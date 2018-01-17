@@ -25,16 +25,38 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeScalingPlanResourcesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name of the scaling plan.
+     * </p>
+     */
     private String scalingPlanName;
-
+    /**
+     * <p>
+     * The version of the scaling plan.
+     * </p>
+     */
     private Long scalingPlanVersion;
-
+    /**
+     * <p>
+     * The maximum number of scalable resources to return. This value can be between 1 and 50. The default value is 50.
+     * </p>
+     */
     private Integer maxResults;
-
+    /**
+     * <p>
+     * The token for the next set of results.
+     * </p>
+     */
     private String nextToken;
 
     /**
+     * <p>
+     * The name of the scaling plan.
+     * </p>
+     * 
      * @param scalingPlanName
+     *        The name of the scaling plan.
      */
 
     public void setScalingPlanName(String scalingPlanName) {
@@ -42,7 +64,11 @@ public class DescribeScalingPlanResourcesRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the scaling plan.
+     * </p>
+     * 
+     * @return The name of the scaling plan.
      */
 
     public String getScalingPlanName() {
@@ -50,7 +76,12 @@ public class DescribeScalingPlanResourcesRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * The name of the scaling plan.
+     * </p>
+     * 
      * @param scalingPlanName
+     *        The name of the scaling plan.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -60,7 +91,12 @@ public class DescribeScalingPlanResourcesRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * The version of the scaling plan.
+     * </p>
+     * 
      * @param scalingPlanVersion
+     *        The version of the scaling plan.
      */
 
     public void setScalingPlanVersion(Long scalingPlanVersion) {
@@ -68,7 +104,11 @@ public class DescribeScalingPlanResourcesRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * @return
+     * <p>
+     * The version of the scaling plan.
+     * </p>
+     * 
+     * @return The version of the scaling plan.
      */
 
     public Long getScalingPlanVersion() {
@@ -76,7 +116,12 @@ public class DescribeScalingPlanResourcesRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * The version of the scaling plan.
+     * </p>
+     * 
      * @param scalingPlanVersion
+     *        The version of the scaling plan.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,7 +131,13 @@ public class DescribeScalingPlanResourcesRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * The maximum number of scalable resources to return. This value can be between 1 and 50. The default value is 50.
+     * </p>
+     * 
      * @param maxResults
+     *        The maximum number of scalable resources to return. This value can be between 1 and 50. The default value
+     *        is 50.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -94,7 +145,12 @@ public class DescribeScalingPlanResourcesRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * @return
+     * <p>
+     * The maximum number of scalable resources to return. This value can be between 1 and 50. The default value is 50.
+     * </p>
+     * 
+     * @return The maximum number of scalable resources to return. This value can be between 1 and 50. The default value
+     *         is 50.
      */
 
     public Integer getMaxResults() {
@@ -102,7 +158,13 @@ public class DescribeScalingPlanResourcesRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * The maximum number of scalable resources to return. This value can be between 1 and 50. The default value is 50.
+     * </p>
+     * 
      * @param maxResults
+     *        The maximum number of scalable resources to return. This value can be between 1 and 50. The default value
+     *        is 50.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,7 +174,12 @@ public class DescribeScalingPlanResourcesRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * The token for the next set of results.
+     * </p>
+     * 
      * @param nextToken
+     *        The token for the next set of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -120,7 +187,11 @@ public class DescribeScalingPlanResourcesRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * @return
+     * <p>
+     * The token for the next set of results.
+     * </p>
+     * 
+     * @return The token for the next set of results.
      */
 
     public String getNextToken() {
@@ -128,7 +199,12 @@ public class DescribeScalingPlanResourcesRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * The token for the next set of results.
+     * </p>
+     * 
      * @param nextToken
+     *        The token for the next set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

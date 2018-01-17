@@ -25,14 +25,32 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name of the scaling plan.
+     * </p>
+     */
     private String scalingPlanName;
-
+    /**
+     * <p>
+     * The source for the application.
+     * </p>
+     */
     private ApplicationSource applicationSource;
-
+    /**
+     * <p>
+     * The scaling instructions.
+     * </p>
+     */
     private java.util.List<ScalingInstruction> scalingInstructions;
 
     /**
+     * <p>
+     * The name of the scaling plan.
+     * </p>
+     * 
      * @param scalingPlanName
+     *        The name of the scaling plan.
      */
 
     public void setScalingPlanName(String scalingPlanName) {
@@ -40,7 +58,11 @@ public class CreateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the scaling plan.
+     * </p>
+     * 
+     * @return The name of the scaling plan.
      */
 
     public String getScalingPlanName() {
@@ -48,7 +70,12 @@ public class CreateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The name of the scaling plan.
+     * </p>
+     * 
      * @param scalingPlanName
+     *        The name of the scaling plan.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -58,7 +85,12 @@ public class CreateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The source for the application.
+     * </p>
+     * 
      * @param applicationSource
+     *        The source for the application.
      */
 
     public void setApplicationSource(ApplicationSource applicationSource) {
@@ -66,7 +98,11 @@ public class CreateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * <p>
+     * The source for the application.
+     * </p>
+     * 
+     * @return The source for the application.
      */
 
     public ApplicationSource getApplicationSource() {
@@ -74,7 +110,12 @@ public class CreateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The source for the application.
+     * </p>
+     * 
      * @param applicationSource
+     *        The source for the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,7 +125,11 @@ public class CreateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * <p>
+     * The scaling instructions.
+     * </p>
+     * 
+     * @return The scaling instructions.
      */
 
     public java.util.List<ScalingInstruction> getScalingInstructions() {
@@ -92,7 +137,12 @@ public class CreateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The scaling instructions.
+     * </p>
+     * 
      * @param scalingInstructions
+     *        The scaling instructions.
      */
 
     public void setScalingInstructions(java.util.Collection<ScalingInstruction> scalingInstructions) {
@@ -106,12 +156,16 @@ public class CreateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
+     * The scaling instructions.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setScalingInstructions(java.util.Collection)} or {@link #withScalingInstructions(java.util.Collection)}
      * if you want to override the existing values.
      * </p>
      * 
      * @param scalingInstructions
+     *        The scaling instructions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,7 +180,12 @@ public class CreateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The scaling instructions.
+     * </p>
+     * 
      * @param scalingInstructions
+     *        The scaling instructions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

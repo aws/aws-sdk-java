@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Represents a dimension for a customized metric.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/MetricDimension" target="_top">AWS
  *      API Documentation</a>
@@ -25,12 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MetricDimension implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The name of the dimension.
+     * </p>
+     */
     private String name;
-
+    /**
+     * <p>
+     * The value of the dimension.
+     * </p>
+     */
     private String value;
 
     /**
+     * <p>
+     * The name of the dimension.
+     * </p>
+     * 
      * @param name
+     *        The name of the dimension.
      */
 
     public void setName(String name) {
@@ -38,7 +55,11 @@ public class MetricDimension implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the dimension.
+     * </p>
+     * 
+     * @return The name of the dimension.
      */
 
     public String getName() {
@@ -46,7 +67,12 @@ public class MetricDimension implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The name of the dimension.
+     * </p>
+     * 
      * @param name
+     *        The name of the dimension.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +82,12 @@ public class MetricDimension implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The value of the dimension.
+     * </p>
+     * 
      * @param value
+     *        The value of the dimension.
      */
 
     public void setValue(String value) {
@@ -64,7 +95,11 @@ public class MetricDimension implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * The value of the dimension.
+     * </p>
+     * 
+     * @return The value of the dimension.
      */
 
     public String getValue() {
@@ -72,7 +107,12 @@ public class MetricDimension implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The value of the dimension.
+     * </p>
+     * 
      * @param value
+     *        The value of the dimension.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

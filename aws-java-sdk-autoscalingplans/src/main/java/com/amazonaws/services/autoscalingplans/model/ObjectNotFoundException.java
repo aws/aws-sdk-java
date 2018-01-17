@@ -15,7 +15,9 @@ package com.amazonaws.services.autoscalingplans.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The specified object could not be found.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ObjectNotFoundException extends com.amazonaws.services.autoscalingplans.model.AWSAutoScalingPlansException {

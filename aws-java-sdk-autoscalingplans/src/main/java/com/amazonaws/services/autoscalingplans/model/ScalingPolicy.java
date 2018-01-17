@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Represents a scaling policy.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/ScalingPolicy" target="_top">AWS
  *      API Documentation</a>
@@ -25,14 +28,32 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The name of the scaling policy.
+     * </p>
+     */
     private String policyName;
-
+    /**
+     * <p>
+     * The type of scaling policy.
+     * </p>
+     */
     private String policyType;
-
+    /**
+     * <p>
+     * The target tracking scaling policy.
+     * </p>
+     */
     private TargetTrackingConfiguration targetTrackingConfiguration;
 
     /**
+     * <p>
+     * The name of the scaling policy.
+     * </p>
+     * 
      * @param policyName
+     *        The name of the scaling policy.
      */
 
     public void setPolicyName(String policyName) {
@@ -40,7 +61,11 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the scaling policy.
+     * </p>
+     * 
+     * @return The name of the scaling policy.
      */
 
     public String getPolicyName() {
@@ -48,7 +73,12 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the scaling policy.
+     * </p>
+     * 
      * @param policyName
+     *        The name of the scaling policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -58,7 +88,12 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The type of scaling policy.
+     * </p>
+     * 
      * @param policyType
+     *        The type of scaling policy.
      * @see PolicyType
      */
 
@@ -67,7 +102,11 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The type of scaling policy.
+     * </p>
+     * 
+     * @return The type of scaling policy.
      * @see PolicyType
      */
 
@@ -76,7 +115,12 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The type of scaling policy.
+     * </p>
+     * 
      * @param policyType
+     *        The type of scaling policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyType
      */
@@ -87,7 +131,12 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The type of scaling policy.
+     * </p>
+     * 
      * @param policyType
+     *        The type of scaling policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyType
      */
@@ -98,7 +147,12 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The target tracking scaling policy.
+     * </p>
+     * 
      * @param targetTrackingConfiguration
+     *        The target tracking scaling policy.
      */
 
     public void setTargetTrackingConfiguration(TargetTrackingConfiguration targetTrackingConfiguration) {
@@ -106,7 +160,11 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The target tracking scaling policy.
+     * </p>
+     * 
+     * @return The target tracking scaling policy.
      */
 
     public TargetTrackingConfiguration getTargetTrackingConfiguration() {
@@ -114,7 +172,12 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The target tracking scaling policy.
+     * </p>
+     * 
      * @param targetTrackingConfiguration
+     *        The target tracking scaling policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

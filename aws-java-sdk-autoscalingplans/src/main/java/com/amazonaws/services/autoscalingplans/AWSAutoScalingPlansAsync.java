@@ -24,11 +24,31 @@ import com.amazonaws.services.autoscalingplans.model.*;
  * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
  * {@link com.amazonaws.services.autoscalingplans.AbstractAWSAutoScalingPlansAsync} instead.
  * </p>
+ * <p>
+ * <p>
+ * Use AWS Auto Scaling to quickly discover all the scalable AWS resources for your application and configure dynamic
+ * scaling for your scalable resources.
+ * </p>
+ * <p>
+ * To get started, create a scaling plan with a set of instructions used to configure dynamic scaling for the scalable
+ * resources in your application. AWS Auto Scaling creates target tracking scaling policies for the scalable resources
+ * in your scaling plan. Target tracking scaling policies adjust the capacity of your scalable resource as required to
+ * maintain resource utilization at the target value that you specified.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSAutoScalingPlansAsync extends AWSAutoScalingPlans {
 
     /**
+     * <p>
+     * Creates a scaling plan.
+     * </p>
+     * <p>
+     * A scaling plan contains a set of instructions used to configure dynamic scaling for the scalable resources in
+     * your application. AWS Auto Scaling creates target tracking scaling policies based on the scaling instructions in
+     * your scaling plan.
+     * </p>
+     * 
      * @param createScalingPlanRequest
      * @return A Java Future containing the result of the CreateScalingPlan operation returned by the service.
      * @sample AWSAutoScalingPlansAsync.CreateScalingPlan
@@ -38,6 +58,15 @@ public interface AWSAutoScalingPlansAsync extends AWSAutoScalingPlans {
     java.util.concurrent.Future<CreateScalingPlanResult> createScalingPlanAsync(CreateScalingPlanRequest createScalingPlanRequest);
 
     /**
+     * <p>
+     * Creates a scaling plan.
+     * </p>
+     * <p>
+     * A scaling plan contains a set of instructions used to configure dynamic scaling for the scalable resources in
+     * your application. AWS Auto Scaling creates target tracking scaling policies based on the scaling instructions in
+     * your scaling plan.
+     * </p>
+     * 
      * @param createScalingPlanRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
@@ -52,6 +81,10 @@ public interface AWSAutoScalingPlansAsync extends AWSAutoScalingPlans {
             com.amazonaws.handlers.AsyncHandler<CreateScalingPlanRequest, CreateScalingPlanResult> asyncHandler);
 
     /**
+     * <p>
+     * Deletes the specified scaling plan.
+     * </p>
+     * 
      * @param deleteScalingPlanRequest
      * @return A Java Future containing the result of the DeleteScalingPlan operation returned by the service.
      * @sample AWSAutoScalingPlansAsync.DeleteScalingPlan
@@ -61,6 +94,10 @@ public interface AWSAutoScalingPlansAsync extends AWSAutoScalingPlans {
     java.util.concurrent.Future<DeleteScalingPlanResult> deleteScalingPlanAsync(DeleteScalingPlanRequest deleteScalingPlanRequest);
 
     /**
+     * <p>
+     * Deletes the specified scaling plan.
+     * </p>
+     * 
      * @param deleteScalingPlanRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
@@ -75,6 +112,10 @@ public interface AWSAutoScalingPlansAsync extends AWSAutoScalingPlans {
             com.amazonaws.handlers.AsyncHandler<DeleteScalingPlanRequest, DeleteScalingPlanResult> asyncHandler);
 
     /**
+     * <p>
+     * Describes the scalable resources in the specified scaling plan.
+     * </p>
+     * 
      * @param describeScalingPlanResourcesRequest
      * @return A Java Future containing the result of the DescribeScalingPlanResources operation returned by the
      *         service.
@@ -86,6 +127,10 @@ public interface AWSAutoScalingPlansAsync extends AWSAutoScalingPlans {
             DescribeScalingPlanResourcesRequest describeScalingPlanResourcesRequest);
 
     /**
+     * <p>
+     * Describes the scalable resources in the specified scaling plan.
+     * </p>
+     * 
      * @param describeScalingPlanResourcesRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
@@ -102,6 +147,10 @@ public interface AWSAutoScalingPlansAsync extends AWSAutoScalingPlans {
             com.amazonaws.handlers.AsyncHandler<DescribeScalingPlanResourcesRequest, DescribeScalingPlanResourcesResult> asyncHandler);
 
     /**
+     * <p>
+     * Describes the specified scaling plans or all of your scaling plans.
+     * </p>
+     * 
      * @param describeScalingPlansRequest
      * @return A Java Future containing the result of the DescribeScalingPlans operation returned by the service.
      * @sample AWSAutoScalingPlansAsync.DescribeScalingPlans
@@ -111,6 +160,10 @@ public interface AWSAutoScalingPlansAsync extends AWSAutoScalingPlans {
     java.util.concurrent.Future<DescribeScalingPlansResult> describeScalingPlansAsync(DescribeScalingPlansRequest describeScalingPlansRequest);
 
     /**
+     * <p>
+     * Describes the specified scaling plans or all of your scaling plans.
+     * </p>
+     * 
      * @param describeScalingPlansRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an

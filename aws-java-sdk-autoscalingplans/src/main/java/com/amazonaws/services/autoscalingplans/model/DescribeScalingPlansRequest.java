@@ -25,18 +25,48 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeScalingPlansRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling plan
+     * names.
+     * </p>
+     */
     private java.util.List<String> scalingPlanNames;
-
+    /**
+     * <p>
+     * The version of the scaling plan. If you specify a scaling plan version, you must also specify a scaling plan
+     * name.
+     * </p>
+     */
     private Long scalingPlanVersion;
-
+    /**
+     * <p>
+     * The sources for the applications (up to 10). If you specify scaling plan names, you cannot specify application
+     * sources.
+     * </p>
+     */
     private java.util.List<ApplicationSource> applicationSources;
-
+    /**
+     * <p>
+     * The maximum number of scalable resources to return. This value can be between 1 and 50. The default value is 50.
+     * </p>
+     */
     private Integer maxResults;
-
+    /**
+     * <p>
+     * The token for the next set of results.
+     * </p>
+     */
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling plan
+     * names.
+     * </p>
+     * 
+     * @return The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling
+     *         plan names.
      */
 
     public java.util.List<String> getScalingPlanNames() {
@@ -44,7 +74,14 @@ public class DescribeScalingPlansRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling plan
+     * names.
+     * </p>
+     * 
      * @param scalingPlanNames
+     *        The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling
+     *        plan names.
      */
 
     public void setScalingPlanNames(java.util.Collection<String> scalingPlanNames) {
@@ -58,12 +95,18 @@ public class DescribeScalingPlansRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
+     * The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling plan
+     * names.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setScalingPlanNames(java.util.Collection)} or {@link #withScalingPlanNames(java.util.Collection)} if you
      * want to override the existing values.
      * </p>
      * 
      * @param scalingPlanNames
+     *        The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling
+     *        plan names.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,7 +121,14 @@ public class DescribeScalingPlansRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling plan
+     * names.
+     * </p>
+     * 
      * @param scalingPlanNames
+     *        The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling
+     *        plan names.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,7 +138,14 @@ public class DescribeScalingPlansRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The version of the scaling plan. If you specify a scaling plan version, you must also specify a scaling plan
+     * name.
+     * </p>
+     * 
      * @param scalingPlanVersion
+     *        The version of the scaling plan. If you specify a scaling plan version, you must also specify a scaling
+     *        plan name.
      */
 
     public void setScalingPlanVersion(Long scalingPlanVersion) {
@@ -96,7 +153,13 @@ public class DescribeScalingPlansRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * The version of the scaling plan. If you specify a scaling plan version, you must also specify a scaling plan
+     * name.
+     * </p>
+     * 
+     * @return The version of the scaling plan. If you specify a scaling plan version, you must also specify a scaling
+     *         plan name.
      */
 
     public Long getScalingPlanVersion() {
@@ -104,7 +167,14 @@ public class DescribeScalingPlansRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The version of the scaling plan. If you specify a scaling plan version, you must also specify a scaling plan
+     * name.
+     * </p>
+     * 
      * @param scalingPlanVersion
+     *        The version of the scaling plan. If you specify a scaling plan version, you must also specify a scaling
+     *        plan name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,7 +184,13 @@ public class DescribeScalingPlansRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * The sources for the applications (up to 10). If you specify scaling plan names, you cannot specify application
+     * sources.
+     * </p>
+     * 
+     * @return The sources for the applications (up to 10). If you specify scaling plan names, you cannot specify
+     *         application sources.
      */
 
     public java.util.List<ApplicationSource> getApplicationSources() {
@@ -122,7 +198,14 @@ public class DescribeScalingPlansRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The sources for the applications (up to 10). If you specify scaling plan names, you cannot specify application
+     * sources.
+     * </p>
+     * 
      * @param applicationSources
+     *        The sources for the applications (up to 10). If you specify scaling plan names, you cannot specify
+     *        application sources.
      */
 
     public void setApplicationSources(java.util.Collection<ApplicationSource> applicationSources) {
@@ -136,12 +219,18 @@ public class DescribeScalingPlansRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
+     * The sources for the applications (up to 10). If you specify scaling plan names, you cannot specify application
+     * sources.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setApplicationSources(java.util.Collection)} or {@link #withApplicationSources(java.util.Collection)} if
      * you want to override the existing values.
      * </p>
      * 
      * @param applicationSources
+     *        The sources for the applications (up to 10). If you specify scaling plan names, you cannot specify
+     *        application sources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,7 +245,14 @@ public class DescribeScalingPlansRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The sources for the applications (up to 10). If you specify scaling plan names, you cannot specify application
+     * sources.
+     * </p>
+     * 
      * @param applicationSources
+     *        The sources for the applications (up to 10). If you specify scaling plan names, you cannot specify
+     *        application sources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,7 +262,13 @@ public class DescribeScalingPlansRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The maximum number of scalable resources to return. This value can be between 1 and 50. The default value is 50.
+     * </p>
+     * 
      * @param maxResults
+     *        The maximum number of scalable resources to return. This value can be between 1 and 50. The default value
+     *        is 50.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -174,7 +276,12 @@ public class DescribeScalingPlansRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * The maximum number of scalable resources to return. This value can be between 1 and 50. The default value is 50.
+     * </p>
+     * 
+     * @return The maximum number of scalable resources to return. This value can be between 1 and 50. The default value
+     *         is 50.
      */
 
     public Integer getMaxResults() {
@@ -182,7 +289,13 @@ public class DescribeScalingPlansRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The maximum number of scalable resources to return. This value can be between 1 and 50. The default value is 50.
+     * </p>
+     * 
      * @param maxResults
+     *        The maximum number of scalable resources to return. This value can be between 1 and 50. The default value
+     *        is 50.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,7 +305,12 @@ public class DescribeScalingPlansRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The token for the next set of results.
+     * </p>
+     * 
      * @param nextToken
+     *        The token for the next set of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -200,7 +318,11 @@ public class DescribeScalingPlansRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * The token for the next set of results.
+     * </p>
+     * 
+     * @return The token for the next set of results.
      */
 
     public String getNextToken() {
@@ -208,7 +330,12 @@ public class DescribeScalingPlansRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The token for the next set of results.
+     * </p>
+     * 
      * @param nextToken
+     *        The token for the next set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

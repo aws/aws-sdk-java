@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Represents an application source.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/ApplicationSource"
  *      target="_top">AWS API Documentation</a>
@@ -25,10 +28,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ApplicationSource implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a CloudFormation stack.
+     * </p>
+     */
     private String cloudFormationStackARN;
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a CloudFormation stack.
+     * </p>
+     * 
      * @param cloudFormationStackARN
+     *        The Amazon Resource Name (ARN) of a CloudFormation stack.
      */
 
     public void setCloudFormationStackARN(String cloudFormationStackARN) {
@@ -36,7 +49,11 @@ public class ApplicationSource implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of a CloudFormation stack.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of a CloudFormation stack.
      */
 
     public String getCloudFormationStackARN() {
@@ -44,7 +61,12 @@ public class ApplicationSource implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a CloudFormation stack.
+     * </p>
+     * 
      * @param cloudFormationStackARN
+     *        The Amazon Resource Name (ARN) of a CloudFormation stack.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

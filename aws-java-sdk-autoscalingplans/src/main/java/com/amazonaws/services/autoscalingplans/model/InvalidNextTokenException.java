@@ -15,7 +15,9 @@ package com.amazonaws.services.autoscalingplans.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The token provided is not valid.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidNextTokenException extends com.amazonaws.services.autoscalingplans.model.AWSAutoScalingPlansException {

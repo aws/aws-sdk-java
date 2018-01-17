@@ -25,6 +25,17 @@ import com.amazonaws.services.autoscalingplans.model.*;
  * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
  * {@link com.amazonaws.services.autoscalingplans.AbstractAWSAutoScalingPlans} instead.
  * </p>
+ * <p>
+ * <p>
+ * Use AWS Auto Scaling to quickly discover all the scalable AWS resources for your application and configure dynamic
+ * scaling for your scalable resources.
+ * </p>
+ * <p>
+ * To get started, create a scaling plan with a set of instructions used to configure dynamic scaling for the scalable
+ * resources in your application. AWS Auto Scaling creates target tracking scaling policies for the scalable resources
+ * in your scaling plan. Target tracking scaling policies adjust the capacity of your scalable resource as required to
+ * maintain resource utilization at the target value that you specified.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSAutoScalingPlans {
@@ -38,12 +49,26 @@ public interface AWSAutoScalingPlans {
     String ENDPOINT_PREFIX = "autoscaling";
 
     /**
+     * <p>
+     * Creates a scaling plan.
+     * </p>
+     * <p>
+     * A scaling plan contains a set of instructions used to configure dynamic scaling for the scalable resources in
+     * your application. AWS Auto Scaling creates target tracking scaling policies based on the scaling instructions in
+     * your scaling plan.
+     * </p>
+     * 
      * @param createScalingPlanRequest
      * @return Result of the CreateScalingPlan operation returned by the service.
      * @throws ValidationException
+     *         An exception was thrown for a validation issue. Review the parameters provided.
      * @throws LimitExceededException
+     *         Your account exceeded a limit. This exception is thrown when a per-account resource limit is exceeded.
      * @throws ConcurrentUpdateException
+     *         Concurrent updates caused an exception, for example, if you request an update to a scaling plan that
+     *         already has a pending update.
      * @throws InternalServiceException
+     *         The service encountered an internal error.
      * @sample AWSAutoScalingPlans.CreateScalingPlan
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/CreateScalingPlan"
      *      target="_top">AWS API Documentation</a>
@@ -51,12 +76,21 @@ public interface AWSAutoScalingPlans {
     CreateScalingPlanResult createScalingPlan(CreateScalingPlanRequest createScalingPlanRequest);
 
     /**
+     * <p>
+     * Deletes the specified scaling plan.
+     * </p>
+     * 
      * @param deleteScalingPlanRequest
      * @return Result of the DeleteScalingPlan operation returned by the service.
      * @throws ValidationException
+     *         An exception was thrown for a validation issue. Review the parameters provided.
      * @throws ObjectNotFoundException
+     *         The specified object could not be found.
      * @throws ConcurrentUpdateException
+     *         Concurrent updates caused an exception, for example, if you request an update to a scaling plan that
+     *         already has a pending update.
      * @throws InternalServiceException
+     *         The service encountered an internal error.
      * @sample AWSAutoScalingPlans.DeleteScalingPlan
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/DeleteScalingPlan"
      *      target="_top">AWS API Documentation</a>
@@ -64,12 +98,21 @@ public interface AWSAutoScalingPlans {
     DeleteScalingPlanResult deleteScalingPlan(DeleteScalingPlanRequest deleteScalingPlanRequest);
 
     /**
+     * <p>
+     * Describes the scalable resources in the specified scaling plan.
+     * </p>
+     * 
      * @param describeScalingPlanResourcesRequest
      * @return Result of the DescribeScalingPlanResources operation returned by the service.
      * @throws ValidationException
+     *         An exception was thrown for a validation issue. Review the parameters provided.
      * @throws InvalidNextTokenException
+     *         The token provided is not valid.
      * @throws ConcurrentUpdateException
+     *         Concurrent updates caused an exception, for example, if you request an update to a scaling plan that
+     *         already has a pending update.
      * @throws InternalServiceException
+     *         The service encountered an internal error.
      * @sample AWSAutoScalingPlans.DescribeScalingPlanResources
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/DescribeScalingPlanResources"
      *      target="_top">AWS API Documentation</a>
@@ -77,12 +120,21 @@ public interface AWSAutoScalingPlans {
     DescribeScalingPlanResourcesResult describeScalingPlanResources(DescribeScalingPlanResourcesRequest describeScalingPlanResourcesRequest);
 
     /**
+     * <p>
+     * Describes the specified scaling plans or all of your scaling plans.
+     * </p>
+     * 
      * @param describeScalingPlansRequest
      * @return Result of the DescribeScalingPlans operation returned by the service.
      * @throws ValidationException
+     *         An exception was thrown for a validation issue. Review the parameters provided.
      * @throws InvalidNextTokenException
+     *         The token provided is not valid.
      * @throws ConcurrentUpdateException
+     *         Concurrent updates caused an exception, for example, if you request an update to a scaling plan that
+     *         already has a pending update.
      * @throws InternalServiceException
+     *         The service encountered an internal error.
      * @sample AWSAutoScalingPlans.DescribeScalingPlans
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/DescribeScalingPlans"
      *      target="_top">AWS API Documentation</a>

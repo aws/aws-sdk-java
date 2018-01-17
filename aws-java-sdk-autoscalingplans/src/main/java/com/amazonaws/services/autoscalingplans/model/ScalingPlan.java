@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Represents a scaling plan.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/ScalingPlan" target="_top">AWS API
  *      Documentation</a>
@@ -25,22 +28,89 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The name of the scaling plan.
+     * </p>
+     */
     private String scalingPlanName;
-
+    /**
+     * <p>
+     * The version of the scaling plan.
+     * </p>
+     */
     private Long scalingPlanVersion;
-
+    /**
+     * <p>
+     * The application source.
+     * </p>
+     */
     private ApplicationSource applicationSource;
-
+    /**
+     * <p>
+     * The scaling instructions.
+     * </p>
+     */
     private java.util.List<ScalingInstruction> scalingInstructions;
-
+    /**
+     * <p>
+     * The status of the scaling plan.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Active</code> - The scaling plan is active.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ActiveWithProblems</code> - The scaling plan is active, but the scaling configuration for one or more
+     * resources could not be applied.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CreationInProgress</code> - The scaling plan is being created.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CreationFailed</code> - The scaling plan could not be created.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DeletionInProgress</code> - The scaling plan is being deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DeletionFailed</code> - The scaling plan could not be deleted.
+     * </p>
+     * </li>
+     * </ul>
+     */
     private String statusCode;
-
+    /**
+     * <p>
+     * A simple message about the current status of the scaling plan.
+     * </p>
+     */
     private String statusMessage;
-
+    /**
+     * <p>
+     * The Unix timestamp when the scaling plan was created.
+     * </p>
+     */
     private java.util.Date creationTime;
 
     /**
+     * <p>
+     * The name of the scaling plan.
+     * </p>
+     * 
      * @param scalingPlanName
+     *        The name of the scaling plan.
      */
 
     public void setScalingPlanName(String scalingPlanName) {
@@ -48,7 +118,11 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the scaling plan.
+     * </p>
+     * 
+     * @return The name of the scaling plan.
      */
 
     public String getScalingPlanName() {
@@ -56,7 +130,12 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the scaling plan.
+     * </p>
+     * 
      * @param scalingPlanName
+     *        The name of the scaling plan.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,7 +145,12 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The version of the scaling plan.
+     * </p>
+     * 
      * @param scalingPlanVersion
+     *        The version of the scaling plan.
      */
 
     public void setScalingPlanVersion(Long scalingPlanVersion) {
@@ -74,7 +158,11 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The version of the scaling plan.
+     * </p>
+     * 
+     * @return The version of the scaling plan.
      */
 
     public Long getScalingPlanVersion() {
@@ -82,7 +170,12 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The version of the scaling plan.
+     * </p>
+     * 
      * @param scalingPlanVersion
+     *        The version of the scaling plan.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,7 +185,12 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The application source.
+     * </p>
+     * 
      * @param applicationSource
+     *        The application source.
      */
 
     public void setApplicationSource(ApplicationSource applicationSource) {
@@ -100,7 +198,11 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The application source.
+     * </p>
+     * 
+     * @return The application source.
      */
 
     public ApplicationSource getApplicationSource() {
@@ -108,7 +210,12 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The application source.
+     * </p>
+     * 
      * @param applicationSource
+     *        The application source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -118,7 +225,11 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The scaling instructions.
+     * </p>
+     * 
+     * @return The scaling instructions.
      */
 
     public java.util.List<ScalingInstruction> getScalingInstructions() {
@@ -126,7 +237,12 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The scaling instructions.
+     * </p>
+     * 
      * @param scalingInstructions
+     *        The scaling instructions.
      */
 
     public void setScalingInstructions(java.util.Collection<ScalingInstruction> scalingInstructions) {
@@ -140,12 +256,16 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The scaling instructions.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setScalingInstructions(java.util.Collection)} or {@link #withScalingInstructions(java.util.Collection)}
      * if you want to override the existing values.
      * </p>
      * 
      * @param scalingInstructions
+     *        The scaling instructions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,7 +280,12 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The scaling instructions.
+     * </p>
+     * 
      * @param scalingInstructions
+     *        The scaling instructions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -170,7 +295,77 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The status of the scaling plan.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Active</code> - The scaling plan is active.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ActiveWithProblems</code> - The scaling plan is active, but the scaling configuration for one or more
+     * resources could not be applied.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CreationInProgress</code> - The scaling plan is being created.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CreationFailed</code> - The scaling plan could not be created.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DeletionInProgress</code> - The scaling plan is being deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DeletionFailed</code> - The scaling plan could not be deleted.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param statusCode
+     *        The status of the scaling plan.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Active</code> - The scaling plan is active.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ActiveWithProblems</code> - The scaling plan is active, but the scaling configuration for one or
+     *        more resources could not be applied.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CreationInProgress</code> - The scaling plan is being created.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CreationFailed</code> - The scaling plan could not be created.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DeletionInProgress</code> - The scaling plan is being deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DeletionFailed</code> - The scaling plan could not be deleted.
+     *        </p>
+     *        </li>
      * @see ScalingPlanStatusCode
      */
 
@@ -179,7 +374,76 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The status of the scaling plan.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Active</code> - The scaling plan is active.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ActiveWithProblems</code> - The scaling plan is active, but the scaling configuration for one or more
+     * resources could not be applied.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CreationInProgress</code> - The scaling plan is being created.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CreationFailed</code> - The scaling plan could not be created.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DeletionInProgress</code> - The scaling plan is being deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DeletionFailed</code> - The scaling plan could not be deleted.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The status of the scaling plan.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Active</code> - The scaling plan is active.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ActiveWithProblems</code> - The scaling plan is active, but the scaling configuration for one or
+     *         more resources could not be applied.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CreationInProgress</code> - The scaling plan is being created.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CreationFailed</code> - The scaling plan could not be created.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DeletionInProgress</code> - The scaling plan is being deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DeletionFailed</code> - The scaling plan could not be deleted.
+     *         </p>
+     *         </li>
      * @see ScalingPlanStatusCode
      */
 
@@ -188,7 +452,77 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The status of the scaling plan.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Active</code> - The scaling plan is active.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ActiveWithProblems</code> - The scaling plan is active, but the scaling configuration for one or more
+     * resources could not be applied.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CreationInProgress</code> - The scaling plan is being created.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CreationFailed</code> - The scaling plan could not be created.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DeletionInProgress</code> - The scaling plan is being deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DeletionFailed</code> - The scaling plan could not be deleted.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param statusCode
+     *        The status of the scaling plan.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Active</code> - The scaling plan is active.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ActiveWithProblems</code> - The scaling plan is active, but the scaling configuration for one or
+     *        more resources could not be applied.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CreationInProgress</code> - The scaling plan is being created.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CreationFailed</code> - The scaling plan could not be created.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DeletionInProgress</code> - The scaling plan is being deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DeletionFailed</code> - The scaling plan could not be deleted.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScalingPlanStatusCode
      */
@@ -199,7 +533,77 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The status of the scaling plan.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Active</code> - The scaling plan is active.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ActiveWithProblems</code> - The scaling plan is active, but the scaling configuration for one or more
+     * resources could not be applied.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CreationInProgress</code> - The scaling plan is being created.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CreationFailed</code> - The scaling plan could not be created.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DeletionInProgress</code> - The scaling plan is being deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DeletionFailed</code> - The scaling plan could not be deleted.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param statusCode
+     *        The status of the scaling plan.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Active</code> - The scaling plan is active.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ActiveWithProblems</code> - The scaling plan is active, but the scaling configuration for one or
+     *        more resources could not be applied.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CreationInProgress</code> - The scaling plan is being created.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CreationFailed</code> - The scaling plan could not be created.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DeletionInProgress</code> - The scaling plan is being deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DeletionFailed</code> - The scaling plan could not be deleted.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScalingPlanStatusCode
      */
@@ -210,7 +614,12 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A simple message about the current status of the scaling plan.
+     * </p>
+     * 
      * @param statusMessage
+     *        A simple message about the current status of the scaling plan.
      */
 
     public void setStatusMessage(String statusMessage) {
@@ -218,7 +627,11 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * A simple message about the current status of the scaling plan.
+     * </p>
+     * 
+     * @return A simple message about the current status of the scaling plan.
      */
 
     public String getStatusMessage() {
@@ -226,7 +639,12 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A simple message about the current status of the scaling plan.
+     * </p>
+     * 
      * @param statusMessage
+     *        A simple message about the current status of the scaling plan.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -236,7 +654,12 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Unix timestamp when the scaling plan was created.
+     * </p>
+     * 
      * @param creationTime
+     *        The Unix timestamp when the scaling plan was created.
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -244,7 +667,11 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The Unix timestamp when the scaling plan was created.
+     * </p>
+     * 
+     * @return The Unix timestamp when the scaling plan was created.
      */
 
     public java.util.Date getCreationTime() {
@@ -252,7 +679,12 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Unix timestamp when the scaling plan was created.
+     * </p>
+     * 
      * @param creationTime
+     *        The Unix timestamp when the scaling plan was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

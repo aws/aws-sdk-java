@@ -23,10 +23,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateScalingPlanResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The version of the scaling plan. This value is always 1.
+     * </p>
+     */
     private Long scalingPlanVersion;
 
     /**
+     * <p>
+     * The version of the scaling plan. This value is always 1.
+     * </p>
+     * 
      * @param scalingPlanVersion
+     *        The version of the scaling plan. This value is always 1.
      */
 
     public void setScalingPlanVersion(Long scalingPlanVersion) {
@@ -34,7 +44,11 @@ public class CreateScalingPlanResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
-     * @return
+     * <p>
+     * The version of the scaling plan. This value is always 1.
+     * </p>
+     * 
+     * @return The version of the scaling plan. This value is always 1.
      */
 
     public Long getScalingPlanVersion() {
@@ -42,7 +56,12 @@ public class CreateScalingPlanResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * The version of the scaling plan. This value is always 1.
+     * </p>
+     * 
      * @param scalingPlanVersion
+     *        The version of the scaling plan. This value is always 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

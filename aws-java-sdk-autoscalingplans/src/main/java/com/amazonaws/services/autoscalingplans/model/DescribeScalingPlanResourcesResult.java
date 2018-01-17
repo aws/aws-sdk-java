@@ -23,12 +23,26 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeScalingPlanResourcesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Information about the scalable resources.
+     * </p>
+     */
     private java.util.List<ScalingPlanResource> scalingPlanResources;
-
+    /**
+     * <p>
+     * The token required to get the next set of results. This value is <code>null</code> if there are no more results
+     * to return.
+     * </p>
+     */
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * Information about the scalable resources.
+     * </p>
+     * 
+     * @return Information about the scalable resources.
      */
 
     public java.util.List<ScalingPlanResource> getScalingPlanResources() {
@@ -36,7 +50,12 @@ public class DescribeScalingPlanResourcesResult extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * Information about the scalable resources.
+     * </p>
+     * 
      * @param scalingPlanResources
+     *        Information about the scalable resources.
      */
 
     public void setScalingPlanResources(java.util.Collection<ScalingPlanResource> scalingPlanResources) {
@@ -50,12 +69,16 @@ public class DescribeScalingPlanResourcesResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
+     * Information about the scalable resources.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setScalingPlanResources(java.util.Collection)} or {@link #withScalingPlanResources(java.util.Collection)}
      * if you want to override the existing values.
      * </p>
      * 
      * @param scalingPlanResources
+     *        Information about the scalable resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -70,7 +93,12 @@ public class DescribeScalingPlanResourcesResult extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * Information about the scalable resources.
+     * </p>
+     * 
      * @param scalingPlanResources
+     *        Information about the scalable resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,7 +108,14 @@ public class DescribeScalingPlanResourcesResult extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * The token required to get the next set of results. This value is <code>null</code> if there are no more results
+     * to return.
+     * </p>
+     * 
      * @param nextToken
+     *        The token required to get the next set of results. This value is <code>null</code> if there are no more
+     *        results to return.
      */
 
     public void setNextToken(String nextToken) {
@@ -88,7 +123,13 @@ public class DescribeScalingPlanResourcesResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * @return
+     * <p>
+     * The token required to get the next set of results. This value is <code>null</code> if there are no more results
+     * to return.
+     * </p>
+     * 
+     * @return The token required to get the next set of results. This value is <code>null</code> if there are no more
+     *         results to return.
      */
 
     public String getNextToken() {
@@ -96,7 +137,14 @@ public class DescribeScalingPlanResourcesResult extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * The token required to get the next set of results. This value is <code>null</code> if there are no more results
+     * to return.
+     * </p>
+     * 
      * @param nextToken
+     *        The token required to get the next set of results. This value is <code>null</code> if there are no more
+     *        results to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

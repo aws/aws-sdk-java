@@ -25,12 +25,26 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name of the scaling plan.
+     * </p>
+     */
     private String scalingPlanName;
-
+    /**
+     * <p>
+     * The version of the scaling plan.
+     * </p>
+     */
     private Long scalingPlanVersion;
 
     /**
+     * <p>
+     * The name of the scaling plan.
+     * </p>
+     * 
      * @param scalingPlanName
+     *        The name of the scaling plan.
      */
 
     public void setScalingPlanName(String scalingPlanName) {
@@ -38,7 +52,11 @@ public class DeleteScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the scaling plan.
+     * </p>
+     * 
+     * @return The name of the scaling plan.
      */
 
     public String getScalingPlanName() {
@@ -46,7 +64,12 @@ public class DeleteScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The name of the scaling plan.
+     * </p>
+     * 
      * @param scalingPlanName
+     *        The name of the scaling plan.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +79,12 @@ public class DeleteScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The version of the scaling plan.
+     * </p>
+     * 
      * @param scalingPlanVersion
+     *        The version of the scaling plan.
      */
 
     public void setScalingPlanVersion(Long scalingPlanVersion) {
@@ -64,7 +92,11 @@ public class DeleteScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * <p>
+     * The version of the scaling plan.
+     * </p>
+     * 
+     * @return The version of the scaling plan.
      */
 
     public Long getScalingPlanVersion() {
@@ -72,7 +104,12 @@ public class DeleteScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The version of the scaling plan.
+     * </p>
+     * 
      * @param scalingPlanVersion
+     *        The version of the scaling plan.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

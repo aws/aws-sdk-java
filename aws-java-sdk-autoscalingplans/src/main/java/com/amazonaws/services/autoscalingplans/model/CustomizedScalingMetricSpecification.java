@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Represents a customized metric for a target tracking policy.
+ * </p>
  * 
  * @see <a
  *      href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/CustomizedScalingMetricSpecification"
@@ -26,18 +29,44 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CustomizedScalingMetricSpecification implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The name of the metric.
+     * </p>
+     */
     private String metricName;
-
+    /**
+     * <p>
+     * The namespace of the metric.
+     * </p>
+     */
     private String namespace;
-
+    /**
+     * <p>
+     * The dimensions of the metric.
+     * </p>
+     */
     private java.util.List<MetricDimension> dimensions;
-
+    /**
+     * <p>
+     * The statistic of the metric.
+     * </p>
+     */
     private String statistic;
-
+    /**
+     * <p>
+     * The unit of the metric.
+     * </p>
+     */
     private String unit;
 
     /**
+     * <p>
+     * The name of the metric.
+     * </p>
+     * 
      * @param metricName
+     *        The name of the metric.
      */
 
     public void setMetricName(String metricName) {
@@ -45,7 +74,11 @@ public class CustomizedScalingMetricSpecification implements Serializable, Clone
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the metric.
+     * </p>
+     * 
+     * @return The name of the metric.
      */
 
     public String getMetricName() {
@@ -53,7 +86,12 @@ public class CustomizedScalingMetricSpecification implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * The name of the metric.
+     * </p>
+     * 
      * @param metricName
+     *        The name of the metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -63,7 +101,12 @@ public class CustomizedScalingMetricSpecification implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * The namespace of the metric.
+     * </p>
+     * 
      * @param namespace
+     *        The namespace of the metric.
      */
 
     public void setNamespace(String namespace) {
@@ -71,7 +114,11 @@ public class CustomizedScalingMetricSpecification implements Serializable, Clone
     }
 
     /**
-     * @return
+     * <p>
+     * The namespace of the metric.
+     * </p>
+     * 
+     * @return The namespace of the metric.
      */
 
     public String getNamespace() {
@@ -79,7 +126,12 @@ public class CustomizedScalingMetricSpecification implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * The namespace of the metric.
+     * </p>
+     * 
      * @param namespace
+     *        The namespace of the metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,7 +141,11 @@ public class CustomizedScalingMetricSpecification implements Serializable, Clone
     }
 
     /**
-     * @return
+     * <p>
+     * The dimensions of the metric.
+     * </p>
+     * 
+     * @return The dimensions of the metric.
      */
 
     public java.util.List<MetricDimension> getDimensions() {
@@ -97,7 +153,12 @@ public class CustomizedScalingMetricSpecification implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * The dimensions of the metric.
+     * </p>
+     * 
      * @param dimensions
+     *        The dimensions of the metric.
      */
 
     public void setDimensions(java.util.Collection<MetricDimension> dimensions) {
@@ -111,12 +172,16 @@ public class CustomizedScalingMetricSpecification implements Serializable, Clone
 
     /**
      * <p>
+     * The dimensions of the metric.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setDimensions(java.util.Collection)} or {@link #withDimensions(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param dimensions
+     *        The dimensions of the metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,7 +196,12 @@ public class CustomizedScalingMetricSpecification implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * The dimensions of the metric.
+     * </p>
+     * 
      * @param dimensions
+     *        The dimensions of the metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,7 +211,12 @@ public class CustomizedScalingMetricSpecification implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * The statistic of the metric.
+     * </p>
+     * 
      * @param statistic
+     *        The statistic of the metric.
      * @see MetricStatistic
      */
 
@@ -150,7 +225,11 @@ public class CustomizedScalingMetricSpecification implements Serializable, Clone
     }
 
     /**
-     * @return
+     * <p>
+     * The statistic of the metric.
+     * </p>
+     * 
+     * @return The statistic of the metric.
      * @see MetricStatistic
      */
 
@@ -159,7 +238,12 @@ public class CustomizedScalingMetricSpecification implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * The statistic of the metric.
+     * </p>
+     * 
      * @param statistic
+     *        The statistic of the metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricStatistic
      */
@@ -170,7 +254,12 @@ public class CustomizedScalingMetricSpecification implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * The statistic of the metric.
+     * </p>
+     * 
      * @param statistic
+     *        The statistic of the metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricStatistic
      */
@@ -181,7 +270,12 @@ public class CustomizedScalingMetricSpecification implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * The unit of the metric.
+     * </p>
+     * 
      * @param unit
+     *        The unit of the metric.
      */
 
     public void setUnit(String unit) {
@@ -189,7 +283,11 @@ public class CustomizedScalingMetricSpecification implements Serializable, Clone
     }
 
     /**
-     * @return
+     * <p>
+     * The unit of the metric.
+     * </p>
+     * 
+     * @return The unit of the metric.
      */
 
     public String getUnit() {
@@ -197,7 +295,12 @@ public class CustomizedScalingMetricSpecification implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * The unit of the metric.
+     * </p>
+     * 
      * @param unit
+     *        The unit of the metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

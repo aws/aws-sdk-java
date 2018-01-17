@@ -14,9 +14,8 @@
 /**
  * <fullname>Amazon Elastic Compute Cloud</fullname>
  * <p>
- * Amazon Elastic Compute Cloud (Amazon EC2) provides resizable computing capacity in the Amazon Web Services (AWS)
- * cloud. Using Amazon EC2 eliminates your need to invest in hardware up front, so you can develop and deploy
- * applications faster.
+ * Amazon Elastic Compute Cloud (Amazon EC2) provides resizable computing capacity in the AWS Cloud. Using Amazon EC2
+ * eliminates your need to invest in hardware up front, so you can develop and deploy applications faster.
  * </p>
  */
 package com.amazonaws.services.ec2;

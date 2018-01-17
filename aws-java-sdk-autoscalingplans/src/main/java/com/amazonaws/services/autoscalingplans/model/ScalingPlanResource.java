@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Represents a scalable resource.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/ScalingPlanResource"
  *      target="_top">AWS API Documentation</a>
@@ -25,24 +28,165 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ScalingPlanResource implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The name of the scaling plan.
+     * </p>
+     */
     private String scalingPlanName;
-
+    /**
+     * <p>
+     * The version of the scaling plan.
+     * </p>
+     */
     private Long scalingPlanVersion;
-
+    /**
+     * <p>
+     * The namespace of the AWS service.
+     * </p>
+     */
     private String serviceNamespace;
-
+    /**
+     * <p>
+     * The ID of the resource. This string consists of the resource type and unique identifier.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique identifier is the name of
+     * the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service
+     * name. Example: <code>service/default/sample-webapp</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spot fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
+     * fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example:
+     * <code>table/my-table</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
+     * resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
+     * Example: <code>cluster:my-db-cluster</code>.
+     * </p>
+     * </li>
+     * </ul>
+     */
     private String resourceId;
-
+    /**
+     * <p>
+     * The scalable dimension for the resource.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>autoscaling:autoScalingGroup:DesiredCapacity</code> - The desired capacity of an Auto Scaling group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for
+     * Aurora MySQL-compatible edition.
+     * </p>
+     * </li>
+     * </ul>
+     */
     private String scalableDimension;
-
+    /**
+     * <p>
+     * The scaling policies.
+     * </p>
+     */
     private java.util.List<ScalingPolicy> scalingPolicies;
-
+    /**
+     * <p>
+     * The scaling status of the resource.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Active</code> - The scaling configuration is active.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Inactive</code> - The scaling configuration is not active because the scaling plan is being created or the
+     * scaling configuration could not be applied. Check the status message for more information.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PartiallyActive</code> - The scaling configuration is partially active because the scaling plan is being
+     * created or deleted or the scaling configuration could not be fully applied. Check the status message for more
+     * information.
+     * </p>
+     * </li>
+     * </ul>
+     */
     private String scalingStatusCode;
-
+    /**
+     * <p>
+     * A simple message about the current scaling status of the resource.
+     * </p>
+     */
     private String scalingStatusMessage;
 
     /**
+     * <p>
+     * The name of the scaling plan.
+     * </p>
+     * 
      * @param scalingPlanName
+     *        The name of the scaling plan.
      */
 
     public void setScalingPlanName(String scalingPlanName) {
@@ -50,7 +194,11 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the scaling plan.
+     * </p>
+     * 
+     * @return The name of the scaling plan.
      */
 
     public String getScalingPlanName() {
@@ -58,7 +206,12 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The name of the scaling plan.
+     * </p>
+     * 
      * @param scalingPlanName
+     *        The name of the scaling plan.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -68,7 +221,12 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The version of the scaling plan.
+     * </p>
+     * 
      * @param scalingPlanVersion
+     *        The version of the scaling plan.
      */
 
     public void setScalingPlanVersion(Long scalingPlanVersion) {
@@ -76,7 +234,11 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * The version of the scaling plan.
+     * </p>
+     * 
+     * @return The version of the scaling plan.
      */
 
     public Long getScalingPlanVersion() {
@@ -84,7 +246,12 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The version of the scaling plan.
+     * </p>
+     * 
      * @param scalingPlanVersion
+     *        The version of the scaling plan.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,7 +261,12 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The namespace of the AWS service.
+     * </p>
+     * 
      * @param serviceNamespace
+     *        The namespace of the AWS service.
      * @see ServiceNamespace
      */
 
@@ -103,7 +275,11 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * The namespace of the AWS service.
+     * </p>
+     * 
+     * @return The namespace of the AWS service.
      * @see ServiceNamespace
      */
 
@@ -112,7 +288,12 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The namespace of the AWS service.
+     * </p>
+     * 
      * @param serviceNamespace
+     *        The namespace of the AWS service.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServiceNamespace
      */
@@ -123,7 +304,12 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The namespace of the AWS service.
+     * </p>
+     * 
      * @param serviceNamespace
+     *        The namespace of the AWS service.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServiceNamespace
      */
@@ -134,7 +320,87 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The ID of the resource. This string consists of the resource type and unique identifier.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique identifier is the name of
+     * the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service
+     * name. Example: <code>service/default/sample-webapp</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spot fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
+     * fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example:
+     * <code>table/my-table</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
+     * resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
+     * Example: <code>cluster:my-db-cluster</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param resourceId
+     *        The ID of the resource. This string consists of the resource type and unique identifier.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique identifier is the
+     *        name of the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and
+     *        service name. Example: <code>service/default/sample-webapp</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Spot fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+     *        Spot fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID.
+     *        Example: <code>table/my-table</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
+     *        resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster
+     *        name. Example: <code>cluster:my-db-cluster</code>.
+     *        </p>
+     *        </li>
      */
 
     public void setResourceId(String resourceId) {
@@ -142,7 +408,87 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the resource. This string consists of the resource type and unique identifier.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique identifier is the name of
+     * the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service
+     * name. Example: <code>service/default/sample-webapp</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spot fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
+     * fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example:
+     * <code>table/my-table</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
+     * resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
+     * Example: <code>cluster:my-db-cluster</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The ID of the resource. This string consists of the resource type and unique identifier.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique identifier is the
+     *         name of the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and
+     *         service name. Example: <code>service/default/sample-webapp</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Spot fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is
+     *         the Spot fleet request ID. Example:
+     *         <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID.
+     *         Example: <code>table/my-table</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is
+     *         the resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster
+     *         name. Example: <code>cluster:my-db-cluster</code>.
+     *         </p>
+     *         </li>
      */
 
     public String getResourceId() {
@@ -150,7 +496,87 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The ID of the resource. This string consists of the resource type and unique identifier.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique identifier is the name of
+     * the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and service
+     * name. Example: <code>service/default/sample-webapp</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spot fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the Spot
+     * fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID. Example:
+     * <code>table/my-table</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
+     * resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
+     * Example: <code>cluster:my-db-cluster</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param resourceId
+     *        The ID of the resource. This string consists of the resource type and unique identifier.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique identifier is the
+     *        name of the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name and
+     *        service name. Example: <code>service/default/sample-webapp</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Spot fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+     *        Spot fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID.
+     *        Example: <code>table/my-table</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the
+     *        resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster
+     *        name. Example: <code>cluster:my-db-cluster</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,7 +586,101 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The scalable dimension for the resource.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>autoscaling:autoScalingGroup:DesiredCapacity</code> - The desired capacity of an Auto Scaling group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for
+     * Aurora MySQL-compatible edition.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param scalableDimension
+     *        The scalable dimension for the resource.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>autoscaling:autoScalingGroup:DesiredCapacity</code> - The desired capacity of an Auto Scaling group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global
+     *        secondary index.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global
+     *        secondary index.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster.
+     *        Available for Aurora MySQL-compatible edition.
+     *        </p>
+     *        </li>
      * @see ScalableDimension
      */
 
@@ -169,7 +689,101 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * The scalable dimension for the resource.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>autoscaling:autoScalingGroup:DesiredCapacity</code> - The desired capacity of an Auto Scaling group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for
+     * Aurora MySQL-compatible edition.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The scalable dimension for the resource.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>autoscaling:autoScalingGroup:DesiredCapacity</code> - The desired capacity of an Auto Scaling
+     *         group.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global
+     *         secondary index.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global
+     *         secondary index.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster.
+     *         Available for Aurora MySQL-compatible edition.
+     *         </p>
+     *         </li>
      * @see ScalableDimension
      */
 
@@ -178,7 +792,101 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The scalable dimension for the resource.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>autoscaling:autoScalingGroup:DesiredCapacity</code> - The desired capacity of an Auto Scaling group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for
+     * Aurora MySQL-compatible edition.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param scalableDimension
+     *        The scalable dimension for the resource.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>autoscaling:autoScalingGroup:DesiredCapacity</code> - The desired capacity of an Auto Scaling group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global
+     *        secondary index.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global
+     *        secondary index.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster.
+     *        Available for Aurora MySQL-compatible edition.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScalableDimension
      */
@@ -189,7 +897,101 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The scalable dimension for the resource.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>autoscaling:autoScalingGroup:DesiredCapacity</code> - The desired capacity of an Auto Scaling group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary
+     * index.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for
+     * Aurora MySQL-compatible edition.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param scalableDimension
+     *        The scalable dimension for the resource.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>autoscaling:autoScalingGroup:DesiredCapacity</code> - The desired capacity of an Auto Scaling group.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot fleet request.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global
+     *        secondary index.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global
+     *        secondary index.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster.
+     *        Available for Aurora MySQL-compatible edition.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScalableDimension
      */
@@ -200,7 +1002,11 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * The scaling policies.
+     * </p>
+     * 
+     * @return The scaling policies.
      */
 
     public java.util.List<ScalingPolicy> getScalingPolicies() {
@@ -208,7 +1014,12 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The scaling policies.
+     * </p>
+     * 
      * @param scalingPolicies
+     *        The scaling policies.
      */
 
     public void setScalingPolicies(java.util.Collection<ScalingPolicy> scalingPolicies) {
@@ -222,12 +1033,16 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
+     * The scaling policies.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setScalingPolicies(java.util.Collection)} or {@link #withScalingPolicies(java.util.Collection)} if you
      * want to override the existing values.
      * </p>
      * 
      * @param scalingPolicies
+     *        The scaling policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -242,7 +1057,12 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The scaling policies.
+     * </p>
+     * 
      * @param scalingPolicies
+     *        The scaling policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -252,7 +1072,51 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The scaling status of the resource.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Active</code> - The scaling configuration is active.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Inactive</code> - The scaling configuration is not active because the scaling plan is being created or the
+     * scaling configuration could not be applied. Check the status message for more information.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PartiallyActive</code> - The scaling configuration is partially active because the scaling plan is being
+     * created or deleted or the scaling configuration could not be fully applied. Check the status message for more
+     * information.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param scalingStatusCode
+     *        The scaling status of the resource.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Active</code> - The scaling configuration is active.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Inactive</code> - The scaling configuration is not active because the scaling plan is being created
+     *        or the scaling configuration could not be applied. Check the status message for more information.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PartiallyActive</code> - The scaling configuration is partially active because the scaling plan is
+     *        being created or deleted or the scaling configuration could not be fully applied. Check the status message
+     *        for more information.
+     *        </p>
+     *        </li>
      * @see ScalingStatusCode
      */
 
@@ -261,7 +1125,50 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * The scaling status of the resource.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Active</code> - The scaling configuration is active.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Inactive</code> - The scaling configuration is not active because the scaling plan is being created or the
+     * scaling configuration could not be applied. Check the status message for more information.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PartiallyActive</code> - The scaling configuration is partially active because the scaling plan is being
+     * created or deleted or the scaling configuration could not be fully applied. Check the status message for more
+     * information.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The scaling status of the resource.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Active</code> - The scaling configuration is active.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Inactive</code> - The scaling configuration is not active because the scaling plan is being created
+     *         or the scaling configuration could not be applied. Check the status message for more information.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PartiallyActive</code> - The scaling configuration is partially active because the scaling plan is
+     *         being created or deleted or the scaling configuration could not be fully applied. Check the status
+     *         message for more information.
+     *         </p>
+     *         </li>
      * @see ScalingStatusCode
      */
 
@@ -270,7 +1177,51 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The scaling status of the resource.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Active</code> - The scaling configuration is active.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Inactive</code> - The scaling configuration is not active because the scaling plan is being created or the
+     * scaling configuration could not be applied. Check the status message for more information.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PartiallyActive</code> - The scaling configuration is partially active because the scaling plan is being
+     * created or deleted or the scaling configuration could not be fully applied. Check the status message for more
+     * information.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param scalingStatusCode
+     *        The scaling status of the resource.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Active</code> - The scaling configuration is active.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Inactive</code> - The scaling configuration is not active because the scaling plan is being created
+     *        or the scaling configuration could not be applied. Check the status message for more information.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PartiallyActive</code> - The scaling configuration is partially active because the scaling plan is
+     *        being created or deleted or the scaling configuration could not be fully applied. Check the status message
+     *        for more information.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScalingStatusCode
      */
@@ -281,7 +1232,51 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The scaling status of the resource.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Active</code> - The scaling configuration is active.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Inactive</code> - The scaling configuration is not active because the scaling plan is being created or the
+     * scaling configuration could not be applied. Check the status message for more information.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PartiallyActive</code> - The scaling configuration is partially active because the scaling plan is being
+     * created or deleted or the scaling configuration could not be fully applied. Check the status message for more
+     * information.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param scalingStatusCode
+     *        The scaling status of the resource.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Active</code> - The scaling configuration is active.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Inactive</code> - The scaling configuration is not active because the scaling plan is being created
+     *        or the scaling configuration could not be applied. Check the status message for more information.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PartiallyActive</code> - The scaling configuration is partially active because the scaling plan is
+     *        being created or deleted or the scaling configuration could not be fully applied. Check the status message
+     *        for more information.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScalingStatusCode
      */
@@ -292,7 +1287,12 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * A simple message about the current scaling status of the resource.
+     * </p>
+     * 
      * @param scalingStatusMessage
+     *        A simple message about the current scaling status of the resource.
      */
 
     public void setScalingStatusMessage(String scalingStatusMessage) {
@@ -300,7 +1300,11 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * A simple message about the current scaling status of the resource.
+     * </p>
+     * 
+     * @return A simple message about the current scaling status of the resource.
      */
 
     public String getScalingStatusMessage() {
@@ -308,7 +1312,12 @@ public class ScalingPlanResource implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * A simple message about the current scaling status of the resource.
+     * </p>
+     * 
      * @param scalingStatusMessage
+     *        A simple message about the current scaling status of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,9 +27,8 @@ import com.amazonaws.services.ec2.model.*;
  * <p>
  * <fullname>Amazon Elastic Compute Cloud</fullname>
  * <p>
- * Amazon Elastic Compute Cloud (Amazon EC2) provides resizable computing capacity in the Amazon Web Services (AWS)
- * cloud. Using Amazon EC2 eliminates your need to invest in hardware up front, so you can develop and deploy
- * applications faster.
+ * Amazon Elastic Compute Cloud (Amazon EC2) provides resizable computing capacity in the AWS Cloud. Using Amazon EC2
+ * eliminates your need to invest in hardware up front, so you can develop and deploy applications faster.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -3631,6 +3630,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * to create the connection. The accepter VPC can belong to another AWS account and can be in a different region to
      * the requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR blocks.
      * </p>
+     * <note>
+     * <p>
+     * Limitations and rules apply to a VPC peering connection. For more information, see the <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/vpc-peering-basics.html#vpc-peering-limitations"
+     * >limitations</a> section in the <i>VPC Peering Guide</i>.
+     * </p>
+     * </note>
      * <p>
      * The owner of the accepter VPC must accept the peering request to activate the peering connection. The VPC peering
      * connection request expires after 7 days, after which it cannot be accepted or rejected.
@@ -3656,6 +3662,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * to create the connection. The accepter VPC can belong to another AWS account and can be in a different region to
      * the requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR blocks.
      * </p>
+     * <note>
+     * <p>
+     * Limitations and rules apply to a VPC peering connection. For more information, see the <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/vpc-peering-basics.html#vpc-peering-limitations"
+     * >limitations</a> section in the <i>VPC Peering Guide</i>.
+     * </p>
+     * </note>
      * <p>
      * The owner of the accepter VPC must accept the peering request to activate the peering connection. The VPC peering
      * connection request expires after 7 days, after which it cannot be accepted or rejected.
@@ -11649,8 +11662,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Modifies the permissions for your VPC endpoint service. You can add or remove permissions for service consumers
-     * (IAM users, IAM roles, and AWS accounts) to discover your endpoint service.
+     * Modifies the permissions for your <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC endpoint service</a>. You
+     * can add or remove permissions for service consumers (IAM users, IAM roles, and AWS accounts) to connect to your
+     * endpoint service.
      * </p>
      * 
      * @param modifyVpcEndpointServicePermissionsRequest
@@ -11665,8 +11680,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Modifies the permissions for your VPC endpoint service. You can add or remove permissions for service consumers
-     * (IAM users, IAM roles, and AWS accounts) to discover your endpoint service.
+     * Modifies the permissions for your <a
+     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC endpoint service</a>. You
+     * can add or remove permissions for service consumers (IAM users, IAM roles, and AWS accounts) to connect to your
+     * endpoint service.
      * </p>
      * 
      * @param modifyVpcEndpointServicePermissionsRequest

@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Represents a predefined metric for a target tracking policy.
+ * </p>
  * 
  * @see <a
  *      href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/PredefinedScalingMetricSpecification"
@@ -26,12 +29,48 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PredefinedScalingMetricSpecification implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Auto Scaling groups, Sport
+     * Fleet requests, and ECS services.
+     * </p>
+     */
     private String predefinedScalingMetricType;
-
+    /**
+     * <p>
+     * Identifies the resource associated with the metric type. You can't specify a resource label unless the metric
+     * type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Auto Scaling group,
+     * Spot Fleet request, or ECS service.
+     * </p>
+     * <p>
+     * The format is
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target
+     * -group-id&gt;, where:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group ARN.
+     * </p>
+     * </li>
+     * </ul>
+     */
     private String resourceLabel;
 
     /**
+     * <p>
+     * The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Auto Scaling groups, Sport
+     * Fleet requests, and ECS services.
+     * </p>
+     * 
      * @param predefinedScalingMetricType
+     *        The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Auto Scaling
+     *        groups, Sport Fleet requests, and ECS services.
      * @see ScalingMetricType
      */
 
@@ -40,7 +79,13 @@ public class PredefinedScalingMetricSpecification implements Serializable, Clone
     }
 
     /**
-     * @return
+     * <p>
+     * The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Auto Scaling groups, Sport
+     * Fleet requests, and ECS services.
+     * </p>
+     * 
+     * @return The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Auto Scaling
+     *         groups, Sport Fleet requests, and ECS services.
      * @see ScalingMetricType
      */
 
@@ -49,7 +94,14 @@ public class PredefinedScalingMetricSpecification implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Auto Scaling groups, Sport
+     * Fleet requests, and ECS services.
+     * </p>
+     * 
      * @param predefinedScalingMetricType
+     *        The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Auto Scaling
+     *        groups, Sport Fleet requests, and ECS services.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScalingMetricType
      */
@@ -60,7 +112,14 @@ public class PredefinedScalingMetricSpecification implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Auto Scaling groups, Sport
+     * Fleet requests, and ECS services.
+     * </p>
+     * 
      * @param predefinedScalingMetricType
+     *        The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to Auto Scaling
+     *        groups, Sport Fleet requests, and ECS services.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScalingMetricType
      */
@@ -71,7 +130,50 @@ public class PredefinedScalingMetricSpecification implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * Identifies the resource associated with the metric type. You can't specify a resource label unless the metric
+     * type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Auto Scaling group,
+     * Spot Fleet request, or ECS service.
+     * </p>
+     * <p>
+     * The format is
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target
+     * -group-id&gt;, where:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group ARN.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param resourceLabel
+     *        Identifies the resource associated with the metric type. You can't specify a resource label unless the
+     *        metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Auto
+     *        Scaling group, Spot Fleet request, or ECS service.</p>
+     *        <p>
+     *        The format is
+     *        app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;
+     *        /&lt;target-group-id&gt;, where:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group
+     *        ARN.
+     *        </p>
+     *        </li>
      */
 
     public void setResourceLabel(String resourceLabel) {
@@ -79,7 +181,49 @@ public class PredefinedScalingMetricSpecification implements Serializable, Clone
     }
 
     /**
-     * @return
+     * <p>
+     * Identifies the resource associated with the metric type. You can't specify a resource label unless the metric
+     * type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Auto Scaling group,
+     * Spot Fleet request, or ECS service.
+     * </p>
+     * <p>
+     * The format is
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target
+     * -group-id&gt;, where:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group ARN.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Identifies the resource associated with the metric type. You can't specify a resource label unless the
+     *         metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Auto
+     *         Scaling group, Spot Fleet request, or ECS service.</p>
+     *         <p>
+     *         The format is
+     *         app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt
+     *         ;/&lt;target-group-id&gt;, where:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group
+     *         ARN.
+     *         </p>
+     *         </li>
      */
 
     public String getResourceLabel() {
@@ -87,7 +231,50 @@ public class PredefinedScalingMetricSpecification implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * Identifies the resource associated with the metric type. You can't specify a resource label unless the metric
+     * type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Auto Scaling group,
+     * Spot Fleet request, or ECS service.
+     * </p>
+     * <p>
+     * The format is
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target
+     * -group-id&gt;, where:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group ARN.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param resourceLabel
+     *        Identifies the resource associated with the metric type. You can't specify a resource label unless the
+     *        metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Auto
+     *        Scaling group, Spot Fleet request, or ECS service.</p>
+     *        <p>
+     *        The format is
+     *        app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;
+     *        /&lt;target-group-id&gt;, where:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group
+     *        ARN.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

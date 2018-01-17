@@ -44,7 +44,8 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
     private String vpcId;
     /**
      * <p>
-     * The service name. To get a list of available services, use the <a>DescribeVpcEndpointServices</a> request.
+     * The service name. To get a list of available services, use the <a>DescribeVpcEndpointServices</a> request, or get
+     * the name from the service provider.
      * </p>
      */
     private String serviceName;
@@ -222,11 +223,13 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The service name. To get a list of available services, use the <a>DescribeVpcEndpointServices</a> request.
+     * The service name. To get a list of available services, use the <a>DescribeVpcEndpointServices</a> request, or get
+     * the name from the service provider.
      * </p>
      * 
      * @param serviceName
-     *        The service name. To get a list of available services, use the <a>DescribeVpcEndpointServices</a> request.
+     *        The service name. To get a list of available services, use the <a>DescribeVpcEndpointServices</a> request,
+     *        or get the name from the service provider.
      */
 
     public void setServiceName(String serviceName) {
@@ -235,11 +238,12 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The service name. To get a list of available services, use the <a>DescribeVpcEndpointServices</a> request.
+     * The service name. To get a list of available services, use the <a>DescribeVpcEndpointServices</a> request, or get
+     * the name from the service provider.
      * </p>
      * 
      * @return The service name. To get a list of available services, use the <a>DescribeVpcEndpointServices</a>
-     *         request.
+     *         request, or get the name from the service provider.
      */
 
     public String getServiceName() {
@@ -248,11 +252,13 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The service name. To get a list of available services, use the <a>DescribeVpcEndpointServices</a> request.
+     * The service name. To get a list of available services, use the <a>DescribeVpcEndpointServices</a> request, or get
+     * the name from the service provider.
      * </p>
      * 
      * @param serviceName
-     *        The service name. To get a list of available services, use the <a>DescribeVpcEndpointServices</a> request.
+     *        The service name. To get a list of available services, use the <a>DescribeVpcEndpointServices</a> request,
+     *        or get the name from the service provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

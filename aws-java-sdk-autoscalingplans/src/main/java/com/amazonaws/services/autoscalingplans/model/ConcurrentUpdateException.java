@@ -15,7 +15,10 @@ package com.amazonaws.services.autoscalingplans.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * Concurrent updates caused an exception, for example, if you request an update to a scaling plan that already has a
+ * pending update.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConcurrentUpdateException extends com.amazonaws.services.autoscalingplans.model.AWSAutoScalingPlansException {

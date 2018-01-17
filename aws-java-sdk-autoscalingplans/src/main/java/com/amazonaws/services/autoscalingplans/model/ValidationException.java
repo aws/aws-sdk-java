@@ -15,7 +15,9 @@ package com.amazonaws.services.autoscalingplans.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * An exception was thrown for a validation issue. Review the parameters provided.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ValidationException extends com.amazonaws.services.autoscalingplans.model.AWSAutoScalingPlansException {
