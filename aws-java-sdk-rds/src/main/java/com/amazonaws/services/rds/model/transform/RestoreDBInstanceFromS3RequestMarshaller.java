@@ -225,6 +225,20 @@ public class RestoreDBInstanceFromS3RequestMarshaller implements Marshaller<Requ
             request.addParameter("PerformanceInsightsKMSKeyId", StringUtils.fromString(restoreDBInstanceFromS3Request.getPerformanceInsightsKMSKeyId()));
         }
 
+        com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExportsList = (com.amazonaws.internal.SdkInternalList<String>) restoreDBInstanceFromS3Request
+                .getEnableCloudwatchLogsExports();
+        if (!enableCloudwatchLogsExportsList.isEmpty() || !enableCloudwatchLogsExportsList.isAutoConstruct()) {
+            int enableCloudwatchLogsExportsListIndex = 1;
+
+            for (String enableCloudwatchLogsExportsListValue : enableCloudwatchLogsExportsList) {
+                if (enableCloudwatchLogsExportsListValue != null) {
+                    request.addParameter("EnableCloudwatchLogsExports.member." + enableCloudwatchLogsExportsListIndex,
+                            StringUtils.fromString(enableCloudwatchLogsExportsListValue));
+                }
+                enableCloudwatchLogsExportsListIndex++;
+            }
+        }
+
         return request;
     }
 

@@ -25,7 +25,7 @@ public class DescribeScalableTargetsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The list of scalable targets that matches the request parameters.
+     * The scalable targets that match the request parameters.
      * </p>
      */
     private java.util.List<ScalableTarget> scalableTargets;
@@ -39,10 +39,10 @@ public class DescribeScalableTargetsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The list of scalable targets that matches the request parameters.
+     * The scalable targets that match the request parameters.
      * </p>
      * 
-     * @return The list of scalable targets that matches the request parameters.
+     * @return The scalable targets that match the request parameters.
      */
 
     public java.util.List<ScalableTarget> getScalableTargets() {
@@ -51,11 +51,11 @@ public class DescribeScalableTargetsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The list of scalable targets that matches the request parameters.
+     * The scalable targets that match the request parameters.
      * </p>
      * 
      * @param scalableTargets
-     *        The list of scalable targets that matches the request parameters.
+     *        The scalable targets that match the request parameters.
      */
 
     public void setScalableTargets(java.util.Collection<ScalableTarget> scalableTargets) {
@@ -69,7 +69,7 @@ public class DescribeScalableTargetsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The list of scalable targets that matches the request parameters.
+     * The scalable targets that match the request parameters.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class DescribeScalableTargetsResult extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param scalableTargets
-     *        The list of scalable targets that matches the request parameters.
+     *        The scalable targets that match the request parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class DescribeScalableTargetsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The list of scalable targets that matches the request parameters.
+     * The scalable targets that match the request parameters.
      * </p>
      * 
      * @param scalableTargets
-     *        The list of scalable targets that matches the request parameters.
+     *        The scalable targets that match the request parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

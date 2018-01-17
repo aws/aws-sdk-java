@@ -105,6 +105,20 @@ public class DBEngineVersionStaxUnmarshaller implements Unmarshaller<DBEngineVer
                     continue;
                 }
 
+                if (context.testExpression("ExportableLogTypes", targetDepth)) {
+                    dBEngineVersion.withExportableLogTypes(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("ExportableLogTypes/member", targetDepth)) {
+                    dBEngineVersion.withExportableLogTypes(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SupportsLogExportsToCloudwatchLogs", targetDepth)) {
+                    dBEngineVersion.setSupportsLogExportsToCloudwatchLogs(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dBEngineVersion;

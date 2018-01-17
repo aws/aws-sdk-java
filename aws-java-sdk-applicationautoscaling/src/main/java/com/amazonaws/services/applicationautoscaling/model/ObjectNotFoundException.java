@@ -16,10 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified object could not be found. For any <code>Put</code> or <code>Register</code> API operation, which
- * depends on the existence of a scalable target, this exception is thrown if the scalable target with the specified
- * service namespace, resource ID, and scalable dimension does not exist. For any <code>Delete</code> or
- * <code>Deregister</code> API operation, this exception is thrown if the resource that is to be deleted or deregistered
+ * The specified object could not be found. For any operation that depends on the existence of a scalable target, this
+ * exception is thrown if the scalable target with the specified service namespace, resource ID, and scalable dimension
+ * does not exist. For any operation that deletes or deregisters a resource, this exception is thrown if the resource
  * cannot be found.
  * </p>
  */

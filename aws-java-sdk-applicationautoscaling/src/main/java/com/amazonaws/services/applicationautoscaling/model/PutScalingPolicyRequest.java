@@ -148,11 +148,11 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
     private String scalableDimension;
     /**
      * <p>
-     * The policy type. If you are creating a new policy, this parameter is required. If you are updating a policy, this
-     * parameter is not required.
+     * The policy type. This parameter is required if you are creating a policy.
      * </p>
      * <p>
-     * For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For any other service, only
+     * For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For Amazon ECS, Spot Fleet, and Amazon RDS,
+     * both <code>StepScaling</code> and <code>TargetTrackingScaling</code> are supported. For any other service, only
      * <code>StepScaling</code> is supported.
      * </p>
      */
@@ -171,8 +171,8 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * A target tracking policy.
      * </p>
      * <p>
-     * This parameter is required if you are creating a new policy and the policy type is
-     * <code>TargetTrackingScaling</code>.
+     * This parameter is required if you are creating a policy and the policy type is <code>TargetTrackingScaling</code>
+     * .
      * </p>
      */
     private TargetTrackingScalingPolicyConfiguration targetTrackingScalingPolicyConfiguration;
@@ -1193,20 +1193,20 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The policy type. If you are creating a new policy, this parameter is required. If you are updating a policy, this
-     * parameter is not required.
+     * The policy type. This parameter is required if you are creating a policy.
      * </p>
      * <p>
-     * For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For any other service, only
+     * For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For Amazon ECS, Spot Fleet, and Amazon RDS,
+     * both <code>StepScaling</code> and <code>TargetTrackingScaling</code> are supported. For any other service, only
      * <code>StepScaling</code> is supported.
      * </p>
      * 
      * @param policyType
-     *        The policy type. If you are creating a new policy, this parameter is required. If you are updating a
-     *        policy, this parameter is not required.</p>
+     *        The policy type. This parameter is required if you are creating a policy.</p>
      *        <p>
-     *        For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For any other service, only
-     *        <code>StepScaling</code> is supported.
+     *        For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For Amazon ECS, Spot Fleet, and Amazon
+     *        RDS, both <code>StepScaling</code> and <code>TargetTrackingScaling</code> are supported. For any other
+     *        service, only <code>StepScaling</code> is supported.
      * @see PolicyType
      */
 
@@ -1216,19 +1216,19 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The policy type. If you are creating a new policy, this parameter is required. If you are updating a policy, this
-     * parameter is not required.
+     * The policy type. This parameter is required if you are creating a policy.
      * </p>
      * <p>
-     * For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For any other service, only
+     * For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For Amazon ECS, Spot Fleet, and Amazon RDS,
+     * both <code>StepScaling</code> and <code>TargetTrackingScaling</code> are supported. For any other service, only
      * <code>StepScaling</code> is supported.
      * </p>
      * 
-     * @return The policy type. If you are creating a new policy, this parameter is required. If you are updating a
-     *         policy, this parameter is not required.</p>
+     * @return The policy type. This parameter is required if you are creating a policy.</p>
      *         <p>
-     *         For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For any other service, only
-     *         <code>StepScaling</code> is supported.
+     *         For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For Amazon ECS, Spot Fleet, and
+     *         Amazon RDS, both <code>StepScaling</code> and <code>TargetTrackingScaling</code> are supported. For any
+     *         other service, only <code>StepScaling</code> is supported.
      * @see PolicyType
      */
 
@@ -1238,20 +1238,20 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The policy type. If you are creating a new policy, this parameter is required. If you are updating a policy, this
-     * parameter is not required.
+     * The policy type. This parameter is required if you are creating a policy.
      * </p>
      * <p>
-     * For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For any other service, only
+     * For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For Amazon ECS, Spot Fleet, and Amazon RDS,
+     * both <code>StepScaling</code> and <code>TargetTrackingScaling</code> are supported. For any other service, only
      * <code>StepScaling</code> is supported.
      * </p>
      * 
      * @param policyType
-     *        The policy type. If you are creating a new policy, this parameter is required. If you are updating a
-     *        policy, this parameter is not required.</p>
+     *        The policy type. This parameter is required if you are creating a policy.</p>
      *        <p>
-     *        For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For any other service, only
-     *        <code>StepScaling</code> is supported.
+     *        For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For Amazon ECS, Spot Fleet, and Amazon
+     *        RDS, both <code>StepScaling</code> and <code>TargetTrackingScaling</code> are supported. For any other
+     *        service, only <code>StepScaling</code> is supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyType
      */
@@ -1263,20 +1263,20 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The policy type. If you are creating a new policy, this parameter is required. If you are updating a policy, this
-     * parameter is not required.
+     * The policy type. This parameter is required if you are creating a policy.
      * </p>
      * <p>
-     * For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For any other service, only
+     * For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For Amazon ECS, Spot Fleet, and Amazon RDS,
+     * both <code>StepScaling</code> and <code>TargetTrackingScaling</code> are supported. For any other service, only
      * <code>StepScaling</code> is supported.
      * </p>
      * 
      * @param policyType
-     *        The policy type. If you are creating a new policy, this parameter is required. If you are updating a
-     *        policy, this parameter is not required.</p>
+     *        The policy type. This parameter is required if you are creating a policy.</p>
      *        <p>
-     *        For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For any other service, only
-     *        <code>StepScaling</code> is supported.
+     *        For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For Amazon ECS, Spot Fleet, and Amazon
+     *        RDS, both <code>StepScaling</code> and <code>TargetTrackingScaling</code> are supported. For any other
+     *        service, only <code>StepScaling</code> is supported.
      * @see PolicyType
      */
 
@@ -1286,20 +1286,20 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The policy type. If you are creating a new policy, this parameter is required. If you are updating a policy, this
-     * parameter is not required.
+     * The policy type. This parameter is required if you are creating a policy.
      * </p>
      * <p>
-     * For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For any other service, only
+     * For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For Amazon ECS, Spot Fleet, and Amazon RDS,
+     * both <code>StepScaling</code> and <code>TargetTrackingScaling</code> are supported. For any other service, only
      * <code>StepScaling</code> is supported.
      * </p>
      * 
      * @param policyType
-     *        The policy type. If you are creating a new policy, this parameter is required. If you are updating a
-     *        policy, this parameter is not required.</p>
+     *        The policy type. This parameter is required if you are creating a policy.</p>
      *        <p>
-     *        For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For any other service, only
-     *        <code>StepScaling</code> is supported.
+     *        For DynamoDB, only <code>TargetTrackingScaling</code> is supported. For Amazon ECS, Spot Fleet, and Amazon
+     *        RDS, both <code>StepScaling</code> and <code>TargetTrackingScaling</code> are supported. For any other
+     *        service, only <code>StepScaling</code> is supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyType
      */
@@ -1369,14 +1369,14 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * A target tracking policy.
      * </p>
      * <p>
-     * This parameter is required if you are creating a new policy and the policy type is
-     * <code>TargetTrackingScaling</code>.
+     * This parameter is required if you are creating a policy and the policy type is <code>TargetTrackingScaling</code>
+     * .
      * </p>
      * 
      * @param targetTrackingScalingPolicyConfiguration
      *        A target tracking policy.</p>
      *        <p>
-     *        This parameter is required if you are creating a new policy and the policy type is
+     *        This parameter is required if you are creating a policy and the policy type is
      *        <code>TargetTrackingScaling</code>.
      */
 
@@ -1389,13 +1389,13 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * A target tracking policy.
      * </p>
      * <p>
-     * This parameter is required if you are creating a new policy and the policy type is
-     * <code>TargetTrackingScaling</code>.
+     * This parameter is required if you are creating a policy and the policy type is <code>TargetTrackingScaling</code>
+     * .
      * </p>
      * 
      * @return A target tracking policy.</p>
      *         <p>
-     *         This parameter is required if you are creating a new policy and the policy type is
+     *         This parameter is required if you are creating a policy and the policy type is
      *         <code>TargetTrackingScaling</code>.
      */
 
@@ -1408,14 +1408,14 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * A target tracking policy.
      * </p>
      * <p>
-     * This parameter is required if you are creating a new policy and the policy type is
-     * <code>TargetTrackingScaling</code>.
+     * This parameter is required if you are creating a policy and the policy type is <code>TargetTrackingScaling</code>
+     * .
      * </p>
      * 
      * @param targetTrackingScalingPolicyConfiguration
      *        A target tracking policy.</p>
      *        <p>
-     *        This parameter is required if you are creating a new policy and the policy type is
+     *        This parameter is required if you are creating a policy and the policy type is
      *        <code>TargetTrackingScaling</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -199,6 +199,38 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
             request.addParameter("PerformanceInsightsKMSKeyId", StringUtils.fromString(modifyDBInstanceRequest.getPerformanceInsightsKMSKeyId()));
         }
 
+        CloudwatchLogsExportConfiguration cloudwatchLogsExportConfiguration = modifyDBInstanceRequest.getCloudwatchLogsExportConfiguration();
+        if (cloudwatchLogsExportConfiguration != null) {
+
+            com.amazonaws.internal.SdkInternalList<String> enableLogTypesList = (com.amazonaws.internal.SdkInternalList<String>) cloudwatchLogsExportConfiguration
+                    .getEnableLogTypes();
+            if (!enableLogTypesList.isEmpty() || !enableLogTypesList.isAutoConstruct()) {
+                int enableLogTypesListIndex = 1;
+
+                for (String enableLogTypesListValue : enableLogTypesList) {
+                    if (enableLogTypesListValue != null) {
+                        request.addParameter("CloudwatchLogsExportConfiguration.EnableLogTypes.member." + enableLogTypesListIndex,
+                                StringUtils.fromString(enableLogTypesListValue));
+                    }
+                    enableLogTypesListIndex++;
+                }
+            }
+
+            com.amazonaws.internal.SdkInternalList<String> disableLogTypesList = (com.amazonaws.internal.SdkInternalList<String>) cloudwatchLogsExportConfiguration
+                    .getDisableLogTypes();
+            if (!disableLogTypesList.isEmpty() || !disableLogTypesList.isAutoConstruct()) {
+                int disableLogTypesListIndex = 1;
+
+                for (String disableLogTypesListValue : disableLogTypesList) {
+                    if (disableLogTypesListValue != null) {
+                        request.addParameter("CloudwatchLogsExportConfiguration.DisableLogTypes.member." + disableLogTypesListIndex,
+                                StringUtils.fromString(disableLogTypesListValue));
+                    }
+                    disableLogTypesListIndex++;
+                }
+            }
+        }
+
         return request;
     }
 

@@ -27,7 +27,9 @@ public enum MetricType {
     RDSReaderAverageDatabaseConnections("RDSReaderAverageDatabaseConnections"),
     EC2SpotFleetRequestAverageCPUUtilization("EC2SpotFleetRequestAverageCPUUtilization"),
     EC2SpotFleetRequestAverageNetworkIn("EC2SpotFleetRequestAverageNetworkIn"),
-    EC2SpotFleetRequestAverageNetworkOut("EC2SpotFleetRequestAverageNetworkOut");
+    EC2SpotFleetRequestAverageNetworkOut("EC2SpotFleetRequestAverageNetworkOut"),
+    ECSServiceAverageCPUUtilization("ECSServiceAverageCPUUtilization"),
+    ECSServiceAverageMemoryUtilization("ECSServiceAverageMemoryUtilization");
 
     private String value;
 

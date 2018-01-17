@@ -718,6 +718,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private String performanceInsightsKMSKeyId;
+    /**
+     * <p>
+     * The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB
+     * instance or DB cluster.
+     * </p>
+     */
+    private CloudwatchLogsExportConfiguration cloudwatchLogsExportConfiguration;
 
     /**
      * Default constructor for ModifyDBInstanceRequest object. Callers should use the setter or fluent setter (with...)
@@ -5337,6 +5344,52 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB
+     * instance or DB cluster.
+     * </p>
+     * 
+     * @param cloudwatchLogsExportConfiguration
+     *        The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB
+     *        instance or DB cluster.
+     */
+
+    public void setCloudwatchLogsExportConfiguration(CloudwatchLogsExportConfiguration cloudwatchLogsExportConfiguration) {
+        this.cloudwatchLogsExportConfiguration = cloudwatchLogsExportConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB
+     * instance or DB cluster.
+     * </p>
+     * 
+     * @return The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB
+     *         instance or DB cluster.
+     */
+
+    public CloudwatchLogsExportConfiguration getCloudwatchLogsExportConfiguration() {
+        return this.cloudwatchLogsExportConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB
+     * instance or DB cluster.
+     * </p>
+     * 
+     * @param cloudwatchLogsExportConfiguration
+     *        The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB
+     *        instance or DB cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyDBInstanceRequest withCloudwatchLogsExportConfiguration(CloudwatchLogsExportConfiguration cloudwatchLogsExportConfiguration) {
+        setCloudwatchLogsExportConfiguration(cloudwatchLogsExportConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -5416,7 +5469,9 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
         if (getEnablePerformanceInsights() != null)
             sb.append("EnablePerformanceInsights: ").append(getEnablePerformanceInsights()).append(",");
         if (getPerformanceInsightsKMSKeyId() != null)
-            sb.append("PerformanceInsightsKMSKeyId: ").append(getPerformanceInsightsKMSKeyId());
+            sb.append("PerformanceInsightsKMSKeyId: ").append(getPerformanceInsightsKMSKeyId()).append(",");
+        if (getCloudwatchLogsExportConfiguration() != null)
+            sb.append("CloudwatchLogsExportConfiguration: ").append(getCloudwatchLogsExportConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -5572,6 +5627,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getPerformanceInsightsKMSKeyId() != null && other.getPerformanceInsightsKMSKeyId().equals(this.getPerformanceInsightsKMSKeyId()) == false)
             return false;
+        if (other.getCloudwatchLogsExportConfiguration() == null ^ this.getCloudwatchLogsExportConfiguration() == null)
+            return false;
+        if (other.getCloudwatchLogsExportConfiguration() != null
+                && other.getCloudwatchLogsExportConfiguration().equals(this.getCloudwatchLogsExportConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -5615,6 +5675,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getEnableIAMDatabaseAuthentication() == null) ? 0 : getEnableIAMDatabaseAuthentication().hashCode());
         hashCode = prime * hashCode + ((getEnablePerformanceInsights() == null) ? 0 : getEnablePerformanceInsights().hashCode());
         hashCode = prime * hashCode + ((getPerformanceInsightsKMSKeyId() == null) ? 0 : getPerformanceInsightsKMSKeyId().hashCode());
+        hashCode = prime * hashCode + ((getCloudwatchLogsExportConfiguration() == null) ? 0 : getCloudwatchLogsExportConfiguration().hashCode());
         return hashCode;
     }
 

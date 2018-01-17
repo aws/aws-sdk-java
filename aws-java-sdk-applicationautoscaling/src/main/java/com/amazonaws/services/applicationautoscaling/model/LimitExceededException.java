@@ -16,10 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Your account exceeded a limit. This exception is thrown when a per-account resource limit is exceeded. For more
- * information, see <a
- * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_as-app">Application Auto Scaling
- * Limits</a>.
+ * A per-account resource limit is exceeded. For more information, see <a
+ * href="http://docs.aws.amazon.com/ApplicationAutoScaling/latest/userguide/application-auto-scaling-limits.html"
+ * >Application Auto Scaling Limits</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -48,6 +48,11 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
+ * Schedule one-time or recurring scaling actions
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * View the history of your scaling events
  * </p>
  * </li>
@@ -60,7 +65,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * Amazon ECS services. For more information, see <a
  * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html">Service Auto Scaling</a>
- * in the <i>Amazon EC2 Container Service Developer Guide</i>.
+ * in the <i>Amazon Elastic Container Service Developer Guide</i>.
  * </p>
  * </li>
  * <li>
@@ -94,8 +99,8 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <li>
  * <p>
  * Amazon Aurora Replicas. For more information, see <a
- * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Integrating.AutoScaling.html">Using Application
- * Auto Scaling with an Amazon Aurora DB Cluster</a>.
+ * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Integrating.AutoScaling.html">Using Amazon Aurora
+ * Auto Scaling with Aurora Replicas</a>.
  * </p>
  * </li>
  * </ul>

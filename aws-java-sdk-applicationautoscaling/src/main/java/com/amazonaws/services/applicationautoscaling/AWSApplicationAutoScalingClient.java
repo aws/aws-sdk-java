@@ -66,6 +66,11 @@ import com.amazonaws.services.applicationautoscaling.model.transform.*;
  * </li>
  * <li>
  * <p>
+ * Schedule one-time or recurring scaling actions
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * View the history of your scaling events
  * </p>
  * </li>
@@ -78,7 +83,7 @@ import com.amazonaws.services.applicationautoscaling.model.transform.*;
  * <p>
  * Amazon ECS services. For more information, see <a
  * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html">Service Auto Scaling</a>
- * in the <i>Amazon EC2 Container Service Developer Guide</i>.
+ * in the <i>Amazon Elastic Container Service Developer Guide</i>.
  * </p>
  * </li>
  * <li>
@@ -112,8 +117,8 @@ import com.amazonaws.services.applicationautoscaling.model.transform.*;
  * <li>
  * <p>
  * Amazon Aurora Replicas. For more information, see <a
- * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Integrating.AutoScaling.html">Using Application
- * Auto Scaling with an Amazon Aurora DB Cluster</a>.
+ * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Integrating.AutoScaling.html">Using Amazon Aurora
+ * Auto Scaling with Aurora Replicas</a>.
  * </p>
  * </li>
  * </ul>
@@ -366,11 +371,10 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      * @throws ValidationException
      *         An exception was thrown for a validation issue. Review the available parameters for the API request.
      * @throws ObjectNotFoundException
-     *         The specified object could not be found. For any <code>Put</code> or <code>Register</code> API operation,
-     *         which depends on the existence of a scalable target, this exception is thrown if the scalable target with
-     *         the specified service namespace, resource ID, and scalable dimension does not exist. For any
-     *         <code>Delete</code> or <code>Deregister</code> API operation, this exception is thrown if the resource
-     *         that is to be deleted or deregistered cannot be found.
+     *         The specified object could not be found. For any operation that depends on the existence of a scalable
+     *         target, this exception is thrown if the scalable target with the specified service namespace, resource
+     *         ID, and scalable dimension does not exist. For any operation that deletes or deregisters a resource, this
+     *         exception is thrown if the resource cannot be found.
      * @throws ConcurrentUpdateException
      *         Concurrent updates caused an exception, for example, if you request an update to an Application Auto
      *         Scaling resource that already has a pending update.
@@ -427,11 +431,10 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      * @throws ValidationException
      *         An exception was thrown for a validation issue. Review the available parameters for the API request.
      * @throws ObjectNotFoundException
-     *         The specified object could not be found. For any <code>Put</code> or <code>Register</code> API operation,
-     *         which depends on the existence of a scalable target, this exception is thrown if the scalable target with
-     *         the specified service namespace, resource ID, and scalable dimension does not exist. For any
-     *         <code>Delete</code> or <code>Deregister</code> API operation, this exception is thrown if the resource
-     *         that is to be deleted or deregistered cannot be found.
+     *         The specified object could not be found. For any operation that depends on the existence of a scalable
+     *         target, this exception is thrown if the scalable target with the specified service namespace, resource
+     *         ID, and scalable dimension does not exist. For any operation that deletes or deregisters a resource, this
+     *         exception is thrown if the resource cannot be found.
      * @throws ConcurrentUpdateException
      *         Concurrent updates caused an exception, for example, if you request an update to an Application Auto
      *         Scaling resource that already has a pending update.
@@ -495,11 +498,10 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      * @throws ValidationException
      *         An exception was thrown for a validation issue. Review the available parameters for the API request.
      * @throws ObjectNotFoundException
-     *         The specified object could not be found. For any <code>Put</code> or <code>Register</code> API operation,
-     *         which depends on the existence of a scalable target, this exception is thrown if the scalable target with
-     *         the specified service namespace, resource ID, and scalable dimension does not exist. For any
-     *         <code>Delete</code> or <code>Deregister</code> API operation, this exception is thrown if the resource
-     *         that is to be deleted or deregistered cannot be found.
+     *         The specified object could not be found. For any operation that depends on the existence of a scalable
+     *         target, this exception is thrown if the scalable target with the specified service namespace, resource
+     *         ID, and scalable dimension does not exist. For any operation that deletes or deregisters a resource, this
+     *         exception is thrown if the resource cannot be found.
      * @throws ConcurrentUpdateException
      *         Concurrent updates caused an exception, for example, if you request an update to an Application Auto
      *         Scaling resource that already has a pending update.
@@ -550,7 +552,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
 
     /**
      * <p>
-     * Provides descriptive information about the scalable targets in the specified namespace.
+     * Gets information about the scalable targets in the specified namespace.
      * </p>
      * <p>
      * You can filter the results using the <code>ResourceIds</code> and <code>ScalableDimension</code> parameters.
@@ -705,7 +707,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      *         unable to retrieve the alarms associated with a scaling policy due to a client error, for example, if the
      *         role ARN specified for a scalable target does not have permission to call the CloudWatch <a
      *         href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html"
-     *         >DescribeAlarms</a> API operation on behalf of your account.
+     *         >DescribeAlarms</a> on your behalf.
      * @throws InvalidNextTokenException
      *         The next token supplied was invalid.
      * @throws ConcurrentUpdateException
@@ -829,8 +831,8 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      * </p>
      * <p>
      * Each scalable target is identified by a service namespace, resource ID, and scalable dimension. A scaling policy
-     * applies to the scalable target identified by those three attributes. You cannot create a scaling policy without
-     * first registering a scalable target using <a>RegisterScalableTarget</a>.
+     * applies to the scalable target identified by those three attributes. You cannot create a scaling policy until you
+     * register the scalable target using <a>RegisterScalableTarget</a>.
      * </p>
      * <p>
      * To update a policy, specify its policy name and the parameters that you want to change. Any parameters that you
@@ -846,16 +848,14 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      * @throws ValidationException
      *         An exception was thrown for a validation issue. Review the available parameters for the API request.
      * @throws LimitExceededException
-     *         Your account exceeded a limit. This exception is thrown when a per-account resource limit is exceeded.
-     *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_as-app">Application
-     *         Auto Scaling Limits</a>.
+     *         A per-account resource limit is exceeded. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/ApplicationAutoScaling/latest/userguide/application-auto-scaling-limits.html"
+     *         >Application Auto Scaling Limits</a>.
      * @throws ObjectNotFoundException
-     *         The specified object could not be found. For any <code>Put</code> or <code>Register</code> API operation,
-     *         which depends on the existence of a scalable target, this exception is thrown if the scalable target with
-     *         the specified service namespace, resource ID, and scalable dimension does not exist. For any
-     *         <code>Delete</code> or <code>Deregister</code> API operation, this exception is thrown if the resource
-     *         that is to be deleted or deregistered cannot be found.
+     *         The specified object could not be found. For any operation that depends on the existence of a scalable
+     *         target, this exception is thrown if the scalable target with the specified service namespace, resource
+     *         ID, and scalable dimension does not exist. For any operation that deletes or deregisters a resource, this
+     *         exception is thrown if the resource cannot be found.
      * @throws ConcurrentUpdateException
      *         Concurrent updates caused an exception, for example, if you request an update to an Application Auto
      *         Scaling resource that already has a pending update.
@@ -864,7 +864,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      *         unable to retrieve the alarms associated with a scaling policy due to a client error, for example, if the
      *         role ARN specified for a scalable target does not have permission to call the CloudWatch <a
      *         href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html"
-     *         >DescribeAlarms</a> API operation on behalf of your account.
+     *         >DescribeAlarms</a> on your behalf.
      * @throws InternalServiceException
      *         The service encountered an internal error.
      * @sample AWSApplicationAutoScaling.PutScalingPolicy
@@ -915,7 +915,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      * <p>
      * Each scalable target is identified by a service namespace, resource ID, and scalable dimension. A scheduled
      * action applies to the scalable target identified by those three attributes. You cannot create a scheduled action
-     * without first registering a scalable target using <a>RegisterScalableTarget</a>.
+     * until you register the scalable target using <a>RegisterScalableTarget</a>.
      * </p>
      * <p>
      * To update an action, specify its name and the parameters that you want to change. If you don't specify start and
@@ -932,16 +932,14 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      * @throws ValidationException
      *         An exception was thrown for a validation issue. Review the available parameters for the API request.
      * @throws LimitExceededException
-     *         Your account exceeded a limit. This exception is thrown when a per-account resource limit is exceeded.
-     *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_as-app">Application
-     *         Auto Scaling Limits</a>.
+     *         A per-account resource limit is exceeded. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/ApplicationAutoScaling/latest/userguide/application-auto-scaling-limits.html"
+     *         >Application Auto Scaling Limits</a>.
      * @throws ObjectNotFoundException
-     *         The specified object could not be found. For any <code>Put</code> or <code>Register</code> API operation,
-     *         which depends on the existence of a scalable target, this exception is thrown if the scalable target with
-     *         the specified service namespace, resource ID, and scalable dimension does not exist. For any
-     *         <code>Delete</code> or <code>Deregister</code> API operation, this exception is thrown if the resource
-     *         that is to be deleted or deregistered cannot be found.
+     *         The specified object could not be found. For any operation that depends on the existence of a scalable
+     *         target, this exception is thrown if the scalable target with the specified service namespace, resource
+     *         ID, and scalable dimension does not exist. For any operation that deletes or deregisters a resource, this
+     *         exception is thrown if the resource cannot be found.
      * @throws ConcurrentUpdateException
      *         Concurrent updates caused an exception, for example, if you request an update to an Application Auto
      *         Scaling resource that already has a pending update.
@@ -992,12 +990,12 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      * <p>
      * Registers or updates a scalable target. A scalable target is a resource that Application Auto Scaling can scale
      * out or scale in. After you have registered a scalable target, you can use this operation to update the minimum
-     * and maximum values for your scalable dimension.
+     * and maximum values for its scalable dimension.
      * </p>
      * <p>
      * After you register a scalable target, you can create and apply scaling policies using <a>PutScalingPolicy</a>.
-     * You can view the scaling policies for a service namespace using <a>DescribeScalableTargets</a>. If you are no
-     * longer using a scalable target, you can deregister it using <a>DeregisterScalableTarget</a>.
+     * You can view the scaling policies for a service namespace using <a>DescribeScalableTargets</a>. If you no longer
+     * need a scalable target, you can deregister it using <a>DeregisterScalableTarget</a>.
      * </p>
      * 
      * @param registerScalableTargetRequest
@@ -1005,10 +1003,9 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      * @throws ValidationException
      *         An exception was thrown for a validation issue. Review the available parameters for the API request.
      * @throws LimitExceededException
-     *         Your account exceeded a limit. This exception is thrown when a per-account resource limit is exceeded.
-     *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_as-app">Application
-     *         Auto Scaling Limits</a>.
+     *         A per-account resource limit is exceeded. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/ApplicationAutoScaling/latest/userguide/application-auto-scaling-limits.html"
+     *         >Application Auto Scaling Limits</a>.
      * @throws ConcurrentUpdateException
      *         Concurrent updates caused an exception, for example, if you request an update to an Application Auto
      *         Scaling resource that already has a pending update.

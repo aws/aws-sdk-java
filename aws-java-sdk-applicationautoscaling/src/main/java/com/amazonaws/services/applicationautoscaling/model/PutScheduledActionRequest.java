@@ -125,7 +125,8 @@ public class PutScheduledActionRequest extends com.amazonaws.AmazonWebServiceReq
     private String resourceId;
     /**
      * <p>
-     * The scalable dimension. This string consists of the service namespace, resource type, and scaling property.
+     * The scalable dimension. This parameter is required if you are creating a scheduled action. This string consists
+     * of the service namespace, resource type, and scaling property.
      * </p>
      * <ul>
      * <li>
@@ -824,7 +825,8 @@ public class PutScheduledActionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The scalable dimension. This string consists of the service namespace, resource type, and scaling property.
+     * The scalable dimension. This parameter is required if you are creating a scheduled action. This string consists
+     * of the service namespace, resource type, and scaling property.
      * </p>
      * <ul>
      * <li>
@@ -878,8 +880,8 @@ public class PutScheduledActionRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * 
      * @param scalableDimension
-     *        The scalable dimension. This string consists of the service namespace, resource type, and scaling
-     *        property.</p>
+     *        The scalable dimension. This parameter is required if you are creating a scheduled action. This string
+     *        consists of the service namespace, resource type, and scaling property.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -938,7 +940,8 @@ public class PutScheduledActionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The scalable dimension. This string consists of the service namespace, resource type, and scaling property.
+     * The scalable dimension. This parameter is required if you are creating a scheduled action. This string consists
+     * of the service namespace, resource type, and scaling property.
      * </p>
      * <ul>
      * <li>
@@ -991,8 +994,8 @@ public class PutScheduledActionRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * 
-     * @return The scalable dimension. This string consists of the service namespace, resource type, and scaling
-     *         property.</p>
+     * @return The scalable dimension. This parameter is required if you are creating a scheduled action. This string
+     *         consists of the service namespace, resource type, and scaling property.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1051,7 +1054,8 @@ public class PutScheduledActionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The scalable dimension. This string consists of the service namespace, resource type, and scaling property.
+     * The scalable dimension. This parameter is required if you are creating a scheduled action. This string consists
+     * of the service namespace, resource type, and scaling property.
      * </p>
      * <ul>
      * <li>
@@ -1105,8 +1109,8 @@ public class PutScheduledActionRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * 
      * @param scalableDimension
-     *        The scalable dimension. This string consists of the service namespace, resource type, and scaling
-     *        property.</p>
+     *        The scalable dimension. This parameter is required if you are creating a scheduled action. This string
+     *        consists of the service namespace, resource type, and scaling property.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1167,7 +1171,8 @@ public class PutScheduledActionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The scalable dimension. This string consists of the service namespace, resource type, and scaling property.
+     * The scalable dimension. This parameter is required if you are creating a scheduled action. This string consists
+     * of the service namespace, resource type, and scaling property.
      * </p>
      * <ul>
      * <li>
@@ -1221,8 +1226,8 @@ public class PutScheduledActionRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * 
      * @param scalableDimension
-     *        The scalable dimension. This string consists of the service namespace, resource type, and scaling
-     *        property.</p>
+     *        The scalable dimension. This parameter is required if you are creating a scheduled action. This string
+     *        consists of the service namespace, resource type, and scaling property.</p>
      *        <ul>
      *        <li>
      *        <p>

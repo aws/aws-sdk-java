@@ -143,7 +143,7 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
     private String scalableDimension;
     /**
      * <p>
-     * The maximum number of scalable target results. This value can be between 1 and 50. The default value is 50.
+     * The maximum number of scalable targets. This value can be between 1 and 50. The default value is 50.
      * </p>
      * <p>
      * If this parameter is used, the operation returns up to <code>MaxResults</code> results at a time, along with a
@@ -1141,7 +1141,7 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The maximum number of scalable target results. This value can be between 1 and 50. The default value is 50.
+     * The maximum number of scalable targets. This value can be between 1 and 50. The default value is 50.
      * </p>
      * <p>
      * If this parameter is used, the operation returns up to <code>MaxResults</code> results at a time, along with a
@@ -1151,8 +1151,7 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of scalable target results. This value can be between 1 and 50. The default value is
-     *        50.</p>
+     *        The maximum number of scalable targets. This value can be between 1 and 50. The default value is 50.</p>
      *        <p>
      *        If this parameter is used, the operation returns up to <code>MaxResults</code> results at a time, along
      *        with a <code>NextToken</code> value. To get the next set of results, include the <code>NextToken</code>
@@ -1166,7 +1165,7 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The maximum number of scalable target results. This value can be between 1 and 50. The default value is 50.
+     * The maximum number of scalable targets. This value can be between 1 and 50. The default value is 50.
      * </p>
      * <p>
      * If this parameter is used, the operation returns up to <code>MaxResults</code> results at a time, along with a
@@ -1175,8 +1174,7 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      * <code>NextToken</code> value, if applicable.
      * </p>
      * 
-     * @return The maximum number of scalable target results. This value can be between 1 and 50. The default value is
-     *         50.</p>
+     * @return The maximum number of scalable targets. This value can be between 1 and 50. The default value is 50.</p>
      *         <p>
      *         If this parameter is used, the operation returns up to <code>MaxResults</code> results at a time, along
      *         with a <code>NextToken</code> value. To get the next set of results, include the <code>NextToken</code>
@@ -1190,7 +1188,7 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The maximum number of scalable target results. This value can be between 1 and 50. The default value is 50.
+     * The maximum number of scalable targets. This value can be between 1 and 50. The default value is 50.
      * </p>
      * <p>
      * If this parameter is used, the operation returns up to <code>MaxResults</code> results at a time, along with a
@@ -1200,8 +1198,7 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of scalable target results. This value can be between 1 and 50. The default value is
-     *        50.</p>
+     *        The maximum number of scalable targets. This value can be between 1 and 50. The default value is 50.</p>
      *        <p>
      *        If this parameter is used, the operation returns up to <code>MaxResults</code> results at a time, along
      *        with a <code>NextToken</code> value. To get the next set of results, include the <code>NextToken</code>

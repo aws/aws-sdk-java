@@ -144,30 +144,27 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The minimum value to scale to in response to a scale in event. This parameter is required if you are registering
-     * a scalable target and optional if you are updating one.
+     * a scalable target.
      * </p>
      */
     private Integer minCapacity;
     /**
      * <p>
      * The maximum value to scale to in response to a scale out event. This parameter is required if you are registering
-     * a scalable target and optional if you are updating one.
+     * a scalable target.
      * </p>
      */
     private Integer maxCapacity;
     /**
      * <p>
-     * The ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.
-     * </p>
-     * <p>
-     * With Amazon RDS resources, permissions are granted using a service-linked role. For more information, see <a
-     * href=
+     * Application Auto Scaling creates a service-linked role that grants it permissions to modify the scalable target
+     * on your behalf. For more information, see <a href=
      * "http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/application-autoscaling-service-linked-roles.html"
      * >Service-Linked Roles for Application Auto Scaling</a>.
      * </p>
      * <p>
-     * For resources that are not supported using a service-linked role, this parameter is required when you register a
-     * scalable target and optional when you update one.
+     * For resources that are not supported using a service-linked role, this parameter is required and must specify the
+     * ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.
      * </p>
      */
     private String roleARN;
@@ -1154,12 +1151,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The minimum value to scale to in response to a scale in event. This parameter is required if you are registering
-     * a scalable target and optional if you are updating one.
+     * a scalable target.
      * </p>
      * 
      * @param minCapacity
      *        The minimum value to scale to in response to a scale in event. This parameter is required if you are
-     *        registering a scalable target and optional if you are updating one.
+     *        registering a scalable target.
      */
 
     public void setMinCapacity(Integer minCapacity) {
@@ -1169,11 +1166,11 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The minimum value to scale to in response to a scale in event. This parameter is required if you are registering
-     * a scalable target and optional if you are updating one.
+     * a scalable target.
      * </p>
      * 
      * @return The minimum value to scale to in response to a scale in event. This parameter is required if you are
-     *         registering a scalable target and optional if you are updating one.
+     *         registering a scalable target.
      */
 
     public Integer getMinCapacity() {
@@ -1183,12 +1180,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The minimum value to scale to in response to a scale in event. This parameter is required if you are registering
-     * a scalable target and optional if you are updating one.
+     * a scalable target.
      * </p>
      * 
      * @param minCapacity
      *        The minimum value to scale to in response to a scale in event. This parameter is required if you are
-     *        registering a scalable target and optional if you are updating one.
+     *        registering a scalable target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1200,12 +1197,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The maximum value to scale to in response to a scale out event. This parameter is required if you are registering
-     * a scalable target and optional if you are updating one.
+     * a scalable target.
      * </p>
      * 
      * @param maxCapacity
      *        The maximum value to scale to in response to a scale out event. This parameter is required if you are
-     *        registering a scalable target and optional if you are updating one.
+     *        registering a scalable target.
      */
 
     public void setMaxCapacity(Integer maxCapacity) {
@@ -1215,11 +1212,11 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The maximum value to scale to in response to a scale out event. This parameter is required if you are registering
-     * a scalable target and optional if you are updating one.
+     * a scalable target.
      * </p>
      * 
      * @return The maximum value to scale to in response to a scale out event. This parameter is required if you are
-     *         registering a scalable target and optional if you are updating one.
+     *         registering a scalable target.
      */
 
     public Integer getMaxCapacity() {
@@ -1229,12 +1226,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The maximum value to scale to in response to a scale out event. This parameter is required if you are registering
-     * a scalable target and optional if you are updating one.
+     * a scalable target.
      * </p>
      * 
      * @param maxCapacity
      *        The maximum value to scale to in response to a scale out event. This parameter is required if you are
-     *        registering a scalable target and optional if you are updating one.
+     *        registering a scalable target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1245,31 +1242,25 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.
-     * </p>
-     * <p>
-     * With Amazon RDS resources, permissions are granted using a service-linked role. For more information, see <a
-     * href=
+     * Application Auto Scaling creates a service-linked role that grants it permissions to modify the scalable target
+     * on your behalf. For more information, see <a href=
      * "http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/application-autoscaling-service-linked-roles.html"
      * >Service-Linked Roles for Application Auto Scaling</a>.
      * </p>
      * <p>
-     * For resources that are not supported using a service-linked role, this parameter is required when you register a
-     * scalable target and optional when you update one.
+     * For resources that are not supported using a service-linked role, this parameter is required and must specify the
+     * ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.
      * </p>
      * 
      * @param roleARN
-     *        The ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your
-     *        behalf.</p>
-     *        <p>
-     *        With Amazon RDS resources, permissions are granted using a service-linked role. For more information, see
-     *        <a href=
+     *        Application Auto Scaling creates a service-linked role that grants it permissions to modify the scalable
+     *        target on your behalf. For more information, see <a href=
      *        "http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/application-autoscaling-service-linked-roles.html"
-     *        >Service-Linked Roles for Application Auto Scaling</a>.
-     *        </p>
+     *        >Service-Linked Roles for Application Auto Scaling</a>.</p>
      *        <p>
-     *        For resources that are not supported using a service-linked role, this parameter is required when you
-     *        register a scalable target and optional when you update one.
+     *        For resources that are not supported using a service-linked role, this parameter is required and must
+     *        specify the ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your
+     *        behalf.
      */
 
     public void setRoleARN(String roleARN) {
@@ -1278,30 +1269,24 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.
-     * </p>
-     * <p>
-     * With Amazon RDS resources, permissions are granted using a service-linked role. For more information, see <a
-     * href=
+     * Application Auto Scaling creates a service-linked role that grants it permissions to modify the scalable target
+     * on your behalf. For more information, see <a href=
      * "http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/application-autoscaling-service-linked-roles.html"
      * >Service-Linked Roles for Application Auto Scaling</a>.
      * </p>
      * <p>
-     * For resources that are not supported using a service-linked role, this parameter is required when you register a
-     * scalable target and optional when you update one.
+     * For resources that are not supported using a service-linked role, this parameter is required and must specify the
+     * ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.
      * </p>
      * 
-     * @return The ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your
-     *         behalf.</p>
-     *         <p>
-     *         With Amazon RDS resources, permissions are granted using a service-linked role. For more information, see
-     *         <a href=
+     * @return Application Auto Scaling creates a service-linked role that grants it permissions to modify the scalable
+     *         target on your behalf. For more information, see <a href=
      *         "http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/application-autoscaling-service-linked-roles.html"
-     *         >Service-Linked Roles for Application Auto Scaling</a>.
-     *         </p>
+     *         >Service-Linked Roles for Application Auto Scaling</a>.</p>
      *         <p>
-     *         For resources that are not supported using a service-linked role, this parameter is required when you
-     *         register a scalable target and optional when you update one.
+     *         For resources that are not supported using a service-linked role, this parameter is required and must
+     *         specify the ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your
+     *         behalf.
      */
 
     public String getRoleARN() {
@@ -1310,31 +1295,25 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.
-     * </p>
-     * <p>
-     * With Amazon RDS resources, permissions are granted using a service-linked role. For more information, see <a
-     * href=
+     * Application Auto Scaling creates a service-linked role that grants it permissions to modify the scalable target
+     * on your behalf. For more information, see <a href=
      * "http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/application-autoscaling-service-linked-roles.html"
      * >Service-Linked Roles for Application Auto Scaling</a>.
      * </p>
      * <p>
-     * For resources that are not supported using a service-linked role, this parameter is required when you register a
-     * scalable target and optional when you update one.
+     * For resources that are not supported using a service-linked role, this parameter is required and must specify the
+     * ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.
      * </p>
      * 
      * @param roleARN
-     *        The ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your
-     *        behalf.</p>
-     *        <p>
-     *        With Amazon RDS resources, permissions are granted using a service-linked role. For more information, see
-     *        <a href=
+     *        Application Auto Scaling creates a service-linked role that grants it permissions to modify the scalable
+     *        target on your behalf. For more information, see <a href=
      *        "http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/application-autoscaling-service-linked-roles.html"
-     *        >Service-Linked Roles for Application Auto Scaling</a>.
-     *        </p>
+     *        >Service-Linked Roles for Application Auto Scaling</a>.</p>
      *        <p>
-     *        For resources that are not supported using a service-linked role, this parameter is required when you
-     *        register a scalable target and optional when you update one.
+     *        For resources that are not supported using a service-linked role, this parameter is required and must
+     *        specify the ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your
+     *        behalf.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
