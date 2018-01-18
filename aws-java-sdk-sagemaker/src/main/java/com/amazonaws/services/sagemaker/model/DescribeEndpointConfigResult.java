@@ -43,6 +43,13 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
     private java.util.List<ProductionVariant> productionVariants;
     /**
      * <p>
+     * AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to the
+     * instance.
+     * </p>
+     */
+    private String kmsKeyId;
+    /**
+     * <p>
      * A timestamp that shows when the endpoint configuration was created.
      * </p>
      */
@@ -204,6 +211,52 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
+     * AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to the
+     * instance.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to
+     *        the instance.
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to the
+     * instance.
+     * </p>
+     * 
+     * @return AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to
+     *         the instance.
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to the
+     * instance.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to
+     *        the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeEndpointConfigResult withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
      * A timestamp that shows when the endpoint configuration was created.
      * </p>
      * 
@@ -259,6 +312,8 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
             sb.append("EndpointConfigArn: ").append(getEndpointConfigArn()).append(",");
         if (getProductionVariants() != null)
             sb.append("ProductionVariants: ").append(getProductionVariants()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime());
         sb.append("}");
@@ -287,6 +342,10 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
             return false;
         if (other.getProductionVariants() != null && other.getProductionVariants().equals(this.getProductionVariants()) == false)
             return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
         if (other.getCreationTime() == null ^ this.getCreationTime() == null)
             return false;
         if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
@@ -302,6 +361,7 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getEndpointConfigName() == null) ? 0 : getEndpointConfigName().hashCode());
         hashCode = prime * hashCode + ((getEndpointConfigArn() == null) ? 0 : getEndpointConfigArn().hashCode());
         hashCode = prime * hashCode + ((getProductionVariants() == null) ? 0 : getProductionVariants().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         return hashCode;
     }

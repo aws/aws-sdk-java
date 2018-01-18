@@ -61,6 +61,10 @@ public class DescribeEndpointConfigResultJsonUnmarshaller implements Unmarshalle
                     describeEndpointConfigResult.setProductionVariants(new ListUnmarshaller<ProductionVariant>(ProductionVariantJsonUnmarshaller.getInstance())
                             .unmarshall(context));
                 }
+                if (context.testExpression("KmsKeyId", targetDepth)) {
+                    context.nextToken();
+                    describeEndpointConfigResult.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
                     describeEndpointConfigResult.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));

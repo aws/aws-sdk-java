@@ -46,6 +46,13 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on
+     * the storage volume attached to the ML compute instance that hosts the endpoint.
+     * </p>
+     */
+    private String kmsKeyId;
 
     /**
      * <p>
@@ -254,6 +261,52 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on
+     * the storage volume attached to the ML compute instance that hosts the endpoint.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt
+     *        data on the storage volume attached to the ML compute instance that hosts the endpoint.
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on
+     * the storage volume attached to the ML compute instance that hosts the endpoint.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt
+     *         data on the storage volume attached to the ML compute instance that hosts the endpoint.
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on
+     * the storage volume attached to the ML compute instance that hosts the endpoint.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt
+     *        data on the storage volume attached to the ML compute instance that hosts the endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEndpointConfigRequest withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -269,7 +322,9 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
         if (getProductionVariants() != null)
             sb.append("ProductionVariants: ").append(getProductionVariants()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -296,6 +351,10 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
         return true;
     }
 
@@ -307,6 +366,7 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getEndpointConfigName() == null) ? 0 : getEndpointConfigName().hashCode());
         hashCode = prime * hashCode + ((getProductionVariants() == null) ? 0 : getProductionVariants().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         return hashCode;
     }
 

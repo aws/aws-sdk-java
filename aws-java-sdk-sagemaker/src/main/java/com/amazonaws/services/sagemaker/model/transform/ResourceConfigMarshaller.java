@@ -33,6 +33,8 @@ public class ResourceConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceCount").build();
     private static final MarshallingInfo<Integer> VOLUMESIZEINGB_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeSizeInGB").build();
+    private static final MarshallingInfo<String> VOLUMEKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeKmsKeyId").build();
 
     private static final ResourceConfigMarshaller instance = new ResourceConfigMarshaller();
 
@@ -53,6 +55,7 @@ public class ResourceConfigMarshaller {
             protocolMarshaller.marshall(resourceConfig.getInstanceType(), INSTANCETYPE_BINDING);
             protocolMarshaller.marshall(resourceConfig.getInstanceCount(), INSTANCECOUNT_BINDING);
             protocolMarshaller.marshall(resourceConfig.getVolumeSizeInGB(), VOLUMESIZEINGB_BINDING);
+            protocolMarshaller.marshall(resourceConfig.getVolumeKmsKeyId(), VOLUMEKMSKEYID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

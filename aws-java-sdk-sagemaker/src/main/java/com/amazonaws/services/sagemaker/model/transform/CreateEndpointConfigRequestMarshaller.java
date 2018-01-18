@@ -34,6 +34,8 @@ public class CreateEndpointConfigRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProductionVariants").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KmsKeyId").build();
 
     private static final CreateEndpointConfigRequestMarshaller instance = new CreateEndpointConfigRequestMarshaller();
 
@@ -54,6 +56,7 @@ public class CreateEndpointConfigRequestMarshaller {
             protocolMarshaller.marshall(createEndpointConfigRequest.getEndpointConfigName(), ENDPOINTCONFIGNAME_BINDING);
             protocolMarshaller.marshall(createEndpointConfigRequest.getProductionVariants(), PRODUCTIONVARIANTS_BINDING);
             protocolMarshaller.marshall(createEndpointConfigRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createEndpointConfigRequest.getKmsKeyId(), KMSKEYID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

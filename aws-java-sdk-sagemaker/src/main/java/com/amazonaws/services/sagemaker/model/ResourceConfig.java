@@ -59,6 +59,13 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
      * </note>
      */
     private Integer volumeSizeInGB;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on
+     * the storage volume attached to the ML compute instance(s) that run the training job.
+     * </p>
+     */
+    private String volumeKmsKeyId;
 
     /**
      * <p>
@@ -275,6 +282,52 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on
+     * the storage volume attached to the ML compute instance(s) that run the training job.
+     * </p>
+     * 
+     * @param volumeKmsKeyId
+     *        The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt
+     *        data on the storage volume attached to the ML compute instance(s) that run the training job.
+     */
+
+    public void setVolumeKmsKeyId(String volumeKmsKeyId) {
+        this.volumeKmsKeyId = volumeKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on
+     * the storage volume attached to the ML compute instance(s) that run the training job.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt
+     *         data on the storage volume attached to the ML compute instance(s) that run the training job.
+     */
+
+    public String getVolumeKmsKeyId() {
+        return this.volumeKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on
+     * the storage volume attached to the ML compute instance(s) that run the training job.
+     * </p>
+     * 
+     * @param volumeKmsKeyId
+     *        The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt
+     *        data on the storage volume attached to the ML compute instance(s) that run the training job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceConfig withVolumeKmsKeyId(String volumeKmsKeyId) {
+        setVolumeKmsKeyId(volumeKmsKeyId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -290,7 +343,9 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
         if (getInstanceCount() != null)
             sb.append("InstanceCount: ").append(getInstanceCount()).append(",");
         if (getVolumeSizeInGB() != null)
-            sb.append("VolumeSizeInGB: ").append(getVolumeSizeInGB());
+            sb.append("VolumeSizeInGB: ").append(getVolumeSizeInGB()).append(",");
+        if (getVolumeKmsKeyId() != null)
+            sb.append("VolumeKmsKeyId: ").append(getVolumeKmsKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -317,6 +372,10 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getVolumeSizeInGB() != null && other.getVolumeSizeInGB().equals(this.getVolumeSizeInGB()) == false)
             return false;
+        if (other.getVolumeKmsKeyId() == null ^ this.getVolumeKmsKeyId() == null)
+            return false;
+        if (other.getVolumeKmsKeyId() != null && other.getVolumeKmsKeyId().equals(this.getVolumeKmsKeyId()) == false)
+            return false;
         return true;
     }
 
@@ -328,6 +387,7 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode());
         hashCode = prime * hashCode + ((getVolumeSizeInGB() == null) ? 0 : getVolumeSizeInGB().hashCode());
+        hashCode = prime * hashCode + ((getVolumeKmsKeyId() == null) ? 0 : getVolumeKmsKeyId().hashCode());
         return hashCode;
     }
 
