@@ -128,6 +128,27 @@ public interface AWSGlue {
 
     /**
      * <p>
+     * Deletes a specified batch of versions of a table.
+     * </p>
+     * 
+     * @param batchDeleteTableVersionRequest
+     * @return Result of the BatchDeleteTableVersion operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @sample AWSGlue.BatchDeleteTableVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchDeleteTableVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    BatchDeleteTableVersionResult batchDeleteTableVersion(BatchDeleteTableVersionRequest batchDeleteTableVersionRequest);
+
+    /**
+     * <p>
      * Retrieves partitions in a batch request.
      * </p>
      * 
@@ -199,6 +220,8 @@ public interface AWSGlue {
      *         The input provided was not valid.
      * @throws OperationTimeoutException
      *         The operation timed out.
+     * @throws ResourceNumberLimitExceededException
+     *         A resource numerical limit was exceeded.
      * @sample AWSGlue.CreateConnection
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateConnection" target="_top">AWS API
      *      Documentation</a>
@@ -419,6 +442,8 @@ public interface AWSGlue {
      *         A specified entity does not exist
      * @throws OperationTimeoutException
      *         The operation timed out.
+     * @throws ResourceNumberLimitExceededException
+     *         A resource numerical limit was exceeded.
      * @sample AWSGlue.CreateUserDefinedFunction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateUserDefinedFunction" target="_top">AWS
      *      API Documentation</a>
@@ -582,6 +607,27 @@ public interface AWSGlue {
      *      Documentation</a>
      */
     DeleteTableResult deleteTable(DeleteTableRequest deleteTableRequest);
+
+    /**
+     * <p>
+     * Deletes a specified version of a table.
+     * </p>
+     * 
+     * @param deleteTableVersionRequest
+     * @return Result of the DeleteTableVersion operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @sample AWSGlue.DeleteTableVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTableVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteTableVersionResult deleteTableVersion(DeleteTableVersionRequest deleteTableVersionRequest);
 
     /**
      * <p>
@@ -1042,6 +1088,27 @@ public interface AWSGlue {
      *      Documentation</a>
      */
     GetTableResult getTable(GetTableRequest getTableRequest);
+
+    /**
+     * <p>
+     * Retrieves a specified version of a table.
+     * </p>
+     * 
+     * @param getTableVersionRequest
+     * @return Result of the GetTableVersion operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @sample AWSGlue.GetTableVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTableVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetTableVersionResult getTableVersion(GetTableVersionRequest getTableVersionRequest);
 
     /**
      * <p>
@@ -1559,6 +1626,8 @@ public interface AWSGlue {
      *         The operation timed out.
      * @throws ConcurrentModificationException
      *         Two processes are trying to modify a resource simultaneously.
+     * @throws ResourceNumberLimitExceededException
+     *         A resource numerical limit was exceeded.
      * @sample AWSGlue.UpdateTable
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateTable" target="_top">AWS API
      *      Documentation</a>

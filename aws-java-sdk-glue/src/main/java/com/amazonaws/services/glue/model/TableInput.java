@@ -30,7 +30,7 @@ public class TableInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the table.
+     * Name of the table. For Hive compatibility, this is folded to lowercase when it is stored.
      * </p>
      */
     private String name;
@@ -103,11 +103,11 @@ public class TableInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the table.
+     * Name of the table. For Hive compatibility, this is folded to lowercase when it is stored.
      * </p>
      * 
      * @param name
-     *        Name of the table.
+     *        Name of the table. For Hive compatibility, this is folded to lowercase when it is stored.
      */
 
     public void setName(String name) {
@@ -116,10 +116,10 @@ public class TableInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the table.
+     * Name of the table. For Hive compatibility, this is folded to lowercase when it is stored.
      * </p>
      * 
-     * @return Name of the table.
+     * @return Name of the table. For Hive compatibility, this is folded to lowercase when it is stored.
      */
 
     public String getName() {
@@ -128,11 +128,11 @@ public class TableInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the table.
+     * Name of the table. For Hive compatibility, this is folded to lowercase when it is stored.
      * </p>
      * 
      * @param name
-     *        Name of the table.
+     *        Name of the table. For Hive compatibility, this is folded to lowercase when it is stored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

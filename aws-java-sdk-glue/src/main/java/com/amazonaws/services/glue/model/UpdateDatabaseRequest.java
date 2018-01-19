@@ -34,7 +34,7 @@ public class UpdateDatabaseRequest extends com.amazonaws.AmazonWebServiceRequest
     private String catalogId;
     /**
      * <p>
-     * The name of the metadata database to update in the catalog.
+     * The name of the database to update in the catalog. For Hive compatibility, this is folded to lowercase.
      * </p>
      */
     private String name;
@@ -93,11 +93,11 @@ public class UpdateDatabaseRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the metadata database to update in the catalog.
+     * The name of the database to update in the catalog. For Hive compatibility, this is folded to lowercase.
      * </p>
      * 
      * @param name
-     *        The name of the metadata database to update in the catalog.
+     *        The name of the database to update in the catalog. For Hive compatibility, this is folded to lowercase.
      */
 
     public void setName(String name) {
@@ -106,10 +106,10 @@ public class UpdateDatabaseRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the metadata database to update in the catalog.
+     * The name of the database to update in the catalog. For Hive compatibility, this is folded to lowercase.
      * </p>
      * 
-     * @return The name of the metadata database to update in the catalog.
+     * @return The name of the database to update in the catalog. For Hive compatibility, this is folded to lowercase.
      */
 
     public String getName() {
@@ -118,11 +118,11 @@ public class UpdateDatabaseRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the metadata database to update in the catalog.
+     * The name of the database to update in the catalog. For Hive compatibility, this is folded to lowercase.
      * </p>
      * 
      * @param name
-     *        The name of the metadata database to update in the catalog.
+     *        The name of the database to update in the catalog. For Hive compatibility, this is folded to lowercase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

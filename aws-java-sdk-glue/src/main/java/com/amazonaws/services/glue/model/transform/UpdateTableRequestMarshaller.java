@@ -33,6 +33,8 @@ public class UpdateTableRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatabaseName").build();
     private static final MarshallingInfo<StructuredPojo> TABLEINPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TableInput").build();
+    private static final MarshallingInfo<Boolean> SKIPARCHIVE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SkipArchive").build();
 
     private static final UpdateTableRequestMarshaller instance = new UpdateTableRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class UpdateTableRequestMarshaller {
             protocolMarshaller.marshall(updateTableRequest.getCatalogId(), CATALOGID_BINDING);
             protocolMarshaller.marshall(updateTableRequest.getDatabaseName(), DATABASENAME_BINDING);
             protocolMarshaller.marshall(updateTableRequest.getTableInput(), TABLEINPUT_BINDING);
+            protocolMarshaller.marshall(updateTableRequest.getSkipArchive(), SKIPARCHIVE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

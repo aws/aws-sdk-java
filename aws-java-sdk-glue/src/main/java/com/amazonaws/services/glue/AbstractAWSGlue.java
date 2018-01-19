@@ -48,6 +48,11 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public BatchDeleteTableVersionResult batchDeleteTableVersion(BatchDeleteTableVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchGetPartitionResult batchGetPartition(BatchGetPartitionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -149,6 +154,11 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public DeleteTableResult deleteTable(DeleteTableRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteTableVersionResult deleteTableVersion(DeleteTableVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -269,6 +279,11 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public GetTableResult getTable(GetTableRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetTableVersionResult getTableVersion(GetTableVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

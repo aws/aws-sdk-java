@@ -33,13 +33,13 @@ public class GetTableVersionsRequest extends com.amazonaws.AmazonWebServiceReque
     private String catalogId;
     /**
      * <p>
-     * The database in the catalog in which the table resides.
+     * The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.
      * </p>
      */
     private String databaseName;
     /**
      * <p>
-     * The name of the table.
+     * The name of the table. For Hive compatibility, this name is entirely lowercase.
      * </p>
      */
     private String tableName;
@@ -101,11 +101,12 @@ public class GetTableVersionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The database in the catalog in which the table resides.
+     * The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.
      * </p>
      * 
      * @param databaseName
-     *        The database in the catalog in which the table resides.
+     *        The database in the catalog in which the table resides. For Hive compatibility, this name is entirely
+     *        lowercase.
      */
 
     public void setDatabaseName(String databaseName) {
@@ -114,10 +115,11 @@ public class GetTableVersionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The database in the catalog in which the table resides.
+     * The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.
      * </p>
      * 
-     * @return The database in the catalog in which the table resides.
+     * @return The database in the catalog in which the table resides. For Hive compatibility, this name is entirely
+     *         lowercase.
      */
 
     public String getDatabaseName() {
@@ -126,11 +128,12 @@ public class GetTableVersionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The database in the catalog in which the table resides.
+     * The database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.
      * </p>
      * 
      * @param databaseName
-     *        The database in the catalog in which the table resides.
+     *        The database in the catalog in which the table resides. For Hive compatibility, this name is entirely
+     *        lowercase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +144,11 @@ public class GetTableVersionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the table.
+     * The name of the table. For Hive compatibility, this name is entirely lowercase.
      * </p>
      * 
      * @param tableName
-     *        The name of the table.
+     *        The name of the table. For Hive compatibility, this name is entirely lowercase.
      */
 
     public void setTableName(String tableName) {
@@ -154,10 +157,10 @@ public class GetTableVersionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the table.
+     * The name of the table. For Hive compatibility, this name is entirely lowercase.
      * </p>
      * 
-     * @return The name of the table.
+     * @return The name of the table. For Hive compatibility, this name is entirely lowercase.
      */
 
     public String getTableName() {
@@ -166,11 +169,11 @@ public class GetTableVersionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the table.
+     * The name of the table. For Hive compatibility, this name is entirely lowercase.
      * </p>
      * 
      * @param tableName
-     *        The name of the table.
+     *        The name of the table. For Hive compatibility, this name is entirely lowercase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

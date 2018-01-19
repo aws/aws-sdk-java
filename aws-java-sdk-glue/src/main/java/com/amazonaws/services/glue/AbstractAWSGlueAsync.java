@@ -79,6 +79,19 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<BatchDeleteTableVersionResult> batchDeleteTableVersionAsync(BatchDeleteTableVersionRequest request) {
+
+        return batchDeleteTableVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteTableVersionResult> batchDeleteTableVersionAsync(BatchDeleteTableVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchDeleteTableVersionRequest, BatchDeleteTableVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchGetPartitionResult> batchGetPartitionAsync(BatchGetPartitionRequest request) {
 
         return batchGetPartitionAsync(request, null);
@@ -347,6 +360,19 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     @Override
     public java.util.concurrent.Future<DeleteTableResult> deleteTableAsync(DeleteTableRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteTableRequest, DeleteTableResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTableVersionResult> deleteTableVersionAsync(DeleteTableVersionRequest request) {
+
+        return deleteTableVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTableVersionResult> deleteTableVersionAsync(DeleteTableVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteTableVersionRequest, DeleteTableVersionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -659,6 +685,19 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     @Override
     public java.util.concurrent.Future<GetTableResult> getTableAsync(GetTableRequest request,
             com.amazonaws.handlers.AsyncHandler<GetTableRequest, GetTableResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTableVersionResult> getTableVersionAsync(GetTableVersionRequest request) {
+
+        return getTableVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTableVersionResult> getTableVersionAsync(GetTableVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetTableVersionRequest, GetTableVersionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

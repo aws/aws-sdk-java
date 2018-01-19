@@ -34,7 +34,7 @@ public class GetDatabaseRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String catalogId;
     /**
      * <p>
-     * The name of the database to retrieve.
+     * The name of the database to retrieve. For Hive compatibility, this should be all lowercase.
      * </p>
      */
     private String name;
@@ -87,11 +87,11 @@ public class GetDatabaseRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the database to retrieve.
+     * The name of the database to retrieve. For Hive compatibility, this should be all lowercase.
      * </p>
      * 
      * @param name
-     *        The name of the database to retrieve.
+     *        The name of the database to retrieve. For Hive compatibility, this should be all lowercase.
      */
 
     public void setName(String name) {
@@ -100,10 +100,10 @@ public class GetDatabaseRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the database to retrieve.
+     * The name of the database to retrieve. For Hive compatibility, this should be all lowercase.
      * </p>
      * 
-     * @return The name of the database to retrieve.
+     * @return The name of the database to retrieve. For Hive compatibility, this should be all lowercase.
      */
 
     public String getName() {
@@ -112,11 +112,11 @@ public class GetDatabaseRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the database to retrieve.
+     * The name of the database to retrieve. For Hive compatibility, this should be all lowercase.
      * </p>
      * 
      * @param name
-     *        The name of the database to retrieve.
+     *        The name of the database to retrieve. For Hive compatibility, this should be all lowercase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

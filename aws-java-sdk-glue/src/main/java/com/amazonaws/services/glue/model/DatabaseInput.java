@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The structure used to create or updata a database.
+ * The structure used to create or update a database.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DatabaseInput" target="_top">AWS API
@@ -30,7 +30,7 @@ public class DatabaseInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the database.
+     * Name of the database. For Hive compatibility, this is folded to lowercase when it is stored.
      * </p>
      */
     private String name;
@@ -55,11 +55,11 @@ public class DatabaseInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the database.
+     * Name of the database. For Hive compatibility, this is folded to lowercase when it is stored.
      * </p>
      * 
      * @param name
-     *        Name of the database.
+     *        Name of the database. For Hive compatibility, this is folded to lowercase when it is stored.
      */
 
     public void setName(String name) {
@@ -68,10 +68,10 @@ public class DatabaseInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the database.
+     * Name of the database. For Hive compatibility, this is folded to lowercase when it is stored.
      * </p>
      * 
-     * @return Name of the database.
+     * @return Name of the database. For Hive compatibility, this is folded to lowercase when it is stored.
      */
 
     public String getName() {
@@ -80,11 +80,11 @@ public class DatabaseInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the database.
+     * Name of the database. For Hive compatibility, this is folded to lowercase when it is stored.
      * </p>
      * 
      * @param name
-     *        Name of the database.
+     *        Name of the database. For Hive compatibility, this is folded to lowercase when it is stored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

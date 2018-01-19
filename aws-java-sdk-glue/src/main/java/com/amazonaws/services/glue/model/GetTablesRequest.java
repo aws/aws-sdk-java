@@ -33,7 +33,7 @@ public class GetTablesRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String catalogId;
     /**
      * <p>
-     * The database in the catalog whose tables to list.
+     * The database in the catalog whose tables to list. For Hive compatibility, this name is entirely lowercase.
      * </p>
      */
     private String databaseName;
@@ -101,11 +101,11 @@ public class GetTablesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The database in the catalog whose tables to list.
+     * The database in the catalog whose tables to list. For Hive compatibility, this name is entirely lowercase.
      * </p>
      * 
      * @param databaseName
-     *        The database in the catalog whose tables to list.
+     *        The database in the catalog whose tables to list. For Hive compatibility, this name is entirely lowercase.
      */
 
     public void setDatabaseName(String databaseName) {
@@ -114,10 +114,11 @@ public class GetTablesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The database in the catalog whose tables to list.
+     * The database in the catalog whose tables to list. For Hive compatibility, this name is entirely lowercase.
      * </p>
      * 
-     * @return The database in the catalog whose tables to list.
+     * @return The database in the catalog whose tables to list. For Hive compatibility, this name is entirely
+     *         lowercase.
      */
 
     public String getDatabaseName() {
@@ -126,11 +127,11 @@ public class GetTablesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The database in the catalog whose tables to list.
+     * The database in the catalog whose tables to list. For Hive compatibility, this name is entirely lowercase.
      * </p>
      * 
      * @param databaseName
-     *        The database in the catalog whose tables to list.
+     *        The database in the catalog whose tables to list. For Hive compatibility, this name is entirely lowercase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

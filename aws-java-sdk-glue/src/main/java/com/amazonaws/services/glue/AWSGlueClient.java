@@ -389,6 +389,64 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
+     * Deletes a specified batch of versions of a table.
+     * </p>
+     * 
+     * @param batchDeleteTableVersionRequest
+     * @return Result of the BatchDeleteTableVersion operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @sample AWSGlue.BatchDeleteTableVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchDeleteTableVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public BatchDeleteTableVersionResult batchDeleteTableVersion(BatchDeleteTableVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchDeleteTableVersion(request);
+    }
+
+    @SdkInternalApi
+    final BatchDeleteTableVersionResult executeBatchDeleteTableVersion(BatchDeleteTableVersionRequest batchDeleteTableVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchDeleteTableVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchDeleteTableVersionRequest> request = null;
+        Response<BatchDeleteTableVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchDeleteTableVersionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(batchDeleteTableVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchDeleteTableVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new BatchDeleteTableVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves partitions in a batch request.
      * </p>
      * 
@@ -565,6 +623,8 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      *         The input provided was not valid.
      * @throws OperationTimeoutException
      *         The operation timed out.
+     * @throws ResourceNumberLimitExceededException
+     *         A resource numerical limit was exceeded.
      * @sample AWSGlue.CreateConnection
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateConnection" target="_top">AWS API
      *      Documentation</a>
@@ -1100,6 +1160,8 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      *         A specified entity does not exist
      * @throws OperationTimeoutException
      *         The operation timed out.
+     * @throws ResourceNumberLimitExceededException
+     *         A resource numerical limit was exceeded.
      * @sample AWSGlue.CreateUserDefinedFunction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateUserDefinedFunction" target="_top">AWS
      *      API Documentation</a>
@@ -1571,6 +1633,62 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteTableResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteTableResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a specified version of a table.
+     * </p>
+     * 
+     * @param deleteTableVersionRequest
+     * @return Result of the DeleteTableVersion operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @sample AWSGlue.DeleteTableVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTableVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteTableVersionResult deleteTableVersion(DeleteTableVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTableVersion(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTableVersionResult executeDeleteTableVersion(DeleteTableVersionRequest deleteTableVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteTableVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteTableVersionRequest> request = null;
+        Response<DeleteTableVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteTableVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTableVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteTableVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteTableVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2874,6 +2992,62 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
             HttpResponseHandler<AmazonWebServiceResponse<GetTableResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetTableResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a specified version of a table.
+     * </p>
+     * 
+     * @param getTableVersionRequest
+     * @return Result of the GetTableVersion operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @sample AWSGlue.GetTableVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTableVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetTableVersionResult getTableVersion(GetTableVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetTableVersion(request);
+    }
+
+    @SdkInternalApi
+    final GetTableVersionResult executeGetTableVersion(GetTableVersionRequest getTableVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getTableVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetTableVersionRequest> request = null;
+        Response<GetTableVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetTableVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTableVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetTableVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetTableVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4209,6 +4383,8 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      *         The operation timed out.
      * @throws ConcurrentModificationException
      *         Two processes are trying to modify a resource simultaneously.
+     * @throws ResourceNumberLimitExceededException
+     *         A resource numerical limit was exceeded.
      * @sample AWSGlue.UpdateTable
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateTable" target="_top">AWS API
      *      Documentation</a>

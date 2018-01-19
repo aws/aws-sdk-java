@@ -34,7 +34,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String catalogId;
     /**
      * <p>
-     * The catalog database in which to create the new table.
+     * The catalog database in which to create the new table. For Hive compatibility, this name is entirely lowercase.
      * </p>
      */
     private String databaseName;
@@ -93,11 +93,12 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The catalog database in which to create the new table.
+     * The catalog database in which to create the new table. For Hive compatibility, this name is entirely lowercase.
      * </p>
      * 
      * @param databaseName
-     *        The catalog database in which to create the new table.
+     *        The catalog database in which to create the new table. For Hive compatibility, this name is entirely
+     *        lowercase.
      */
 
     public void setDatabaseName(String databaseName) {
@@ -106,10 +107,11 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The catalog database in which to create the new table.
+     * The catalog database in which to create the new table. For Hive compatibility, this name is entirely lowercase.
      * </p>
      * 
-     * @return The catalog database in which to create the new table.
+     * @return The catalog database in which to create the new table. For Hive compatibility, this name is entirely
+     *         lowercase.
      */
 
     public String getDatabaseName() {
@@ -118,11 +120,12 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The catalog database in which to create the new table.
+     * The catalog database in which to create the new table. For Hive compatibility, this name is entirely lowercase.
      * </p>
      * 
      * @param databaseName
-     *        The catalog database in which to create the new table.
+     *        The catalog database in which to create the new table. For Hive compatibility, this name is entirely
+     *        lowercase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

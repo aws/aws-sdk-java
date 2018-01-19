@@ -1,4 +1,4 @@
-# __1.11.267__ __2018-01-18__
+# __1.11.267__ __2018-01-17__
 ## __AWS Application Discovery Service__
   - ### Features
     - Documentation updates for AWS Application Discovery Service.

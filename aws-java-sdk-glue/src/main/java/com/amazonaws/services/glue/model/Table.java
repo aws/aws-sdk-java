@@ -29,13 +29,14 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the table.
+     * Name of the table. For Hive compatibility, this must be entirely lowercase.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Name of the metadata database where the table metadata resides.
+     * Name of the metadata database where the table metadata resides. For Hive compatibility, this must be all
+     * lowercase.
      * </p>
      */
     private String databaseName;
@@ -126,11 +127,11 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the table.
+     * Name of the table. For Hive compatibility, this must be entirely lowercase.
      * </p>
      * 
      * @param name
-     *        Name of the table.
+     *        Name of the table. For Hive compatibility, this must be entirely lowercase.
      */
 
     public void setName(String name) {
@@ -139,10 +140,10 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the table.
+     * Name of the table. For Hive compatibility, this must be entirely lowercase.
      * </p>
      * 
-     * @return Name of the table.
+     * @return Name of the table. For Hive compatibility, this must be entirely lowercase.
      */
 
     public String getName() {
@@ -151,11 +152,11 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the table.
+     * Name of the table. For Hive compatibility, this must be entirely lowercase.
      * </p>
      * 
      * @param name
-     *        Name of the table.
+     *        Name of the table. For Hive compatibility, this must be entirely lowercase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,11 +167,13 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the metadata database where the table metadata resides.
+     * Name of the metadata database where the table metadata resides. For Hive compatibility, this must be all
+     * lowercase.
      * </p>
      * 
      * @param databaseName
-     *        Name of the metadata database where the table metadata resides.
+     *        Name of the metadata database where the table metadata resides. For Hive compatibility, this must be all
+     *        lowercase.
      */
 
     public void setDatabaseName(String databaseName) {
@@ -179,10 +182,12 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the metadata database where the table metadata resides.
+     * Name of the metadata database where the table metadata resides. For Hive compatibility, this must be all
+     * lowercase.
      * </p>
      * 
-     * @return Name of the metadata database where the table metadata resides.
+     * @return Name of the metadata database where the table metadata resides. For Hive compatibility, this must be all
+     *         lowercase.
      */
 
     public String getDatabaseName() {
@@ -191,11 +196,13 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the metadata database where the table metadata resides.
+     * Name of the metadata database where the table metadata resides. For Hive compatibility, this must be all
+     * lowercase.
      * </p>
      * 
      * @param databaseName
-     *        Name of the metadata database where the table metadata resides.
+     *        Name of the metadata database where the table metadata resides. For Hive compatibility, this must be all
+     *        lowercase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

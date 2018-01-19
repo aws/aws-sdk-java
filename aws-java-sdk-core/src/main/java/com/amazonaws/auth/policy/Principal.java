@@ -149,7 +149,7 @@ public class Principal {
      * Secret Access Key, and a security token.
      */
     static public enum Services {
-
+        
         AmazonApiGateway("apigateway.amazonaws.com"),
         AWSDataPipeline("datapipeline.amazonaws.com"),
         AmazonElasticTranscoder("elastictranscoder.amazonaws.com"),

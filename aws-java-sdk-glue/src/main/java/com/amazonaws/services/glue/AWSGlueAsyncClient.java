@@ -195,6 +195,39 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<BatchDeleteTableVersionResult> batchDeleteTableVersionAsync(BatchDeleteTableVersionRequest request) {
+
+        return batchDeleteTableVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteTableVersionResult> batchDeleteTableVersionAsync(final BatchDeleteTableVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchDeleteTableVersionRequest, BatchDeleteTableVersionResult> asyncHandler) {
+        final BatchDeleteTableVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchDeleteTableVersionResult>() {
+            @Override
+            public BatchDeleteTableVersionResult call() throws Exception {
+                BatchDeleteTableVersionResult result = null;
+
+                try {
+                    result = executeBatchDeleteTableVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchGetPartitionResult> batchGetPartitionAsync(BatchGetPartitionRequest request) {
 
         return batchGetPartitionAsync(request, null);
@@ -872,6 +905,39 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
 
                 try {
                     result = executeDeleteTable(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTableVersionResult> deleteTableVersionAsync(DeleteTableVersionRequest request) {
+
+        return deleteTableVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTableVersionResult> deleteTableVersionAsync(final DeleteTableVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteTableVersionRequest, DeleteTableVersionResult> asyncHandler) {
+        final DeleteTableVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteTableVersionResult>() {
+            @Override
+            public DeleteTableVersionResult call() throws Exception {
+                DeleteTableVersionResult result = null;
+
+                try {
+                    result = executeDeleteTableVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1664,6 +1730,39 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
 
                 try {
                     result = executeGetTable(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTableVersionResult> getTableVersionAsync(GetTableVersionRequest request) {
+
+        return getTableVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTableVersionResult> getTableVersionAsync(final GetTableVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetTableVersionRequest, GetTableVersionResult> asyncHandler) {
+        final GetTableVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetTableVersionResult>() {
+            @Override
+            public GetTableVersionResult call() throws Exception {
+                GetTableVersionResult result = null;
+
+                try {
+                    result = executeGetTableVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

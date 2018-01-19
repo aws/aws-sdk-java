@@ -159,6 +159,37 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
+     * Deletes a specified batch of versions of a table.
+     * </p>
+     * 
+     * @param batchDeleteTableVersionRequest
+     * @return A Java Future containing the result of the BatchDeleteTableVersion operation returned by the service.
+     * @sample AWSGlueAsync.BatchDeleteTableVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchDeleteTableVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDeleteTableVersionResult> batchDeleteTableVersionAsync(BatchDeleteTableVersionRequest batchDeleteTableVersionRequest);
+
+    /**
+     * <p>
+     * Deletes a specified batch of versions of a table.
+     * </p>
+     * 
+     * @param batchDeleteTableVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchDeleteTableVersion operation returned by the service.
+     * @sample AWSGlueAsyncHandler.BatchDeleteTableVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchDeleteTableVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDeleteTableVersionResult> batchDeleteTableVersionAsync(BatchDeleteTableVersionRequest batchDeleteTableVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchDeleteTableVersionRequest, BatchDeleteTableVersionResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves partitions in a batch request.
      * </p>
      * 
@@ -813,6 +844,37 @@ public interface AWSGlueAsync extends AWSGlue {
      */
     java.util.concurrent.Future<DeleteTableResult> deleteTableAsync(DeleteTableRequest deleteTableRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteTableRequest, DeleteTableResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a specified version of a table.
+     * </p>
+     * 
+     * @param deleteTableVersionRequest
+     * @return A Java Future containing the result of the DeleteTableVersion operation returned by the service.
+     * @sample AWSGlueAsync.DeleteTableVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTableVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTableVersionResult> deleteTableVersionAsync(DeleteTableVersionRequest deleteTableVersionRequest);
+
+    /**
+     * <p>
+     * Deletes a specified version of a table.
+     * </p>
+     * 
+     * @param deleteTableVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTableVersion operation returned by the service.
+     * @sample AWSGlueAsyncHandler.DeleteTableVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteTableVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTableVersionResult> deleteTableVersionAsync(DeleteTableVersionRequest deleteTableVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTableVersionRequest, DeleteTableVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -1559,6 +1621,37 @@ public interface AWSGlueAsync extends AWSGlue {
      */
     java.util.concurrent.Future<GetTableResult> getTableAsync(GetTableRequest getTableRequest,
             com.amazonaws.handlers.AsyncHandler<GetTableRequest, GetTableResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a specified version of a table.
+     * </p>
+     * 
+     * @param getTableVersionRequest
+     * @return A Java Future containing the result of the GetTableVersion operation returned by the service.
+     * @sample AWSGlueAsync.GetTableVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTableVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetTableVersionResult> getTableVersionAsync(GetTableVersionRequest getTableVersionRequest);
+
+    /**
+     * <p>
+     * Retrieves a specified version of a table.
+     * </p>
+     * 
+     * @param getTableVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetTableVersion operation returned by the service.
+     * @sample AWSGlueAsyncHandler.GetTableVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTableVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetTableVersionResult> getTableVersionAsync(GetTableVersionRequest getTableVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetTableVersionRequest, GetTableVersionResult> asyncHandler);
 
     /**
      * <p>

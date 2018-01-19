@@ -33,13 +33,14 @@ public class DeleteTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String catalogId;
     /**
      * <p>
-     * The name of the catalog database in which the table resides.
+     * The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely
+     * lowercase.
      * </p>
      */
     private String databaseName;
     /**
      * <p>
-     * The name of the table to be deleted.
+     * The name of the table to be deleted. For Hive compatibility, this name is entirely lowercase.
      * </p>
      */
     private String name;
@@ -89,11 +90,13 @@ public class DeleteTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the catalog database in which the table resides.
+     * The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely
+     * lowercase.
      * </p>
      * 
      * @param databaseName
-     *        The name of the catalog database in which the table resides.
+     *        The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely
+     *        lowercase.
      */
 
     public void setDatabaseName(String databaseName) {
@@ -102,10 +105,12 @@ public class DeleteTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the catalog database in which the table resides.
+     * The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely
+     * lowercase.
      * </p>
      * 
-     * @return The name of the catalog database in which the table resides.
+     * @return The name of the catalog database in which the table resides. For Hive compatibility, this name is
+     *         entirely lowercase.
      */
 
     public String getDatabaseName() {
@@ -114,11 +119,13 @@ public class DeleteTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the catalog database in which the table resides.
+     * The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely
+     * lowercase.
      * </p>
      * 
      * @param databaseName
-     *        The name of the catalog database in which the table resides.
+     *        The name of the catalog database in which the table resides. For Hive compatibility, this name is entirely
+     *        lowercase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +136,11 @@ public class DeleteTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the table to be deleted.
+     * The name of the table to be deleted. For Hive compatibility, this name is entirely lowercase.
      * </p>
      * 
      * @param name
-     *        The name of the table to be deleted.
+     *        The name of the table to be deleted. For Hive compatibility, this name is entirely lowercase.
      */
 
     public void setName(String name) {
@@ -142,10 +149,10 @@ public class DeleteTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the table to be deleted.
+     * The name of the table to be deleted. For Hive compatibility, this name is entirely lowercase.
      * </p>
      * 
-     * @return The name of the table to be deleted.
+     * @return The name of the table to be deleted. For Hive compatibility, this name is entirely lowercase.
      */
 
     public String getName() {
@@ -154,11 +161,11 @@ public class DeleteTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the table to be deleted.
+     * The name of the table to be deleted. For Hive compatibility, this name is entirely lowercase.
      * </p>
      * 
      * @param name
-     *        The name of the table to be deleted.
+     *        The name of the table to be deleted. For Hive compatibility, this name is entirely lowercase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -3,7 +3,7 @@
   <parent>
     <artifactId>aws-java-sdk-pom</artifactId>
     <groupId>com.amazonaws</groupId>
-    <version>1.11.267</version>
+    <version>1.11.268</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
@@ -114,10 +114,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.267</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.268</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.267</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.268</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -131,6 +131,10 @@
                     </taglet>
                   </taglets>
                   <groups>
+                    <group>
+                      <title>Amazon Transcribe</title>
+                      <packages>com.amazonaws.services.transcribe*</packages>
+                    </group>
                     <group>
                       <title>AWS Auto Scaling Plans</title>
                       <packages>com.amazonaws.services.autoscalingplans*</packages>
@@ -739,10 +743,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.267</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.268</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.267</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.268</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -756,6 +760,10 @@
                     </taglet>
                   </taglets>
                   <groups>
+                    <group>
+                      <title>Amazon Transcribe</title>
+                      <packages>com.amazonaws.services.transcribe*</packages>
+                    </group>
                     <group>
                       <title>AWS Auto Scaling Plans</title>
                       <packages>com.amazonaws.services.autoscalingplans*</packages>
@@ -1360,10 +1368,10 @@
               <use>false</use>
               <notree>true</notree>
               <nodeprecatedlist>true</nodeprecatedlist>
-              <windowtitle>AWS SDK for Java - 1.11.267</windowtitle>
+              <windowtitle>AWS SDK for Java - 1.11.268</windowtitle>
               <encoding>UTF-8</encoding>
               <docencoding>UTF-8</docencoding>
-              <doctitle>AWS SDK for Java API Reference - 1.11.267</doctitle>
+              <doctitle>AWS SDK for Java API Reference - 1.11.268</doctitle>
               <packagesheader>AWS SDK for Java</packagesheader>
               <docfilessubdirs>true</docfilessubdirs>
               <taglets>
@@ -1377,6 +1385,10 @@
                 </taglet>
               </taglets>
               <groups>
+                <group>
+                  <title>Amazon Transcribe</title>
+                  <packages>com.amazonaws.services.transcribe*</packages>
+                </group>
                 <group>
                   <title>AWS Auto Scaling Plans</title>
                   <packages>com.amazonaws.services.autoscalingplans*</packages>
@@ -2194,7 +2206,7 @@
                   <goal>exec</goal>
                 </goals>
                 <configuration>
-                  <workingDirectory>target/aws-java-sdk-osgi-1.11.267-sdk-zip-archive-assembly/</workingDirectory>
+                  <workingDirectory>target/aws-java-sdk-osgi-1.11.268-sdk-zip-archive-assembly/</workingDirectory>
                   <executable>zip</executable>
                   <commandlineArgs>-r ../aws-java-sdk.zip .</commandlineArgs>
                 </configuration>
