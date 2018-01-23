@@ -45,6 +45,10 @@ public class CostTypesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeOtherSubscription").build();
     private static final MarshallingInfo<Boolean> INCLUDESUPPORT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeSupport").build();
+    private static final MarshallingInfo<Boolean> INCLUDEDISCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeDiscount").build();
+    private static final MarshallingInfo<Boolean> USEAMORTIZED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UseAmortized").build();
 
     private static final CostTypesMarshaller instance = new CostTypesMarshaller();
 
@@ -71,6 +75,8 @@ public class CostTypesMarshaller {
             protocolMarshaller.marshall(costTypes.getIncludeRecurring(), INCLUDERECURRING_BINDING);
             protocolMarshaller.marshall(costTypes.getIncludeOtherSubscription(), INCLUDEOTHERSUBSCRIPTION_BINDING);
             protocolMarshaller.marshall(costTypes.getIncludeSupport(), INCLUDESUPPORT_BINDING);
+            protocolMarshaller.marshall(costTypes.getIncludeDiscount(), INCLUDEDISCOUNT_BINDING);
+            protocolMarshaller.marshall(costTypes.getUseAmortized(), USEAMORTIZED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

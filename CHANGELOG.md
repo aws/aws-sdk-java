@@ -1,3 +1,8 @@
+# __1.11.269__ __2018-01-22__
+## __AWS Budgets__
+  - ### Features
+    - Add additional costTypes: IncludeDiscount, UseAmortized,  to support finer control for different charges included in a cost budget.
+
 # __1.11.267__ __2018-01-17__
 ## __AWS Application Discovery Service__
   - ### Features

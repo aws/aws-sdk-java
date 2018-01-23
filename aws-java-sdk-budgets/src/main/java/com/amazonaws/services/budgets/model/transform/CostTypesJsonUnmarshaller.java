@@ -84,6 +84,14 @@ public class CostTypesJsonUnmarshaller implements Unmarshaller<CostTypes, JsonUn
                     context.nextToken();
                     costTypes.setIncludeSupport(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("IncludeDiscount", targetDepth)) {
+                    context.nextToken();
+                    costTypes.setIncludeDiscount(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("UseAmortized", targetDepth)) {
+                    context.nextToken();
+                    costTypes.setUseAmortized(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

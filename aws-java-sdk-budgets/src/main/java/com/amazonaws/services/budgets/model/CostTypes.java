@@ -41,6 +41,10 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     private Boolean includeOtherSubscription;
     /** A boolean value whether to include support costs in the cost budget. */
     private Boolean includeSupport;
+    /** A boolean value whether to include discounts in the cost budget. */
+    private Boolean includeDiscount;
+    /** A boolean value whether to include amortized costs in the cost budget. */
+    private Boolean useAmortized;
 
     /**
      * A boolean value whether to include tax in the cost budget.
@@ -439,6 +443,94 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * A boolean value whether to include discounts in the cost budget.
+     * 
+     * @param includeDiscount
+     *        A boolean value whether to include discounts in the cost budget.
+     */
+
+    public void setIncludeDiscount(Boolean includeDiscount) {
+        this.includeDiscount = includeDiscount;
+    }
+
+    /**
+     * A boolean value whether to include discounts in the cost budget.
+     * 
+     * @return A boolean value whether to include discounts in the cost budget.
+     */
+
+    public Boolean getIncludeDiscount() {
+        return this.includeDiscount;
+    }
+
+    /**
+     * A boolean value whether to include discounts in the cost budget.
+     * 
+     * @param includeDiscount
+     *        A boolean value whether to include discounts in the cost budget.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CostTypes withIncludeDiscount(Boolean includeDiscount) {
+        setIncludeDiscount(includeDiscount);
+        return this;
+    }
+
+    /**
+     * A boolean value whether to include discounts in the cost budget.
+     * 
+     * @return A boolean value whether to include discounts in the cost budget.
+     */
+
+    public Boolean isIncludeDiscount() {
+        return this.includeDiscount;
+    }
+
+    /**
+     * A boolean value whether to include amortized costs in the cost budget.
+     * 
+     * @param useAmortized
+     *        A boolean value whether to include amortized costs in the cost budget.
+     */
+
+    public void setUseAmortized(Boolean useAmortized) {
+        this.useAmortized = useAmortized;
+    }
+
+    /**
+     * A boolean value whether to include amortized costs in the cost budget.
+     * 
+     * @return A boolean value whether to include amortized costs in the cost budget.
+     */
+
+    public Boolean getUseAmortized() {
+        return this.useAmortized;
+    }
+
+    /**
+     * A boolean value whether to include amortized costs in the cost budget.
+     * 
+     * @param useAmortized
+     *        A boolean value whether to include amortized costs in the cost budget.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CostTypes withUseAmortized(Boolean useAmortized) {
+        setUseAmortized(useAmortized);
+        return this;
+    }
+
+    /**
+     * A boolean value whether to include amortized costs in the cost budget.
+     * 
+     * @return A boolean value whether to include amortized costs in the cost budget.
+     */
+
+    public Boolean isUseAmortized() {
+        return this.useAmortized;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -466,7 +558,11 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
         if (getIncludeOtherSubscription() != null)
             sb.append("IncludeOtherSubscription: ").append(getIncludeOtherSubscription()).append(",");
         if (getIncludeSupport() != null)
-            sb.append("IncludeSupport: ").append(getIncludeSupport());
+            sb.append("IncludeSupport: ").append(getIncludeSupport()).append(",");
+        if (getIncludeDiscount() != null)
+            sb.append("IncludeDiscount: ").append(getIncludeDiscount()).append(",");
+        if (getUseAmortized() != null)
+            sb.append("UseAmortized: ").append(getUseAmortized());
         sb.append("}");
         return sb.toString();
     }
@@ -517,6 +613,14 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getIncludeSupport() != null && other.getIncludeSupport().equals(this.getIncludeSupport()) == false)
             return false;
+        if (other.getIncludeDiscount() == null ^ this.getIncludeDiscount() == null)
+            return false;
+        if (other.getIncludeDiscount() != null && other.getIncludeDiscount().equals(this.getIncludeDiscount()) == false)
+            return false;
+        if (other.getUseAmortized() == null ^ this.getUseAmortized() == null)
+            return false;
+        if (other.getUseAmortized() != null && other.getUseAmortized().equals(this.getUseAmortized()) == false)
+            return false;
         return true;
     }
 
@@ -534,6 +638,8 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getIncludeRecurring() == null) ? 0 : getIncludeRecurring().hashCode());
         hashCode = prime * hashCode + ((getIncludeOtherSubscription() == null) ? 0 : getIncludeOtherSubscription().hashCode());
         hashCode = prime * hashCode + ((getIncludeSupport() == null) ? 0 : getIncludeSupport().hashCode());
+        hashCode = prime * hashCode + ((getIncludeDiscount() == null) ? 0 : getIncludeDiscount().hashCode());
+        hashCode = prime * hashCode + ((getUseAmortized() == null) ? 0 : getUseAmortized().hashCode());
         return hashCode;
     }
 
