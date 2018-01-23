@@ -23,34 +23,32 @@ import javax.net.ssl.SSLSocket;
 
 class TestSSLSocket extends SSLSocket {
 
+    private String[] capturedProtocols;
+
     @Override
     public void setEnabledProtocols(String[] protocols) {
-        //The variable will be true if the method was called and the
-        //protocols are correct.
-        protocolsVerified = verifyEnabledProtocols(protocols);
+        capturedProtocols = protocols;
+        protocolsEnabled = true;
     }
 
-    private boolean protocolsVerified = false;
+    private boolean protocolsEnabled = false;
 
     /**
-     * Tells whether the protocols enabled were verified and meet the assertion.
+     * Indicates if setEnabledProtocols was invoked
      */
-    public boolean getProtocolsVerified() {
-        return protocolsVerified;
-    }
-
-    /**
-     * Evaluates if the given protocols meet certain assertion.
-     */
-    public boolean verifyEnabledProtocols(String[] protocols) {
-        return Arrays.equals(getExpectedEnabledProtocols(), protocols);
+    public boolean wereProtocolsEnabled() {
+        return protocolsEnabled;
     }
 
     /**
-     * Gets the array with protocol names expected to be enabled by the socket
-     * factory.
+     * Returns the protocol array given to setEnabledProtocols
      */
-    public String[] getExpectedEnabledProtocols() {
+    public String[] getCapturedProtocols() {
+        return capturedProtocols;
+    }
+
+    @Override
+    public String[] getEnabledProtocols() {
         return null;
     }
 
@@ -73,10 +71,7 @@ class TestSSLSocket extends SSLSocket {
         return null;
     }
 
-    @Override
-    public String[] getEnabledProtocols() {
-        return null;
-    }
+    
 
     @Override
     public SSLSession getSession() {
