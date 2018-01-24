@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,9 @@ public enum Runtime {
     Python27("python2.7"),
     Python36("python3.6"),
     Dotnetcore10("dotnetcore1.0"),
-    Nodejs43Edge("nodejs4.3-edge");
+    Dotnetcore20("dotnetcore2.0"),
+    Nodejs43Edge("nodejs4.3-edge"),
+    Go1X("go1.x");
 
     private String value;
 

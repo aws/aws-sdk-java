@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -149,7 +149,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
     private String scalableDimension;
     /**
      * <p>
-     * The maximum number of scalable target results. This value can be between 1 and 50. The default value is 50.
+     * The maximum number of scalable targets. This value can be between 1 and 50. The default value is 50.
      * </p>
      * <p>
      * If this parameter is used, the operation returns up to <code>MaxResults</code> results at a time, along with a
@@ -1217,7 +1217,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The maximum number of scalable target results. This value can be between 1 and 50. The default value is 50.
+     * The maximum number of scalable targets. This value can be between 1 and 50. The default value is 50.
      * </p>
      * <p>
      * If this parameter is used, the operation returns up to <code>MaxResults</code> results at a time, along with a
@@ -1227,8 +1227,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of scalable target results. This value can be between 1 and 50. The default value is
-     *        50.</p>
+     *        The maximum number of scalable targets. This value can be between 1 and 50. The default value is 50.</p>
      *        <p>
      *        If this parameter is used, the operation returns up to <code>MaxResults</code> results at a time, along
      *        with a <code>NextToken</code> value. To get the next set of results, include the <code>NextToken</code>
@@ -1242,7 +1241,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The maximum number of scalable target results. This value can be between 1 and 50. The default value is 50.
+     * The maximum number of scalable targets. This value can be between 1 and 50. The default value is 50.
      * </p>
      * <p>
      * If this parameter is used, the operation returns up to <code>MaxResults</code> results at a time, along with a
@@ -1251,8 +1250,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * <code>NextToken</code> value, if applicable.
      * </p>
      * 
-     * @return The maximum number of scalable target results. This value can be between 1 and 50. The default value is
-     *         50.</p>
+     * @return The maximum number of scalable targets. This value can be between 1 and 50. The default value is 50.</p>
      *         <p>
      *         If this parameter is used, the operation returns up to <code>MaxResults</code> results at a time, along
      *         with a <code>NextToken</code> value. To get the next set of results, include the <code>NextToken</code>
@@ -1266,7 +1264,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The maximum number of scalable target results. This value can be between 1 and 50. The default value is 50.
+     * The maximum number of scalable targets. This value can be between 1 and 50. The default value is 50.
      * </p>
      * <p>
      * If this parameter is used, the operation returns up to <code>MaxResults</code> results at a time, along with a
@@ -1276,8 +1274,7 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of scalable target results. This value can be between 1 and 50. The default value is
-     *        50.</p>
+     *        The maximum number of scalable targets. This value can be between 1 and 50. The default value is 50.</p>
      *        <p>
      *        If this parameter is used, the operation returns up to <code>MaxResults</code> results at a time, along
      *        with a <code>NextToken</code> value. To get the next set of results, include the <code>NextToken</code>

@@ -118,6 +118,22 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     private Integer port;
     /**
      * <p>
+     * Specifies whether the read replica is in a Multi-AZ deployment.
+     * </p>
+     * <p>
+     * You can create a Read Replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another
+     * Availability Zone for failover support for the replica. Creating your Read Replica as a Multi-AZ DB instance is
+     * independent of whether the source database is a Multi-AZ DB instance.
+     * </p>
+     * <note>
+     * <p>
+     * Currently PostgreSQL Read Replicas can only be created as single-AZ DB instances.
+     * </p>
+     * </note>
+     */
+    private Boolean multiAZ;
+    /**
+     * <p>
      * Indicates that minor engine upgrades are applied automatically to the Read Replica during the maintenance window.
      * </p>
      * <p>
@@ -387,6 +403,12 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      */
     private String performanceInsightsKMSKeyId;
+    /**
+     * <p>
+     * The list of logs that the new DB instance is to export to CloudWatch Logs.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExports;
     /** The region where the source instance is located. */
     private String sourceRegion;
 
@@ -1008,6 +1030,134 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     public CreateDBInstanceReadReplicaRequest withPort(Integer port) {
         setPort(port);
         return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the read replica is in a Multi-AZ deployment.
+     * </p>
+     * <p>
+     * You can create a Read Replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another
+     * Availability Zone for failover support for the replica. Creating your Read Replica as a Multi-AZ DB instance is
+     * independent of whether the source database is a Multi-AZ DB instance.
+     * </p>
+     * <note>
+     * <p>
+     * Currently PostgreSQL Read Replicas can only be created as single-AZ DB instances.
+     * </p>
+     * </note>
+     * 
+     * @param multiAZ
+     *        Specifies whether the read replica is in a Multi-AZ deployment. </p>
+     *        <p>
+     *        You can create a Read Replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another
+     *        Availability Zone for failover support for the replica. Creating your Read Replica as a Multi-AZ DB
+     *        instance is independent of whether the source database is a Multi-AZ DB instance.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Currently PostgreSQL Read Replicas can only be created as single-AZ DB instances.
+     *        </p>
+     */
+
+    public void setMultiAZ(Boolean multiAZ) {
+        this.multiAZ = multiAZ;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the read replica is in a Multi-AZ deployment.
+     * </p>
+     * <p>
+     * You can create a Read Replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another
+     * Availability Zone for failover support for the replica. Creating your Read Replica as a Multi-AZ DB instance is
+     * independent of whether the source database is a Multi-AZ DB instance.
+     * </p>
+     * <note>
+     * <p>
+     * Currently PostgreSQL Read Replicas can only be created as single-AZ DB instances.
+     * </p>
+     * </note>
+     * 
+     * @return Specifies whether the read replica is in a Multi-AZ deployment. </p>
+     *         <p>
+     *         You can create a Read Replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another
+     *         Availability Zone for failover support for the replica. Creating your Read Replica as a Multi-AZ DB
+     *         instance is independent of whether the source database is a Multi-AZ DB instance.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         Currently PostgreSQL Read Replicas can only be created as single-AZ DB instances.
+     *         </p>
+     */
+
+    public Boolean getMultiAZ() {
+        return this.multiAZ;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the read replica is in a Multi-AZ deployment.
+     * </p>
+     * <p>
+     * You can create a Read Replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another
+     * Availability Zone for failover support for the replica. Creating your Read Replica as a Multi-AZ DB instance is
+     * independent of whether the source database is a Multi-AZ DB instance.
+     * </p>
+     * <note>
+     * <p>
+     * Currently PostgreSQL Read Replicas can only be created as single-AZ DB instances.
+     * </p>
+     * </note>
+     * 
+     * @param multiAZ
+     *        Specifies whether the read replica is in a Multi-AZ deployment. </p>
+     *        <p>
+     *        You can create a Read Replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another
+     *        Availability Zone for failover support for the replica. Creating your Read Replica as a Multi-AZ DB
+     *        instance is independent of whether the source database is a Multi-AZ DB instance.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Currently PostgreSQL Read Replicas can only be created as single-AZ DB instances.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBInstanceReadReplicaRequest withMultiAZ(Boolean multiAZ) {
+        setMultiAZ(multiAZ);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the read replica is in a Multi-AZ deployment.
+     * </p>
+     * <p>
+     * You can create a Read Replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another
+     * Availability Zone for failover support for the replica. Creating your Read Replica as a Multi-AZ DB instance is
+     * independent of whether the source database is a Multi-AZ DB instance.
+     * </p>
+     * <note>
+     * <p>
+     * Currently PostgreSQL Read Replicas can only be created as single-AZ DB instances.
+     * </p>
+     * </note>
+     * 
+     * @return Specifies whether the read replica is in a Multi-AZ deployment. </p>
+     *         <p>
+     *         You can create a Read Replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another
+     *         Availability Zone for failover support for the replica. Creating your Read Replica as a Multi-AZ DB
+     *         instance is independent of whether the source database is a Multi-AZ DB instance.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         Currently PostgreSQL Read Replicas can only be created as single-AZ DB instances.
+     *         </p>
+     */
+
+    public Boolean isMultiAZ() {
+        return this.multiAZ;
     }
 
     /**
@@ -2879,6 +3029,79 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * The list of logs that the new DB instance is to export to CloudWatch Logs.
+     * </p>
+     * 
+     * @return The list of logs that the new DB instance is to export to CloudWatch Logs.
+     */
+
+    public java.util.List<String> getEnableCloudwatchLogsExports() {
+        if (enableCloudwatchLogsExports == null) {
+            enableCloudwatchLogsExports = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return enableCloudwatchLogsExports;
+    }
+
+    /**
+     * <p>
+     * The list of logs that the new DB instance is to export to CloudWatch Logs.
+     * </p>
+     * 
+     * @param enableCloudwatchLogsExports
+     *        The list of logs that the new DB instance is to export to CloudWatch Logs.
+     */
+
+    public void setEnableCloudwatchLogsExports(java.util.Collection<String> enableCloudwatchLogsExports) {
+        if (enableCloudwatchLogsExports == null) {
+            this.enableCloudwatchLogsExports = null;
+            return;
+        }
+
+        this.enableCloudwatchLogsExports = new com.amazonaws.internal.SdkInternalList<String>(enableCloudwatchLogsExports);
+    }
+
+    /**
+     * <p>
+     * The list of logs that the new DB instance is to export to CloudWatch Logs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEnableCloudwatchLogsExports(java.util.Collection)} or
+     * {@link #withEnableCloudwatchLogsExports(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param enableCloudwatchLogsExports
+     *        The list of logs that the new DB instance is to export to CloudWatch Logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBInstanceReadReplicaRequest withEnableCloudwatchLogsExports(String... enableCloudwatchLogsExports) {
+        if (this.enableCloudwatchLogsExports == null) {
+            setEnableCloudwatchLogsExports(new com.amazonaws.internal.SdkInternalList<String>(enableCloudwatchLogsExports.length));
+        }
+        for (String ele : enableCloudwatchLogsExports) {
+            this.enableCloudwatchLogsExports.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of logs that the new DB instance is to export to CloudWatch Logs.
+     * </p>
+     * 
+     * @param enableCloudwatchLogsExports
+     *        The list of logs that the new DB instance is to export to CloudWatch Logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBInstanceReadReplicaRequest withEnableCloudwatchLogsExports(java.util.Collection<String> enableCloudwatchLogsExports) {
+        setEnableCloudwatchLogsExports(enableCloudwatchLogsExports);
+        return this;
+    }
+
+    /**
      * The region where the source instance is located.
      * 
      * @param sourceRegion
@@ -2933,6 +3156,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
             sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getPort() != null)
             sb.append("Port: ").append(getPort()).append(",");
+        if (getMultiAZ() != null)
+            sb.append("MultiAZ: ").append(getMultiAZ()).append(",");
         if (getAutoMinorVersionUpgrade() != null)
             sb.append("AutoMinorVersionUpgrade: ").append(getAutoMinorVersionUpgrade()).append(",");
         if (getIops() != null)
@@ -2963,6 +3188,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
             sb.append("EnablePerformanceInsights: ").append(getEnablePerformanceInsights()).append(",");
         if (getPerformanceInsightsKMSKeyId() != null)
             sb.append("PerformanceInsightsKMSKeyId: ").append(getPerformanceInsightsKMSKeyId()).append(",");
+        if (getEnableCloudwatchLogsExports() != null)
+            sb.append("EnableCloudwatchLogsExports: ").append(getEnableCloudwatchLogsExports()).append(",");
         if (getSourceRegion() != null)
             sb.append("SourceRegion: ").append(getSourceRegion());
         sb.append("}");
@@ -2998,6 +3225,10 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
         if (other.getPort() == null ^ this.getPort() == null)
             return false;
         if (other.getPort() != null && other.getPort().equals(this.getPort()) == false)
+            return false;
+        if (other.getMultiAZ() == null ^ this.getMultiAZ() == null)
+            return false;
+        if (other.getMultiAZ() != null && other.getMultiAZ().equals(this.getMultiAZ()) == false)
             return false;
         if (other.getAutoMinorVersionUpgrade() == null ^ this.getAutoMinorVersionUpgrade() == null)
             return false;
@@ -3060,6 +3291,10 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getPerformanceInsightsKMSKeyId() != null && other.getPerformanceInsightsKMSKeyId().equals(this.getPerformanceInsightsKMSKeyId()) == false)
             return false;
+        if (other.getEnableCloudwatchLogsExports() == null ^ this.getEnableCloudwatchLogsExports() == null)
+            return false;
+        if (other.getEnableCloudwatchLogsExports() != null && other.getEnableCloudwatchLogsExports().equals(this.getEnableCloudwatchLogsExports()) == false)
+            return false;
         if (other.getSourceRegion() == null ^ this.getSourceRegion() == null)
             return false;
         if (other.getSourceRegion() != null && other.getSourceRegion().equals(this.getSourceRegion()) == false)
@@ -3077,6 +3312,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getDBInstanceClass() == null) ? 0 : getDBInstanceClass().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
+        hashCode = prime * hashCode + ((getMultiAZ() == null) ? 0 : getMultiAZ().hashCode());
         hashCode = prime * hashCode + ((getAutoMinorVersionUpgrade() == null) ? 0 : getAutoMinorVersionUpgrade().hashCode());
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
         hashCode = prime * hashCode + ((getOptionGroupName() == null) ? 0 : getOptionGroupName().hashCode());
@@ -3092,6 +3328,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getEnableIAMDatabaseAuthentication() == null) ? 0 : getEnableIAMDatabaseAuthentication().hashCode());
         hashCode = prime * hashCode + ((getEnablePerformanceInsights() == null) ? 0 : getEnablePerformanceInsights().hashCode());
         hashCode = prime * hashCode + ((getPerformanceInsightsKMSKeyId() == null) ? 0 : getPerformanceInsightsKMSKeyId().hashCode());
+        hashCode = prime * hashCode + ((getEnableCloudwatchLogsExports() == null) ? 0 : getEnableCloudwatchLogsExports().hashCode());
         hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode());
         return hashCode;
     }

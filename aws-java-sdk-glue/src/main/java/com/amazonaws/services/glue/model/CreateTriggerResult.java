@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,18 @@ public class CreateTriggerResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The name assigned to the new trigger.
+     * The name of the trigger.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * The name assigned to the new trigger.
+     * The name of the trigger.
      * </p>
      * 
      * @param name
-     *        The name assigned to the new trigger.
+     *        The name of the trigger.
      */
 
     public void setName(String name) {
@@ -45,10 +45,10 @@ public class CreateTriggerResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The name assigned to the new trigger.
+     * The name of the trigger.
      * </p>
      * 
-     * @return The name assigned to the new trigger.
+     * @return The name of the trigger.
      */
 
     public String getName() {
@@ -57,11 +57,11 @@ public class CreateTriggerResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The name assigned to the new trigger.
+     * The name of the trigger.
      * </p>
      * 
      * @param name
-     *        The name assigned to the new trigger.
+     *        The name of the trigger.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

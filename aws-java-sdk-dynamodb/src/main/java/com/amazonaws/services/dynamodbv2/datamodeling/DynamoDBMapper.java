@@ -1620,7 +1620,7 @@ public class DynamoDBMapper extends AbstractDynamoDBMapper {
         return parallelScanRequests;
     }
 
-    private <T> QueryRequest createQueryRequestFromExpression(Class<T> clazz,
+    protected <T> QueryRequest createQueryRequestFromExpression(Class<T> clazz,
             DynamoDBQueryExpression<T> xpress, DynamoDBMapperConfig config) {
 
         final DynamoDBMapperTableModel<T> model = getTableModel(clazz, config);

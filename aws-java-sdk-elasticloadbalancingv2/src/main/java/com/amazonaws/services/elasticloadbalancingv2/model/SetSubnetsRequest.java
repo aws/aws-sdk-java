@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,7 +44,8 @@ public class SetSubnetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * subnet per Availability Zone. You must specify either subnets or subnet mappings.
      * </p>
      * <p>
-     * You cannot specify Elastic IP addresses for your subnets.
+     * The load balancer is allocated one static IP address per subnet. You cannot specify your own Elastic IP
+     * addresses.
      * </p>
      */
     private java.util.List<SubnetMapping> subnetMappings;
@@ -173,13 +174,15 @@ public class SetSubnetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * subnet per Availability Zone. You must specify either subnets or subnet mappings.
      * </p>
      * <p>
-     * You cannot specify Elastic IP addresses for your subnets.
+     * The load balancer is allocated one static IP address per subnet. You cannot specify your own Elastic IP
+     * addresses.
      * </p>
      * 
      * @return The IDs of the subnets. You must specify subnets from at least two Availability Zones. You can specify
      *         only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
      *         <p>
-     *         You cannot specify Elastic IP addresses for your subnets.
+     *         The load balancer is allocated one static IP address per subnet. You cannot specify your own Elastic IP
+     *         addresses.
      */
 
     public java.util.List<SubnetMapping> getSubnetMappings() {
@@ -192,14 +195,16 @@ public class SetSubnetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * subnet per Availability Zone. You must specify either subnets or subnet mappings.
      * </p>
      * <p>
-     * You cannot specify Elastic IP addresses for your subnets.
+     * The load balancer is allocated one static IP address per subnet. You cannot specify your own Elastic IP
+     * addresses.
      * </p>
      * 
      * @param subnetMappings
      *        The IDs of the subnets. You must specify subnets from at least two Availability Zones. You can specify
      *        only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
      *        <p>
-     *        You cannot specify Elastic IP addresses for your subnets.
+     *        The load balancer is allocated one static IP address per subnet. You cannot specify your own Elastic IP
+     *        addresses.
      */
 
     public void setSubnetMappings(java.util.Collection<SubnetMapping> subnetMappings) {
@@ -217,7 +222,8 @@ public class SetSubnetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * subnet per Availability Zone. You must specify either subnets or subnet mappings.
      * </p>
      * <p>
-     * You cannot specify Elastic IP addresses for your subnets.
+     * The load balancer is allocated one static IP address per subnet. You cannot specify your own Elastic IP
+     * addresses.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -229,7 +235,8 @@ public class SetSubnetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        The IDs of the subnets. You must specify subnets from at least two Availability Zones. You can specify
      *        only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
      *        <p>
-     *        You cannot specify Elastic IP addresses for your subnets.
+     *        The load balancer is allocated one static IP address per subnet. You cannot specify your own Elastic IP
+     *        addresses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -249,14 +256,16 @@ public class SetSubnetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * subnet per Availability Zone. You must specify either subnets or subnet mappings.
      * </p>
      * <p>
-     * You cannot specify Elastic IP addresses for your subnets.
+     * The load balancer is allocated one static IP address per subnet. You cannot specify your own Elastic IP
+     * addresses.
      * </p>
      * 
      * @param subnetMappings
      *        The IDs of the subnets. You must specify subnets from at least two Availability Zones. You can specify
      *        only one subnet per Availability Zone. You must specify either subnets or subnet mappings.</p>
      *        <p>
-     *        You cannot specify Elastic IP addresses for your subnets.
+     *        The load balancer is allocated one static IP address per subnet. You cannot specify your own Elastic IP
+     *        addresses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

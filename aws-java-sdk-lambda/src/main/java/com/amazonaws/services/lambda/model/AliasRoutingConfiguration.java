@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,20 +31,23 @@ public class AliasRoutingConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Set this property value to dictate what percentage of traffic will invoke the updated function version. If set to
-     * an empty string, 100 percent of traffic will invoke <code>function-version</code>.
+     * Set this value to dictate what percentage of traffic will invoke the updated function version. If set to an empty
+     * string, 100 percent of traffic will invoke <code>function-version</code>. For more information, see
+     * <a>lambda-traffic-shifting-using-aliases</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, Double> additionalVersionWeights;
 
     /**
      * <p>
-     * Set this property value to dictate what percentage of traffic will invoke the updated function version. If set to
-     * an empty string, 100 percent of traffic will invoke <code>function-version</code>.
+     * Set this value to dictate what percentage of traffic will invoke the updated function version. If set to an empty
+     * string, 100 percent of traffic will invoke <code>function-version</code>. For more information, see
+     * <a>lambda-traffic-shifting-using-aliases</a>.
      * </p>
      * 
-     * @return Set this property value to dictate what percentage of traffic will invoke the updated function version.
-     *         If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>.
+     * @return Set this value to dictate what percentage of traffic will invoke the updated function version. If set to
+     *         an empty string, 100 percent of traffic will invoke <code>function-version</code>. For more information,
+     *         see <a>lambda-traffic-shifting-using-aliases</a>.
      */
 
     public java.util.Map<String, Double> getAdditionalVersionWeights() {
@@ -56,13 +59,15 @@ public class AliasRoutingConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Set this property value to dictate what percentage of traffic will invoke the updated function version. If set to
-     * an empty string, 100 percent of traffic will invoke <code>function-version</code>.
+     * Set this value to dictate what percentage of traffic will invoke the updated function version. If set to an empty
+     * string, 100 percent of traffic will invoke <code>function-version</code>. For more information, see
+     * <a>lambda-traffic-shifting-using-aliases</a>.
      * </p>
      * 
      * @param additionalVersionWeights
-     *        Set this property value to dictate what percentage of traffic will invoke the updated function version. If
-     *        set to an empty string, 100 percent of traffic will invoke <code>function-version</code>.
+     *        Set this value to dictate what percentage of traffic will invoke the updated function version. If set to
+     *        an empty string, 100 percent of traffic will invoke <code>function-version</code>. For more information,
+     *        see <a>lambda-traffic-shifting-using-aliases</a>.
      */
 
     public void setAdditionalVersionWeights(java.util.Map<String, Double> additionalVersionWeights) {
@@ -72,13 +77,15 @@ public class AliasRoutingConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Set this property value to dictate what percentage of traffic will invoke the updated function version. If set to
-     * an empty string, 100 percent of traffic will invoke <code>function-version</code>.
+     * Set this value to dictate what percentage of traffic will invoke the updated function version. If set to an empty
+     * string, 100 percent of traffic will invoke <code>function-version</code>. For more information, see
+     * <a>lambda-traffic-shifting-using-aliases</a>.
      * </p>
      * 
      * @param additionalVersionWeights
-     *        Set this property value to dictate what percentage of traffic will invoke the updated function version. If
-     *        set to an empty string, 100 percent of traffic will invoke <code>function-version</code>.
+     *        Set this value to dictate what percentage of traffic will invoke the updated function version. If set to
+     *        an empty string, 100 percent of traffic will invoke <code>function-version</code>. For more information,
+     *        see <a>lambda-traffic-shifting-using-aliases</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

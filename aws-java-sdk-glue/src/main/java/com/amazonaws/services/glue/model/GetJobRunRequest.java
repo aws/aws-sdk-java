@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class GetJobRunRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String runId;
     /**
      * <p>
-     * A list of the predecessor runs to return as well.
+     * True if a list of predecessor runs should be returned.
      * </p>
      */
     private Boolean predecessorsIncluded;
@@ -126,11 +126,11 @@ public class GetJobRunRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A list of the predecessor runs to return as well.
+     * True if a list of predecessor runs should be returned.
      * </p>
      * 
      * @param predecessorsIncluded
-     *        A list of the predecessor runs to return as well.
+     *        True if a list of predecessor runs should be returned.
      */
 
     public void setPredecessorsIncluded(Boolean predecessorsIncluded) {
@@ -139,10 +139,10 @@ public class GetJobRunRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A list of the predecessor runs to return as well.
+     * True if a list of predecessor runs should be returned.
      * </p>
      * 
-     * @return A list of the predecessor runs to return as well.
+     * @return True if a list of predecessor runs should be returned.
      */
 
     public Boolean getPredecessorsIncluded() {
@@ -151,11 +151,11 @@ public class GetJobRunRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A list of the predecessor runs to return as well.
+     * True if a list of predecessor runs should be returned.
      * </p>
      * 
      * @param predecessorsIncluded
-     *        A list of the predecessor runs to return as well.
+     *        True if a list of predecessor runs should be returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,10 +166,10 @@ public class GetJobRunRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A list of the predecessor runs to return as well.
+     * True if a list of predecessor runs should be returned.
      * </p>
      * 
-     * @return A list of the predecessor runs to return as well.
+     * @return True if a list of predecessor runs should be returned.
      */
 
     public Boolean isPredecessorsIncluded() {

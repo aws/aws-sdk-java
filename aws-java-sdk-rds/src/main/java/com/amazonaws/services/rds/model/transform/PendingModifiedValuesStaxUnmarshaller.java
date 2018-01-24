@@ -107,6 +107,11 @@ public class PendingModifiedValuesStaxUnmarshaller implements Unmarshaller<Pendi
                     pendingModifiedValues.setDBSubnetGroupName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("PendingCloudwatchLogsExports", targetDepth)) {
+                    pendingModifiedValues.setPendingCloudwatchLogsExports(PendingCloudwatchLogsExportsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return pendingModifiedValues;

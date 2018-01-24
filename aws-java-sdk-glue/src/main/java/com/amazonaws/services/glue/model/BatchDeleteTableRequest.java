@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,8 @@ public class BatchDeleteTableRequest extends com.amazonaws.AmazonWebServiceReque
     private String catalogId;
     /**
      * <p>
-     * The name of the catalog database where the tables to delete reside.
+     * The name of the catalog database where the tables to delete reside. For Hive compatibility, this name is entirely
+     * lowercase.
      * </p>
      */
     private String databaseName;
@@ -89,11 +90,13 @@ public class BatchDeleteTableRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the catalog database where the tables to delete reside.
+     * The name of the catalog database where the tables to delete reside. For Hive compatibility, this name is entirely
+     * lowercase.
      * </p>
      * 
      * @param databaseName
-     *        The name of the catalog database where the tables to delete reside.
+     *        The name of the catalog database where the tables to delete reside. For Hive compatibility, this name is
+     *        entirely lowercase.
      */
 
     public void setDatabaseName(String databaseName) {
@@ -102,10 +105,12 @@ public class BatchDeleteTableRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the catalog database where the tables to delete reside.
+     * The name of the catalog database where the tables to delete reside. For Hive compatibility, this name is entirely
+     * lowercase.
      * </p>
      * 
-     * @return The name of the catalog database where the tables to delete reside.
+     * @return The name of the catalog database where the tables to delete reside. For Hive compatibility, this name is
+     *         entirely lowercase.
      */
 
     public String getDatabaseName() {
@@ -114,11 +119,13 @@ public class BatchDeleteTableRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the catalog database where the tables to delete reside.
+     * The name of the catalog database where the tables to delete reside. For Hive compatibility, this name is entirely
+     * lowercase.
      * </p>
      * 
      * @param databaseName
-     *        The name of the catalog database where the tables to delete reside.
+     *        The name of the catalog database where the tables to delete reside. For Hive compatibility, this name is
+     *        entirely lowercase.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

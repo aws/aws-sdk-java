@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -879,6 +879,39 @@ public class AmazonCodeDeployAsyncClient extends AmazonCodeDeployClient implemen
 
                 try {
                     result = executeDeleteDeploymentGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteGitHubAccountTokenResult> deleteGitHubAccountTokenAsync(DeleteGitHubAccountTokenRequest request) {
+
+        return deleteGitHubAccountTokenAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteGitHubAccountTokenResult> deleteGitHubAccountTokenAsync(final DeleteGitHubAccountTokenRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteGitHubAccountTokenRequest, DeleteGitHubAccountTokenResult> asyncHandler) {
+        final DeleteGitHubAccountTokenRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteGitHubAccountTokenResult>() {
+            @Override
+            public DeleteGitHubAccountTokenResult call() throws Exception {
+                DeleteGitHubAccountTokenResult result = null;
+
+                try {
+                    result = executeDeleteGitHubAccountToken(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

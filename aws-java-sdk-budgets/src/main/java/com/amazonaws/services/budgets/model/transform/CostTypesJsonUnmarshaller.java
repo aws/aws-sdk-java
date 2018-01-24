@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -83,6 +83,14 @@ public class CostTypesJsonUnmarshaller implements Unmarshaller<CostTypes, JsonUn
                 if (context.testExpression("IncludeSupport", targetDepth)) {
                     context.nextToken();
                     costTypes.setIncludeSupport(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("IncludeDiscount", targetDepth)) {
+                    context.nextToken();
+                    costTypes.setIncludeDiscount(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("UseAmortized", targetDepth)) {
+                    context.nextToken();
+                    costTypes.setUseAmortized(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

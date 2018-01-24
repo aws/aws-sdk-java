@@ -139,7 +139,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
+        "documentation" : "<p> </p>",
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -186,7 +186,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
+        "documentation" : "<p> </p>",
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -229,7 +229,7 @@
         "httpStatusCode" : 409
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
+        "documentation" : "<p> </p>",
         "httpStatusCode" : 429
       }, {
         "exceptionName" : "ResourceNotFoundException",
@@ -280,7 +280,7 @@
         "httpStatusCode" : 409
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
+        "documentation" : "<p> </p>",
         "httpStatusCode" : 429
       }, {
         "exceptionName" : "CodeStorageExceededException",
@@ -323,7 +323,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
+        "documentation" : "<p> </p>",
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -366,7 +366,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
+        "documentation" : "<p> </p>",
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -405,7 +405,7 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
+        "documentation" : "<p> </p>",
         "httpStatusCode" : 429
       }, {
         "exceptionName" : "InvalidParameterValueException",
@@ -441,7 +441,7 @@
       "asyncReturnType" : "DeleteFunctionConcurrencyResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Removes concurrent execution limits from this function.</p>",
+      "documentation" : "<p>Removes concurrent execution limits from this function. For more information, see <a>concurrent-executions</a>.</p>",
       "exceptions" : [ {
         "exceptionName" : "ServiceException",
         "documentation" : "<p>The AWS Lambda service encountered an internal error.</p>",
@@ -452,7 +452,7 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
+        "documentation" : "<p> </p>",
         "httpStatusCode" : 429
       }, {
         "exceptionName" : "InvalidParameterValueException",
@@ -487,7 +487,7 @@
       "documentation" : "<p>Returns a customer's account settings.</p> <p>You can use this operation to retrieve Lambda limits information, such as code size and concurrency limits. For more information about limits, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/limits.html\">AWS Lambda Limits</a>. You can also retrieve resource usage statistics, such as code storage usage and function count.</p>",
       "exceptions" : [ {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
+        "documentation" : "<p> </p>",
         "httpStatusCode" : 429
       }, {
         "exceptionName" : "ServiceException",
@@ -534,7 +534,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
+        "documentation" : "<p> </p>",
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -577,7 +577,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
+        "documentation" : "<p> </p>",
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -616,7 +616,7 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
+        "documentation" : "<p> </p>",
         "httpStatusCode" : 429
       }, {
         "exceptionName" : "InvalidParameterValueException",
@@ -659,7 +659,7 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
+        "documentation" : "<p> </p>",
         "httpStatusCode" : 429
       }, {
         "exceptionName" : "InvalidParameterValueException",
@@ -702,7 +702,7 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
+        "documentation" : "<p> </p>",
         "httpStatusCode" : 429
       }, {
         "exceptionName" : "InvalidParameterValueException",
@@ -734,7 +734,7 @@
       "asyncReturnType" : "InvokeResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Invokes a specific Lambda function. For an example, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/with-dynamodb-create-function.html#with-dbb-invoke-manually\">Create the Lambda Function and Test It Manually</a>. </p> <p>If you are using the versioning feature, you can invoke the specific function version by providing function version or alias name that is pointing to the function version using the <code>Qualifier</code> parameter in the request. If you don't provide the <code>Qualifier</code> parameter, the <code>$LATEST</code> version of the Lambda function is invoked. Invocations occur at least once in response to an event and functions must be idempotent to handle this. For information about the versioning feature, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html\">AWS Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires permission for the <code>lambda:InvokeFunction</code> action.</p>",
+      "documentation" : "<p>Invokes a specific Lambda function. For an example, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/with-dynamodb-create-function.html#with-dbb-invoke-manually\">Create the Lambda Function and Test It Manually</a>. </p> <p>If you are using the versioning feature, you can invoke the specific function version by providing function version or alias name that is pointing to the function version using the <code>Qualifier</code> parameter in the request. If you don't provide the <code>Qualifier</code> parameter, the <code>$LATEST</code> version of the Lambda function is invoked. Invocations occur at least once in response to an event and functions must be idempotent to handle this. For information about the versioning feature, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html\">AWS Lambda Function Versioning and Aliases</a>. </p> <p>This operation requires permission for the <code>lambda:InvokeFunction</code> action.</p> <note> <p>The <code>TooManyRequestsException</code> noted below will return the following: <code>ConcurrentInvocationLimitExceeded</code> will be returned if you have no functions with reserved concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> will be returned when a function with reserved concurrency exceeds its configured concurrency limit. </p> </note>",
       "exceptions" : [ {
         "exceptionName" : "ServiceException",
         "documentation" : "<p>The AWS Lambda service encountered an internal error.</p>",
@@ -757,7 +757,7 @@
         "httpStatusCode" : 415
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
+        "documentation" : "<p> </p>",
         "httpStatusCode" : 429
       }, {
         "exceptionName" : "InvalidParameterValueException",
@@ -899,7 +899,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
+        "documentation" : "<p> </p>",
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -942,7 +942,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
+        "documentation" : "<p> </p>",
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -977,7 +977,7 @@
         "httpStatusCode" : 500
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
+        "documentation" : "<p> </p>",
         "httpStatusCode" : 429
       }, {
         "exceptionName" : "InvalidParameterValueException",
@@ -1024,7 +1024,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
+        "documentation" : "<p> </p>",
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1067,7 +1067,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
+        "documentation" : "<p> </p>",
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1110,7 +1110,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
+        "documentation" : "<p> </p>",
         "httpStatusCode" : 429
       }, {
         "exceptionName" : "CodeStorageExceededException",
@@ -1142,7 +1142,7 @@
       "asyncReturnType" : "PutFunctionConcurrencyResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Sets a limit on the number of concurrent executions available to this function. It is a subset of your account's total concurrent execution limit per region. Note that Lambda automatically reserves a buffer of 100 concurrent executions for functions without any reserved concurrency limit. This means if your account limit is 1000, you have a total of 900 available to allocate to individual functions.</p>",
+      "documentation" : "<p>Sets a limit on the number of concurrent executions available to this function. It is a subset of your account's total concurrent execution limit per region. Note that Lambda automatically reserves a buffer of 100 concurrent executions for functions without any reserved concurrency limit. This means if your account limit is 1000, you have a total of 900 available to allocate to individual functions. For more information, see <a>concurrent-executions</a>.</p>",
       "exceptions" : [ {
         "exceptionName" : "ServiceException",
         "documentation" : "<p>The AWS Lambda service encountered an internal error.</p>",
@@ -1157,7 +1157,7 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
+        "documentation" : "<p> </p>",
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1200,7 +1200,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
+        "documentation" : "<p> </p>",
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1243,7 +1243,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
+        "documentation" : "<p> </p>",
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1286,7 +1286,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
+        "documentation" : "<p> </p>",
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1329,7 +1329,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
+        "documentation" : "<p> </p>",
         "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1372,7 +1372,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
+        "documentation" : "<p> </p>",
         "httpStatusCode" : 429
       }, {
         "exceptionName" : "ResourceConflictException",
@@ -1419,7 +1419,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
+        "documentation" : "<p> </p>",
         "httpStatusCode" : 429
       }, {
         "exceptionName" : "CodeStorageExceededException",
@@ -1466,7 +1466,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "TooManyRequestsException",
-        "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
+        "documentation" : "<p> </p>",
         "httpStatusCode" : 429
       }, {
         "exceptionName" : "ResourceConflictException",
@@ -1766,11 +1766,11 @@
         "c2jName" : "UnreservedConcurrentExecutions",
         "c2jShape" : "UnreservedConcurrentExecutions",
         "deprecated" : false,
-        "documentation" : "<p>The number of concurrent executions available to functions that do not have concurrency limits set.</p>",
+        "documentation" : "<p>The number of concurrent executions available to functions that do not have concurrency limits set. For more information, see <a>concurrent-executions</a>.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The number of concurrent executions available to functions that do not have concurrency limits set.</p>\n@param unreservedConcurrentExecutions The number of concurrent executions available to functions that do not have concurrency limits set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The number of concurrent executions available to functions that do not have concurrency limits set. For more information, see <a>concurrent-executions</a>.</p>\n@param unreservedConcurrentExecutions The number of concurrent executions available to functions that do not have concurrency limits set. For more information, see <a>concurrent-executions</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withUnreservedConcurrentExecutions",
-        "getterDocumentation" : "/**<p>The number of concurrent executions available to functions that do not have concurrency limits set.</p>\n@return The number of concurrent executions available to functions that do not have concurrency limits set.*/",
+        "getterDocumentation" : "/**<p>The number of concurrent executions available to functions that do not have concurrency limits set. For more information, see <a>concurrent-executions</a>.</p>\n@return The number of concurrent executions available to functions that do not have concurrency limits set. For more information, see <a>concurrent-executions</a>.*/",
         "getterMethodName" : "getUnreservedConcurrentExecutions",
         "getterModel" : {
           "returnType" : "Integer",
@@ -1802,7 +1802,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "UnreservedConcurrentExecutions",
-        "setterDocumentation" : "/**<p>The number of concurrent executions available to functions that do not have concurrency limits set.</p>\n@param unreservedConcurrentExecutions The number of concurrent executions available to functions that do not have concurrency limits set.*/",
+        "setterDocumentation" : "/**<p>The number of concurrent executions available to functions that do not have concurrency limits set. For more information, see <a>concurrent-executions</a>.</p>\n@param unreservedConcurrentExecutions The number of concurrent executions available to functions that do not have concurrency limits set. For more information, see <a>concurrent-executions</a>.*/",
         "setterMethodName" : "setUnreservedConcurrentExecutions",
         "setterModel" : {
           "variableDeclarationType" : "Integer",
@@ -1815,12 +1815,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The number of concurrent executions available to functions that do not have concurrency limits set.</p>\n@param unreservedConcurrentExecutions The number of concurrent executions available to functions that do not have concurrency limits set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The number of concurrent executions available to functions that do not have concurrency limits set. For more information, see <a>concurrent-executions</a>.</p>\n@param unreservedConcurrentExecutions The number of concurrent executions available to functions that do not have concurrency limits set. For more information, see <a>concurrent-executions</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Integer",
           "variableName" : "unreservedConcurrentExecutions",
           "variableType" : "Integer",
-          "documentation" : "<p>The number of concurrent executions available to functions that do not have concurrency limits set.</p>",
+          "documentation" : "<p>The number of concurrent executions available to functions that do not have concurrency limits set. For more information, see <a>concurrent-executions</a>.</p>",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -2087,11 +2087,11 @@
           "c2jName" : "UnreservedConcurrentExecutions",
           "c2jShape" : "UnreservedConcurrentExecutions",
           "deprecated" : false,
-          "documentation" : "<p>The number of concurrent executions available to functions that do not have concurrency limits set.</p>",
+          "documentation" : "<p>The number of concurrent executions available to functions that do not have concurrency limits set. For more information, see <a>concurrent-executions</a>.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The number of concurrent executions available to functions that do not have concurrency limits set.</p>\n@param unreservedConcurrentExecutions The number of concurrent executions available to functions that do not have concurrency limits set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The number of concurrent executions available to functions that do not have concurrency limits set. For more information, see <a>concurrent-executions</a>.</p>\n@param unreservedConcurrentExecutions The number of concurrent executions available to functions that do not have concurrency limits set. For more information, see <a>concurrent-executions</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withUnreservedConcurrentExecutions",
-          "getterDocumentation" : "/**<p>The number of concurrent executions available to functions that do not have concurrency limits set.</p>\n@return The number of concurrent executions available to functions that do not have concurrency limits set.*/",
+          "getterDocumentation" : "/**<p>The number of concurrent executions available to functions that do not have concurrency limits set. For more information, see <a>concurrent-executions</a>.</p>\n@return The number of concurrent executions available to functions that do not have concurrency limits set. For more information, see <a>concurrent-executions</a>.*/",
           "getterMethodName" : "getUnreservedConcurrentExecutions",
           "getterModel" : {
             "returnType" : "Integer",
@@ -2123,7 +2123,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "UnreservedConcurrentExecutions",
-          "setterDocumentation" : "/**<p>The number of concurrent executions available to functions that do not have concurrency limits set.</p>\n@param unreservedConcurrentExecutions The number of concurrent executions available to functions that do not have concurrency limits set.*/",
+          "setterDocumentation" : "/**<p>The number of concurrent executions available to functions that do not have concurrency limits set. For more information, see <a>concurrent-executions</a>.</p>\n@param unreservedConcurrentExecutions The number of concurrent executions available to functions that do not have concurrency limits set. For more information, see <a>concurrent-executions</a>.*/",
           "setterMethodName" : "setUnreservedConcurrentExecutions",
           "setterModel" : {
             "variableDeclarationType" : "Integer",
@@ -2136,12 +2136,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The number of concurrent executions available to functions that do not have concurrency limits set.</p>\n@param unreservedConcurrentExecutions The number of concurrent executions available to functions that do not have concurrency limits set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The number of concurrent executions available to functions that do not have concurrency limits set. For more information, see <a>concurrent-executions</a>.</p>\n@param unreservedConcurrentExecutions The number of concurrent executions available to functions that do not have concurrency limits set. For more information, see <a>concurrent-executions</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Integer",
             "variableName" : "unreservedConcurrentExecutions",
             "variableType" : "Integer",
-            "documentation" : "<p>The number of concurrent executions available to functions that do not have concurrency limits set.</p>",
+            "documentation" : "<p>The number of concurrent executions available to functions that do not have concurrency limits set. For more information, see <a>concurrent-executions</a>.</p>",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -4385,11 +4385,11 @@
         "c2jName" : "AdditionalVersionWeights",
         "c2jShape" : "AdditionalVersionWeights",
         "deprecated" : false,
-        "documentation" : "<p>Set this property value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>.</p>",
+        "documentation" : "<p>Set this value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Set this property value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>.</p>\n@param additionalVersionWeights Set this property value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Set this value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>\n@param additionalVersionWeights Set this value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withAdditionalVersionWeights",
-        "getterDocumentation" : "/**<p>Set this property value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>.</p>\n@return Set this property value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>.*/",
+        "getterDocumentation" : "/**<p>Set this value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>\n@return Set this value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.*/",
         "getterMethodName" : "getAdditionalVersionWeights",
         "getterModel" : {
           "returnType" : "java.util.Map<String,Double>",
@@ -4499,7 +4499,7 @@
         "marshallingTargetClass" : "Map",
         "marshallingType" : "MAP",
         "name" : "AdditionalVersionWeights",
-        "setterDocumentation" : "/**<p>Set this property value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>.</p>\n@param additionalVersionWeights Set this property value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>.*/",
+        "setterDocumentation" : "/**<p>Set this value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>\n@param additionalVersionWeights Set this value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.*/",
         "setterMethodName" : "setAdditionalVersionWeights",
         "setterModel" : {
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalMap<String,Double>",
@@ -4512,12 +4512,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Set this property value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>.</p>\n@param additionalVersionWeights Set this property value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Set this value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>\n@param additionalVersionWeights Set this value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "com.amazonaws.internal.SdkInternalMap<String,Double>",
           "variableName" : "additionalVersionWeights",
           "variableType" : "java.util.Map<String,Double>",
-          "documentation" : "<p>Set this property value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>.</p>",
+          "documentation" : "<p>Set this value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>",
           "simpleType" : "Map<String,Double>",
           "variableSetterType" : "java.util.Map<String,Double>"
         },
@@ -4528,11 +4528,11 @@
           "c2jName" : "AdditionalVersionWeights",
           "c2jShape" : "AdditionalVersionWeights",
           "deprecated" : false,
-          "documentation" : "<p>Set this property value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>.</p>",
+          "documentation" : "<p>Set this value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Set this property value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>.</p>\n@param additionalVersionWeights Set this property value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Set this value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>\n@param additionalVersionWeights Set this value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withAdditionalVersionWeights",
-          "getterDocumentation" : "/**<p>Set this property value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>.</p>\n@return Set this property value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>.*/",
+          "getterDocumentation" : "/**<p>Set this value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>\n@return Set this value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.*/",
           "getterMethodName" : "getAdditionalVersionWeights",
           "getterModel" : {
             "returnType" : "java.util.Map<String,Double>",
@@ -4642,7 +4642,7 @@
           "marshallingTargetClass" : "Map",
           "marshallingType" : "MAP",
           "name" : "AdditionalVersionWeights",
-          "setterDocumentation" : "/**<p>Set this property value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>.</p>\n@param additionalVersionWeights Set this property value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>.*/",
+          "setterDocumentation" : "/**<p>Set this value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>\n@param additionalVersionWeights Set this value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.*/",
           "setterMethodName" : "setAdditionalVersionWeights",
           "setterModel" : {
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalMap<String,Double>",
@@ -4655,12 +4655,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Set this property value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>.</p>\n@param additionalVersionWeights Set this property value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Set this value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>\n@param additionalVersionWeights Set this value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "com.amazonaws.internal.SdkInternalMap<String,Double>",
             "variableName" : "additionalVersionWeights",
             "variableType" : "java.util.Map<String,Double>",
-            "documentation" : "<p>Set this property value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>.</p>",
+            "documentation" : "<p>Set this value to dictate what percentage of traffic will invoke the updated function version. If set to an empty string, 100 percent of traffic will invoke <code>function-version</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>",
             "simpleType" : "Map<String,Double>",
             "variableSetterType" : "java.util.Map<String,Double>"
           },
@@ -4872,11 +4872,11 @@
         "c2jName" : "ReservedConcurrentExecutions",
         "c2jShape" : "ReservedConcurrentExecutions",
         "deprecated" : false,
-        "documentation" : "<p>The number of concurrent executions reserved for this function.</p>",
+        "documentation" : "<p>The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The number of concurrent executions reserved for this function.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withReservedConcurrentExecutions",
-        "getterDocumentation" : "/**<p>The number of concurrent executions reserved for this function.</p>\n@return The number of concurrent executions reserved for this function.*/",
+        "getterDocumentation" : "/**<p>The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.</p>\n@return The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.*/",
         "getterMethodName" : "getReservedConcurrentExecutions",
         "getterModel" : {
           "returnType" : "Integer",
@@ -4908,7 +4908,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "ReservedConcurrentExecutions",
-        "setterDocumentation" : "/**<p>The number of concurrent executions reserved for this function.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function.*/",
+        "setterDocumentation" : "/**<p>The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.*/",
         "setterMethodName" : "setReservedConcurrentExecutions",
         "setterModel" : {
           "variableDeclarationType" : "Integer",
@@ -4921,12 +4921,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The number of concurrent executions reserved for this function.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Integer",
           "variableName" : "reservedConcurrentExecutions",
           "variableType" : "Integer",
-          "documentation" : "<p>The number of concurrent executions reserved for this function.</p>",
+          "documentation" : "<p>The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.</p>",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -4937,11 +4937,11 @@
           "c2jName" : "ReservedConcurrentExecutions",
           "c2jShape" : "ReservedConcurrentExecutions",
           "deprecated" : false,
-          "documentation" : "<p>The number of concurrent executions reserved for this function.</p>",
+          "documentation" : "<p>The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The number of concurrent executions reserved for this function.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withReservedConcurrentExecutions",
-          "getterDocumentation" : "/**<p>The number of concurrent executions reserved for this function.</p>\n@return The number of concurrent executions reserved for this function.*/",
+          "getterDocumentation" : "/**<p>The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.</p>\n@return The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.*/",
           "getterMethodName" : "getReservedConcurrentExecutions",
           "getterModel" : {
             "returnType" : "Integer",
@@ -4973,7 +4973,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "ReservedConcurrentExecutions",
-          "setterDocumentation" : "/**<p>The number of concurrent executions reserved for this function.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function.*/",
+          "setterDocumentation" : "/**<p>The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.*/",
           "setterMethodName" : "setReservedConcurrentExecutions",
           "setterModel" : {
             "variableDeclarationType" : "Integer",
@@ -4986,12 +4986,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The number of concurrent executions reserved for this function.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Integer",
             "variableName" : "reservedConcurrentExecutions",
             "variableType" : "Integer",
-            "documentation" : "<p>The number of concurrent executions reserved for this function.</p>",
+            "documentation" : "<p>The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.</p>",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -14424,11 +14424,11 @@
         "c2jName" : "FunctionName",
         "c2jShape" : "FunctionName",
         "deprecated" : false,
-        "documentation" : "<p>The name of the function you are removing concurrent execution limits from.</p>",
+        "documentation" : "<p>The name of the function you are removing concurrent execution limits from. For more information, see <a>concurrent-executions</a>.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The name of the function you are removing concurrent execution limits from.</p>\n@param functionName The name of the function you are removing concurrent execution limits from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The name of the function you are removing concurrent execution limits from. For more information, see <a>concurrent-executions</a>.</p>\n@param functionName The name of the function you are removing concurrent execution limits from. For more information, see <a>concurrent-executions</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withFunctionName",
-        "getterDocumentation" : "/**<p>The name of the function you are removing concurrent execution limits from.</p>\n@return The name of the function you are removing concurrent execution limits from.*/",
+        "getterDocumentation" : "/**<p>The name of the function you are removing concurrent execution limits from. For more information, see <a>concurrent-executions</a>.</p>\n@return The name of the function you are removing concurrent execution limits from. For more information, see <a>concurrent-executions</a>.*/",
         "getterMethodName" : "getFunctionName",
         "getterModel" : {
           "returnType" : "String",
@@ -14460,7 +14460,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FunctionName",
-        "setterDocumentation" : "/**<p>The name of the function you are removing concurrent execution limits from.</p>\n@param functionName The name of the function you are removing concurrent execution limits from.*/",
+        "setterDocumentation" : "/**<p>The name of the function you are removing concurrent execution limits from. For more information, see <a>concurrent-executions</a>.</p>\n@param functionName The name of the function you are removing concurrent execution limits from. For more information, see <a>concurrent-executions</a>.*/",
         "setterMethodName" : "setFunctionName",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -14473,12 +14473,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The name of the function you are removing concurrent execution limits from.</p>\n@param functionName The name of the function you are removing concurrent execution limits from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The name of the function you are removing concurrent execution limits from. For more information, see <a>concurrent-executions</a>.</p>\n@param functionName The name of the function you are removing concurrent execution limits from. For more information, see <a>concurrent-executions</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "functionName",
           "variableType" : "String",
-          "documentation" : "<p>The name of the function you are removing concurrent execution limits from.</p>",
+          "documentation" : "<p>The name of the function you are removing concurrent execution limits from. For more information, see <a>concurrent-executions</a>.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -14489,11 +14489,11 @@
           "c2jName" : "FunctionName",
           "c2jShape" : "FunctionName",
           "deprecated" : false,
-          "documentation" : "<p>The name of the function you are removing concurrent execution limits from.</p>",
+          "documentation" : "<p>The name of the function you are removing concurrent execution limits from. For more information, see <a>concurrent-executions</a>.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The name of the function you are removing concurrent execution limits from.</p>\n@param functionName The name of the function you are removing concurrent execution limits from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The name of the function you are removing concurrent execution limits from. For more information, see <a>concurrent-executions</a>.</p>\n@param functionName The name of the function you are removing concurrent execution limits from. For more information, see <a>concurrent-executions</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withFunctionName",
-          "getterDocumentation" : "/**<p>The name of the function you are removing concurrent execution limits from.</p>\n@return The name of the function you are removing concurrent execution limits from.*/",
+          "getterDocumentation" : "/**<p>The name of the function you are removing concurrent execution limits from. For more information, see <a>concurrent-executions</a>.</p>\n@return The name of the function you are removing concurrent execution limits from. For more information, see <a>concurrent-executions</a>.*/",
           "getterMethodName" : "getFunctionName",
           "getterModel" : {
             "returnType" : "String",
@@ -14525,7 +14525,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FunctionName",
-          "setterDocumentation" : "/**<p>The name of the function you are removing concurrent execution limits from.</p>\n@param functionName The name of the function you are removing concurrent execution limits from.*/",
+          "setterDocumentation" : "/**<p>The name of the function you are removing concurrent execution limits from. For more information, see <a>concurrent-executions</a>.</p>\n@param functionName The name of the function you are removing concurrent execution limits from. For more information, see <a>concurrent-executions</a>.*/",
           "setterMethodName" : "setFunctionName",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -14538,12 +14538,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The name of the function you are removing concurrent execution limits from.</p>\n@param functionName The name of the function you are removing concurrent execution limits from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The name of the function you are removing concurrent execution limits from. For more information, see <a>concurrent-executions</a>.</p>\n@param functionName The name of the function you are removing concurrent execution limits from. For more information, see <a>concurrent-executions</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "functionName",
             "variableType" : "String",
-            "documentation" : "<p>The name of the function you are removing concurrent execution limits from.</p>",
+            "documentation" : "<p>The name of the function you are removing concurrent execution limits from. For more information, see <a>concurrent-executions</a>.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -26854,11 +26854,11 @@
         "c2jName" : "Concurrency",
         "c2jShape" : "Concurrency",
         "deprecated" : false,
-        "documentation" : "<p>The concurrent execution limit set for this function.</p>",
+        "documentation" : "<p>The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The concurrent execution limit set for this function.</p>\n@param concurrency The concurrent execution limit set for this function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.</p>\n@param concurrency The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withConcurrency",
-        "getterDocumentation" : "/**<p>The concurrent execution limit set for this function.</p>\n@return The concurrent execution limit set for this function.*/",
+        "getterDocumentation" : "/**<p>The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.</p>\n@return The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.*/",
         "getterMethodName" : "getConcurrency",
         "getterModel" : {
           "returnType" : "Concurrency",
@@ -26890,7 +26890,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Concurrency",
-        "setterDocumentation" : "/**<p>The concurrent execution limit set for this function.</p>\n@param concurrency The concurrent execution limit set for this function.*/",
+        "setterDocumentation" : "/**<p>The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.</p>\n@param concurrency The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.*/",
         "setterMethodName" : "setConcurrency",
         "setterModel" : {
           "variableDeclarationType" : "Concurrency",
@@ -26903,12 +26903,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The concurrent execution limit set for this function.</p>\n@param concurrency The concurrent execution limit set for this function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.</p>\n@param concurrency The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Concurrency",
           "variableName" : "concurrency",
           "variableType" : "Concurrency",
-          "documentation" : "<p>The concurrent execution limit set for this function.</p>",
+          "documentation" : "<p>The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.</p>",
           "simpleType" : "Concurrency",
           "variableSetterType" : "Concurrency"
         },
@@ -26983,11 +26983,11 @@
           "c2jName" : "Concurrency",
           "c2jShape" : "Concurrency",
           "deprecated" : false,
-          "documentation" : "<p>The concurrent execution limit set for this function.</p>",
+          "documentation" : "<p>The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The concurrent execution limit set for this function.</p>\n@param concurrency The concurrent execution limit set for this function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.</p>\n@param concurrency The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withConcurrency",
-          "getterDocumentation" : "/**<p>The concurrent execution limit set for this function.</p>\n@return The concurrent execution limit set for this function.*/",
+          "getterDocumentation" : "/**<p>The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.</p>\n@return The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.*/",
           "getterMethodName" : "getConcurrency",
           "getterModel" : {
             "returnType" : "Concurrency",
@@ -27019,7 +27019,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Concurrency",
-          "setterDocumentation" : "/**<p>The concurrent execution limit set for this function.</p>\n@param concurrency The concurrent execution limit set for this function.*/",
+          "setterDocumentation" : "/**<p>The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.</p>\n@param concurrency The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.*/",
           "setterMethodName" : "setConcurrency",
           "setterModel" : {
             "variableDeclarationType" : "Concurrency",
@@ -27032,12 +27032,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The concurrent execution limit set for this function.</p>\n@param concurrency The concurrent execution limit set for this function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.</p>\n@param concurrency The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Concurrency",
             "variableName" : "concurrency",
             "variableType" : "Concurrency",
-            "documentation" : "<p>The concurrent execution limit set for this function.</p>",
+            "documentation" : "<p>The concurrent execution limit set for this function. For more information, see <a>concurrent-executions</a>.</p>",
             "simpleType" : "Concurrency",
             "variableSetterType" : "Concurrency"
           },
@@ -30311,11 +30311,11 @@
         "c2jName" : "ExecutedVersion",
         "c2jShape" : "Version",
         "deprecated" : false,
-        "documentation" : "<p>The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>.</p>",
+        "documentation" : "<p>The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>.</p>\n@param executedVersion The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>\n@param executedVersion The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withExecutedVersion",
-        "getterDocumentation" : "/**<p>The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>.</p>\n@return The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>.*/",
+        "getterDocumentation" : "/**<p>The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>\n@return The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.*/",
         "getterMethodName" : "getExecutedVersion",
         "getterModel" : {
           "returnType" : "String",
@@ -30347,7 +30347,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "ExecutedVersion",
-        "setterDocumentation" : "/**<p>The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>.</p>\n@param executedVersion The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>.*/",
+        "setterDocumentation" : "/**<p>The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>\n@param executedVersion The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.*/",
         "setterMethodName" : "setExecutedVersion",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -30360,12 +30360,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>.</p>\n@param executedVersion The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>\n@param executedVersion The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "executedVersion",
           "variableType" : "String",
-          "documentation" : "<p>The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>.</p>",
+          "documentation" : "<p>The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -30376,11 +30376,11 @@
           "c2jName" : "ExecutedVersion",
           "c2jShape" : "Version",
           "deprecated" : false,
-          "documentation" : "<p>The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>.</p>",
+          "documentation" : "<p>The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>.</p>\n@param executedVersion The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>\n@param executedVersion The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withExecutedVersion",
-          "getterDocumentation" : "/**<p>The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>.</p>\n@return The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>.*/",
+          "getterDocumentation" : "/**<p>The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>\n@return The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.*/",
           "getterMethodName" : "getExecutedVersion",
           "getterModel" : {
             "returnType" : "String",
@@ -30412,7 +30412,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "ExecutedVersion",
-          "setterDocumentation" : "/**<p>The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>.</p>\n@param executedVersion The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>.*/",
+          "setterDocumentation" : "/**<p>The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>\n@param executedVersion The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.*/",
           "setterMethodName" : "setExecutedVersion",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -30425,12 +30425,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>.</p>\n@param executedVersion The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>\n@param executedVersion The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "executedVersion",
             "variableType" : "String",
-            "documentation" : "<p>The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>.</p>",
+            "documentation" : "<p>The function version that has been executed. This value is returned only if the invocation type is <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -38732,11 +38732,11 @@
         "c2jName" : "FunctionName",
         "c2jShape" : "FunctionName",
         "deprecated" : false,
-        "documentation" : "<p>The name of the function you are setting concurrent execution limits on.</p>",
+        "documentation" : "<p>The name of the function you are setting concurrent execution limits on. For more information, see <a>concurrent-executions</a>.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The name of the function you are setting concurrent execution limits on.</p>\n@param functionName The name of the function you are setting concurrent execution limits on.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The name of the function you are setting concurrent execution limits on. For more information, see <a>concurrent-executions</a>.</p>\n@param functionName The name of the function you are setting concurrent execution limits on. For more information, see <a>concurrent-executions</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withFunctionName",
-        "getterDocumentation" : "/**<p>The name of the function you are setting concurrent execution limits on.</p>\n@return The name of the function you are setting concurrent execution limits on.*/",
+        "getterDocumentation" : "/**<p>The name of the function you are setting concurrent execution limits on. For more information, see <a>concurrent-executions</a>.</p>\n@return The name of the function you are setting concurrent execution limits on. For more information, see <a>concurrent-executions</a>.*/",
         "getterMethodName" : "getFunctionName",
         "getterModel" : {
           "returnType" : "String",
@@ -38768,7 +38768,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FunctionName",
-        "setterDocumentation" : "/**<p>The name of the function you are setting concurrent execution limits on.</p>\n@param functionName The name of the function you are setting concurrent execution limits on.*/",
+        "setterDocumentation" : "/**<p>The name of the function you are setting concurrent execution limits on. For more information, see <a>concurrent-executions</a>.</p>\n@param functionName The name of the function you are setting concurrent execution limits on. For more information, see <a>concurrent-executions</a>.*/",
         "setterMethodName" : "setFunctionName",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -38781,12 +38781,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The name of the function you are setting concurrent execution limits on.</p>\n@param functionName The name of the function you are setting concurrent execution limits on.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The name of the function you are setting concurrent execution limits on. For more information, see <a>concurrent-executions</a>.</p>\n@param functionName The name of the function you are setting concurrent execution limits on. For more information, see <a>concurrent-executions</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "functionName",
           "variableType" : "String",
-          "documentation" : "<p>The name of the function you are setting concurrent execution limits on.</p>",
+          "documentation" : "<p>The name of the function you are setting concurrent execution limits on. For more information, see <a>concurrent-executions</a>.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -38795,11 +38795,11 @@
         "c2jName" : "ReservedConcurrentExecutions",
         "c2jShape" : "ReservedConcurrentExecutions",
         "deprecated" : false,
-        "documentation" : "<p>The concurrent execution limit reserved for this function.</p>",
+        "documentation" : "<p>The concurrent execution limit reserved for this function. For more information, see <a>concurrent-executions</a>.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The concurrent execution limit reserved for this function.</p>\n@param reservedConcurrentExecutions The concurrent execution limit reserved for this function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The concurrent execution limit reserved for this function. For more information, see <a>concurrent-executions</a>.</p>\n@param reservedConcurrentExecutions The concurrent execution limit reserved for this function. For more information, see <a>concurrent-executions</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withReservedConcurrentExecutions",
-        "getterDocumentation" : "/**<p>The concurrent execution limit reserved for this function.</p>\n@return The concurrent execution limit reserved for this function.*/",
+        "getterDocumentation" : "/**<p>The concurrent execution limit reserved for this function. For more information, see <a>concurrent-executions</a>.</p>\n@return The concurrent execution limit reserved for this function. For more information, see <a>concurrent-executions</a>.*/",
         "getterMethodName" : "getReservedConcurrentExecutions",
         "getterModel" : {
           "returnType" : "Integer",
@@ -38831,7 +38831,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "ReservedConcurrentExecutions",
-        "setterDocumentation" : "/**<p>The concurrent execution limit reserved for this function.</p>\n@param reservedConcurrentExecutions The concurrent execution limit reserved for this function.*/",
+        "setterDocumentation" : "/**<p>The concurrent execution limit reserved for this function. For more information, see <a>concurrent-executions</a>.</p>\n@param reservedConcurrentExecutions The concurrent execution limit reserved for this function. For more information, see <a>concurrent-executions</a>.*/",
         "setterMethodName" : "setReservedConcurrentExecutions",
         "setterModel" : {
           "variableDeclarationType" : "Integer",
@@ -38844,12 +38844,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The concurrent execution limit reserved for this function.</p>\n@param reservedConcurrentExecutions The concurrent execution limit reserved for this function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The concurrent execution limit reserved for this function. For more information, see <a>concurrent-executions</a>.</p>\n@param reservedConcurrentExecutions The concurrent execution limit reserved for this function. For more information, see <a>concurrent-executions</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Integer",
           "variableName" : "reservedConcurrentExecutions",
           "variableType" : "Integer",
-          "documentation" : "<p>The concurrent execution limit reserved for this function.</p>",
+          "documentation" : "<p>The concurrent execution limit reserved for this function. For more information, see <a>concurrent-executions</a>.</p>",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -38860,11 +38860,11 @@
           "c2jName" : "FunctionName",
           "c2jShape" : "FunctionName",
           "deprecated" : false,
-          "documentation" : "<p>The name of the function you are setting concurrent execution limits on.</p>",
+          "documentation" : "<p>The name of the function you are setting concurrent execution limits on. For more information, see <a>concurrent-executions</a>.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The name of the function you are setting concurrent execution limits on.</p>\n@param functionName The name of the function you are setting concurrent execution limits on.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The name of the function you are setting concurrent execution limits on. For more information, see <a>concurrent-executions</a>.</p>\n@param functionName The name of the function you are setting concurrent execution limits on. For more information, see <a>concurrent-executions</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withFunctionName",
-          "getterDocumentation" : "/**<p>The name of the function you are setting concurrent execution limits on.</p>\n@return The name of the function you are setting concurrent execution limits on.*/",
+          "getterDocumentation" : "/**<p>The name of the function you are setting concurrent execution limits on. For more information, see <a>concurrent-executions</a>.</p>\n@return The name of the function you are setting concurrent execution limits on. For more information, see <a>concurrent-executions</a>.*/",
           "getterMethodName" : "getFunctionName",
           "getterModel" : {
             "returnType" : "String",
@@ -38896,7 +38896,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FunctionName",
-          "setterDocumentation" : "/**<p>The name of the function you are setting concurrent execution limits on.</p>\n@param functionName The name of the function you are setting concurrent execution limits on.*/",
+          "setterDocumentation" : "/**<p>The name of the function you are setting concurrent execution limits on. For more information, see <a>concurrent-executions</a>.</p>\n@param functionName The name of the function you are setting concurrent execution limits on. For more information, see <a>concurrent-executions</a>.*/",
           "setterMethodName" : "setFunctionName",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -38909,12 +38909,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The name of the function you are setting concurrent execution limits on.</p>\n@param functionName The name of the function you are setting concurrent execution limits on.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The name of the function you are setting concurrent execution limits on. For more information, see <a>concurrent-executions</a>.</p>\n@param functionName The name of the function you are setting concurrent execution limits on. For more information, see <a>concurrent-executions</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "functionName",
             "variableType" : "String",
-            "documentation" : "<p>The name of the function you are setting concurrent execution limits on.</p>",
+            "documentation" : "<p>The name of the function you are setting concurrent execution limits on. For more information, see <a>concurrent-executions</a>.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -38924,11 +38924,11 @@
           "c2jName" : "ReservedConcurrentExecutions",
           "c2jShape" : "ReservedConcurrentExecutions",
           "deprecated" : false,
-          "documentation" : "<p>The concurrent execution limit reserved for this function.</p>",
+          "documentation" : "<p>The concurrent execution limit reserved for this function. For more information, see <a>concurrent-executions</a>.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The concurrent execution limit reserved for this function.</p>\n@param reservedConcurrentExecutions The concurrent execution limit reserved for this function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The concurrent execution limit reserved for this function. For more information, see <a>concurrent-executions</a>.</p>\n@param reservedConcurrentExecutions The concurrent execution limit reserved for this function. For more information, see <a>concurrent-executions</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withReservedConcurrentExecutions",
-          "getterDocumentation" : "/**<p>The concurrent execution limit reserved for this function.</p>\n@return The concurrent execution limit reserved for this function.*/",
+          "getterDocumentation" : "/**<p>The concurrent execution limit reserved for this function. For more information, see <a>concurrent-executions</a>.</p>\n@return The concurrent execution limit reserved for this function. For more information, see <a>concurrent-executions</a>.*/",
           "getterMethodName" : "getReservedConcurrentExecutions",
           "getterModel" : {
             "returnType" : "Integer",
@@ -38960,7 +38960,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "ReservedConcurrentExecutions",
-          "setterDocumentation" : "/**<p>The concurrent execution limit reserved for this function.</p>\n@param reservedConcurrentExecutions The concurrent execution limit reserved for this function.*/",
+          "setterDocumentation" : "/**<p>The concurrent execution limit reserved for this function. For more information, see <a>concurrent-executions</a>.</p>\n@param reservedConcurrentExecutions The concurrent execution limit reserved for this function. For more information, see <a>concurrent-executions</a>.*/",
           "setterMethodName" : "setReservedConcurrentExecutions",
           "setterModel" : {
             "variableDeclarationType" : "Integer",
@@ -38973,12 +38973,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The concurrent execution limit reserved for this function.</p>\n@param reservedConcurrentExecutions The concurrent execution limit reserved for this function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The concurrent execution limit reserved for this function. For more information, see <a>concurrent-executions</a>.</p>\n@param reservedConcurrentExecutions The concurrent execution limit reserved for this function. For more information, see <a>concurrent-executions</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Integer",
             "variableName" : "reservedConcurrentExecutions",
             "variableType" : "Integer",
-            "documentation" : "<p>The concurrent execution limit reserved for this function.</p>",
+            "documentation" : "<p>The concurrent execution limit reserved for this function. For more information, see <a>concurrent-executions</a>.</p>",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -39023,11 +39023,11 @@
         "c2jName" : "ReservedConcurrentExecutions",
         "c2jShape" : "ReservedConcurrentExecutions",
         "deprecated" : false,
-        "documentation" : "<p>The number of concurrent executions reserved for this function.</p>",
+        "documentation" : "<p>The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The number of concurrent executions reserved for this function.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withReservedConcurrentExecutions",
-        "getterDocumentation" : "/**<p>The number of concurrent executions reserved for this function.</p>\n@return The number of concurrent executions reserved for this function.*/",
+        "getterDocumentation" : "/**<p>The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.</p>\n@return The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.*/",
         "getterMethodName" : "getReservedConcurrentExecutions",
         "getterModel" : {
           "returnType" : "Integer",
@@ -39059,7 +39059,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "ReservedConcurrentExecutions",
-        "setterDocumentation" : "/**<p>The number of concurrent executions reserved for this function.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function.*/",
+        "setterDocumentation" : "/**<p>The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.*/",
         "setterMethodName" : "setReservedConcurrentExecutions",
         "setterModel" : {
           "variableDeclarationType" : "Integer",
@@ -39072,12 +39072,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The number of concurrent executions reserved for this function.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Integer",
           "variableName" : "reservedConcurrentExecutions",
           "variableType" : "Integer",
-          "documentation" : "<p>The number of concurrent executions reserved for this function.</p>",
+          "documentation" : "<p>The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.</p>",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -39088,11 +39088,11 @@
           "c2jName" : "ReservedConcurrentExecutions",
           "c2jShape" : "ReservedConcurrentExecutions",
           "deprecated" : false,
-          "documentation" : "<p>The number of concurrent executions reserved for this function.</p>",
+          "documentation" : "<p>The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The number of concurrent executions reserved for this function.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withReservedConcurrentExecutions",
-          "getterDocumentation" : "/**<p>The number of concurrent executions reserved for this function.</p>\n@return The number of concurrent executions reserved for this function.*/",
+          "getterDocumentation" : "/**<p>The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.</p>\n@return The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.*/",
           "getterMethodName" : "getReservedConcurrentExecutions",
           "getterModel" : {
             "returnType" : "Integer",
@@ -39124,7 +39124,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "ReservedConcurrentExecutions",
-          "setterDocumentation" : "/**<p>The number of concurrent executions reserved for this function.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function.*/",
+          "setterDocumentation" : "/**<p>The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.*/",
           "setterMethodName" : "setReservedConcurrentExecutions",
           "setterModel" : {
             "variableDeclarationType" : "Integer",
@@ -39137,12 +39137,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The number of concurrent executions reserved for this function.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.</p>\n@param reservedConcurrentExecutions The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Integer",
             "variableName" : "reservedConcurrentExecutions",
             "variableType" : "Integer",
-            "documentation" : "<p>The number of concurrent executions reserved for this function.</p>",
+            "documentation" : "<p>The number of concurrent executions reserved for this function. For more information, see <a>concurrent-executions</a>.</p>",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -40157,8 +40157,14 @@
         "name" : "Dotnetcore10",
         "value" : "dotnetcore1.0"
       }, {
+        "name" : "Dotnetcore20",
+        "value" : "dotnetcore2.0"
+      }, {
         "name" : "Nodejs43Edge",
         "value" : "nodejs4.3-edge"
+      }, {
+        "name" : "Go1X",
+        "value" : "go1.x"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -41072,7 +41078,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>You will get this exception for the following reasons. <code>ConcurrentInvocationLimitExceeded</code> is returned if you have no functions with reserved-concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <code>ReservedFunctionConcurrentInvocationLimitExceeded</code> is returned when a function with reserved concurrency exceeds its configured concurrent limit. <code>CallerRateLimitExceeded</code> is returned when your account limit is exceeded and you have not reserved concurrency on any function. For more information, see <a>concurrent-executions</a> </p>",
+      "documentation" : "<p> </p>",
       "enums" : null,
       "errorCode" : "TooManyRequestsException",
       "hasHeaderMember" : true,
@@ -54480,7 +54486,7 @@
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,
-  "fileHeader" : "/*\n * Copyright 2012-2017 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "fileHeader" : "/*\n * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "hasWaiters" : false,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AWSLambdaException",

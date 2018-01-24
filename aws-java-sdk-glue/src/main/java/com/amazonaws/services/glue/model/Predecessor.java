@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A job run that preceded this one.
+ * A job run that was used in the predicate of a conditional trigger that triggered this job run.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Predecessor" target="_top">AWS API
@@ -36,7 +36,7 @@ public class Predecessor implements Serializable, Cloneable, StructuredPojo {
     private String jobName;
     /**
      * <p>
-     * The job-run ID of the precessor job run.
+     * The job-run ID of the predecessor job run.
      * </p>
      */
     private String runId;
@@ -83,11 +83,11 @@ public class Predecessor implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The job-run ID of the precessor job run.
+     * The job-run ID of the predecessor job run.
      * </p>
      * 
      * @param runId
-     *        The job-run ID of the precessor job run.
+     *        The job-run ID of the predecessor job run.
      */
 
     public void setRunId(String runId) {
@@ -96,10 +96,10 @@ public class Predecessor implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The job-run ID of the precessor job run.
+     * The job-run ID of the predecessor job run.
      * </p>
      * 
-     * @return The job-run ID of the precessor job run.
+     * @return The job-run ID of the predecessor job run.
      */
 
     public String getRunId() {
@@ -108,11 +108,11 @@ public class Predecessor implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The job-run ID of the precessor job run.
+     * The job-run ID of the predecessor job run.
      * </p>
      * 
      * @param runId
-     *        The job-run ID of the precessor job run.
+     *        The job-run ID of the predecessor job run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

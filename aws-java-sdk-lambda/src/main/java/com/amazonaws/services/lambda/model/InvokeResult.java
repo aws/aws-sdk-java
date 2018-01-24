@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,7 +67,7 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     /**
      * <p>
      * The function version that has been executed. This value is returned only if the invocation type is
-     * <code>RequestResponse</code>.
+     * <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
      * </p>
      */
     private String executedVersion;
@@ -344,12 +344,12 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     /**
      * <p>
      * The function version that has been executed. This value is returned only if the invocation type is
-     * <code>RequestResponse</code>.
+     * <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
      * </p>
      * 
      * @param executedVersion
      *        The function version that has been executed. This value is returned only if the invocation type is
-     *        <code>RequestResponse</code>.
+     *        <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
      */
 
     public void setExecutedVersion(String executedVersion) {
@@ -359,11 +359,11 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     /**
      * <p>
      * The function version that has been executed. This value is returned only if the invocation type is
-     * <code>RequestResponse</code>.
+     * <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
      * </p>
      * 
      * @return The function version that has been executed. This value is returned only if the invocation type is
-     *         <code>RequestResponse</code>.
+     *         <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
      */
 
     public String getExecutedVersion() {
@@ -373,12 +373,12 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     /**
      * <p>
      * The function version that has been executed. This value is returned only if the invocation type is
-     * <code>RequestResponse</code>.
+     * <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
      * </p>
      * 
      * @param executedVersion
      *        The function version that has been executed. This value is returned only if the invocation type is
-     *        <code>RequestResponse</code>.
+     *        <code>RequestResponse</code>. For more information, see <a>lambda-traffic-shifting-using-aliases</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

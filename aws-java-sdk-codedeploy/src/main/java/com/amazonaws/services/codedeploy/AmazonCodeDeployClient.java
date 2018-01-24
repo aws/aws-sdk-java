@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -165,6 +165,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                             new JsonErrorShapeMetadata().withErrorCode("ResourceValidationException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.ResourceValidationException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("GitHubAccountTokenDoesNotExistException").withModeledClass(
+                                    com.amazonaws.services.codedeploy.model.GitHubAccountTokenDoesNotExistException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidOperationException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.InvalidOperationException.class))
                     .addErrorMetadata(
@@ -230,6 +233,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DeploymentIsNotInReadyStateException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.DeploymentIsNotInReadyStateException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidGitHubAccountTokenNameException").withModeledClass(
+                                    com.amazonaws.services.codedeploy.model.InvalidGitHubAccountTokenNameException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InstanceNotRegisteredException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.InstanceNotRegisteredException.class))
@@ -314,6 +320,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidKeyPrefixFilterException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.InvalidKeyPrefixFilterException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("GitHubAccountTokenNameRequiredException").withModeledClass(
+                                    com.amazonaws.services.codedeploy.model.GitHubAccountTokenNameRequiredException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidBucketNameFilterException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.InvalidBucketNameFilterException.class))
@@ -628,6 +637,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @return Result of the AddTagsToOnPremisesInstances operation returned by the service.
      * @throws InstanceNameRequiredException
      *         An on-premises instance name was not specified.
+     * @throws InvalidInstanceNameException
+     *         The specified on-premises instance name was specified in an invalid format.
      * @throws TagRequiredException
      *         A tag was not specified.
      * @throws InvalidTagException
@@ -1665,6 +1676,67 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
             HttpResponseHandler<AmazonWebServiceResponse<DeleteDeploymentGroupResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new DeleteDeploymentGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a GitHub account connection.
+     * </p>
+     * 
+     * @param deleteGitHubAccountTokenRequest
+     *        Represents the input of a DeleteGitHubAccount operation.
+     * @return Result of the DeleteGitHubAccountToken operation returned by the service.
+     * @throws GitHubAccountTokenNameRequiredException
+     *         The call is missing a required GitHub account connection name.
+     * @throws GitHubAccountTokenDoesNotExistException
+     *         No GitHub account connection exists with the named specified in the call.
+     * @throws InvalidGitHubAccountTokenNameException
+     *         The format of the specified GitHub account connection name is invalid.
+     * @throws ResourceValidationException
+     *         The specified resource could not be validated.
+     * @throws OperationNotSupportedException
+     *         The API used does not support the deployment.
+     * @sample AmazonCodeDeploy.DeleteGitHubAccountToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteGitHubAccountToken"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteGitHubAccountTokenResult deleteGitHubAccountToken(DeleteGitHubAccountTokenRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteGitHubAccountToken(request);
+    }
+
+    @SdkInternalApi
+    final DeleteGitHubAccountTokenResult executeDeleteGitHubAccountToken(DeleteGitHubAccountTokenRequest deleteGitHubAccountTokenRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteGitHubAccountTokenRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteGitHubAccountTokenRequest> request = null;
+        Response<DeleteGitHubAccountTokenResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteGitHubAccountTokenRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteGitHubAccountTokenRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteGitHubAccountTokenResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteGitHubAccountTokenResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2860,6 +2932,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @return Result of the RemoveTagsFromOnPremisesInstances operation returned by the service.
      * @throws InstanceNameRequiredException
      *         An on-premises instance name was not specified.
+     * @throws InvalidInstanceNameException
+     *         The specified on-premises instance name was specified in an invalid format.
      * @throws TagRequiredException
      *         A tag was not specified.
      * @throws InvalidTagException

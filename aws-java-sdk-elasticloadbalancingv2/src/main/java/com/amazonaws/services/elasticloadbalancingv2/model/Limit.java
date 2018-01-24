@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,16 +66,6 @@ public class Limit implements Serializable, Cloneable {
      * targets-per-application-load-balancer
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * targets-per-availability-zone-per-network-load-balancer
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * targets-per-network-load-balancer
-     * </p>
-     * </li>
      * </ul>
      */
     private String name;
@@ -126,16 +116,6 @@ public class Limit implements Serializable, Cloneable {
      * targets-per-application-load-balancer
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * targets-per-availability-zone-per-network-load-balancer
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * targets-per-network-load-balancer
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param name
@@ -174,16 +154,6 @@ public class Limit implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        targets-per-application-load-balancer
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        targets-per-availability-zone-per-network-load-balancer
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        targets-per-network-load-balancer
      *        </p>
      *        </li>
      */
@@ -232,16 +202,6 @@ public class Limit implements Serializable, Cloneable {
      * targets-per-application-load-balancer
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * targets-per-availability-zone-per-network-load-balancer
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * targets-per-network-load-balancer
-     * </p>
-     * </li>
      * </ul>
      * 
      * @return The name of the limit. The possible values are:</p>
@@ -279,16 +239,6 @@ public class Limit implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         targets-per-application-load-balancer
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         targets-per-availability-zone-per-network-load-balancer
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         targets-per-network-load-balancer
      *         </p>
      *         </li>
      */
@@ -337,16 +287,6 @@ public class Limit implements Serializable, Cloneable {
      * targets-per-application-load-balancer
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * targets-per-availability-zone-per-network-load-balancer
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * targets-per-network-load-balancer
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param name
@@ -385,16 +325,6 @@ public class Limit implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        targets-per-application-load-balancer
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        targets-per-availability-zone-per-network-load-balancer
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        targets-per-network-load-balancer
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

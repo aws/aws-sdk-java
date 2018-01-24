@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,11 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public BatchDeleteTableResult batchDeleteTable(BatchDeleteTableRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchDeleteTableVersionResult batchDeleteTableVersion(BatchDeleteTableVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -149,6 +154,11 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public DeleteTableResult deleteTable(DeleteTableRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteTableVersionResult deleteTableVersion(DeleteTableVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -269,6 +279,11 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public GetTableResult getTable(GetTableRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetTableVersionResult getTableVersion(GetTableVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

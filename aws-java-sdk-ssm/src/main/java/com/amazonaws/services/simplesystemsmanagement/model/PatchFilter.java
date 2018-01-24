@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,6 +21,504 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Defines a patch filter.
  * </p>
+ * <p>
+ * A patch filter consists of key/value pairs, but not all keys are valid for all operating system types. For example,
+ * the key <code>PRODUCT</code> is valid for all supported operating system types. The key <code>MSRC_SEVERITY</code>,
+ * however, is valid only for Windows operating systems, and the key <code>SECTION</code> is valid only for Ubuntu
+ * operating systems.
+ * </p>
+ * <p>
+ * Refer to the following sections for information about which keys may be used with each major operating system, and
+ * which values are valid for each key.
+ * </p>
+ * <p>
+ * <b>Windows Operating Systems</b>
+ * </p>
+ * <p>
+ * The supported keys for Windows operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and
+ * <code>MSRC_SEVERITY</code>. See the following lists for valid values for each of these keys.
+ * </p>
+ * <p>
+ * <i>Supported key:</i> <code>PRODUCT</code>
+ * </p>
+ * <p>
+ * <i>Supported values:</i>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>Windows7</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Windows8</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Windows8.1</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Windows8Embedded</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Windows10</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Windows10LTSB</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>WindowsServer2008</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>WindowsServer2008R2</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>WindowsServer2012</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>WindowsServer2012R2</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>WindowsServer2016</code>
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <i>Supported key:</i> <code>CLASSIFICATION</code>
+ * </p>
+ * <p>
+ * <i>Supported values:</i>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>CriticalUpdates</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>DefinitionUpdates</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Drivers</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>FeaturePacks</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>SecurityUpdates</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ServicePacks</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Tools</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>UpdateRollups</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Updates</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Upgrades</code>
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <i>Supported key:</i> <code>MSRC_SEVERITY</code>
+ * </p>
+ * <p>
+ * <i>Supported values:</i>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>Critical</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Important</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Moderate</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Low</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Unspecified</code>
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <b>Ubuntu Operating Systems</b>
+ * </p>
+ * <p>
+ * The supported keys for Ubuntu operating systems are <code>PRODUCT</code>, <code>PRIORITY</code>, and
+ * <code>SECTION</code>. See the following lists for valid values for each of these keys.
+ * </p>
+ * <p>
+ * <i>Supported key:</i> <code>PRODUCT</code>
+ * </p>
+ * <p>
+ * <i>Supported values:</i>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>Ubuntu14.04</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Ubuntu16.04</code>
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <i>Supported key:</i> <code>PRIORITY</code>
+ * </p>
+ * <p>
+ * <i>Supported values:</i>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>Required</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Important</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Standard</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Optional</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Extra</code>
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <i>Supported key:</i> <code>SECTION</code>
+ * </p>
+ * <p>
+ * Only the length of the key value is validated. Minimum length is 1. Maximum length is 64.
+ * </p>
+ * <p>
+ * <b>Amazon Linux Operating Systems</b>
+ * </p>
+ * <p>
+ * The supported keys for Amazon Linux operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and
+ * <code>SEVERITY</code>. See the following lists for valid values for each of these keys.
+ * </p>
+ * <p>
+ * <i>Supported key:</i> <code>PRODUCT</code>
+ * </p>
+ * <p>
+ * <i>Supported values:</i>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>AmazonLinux2012.03</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>AmazonLinux2012.09</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>AmazonLinux2013.03</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>AmazonLinux2013.09</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>AmazonLinux2014.03</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>AmazonLinux2014.09</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>AmazonLinux2015.03</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>AmazonLinux2015.09</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>AmazonLinux2016.03</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>AmazonLinux2016.09</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>AmazonLinux2017.03</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>AmazonLinux2017.09</code>
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <i>Supported key:</i> <code>CLASSIFICATION</code>
+ * </p>
+ * <p>
+ * <i>Supported values:</i>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>Security</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Bugfix</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Enhancement</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Recommended</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Newpackage</code>
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <i>Supported key:</i> <code>SEVERITY</code>
+ * </p>
+ * <p>
+ * <i>Supported values:</i>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>Critical</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Important</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Medium</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Low</code>
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <b>RedHat Enterprise Linux (RHEL) Operating Systems</b>
+ * </p>
+ * <p>
+ * The supported keys for RedHat Enterprise Linux operating systems are <code>PRODUCT</code>,
+ * <code>CLASSIFICATION</code>, and <code>SEVERITY</code>. See the following lists for valid values for each of these
+ * keys.
+ * </p>
+ * <p>
+ * <i>Supported key:</i> <code>PRODUCT</code>
+ * </p>
+ * <p>
+ * <i>Supported values:</i>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>RedhatEnterpriseLinux6.5</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>RedhatEnterpriseLinux6.6</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>RedhatEnterpriseLinux6.7</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>RedhatEnterpriseLinux6.8</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>RedhatEnterpriseLinux6.9</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>RedhatEnterpriseLinux7.0</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>RedhatEnterpriseLinux7.1</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>RedhatEnterpriseLinux7.2</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>RedhatEnterpriseLinux7.3</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>RedhatEnterpriseLinux7.4</code>
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <i>Supported key:</i> <code>CLASSIFICATION</code>
+ * </p>
+ * <p>
+ * <i>Supported values:</i>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>Security</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Bugfix</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Enhancement</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Recommended</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Newpackage</code>
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <i>Supported key:</i> <code>SEVERITY</code>
+ * </p>
+ * <p>
+ * <i>Supported values:</i>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>Critical</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Important</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Medium</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Low</code>
+ * </p>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PatchFilter" target="_top">AWS API
  *      Documentation</a>
@@ -30,7 +528,10 @@ public class PatchFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key for the filter (PRODUCT, CLASSIFICATION, MSRC_SEVERITY, PATCH_ID)
+     * The key for the filter.
+     * </p>
+     * <p>
+     * See <a>PatchFilter</a> for lists of valid keys for each operating system type.
      * </p>
      */
     private String key;
@@ -38,16 +539,24 @@ public class PatchFilter implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The value for the filter key.
      * </p>
+     * <p>
+     * See <a>PatchFilter</a> for lists of valid values for each key based on operating system type.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> values;
 
     /**
      * <p>
-     * The key for the filter (PRODUCT, CLASSIFICATION, MSRC_SEVERITY, PATCH_ID)
+     * The key for the filter.
+     * </p>
+     * <p>
+     * See <a>PatchFilter</a> for lists of valid keys for each operating system type.
      * </p>
      * 
      * @param key
-     *        The key for the filter (PRODUCT, CLASSIFICATION, MSRC_SEVERITY, PATCH_ID)
+     *        The key for the filter.</p>
+     *        <p>
+     *        See <a>PatchFilter</a> for lists of valid keys for each operating system type.
      * @see PatchFilterKey
      */
 
@@ -57,10 +566,15 @@ public class PatchFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key for the filter (PRODUCT, CLASSIFICATION, MSRC_SEVERITY, PATCH_ID)
+     * The key for the filter.
+     * </p>
+     * <p>
+     * See <a>PatchFilter</a> for lists of valid keys for each operating system type.
      * </p>
      * 
-     * @return The key for the filter (PRODUCT, CLASSIFICATION, MSRC_SEVERITY, PATCH_ID)
+     * @return The key for the filter.</p>
+     *         <p>
+     *         See <a>PatchFilter</a> for lists of valid keys for each operating system type.
      * @see PatchFilterKey
      */
 
@@ -70,11 +584,16 @@ public class PatchFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key for the filter (PRODUCT, CLASSIFICATION, MSRC_SEVERITY, PATCH_ID)
+     * The key for the filter.
+     * </p>
+     * <p>
+     * See <a>PatchFilter</a> for lists of valid keys for each operating system type.
      * </p>
      * 
      * @param key
-     *        The key for the filter (PRODUCT, CLASSIFICATION, MSRC_SEVERITY, PATCH_ID)
+     *        The key for the filter.</p>
+     *        <p>
+     *        See <a>PatchFilter</a> for lists of valid keys for each operating system type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PatchFilterKey
      */
@@ -86,11 +605,16 @@ public class PatchFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key for the filter (PRODUCT, CLASSIFICATION, MSRC_SEVERITY, PATCH_ID)
+     * The key for the filter.
+     * </p>
+     * <p>
+     * See <a>PatchFilter</a> for lists of valid keys for each operating system type.
      * </p>
      * 
      * @param key
-     *        The key for the filter (PRODUCT, CLASSIFICATION, MSRC_SEVERITY, PATCH_ID)
+     *        The key for the filter.</p>
+     *        <p>
+     *        See <a>PatchFilter</a> for lists of valid keys for each operating system type.
      * @see PatchFilterKey
      */
 
@@ -100,11 +624,16 @@ public class PatchFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key for the filter (PRODUCT, CLASSIFICATION, MSRC_SEVERITY, PATCH_ID)
+     * The key for the filter.
+     * </p>
+     * <p>
+     * See <a>PatchFilter</a> for lists of valid keys for each operating system type.
      * </p>
      * 
      * @param key
-     *        The key for the filter (PRODUCT, CLASSIFICATION, MSRC_SEVERITY, PATCH_ID)
+     *        The key for the filter.</p>
+     *        <p>
+     *        See <a>PatchFilter</a> for lists of valid keys for each operating system type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PatchFilterKey
      */
@@ -118,8 +647,13 @@ public class PatchFilter implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The value for the filter key.
      * </p>
+     * <p>
+     * See <a>PatchFilter</a> for lists of valid values for each key based on operating system type.
+     * </p>
      * 
-     * @return The value for the filter key.
+     * @return The value for the filter key.</p>
+     *         <p>
+     *         See <a>PatchFilter</a> for lists of valid values for each key based on operating system type.
      */
 
     public java.util.List<String> getValues() {
@@ -133,9 +667,14 @@ public class PatchFilter implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The value for the filter key.
      * </p>
+     * <p>
+     * See <a>PatchFilter</a> for lists of valid values for each key based on operating system type.
+     * </p>
      * 
      * @param values
-     *        The value for the filter key.
+     *        The value for the filter key.</p>
+     *        <p>
+     *        See <a>PatchFilter</a> for lists of valid values for each key based on operating system type.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -152,13 +691,18 @@ public class PatchFilter implements Serializable, Cloneable, StructuredPojo {
      * The value for the filter key.
      * </p>
      * <p>
+     * See <a>PatchFilter</a> for lists of valid values for each key based on operating system type.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param values
-     *        The value for the filter key.
+     *        The value for the filter key.</p>
+     *        <p>
+     *        See <a>PatchFilter</a> for lists of valid values for each key based on operating system type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -176,9 +720,14 @@ public class PatchFilter implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The value for the filter key.
      * </p>
+     * <p>
+     * See <a>PatchFilter</a> for lists of valid values for each key based on operating system type.
+     * </p>
      * 
      * @param values
-     *        The value for the filter key.
+     *        The value for the filter key.</p>
+     *        <p>
+     *        See <a>PatchFilter</a> for lists of valid values for each key based on operating system type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
