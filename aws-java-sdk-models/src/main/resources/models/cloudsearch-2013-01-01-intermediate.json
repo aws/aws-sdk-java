@@ -83,7 +83,7 @@
     "syncClient" : "AmazonCloudSearchClient",
     "syncClientBuilderClassName" : "AmazonCloudSearchClientBuilder",
     "syncInterface" : "AmazonCloudSearch",
-    "uid" : null,
+    "uid" : "cloudsearch-2013-01-01",
     "unmarshallerClassSuffix" : "StaxUnmarshaller",
     "unmarshallerContextClassName" : "StaxUnmarshallerContext",
     "xmlProtocol" : true

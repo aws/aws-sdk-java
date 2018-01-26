@@ -51,6 +51,8 @@ public class UpdateFunctionConfigurationRequestMarshaller {
             .marshallLocationName("KMSKeyArn").build();
     private static final MarshallingInfo<StructuredPojo> TRACINGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TracingConfig").build();
+    private static final MarshallingInfo<String> REVISIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RevisionId").build();
 
     private static final UpdateFunctionConfigurationRequestMarshaller instance = new UpdateFunctionConfigurationRequestMarshaller();
 
@@ -80,6 +82,7 @@ public class UpdateFunctionConfigurationRequestMarshaller {
             protocolMarshaller.marshall(updateFunctionConfigurationRequest.getDeadLetterConfig(), DEADLETTERCONFIG_BINDING);
             protocolMarshaller.marshall(updateFunctionConfigurationRequest.getKMSKeyArn(), KMSKEYARN_BINDING);
             protocolMarshaller.marshall(updateFunctionConfigurationRequest.getTracingConfig(), TRACINGCONFIG_BINDING);
+            protocolMarshaller.marshall(updateFunctionConfigurationRequest.getRevisionId(), REVISIONID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

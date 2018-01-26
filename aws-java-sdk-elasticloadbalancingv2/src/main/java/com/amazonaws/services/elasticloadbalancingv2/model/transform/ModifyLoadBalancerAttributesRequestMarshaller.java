@@ -48,9 +48,8 @@ public class ModifyLoadBalancerAttributesRequestMarshaller implements
             request.addParameter("LoadBalancerArn", StringUtils.fromString(modifyLoadBalancerAttributesRequest.getLoadBalancerArn()));
         }
 
-        java.util.List<LoadBalancerAttribute> attributesList = modifyLoadBalancerAttributesRequest.getAttributes();
-
-        if (attributesList != null) {
+        if (modifyLoadBalancerAttributesRequest.getAttributes() != null) {
+            java.util.List<LoadBalancerAttribute> attributesList = modifyLoadBalancerAttributesRequest.getAttributes();
             if (attributesList.isEmpty()) {
                 request.addParameter("Attributes", "");
             } else {

@@ -84,6 +84,15 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private Boolean dryRun;
+    /**
+     * <p>
+     * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
+     * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
+     * it will fail with an error message, advising you to retrieve the latest function version or alias
+     * <code>RevisionID</code> using either or .
+     * </p>
+     */
+    private String revisionId;
 
     /**
      * <p>
@@ -522,6 +531,64 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
+     * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
+     * it will fail with an error message, advising you to retrieve the latest function version or alias
+     * <code>RevisionID</code> using either or .
+     * </p>
+     * 
+     * @param revisionId
+     *        An optional value you can use to ensure you are updating the latest update of the function version or
+     *        alias. If the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the
+     *        function or alias, it will fail with an error message, advising you to retrieve the latest function
+     *        version or alias <code>RevisionID</code> using either or .
+     */
+
+    public void setRevisionId(String revisionId) {
+        this.revisionId = revisionId;
+    }
+
+    /**
+     * <p>
+     * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
+     * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
+     * it will fail with an error message, advising you to retrieve the latest function version or alias
+     * <code>RevisionID</code> using either or .
+     * </p>
+     * 
+     * @return An optional value you can use to ensure you are updating the latest update of the function version or
+     *         alias. If the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the
+     *         function or alias, it will fail with an error message, advising you to retrieve the latest function
+     *         version or alias <code>RevisionID</code> using either or .
+     */
+
+    public String getRevisionId() {
+        return this.revisionId;
+    }
+
+    /**
+     * <p>
+     * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
+     * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
+     * it will fail with an error message, advising you to retrieve the latest function version or alias
+     * <code>RevisionID</code> using either or .
+     * </p>
+     * 
+     * @param revisionId
+     *        An optional value you can use to ensure you are updating the latest update of the function version or
+     *        alias. If the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the
+     *        function or alias, it will fail with an error message, advising you to retrieve the latest function
+     *        version or alias <code>RevisionID</code> using either or .
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFunctionCodeRequest withRevisionId(String revisionId) {
+        setRevisionId(revisionId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -545,7 +612,9 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
         if (getPublish() != null)
             sb.append("Publish: ").append(getPublish()).append(",");
         if (getDryRun() != null)
-            sb.append("DryRun: ").append(getDryRun());
+            sb.append("DryRun: ").append(getDryRun()).append(",");
+        if (getRevisionId() != null)
+            sb.append("RevisionId: ").append(getRevisionId());
         sb.append("}");
         return sb.toString();
     }
@@ -588,6 +657,10 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getDryRun() != null && other.getDryRun().equals(this.getDryRun()) == false)
             return false;
+        if (other.getRevisionId() == null ^ this.getRevisionId() == null)
+            return false;
+        if (other.getRevisionId() != null && other.getRevisionId().equals(this.getRevisionId()) == false)
+            return false;
         return true;
     }
 
@@ -603,6 +676,7 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getS3ObjectVersion() == null) ? 0 : getS3ObjectVersion().hashCode());
         hashCode = prime * hashCode + ((getPublish() == null) ? 0 : getPublish().hashCode());
         hashCode = prime * hashCode + ((getDryRun() == null) ? 0 : getDryRun().hashCode());
+        hashCode = prime * hashCode + ((getRevisionId() == null) ? 0 : getRevisionId().hashCode());
         return hashCode;
     }
 

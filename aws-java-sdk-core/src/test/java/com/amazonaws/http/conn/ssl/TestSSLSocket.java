@@ -15,8 +15,6 @@
 package com.amazonaws.http.conn.ssl;
 
 import java.io.IOException;
-import java.util.Arrays;
-
 import javax.net.ssl.HandshakeCompletedListener;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.SSLSocket;
@@ -25,13 +23,13 @@ class TestSSLSocket extends SSLSocket {
 
     private String[] capturedProtocols;
 
+    private boolean protocolsEnabled = false;
+
     @Override
     public void setEnabledProtocols(String[] protocols) {
         capturedProtocols = protocols;
         protocolsEnabled = true;
     }
-
-    private boolean protocolsEnabled = false;
 
     /**
      * Indicates if setEnabledProtocols was invoked
@@ -71,8 +69,6 @@ class TestSSLSocket extends SSLSocket {
         return null;
     }
 
-    
-
     @Override
     public SSLSession getSession() {
         return null;
@@ -80,12 +76,12 @@ class TestSSLSocket extends SSLSocket {
 
     @Override
     public void addHandshakeCompletedListener(
-            HandshakeCompletedListener listener) {
+        HandshakeCompletedListener listener) {
     }
 
     @Override
     public void removeHandshakeCompletedListener(
-            HandshakeCompletedListener listener) {
+        HandshakeCompletedListener listener) {
     }
 
     @Override

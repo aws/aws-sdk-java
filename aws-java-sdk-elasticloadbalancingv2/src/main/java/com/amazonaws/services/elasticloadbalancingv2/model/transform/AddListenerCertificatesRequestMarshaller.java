@@ -47,9 +47,8 @@ public class AddListenerCertificatesRequestMarshaller implements Marshaller<Requ
             request.addParameter("ListenerArn", StringUtils.fromString(addListenerCertificatesRequest.getListenerArn()));
         }
 
-        java.util.List<Certificate> certificatesList = addListenerCertificatesRequest.getCertificates();
-
-        if (certificatesList != null) {
+        if (addListenerCertificatesRequest.getCertificates() != null) {
+            java.util.List<Certificate> certificatesList = addListenerCertificatesRequest.getCertificates();
             if (certificatesList.isEmpty()) {
                 request.addParameter("Certificates", "");
             } else {

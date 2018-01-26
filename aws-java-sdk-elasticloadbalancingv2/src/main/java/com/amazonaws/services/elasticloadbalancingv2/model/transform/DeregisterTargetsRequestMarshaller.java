@@ -46,9 +46,8 @@ public class DeregisterTargetsRequestMarshaller implements Marshaller<Request<De
             request.addParameter("TargetGroupArn", StringUtils.fromString(deregisterTargetsRequest.getTargetGroupArn()));
         }
 
-        java.util.List<TargetDescription> targetsList = deregisterTargetsRequest.getTargets();
-
-        if (targetsList != null) {
+        if (deregisterTargetsRequest.getTargets() != null) {
+            java.util.List<TargetDescription> targetsList = deregisterTargetsRequest.getTargets();
             if (targetsList.isEmpty()) {
                 request.addParameter("Targets", "");
             } else {

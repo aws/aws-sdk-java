@@ -33,6 +33,8 @@ public class RemovePermissionRequestMarshaller {
             .marshallLocationName("StatementId").build();
     private static final MarshallingInfo<String> QUALIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("Qualifier").build();
+    private static final MarshallingInfo<String> REVISIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("RevisionId").build();
 
     private static final RemovePermissionRequestMarshaller instance = new RemovePermissionRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class RemovePermissionRequestMarshaller {
             protocolMarshaller.marshall(removePermissionRequest.getFunctionName(), FUNCTIONNAME_BINDING);
             protocolMarshaller.marshall(removePermissionRequest.getStatementId(), STATEMENTID_BINDING);
             protocolMarshaller.marshall(removePermissionRequest.getQualifier(), QUALIFIER_BINDING);
+            protocolMarshaller.marshall(removePermissionRequest.getRevisionId(), REVISIONID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

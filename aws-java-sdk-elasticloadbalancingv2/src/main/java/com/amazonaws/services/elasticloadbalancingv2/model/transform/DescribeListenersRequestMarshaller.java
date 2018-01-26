@@ -46,9 +46,8 @@ public class DescribeListenersRequestMarshaller implements Marshaller<Request<De
             request.addParameter("LoadBalancerArn", StringUtils.fromString(describeListenersRequest.getLoadBalancerArn()));
         }
 
-        java.util.List<String> listenerArnsList = describeListenersRequest.getListenerArns();
-
-        if (listenerArnsList != null) {
+        if (describeListenersRequest.getListenerArns() != null) {
+            java.util.List<String> listenerArnsList = describeListenersRequest.getListenerArns();
             if (listenerArnsList.isEmpty()) {
                 request.addParameter("ListenerArns", "");
             } else {

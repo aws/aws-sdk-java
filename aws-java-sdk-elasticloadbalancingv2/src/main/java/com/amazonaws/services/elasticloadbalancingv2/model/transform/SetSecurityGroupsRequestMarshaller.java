@@ -46,9 +46,8 @@ public class SetSecurityGroupsRequestMarshaller implements Marshaller<Request<Se
             request.addParameter("LoadBalancerArn", StringUtils.fromString(setSecurityGroupsRequest.getLoadBalancerArn()));
         }
 
-        java.util.List<String> securityGroupsList = setSecurityGroupsRequest.getSecurityGroups();
-
-        if (securityGroupsList != null) {
+        if (setSecurityGroupsRequest.getSecurityGroups() != null) {
+            java.util.List<String> securityGroupsList = setSecurityGroupsRequest.getSecurityGroups();
             if (securityGroupsList.isEmpty()) {
                 request.addParameter("SecurityGroups", "");
             } else {

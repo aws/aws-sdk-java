@@ -551,8 +551,8 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
      * <p>
      * This field represents the base64 encoded 128-bit MD5 digest digest of an
      * object's content as calculated on the caller's side. The ETag metadata
-     * field represents the hex encoded 128-bit MD5 digest as computed by Amazon
-     * S3.
+     * field sometimes (but not always) represents the hex encoded 128-bit MD5 digest as computed by Amazon
+     * S3. See the documentation at {@link #getETag()} for more information on what the ETag field represents.
      * </p>
      * <p>
      * The AWS S3 Java client will attempt to calculate this field automatically
@@ -584,8 +584,8 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
      * <p>
      * This field represents the base64 encoded 128-bit MD5 digest digest of an
      * object's content as calculated on the caller's side. The ETag metadata
-     * field represents the hex encoded 128-bit MD5 digest as computed by Amazon
-     * S3.
+     * field sometimes (but not always) represents the hex encoded 128-bit MD5 digest as computed by Amazon
+     * S3. See the documentation at {@link #getETag()} for more information on what the ETag field represents.
      * </p>
      * <p>
      * The AWS S3 Java client will attempt to calculate this field automatically
@@ -652,19 +652,25 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
     }
 
     /**
-     * Gets the hex encoded 128-bit MD5 digest of the associated object
-     * according to RFC 1864. This data is used as an integrity check to verify
-     * that the data received by the caller is the same data that was sent by
-     * Amazon S3.
-     * <p>
-     * This field represents the hex encoded 128-bit MD5 digest of an object's
-     * content as calculated by Amazon S3. The ContentMD5 field represents the
-     * base64 encoded 128-bit MD5 digest as calculated on the caller's side.
-     * </p>
+     * The entity tag is a hash of the object. The ETag reflects changes only to the contents of an object, not its metadata.
+     * The ETag may or may not be an MD5 digest of the object data. Whether or not it is depends on how the object was created
+     * and how it is encrypted as described below:
+     * <ul>
+     * <li>
+     * Objects created by the PUT Object, POST Object, or Copy operation, or through the AWS Management Console, and are encrypted
+     * by SSE-S3 or plaintext, have ETags that are an MD5 digest of their object data.
+     * </li>
+     * <li>
+     * Objects created by the PUT Object, POST Object, or Copy operation, or through the AWS Management Console, and are encrypted
+     * by SSE-C or SSE-KMS, have ETags that are not an MD5 digest of their object data.
+     * </li>
+     * <li>
+     * If an object is created by either the Multipart Upload or Part Copy operation, the ETag is not an MD5 digest, regardless of
+     * the method of encryption.
+     * </li>
+     * </ul>
      *
-     * @return The hex encoded MD5 hash of the content for the associated object
-     *         as calculated by Amazon S3.
-     *         Returns <code>null</code> if it hasn't been set yet.
+     * @return The ETag of the object or <code>null</code>if it hasn't been set yet.
      */
     public String getETag() {
         return (String)metadata.get(Headers.ETAG);

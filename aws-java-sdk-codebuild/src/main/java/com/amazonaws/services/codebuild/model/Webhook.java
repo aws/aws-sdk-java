@@ -34,6 +34,19 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String url;
+    /**
+     * <p>
+     * This is the server endpoint that will receive the webhook payload.
+     * </p>
+     */
+    private String payloadUrl;
+    /**
+     * <p>
+     * Use this secret while creating a webhook in GitHub for Enterprise. The secret allows webhook requests sent by
+     * GitHub for Enterprise to be authenticated by AWS CodeBuild.
+     * </p>
+     */
+    private String secret;
 
     /**
      * <p>
@@ -76,6 +89,92 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * This is the server endpoint that will receive the webhook payload.
+     * </p>
+     * 
+     * @param payloadUrl
+     *        This is the server endpoint that will receive the webhook payload.
+     */
+
+    public void setPayloadUrl(String payloadUrl) {
+        this.payloadUrl = payloadUrl;
+    }
+
+    /**
+     * <p>
+     * This is the server endpoint that will receive the webhook payload.
+     * </p>
+     * 
+     * @return This is the server endpoint that will receive the webhook payload.
+     */
+
+    public String getPayloadUrl() {
+        return this.payloadUrl;
+    }
+
+    /**
+     * <p>
+     * This is the server endpoint that will receive the webhook payload.
+     * </p>
+     * 
+     * @param payloadUrl
+     *        This is the server endpoint that will receive the webhook payload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Webhook withPayloadUrl(String payloadUrl) {
+        setPayloadUrl(payloadUrl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Use this secret while creating a webhook in GitHub for Enterprise. The secret allows webhook requests sent by
+     * GitHub for Enterprise to be authenticated by AWS CodeBuild.
+     * </p>
+     * 
+     * @param secret
+     *        Use this secret while creating a webhook in GitHub for Enterprise. The secret allows webhook requests sent
+     *        by GitHub for Enterprise to be authenticated by AWS CodeBuild.
+     */
+
+    public void setSecret(String secret) {
+        this.secret = secret;
+    }
+
+    /**
+     * <p>
+     * Use this secret while creating a webhook in GitHub for Enterprise. The secret allows webhook requests sent by
+     * GitHub for Enterprise to be authenticated by AWS CodeBuild.
+     * </p>
+     * 
+     * @return Use this secret while creating a webhook in GitHub for Enterprise. The secret allows webhook requests
+     *         sent by GitHub for Enterprise to be authenticated by AWS CodeBuild.
+     */
+
+    public String getSecret() {
+        return this.secret;
+    }
+
+    /**
+     * <p>
+     * Use this secret while creating a webhook in GitHub for Enterprise. The secret allows webhook requests sent by
+     * GitHub for Enterprise to be authenticated by AWS CodeBuild.
+     * </p>
+     * 
+     * @param secret
+     *        Use this secret while creating a webhook in GitHub for Enterprise. The secret allows webhook requests sent
+     *        by GitHub for Enterprise to be authenticated by AWS CodeBuild.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Webhook withSecret(String secret) {
+        setSecret(secret);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -87,7 +186,11 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUrl() != null)
-            sb.append("Url: ").append(getUrl());
+            sb.append("Url: ").append(getUrl()).append(",");
+        if (getPayloadUrl() != null)
+            sb.append("PayloadUrl: ").append(getPayloadUrl()).append(",");
+        if (getSecret() != null)
+            sb.append("Secret: ").append(getSecret());
         sb.append("}");
         return sb.toString();
     }
@@ -106,6 +209,14 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getUrl() != null && other.getUrl().equals(this.getUrl()) == false)
             return false;
+        if (other.getPayloadUrl() == null ^ this.getPayloadUrl() == null)
+            return false;
+        if (other.getPayloadUrl() != null && other.getPayloadUrl().equals(this.getPayloadUrl()) == false)
+            return false;
+        if (other.getSecret() == null ^ this.getSecret() == null)
+            return false;
+        if (other.getSecret() != null && other.getSecret().equals(this.getSecret()) == false)
+            return false;
         return true;
     }
 
@@ -115,6 +226,8 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getUrl() == null) ? 0 : getUrl().hashCode());
+        hashCode = prime * hashCode + ((getPayloadUrl() == null) ? 0 : getPayloadUrl().hashCode());
+        hashCode = prime * hashCode + ((getSecret() == null) ? 0 : getSecret().hashCode());
         return hashCode;
     }
 

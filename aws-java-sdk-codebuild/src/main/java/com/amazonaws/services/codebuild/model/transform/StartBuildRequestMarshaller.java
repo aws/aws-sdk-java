@@ -36,6 +36,8 @@ public class StartBuildRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("artifactsOverride").build();
     private static final MarshallingInfo<List> ENVIRONMENTVARIABLESOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("environmentVariablesOverride").build();
+    private static final MarshallingInfo<Integer> GITCLONEDEPTHOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("gitCloneDepthOverride").build();
     private static final MarshallingInfo<String> BUILDSPECOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("buildspecOverride").build();
     private static final MarshallingInfo<Integer> TIMEOUTINMINUTESOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -61,6 +63,7 @@ public class StartBuildRequestMarshaller {
             protocolMarshaller.marshall(startBuildRequest.getSourceVersion(), SOURCEVERSION_BINDING);
             protocolMarshaller.marshall(startBuildRequest.getArtifactsOverride(), ARTIFACTSOVERRIDE_BINDING);
             protocolMarshaller.marshall(startBuildRequest.getEnvironmentVariablesOverride(), ENVIRONMENTVARIABLESOVERRIDE_BINDING);
+            protocolMarshaller.marshall(startBuildRequest.getGitCloneDepthOverride(), GITCLONEDEPTHOVERRIDE_BINDING);
             protocolMarshaller.marshall(startBuildRequest.getBuildspecOverride(), BUILDSPECOVERRIDE_BINDING);
             protocolMarshaller.marshall(startBuildRequest.getTimeoutInMinutesOverride(), TIMEOUTINMINUTESOVERRIDE_BINDING);
         } catch (Exception e) {

@@ -48,7 +48,7 @@ public class JsonContent {
                 rawJsonContent = IOUtils.toByteArray(httpResponse.getContent());
             }
         } catch (Exception e) {
-            LOG.info("Unable to read HTTP response content", e);
+            LOG.debug("Unable to read HTTP response content", e);
         }
         return new JsonContent(rawJsonContent, new ObjectMapper(jsonFactory)
                 .configure(JsonParser.Feature.ALLOW_COMMENTS, true));
@@ -71,7 +71,7 @@ public class JsonContent {
         try {
             return mapper.readTree(rawJsonContent);
         } catch (Exception e) {
-            LOG.info("Unable to parse HTTP response content", e);
+            LOG.debug("Unable to parse HTTP response content", e);
             return mapper.createObjectNode();
         }
     }

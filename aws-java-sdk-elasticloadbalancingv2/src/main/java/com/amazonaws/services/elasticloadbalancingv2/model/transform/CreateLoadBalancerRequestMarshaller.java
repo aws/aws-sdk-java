@@ -46,9 +46,8 @@ public class CreateLoadBalancerRequestMarshaller implements Marshaller<Request<C
             request.addParameter("Name", StringUtils.fromString(createLoadBalancerRequest.getName()));
         }
 
-        java.util.List<String> subnetsList = createLoadBalancerRequest.getSubnets();
-
-        if (subnetsList != null) {
+        if (createLoadBalancerRequest.getSubnets() != null) {
+            java.util.List<String> subnetsList = createLoadBalancerRequest.getSubnets();
             if (subnetsList.isEmpty()) {
                 request.addParameter("Subnets", "");
             } else {
@@ -63,9 +62,8 @@ public class CreateLoadBalancerRequestMarshaller implements Marshaller<Request<C
             }
         }
 
-        java.util.List<SubnetMapping> subnetMappingsList = createLoadBalancerRequest.getSubnetMappings();
-
-        if (subnetMappingsList != null) {
+        if (createLoadBalancerRequest.getSubnetMappings() != null) {
+            java.util.List<SubnetMapping> subnetMappingsList = createLoadBalancerRequest.getSubnetMappings();
             if (subnetMappingsList.isEmpty()) {
                 request.addParameter("SubnetMappings", "");
             } else {
@@ -87,9 +85,8 @@ public class CreateLoadBalancerRequestMarshaller implements Marshaller<Request<C
             }
         }
 
-        java.util.List<String> securityGroupsList = createLoadBalancerRequest.getSecurityGroups();
-
-        if (securityGroupsList != null) {
+        if (createLoadBalancerRequest.getSecurityGroups() != null) {
+            java.util.List<String> securityGroupsList = createLoadBalancerRequest.getSecurityGroups();
             if (securityGroupsList.isEmpty()) {
                 request.addParameter("SecurityGroups", "");
             } else {
@@ -108,9 +105,8 @@ public class CreateLoadBalancerRequestMarshaller implements Marshaller<Request<C
             request.addParameter("Scheme", StringUtils.fromString(createLoadBalancerRequest.getScheme()));
         }
 
-        java.util.List<Tag> tagsList = createLoadBalancerRequest.getTags();
-
-        if (tagsList != null) {
+        if (createLoadBalancerRequest.getTags() != null) {
+            java.util.List<Tag> tagsList = createLoadBalancerRequest.getTags();
             if (tagsList.isEmpty()) {
                 request.addParameter("Tags", "");
             } else {

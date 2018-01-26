@@ -41,6 +41,8 @@ public class UpdateFunctionCodeRequestMarshaller {
             .marshallLocationName("Publish").build();
     private static final MarshallingInfo<Boolean> DRYRUN_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("DryRun").build();
+    private static final MarshallingInfo<String> REVISIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RevisionId").build();
 
     private static final UpdateFunctionCodeRequestMarshaller instance = new UpdateFunctionCodeRequestMarshaller();
 
@@ -65,6 +67,7 @@ public class UpdateFunctionCodeRequestMarshaller {
             protocolMarshaller.marshall(updateFunctionCodeRequest.getS3ObjectVersion(), S3OBJECTVERSION_BINDING);
             protocolMarshaller.marshall(updateFunctionCodeRequest.getPublish(), PUBLISH_BINDING);
             protocolMarshaller.marshall(updateFunctionCodeRequest.getDryRun(), DRYRUN_BINDING);
+            protocolMarshaller.marshall(updateFunctionCodeRequest.getRevisionId(), REVISIONID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -33,6 +33,8 @@ public class PublishVersionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CodeSha256").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<String> REVISIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RevisionId").build();
 
     private static final PublishVersionRequestMarshaller instance = new PublishVersionRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class PublishVersionRequestMarshaller {
             protocolMarshaller.marshall(publishVersionRequest.getFunctionName(), FUNCTIONNAME_BINDING);
             protocolMarshaller.marshall(publishVersionRequest.getCodeSha256(), CODESHA256_BINDING);
             protocolMarshaller.marshall(publishVersionRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(publishVersionRequest.getRevisionId(), REVISIONID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

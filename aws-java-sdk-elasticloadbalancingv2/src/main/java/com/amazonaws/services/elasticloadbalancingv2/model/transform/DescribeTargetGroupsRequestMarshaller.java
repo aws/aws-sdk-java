@@ -47,9 +47,8 @@ public class DescribeTargetGroupsRequestMarshaller implements Marshaller<Request
             request.addParameter("LoadBalancerArn", StringUtils.fromString(describeTargetGroupsRequest.getLoadBalancerArn()));
         }
 
-        java.util.List<String> targetGroupArnsList = describeTargetGroupsRequest.getTargetGroupArns();
-
-        if (targetGroupArnsList != null) {
+        if (describeTargetGroupsRequest.getTargetGroupArns() != null) {
+            java.util.List<String> targetGroupArnsList = describeTargetGroupsRequest.getTargetGroupArns();
             if (targetGroupArnsList.isEmpty()) {
                 request.addParameter("TargetGroupArns", "");
             } else {
@@ -64,9 +63,8 @@ public class DescribeTargetGroupsRequestMarshaller implements Marshaller<Request
             }
         }
 
-        java.util.List<String> namesList = describeTargetGroupsRequest.getNames();
-
-        if (namesList != null) {
+        if (describeTargetGroupsRequest.getNames() != null) {
+            java.util.List<String> namesList = describeTargetGroupsRequest.getNames();
             if (namesList.isEmpty()) {
                 request.addParameter("Names", "");
             } else {

@@ -46,9 +46,8 @@ public class ModifyRuleRequestMarshaller implements Marshaller<Request<ModifyRul
             request.addParameter("RuleArn", StringUtils.fromString(modifyRuleRequest.getRuleArn()));
         }
 
-        java.util.List<RuleCondition> conditionsList = modifyRuleRequest.getConditions();
-
-        if (conditionsList != null) {
+        if (modifyRuleRequest.getConditions() != null) {
+            java.util.List<RuleCondition> conditionsList = modifyRuleRequest.getConditions();
             if (conditionsList.isEmpty()) {
                 request.addParameter("Conditions", "");
             } else {
@@ -60,9 +59,8 @@ public class ModifyRuleRequestMarshaller implements Marshaller<Request<ModifyRul
                         request.addParameter("Conditions.member." + conditionsListIndex + ".Field", StringUtils.fromString(conditionsListValue.getField()));
                     }
 
-                    java.util.List<String> valuesList = conditionsListValue.getValues();
-
-                    if (valuesList != null) {
+                    if (conditionsListValue.getValues() != null) {
+                        java.util.List<String> valuesList = conditionsListValue.getValues();
                         if (valuesList.isEmpty()) {
                             request.addParameter("Conditions.member." + conditionsListIndex + ".Values", "");
                         } else {
@@ -82,9 +80,8 @@ public class ModifyRuleRequestMarshaller implements Marshaller<Request<ModifyRul
             }
         }
 
-        java.util.List<Action> actionsList = modifyRuleRequest.getActions();
-
-        if (actionsList != null) {
+        if (modifyRuleRequest.getActions() != null) {
+            java.util.List<Action> actionsList = modifyRuleRequest.getActions();
             if (actionsList.isEmpty()) {
                 request.addParameter("Actions", "");
             } else {

@@ -47,9 +47,8 @@ public class RemoveListenerCertificatesRequestMarshaller implements Marshaller<R
             request.addParameter("ListenerArn", StringUtils.fromString(removeListenerCertificatesRequest.getListenerArn()));
         }
 
-        java.util.List<Certificate> certificatesList = removeListenerCertificatesRequest.getCertificates();
-
-        if (certificatesList != null) {
+        if (removeListenerCertificatesRequest.getCertificates() != null) {
+            java.util.List<Certificate> certificatesList = removeListenerCertificatesRequest.getCertificates();
             if (certificatesList.isEmpty()) {
                 request.addParameter("Certificates", "");
             } else {

@@ -117,6 +117,12 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
     private String location;
     /**
      * <p>
+     * Information about the git clone depth for the build project.
+     * </p>
+     */
+    private Integer gitCloneDepth;
+    /**
+     * <p>
      * The build spec declaration to use for the builds in this build project.
      * </p>
      * <p>
@@ -135,6 +141,12 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private SourceAuth auth;
+    /**
+     * <p>
+     * Enable this flag to ignore SSL warnings while connecting to the project source code.
+     * </p>
+     */
+    private Boolean insecureSsl;
 
     /**
      * <p>
@@ -808,6 +820,46 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Information about the git clone depth for the build project.
+     * </p>
+     * 
+     * @param gitCloneDepth
+     *        Information about the git clone depth for the build project.
+     */
+
+    public void setGitCloneDepth(Integer gitCloneDepth) {
+        this.gitCloneDepth = gitCloneDepth;
+    }
+
+    /**
+     * <p>
+     * Information about the git clone depth for the build project.
+     * </p>
+     * 
+     * @return Information about the git clone depth for the build project.
+     */
+
+    public Integer getGitCloneDepth() {
+        return this.gitCloneDepth;
+    }
+
+    /**
+     * <p>
+     * Information about the git clone depth for the build project.
+     * </p>
+     * 
+     * @param gitCloneDepth
+     *        Information about the git clone depth for the build project.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProjectSource withGitCloneDepth(Integer gitCloneDepth) {
+        setGitCloneDepth(gitCloneDepth);
+        return this;
+    }
+
+    /**
+     * <p>
      * The build spec declaration to use for the builds in this build project.
      * </p>
      * <p>
@@ -929,6 +981,58 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Enable this flag to ignore SSL warnings while connecting to the project source code.
+     * </p>
+     * 
+     * @param insecureSsl
+     *        Enable this flag to ignore SSL warnings while connecting to the project source code.
+     */
+
+    public void setInsecureSsl(Boolean insecureSsl) {
+        this.insecureSsl = insecureSsl;
+    }
+
+    /**
+     * <p>
+     * Enable this flag to ignore SSL warnings while connecting to the project source code.
+     * </p>
+     * 
+     * @return Enable this flag to ignore SSL warnings while connecting to the project source code.
+     */
+
+    public Boolean getInsecureSsl() {
+        return this.insecureSsl;
+    }
+
+    /**
+     * <p>
+     * Enable this flag to ignore SSL warnings while connecting to the project source code.
+     * </p>
+     * 
+     * @param insecureSsl
+     *        Enable this flag to ignore SSL warnings while connecting to the project source code.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProjectSource withInsecureSsl(Boolean insecureSsl) {
+        setInsecureSsl(insecureSsl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enable this flag to ignore SSL warnings while connecting to the project source code.
+     * </p>
+     * 
+     * @return Enable this flag to ignore SSL warnings while connecting to the project source code.
+     */
+
+    public Boolean isInsecureSsl() {
+        return this.insecureSsl;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -943,10 +1047,14 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
             sb.append("Type: ").append(getType()).append(",");
         if (getLocation() != null)
             sb.append("Location: ").append(getLocation()).append(",");
+        if (getGitCloneDepth() != null)
+            sb.append("GitCloneDepth: ").append(getGitCloneDepth()).append(",");
         if (getBuildspec() != null)
             sb.append("Buildspec: ").append(getBuildspec()).append(",");
         if (getAuth() != null)
-            sb.append("Auth: ").append(getAuth());
+            sb.append("Auth: ").append(getAuth()).append(",");
+        if (getInsecureSsl() != null)
+            sb.append("InsecureSsl: ").append(getInsecureSsl());
         sb.append("}");
         return sb.toString();
     }
@@ -969,6 +1077,10 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
             return false;
+        if (other.getGitCloneDepth() == null ^ this.getGitCloneDepth() == null)
+            return false;
+        if (other.getGitCloneDepth() != null && other.getGitCloneDepth().equals(this.getGitCloneDepth()) == false)
+            return false;
         if (other.getBuildspec() == null ^ this.getBuildspec() == null)
             return false;
         if (other.getBuildspec() != null && other.getBuildspec().equals(this.getBuildspec()) == false)
@@ -976,6 +1088,10 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
         if (other.getAuth() == null ^ this.getAuth() == null)
             return false;
         if (other.getAuth() != null && other.getAuth().equals(this.getAuth()) == false)
+            return false;
+        if (other.getInsecureSsl() == null ^ this.getInsecureSsl() == null)
+            return false;
+        if (other.getInsecureSsl() != null && other.getInsecureSsl().equals(this.getInsecureSsl()) == false)
             return false;
         return true;
     }
@@ -987,8 +1103,10 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
+        hashCode = prime * hashCode + ((getGitCloneDepth() == null) ? 0 : getGitCloneDepth().hashCode());
         hashCode = prime * hashCode + ((getBuildspec() == null) ? 0 : getBuildspec().hashCode());
         hashCode = prime * hashCode + ((getAuth() == null) ? 0 : getAuth().hashCode());
+        hashCode = prime * hashCode + ((getInsecureSsl() == null) ? 0 : getInsecureSsl().hashCode());
         return hashCode;
     }
 

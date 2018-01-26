@@ -141,6 +141,9 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                             new JsonErrorShapeMetadata().withErrorCode("InvalidSubnetIDException").withModeledClass(
                                     com.amazonaws.services.lambda.model.InvalidSubnetIDException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("PreconditionFailedException").withModeledClass(
+                                    com.amazonaws.services.lambda.model.PreconditionFailedException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("RequestTooLargeException").withModeledClass(
                                     com.amazonaws.services.lambda.model.RequestTooLargeException.class))
                     .addErrorMetadata(
@@ -369,6 +372,10 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws PolicyLengthExceededException
      *         Lambda function access policy is limited to 20 KB.
      * @throws TooManyRequestsException
+     * @throws PreconditionFailedException
+     *         The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
+     *         <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
+     *         resource.
      * @sample AWSLambda.AddPermission
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission" target="_top">AWS API
      *      Documentation</a>
@@ -1830,6 +1837,10 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws CodeStorageExceededException
      *         You have exceeded your maximum total code size per account. <a
      *         href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
+     * @throws PreconditionFailedException
+     *         The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
+     *         <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
+     *         resource.
      * @sample AWSLambda.PublishVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishVersion" target="_top">AWS API
      *      Documentation</a>
@@ -1964,6 +1975,10 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
+     * @throws PreconditionFailedException
+     *         The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
+     *         <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
+     *         resource.
      * @sample AWSLambda.RemovePermission
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission" target="_top">AWS API
      *      Documentation</a>
@@ -2145,6 +2160,10 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code> API, that
      *         AWS Lambda is unable to assume you will get this exception.
      * @throws TooManyRequestsException
+     * @throws PreconditionFailedException
+     *         The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
+     *         <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
+     *         resource.
      * @sample AWSLambda.UpdateAlias
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateAlias" target="_top">AWS API
      *      Documentation</a>
@@ -2294,6 +2313,10 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws CodeStorageExceededException
      *         You have exceeded your maximum total code size per account. <a
      *         href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
+     * @throws PreconditionFailedException
+     *         The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
+     *         <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
+     *         resource.
      * @sample AWSLambda.UpdateFunctionCode
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionCode" target="_top">AWS API
      *      Documentation</a>
@@ -2365,6 +2388,10 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws TooManyRequestsException
      * @throws ResourceConflictException
      *         The resource already exists.
+     * @throws PreconditionFailedException
+     *         The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
+     *         <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
+     *         resource.
      * @sample AWSLambda.UpdateFunctionConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration"
      *      target="_top">AWS API Documentation</a>

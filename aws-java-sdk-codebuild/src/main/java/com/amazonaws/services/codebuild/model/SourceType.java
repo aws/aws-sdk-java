@@ -24,7 +24,8 @@ public enum SourceType {
     CODEPIPELINE("CODEPIPELINE"),
     GITHUB("GITHUB"),
     S3("S3"),
-    BITBUCKET("BITBUCKET");
+    BITBUCKET("BITBUCKET"),
+    GITHUB_ENTERPRISE("GITHUB_ENTERPRISE");
 
     private String value;
 

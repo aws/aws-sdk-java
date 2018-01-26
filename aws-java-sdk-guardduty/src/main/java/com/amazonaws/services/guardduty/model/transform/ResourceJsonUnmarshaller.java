@@ -48,6 +48,10 @@ public class ResourceJsonUnmarshaller implements Unmarshaller<Resource, JsonUnma
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("accessKeyDetails", targetDepth)) {
+                    context.nextToken();
+                    resource.setAccessKeyDetails(AccessKeyDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("instanceDetails", targetDepth)) {
                     context.nextToken();
                     resource.setInstanceDetails(InstanceDetailsJsonUnmarshaller.getInstance().unmarshall(context));

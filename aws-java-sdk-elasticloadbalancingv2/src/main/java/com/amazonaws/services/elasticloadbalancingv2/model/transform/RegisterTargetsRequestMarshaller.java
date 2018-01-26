@@ -46,9 +46,8 @@ public class RegisterTargetsRequestMarshaller implements Marshaller<Request<Regi
             request.addParameter("TargetGroupArn", StringUtils.fromString(registerTargetsRequest.getTargetGroupArn()));
         }
 
-        java.util.List<TargetDescription> targetsList = registerTargetsRequest.getTargets();
-
-        if (targetsList != null) {
+        if (registerTargetsRequest.getTargets() != null) {
+            java.util.List<TargetDescription> targetsList = registerTargetsRequest.getTargets();
             if (targetsList.isEmpty()) {
                 request.addParameter("Targets", "");
             } else {

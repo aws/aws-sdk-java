@@ -47,9 +47,8 @@ public class DescribeTargetHealthRequestMarshaller implements Marshaller<Request
             request.addParameter("TargetGroupArn", StringUtils.fromString(describeTargetHealthRequest.getTargetGroupArn()));
         }
 
-        java.util.List<TargetDescription> targetsList = describeTargetHealthRequest.getTargets();
-
-        if (targetsList != null) {
+        if (describeTargetHealthRequest.getTargets() != null) {
+            java.util.List<TargetDescription> targetsList = describeTargetHealthRequest.getTargets();
             if (targetsList.isEmpty()) {
                 request.addParameter("Targets", "");
             } else {

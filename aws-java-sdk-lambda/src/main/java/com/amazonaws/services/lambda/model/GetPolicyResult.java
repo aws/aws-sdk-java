@@ -31,6 +31,12 @@ public class GetPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      */
     private String policy;
+    /**
+     * <p>
+     * Represents the latest updated revision of the function or alias.
+     * </p>
+     */
+    private String revisionId;
 
     /**
      * <p>
@@ -79,6 +85,46 @@ public class GetPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
+     * <p>
+     * Represents the latest updated revision of the function or alias.
+     * </p>
+     * 
+     * @param revisionId
+     *        Represents the latest updated revision of the function or alias.
+     */
+
+    public void setRevisionId(String revisionId) {
+        this.revisionId = revisionId;
+    }
+
+    /**
+     * <p>
+     * Represents the latest updated revision of the function or alias.
+     * </p>
+     * 
+     * @return Represents the latest updated revision of the function or alias.
+     */
+
+    public String getRevisionId() {
+        return this.revisionId;
+    }
+
+    /**
+     * <p>
+     * Represents the latest updated revision of the function or alias.
+     * </p>
+     * 
+     * @param revisionId
+     *        Represents the latest updated revision of the function or alias.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPolicyResult withRevisionId(String revisionId) {
+        setRevisionId(revisionId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -90,7 +136,9 @@ public class GetPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPolicy() != null)
-            sb.append("Policy: ").append(getPolicy());
+            sb.append("Policy: ").append(getPolicy()).append(",");
+        if (getRevisionId() != null)
+            sb.append("RevisionId: ").append(getRevisionId());
         sb.append("}");
         return sb.toString();
     }
@@ -109,6 +157,10 @@ public class GetPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
             return false;
         if (other.getPolicy() != null && other.getPolicy().equals(this.getPolicy()) == false)
             return false;
+        if (other.getRevisionId() == null ^ this.getRevisionId() == null)
+            return false;
+        if (other.getRevisionId() != null && other.getRevisionId().equals(this.getRevisionId()) == false)
+            return false;
         return true;
     }
 
@@ -118,6 +170,7 @@ public class GetPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getPolicy() == null) ? 0 : getPolicy().hashCode());
+        hashCode = prime * hashCode + ((getRevisionId() == null) ? 0 : getRevisionId().hashCode());
         return hashCode;
     }
 

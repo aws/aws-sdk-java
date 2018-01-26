@@ -72,10 +72,16 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
     private String roomArn;
     /**
      * <p>
-     * The status of a device.
+     * The status of a device. If the status is not READY, check the DeviceStatusInfo for details.
      * </p>
      */
     private String deviceStatus;
+    /**
+     * <p>
+     * Detailed information about a device's status.
+     * </p>
+     */
+    private DeviceStatusInfo deviceStatusInfo;
 
     /**
      * <p>
@@ -359,11 +365,11 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of a device.
+     * The status of a device. If the status is not READY, check the DeviceStatusInfo for details.
      * </p>
      * 
      * @param deviceStatus
-     *        The status of a device.
+     *        The status of a device. If the status is not READY, check the DeviceStatusInfo for details.
      * @see DeviceStatus
      */
 
@@ -373,10 +379,10 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of a device.
+     * The status of a device. If the status is not READY, check the DeviceStatusInfo for details.
      * </p>
      * 
-     * @return The status of a device.
+     * @return The status of a device. If the status is not READY, check the DeviceStatusInfo for details.
      * @see DeviceStatus
      */
 
@@ -386,11 +392,11 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of a device.
+     * The status of a device. If the status is not READY, check the DeviceStatusInfo for details.
      * </p>
      * 
      * @param deviceStatus
-     *        The status of a device.
+     *        The status of a device. If the status is not READY, check the DeviceStatusInfo for details.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeviceStatus
      */
@@ -402,17 +408,57 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of a device.
+     * The status of a device. If the status is not READY, check the DeviceStatusInfo for details.
      * </p>
      * 
      * @param deviceStatus
-     *        The status of a device.
+     *        The status of a device. If the status is not READY, check the DeviceStatusInfo for details.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeviceStatus
      */
 
     public Device withDeviceStatus(DeviceStatus deviceStatus) {
         this.deviceStatus = deviceStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Detailed information about a device's status.
+     * </p>
+     * 
+     * @param deviceStatusInfo
+     *        Detailed information about a device's status.
+     */
+
+    public void setDeviceStatusInfo(DeviceStatusInfo deviceStatusInfo) {
+        this.deviceStatusInfo = deviceStatusInfo;
+    }
+
+    /**
+     * <p>
+     * Detailed information about a device's status.
+     * </p>
+     * 
+     * @return Detailed information about a device's status.
+     */
+
+    public DeviceStatusInfo getDeviceStatusInfo() {
+        return this.deviceStatusInfo;
+    }
+
+    /**
+     * <p>
+     * Detailed information about a device's status.
+     * </p>
+     * 
+     * @param deviceStatusInfo
+     *        Detailed information about a device's status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Device withDeviceStatusInfo(DeviceStatusInfo deviceStatusInfo) {
+        setDeviceStatusInfo(deviceStatusInfo);
         return this;
     }
 
@@ -442,7 +488,9 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
         if (getRoomArn() != null)
             sb.append("RoomArn: ").append(getRoomArn()).append(",");
         if (getDeviceStatus() != null)
-            sb.append("DeviceStatus: ").append(getDeviceStatus());
+            sb.append("DeviceStatus: ").append(getDeviceStatus()).append(",");
+        if (getDeviceStatusInfo() != null)
+            sb.append("DeviceStatusInfo: ").append(getDeviceStatusInfo());
         sb.append("}");
         return sb.toString();
     }
@@ -489,6 +537,10 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDeviceStatus() != null && other.getDeviceStatus().equals(this.getDeviceStatus()) == false)
             return false;
+        if (other.getDeviceStatusInfo() == null ^ this.getDeviceStatusInfo() == null)
+            return false;
+        if (other.getDeviceStatusInfo() != null && other.getDeviceStatusInfo().equals(this.getDeviceStatusInfo()) == false)
+            return false;
         return true;
     }
 
@@ -505,6 +557,7 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getMacAddress() == null) ? 0 : getMacAddress().hashCode());
         hashCode = prime * hashCode + ((getRoomArn() == null) ? 0 : getRoomArn().hashCode());
         hashCode = prime * hashCode + ((getDeviceStatus() == null) ? 0 : getDeviceStatus().hashCode());
+        hashCode = prime * hashCode + ((getDeviceStatusInfo() == null) ? 0 : getDeviceStatusInfo().hashCode());
         return hashCode;
     }
 

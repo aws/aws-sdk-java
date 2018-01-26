@@ -46,9 +46,8 @@ public class DescribeRulesRequestMarshaller implements Marshaller<Request<Descri
             request.addParameter("ListenerArn", StringUtils.fromString(describeRulesRequest.getListenerArn()));
         }
 
-        java.util.List<String> ruleArnsList = describeRulesRequest.getRuleArns();
-
-        if (ruleArnsList != null) {
+        if (describeRulesRequest.getRuleArns() != null) {
+            java.util.List<String> ruleArnsList = describeRulesRequest.getRuleArns();
             if (ruleArnsList.isEmpty()) {
                 request.addParameter("RuleArns", "");
             } else {

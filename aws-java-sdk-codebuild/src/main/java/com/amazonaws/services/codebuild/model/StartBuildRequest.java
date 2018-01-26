@@ -82,6 +82,13 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private java.util.List<EnvironmentVariable> environmentVariablesOverride;
     /**
      * <p>
+     * The user-defined depth of history, with a minimum value of 0, that overrides, for this build only, any previous
+     * depth of history defined in the build project.
+     * </p>
+     */
+    private Integer gitCloneDepthOverride;
+    /**
+     * <p>
      * A build spec declaration that overrides, for this build only, the latest one already defined in the build
      * project.
      * </p>
@@ -472,6 +479,52 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
+     * The user-defined depth of history, with a minimum value of 0, that overrides, for this build only, any previous
+     * depth of history defined in the build project.
+     * </p>
+     * 
+     * @param gitCloneDepthOverride
+     *        The user-defined depth of history, with a minimum value of 0, that overrides, for this build only, any
+     *        previous depth of history defined in the build project.
+     */
+
+    public void setGitCloneDepthOverride(Integer gitCloneDepthOverride) {
+        this.gitCloneDepthOverride = gitCloneDepthOverride;
+    }
+
+    /**
+     * <p>
+     * The user-defined depth of history, with a minimum value of 0, that overrides, for this build only, any previous
+     * depth of history defined in the build project.
+     * </p>
+     * 
+     * @return The user-defined depth of history, with a minimum value of 0, that overrides, for this build only, any
+     *         previous depth of history defined in the build project.
+     */
+
+    public Integer getGitCloneDepthOverride() {
+        return this.gitCloneDepthOverride;
+    }
+
+    /**
+     * <p>
+     * The user-defined depth of history, with a minimum value of 0, that overrides, for this build only, any previous
+     * depth of history defined in the build project.
+     * </p>
+     * 
+     * @param gitCloneDepthOverride
+     *        The user-defined depth of history, with a minimum value of 0, that overrides, for this build only, any
+     *        previous depth of history defined in the build project.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartBuildRequest withGitCloneDepthOverride(Integer gitCloneDepthOverride) {
+        setGitCloneDepthOverride(gitCloneDepthOverride);
+        return this;
+    }
+
+    /**
+     * <p>
      * A build spec declaration that overrides, for this build only, the latest one already defined in the build
      * project.
      * </p>
@@ -581,6 +634,8 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
             sb.append("ArtifactsOverride: ").append(getArtifactsOverride()).append(",");
         if (getEnvironmentVariablesOverride() != null)
             sb.append("EnvironmentVariablesOverride: ").append(getEnvironmentVariablesOverride()).append(",");
+        if (getGitCloneDepthOverride() != null)
+            sb.append("GitCloneDepthOverride: ").append(getGitCloneDepthOverride()).append(",");
         if (getBuildspecOverride() != null)
             sb.append("BuildspecOverride: ").append(getBuildspecOverride()).append(",");
         if (getTimeoutInMinutesOverride() != null)
@@ -615,6 +670,10 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getEnvironmentVariablesOverride() != null && other.getEnvironmentVariablesOverride().equals(this.getEnvironmentVariablesOverride()) == false)
             return false;
+        if (other.getGitCloneDepthOverride() == null ^ this.getGitCloneDepthOverride() == null)
+            return false;
+        if (other.getGitCloneDepthOverride() != null && other.getGitCloneDepthOverride().equals(this.getGitCloneDepthOverride()) == false)
+            return false;
         if (other.getBuildspecOverride() == null ^ this.getBuildspecOverride() == null)
             return false;
         if (other.getBuildspecOverride() != null && other.getBuildspecOverride().equals(this.getBuildspecOverride()) == false)
@@ -635,6 +694,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getSourceVersion() == null) ? 0 : getSourceVersion().hashCode());
         hashCode = prime * hashCode + ((getArtifactsOverride() == null) ? 0 : getArtifactsOverride().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentVariablesOverride() == null) ? 0 : getEnvironmentVariablesOverride().hashCode());
+        hashCode = prime * hashCode + ((getGitCloneDepthOverride() == null) ? 0 : getGitCloneDepthOverride().hashCode());
         hashCode = prime * hashCode + ((getBuildspecOverride() == null) ? 0 : getBuildspecOverride().hashCode());
         hashCode = prime * hashCode + ((getTimeoutInMinutesOverride() == null) ? 0 : getTimeoutInMinutesOverride().hashCode());
         return hashCode;

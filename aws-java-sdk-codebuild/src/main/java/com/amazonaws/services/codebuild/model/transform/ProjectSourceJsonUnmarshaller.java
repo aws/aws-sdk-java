@@ -56,6 +56,10 @@ public class ProjectSourceJsonUnmarshaller implements Unmarshaller<ProjectSource
                     context.nextToken();
                     projectSource.setLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("gitCloneDepth", targetDepth)) {
+                    context.nextToken();
+                    projectSource.setGitCloneDepth(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("buildspec", targetDepth)) {
                     context.nextToken();
                     projectSource.setBuildspec(context.getUnmarshaller(String.class).unmarshall(context));
@@ -63,6 +67,10 @@ public class ProjectSourceJsonUnmarshaller implements Unmarshaller<ProjectSource
                 if (context.testExpression("auth", targetDepth)) {
                     context.nextToken();
                     projectSource.setAuth(SourceAuthJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("insecureSsl", targetDepth)) {
+                    context.nextToken();
+                    projectSource.setInsecureSsl(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

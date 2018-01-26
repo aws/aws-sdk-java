@@ -120,6 +120,10 @@ public class CreateFunctionResultJsonUnmarshaller implements Unmarshaller<Create
                     context.nextToken();
                     createFunctionResult.setMasterArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("RevisionId", targetDepth)) {
+                    context.nextToken();
+                    createFunctionResult.setRevisionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

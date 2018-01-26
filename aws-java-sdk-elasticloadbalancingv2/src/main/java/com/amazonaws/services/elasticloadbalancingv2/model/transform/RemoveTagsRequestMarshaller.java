@@ -42,9 +42,8 @@ public class RemoveTagsRequestMarshaller implements Marshaller<Request<RemoveTag
         request.addParameter("Version", "2015-12-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        java.util.List<String> resourceArnsList = removeTagsRequest.getResourceArns();
-
-        if (resourceArnsList != null) {
+        if (removeTagsRequest.getResourceArns() != null) {
+            java.util.List<String> resourceArnsList = removeTagsRequest.getResourceArns();
             if (resourceArnsList.isEmpty()) {
                 request.addParameter("ResourceArns", "");
             } else {
@@ -59,9 +58,8 @@ public class RemoveTagsRequestMarshaller implements Marshaller<Request<RemoveTag
             }
         }
 
-        java.util.List<String> tagKeysList = removeTagsRequest.getTagKeys();
-
-        if (tagKeysList != null) {
+        if (removeTagsRequest.getTagKeys() != null) {
+            java.util.List<String> tagKeysList = removeTagsRequest.getTagKeys();
             if (tagKeysList.isEmpty()) {
                 request.addParameter("TagKeys", "");
             } else {

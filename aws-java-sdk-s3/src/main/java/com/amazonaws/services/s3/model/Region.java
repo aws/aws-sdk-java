@@ -42,19 +42,13 @@ import java.util.regex.Pattern;
 public enum Region {
 
     /**
-     * The US Standard Amazon S3 Region. This region
-     * uses Amazon S3 servers located in the United
-     * States.
+     * The US Standard Amazon S3 Region. This region is equivalent to 'us-east-1', see
+     * <a href="https://aws.amazon.com/s3/faqs/">Amazon Simple Storage Service (S3) FAQs</a> for more information.
      * <p>
-     * This is the default Amazon S3 Region. All requests sent to
-     * <code>s3.amazonaws.com</code> go
+     * This is the default Amazon S3 Region. All requests sent to <code>s3.amazonaws.com</code> go
      * to this region unless a location constraint is specified when creating a bucket.
-     * The US Standard Region automatically places
-     * data in either Amazon's east or west coast data centers depending on
-     * which one provides the lowest latency.
-     * </p>
      */
-    US_Standard((String[])null),
+    US_Standard((String[]) null),
 
     /**
      * The US-East-2 (Ohio) Region. This region

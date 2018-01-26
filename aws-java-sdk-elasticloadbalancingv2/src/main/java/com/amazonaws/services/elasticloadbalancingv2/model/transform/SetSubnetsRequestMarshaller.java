@@ -46,9 +46,8 @@ public class SetSubnetsRequestMarshaller implements Marshaller<Request<SetSubnet
             request.addParameter("LoadBalancerArn", StringUtils.fromString(setSubnetsRequest.getLoadBalancerArn()));
         }
 
-        java.util.List<String> subnetsList = setSubnetsRequest.getSubnets();
-
-        if (subnetsList != null) {
+        if (setSubnetsRequest.getSubnets() != null) {
+            java.util.List<String> subnetsList = setSubnetsRequest.getSubnets();
             if (subnetsList.isEmpty()) {
                 request.addParameter("Subnets", "");
             } else {
@@ -63,9 +62,8 @@ public class SetSubnetsRequestMarshaller implements Marshaller<Request<SetSubnet
             }
         }
 
-        java.util.List<SubnetMapping> subnetMappingsList = setSubnetsRequest.getSubnetMappings();
-
-        if (subnetMappingsList != null) {
+        if (setSubnetsRequest.getSubnetMappings() != null) {
+            java.util.List<SubnetMapping> subnetMappingsList = setSubnetsRequest.getSubnetMappings();
             if (subnetMappingsList.isEmpty()) {
                 request.addParameter("SubnetMappings", "");
             } else {

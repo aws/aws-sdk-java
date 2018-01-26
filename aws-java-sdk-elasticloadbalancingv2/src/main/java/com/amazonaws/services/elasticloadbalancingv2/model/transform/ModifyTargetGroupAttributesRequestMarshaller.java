@@ -48,9 +48,8 @@ public class ModifyTargetGroupAttributesRequestMarshaller implements
             request.addParameter("TargetGroupArn", StringUtils.fromString(modifyTargetGroupAttributesRequest.getTargetGroupArn()));
         }
 
-        java.util.List<TargetGroupAttribute> attributesList = modifyTargetGroupAttributesRequest.getAttributes();
-
-        if (attributesList != null) {
+        if (modifyTargetGroupAttributesRequest.getAttributes() != null) {
+            java.util.List<TargetGroupAttribute> attributesList = modifyTargetGroupAttributesRequest.getAttributes();
             if (attributesList.isEmpty()) {
                 request.addParameter("Attributes", "");
             } else {

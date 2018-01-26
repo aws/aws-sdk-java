@@ -26,9 +26,37 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Resource implements Serializable, Cloneable, StructuredPojo {
 
+    private AccessKeyDetails accessKeyDetails;
+
     private InstanceDetails instanceDetails;
     /** The type of the AWS resource. */
     private String resourceType;
+
+    /**
+     * @param accessKeyDetails
+     */
+
+    public void setAccessKeyDetails(AccessKeyDetails accessKeyDetails) {
+        this.accessKeyDetails = accessKeyDetails;
+    }
+
+    /**
+     * @return
+     */
+
+    public AccessKeyDetails getAccessKeyDetails() {
+        return this.accessKeyDetails;
+    }
+
+    /**
+     * @param accessKeyDetails
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Resource withAccessKeyDetails(AccessKeyDetails accessKeyDetails) {
+        setAccessKeyDetails(accessKeyDetails);
+        return this;
+    }
 
     /**
      * @param instanceDetails
@@ -101,6 +129,8 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccessKeyDetails() != null)
+            sb.append("AccessKeyDetails: ").append(getAccessKeyDetails()).append(",");
         if (getInstanceDetails() != null)
             sb.append("InstanceDetails: ").append(getInstanceDetails()).append(",");
         if (getResourceType() != null)
@@ -119,6 +149,10 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Resource == false)
             return false;
         Resource other = (Resource) obj;
+        if (other.getAccessKeyDetails() == null ^ this.getAccessKeyDetails() == null)
+            return false;
+        if (other.getAccessKeyDetails() != null && other.getAccessKeyDetails().equals(this.getAccessKeyDetails()) == false)
+            return false;
         if (other.getInstanceDetails() == null ^ this.getInstanceDetails() == null)
             return false;
         if (other.getInstanceDetails() != null && other.getInstanceDetails().equals(this.getInstanceDetails()) == false)
@@ -135,6 +169,7 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccessKeyDetails() == null) ? 0 : getAccessKeyDetails().hashCode());
         hashCode = prime * hashCode + ((getInstanceDetails() == null) ? 0 : getInstanceDetails().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         return hashCode;

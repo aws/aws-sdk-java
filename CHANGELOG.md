@@ -1,3 +1,20 @@
+# __1.11.270__ __2018-01-25__
+## __AWS CodeBuild__
+  - ### Features
+    - Adding support for Shallow Clone and GitHub Enterprise in AWS CodeBuild.
+
+## __AWS Lambda__
+  - ### Features
+    - AWS Lambda now supports Revision ID on your function versions and aliases, to track and apply conditional updates when you are updating your function version or alias resources.
+
+## __Alexa For Business__
+  - ### Features
+    - Supports new field for DeviceStatusInfo which provides details about the DeviceStatus following a DeviceSync operation.
+
+## __Amazon GuardDuty__
+  - ### Features
+    - Added the missing AccessKeyDetails object to the resource shape.
+
 # __1.11.269__ __2018-01-22__
 ## __AWS Budgets__
   - ### Features

@@ -43,9 +43,8 @@ public class DescribeLoadBalancersRequestMarshaller implements Marshaller<Reques
         request.addParameter("Version", "2015-12-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        java.util.List<String> loadBalancerArnsList = describeLoadBalancersRequest.getLoadBalancerArns();
-
-        if (loadBalancerArnsList != null) {
+        if (describeLoadBalancersRequest.getLoadBalancerArns() != null) {
+            java.util.List<String> loadBalancerArnsList = describeLoadBalancersRequest.getLoadBalancerArns();
             if (loadBalancerArnsList.isEmpty()) {
                 request.addParameter("LoadBalancerArns", "");
             } else {
@@ -60,9 +59,8 @@ public class DescribeLoadBalancersRequestMarshaller implements Marshaller<Reques
             }
         }
 
-        java.util.List<String> namesList = describeLoadBalancersRequest.getNames();
-
-        if (namesList != null) {
+        if (describeLoadBalancersRequest.getNames() != null) {
+            java.util.List<String> namesList = describeLoadBalancersRequest.getNames();
             if (namesList.isEmpty()) {
                 request.addParameter("Names", "");
             } else {

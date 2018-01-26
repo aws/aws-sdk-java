@@ -38,6 +38,8 @@ public class ProjectEnvironmentMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("environmentVariables").build();
     private static final MarshallingInfo<Boolean> PRIVILEGEDMODE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("privilegedMode").build();
+    private static final MarshallingInfo<String> CERTIFICATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificate").build();
 
     private static final ProjectEnvironmentMarshaller instance = new ProjectEnvironmentMarshaller();
 
@@ -60,6 +62,7 @@ public class ProjectEnvironmentMarshaller {
             protocolMarshaller.marshall(projectEnvironment.getComputeType(), COMPUTETYPE_BINDING);
             protocolMarshaller.marshall(projectEnvironment.getEnvironmentVariables(), ENVIRONMENTVARIABLES_BINDING);
             protocolMarshaller.marshall(projectEnvironment.getPrivilegedMode(), PRIVILEGEDMODE_BINDING);
+            protocolMarshaller.marshall(projectEnvironment.getCertificate(), CERTIFICATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

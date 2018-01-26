@@ -31,10 +31,14 @@ public class ProjectSourceMarshaller {
             .marshallLocationName("type").build();
     private static final MarshallingInfo<String> LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("location").build();
+    private static final MarshallingInfo<Integer> GITCLONEDEPTH_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("gitCloneDepth").build();
     private static final MarshallingInfo<String> BUILDSPEC_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("buildspec").build();
     private static final MarshallingInfo<StructuredPojo> AUTH_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("auth").build();
+    private static final MarshallingInfo<Boolean> INSECURESSL_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("insecureSsl").build();
 
     private static final ProjectSourceMarshaller instance = new ProjectSourceMarshaller();
 
@@ -54,8 +58,10 @@ public class ProjectSourceMarshaller {
         try {
             protocolMarshaller.marshall(projectSource.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(projectSource.getLocation(), LOCATION_BINDING);
+            protocolMarshaller.marshall(projectSource.getGitCloneDepth(), GITCLONEDEPTH_BINDING);
             protocolMarshaller.marshall(projectSource.getBuildspec(), BUILDSPEC_BINDING);
             protocolMarshaller.marshall(projectSource.getAuth(), AUTH_BINDING);
+            protocolMarshaller.marshall(projectSource.getInsecureSsl(), INSECURESSL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

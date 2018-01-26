@@ -70,9 +70,9 @@
         </#if>
         if (!${listVariable}.isEmpty() || !${listVariable}.isAutoConstruct()) {
     <#else>
-        ${listModel.templateType} ${listVariable} = ${getMember}();
 
-        if (${listVariable} != null) {
+        if (${getMember}() != null) {
+            ${listModel.templateType} ${listVariable} = ${getMember}();
             <#-- For query protocol, an empty list is serialized differently. -->
             if (${listVariable}.isEmpty()) {
                 request.addParameter("${parameterRootPath}", "");

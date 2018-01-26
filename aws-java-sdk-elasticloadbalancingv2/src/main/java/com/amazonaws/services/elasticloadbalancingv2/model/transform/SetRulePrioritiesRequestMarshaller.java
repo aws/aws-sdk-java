@@ -42,9 +42,8 @@ public class SetRulePrioritiesRequestMarshaller implements Marshaller<Request<Se
         request.addParameter("Version", "2015-12-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        java.util.List<RulePriorityPair> rulePrioritiesList = setRulePrioritiesRequest.getRulePriorities();
-
-        if (rulePrioritiesList != null) {
+        if (setRulePrioritiesRequest.getRulePriorities() != null) {
+            java.util.List<RulePriorityPair> rulePrioritiesList = setRulePrioritiesRequest.getRulePriorities();
             if (rulePrioritiesList.isEmpty()) {
                 request.addParameter("RulePriorities", "");
             } else {

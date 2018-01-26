@@ -43,6 +43,8 @@ public class AddPermissionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventSourceToken").build();
     private static final MarshallingInfo<String> QUALIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("Qualifier").build();
+    private static final MarshallingInfo<String> REVISIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RevisionId").build();
 
     private static final AddPermissionRequestMarshaller instance = new AddPermissionRequestMarshaller();
 
@@ -68,6 +70,7 @@ public class AddPermissionRequestMarshaller {
             protocolMarshaller.marshall(addPermissionRequest.getSourceAccount(), SOURCEACCOUNT_BINDING);
             protocolMarshaller.marshall(addPermissionRequest.getEventSourceToken(), EVENTSOURCETOKEN_BINDING);
             protocolMarshaller.marshall(addPermissionRequest.getQualifier(), QUALIFIER_BINDING);
+            protocolMarshaller.marshall(addPermissionRequest.getRevisionId(), REVISIONID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

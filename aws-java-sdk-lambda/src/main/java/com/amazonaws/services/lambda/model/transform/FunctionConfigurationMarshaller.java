@@ -63,6 +63,8 @@ public class FunctionConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TracingConfig").build();
     private static final MarshallingInfo<String> MASTERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("MasterArn").build();
+    private static final MarshallingInfo<String> REVISIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RevisionId").build();
 
     private static final FunctionConfigurationMarshaller instance = new FunctionConfigurationMarshaller();
 
@@ -98,6 +100,7 @@ public class FunctionConfigurationMarshaller {
             protocolMarshaller.marshall(functionConfiguration.getKMSKeyArn(), KMSKEYARN_BINDING);
             protocolMarshaller.marshall(functionConfiguration.getTracingConfig(), TRACINGCONFIG_BINDING);
             protocolMarshaller.marshall(functionConfiguration.getMasterArn(), MASTERARN_BINDING);
+            protocolMarshaller.marshall(functionConfiguration.getRevisionId(), REVISIONID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

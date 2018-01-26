@@ -58,9 +58,8 @@ public class ModifyListenerRequestMarshaller implements Marshaller<Request<Modif
             request.addParameter("SslPolicy", StringUtils.fromString(modifyListenerRequest.getSslPolicy()));
         }
 
-        java.util.List<Certificate> certificatesList = modifyListenerRequest.getCertificates();
-
-        if (certificatesList != null) {
+        if (modifyListenerRequest.getCertificates() != null) {
+            java.util.List<Certificate> certificatesList = modifyListenerRequest.getCertificates();
             if (certificatesList.isEmpty()) {
                 request.addParameter("Certificates", "");
             } else {
@@ -82,9 +81,8 @@ public class ModifyListenerRequestMarshaller implements Marshaller<Request<Modif
             }
         }
 
-        java.util.List<Action> defaultActionsList = modifyListenerRequest.getDefaultActions();
-
-        if (defaultActionsList != null) {
+        if (modifyListenerRequest.getDefaultActions() != null) {
+            java.util.List<Action> defaultActionsList = modifyListenerRequest.getDefaultActions();
             if (defaultActionsList.isEmpty()) {
                 request.addParameter("DefaultActions", "");
             } else {

@@ -14,19 +14,15 @@
  */
 package com.amazonaws.http.conn.ssl;
 
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.fail;
 import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertFalse;
 
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-
 import javax.net.ssl.SSLContext;
-
 import org.junit.Test;
 
 public class SdkTLSSocketFactoryTest {
@@ -67,7 +63,7 @@ public class SdkTLSSocketFactoryTest {
         f.prepareSocket(socket);
 
         assertArrayEquals(new String[] {"TLSv1.2", "TLSv1.1", "TLSv1", "SSLv3" },
-                    socket.getCapturedProtocols());
+                          socket.getCapturedProtocols());
     }
 
     @Test
@@ -86,8 +82,8 @@ public class SdkTLSSocketFactoryTest {
         f.prepareSocket(socket);
 
         // For backward compatibility
-        assertArrayEquals(new String[] {"SSLv3"}, 
-                            socket.getCapturedProtocols());
+        assertArrayEquals(new String[] {"SSLv3"},
+                          socket.getCapturedProtocols());
     }
 
     @Test
@@ -105,7 +101,7 @@ public class SdkTLSSocketFactoryTest {
         };
         f.prepareSocket(socket);
         assertArrayEquals(new String[]{"TLSv1.1", "TLSv1", "SSLv3"},
-                            socket.getCapturedProtocols());
+                          socket.getCapturedProtocols());
     }
 
     private String[] shuffle(String[] in) {

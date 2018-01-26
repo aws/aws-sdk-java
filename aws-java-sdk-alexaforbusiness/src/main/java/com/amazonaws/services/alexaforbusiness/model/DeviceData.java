@@ -82,6 +82,12 @@ public class DeviceData implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String roomName;
+    /**
+     * <p>
+     * Detailed information about a device's status.
+     * </p>
+     */
+    private DeviceStatusInfo deviceStatusInfo;
 
     /**
      * <p>
@@ -463,6 +469,46 @@ public class DeviceData implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Detailed information about a device's status.
+     * </p>
+     * 
+     * @param deviceStatusInfo
+     *        Detailed information about a device's status.
+     */
+
+    public void setDeviceStatusInfo(DeviceStatusInfo deviceStatusInfo) {
+        this.deviceStatusInfo = deviceStatusInfo;
+    }
+
+    /**
+     * <p>
+     * Detailed information about a device's status.
+     * </p>
+     * 
+     * @return Detailed information about a device's status.
+     */
+
+    public DeviceStatusInfo getDeviceStatusInfo() {
+        return this.deviceStatusInfo;
+    }
+
+    /**
+     * <p>
+     * Detailed information about a device's status.
+     * </p>
+     * 
+     * @param deviceStatusInfo
+     *        Detailed information about a device's status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeviceData withDeviceStatusInfo(DeviceStatusInfo deviceStatusInfo) {
+        setDeviceStatusInfo(deviceStatusInfo);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -490,7 +536,9 @@ public class DeviceData implements Serializable, Cloneable, StructuredPojo {
         if (getRoomArn() != null)
             sb.append("RoomArn: ").append(getRoomArn()).append(",");
         if (getRoomName() != null)
-            sb.append("RoomName: ").append(getRoomName());
+            sb.append("RoomName: ").append(getRoomName()).append(",");
+        if (getDeviceStatusInfo() != null)
+            sb.append("DeviceStatusInfo: ").append(getDeviceStatusInfo());
         sb.append("}");
         return sb.toString();
     }
@@ -541,6 +589,10 @@ public class DeviceData implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRoomName() != null && other.getRoomName().equals(this.getRoomName()) == false)
             return false;
+        if (other.getDeviceStatusInfo() == null ^ this.getDeviceStatusInfo() == null)
+            return false;
+        if (other.getDeviceStatusInfo() != null && other.getDeviceStatusInfo().equals(this.getDeviceStatusInfo()) == false)
+            return false;
         return true;
     }
 
@@ -558,6 +610,7 @@ public class DeviceData implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDeviceStatus() == null) ? 0 : getDeviceStatus().hashCode());
         hashCode = prime * hashCode + ((getRoomArn() == null) ? 0 : getRoomArn().hashCode());
         hashCode = prime * hashCode + ((getRoomName() == null) ? 0 : getRoomName().hashCode());
+        hashCode = prime * hashCode + ((getDeviceStatusInfo() == null) ? 0 : getDeviceStatusInfo().hashCode());
         return hashCode;
     }
 

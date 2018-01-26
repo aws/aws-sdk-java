@@ -42,9 +42,8 @@ public class DescribeSSLPoliciesRequestMarshaller implements Marshaller<Request<
         request.addParameter("Version", "2015-12-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        java.util.List<String> namesList = describeSSLPoliciesRequest.getNames();
-
-        if (namesList != null) {
+        if (describeSSLPoliciesRequest.getNames() != null) {
+            java.util.List<String> namesList = describeSSLPoliciesRequest.getNames();
             if (namesList.isEmpty()) {
                 request.addParameter("Names", "");
             } else {

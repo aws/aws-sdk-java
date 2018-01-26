@@ -52,6 +52,14 @@ public class WebhookJsonUnmarshaller implements Unmarshaller<Webhook, JsonUnmars
                     context.nextToken();
                     webhook.setUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("payloadUrl", targetDepth)) {
+                    context.nextToken();
+                    webhook.setPayloadUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("secret", targetDepth)) {
+                    context.nextToken();
+                    webhook.setSecret(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

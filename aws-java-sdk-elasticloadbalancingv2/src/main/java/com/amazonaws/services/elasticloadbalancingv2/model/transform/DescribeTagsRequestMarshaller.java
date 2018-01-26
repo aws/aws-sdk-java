@@ -42,9 +42,8 @@ public class DescribeTagsRequestMarshaller implements Marshaller<Request<Describ
         request.addParameter("Version", "2015-12-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        java.util.List<String> resourceArnsList = describeTagsRequest.getResourceArns();
-
-        if (resourceArnsList != null) {
+        if (describeTagsRequest.getResourceArns() != null) {
+            java.util.List<String> resourceArnsList = describeTagsRequest.getResourceArns();
             if (resourceArnsList.isEmpty()) {
                 request.addParameter("ResourceArns", "");
             } else {

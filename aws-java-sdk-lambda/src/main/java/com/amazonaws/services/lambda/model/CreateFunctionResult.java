@@ -140,6 +140,12 @@ public class CreateFunctionResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private String masterArn;
+    /**
+     * <p>
+     * Represents the latest updated revision of the function or alias.
+     * </p>
+     */
+    private String revisionId;
 
     /**
      * <p>
@@ -937,6 +943,46 @@ public class CreateFunctionResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * Represents the latest updated revision of the function or alias.
+     * </p>
+     * 
+     * @param revisionId
+     *        Represents the latest updated revision of the function or alias.
+     */
+
+    public void setRevisionId(String revisionId) {
+        this.revisionId = revisionId;
+    }
+
+    /**
+     * <p>
+     * Represents the latest updated revision of the function or alias.
+     * </p>
+     * 
+     * @return Represents the latest updated revision of the function or alias.
+     */
+
+    public String getRevisionId() {
+        return this.revisionId;
+    }
+
+    /**
+     * <p>
+     * Represents the latest updated revision of the function or alias.
+     * </p>
+     * 
+     * @param revisionId
+     *        Represents the latest updated revision of the function or alias.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFunctionResult withRevisionId(String revisionId) {
+        setRevisionId(revisionId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -982,7 +1028,9 @@ public class CreateFunctionResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getTracingConfig() != null)
             sb.append("TracingConfig: ").append(getTracingConfig()).append(",");
         if (getMasterArn() != null)
-            sb.append("MasterArn: ").append(getMasterArn());
+            sb.append("MasterArn: ").append(getMasterArn()).append(",");
+        if (getRevisionId() != null)
+            sb.append("RevisionId: ").append(getRevisionId());
         sb.append("}");
         return sb.toString();
     }
@@ -1069,6 +1117,10 @@ public class CreateFunctionResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getMasterArn() != null && other.getMasterArn().equals(this.getMasterArn()) == false)
             return false;
+        if (other.getRevisionId() == null ^ this.getRevisionId() == null)
+            return false;
+        if (other.getRevisionId() != null && other.getRevisionId().equals(this.getRevisionId()) == false)
+            return false;
         return true;
     }
 
@@ -1095,6 +1147,7 @@ public class CreateFunctionResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getKMSKeyArn() == null) ? 0 : getKMSKeyArn().hashCode());
         hashCode = prime * hashCode + ((getTracingConfig() == null) ? 0 : getTracingConfig().hashCode());
         hashCode = prime * hashCode + ((getMasterArn() == null) ? 0 : getMasterArn().hashCode());
+        hashCode = prime * hashCode + ((getRevisionId() == null) ? 0 : getRevisionId().hashCode());
         return hashCode;
     }
 
