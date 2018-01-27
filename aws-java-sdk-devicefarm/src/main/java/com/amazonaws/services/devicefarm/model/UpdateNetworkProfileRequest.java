@@ -27,7 +27,7 @@ public class UpdateNetworkProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the project that you wish to update network profile settings.
+     * The Amazon Resource Name (ARN) of the project for which you want to update network profile settings.
      * </p>
      */
     private String arn;
@@ -100,11 +100,11 @@ public class UpdateNetworkProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the project that you wish to update network profile settings.
+     * The Amazon Resource Name (ARN) of the project for which you want to update network profile settings.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the project that you wish to update network profile settings.
+     *        The Amazon Resource Name (ARN) of the project for which you want to update network profile settings.
      */
 
     public void setArn(String arn) {
@@ -113,10 +113,10 @@ public class UpdateNetworkProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the project that you wish to update network profile settings.
+     * The Amazon Resource Name (ARN) of the project for which you want to update network profile settings.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the project that you wish to update network profile settings.
+     * @return The Amazon Resource Name (ARN) of the project for which you want to update network profile settings.
      */
 
     public String getArn() {
@@ -125,11 +125,11 @@ public class UpdateNetworkProfileRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the project that you wish to update network profile settings.
+     * The Amazon Resource Name (ARN) of the project for which you want to update network profile settings.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the project that you wish to update network profile settings.
+     *        The Amazon Resource Name (ARN) of the project for which you want to update network profile settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -26,33 +26,28 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateInputRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /**
-     * settings required for PUSH-type inputs; one per redundancy group. Only one of sources and destinations can be
-     * specified. Note: there are currently no settings required for PUSH-type inputs
-     */
+    /** Destination settings for PUSH type inputs. */
     private java.util.List<InputDestinationRequest> destinations;
     /** A list of security groups referenced by IDs to attach to the input. */
     private java.util.List<String> inputSecurityGroups;
     /** Name of the input. */
     private String name;
     /**
-     * Unique identifier of the request to ensure the request is handled exactly once in case of retries
+     * Unique identifier of the request to ensure the request is handled exactly once in case of retries.
      */
     private String requestId;
     /**
-     * settings required for PULL-type inputs; one per redundancy group Only one of sources and destinations can be
-     * specified
+     * The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only
+     * specify sources for PULL type Inputs. Leave Destinations empty.
      */
     private java.util.List<InputSourceRequest> sources;
 
     private String type;
 
     /**
-     * settings required for PUSH-type inputs; one per redundancy group. Only one of sources and destinations can be
-     * specified. Note: there are currently no settings required for PUSH-type inputs
+     * Destination settings for PUSH type inputs.
      * 
-     * @return settings required for PUSH-type inputs; one per redundancy group. Only one of sources and destinations
-     *         can be specified. Note: there are currently no settings required for PUSH-type inputs
+     * @return Destination settings for PUSH type inputs.
      */
 
     public java.util.List<InputDestinationRequest> getDestinations() {
@@ -60,12 +55,10 @@ public class CreateInputRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * settings required for PUSH-type inputs; one per redundancy group. Only one of sources and destinations can be
-     * specified. Note: there are currently no settings required for PUSH-type inputs
+     * Destination settings for PUSH type inputs.
      * 
      * @param destinations
-     *        settings required for PUSH-type inputs; one per redundancy group. Only one of sources and destinations can
-     *        be specified. Note: there are currently no settings required for PUSH-type inputs
+     *        Destination settings for PUSH type inputs.
      */
 
     public void setDestinations(java.util.Collection<InputDestinationRequest> destinations) {
@@ -78,9 +71,7 @@ public class CreateInputRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * settings required for PUSH-type inputs; one per redundancy group. Only one of sources and destinations can be
-     * specified. Note: there are currently no settings required for PUSH-type inputs
-     * 
+     * Destination settings for PUSH type inputs.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setDestinations(java.util.Collection)} or {@link #withDestinations(java.util.Collection)} if you want to
@@ -88,8 +79,7 @@ public class CreateInputRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param destinations
-     *        settings required for PUSH-type inputs; one per redundancy group. Only one of sources and destinations can
-     *        be specified. Note: there are currently no settings required for PUSH-type inputs
+     *        Destination settings for PUSH type inputs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,12 +94,10 @@ public class CreateInputRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * settings required for PUSH-type inputs; one per redundancy group. Only one of sources and destinations can be
-     * specified. Note: there are currently no settings required for PUSH-type inputs
+     * Destination settings for PUSH type inputs.
      * 
      * @param destinations
-     *        settings required for PUSH-type inputs; one per redundancy group. Only one of sources and destinations can
-     *        be specified. Note: there are currently no settings required for PUSH-type inputs
+     *        Destination settings for PUSH type inputs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -215,10 +203,10 @@ public class CreateInputRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Unique identifier of the request to ensure the request is handled exactly once in case of retries
+     * Unique identifier of the request to ensure the request is handled exactly once in case of retries.
      * 
      * @param requestId
-     *        Unique identifier of the request to ensure the request is handled exactly once in case of retries
+     *        Unique identifier of the request to ensure the request is handled exactly once in case of retries.
      */
 
     public void setRequestId(String requestId) {
@@ -226,9 +214,9 @@ public class CreateInputRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Unique identifier of the request to ensure the request is handled exactly once in case of retries
+     * Unique identifier of the request to ensure the request is handled exactly once in case of retries.
      * 
-     * @return Unique identifier of the request to ensure the request is handled exactly once in case of retries
+     * @return Unique identifier of the request to ensure the request is handled exactly once in case of retries.
      */
 
     public String getRequestId() {
@@ -236,10 +224,10 @@ public class CreateInputRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Unique identifier of the request to ensure the request is handled exactly once in case of retries
+     * Unique identifier of the request to ensure the request is handled exactly once in case of retries.
      * 
      * @param requestId
-     *        Unique identifier of the request to ensure the request is handled exactly once in case of retries
+     *        Unique identifier of the request to ensure the request is handled exactly once in case of retries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -249,11 +237,11 @@ public class CreateInputRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * settings required for PULL-type inputs; one per redundancy group Only one of sources and destinations can be
-     * specified
+     * The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only
+     * specify sources for PULL type Inputs. Leave Destinations empty.
      * 
-     * @return settings required for PULL-type inputs; one per redundancy group Only one of sources and destinations can
-     *         be specified
+     * @return The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for
+     *         redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
      */
 
     public java.util.List<InputSourceRequest> getSources() {
@@ -261,12 +249,12 @@ public class CreateInputRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * settings required for PULL-type inputs; one per redundancy group Only one of sources and destinations can be
-     * specified
+     * The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only
+     * specify sources for PULL type Inputs. Leave Destinations empty.
      * 
      * @param sources
-     *        settings required for PULL-type inputs; one per redundancy group Only one of sources and destinations can
-     *        be specified
+     *        The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy.
+     *        Only specify sources for PULL type Inputs. Leave Destinations empty.
      */
 
     public void setSources(java.util.Collection<InputSourceRequest> sources) {
@@ -279,8 +267,8 @@ public class CreateInputRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * settings required for PULL-type inputs; one per redundancy group Only one of sources and destinations can be
-     * specified
+     * The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only
+     * specify sources for PULL type Inputs. Leave Destinations empty.
      * 
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -289,8 +277,8 @@ public class CreateInputRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param sources
-     *        settings required for PULL-type inputs; one per redundancy group Only one of sources and destinations can
-     *        be specified
+     *        The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy.
+     *        Only specify sources for PULL type Inputs. Leave Destinations empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -305,12 +293,12 @@ public class CreateInputRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * settings required for PULL-type inputs; one per redundancy group Only one of sources and destinations can be
-     * specified
+     * The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only
+     * specify sources for PULL type Inputs. Leave Destinations empty.
      * 
      * @param sources
-     *        settings required for PULL-type inputs; one per redundancy group Only one of sources and destinations can
-     *        be specified
+     *        The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy.
+     *        Only specify sources for PULL type Inputs. Leave Destinations empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

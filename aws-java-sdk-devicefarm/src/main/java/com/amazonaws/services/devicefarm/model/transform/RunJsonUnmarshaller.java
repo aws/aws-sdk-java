@@ -120,9 +120,45 @@ public class RunJsonUnmarshaller implements Unmarshaller<Run, JsonUnmarshallerCo
                     context.nextToken();
                     run.setResultCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("seed", targetDepth)) {
+                    context.nextToken();
+                    run.setSeed(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("appUpload", targetDepth)) {
+                    context.nextToken();
+                    run.setAppUpload(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("eventCount", targetDepth)) {
+                    context.nextToken();
+                    run.setEventCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("jobTimeoutMinutes", targetDepth)) {
+                    context.nextToken();
+                    run.setJobTimeoutMinutes(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("devicePoolArn", targetDepth)) {
+                    context.nextToken();
+                    run.setDevicePoolArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("locale", targetDepth)) {
+                    context.nextToken();
+                    run.setLocale(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("radios", targetDepth)) {
+                    context.nextToken();
+                    run.setRadios(RadiosJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("location", targetDepth)) {
+                    context.nextToken();
+                    run.setLocation(LocationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("customerArtifactPaths", targetDepth)) {
                     context.nextToken();
                     run.setCustomerArtifactPaths(CustomerArtifactPathsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("webUrl", targetDepth)) {
+                    context.nextToken();
+                    run.setWebUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

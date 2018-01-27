@@ -64,6 +64,10 @@ public class DeviceJsonUnmarshaller implements Unmarshaller<Device, JsonUnmarsha
                     context.nextToken();
                     device.setModel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("modelId", targetDepth)) {
+                    context.nextToken();
+                    device.setModelId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("formFactor", targetDepth)) {
                     context.nextToken();
                     device.setFormFactor(context.getUnmarshaller(String.class).unmarshall(context));

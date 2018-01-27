@@ -1,3 +1,32 @@
+# __1.11.271__ __2018-01-26__
+## __AWS CodeBuild__
+  - ### Features
+    - Adding support for Shallow Clone and GitHub Enterprise in AWS CodeBuild.
+
+## __AWS Device Farm__
+  - ### Features
+    - Add InteractionMode in CreateRemoteAccessSession for DirectDeviceAccess feature.
+
+## __AWS Elemental MediaLive__
+  - ### Features
+    - Add InputSpecification to CreateChannel (specification of input attributes is used for channel sizing and affects pricing);  add NotFoundException to DeleteInputSecurityGroups.
+
+## __AWS Lambda__
+  - ### Features
+    - AWS Lambda now supports Revision ID on your function versions and aliases, to track and apply conditional updates when you are updating your function version or alias resources.
+
+## __Alexa For Business__
+  - ### Features
+    - Supports new field for DeviceStatusInfo which provides details about the DeviceStatus following a DeviceSync operation.
+
+## __Amazon GuardDuty__
+  - ### Features
+    - Added the missing AccessKeyDetails object to the resource shape.
+
+## __Amazon Mechanical Turk__
+  - ### Features
+    - Documentation updates for mturk-requester
+
 # __1.11.270__ __2018-01-25__
 ## __AWS CodeBuild__
   - ### Features

@@ -75,6 +75,10 @@ public class DescribeChannelResultJsonUnmarshaller implements Unmarshaller<Descr
                     describeChannelResult.setInputAttachments(new ListUnmarshaller<InputAttachment>(InputAttachmentJsonUnmarshaller.getInstance())
                             .unmarshall(context));
                 }
+                if (context.testExpression("inputSpecification", targetDepth)) {
+                    context.nextToken();
+                    describeChannelResult.setInputSpecification(InputSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     describeChannelResult.setName(context.getUnmarshaller(String.class).unmarshall(context));

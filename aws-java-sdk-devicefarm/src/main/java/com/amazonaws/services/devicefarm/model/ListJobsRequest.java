@@ -30,7 +30,7 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The jobs' ARNs.
+     * The run's Amazon Resource Name (ARN).
      * </p>
      */
     private String arn;
@@ -44,11 +44,11 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The jobs' ARNs.
+     * The run's Amazon Resource Name (ARN).
      * </p>
      * 
      * @param arn
-     *        The jobs' ARNs.
+     *        The run's Amazon Resource Name (ARN).
      */
 
     public void setArn(String arn) {
@@ -57,10 +57,10 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The jobs' ARNs.
+     * The run's Amazon Resource Name (ARN).
      * </p>
      * 
-     * @return The jobs' ARNs.
+     * @return The run's Amazon Resource Name (ARN).
      */
 
     public String getArn() {
@@ -69,11 +69,11 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The jobs' ARNs.
+     * The run's Amazon Resource Name (ARN).
      * </p>
      * 
      * @param arn
-     *        The jobs' ARNs.
+     *        The run's Amazon Resource Name (ARN).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

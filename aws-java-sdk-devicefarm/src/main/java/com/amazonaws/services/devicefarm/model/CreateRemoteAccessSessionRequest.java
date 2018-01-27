@@ -55,6 +55,18 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
     private Boolean remoteDebugEnabled;
     /**
      * <p>
+     * Set to <code>true</code> to enable remote recording for the remote access session.
+     * </p>
+     */
+    private Boolean remoteRecordEnabled;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.
+     * </p>
+     */
+    private String remoteRecordAppArn;
+    /**
+     * <p>
      * The name of the remote access session that you wish to create.
      * </p>
      */
@@ -63,7 +75,7 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the
      * same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This is required only if
-     * <code>remoteDebugEnabled</code> is set to true <code>true</code>.
+     * <code>remoteDebugEnabled</code> is set to <code>true</code>.
      * </p>
      */
     private String clientId;
@@ -73,6 +85,32 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private CreateRemoteAccessSessionConfiguration configuration;
+    /**
+     * <p>
+     * The interaction mode of the remote access session. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You
+     * <b>cannot</b> run XCUITest framework-based tests in this mode.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NO_VIDEO: You are connected to the device but cannot interact with it or view the screen. This mode has the
+     * fastest test execution speed. You <b>can</b> run XCUITest framework-based tests in this mode.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VIDEO_ONLY: You can view the screen but cannot touch or rotate it. You <b>can</b> run XCUITest framework-based
+     * tests and watch the screen in this mode.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String interactionMode;
 
     /**
      * <p>
@@ -261,6 +299,98 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
+     * Set to <code>true</code> to enable remote recording for the remote access session.
+     * </p>
+     * 
+     * @param remoteRecordEnabled
+     *        Set to <code>true</code> to enable remote recording for the remote access session.
+     */
+
+    public void setRemoteRecordEnabled(Boolean remoteRecordEnabled) {
+        this.remoteRecordEnabled = remoteRecordEnabled;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to enable remote recording for the remote access session.
+     * </p>
+     * 
+     * @return Set to <code>true</code> to enable remote recording for the remote access session.
+     */
+
+    public Boolean getRemoteRecordEnabled() {
+        return this.remoteRecordEnabled;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to enable remote recording for the remote access session.
+     * </p>
+     * 
+     * @param remoteRecordEnabled
+     *        Set to <code>true</code> to enable remote recording for the remote access session.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRemoteAccessSessionRequest withRemoteRecordEnabled(Boolean remoteRecordEnabled) {
+        setRemoteRecordEnabled(remoteRecordEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to enable remote recording for the remote access session.
+     * </p>
+     * 
+     * @return Set to <code>true</code> to enable remote recording for the remote access session.
+     */
+
+    public Boolean isRemoteRecordEnabled() {
+        return this.remoteRecordEnabled;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.
+     * </p>
+     * 
+     * @param remoteRecordAppArn
+     *        The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.
+     */
+
+    public void setRemoteRecordAppArn(String remoteRecordAppArn) {
+        this.remoteRecordAppArn = remoteRecordAppArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.
+     */
+
+    public String getRemoteRecordAppArn() {
+        return this.remoteRecordAppArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.
+     * </p>
+     * 
+     * @param remoteRecordAppArn
+     *        The Amazon Resource Name (ARN) for the app to be recorded in the remote access session.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRemoteAccessSessionRequest withRemoteRecordAppArn(String remoteRecordAppArn) {
+        setRemoteRecordAppArn(remoteRecordAppArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * The name of the remote access session that you wish to create.
      * </p>
      * 
@@ -303,13 +433,13 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the
      * same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This is required only if
-     * <code>remoteDebugEnabled</code> is set to true <code>true</code>.
+     * <code>remoteDebugEnabled</code> is set to <code>true</code>.
      * </p>
      * 
      * @param clientId
      *        Unique identifier for the client. If you want access to multiple devices on the same client, you should
      *        pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This is
-     *        required only if <code>remoteDebugEnabled</code> is set to true <code>true</code>.
+     *        required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.
      */
 
     public void setClientId(String clientId) {
@@ -320,12 +450,12 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the
      * same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This is required only if
-     * <code>remoteDebugEnabled</code> is set to true <code>true</code>.
+     * <code>remoteDebugEnabled</code> is set to <code>true</code>.
      * </p>
      * 
      * @return Unique identifier for the client. If you want access to multiple devices on the same client, you should
      *         pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This is
-     *         required only if <code>remoteDebugEnabled</code> is set to true <code>true</code>.
+     *         required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.
      */
 
     public String getClientId() {
@@ -336,13 +466,13 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * Unique identifier for the client. If you want access to multiple devices on the same client, you should pass the
      * same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This is required only if
-     * <code>remoteDebugEnabled</code> is set to true <code>true</code>.
+     * <code>remoteDebugEnabled</code> is set to <code>true</code>.
      * </p>
      * 
      * @param clientId
      *        Unique identifier for the client. If you want access to multiple devices on the same client, you should
      *        pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>. This is
-     *        required only if <code>remoteDebugEnabled</code> is set to true <code>true</code>.
+     *        required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -392,6 +522,221 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * The interaction mode of the remote access session. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You
+     * <b>cannot</b> run XCUITest framework-based tests in this mode.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NO_VIDEO: You are connected to the device but cannot interact with it or view the screen. This mode has the
+     * fastest test execution speed. You <b>can</b> run XCUITest framework-based tests in this mode.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VIDEO_ONLY: You can view the screen but cannot touch or rotate it. You <b>can</b> run XCUITest framework-based
+     * tests and watch the screen in this mode.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param interactionMode
+     *        The interaction mode of the remote access session. Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You
+     *        <b>cannot</b> run XCUITest framework-based tests in this mode.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NO_VIDEO: You are connected to the device but cannot interact with it or view the screen. This mode has
+     *        the fastest test execution speed. You <b>can</b> run XCUITest framework-based tests in this mode.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        VIDEO_ONLY: You can view the screen but cannot touch or rotate it. You <b>can</b> run XCUITest
+     *        framework-based tests and watch the screen in this mode.
+     *        </p>
+     *        </li>
+     * @see InteractionMode
+     */
+
+    public void setInteractionMode(String interactionMode) {
+        this.interactionMode = interactionMode;
+    }
+
+    /**
+     * <p>
+     * The interaction mode of the remote access session. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You
+     * <b>cannot</b> run XCUITest framework-based tests in this mode.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NO_VIDEO: You are connected to the device but cannot interact with it or view the screen. This mode has the
+     * fastest test execution speed. You <b>can</b> run XCUITest framework-based tests in this mode.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VIDEO_ONLY: You can view the screen but cannot touch or rotate it. You <b>can</b> run XCUITest framework-based
+     * tests and watch the screen in this mode.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The interaction mode of the remote access session. Valid values are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You
+     *         <b>cannot</b> run XCUITest framework-based tests in this mode.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         NO_VIDEO: You are connected to the device but cannot interact with it or view the screen. This mode has
+     *         the fastest test execution speed. You <b>can</b> run XCUITest framework-based tests in this mode.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         VIDEO_ONLY: You can view the screen but cannot touch or rotate it. You <b>can</b> run XCUITest
+     *         framework-based tests and watch the screen in this mode.
+     *         </p>
+     *         </li>
+     * @see InteractionMode
+     */
+
+    public String getInteractionMode() {
+        return this.interactionMode;
+    }
+
+    /**
+     * <p>
+     * The interaction mode of the remote access session. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You
+     * <b>cannot</b> run XCUITest framework-based tests in this mode.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NO_VIDEO: You are connected to the device but cannot interact with it or view the screen. This mode has the
+     * fastest test execution speed. You <b>can</b> run XCUITest framework-based tests in this mode.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VIDEO_ONLY: You can view the screen but cannot touch or rotate it. You <b>can</b> run XCUITest framework-based
+     * tests and watch the screen in this mode.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param interactionMode
+     *        The interaction mode of the remote access session. Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You
+     *        <b>cannot</b> run XCUITest framework-based tests in this mode.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NO_VIDEO: You are connected to the device but cannot interact with it or view the screen. This mode has
+     *        the fastest test execution speed. You <b>can</b> run XCUITest framework-based tests in this mode.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        VIDEO_ONLY: You can view the screen but cannot touch or rotate it. You <b>can</b> run XCUITest
+     *        framework-based tests and watch the screen in this mode.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InteractionMode
+     */
+
+    public CreateRemoteAccessSessionRequest withInteractionMode(String interactionMode) {
+        setInteractionMode(interactionMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The interaction mode of the remote access session. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You
+     * <b>cannot</b> run XCUITest framework-based tests in this mode.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NO_VIDEO: You are connected to the device but cannot interact with it or view the screen. This mode has the
+     * fastest test execution speed. You <b>can</b> run XCUITest framework-based tests in this mode.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VIDEO_ONLY: You can view the screen but cannot touch or rotate it. You <b>can</b> run XCUITest framework-based
+     * tests and watch the screen in this mode.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param interactionMode
+     *        The interaction mode of the remote access session. Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        INTERACTIVE: You can interact with the iOS device by viewing, touching, and rotating the screen. You
+     *        <b>cannot</b> run XCUITest framework-based tests in this mode.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NO_VIDEO: You are connected to the device but cannot interact with it or view the screen. This mode has
+     *        the fastest test execution speed. You <b>can</b> run XCUITest framework-based tests in this mode.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        VIDEO_ONLY: You can view the screen but cannot touch or rotate it. You <b>can</b> run XCUITest
+     *        framework-based tests and watch the screen in this mode.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InteractionMode
+     */
+
+    public CreateRemoteAccessSessionRequest withInteractionMode(InteractionMode interactionMode) {
+        this.interactionMode = interactionMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -410,12 +755,18 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
             sb.append("SshPublicKey: ").append(getSshPublicKey()).append(",");
         if (getRemoteDebugEnabled() != null)
             sb.append("RemoteDebugEnabled: ").append(getRemoteDebugEnabled()).append(",");
+        if (getRemoteRecordEnabled() != null)
+            sb.append("RemoteRecordEnabled: ").append(getRemoteRecordEnabled()).append(",");
+        if (getRemoteRecordAppArn() != null)
+            sb.append("RemoteRecordAppArn: ").append(getRemoteRecordAppArn()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getClientId() != null)
             sb.append("ClientId: ").append(getClientId()).append(",");
         if (getConfiguration() != null)
-            sb.append("Configuration: ").append(getConfiguration());
+            sb.append("Configuration: ").append(getConfiguration()).append(",");
+        if (getInteractionMode() != null)
+            sb.append("InteractionMode: ").append(getInteractionMode());
         sb.append("}");
         return sb.toString();
     }
@@ -446,6 +797,14 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getRemoteDebugEnabled() != null && other.getRemoteDebugEnabled().equals(this.getRemoteDebugEnabled()) == false)
             return false;
+        if (other.getRemoteRecordEnabled() == null ^ this.getRemoteRecordEnabled() == null)
+            return false;
+        if (other.getRemoteRecordEnabled() != null && other.getRemoteRecordEnabled().equals(this.getRemoteRecordEnabled()) == false)
+            return false;
+        if (other.getRemoteRecordAppArn() == null ^ this.getRemoteRecordAppArn() == null)
+            return false;
+        if (other.getRemoteRecordAppArn() != null && other.getRemoteRecordAppArn().equals(this.getRemoteRecordAppArn()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -457,6 +816,10 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
         if (other.getConfiguration() == null ^ this.getConfiguration() == null)
             return false;
         if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
+            return false;
+        if (other.getInteractionMode() == null ^ this.getInteractionMode() == null)
+            return false;
+        if (other.getInteractionMode() != null && other.getInteractionMode().equals(this.getInteractionMode()) == false)
             return false;
         return true;
     }
@@ -470,9 +833,12 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getDeviceArn() == null) ? 0 : getDeviceArn().hashCode());
         hashCode = prime * hashCode + ((getSshPublicKey() == null) ? 0 : getSshPublicKey().hashCode());
         hashCode = prime * hashCode + ((getRemoteDebugEnabled() == null) ? 0 : getRemoteDebugEnabled().hashCode());
+        hashCode = prime * hashCode + ((getRemoteRecordEnabled() == null) ? 0 : getRemoteRecordEnabled().hashCode());
+        hashCode = prime * hashCode + ((getRemoteRecordAppArn() == null) ? 0 : getRemoteRecordAppArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getClientId() == null) ? 0 : getClientId().hashCode());
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getInteractionMode() == null) ? 0 : getInteractionMode().hashCode());
         return hashCode;
     }
 

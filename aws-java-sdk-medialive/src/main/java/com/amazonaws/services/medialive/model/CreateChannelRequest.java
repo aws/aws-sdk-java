@@ -31,6 +31,8 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     private EncoderSettings encoderSettings;
     /** List of input attachments for channel. */
     private java.util.List<InputAttachment> inputAttachments;
+    /** Specification of input for this channel (max. bitrate, resolution, codec, etc.) */
+    private InputSpecification inputSpecification;
     /** Name of channel. */
     private String name;
     /**
@@ -179,6 +181,40 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     public CreateChannelRequest withInputAttachments(java.util.Collection<InputAttachment> inputAttachments) {
         setInputAttachments(inputAttachments);
+        return this;
+    }
+
+    /**
+     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     * 
+     * @param inputSpecification
+     *        Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     */
+
+    public void setInputSpecification(InputSpecification inputSpecification) {
+        this.inputSpecification = inputSpecification;
+    }
+
+    /**
+     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     * 
+     * @return Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     */
+
+    public InputSpecification getInputSpecification() {
+        return this.inputSpecification;
+    }
+
+    /**
+     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     * 
+     * @param inputSpecification
+     *        Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateChannelRequest withInputSpecification(InputSpecification inputSpecification) {
+        setInputSpecification(inputSpecification);
         return this;
     }
 
@@ -335,6 +371,8 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("EncoderSettings: ").append(getEncoderSettings()).append(",");
         if (getInputAttachments() != null)
             sb.append("InputAttachments: ").append(getInputAttachments()).append(",");
+        if (getInputSpecification() != null)
+            sb.append("InputSpecification: ").append(getInputSpecification()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getRequestId() != null)
@@ -369,6 +407,10 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getInputAttachments() != null && other.getInputAttachments().equals(this.getInputAttachments()) == false)
             return false;
+        if (other.getInputSpecification() == null ^ this.getInputSpecification() == null)
+            return false;
+        if (other.getInputSpecification() != null && other.getInputSpecification().equals(this.getInputSpecification()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -396,6 +438,7 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getDestinations() == null) ? 0 : getDestinations().hashCode());
         hashCode = prime * hashCode + ((getEncoderSettings() == null) ? 0 : getEncoderSettings().hashCode());
         hashCode = prime * hashCode + ((getInputAttachments() == null) ? 0 : getInputAttachments().hashCode());
+        hashCode = prime * hashCode + ((getInputSpecification() == null) ? 0 : getInputSpecification().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getRequestId() == null) ? 0 : getRequestId().hashCode());
         hashCode = prime * hashCode + ((getReserved() == null) ? 0 : getReserved().hashCode());

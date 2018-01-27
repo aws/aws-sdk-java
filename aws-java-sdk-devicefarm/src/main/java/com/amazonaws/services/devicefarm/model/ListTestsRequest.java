@@ -30,7 +30,7 @@ public class ListTestsRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The tests' ARNs.
+     * The test suite's Amazon Resource Name (ARN).
      * </p>
      */
     private String arn;
@@ -44,11 +44,11 @@ public class ListTestsRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The tests' ARNs.
+     * The test suite's Amazon Resource Name (ARN).
      * </p>
      * 
      * @param arn
-     *        The tests' ARNs.
+     *        The test suite's Amazon Resource Name (ARN).
      */
 
     public void setArn(String arn) {
@@ -57,10 +57,10 @@ public class ListTestsRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The tests' ARNs.
+     * The test suite's Amazon Resource Name (ARN).
      * </p>
      * 
-     * @return The tests' ARNs.
+     * @return The test suite's Amazon Resource Name (ARN).
      */
 
     public String getArn() {
@@ -69,11 +69,11 @@ public class ListTestsRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The tests' ARNs.
+     * The test suite's Amazon Resource Name (ARN).
      * </p>
      * 
      * @param arn
-     *        The tests' ARNs.
+     *        The test suite's Amazon Resource Name (ARN).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

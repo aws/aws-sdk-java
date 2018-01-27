@@ -36,6 +36,8 @@ public class CreateChannelRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encoderSettings").build();
     private static final MarshallingInfo<List> INPUTATTACHMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputAttachments").build();
+    private static final MarshallingInfo<StructuredPojo> INPUTSPECIFICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputSpecification").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> REQUESTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -64,6 +66,7 @@ public class CreateChannelRequestMarshaller {
             protocolMarshaller.marshall(createChannelRequest.getDestinations(), DESTINATIONS_BINDING);
             protocolMarshaller.marshall(createChannelRequest.getEncoderSettings(), ENCODERSETTINGS_BINDING);
             protocolMarshaller.marshall(createChannelRequest.getInputAttachments(), INPUTATTACHMENTS_BINDING);
+            protocolMarshaller.marshall(createChannelRequest.getInputSpecification(), INPUTSPECIFICATION_BINDING);
             protocolMarshaller.marshall(createChannelRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createChannelRequest.getRequestId(), REQUESTID_BINDING);
             protocolMarshaller.marshall(createChannelRequest.getReserved(), RESERVED_BINDING);

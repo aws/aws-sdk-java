@@ -75,6 +75,10 @@ public class DeleteChannelResultJsonUnmarshaller implements Unmarshaller<DeleteC
                     deleteChannelResult.setInputAttachments(new ListUnmarshaller<InputAttachment>(InputAttachmentJsonUnmarshaller.getInstance())
                             .unmarshall(context));
                 }
+                if (context.testExpression("inputSpecification", targetDepth)) {
+                    context.nextToken();
+                    deleteChannelResult.setInputSpecification(InputSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     deleteChannelResult.setName(context.getUnmarshaller(String.class).unmarshall(context));

@@ -41,6 +41,8 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     private String id;
     /** List of input attachments for channel. */
     private java.util.List<InputAttachment> inputAttachments;
+
+    private InputSpecification inputSpecification;
     /** The name of the channel. (user-mutable) */
     private String name;
     /** The number of currently healthy pipelines. */
@@ -340,6 +342,32 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param inputSpecification
+     */
+
+    public void setInputSpecification(InputSpecification inputSpecification) {
+        this.inputSpecification = inputSpecification;
+    }
+
+    /**
+     * @return
+     */
+
+    public InputSpecification getInputSpecification() {
+        return this.inputSpecification;
+    }
+
+    /**
+     * @param inputSpecification
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Channel withInputSpecification(InputSpecification inputSpecification) {
+        setInputSpecification(inputSpecification);
+        return this;
+    }
+
+    /**
      * The name of the channel. (user-mutable)
      * 
      * @param name
@@ -504,6 +532,8 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
             sb.append("Id: ").append(getId()).append(",");
         if (getInputAttachments() != null)
             sb.append("InputAttachments: ").append(getInputAttachments()).append(",");
+        if (getInputSpecification() != null)
+            sb.append("InputSpecification: ").append(getInputSpecification()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getPipelinesRunningCount() != null)
@@ -550,6 +580,10 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getInputAttachments() != null && other.getInputAttachments().equals(this.getInputAttachments()) == false)
             return false;
+        if (other.getInputSpecification() == null ^ this.getInputSpecification() == null)
+            return false;
+        if (other.getInputSpecification() != null && other.getInputSpecification().equals(this.getInputSpecification()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -580,6 +614,7 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEncoderSettings() == null) ? 0 : getEncoderSettings().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getInputAttachments() == null) ? 0 : getInputAttachments().hashCode());
+        hashCode = prime * hashCode + ((getInputSpecification() == null) ? 0 : getInputSpecification().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getPipelinesRunningCount() == null) ? 0 : getPipelinesRunningCount().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());

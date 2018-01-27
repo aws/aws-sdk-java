@@ -40,6 +40,8 @@ public class ChannelMarshaller {
             .marshallLocationName("id").build();
     private static final MarshallingInfo<List> INPUTATTACHMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputAttachments").build();
+    private static final MarshallingInfo<StructuredPojo> INPUTSPECIFICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputSpecification").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<Integer> PIPELINESRUNNINGCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -71,6 +73,7 @@ public class ChannelMarshaller {
             protocolMarshaller.marshall(channel.getEncoderSettings(), ENCODERSETTINGS_BINDING);
             protocolMarshaller.marshall(channel.getId(), ID_BINDING);
             protocolMarshaller.marshall(channel.getInputAttachments(), INPUTATTACHMENTS_BINDING);
+            protocolMarshaller.marshall(channel.getInputSpecification(), INPUTSPECIFICATION_BINDING);
             protocolMarshaller.marshall(channel.getName(), NAME_BINDING);
             protocolMarshaller.marshall(channel.getPipelinesRunningCount(), PIPELINESRUNNINGCOUNT_BINDING);
             protocolMarshaller.marshall(channel.getRoleArn(), ROLEARN_BINDING);

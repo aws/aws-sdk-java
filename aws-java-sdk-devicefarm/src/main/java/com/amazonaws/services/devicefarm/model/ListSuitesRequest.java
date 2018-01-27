@@ -30,7 +30,7 @@ public class ListSuitesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The suites' ARNs.
+     * The job's Amazon Resource Name (ARN).
      * </p>
      */
     private String arn;
@@ -44,11 +44,11 @@ public class ListSuitesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The suites' ARNs.
+     * The job's Amazon Resource Name (ARN).
      * </p>
      * 
      * @param arn
-     *        The suites' ARNs.
+     *        The job's Amazon Resource Name (ARN).
      */
 
     public void setArn(String arn) {
@@ -57,10 +57,10 @@ public class ListSuitesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The suites' ARNs.
+     * The job's Amazon Resource Name (ARN).
      * </p>
      * 
-     * @return The suites' ARNs.
+     * @return The job's Amazon Resource Name (ARN).
      */
 
     public String getArn() {
@@ -69,11 +69,11 @@ public class ListSuitesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The suites' ARNs.
+     * The job's Amazon Resource Name (ARN).
      * </p>
      * 
      * @param arn
-     *        The suites' ARNs.
+     *        The job's Amazon Resource Name (ARN).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -54,6 +54,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
     private String model;
     /**
      * <p>
+     * The device's model ID.
+     * </p>
+     */
+    private String modelId;
+    /**
+     * <p>
      * The device's form factor.
      * </p>
      * <p>
@@ -324,6 +330,46 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     public Device withModel(String model) {
         setModel(model);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The device's model ID.
+     * </p>
+     * 
+     * @param modelId
+     *        The device's model ID.
+     */
+
+    public void setModelId(String modelId) {
+        this.modelId = modelId;
+    }
+
+    /**
+     * <p>
+     * The device's model ID.
+     * </p>
+     * 
+     * @return The device's model ID.
+     */
+
+    public String getModelId() {
+        return this.modelId;
+    }
+
+    /**
+     * <p>
+     * The device's model ID.
+     * </p>
+     * 
+     * @param modelId
+     *        The device's model ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Device withModelId(String modelId) {
+        setModelId(modelId);
         return this;
     }
 
@@ -1286,6 +1332,8 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
             sb.append("Manufacturer: ").append(getManufacturer()).append(",");
         if (getModel() != null)
             sb.append("Model: ").append(getModel()).append(",");
+        if (getModelId() != null)
+            sb.append("ModelId: ").append(getModelId()).append(",");
         if (getFormFactor() != null)
             sb.append("FormFactor: ").append(getFormFactor()).append(",");
         if (getPlatform() != null)
@@ -1343,6 +1391,10 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
         if (other.getModel() == null ^ this.getModel() == null)
             return false;
         if (other.getModel() != null && other.getModel().equals(this.getModel()) == false)
+            return false;
+        if (other.getModelId() == null ^ this.getModelId() == null)
+            return false;
+        if (other.getModelId() != null && other.getModelId().equals(this.getModelId()) == false)
             return false;
         if (other.getFormFactor() == null ^ this.getFormFactor() == null)
             return false;
@@ -1412,6 +1464,7 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getManufacturer() == null) ? 0 : getManufacturer().hashCode());
         hashCode = prime * hashCode + ((getModel() == null) ? 0 : getModel().hashCode());
+        hashCode = prime * hashCode + ((getModelId() == null) ? 0 : getModelId().hashCode());
         hashCode = prime * hashCode + ((getFormFactor() == null) ? 0 : getFormFactor().hashCode());
         hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
         hashCode = prime * hashCode + ((getOs() == null) ? 0 : getOs().hashCode());

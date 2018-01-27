@@ -322,10 +322,66 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
     private String resultCode;
     /**
      * <p>
+     * For fuzz tests, this is a seed to use for randomizing the UI fuzz test. Using the same seed value between tests
+     * ensures identical event sequences.
+     * </p>
+     */
+    private Integer seed;
+    /**
+     * <p>
+     * An app to upload or that has been uploaded.
+     * </p>
+     */
+    private String appUpload;
+    /**
+     * <p>
+     * For fuzz tests, this is the number of events, between 1 and 10000, that the UI fuzz test should perform.
+     * </p>
+     */
+    private Integer eventCount;
+    /**
+     * <p>
+     * The number of minutes the job will execute before it times out.
+     * </p>
+     */
+    private Integer jobTimeoutMinutes;
+    /**
+     * <p>
+     * The ARN of the device pool for the run.
+     * </p>
+     */
+    private String devicePoolArn;
+    /**
+     * <p>
+     * Information about the locale that is used for the run.
+     * </p>
+     */
+    private String locale;
+    /**
+     * <p>
+     * Information about the radio states for the run.
+     * </p>
+     */
+    private Radios radios;
+    /**
+     * <p>
+     * Information about the location that is used for the run.
+     * </p>
+     */
+    private Location location;
+    /**
+     * <p>
      * Output <code>CustomerArtifactPaths</code> object for the test run.
      * </p>
      */
     private CustomerArtifactPaths customerArtifactPaths;
+    /**
+     * <p>
+     * A pre-signed Amazon S3 URL that can be used with a corresponding GET request to download the symbol file for the
+     * run.
+     * </p>
+     */
+    private String webUrl;
 
     /**
      * <p>
@@ -3064,6 +3120,332 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * For fuzz tests, this is a seed to use for randomizing the UI fuzz test. Using the same seed value between tests
+     * ensures identical event sequences.
+     * </p>
+     * 
+     * @param seed
+     *        For fuzz tests, this is a seed to use for randomizing the UI fuzz test. Using the same seed value between
+     *        tests ensures identical event sequences.
+     */
+
+    public void setSeed(Integer seed) {
+        this.seed = seed;
+    }
+
+    /**
+     * <p>
+     * For fuzz tests, this is a seed to use for randomizing the UI fuzz test. Using the same seed value between tests
+     * ensures identical event sequences.
+     * </p>
+     * 
+     * @return For fuzz tests, this is a seed to use for randomizing the UI fuzz test. Using the same seed value between
+     *         tests ensures identical event sequences.
+     */
+
+    public Integer getSeed() {
+        return this.seed;
+    }
+
+    /**
+     * <p>
+     * For fuzz tests, this is a seed to use for randomizing the UI fuzz test. Using the same seed value between tests
+     * ensures identical event sequences.
+     * </p>
+     * 
+     * @param seed
+     *        For fuzz tests, this is a seed to use for randomizing the UI fuzz test. Using the same seed value between
+     *        tests ensures identical event sequences.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Run withSeed(Integer seed) {
+        setSeed(seed);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An app to upload or that has been uploaded.
+     * </p>
+     * 
+     * @param appUpload
+     *        An app to upload or that has been uploaded.
+     */
+
+    public void setAppUpload(String appUpload) {
+        this.appUpload = appUpload;
+    }
+
+    /**
+     * <p>
+     * An app to upload or that has been uploaded.
+     * </p>
+     * 
+     * @return An app to upload or that has been uploaded.
+     */
+
+    public String getAppUpload() {
+        return this.appUpload;
+    }
+
+    /**
+     * <p>
+     * An app to upload or that has been uploaded.
+     * </p>
+     * 
+     * @param appUpload
+     *        An app to upload or that has been uploaded.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Run withAppUpload(String appUpload) {
+        setAppUpload(appUpload);
+        return this;
+    }
+
+    /**
+     * <p>
+     * For fuzz tests, this is the number of events, between 1 and 10000, that the UI fuzz test should perform.
+     * </p>
+     * 
+     * @param eventCount
+     *        For fuzz tests, this is the number of events, between 1 and 10000, that the UI fuzz test should perform.
+     */
+
+    public void setEventCount(Integer eventCount) {
+        this.eventCount = eventCount;
+    }
+
+    /**
+     * <p>
+     * For fuzz tests, this is the number of events, between 1 and 10000, that the UI fuzz test should perform.
+     * </p>
+     * 
+     * @return For fuzz tests, this is the number of events, between 1 and 10000, that the UI fuzz test should perform.
+     */
+
+    public Integer getEventCount() {
+        return this.eventCount;
+    }
+
+    /**
+     * <p>
+     * For fuzz tests, this is the number of events, between 1 and 10000, that the UI fuzz test should perform.
+     * </p>
+     * 
+     * @param eventCount
+     *        For fuzz tests, this is the number of events, between 1 and 10000, that the UI fuzz test should perform.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Run withEventCount(Integer eventCount) {
+        setEventCount(eventCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of minutes the job will execute before it times out.
+     * </p>
+     * 
+     * @param jobTimeoutMinutes
+     *        The number of minutes the job will execute before it times out.
+     */
+
+    public void setJobTimeoutMinutes(Integer jobTimeoutMinutes) {
+        this.jobTimeoutMinutes = jobTimeoutMinutes;
+    }
+
+    /**
+     * <p>
+     * The number of minutes the job will execute before it times out.
+     * </p>
+     * 
+     * @return The number of minutes the job will execute before it times out.
+     */
+
+    public Integer getJobTimeoutMinutes() {
+        return this.jobTimeoutMinutes;
+    }
+
+    /**
+     * <p>
+     * The number of minutes the job will execute before it times out.
+     * </p>
+     * 
+     * @param jobTimeoutMinutes
+     *        The number of minutes the job will execute before it times out.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Run withJobTimeoutMinutes(Integer jobTimeoutMinutes) {
+        setJobTimeoutMinutes(jobTimeoutMinutes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the device pool for the run.
+     * </p>
+     * 
+     * @param devicePoolArn
+     *        The ARN of the device pool for the run.
+     */
+
+    public void setDevicePoolArn(String devicePoolArn) {
+        this.devicePoolArn = devicePoolArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the device pool for the run.
+     * </p>
+     * 
+     * @return The ARN of the device pool for the run.
+     */
+
+    public String getDevicePoolArn() {
+        return this.devicePoolArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the device pool for the run.
+     * </p>
+     * 
+     * @param devicePoolArn
+     *        The ARN of the device pool for the run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Run withDevicePoolArn(String devicePoolArn) {
+        setDevicePoolArn(devicePoolArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the locale that is used for the run.
+     * </p>
+     * 
+     * @param locale
+     *        Information about the locale that is used for the run.
+     */
+
+    public void setLocale(String locale) {
+        this.locale = locale;
+    }
+
+    /**
+     * <p>
+     * Information about the locale that is used for the run.
+     * </p>
+     * 
+     * @return Information about the locale that is used for the run.
+     */
+
+    public String getLocale() {
+        return this.locale;
+    }
+
+    /**
+     * <p>
+     * Information about the locale that is used for the run.
+     * </p>
+     * 
+     * @param locale
+     *        Information about the locale that is used for the run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Run withLocale(String locale) {
+        setLocale(locale);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the radio states for the run.
+     * </p>
+     * 
+     * @param radios
+     *        Information about the radio states for the run.
+     */
+
+    public void setRadios(Radios radios) {
+        this.radios = radios;
+    }
+
+    /**
+     * <p>
+     * Information about the radio states for the run.
+     * </p>
+     * 
+     * @return Information about the radio states for the run.
+     */
+
+    public Radios getRadios() {
+        return this.radios;
+    }
+
+    /**
+     * <p>
+     * Information about the radio states for the run.
+     * </p>
+     * 
+     * @param radios
+     *        Information about the radio states for the run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Run withRadios(Radios radios) {
+        setRadios(radios);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the location that is used for the run.
+     * </p>
+     * 
+     * @param location
+     *        Information about the location that is used for the run.
+     */
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    /**
+     * <p>
+     * Information about the location that is used for the run.
+     * </p>
+     * 
+     * @return Information about the location that is used for the run.
+     */
+
+    public Location getLocation() {
+        return this.location;
+    }
+
+    /**
+     * <p>
+     * Information about the location that is used for the run.
+     * </p>
+     * 
+     * @param location
+     *        Information about the location that is used for the run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Run withLocation(Location location) {
+        setLocation(location);
+        return this;
+    }
+
+    /**
+     * <p>
      * Output <code>CustomerArtifactPaths</code> object for the test run.
      * </p>
      * 
@@ -3099,6 +3481,52 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
 
     public Run withCustomerArtifactPaths(CustomerArtifactPaths customerArtifactPaths) {
         setCustomerArtifactPaths(customerArtifactPaths);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A pre-signed Amazon S3 URL that can be used with a corresponding GET request to download the symbol file for the
+     * run.
+     * </p>
+     * 
+     * @param webUrl
+     *        A pre-signed Amazon S3 URL that can be used with a corresponding GET request to download the symbol file
+     *        for the run.
+     */
+
+    public void setWebUrl(String webUrl) {
+        this.webUrl = webUrl;
+    }
+
+    /**
+     * <p>
+     * A pre-signed Amazon S3 URL that can be used with a corresponding GET request to download the symbol file for the
+     * run.
+     * </p>
+     * 
+     * @return A pre-signed Amazon S3 URL that can be used with a corresponding GET request to download the symbol file
+     *         for the run.
+     */
+
+    public String getWebUrl() {
+        return this.webUrl;
+    }
+
+    /**
+     * <p>
+     * A pre-signed Amazon S3 URL that can be used with a corresponding GET request to download the symbol file for the
+     * run.
+     * </p>
+     * 
+     * @param webUrl
+     *        A pre-signed Amazon S3 URL that can be used with a corresponding GET request to download the symbol file
+     *        for the run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Run withWebUrl(String webUrl) {
+        setWebUrl(webUrl);
         return this;
     }
 
@@ -3149,8 +3577,26 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
             sb.append("ParsingResultUrl: ").append(getParsingResultUrl()).append(",");
         if (getResultCode() != null)
             sb.append("ResultCode: ").append(getResultCode()).append(",");
+        if (getSeed() != null)
+            sb.append("Seed: ").append(getSeed()).append(",");
+        if (getAppUpload() != null)
+            sb.append("AppUpload: ").append(getAppUpload()).append(",");
+        if (getEventCount() != null)
+            sb.append("EventCount: ").append(getEventCount()).append(",");
+        if (getJobTimeoutMinutes() != null)
+            sb.append("JobTimeoutMinutes: ").append(getJobTimeoutMinutes()).append(",");
+        if (getDevicePoolArn() != null)
+            sb.append("DevicePoolArn: ").append(getDevicePoolArn()).append(",");
+        if (getLocale() != null)
+            sb.append("Locale: ").append(getLocale()).append(",");
+        if (getRadios() != null)
+            sb.append("Radios: ").append(getRadios()).append(",");
+        if (getLocation() != null)
+            sb.append("Location: ").append(getLocation()).append(",");
         if (getCustomerArtifactPaths() != null)
-            sb.append("CustomerArtifactPaths: ").append(getCustomerArtifactPaths());
+            sb.append("CustomerArtifactPaths: ").append(getCustomerArtifactPaths()).append(",");
+        if (getWebUrl() != null)
+            sb.append("WebUrl: ").append(getWebUrl());
         sb.append("}");
         return sb.toString();
     }
@@ -3237,9 +3683,45 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getResultCode() != null && other.getResultCode().equals(this.getResultCode()) == false)
             return false;
+        if (other.getSeed() == null ^ this.getSeed() == null)
+            return false;
+        if (other.getSeed() != null && other.getSeed().equals(this.getSeed()) == false)
+            return false;
+        if (other.getAppUpload() == null ^ this.getAppUpload() == null)
+            return false;
+        if (other.getAppUpload() != null && other.getAppUpload().equals(this.getAppUpload()) == false)
+            return false;
+        if (other.getEventCount() == null ^ this.getEventCount() == null)
+            return false;
+        if (other.getEventCount() != null && other.getEventCount().equals(this.getEventCount()) == false)
+            return false;
+        if (other.getJobTimeoutMinutes() == null ^ this.getJobTimeoutMinutes() == null)
+            return false;
+        if (other.getJobTimeoutMinutes() != null && other.getJobTimeoutMinutes().equals(this.getJobTimeoutMinutes()) == false)
+            return false;
+        if (other.getDevicePoolArn() == null ^ this.getDevicePoolArn() == null)
+            return false;
+        if (other.getDevicePoolArn() != null && other.getDevicePoolArn().equals(this.getDevicePoolArn()) == false)
+            return false;
+        if (other.getLocale() == null ^ this.getLocale() == null)
+            return false;
+        if (other.getLocale() != null && other.getLocale().equals(this.getLocale()) == false)
+            return false;
+        if (other.getRadios() == null ^ this.getRadios() == null)
+            return false;
+        if (other.getRadios() != null && other.getRadios().equals(this.getRadios()) == false)
+            return false;
+        if (other.getLocation() == null ^ this.getLocation() == null)
+            return false;
+        if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
+            return false;
         if (other.getCustomerArtifactPaths() == null ^ this.getCustomerArtifactPaths() == null)
             return false;
         if (other.getCustomerArtifactPaths() != null && other.getCustomerArtifactPaths().equals(this.getCustomerArtifactPaths()) == false)
+            return false;
+        if (other.getWebUrl() == null ^ this.getWebUrl() == null)
+            return false;
+        if (other.getWebUrl() != null && other.getWebUrl().equals(this.getWebUrl()) == false)
             return false;
         return true;
     }
@@ -3267,7 +3749,16 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getNetworkProfile() == null) ? 0 : getNetworkProfile().hashCode());
         hashCode = prime * hashCode + ((getParsingResultUrl() == null) ? 0 : getParsingResultUrl().hashCode());
         hashCode = prime * hashCode + ((getResultCode() == null) ? 0 : getResultCode().hashCode());
+        hashCode = prime * hashCode + ((getSeed() == null) ? 0 : getSeed().hashCode());
+        hashCode = prime * hashCode + ((getAppUpload() == null) ? 0 : getAppUpload().hashCode());
+        hashCode = prime * hashCode + ((getEventCount() == null) ? 0 : getEventCount().hashCode());
+        hashCode = prime * hashCode + ((getJobTimeoutMinutes() == null) ? 0 : getJobTimeoutMinutes().hashCode());
+        hashCode = prime * hashCode + ((getDevicePoolArn() == null) ? 0 : getDevicePoolArn().hashCode());
+        hashCode = prime * hashCode + ((getLocale() == null) ? 0 : getLocale().hashCode());
+        hashCode = prime * hashCode + ((getRadios() == null) ? 0 : getRadios().hashCode());
+        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         hashCode = prime * hashCode + ((getCustomerArtifactPaths() == null) ? 0 : getCustomerArtifactPaths().hashCode());
+        hashCode = prime * hashCode + ((getWebUrl() == null) ? 0 : getWebUrl().hashCode());
         return hashCode;
     }
 

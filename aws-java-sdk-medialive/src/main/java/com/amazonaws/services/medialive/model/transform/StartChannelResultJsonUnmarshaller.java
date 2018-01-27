@@ -75,6 +75,10 @@ public class StartChannelResultJsonUnmarshaller implements Unmarshaller<StartCha
                     startChannelResult.setInputAttachments(new ListUnmarshaller<InputAttachment>(InputAttachmentJsonUnmarshaller.getInstance())
                             .unmarshall(context));
                 }
+                if (context.testExpression("inputSpecification", targetDepth)) {
+                    context.nextToken();
+                    startChannelResult.setInputSpecification(InputSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     startChannelResult.setName(context.getUnmarshaller(String.class).unmarshall(context));

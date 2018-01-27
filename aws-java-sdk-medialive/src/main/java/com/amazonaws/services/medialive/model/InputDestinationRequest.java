@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Endpoint settings for a PUSH type input
+ * Endpoint settings for a PUSH type input.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/InputDestinationRequest" target="_top">AWS
  *      API Documentation</a>

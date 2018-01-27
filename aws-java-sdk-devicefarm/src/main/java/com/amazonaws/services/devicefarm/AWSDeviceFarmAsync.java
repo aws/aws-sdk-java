@@ -987,7 +987,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Gets information about jobs.
+     * Gets information about jobs for a given test run.
      * </p>
      * 
      * @param listJobsRequest
@@ -1001,7 +1001,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Gets information about jobs.
+     * Gets information about jobs for a given test run.
      * </p>
      * 
      * @param listJobsRequest
@@ -1302,7 +1302,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Gets information about suites.
+     * Gets information about test suites for a given job.
      * </p>
      * 
      * @param listSuitesRequest
@@ -1316,7 +1316,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Gets information about suites.
+     * Gets information about test suites for a given job.
      * </p>
      * 
      * @param listSuitesRequest
@@ -1335,7 +1335,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Gets information about tests.
+     * Gets information about tests in a given test suite.
      * </p>
      * 
      * @param listTestsRequest
@@ -1349,7 +1349,7 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
-     * Gets information about tests.
+     * Gets information about tests in a given test suite.
      * </p>
      * 
      * @param listTestsRequest

@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Settings for a PULL type input
+ * The settings for a PULL type input.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/InputSource" target="_top">AWS API
  *      Documentation</a>
@@ -26,20 +26,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InputSource implements Serializable, Cloneable, StructuredPojo {
 
-    /** key used to extract the password from EC2 Parameter store */
+    /** The key used to extract the password from EC2 Parameter store. */
     private String passwordParam;
     /**
      * This represents the customer's source URL where stream is pulled from.
      */
     private String url;
-    /** username for input source */
+    /** The username for the input source. */
     private String username;
 
     /**
-     * key used to extract the password from EC2 Parameter store
+     * The key used to extract the password from EC2 Parameter store.
      * 
      * @param passwordParam
-     *        key used to extract the password from EC2 Parameter store
+     *        The key used to extract the password from EC2 Parameter store.
      */
 
     public void setPasswordParam(String passwordParam) {
@@ -47,9 +47,9 @@ public class InputSource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * key used to extract the password from EC2 Parameter store
+     * The key used to extract the password from EC2 Parameter store.
      * 
-     * @return key used to extract the password from EC2 Parameter store
+     * @return The key used to extract the password from EC2 Parameter store.
      */
 
     public String getPasswordParam() {
@@ -57,10 +57,10 @@ public class InputSource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * key used to extract the password from EC2 Parameter store
+     * The key used to extract the password from EC2 Parameter store.
      * 
      * @param passwordParam
-     *        key used to extract the password from EC2 Parameter store
+     *        The key used to extract the password from EC2 Parameter store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,10 +104,10 @@ public class InputSource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * username for input source
+     * The username for the input source.
      * 
      * @param username
-     *        username for input source
+     *        The username for the input source.
      */
 
     public void setUsername(String username) {
@@ -115,9 +115,9 @@ public class InputSource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * username for input source
+     * The username for the input source.
      * 
-     * @return username for input source
+     * @return The username for the input source.
      */
 
     public String getUsername() {
@@ -125,10 +125,10 @@ public class InputSource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * username for input source
+     * The username for the input source.
      * 
      * @param username
-     *        username for input source
+     *        The username for the input source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

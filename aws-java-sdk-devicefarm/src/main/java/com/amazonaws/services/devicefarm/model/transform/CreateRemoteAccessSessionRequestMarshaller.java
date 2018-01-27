@@ -35,12 +35,18 @@ public class CreateRemoteAccessSessionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sshPublicKey").build();
     private static final MarshallingInfo<Boolean> REMOTEDEBUGENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("remoteDebugEnabled").build();
+    private static final MarshallingInfo<Boolean> REMOTERECORDENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("remoteRecordEnabled").build();
+    private static final MarshallingInfo<String> REMOTERECORDAPPARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("remoteRecordAppArn").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> CLIENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("clientId").build();
     private static final MarshallingInfo<StructuredPojo> CONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configuration").build();
+    private static final MarshallingInfo<String> INTERACTIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("interactionMode").build();
 
     private static final CreateRemoteAccessSessionRequestMarshaller instance = new CreateRemoteAccessSessionRequestMarshaller();
 
@@ -62,9 +68,12 @@ public class CreateRemoteAccessSessionRequestMarshaller {
             protocolMarshaller.marshall(createRemoteAccessSessionRequest.getDeviceArn(), DEVICEARN_BINDING);
             protocolMarshaller.marshall(createRemoteAccessSessionRequest.getSshPublicKey(), SSHPUBLICKEY_BINDING);
             protocolMarshaller.marshall(createRemoteAccessSessionRequest.getRemoteDebugEnabled(), REMOTEDEBUGENABLED_BINDING);
+            protocolMarshaller.marshall(createRemoteAccessSessionRequest.getRemoteRecordEnabled(), REMOTERECORDENABLED_BINDING);
+            protocolMarshaller.marshall(createRemoteAccessSessionRequest.getRemoteRecordAppArn(), REMOTERECORDAPPARN_BINDING);
             protocolMarshaller.marshall(createRemoteAccessSessionRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createRemoteAccessSessionRequest.getClientId(), CLIENTID_BINDING);
             protocolMarshaller.marshall(createRemoteAccessSessionRequest.getConfiguration(), CONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createRemoteAccessSessionRequest.getInteractionMode(), INTERACTIONMODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -453,6 +453,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      *         The requester does not have permission to delete this Input Security Group
      * @throws BadGatewayException
      *         Bad Gateway Error
+     * @throws NotFoundException
+     *         Input Security Group not found
      * @throws GatewayTimeoutException
      *         Gateway Timeout Error
      * @throws TooManyRequestsException

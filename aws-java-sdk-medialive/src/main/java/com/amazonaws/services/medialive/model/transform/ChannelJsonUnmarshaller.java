@@ -73,6 +73,10 @@ public class ChannelJsonUnmarshaller implements Unmarshaller<Channel, JsonUnmars
                     context.nextToken();
                     channel.setInputAttachments(new ListUnmarshaller<InputAttachment>(InputAttachmentJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("inputSpecification", targetDepth)) {
+                    context.nextToken();
+                    channel.setInputSpecification(InputSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     channel.setName(context.getUnmarshaller(String.class).unmarshall(context));

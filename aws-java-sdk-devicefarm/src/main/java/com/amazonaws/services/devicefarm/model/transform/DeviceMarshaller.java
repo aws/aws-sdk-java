@@ -35,6 +35,8 @@ public class DeviceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("manufacturer").build();
     private static final MarshallingInfo<String> MODEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("model").build();
+    private static final MarshallingInfo<String> MODELID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("modelId").build();
     private static final MarshallingInfo<String> FORMFACTOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("formFactor").build();
     private static final MarshallingInfo<String> PLATFORM_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -84,6 +86,7 @@ public class DeviceMarshaller {
             protocolMarshaller.marshall(device.getName(), NAME_BINDING);
             protocolMarshaller.marshall(device.getManufacturer(), MANUFACTURER_BINDING);
             protocolMarshaller.marshall(device.getModel(), MODEL_BINDING);
+            protocolMarshaller.marshall(device.getModelId(), MODELID_BINDING);
             protocolMarshaller.marshall(device.getFormFactor(), FORMFACTOR_BINDING);
             protocolMarshaller.marshall(device.getPlatform(), PLATFORM_BINDING);
             protocolMarshaller.marshall(device.getOs(), OS_BINDING);

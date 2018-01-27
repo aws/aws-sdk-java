@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Settings for a PUSH type input
+ * The settings for a PUSH type input.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/InputDestination" target="_top">AWS API
  *      Documentation</a>
@@ -27,10 +27,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class InputDestination implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * system-generated static IP address of endpoint. Remains fixed for the lifetime of the input
+     * The system-generated static IP address of endpoint. It remains fixed for the lifetime of the input.
      */
     private String ip;
-    /** port for input */
+    /** The port number for the input. */
     private String port;
     /**
      * This represents the endpoint that the customer stream will be pushed to.
@@ -38,10 +38,10 @@ public class InputDestination implements Serializable, Cloneable, StructuredPojo
     private String url;
 
     /**
-     * system-generated static IP address of endpoint. Remains fixed for the lifetime of the input
+     * The system-generated static IP address of endpoint. It remains fixed for the lifetime of the input.
      * 
      * @param ip
-     *        system-generated static IP address of endpoint. Remains fixed for the lifetime of the input
+     *        The system-generated static IP address of endpoint. It remains fixed for the lifetime of the input.
      */
 
     public void setIp(String ip) {
@@ -49,9 +49,9 @@ public class InputDestination implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * system-generated static IP address of endpoint. Remains fixed for the lifetime of the input
+     * The system-generated static IP address of endpoint. It remains fixed for the lifetime of the input.
      * 
-     * @return system-generated static IP address of endpoint. Remains fixed for the lifetime of the input
+     * @return The system-generated static IP address of endpoint. It remains fixed for the lifetime of the input.
      */
 
     public String getIp() {
@@ -59,10 +59,10 @@ public class InputDestination implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * system-generated static IP address of endpoint. Remains fixed for the lifetime of the input
+     * The system-generated static IP address of endpoint. It remains fixed for the lifetime of the input.
      * 
      * @param ip
-     *        system-generated static IP address of endpoint. Remains fixed for the lifetime of the input
+     *        The system-generated static IP address of endpoint. It remains fixed for the lifetime of the input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -72,10 +72,10 @@ public class InputDestination implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * port for input
+     * The port number for the input.
      * 
      * @param port
-     *        port for input
+     *        The port number for the input.
      */
 
     public void setPort(String port) {
@@ -83,9 +83,9 @@ public class InputDestination implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * port for input
+     * The port number for the input.
      * 
-     * @return port for input
+     * @return The port number for the input.
      */
 
     public String getPort() {
@@ -93,10 +93,10 @@ public class InputDestination implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * port for input
+     * The port number for the input.
      * 
      * @param port
-     *        port for input
+     *        The port number for the input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
