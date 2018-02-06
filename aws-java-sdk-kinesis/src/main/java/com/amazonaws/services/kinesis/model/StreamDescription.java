@@ -47,14 +47,14 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> - The stream is being created. Kinesis Streams immediately returns and sets
+     * <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets
      * <code>StreamStatus</code> to <code>CREATING</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state
-     * until Kinesis Streams completes the deletion.
+     * until Kinesis Data Streams completes the deletion.
      * </p>
      * </li>
      * <li>
@@ -114,7 +114,7 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed AWS KMS key.
      * </p>
      * </li>
      * </ul>
@@ -122,9 +122,9 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
     private String encryptionType;
     /**
      * <p>
-     * The GUID for the customer-managed KMS key to use for encryption. This value can be a globally unique identifier,
-     * a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also use a
-     * master key owned by Kinesis Streams by specifying the alias <code>aws/kinesis</code>.
+     * The GUID for the customer-managed AWS KMS key to use for encryption. This value can be a globally unique
+     * identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also
+     * use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.
      * </p>
      * <ul>
      * <li>
@@ -149,7 +149,7 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * Master key owned by Kinesis Streams: <code>alias/aws/kinesis</code>
+     * Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code>
      * </p>
      * </li>
      * </ul>
@@ -243,14 +243,14 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> - The stream is being created. Kinesis Streams immediately returns and sets
+     * <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets
      * <code>StreamStatus</code> to <code>CREATING</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state
-     * until Kinesis Streams completes the deletion.
+     * until Kinesis Data Streams completes the deletion.
      * </p>
      * </li>
      * <li>
@@ -272,14 +272,14 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATING</code> - The stream is being created. Kinesis Streams immediately returns and sets
+     *        <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets
      *        <code>StreamStatus</code> to <code>CREATING</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code>
-     *        state until Kinesis Streams completes the deletion.
+     *        state until Kinesis Data Streams completes the deletion.
      *        </p>
      *        </li>
      *        <li>
@@ -308,14 +308,14 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> - The stream is being created. Kinesis Streams immediately returns and sets
+     * <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets
      * <code>StreamStatus</code> to <code>CREATING</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state
-     * until Kinesis Streams completes the deletion.
+     * until Kinesis Data Streams completes the deletion.
      * </p>
      * </li>
      * <li>
@@ -336,14 +336,14 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>CREATING</code> - The stream is being created. Kinesis Streams immediately returns and sets
+     *         <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets
      *         <code>StreamStatus</code> to <code>CREATING</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code>
-     *         state until Kinesis Streams completes the deletion.
+     *         state until Kinesis Data Streams completes the deletion.
      *         </p>
      *         </li>
      *         <li>
@@ -372,14 +372,14 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> - The stream is being created. Kinesis Streams immediately returns and sets
+     * <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets
      * <code>StreamStatus</code> to <code>CREATING</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state
-     * until Kinesis Streams completes the deletion.
+     * until Kinesis Data Streams completes the deletion.
      * </p>
      * </li>
      * <li>
@@ -401,14 +401,14 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATING</code> - The stream is being created. Kinesis Streams immediately returns and sets
+     *        <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets
      *        <code>StreamStatus</code> to <code>CREATING</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code>
-     *        state until Kinesis Streams completes the deletion.
+     *        state until Kinesis Data Streams completes the deletion.
      *        </p>
      *        </li>
      *        <li>
@@ -439,14 +439,14 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> - The stream is being created. Kinesis Streams immediately returns and sets
+     * <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets
      * <code>StreamStatus</code> to <code>CREATING</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state
-     * until Kinesis Streams completes the deletion.
+     * until Kinesis Data Streams completes the deletion.
      * </p>
      * </li>
      * <li>
@@ -468,14 +468,14 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATING</code> - The stream is being created. Kinesis Streams immediately returns and sets
+     *        <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets
      *        <code>StreamStatus</code> to <code>CREATING</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code>
-     *        state until Kinesis Streams completes the deletion.
+     *        state until Kinesis Data Streams completes the deletion.
      *        </p>
      *        </li>
      *        <li>
@@ -504,14 +504,14 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> - The stream is being created. Kinesis Streams immediately returns and sets
+     * <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets
      * <code>StreamStatus</code> to <code>CREATING</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code> state
-     * until Kinesis Streams completes the deletion.
+     * until Kinesis Data Streams completes the deletion.
      * </p>
      * </li>
      * <li>
@@ -533,14 +533,14 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATING</code> - The stream is being created. Kinesis Streams immediately returns and sets
+     *        <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately returns and sets
      *        <code>StreamStatus</code> to <code>CREATING</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>DELETING</code> - The stream is being deleted. The specified stream is in the <code>DELETING</code>
-     *        state until Kinesis Streams completes the deletion.
+     *        state until Kinesis Data Streams completes the deletion.
      *        </p>
      *        </li>
      *        <li>
@@ -854,7 +854,7 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed AWS KMS key.
      * </p>
      * </li>
      * </ul>
@@ -869,7 +869,7 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS
+     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed AWS KMS
      *        key.
      *        </p>
      *        </li>
@@ -892,7 +892,7 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed AWS KMS key.
      * </p>
      * </li>
      * </ul>
@@ -907,8 +907,8 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      *         </li>
      *         <li>
      *         <p>
-     *         <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS
-     *         key.
+     *         <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed AWS
+     *         KMS key.
      *         </p>
      *         </li>
      * @see EncryptionType
@@ -930,7 +930,7 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed AWS KMS key.
      * </p>
      * </li>
      * </ul>
@@ -945,7 +945,7 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS
+     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed AWS KMS
      *        key.
      *        </p>
      *        </li>
@@ -970,7 +970,7 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed AWS KMS key.
      * </p>
      * </li>
      * </ul>
@@ -985,7 +985,7 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS
+     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed AWS KMS
      *        key.
      *        </p>
      *        </li>
@@ -1008,7 +1008,7 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS key.
+     * <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed AWS KMS key.
      * </p>
      * </li>
      * </ul>
@@ -1023,7 +1023,7 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed KMS
+     *        <code>KMS</code>: Use server-side encryption on the records in the stream using a customer-managed AWS KMS
      *        key.
      *        </p>
      *        </li>
@@ -1038,9 +1038,9 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The GUID for the customer-managed KMS key to use for encryption. This value can be a globally unique identifier,
-     * a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also use a
-     * master key owned by Kinesis Streams by specifying the alias <code>aws/kinesis</code>.
+     * The GUID for the customer-managed AWS KMS key to use for encryption. This value can be a globally unique
+     * identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also
+     * use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.
      * </p>
      * <ul>
      * <li>
@@ -1065,15 +1065,16 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * Master key owned by Kinesis Streams: <code>alias/aws/kinesis</code>
+     * Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code>
      * </p>
      * </li>
      * </ul>
      * 
      * @param keyId
-     *        The GUID for the customer-managed KMS key to use for encryption. This value can be a globally unique
+     *        The GUID for the customer-managed AWS KMS key to use for encryption. This value can be a globally unique
      *        identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You
-     *        can also use a master key owned by Kinesis Streams by specifying the alias <code>aws/kinesis</code>.</p>
+     *        can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>
+     *        .</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1097,7 +1098,7 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        Master key owned by Kinesis Streams: <code>alias/aws/kinesis</code>
+     *        Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code>
      *        </p>
      *        </li>
      */
@@ -1108,9 +1109,9 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The GUID for the customer-managed KMS key to use for encryption. This value can be a globally unique identifier,
-     * a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also use a
-     * master key owned by Kinesis Streams by specifying the alias <code>aws/kinesis</code>.
+     * The GUID for the customer-managed AWS KMS key to use for encryption. This value can be a globally unique
+     * identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also
+     * use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.
      * </p>
      * <ul>
      * <li>
@@ -1135,14 +1136,15 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * Master key owned by Kinesis Streams: <code>alias/aws/kinesis</code>
+     * Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code>
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The GUID for the customer-managed KMS key to use for encryption. This value can be a globally unique
+     * @return The GUID for the customer-managed AWS KMS key to use for encryption. This value can be a globally unique
      *         identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You
-     *         can also use a master key owned by Kinesis Streams by specifying the alias <code>aws/kinesis</code>.</p>
+     *         can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>
+     *         .</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1166,7 +1168,7 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      *         </li>
      *         <li>
      *         <p>
-     *         Master key owned by Kinesis Streams: <code>alias/aws/kinesis</code>
+     *         Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code>
      *         </p>
      *         </li>
      */
@@ -1177,9 +1179,9 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The GUID for the customer-managed KMS key to use for encryption. This value can be a globally unique identifier,
-     * a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also use a
-     * master key owned by Kinesis Streams by specifying the alias <code>aws/kinesis</code>.
+     * The GUID for the customer-managed AWS KMS key to use for encryption. This value can be a globally unique
+     * identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You can also
+     * use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.
      * </p>
      * <ul>
      * <li>
@@ -1204,15 +1206,16 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * Master key owned by Kinesis Streams: <code>alias/aws/kinesis</code>
+     * Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code>
      * </p>
      * </li>
      * </ul>
      * 
      * @param keyId
-     *        The GUID for the customer-managed KMS key to use for encryption. This value can be a globally unique
+     *        The GUID for the customer-managed AWS KMS key to use for encryption. This value can be a globally unique
      *        identifier, a fully specified ARN to either an alias or a key, or an alias name prefixed by "alias/".You
-     *        can also use a master key owned by Kinesis Streams by specifying the alias <code>aws/kinesis</code>.</p>
+     *        can also use a master key owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>
+     *        .</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1236,7 +1239,7 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        Master key owned by Kinesis Streams: <code>alias/aws/kinesis</code>
+     *        Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

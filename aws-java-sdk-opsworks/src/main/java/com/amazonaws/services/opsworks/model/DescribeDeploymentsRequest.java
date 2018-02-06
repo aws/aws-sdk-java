@@ -27,35 +27,35 @@ public class DescribeDeploymentsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The stack ID. If you include this parameter, <code>DescribeDeployments</code> returns a description of the
-     * commands associated with the specified stack.
+     * The stack ID. If you include this parameter, the command returns a description of the commands associated with
+     * the specified stack.
      * </p>
      */
     private String stackId;
     /**
      * <p>
-     * The app ID. If you include this parameter, <code>DescribeDeployments</code> returns a description of the commands
-     * associated with the specified app.
+     * The app ID. If you include this parameter, the command returns a description of the commands associated with the
+     * specified app.
      * </p>
      */
     private String appId;
     /**
      * <p>
-     * An array of deployment IDs to be described. If you include this parameter, <code>DescribeDeployments</code>
-     * returns a description of the specified deployments. Otherwise, it returns a description of every deployment.
+     * An array of deployment IDs to be described. If you include this parameter, the command returns a description of
+     * the specified deployments. Otherwise, it returns a description of every deployment.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> deploymentIds;
 
     /**
      * <p>
-     * The stack ID. If you include this parameter, <code>DescribeDeployments</code> returns a description of the
-     * commands associated with the specified stack.
+     * The stack ID. If you include this parameter, the command returns a description of the commands associated with
+     * the specified stack.
      * </p>
      * 
      * @param stackId
-     *        The stack ID. If you include this parameter, <code>DescribeDeployments</code> returns a description of the
-     *        commands associated with the specified stack.
+     *        The stack ID. If you include this parameter, the command returns a description of the commands associated
+     *        with the specified stack.
      */
 
     public void setStackId(String stackId) {
@@ -64,12 +64,12 @@ public class DescribeDeploymentsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The stack ID. If you include this parameter, <code>DescribeDeployments</code> returns a description of the
-     * commands associated with the specified stack.
+     * The stack ID. If you include this parameter, the command returns a description of the commands associated with
+     * the specified stack.
      * </p>
      * 
-     * @return The stack ID. If you include this parameter, <code>DescribeDeployments</code> returns a description of
-     *         the commands associated with the specified stack.
+     * @return The stack ID. If you include this parameter, the command returns a description of the commands associated
+     *         with the specified stack.
      */
 
     public String getStackId() {
@@ -78,13 +78,13 @@ public class DescribeDeploymentsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The stack ID. If you include this parameter, <code>DescribeDeployments</code> returns a description of the
-     * commands associated with the specified stack.
+     * The stack ID. If you include this parameter, the command returns a description of the commands associated with
+     * the specified stack.
      * </p>
      * 
      * @param stackId
-     *        The stack ID. If you include this parameter, <code>DescribeDeployments</code> returns a description of the
-     *        commands associated with the specified stack.
+     *        The stack ID. If you include this parameter, the command returns a description of the commands associated
+     *        with the specified stack.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,13 +95,13 @@ public class DescribeDeploymentsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The app ID. If you include this parameter, <code>DescribeDeployments</code> returns a description of the commands
-     * associated with the specified app.
+     * The app ID. If you include this parameter, the command returns a description of the commands associated with the
+     * specified app.
      * </p>
      * 
      * @param appId
-     *        The app ID. If you include this parameter, <code>DescribeDeployments</code> returns a description of the
-     *        commands associated with the specified app.
+     *        The app ID. If you include this parameter, the command returns a description of the commands associated
+     *        with the specified app.
      */
 
     public void setAppId(String appId) {
@@ -110,12 +110,12 @@ public class DescribeDeploymentsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The app ID. If you include this parameter, <code>DescribeDeployments</code> returns a description of the commands
-     * associated with the specified app.
+     * The app ID. If you include this parameter, the command returns a description of the commands associated with the
+     * specified app.
      * </p>
      * 
-     * @return The app ID. If you include this parameter, <code>DescribeDeployments</code> returns a description of the
-     *         commands associated with the specified app.
+     * @return The app ID. If you include this parameter, the command returns a description of the commands associated
+     *         with the specified app.
      */
 
     public String getAppId() {
@@ -124,13 +124,13 @@ public class DescribeDeploymentsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The app ID. If you include this parameter, <code>DescribeDeployments</code> returns a description of the commands
-     * associated with the specified app.
+     * The app ID. If you include this parameter, the command returns a description of the commands associated with the
+     * specified app.
      * </p>
      * 
      * @param appId
-     *        The app ID. If you include this parameter, <code>DescribeDeployments</code> returns a description of the
-     *        commands associated with the specified app.
+     *        The app ID. If you include this parameter, the command returns a description of the commands associated
+     *        with the specified app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,13 +141,12 @@ public class DescribeDeploymentsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An array of deployment IDs to be described. If you include this parameter, <code>DescribeDeployments</code>
-     * returns a description of the specified deployments. Otherwise, it returns a description of every deployment.
+     * An array of deployment IDs to be described. If you include this parameter, the command returns a description of
+     * the specified deployments. Otherwise, it returns a description of every deployment.
      * </p>
      * 
-     * @return An array of deployment IDs to be described. If you include this parameter,
-     *         <code>DescribeDeployments</code> returns a description of the specified deployments. Otherwise, it
-     *         returns a description of every deployment.
+     * @return An array of deployment IDs to be described. If you include this parameter, the command returns a
+     *         description of the specified deployments. Otherwise, it returns a description of every deployment.
      */
 
     public java.util.List<String> getDeploymentIds() {
@@ -159,14 +158,13 @@ public class DescribeDeploymentsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An array of deployment IDs to be described. If you include this parameter, <code>DescribeDeployments</code>
-     * returns a description of the specified deployments. Otherwise, it returns a description of every deployment.
+     * An array of deployment IDs to be described. If you include this parameter, the command returns a description of
+     * the specified deployments. Otherwise, it returns a description of every deployment.
      * </p>
      * 
      * @param deploymentIds
-     *        An array of deployment IDs to be described. If you include this parameter,
-     *        <code>DescribeDeployments</code> returns a description of the specified deployments. Otherwise, it returns
-     *        a description of every deployment.
+     *        An array of deployment IDs to be described. If you include this parameter, the command returns a
+     *        description of the specified deployments. Otherwise, it returns a description of every deployment.
      */
 
     public void setDeploymentIds(java.util.Collection<String> deploymentIds) {
@@ -180,8 +178,8 @@ public class DescribeDeploymentsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An array of deployment IDs to be described. If you include this parameter, <code>DescribeDeployments</code>
-     * returns a description of the specified deployments. Otherwise, it returns a description of every deployment.
+     * An array of deployment IDs to be described. If you include this parameter, the command returns a description of
+     * the specified deployments. Otherwise, it returns a description of every deployment.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -190,9 +188,8 @@ public class DescribeDeploymentsRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param deploymentIds
-     *        An array of deployment IDs to be described. If you include this parameter,
-     *        <code>DescribeDeployments</code> returns a description of the specified deployments. Otherwise, it returns
-     *        a description of every deployment.
+     *        An array of deployment IDs to be described. If you include this parameter, the command returns a
+     *        description of the specified deployments. Otherwise, it returns a description of every deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -208,14 +205,13 @@ public class DescribeDeploymentsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An array of deployment IDs to be described. If you include this parameter, <code>DescribeDeployments</code>
-     * returns a description of the specified deployments. Otherwise, it returns a description of every deployment.
+     * An array of deployment IDs to be described. If you include this parameter, the command returns a description of
+     * the specified deployments. Otherwise, it returns a description of every deployment.
      * </p>
      * 
      * @param deploymentIds
-     *        An array of deployment IDs to be described. If you include this parameter,
-     *        <code>DescribeDeployments</code> returns a description of the specified deployments. Otherwise, it returns
-     *        a description of every deployment.
+     *        An array of deployment IDs to be described. If you include this parameter, the command returns a
+     *        description of the specified deployments. Otherwise, it returns a description of every deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

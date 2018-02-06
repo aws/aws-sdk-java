@@ -331,6 +331,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(addApplicationCloudWatchLoggingOptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -404,6 +405,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 request = new AddApplicationInputRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addApplicationInputRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -466,6 +468,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(addApplicationInputProcessingConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -549,6 +552,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 request = new AddApplicationOutputRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addApplicationOutputRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -624,6 +628,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(addApplicationReferenceDataSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -707,6 +712,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 request = new CreateApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -767,6 +773,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 request = new DeleteApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -830,6 +837,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(deleteApplicationCloudWatchLoggingOptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -892,6 +900,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(deleteApplicationInputProcessingConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -955,6 +964,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(deleteApplicationOutputRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1024,6 +1034,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(deleteApplicationReferenceDataSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1083,6 +1094,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 request = new DescribeApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1155,6 +1167,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 request = new DiscoverInputSchemaRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(discoverInputSchemaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1213,6 +1226,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 request = new ListApplicationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listApplicationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1285,6 +1299,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 request = new StartApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1343,6 +1358,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 request = new StopApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1410,6 +1426,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                 request = new UpdateApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

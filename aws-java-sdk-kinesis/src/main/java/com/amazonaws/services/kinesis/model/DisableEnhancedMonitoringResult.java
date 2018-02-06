@@ -28,7 +28,7 @@ public class DisableEnhancedMonitoringResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the Kinesis stream.
+     * The name of the Kinesis data stream.
      * </p>
      */
     private String streamName;
@@ -47,11 +47,11 @@ public class DisableEnhancedMonitoringResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the Kinesis stream.
+     * The name of the Kinesis data stream.
      * </p>
      * 
      * @param streamName
-     *        The name of the Kinesis stream.
+     *        The name of the Kinesis data stream.
      */
 
     public void setStreamName(String streamName) {
@@ -60,10 +60,10 @@ public class DisableEnhancedMonitoringResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the Kinesis stream.
+     * The name of the Kinesis data stream.
      * </p>
      * 
-     * @return The name of the Kinesis stream.
+     * @return The name of the Kinesis data stream.
      */
 
     public String getStreamName() {
@@ -72,11 +72,11 @@ public class DisableEnhancedMonitoringResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the Kinesis stream.
+     * The name of the Kinesis data stream.
      * </p>
      * 
      * @param streamName
-     *        The name of the Kinesis stream.
+     *        The name of the Kinesis data stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

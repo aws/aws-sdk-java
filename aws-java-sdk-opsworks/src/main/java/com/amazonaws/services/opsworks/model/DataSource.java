@@ -30,8 +30,8 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>, or
-     * <code>RdsDbInstance</code>.
+     * The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>,
+     * <code>RdsDbInstance</code>, or <code>None</code>.
      * </p>
      */
     private String type;
@@ -50,13 +50,13 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>, or
-     * <code>RdsDbInstance</code>.
+     * The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>,
+     * <code>RdsDbInstance</code>, or <code>None</code>.
      * </p>
      * 
      * @param type
      *        The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>,
-     *        or <code>RdsDbInstance</code>.
+     *        <code>RdsDbInstance</code>, or <code>None</code>.
      */
 
     public void setType(String type) {
@@ -65,12 +65,12 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>, or
-     * <code>RdsDbInstance</code>.
+     * The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>,
+     * <code>RdsDbInstance</code>, or <code>None</code>.
      * </p>
      * 
      * @return The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>,
-     *         or <code>RdsDbInstance</code>.
+     *         <code>RdsDbInstance</code>, or <code>None</code>.
      */
 
     public String getType() {
@@ -79,13 +79,13 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>, or
-     * <code>RdsDbInstance</code>.
+     * The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>,
+     * <code>RdsDbInstance</code>, or <code>None</code>.
      * </p>
      * 
      * @param type
      *        The data source's type, <code>AutoSelectOpsworksMysqlInstance</code>, <code>OpsworksMysqlInstance</code>,
-     *        or <code>RdsDbInstance</code>.
+     *        <code>RdsDbInstance</code>, or <code>None</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

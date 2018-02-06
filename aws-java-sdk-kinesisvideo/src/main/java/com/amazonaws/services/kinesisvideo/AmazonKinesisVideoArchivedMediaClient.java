@@ -182,6 +182,7 @@ public class AmazonKinesisVideoArchivedMediaClient extends AmazonWebServiceClien
                         .beforeMarshalling(getMediaForFragmentListRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -243,6 +244,7 @@ public class AmazonKinesisVideoArchivedMediaClient extends AmazonWebServiceClien
                 request = new ListFragmentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFragmentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

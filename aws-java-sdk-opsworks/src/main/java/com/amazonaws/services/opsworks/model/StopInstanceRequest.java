@@ -32,6 +32,8 @@ public class StopInstanceRequest extends com.amazonaws.AmazonWebServiceRequest i
      */
     private String instanceId;
 
+    private Boolean force;
+
     /**
      * <p>
      * The instance ID.
@@ -73,6 +75,40 @@ public class StopInstanceRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * @param force
+     */
+
+    public void setForce(Boolean force) {
+        this.force = force;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean getForce() {
+        return this.force;
+    }
+
+    /**
+     * @param force
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StopInstanceRequest withForce(Boolean force) {
+        setForce(force);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean isForce() {
+        return this.force;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -84,7 +120,9 @@ public class StopInstanceRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInstanceId() != null)
-            sb.append("InstanceId: ").append(getInstanceId());
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
+        if (getForce() != null)
+            sb.append("Force: ").append(getForce());
         sb.append("}");
         return sb.toString();
     }
@@ -103,6 +141,10 @@ public class StopInstanceRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
+        if (other.getForce() == null ^ this.getForce() == null)
+            return false;
+        if (other.getForce() != null && other.getForce().equals(this.getForce()) == false)
+            return false;
         return true;
     }
 
@@ -112,6 +154,7 @@ public class StopInstanceRequest extends com.amazonaws.AmazonWebServiceRequest i
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getForce() == null) ? 0 : getForce().hashCode());
         return hashCode;
     }
 

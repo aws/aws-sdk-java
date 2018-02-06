@@ -29,6 +29,8 @@ public class StopInstanceRequestMarshaller {
 
     private static final MarshallingInfo<String> INSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceId").build();
+    private static final MarshallingInfo<Boolean> FORCE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Force").build();
 
     private static final StopInstanceRequestMarshaller instance = new StopInstanceRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class StopInstanceRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(stopInstanceRequest.getInstanceId(), INSTANCEID_BINDING);
+            protocolMarshaller.marshall(stopInstanceRequest.getForce(), FORCE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

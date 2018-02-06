@@ -114,12 +114,22 @@ import com.amazonaws.services.opsworks.waiters.AWSOpsWorksWaiters;
  * </li>
  * <li>
  * <p>
+ * opsworks.ca-central-1.amazonaws.com (API only; not available in the AWS console)
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * opsworks.eu-west-1.amazonaws.com
  * </p>
  * </li>
  * <li>
  * <p>
  * opsworks.eu-west-2.amazonaws.com
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * opsworks.eu-west-3.amazonaws.com
  * </p>
  * </li>
  * <li>
@@ -1082,6 +1092,19 @@ public interface AWSOpsWorks {
      *      API Documentation</a>
      */
     DescribeMyUserProfileResult describeMyUserProfile(DescribeMyUserProfileRequest describeMyUserProfileRequest);
+
+    /**
+     * <p>
+     * Describes the operating systems that are supported by AWS OpsWorks Stacks.
+     * </p>
+     * 
+     * @param describeOperatingSystemsRequest
+     * @return Result of the DescribeOperatingSystems operation returned by the service.
+     * @sample AWSOpsWorks.DescribeOperatingSystems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeOperatingSystems"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeOperatingSystemsResult describeOperatingSystems(DescribeOperatingSystemsRequest describeOperatingSystemsRequest);
 
     /**
      * <p>

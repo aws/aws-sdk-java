@@ -27,17 +27,17 @@ public class DescribeEnvironmentsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The IDs of invidividual environments to get information about.
+     * The IDs of individual environments to get information about.
      * </p>
      */
     private java.util.List<String> environmentIds;
 
     /**
      * <p>
-     * The IDs of invidividual environments to get information about.
+     * The IDs of individual environments to get information about.
      * </p>
      * 
-     * @return The IDs of invidividual environments to get information about.
+     * @return The IDs of individual environments to get information about.
      */
 
     public java.util.List<String> getEnvironmentIds() {
@@ -46,11 +46,11 @@ public class DescribeEnvironmentsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The IDs of invidividual environments to get information about.
+     * The IDs of individual environments to get information about.
      * </p>
      * 
      * @param environmentIds
-     *        The IDs of invidividual environments to get information about.
+     *        The IDs of individual environments to get information about.
      */
 
     public void setEnvironmentIds(java.util.Collection<String> environmentIds) {
@@ -64,7 +64,7 @@ public class DescribeEnvironmentsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The IDs of invidividual environments to get information about.
+     * The IDs of individual environments to get information about.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +73,7 @@ public class DescribeEnvironmentsRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param environmentIds
-     *        The IDs of invidividual environments to get information about.
+     *        The IDs of individual environments to get information about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class DescribeEnvironmentsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The IDs of invidividual environments to get information about.
+     * The IDs of individual environments to get information about.
      * </p>
      * 
      * @param environmentIds
-     *        The IDs of invidividual environments to get information about.
+     *        The IDs of individual environments to get information about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

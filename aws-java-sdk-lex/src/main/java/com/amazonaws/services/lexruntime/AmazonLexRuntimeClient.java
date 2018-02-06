@@ -300,6 +300,7 @@ public class AmazonLexRuntimeClient extends AmazonWebServiceClient implements Am
                 request = new PostContentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(postContentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -462,6 +463,7 @@ public class AmazonLexRuntimeClient extends AmazonWebServiceClient implements Am
                 request = new PostTextRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(postTextRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -30,7 +30,7 @@ public class DisableEnhancedMonitoringRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the Kinesis stream for which to disable enhanced monitoring.
+     * The name of the Kinesis data stream for which to disable enhanced monitoring.
      * </p>
      */
     private String streamName;
@@ -86,18 +86,19 @@ public class DisableEnhancedMonitoringRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon
-     * Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
+     * Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer
+     * Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> shardLevelMetrics;
 
     /**
      * <p>
-     * The name of the Kinesis stream for which to disable enhanced monitoring.
+     * The name of the Kinesis data stream for which to disable enhanced monitoring.
      * </p>
      * 
      * @param streamName
-     *        The name of the Kinesis stream for which to disable enhanced monitoring.
+     *        The name of the Kinesis data stream for which to disable enhanced monitoring.
      */
 
     public void setStreamName(String streamName) {
@@ -106,10 +107,10 @@ public class DisableEnhancedMonitoringRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the Kinesis stream for which to disable enhanced monitoring.
+     * The name of the Kinesis data stream for which to disable enhanced monitoring.
      * </p>
      * 
-     * @return The name of the Kinesis stream for which to disable enhanced monitoring.
+     * @return The name of the Kinesis data stream for which to disable enhanced monitoring.
      */
 
     public String getStreamName() {
@@ -118,11 +119,11 @@ public class DisableEnhancedMonitoringRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the Kinesis stream for which to disable enhanced monitoring.
+     * The name of the Kinesis data stream for which to disable enhanced monitoring.
      * </p>
      * 
      * @param streamName
-     *        The name of the Kinesis stream for which to disable enhanced monitoring.
+     *        The name of the Kinesis data stream for which to disable enhanced monitoring.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,7 +184,8 @@ public class DisableEnhancedMonitoringRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon
-     * Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
+     * Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer
+     * Guide</i>.
      * </p>
      * 
      * @return List of shard-level metrics to disable.</p>
@@ -235,8 +237,8 @@ public class DisableEnhancedMonitoringRequest extends com.amazonaws.AmazonWebSer
      *         <p>
      *         For more information, see <a
      *         href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the
-     *         Amazon Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer
-     *         Guide</i>.
+     *         Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams
+     *         Developer Guide</i>.
      * @see MetricsName
      */
 
@@ -299,7 +301,8 @@ public class DisableEnhancedMonitoringRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon
-     * Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
+     * Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer
+     * Guide</i>.
      * </p>
      * 
      * @param shardLevelMetrics
@@ -352,7 +355,8 @@ public class DisableEnhancedMonitoringRequest extends com.amazonaws.AmazonWebSer
      *        <p>
      *        For more information, see <a
      *        href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon
-     *        Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
+     *        Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer
+     *        Guide</i>.
      * @see MetricsName
      */
 
@@ -417,7 +421,8 @@ public class DisableEnhancedMonitoringRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon
-     * Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
+     * Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer
+     * Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -475,7 +480,8 @@ public class DisableEnhancedMonitoringRequest extends com.amazonaws.AmazonWebSer
      *        <p>
      *        For more information, see <a
      *        href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon
-     *        Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
+     *        Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricsName
      */
@@ -542,7 +548,8 @@ public class DisableEnhancedMonitoringRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon
-     * Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
+     * Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer
+     * Guide</i>.
      * </p>
      * 
      * @param shardLevelMetrics
@@ -595,7 +602,8 @@ public class DisableEnhancedMonitoringRequest extends com.amazonaws.AmazonWebSer
      *        <p>
      *        For more information, see <a
      *        href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon
-     *        Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
+     *        Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricsName
      */
@@ -657,7 +665,8 @@ public class DisableEnhancedMonitoringRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon
-     * Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
+     * Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer
+     * Guide</i>.
      * </p>
      * 
      * @param shardLevelMetrics
@@ -710,7 +719,8 @@ public class DisableEnhancedMonitoringRequest extends com.amazonaws.AmazonWebSer
      *        <p>
      *        For more information, see <a
      *        href="http://docs.aws.amazon.com/kinesis/latest/dev/monitoring-with-cloudwatch.html">Monitoring the Amazon
-     *        Kinesis Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Streams Developer Guide</i>.
+     *        Kinesis Data Streams Service with Amazon CloudWatch</a> in the <i>Amazon Kinesis Data Streams Developer
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricsName
      */

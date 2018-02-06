@@ -446,6 +446,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 request = new AssumeRoleRequestMarshaller().marshall(super.beforeMarshalling(assumeRoleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -599,6 +600,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 request = new AssumeRoleWithSAMLRequestMarshaller().marshall(super.beforeMarshalling(assumeRoleWithSAMLRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -782,6 +784,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 request = new AssumeRoleWithWebIdentityRequestMarshaller().marshall(super.beforeMarshalling(assumeRoleWithWebIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -884,6 +887,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 request = new DecodeAuthorizationMessageRequestMarshaller().marshall(super.beforeMarshalling(decodeAuthorizationMessageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -932,6 +936,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 request = new GetCallerIdentityRequestMarshaller().marshall(super.beforeMarshalling(getCallerIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1090,6 +1095,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 request = new GetFederationTokenRequestMarshaller().marshall(super.beforeMarshalling(getFederationTokenRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1197,6 +1203,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 request = new GetSessionTokenRequestMarshaller().marshall(super.beforeMarshalling(getSessionTokenRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

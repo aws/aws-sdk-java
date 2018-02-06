@@ -298,6 +298,7 @@ public class AWSMarketplaceCommerceAnalyticsClient extends AmazonWebServiceClien
                 request = new GenerateDataSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(generateDataSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -355,6 +356,7 @@ public class AWSMarketplaceCommerceAnalyticsClient extends AmazonWebServiceClien
                 request = new StartSupportDataExportRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startSupportDataExportRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

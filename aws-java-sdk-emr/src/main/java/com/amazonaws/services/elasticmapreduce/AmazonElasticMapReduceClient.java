@@ -310,6 +310,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request = new AddInstanceFleetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addInstanceFleetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -361,6 +362,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request = new AddInstanceGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addInstanceGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -434,6 +436,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request = new AddJobFlowStepsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addJobFlowStepsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -489,6 +492,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request = new AddTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -545,6 +549,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request = new CancelStepsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelStepsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -598,6 +603,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(createSecurityConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -652,6 +658,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(deleteSecurityConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -707,6 +714,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request = new DescribeClusterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -786,6 +794,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request = new DescribeJobFlowsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeJobFlowsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -845,6 +854,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(describeSecurityConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -899,6 +909,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request = new DescribeStepRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeStepRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -952,6 +963,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request = new ListBootstrapActionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBootstrapActionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1008,6 +1020,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request = new ListClustersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listClustersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1071,6 +1084,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request = new ListInstanceFleetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listInstanceFleetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1124,6 +1138,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request = new ListInstanceGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listInstanceGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1179,6 +1194,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request = new ListInstancesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1234,6 +1250,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(listSecurityConfigurationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1288,6 +1305,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request = new ListStepsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listStepsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1347,6 +1365,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request = new ModifyInstanceFleetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(modifyInstanceFleetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1400,6 +1419,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request = new ModifyInstanceGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(modifyInstanceGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1455,6 +1475,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request = new PutAutoScalingPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putAutoScalingPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1504,6 +1525,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(removeAutoScalingPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1563,6 +1585,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request = new RemoveTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1644,6 +1667,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request = new RunJobFlowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(runJobFlowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1714,6 +1738,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(setTerminationProtectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1769,6 +1794,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request = new SetVisibleToAllUsersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setVisibleToAllUsersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1827,6 +1853,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                 request = new TerminateJobFlowsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(terminateJobFlowsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

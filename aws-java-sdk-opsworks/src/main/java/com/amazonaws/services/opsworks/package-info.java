@@ -99,12 +99,22 @@
  * </li>
  * <li>
  * <p>
+ * opsworks.ca-central-1.amazonaws.com (API only; not available in the AWS console)
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * opsworks.eu-west-1.amazonaws.com
  * </p>
  * </li>
  * <li>
  * <p>
  * opsworks.eu-west-2.amazonaws.com
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * opsworks.eu-west-3.amazonaws.com
  * </p>
  * </li>
  * <li>

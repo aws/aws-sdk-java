@@ -144,6 +144,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new AcceptInvitationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(acceptInvitationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -195,6 +196,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new ArchiveFindingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(archiveFindingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -247,6 +249,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new CreateDetectorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDetectorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -299,6 +302,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new CreateIPSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createIPSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -351,6 +355,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new CreateMembersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createMembersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -403,6 +408,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new CreateSampleFindingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSampleFindingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -455,6 +461,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new CreateThreatIntelSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createThreatIntelSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -506,6 +513,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new DeclineInvitationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(declineInvitationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -556,6 +564,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteDetectorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDetectorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -606,6 +615,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteIPSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteIPSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -657,6 +667,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteInvitationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteInvitationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -708,6 +719,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteMembersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMembersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -758,6 +770,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteThreatIntelSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteThreatIntelSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -809,6 +822,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(disassociateFromMasterAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -861,6 +875,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new DisassociateMembersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateMembersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -911,6 +926,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new GetDetectorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDetectorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -962,6 +978,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new GetFindingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getFindingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1013,6 +1030,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new GetFindingsStatisticsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getFindingsStatisticsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1064,6 +1082,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new GetIPSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getIPSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1115,6 +1134,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new GetInvitationsCountRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInvitationsCountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1165,6 +1185,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new GetMasterAccountRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMasterAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1216,6 +1237,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new GetMembersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMembersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1266,6 +1288,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new GetThreatIntelSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getThreatIntelSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1319,6 +1342,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new InviteMembersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(inviteMembersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1369,6 +1393,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new ListDetectorsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDetectorsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1420,6 +1445,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new ListFindingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFindingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1470,6 +1496,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new ListIPSetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listIPSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1520,6 +1547,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new ListInvitationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listInvitationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1570,6 +1598,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new ListMembersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMembersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1620,6 +1649,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new ListThreatIntelSetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listThreatIntelSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1673,6 +1703,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new StartMonitoringMembersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startMonitoringMembersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1727,6 +1758,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new StopMonitoringMembersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopMonitoringMembersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1779,6 +1811,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new UnarchiveFindingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(unarchiveFindingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1830,6 +1863,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new UpdateDetectorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDetectorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1881,6 +1915,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new UpdateFindingsFeedbackRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFindingsFeedbackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1933,6 +1968,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new UpdateIPSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateIPSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1984,6 +2020,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                 request = new UpdateThreatIntelSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateThreatIntelSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

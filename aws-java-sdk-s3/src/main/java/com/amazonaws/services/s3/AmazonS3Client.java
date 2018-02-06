@@ -51,6 +51,7 @@ import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressInputStream;
 import com.amazonaws.event.ProgressListener;
 import com.amazonaws.handlers.HandlerChainFactory;
+import com.amazonaws.handlers.HandlerContextKey;
 import com.amazonaws.handlers.RequestHandler2;
 import com.amazonaws.http.ExecutionContext;
 import com.amazonaws.http.HttpMethodName;
@@ -3577,6 +3578,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 if (region != null) {
                      // If cache contains the region for the bucket, create an endpoint for the region and
                      // update the request with that endpoint.
+                     request.addHandlerContext(HandlerContextKey.SIGNING_REGION, region);
                      resolveRequestEndpoint(request, bucketName, key, RuntimeHttpUtils.toUri(RegionUtils.getRegion(region).getServiceEndpoint(S3_SERVICE_NAME), clientConfiguration));
                      return updateSigV4SignerWithRegion((AWSS3V4Signer) signer, region);
                 } else if (request.getOriginalRequest() instanceof GeneratePresignedUrlRequest) {
@@ -4201,6 +4203,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         return createRequest(bucketName, key, originalRequest, httpMethod, endpoint);
     }
 
+    // NOTE: New uses of this method are discouraged and flagged at build time.
+    // Be careful not to change its signature.
     protected <X extends AmazonWebServiceRequest> Request<X> createRequest(String bucketName, String key, X originalRequest, HttpMethodName httpMethod, URI endpoint) {
         // If the underlying AmazonS3Client has enabled accelerate mode and the original
         // request operation is accelerate mode supported, then the request will use the
@@ -4220,6 +4224,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         request.addHandlerContext(S3HandlerContextKeys.IS_PAYLOAD_SIGNING_ENABLED,
                 Boolean.valueOf(clientOptions.isPayloadSigningEnabled()));
         resolveRequestEndpoint(request, bucketName, key, endpoint);
+        request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
 
         return request;
     }

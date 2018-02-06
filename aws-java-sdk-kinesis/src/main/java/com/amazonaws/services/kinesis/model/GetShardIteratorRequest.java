@@ -30,13 +30,13 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the Amazon Kinesis stream.
+     * The name of the Amazon Kinesis data stream.
      * </p>
      */
     private String streamName;
     /**
      * <p>
-     * The shard ID of the Kinesis Streams shard to get the iterator for.
+     * The shard ID of the Kinesis Data Streams shard to get the iterator for.
      * </p>
      */
     private String shardId;
@@ -101,11 +101,11 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the Amazon Kinesis stream.
+     * The name of the Amazon Kinesis data stream.
      * </p>
      * 
      * @param streamName
-     *        The name of the Amazon Kinesis stream.
+     *        The name of the Amazon Kinesis data stream.
      */
 
     public void setStreamName(String streamName) {
@@ -114,10 +114,10 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the Amazon Kinesis stream.
+     * The name of the Amazon Kinesis data stream.
      * </p>
      * 
-     * @return The name of the Amazon Kinesis stream.
+     * @return The name of the Amazon Kinesis data stream.
      */
 
     public String getStreamName() {
@@ -126,11 +126,11 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the Amazon Kinesis stream.
+     * The name of the Amazon Kinesis data stream.
      * </p>
      * 
      * @param streamName
-     *        The name of the Amazon Kinesis stream.
+     *        The name of the Amazon Kinesis data stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +141,11 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The shard ID of the Kinesis Streams shard to get the iterator for.
+     * The shard ID of the Kinesis Data Streams shard to get the iterator for.
      * </p>
      * 
      * @param shardId
-     *        The shard ID of the Kinesis Streams shard to get the iterator for.
+     *        The shard ID of the Kinesis Data Streams shard to get the iterator for.
      */
 
     public void setShardId(String shardId) {
@@ -154,10 +154,10 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The shard ID of the Kinesis Streams shard to get the iterator for.
+     * The shard ID of the Kinesis Data Streams shard to get the iterator for.
      * </p>
      * 
-     * @return The shard ID of the Kinesis Streams shard to get the iterator for.
+     * @return The shard ID of the Kinesis Data Streams shard to get the iterator for.
      */
 
     public String getShardId() {
@@ -166,11 +166,11 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The shard ID of the Kinesis Streams shard to get the iterator for.
+     * The shard ID of the Kinesis Data Streams shard to get the iterator for.
      * </p>
      * 
      * @param shardId
-     *        The shard ID of the Kinesis Streams shard to get the iterator for.
+     *        The shard ID of the Kinesis Data Streams shard to get the iterator for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

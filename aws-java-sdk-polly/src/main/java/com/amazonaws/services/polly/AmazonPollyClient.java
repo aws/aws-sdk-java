@@ -349,6 +349,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
                 request = new DeleteLexiconRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLexiconRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -419,6 +420,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
                 request = new DescribeVoicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeVoicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -476,6 +478,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
                 request = new GetLexiconRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLexiconRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -529,6 +532,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
                 request = new ListLexiconsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLexiconsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -600,6 +604,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
                 request = new PutLexiconRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putLexiconRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -673,6 +678,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
                 request = new SynthesizeSpeechRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(synthesizeSpeechRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

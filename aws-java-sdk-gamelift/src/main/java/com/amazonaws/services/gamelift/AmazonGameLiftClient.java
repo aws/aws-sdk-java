@@ -943,6 +943,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new AcceptMatchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(acceptMatchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1056,6 +1057,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1166,6 +1168,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateBuildRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBuildRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1428,6 +1431,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateFleetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFleetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1596,6 +1600,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateGameSessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGameSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1706,6 +1711,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateGameSessionQueueRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGameSessionQueueRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1834,6 +1840,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(createMatchmakingConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1951,6 +1958,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(createMatchmakingRuleSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2075,6 +2083,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new CreatePlayerSessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPlayerSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2199,6 +2208,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new CreatePlayerSessionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPlayerSessionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2321,6 +2331,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(createVpcPeeringAuthorizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2437,6 +2448,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(createVpcPeeringConnectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2534,6 +2546,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2628,6 +2641,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteBuildRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBuildRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2812,6 +2826,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteFleetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFleetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2898,6 +2913,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteGameSessionQueueRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGameSessionQueueRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3001,6 +3017,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(deleteMatchmakingConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3179,6 +3196,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteScalingPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteScalingPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3276,6 +3294,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(deleteVpcPeeringAuthorizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3380,6 +3399,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(deleteVpcPeeringConnectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3480,6 +3500,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3571,6 +3592,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeBuildRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBuildRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3761,6 +3783,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(describeEC2InstanceLimitsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3949,6 +3972,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(describeFleetAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4137,6 +4161,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeFleetCapacityRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFleetCapacityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4316,6 +4341,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeFleetEventsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFleetEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4496,6 +4522,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(describeFleetPortSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4684,6 +4711,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(describeFleetUtilizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4817,6 +4845,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(describeGameSessionDetailsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4937,6 +4966,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(describeGameSessionPlacementRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5027,6 +5057,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(describeGameSessionQueuesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5161,6 +5192,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeGameSessionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeGameSessionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5227,6 +5259,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeInstancesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5320,6 +5353,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeMatchmakingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeMatchmakingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5424,6 +5458,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(describeMatchmakingConfigurationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5528,6 +5563,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(describeMatchmakingRuleSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5643,6 +5679,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribePlayerSessionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePlayerSessionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -5822,6 +5859,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(describeRuntimeConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6005,6 +6043,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(describeScalingPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6100,6 +6139,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(describeVpcPeeringAuthorizationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6204,6 +6244,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(describeVpcPeeringConnectionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6330,6 +6371,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new GetGameSessionLogUrlRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGameSessionLogUrlRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6406,6 +6448,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new GetInstanceAccessRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInstanceAccessRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6504,6 +6547,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new ListAliasesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAliasesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6598,6 +6642,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new ListBuildsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBuildsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6780,6 +6825,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new ListFleetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFleetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -6979,6 +7025,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new PutScalingPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putScalingPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7042,6 +7089,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(requestUploadCredentialsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7143,6 +7191,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new ResolveAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resolveAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7325,6 +7374,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new SearchGameSessionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchGameSessionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7494,6 +7544,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(startGameSessionPlacementRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7656,6 +7707,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new StartMatchmakingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startMatchmakingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7775,6 +7827,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(stopGameSessionPlacementRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7863,6 +7916,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new StopMatchmakingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopMatchmakingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -7960,6 +8014,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new UpdateAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8052,6 +8107,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new UpdateBuildRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateBuildRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8238,6 +8294,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new UpdateFleetAttributesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFleetAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8438,6 +8495,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new UpdateFleetCapacityRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFleetCapacityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8628,6 +8686,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(updateFleetPortSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8756,6 +8815,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new UpdateGameSessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGameSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8843,6 +8903,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                 request = new UpdateGameSessionQueueRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGameSessionQueueRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -8946,6 +9007,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(updateMatchmakingConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9140,6 +9202,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(updateRuntimeConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -9241,6 +9304,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(validateMatchmakingRuleSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

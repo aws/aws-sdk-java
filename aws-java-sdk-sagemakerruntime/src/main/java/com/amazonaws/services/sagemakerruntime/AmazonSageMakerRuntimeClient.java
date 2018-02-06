@@ -166,6 +166,7 @@ public class AmazonSageMakerRuntimeClient extends AmazonWebServiceClient impleme
                 request = new InvokeEndpointRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(invokeEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -317,6 +317,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new AddPermissionRequestMarshaller().marshall(super.beforeMarshalling(addPermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -383,6 +384,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new CheckIfPhoneNumberIsOptedOutRequestMarshaller().marshall(super.beforeMarshalling(checkIfPhoneNumberIsOptedOutRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -445,6 +447,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new ConfirmSubscriptionRequestMarshaller().marshall(super.beforeMarshalling(confirmSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -535,6 +538,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new CreatePlatformApplicationRequestMarshaller().marshall(super.beforeMarshalling(createPlatformApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -606,6 +610,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new CreatePlatformEndpointRequestMarshaller().marshall(super.beforeMarshalling(createPlatformEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -666,6 +671,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new CreateTopicRequestMarshaller().marshall(super.beforeMarshalling(createTopicRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -731,6 +737,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new DeleteEndpointRequestMarshaller().marshall(super.beforeMarshalling(deleteEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -788,6 +795,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new DeletePlatformApplicationRequestMarshaller().marshall(super.beforeMarshalling(deletePlatformApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -846,6 +854,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new DeleteTopicRequestMarshaller().marshall(super.beforeMarshalling(deleteTopicRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -909,6 +918,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new GetEndpointAttributesRequestMarshaller().marshall(super.beforeMarshalling(getEndpointAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -970,6 +980,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new GetPlatformApplicationAttributesRequestMarshaller().marshall(super.beforeMarshalling(getPlatformApplicationAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1031,6 +1042,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new GetSMSAttributesRequestMarshaller().marshall(super.beforeMarshalling(getSMSAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1088,6 +1100,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new GetSubscriptionAttributesRequestMarshaller().marshall(super.beforeMarshalling(getSubscriptionAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1151,6 +1164,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new GetTopicAttributesRequestMarshaller().marshall(super.beforeMarshalling(getTopicAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1221,6 +1235,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                         .marshall(super.beforeMarshalling(listEndpointsByPlatformApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1286,6 +1301,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new ListPhoneNumbersOptedOutRequestMarshaller().marshall(super.beforeMarshalling(listPhoneNumbersOptedOutRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1347,6 +1363,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new ListPlatformApplicationsRequestMarshaller().marshall(super.beforeMarshalling(listPlatformApplicationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1409,6 +1426,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new ListSubscriptionsRequestMarshaller().marshall(super.beforeMarshalling(listSubscriptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1478,6 +1496,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new ListSubscriptionsByTopicRequestMarshaller().marshall(super.beforeMarshalling(listSubscriptionsByTopicRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1544,6 +1563,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new ListTopicsRequestMarshaller().marshall(super.beforeMarshalling(listTopicsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1615,6 +1635,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new OptInPhoneNumberRequestMarshaller().marshall(super.beforeMarshalling(optInPhoneNumberRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1690,6 +1711,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new PublishRequestMarshaller().marshall(super.beforeMarshalling(publishRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1756,6 +1778,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new RemovePermissionRequestMarshaller().marshall(super.beforeMarshalling(removePermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1820,6 +1843,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new SetEndpointAttributesRequestMarshaller().marshall(super.beforeMarshalling(setEndpointAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1882,6 +1906,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new SetPlatformApplicationAttributesRequestMarshaller().marshall(super.beforeMarshalling(setPlatformApplicationAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1946,6 +1971,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new SetSMSAttributesRequestMarshaller().marshall(super.beforeMarshalling(setSMSAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2003,6 +2029,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new SetSubscriptionAttributesRequestMarshaller().marshall(super.beforeMarshalling(setSubscriptionAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2066,6 +2093,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new SetTopicAttributesRequestMarshaller().marshall(super.beforeMarshalling(setTopicAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2132,6 +2160,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new SubscribeRequestMarshaller().marshall(super.beforeMarshalling(subscribeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2197,6 +2226,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new UnsubscribeRequestMarshaller().marshall(super.beforeMarshalling(unsubscribeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

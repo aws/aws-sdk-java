@@ -185,6 +185,7 @@ public class AWSIoTJobsDataPlaneClient extends AmazonWebServiceClient implements
                 request = new DescribeJobExecutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeJobExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -245,6 +246,7 @@ public class AWSIoTJobsDataPlaneClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(getPendingJobExecutionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -306,6 +308,7 @@ public class AWSIoTJobsDataPlaneClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(startNextPendingJobExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -370,6 +373,7 @@ public class AWSIoTJobsDataPlaneClient extends AmazonWebServiceClient implements
                 request = new UpdateJobExecutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateJobExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

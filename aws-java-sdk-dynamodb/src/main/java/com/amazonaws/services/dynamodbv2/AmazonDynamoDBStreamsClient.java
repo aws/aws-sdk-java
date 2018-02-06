@@ -325,6 +325,7 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
                 request = new DescribeStreamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -418,6 +419,7 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
                 request = new GetRecordsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRecordsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -498,6 +500,7 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
                 request = new GetShardIteratorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getShardIteratorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -557,6 +560,7 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
                 request = new ListStreamsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listStreamsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

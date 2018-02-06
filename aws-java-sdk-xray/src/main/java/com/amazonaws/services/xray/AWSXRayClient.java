@@ -299,6 +299,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
                 request = new BatchGetTracesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetTracesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -354,6 +355,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
                 request = new GetServiceGraphRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getServiceGraphRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -406,6 +408,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
                 request = new GetTraceGraphRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTraceGraphRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -479,6 +482,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
                 request = new GetTraceSummariesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTraceSummariesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -531,6 +535,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
                 request = new PutTelemetryRecordsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putTelemetryRecordsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -657,6 +662,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
                 request = new PutTraceSegmentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putTraceSegmentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

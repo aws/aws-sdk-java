@@ -405,6 +405,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                 request = new DeleteScalingPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteScalingPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -465,6 +466,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                 request = new DeleteScheduledActionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteScheduledActionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -533,6 +535,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                         .beforeMarshalling(deregisterScalableTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -599,6 +602,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                         .beforeMarshalling(describeScalableTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -668,6 +672,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                         .beforeMarshalling(describeScalingActivitiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -741,6 +746,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                         .beforeMarshalling(describeScalingPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -808,6 +814,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                         .beforeMarshalling(describeScheduledActionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -892,6 +899,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                 request = new PutScalingPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putScalingPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -970,6 +978,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                 request = new PutScheduledActionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putScheduledActionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1036,6 +1045,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                 request = new RegisterScalableTargetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerScalableTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

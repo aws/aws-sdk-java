@@ -104,6 +104,10 @@ public class InstancesCountJsonUnmarshaller implements Unmarshaller<InstancesCou
                     context.nextToken();
                     instancesCount.setStartFailed(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("StopFailed", targetDepth)) {
+                    context.nextToken();
+                    instancesCount.setStopFailed(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("Stopped", targetDepth)) {
                     context.nextToken();
                     instancesCount.setStopped(context.getUnmarshaller(Integer.class).unmarshall(context));

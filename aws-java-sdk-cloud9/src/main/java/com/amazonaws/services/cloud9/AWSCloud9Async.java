@@ -31,13 +31,8 @@ import com.amazonaws.services.cloud9.model.*;
  * cloud.
  * </p>
  * <p>
- * In the background, these tools are available through development environments running on Amazon Elastic Compute Cloud
- * (Amazon EC2) instances (known as <i>Amazon EC2 environments</i>), your own servers (known as <i>SSH
- * environments</i>), or a combination. This enables you to create and switch between multiple environments, with each
- * environment set up for a specific development project.
- * </p>
- * <p>
- * For more information about AWS Cloud9, see the <i>AWS Cloud9 User Guide</i>.
+ * For more information about AWS Cloud9, see the <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide">AWS
+ * Cloud9 User Guide</a>.
  * </p>
  * <p>
  * AWS Cloud9 supports these operations:
@@ -46,7 +41,7 @@ import com.amazonaws.services.cloud9.model.*;
  * <li>
  * <p>
  * <code>CreateEnvironmentEC2</code>: Creates an AWS Cloud9 development environment, launches an Amazon EC2 instance,
- * and then hosts the environment on the instance.
+ * and then connects from the instance to the environment.
  * </p>
  * </li>
  * <li>
@@ -56,8 +51,8 @@ import com.amazonaws.services.cloud9.model.*;
  * </li>
  * <li>
  * <p>
- * <code>DeleteEnvironment</code>: Deletes an environment. If the environment is hosted on an Amazon EC2 instance, also
- * terminates the instance.
+ * <code>DeleteEnvironment</code>: Deletes an environment. If an Amazon EC2 instance is connected to the environment,
+ * also terminates the instance.
  * </p>
  * </li>
  * <li>
@@ -103,7 +98,7 @@ public interface AWSCloud9Async extends AWSCloud9 {
     /**
      * <p>
      * Creates an AWS Cloud9 development environment, launches an Amazon Elastic Compute Cloud (Amazon EC2) instance,
-     * and then hosts the environment on the instance.
+     * and then connects from the instance to the environment.
      * </p>
      * 
      * @param createEnvironmentEC2Request
@@ -117,7 +112,7 @@ public interface AWSCloud9Async extends AWSCloud9 {
     /**
      * <p>
      * Creates an AWS Cloud9 development environment, launches an Amazon Elastic Compute Cloud (Amazon EC2) instance,
-     * and then hosts the environment on the instance.
+     * and then connects from the instance to the environment.
      * </p>
      * 
      * @param createEnvironmentEC2Request
@@ -168,8 +163,8 @@ public interface AWSCloud9Async extends AWSCloud9 {
 
     /**
      * <p>
-     * Deletes an AWS Cloud9 development environment. If the environment is hosted on an Amazon Elastic Compute Cloud
-     * (Amazon EC2) instance, also terminates the instance.
+     * Deletes an AWS Cloud9 development environment. If an Amazon EC2 instance is connected to the environment, also
+     * terminates the instance.
      * </p>
      * 
      * @param deleteEnvironmentRequest
@@ -182,8 +177,8 @@ public interface AWSCloud9Async extends AWSCloud9 {
 
     /**
      * <p>
-     * Deletes an AWS Cloud9 development environment. If the environment is hosted on an Amazon Elastic Compute Cloud
-     * (Amazon EC2) instance, also terminates the instance.
+     * Deletes an AWS Cloud9 development environment. If an Amazon EC2 instance is connected to the environment, also
+     * terminates the instance.
      * </p>
      * 
      * @param deleteEnvironmentRequest

@@ -112,10 +112,9 @@ public class AWSOpsWorksWaiters {
 
         return new WaiterBuilder<DescribeInstancesRequest, DescribeInstancesResult>()
                 .withSdkFunction(new DescribeInstancesFunction(client))
-                .withAcceptors(new InstanceStopped.IsStoppedMatcher(), new InstanceStopped.IsBootingMatcher(), new InstanceStopped.IsOnlineMatcher(),
-                        new InstanceStopped.IsPendingMatcher(), new InstanceStopped.IsRebootingMatcher(), new InstanceStopped.IsRequestedMatcher(),
-                        new InstanceStopped.IsRunning_setupMatcher(), new InstanceStopped.IsSetup_failedMatcher(), new InstanceStopped.IsStart_failedMatcher(),
-                        new InstanceStopped.IsStop_failedMatcher())
+                .withAcceptors(new InstanceStopped.IsStoppedMatcher(), new InstanceStopped.IsBootingMatcher(), new InstanceStopped.IsPendingMatcher(),
+                        new InstanceStopped.IsRebootingMatcher(), new InstanceStopped.IsRequestedMatcher(), new InstanceStopped.IsRunning_setupMatcher(),
+                        new InstanceStopped.IsSetup_failedMatcher(), new InstanceStopped.IsStart_failedMatcher(), new InstanceStopped.IsStop_failedMatcher())
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(40), new FixedDelayStrategy(15)))
                 .withExecutorService(executorService).build();
     }

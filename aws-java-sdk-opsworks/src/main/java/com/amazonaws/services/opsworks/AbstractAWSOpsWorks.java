@@ -199,6 +199,11 @@ public class AbstractAWSOpsWorks implements AWSOpsWorks {
     }
 
     @Override
+    public DescribeOperatingSystemsResult describeOperatingSystems(DescribeOperatingSystemsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribePermissionsResult describePermissions(DescribePermissionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

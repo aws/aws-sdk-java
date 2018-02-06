@@ -325,6 +325,7 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
                 request = new SearchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -389,6 +390,7 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
                 request = new SuggestRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(suggestRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -457,6 +459,7 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
                 request = new UploadDocumentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(uploadDocumentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

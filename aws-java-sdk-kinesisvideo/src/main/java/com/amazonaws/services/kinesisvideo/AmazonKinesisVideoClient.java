@@ -195,6 +195,7 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
                 request = new CreateStreamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -265,6 +266,7 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
                 request = new DeleteStreamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -323,6 +325,7 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
                 request = new DescribeStreamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -391,6 +394,7 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
                 request = new GetDataEndpointRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDataEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -445,6 +449,7 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
                 request = new ListStreamsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listStreamsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -507,6 +512,7 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
                 request = new ListTagsForStreamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -582,6 +588,7 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
                 request = new TagStreamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -645,6 +652,7 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
                 request = new UntagStreamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -736,6 +744,7 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
                 request = new UpdateDataRetentionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDataRetentionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -809,6 +818,7 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
                 request = new UpdateStreamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

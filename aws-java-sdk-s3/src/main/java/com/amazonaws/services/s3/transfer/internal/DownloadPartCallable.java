@@ -14,7 +14,9 @@
  */
 package com.amazonaws.services.s3.transfer.internal;
 
+import com.amazonaws.util.StringUtils;
 import java.io.File;
+import java.util.UUID;
 import java.util.concurrent.Callable;
 
 import com.amazonaws.SdkClientException;
@@ -36,7 +38,6 @@ public class DownloadPartCallable implements Callable<File> {
     private final GetObjectRequest getPartRequest;
     private final File destinationFile;
     private final String destinationFilePath;
-    private File partFile;
 
     public DownloadPartCallable(AmazonS3 s3, GetObjectRequest getPartRequest, File destinationFile) {
         this.s3 = s3;
@@ -46,8 +47,8 @@ public class DownloadPartCallable implements Callable<File> {
     }
 
     public File call() throws Exception {
-        partFile = File.createTempFile(
-                destinationFile.getName() + "-tmp",
+        final File partFile = File.createTempFile(
+                UUID.nameUUIDFromBytes(destinationFile.getName().getBytes(StringUtils.UTF8)).toString(),
                 TEMP_FILE_MIDDLE_NAME + getPartRequest.getPartNumber().toString(),
                 new File(destinationFilePath.substring(0, destinationFilePath.lastIndexOf(File.separator))));
         try {

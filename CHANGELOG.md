@@ -1,8 +1,25 @@
-# __1.11.271__ __2018-01-26__
-## __AWS CodeBuild__
+# __1.11.272__ __2018-02-05__
+## __AWS Certificate Manager__
   - ### Features
-    - Adding support for Shallow Clone and GitHub Enterprise in AWS CodeBuild.
+    - Documentation updates for acm
 
+## __AWS Cloud9__
+  - ### Features
+    - API usage examples for AWS Cloud9.
+
+## __AWS OpsWorks__
+  - ### Features
+    - AWS OpsWorks Stacks supports EBS encryption and HDD volume types. Also, a new DescribeOperatingSystems API is available, which lists all operating systems supported by OpsWorks Stacks.
+
+## __Amazon Kinesis__
+  - ### Features
+    - Using ListShards a Kinesis Data Streams customer or client can get information about shards in a data stream (including meta-data for each shard) without obtaining data stream level information.
+
+## __Amazon S3__
+  - ### Bugfixes
+    - Multi-part downloads through TransferManager now use a shorter temporary file name to prevent file system limitations with long file names.
+
+# __1.11.271__ __2018-01-26__
 ## __AWS Device Farm__
   - ### Features
     - Add InteractionMode in CreateRemoteAccessSession for DirectDeviceAccess feature.
@@ -10,18 +27,6 @@
 ## __AWS Elemental MediaLive__
   - ### Features
     - Add InputSpecification to CreateChannel (specification of input attributes is used for channel sizing and affects pricing);  add NotFoundException to DeleteInputSecurityGroups.
-
-## __AWS Lambda__
-  - ### Features
-    - AWS Lambda now supports Revision ID on your function versions and aliases, to track and apply conditional updates when you are updating your function version or alias resources.
-
-## __Alexa For Business__
-  - ### Features
-    - Supports new field for DeviceStatusInfo which provides details about the DeviceStatus following a DeviceSync operation.
-
-## __Amazon GuardDuty__
-  - ### Features
-    - Added the missing AccessKeyDetails object to the resource shape.
 
 ## __Amazon Mechanical Turk__
   - ### Features
@@ -49,180 +54,38 @@
   - ### Features
     - Add additional costTypes: IncludeDiscount, UseAmortized,  to support finer control for different charges included in a cost budget.
 
-# __1.11.267__ __2018-01-17__
-## __AWS Application Discovery Service__
-  - ### Features
-    - Documentation updates for AWS Application Discovery Service.
-
-## __AWS Auto Scaling Plans__
-  - ### Features
-    - Documentation updates for autoscaling-plans
-
-## __AWS CodeDeploy__
-  - ### Features
-    - The AWS CodeDeploy API was updated to support DeleteGitHubAccountToken, a new method that deletes a GitHub account connection.
-
-## __AWS Directory Service__
-  - ### Features
-    - On October 24 we introduced AWS Directory Service for Microsoft Active Directory (Standard Edition), also known as AWS Microsoft AD (Standard Edition), which is a managed Microsoft Active Directory (AD) that is optimized for small and midsize businesses (SMBs). With this SDK release, you can now create an AWS Microsoft AD directory using API. This enables you to run typical SMB workloads using a cost-effective, highly available, and managed Microsoft AD in the AWS Cloud.
-
+# __1.11.268__ __2018-01-19__
 ## __AWS Glue__
   - ### Features
-    - Support is added to generate ETL scripts in Scala which can now be run by  AWS Glue ETL jobs. In addition, the trigger API now supports firing when any conditions are met (in addition to all conditions). Also, jobs can be triggered based on a "failed" or "stopped" job run (in addition to a "succeeded" job run). 
+    - New AWS Glue DataCatalog APIs to manage table versions and a new feature to skip archiving of the old table version when updating table. 
 
-## __AWS Key Management Service__
-  - ### Features
-    - Documentation updates for AWS KMS
-
-## __AWS Lambda__
-  - ### Features
-    - Support for creating Lambda Functions using 'dotnetcore2.0' and 'go1.x'. 
-
-## __Amazon Elastic Compute Cloud__
-  - ### Features
-    - Documentation updates for EC2
-
-## __Amazon Import/Export Snowball__
-  - ### Features
-    - Documentation updates for snowball
-
-## __Amazon Inspector__
-  - ### Features
-    - Added 2 new attributes to the DescribeAssessmentTemplate response, indicating the total number of assessment runs and last assessment run ARN (if present.)
-
-## __Amazon Relational Database Service__
-  - ### Features
-    - With this release you can now integrate RDS DB instances with CloudWatch Logs. We have added parameters to the operations for creating and modifying DB instances (for example CreateDBInstance) to allow you to take advantage of this capability through the CLI and API. Once you enable this feature, a stream of log events will publish to CloudWatch Logs for each log type you enable.
-
-## __Amazon Route 53__
-  - ### Features
-    - This release adds an exception to the CreateTrafficPolicyVersion API operation.
-
+# __1.11.267__ __2018-01-18__
 ## __Amazon SageMaker Service__
   - ### Features
     - CreateTrainingJob and CreateEndpointConfig now supports KMS Key for volume encryption. 
 
-## __Amazon Simple Systems Manager (SSM)__
-  - ### Features
-    - Updates documentation for the HierarchyLevelLimitExceededException error.
-
-## __Application Auto Scaling__
-  - ### Features
-    - Application Auto Scaling is adding support for Target Tracking Scaling for ECS services.
-
-## __Elastic Load Balancing__
-  - ### Features
-    - Added OperationNotPermittedException to indicate that you cannot create a load balancer while deleting the Elastic Load Balancing service-linked role.
-
 # __1.11.266__ __2018-01-17__
-## __AWS Application Discovery Service__
-  - ### Features
-    - Documentation updates for AWS Application Discovery Service.
-
-## __AWS Auto Scaling Plans__
-  - ### Features
-    - Documentation updates for autoscaling-plans
-
-## __AWS CodeDeploy__
-  - ### Features
-    - The AWS CodeDeploy API was updated to support DeleteGitHubAccountToken, a new method that deletes a GitHub account connection.
-
-## __AWS Directory Service__
-  - ### Features
-    - On October 24 we introduced AWS Directory Service for Microsoft Active Directory (Standard Edition), also known as AWS Microsoft AD (Standard Edition), which is a managed Microsoft Active Directory (AD) that is optimized for small and midsize businesses (SMBs). With this SDK release, you can now create an AWS Microsoft AD directory using API. This enables you to run typical SMB workloads using a cost-effective, highly available, and managed Microsoft AD in the AWS Cloud.
-
-## __AWS Glue__
-  - ### Features
-    - Support is added to generate ETL scripts in Scala which can now be run by  AWS Glue ETL jobs. In addition, the trigger API now supports firing when any conditions are met (in addition to all conditions). Also, jobs can be triggered based on a "failed" or "stopped" job run (in addition to a "succeeded" job run). 
-
-## __AWS Key Management Service__
-  - ### Features
-    - Documentation updates for AWS KMS
-
-## __AWS Lambda__
-  - ### Features
-    - Support for creating Lambda Functions using 'dotnetcore2.0' and 'go1.x'. 
-
 ## __Amazon Elastic Compute Cloud__
   - ### Features
     - Documentation updates for EC2
 
-## __Amazon Import/Export Snowball__
+## __Application Auto Scaling__
   - ### Features
-    - Documentation updates for snowball
+    - Documentation updates for autoscaling-plans
 
-## __Amazon Inspector__
-  - ### Features
-    - Added 2 new attributes to the DescribeAssessmentTemplate response, indicating the total number of assessment runs and last assessment run ARN (if present.)
-
+# __1.11.265__ __2018-01-16__
 ## __Amazon Relational Database Service__
   - ### Features
     - With this release you can now integrate RDS DB instances with CloudWatch Logs. We have added parameters to the operations for creating and modifying DB instances (for example CreateDBInstance) to allow you to take advantage of this capability through the CLI and API. Once you enable this feature, a stream of log events will publish to CloudWatch Logs for each log type you enable.
-
-## __Amazon Route 53__
-  - ### Features
-    - This release adds an exception to the CreateTrafficPolicyVersion API operation.
-
-## __Amazon Simple Systems Manager (SSM)__
-  - ### Features
-    - Updates documentation for the HierarchyLevelLimitExceededException error.
 
 ## __Application Auto Scaling__
   - ### Features
     - Application Auto Scaling is adding support for Target Tracking Scaling for ECS services.
 
-## __Elastic Load Balancing__
-  - ### Features
-    - Added OperationNotPermittedException to indicate that you cannot create a load balancer while deleting the Elastic Load Balancing service-linked role.
-
 # __1.11.264__ __2018-01-15__
-## __AWS Application Discovery Service__
-  - ### Features
-    - Documentation updates for AWS Application Discovery Service.
-
-## __AWS CodeDeploy__
-  - ### Features
-    - The AWS CodeDeploy API was updated to support DeleteGitHubAccountToken, a new method that deletes a GitHub account connection.
-
-## __AWS Directory Service__
-  - ### Features
-    - On October 24 we introduced AWS Directory Service for Microsoft Active Directory (Standard Edition), also known as AWS Microsoft AD (Standard Edition), which is a managed Microsoft Active Directory (AD) that is optimized for small and midsize businesses (SMBs). With this SDK release, you can now create an AWS Microsoft AD directory using API. This enables you to run typical SMB workloads using a cost-effective, highly available, and managed Microsoft AD in the AWS Cloud.
-
-## __AWS Glue__
-  - ### Features
-    - Support is added to generate ETL scripts in Scala which can now be run by  AWS Glue ETL jobs. In addition, the trigger API now supports firing when any conditions are met (in addition to all conditions). Also, jobs can be triggered based on a "failed" or "stopped" job run (in addition to a "succeeded" job run). 
-
-## __AWS Key Management Service__
-  - ### Features
-    - Documentation updates for AWS KMS
-
 ## __AWS Lambda__
   - ### Features
     - Support for creating Lambda Functions using 'dotnetcore2.0' and 'go1.x'. 
-
-## __Amazon Import/Export Snowball__
-  - ### Features
-    - Documentation updates for snowball
-
-## __Amazon Inspector__
-  - ### Features
-    - Added 2 new attributes to the DescribeAssessmentTemplate response, indicating the total number of assessment runs and last assessment run ARN (if present.)
-
-## __Amazon Relational Database Service__
-  - ### Features
-    - Read Replicas for Amazon RDS for MySQL, MariaDB, and PostgreSQL now support Multi-AZ deployments.Amazon RDS Read Replicas enable you to create one or more read-only copies of your database instance within the same AWS Region or in a different AWS Region. Updates made to the source database are asynchronously copied to the Read Replicas. In addition to providing scalability for read-heavy workloads, you can choose to promote a Read Replica to become standalone a DB instance when needed.Amazon RDS Multi-AZ Deployments provide enhanced availability for database instances within a single AWS Region. With Multi-AZ, your data is synchronously replicated to a standby in a different Availability Zone (AZ). In case of an infrastructure failure, Amazon RDS performs an automatic failover to the standby, minimizing disruption to your applications.You can now combine Read Replicas with Multi-AZ as part of a disaster recovery strategy for your production databases. A well-designed and tested plan is critical for maintaining business continuity after a disaster. Since Read Replicas can also be created in different regions than the source database, your Read Replica can be promoted to become the new production database in case of a regional disruption.You can also combine Read Replicas with Multi-AZ for your database engine upgrade process. You can create a Read Replica of your production database instance and upgrade it to a new database engine version. When the upgrade is complete, you can stop applications, promote the Read Replica to a standalone database instance and switch over your applications. Since the database instance is already a Multi-AZ deployment, no additional steps are needed.For more information, see the Amazon RDS User Guide.
-
-## __Amazon Route 53__
-  - ### Features
-    - This release adds an exception to the CreateTrafficPolicyVersion API operation.
-
-## __Amazon Simple Systems Manager (SSM)__
-  - ### Features
-    - Updates documentation for the HierarchyLevelLimitExceededException error.
-
-## __Elastic Load Balancing__
-  - ### Features
-    - Added OperationNotPermittedException to indicate that you cannot create a load balancer while deleting the Elastic Load Balancing service-linked role.
 
 # __1.11.263__ __2018-01-12__
 ## __AWS Application Discovery Service__
@@ -253,21 +116,9 @@
   - ### Features
     - Added 2 new attributes to the DescribeAssessmentTemplate response, indicating the total number of assessment runs and last assessment run ARN (if present.)
 
-## __Amazon Relational Database Service__
-  - ### Features
-    - Read Replicas for Amazon RDS for MySQL, MariaDB, and PostgreSQL now support Multi-AZ deployments.Amazon RDS Read Replicas enable you to create one or more read-only copies of your database instance within the same AWS Region or in a different AWS Region. Updates made to the source database are asynchronously copied to the Read Replicas. In addition to providing scalability for read-heavy workloads, you can choose to promote a Read Replica to become standalone a DB instance when needed.Amazon RDS Multi-AZ Deployments provide enhanced availability for database instances within a single AWS Region. With Multi-AZ, your data is synchronously replicated to a standby in a different Availability Zone (AZ). In case of an infrastructure failure, Amazon RDS performs an automatic failover to the standby, minimizing disruption to your applications.You can now combine Read Replicas with Multi-AZ as part of a disaster recovery strategy for your production databases. A well-designed and tested plan is critical for maintaining business continuity after a disaster. Since Read Replicas can also be created in different regions than the source database, your Read Replica can be promoted to become the new production database in case of a regional disruption.You can also combine Read Replicas with Multi-AZ for your database engine upgrade process. You can create a Read Replica of your production database instance and upgrade it to a new database engine version. When the upgrade is complete, you can stop applications, promote the Read Replica to a standalone database instance and switch over your applications. Since the database instance is already a Multi-AZ deployment, no additional steps are needed.For more information, see the Amazon RDS User Guide.
-
 ## __Amazon Route 53__
   - ### Features
     - This release adds an exception to the CreateTrafficPolicyVersion API operation.
-
-## __Amazon Simple Systems Manager (SSM)__
-  - ### Features
-    - Updates documentation for the HierarchyLevelLimitExceededException error.
-
-## __Elastic Load Balancing__
-  - ### Features
-    - Added OperationNotPermittedException to indicate that you cannot create a load balancer while deleting the Elastic Load Balancing service-linked role.
 
 # __1.11.262__ __2018-01-11__
 ## __Amazon Relational Database Service__

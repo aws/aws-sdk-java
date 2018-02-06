@@ -90,7 +90,7 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
     private String idempotencyToken;
     /**
      * <p>
-     * The domain name that you want ACM to use to send you emails so taht your can validate domain ownership.
+     * The domain name that you want ACM to use to send you emails so that you can validate domain ownership.
      * </p>
      */
     private java.util.List<DomainValidationOption> domainValidationOptions;
@@ -594,10 +594,10 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The domain name that you want ACM to use to send you emails so taht your can validate domain ownership.
+     * The domain name that you want ACM to use to send you emails so that you can validate domain ownership.
      * </p>
      * 
-     * @return The domain name that you want ACM to use to send you emails so taht your can validate domain ownership.
+     * @return The domain name that you want ACM to use to send you emails so that you can validate domain ownership.
      */
 
     public java.util.List<DomainValidationOption> getDomainValidationOptions() {
@@ -606,11 +606,11 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The domain name that you want ACM to use to send you emails so taht your can validate domain ownership.
+     * The domain name that you want ACM to use to send you emails so that you can validate domain ownership.
      * </p>
      * 
      * @param domainValidationOptions
-     *        The domain name that you want ACM to use to send you emails so taht your can validate domain ownership.
+     *        The domain name that you want ACM to use to send you emails so that you can validate domain ownership.
      */
 
     public void setDomainValidationOptions(java.util.Collection<DomainValidationOption> domainValidationOptions) {
@@ -624,7 +624,7 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The domain name that you want ACM to use to send you emails so taht your can validate domain ownership.
+     * The domain name that you want ACM to use to send you emails so that you can validate domain ownership.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -633,7 +633,7 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param domainValidationOptions
-     *        The domain name that you want ACM to use to send you emails so taht your can validate domain ownership.
+     *        The domain name that you want ACM to use to send you emails so that you can validate domain ownership.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -649,11 +649,11 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The domain name that you want ACM to use to send you emails so taht your can validate domain ownership.
+     * The domain name that you want ACM to use to send you emails so that you can validate domain ownership.
      * </p>
      * 
      * @param domainValidationOptions
-     *        The domain name that you want ACM to use to send you emails so taht your can validate domain ownership.
+     *        The domain name that you want ACM to use to send you emails so that you can validate domain ownership.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

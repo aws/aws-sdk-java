@@ -367,6 +367,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                 request = new BulkPublishRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(bulkPublishRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -435,6 +436,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                 request = new DeleteDatasetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDatasetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -500,6 +502,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                 request = new DescribeDatasetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDatasetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -564,6 +567,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(describeIdentityPoolUsageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -628,6 +632,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                 request = new DescribeIdentityUsageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeIdentityUsageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -690,6 +695,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                 request = new GetBulkPublishDetailsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBulkPublishDetailsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -754,6 +760,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                 request = new GetCognitoEventsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCognitoEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -818,6 +825,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(getIdentityPoolConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -881,6 +889,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                 request = new ListDatasetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDatasetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -942,6 +951,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                 request = new ListIdentityPoolUsageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listIdentityPoolUsageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1006,6 +1016,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                 request = new ListRecordsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRecordsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1070,6 +1081,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                 request = new RegisterDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1135,6 +1147,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                 request = new SetCognitoEventsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setCognitoEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1201,6 +1214,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(setIdentityPoolConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1266,6 +1280,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                 request = new SubscribeToDatasetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(subscribeToDatasetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1330,6 +1345,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                 request = new UnsubscribeFromDatasetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(unsubscribeFromDatasetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1415,6 +1431,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                 request = new UpdateRecordsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRecordsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

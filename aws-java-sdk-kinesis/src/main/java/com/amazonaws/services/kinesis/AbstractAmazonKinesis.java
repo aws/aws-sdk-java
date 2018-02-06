@@ -135,6 +135,11 @@ public class AbstractAmazonKinesis implements AmazonKinesis {
     }
 
     @Override
+    public ListShardsResult listShards(ListShardsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListStreamsResult listStreams(ListStreamsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

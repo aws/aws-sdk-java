@@ -158,6 +158,7 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
                 request = new CreateContainerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createContainerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -213,6 +214,7 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
                 request = new DeleteContainerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteContainerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -269,6 +271,7 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
                 request = new DeleteContainerPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteContainerPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -324,6 +327,7 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
                 request = new DescribeContainerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeContainerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -382,6 +386,7 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
                 request = new GetContainerPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getContainerPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -442,6 +447,7 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
                 request = new ListContainersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listContainersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -502,6 +508,7 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
                 request = new PutContainerPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putContainerPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

@@ -321,6 +321,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new AcceptPortfolioShareRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(acceptPortfolioShareRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -378,6 +379,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(associatePrincipalWithPortfolioRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -435,6 +437,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(associateProductWithPortfolioRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -501,6 +504,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(associateTagOptionWithResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -562,6 +566,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new CopyProductRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(copyProductRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -619,6 +624,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new CreateConstraintRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createConstraintRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -676,6 +682,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new CreatePortfolioRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPortfolioRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -731,6 +738,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new CreatePortfolioShareRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPortfolioShareRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -788,6 +796,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new CreateProductRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProductRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -847,6 +856,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(createProvisioningArtifactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -905,6 +915,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new CreateTagOptionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTagOptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -957,6 +968,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new DeleteConstraintRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteConstraintRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1019,6 +1031,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new DeletePortfolioRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePortfolioRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1069,6 +1082,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new DeletePortfolioShareRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePortfolioShareRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1130,6 +1144,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new DeleteProductRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProductRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1189,6 +1204,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(deleteProvisioningArtifactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1240,6 +1256,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new DescribeConstraintRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeConstraintRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1291,6 +1308,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(describeCopyProductStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1342,6 +1360,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new DescribePortfolioRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePortfolioRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1394,6 +1413,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new DescribeProductRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeProductRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1444,6 +1464,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new DescribeProductAsAdminRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeProductAsAdminRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1497,6 +1518,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new DescribeProductViewRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeProductViewRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1548,6 +1570,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(describeProvisionedProductRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1600,6 +1623,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(describeProvisioningArtifactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1662,6 +1686,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(describeProvisioningParametersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1717,6 +1742,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new DescribeRecordRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRecordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1771,6 +1797,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new DescribeTagOptionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTagOptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1826,6 +1853,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(disassociatePrincipalFromPortfolioRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1883,6 +1911,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(disassociateProductFromPortfolioRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1940,6 +1969,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(disassociateTagOptionFromResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1992,6 +2022,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(listAcceptedPortfolioSharesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2046,6 +2077,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(listConstraintsForPortfolioRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2100,6 +2132,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new ListLaunchPathsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLaunchPathsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2150,6 +2183,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new ListPortfolioAccessRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPortfolioAccessRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2200,6 +2234,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new ListPortfoliosRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPortfoliosRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2253,6 +2288,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(listPortfoliosForProductRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2307,6 +2343,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(listPrincipalsForPortfolioRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2361,6 +2398,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(listProvisioningArtifactsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2412,6 +2450,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new ListRecordHistoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRecordHistoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2469,6 +2508,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(listResourcesForTagOptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2524,6 +2564,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new ListTagOptionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2588,6 +2629,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new ProvisionProductRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(provisionProductRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2638,6 +2680,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new RejectPortfolioShareRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(rejectPortfolioShareRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2689,6 +2732,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(scanProvisionedProductsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2740,6 +2784,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new SearchProductsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchProductsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2792,6 +2837,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new SearchProductsAsAdminRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchProductsAsAdminRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2850,6 +2896,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(terminateProvisionedProductRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2903,6 +2950,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new UpdateConstraintRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateConstraintRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2965,6 +3013,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new UpdatePortfolioRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updatePortfolioRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3021,6 +3070,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new UpdateProductRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateProductRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3082,6 +3132,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(updateProvisionedProductRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3139,6 +3190,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(updateProvisioningArtifactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3198,6 +3250,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new UpdateTagOptionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTagOptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

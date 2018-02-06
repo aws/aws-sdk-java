@@ -39,6 +39,8 @@ public class VolumeConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeType").build();
     private static final MarshallingInfo<Integer> IOPS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Iops").build();
+    private static final MarshallingInfo<Boolean> ENCRYPTED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Encrypted").build();
 
     private static final VolumeConfigurationMarshaller instance = new VolumeConfigurationMarshaller();
 
@@ -62,6 +64,7 @@ public class VolumeConfigurationMarshaller {
             protocolMarshaller.marshall(volumeConfiguration.getSize(), SIZE_BINDING);
             protocolMarshaller.marshall(volumeConfiguration.getVolumeType(), VOLUMETYPE_BINDING);
             protocolMarshaller.marshall(volumeConfiguration.getIops(), IOPS_BINDING);
+            protocolMarshaller.marshall(volumeConfiguration.getEncrypted(), ENCRYPTED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

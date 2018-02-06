@@ -53,12 +53,12 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance.
+     * <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ssh</code>: An environment hosted on your own server.
+     * <code>ssh</code>: Your own server connects to the environment.
      * </p>
      * </li>
      * </ul>
@@ -204,12 +204,12 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance.
+     * <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ssh</code>: An environment hosted on your own server.
+     * <code>ssh</code>: Your own server connects to the environment.
      * </p>
      * </li>
      * </ul>
@@ -219,12 +219,12 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance.
+     *        <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ssh</code>: An environment hosted on your own server.
+     *        <code>ssh</code>: Your own server connects to the environment.
      *        </p>
      *        </li>
      * @see EnvironmentType
@@ -241,12 +241,12 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance.
+     * <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ssh</code>: An environment hosted on your own server.
+     * <code>ssh</code>: Your own server connects to the environment.
      * </p>
      * </li>
      * </ul>
@@ -255,12 +255,12 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance.
+     *         <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ssh</code>: An environment hosted on your own server.
+     *         <code>ssh</code>: Your own server connects to the environment.
      *         </p>
      *         </li>
      * @see EnvironmentType
@@ -277,12 +277,12 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance.
+     * <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ssh</code>: An environment hosted on your own server.
+     * <code>ssh</code>: Your own server connects to the environment.
      * </p>
      * </li>
      * </ul>
@@ -292,12 +292,12 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance.
+     *        <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ssh</code>: An environment hosted on your own server.
+     *        <code>ssh</code>: Your own server connects to the environment.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -316,12 +316,12 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance.
+     * <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ssh</code>: An environment hosted on your own server.
+     * <code>ssh</code>: Your own server connects to the environment.
      * </p>
      * </li>
      * </ul>
@@ -331,12 +331,12 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance.
+     *        <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ssh</code>: An environment hosted on your own server.
+     *        <code>ssh</code>: Your own server connects to the environment.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

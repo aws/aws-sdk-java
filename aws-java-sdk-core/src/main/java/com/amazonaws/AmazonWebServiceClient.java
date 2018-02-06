@@ -128,6 +128,11 @@ public abstract class AmazonWebServiceClient {
     private volatile String endpointPrefix;
 
     /**
+     * Region used to sign requests.
+     */
+    private volatile String signingRegion;
+
+    /**
      * Constructs a new AmazonWebServiceClient object using the specified
      * configuration.
      *
@@ -226,9 +231,10 @@ public abstract class AmazonWebServiceClient {
         checkMutability();
         URI uri = toURI(endpoint);
         Signer signer = computeSignerByURI(uri, signerRegionOverride, false);
-        synchronized(this)  {
+        synchronized (this) {
             this.endpoint = uri;
             this.signerProvider = createSignerProvider(signer);
+            this.signingRegion = AwsHostNameUtils.parseRegion(endpoint, getEndpointPrefix());
         }
     }
 
@@ -290,6 +296,7 @@ public abstract class AmazonWebServiceClient {
             this.signerProvider = createSignerProvider(signer);
             this.endpoint = uri;
             this.signerRegionOverride = regionId;
+            this.signingRegion = regionId;
         }
     }
 
@@ -424,6 +431,7 @@ public abstract class AmazonWebServiceClient {
         synchronized (this) {
             this.endpoint = uri;
             this.signerProvider = createSignerProvider(signer);
+            this.signingRegion = AwsHostNameUtils.parseRegion(endpoint.toString(), getEndpointPrefix());
         }
     }
 
@@ -740,6 +748,14 @@ public abstract class AmazonWebServiceClient {
     }
 
     /**
+     * @return The region used to sign requests with AWS SigV4 auth.
+     */
+    @SdkProtectedApi
+    protected String getSigningRegion() {
+        return this.signingRegion;
+    }
+
+    /**
      * An internal method used to explicitly override the service name for region metadata.
      * This service name is used to compute the region endpoints.
      */
@@ -845,6 +861,7 @@ public abstract class AmazonWebServiceClient {
         synchronized(this)  {
             this.signerRegionOverride = signerRegionOverride;
             this.signerProvider = createSignerProvider(signer);
+            this.signingRegion = signerRegionOverride;
         }
     }
 

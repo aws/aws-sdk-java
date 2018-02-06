@@ -396,6 +396,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new BatchDeleteBuildsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchDeleteBuildsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -446,6 +447,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new BatchGetBuildsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetBuildsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -496,6 +498,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new BatchGetProjectsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetProjectsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -551,6 +554,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new CreateProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -620,6 +624,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new CreateWebhookRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createWebhookRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -670,6 +675,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new DeleteProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -725,6 +731,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new DeleteWebhookRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteWebhookRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -777,6 +784,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new InvalidateProjectCacheRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(invalidateProjectCacheRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -828,6 +836,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new ListBuildsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBuildsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -880,6 +889,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new ListBuildsForProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBuildsForProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -929,6 +939,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                         .beforeMarshalling(listCuratedEnvironmentImagesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -980,6 +991,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new ListProjectsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProjectsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1034,6 +1046,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new StartBuildRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startBuildRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1086,6 +1099,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new StopBuildRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopBuildRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1138,6 +1152,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new UpdateProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

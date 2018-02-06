@@ -196,6 +196,7 @@ public class AWSPricingClient extends AmazonWebServiceClient implements AWSPrici
                 request = new DescribeServicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeServicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -259,6 +260,7 @@ public class AWSPricingClient extends AmazonWebServiceClient implements AWSPrici
                 request = new GetAttributeValuesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAttributeValuesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -317,6 +319,7 @@ public class AWSPricingClient extends AmazonWebServiceClient implements AWSPrici
                 request = new GetProductsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getProductsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

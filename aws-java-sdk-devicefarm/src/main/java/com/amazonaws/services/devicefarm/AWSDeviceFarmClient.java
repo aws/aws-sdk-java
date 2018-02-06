@@ -315,6 +315,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new CreateDevicePoolRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDevicePoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -371,6 +372,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new CreateNetworkProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createNetworkProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -428,6 +430,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new CreateProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -486,6 +489,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                         .beforeMarshalling(createRemoteAccessSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -544,6 +548,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new CreateUploadRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUploadRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -601,6 +606,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new DeleteDevicePoolRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDevicePoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -657,6 +663,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new DeleteNetworkProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteNetworkProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -717,6 +724,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new DeleteProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -775,6 +783,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                         .beforeMarshalling(deleteRemoteAccessSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -836,6 +845,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new DeleteRunRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRunRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -893,6 +903,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new DeleteUploadRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUploadRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -950,6 +961,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new GetAccountSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAccountSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1007,6 +1019,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new GetDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1064,6 +1077,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new GetDevicePoolRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDevicePoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1122,6 +1136,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                         .beforeMarshalling(getDevicePoolCompatibilityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1180,6 +1195,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new GetJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1236,6 +1252,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new GetNetworkProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getNetworkProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1299,6 +1316,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new GetOfferingStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getOfferingStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1356,6 +1374,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new GetProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1413,6 +1432,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new GetRemoteAccessSessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRemoteAccessSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1471,6 +1491,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new GetRunRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRunRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1528,6 +1549,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new GetSuiteRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSuiteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1585,6 +1607,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new GetTestRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTestRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1642,6 +1665,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new GetUploadRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUploadRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1702,6 +1726,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                         .beforeMarshalling(installToRemoteAccessSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1760,6 +1785,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListArtifactsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listArtifactsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1817,6 +1843,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListDevicePoolsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDevicePoolsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1874,6 +1901,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListDevicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDevicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1931,6 +1959,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1987,6 +2016,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListNetworkProfilesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listNetworkProfilesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2048,6 +2078,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListOfferingPromotionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listOfferingPromotionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2113,6 +2144,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                         .beforeMarshalling(listOfferingTransactionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2177,6 +2209,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListOfferingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listOfferingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2234,6 +2267,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListProjectsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProjectsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2292,6 +2326,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                         .beforeMarshalling(listRemoteAccessSessionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2350,6 +2385,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListRunsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRunsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2407,6 +2443,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListSamplesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSamplesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2464,6 +2501,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListSuitesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSuitesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2521,6 +2559,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListTestsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTestsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2578,6 +2617,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListUniqueProblemsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUniqueProblemsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2635,6 +2675,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ListUploadsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUploadsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2698,6 +2739,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new PurchaseOfferingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(purchaseOfferingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2761,6 +2803,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new RenewOfferingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(renewOfferingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2820,6 +2863,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new ScheduleRunRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(scheduleRunRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2878,6 +2922,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                         .beforeMarshalling(stopRemoteAccessSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2939,6 +2984,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new StopRunRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopRunRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2997,6 +3043,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new UpdateDevicePoolRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDevicePoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3053,6 +3100,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new UpdateNetworkProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateNetworkProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3110,6 +3158,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                 request = new UpdateProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

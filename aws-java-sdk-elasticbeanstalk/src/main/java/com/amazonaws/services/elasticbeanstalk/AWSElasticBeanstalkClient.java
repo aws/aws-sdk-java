@@ -327,6 +327,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new AbortEnvironmentUpdateRequestMarshaller().marshall(super.beforeMarshalling(abortEnvironmentUpdateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -387,6 +388,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new ApplyEnvironmentManagedActionRequestMarshaller().marshall(super.beforeMarshalling(applyEnvironmentManagedActionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -436,6 +438,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new CheckDNSAvailabilityRequestMarshaller().marshall(super.beforeMarshalling(checkDNSAvailabilityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -494,6 +497,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new ComposeEnvironmentsRequestMarshaller().marshall(super.beforeMarshalling(composeEnvironmentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -546,6 +550,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new CreateApplicationRequestMarshaller().marshall(super.beforeMarshalling(createApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -642,6 +647,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new CreateApplicationVersionRequestMarshaller().marshall(super.beforeMarshalling(createApplicationVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -718,6 +724,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new CreateConfigurationTemplateRequestMarshaller().marshall(super.beforeMarshalling(createConfigurationTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -770,6 +777,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new CreateEnvironmentRequestMarshaller().marshall(super.beforeMarshalling(createEnvironmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -825,6 +833,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new CreatePlatformVersionRequestMarshaller().marshall(super.beforeMarshalling(createPlatformVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -882,6 +891,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new CreateStorageLocationRequestMarshaller().marshall(super.beforeMarshalling(createStorageLocationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -945,6 +955,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new DeleteApplicationRequestMarshaller().marshall(super.beforeMarshalling(deleteApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1026,6 +1037,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new DeleteApplicationVersionRequestMarshaller().marshall(super.beforeMarshalling(deleteApplicationVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1084,6 +1096,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new DeleteConfigurationTemplateRequestMarshaller().marshall(super.beforeMarshalling(deleteConfigurationTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1139,6 +1152,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new DeleteEnvironmentConfigurationRequestMarshaller().marshall(super.beforeMarshalling(deleteEnvironmentConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1196,6 +1210,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new DeletePlatformVersionRequestMarshaller().marshall(super.beforeMarshalling(deletePlatformVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1245,6 +1260,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new DescribeApplicationVersionsRequestMarshaller().marshall(super.beforeMarshalling(describeApplicationVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1299,6 +1315,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new DescribeApplicationsRequestMarshaller().marshall(super.beforeMarshalling(describeApplicationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1357,6 +1374,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new DescribeConfigurationOptionsRequestMarshaller().marshall(super.beforeMarshalling(describeConfigurationOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1425,6 +1443,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new DescribeConfigurationSettingsRequestMarshaller().marshall(super.beforeMarshalling(describeConfigurationSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1480,6 +1499,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new DescribeEnvironmentHealthRequestMarshaller().marshall(super.beforeMarshalling(describeEnvironmentHealthRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1534,6 +1554,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(describeEnvironmentManagedActionHistoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1587,6 +1608,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new DescribeEnvironmentManagedActionsRequestMarshaller().marshall(super.beforeMarshalling(describeEnvironmentManagedActionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1638,6 +1660,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new DescribeEnvironmentResourcesRequestMarshaller().marshall(super.beforeMarshalling(describeEnvironmentResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1687,6 +1710,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new DescribeEnvironmentsRequestMarshaller().marshall(super.beforeMarshalling(describeEnvironmentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1746,6 +1770,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new DescribeEventsRequestMarshaller().marshall(super.beforeMarshalling(describeEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1807,6 +1832,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new DescribeInstancesHealthRequestMarshaller().marshall(super.beforeMarshalling(describeInstancesHealthRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1859,6 +1885,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new DescribePlatformVersionRequestMarshaller().marshall(super.beforeMarshalling(describePlatformVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1908,6 +1935,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new ListAvailableSolutionStacksRequestMarshaller().marshall(super.beforeMarshalling(listAvailableSolutionStacksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1965,6 +1993,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new ListPlatformVersionsRequestMarshaller().marshall(super.beforeMarshalling(listPlatformVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2026,6 +2055,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new ListTagsForResourceRequestMarshaller().marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2077,6 +2107,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new RebuildEnvironmentRequestMarshaller().marshall(super.beforeMarshalling(rebuildEnvironmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2147,6 +2178,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new RequestEnvironmentInfoRequestMarshaller().marshall(super.beforeMarshalling(requestEnvironmentInfoRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2195,6 +2227,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new RestartAppServerRequestMarshaller().marshall(super.beforeMarshalling(restartAppServerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2254,6 +2287,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new RetrieveEnvironmentInfoRequestMarshaller().marshall(super.beforeMarshalling(retrieveEnvironmentInfoRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2303,6 +2337,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new SwapEnvironmentCNAMEsRequestMarshaller().marshall(super.beforeMarshalling(swapEnvironmentCNAMEsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2359,6 +2394,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new TerminateEnvironmentRequestMarshaller().marshall(super.beforeMarshalling(terminateEnvironmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2414,6 +2450,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new UpdateApplicationRequestMarshaller().marshall(super.beforeMarshalling(updateApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2467,6 +2504,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                         .marshall(super.beforeMarshalling(updateApplicationResourceLifecycleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2521,6 +2559,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new UpdateApplicationVersionRequestMarshaller().marshall(super.beforeMarshalling(updateApplicationVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2590,6 +2629,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new UpdateConfigurationTemplateRequestMarshaller().marshall(super.beforeMarshalling(updateConfigurationTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2653,6 +2693,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new UpdateEnvironmentRequestMarshaller().marshall(super.beforeMarshalling(updateEnvironmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2747,6 +2788,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new UpdateTagsForResourceRequestMarshaller().marshall(super.beforeMarshalling(updateTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2805,6 +2847,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
                 request = new ValidateConfigurationSettingsRequestMarshaller().marshall(super.beforeMarshalling(validateConfigurationSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

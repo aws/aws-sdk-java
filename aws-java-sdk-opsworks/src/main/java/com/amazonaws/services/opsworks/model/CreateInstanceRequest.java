@@ -67,9 +67,9 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2017.03</code>,
-     * <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
-     * <code>Amazon Linux 2015.03</code>.
+     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2017.09</code>,
+     * <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>,
+     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
      * </p>
      * </li>
      * <li>
@@ -548,9 +548,9 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2017.03</code>,
-     * <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
-     * <code>Amazon Linux 2015.03</code>.
+     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2017.09</code>,
+     * <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>,
+     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
      * </p>
      * </li>
      * <li>
@@ -604,9 +604,9 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2017.03</code>,
-     *        <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>,
-     *        or <code>Amazon Linux 2015.03</code>.
+     *        A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2017.09</code>,
+     *        <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>,
+     *        <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -666,9 +666,9 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2017.03</code>,
-     * <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
-     * <code>Amazon Linux 2015.03</code>.
+     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2017.09</code>,
+     * <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>,
+     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
      * </p>
      * </li>
      * <li>
@@ -721,9 +721,9 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <ul>
      *         <li>
      *         <p>
-     *         A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2017.03</code>,
-     *         <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>,
-     *         or <code>Amazon Linux 2015.03</code>.
+     *         A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2017.09</code>,
+     *         <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>,
+     *         <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -783,9 +783,9 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2017.03</code>,
-     * <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>, or
-     * <code>Amazon Linux 2015.03</code>.
+     * A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2017.09</code>,
+     * <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>,
+     * <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
      * </p>
      * </li>
      * <li>
@@ -839,9 +839,9 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2017.03</code>,
-     *        <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon Linux 2015.09</code>,
-     *        or <code>Amazon Linux 2015.03</code>.
+     *        A supported Linux operating system: An Amazon Linux version, such as <code>Amazon Linux 2017.09</code>,
+     *        <code>Amazon Linux 2017.03</code>, <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>,
+     *        <code>Amazon Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
      *        </p>
      *        </li>
      *        <li>

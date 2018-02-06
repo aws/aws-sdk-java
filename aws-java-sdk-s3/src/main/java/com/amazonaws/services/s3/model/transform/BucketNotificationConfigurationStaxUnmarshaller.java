@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.s3.model.transform;
 
+import com.amazonaws.util.XmlUtils;
 import java.io.InputStream;
 import java.util.Map.Entry;
 
@@ -34,17 +35,13 @@ public class BucketNotificationConfigurationStaxUnmarshaller implements
         return instance;
     }
 
-    private final XMLInputFactory inputFactory = XMLInputFactory.newInstance();
-
     private BucketNotificationConfigurationStaxUnmarshaller() {
     }
 
     @Override
     public BucketNotificationConfiguration unmarshall(InputStream inputStream) throws Exception {
-        StaxUnmarshallerContext context;
-        synchronized (inputFactory) {
-            context = new StaxUnmarshallerContext(inputFactory.createXMLEventReader(inputStream));
-        }
+        StaxUnmarshallerContext context =
+            new StaxUnmarshallerContext(XmlUtils.getXmlInputFactory().createXMLEventReader(inputStream));
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 

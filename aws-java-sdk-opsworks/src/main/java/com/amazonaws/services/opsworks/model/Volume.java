@@ -111,6 +111,8 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      */
     private Integer iops;
 
+    private Boolean encrypted;
+
     /**
      * <p>
      * The volume ID.
@@ -656,6 +658,40 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param encrypted
+     */
+
+    public void setEncrypted(Boolean encrypted) {
+        this.encrypted = encrypted;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean getEncrypted() {
+        return this.encrypted;
+    }
+
+    /**
+     * @param encrypted
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Volume withEncrypted(Boolean encrypted) {
+        setEncrypted(encrypted);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean isEncrypted() {
+        return this.encrypted;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -691,7 +727,9 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
         if (getVolumeType() != null)
             sb.append("VolumeType: ").append(getVolumeType()).append(",");
         if (getIops() != null)
-            sb.append("Iops: ").append(getIops());
+            sb.append("Iops: ").append(getIops()).append(",");
+        if (getEncrypted() != null)
+            sb.append("Encrypted: ").append(getEncrypted());
         sb.append("}");
         return sb.toString();
     }
@@ -758,6 +796,10 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getIops() != null && other.getIops().equals(this.getIops()) == false)
             return false;
+        if (other.getEncrypted() == null ^ this.getEncrypted() == null)
+            return false;
+        if (other.getEncrypted() != null && other.getEncrypted().equals(this.getEncrypted()) == false)
+            return false;
         return true;
     }
 
@@ -779,6 +821,7 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode());
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
+        hashCode = prime * hashCode + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
         return hashCode;
     }
 

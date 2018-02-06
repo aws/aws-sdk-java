@@ -339,6 +339,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
                 request = new ActivatePipelineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(activatePipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -398,6 +399,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
                 request = new AddTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -453,6 +455,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
                 request = new CreatePipelineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -517,6 +520,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
                 request = new DeactivatePipelineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deactivatePipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -580,6 +584,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
                 request = new DeletePipelineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -640,6 +645,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
                 request = new DescribeObjectsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeObjectsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -706,6 +712,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
                 request = new DescribePipelinesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePipelinesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -768,6 +775,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
                 request = new EvaluateExpressionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(evaluateExpressionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -828,6 +836,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
                 request = new GetPipelineDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPipelineDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -884,6 +893,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
                 request = new ListPipelinesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPipelinesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -957,6 +967,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
                 request = new PollForTaskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(pollForTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1031,6 +1042,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
                 request = new PutPipelineDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putPipelineDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1091,6 +1103,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
                 request = new QueryObjectsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(queryObjectsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1150,6 +1163,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
                 request = new RemoveTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1220,6 +1234,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
                 request = new ReportTaskProgressRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(reportTaskProgressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1278,6 +1293,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
                         .beforeMarshalling(reportTaskRunnerHeartbeatRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1341,6 +1357,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
                 request = new SetStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1405,6 +1422,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
                 request = new SetTaskStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setTaskStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1465,6 +1483,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
                         .beforeMarshalling(validatePipelineDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

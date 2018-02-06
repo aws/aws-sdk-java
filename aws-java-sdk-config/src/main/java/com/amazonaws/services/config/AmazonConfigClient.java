@@ -411,6 +411,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new DeleteConfigRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteConfigRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -473,6 +474,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(deleteConfigurationRecorderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -532,6 +534,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new DeleteDeliveryChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDeliveryChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -590,6 +593,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(deleteEvaluationResultsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -666,6 +670,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new DeliverConfigSnapshotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deliverConfigSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -756,6 +761,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeComplianceByConfigRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -848,6 +854,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeComplianceByResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -914,6 +921,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeConfigRuleEvaluationStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -974,6 +982,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new DescribeConfigRulesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeConfigRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1038,6 +1047,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeConfigurationRecorderStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1102,6 +1112,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeConfigurationRecordersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1166,6 +1177,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeDeliveryChannelStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1230,6 +1242,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeDeliveryChannelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1295,6 +1308,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getComplianceDetailsByConfigRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1348,6 +1362,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getComplianceDetailsByResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1399,6 +1414,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getComplianceSummaryByConfigRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1458,6 +1474,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getComplianceSummaryByResourceTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1588,6 +1605,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getDiscoveredResourceCountsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1667,6 +1685,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getResourceConfigHistoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1740,6 +1759,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(listDiscoveredResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1855,6 +1875,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new PutConfigRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putConfigRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1927,6 +1948,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(putConfigurationRecorderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2007,6 +2029,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new PutDeliveryChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putDeliveryChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2063,6 +2086,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new PutEvaluationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putEvaluationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2171,6 +2195,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(startConfigRulesEvaluationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2229,6 +2254,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(startConfigurationRecorderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2282,6 +2308,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(stopConfigurationRecorderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

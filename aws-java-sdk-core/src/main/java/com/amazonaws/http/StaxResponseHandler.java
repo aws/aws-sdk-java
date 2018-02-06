@@ -20,12 +20,12 @@ import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.transform.VoidStaxUnmarshaller;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.XmlUtils;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;
 import javax.xml.stream.XMLEventReader;
-import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -48,11 +48,6 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
      * Shared logger for profiling information
      */
     private static final Log log = LogFactory.getLog("com.amazonaws.request");
-
-    /**
-     * Shared factory for creating XML event readers
-     */
-    private static final XMLInputFactory xmlInputFactory = createXmlInputFactory();
 
     /**
      * Constructs a new response handler that will use the specified StAX
@@ -89,12 +84,10 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
         }
 
         XMLEventReader eventReader;
-        synchronized (xmlInputFactory) {
-            try {
-                eventReader = xmlInputFactory.createXMLEventReader(content);
-            } catch (XMLStreamException e) {
-                throw handleXmlStreamException(e);
-            }
+        try {
+            eventReader = XmlUtils.getXmlInputFactory().createXMLEventReader(content);
+        } catch (XMLStreamException e) {
+            throw handleXmlStreamException(e);
         }
 
         try {
@@ -170,15 +163,4 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
         return false;
     }
 
-    /**
-     * Disables certain dangerous features that attempt to automatically fetch DTDs
-     *
-     * See <a href="https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Prevention_Cheat_Sheet">OWASP XXE Cheat Sheet</a>
-     */
-    private static XMLInputFactory createXmlInputFactory() {
-        XMLInputFactory factory = XMLInputFactory.newInstance();
-        factory.setProperty(XMLInputFactory.SUPPORT_DTD, false);
-        factory.setProperty(XMLInputFactory.IS_SUPPORTING_EXTERNAL_ENTITIES, false);
-        return factory;
-    }
 }

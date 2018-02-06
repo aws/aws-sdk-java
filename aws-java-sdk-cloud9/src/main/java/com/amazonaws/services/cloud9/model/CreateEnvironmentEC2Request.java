@@ -53,7 +53,7 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
     private String clientRequestToken;
     /**
      * <p>
-     * The type of instance to host the environment on (for example, <code>t2.micro</code>).
+     * The type of instance to connect to the environment (for example, <code>t2.micro</code>).
      * </p>
      */
     private String instanceType;
@@ -244,11 +244,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of instance to host the environment on (for example, <code>t2.micro</code>).
+     * The type of instance to connect to the environment (for example, <code>t2.micro</code>).
      * </p>
      * 
      * @param instanceType
-     *        The type of instance to host the environment on (for example, <code>t2.micro</code>).
+     *        The type of instance to connect to the environment (for example, <code>t2.micro</code>).
      */
 
     public void setInstanceType(String instanceType) {
@@ -257,10 +257,10 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of instance to host the environment on (for example, <code>t2.micro</code>).
+     * The type of instance to connect to the environment (for example, <code>t2.micro</code>).
      * </p>
      * 
-     * @return The type of instance to host the environment on (for example, <code>t2.micro</code>).
+     * @return The type of instance to connect to the environment (for example, <code>t2.micro</code>).
      */
 
     public String getInstanceType() {
@@ -269,11 +269,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The type of instance to host the environment on (for example, <code>t2.micro</code>).
+     * The type of instance to connect to the environment (for example, <code>t2.micro</code>).
      * </p>
      * 
      * @param instanceType
-     *        The type of instance to host the environment on (for example, <code>t2.micro</code>).
+     *        The type of instance to connect to the environment (for example, <code>t2.micro</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

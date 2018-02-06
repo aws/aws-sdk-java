@@ -171,6 +171,7 @@ public class AWSMarketplaceEntitlementClient extends AmazonWebServiceClient impl
                 request = new GetEntitlementsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getEntitlementsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

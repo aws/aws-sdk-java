@@ -424,6 +424,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new ActivateGatewayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(activateGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -485,6 +486,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new AddCacheRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addCacheRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -568,6 +570,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new AddTagsToResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addTagsToResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -627,6 +630,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new AddUploadBufferRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addUploadBufferRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -700,6 +704,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new AddWorkingStorageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addWorkingStorageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -756,6 +761,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new CancelArchivalRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelArchivalRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -812,6 +818,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new CancelRetrievalRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelRetrievalRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -885,6 +892,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(createCachediSCSIVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -954,6 +962,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new CreateNFSFileShareRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createNFSFileShareRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1050,6 +1059,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new CreateSnapshotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1129,6 +1139,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(createSnapshotFromVolumeRecoveryPointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1222,6 +1233,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(createStorediSCSIVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1286,6 +1298,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new CreateTapeWithBarcodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTapeWithBarcodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1349,6 +1362,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new CreateTapesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTapesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1413,6 +1427,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(deleteBandwidthRateLimitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1481,6 +1496,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new DeleteChapCredentialsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteChapCredentialsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1537,6 +1553,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new DeleteFileShareRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFileShareRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1608,6 +1625,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new DeleteGatewayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1675,6 +1693,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new DeleteSnapshotScheduleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSnapshotScheduleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1731,6 +1750,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new DeleteTapeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTapeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1787,6 +1807,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new DeleteTapeArchiveRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTapeArchiveRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1855,6 +1876,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new DeleteVolumeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteVolumeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1917,6 +1939,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(describeBandwidthRateLimitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1977,6 +2000,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new DescribeCacheRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCacheRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2037,6 +2061,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(describeCachediSCSIVolumesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2095,6 +2120,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(describeChapCredentialsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2154,6 +2180,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(describeGatewayInformationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2212,6 +2239,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(describeMaintenanceStartTimeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2269,6 +2297,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new DescribeNFSFileSharesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeNFSFileSharesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2328,6 +2357,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(describeSnapshotScheduleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2387,6 +2417,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(describeStorediSCSIVolumesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2448,6 +2479,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new DescribeTapeArchivesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTapeArchivesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2514,6 +2546,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(describeTapeRecoveryPointsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2572,6 +2605,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new DescribeTapesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTapesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2631,6 +2665,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new DescribeUploadBufferRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeUploadBufferRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2690,6 +2725,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new DescribeVTLDevicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeVTLDevicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2757,6 +2793,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new DescribeWorkingStorageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeWorkingStorageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2823,6 +2860,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new DisableGatewayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2879,6 +2917,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new ListFileSharesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFileSharesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2955,6 +2994,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new ListGatewaysRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGatewaysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3022,6 +3062,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new ListLocalDisksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLocalDisksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3078,6 +3119,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3163,6 +3205,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new ListTapesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTapesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3219,6 +3262,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new ListVolumeInitiatorsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVolumeInitiatorsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3280,6 +3324,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(listVolumeRecoveryPointsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3356,6 +3401,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new ListVolumesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVolumesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3418,6 +3464,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new NotifyWhenUploadedRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(notifyWhenUploadedRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3474,6 +3521,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new RefreshCacheRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(refreshCacheRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3530,6 +3578,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new RemoveTagsFromResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeTagsFromResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3601,6 +3650,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new ResetCacheRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resetCacheRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3664,6 +3714,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new RetrieveTapeArchiveRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(retrieveTapeArchiveRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3731,6 +3782,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(retrieveTapeRecoveryPointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3790,6 +3842,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(setLocalConsolePasswordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3873,6 +3926,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new ShutdownGatewayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(shutdownGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3940,6 +3994,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new StartGatewayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4015,6 +4070,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(updateBandwidthRateLimitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4099,6 +4155,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new UpdateChapCredentialsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateChapCredentialsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4162,6 +4219,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(updateGatewayInformationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4236,6 +4294,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(updateGatewaySoftwareNowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4310,6 +4369,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(updateMaintenanceStartTimeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4407,6 +4467,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new UpdateNFSFileShareRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateNFSFileShareRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4492,6 +4553,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new UpdateSnapshotScheduleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateSnapshotScheduleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -4549,6 +4611,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                 request = new UpdateVTLDeviceTypeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateVTLDeviceTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

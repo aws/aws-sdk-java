@@ -175,6 +175,7 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
                 request = new CreateScalingPlanRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createScalingPlanRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -232,6 +233,7 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
                 request = new DeleteScalingPlanRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteScalingPlanRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -290,6 +292,7 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(describeScalingPlanResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -348,6 +351,7 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
                 request = new DescribeScalingPlansRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeScalingPlansRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

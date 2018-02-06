@@ -117,12 +117,22 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
+ * opsworks.ca-central-1.amazonaws.com (API only; not available in the AWS console)
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * opsworks.eu-west-1.amazonaws.com
  * </p>
  * </li>
  * <li>
  * <p>
  * opsworks.eu-west-2.amazonaws.com
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * opsworks.eu-west-3.amazonaws.com
  * </p>
  * </li>
  * <li>
@@ -1427,6 +1437,39 @@ public class AWSOpsWorksAsyncClient extends AWSOpsWorksClient implements AWSOpsW
 
                 try {
                     result = executeDescribeMyUserProfile(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeOperatingSystemsResult> describeOperatingSystemsAsync(DescribeOperatingSystemsRequest request) {
+
+        return describeOperatingSystemsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeOperatingSystemsResult> describeOperatingSystemsAsync(final DescribeOperatingSystemsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeOperatingSystemsRequest, DescribeOperatingSystemsResult> asyncHandler) {
+        final DescribeOperatingSystemsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeOperatingSystemsResult>() {
+            @Override
+            public DescribeOperatingSystemsResult call() throws Exception {
+                DescribeOperatingSystemsResult result = null;
+
+                try {
+                    result = executeDescribeOperatingSystems(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

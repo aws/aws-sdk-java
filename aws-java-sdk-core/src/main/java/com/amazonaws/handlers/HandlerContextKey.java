@@ -43,8 +43,16 @@ import com.amazonaws.auth.AWSCredentials;
  * </pre>
  */
 public class HandlerContextKey<T> {
-    /** The key under which the request credentials are set. */
+
+    /**
+     * The key under which the request credentials are set.
+     **/
     public static final HandlerContextKey<AWSCredentials> AWS_CREDENTIALS = new HandlerContextKey<AWSCredentials>("AWSCredentials");
+
+    /**
+     * The region used to sign the request.
+     */
+    public static final HandlerContextKey<String> SIGNING_REGION = new HandlerContextKey<String>("SigningRegion");
 
     private final String name;
 

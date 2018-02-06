@@ -397,6 +397,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request = new CreateIdentityPoolRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createIdentityPoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -455,6 +456,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request = new DeleteIdentitiesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteIdentitiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -517,6 +519,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request = new DeleteIdentityPoolRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteIdentityPoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -580,6 +583,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request = new DescribeIdentityRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -643,6 +647,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request = new DescribeIdentityPoolRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeIdentityPoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -715,6 +720,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                         .beforeMarshalling(getCredentialsForIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -784,6 +790,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request = new GetIdRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getIdRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -848,6 +855,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request = new GetIdentityPoolRolesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getIdentityPoolRolesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -918,6 +926,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request = new GetOpenIdTokenRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getOpenIdTokenRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -997,6 +1006,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                         .beforeMarshalling(getOpenIdTokenForDeveloperIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1060,6 +1070,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request = new ListIdentitiesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listIdentitiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1120,6 +1131,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request = new ListIdentityPoolsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listIdentityPoolsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1191,6 +1203,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                         .beforeMarshalling(lookupDeveloperIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1262,6 +1275,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                         .beforeMarshalling(mergeDeveloperIdentitiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1330,6 +1344,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request = new SetIdentityPoolRolesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setIdentityPoolRolesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1397,6 +1412,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                         .beforeMarshalling(unlinkDeveloperIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1465,6 +1481,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request = new UnlinkIdentityRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(unlinkIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1533,6 +1550,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                 request = new UpdateIdentityPoolRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateIdentityPoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

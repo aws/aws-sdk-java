@@ -377,6 +377,7 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
                 request = new BatchMeterUsageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchMeterUsageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -447,6 +448,7 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
                 request = new MeterUsageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(meterUsageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -509,6 +511,7 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
                 request = new ResolveCustomerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resolveCustomerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

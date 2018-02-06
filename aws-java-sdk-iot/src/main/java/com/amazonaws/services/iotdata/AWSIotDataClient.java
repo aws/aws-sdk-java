@@ -343,6 +343,7 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
                 request = new DeleteThingShadowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteThingShadowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -411,6 +412,7 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
                 request = new GetThingShadowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getThingShadowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -470,6 +472,7 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
                 request = new PublishRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(publishRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -540,6 +543,7 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
                 request = new UpdateThingShadowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateThingShadowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

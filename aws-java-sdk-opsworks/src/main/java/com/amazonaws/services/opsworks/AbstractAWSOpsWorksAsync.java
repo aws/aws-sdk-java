@@ -444,6 +444,19 @@ public class AbstractAWSOpsWorksAsync extends AbstractAWSOpsWorks implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeOperatingSystemsResult> describeOperatingSystemsAsync(DescribeOperatingSystemsRequest request) {
+
+        return describeOperatingSystemsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeOperatingSystemsResult> describeOperatingSystemsAsync(DescribeOperatingSystemsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeOperatingSystemsRequest, DescribeOperatingSystemsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribePermissionsResult> describePermissionsAsync(DescribePermissionsRequest request) {
 
         return describePermissionsAsync(request, null);

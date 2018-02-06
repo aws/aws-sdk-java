@@ -112,6 +112,8 @@ public class InstancesCount implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Integer startFailed;
+
+    private Integer stopFailed;
     /**
      * <p>
      * The number of instances with <code>stopped</code> status.
@@ -704,6 +706,32 @@ public class InstancesCount implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param stopFailed
+     */
+
+    public void setStopFailed(Integer stopFailed) {
+        this.stopFailed = stopFailed;
+    }
+
+    /**
+     * @return
+     */
+
+    public Integer getStopFailed() {
+        return this.stopFailed;
+    }
+
+    /**
+     * @param stopFailed
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstancesCount withStopFailed(Integer stopFailed) {
+        setStopFailed(stopFailed);
+        return this;
+    }
+
+    /**
      * <p>
      * The number of instances with <code>stopped</code> status.
      * </p>
@@ -942,6 +970,8 @@ public class InstancesCount implements Serializable, Cloneable, StructuredPojo {
             sb.append("ShuttingDown: ").append(getShuttingDown()).append(",");
         if (getStartFailed() != null)
             sb.append("StartFailed: ").append(getStartFailed()).append(",");
+        if (getStopFailed() != null)
+            sb.append("StopFailed: ").append(getStopFailed()).append(",");
         if (getStopped() != null)
             sb.append("Stopped: ").append(getStopped()).append(",");
         if (getStopping() != null)
@@ -1022,6 +1052,10 @@ public class InstancesCount implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStartFailed() != null && other.getStartFailed().equals(this.getStartFailed()) == false)
             return false;
+        if (other.getStopFailed() == null ^ this.getStopFailed() == null)
+            return false;
+        if (other.getStopFailed() != null && other.getStopFailed().equals(this.getStopFailed()) == false)
+            return false;
         if (other.getStopped() == null ^ this.getStopped() == null)
             return false;
         if (other.getStopped() != null && other.getStopped().equals(this.getStopped()) == false)
@@ -1064,6 +1098,7 @@ public class InstancesCount implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSetupFailed() == null) ? 0 : getSetupFailed().hashCode());
         hashCode = prime * hashCode + ((getShuttingDown() == null) ? 0 : getShuttingDown().hashCode());
         hashCode = prime * hashCode + ((getStartFailed() == null) ? 0 : getStartFailed().hashCode());
+        hashCode = prime * hashCode + ((getStopFailed() == null) ? 0 : getStopFailed().hashCode());
         hashCode = prime * hashCode + ((getStopped() == null) ? 0 : getStopped().hashCode());
         hashCode = prime * hashCode + ((getStopping() == null) ? 0 : getStopping().hashCode());
         hashCode = prime * hashCode + ((getTerminated() == null) ? 0 : getTerminated().hashCode());

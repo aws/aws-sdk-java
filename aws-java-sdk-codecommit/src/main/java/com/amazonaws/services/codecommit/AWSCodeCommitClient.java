@@ -828,6 +828,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new BatchGetRepositoriesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetRepositoriesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -916,6 +917,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new CreateBranchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBranchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1033,6 +1035,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new CreatePullRequestRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPullRequestRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1106,6 +1109,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new CreateRepositoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRepositoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1182,6 +1186,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new DeleteBranchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBranchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1238,6 +1243,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new DeleteCommentContentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCommentContentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1311,6 +1317,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new DeleteRepositoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRepositoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1389,6 +1396,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(describePullRequestEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1469,6 +1477,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new GetBlobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBlobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1544,6 +1553,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new GetBranchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBranchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1600,6 +1610,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new GetCommentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCommentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1680,6 +1691,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(getCommentsForComparedCommitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1772,6 +1784,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(getCommentsForPullRequestRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1848,6 +1861,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new GetCommitRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCommitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -1934,6 +1948,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new GetDifferencesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDifferencesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2022,6 +2037,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new GetMergeConflictsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMergeConflictsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2088,6 +2104,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new GetPullRequestRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPullRequestRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2165,6 +2182,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new GetRepositoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRepositoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2234,6 +2252,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new GetRepositoryTriggersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRepositoryTriggersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2306,6 +2325,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new ListBranchesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBranchesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2387,6 +2407,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new ListPullRequestsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPullRequestsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2442,6 +2463,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new ListRepositoriesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRepositoriesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2533,6 +2555,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(mergePullRequestByFastForwardRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2642,6 +2665,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(postCommentForComparedCommitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2764,6 +2788,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(postCommentForPullRequestRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2833,6 +2858,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new PostCommentReplyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(postCommentReplyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -2931,6 +2957,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new PutRepositoryTriggersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putRepositoryTriggersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3032,6 +3059,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new TestRepositoryTriggersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(testRepositoryTriggersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3095,6 +3123,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new UpdateCommentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateCommentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3176,6 +3205,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new UpdateDefaultBranchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDefaultBranchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3237,6 +3267,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(updatePullRequestDescriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3313,6 +3344,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(updatePullRequestStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3376,6 +3408,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new UpdatePullRequestTitleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updatePullRequestTitleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3457,6 +3490,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                         .beforeMarshalling(updateRepositoryDescriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
@@ -3523,6 +3557,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                 request = new UpdateRepositoryNameRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRepositoryNameRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }

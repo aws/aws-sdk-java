@@ -350,6 +350,19 @@ public class AbstractAmazonKinesisAsync extends AbstractAmazonKinesis implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListShardsResult> listShardsAsync(ListShardsRequest request) {
+
+        return listShardsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListShardsResult> listShardsAsync(ListShardsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListShardsRequest, ListShardsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListStreamsResult> listStreamsAsync(ListStreamsRequest request) {
 
         return listStreamsAsync(request, null);

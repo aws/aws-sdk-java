@@ -112,12 +112,22 @@ import com.amazonaws.services.opsworks.model.*;
  * </li>
  * <li>
  * <p>
+ * opsworks.ca-central-1.amazonaws.com (API only; not available in the AWS console)
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * opsworks.eu-west-1.amazonaws.com
  * </p>
  * </li>
  * <li>
  * <p>
  * opsworks.eu-west-2.amazonaws.com
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * opsworks.eu-west-3.amazonaws.com
  * </p>
  * </li>
  * <li>
@@ -1798,6 +1808,37 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      */
     java.util.concurrent.Future<DescribeMyUserProfileResult> describeMyUserProfileAsync(DescribeMyUserProfileRequest describeMyUserProfileRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeMyUserProfileRequest, DescribeMyUserProfileResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the operating systems that are supported by AWS OpsWorks Stacks.
+     * </p>
+     * 
+     * @param describeOperatingSystemsRequest
+     * @return A Java Future containing the result of the DescribeOperatingSystems operation returned by the service.
+     * @sample AWSOpsWorksAsync.DescribeOperatingSystems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeOperatingSystems"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeOperatingSystemsResult> describeOperatingSystemsAsync(DescribeOperatingSystemsRequest describeOperatingSystemsRequest);
+
+    /**
+     * <p>
+     * Describes the operating systems that are supported by AWS OpsWorks Stacks.
+     * </p>
+     * 
+     * @param describeOperatingSystemsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeOperatingSystems operation returned by the service.
+     * @sample AWSOpsWorksAsyncHandler.DescribeOperatingSystems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeOperatingSystems"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeOperatingSystemsResult> describeOperatingSystemsAsync(DescribeOperatingSystemsRequest describeOperatingSystemsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeOperatingSystemsRequest, DescribeOperatingSystemsResult> asyncHandler);
 
     /**
      * <p>

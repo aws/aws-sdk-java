@@ -18,7 +18,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -52,7 +52,7 @@
     "defaultEndpoint" : "cloud9.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "cloud9.us-east-1.amazonaws.com",
     "defaultRegion" : null,
-    "documentation" : "<fullname>AWS Cloud9</fullname> <p>AWS Cloud9 is a collection of tools that you can use to code, build, run, test, debug, and release software in the cloud.</p> <p>In the background, these tools are available through development environments running on Amazon Elastic Compute Cloud (Amazon EC2) instances (known as <i>Amazon EC2 environments</i>), your own servers (known as <i>SSH environments</i>), or a combination. This enables you to create and switch between multiple environments, with each environment set up for a specific development project.</p> <p>For more information about AWS Cloud9, see the <i>AWS Cloud9 User Guide</i>.</p> <p>AWS Cloud9 supports these operations:</p> <ul> <li> <p> <code>CreateEnvironmentEC2</code>: Creates an AWS Cloud9 development environment, launches an Amazon EC2 instance, and then hosts the environment on the instance.</p> </li> <li> <p> <code>CreateEnvironmentMembership</code>: Adds an environment member to an environment.</p> </li> <li> <p> <code>DeleteEnvironment</code>: Deletes an environment. If the environment is hosted on an Amazon EC2 instance, also terminates the instance.</p> </li> <li> <p> <code>DeleteEnvironmentMembership</code>: Deletes an environment member from an environment.</p> </li> <li> <p> <code>DescribeEnvironmentMemberships</code>: Gets information about environment members for an environment.</p> </li> <li> <p> <code>DescribeEnvironments</code>: Gets information about environments.</p> </li> <li> <p> <code>DescribeEnvironmentStatus</code>: Gets status information for an environment.</p> </li> <li> <p> <code>ListEnvironments</code>: Gets a list of environment identifiers.</p> </li> <li> <p> <code>UpdateEnvironment</code>: Changes the settings of an existing environment.</p> </li> <li> <p> <code>UpdateEnvironmentMembership</code>: Changes the settings of an existing environment member for an environment.</p> </li> </ul>",
+    "documentation" : "<fullname>AWS Cloud9</fullname> <p>AWS Cloud9 is a collection of tools that you can use to code, build, run, test, debug, and release software in the cloud.</p> <p>For more information about AWS Cloud9, see the <a href=\"https://docs.aws.amazon.com/cloud9/latest/user-guide\">AWS Cloud9 User Guide</a>.</p> <p>AWS Cloud9 supports these operations:</p> <ul> <li> <p> <code>CreateEnvironmentEC2</code>: Creates an AWS Cloud9 development environment, launches an Amazon EC2 instance, and then connects from the instance to the environment.</p> </li> <li> <p> <code>CreateEnvironmentMembership</code>: Adds an environment member to an environment.</p> </li> <li> <p> <code>DeleteEnvironment</code>: Deletes an environment. If an Amazon EC2 instance is connected to the environment, also terminates the instance.</p> </li> <li> <p> <code>DeleteEnvironmentMembership</code>: Deletes an environment member from an environment.</p> </li> <li> <p> <code>DescribeEnvironmentMemberships</code>: Gets information about environment members for an environment.</p> </li> <li> <p> <code>DescribeEnvironments</code>: Gets information about environments.</p> </li> <li> <p> <code>DescribeEnvironmentStatus</code>: Gets status information for an environment.</p> </li> <li> <p> <code>ListEnvironments</code>: Gets a list of environment identifiers.</p> </li> <li> <p> <code>UpdateEnvironment</code>: Changes the settings of an existing environment.</p> </li> <li> <p> <code>UpdateEnvironmentMembership</code>: Changes the settings of an existing environment member for an environment.</p> </li> </ul>",
     "endpointPrefix" : "cloud9",
     "hasApiWithStreamInput" : false,
     "ionProtocol" : false,
@@ -87,7 +87,7 @@
       "asyncReturnType" : "CreateEnvironmentEC2Result",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Creates an AWS Cloud9 development environment, launches an Amazon Elastic Compute Cloud (Amazon EC2) instance, and then hosts the environment on the instance.</p>",
+      "documentation" : "<p>Creates an AWS Cloud9 development environment, launches an Amazon Elastic Compute Cloud (Amazon EC2) instance, and then connects from the instance to the environment.</p>",
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The target request is invalid.</p>",
@@ -197,7 +197,7 @@
       "asyncReturnType" : "DeleteEnvironmentResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Deletes an AWS Cloud9 development environment. If the environment is hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance, also terminates the instance.</p>",
+      "documentation" : "<p>Deletes an AWS Cloud9 development environment. If an Amazon EC2 instance is connected to the environment, also terminates the instance.</p>",
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The target request is invalid.</p>",
@@ -921,11 +921,11 @@
         "c2jName" : "instanceType",
         "c2jShape" : "InstanceType",
         "deprecated" : false,
-        "documentation" : "<p>The type of instance to host the environment on (for example, <code>t2.micro</code>).</p>",
+        "documentation" : "<p>The type of instance to connect to the environment (for example, <code>t2.micro</code>).</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The type of instance to host the environment on (for example, <code>t2.micro</code>).</p>\n@param instanceType The type of instance to host the environment on (for example, <code>t2.micro</code>).\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The type of instance to connect to the environment (for example, <code>t2.micro</code>).</p>\n@param instanceType The type of instance to connect to the environment (for example, <code>t2.micro</code>).\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withInstanceType",
-        "getterDocumentation" : "/**<p>The type of instance to host the environment on (for example, <code>t2.micro</code>).</p>\n@return The type of instance to host the environment on (for example, <code>t2.micro</code>).*/",
+        "getterDocumentation" : "/**<p>The type of instance to connect to the environment (for example, <code>t2.micro</code>).</p>\n@return The type of instance to connect to the environment (for example, <code>t2.micro</code>).*/",
         "getterMethodName" : "getInstanceType",
         "getterModel" : {
           "returnType" : "String",
@@ -957,7 +957,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "InstanceType",
-        "setterDocumentation" : "/**<p>The type of instance to host the environment on (for example, <code>t2.micro</code>).</p>\n@param instanceType The type of instance to host the environment on (for example, <code>t2.micro</code>).*/",
+        "setterDocumentation" : "/**<p>The type of instance to connect to the environment (for example, <code>t2.micro</code>).</p>\n@param instanceType The type of instance to connect to the environment (for example, <code>t2.micro</code>).*/",
         "setterMethodName" : "setInstanceType",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -970,12 +970,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The type of instance to host the environment on (for example, <code>t2.micro</code>).</p>\n@param instanceType The type of instance to host the environment on (for example, <code>t2.micro</code>).\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The type of instance to connect to the environment (for example, <code>t2.micro</code>).</p>\n@param instanceType The type of instance to connect to the environment (for example, <code>t2.micro</code>).\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "instanceType",
           "variableType" : "String",
-          "documentation" : "<p>The type of instance to host the environment on (for example, <code>t2.micro</code>).</p>",
+          "documentation" : "<p>The type of instance to connect to the environment (for example, <code>t2.micro</code>).</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1367,11 +1367,11 @@
           "c2jName" : "instanceType",
           "c2jShape" : "InstanceType",
           "deprecated" : false,
-          "documentation" : "<p>The type of instance to host the environment on (for example, <code>t2.micro</code>).</p>",
+          "documentation" : "<p>The type of instance to connect to the environment (for example, <code>t2.micro</code>).</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The type of instance to host the environment on (for example, <code>t2.micro</code>).</p>\n@param instanceType The type of instance to host the environment on (for example, <code>t2.micro</code>).\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The type of instance to connect to the environment (for example, <code>t2.micro</code>).</p>\n@param instanceType The type of instance to connect to the environment (for example, <code>t2.micro</code>).\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withInstanceType",
-          "getterDocumentation" : "/**<p>The type of instance to host the environment on (for example, <code>t2.micro</code>).</p>\n@return The type of instance to host the environment on (for example, <code>t2.micro</code>).*/",
+          "getterDocumentation" : "/**<p>The type of instance to connect to the environment (for example, <code>t2.micro</code>).</p>\n@return The type of instance to connect to the environment (for example, <code>t2.micro</code>).*/",
           "getterMethodName" : "getInstanceType",
           "getterModel" : {
             "returnType" : "String",
@@ -1403,7 +1403,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "InstanceType",
-          "setterDocumentation" : "/**<p>The type of instance to host the environment on (for example, <code>t2.micro</code>).</p>\n@param instanceType The type of instance to host the environment on (for example, <code>t2.micro</code>).*/",
+          "setterDocumentation" : "/**<p>The type of instance to connect to the environment (for example, <code>t2.micro</code>).</p>\n@param instanceType The type of instance to connect to the environment (for example, <code>t2.micro</code>).*/",
           "setterMethodName" : "setInstanceType",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -1416,12 +1416,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The type of instance to host the environment on (for example, <code>t2.micro</code>).</p>\n@param instanceType The type of instance to host the environment on (for example, <code>t2.micro</code>).\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The type of instance to connect to the environment (for example, <code>t2.micro</code>).</p>\n@param instanceType The type of instance to connect to the environment (for example, <code>t2.micro</code>).\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "instanceType",
             "variableType" : "String",
-            "documentation" : "<p>The type of instance to host the environment on (for example, <code>t2.micro</code>).</p>",
+            "documentation" : "<p>The type of instance to connect to the environment (for example, <code>t2.micro</code>).</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4721,11 +4721,11 @@
         "c2jName" : "environmentIds",
         "c2jShape" : "BoundedEnvironmentIdList",
         "deprecated" : false,
-        "documentation" : "<p>The IDs of invidividual environments to get information about.</p>",
+        "documentation" : "<p>The IDs of individual environments to get information about.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The IDs of invidividual environments to get information about.</p>\n@param environmentIds The IDs of invidividual environments to get information about.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The IDs of individual environments to get information about.</p>\n@param environmentIds The IDs of individual environments to get information about.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withEnvironmentIds",
-        "getterDocumentation" : "/**<p>The IDs of invidividual environments to get information about.</p>\n@return The IDs of invidividual environments to get information about.*/",
+        "getterDocumentation" : "/**<p>The IDs of individual environments to get information about.</p>\n@return The IDs of individual environments to get information about.*/",
         "getterMethodName" : "getEnvironmentIds",
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -4835,7 +4835,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "EnvironmentIds",
-        "setterDocumentation" : "/**<p>The IDs of invidividual environments to get information about.</p>\n@param environmentIds The IDs of invidividual environments to get information about.*/",
+        "setterDocumentation" : "/**<p>The IDs of individual environments to get information about.</p>\n@param environmentIds The IDs of individual environments to get information about.*/",
         "setterMethodName" : "setEnvironmentIds",
         "setterModel" : {
           "variableDeclarationType" : "java.util.List<String>",
@@ -4848,12 +4848,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The IDs of invidividual environments to get information about.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEnvironmentIds(java.util.Collection)} or {@link #withEnvironmentIds(java.util.Collection)} if you want to override the existing values.</p>\n@param environmentIds The IDs of invidividual environments to get information about.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The IDs of individual environments to get information about.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEnvironmentIds(java.util.Collection)} or {@link #withEnvironmentIds(java.util.Collection)} if you want to override the existing values.</p>\n@param environmentIds The IDs of individual environments to get information about.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "environmentIds",
           "variableType" : "java.util.List<String>",
-          "documentation" : "<p>The IDs of invidividual environments to get information about.</p>",
+          "documentation" : "<p>The IDs of individual environments to get information about.</p>",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -4864,11 +4864,11 @@
           "c2jName" : "environmentIds",
           "c2jShape" : "BoundedEnvironmentIdList",
           "deprecated" : false,
-          "documentation" : "<p>The IDs of invidividual environments to get information about.</p>",
+          "documentation" : "<p>The IDs of individual environments to get information about.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The IDs of invidividual environments to get information about.</p>\n@param environmentIds The IDs of invidividual environments to get information about.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The IDs of individual environments to get information about.</p>\n@param environmentIds The IDs of individual environments to get information about.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withEnvironmentIds",
-          "getterDocumentation" : "/**<p>The IDs of invidividual environments to get information about.</p>\n@return The IDs of invidividual environments to get information about.*/",
+          "getterDocumentation" : "/**<p>The IDs of individual environments to get information about.</p>\n@return The IDs of individual environments to get information about.*/",
           "getterMethodName" : "getEnvironmentIds",
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -4978,7 +4978,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "EnvironmentIds",
-          "setterDocumentation" : "/**<p>The IDs of invidividual environments to get information about.</p>\n@param environmentIds The IDs of invidividual environments to get information about.*/",
+          "setterDocumentation" : "/**<p>The IDs of individual environments to get information about.</p>\n@param environmentIds The IDs of individual environments to get information about.*/",
           "setterMethodName" : "setEnvironmentIds",
           "setterModel" : {
             "variableDeclarationType" : "java.util.List<String>",
@@ -4991,12 +4991,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The IDs of invidividual environments to get information about.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEnvironmentIds(java.util.Collection)} or {@link #withEnvironmentIds(java.util.Collection)} if you want to override the existing values.</p>\n@param environmentIds The IDs of invidividual environments to get information about.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The IDs of individual environments to get information about.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEnvironmentIds(java.util.Collection)} or {@link #withEnvironmentIds(java.util.Collection)} if you want to override the existing values.</p>\n@param environmentIds The IDs of individual environments to get information about.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "environmentIds",
             "variableType" : "java.util.List<String>",
-            "documentation" : "<p>The IDs of invidividual environments to get information about.</p>",
+            "documentation" : "<p>The IDs of individual environments to get information about.</p>",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -5553,11 +5553,11 @@
         "c2jName" : "type",
         "c2jShape" : "EnvironmentType",
         "deprecated" : false,
-        "documentation" : "<p>The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance.</p> </li> <li> <p> <code>ssh</code>: An environment hosted on your own server.</p> </li> </ul>",
+        "documentation" : "<p>The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li> <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li> </ul>",
         "enumType" : "EnvironmentType",
-        "fluentSetterDocumentation" : "/**<p>The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance.</p> </li> <li> <p> <code>ssh</code>: An environment hosted on your own server.</p> </li> </ul>\n@param type The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance.</p> </li> <li> <p> <code>ssh</code>: An environment hosted on your own server.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see EnvironmentType*/",
+        "fluentSetterDocumentation" : "/**<p>The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li> <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li> </ul>\n@param type The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li> <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see EnvironmentType*/",
         "fluentSetterMethodName" : "withType",
-        "getterDocumentation" : "/**<p>The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance.</p> </li> <li> <p> <code>ssh</code>: An environment hosted on your own server.</p> </li> </ul>\n@return The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance.</p> </li> <li> <p> <code>ssh</code>: An environment hosted on your own server.</p> </li>\n@see EnvironmentType*/",
+        "getterDocumentation" : "/**<p>The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li> <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li> </ul>\n@return The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li> <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li>\n@see EnvironmentType*/",
         "getterMethodName" : "getType",
         "getterModel" : {
           "returnType" : "String",
@@ -5589,7 +5589,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Type",
-        "setterDocumentation" : "/**<p>The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance.</p> </li> <li> <p> <code>ssh</code>: An environment hosted on your own server.</p> </li> </ul>\n@param type The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance.</p> </li> <li> <p> <code>ssh</code>: An environment hosted on your own server.</p> </li>\n@see EnvironmentType*/",
+        "setterDocumentation" : "/**<p>The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li> <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li> </ul>\n@param type The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li> <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li>\n@see EnvironmentType*/",
         "setterMethodName" : "setType",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -5602,12 +5602,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance.</p> </li> <li> <p> <code>ssh</code>: An environment hosted on your own server.</p> </li> </ul>\n@param type The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance.</p> </li> <li> <p> <code>ssh</code>: An environment hosted on your own server.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see EnvironmentType*/",
+        "varargSetterDocumentation" : "/**<p>The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li> <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li> </ul>\n@param type The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li> <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see EnvironmentType*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "type",
           "variableType" : "String",
-          "documentation" : "<p>The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance.</p> </li> <li> <p> <code>ssh</code>: An environment hosted on your own server.</p> </li> </ul>",
+          "documentation" : "<p>The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li> <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li> </ul>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6064,11 +6064,11 @@
           "c2jName" : "type",
           "c2jShape" : "EnvironmentType",
           "deprecated" : false,
-          "documentation" : "<p>The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance.</p> </li> <li> <p> <code>ssh</code>: An environment hosted on your own server.</p> </li> </ul>",
+          "documentation" : "<p>The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li> <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li> </ul>",
           "enumType" : "EnvironmentType",
-          "fluentSetterDocumentation" : "/**<p>The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance.</p> </li> <li> <p> <code>ssh</code>: An environment hosted on your own server.</p> </li> </ul>\n@param type The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance.</p> </li> <li> <p> <code>ssh</code>: An environment hosted on your own server.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see EnvironmentType*/",
+          "fluentSetterDocumentation" : "/**<p>The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li> <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li> </ul>\n@param type The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li> <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see EnvironmentType*/",
           "fluentSetterMethodName" : "withType",
-          "getterDocumentation" : "/**<p>The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance.</p> </li> <li> <p> <code>ssh</code>: An environment hosted on your own server.</p> </li> </ul>\n@return The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance.</p> </li> <li> <p> <code>ssh</code>: An environment hosted on your own server.</p> </li>\n@see EnvironmentType*/",
+          "getterDocumentation" : "/**<p>The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li> <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li> </ul>\n@return The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li> <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li>\n@see EnvironmentType*/",
           "getterMethodName" : "getType",
           "getterModel" : {
             "returnType" : "String",
@@ -6100,7 +6100,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Type",
-          "setterDocumentation" : "/**<p>The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance.</p> </li> <li> <p> <code>ssh</code>: An environment hosted on your own server.</p> </li> </ul>\n@param type The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance.</p> </li> <li> <p> <code>ssh</code>: An environment hosted on your own server.</p> </li>\n@see EnvironmentType*/",
+          "setterDocumentation" : "/**<p>The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li> <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li> </ul>\n@param type The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li> <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li>\n@see EnvironmentType*/",
           "setterMethodName" : "setType",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -6113,12 +6113,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance.</p> </li> <li> <p> <code>ssh</code>: An environment hosted on your own server.</p> </li> </ul>\n@param type The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance.</p> </li> <li> <p> <code>ssh</code>: An environment hosted on your own server.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see EnvironmentType*/",
+          "varargSetterDocumentation" : "/**<p>The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li> <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li> </ul>\n@param type The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li> <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see EnvironmentType*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "type",
             "variableType" : "String",
-            "documentation" : "<p>The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An environment hosted on an Amazon Elastic Compute Cloud (Amazon EC2) instance.</p> </li> <li> <p> <code>ssh</code>: An environment hosted on your own server.</p> </li> </ul>",
+            "documentation" : "<p>The type of environment. Valid values include the following:</p> <ul> <li> <p> <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the environment.</p> </li> <li> <p> <code>ssh</code>: Your own server connects to the environment.</p> </li> </ul>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -8629,11 +8629,11 @@
         "c2jName" : "name",
         "c2jShape" : "EnvironmentName",
         "deprecated" : false,
-        "documentation" : "<p>Any replacement name for the environment.</p>",
+        "documentation" : "<p>A replacement name for the environment.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Any replacement name for the environment.</p>\n@param name Any replacement name for the environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>A replacement name for the environment.</p>\n@param name A replacement name for the environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withName",
-        "getterDocumentation" : "/**<p>Any replacement name for the environment.</p>\n@return Any replacement name for the environment.*/",
+        "getterDocumentation" : "/**<p>A replacement name for the environment.</p>\n@return A replacement name for the environment.*/",
         "getterMethodName" : "getName",
         "getterModel" : {
           "returnType" : "String",
@@ -8665,7 +8665,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Name",
-        "setterDocumentation" : "/**<p>Any replacement name for the environment.</p>\n@param name Any replacement name for the environment.*/",
+        "setterDocumentation" : "/**<p>A replacement name for the environment.</p>\n@param name A replacement name for the environment.*/",
         "setterMethodName" : "setName",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -8678,12 +8678,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Any replacement name for the environment.</p>\n@param name Any replacement name for the environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A replacement name for the environment.</p>\n@param name A replacement name for the environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "name",
           "variableType" : "String",
-          "documentation" : "<p>Any replacement name for the environment.</p>",
+          "documentation" : "<p>A replacement name for the environment.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -8885,11 +8885,11 @@
           "c2jName" : "name",
           "c2jShape" : "EnvironmentName",
           "deprecated" : false,
-          "documentation" : "<p>Any replacement name for the environment.</p>",
+          "documentation" : "<p>A replacement name for the environment.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Any replacement name for the environment.</p>\n@param name Any replacement name for the environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>A replacement name for the environment.</p>\n@param name A replacement name for the environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withName",
-          "getterDocumentation" : "/**<p>Any replacement name for the environment.</p>\n@return Any replacement name for the environment.*/",
+          "getterDocumentation" : "/**<p>A replacement name for the environment.</p>\n@return A replacement name for the environment.*/",
           "getterMethodName" : "getName",
           "getterModel" : {
             "returnType" : "String",
@@ -8921,7 +8921,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Name",
-          "setterDocumentation" : "/**<p>Any replacement name for the environment.</p>\n@param name Any replacement name for the environment.*/",
+          "setterDocumentation" : "/**<p>A replacement name for the environment.</p>\n@param name A replacement name for the environment.*/",
           "setterMethodName" : "setName",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -8934,12 +8934,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Any replacement name for the environment.</p>\n@param name Any replacement name for the environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A replacement name for the environment.</p>\n@param name A replacement name for the environment.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "name",
             "variableType" : "String",
-            "documentation" : "<p>Any replacement name for the environment.</p>",
+            "documentation" : "<p>A replacement name for the environment.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -9006,7 +9006,242 @@
   "clientConfigFactory" : "ClientConfigurationFactory",
   "customAuthorizers" : { },
   "examples" : {
-    "examples" : { },
+    "examples" : {
+      "CreateEnvironmentEC2" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "",
+        "id" : "createenvironmentec2-1516821730547",
+        "input" : {
+          "name" : "my-demo-environment",
+          "description" : "This is my demonstration environment.",
+          "instanceType" : "t2.micro",
+          "subnetId" : "subnet-1fab8aEX",
+          "automaticStopTimeMinutes" : 60,
+          "ownerArn" : "arn:aws:iam::123456789012:user/MyDemoUser"
+        },
+        "output" : {
+          "environmentId" : "8d9967e2f0624182b74e7690ad69ebEX"
+        },
+        "title" : "CreateEnvironmentEC2"
+      } ],
+      "CreateEnvironmentMembership" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "",
+        "id" : "createenvironmentmembership-1516822583452",
+        "input" : {
+          "environmentId" : "8d9967e2f0624182b74e7690ad69ebEX",
+          "userArn" : "arn:aws:iam::123456789012:user/AnotherDemoUser",
+          "permissions" : "read-write"
+        },
+        "output" : {
+          "membership" : {
+            "permissions" : "read-write",
+            "userId" : "AIDAJ3BA6O2FMJWCWXHEX",
+            "userArn" : "arn:aws:iam::123456789012:user/AnotherDemoUser",
+            "environmentId" : "8d9967e2f0624182b74e7690ad69ebEX"
+          }
+        },
+        "title" : "CreateEnvironmentMembership"
+      } ],
+      "DeleteEnvironment" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "",
+        "id" : "deleteenvironment-1516822903149",
+        "input" : {
+          "environmentId" : "8d9967e2f0624182b74e7690ad69ebEX"
+        },
+        "output" : { },
+        "title" : "DeleteEnvironment"
+      } ],
+      "DeleteEnvironmentMembership" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "",
+        "id" : "deleteenvironmentmembership-1516822975655",
+        "input" : {
+          "environmentId" : "8d9967e2f0624182b74e7690ad69ebEX",
+          "userArn" : "arn:aws:iam::123456789012:user/AnotherDemoUser"
+        },
+        "output" : { },
+        "title" : "DeleteEnvironmentMembership"
+      } ],
+      "DescribeEnvironmentMemberships" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example gets information about all of the environment members for the specified AWS Cloud9 development environment.",
+        "id" : "describeenvironmentmemberships1-1516823070453",
+        "input" : {
+          "environmentId" : "8d9967e2f0624182b74e7690ad69ebEX"
+        },
+        "output" : {
+          "memberships" : [ {
+            "permissions" : "read-write",
+            "userId" : "AIDAJ3BA6O2FMJWCWXHEX",
+            "userArn" : "arn:aws:iam::123456789012:user/AnotherDemoUser",
+            "environmentId" : "8d9967e2f0624182b74e7690ad69ebEX"
+          }, {
+            "permissions" : "owner",
+            "userId" : "AIDAJNUEDQAQWFELJDLEX",
+            "userArn" : "arn:aws:iam::123456789012:user/MyDemoUser",
+            "environmentId" : "8d9967e2f0624182b74e7690ad69ebEX"
+          } ]
+        },
+        "title" : "DescribeEnvironmentMemberships1"
+      }, {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example gets information about the owner of the specified AWS Cloud9 development environment.",
+        "id" : "describeenvironmentmemberships2-1516823191355",
+        "input" : {
+          "environmentId" : "8d9967e2f0624182b74e7690ad69ebEX",
+          "permissions" : [ "owner" ]
+        },
+        "output" : {
+          "memberships" : [ {
+            "permissions" : "owner",
+            "userId" : "AIDAJNUEDQAQWFELJDLEX",
+            "userArn" : "arn:aws:iam::123456789012:user/MyDemoUser",
+            "environmentId" : "8d9967e2f0624182b74e7690ad69ebEX"
+          } ]
+        },
+        "title" : "DescribeEnvironmentMemberships2"
+      }, {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example gets AWS Cloud9 development environment membership information for the specified user.",
+        "id" : "describeenvironmentmemberships3-1516823268793",
+        "input" : {
+          "userArn" : "arn:aws:iam::123456789012:user/MyDemoUser"
+        },
+        "output" : {
+          "memberships" : [ {
+            "permissions" : "owner",
+            "userId" : "AIDAJNUEDQAQWFELJDLEX",
+            "userArn" : "arn:aws:iam::123456789012:user/MyDemoUser",
+            "environmentId" : "10a75714bd494714929e7f5ec4125aEX",
+            "lastAccess" : "2018-01-19T11:06:13Z"
+          }, {
+            "permissions" : "owner",
+            "userId" : "AIDAJNUEDQAQWFELJDLEX",
+            "userArn" : "arn:aws:iam::123456789012:user/MyDemoUser",
+            "environmentId" : "12bfc3cd537f41cb9776f8af5525c9EX",
+            "lastAccess" : "2018-01-19T11:39:19Z"
+          } ]
+        },
+        "title" : "DescribeEnvironmentMemberships3"
+      } ],
+      "DescribeEnvironmentStatus" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "",
+        "id" : "describeenvironmentstatus-1516823462133",
+        "input" : {
+          "environmentId" : "8d9967e2f0624182b74e7690ad69ebEX"
+        },
+        "output" : {
+          "status" : "ready",
+          "message" : "Environment is ready to use"
+        },
+        "title" : "DescribeEnvironmentStatus"
+      } ],
+      "DescribeEnvironments" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "",
+        "id" : "describeenvironments-1516823568291",
+        "input" : {
+          "environmentIds" : [ "8d9967e2f0624182b74e7690ad69ebEX", "349c86d4579e4e7298d500ff57a6b2EX" ]
+        },
+        "output" : {
+          "environments" : [ {
+            "id" : "8d9967e2f0624182b74e7690ad69ebEX",
+            "name" : "my-demo-environment",
+            "description" : "This is my demonstration environment.",
+            "type" : "ec2",
+            "arn" : "arn:aws:cloud9:us-east-2:123456789012:environment:8d9967e2f0624182b74e7690ad69ebEX",
+            "ownerArn" : "arn:aws:iam::123456789012:user/MyDemoUser"
+          }, {
+            "id" : "349c86d4579e4e7298d500ff57a6b2EX",
+            "name" : "another-demo-environment",
+            "type" : "ssh",
+            "arn" : "arn:aws:cloud9:us-east-2:123456789012:environment:349c86d4579e4e7298d500ff57a6b2EX",
+            "ownerArn" : "arn:aws:sts::123456789012:assumed-role/AnotherDemoUser/AnotherDemoUser"
+          } ]
+        },
+        "title" : "DescribeEnvironments"
+      } ],
+      "ListEnvironments" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "",
+        "id" : "listenvironments-1516823687205",
+        "input" : { },
+        "output" : {
+          "environmentIds" : [ "349c86d4579e4e7298d500ff57a6b2EX", "45a3da47af0840f2b0c0824f5ee232EX" ]
+        },
+        "title" : "ListEnvironments"
+      } ],
+      "UpdateEnvironment" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "",
+        "id" : "updateenvironment-1516823781910",
+        "input" : {
+          "environmentId" : "8d9967e2f0624182b74e7690ad69ebEX",
+          "name" : "my-changed-demo-environment",
+          "description" : "This is my changed demonstration environment."
+        },
+        "output" : { },
+        "title" : "UpdateEnvironment"
+      } ],
+      "UpdateEnvironmentMembership" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "",
+        "id" : "updateenvironmentmembership-1516823876645",
+        "input" : {
+          "environmentId" : "8d9967e2f0624182b74e7690ad69ebEX",
+          "userArn" : "arn:aws:iam::123456789012:user/AnotherDemoUser",
+          "permissions" : "read-only"
+        },
+        "output" : {
+          "membership" : {
+            "permissions" : "read-only",
+            "userId" : "AIDAJ3BA6O2FMJWCWXHEX",
+            "userArn" : "arn:aws:iam::123456789012:user/AnotherDemoUser",
+            "environmentId" : "8d9967e2f0624182b74e7690ad69eb31"
+          }
+        },
+        "title" : "UpdateEnvironmentMembership"
+      } ]
+    },
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,

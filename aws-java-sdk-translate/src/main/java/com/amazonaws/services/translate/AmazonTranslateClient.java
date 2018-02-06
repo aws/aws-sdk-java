@@ -201,6 +201,7 @@ public class AmazonTranslateClient extends AmazonWebServiceClient implements Ama
                 request = new TranslateTextRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(translateTextRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
