@@ -93,7 +93,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
     private String statusMessage;
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      */
     private java.util.Date createdTime;
@@ -656,11 +656,11 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      * 
      * @param createdTime
-     *        The UTC timestamp of the creation time.
+     *        The UTC time stamp of the creation time.
      */
 
     public void setCreatedTime(java.util.Date createdTime) {
@@ -669,10 +669,10 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      * 
-     * @return The UTC timestamp of the creation time.
+     * @return The UTC time stamp of the creation time.
      */
 
     public java.util.Date getCreatedTime() {
@@ -681,11 +681,11 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      * 
      * @param createdTime
-     *        The UTC timestamp of the creation time.
+     *        The UTC time stamp of the creation time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

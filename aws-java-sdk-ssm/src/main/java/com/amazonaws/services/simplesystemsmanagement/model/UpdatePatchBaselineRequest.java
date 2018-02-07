@@ -63,6 +63,13 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
     private String approvedPatchesComplianceLevel;
     /**
      * <p>
+     * Indicates whether the list of approved patches includes non-security updates that should be applied to the
+     * instances. The default value is 'false'. Applies to Linux instances only.
+     * </p>
+     */
+    private Boolean approvedPatchesEnableNonSecurity;
+    /**
+     * <p>
      * A list of explicitly rejected patches for the baseline.
      * </p>
      */
@@ -73,6 +80,20 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * Information about the patches to use to update the instances, including target operating systems and source
+     * repositories. Applies to Linux instances only.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<PatchSource> sources;
+    /**
+     * <p>
+     * If True, then all fields that are required by the CreatePatchBaseline action are also required for this API
+     * request. Optional fields that are not specified are set to null.
+     * </p>
+     */
+    private Boolean replace;
 
     /**
      * <p>
@@ -382,6 +403,66 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * Indicates whether the list of approved patches includes non-security updates that should be applied to the
+     * instances. The default value is 'false'. Applies to Linux instances only.
+     * </p>
+     * 
+     * @param approvedPatchesEnableNonSecurity
+     *        Indicates whether the list of approved patches includes non-security updates that should be applied to the
+     *        instances. The default value is 'false'. Applies to Linux instances only.
+     */
+
+    public void setApprovedPatchesEnableNonSecurity(Boolean approvedPatchesEnableNonSecurity) {
+        this.approvedPatchesEnableNonSecurity = approvedPatchesEnableNonSecurity;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the list of approved patches includes non-security updates that should be applied to the
+     * instances. The default value is 'false'. Applies to Linux instances only.
+     * </p>
+     * 
+     * @return Indicates whether the list of approved patches includes non-security updates that should be applied to
+     *         the instances. The default value is 'false'. Applies to Linux instances only.
+     */
+
+    public Boolean getApprovedPatchesEnableNonSecurity() {
+        return this.approvedPatchesEnableNonSecurity;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the list of approved patches includes non-security updates that should be applied to the
+     * instances. The default value is 'false'. Applies to Linux instances only.
+     * </p>
+     * 
+     * @param approvedPatchesEnableNonSecurity
+     *        Indicates whether the list of approved patches includes non-security updates that should be applied to the
+     *        instances. The default value is 'false'. Applies to Linux instances only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdatePatchBaselineRequest withApprovedPatchesEnableNonSecurity(Boolean approvedPatchesEnableNonSecurity) {
+        setApprovedPatchesEnableNonSecurity(approvedPatchesEnableNonSecurity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the list of approved patches includes non-security updates that should be applied to the
+     * instances. The default value is 'false'. Applies to Linux instances only.
+     * </p>
+     * 
+     * @return Indicates whether the list of approved patches includes non-security updates that should be applied to
+     *         the instances. The default value is 'false'. Applies to Linux instances only.
+     */
+
+    public Boolean isApprovedPatchesEnableNonSecurity() {
+        return this.approvedPatchesEnableNonSecurity;
+    }
+
+    /**
+     * <p>
      * A list of explicitly rejected patches for the baseline.
      * </p>
      * 
@@ -494,6 +575,147 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Information about the patches to use to update the instances, including target operating systems and source
+     * repositories. Applies to Linux instances only.
+     * </p>
+     * 
+     * @return Information about the patches to use to update the instances, including target operating systems and
+     *         source repositories. Applies to Linux instances only.
+     */
+
+    public java.util.List<PatchSource> getSources() {
+        if (sources == null) {
+            sources = new com.amazonaws.internal.SdkInternalList<PatchSource>();
+        }
+        return sources;
+    }
+
+    /**
+     * <p>
+     * Information about the patches to use to update the instances, including target operating systems and source
+     * repositories. Applies to Linux instances only.
+     * </p>
+     * 
+     * @param sources
+     *        Information about the patches to use to update the instances, including target operating systems and
+     *        source repositories. Applies to Linux instances only.
+     */
+
+    public void setSources(java.util.Collection<PatchSource> sources) {
+        if (sources == null) {
+            this.sources = null;
+            return;
+        }
+
+        this.sources = new com.amazonaws.internal.SdkInternalList<PatchSource>(sources);
+    }
+
+    /**
+     * <p>
+     * Information about the patches to use to update the instances, including target operating systems and source
+     * repositories. Applies to Linux instances only.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSources(java.util.Collection)} or {@link #withSources(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param sources
+     *        Information about the patches to use to update the instances, including target operating systems and
+     *        source repositories. Applies to Linux instances only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdatePatchBaselineRequest withSources(PatchSource... sources) {
+        if (this.sources == null) {
+            setSources(new com.amazonaws.internal.SdkInternalList<PatchSource>(sources.length));
+        }
+        for (PatchSource ele : sources) {
+            this.sources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the patches to use to update the instances, including target operating systems and source
+     * repositories. Applies to Linux instances only.
+     * </p>
+     * 
+     * @param sources
+     *        Information about the patches to use to update the instances, including target operating systems and
+     *        source repositories. Applies to Linux instances only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdatePatchBaselineRequest withSources(java.util.Collection<PatchSource> sources) {
+        setSources(sources);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If True, then all fields that are required by the CreatePatchBaseline action are also required for this API
+     * request. Optional fields that are not specified are set to null.
+     * </p>
+     * 
+     * @param replace
+     *        If True, then all fields that are required by the CreatePatchBaseline action are also required for this
+     *        API request. Optional fields that are not specified are set to null.
+     */
+
+    public void setReplace(Boolean replace) {
+        this.replace = replace;
+    }
+
+    /**
+     * <p>
+     * If True, then all fields that are required by the CreatePatchBaseline action are also required for this API
+     * request. Optional fields that are not specified are set to null.
+     * </p>
+     * 
+     * @return If True, then all fields that are required by the CreatePatchBaseline action are also required for this
+     *         API request. Optional fields that are not specified are set to null.
+     */
+
+    public Boolean getReplace() {
+        return this.replace;
+    }
+
+    /**
+     * <p>
+     * If True, then all fields that are required by the CreatePatchBaseline action are also required for this API
+     * request. Optional fields that are not specified are set to null.
+     * </p>
+     * 
+     * @param replace
+     *        If True, then all fields that are required by the CreatePatchBaseline action are also required for this
+     *        API request. Optional fields that are not specified are set to null.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdatePatchBaselineRequest withReplace(Boolean replace) {
+        setReplace(replace);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If True, then all fields that are required by the CreatePatchBaseline action are also required for this API
+     * request. Optional fields that are not specified are set to null.
+     * </p>
+     * 
+     * @return If True, then all fields that are required by the CreatePatchBaseline action are also required for this
+     *         API request. Optional fields that are not specified are set to null.
+     */
+
+    public Boolean isReplace() {
+        return this.replace;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -516,10 +738,16 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
             sb.append("ApprovedPatches: ").append(getApprovedPatches()).append(",");
         if (getApprovedPatchesComplianceLevel() != null)
             sb.append("ApprovedPatchesComplianceLevel: ").append(getApprovedPatchesComplianceLevel()).append(",");
+        if (getApprovedPatchesEnableNonSecurity() != null)
+            sb.append("ApprovedPatchesEnableNonSecurity: ").append(getApprovedPatchesEnableNonSecurity()).append(",");
         if (getRejectedPatches() != null)
             sb.append("RejectedPatches: ").append(getRejectedPatches()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getSources() != null)
+            sb.append("Sources: ").append(getSources()).append(",");
+        if (getReplace() != null)
+            sb.append("Replace: ").append(getReplace());
         sb.append("}");
         return sb.toString();
     }
@@ -559,6 +787,11 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
         if (other.getApprovedPatchesComplianceLevel() != null
                 && other.getApprovedPatchesComplianceLevel().equals(this.getApprovedPatchesComplianceLevel()) == false)
             return false;
+        if (other.getApprovedPatchesEnableNonSecurity() == null ^ this.getApprovedPatchesEnableNonSecurity() == null)
+            return false;
+        if (other.getApprovedPatchesEnableNonSecurity() != null
+                && other.getApprovedPatchesEnableNonSecurity().equals(this.getApprovedPatchesEnableNonSecurity()) == false)
+            return false;
         if (other.getRejectedPatches() == null ^ this.getRejectedPatches() == null)
             return false;
         if (other.getRejectedPatches() != null && other.getRejectedPatches().equals(this.getRejectedPatches()) == false)
@@ -566,6 +799,14 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getSources() == null ^ this.getSources() == null)
+            return false;
+        if (other.getSources() != null && other.getSources().equals(this.getSources()) == false)
+            return false;
+        if (other.getReplace() == null ^ this.getReplace() == null)
+            return false;
+        if (other.getReplace() != null && other.getReplace().equals(this.getReplace()) == false)
             return false;
         return true;
     }
@@ -581,8 +822,11 @@ public class UpdatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getApprovalRules() == null) ? 0 : getApprovalRules().hashCode());
         hashCode = prime * hashCode + ((getApprovedPatches() == null) ? 0 : getApprovedPatches().hashCode());
         hashCode = prime * hashCode + ((getApprovedPatchesComplianceLevel() == null) ? 0 : getApprovedPatchesComplianceLevel().hashCode());
+        hashCode = prime * hashCode + ((getApprovedPatchesEnableNonSecurity() == null) ? 0 : getApprovedPatchesEnableNonSecurity().hashCode());
         hashCode = prime * hashCode + ((getRejectedPatches() == null) ? 0 : getRejectedPatches().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getSources() == null) ? 0 : getSources().hashCode());
+        hashCode = prime * hashCode + ((getReplace() == null) ? 0 : getReplace().hashCode());
         return hashCode;
     }
 

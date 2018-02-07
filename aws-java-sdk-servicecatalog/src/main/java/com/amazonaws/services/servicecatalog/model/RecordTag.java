@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A tag associated with the record, stored as a key-value pair.
+ * Information about a tag, which is a key-value pair.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/RecordTag" target="_top">AWS API

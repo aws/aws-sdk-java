@@ -30,13 +30,13 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID that Amazon Route 53 assigned to the service when you created it.
+     * The ID that Route 53 assigned to the service when you created it.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that Amazon Route 53 assigns to the service when you create it.
+     * The Amazon Resource Name (ARN) that Route 53 assigns to the service when you create it.
      * </p>
      */
     private String arn;
@@ -62,11 +62,11 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID that Amazon Route 53 assigned to the service when you created it.
+     * The ID that Route 53 assigned to the service when you created it.
      * </p>
      * 
      * @param id
-     *        The ID that Amazon Route 53 assigned to the service when you created it.
+     *        The ID that Route 53 assigned to the service when you created it.
      */
 
     public void setId(String id) {
@@ -75,10 +75,10 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID that Amazon Route 53 assigned to the service when you created it.
+     * The ID that Route 53 assigned to the service when you created it.
      * </p>
      * 
-     * @return The ID that Amazon Route 53 assigned to the service when you created it.
+     * @return The ID that Route 53 assigned to the service when you created it.
      */
 
     public String getId() {
@@ -87,11 +87,11 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID that Amazon Route 53 assigned to the service when you created it.
+     * The ID that Route 53 assigned to the service when you created it.
      * </p>
      * 
      * @param id
-     *        The ID that Amazon Route 53 assigned to the service when you created it.
+     *        The ID that Route 53 assigned to the service when you created it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,11 +102,11 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that Amazon Route 53 assigns to the service when you create it.
+     * The Amazon Resource Name (ARN) that Route 53 assigns to the service when you create it.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) that Amazon Route 53 assigns to the service when you create it.
+     *        The Amazon Resource Name (ARN) that Route 53 assigns to the service when you create it.
      */
 
     public void setArn(String arn) {
@@ -115,10 +115,10 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that Amazon Route 53 assigns to the service when you create it.
+     * The Amazon Resource Name (ARN) that Route 53 assigns to the service when you create it.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that Amazon Route 53 assigns to the service when you create it.
+     * @return The Amazon Resource Name (ARN) that Route 53 assigns to the service when you create it.
      */
 
     public String getArn() {
@@ -127,11 +127,11 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that Amazon Route 53 assigns to the service when you create it.
+     * The Amazon Resource Name (ARN) that Route 53 assigns to the service when you create it.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) that Amazon Route 53 assigns to the service when you create it.
+     *        The Amazon Resource Name (ARN) that Route 53 assigns to the service when you create it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

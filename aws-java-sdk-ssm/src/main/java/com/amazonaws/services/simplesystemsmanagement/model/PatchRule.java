@@ -48,6 +48,13 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Integer approveAfterDays;
+    /**
+     * <p>
+     * For instances identified by the approval rule filters, enables a patch baseline to apply non-security updates
+     * available in the specified repository. The default value is 'false'. Applies to Linux instances only.
+     * </p>
+     */
+    private Boolean enableNonSecurity;
 
     /**
      * <p>
@@ -219,6 +226,70 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * For instances identified by the approval rule filters, enables a patch baseline to apply non-security updates
+     * available in the specified repository. The default value is 'false'. Applies to Linux instances only.
+     * </p>
+     * 
+     * @param enableNonSecurity
+     *        For instances identified by the approval rule filters, enables a patch baseline to apply non-security
+     *        updates available in the specified repository. The default value is 'false'. Applies to Linux instances
+     *        only.
+     */
+
+    public void setEnableNonSecurity(Boolean enableNonSecurity) {
+        this.enableNonSecurity = enableNonSecurity;
+    }
+
+    /**
+     * <p>
+     * For instances identified by the approval rule filters, enables a patch baseline to apply non-security updates
+     * available in the specified repository. The default value is 'false'. Applies to Linux instances only.
+     * </p>
+     * 
+     * @return For instances identified by the approval rule filters, enables a patch baseline to apply non-security
+     *         updates available in the specified repository. The default value is 'false'. Applies to Linux instances
+     *         only.
+     */
+
+    public Boolean getEnableNonSecurity() {
+        return this.enableNonSecurity;
+    }
+
+    /**
+     * <p>
+     * For instances identified by the approval rule filters, enables a patch baseline to apply non-security updates
+     * available in the specified repository. The default value is 'false'. Applies to Linux instances only.
+     * </p>
+     * 
+     * @param enableNonSecurity
+     *        For instances identified by the approval rule filters, enables a patch baseline to apply non-security
+     *        updates available in the specified repository. The default value is 'false'. Applies to Linux instances
+     *        only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PatchRule withEnableNonSecurity(Boolean enableNonSecurity) {
+        setEnableNonSecurity(enableNonSecurity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * For instances identified by the approval rule filters, enables a patch baseline to apply non-security updates
+     * available in the specified repository. The default value is 'false'. Applies to Linux instances only.
+     * </p>
+     * 
+     * @return For instances identified by the approval rule filters, enables a patch baseline to apply non-security
+     *         updates available in the specified repository. The default value is 'false'. Applies to Linux instances
+     *         only.
+     */
+
+    public Boolean isEnableNonSecurity() {
+        return this.enableNonSecurity;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -234,7 +305,9 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
         if (getComplianceLevel() != null)
             sb.append("ComplianceLevel: ").append(getComplianceLevel()).append(",");
         if (getApproveAfterDays() != null)
-            sb.append("ApproveAfterDays: ").append(getApproveAfterDays());
+            sb.append("ApproveAfterDays: ").append(getApproveAfterDays()).append(",");
+        if (getEnableNonSecurity() != null)
+            sb.append("EnableNonSecurity: ").append(getEnableNonSecurity());
         sb.append("}");
         return sb.toString();
     }
@@ -261,6 +334,10 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getApproveAfterDays() != null && other.getApproveAfterDays().equals(this.getApproveAfterDays()) == false)
             return false;
+        if (other.getEnableNonSecurity() == null ^ this.getEnableNonSecurity() == null)
+            return false;
+        if (other.getEnableNonSecurity() != null && other.getEnableNonSecurity().equals(this.getEnableNonSecurity()) == false)
+            return false;
         return true;
     }
 
@@ -272,6 +349,7 @@ public class PatchRule implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPatchFilterGroup() == null) ? 0 : getPatchFilterGroup().hashCode());
         hashCode = prime * hashCode + ((getComplianceLevel() == null) ? 0 : getComplianceLevel().hashCode());
         hashCode = prime * hashCode + ((getApproveAfterDays() == null) ? 0 : getApproveAfterDays().hashCode());
+        hashCode = prime * hashCode + ((getEnableNonSecurity() == null) ? 0 : getEnableNonSecurity().hashCode());
         return hashCode;
     }
 

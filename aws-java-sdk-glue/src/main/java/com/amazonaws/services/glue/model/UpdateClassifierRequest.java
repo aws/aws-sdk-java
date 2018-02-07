@@ -37,6 +37,12 @@ public class UpdateClassifierRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private UpdateXMLClassifierRequest xMLClassifier;
+    /**
+     * <p>
+     * A <code>JsonClassifier</code> object with updated fields.
+     * </p>
+     */
+    private UpdateJsonClassifierRequest jsonClassifier;
 
     /**
      * <p>
@@ -119,6 +125,46 @@ public class UpdateClassifierRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * A <code>JsonClassifier</code> object with updated fields.
+     * </p>
+     * 
+     * @param jsonClassifier
+     *        A <code>JsonClassifier</code> object with updated fields.
+     */
+
+    public void setJsonClassifier(UpdateJsonClassifierRequest jsonClassifier) {
+        this.jsonClassifier = jsonClassifier;
+    }
+
+    /**
+     * <p>
+     * A <code>JsonClassifier</code> object with updated fields.
+     * </p>
+     * 
+     * @return A <code>JsonClassifier</code> object with updated fields.
+     */
+
+    public UpdateJsonClassifierRequest getJsonClassifier() {
+        return this.jsonClassifier;
+    }
+
+    /**
+     * <p>
+     * A <code>JsonClassifier</code> object with updated fields.
+     * </p>
+     * 
+     * @param jsonClassifier
+     *        A <code>JsonClassifier</code> object with updated fields.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateClassifierRequest withJsonClassifier(UpdateJsonClassifierRequest jsonClassifier) {
+        setJsonClassifier(jsonClassifier);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -132,7 +178,9 @@ public class UpdateClassifierRequest extends com.amazonaws.AmazonWebServiceReque
         if (getGrokClassifier() != null)
             sb.append("GrokClassifier: ").append(getGrokClassifier()).append(",");
         if (getXMLClassifier() != null)
-            sb.append("XMLClassifier: ").append(getXMLClassifier());
+            sb.append("XMLClassifier: ").append(getXMLClassifier()).append(",");
+        if (getJsonClassifier() != null)
+            sb.append("JsonClassifier: ").append(getJsonClassifier());
         sb.append("}");
         return sb.toString();
     }
@@ -155,6 +203,10 @@ public class UpdateClassifierRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getXMLClassifier() != null && other.getXMLClassifier().equals(this.getXMLClassifier()) == false)
             return false;
+        if (other.getJsonClassifier() == null ^ this.getJsonClassifier() == null)
+            return false;
+        if (other.getJsonClassifier() != null && other.getJsonClassifier().equals(this.getJsonClassifier()) == false)
+            return false;
         return true;
     }
 
@@ -165,6 +217,7 @@ public class UpdateClassifierRequest extends com.amazonaws.AmazonWebServiceReque
 
         hashCode = prime * hashCode + ((getGrokClassifier() == null) ? 0 : getGrokClassifier().hashCode());
         hashCode = prime * hashCode + ((getXMLClassifier() == null) ? 0 : getXMLClassifier().hashCode());
+        hashCode = prime * hashCode + ((getJsonClassifier() == null) ? 0 : getJsonClassifier().hashCode());
         return hashCode;
     }
 

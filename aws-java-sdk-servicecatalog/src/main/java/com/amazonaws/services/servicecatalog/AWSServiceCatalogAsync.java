@@ -346,6 +346,59 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
+     * Creates a plan. A plan includes the list of resources that will be created (when provisioning a new product) or
+     * modified (when updating a provisioned product) when the plan is executed.
+     * </p>
+     * <p>
+     * You can create one plan per provisioned product. To create a plan for an existing provisioned product, it's
+     * status must be AVAILBLE or TAINTED.
+     * </p>
+     * <p>
+     * To view the resource changes in the change set, use <a>DescribeProvisionedProductPlan</a>. To create or modify
+     * the provisioned product, use <a>ExecuteProvisionedProductPlan</a>.
+     * </p>
+     * 
+     * @param createProvisionedProductPlanRequest
+     * @return A Java Future containing the result of the CreateProvisionedProductPlan operation returned by the
+     *         service.
+     * @sample AWSServiceCatalogAsync.CreateProvisionedProductPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisionedProductPlan"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateProvisionedProductPlanResult> createProvisionedProductPlanAsync(
+            CreateProvisionedProductPlanRequest createProvisionedProductPlanRequest);
+
+    /**
+     * <p>
+     * Creates a plan. A plan includes the list of resources that will be created (when provisioning a new product) or
+     * modified (when updating a provisioned product) when the plan is executed.
+     * </p>
+     * <p>
+     * You can create one plan per provisioned product. To create a plan for an existing provisioned product, it's
+     * status must be AVAILBLE or TAINTED.
+     * </p>
+     * <p>
+     * To view the resource changes in the change set, use <a>DescribeProvisionedProductPlan</a>. To create or modify
+     * the provisioned product, use <a>ExecuteProvisionedProductPlan</a>.
+     * </p>
+     * 
+     * @param createProvisionedProductPlanRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateProvisionedProductPlan operation returned by the
+     *         service.
+     * @sample AWSServiceCatalogAsyncHandler.CreateProvisionedProductPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreateProvisionedProductPlan"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateProvisionedProductPlanResult> createProvisionedProductPlanAsync(
+            CreateProvisionedProductPlanRequest createProvisionedProductPlanRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateProvisionedProductPlanRequest, CreateProvisionedProductPlanResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a provisioning artifact (also known as a version) for the specified product.
      * </p>
      * <p>
@@ -551,6 +604,41 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      */
     java.util.concurrent.Future<DeleteProductResult> deleteProductAsync(DeleteProductRequest deleteProductRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteProductRequest, DeleteProductResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified plan.
+     * </p>
+     * 
+     * @param deleteProvisionedProductPlanRequest
+     * @return A Java Future containing the result of the DeleteProvisionedProductPlan operation returned by the
+     *         service.
+     * @sample AWSServiceCatalogAsync.DeleteProvisionedProductPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProvisionedProductPlan"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteProvisionedProductPlanResult> deleteProvisionedProductPlanAsync(
+            DeleteProvisionedProductPlanRequest deleteProvisionedProductPlanRequest);
+
+    /**
+     * <p>
+     * Deletes the specified plan.
+     * </p>
+     * 
+     * @param deleteProvisionedProductPlanRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteProvisionedProductPlan operation returned by the
+     *         service.
+     * @sample AWSServiceCatalogAsyncHandler.DeleteProvisionedProductPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteProvisionedProductPlan"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteProvisionedProductPlanResult> deleteProvisionedProductPlanAsync(
+            DeleteProvisionedProductPlanRequest deleteProvisionedProductPlanRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteProvisionedProductPlanRequest, DeleteProvisionedProductPlanResult> asyncHandler);
 
     /**
      * <p>
@@ -816,6 +904,41 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
+     * Gets information about the resource changes for the specified plan.
+     * </p>
+     * 
+     * @param describeProvisionedProductPlanRequest
+     * @return A Java Future containing the result of the DescribeProvisionedProductPlan operation returned by the
+     *         service.
+     * @sample AWSServiceCatalogAsync.DescribeProvisionedProductPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisionedProductPlan"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeProvisionedProductPlanResult> describeProvisionedProductPlanAsync(
+            DescribeProvisionedProductPlanRequest describeProvisionedProductPlanRequest);
+
+    /**
+     * <p>
+     * Gets information about the resource changes for the specified plan.
+     * </p>
+     * 
+     * @param describeProvisionedProductPlanRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeProvisionedProductPlan operation returned by the
+     *         service.
+     * @sample AWSServiceCatalogAsyncHandler.DescribeProvisionedProductPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisionedProductPlan"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeProvisionedProductPlanResult> describeProvisionedProductPlanAsync(
+            DescribeProvisionedProductPlanRequest describeProvisionedProductPlanRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeProvisionedProductPlanRequest, DescribeProvisionedProductPlanResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about the specified provisioning artifact (also known as a version) for the specified product.
      * </p>
      * 
@@ -857,8 +980,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * <p>
      * If the output contains a TagOption key with an empty list of values, there is a TagOption conflict for that key.
      * The end user cannot take action to fix the conflict, and launch is not blocked. In subsequent calls to
-     * <a>ProvisionProduct</a>, do not include conflicted TagOption keys as tags, or this will cause the error
-     * "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>" and tag the provisioned
+     * <a>ProvisionProduct</a>, do not include conflicted TagOption keys as tags, or this causes the error
+     * "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>". Tag the provisioned
      * product with the value <code>sc-tagoption-conflict-portfolioId-productId</code>.
      * </p>
      * 
@@ -880,8 +1003,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * <p>
      * If the output contains a TagOption key with an empty list of values, there is a TagOption conflict for that key.
      * The end user cannot take action to fix the conflict, and launch is not blocked. In subsequent calls to
-     * <a>ProvisionProduct</a>, do not include conflicted TagOption keys as tags, or this will cause the error
-     * "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>" and tag the provisioned
+     * <a>ProvisionProduct</a>, do not include conflicted TagOption keys as tags, or this causes the error
+     * "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>". Tag the provisioned
      * product with the value <code>sc-tagoption-conflict-portfolioId-productId</code>.
      * </p>
      * 
@@ -1076,6 +1199,41 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     java.util.concurrent.Future<DisassociateTagOptionFromResourceResult> disassociateTagOptionFromResourceAsync(
             DisassociateTagOptionFromResourceRequest disassociateTagOptionFromResourceRequest,
             com.amazonaws.handlers.AsyncHandler<DisassociateTagOptionFromResourceRequest, DisassociateTagOptionFromResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provisions or modifies a product based on the resource changes for the specified plan.
+     * </p>
+     * 
+     * @param executeProvisionedProductPlanRequest
+     * @return A Java Future containing the result of the ExecuteProvisionedProductPlan operation returned by the
+     *         service.
+     * @sample AWSServiceCatalogAsync.ExecuteProvisionedProductPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ExecuteProvisionedProductPlan"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ExecuteProvisionedProductPlanResult> executeProvisionedProductPlanAsync(
+            ExecuteProvisionedProductPlanRequest executeProvisionedProductPlanRequest);
+
+    /**
+     * <p>
+     * Provisions or modifies a product based on the resource changes for the specified plan.
+     * </p>
+     * 
+     * @param executeProvisionedProductPlanRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ExecuteProvisionedProductPlan operation returned by the
+     *         service.
+     * @sample AWSServiceCatalogAsyncHandler.ExecuteProvisionedProductPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ExecuteProvisionedProductPlan"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ExecuteProvisionedProductPlanResult> executeProvisionedProductPlanAsync(
+            ExecuteProvisionedProductPlanRequest executeProvisionedProductPlanRequest,
+            com.amazonaws.handlers.AsyncHandler<ExecuteProvisionedProductPlanRequest, ExecuteProvisionedProductPlanResult> asyncHandler);
 
     /**
      * <p>
@@ -1304,6 +1462,39 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
+     * Lists the plans for the specified provisioned product or all plans the user has access to.
+     * </p>
+     * 
+     * @param listProvisionedProductPlansRequest
+     * @return A Java Future containing the result of the ListProvisionedProductPlans operation returned by the service.
+     * @sample AWSServiceCatalogAsync.ListProvisionedProductPlans
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisionedProductPlans"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListProvisionedProductPlansResult> listProvisionedProductPlansAsync(
+            ListProvisionedProductPlansRequest listProvisionedProductPlansRequest);
+
+    /**
+     * <p>
+     * Lists the plans for the specified provisioned product or all plans the user has access to.
+     * </p>
+     * 
+     * @param listProvisionedProductPlansRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListProvisionedProductPlans operation returned by the service.
+     * @sample AWSServiceCatalogAsyncHandler.ListProvisionedProductPlans
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListProvisionedProductPlans"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListProvisionedProductPlansResult> listProvisionedProductPlansAsync(
+            ListProvisionedProductPlansRequest listProvisionedProductPlansRequest,
+            com.amazonaws.handlers.AsyncHandler<ListProvisionedProductPlansRequest, ListProvisionedProductPlansResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists all provisioning artifacts (also known as versions) for the specified product.
      * </p>
      * 
@@ -1441,7 +1632,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * </p>
      * <p>
      * If the request contains a tag key with an empty list of values, there is a tag conflict for that key. Do not
-     * include conflicted keys as tags, or this will cause the error
+     * include conflicted keys as tags, or this causes the error
      * "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>".
      * </p>
      * 
@@ -1464,7 +1655,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * </p>
      * <p>
      * If the request contains a tag key with an empty list of values, there is a tag conflict for that key. Do not
-     * include conflicted keys as tags, or this will cause the error
+     * include conflicted keys as tags, or this causes the error
      * "Parameter validation failed: Missing required parameter in Tags[<i>N</i>]:<i>Value</i>".
      * </p>
      * 
@@ -1516,6 +1707,9 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * <p>
      * Lists the provisioned products that are available (not terminated).
      * </p>
+     * <p>
+     * To use additional filtering, see <a>SearchProvisionedProducts</a>.
+     * </p>
      * 
      * @param scanProvisionedProductsRequest
      * @return A Java Future containing the result of the ScanProvisionedProducts operation returned by the service.
@@ -1528,6 +1722,9 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     /**
      * <p>
      * Lists the provisioned products that are available (not terminated).
+     * </p>
+     * <p>
+     * To use additional filtering, see <a>SearchProvisionedProducts</a>.
      * </p>
      * 
      * @param scanProvisionedProductsRequest
@@ -1604,6 +1801,39 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      */
     java.util.concurrent.Future<SearchProductsAsAdminResult> searchProductsAsAdminAsync(SearchProductsAsAdminRequest searchProductsAsAdminRequest,
             com.amazonaws.handlers.AsyncHandler<SearchProductsAsAdminRequest, SearchProductsAsAdminResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information about the provisioned products that meet the specified criteria.
+     * </p>
+     * 
+     * @param searchProvisionedProductsRequest
+     * @return A Java Future containing the result of the SearchProvisionedProducts operation returned by the service.
+     * @sample AWSServiceCatalogAsync.SearchProvisionedProducts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProvisionedProducts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SearchProvisionedProductsResult> searchProvisionedProductsAsync(
+            SearchProvisionedProductsRequest searchProvisionedProductsRequest);
+
+    /**
+     * <p>
+     * Gets information about the provisioned products that meet the specified criteria.
+     * </p>
+     * 
+     * @param searchProvisionedProductsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SearchProvisionedProducts operation returned by the service.
+     * @sample AWSServiceCatalogAsyncHandler.SearchProvisionedProducts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/SearchProvisionedProducts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SearchProvisionedProductsResult> searchProvisionedProductsAsync(
+            SearchProvisionedProductsRequest searchProvisionedProductsRequest,
+            com.amazonaws.handlers.AsyncHandler<SearchProvisionedProductsRequest, SearchProvisionedProductsResult> asyncHandler);
 
     /**
      * <p>

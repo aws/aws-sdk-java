@@ -45,8 +45,8 @@ public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The maximum number of instances that you want Amazon Route 53 to return in the response to a
-     * <code>ListInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Amazon Route 53
-     * returns up to 100 instances.
+     * <code>ListInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Route 53 returns up
+     * to 100 instances.
      * </p>
      */
     private Integer maxResults;
@@ -161,14 +161,14 @@ public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The maximum number of instances that you want Amazon Route 53 to return in the response to a
-     * <code>ListInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Amazon Route 53
-     * returns up to 100 instances.
+     * <code>ListInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Route 53 returns up
+     * to 100 instances.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of instances that you want Amazon Route 53 to return in the response to a
-     *        <code>ListInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Amazon Route
-     *        53 returns up to 100 instances.
+     *        <code>ListInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Route 53
+     *        returns up to 100 instances.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -178,13 +178,13 @@ public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The maximum number of instances that you want Amazon Route 53 to return in the response to a
-     * <code>ListInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Amazon Route 53
-     * returns up to 100 instances.
+     * <code>ListInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Route 53 returns up
+     * to 100 instances.
      * </p>
      * 
      * @return The maximum number of instances that you want Amazon Route 53 to return in the response to a
-     *         <code>ListInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Amazon
-     *         Route 53 returns up to 100 instances.
+     *         <code>ListInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Route 53
+     *         returns up to 100 instances.
      */
 
     public Integer getMaxResults() {
@@ -194,14 +194,14 @@ public class ListInstancesRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The maximum number of instances that you want Amazon Route 53 to return in the response to a
-     * <code>ListInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Amazon Route 53
-     * returns up to 100 instances.
+     * <code>ListInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Route 53 returns up
+     * to 100 instances.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of instances that you want Amazon Route 53 to return in the response to a
-     *        <code>ListInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Amazon Route
-     *        53 returns up to 100 instances.
+     *        <code>ListInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Route 53
+     *        returns up to 100 instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

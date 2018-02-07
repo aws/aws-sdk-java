@@ -29,6 +29,12 @@ public class DescribeProvisionedProductResult extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private ProvisionedProductDetail provisionedProductDetail;
+    /**
+     * <p>
+     * Any CloudWatch dashboards that were created when provisioning the product.
+     * </p>
+     */
+    private java.util.List<CloudWatchDashboard> cloudWatchDashboards;
 
     /**
      * <p>
@@ -71,6 +77,76 @@ public class DescribeProvisionedProductResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * Any CloudWatch dashboards that were created when provisioning the product.
+     * </p>
+     * 
+     * @return Any CloudWatch dashboards that were created when provisioning the product.
+     */
+
+    public java.util.List<CloudWatchDashboard> getCloudWatchDashboards() {
+        return cloudWatchDashboards;
+    }
+
+    /**
+     * <p>
+     * Any CloudWatch dashboards that were created when provisioning the product.
+     * </p>
+     * 
+     * @param cloudWatchDashboards
+     *        Any CloudWatch dashboards that were created when provisioning the product.
+     */
+
+    public void setCloudWatchDashboards(java.util.Collection<CloudWatchDashboard> cloudWatchDashboards) {
+        if (cloudWatchDashboards == null) {
+            this.cloudWatchDashboards = null;
+            return;
+        }
+
+        this.cloudWatchDashboards = new java.util.ArrayList<CloudWatchDashboard>(cloudWatchDashboards);
+    }
+
+    /**
+     * <p>
+     * Any CloudWatch dashboards that were created when provisioning the product.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCloudWatchDashboards(java.util.Collection)} or {@link #withCloudWatchDashboards(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param cloudWatchDashboards
+     *        Any CloudWatch dashboards that were created when provisioning the product.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProvisionedProductResult withCloudWatchDashboards(CloudWatchDashboard... cloudWatchDashboards) {
+        if (this.cloudWatchDashboards == null) {
+            setCloudWatchDashboards(new java.util.ArrayList<CloudWatchDashboard>(cloudWatchDashboards.length));
+        }
+        for (CloudWatchDashboard ele : cloudWatchDashboards) {
+            this.cloudWatchDashboards.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Any CloudWatch dashboards that were created when provisioning the product.
+     * </p>
+     * 
+     * @param cloudWatchDashboards
+     *        Any CloudWatch dashboards that were created when provisioning the product.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProvisionedProductResult withCloudWatchDashboards(java.util.Collection<CloudWatchDashboard> cloudWatchDashboards) {
+        setCloudWatchDashboards(cloudWatchDashboards);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -82,7 +158,9 @@ public class DescribeProvisionedProductResult extends com.amazonaws.AmazonWebSer
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProvisionedProductDetail() != null)
-            sb.append("ProvisionedProductDetail: ").append(getProvisionedProductDetail());
+            sb.append("ProvisionedProductDetail: ").append(getProvisionedProductDetail()).append(",");
+        if (getCloudWatchDashboards() != null)
+            sb.append("CloudWatchDashboards: ").append(getCloudWatchDashboards());
         sb.append("}");
         return sb.toString();
     }
@@ -101,6 +179,10 @@ public class DescribeProvisionedProductResult extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getProvisionedProductDetail() != null && other.getProvisionedProductDetail().equals(this.getProvisionedProductDetail()) == false)
             return false;
+        if (other.getCloudWatchDashboards() == null ^ this.getCloudWatchDashboards() == null)
+            return false;
+        if (other.getCloudWatchDashboards() != null && other.getCloudWatchDashboards().equals(this.getCloudWatchDashboards()) == false)
+            return false;
         return true;
     }
 
@@ -110,6 +192,7 @@ public class DescribeProvisionedProductResult extends com.amazonaws.AmazonWebSer
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getProvisionedProductDetail() == null) ? 0 : getProvisionedProductDetail().hashCode());
+        hashCode = prime * hashCode + ((getCloudWatchDashboards() == null) ? 0 : getCloudWatchDashboards().hashCode());
         return hashCode;
     }
 

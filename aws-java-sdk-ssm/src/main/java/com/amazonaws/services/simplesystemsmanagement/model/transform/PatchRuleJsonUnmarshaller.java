@@ -60,6 +60,10 @@ public class PatchRuleJsonUnmarshaller implements Unmarshaller<PatchRule, JsonUn
                     context.nextToken();
                     patchRule.setApproveAfterDays(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("EnableNonSecurity", targetDepth)) {
+                    context.nextToken();
+                    patchRule.setEnableNonSecurity(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

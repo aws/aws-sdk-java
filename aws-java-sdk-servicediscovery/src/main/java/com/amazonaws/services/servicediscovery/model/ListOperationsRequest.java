@@ -30,17 +30,24 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
      * For the first <code>ListOperations</code> request, omit this value.
      * </p>
      * <p>
-     * If more than <code>MaxResults</code> operations match the specified criteria, you can submit another
-     * <code>ListOperations</code> request to get the next group of results. Specify the value of <code>NextToken</code>
-     * from the previous response in the next request.
+     * If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the
+     * next group of results. Specify the value of <code>NextToken</code> from the previous response in the next
+     * request.
      * </p>
+     * <note>
+     * <p>
+     * Route 53 gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's
+     * possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but
+     * that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.
+     * </p>
+     * </note>
      */
     private String nextToken;
     /**
      * <p>
      * The maximum number of items that you want Amazon Route 53 to return in the response to a
-     * <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, Amazon Route 53
-     * returns up to 100 operations.
+     * <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, Route 53 returns
+     * up to 100 operations.
      * </p>
      */
     private Integer maxResults;
@@ -61,17 +68,32 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
      * For the first <code>ListOperations</code> request, omit this value.
      * </p>
      * <p>
-     * If more than <code>MaxResults</code> operations match the specified criteria, you can submit another
-     * <code>ListOperations</code> request to get the next group of results. Specify the value of <code>NextToken</code>
-     * from the previous response in the next request.
+     * If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the
+     * next group of results. Specify the value of <code>NextToken</code> from the previous response in the next
+     * request.
      * </p>
+     * <note>
+     * <p>
+     * Route 53 gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's
+     * possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but
+     * that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.
+     * </p>
+     * </note>
      * 
      * @param nextToken
      *        For the first <code>ListOperations</code> request, omit this value.</p>
      *        <p>
-     *        If more than <code>MaxResults</code> operations match the specified criteria, you can submit another
-     *        <code>ListOperations</code> request to get the next group of results. Specify the value of
-     *        <code>NextToken</code> from the previous response in the next request.
+     *        If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get
+     *        the next group of results. Specify the value of <code>NextToken</code> from the previous response in the
+     *        next request.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Route 53 gets <code>MaxResults</code> operations and then filters them based on the specified criteria.
+     *        It's possible that no operations in the first <code>MaxResults</code> operations matched the specified
+     *        criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations that match
+     *        the criteria.
+     *        </p>
      */
 
     public void setNextToken(String nextToken) {
@@ -83,16 +105,31 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
      * For the first <code>ListOperations</code> request, omit this value.
      * </p>
      * <p>
-     * If more than <code>MaxResults</code> operations match the specified criteria, you can submit another
-     * <code>ListOperations</code> request to get the next group of results. Specify the value of <code>NextToken</code>
-     * from the previous response in the next request.
+     * If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the
+     * next group of results. Specify the value of <code>NextToken</code> from the previous response in the next
+     * request.
      * </p>
+     * <note>
+     * <p>
+     * Route 53 gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's
+     * possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but
+     * that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.
+     * </p>
+     * </note>
      * 
      * @return For the first <code>ListOperations</code> request, omit this value.</p>
      *         <p>
-     *         If more than <code>MaxResults</code> operations match the specified criteria, you can submit another
-     *         <code>ListOperations</code> request to get the next group of results. Specify the value of
-     *         <code>NextToken</code> from the previous response in the next request.
+     *         If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to
+     *         get the next group of results. Specify the value of <code>NextToken</code> from the previous response in
+     *         the next request.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         Route 53 gets <code>MaxResults</code> operations and then filters them based on the specified criteria.
+     *         It's possible that no operations in the first <code>MaxResults</code> operations matched the specified
+     *         criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations that
+     *         match the criteria.
+     *         </p>
      */
 
     public String getNextToken() {
@@ -104,17 +141,32 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
      * For the first <code>ListOperations</code> request, omit this value.
      * </p>
      * <p>
-     * If more than <code>MaxResults</code> operations match the specified criteria, you can submit another
-     * <code>ListOperations</code> request to get the next group of results. Specify the value of <code>NextToken</code>
-     * from the previous response in the next request.
+     * If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get the
+     * next group of results. Specify the value of <code>NextToken</code> from the previous response in the next
+     * request.
      * </p>
+     * <note>
+     * <p>
+     * Route 53 gets <code>MaxResults</code> operations and then filters them based on the specified criteria. It's
+     * possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but
+     * that subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.
+     * </p>
+     * </note>
      * 
      * @param nextToken
      *        For the first <code>ListOperations</code> request, omit this value.</p>
      *        <p>
-     *        If more than <code>MaxResults</code> operations match the specified criteria, you can submit another
-     *        <code>ListOperations</code> request to get the next group of results. Specify the value of
-     *        <code>NextToken</code> from the previous response in the next request.
+     *        If the response contains <code>NextToken</code>, submit another <code>ListOperations</code> request to get
+     *        the next group of results. Specify the value of <code>NextToken</code> from the previous response in the
+     *        next request.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Route 53 gets <code>MaxResults</code> operations and then filters them based on the specified criteria.
+     *        It's possible that no operations in the first <code>MaxResults</code> operations matched the specified
+     *        criteria but that subsequent groups of <code>MaxResults</code> operations do contain operations that match
+     *        the criteria.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,14 +178,14 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The maximum number of items that you want Amazon Route 53 to return in the response to a
-     * <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, Amazon Route 53
-     * returns up to 100 operations.
+     * <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, Route 53 returns
+     * up to 100 operations.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of items that you want Amazon Route 53 to return in the response to a
-     *        <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, Amazon
-     *        Route 53 returns up to 100 operations.
+     *        <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, Route 53
+     *        returns up to 100 operations.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -143,13 +195,13 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The maximum number of items that you want Amazon Route 53 to return in the response to a
-     * <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, Amazon Route 53
-     * returns up to 100 operations.
+     * <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, Route 53 returns
+     * up to 100 operations.
      * </p>
      * 
      * @return The maximum number of items that you want Amazon Route 53 to return in the response to a
-     *         <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, Amazon
-     *         Route 53 returns up to 100 operations.
+     *         <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, Route 53
+     *         returns up to 100 operations.
      */
 
     public Integer getMaxResults() {
@@ -159,14 +211,14 @@ public class ListOperationsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The maximum number of items that you want Amazon Route 53 to return in the response to a
-     * <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, Amazon Route 53
-     * returns up to 100 operations.
+     * <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, Route 53 returns
+     * up to 100 operations.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of items that you want Amazon Route 53 to return in the response to a
-     *        <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, Amazon
-     *        Route 53 returns up to 100 operations.
+     *        <code>ListOperations</code> request. If you don't specify a value for <code>MaxResults</code>, Route 53
+     *        returns up to 100 operations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

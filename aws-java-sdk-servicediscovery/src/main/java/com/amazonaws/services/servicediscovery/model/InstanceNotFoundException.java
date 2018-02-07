@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * No instance exists with the specified ID.
+ * No instance exists with the specified ID, or the instance was recently registered, and information about the instance
+ * hasn't propagated yet.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

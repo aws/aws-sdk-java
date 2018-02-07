@@ -52,7 +52,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>PENDING</b>: Amazon Route 53 is performing the operation.
+     * <b>PENDING</b>: Route 53 is performing the operation.
      * </p>
      * </li>
      * <li>
@@ -76,20 +76,60 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
     private String errorMessage;
     /**
      * <p>
-     * The code associated with <code>ErrorMessage</code>.
+     * The code associated with <code>ErrorMessage</code>. Values for <code>ErrorCode</code> include the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACCESS_DENIED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CANNOT_CREATE_HOSTED_ZONE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXPIRED_TOKEN</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HOSTED_ZONE_NOT_FOUND</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INTERNAL_FAILURE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INVALID_CHANGE_BATCH</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>THROTTLED_REQUEST</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String errorCode;
     /**
      * <p>
      * The date and time that the request was submitted, in Unix date/time format and Coordinated Universal Time (UTC).
+     * The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value
+     * <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.
      * </p>
      */
     private java.util.Date createDate;
     /**
      * <p>
      * The date and time that the value of <code>Status</code> changed to the current value, in Unix date/time format
-     * and Coordinated Universal Time (UTC).
+     * and Coordinated Universal Time (UTC). The value of <code>UpdateDate</code> is accurate to milliseconds. For
+     * example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.
      * </p>
      */
     private java.util.Date updateDate;
@@ -228,7 +268,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>PENDING</b>: Amazon Route 53 is performing the operation.
+     * <b>PENDING</b>: Route 53 is performing the operation.
      * </p>
      * </li>
      * <li>
@@ -253,7 +293,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>PENDING</b>: Amazon Route 53 is performing the operation.
+     *        <b>PENDING</b>: Route 53 is performing the operation.
      *        </p>
      *        </li>
      *        <li>
@@ -285,7 +325,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>PENDING</b>: Amazon Route 53 is performing the operation.
+     * <b>PENDING</b>: Route 53 is performing the operation.
      * </p>
      * </li>
      * <li>
@@ -309,7 +349,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <b>PENDING</b>: Amazon Route 53 is performing the operation.
+     *         <b>PENDING</b>: Route 53 is performing the operation.
      *         </p>
      *         </li>
      *         <li>
@@ -341,7 +381,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>PENDING</b>: Amazon Route 53 is performing the operation.
+     * <b>PENDING</b>: Route 53 is performing the operation.
      * </p>
      * </li>
      * <li>
@@ -366,7 +406,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>PENDING</b>: Amazon Route 53 is performing the operation.
+     *        <b>PENDING</b>: Route 53 is performing the operation.
      *        </p>
      *        </li>
      *        <li>
@@ -400,7 +440,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>PENDING</b>: Amazon Route 53 is performing the operation.
+     * <b>PENDING</b>: Route 53 is performing the operation.
      * </p>
      * </li>
      * <li>
@@ -425,7 +465,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>PENDING</b>: Amazon Route 53 is performing the operation.
+     *        <b>PENDING</b>: Route 53 is performing the operation.
      *        </p>
      *        </li>
      *        <li>
@@ -489,11 +529,85 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The code associated with <code>ErrorMessage</code>.
+     * The code associated with <code>ErrorMessage</code>. Values for <code>ErrorCode</code> include the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACCESS_DENIED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CANNOT_CREATE_HOSTED_ZONE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXPIRED_TOKEN</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HOSTED_ZONE_NOT_FOUND</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INTERNAL_FAILURE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INVALID_CHANGE_BATCH</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>THROTTLED_REQUEST</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param errorCode
-     *        The code associated with <code>ErrorMessage</code>.
+     *        The code associated with <code>ErrorMessage</code>. Values for <code>ErrorCode</code> include the
+     *        following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ACCESS_DENIED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CANNOT_CREATE_HOSTED_ZONE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EXPIRED_TOKEN</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>HOSTED_ZONE_NOT_FOUND</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INTERNAL_FAILURE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INVALID_CHANGE_BATCH</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>THROTTLED_REQUEST</code>
+     *        </p>
+     *        </li>
      */
 
     public void setErrorCode(String errorCode) {
@@ -502,10 +616,84 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The code associated with <code>ErrorMessage</code>.
+     * The code associated with <code>ErrorMessage</code>. Values for <code>ErrorCode</code> include the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACCESS_DENIED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CANNOT_CREATE_HOSTED_ZONE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXPIRED_TOKEN</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HOSTED_ZONE_NOT_FOUND</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INTERNAL_FAILURE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INVALID_CHANGE_BATCH</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>THROTTLED_REQUEST</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The code associated with <code>ErrorMessage</code>.
+     * @return The code associated with <code>ErrorMessage</code>. Values for <code>ErrorCode</code> include the
+     *         following:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ACCESS_DENIED</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CANNOT_CREATE_HOSTED_ZONE</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>EXPIRED_TOKEN</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>HOSTED_ZONE_NOT_FOUND</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>INTERNAL_FAILURE</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>INVALID_CHANGE_BATCH</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>THROTTLED_REQUEST</code>
+     *         </p>
+     *         </li>
      */
 
     public String getErrorCode() {
@@ -514,11 +702,85 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The code associated with <code>ErrorMessage</code>.
+     * The code associated with <code>ErrorMessage</code>. Values for <code>ErrorCode</code> include the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACCESS_DENIED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CANNOT_CREATE_HOSTED_ZONE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EXPIRED_TOKEN</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>HOSTED_ZONE_NOT_FOUND</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INTERNAL_FAILURE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INVALID_CHANGE_BATCH</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>THROTTLED_REQUEST</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param errorCode
-     *        The code associated with <code>ErrorMessage</code>.
+     *        The code associated with <code>ErrorMessage</code>. Values for <code>ErrorCode</code> include the
+     *        following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ACCESS_DENIED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CANNOT_CREATE_HOSTED_ZONE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EXPIRED_TOKEN</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>HOSTED_ZONE_NOT_FOUND</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INTERNAL_FAILURE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INVALID_CHANGE_BATCH</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>THROTTLED_REQUEST</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -530,11 +792,14 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The date and time that the request was submitted, in Unix date/time format and Coordinated Universal Time (UTC).
+     * The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value
+     * <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.
      * </p>
      * 
      * @param createDate
      *        The date and time that the request was submitted, in Unix date/time format and Coordinated Universal Time
-     *        (UTC).
+     *        (UTC). The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value
+     *        <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.
      */
 
     public void setCreateDate(java.util.Date createDate) {
@@ -544,10 +809,13 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The date and time that the request was submitted, in Unix date/time format and Coordinated Universal Time (UTC).
+     * The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value
+     * <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.
      * </p>
      * 
      * @return The date and time that the request was submitted, in Unix date/time format and Coordinated Universal Time
-     *         (UTC).
+     *         (UTC). The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value
+     *         <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.
      */
 
     public java.util.Date getCreateDate() {
@@ -557,11 +825,14 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The date and time that the request was submitted, in Unix date/time format and Coordinated Universal Time (UTC).
+     * The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value
+     * <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.
      * </p>
      * 
      * @param createDate
      *        The date and time that the request was submitted, in Unix date/time format and Coordinated Universal Time
-     *        (UTC).
+     *        (UTC). The value of <code>CreateDate</code> is accurate to milliseconds. For example, the value
+     *        <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -573,12 +844,15 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The date and time that the value of <code>Status</code> changed to the current value, in Unix date/time format
-     * and Coordinated Universal Time (UTC).
+     * and Coordinated Universal Time (UTC). The value of <code>UpdateDate</code> is accurate to milliseconds. For
+     * example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.
      * </p>
      * 
      * @param updateDate
      *        The date and time that the value of <code>Status</code> changed to the current value, in Unix date/time
-     *        format and Coordinated Universal Time (UTC).
+     *        format and Coordinated Universal Time (UTC). The value of <code>UpdateDate</code> is accurate to
+     *        milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018
+     *        12:11:30.087 AM.
      */
 
     public void setUpdateDate(java.util.Date updateDate) {
@@ -588,11 +862,14 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The date and time that the value of <code>Status</code> changed to the current value, in Unix date/time format
-     * and Coordinated Universal Time (UTC).
+     * and Coordinated Universal Time (UTC). The value of <code>UpdateDate</code> is accurate to milliseconds. For
+     * example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.
      * </p>
      * 
      * @return The date and time that the value of <code>Status</code> changed to the current value, in Unix date/time
-     *         format and Coordinated Universal Time (UTC).
+     *         format and Coordinated Universal Time (UTC). The value of <code>UpdateDate</code> is accurate to
+     *         milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018
+     *         12:11:30.087 AM.
      */
 
     public java.util.Date getUpdateDate() {
@@ -602,12 +879,15 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The date and time that the value of <code>Status</code> changed to the current value, in Unix date/time format
-     * and Coordinated Universal Time (UTC).
+     * and Coordinated Universal Time (UTC). The value of <code>UpdateDate</code> is accurate to milliseconds. For
+     * example, the value <code>1516925490.087</code> represents Friday, January 26, 2018 12:11:30.087 AM.
      * </p>
      * 
      * @param updateDate
      *        The date and time that the value of <code>Status</code> changed to the current value, in Unix date/time
-     *        format and Coordinated Universal Time (UTC).
+     *        format and Coordinated Universal Time (UTC). The value of <code>UpdateDate</code> is accurate to
+     *        milliseconds. For example, the value <code>1516925490.087</code> represents Friday, January 26, 2018
+     *        12:11:30.087 AM.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

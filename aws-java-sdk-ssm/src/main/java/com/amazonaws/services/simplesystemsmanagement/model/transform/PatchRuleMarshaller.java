@@ -33,6 +33,8 @@ public class PatchRuleMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ComplianceLevel").build();
     private static final MarshallingInfo<Integer> APPROVEAFTERDAYS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApproveAfterDays").build();
+    private static final MarshallingInfo<Boolean> ENABLENONSECURITY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableNonSecurity").build();
 
     private static final PatchRuleMarshaller instance = new PatchRuleMarshaller();
 
@@ -53,6 +55,7 @@ public class PatchRuleMarshaller {
             protocolMarshaller.marshall(patchRule.getPatchFilterGroup(), PATCHFILTERGROUP_BINDING);
             protocolMarshaller.marshall(patchRule.getComplianceLevel(), COMPLIANCELEVEL_BINDING);
             protocolMarshaller.marshall(patchRule.getApproveAfterDays(), APPROVEAFTERDAYS_BINDING);
+            protocolMarshaller.marshall(patchRule.getEnableNonSecurity(), ENABLENONSECURITY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

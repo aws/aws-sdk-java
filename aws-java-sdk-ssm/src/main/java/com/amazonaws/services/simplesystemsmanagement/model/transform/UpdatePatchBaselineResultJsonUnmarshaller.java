@@ -76,6 +76,10 @@ public class UpdatePatchBaselineResultJsonUnmarshaller implements Unmarshaller<U
                     context.nextToken();
                     updatePatchBaselineResult.setApprovedPatchesComplianceLevel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ApprovedPatchesEnableNonSecurity", targetDepth)) {
+                    context.nextToken();
+                    updatePatchBaselineResult.setApprovedPatchesEnableNonSecurity(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("RejectedPatches", targetDepth)) {
                     context.nextToken();
                     updatePatchBaselineResult.setRejectedPatches(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
@@ -91,6 +95,10 @@ public class UpdatePatchBaselineResultJsonUnmarshaller implements Unmarshaller<U
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();
                     updatePatchBaselineResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Sources", targetDepth)) {
+                    context.nextToken();
+                    updatePatchBaselineResult.setSources(new ListUnmarshaller<PatchSource>(PatchSourceJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

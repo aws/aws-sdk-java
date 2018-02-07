@@ -35,6 +35,29 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * A name for the Systems Manager document.
      * </p>
+     * <important>
+     * <p>
+     * Do not use the following to begin the names of documents you create. They are reserved by AWS for use as document
+     * prefixes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>aws</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>amazon</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>amzn</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </important>
      */
     private String name;
     /**
@@ -106,9 +129,53 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * A name for the Systems Manager document.
      * </p>
+     * <important>
+     * <p>
+     * Do not use the following to begin the names of documents you create. They are reserved by AWS for use as document
+     * prefixes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>aws</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>amazon</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>amzn</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </important>
      * 
      * @param name
-     *        A name for the Systems Manager document.
+     *        A name for the Systems Manager document.</p> <important>
+     *        <p>
+     *        Do not use the following to begin the names of documents you create. They are reserved by AWS for use as
+     *        document prefixes:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>aws</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>amazon</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>amzn</code>
+     *        </p>
+     *        </li>
+     *        </ul>
      */
 
     public void setName(String name) {
@@ -119,8 +186,52 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * A name for the Systems Manager document.
      * </p>
+     * <important>
+     * <p>
+     * Do not use the following to begin the names of documents you create. They are reserved by AWS for use as document
+     * prefixes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>aws</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>amazon</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>amzn</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </important>
      * 
-     * @return A name for the Systems Manager document.
+     * @return A name for the Systems Manager document.</p> <important>
+     *         <p>
+     *         Do not use the following to begin the names of documents you create. They are reserved by AWS for use as
+     *         document prefixes:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>aws</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>amazon</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>amzn</code>
+     *         </p>
+     *         </li>
+     *         </ul>
      */
 
     public String getName() {
@@ -131,9 +242,53 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * A name for the Systems Manager document.
      * </p>
+     * <important>
+     * <p>
+     * Do not use the following to begin the names of documents you create. They are reserved by AWS for use as document
+     * prefixes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>aws</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>amazon</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>amzn</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </important>
      * 
      * @param name
-     *        A name for the Systems Manager document.
+     *        A name for the Systems Manager document.</p> <important>
+     *        <p>
+     *        Do not use the following to begin the names of documents you create. They are reserved by AWS for use as
+     *        document prefixes:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>aws</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>amazon</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>amzn</code>
+     *        </p>
+     *        </li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

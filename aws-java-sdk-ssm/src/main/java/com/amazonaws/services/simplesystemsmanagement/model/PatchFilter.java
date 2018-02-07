@@ -519,6 +519,137 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * </li>
  * </ul>
+ * <p>
+ * <b>SUSE Linux Enterprise Server (SUSE) Operating Systems</b>
+ * </p>
+ * <p>
+ * The supported keys for SUSE operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and
+ * <code>SEVERITY</code>. See the following lists for valid values for each of these keys.
+ * </p>
+ * <p>
+ * <i>Supported key:</i> <code>PRODUCT</code>
+ * </p>
+ * <p>
+ * <i>Supported values:</i>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>Suse12.0</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Suse12.1</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Suse12.2</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Suse12.3</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Suse12.4</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Suse12.5</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Suse12.6</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Suse12.7</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Suse12.8</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Suse12.9</code>
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <i>Supported key:</i> <code>CLASSIFICATION</code>
+ * </p>
+ * <p>
+ * <i>Supported values:</i>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>Security</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Recommended</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Optional</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Feature</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Document</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Yast</code>
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <i>Supported key:</i> <code>SEVERITY</code>
+ * </p>
+ * <p>
+ * <i>Supported values:</i>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>Critical</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Important</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Moderate</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Low</code>
+ * </p>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PatchFilter" target="_top">AWS API
  *      Documentation</a>

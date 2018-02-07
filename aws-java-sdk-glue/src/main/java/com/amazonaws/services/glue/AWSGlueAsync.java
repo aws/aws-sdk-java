@@ -252,8 +252,9 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Creates a classifier in the user's account. This may be either a <code>GrokClassifier</code> or an
-     * <code>XMLClassifier</code>.
+     * Creates a classifier in the user's account. This may be a <code>GrokClassifier</code>, an
+     * <code>XMLClassifier</code>, or abbrev <code>JsonClassifier</code>, depending on which field of the request is
+     * present.
      * </p>
      * 
      * @param createClassifierRequest
@@ -266,8 +267,9 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Creates a classifier in the user's account. This may be either a <code>GrokClassifier</code> or an
-     * <code>XMLClassifier</code>.
+     * Creates a classifier in the user's account. This may be a <code>GrokClassifier</code>, an
+     * <code>XMLClassifier</code>, or abbrev <code>JsonClassifier</code>, depending on which field of the request is
+     * present.
      * </p>
      * 
      * @param createClassifierRequest
@@ -2128,7 +2130,8 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Modifies an existing classifier (either a <code>GrokClassifier</code> or an <code>XMLClassifier</code>).
+     * Modifies an existing classifier (a <code>GrokClassifier</code>, <code>XMLClassifier</code>, or
+     * <code>JsonClassifier</code>, depending on which field is present).
      * </p>
      * 
      * @param updateClassifierRequest
@@ -2141,7 +2144,8 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Modifies an existing classifier (either a <code>GrokClassifier</code> or an <code>XMLClassifier</code>).
+     * Modifies an existing classifier (a <code>GrokClassifier</code>, <code>XMLClassifier</code>, or
+     * <code>JsonClassifier</code>, depending on which field is present).
      * </p>
      * 
      * @param updateClassifierRequest

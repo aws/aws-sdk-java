@@ -82,7 +82,7 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
     private java.util.List<ProvisioningParameter> provisioningParameters;
     /**
      * <p>
-     * The tags to use as provisioning options.
+     * One or more tags.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -483,10 +483,10 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The tags to use as provisioning options.
+     * One or more tags.
      * </p>
      * 
-     * @return The tags to use as provisioning options.
+     * @return One or more tags.
      */
 
     public java.util.List<Tag> getTags() {
@@ -495,11 +495,11 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The tags to use as provisioning options.
+     * One or more tags.
      * </p>
      * 
      * @param tags
-     *        The tags to use as provisioning options.
+     *        One or more tags.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -513,7 +513,7 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The tags to use as provisioning options.
+     * One or more tags.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -522,7 +522,7 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param tags
-     *        The tags to use as provisioning options.
+     *        One or more tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -538,11 +538,11 @@ public class ProvisionProductRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The tags to use as provisioning options.
+     * One or more tags.
      * </p>
      * 
      * @param tags
-     *        The tags to use as provisioning options.
+     *        One or more tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

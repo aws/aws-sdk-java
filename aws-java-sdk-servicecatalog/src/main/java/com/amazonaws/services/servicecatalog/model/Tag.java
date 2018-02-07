@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about a tag. A tag is a key-value pair. Tags are entirely discretionary and are propagated to the
- * resources created when provisioning a product.
+ * Information about a tag. A tag is a key-value pair. Tags are propagated to the resources created when provisioning a
+ * product.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/Tag" target="_top">AWS API

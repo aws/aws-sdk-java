@@ -25,18 +25,18 @@ public class ProvisionProductResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Information about the result of <a>ProvisionProduct</a>.
+     * Information about the result of provisioning the product.
      * </p>
      */
     private RecordDetail recordDetail;
 
     /**
      * <p>
-     * Information about the result of <a>ProvisionProduct</a>.
+     * Information about the result of provisioning the product.
      * </p>
      * 
      * @param recordDetail
-     *        Information about the result of <a>ProvisionProduct</a>.
+     *        Information about the result of provisioning the product.
      */
 
     public void setRecordDetail(RecordDetail recordDetail) {
@@ -45,10 +45,10 @@ public class ProvisionProductResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Information about the result of <a>ProvisionProduct</a>.
+     * Information about the result of provisioning the product.
      * </p>
      * 
-     * @return Information about the result of <a>ProvisionProduct</a>.
+     * @return Information about the result of provisioning the product.
      */
 
     public RecordDetail getRecordDetail() {
@@ -57,11 +57,11 @@ public class ProvisionProductResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Information about the result of <a>ProvisionProduct</a>.
+     * Information about the result of provisioning the product.
      * </p>
      * 
      * @param recordDetail
-     *        Information about the result of <a>ProvisionProduct</a>.
+     *        Information about the result of provisioning the product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

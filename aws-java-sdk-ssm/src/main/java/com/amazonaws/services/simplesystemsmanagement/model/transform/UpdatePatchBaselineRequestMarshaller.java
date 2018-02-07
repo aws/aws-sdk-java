@@ -40,10 +40,16 @@ public class UpdatePatchBaselineRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApprovedPatches").build();
     private static final MarshallingInfo<String> APPROVEDPATCHESCOMPLIANCELEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApprovedPatchesComplianceLevel").build();
+    private static final MarshallingInfo<Boolean> APPROVEDPATCHESENABLENONSECURITY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApprovedPatchesEnableNonSecurity").build();
     private static final MarshallingInfo<List> REJECTEDPATCHES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RejectedPatches").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<List> SOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Sources").build();
+    private static final MarshallingInfo<Boolean> REPLACE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Replace").build();
 
     private static final UpdatePatchBaselineRequestMarshaller instance = new UpdatePatchBaselineRequestMarshaller();
 
@@ -67,8 +73,11 @@ public class UpdatePatchBaselineRequestMarshaller {
             protocolMarshaller.marshall(updatePatchBaselineRequest.getApprovalRules(), APPROVALRULES_BINDING);
             protocolMarshaller.marshall(updatePatchBaselineRequest.getApprovedPatches(), APPROVEDPATCHES_BINDING);
             protocolMarshaller.marshall(updatePatchBaselineRequest.getApprovedPatchesComplianceLevel(), APPROVEDPATCHESCOMPLIANCELEVEL_BINDING);
+            protocolMarshaller.marshall(updatePatchBaselineRequest.getApprovedPatchesEnableNonSecurity(), APPROVEDPATCHESENABLENONSECURITY_BINDING);
             protocolMarshaller.marshall(updatePatchBaselineRequest.getRejectedPatches(), REJECTEDPATCHES_BINDING);
             protocolMarshaller.marshall(updatePatchBaselineRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(updatePatchBaselineRequest.getSources(), SOURCES_BINDING);
+            protocolMarshaller.marshall(updatePatchBaselineRequest.getReplace(), REPLACE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

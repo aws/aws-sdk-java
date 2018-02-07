@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A complex type that contains information about changes to the resource record sets that Amazon Route 53 creates when
- * you register an instance.
+ * A complex type that contains information about changes to the records that Route 53 creates when you register an
+ * instance.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DnsConfigChange" target="_top">AWS
@@ -31,20 +31,20 @@ public class DnsConfigChange implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array that contains one <code>DnsRecord</code> object for each resource record set that you want Amazon Route
-     * 53 to create when you register an instance.
+     * An array that contains one <code>DnsRecord</code> object for each record that you want Route 53 to create when
+     * you register an instance.
      * </p>
      */
     private java.util.List<DnsRecord> dnsRecords;
 
     /**
      * <p>
-     * An array that contains one <code>DnsRecord</code> object for each resource record set that you want Amazon Route
-     * 53 to create when you register an instance.
+     * An array that contains one <code>DnsRecord</code> object for each record that you want Route 53 to create when
+     * you register an instance.
      * </p>
      * 
-     * @return An array that contains one <code>DnsRecord</code> object for each resource record set that you want
-     *         Amazon Route 53 to create when you register an instance.
+     * @return An array that contains one <code>DnsRecord</code> object for each record that you want Route 53 to create
+     *         when you register an instance.
      */
 
     public java.util.List<DnsRecord> getDnsRecords() {
@@ -53,13 +53,13 @@ public class DnsConfigChange implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array that contains one <code>DnsRecord</code> object for each resource record set that you want Amazon Route
-     * 53 to create when you register an instance.
+     * An array that contains one <code>DnsRecord</code> object for each record that you want Route 53 to create when
+     * you register an instance.
      * </p>
      * 
      * @param dnsRecords
-     *        An array that contains one <code>DnsRecord</code> object for each resource record set that you want Amazon
-     *        Route 53 to create when you register an instance.
+     *        An array that contains one <code>DnsRecord</code> object for each record that you want Route 53 to create
+     *        when you register an instance.
      */
 
     public void setDnsRecords(java.util.Collection<DnsRecord> dnsRecords) {
@@ -73,8 +73,8 @@ public class DnsConfigChange implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array that contains one <code>DnsRecord</code> object for each resource record set that you want Amazon Route
-     * 53 to create when you register an instance.
+     * An array that contains one <code>DnsRecord</code> object for each record that you want Route 53 to create when
+     * you register an instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -83,8 +83,8 @@ public class DnsConfigChange implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param dnsRecords
-     *        An array that contains one <code>DnsRecord</code> object for each resource record set that you want Amazon
-     *        Route 53 to create when you register an instance.
+     *        An array that contains one <code>DnsRecord</code> object for each record that you want Route 53 to create
+     *        when you register an instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,13 +100,13 @@ public class DnsConfigChange implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array that contains one <code>DnsRecord</code> object for each resource record set that you want Amazon Route
-     * 53 to create when you register an instance.
+     * An array that contains one <code>DnsRecord</code> object for each record that you want Route 53 to create when
+     * you register an instance.
      * </p>
      * 
      * @param dnsRecords
-     *        An array that contains one <code>DnsRecord</code> object for each resource record set that you want Amazon
-     *        Route 53 to create when you register an instance.
+     *        An array that contains one <code>DnsRecord</code> object for each record that you want Route 53 to create
+     *        when you register an instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

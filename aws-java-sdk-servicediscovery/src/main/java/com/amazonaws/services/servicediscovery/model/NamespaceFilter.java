@@ -64,6 +64,11 @@ public class NamespaceFilter implements Serializable, Cloneable, StructuredPojo 
      * private namespaces, or both.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>BETWEEN</code>: Not applicable
+     * </p>
+     * </li>
      * </ul>
      */
     private String condition;
@@ -251,6 +256,11 @@ public class NamespaceFilter implements Serializable, Cloneable, StructuredPojo 
      * private namespaces, or both.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>BETWEEN</code>: Not applicable
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param condition
@@ -268,6 +278,11 @@ public class NamespaceFilter implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        <code>IN</code>: When you specify <code>IN</code> for the condition, you can choose to list public
      *        namespaces, private namespaces, or both.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BETWEEN</code>: Not applicable
      *        </p>
      *        </li>
      * @see FilterCondition
@@ -295,6 +310,11 @@ public class NamespaceFilter implements Serializable, Cloneable, StructuredPojo 
      * private namespaces, or both.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>BETWEEN</code>: Not applicable
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The operator that you want to use to determine whether <code>ListNamespaces</code> returns a namespace.
@@ -311,6 +331,11 @@ public class NamespaceFilter implements Serializable, Cloneable, StructuredPojo 
      *         <p>
      *         <code>IN</code>: When you specify <code>IN</code> for the condition, you can choose to list public
      *         namespaces, private namespaces, or both.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>BETWEEN</code>: Not applicable
      *         </p>
      *         </li>
      * @see FilterCondition
@@ -338,6 +363,11 @@ public class NamespaceFilter implements Serializable, Cloneable, StructuredPojo 
      * private namespaces, or both.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>BETWEEN</code>: Not applicable
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param condition
@@ -355,6 +385,11 @@ public class NamespaceFilter implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        <code>IN</code>: When you specify <code>IN</code> for the condition, you can choose to list public
      *        namespaces, private namespaces, or both.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BETWEEN</code>: Not applicable
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -384,6 +419,11 @@ public class NamespaceFilter implements Serializable, Cloneable, StructuredPojo 
      * private namespaces, or both.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>BETWEEN</code>: Not applicable
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param condition
@@ -401,6 +441,11 @@ public class NamespaceFilter implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        <code>IN</code>: When you specify <code>IN</code> for the condition, you can choose to list public
      *        namespaces, private namespaces, or both.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BETWEEN</code>: Not applicable
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

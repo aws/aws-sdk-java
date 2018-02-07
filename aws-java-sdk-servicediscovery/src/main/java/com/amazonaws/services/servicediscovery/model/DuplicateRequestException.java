@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This request tried to create an object that already exists.
+ * The operation is already in progress.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

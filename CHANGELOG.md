@@ -1,3 +1,20 @@
+# __1.11.273__ __2018-02-06__
+## __AWS Glue__
+  - ### Features
+    - This new feature will now allow customers to add a customized json classifier. They can specify a json path to indicate the object, array or field of the json documents they'd like crawlers to inspect when they crawl json files. 
+
+## __AWS Service Catalog__
+  - ### Features
+    - This release of Service Catalog adds SearchProvisionedProducts API and ProvisionedProductPlan APIs.
+
+## __Amazon Route 53 Auto Naming__
+  - ### Features
+    - This release adds support for registering CNAME record types and creating Route 53 alias records that route traffic to Amazon Elastic Load Balancers using Amazon Route 53 Auto Naming APIs.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - This Patch Manager release supports configuring Linux repos as part of patch baselines, controlling updates of non-OS security packages and also creating patch baselines for SUSE12
+
 # __1.11.272__ __2018-02-05__
 ## __AWS Certificate Manager__
   - ### Features

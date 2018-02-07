@@ -47,7 +47,7 @@ public class OperationSummary implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <b>PENDING</b>: Amazon Route 53 is performing the operation.
+     * <b>PENDING</b>: Route 53 is performing the operation.
      * </p>
      * </li>
      * <li>
@@ -116,7 +116,7 @@ public class OperationSummary implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <b>PENDING</b>: Amazon Route 53 is performing the operation.
+     * <b>PENDING</b>: Route 53 is performing the operation.
      * </p>
      * </li>
      * <li>
@@ -141,7 +141,7 @@ public class OperationSummary implements Serializable, Cloneable, StructuredPojo
      *        </li>
      *        <li>
      *        <p>
-     *        <b>PENDING</b>: Amazon Route 53 is performing the operation.
+     *        <b>PENDING</b>: Route 53 is performing the operation.
      *        </p>
      *        </li>
      *        <li>
@@ -173,7 +173,7 @@ public class OperationSummary implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <b>PENDING</b>: Amazon Route 53 is performing the operation.
+     * <b>PENDING</b>: Route 53 is performing the operation.
      * </p>
      * </li>
      * <li>
@@ -197,7 +197,7 @@ public class OperationSummary implements Serializable, Cloneable, StructuredPojo
      *         </li>
      *         <li>
      *         <p>
-     *         <b>PENDING</b>: Amazon Route 53 is performing the operation.
+     *         <b>PENDING</b>: Route 53 is performing the operation.
      *         </p>
      *         </li>
      *         <li>
@@ -229,7 +229,7 @@ public class OperationSummary implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <b>PENDING</b>: Amazon Route 53 is performing the operation.
+     * <b>PENDING</b>: Route 53 is performing the operation.
      * </p>
      * </li>
      * <li>
@@ -254,7 +254,7 @@ public class OperationSummary implements Serializable, Cloneable, StructuredPojo
      *        </li>
      *        <li>
      *        <p>
-     *        <b>PENDING</b>: Amazon Route 53 is performing the operation.
+     *        <b>PENDING</b>: Route 53 is performing the operation.
      *        </p>
      *        </li>
      *        <li>
@@ -288,7 +288,7 @@ public class OperationSummary implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <b>PENDING</b>: Amazon Route 53 is performing the operation.
+     * <b>PENDING</b>: Route 53 is performing the operation.
      * </p>
      * </li>
      * <li>
@@ -313,7 +313,7 @@ public class OperationSummary implements Serializable, Cloneable, StructuredPojo
      *        </li>
      *        <li>
      *        <p>
-     *        <b>PENDING</b>: Amazon Route 53 is performing the operation.
+     *        <b>PENDING</b>: Route 53 is performing the operation.
      *        </p>
      *        </li>
      *        <li>

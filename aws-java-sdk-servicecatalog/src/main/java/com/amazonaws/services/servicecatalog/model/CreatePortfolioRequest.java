@@ -68,7 +68,7 @@ public class CreatePortfolioRequest extends com.amazonaws.AmazonWebServiceReques
     private String providerName;
     /**
      * <p>
-     * The tags to associate with the portfolio.
+     * One or more tags.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -341,10 +341,10 @@ public class CreatePortfolioRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The tags to associate with the portfolio.
+     * One or more tags.
      * </p>
      * 
-     * @return The tags to associate with the portfolio.
+     * @return One or more tags.
      */
 
     public java.util.List<Tag> getTags() {
@@ -353,11 +353,11 @@ public class CreatePortfolioRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The tags to associate with the portfolio.
+     * One or more tags.
      * </p>
      * 
      * @param tags
-     *        The tags to associate with the portfolio.
+     *        One or more tags.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -371,7 +371,7 @@ public class CreatePortfolioRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The tags to associate with the portfolio.
+     * One or more tags.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -380,7 +380,7 @@ public class CreatePortfolioRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param tags
-     *        The tags to associate with the portfolio.
+     *        One or more tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -396,11 +396,11 @@ public class CreatePortfolioRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The tags to associate with the portfolio.
+     * One or more tags.
      * </p>
      * 
      * @param tags
-     *        The tags to associate with the portfolio.
+     *        One or more tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

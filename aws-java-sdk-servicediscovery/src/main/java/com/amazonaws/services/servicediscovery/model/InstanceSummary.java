@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A complex type that contains information about the instances that you created by using a specified service.
+ * A complex type that contains information about the instances that you registered by using a specified service.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/InstanceSummary" target="_top">AWS
@@ -36,21 +36,52 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
     private String id;
     /**
      * <p>
-     * A string map that contain attribute keys and values for an instance. Supported attribute keys include the
-     * following:
+     * A string map that contains the following information:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>AWS_INSTANCE_PORT</code>: The port on the endpoint that you want Amazon Route 53 to perform health checks
-     * on. This value is also used for the port value in an SRV record if the service that you specify includes an SRV
-     * record. For more information, see <a>CreateService</a>.
+     * The attributes that are associate with the instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>AWS_INSTANCE_IP</code>: If the service that you specify contains a resource record set template for an A or
-     * AAAA record, the IP address that you want Amazon Route 53 to use for the value of the A record.
+     * For each attribute, the applicable value.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Supported attribute keys include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS_ALIAS_DNS_NAME</code>: For an alias record that routes traffic to an Elastic Load Balancing load
+     * balancer, the DNS name that is associated with the load balancer.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS_INSTANCE_CNAME</code>: For a CNAME record, the domain name that Route 53 returns in response to DNS
+     * queries, for example, <code>example.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS_INSTANCE_IPV4</code>: For an A record, the IPv4 address that Route 53 returns in response to DNS
+     * queries, for example, <code>192.0.2.44</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS_INSTANCE_IPV6</code>: For an AAAA record, the IPv6 address that Route 53 returns in response to DNS
+     * queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS_INSTANCE_PORT</code>: For an SRV record, the value that Route 53 returns for the port. In addition, if
+     * the service includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends requests to.
      * </p>
      * </li>
      * </ul>
@@ -99,39 +130,102 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A string map that contain attribute keys and values for an instance. Supported attribute keys include the
-     * following:
+     * A string map that contains the following information:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>AWS_INSTANCE_PORT</code>: The port on the endpoint that you want Amazon Route 53 to perform health checks
-     * on. This value is also used for the port value in an SRV record if the service that you specify includes an SRV
-     * record. For more information, see <a>CreateService</a>.
+     * The attributes that are associate with the instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>AWS_INSTANCE_IP</code>: If the service that you specify contains a resource record set template for an A or
-     * AAAA record, the IP address that you want Amazon Route 53 to use for the value of the A record.
+     * For each attribute, the applicable value.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Supported attribute keys include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS_ALIAS_DNS_NAME</code>: For an alias record that routes traffic to an Elastic Load Balancing load
+     * balancer, the DNS name that is associated with the load balancer.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS_INSTANCE_CNAME</code>: For a CNAME record, the domain name that Route 53 returns in response to DNS
+     * queries, for example, <code>example.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS_INSTANCE_IPV4</code>: For an A record, the IPv4 address that Route 53 returns in response to DNS
+     * queries, for example, <code>192.0.2.44</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS_INSTANCE_IPV6</code>: For an AAAA record, the IPv6 address that Route 53 returns in response to DNS
+     * queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS_INSTANCE_PORT</code>: For an SRV record, the value that Route 53 returns for the port. In addition, if
+     * the service includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends requests to.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return A string map that contain attribute keys and values for an instance. Supported attribute keys include the
-     *         following:</p>
+     * @return A string map that contains the following information:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>AWS_INSTANCE_PORT</code>: The port on the endpoint that you want Amazon Route 53 to perform health
-     *         checks on. This value is also used for the port value in an SRV record if the service that you specify
-     *         includes an SRV record. For more information, see <a>CreateService</a>.
+     *         The attributes that are associate with the instance.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>AWS_INSTANCE_IP</code>: If the service that you specify contains a resource record set template for
-     *         an A or AAAA record, the IP address that you want Amazon Route 53 to use for the value of the A record.
+     *         For each attribute, the applicable value.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Supported attribute keys include the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>AWS_ALIAS_DNS_NAME</code>: For an alias record that routes traffic to an Elastic Load Balancing
+     *         load balancer, the DNS name that is associated with the load balancer.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS_INSTANCE_CNAME</code>: For a CNAME record, the domain name that Route 53 returns in response to
+     *         DNS queries, for example, <code>example.com</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS_INSTANCE_IPV4</code>: For an A record, the IPv4 address that Route 53 returns in response to
+     *         DNS queries, for example, <code>192.0.2.44</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS_INSTANCE_IPV6</code>: For an AAAA record, the IPv6 address that Route 53 returns in response to
+     *         DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS_INSTANCE_PORT</code>: For an SRV record, the value that Route 53 returns for the port. In
+     *         addition, if the service includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53
+     *         sends requests to.
      *         </p>
      *         </li>
      */
@@ -142,40 +236,103 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A string map that contain attribute keys and values for an instance. Supported attribute keys include the
-     * following:
+     * A string map that contains the following information:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>AWS_INSTANCE_PORT</code>: The port on the endpoint that you want Amazon Route 53 to perform health checks
-     * on. This value is also used for the port value in an SRV record if the service that you specify includes an SRV
-     * record. For more information, see <a>CreateService</a>.
+     * The attributes that are associate with the instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>AWS_INSTANCE_IP</code>: If the service that you specify contains a resource record set template for an A or
-     * AAAA record, the IP address that you want Amazon Route 53 to use for the value of the A record.
+     * For each attribute, the applicable value.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Supported attribute keys include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS_ALIAS_DNS_NAME</code>: For an alias record that routes traffic to an Elastic Load Balancing load
+     * balancer, the DNS name that is associated with the load balancer.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS_INSTANCE_CNAME</code>: For a CNAME record, the domain name that Route 53 returns in response to DNS
+     * queries, for example, <code>example.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS_INSTANCE_IPV4</code>: For an A record, the IPv4 address that Route 53 returns in response to DNS
+     * queries, for example, <code>192.0.2.44</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS_INSTANCE_IPV6</code>: For an AAAA record, the IPv6 address that Route 53 returns in response to DNS
+     * queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS_INSTANCE_PORT</code>: For an SRV record, the value that Route 53 returns for the port. In addition, if
+     * the service includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends requests to.
      * </p>
      * </li>
      * </ul>
      * 
      * @param attributes
-     *        A string map that contain attribute keys and values for an instance. Supported attribute keys include the
-     *        following:</p>
+     *        A string map that contains the following information:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>AWS_INSTANCE_PORT</code>: The port on the endpoint that you want Amazon Route 53 to perform health
-     *        checks on. This value is also used for the port value in an SRV record if the service that you specify
-     *        includes an SRV record. For more information, see <a>CreateService</a>.
+     *        The attributes that are associate with the instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AWS_INSTANCE_IP</code>: If the service that you specify contains a resource record set template for
-     *        an A or AAAA record, the IP address that you want Amazon Route 53 to use for the value of the A record.
+     *        For each attribute, the applicable value.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Supported attribute keys include the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AWS_ALIAS_DNS_NAME</code>: For an alias record that routes traffic to an Elastic Load Balancing load
+     *        balancer, the DNS name that is associated with the load balancer.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS_INSTANCE_CNAME</code>: For a CNAME record, the domain name that Route 53 returns in response to
+     *        DNS queries, for example, <code>example.com</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS_INSTANCE_IPV4</code>: For an A record, the IPv4 address that Route 53 returns in response to DNS
+     *        queries, for example, <code>192.0.2.44</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS_INSTANCE_IPV6</code>: For an AAAA record, the IPv6 address that Route 53 returns in response to
+     *        DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS_INSTANCE_PORT</code>: For an SRV record, the value that Route 53 returns for the port. In
+     *        addition, if the service includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53
+     *        sends requests to.
      *        </p>
      *        </li>
      */
@@ -186,40 +343,103 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A string map that contain attribute keys and values for an instance. Supported attribute keys include the
-     * following:
+     * A string map that contains the following information:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>AWS_INSTANCE_PORT</code>: The port on the endpoint that you want Amazon Route 53 to perform health checks
-     * on. This value is also used for the port value in an SRV record if the service that you specify includes an SRV
-     * record. For more information, see <a>CreateService</a>.
+     * The attributes that are associate with the instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>AWS_INSTANCE_IP</code>: If the service that you specify contains a resource record set template for an A or
-     * AAAA record, the IP address that you want Amazon Route 53 to use for the value of the A record.
+     * For each attribute, the applicable value.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Supported attribute keys include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS_ALIAS_DNS_NAME</code>: For an alias record that routes traffic to an Elastic Load Balancing load
+     * balancer, the DNS name that is associated with the load balancer.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS_INSTANCE_CNAME</code>: For a CNAME record, the domain name that Route 53 returns in response to DNS
+     * queries, for example, <code>example.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS_INSTANCE_IPV4</code>: For an A record, the IPv4 address that Route 53 returns in response to DNS
+     * queries, for example, <code>192.0.2.44</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS_INSTANCE_IPV6</code>: For an AAAA record, the IPv6 address that Route 53 returns in response to DNS
+     * queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS_INSTANCE_PORT</code>: For an SRV record, the value that Route 53 returns for the port. In addition, if
+     * the service includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends requests to.
      * </p>
      * </li>
      * </ul>
      * 
      * @param attributes
-     *        A string map that contain attribute keys and values for an instance. Supported attribute keys include the
-     *        following:</p>
+     *        A string map that contains the following information:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>AWS_INSTANCE_PORT</code>: The port on the endpoint that you want Amazon Route 53 to perform health
-     *        checks on. This value is also used for the port value in an SRV record if the service that you specify
-     *        includes an SRV record. For more information, see <a>CreateService</a>.
+     *        The attributes that are associate with the instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AWS_INSTANCE_IP</code>: If the service that you specify contains a resource record set template for
-     *        an A or AAAA record, the IP address that you want Amazon Route 53 to use for the value of the A record.
+     *        For each attribute, the applicable value.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Supported attribute keys include the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AWS_ALIAS_DNS_NAME</code>: For an alias record that routes traffic to an Elastic Load Balancing load
+     *        balancer, the DNS name that is associated with the load balancer.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS_INSTANCE_CNAME</code>: For a CNAME record, the domain name that Route 53 returns in response to
+     *        DNS queries, for example, <code>example.com</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS_INSTANCE_IPV4</code>: For an A record, the IPv4 address that Route 53 returns in response to DNS
+     *        queries, for example, <code>192.0.2.44</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS_INSTANCE_IPV6</code>: For an AAAA record, the IPv6 address that Route 53 returns in response to
+     *        DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS_INSTANCE_PORT</code>: For an SRV record, the value that Route 53 returns for the port. In
+     *        addition, if the service includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53
+     *        sends requests to.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

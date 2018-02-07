@@ -89,7 +89,7 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
     private java.util.List<UpdateProvisioningParameter> provisioningParameters;
     /**
      * <p>
-     * The idempotency token that uniquely identifies the provisioning update rquest.
+     * The idempotency token that uniquely identifies the provisioning update request.
      * </p>
      */
     private String updateToken;
@@ -523,11 +523,11 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The idempotency token that uniquely identifies the provisioning update rquest.
+     * The idempotency token that uniquely identifies the provisioning update request.
      * </p>
      * 
      * @param updateToken
-     *        The idempotency token that uniquely identifies the provisioning update rquest.
+     *        The idempotency token that uniquely identifies the provisioning update request.
      */
 
     public void setUpdateToken(String updateToken) {
@@ -536,10 +536,10 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The idempotency token that uniquely identifies the provisioning update rquest.
+     * The idempotency token that uniquely identifies the provisioning update request.
      * </p>
      * 
-     * @return The idempotency token that uniquely identifies the provisioning update rquest.
+     * @return The idempotency token that uniquely identifies the provisioning update request.
      */
 
     public String getUpdateToken() {
@@ -548,11 +548,11 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The idempotency token that uniquely identifies the provisioning update rquest.
+     * The idempotency token that uniquely identifies the provisioning update request.
      * </p>
      * 
      * @param updateToken
-     *        The idempotency token that uniquely identifies the provisioning update rquest.
+     *        The idempotency token that uniquely identifies the provisioning update request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

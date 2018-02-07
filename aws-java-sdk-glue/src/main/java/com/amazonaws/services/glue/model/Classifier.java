@@ -25,8 +25,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <code>StructType</code> object that matches that data format.
  * </p>
  * <p>
- * A classifier can be either a <code>grok</code> classifier or an XML classifier, specified in one or the other field
- * of the <code>Classifier</code> object.
+ * A classifier can be a <code>grok</code> classifier, an XML classifier, or a JSON classifier, asspecified in one of
+ * the fields in the <code>Classifier</code> object.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Classifier" target="_top">AWS API
@@ -47,6 +47,12 @@ public class Classifier implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private XMLClassifier xMLClassifier;
+    /**
+     * <p>
+     * A <code>JsonClassifier</code> object.
+     * </p>
+     */
+    private JsonClassifier jsonClassifier;
 
     /**
      * <p>
@@ -129,6 +135,46 @@ public class Classifier implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A <code>JsonClassifier</code> object.
+     * </p>
+     * 
+     * @param jsonClassifier
+     *        A <code>JsonClassifier</code> object.
+     */
+
+    public void setJsonClassifier(JsonClassifier jsonClassifier) {
+        this.jsonClassifier = jsonClassifier;
+    }
+
+    /**
+     * <p>
+     * A <code>JsonClassifier</code> object.
+     * </p>
+     * 
+     * @return A <code>JsonClassifier</code> object.
+     */
+
+    public JsonClassifier getJsonClassifier() {
+        return this.jsonClassifier;
+    }
+
+    /**
+     * <p>
+     * A <code>JsonClassifier</code> object.
+     * </p>
+     * 
+     * @param jsonClassifier
+     *        A <code>JsonClassifier</code> object.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Classifier withJsonClassifier(JsonClassifier jsonClassifier) {
+        setJsonClassifier(jsonClassifier);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -142,7 +188,9 @@ public class Classifier implements Serializable, Cloneable, StructuredPojo {
         if (getGrokClassifier() != null)
             sb.append("GrokClassifier: ").append(getGrokClassifier()).append(",");
         if (getXMLClassifier() != null)
-            sb.append("XMLClassifier: ").append(getXMLClassifier());
+            sb.append("XMLClassifier: ").append(getXMLClassifier()).append(",");
+        if (getJsonClassifier() != null)
+            sb.append("JsonClassifier: ").append(getJsonClassifier());
         sb.append("}");
         return sb.toString();
     }
@@ -165,6 +213,10 @@ public class Classifier implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getXMLClassifier() != null && other.getXMLClassifier().equals(this.getXMLClassifier()) == false)
             return false;
+        if (other.getJsonClassifier() == null ^ this.getJsonClassifier() == null)
+            return false;
+        if (other.getJsonClassifier() != null && other.getJsonClassifier().equals(this.getJsonClassifier()) == false)
+            return false;
         return true;
     }
 
@@ -175,6 +227,7 @@ public class Classifier implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getGrokClassifier() == null) ? 0 : getGrokClassifier().hashCode());
         hashCode = prime * hashCode + ((getXMLClassifier() == null) ? 0 : getXMLClassifier().hashCode());
+        hashCode = prime * hashCode + ((getJsonClassifier() == null) ? 0 : getJsonClassifier().hashCode());
         return hashCode;
     }
 

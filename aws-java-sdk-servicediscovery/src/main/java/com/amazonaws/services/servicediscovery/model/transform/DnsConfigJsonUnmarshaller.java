@@ -52,6 +52,10 @@ public class DnsConfigJsonUnmarshaller implements Unmarshaller<DnsConfig, JsonUn
                     context.nextToken();
                     dnsConfig.setNamespaceId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("RoutingPolicy", targetDepth)) {
+                    context.nextToken();
+                    dnsConfig.setRoutingPolicy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("DnsRecords", targetDepth)) {
                     context.nextToken();
                     dnsConfig.setDnsRecords(new ListUnmarshaller<DnsRecord>(DnsRecordJsonUnmarshaller.getInstance()).unmarshall(context));

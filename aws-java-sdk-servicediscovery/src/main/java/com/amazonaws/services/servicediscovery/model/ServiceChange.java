@@ -36,8 +36,8 @@ public class ServiceChange implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * A complex type that contains information about the resource record sets that you want Amazon Route 53 to create
-     * when you register an instance.
+     * A complex type that contains information about the records that you want Route 53 to create when you register an
+     * instance.
      * </p>
      */
     private DnsConfigChange dnsConfig;
@@ -86,13 +86,13 @@ public class ServiceChange implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A complex type that contains information about the resource record sets that you want Amazon Route 53 to create
-     * when you register an instance.
+     * A complex type that contains information about the records that you want Route 53 to create when you register an
+     * instance.
      * </p>
      * 
      * @param dnsConfig
-     *        A complex type that contains information about the resource record sets that you want Amazon Route 53 to
-     *        create when you register an instance.
+     *        A complex type that contains information about the records that you want Route 53 to create when you
+     *        register an instance.
      */
 
     public void setDnsConfig(DnsConfigChange dnsConfig) {
@@ -101,12 +101,12 @@ public class ServiceChange implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A complex type that contains information about the resource record sets that you want Amazon Route 53 to create
-     * when you register an instance.
+     * A complex type that contains information about the records that you want Route 53 to create when you register an
+     * instance.
      * </p>
      * 
-     * @return A complex type that contains information about the resource record sets that you want Amazon Route 53 to
-     *         create when you register an instance.
+     * @return A complex type that contains information about the records that you want Route 53 to create when you
+     *         register an instance.
      */
 
     public DnsConfigChange getDnsConfig() {
@@ -115,13 +115,13 @@ public class ServiceChange implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A complex type that contains information about the resource record sets that you want Amazon Route 53 to create
-     * when you register an instance.
+     * A complex type that contains information about the records that you want Route 53 to create when you register an
+     * instance.
      * </p>
      * 
      * @param dnsConfig
-     *        A complex type that contains information about the resource record sets that you want Amazon Route 53 to
-     *        create when you register an instance.
+     *        A complex type that contains information about the records that you want Route 53 to create when you
+     *        register an instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

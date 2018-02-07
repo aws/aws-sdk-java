@@ -56,6 +56,10 @@ public class ClassifierJsonUnmarshaller implements Unmarshaller<Classifier, Json
                     context.nextToken();
                     classifier.setXMLClassifier(XMLClassifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("JsonClassifier", targetDepth)) {
+                    context.nextToken();
+                    classifier.setJsonClassifier(JsonClassifierJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

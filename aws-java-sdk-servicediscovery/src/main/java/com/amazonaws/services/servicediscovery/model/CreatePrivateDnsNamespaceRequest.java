@@ -34,8 +34,9 @@ public class CreatePrivateDnsNamespaceRequest extends com.amazonaws.AmazonWebSer
     private String name;
     /**
      * <p>
-     * An optional parameter that you can use to resolve concurrent creation requests. <code>CreatorRequestId</code>
-     * helps to determine if a specific client owns the namespace.
+     * A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code>
+     * requests to be retried without the risk of executing the operation twice. <code>CreatorRequestId</code> can be
+     * any unique string, for example, a date/time stamp.
      * </p>
      */
     private String creatorRequestId;
@@ -100,13 +101,15 @@ public class CreatePrivateDnsNamespaceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An optional parameter that you can use to resolve concurrent creation requests. <code>CreatorRequestId</code>
-     * helps to determine if a specific client owns the namespace.
+     * A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code>
+     * requests to be retried without the risk of executing the operation twice. <code>CreatorRequestId</code> can be
+     * any unique string, for example, a date/time stamp.
      * </p>
      * 
      * @param creatorRequestId
-     *        An optional parameter that you can use to resolve concurrent creation requests.
-     *        <code>CreatorRequestId</code> helps to determine if a specific client owns the namespace.
+     *        A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code>
+     *        requests to be retried without the risk of executing the operation twice. <code>CreatorRequestId</code>
+     *        can be any unique string, for example, a date/time stamp.
      */
 
     public void setCreatorRequestId(String creatorRequestId) {
@@ -115,12 +118,14 @@ public class CreatePrivateDnsNamespaceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An optional parameter that you can use to resolve concurrent creation requests. <code>CreatorRequestId</code>
-     * helps to determine if a specific client owns the namespace.
+     * A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code>
+     * requests to be retried without the risk of executing the operation twice. <code>CreatorRequestId</code> can be
+     * any unique string, for example, a date/time stamp.
      * </p>
      * 
-     * @return An optional parameter that you can use to resolve concurrent creation requests.
-     *         <code>CreatorRequestId</code> helps to determine if a specific client owns the namespace.
+     * @return A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code>
+     *         requests to be retried without the risk of executing the operation twice. <code>CreatorRequestId</code>
+     *         can be any unique string, for example, a date/time stamp.
      */
 
     public String getCreatorRequestId() {
@@ -129,13 +134,15 @@ public class CreatePrivateDnsNamespaceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * An optional parameter that you can use to resolve concurrent creation requests. <code>CreatorRequestId</code>
-     * helps to determine if a specific client owns the namespace.
+     * A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code>
+     * requests to be retried without the risk of executing the operation twice. <code>CreatorRequestId</code> can be
+     * any unique string, for example, a date/time stamp.
      * </p>
      * 
      * @param creatorRequestId
-     *        An optional parameter that you can use to resolve concurrent creation requests.
-     *        <code>CreatorRequestId</code> helps to determine if a specific client owns the namespace.
+     *        A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code>
+     *        requests to be retried without the risk of executing the operation twice. <code>CreatorRequestId</code>
+     *        can be any unique string, for example, a date/time stamp.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

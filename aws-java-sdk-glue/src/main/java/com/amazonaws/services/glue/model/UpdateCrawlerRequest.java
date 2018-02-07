@@ -95,7 +95,7 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * each partition. Use the following JSON string to specify that behavior:
      * </p>
      * <p>
-     * Example: 
+     * Example:
      * <code>'{ "Version": 1.0, "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } } }'</code>
      * </p>
      */
@@ -534,7 +534,7 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * each partition. Use the following JSON string to specify that behavior:
      * </p>
      * <p>
-     * Example: 
+     * Example:
      * <code>'{ "Version": 1.0, "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } } }'</code>
      * </p>
      * 
@@ -547,7 +547,7 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        separately for each partition. Use the following JSON string to specify that behavior:
      *        </p>
      *        <p>
-     *        Example: 
+     *        Example:
      *        <code>'{ "Version": 1.0, "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } } }'</code>
      */
 
@@ -566,7 +566,7 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * each partition. Use the following JSON string to specify that behavior:
      * </p>
      * <p>
-     * Example: 
+     * Example:
      * <code>'{ "Version": 1.0, "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } } }'</code>
      * </p>
      * 
@@ -578,7 +578,7 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         separately for each partition. Use the following JSON string to specify that behavior:
      *         </p>
      *         <p>
-     *         Example: 
+     *         Example:
      *         <code>'{ "Version": 1.0, "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } } }'</code>
      */
 
@@ -597,7 +597,7 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * each partition. Use the following JSON string to specify that behavior:
      * </p>
      * <p>
-     * Example: 
+     * Example:
      * <code>'{ "Version": 1.0, "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } } }'</code>
      * </p>
      * 
@@ -610,7 +610,7 @@ public class UpdateCrawlerRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        separately for each partition. Use the following JSON string to specify that behavior:
      *        </p>
      *        <p>
-     *        Example: 
+     *        Example:
      *        <code>'{ "Version": 1.0, "CrawlerOutput": { "Partitions": { "AddOrUpdateBehavior": "InheritFromTable" } } }'</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A resource that is currently in use. Ensure the resource is not in use and retry the operation.
+ * A resource that is currently in use. Ensure that the resource is not in use and retry the operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

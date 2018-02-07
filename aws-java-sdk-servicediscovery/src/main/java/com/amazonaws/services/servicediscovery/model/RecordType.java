@@ -22,7 +22,8 @@ public enum RecordType {
 
     SRV("SRV"),
     A("A"),
-    AAAA("AAAA");
+    AAAA("AAAA"),
+    CNAME("CNAME");
 
     private String value;
 

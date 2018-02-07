@@ -23,7 +23,8 @@ public enum ProvisionedProductStatus {
     AVAILABLE("AVAILABLE"),
     UNDER_CHANGE("UNDER_CHANGE"),
     TAINTED("TAINTED"),
-    ERROR("ERROR");
+    ERROR("ERROR"),
+    PLAN_IN_PROGRESS("PLAN_IN_PROGRESS");
 
     private String value;
 

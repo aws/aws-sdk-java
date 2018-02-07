@@ -30,6 +30,8 @@ public class DnsConfigMarshaller {
 
     private static final MarshallingInfo<String> NAMESPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NamespaceId").build();
+    private static final MarshallingInfo<String> ROUTINGPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RoutingPolicy").build();
     private static final MarshallingInfo<List> DNSRECORDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("DnsRecords").build();
 
@@ -50,6 +52,7 @@ public class DnsConfigMarshaller {
 
         try {
             protocolMarshaller.marshall(dnsConfig.getNamespaceId(), NAMESPACEID_BINDING);
+            protocolMarshaller.marshall(dnsConfig.getRoutingPolicy(), ROUTINGPOLICY_BINDING);
             protocolMarshaller.marshall(dnsConfig.getDnsRecords(), DNSRECORDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

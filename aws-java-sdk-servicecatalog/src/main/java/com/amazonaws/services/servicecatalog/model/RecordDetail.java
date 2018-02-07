@@ -77,7 +77,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      */
     private java.util.Date createdTime;
@@ -95,7 +95,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
     private String provisionedProductType;
     /**
      * <p>
-     * The record type for this record.
+     * The record type.
      * </p>
      * <ul>
      * <li>
@@ -142,13 +142,13 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
     private String pathId;
     /**
      * <p>
-     * The errors that occurred while processing the request.
+     * The errors that occurred.
      * </p>
      */
     private java.util.List<RecordError> recordErrors;
     /**
      * <p>
-     * The tags associated with this record.
+     * One or more tags.
      * </p>
      */
     private java.util.List<RecordTag> recordTags;
@@ -593,11 +593,11 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      * 
      * @param createdTime
-     *        The UTC timestamp of the creation time.
+     *        The UTC time stamp of the creation time.
      */
 
     public void setCreatedTime(java.util.Date createdTime) {
@@ -606,10 +606,10 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      * 
-     * @return The UTC timestamp of the creation time.
+     * @return The UTC time stamp of the creation time.
      */
 
     public java.util.Date getCreatedTime() {
@@ -618,11 +618,11 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The UTC timestamp of the creation time.
+     * The UTC time stamp of the creation time.
      * </p>
      * 
      * @param createdTime
-     *        The UTC timestamp of the creation time.
+     *        The UTC time stamp of the creation time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -713,7 +713,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The record type for this record.
+     * The record type.
      * </p>
      * <ul>
      * <li>
@@ -734,7 +734,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param recordType
-     *        The record type for this record.</p>
+     *        The record type.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -759,7 +759,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The record type for this record.
+     * The record type.
      * </p>
      * <ul>
      * <li>
@@ -779,7 +779,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return The record type for this record.</p>
+     * @return The record type.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -804,7 +804,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The record type for this record.
+     * The record type.
      * </p>
      * <ul>
      * <li>
@@ -825,7 +825,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param recordType
-     *        The record type for this record.</p>
+     *        The record type.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1012,10 +1012,10 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The errors that occurred while processing the request.
+     * The errors that occurred.
      * </p>
      * 
-     * @return The errors that occurred while processing the request.
+     * @return The errors that occurred.
      */
 
     public java.util.List<RecordError> getRecordErrors() {
@@ -1024,11 +1024,11 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The errors that occurred while processing the request.
+     * The errors that occurred.
      * </p>
      * 
      * @param recordErrors
-     *        The errors that occurred while processing the request.
+     *        The errors that occurred.
      */
 
     public void setRecordErrors(java.util.Collection<RecordError> recordErrors) {
@@ -1042,7 +1042,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The errors that occurred while processing the request.
+     * The errors that occurred.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1051,7 +1051,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param recordErrors
-     *        The errors that occurred while processing the request.
+     *        The errors that occurred.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1067,11 +1067,11 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The errors that occurred while processing the request.
+     * The errors that occurred.
      * </p>
      * 
      * @param recordErrors
-     *        The errors that occurred while processing the request.
+     *        The errors that occurred.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1082,10 +1082,10 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags associated with this record.
+     * One or more tags.
      * </p>
      * 
-     * @return The tags associated with this record.
+     * @return One or more tags.
      */
 
     public java.util.List<RecordTag> getRecordTags() {
@@ -1094,11 +1094,11 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags associated with this record.
+     * One or more tags.
      * </p>
      * 
      * @param recordTags
-     *        The tags associated with this record.
+     *        One or more tags.
      */
 
     public void setRecordTags(java.util.Collection<RecordTag> recordTags) {
@@ -1112,7 +1112,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags associated with this record.
+     * One or more tags.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1121,7 +1121,7 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param recordTags
-     *        The tags associated with this record.
+     *        One or more tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1137,11 +1137,11 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags associated with this record.
+     * One or more tags.
      * </p>
      * 
      * @param recordTags
-     *        The tags associated with this record.
+     *        One or more tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

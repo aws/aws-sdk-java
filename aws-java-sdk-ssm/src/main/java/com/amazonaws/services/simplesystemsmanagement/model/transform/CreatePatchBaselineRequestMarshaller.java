@@ -42,10 +42,14 @@ public class CreatePatchBaselineRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApprovedPatches").build();
     private static final MarshallingInfo<String> APPROVEDPATCHESCOMPLIANCELEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApprovedPatchesComplianceLevel").build();
+    private static final MarshallingInfo<Boolean> APPROVEDPATCHESENABLENONSECURITY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApprovedPatchesEnableNonSecurity").build();
     private static final MarshallingInfo<List> REJECTEDPATCHES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RejectedPatches").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<List> SOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Sources").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
@@ -72,8 +76,10 @@ public class CreatePatchBaselineRequestMarshaller {
             protocolMarshaller.marshall(createPatchBaselineRequest.getApprovalRules(), APPROVALRULES_BINDING);
             protocolMarshaller.marshall(createPatchBaselineRequest.getApprovedPatches(), APPROVEDPATCHES_BINDING);
             protocolMarshaller.marshall(createPatchBaselineRequest.getApprovedPatchesComplianceLevel(), APPROVEDPATCHESCOMPLIANCELEVEL_BINDING);
+            protocolMarshaller.marshall(createPatchBaselineRequest.getApprovedPatchesEnableNonSecurity(), APPROVEDPATCHESENABLENONSECURITY_BINDING);
             protocolMarshaller.marshall(createPatchBaselineRequest.getRejectedPatches(), REJECTEDPATCHES_BINDING);
             protocolMarshaller.marshall(createPatchBaselineRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createPatchBaselineRequest.getSources(), SOURCES_BINDING);
             protocolMarshaller.marshall(createPatchBaselineRequest.getClientToken(), CLIENTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
