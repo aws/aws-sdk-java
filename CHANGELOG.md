@@ -1,3 +1,40 @@
+# __1.11.274__ __2018-02-08__
+## __AWS Budgets__
+  - ### Features
+    - Making budgetLimit and timePeriod optional, and updating budgets docs. 
+
+## __AWS Database Migration Service__
+  - ### Features
+    - This release includes the addition of two new APIs: describe replication instance task logs and reboot instance. The first allows user to see how much storage each log for a task on a given instance is occupying. The second gives users the option to reboot the application software on the instance and force a fail over for MAZ instances to test robustness of their integration with our service. 
+
+## __AWS Directory Service__
+  - ### Features
+    - Updated the regex of some input parameters to support longer EC2 identifiers.
+
+## __AWS Elemental MediaLive__
+  - ### Features
+    - AWS Elemental MediaLive has added support for updating channel settings for idle channels. You can now update channel name, channel outputs and output destinations, encoder settings, user role ARN, and input specifications. Channel settings can be updated in the console or with API calls. Please note that running channels need to be stopped before they can be updated. We've also deprecated the 'Reserved' field.
+
+## __AWS Elemental MediaStore__
+  - ### Features
+    - AWS Elemental MediaStore now supports per-container CORS configuration.
+
+## __Amazon AppStream__
+  - ### Features
+    - Adds support for allowing customers to provide a redirect URL for a stack. Users will be redirected to the link provided by the admin at the end of their streaming session. 
+
+## __Amazon DynamoDB__
+  - ### Features
+    - Amazon DynamoDB now supports server-side encryption using a default service key (alias/aws/dynamodb) from the AWS Key Management Service (KMS). AWS KMS is a service that combines secure, highly available hardware and software to provide a key management system scaled for the cloud. AWS KMS is used via the AWS Management Console or APIs to centrally create encryption keys, define the policies that control how keys can be used, and audit key usage to prove they are being used correctly. For more information, see the Amazon DynamoDB Developer Guide.
+
+## __Amazon GameLift__
+  - ### Features
+    - Amazon GameLift FlexMatch added the StartMatchBackfill API.  This API allows developers to add new players to an existing game session using the same matchmaking rules and player data that were used to initially create the session.
+
+## __Amazon SNS__
+  - ### Features
+    - Adding a new utility ([SnsMessageManager](https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/sns/message/SnsMessageManager.html)) to parse and validate SNS messages published to an HTTP/HTTPs endpoint. See this [blog post](https://aws.amazon.com/blogs/developer/publishing-to-https-endpoints-using-sns-and-the-aws-sdk-for-java/) for more information.
+
 # __1.11.273__ __2018-02-06__
 ## __AWS Glue__
   - ### Features

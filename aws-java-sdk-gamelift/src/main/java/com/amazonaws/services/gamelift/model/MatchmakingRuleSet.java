@@ -25,8 +25,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <p>
  * A rule set may define the following elements for a match. For detailed information and examples showing how to
- * construct a rule set, see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-rules.html">Create
- * Matchmaking Rules for Your Game</a>.
+ * construct a rule set, see <a
+ * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build a FlexMatch Rule Set</a>.
  * </p>
  * <ul>
  * <li>
@@ -45,13 +45,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <li>
  * <p>
  * Rules -- Optional. Rules define how to evaluate potential players for a match based on player attributes. A rule
- * might specify minimum requirements for individual players--such as each player must meet a certain skill level, or
- * may describe an entire group--such as all teams must be evenly matched or have at least one player in a certain role.
+ * might specify minimum requirements for individual players, teams, or entire matches. For example, a rule might
+ * require each player to meet a certain skill level, each team to have at least one player in a certain role, or the
+ * match to have a minimum average skill level. or may describe an entire group--such as all teams must be evenly
+ * matched or have at least one player in a certain role.
  * </p>
  * </li>
  * <li>
  * <p>
- * Expansions -- Optional. Expansions allow you to relax the rules after a period of time if no acceptable matches are
+ * Expansions -- Optional. Expansions allow you to relax the rules after a period of time when no acceptable matches are
  * found. This feature lets you balance getting players into games in a reasonable amount of time instead of making them
  * wait indefinitely for the best possible match. For example, you might use an expansion to increase the maximum skill
  * variance between players after 30 seconds.

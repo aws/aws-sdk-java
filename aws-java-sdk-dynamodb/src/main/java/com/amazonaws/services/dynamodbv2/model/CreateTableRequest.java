@@ -284,6 +284,12 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      */
     private StreamSpecification streamSpecification;
+    /**
+     * <p>
+     * Represents the settings used to enable server-side encryption.
+     * </p>
+     */
+    private SSESpecification sSESpecification;
 
     /**
      * Default constructor for CreateTableRequest object. Callers should use the setter or fluent setter (with...)
@@ -2469,6 +2475,46 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * Represents the settings used to enable server-side encryption.
+     * </p>
+     * 
+     * @param sSESpecification
+     *        Represents the settings used to enable server-side encryption.
+     */
+
+    public void setSSESpecification(SSESpecification sSESpecification) {
+        this.sSESpecification = sSESpecification;
+    }
+
+    /**
+     * <p>
+     * Represents the settings used to enable server-side encryption.
+     * </p>
+     * 
+     * @return Represents the settings used to enable server-side encryption.
+     */
+
+    public SSESpecification getSSESpecification() {
+        return this.sSESpecification;
+    }
+
+    /**
+     * <p>
+     * Represents the settings used to enable server-side encryption.
+     * </p>
+     * 
+     * @param sSESpecification
+     *        Represents the settings used to enable server-side encryption.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTableRequest withSSESpecification(SSESpecification sSESpecification) {
+        setSSESpecification(sSESpecification);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -2492,7 +2538,9 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getProvisionedThroughput() != null)
             sb.append("ProvisionedThroughput: ").append(getProvisionedThroughput()).append(",");
         if (getStreamSpecification() != null)
-            sb.append("StreamSpecification: ").append(getStreamSpecification());
+            sb.append("StreamSpecification: ").append(getStreamSpecification()).append(",");
+        if (getSSESpecification() != null)
+            sb.append("SSESpecification: ").append(getSSESpecification());
         sb.append("}");
         return sb.toString();
     }
@@ -2535,6 +2583,10 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getStreamSpecification() != null && other.getStreamSpecification().equals(this.getStreamSpecification()) == false)
             return false;
+        if (other.getSSESpecification() == null ^ this.getSSESpecification() == null)
+            return false;
+        if (other.getSSESpecification() != null && other.getSSESpecification().equals(this.getSSESpecification()) == false)
+            return false;
         return true;
     }
 
@@ -2550,6 +2602,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getGlobalSecondaryIndexes() == null) ? 0 : getGlobalSecondaryIndexes().hashCode());
         hashCode = prime * hashCode + ((getProvisionedThroughput() == null) ? 0 : getProvisionedThroughput().hashCode());
         hashCode = prime * hashCode + ((getStreamSpecification() == null) ? 0 : getStreamSpecification().hashCode());
+        hashCode = prime * hashCode + ((getSSESpecification() == null) ? 0 : getSSESpecification().hashCode());
         return hashCode;
     }
 

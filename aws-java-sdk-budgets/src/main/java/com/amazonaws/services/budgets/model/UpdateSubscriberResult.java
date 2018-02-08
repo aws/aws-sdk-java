@@ -16,7 +16,9 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
+ * <p>
  * Response of UpdateSubscriber
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateSubscriberResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {

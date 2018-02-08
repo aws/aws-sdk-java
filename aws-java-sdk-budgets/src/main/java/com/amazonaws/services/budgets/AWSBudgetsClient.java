@@ -48,7 +48,54 @@ import com.amazonaws.services.budgets.model.transform.*;
  * Client for accessing AWSBudgets. All service calls made using this client are blocking, and will not return until the
  * service call completes.
  * <p>
- * All public APIs for AWS Budgets
+ * <p>
+ * Budgets enable you to plan your service usage, service costs, and your RI utilization. You can also track how close
+ * your plan is to your budgeted amount or to the free tier limits. Budgets provide you with a quick way to see your
+ * usage-to-date and current estimated charges from AWS and to see how much your predicted usage accrues in charges by
+ * the end of the month. Budgets also compare current estimates and charges to the amount that you indicated you want to
+ * use or spend and lets you see how much of your budget has been used. AWS updates your budget status several times a
+ * day. Budgets track your unblended costs, subscriptions, and refunds. You can create the following types of budgets:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Cost budgets allow you to say how much you want to spend on a service.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Usage budgets allow you to say how many hours you want to use for one or more services.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * RI utilization budgets allow you to define a utilization threshold and receive alerts when RIs are tracking below
+ * that threshold.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * You can create up to 20,000 budgets per AWS master account. Your first two budgets are free of charge. Each
+ * additional budget costs $0.02 per day. You can set up optional notifications that warn you if you exceed, or are
+ * forecasted to exceed, your budgeted amount. You can have notifications sent to an Amazon SNS topic, to an email
+ * address, or to both. For more information, see <a
+ * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-sns-policy.html">Creating an Amazon SNS
+ * Topic for Budget Notifications</a>. AWS Free Tier usage alerts via AWS Budgets are provided for you, and do not count
+ * toward your budget limits.
+ * </p>
+ * <p>
+ * Service Endpoint
+ * </p>
+ * <p>
+ * The AWS Budgets API provides the following endpoint:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * https://budgets.us-east-1.amazonaws.com
+ * </p>
+ * </li>
+ * </ul>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -275,21 +322,21 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
     }
 
     /**
-     * Create a new budget
+     * <p>
+     * Creates a budget and, if included, notifications and subscribers.
+     * </p>
      * 
      * @param createBudgetRequest
      *        Request of CreateBudget
      * @return Result of the CreateBudget operation returned by the service.
      * @throws InvalidParameterException
-     *         This exception is thrown if any request is given an invalid parameter. E.g., if a required Date field is
-     *         null.
+     *         An error on the client occurred. Typically, the cause is an invalid input value.
      * @throws InternalErrorException
-     *         This exception is thrown on an unknown internal failure.
+     *         An error on the server occurred during the processing of your request. Try again later.
      * @throws CreationLimitExceededException
-     *         The exception is thrown when customer tries to create a record (e.g. budget), but the number this record
-     *         already exceeds the limitation.
+     *         You've exceeded the notification or subscriber limit.
      * @throws DuplicateRecordException
-     *         The exception is thrown when customer tries to create a record (e.g. budget) that already exists.
+     *         The budget name already exists. Budget names must be unique within an account.
      * @sample AWSBudgets.CreateBudget
      */
     @Override
@@ -331,24 +378,23 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
     }
 
     /**
-     * Create a new Notification with subscribers for a budget
+     * <p>
+     * Creates a notification. You must create the budget before you create the associated notification.
+     * </p>
      * 
      * @param createNotificationRequest
      *        Request of CreateNotification
      * @return Result of the CreateNotification operation returned by the service.
      * @throws InternalErrorException
-     *         This exception is thrown on an unknown internal failure.
+     *         An error on the server occurred during the processing of your request. Try again later.
      * @throws InvalidParameterException
-     *         This exception is thrown if any request is given an invalid parameter. E.g., if a required Date field is
-     *         null.
+     *         An error on the client occurred. Typically, the cause is an invalid input value.
      * @throws NotFoundException
-     *         This exception is thrown if a requested entity is not found. E.g., if a budget id doesn't exist for an
-     *         account ID.
+     *         We can’t locate the resource that you specified.
      * @throws CreationLimitExceededException
-     *         The exception is thrown when customer tries to create a record (e.g. budget), but the number this record
-     *         already exceeds the limitation.
+     *         You've exceeded the notification or subscriber limit.
      * @throws DuplicateRecordException
-     *         The exception is thrown when customer tries to create a record (e.g. budget) that already exists.
+     *         The budget name already exists. Budget names must be unique within an account.
      * @sample AWSBudgets.CreateNotification
      */
     @Override
@@ -390,24 +436,23 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
     }
 
     /**
-     * Create a new Subscriber for a notification
+     * <p>
+     * Creates a subscriber. You must create the associated budget and notification before you create the subscriber.
+     * </p>
      * 
      * @param createSubscriberRequest
      *        Request of CreateSubscriber
      * @return Result of the CreateSubscriber operation returned by the service.
      * @throws InternalErrorException
-     *         This exception is thrown on an unknown internal failure.
+     *         An error on the server occurred during the processing of your request. Try again later.
      * @throws InvalidParameterException
-     *         This exception is thrown if any request is given an invalid parameter. E.g., if a required Date field is
-     *         null.
+     *         An error on the client occurred. Typically, the cause is an invalid input value.
      * @throws CreationLimitExceededException
-     *         The exception is thrown when customer tries to create a record (e.g. budget), but the number this record
-     *         already exceeds the limitation.
+     *         You've exceeded the notification or subscriber limit.
      * @throws DuplicateRecordException
-     *         The exception is thrown when customer tries to create a record (e.g. budget) that already exists.
+     *         The budget name already exists. Budget names must be unique within an account.
      * @throws NotFoundException
-     *         This exception is thrown if a requested entity is not found. E.g., if a budget id doesn't exist for an
-     *         account ID.
+     *         We can’t locate the resource that you specified.
      * @sample AWSBudgets.CreateSubscriber
      */
     @Override
@@ -449,19 +494,22 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
     }
 
     /**
-     * Delete a budget and related notifications
+     * <p>
+     * Deletes a budget. You can delete your budget at any time.
+     * </p>
+     * <p>
+     * <b>Deleting a budget also deletes the notifications and subscribers associated with that budget.</b>
+     * </p>
      * 
      * @param deleteBudgetRequest
      *        Request of DeleteBudget
      * @return Result of the DeleteBudget operation returned by the service.
      * @throws InternalErrorException
-     *         This exception is thrown on an unknown internal failure.
+     *         An error on the server occurred during the processing of your request. Try again later.
      * @throws InvalidParameterException
-     *         This exception is thrown if any request is given an invalid parameter. E.g., if a required Date field is
-     *         null.
+     *         An error on the client occurred. Typically, the cause is an invalid input value.
      * @throws NotFoundException
-     *         This exception is thrown if a requested entity is not found. E.g., if a budget id doesn't exist for an
-     *         account ID.
+     *         We can’t locate the resource that you specified.
      * @sample AWSBudgets.DeleteBudget
      */
     @Override
@@ -503,19 +551,22 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
     }
 
     /**
-     * Delete a notification and related subscribers
+     * <p>
+     * Deletes a notification.
+     * </p>
+     * <p>
+     * <b>Deleting a notification also deletes the subscribers associated with the notification.</b>
+     * </p>
      * 
      * @param deleteNotificationRequest
      *        Request of DeleteNotification
      * @return Result of the DeleteNotification operation returned by the service.
      * @throws InvalidParameterException
-     *         This exception is thrown if any request is given an invalid parameter. E.g., if a required Date field is
-     *         null.
+     *         An error on the client occurred. Typically, the cause is an invalid input value.
      * @throws InternalErrorException
-     *         This exception is thrown on an unknown internal failure.
+     *         An error on the server occurred during the processing of your request. Try again later.
      * @throws NotFoundException
-     *         This exception is thrown if a requested entity is not found. E.g., if a budget id doesn't exist for an
-     *         account ID.
+     *         We can’t locate the resource that you specified.
      * @sample AWSBudgets.DeleteNotification
      */
     @Override
@@ -557,19 +608,22 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
     }
 
     /**
-     * Delete a Subscriber for a notification
+     * <p>
+     * Deletes a subscriber.
+     * </p>
+     * <p>
+     * <b>Deleting the last subscriber to a notification also deletes the notification.</b>
+     * </p>
      * 
      * @param deleteSubscriberRequest
      *        Request of DeleteSubscriber
      * @return Result of the DeleteSubscriber operation returned by the service.
      * @throws InternalErrorException
-     *         This exception is thrown on an unknown internal failure.
+     *         An error on the server occurred during the processing of your request. Try again later.
      * @throws InvalidParameterException
-     *         This exception is thrown if any request is given an invalid parameter. E.g., if a required Date field is
-     *         null.
+     *         An error on the client occurred. Typically, the cause is an invalid input value.
      * @throws NotFoundException
-     *         This exception is thrown if a requested entity is not found. E.g., if a budget id doesn't exist for an
-     *         account ID.
+     *         We can’t locate the resource that you specified.
      * @sample AWSBudgets.DeleteSubscriber
      */
     @Override
@@ -611,19 +665,19 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
     }
 
     /**
-     * Get a single budget
+     * <p>
+     * Describes a budget.
+     * </p>
      * 
      * @param describeBudgetRequest
      *        Request of DescribeBudget
      * @return Result of the DescribeBudget operation returned by the service.
      * @throws InternalErrorException
-     *         This exception is thrown on an unknown internal failure.
+     *         An error on the server occurred during the processing of your request. Try again later.
      * @throws InvalidParameterException
-     *         This exception is thrown if any request is given an invalid parameter. E.g., if a required Date field is
-     *         null.
+     *         An error on the client occurred. Typically, the cause is an invalid input value.
      * @throws NotFoundException
-     *         This exception is thrown if a requested entity is not found. E.g., if a budget id doesn't exist for an
-     *         account ID.
+     *         We can’t locate the resource that you specified.
      * @sample AWSBudgets.DescribeBudget
      */
     @Override
@@ -665,24 +719,23 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
     }
 
     /**
-     * Get all budgets for an account
+     * <p>
+     * Lists the budgets associated with an account.
+     * </p>
      * 
      * @param describeBudgetsRequest
      *        Request of DescribeBudgets
      * @return Result of the DescribeBudgets operation returned by the service.
      * @throws InternalErrorException
-     *         This exception is thrown on an unknown internal failure.
+     *         An error on the server occurred during the processing of your request. Try again later.
      * @throws InvalidParameterException
-     *         This exception is thrown if any request is given an invalid parameter. E.g., if a required Date field is
-     *         null.
+     *         An error on the client occurred. Typically, the cause is an invalid input value.
      * @throws NotFoundException
-     *         This exception is thrown if a requested entity is not found. E.g., if a budget id doesn't exist for an
-     *         account ID.
+     *         We can’t locate the resource that you specified.
      * @throws InvalidNextTokenException
-     *         This exception is thrown if paging token signature didn't match the token, or the paging token isn't for
-     *         this request
+     *         The pagination token is invalid.
      * @throws ExpiredNextTokenException
-     *         This exception is thrown if the paging token is expired - past its TTL
+     *         The pagination token expired.
      * @sample AWSBudgets.DescribeBudgets
      */
     @Override
@@ -724,24 +777,23 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
     }
 
     /**
-     * Get notifications of a budget
+     * <p>
+     * Lists the notifications associated with a budget.
+     * </p>
      * 
      * @param describeNotificationsForBudgetRequest
      *        Request of DescribeNotificationsForBudget
      * @return Result of the DescribeNotificationsForBudget operation returned by the service.
      * @throws InternalErrorException
-     *         This exception is thrown on an unknown internal failure.
+     *         An error on the server occurred during the processing of your request. Try again later.
      * @throws InvalidParameterException
-     *         This exception is thrown if any request is given an invalid parameter. E.g., if a required Date field is
-     *         null.
+     *         An error on the client occurred. Typically, the cause is an invalid input value.
      * @throws NotFoundException
-     *         This exception is thrown if a requested entity is not found. E.g., if a budget id doesn't exist for an
-     *         account ID.
+     *         We can’t locate the resource that you specified.
      * @throws InvalidNextTokenException
-     *         This exception is thrown if paging token signature didn't match the token, or the paging token isn't for
-     *         this request
+     *         The pagination token is invalid.
      * @throws ExpiredNextTokenException
-     *         This exception is thrown if the paging token is expired - past its TTL
+     *         The pagination token expired.
      * @sample AWSBudgets.DescribeNotificationsForBudget
      */
     @Override
@@ -785,24 +837,23 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
     }
 
     /**
-     * Get subscribers of a notification
+     * <p>
+     * Lists the subscribers associated with a notification.
+     * </p>
      * 
      * @param describeSubscribersForNotificationRequest
      *        Request of DescribeSubscribersForNotification
      * @return Result of the DescribeSubscribersForNotification operation returned by the service.
      * @throws InternalErrorException
-     *         This exception is thrown on an unknown internal failure.
+     *         An error on the server occurred during the processing of your request. Try again later.
      * @throws NotFoundException
-     *         This exception is thrown if a requested entity is not found. E.g., if a budget id doesn't exist for an
-     *         account ID.
+     *         We can’t locate the resource that you specified.
      * @throws InvalidParameterException
-     *         This exception is thrown if any request is given an invalid parameter. E.g., if a required Date field is
-     *         null.
+     *         An error on the client occurred. Typically, the cause is an invalid input value.
      * @throws InvalidNextTokenException
-     *         This exception is thrown if paging token signature didn't match the token, or the paging token isn't for
-     *         this request
+     *         The pagination token is invalid.
      * @throws ExpiredNextTokenException
-     *         This exception is thrown if the paging token is expired - past its TTL
+     *         The pagination token expired.
      * @sample AWSBudgets.DescribeSubscribersForNotification
      */
     @Override
@@ -847,19 +898,21 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
     }
 
     /**
-     * Update the information of a budget already created
+     * <p>
+     * Updates a budget. You can change every part of a budget except for the <code>budgetName</code> and the
+     * <code>calculatedSpend</code>. When a budget is modified, the <code>calculatedSpend</code> drops to zero until AWS
+     * has new usage data to use for forecasting.
+     * </p>
      * 
      * @param updateBudgetRequest
      *        Request of UpdateBudget
      * @return Result of the UpdateBudget operation returned by the service.
      * @throws InternalErrorException
-     *         This exception is thrown on an unknown internal failure.
+     *         An error on the server occurred during the processing of your request. Try again later.
      * @throws InvalidParameterException
-     *         This exception is thrown if any request is given an invalid parameter. E.g., if a required Date field is
-     *         null.
+     *         An error on the client occurred. Typically, the cause is an invalid input value.
      * @throws NotFoundException
-     *         This exception is thrown if a requested entity is not found. E.g., if a budget id doesn't exist for an
-     *         account ID.
+     *         We can’t locate the resource that you specified.
      * @sample AWSBudgets.UpdateBudget
      */
     @Override
@@ -901,21 +954,21 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
     }
 
     /**
-     * Update the information about a notification already created
+     * <p>
+     * Updates a notification.
+     * </p>
      * 
      * @param updateNotificationRequest
      *        Request of UpdateNotification
      * @return Result of the UpdateNotification operation returned by the service.
      * @throws InternalErrorException
-     *         This exception is thrown on an unknown internal failure.
+     *         An error on the server occurred during the processing of your request. Try again later.
      * @throws InvalidParameterException
-     *         This exception is thrown if any request is given an invalid parameter. E.g., if a required Date field is
-     *         null.
+     *         An error on the client occurred. Typically, the cause is an invalid input value.
      * @throws NotFoundException
-     *         This exception is thrown if a requested entity is not found. E.g., if a budget id doesn't exist for an
-     *         account ID.
+     *         We can’t locate the resource that you specified.
      * @throws DuplicateRecordException
-     *         The exception is thrown when customer tries to create a record (e.g. budget) that already exists.
+     *         The budget name already exists. Budget names must be unique within an account.
      * @sample AWSBudgets.UpdateNotification
      */
     @Override
@@ -957,21 +1010,21 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
     }
 
     /**
-     * Update a subscriber
+     * <p>
+     * Updates a subscriber.
+     * </p>
      * 
      * @param updateSubscriberRequest
      *        Request of UpdateSubscriber
      * @return Result of the UpdateSubscriber operation returned by the service.
      * @throws InternalErrorException
-     *         This exception is thrown on an unknown internal failure.
+     *         An error on the server occurred during the processing of your request. Try again later.
      * @throws InvalidParameterException
-     *         This exception is thrown if any request is given an invalid parameter. E.g., if a required Date field is
-     *         null.
+     *         An error on the client occurred. Typically, the cause is an invalid input value.
      * @throws NotFoundException
-     *         This exception is thrown if a requested entity is not found. E.g., if a budget id doesn't exist for an
-     *         account ID.
+     *         We can’t locate the resource that you specified.
      * @throws DuplicateRecordException
-     *         The exception is thrown when customer tries to create a record (e.g. budget) that already exists.
+     *         The budget name already exists. Budget names must be unique within an account.
      * @sample AWSBudgets.UpdateSubscriber
      */
     @Override

@@ -34,13 +34,15 @@ public class CreateBuildResult extends com.amazonaws.AmazonWebServiceResult<com.
     private Build build;
     /**
      * <p>
-     * This element is not currently in use.
+     * This element is returned only when the operation is called without a storage location. It contains credentials to
+     * use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have
+     * a limited life span. To refresh these credentials, call <a>RequestUploadCredentials</a>.
      * </p>
      */
     private Credentials uploadCredentials;
     /**
      * <p>
-     * Amazon S3 location specified in the request.
+     * Amazon S3 location for your game build file, including bucket name and key.
      * </p>
      */
     private S3Location storageLocation;
@@ -87,11 +89,16 @@ public class CreateBuildResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * This element is not currently in use.
+     * This element is returned only when the operation is called without a storage location. It contains credentials to
+     * use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have
+     * a limited life span. To refresh these credentials, call <a>RequestUploadCredentials</a>.
      * </p>
      * 
      * @param uploadCredentials
-     *        This element is not currently in use.
+     *        This element is returned only when the operation is called without a storage location. It contains
+     *        credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon
+     *        GameLift. Credentials have a limited life span. To refresh these credentials, call
+     *        <a>RequestUploadCredentials</a>.
      */
 
     public void setUploadCredentials(Credentials uploadCredentials) {
@@ -100,10 +107,15 @@ public class CreateBuildResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * This element is not currently in use.
+     * This element is returned only when the operation is called without a storage location. It contains credentials to
+     * use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have
+     * a limited life span. To refresh these credentials, call <a>RequestUploadCredentials</a>.
      * </p>
      * 
-     * @return This element is not currently in use.
+     * @return This element is returned only when the operation is called without a storage location. It contains
+     *         credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon
+     *         GameLift. Credentials have a limited life span. To refresh these credentials, call
+     *         <a>RequestUploadCredentials</a>.
      */
 
     public Credentials getUploadCredentials() {
@@ -112,11 +124,16 @@ public class CreateBuildResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * This element is not currently in use.
+     * This element is returned only when the operation is called without a storage location. It contains credentials to
+     * use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have
+     * a limited life span. To refresh these credentials, call <a>RequestUploadCredentials</a>.
      * </p>
      * 
      * @param uploadCredentials
-     *        This element is not currently in use.
+     *        This element is returned only when the operation is called without a storage location. It contains
+     *        credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon
+     *        GameLift. Credentials have a limited life span. To refresh these credentials, call
+     *        <a>RequestUploadCredentials</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,11 +144,11 @@ public class CreateBuildResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Amazon S3 location specified in the request.
+     * Amazon S3 location for your game build file, including bucket name and key.
      * </p>
      * 
      * @param storageLocation
-     *        Amazon S3 location specified in the request.
+     *        Amazon S3 location for your game build file, including bucket name and key.
      */
 
     public void setStorageLocation(S3Location storageLocation) {
@@ -140,10 +157,10 @@ public class CreateBuildResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Amazon S3 location specified in the request.
+     * Amazon S3 location for your game build file, including bucket name and key.
      * </p>
      * 
-     * @return Amazon S3 location specified in the request.
+     * @return Amazon S3 location for your game build file, including bucket name and key.
      */
 
     public S3Location getStorageLocation() {
@@ -152,11 +169,11 @@ public class CreateBuildResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Amazon S3 location specified in the request.
+     * Amazon S3 location for your game build file, including bucket name and key.
      * </p>
      * 
      * @param storageLocation
-     *        Amazon S3 location specified in the request.
+     *        Amazon S3 location for your game build file, including bucket name and key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

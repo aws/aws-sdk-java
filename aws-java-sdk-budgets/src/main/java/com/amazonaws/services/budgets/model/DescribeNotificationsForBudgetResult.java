@@ -16,18 +16,33 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
+ * <p>
  * Response of GetNotificationsForBudget
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeNotificationsForBudgetResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {
 
+    /**
+     * <p>
+     * A list of notifications associated with a budget.
+     * </p>
+     */
     private java.util.List<Notification> notifications;
-
+    /**
+     * <p>
+     * The pagination token that indicates the next set of results that you can retrieve.
+     * </p>
+     */
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * A list of notifications associated with a budget.
+     * </p>
+     * 
+     * @return A list of notifications associated with a budget.
      */
 
     public java.util.List<Notification> getNotifications() {
@@ -35,7 +50,12 @@ public class DescribeNotificationsForBudgetResult extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * A list of notifications associated with a budget.
+     * </p>
+     * 
      * @param notifications
+     *        A list of notifications associated with a budget.
      */
 
     public void setNotifications(java.util.Collection<Notification> notifications) {
@@ -49,12 +69,16 @@ public class DescribeNotificationsForBudgetResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
+     * A list of notifications associated with a budget.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setNotifications(java.util.Collection)} or {@link #withNotifications(java.util.Collection)} if you want
      * to override the existing values.
      * </p>
      * 
      * @param notifications
+     *        A list of notifications associated with a budget.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -69,7 +93,12 @@ public class DescribeNotificationsForBudgetResult extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * A list of notifications associated with a budget.
+     * </p>
+     * 
      * @param notifications
+     *        A list of notifications associated with a budget.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,7 +108,12 @@ public class DescribeNotificationsForBudgetResult extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * The pagination token that indicates the next set of results that you can retrieve.
+     * </p>
+     * 
      * @param nextToken
+     *        The pagination token that indicates the next set of results that you can retrieve.
      */
 
     public void setNextToken(String nextToken) {
@@ -87,7 +121,11 @@ public class DescribeNotificationsForBudgetResult extends com.amazonaws.AmazonWe
     }
 
     /**
-     * @return
+     * <p>
+     * The pagination token that indicates the next set of results that you can retrieve.
+     * </p>
+     * 
+     * @return The pagination token that indicates the next set of results that you can retrieve.
      */
 
     public String getNextToken() {
@@ -95,7 +133,12 @@ public class DescribeNotificationsForBudgetResult extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * The pagination token that indicates the next set of results that you can retrieve.
+     * </p>
+     * 
      * @param nextToken
+     *        The pagination token that indicates the next set of results that you can retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

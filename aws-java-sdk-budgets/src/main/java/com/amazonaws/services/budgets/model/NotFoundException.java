@@ -15,7 +15,9 @@ package com.amazonaws.services.budgets.model;
 import javax.annotation.Generated;
 
 /**
- * This exception is thrown if a requested entity is not found. E.g., if a budget id doesn't exist for an account ID.
+ * <p>
+ * We can’t locate the resource that you specified.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NotFoundException extends com.amazonaws.services.budgets.model.AWSBudgetsException {

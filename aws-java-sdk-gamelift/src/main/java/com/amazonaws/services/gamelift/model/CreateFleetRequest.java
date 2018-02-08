@@ -135,8 +135,9 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private ResourceCreationLimitPolicy resourceCreationLimitPolicy;
     /**
      * <p>
-     * Names of metric groups to add this fleet to. Use an existing metric group name to add this fleet to the group. Or
-     * use a new name to create a new metric group. A fleet can only be included in one metric group at a time.
+     * Name of a metric group to add this fleet to. A metric group tracks metrics across all fleets in the group. Use an
+     * existing metric group name to add this fleet to the group, or use a new name to create a new metric group. A
+     * fleet can only be included in one metric group at a time.
      * </p>
      */
     private java.util.List<String> metricGroups;
@@ -1045,13 +1046,14 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Names of metric groups to add this fleet to. Use an existing metric group name to add this fleet to the group. Or
-     * use a new name to create a new metric group. A fleet can only be included in one metric group at a time.
+     * Name of a metric group to add this fleet to. A metric group tracks metrics across all fleets in the group. Use an
+     * existing metric group name to add this fleet to the group, or use a new name to create a new metric group. A
+     * fleet can only be included in one metric group at a time.
      * </p>
      * 
-     * @return Names of metric groups to add this fleet to. Use an existing metric group name to add this fleet to the
-     *         group. Or use a new name to create a new metric group. A fleet can only be included in one metric group
-     *         at a time.
+     * @return Name of a metric group to add this fleet to. A metric group tracks metrics across all fleets in the
+     *         group. Use an existing metric group name to add this fleet to the group, or use a new name to create a
+     *         new metric group. A fleet can only be included in one metric group at a time.
      */
 
     public java.util.List<String> getMetricGroups() {
@@ -1060,14 +1062,15 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Names of metric groups to add this fleet to. Use an existing metric group name to add this fleet to the group. Or
-     * use a new name to create a new metric group. A fleet can only be included in one metric group at a time.
+     * Name of a metric group to add this fleet to. A metric group tracks metrics across all fleets in the group. Use an
+     * existing metric group name to add this fleet to the group, or use a new name to create a new metric group. A
+     * fleet can only be included in one metric group at a time.
      * </p>
      * 
      * @param metricGroups
-     *        Names of metric groups to add this fleet to. Use an existing metric group name to add this fleet to the
-     *        group. Or use a new name to create a new metric group. A fleet can only be included in one metric group at
-     *        a time.
+     *        Name of a metric group to add this fleet to. A metric group tracks metrics across all fleets in the group.
+     *        Use an existing metric group name to add this fleet to the group, or use a new name to create a new metric
+     *        group. A fleet can only be included in one metric group at a time.
      */
 
     public void setMetricGroups(java.util.Collection<String> metricGroups) {
@@ -1081,8 +1084,9 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Names of metric groups to add this fleet to. Use an existing metric group name to add this fleet to the group. Or
-     * use a new name to create a new metric group. A fleet can only be included in one metric group at a time.
+     * Name of a metric group to add this fleet to. A metric group tracks metrics across all fleets in the group. Use an
+     * existing metric group name to add this fleet to the group, or use a new name to create a new metric group. A
+     * fleet can only be included in one metric group at a time.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1091,9 +1095,9 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param metricGroups
-     *        Names of metric groups to add this fleet to. Use an existing metric group name to add this fleet to the
-     *        group. Or use a new name to create a new metric group. A fleet can only be included in one metric group at
-     *        a time.
+     *        Name of a metric group to add this fleet to. A metric group tracks metrics across all fleets in the group.
+     *        Use an existing metric group name to add this fleet to the group, or use a new name to create a new metric
+     *        group. A fleet can only be included in one metric group at a time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1109,14 +1113,15 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Names of metric groups to add this fleet to. Use an existing metric group name to add this fleet to the group. Or
-     * use a new name to create a new metric group. A fleet can only be included in one metric group at a time.
+     * Name of a metric group to add this fleet to. A metric group tracks metrics across all fleets in the group. Use an
+     * existing metric group name to add this fleet to the group, or use a new name to create a new metric group. A
+     * fleet can only be included in one metric group at a time.
      * </p>
      * 
      * @param metricGroups
-     *        Names of metric groups to add this fleet to. Use an existing metric group name to add this fleet to the
-     *        group. Or use a new name to create a new metric group. A fleet can only be included in one metric group at
-     *        a time.
+     *        Name of a metric group to add this fleet to. A metric group tracks metrics across all fleets in the group.
+     *        Use an existing metric group name to add this fleet to the group, or use a new name to create a new metric
+     *        group. A fleet can only be included in one metric group at a time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

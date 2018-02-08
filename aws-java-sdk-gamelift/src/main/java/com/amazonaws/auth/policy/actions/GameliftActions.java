@@ -127,6 +127,8 @@ public enum GameliftActions implements Action {
     SearchGameSessions("gamelift:SearchGameSessions"),
     /** Action for the StartGameSessionPlacement operation. */
     StartGameSessionPlacement("gamelift:StartGameSessionPlacement"),
+    /** Action for the StartMatchBackfill operation. */
+    StartMatchBackfill("gamelift:StartMatchBackfill"),
     /** Action for the StartMatchmaking operation. */
     StartMatchmaking("gamelift:StartMatchmaking"),
     /** Action for the StopGameSessionPlacement operation. */

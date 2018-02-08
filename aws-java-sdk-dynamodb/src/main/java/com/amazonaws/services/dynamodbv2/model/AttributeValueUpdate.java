@@ -51,7 +51,7 @@ public class AttributeValueUpdate implements Serializable, Cloneable, Structured
      * <p>
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
-     * >Data TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
     private AttributeValue value;
@@ -173,7 +173,7 @@ public class AttributeValueUpdate implements Serializable, Cloneable, Structured
      *        <p>
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
-     *        >Data TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @param action
      *        Specifies how to perform the update. Valid values are <code>PUT</code> (default), <code>DELETE</code>, and
      *        <code>ADD</code>. The behavior depends on whether the specified primary key already exists in the table.
@@ -291,7 +291,7 @@ public class AttributeValueUpdate implements Serializable, Cloneable, Structured
      *        <p>
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
-     *        >Data TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @param action
      *        Specifies how to perform the update. Valid values are <code>PUT</code> (default), <code>DELETE</code>, and
      *        <code>ADD</code>. The behavior depends on whether the specified primary key already exists in the table.
@@ -407,7 +407,7 @@ public class AttributeValueUpdate implements Serializable, Cloneable, Structured
      * <p>
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
-     * >Data TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param value
@@ -419,7 +419,7 @@ public class AttributeValueUpdate implements Serializable, Cloneable, Structured
      *        <p>
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
-     *        >Data TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public void setValue(AttributeValue value) {
@@ -437,7 +437,7 @@ public class AttributeValueUpdate implements Serializable, Cloneable, Structured
      * <p>
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
-     * >Data TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return Represents the data for an attribute.</p>
@@ -448,7 +448,7 @@ public class AttributeValueUpdate implements Serializable, Cloneable, Structured
      *         <p>
      *         For more information, see <a href=
      *         "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
-     *         >Data TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
     public AttributeValue getValue() {
@@ -466,7 +466,7 @@ public class AttributeValueUpdate implements Serializable, Cloneable, Structured
      * <p>
      * For more information, see <a href=
      * "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
-     * >Data TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param value
@@ -478,7 +478,7 @@ public class AttributeValueUpdate implements Serializable, Cloneable, Structured
      *        <p>
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes"
-     *        >Data TYpes</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *        >Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -15,7 +15,9 @@ package com.amazonaws.services.budgets.model;
 import javax.annotation.Generated;
 
 /**
+ * <p>
  * The type of a notification. It should be ACTUAL or FORECASTED.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum NotificationType {

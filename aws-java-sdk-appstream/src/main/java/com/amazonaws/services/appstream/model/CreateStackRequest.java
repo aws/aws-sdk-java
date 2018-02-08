@@ -49,6 +49,12 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private java.util.List<StorageConnector> storageConnectors;
+    /**
+     * <p>
+     * The URL the user is redirected to after the streaming session ends.
+     * </p>
+     */
+    private String redirectURL;
 
     /**
      * <p>
@@ -241,6 +247,46 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The URL the user is redirected to after the streaming session ends.
+     * </p>
+     * 
+     * @param redirectURL
+     *        The URL the user is redirected to after the streaming session ends.
+     */
+
+    public void setRedirectURL(String redirectURL) {
+        this.redirectURL = redirectURL;
+    }
+
+    /**
+     * <p>
+     * The URL the user is redirected to after the streaming session ends.
+     * </p>
+     * 
+     * @return The URL the user is redirected to after the streaming session ends.
+     */
+
+    public String getRedirectURL() {
+        return this.redirectURL;
+    }
+
+    /**
+     * <p>
+     * The URL the user is redirected to after the streaming session ends.
+     * </p>
+     * 
+     * @param redirectURL
+     *        The URL the user is redirected to after the streaming session ends.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackRequest withRedirectURL(String redirectURL) {
+        setRedirectURL(redirectURL);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -258,7 +304,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getDisplayName() != null)
             sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getStorageConnectors() != null)
-            sb.append("StorageConnectors: ").append(getStorageConnectors());
+            sb.append("StorageConnectors: ").append(getStorageConnectors()).append(",");
+        if (getRedirectURL() != null)
+            sb.append("RedirectURL: ").append(getRedirectURL());
         sb.append("}");
         return sb.toString();
     }
@@ -289,6 +337,10 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getStorageConnectors() != null && other.getStorageConnectors().equals(this.getStorageConnectors()) == false)
             return false;
+        if (other.getRedirectURL() == null ^ this.getRedirectURL() == null)
+            return false;
+        if (other.getRedirectURL() != null && other.getRedirectURL().equals(this.getRedirectURL()) == false)
+            return false;
         return true;
     }
 
@@ -301,6 +353,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getStorageConnectors() == null) ? 0 : getStorageConnectors().hashCode());
+        hashCode = prime * hashCode + ((getRedirectURL() == null) ? 0 : getRedirectURL().hashCode());
         return hashCode;
     }
 

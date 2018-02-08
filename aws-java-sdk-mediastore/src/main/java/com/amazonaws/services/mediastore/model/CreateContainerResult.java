@@ -33,7 +33,7 @@ public class CreateContainerResult extends com.amazonaws.AmazonWebServiceResult<
      * ContainerName: The container name as specified in the request.
      * </p>
      * <p>
-     * CreationTime: Unix timestamp.
+     * CreationTime: Unix time stamp.
      * </p>
      * <p>
      * Status: The status of container creation or deletion. The status is one of the following: <code>CREATING</code>,
@@ -57,7 +57,7 @@ public class CreateContainerResult extends com.amazonaws.AmazonWebServiceResult<
      * ContainerName: The container name as specified in the request.
      * </p>
      * <p>
-     * CreationTime: Unix timestamp.
+     * CreationTime: Unix time stamp.
      * </p>
      * <p>
      * Status: The status of container creation or deletion. The status is one of the following: <code>CREATING</code>,
@@ -77,7 +77,7 @@ public class CreateContainerResult extends com.amazonaws.AmazonWebServiceResult<
      *        ContainerName: The container name as specified in the request.
      *        </p>
      *        <p>
-     *        CreationTime: Unix timestamp.
+     *        CreationTime: Unix time stamp.
      *        </p>
      *        <p>
      *        Status: The status of container creation or deletion. The status is one of the following:
@@ -104,7 +104,7 @@ public class CreateContainerResult extends com.amazonaws.AmazonWebServiceResult<
      * ContainerName: The container name as specified in the request.
      * </p>
      * <p>
-     * CreationTime: Unix timestamp.
+     * CreationTime: Unix time stamp.
      * </p>
      * <p>
      * Status: The status of container creation or deletion. The status is one of the following: <code>CREATING</code>,
@@ -123,7 +123,7 @@ public class CreateContainerResult extends com.amazonaws.AmazonWebServiceResult<
      *         ContainerName: The container name as specified in the request.
      *         </p>
      *         <p>
-     *         CreationTime: Unix timestamp.
+     *         CreationTime: Unix time stamp.
      *         </p>
      *         <p>
      *         Status: The status of container creation or deletion. The status is one of the following:
@@ -150,7 +150,7 @@ public class CreateContainerResult extends com.amazonaws.AmazonWebServiceResult<
      * ContainerName: The container name as specified in the request.
      * </p>
      * <p>
-     * CreationTime: Unix timestamp.
+     * CreationTime: Unix time stamp.
      * </p>
      * <p>
      * Status: The status of container creation or deletion. The status is one of the following: <code>CREATING</code>,
@@ -170,7 +170,7 @@ public class CreateContainerResult extends com.amazonaws.AmazonWebServiceResult<
      *        ContainerName: The container name as specified in the request.
      *        </p>
      *        <p>
-     *        CreationTime: Unix timestamp.
+     *        CreationTime: Unix time stamp.
      *        </p>
      *        <p>
      *        Status: The status of container creation or deletion. The status is one of the following:

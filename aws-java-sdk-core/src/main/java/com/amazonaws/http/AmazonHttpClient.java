@@ -1259,16 +1259,14 @@ public class AmazonHttpClient {
             publishProgress(listener, ProgressEventType.HTTP_REQUEST_COMPLETED_EVENT);
             final StatusLine statusLine = execOneParams.apacheResponse.getStatusLine();
             final int statusCode = statusLine == null ? -1 : statusLine.getStatusCode();
-            if (isRequestSuccessful(execOneParams.apacheResponse)) {
+            if (ApacheUtils.isRequestSuccessful(execOneParams.apacheResponse)) {
                 awsRequestMetrics.addProperty(Field.StatusCode, statusCode);
             /*
              * If we get back any 2xx status code, then we know we should treat the service call as
              * successful.
              */
                 execOneParams.leaveHttpConnectionOpen = responseHandler.needsConnectionLeftOpen();
-                HttpResponse httpResponse = createResponse(execOneParams.apacheRequest,
-                                                           execOneParams.apacheResponse,
-                                                           localRequestContext);
+                HttpResponse httpResponse = ApacheUtils.createResponse(request, execOneParams.apacheRequest, execOneParams.apacheResponse, localRequestContext);
                 Output response = handleResponse(httpResponse);
 
             /*
@@ -1321,9 +1319,7 @@ public class AmazonHttpClient {
             execOneParams.authRetryParam = null;
             AuthErrorRetryStrategy authRetry = executionContext.getAuthErrorRetryStrategy();
             if (authRetry != null && exception instanceof AmazonServiceException) {
-                HttpResponse httpResponse = createResponse(execOneParams.apacheRequest,
-                                                           execOneParams.apacheResponse,
-                                                           localRequestContext);
+                HttpResponse httpResponse = ApacheUtils.createResponse(request, execOneParams.apacheRequest, execOneParams.apacheResponse, localRequestContext);
                 execOneParams.authRetryParam = authRetry
                         .shouldRetryWithAuthParam(request, httpResponse, (AmazonServiceException) exception);
             }
@@ -1505,11 +1501,6 @@ public class AmazonHttpClient {
             return true;
         }
 
-        private boolean isRequestSuccessful(org.apache.http.HttpResponse response) {
-            int status = response.getStatusLine().getStatusCode();
-            return status / 100 == HttpStatus.SC_OK / 100;
-        }
-
         /**
          * Handles a successful response from a service call by unmarshalling the results using the
          * specified response handler.
@@ -1615,7 +1606,7 @@ public class AmazonHttpClient {
                 statusCode = statusLine.getStatusCode();
                 reasonPhrase = statusLine.getReasonPhrase();
             }
-            HttpResponse response = createResponse(method, apacheHttpResponse, context);
+            HttpResponse response = ApacheUtils.createResponse(request, method, apacheHttpResponse, context);
             SdkBaseException exception;
             try {
                 exception = errorResponseHandler.handle(response);
@@ -1638,35 +1629,6 @@ public class AmazonHttpClient {
 
             exception.fillInStackTrace();
             return exception;
-        }
-
-        /**
-         * Creates and initializes an HttpResponse object suitable to be passed to an HTTP response
-         * handler object.
-         *
-         * @param method  The HTTP method that was invoked to get the response.
-         * @param context The HTTP context associated with the request and response.
-         * @return The new, initialized HttpResponse object ready to be passed to an HTTP response
-         * handler object.
-         * @throws IOException If there were any problems getting any response information from the
-         *                     HttpClient method object.
-         */
-        private HttpResponse createResponse(HttpRequestBase method,
-                                            org.apache.http.HttpResponse apacheHttpResponse,
-                                            HttpContext context) throws IOException {
-            HttpResponse httpResponse = new HttpResponse(request, method, context);
-
-            if (apacheHttpResponse.getEntity() != null) {
-                httpResponse.setContent(apacheHttpResponse.getEntity().getContent());
-            }
-
-            httpResponse.setStatusCode(apacheHttpResponse.getStatusLine().getStatusCode());
-            httpResponse.setStatusText(apacheHttpResponse.getStatusLine().getReasonPhrase());
-            for (Header header : apacheHttpResponse.getAllHeaders()) {
-                httpResponse.addHeader(header.getName(), header.getValue());
-            }
-
-            return httpResponse;
         }
 
         /**

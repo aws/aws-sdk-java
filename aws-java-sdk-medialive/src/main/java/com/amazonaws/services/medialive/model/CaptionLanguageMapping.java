@@ -27,7 +27,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CaptionLanguageMapping implements Serializable, Cloneable, StructuredPojo {
 
-    /** Channel to insert closed captions. Each channel mapping must have a unique channel number (maximum of 4) */
+    /**
+     * The closed caption channel being described by this CaptionLanguageMapping. Each channel mapping must have a
+     * unique channel number (maximum of 4)
+     */
     private Integer captionChannel;
     /** Three character ISO 639-2 language code (see http://www.loc.gov/standards/iso639-2) */
     private String languageCode;
@@ -35,10 +38,12 @@ public class CaptionLanguageMapping implements Serializable, Cloneable, Structur
     private String languageDescription;
 
     /**
-     * Channel to insert closed captions. Each channel mapping must have a unique channel number (maximum of 4)
+     * The closed caption channel being described by this CaptionLanguageMapping. Each channel mapping must have a
+     * unique channel number (maximum of 4)
      * 
      * @param captionChannel
-     *        Channel to insert closed captions. Each channel mapping must have a unique channel number (maximum of 4)
+     *        The closed caption channel being described by this CaptionLanguageMapping. Each channel mapping must have
+     *        a unique channel number (maximum of 4)
      */
 
     public void setCaptionChannel(Integer captionChannel) {
@@ -46,9 +51,11 @@ public class CaptionLanguageMapping implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Channel to insert closed captions. Each channel mapping must have a unique channel number (maximum of 4)
+     * The closed caption channel being described by this CaptionLanguageMapping. Each channel mapping must have a
+     * unique channel number (maximum of 4)
      * 
-     * @return Channel to insert closed captions. Each channel mapping must have a unique channel number (maximum of 4)
+     * @return The closed caption channel being described by this CaptionLanguageMapping. Each channel mapping must have
+     *         a unique channel number (maximum of 4)
      */
 
     public Integer getCaptionChannel() {
@@ -56,10 +63,12 @@ public class CaptionLanguageMapping implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Channel to insert closed captions. Each channel mapping must have a unique channel number (maximum of 4)
+     * The closed caption channel being described by this CaptionLanguageMapping. Each channel mapping must have a
+     * unique channel number (maximum of 4)
      * 
      * @param captionChannel
-     *        Channel to insert closed captions. Each channel mapping must have a unique channel number (maximum of 4)
+     *        The closed caption channel being described by this CaptionLanguageMapping. Each channel mapping must have
+     *        a unique channel number (maximum of 4)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

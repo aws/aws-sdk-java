@@ -16,15 +16,27 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
+ * <p>
  * Response of DescribeBudget
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeBudgetResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The description of the budget.
+     * </p>
+     */
     private Budget budget;
 
     /**
+     * <p>
+     * The description of the budget.
+     * </p>
+     * 
      * @param budget
+     *        The description of the budget.
      */
 
     public void setBudget(Budget budget) {
@@ -32,7 +44,11 @@ public class DescribeBudgetResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * @return
+     * <p>
+     * The description of the budget.
+     * </p>
+     * 
+     * @return The description of the budget.
      */
 
     public Budget getBudget() {
@@ -40,7 +56,12 @@ public class DescribeBudgetResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * The description of the budget.
+     * </p>
+     * 
      * @param budget
+     *        The description of the budget.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

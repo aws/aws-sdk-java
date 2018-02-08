@@ -41,8 +41,8 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     private String endpointType;
     /**
      * <p>
-     * The type of engine for the endpoint. Valid values, depending on the EndPointType, include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE, DYNAMODB, MONGODB, and SQLSERVER.
+     * The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
+     * postgres, mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
      * </p>
      */
     private String engineName;
@@ -263,13 +263,13 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of engine for the endpoint. Valid values, depending on the EndPointType, include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE, DYNAMODB, MONGODB, and SQLSERVER.
+     * The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
+     * postgres, mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
      * </p>
      * 
      * @param engineName
-     *        The type of engine for the endpoint. Valid values, depending on the EndPointType, include MYSQL, ORACLE,
-     *        POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE, DYNAMODB, MONGODB, and SQLSERVER.
+     *        The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
+     *        postgres, mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
      */
 
     public void setEngineName(String engineName) {
@@ -278,12 +278,12 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of engine for the endpoint. Valid values, depending on the EndPointType, include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE, DYNAMODB, MONGODB, and SQLSERVER.
+     * The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
+     * postgres, mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
      * </p>
      * 
-     * @return The type of engine for the endpoint. Valid values, depending on the EndPointType, include MYSQL, ORACLE,
-     *         POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE, DYNAMODB, MONGODB, and SQLSERVER.
+     * @return The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
+     *         postgres, mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
      */
 
     public String getEngineName() {
@@ -292,13 +292,13 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of engine for the endpoint. Valid values, depending on the EndPointType, include MYSQL, ORACLE,
-     * POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE, DYNAMODB, MONGODB, and SQLSERVER.
+     * The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
+     * postgres, mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
      * </p>
      * 
      * @param engineName
-     *        The type of engine for the endpoint. Valid values, depending on the EndPointType, include MYSQL, ORACLE,
-     *        POSTGRES, MARIADB, AURORA, REDSHIFT, S3, SYBASE, DYNAMODB, MONGODB, and SQLSERVER.
+     *        The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
+     *        postgres, mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

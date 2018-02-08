@@ -293,6 +293,11 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
     }
 
     @Override
+    public StartMatchBackfillResult startMatchBackfill(StartMatchBackfillRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartMatchmakingResult startMatchmaking(StartMatchmakingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

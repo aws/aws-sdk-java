@@ -16,7 +16,9 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
+ * <p>
  * Response of CreateNotification
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateNotificationResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {

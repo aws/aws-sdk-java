@@ -43,6 +43,11 @@ public class AbstractAWSMediaStore implements AWSMediaStore {
     }
 
     @Override
+    public DeleteCorsPolicyResult deleteCorsPolicy(DeleteCorsPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeContainerResult describeContainer(DescribeContainerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -53,12 +58,22 @@ public class AbstractAWSMediaStore implements AWSMediaStore {
     }
 
     @Override
+    public GetCorsPolicyResult getCorsPolicy(GetCorsPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListContainersResult listContainers(ListContainersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public PutContainerPolicyResult putContainerPolicy(PutContainerPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutCorsPolicyResult putCorsPolicy(PutCorsPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

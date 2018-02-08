@@ -72,6 +72,10 @@ public class StackJsonUnmarshaller implements Unmarshaller<Stack, JsonUnmarshall
                     context.nextToken();
                     stack.setStorageConnectors(new ListUnmarshaller<StorageConnector>(StorageConnectorJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("RedirectURL", targetDepth)) {
+                    context.nextToken();
+                    stack.setRedirectURL(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("StackErrors", targetDepth)) {
                     context.nextToken();
                     stack.setStackErrors(new ListUnmarshaller<StackError>(StackErrorJsonUnmarshaller.getInstance()).unmarshall(context));

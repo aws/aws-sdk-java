@@ -841,6 +841,41 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
 
     /**
      * <p>
+     * Returns information about the task logs for the specified task.
+     * </p>
+     * 
+     * @param describeReplicationInstanceTaskLogsRequest
+     * @return A Java Future containing the result of the DescribeReplicationInstanceTaskLogs operation returned by the
+     *         service.
+     * @sample AWSDatabaseMigrationServiceAsync.DescribeReplicationInstanceTaskLogs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationInstanceTaskLogs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeReplicationInstanceTaskLogsResult> describeReplicationInstanceTaskLogsAsync(
+            DescribeReplicationInstanceTaskLogsRequest describeReplicationInstanceTaskLogsRequest);
+
+    /**
+     * <p>
+     * Returns information about the task logs for the specified task.
+     * </p>
+     * 
+     * @param describeReplicationInstanceTaskLogsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeReplicationInstanceTaskLogs operation returned by the
+     *         service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.DescribeReplicationInstanceTaskLogs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationInstanceTaskLogs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeReplicationInstanceTaskLogsResult> describeReplicationInstanceTaskLogsAsync(
+            DescribeReplicationInstanceTaskLogsRequest describeReplicationInstanceTaskLogsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeReplicationInstanceTaskLogsRequest, DescribeReplicationInstanceTaskLogsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about replication instances for your account in the current region.
      * </p>
      * 
@@ -1295,6 +1330,41 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
      */
     java.util.concurrent.Future<ModifyReplicationTaskResult> modifyReplicationTaskAsync(ModifyReplicationTaskRequest modifyReplicationTaskRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyReplicationTaskRequest, ModifyReplicationTaskResult> asyncHandler);
+
+    /**
+     * <p>
+     * Reboots a replication instance. Rebooting results in a momentary outage, until the replication instance becomes
+     * available again.
+     * </p>
+     * 
+     * @param rebootReplicationInstanceRequest
+     * @return A Java Future containing the result of the RebootReplicationInstance operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsync.RebootReplicationInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RebootReplicationInstance" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<RebootReplicationInstanceResult> rebootReplicationInstanceAsync(
+            RebootReplicationInstanceRequest rebootReplicationInstanceRequest);
+
+    /**
+     * <p>
+     * Reboots a replication instance. Rebooting results in a momentary outage, until the replication instance becomes
+     * available again.
+     * </p>
+     * 
+     * @param rebootReplicationInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RebootReplicationInstance operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.RebootReplicationInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RebootReplicationInstance" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<RebootReplicationInstanceResult> rebootReplicationInstanceAsync(
+            RebootReplicationInstanceRequest rebootReplicationInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<RebootReplicationInstanceRequest, RebootReplicationInstanceResult> asyncHandler);
 
     /**
      * <p>

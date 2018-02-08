@@ -15,7 +15,9 @@ package com.amazonaws.services.budgets.model;
 import javax.annotation.Generated;
 
 /**
- * This exception is thrown if any request is given an invalid parameter. E.g., if a required Date field is null.
+ * <p>
+ * An error on the client occurred. Typically, the cause is an invalid input value.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidParameterException extends com.amazonaws.services.budgets.model.AWSBudgetsException {

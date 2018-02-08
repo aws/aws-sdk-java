@@ -408,6 +408,12 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private RestoreSummary restoreSummary;
+    /**
+     * <p>
+     * The description of the server-side encryption status on the specified table.
+     * </p>
+     */
+    private SSEDescription sSEDescription;
 
     /**
      * <p>
@@ -3452,6 +3458,46 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The description of the server-side encryption status on the specified table.
+     * </p>
+     * 
+     * @param sSEDescription
+     *        The description of the server-side encryption status on the specified table.
+     */
+
+    public void setSSEDescription(SSEDescription sSEDescription) {
+        this.sSEDescription = sSEDescription;
+    }
+
+    /**
+     * <p>
+     * The description of the server-side encryption status on the specified table.
+     * </p>
+     * 
+     * @return The description of the server-side encryption status on the specified table.
+     */
+
+    public SSEDescription getSSEDescription() {
+        return this.sSEDescription;
+    }
+
+    /**
+     * <p>
+     * The description of the server-side encryption status on the specified table.
+     * </p>
+     * 
+     * @param sSEDescription
+     *        The description of the server-side encryption status on the specified table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TableDescription withSSEDescription(SSEDescription sSEDescription) {
+        setSSEDescription(sSEDescription);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -3493,7 +3539,9 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
         if (getLatestStreamArn() != null)
             sb.append("LatestStreamArn: ").append(getLatestStreamArn()).append(",");
         if (getRestoreSummary() != null)
-            sb.append("RestoreSummary: ").append(getRestoreSummary());
+            sb.append("RestoreSummary: ").append(getRestoreSummary()).append(",");
+        if (getSSEDescription() != null)
+            sb.append("SSEDescription: ").append(getSSEDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -3572,6 +3620,10 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getRestoreSummary() != null && other.getRestoreSummary().equals(this.getRestoreSummary()) == false)
             return false;
+        if (other.getSSEDescription() == null ^ this.getSSEDescription() == null)
+            return false;
+        if (other.getSSEDescription() != null && other.getSSEDescription().equals(this.getSSEDescription()) == false)
+            return false;
         return true;
     }
 
@@ -3596,6 +3648,7 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getLatestStreamLabel() == null) ? 0 : getLatestStreamLabel().hashCode());
         hashCode = prime * hashCode + ((getLatestStreamArn() == null) ? 0 : getLatestStreamArn().hashCode());
         hashCode = prime * hashCode + ((getRestoreSummary() == null) ? 0 : getRestoreSummary().hashCode());
+        hashCode = prime * hashCode + ((getSSEDescription() == null) ? 0 : getSSEDescription().hashCode());
         return hashCode;
     }
 

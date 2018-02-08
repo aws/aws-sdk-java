@@ -115,6 +115,10 @@ public class TableDescriptionJsonUnmarshaller implements Unmarshaller<TableDescr
                     context.nextToken();
                     tableDescription.setRestoreSummary(RestoreSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("SSEDescription", targetDepth)) {
+                    context.nextToken();
+                    tableDescription.setSSEDescription(SSEDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

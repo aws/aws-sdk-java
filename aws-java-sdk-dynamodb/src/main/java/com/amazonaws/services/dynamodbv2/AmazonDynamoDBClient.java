@@ -628,23 +628,20 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * on-demand backups that can be taken.
      * </p>
      * <p>
+     * When you create an On-Demand Backup, a time marker of the request is cataloged, and the backup is created
+     * asynchronously, by applying all changes until the time of the request to the last full table snapshot. Backup
+     * requests are processed instantaneously and become available for restore within minutes.
+     * </p>
+     * <p>
      * You can call <code>CreateBackup</code> at a maximum rate of 50 times per second.
      * </p>
      * <p>
-     * All backups in DynamoDB work without consuming any provisioned throughput on the table. This results in a fast,
-     * low-cost, and scalable backup process. In general, the larger the table, the more time it takes to back up. The
-     * backup is stored in an S3 data store that is maintained and managed by DynamoDB.
+     * All backups in DynamoDB work without consuming any provisioned throughput on the table.
      * </p>
      * <p>
-     * Backups incorporate all writes (delete, put, update) that were completed within the last minute before the backup
-     * request was initiated. Backups might include some writes (delete, put, update) that were completed before the
-     * backup request was finished.
-     * </p>
-     * <p>
-     * For example, if you submit the backup request on 2018-12-14 at 14:25:00, the backup is guaranteed to contain all
-     * data committed to the table up to 14:24:00, and data committed after 14:26:00 will not be. The backup may or may
-     * not contain data modifications made between 14:24:00 and 14:26:00. On-Demand Backup does not support causal
-     * consistency.
+     * If you submit a backup request on 2018-12-14 at 14:25:00, the backup is guaranteed to contain all data committed
+     * to the table up to 14:24:00, and data committed after 14:26:00 will not be. The backup may or may not contain
+     * data modifications made between 14:24:00 and 14:26:00. On-Demand Backup does not support causal consistency.
      * </p>
      * <p>
      * Along with data, the following are also included on the backups:
@@ -684,11 +681,23 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         There is another ongoing conflicting backup control plane operation on the table. The backups is either
      *         being created, deleted or restored to a table.
      * @throws LimitExceededException
-     *         The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
-     *         <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed of 10.</p>
+     *         Up to 50 <code>CreateBackup</code> operations are allowed per second, per account. There is no limit to
+     *         the number of daily on-demand backups that can be taken. </p>
      *         <p>
-     *         Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
-     *         state at any point in time. Do not attempt to create more than one such table simultaneously.
+     *         Up to 10 simultaneous table operations are allowed per account. These operations include
+     *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
+     *         <code>UpdateTimeToLive</code>, and <code>RestoreTableFromBackup</code>.
+     *         </p>
+     *         <p>
+     *         For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code> state at
+     *         any point in time. Do not attempt to create more than one such table simultaneously.
+     *         </p>
+     *         <p>
+     *         The total limit of tables in the <code>ACTIVE</code> state is 250.
+     *         </p>
+     *         <p>
+     *         For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code> state at
+     *         any point in time. Do not attempt to create more than one such table simultaneously.
      *         </p>
      *         <p>
      *         The total limit of tables in the <code>ACTIVE</code> state is 250.
@@ -770,11 +779,23 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @param createGlobalTableRequest
      * @return Result of the CreateGlobalTable operation returned by the service.
      * @throws LimitExceededException
-     *         The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
-     *         <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed of 10.</p>
+     *         Up to 50 <code>CreateBackup</code> operations are allowed per second, per account. There is no limit to
+     *         the number of daily on-demand backups that can be taken. </p>
      *         <p>
-     *         Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
-     *         state at any point in time. Do not attempt to create more than one such table simultaneously.
+     *         Up to 10 simultaneous table operations are allowed per account. These operations include
+     *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
+     *         <code>UpdateTimeToLive</code>, and <code>RestoreTableFromBackup</code>.
+     *         </p>
+     *         <p>
+     *         For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code> state at
+     *         any point in time. Do not attempt to create more than one such table simultaneously.
+     *         </p>
+     *         <p>
+     *         The total limit of tables in the <code>ACTIVE</code> state is 250.
+     *         </p>
+     *         <p>
+     *         For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code> state at
+     *         any point in time. Do not attempt to create more than one such table simultaneously.
      *         </p>
      *         <p>
      *         The total limit of tables in the <code>ACTIVE</code> state is 250.
@@ -854,11 +875,23 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         The operation conflicts with the resource's availability. For example, you attempted to recreate an
      *         existing table, or tried to delete a table currently in the <code>CREATING</code> state.
      * @throws LimitExceededException
-     *         The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
-     *         <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed of 10.</p>
+     *         Up to 50 <code>CreateBackup</code> operations are allowed per second, per account. There is no limit to
+     *         the number of daily on-demand backups that can be taken. </p>
      *         <p>
-     *         Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
-     *         state at any point in time. Do not attempt to create more than one such table simultaneously.
+     *         Up to 10 simultaneous table operations are allowed per account. These operations include
+     *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
+     *         <code>UpdateTimeToLive</code>, and <code>RestoreTableFromBackup</code>.
+     *         </p>
+     *         <p>
+     *         For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code> state at
+     *         any point in time. Do not attempt to create more than one such table simultaneously.
+     *         </p>
+     *         <p>
+     *         The total limit of tables in the <code>ACTIVE</code> state is 250.
+     *         </p>
+     *         <p>
+     *         For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code> state at
+     *         any point in time. Do not attempt to create more than one such table simultaneously.
      *         </p>
      *         <p>
      *         The total limit of tables in the <code>ACTIVE</code> state is 250.
@@ -929,11 +962,23 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         There is another ongoing conflicting backup control plane operation on the table. The backups is either
      *         being created, deleted or restored to a table.
      * @throws LimitExceededException
-     *         The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
-     *         <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed of 10.</p>
+     *         Up to 50 <code>CreateBackup</code> operations are allowed per second, per account. There is no limit to
+     *         the number of daily on-demand backups that can be taken. </p>
      *         <p>
-     *         Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
-     *         state at any point in time. Do not attempt to create more than one such table simultaneously.
+     *         Up to 10 simultaneous table operations are allowed per account. These operations include
+     *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
+     *         <code>UpdateTimeToLive</code>, and <code>RestoreTableFromBackup</code>.
+     *         </p>
+     *         <p>
+     *         For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code> state at
+     *         any point in time. Do not attempt to create more than one such table simultaneously.
+     *         </p>
+     *         <p>
+     *         The total limit of tables in the <code>ACTIVE</code> state is 250.
+     *         </p>
+     *         <p>
+     *         For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code> state at
+     *         any point in time. Do not attempt to create more than one such table simultaneously.
      *         </p>
      *         <p>
      *         The total limit of tables in the <code>ACTIVE</code> state is 250.
@@ -1106,11 +1151,23 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         The operation tried to access a nonexistent table or index. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
      * @throws LimitExceededException
-     *         The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
-     *         <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed of 10.</p>
+     *         Up to 50 <code>CreateBackup</code> operations are allowed per second, per account. There is no limit to
+     *         the number of daily on-demand backups that can be taken. </p>
      *         <p>
-     *         Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
-     *         state at any point in time. Do not attempt to create more than one such table simultaneously.
+     *         Up to 10 simultaneous table operations are allowed per account. These operations include
+     *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
+     *         <code>UpdateTimeToLive</code>, and <code>RestoreTableFromBackup</code>.
+     *         </p>
+     *         <p>
+     *         For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code> state at
+     *         any point in time. Do not attempt to create more than one such table simultaneously.
+     *         </p>
+     *         <p>
+     *         The total limit of tables in the <code>ACTIVE</code> state is 250.
+     *         </p>
+     *         <p>
+     *         For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code> state at
+     *         any point in time. Do not attempt to create more than one such table simultaneously.
      *         </p>
      *         <p>
      *         The total limit of tables in the <code>ACTIVE</code> state is 250.
@@ -1280,7 +1337,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Returns information about the global table.
+     * Returns information about the specified global table.
      * </p>
      * 
      * @param describeGlobalTableRequest
@@ -1734,8 +1791,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Lists all the global tables. Only those global tables that have replicas in the region specified as input are
-     * returned.
+     * Lists all global tables that have a replica in the specified region.
      * </p>
      * 
      * @param listGlobalTablesRequest
@@ -2228,6 +2284,11 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * </li>
      * <li>
      * <p>
+     * Stream settings
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Time to Live (TTL) settings
      * </p>
      * </li>
@@ -2245,11 +2306,23 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         There is another ongoing conflicting backup control plane operation on the table. The backups is either
      *         being created, deleted or restored to a table.
      * @throws LimitExceededException
-     *         The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
-     *         <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed of 10.</p>
+     *         Up to 50 <code>CreateBackup</code> operations are allowed per second, per account. There is no limit to
+     *         the number of daily on-demand backups that can be taken. </p>
      *         <p>
-     *         Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
-     *         state at any point in time. Do not attempt to create more than one such table simultaneously.
+     *         Up to 10 simultaneous table operations are allowed per account. These operations include
+     *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
+     *         <code>UpdateTimeToLive</code>, and <code>RestoreTableFromBackup</code>.
+     *         </p>
+     *         <p>
+     *         For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code> state at
+     *         any point in time. Do not attempt to create more than one such table simultaneously.
+     *         </p>
+     *         <p>
+     *         The total limit of tables in the <code>ACTIVE</code> state is 250.
+     *         </p>
+     *         <p>
+     *         For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code> state at
+     *         any point in time. Do not attempt to create more than one such table simultaneously.
      *         </p>
      *         <p>
      *         The total limit of tables in the <code>ACTIVE</code> state is 250.
@@ -2418,11 +2491,23 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
      * @throws LimitExceededException
-     *         The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
-     *         <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed of 10.</p>
+     *         Up to 50 <code>CreateBackup</code> operations are allowed per second, per account. There is no limit to
+     *         the number of daily on-demand backups that can be taken. </p>
      *         <p>
-     *         Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
-     *         state at any point in time. Do not attempt to create more than one such table simultaneously.
+     *         Up to 10 simultaneous table operations are allowed per account. These operations include
+     *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
+     *         <code>UpdateTimeToLive</code>, and <code>RestoreTableFromBackup</code>.
+     *         </p>
+     *         <p>
+     *         For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code> state at
+     *         any point in time. Do not attempt to create more than one such table simultaneously.
+     *         </p>
+     *         <p>
+     *         The total limit of tables in the <code>ACTIVE</code> state is 250.
+     *         </p>
+     *         <p>
+     *         For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code> state at
+     *         any point in time. Do not attempt to create more than one such table simultaneously.
      *         </p>
      *         <p>
      *         The total limit of tables in the <code>ACTIVE</code> state is 250.
@@ -2490,11 +2575,23 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
      * @throws LimitExceededException
-     *         The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
-     *         <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed of 10.</p>
+     *         Up to 50 <code>CreateBackup</code> operations are allowed per second, per account. There is no limit to
+     *         the number of daily on-demand backups that can be taken. </p>
      *         <p>
-     *         Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
-     *         state at any point in time. Do not attempt to create more than one such table simultaneously.
+     *         Up to 10 simultaneous table operations are allowed per account. These operations include
+     *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
+     *         <code>UpdateTimeToLive</code>, and <code>RestoreTableFromBackup</code>.
+     *         </p>
+     *         <p>
+     *         For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code> state at
+     *         any point in time. Do not attempt to create more than one such table simultaneously.
+     *         </p>
+     *         <p>
+     *         The total limit of tables in the <code>ACTIVE</code> state is 250.
+     *         </p>
+     *         <p>
+     *         For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code> state at
+     *         any point in time. Do not attempt to create more than one such table simultaneously.
      *         </p>
      *         <p>
      *         The total limit of tables in the <code>ACTIVE</code> state is 250.
@@ -2550,9 +2647,16 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Adds or removes replicas to the specified global table. The global table should already exist to be able to use
-     * this operation. Currently, the replica to be added should be empty.
+     * Adds or removes replicas in the specified global table. The global table must already exist to be able to use
+     * this operation. Any replica to be added must be empty, must have the same name as the global table, must have the
+     * same key schema, must have DynamoDB Streams enabled, and cannot have any local secondary indexes (LSIs).
      * </p>
+     * <note>
+     * <p>
+     * Although you can use <code>UpdateGlobalTable</code> to add replicas and remove replicas in a single request, for
+     * simplicity we recommend that you issue separate requests for adding or removing replicas.
+     * </p>
+     * </note>
      * 
      * @param updateGlobalTableRequest
      * @return Result of the UpdateGlobalTable operation returned by the service.
@@ -2740,11 +2844,23 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         The operation tried to access a nonexistent table or index. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
      * @throws LimitExceededException
-     *         The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
-     *         <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed of 10.</p>
+     *         Up to 50 <code>CreateBackup</code> operations are allowed per second, per account. There is no limit to
+     *         the number of daily on-demand backups that can be taken. </p>
      *         <p>
-     *         Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
-     *         state at any point in time. Do not attempt to create more than one such table simultaneously.
+     *         Up to 10 simultaneous table operations are allowed per account. These operations include
+     *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
+     *         <code>UpdateTimeToLive</code>, and <code>RestoreTableFromBackup</code>.
+     *         </p>
+     *         <p>
+     *         For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code> state at
+     *         any point in time. Do not attempt to create more than one such table simultaneously.
+     *         </p>
+     *         <p>
+     *         The total limit of tables in the <code>ACTIVE</code> state is 250.
+     *         </p>
+     *         <p>
+     *         For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code> state at
+     *         any point in time. Do not attempt to create more than one such table simultaneously.
      *         </p>
      *         <p>
      *         The total limit of tables in the <code>ACTIVE</code> state is 250.
@@ -2844,11 +2960,23 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         The operation tried to access a nonexistent table or index. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
      * @throws LimitExceededException
-     *         The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
-     *         <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed of 10.</p>
+     *         Up to 50 <code>CreateBackup</code> operations are allowed per second, per account. There is no limit to
+     *         the number of daily on-demand backups that can be taken. </p>
      *         <p>
-     *         Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code>
-     *         state at any point in time. Do not attempt to create more than one such table simultaneously.
+     *         Up to 10 simultaneous table operations are allowed per account. These operations include
+     *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
+     *         <code>UpdateTimeToLive</code>, and <code>RestoreTableFromBackup</code>.
+     *         </p>
+     *         <p>
+     *         For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code> state at
+     *         any point in time. Do not attempt to create more than one such table simultaneously.
+     *         </p>
+     *         <p>
+     *         The total limit of tables in the <code>ACTIVE</code> state is 250.
+     *         </p>
+     *         <p>
+     *         For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code> state at
+     *         any point in time. Do not attempt to create more than one such table simultaneously.
      *         </p>
      *         <p>
      *         The total limit of tables in the <code>ACTIVE</code> state is 250.

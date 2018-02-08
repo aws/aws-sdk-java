@@ -54,7 +54,20 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Deletes the storage connectors currently enabled for the stack.
      * </p>
      */
+    @Deprecated
     private Boolean deleteStorageConnectors;
+    /**
+     * <p>
+     * The URL the user is redirected to after the streaming session ends.
+     * </p>
+     */
+    private String redirectURL;
+    /**
+     * <p>
+     * The stack attributes to delete.
+     * </p>
+     */
+    private java.util.List<String> attributesToDelete;
 
     /**
      * <p>
@@ -254,7 +267,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param deleteStorageConnectors
      *        Deletes the storage connectors currently enabled for the stack.
      */
-
+    @Deprecated
     public void setDeleteStorageConnectors(Boolean deleteStorageConnectors) {
         this.deleteStorageConnectors = deleteStorageConnectors;
     }
@@ -266,7 +279,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @return Deletes the storage connectors currently enabled for the stack.
      */
-
+    @Deprecated
     public Boolean getDeleteStorageConnectors() {
         return this.deleteStorageConnectors;
     }
@@ -280,7 +293,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        Deletes the storage connectors currently enabled for the stack.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public UpdateStackRequest withDeleteStorageConnectors(Boolean deleteStorageConnectors) {
         setDeleteStorageConnectors(deleteStorageConnectors);
         return this;
@@ -293,9 +306,147 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @return Deletes the storage connectors currently enabled for the stack.
      */
-
+    @Deprecated
     public Boolean isDeleteStorageConnectors() {
         return this.deleteStorageConnectors;
+    }
+
+    /**
+     * <p>
+     * The URL the user is redirected to after the streaming session ends.
+     * </p>
+     * 
+     * @param redirectURL
+     *        The URL the user is redirected to after the streaming session ends.
+     */
+
+    public void setRedirectURL(String redirectURL) {
+        this.redirectURL = redirectURL;
+    }
+
+    /**
+     * <p>
+     * The URL the user is redirected to after the streaming session ends.
+     * </p>
+     * 
+     * @return The URL the user is redirected to after the streaming session ends.
+     */
+
+    public String getRedirectURL() {
+        return this.redirectURL;
+    }
+
+    /**
+     * <p>
+     * The URL the user is redirected to after the streaming session ends.
+     * </p>
+     * 
+     * @param redirectURL
+     *        The URL the user is redirected to after the streaming session ends.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateStackRequest withRedirectURL(String redirectURL) {
+        setRedirectURL(redirectURL);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The stack attributes to delete.
+     * </p>
+     * 
+     * @return The stack attributes to delete.
+     * @see StackAttribute
+     */
+
+    public java.util.List<String> getAttributesToDelete() {
+        return attributesToDelete;
+    }
+
+    /**
+     * <p>
+     * The stack attributes to delete.
+     * </p>
+     * 
+     * @param attributesToDelete
+     *        The stack attributes to delete.
+     * @see StackAttribute
+     */
+
+    public void setAttributesToDelete(java.util.Collection<String> attributesToDelete) {
+        if (attributesToDelete == null) {
+            this.attributesToDelete = null;
+            return;
+        }
+
+        this.attributesToDelete = new java.util.ArrayList<String>(attributesToDelete);
+    }
+
+    /**
+     * <p>
+     * The stack attributes to delete.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAttributesToDelete(java.util.Collection)} or {@link #withAttributesToDelete(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param attributesToDelete
+     *        The stack attributes to delete.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StackAttribute
+     */
+
+    public UpdateStackRequest withAttributesToDelete(String... attributesToDelete) {
+        if (this.attributesToDelete == null) {
+            setAttributesToDelete(new java.util.ArrayList<String>(attributesToDelete.length));
+        }
+        for (String ele : attributesToDelete) {
+            this.attributesToDelete.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The stack attributes to delete.
+     * </p>
+     * 
+     * @param attributesToDelete
+     *        The stack attributes to delete.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StackAttribute
+     */
+
+    public UpdateStackRequest withAttributesToDelete(java.util.Collection<String> attributesToDelete) {
+        setAttributesToDelete(attributesToDelete);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The stack attributes to delete.
+     * </p>
+     * 
+     * @param attributesToDelete
+     *        The stack attributes to delete.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StackAttribute
+     */
+
+    public UpdateStackRequest withAttributesToDelete(StackAttribute... attributesToDelete) {
+        java.util.ArrayList<String> attributesToDeleteCopy = new java.util.ArrayList<String>(attributesToDelete.length);
+        for (StackAttribute value : attributesToDelete) {
+            attributesToDeleteCopy.add(value.toString());
+        }
+        if (getAttributesToDelete() == null) {
+            setAttributesToDelete(attributesToDeleteCopy);
+        } else {
+            getAttributesToDelete().addAll(attributesToDeleteCopy);
+        }
+        return this;
     }
 
     /**
@@ -318,7 +469,11 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getStorageConnectors() != null)
             sb.append("StorageConnectors: ").append(getStorageConnectors()).append(",");
         if (getDeleteStorageConnectors() != null)
-            sb.append("DeleteStorageConnectors: ").append(getDeleteStorageConnectors());
+            sb.append("DeleteStorageConnectors: ").append(getDeleteStorageConnectors()).append(",");
+        if (getRedirectURL() != null)
+            sb.append("RedirectURL: ").append(getRedirectURL()).append(",");
+        if (getAttributesToDelete() != null)
+            sb.append("AttributesToDelete: ").append(getAttributesToDelete());
         sb.append("}");
         return sb.toString();
     }
@@ -353,6 +508,14 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getDeleteStorageConnectors() != null && other.getDeleteStorageConnectors().equals(this.getDeleteStorageConnectors()) == false)
             return false;
+        if (other.getRedirectURL() == null ^ this.getRedirectURL() == null)
+            return false;
+        if (other.getRedirectURL() != null && other.getRedirectURL().equals(this.getRedirectURL()) == false)
+            return false;
+        if (other.getAttributesToDelete() == null ^ this.getAttributesToDelete() == null)
+            return false;
+        if (other.getAttributesToDelete() != null && other.getAttributesToDelete().equals(this.getAttributesToDelete()) == false)
+            return false;
         return true;
     }
 
@@ -366,6 +529,8 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getStorageConnectors() == null) ? 0 : getStorageConnectors().hashCode());
         hashCode = prime * hashCode + ((getDeleteStorageConnectors() == null) ? 0 : getDeleteStorageConnectors().hashCode());
+        hashCode = prime * hashCode + ((getRedirectURL() == null) ? 0 : getRedirectURL().hashCode());
+        hashCode = prime * hashCode + ((getAttributesToDelete() == null) ? 0 : getAttributesToDelete().hashCode());
         return hashCode;
     }
 

@@ -16,12 +16,24 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The number of concurrent table requests (cumulative number of tables in the <code>CREATING</code>,
- * <code>DELETING</code> or <code>UPDATING</code> state) exceeds the maximum allowed of 10.
+ * Up to 50 <code>CreateBackup</code> operations are allowed per second, per account. There is no limit to the number of
+ * daily on-demand backups that can be taken.
  * </p>
  * <p>
- * Also, for tables with secondary indexes, only one of those tables can be in the <code>CREATING</code> state at any
- * point in time. Do not attempt to create more than one such table simultaneously.
+ * Up to 10 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>,
+ * <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>, and
+ * <code>RestoreTableFromBackup</code>.
+ * </p>
+ * <p>
+ * For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code> state at any point in
+ * time. Do not attempt to create more than one such table simultaneously.
+ * </p>
+ * <p>
+ * The total limit of tables in the <code>ACTIVE</code> state is 250.
+ * </p>
+ * <p>
+ * For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code> state at any point in
+ * time. Do not attempt to create more than one such table simultaneously.
  * </p>
  * <p>
  * The total limit of tables in the <code>ACTIVE</code> state is 250.

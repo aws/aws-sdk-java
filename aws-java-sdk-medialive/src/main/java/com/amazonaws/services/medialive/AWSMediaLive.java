@@ -404,6 +404,32 @@ public interface AWSMediaLive {
     StopChannelResult stopChannel(StopChannelRequest stopChannelRequest);
 
     /**
+     * Updates a channel.
+     * 
+     * @param updateChannelRequest
+     *        A request to update a channel.
+     * @return Result of the UpdateChannel operation returned by the service.
+     * @throws UnprocessableEntityException
+     *         The channel configuration failed validation and could not be updated.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to update the channel.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws ConflictException
+     *         The channel is unable to update due to an issue with channel resources.
+     * @sample AWSMediaLive.UpdateChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateChannelResult updateChannel(UpdateChannelRequest updateChannelRequest);
+
+    /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and
      * callers are not expected to call it, but can if they want to explicitly release any open resources. Once a client
      * has been shutdown, it should not be used to make any more requests.

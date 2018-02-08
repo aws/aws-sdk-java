@@ -18,17 +18,33 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * Request of DeleteBudget
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteBudgetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The <code>accountId</code> that is associated with the budget that you want to delete.
+     * </p>
+     */
     private String accountId;
-
+    /**
+     * <p>
+     * The name of the budget that you want to delete.
+     * </p>
+     */
     private String budgetName;
 
     /**
+     * <p>
+     * The <code>accountId</code> that is associated with the budget that you want to delete.
+     * </p>
+     * 
      * @param accountId
+     *        The <code>accountId</code> that is associated with the budget that you want to delete.
      */
 
     public void setAccountId(String accountId) {
@@ -36,7 +52,11 @@ public class DeleteBudgetRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * @return
+     * <p>
+     * The <code>accountId</code> that is associated with the budget that you want to delete.
+     * </p>
+     * 
+     * @return The <code>accountId</code> that is associated with the budget that you want to delete.
      */
 
     public String getAccountId() {
@@ -44,7 +64,12 @@ public class DeleteBudgetRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The <code>accountId</code> that is associated with the budget that you want to delete.
+     * </p>
+     * 
      * @param accountId
+     *        The <code>accountId</code> that is associated with the budget that you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -54,7 +79,12 @@ public class DeleteBudgetRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The name of the budget that you want to delete.
+     * </p>
+     * 
      * @param budgetName
+     *        The name of the budget that you want to delete.
      */
 
     public void setBudgetName(String budgetName) {
@@ -62,7 +92,11 @@ public class DeleteBudgetRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the budget that you want to delete.
+     * </p>
+     * 
+     * @return The name of the budget that you want to delete.
      */
 
     public String getBudgetName() {
@@ -70,7 +104,12 @@ public class DeleteBudgetRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The name of the budget that you want to delete.
+     * </p>
+     * 
      * @param budgetName
+     *        The name of the budget that you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

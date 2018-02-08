@@ -56,6 +56,8 @@ public class GameSessionMarshaller {
             .marshallLocationName("CreatorId").build();
     private static final MarshallingInfo<String> GAMESESSIONDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GameSessionData").build();
+    private static final MarshallingInfo<String> MATCHMAKERDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MatchmakerData").build();
 
     private static final GameSessionMarshaller instance = new GameSessionMarshaller();
 
@@ -87,6 +89,7 @@ public class GameSessionMarshaller {
             protocolMarshaller.marshall(gameSession.getPlayerSessionCreationPolicy(), PLAYERSESSIONCREATIONPOLICY_BINDING);
             protocolMarshaller.marshall(gameSession.getCreatorId(), CREATORID_BINDING);
             protocolMarshaller.marshall(gameSession.getGameSessionData(), GAMESESSIONDATA_BINDING);
+            protocolMarshaller.marshall(gameSession.getMatchmakerData(), MATCHMAKERDATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

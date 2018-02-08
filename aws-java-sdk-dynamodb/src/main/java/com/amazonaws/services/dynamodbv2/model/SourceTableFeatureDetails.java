@@ -55,6 +55,12 @@ public class SourceTableFeatureDetails implements Serializable, Cloneable, Struc
      * </p>
      */
     private TimeToLiveDescription timeToLiveDescription;
+    /**
+     * <p>
+     * The description of the server-side encryption status on the table when the backup was created.
+     * </p>
+     */
+    private SSEDescription sSEDescription;
 
     /**
      * <p>
@@ -293,6 +299,46 @@ public class SourceTableFeatureDetails implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The description of the server-side encryption status on the table when the backup was created.
+     * </p>
+     * 
+     * @param sSEDescription
+     *        The description of the server-side encryption status on the table when the backup was created.
+     */
+
+    public void setSSEDescription(SSEDescription sSEDescription) {
+        this.sSEDescription = sSEDescription;
+    }
+
+    /**
+     * <p>
+     * The description of the server-side encryption status on the table when the backup was created.
+     * </p>
+     * 
+     * @return The description of the server-side encryption status on the table when the backup was created.
+     */
+
+    public SSEDescription getSSEDescription() {
+        return this.sSEDescription;
+    }
+
+    /**
+     * <p>
+     * The description of the server-side encryption status on the table when the backup was created.
+     * </p>
+     * 
+     * @param sSEDescription
+     *        The description of the server-side encryption status on the table when the backup was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SourceTableFeatureDetails withSSEDescription(SSEDescription sSEDescription) {
+        setSSEDescription(sSEDescription);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -310,7 +356,9 @@ public class SourceTableFeatureDetails implements Serializable, Cloneable, Struc
         if (getStreamDescription() != null)
             sb.append("StreamDescription: ").append(getStreamDescription()).append(",");
         if (getTimeToLiveDescription() != null)
-            sb.append("TimeToLiveDescription: ").append(getTimeToLiveDescription());
+            sb.append("TimeToLiveDescription: ").append(getTimeToLiveDescription()).append(",");
+        if (getSSEDescription() != null)
+            sb.append("SSEDescription: ").append(getSSEDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -341,6 +389,10 @@ public class SourceTableFeatureDetails implements Serializable, Cloneable, Struc
             return false;
         if (other.getTimeToLiveDescription() != null && other.getTimeToLiveDescription().equals(this.getTimeToLiveDescription()) == false)
             return false;
+        if (other.getSSEDescription() == null ^ this.getSSEDescription() == null)
+            return false;
+        if (other.getSSEDescription() != null && other.getSSEDescription().equals(this.getSSEDescription()) == false)
+            return false;
         return true;
     }
 
@@ -353,6 +405,7 @@ public class SourceTableFeatureDetails implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getGlobalSecondaryIndexes() == null) ? 0 : getGlobalSecondaryIndexes().hashCode());
         hashCode = prime * hashCode + ((getStreamDescription() == null) ? 0 : getStreamDescription().hashCode());
         hashCode = prime * hashCode + ((getTimeToLiveDescription() == null) ? 0 : getTimeToLiveDescription().hashCode());
+        hashCode = prime * hashCode + ((getSSEDescription() == null) ? 0 : getSSEDescription().hashCode());
         return hashCode;
     }
 

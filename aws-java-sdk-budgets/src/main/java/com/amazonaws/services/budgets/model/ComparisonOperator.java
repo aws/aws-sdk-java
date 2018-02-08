@@ -15,7 +15,9 @@ package com.amazonaws.services.budgets.model;
 import javax.annotation.Generated;
 
 /**
+ * <p>
  * The comparison operator of a notification. Currently we support less than, equal to and greater than.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ComparisonOperator {

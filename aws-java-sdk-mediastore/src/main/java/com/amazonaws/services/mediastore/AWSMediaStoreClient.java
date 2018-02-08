@@ -73,20 +73,23 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ContainerNotFoundException").withModeledClass(
+                                    com.amazonaws.services.mediastore.model.ContainerNotFoundException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ContainerInUseException").withModeledClass(
                                     com.amazonaws.services.mediastore.model.ContainerInUseException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("PolicyNotFoundException").withModeledClass(
                                     com.amazonaws.services.mediastore.model.PolicyNotFoundException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CorsPolicyNotFoundException").withModeledClass(
+                                    com.amazonaws.services.mediastore.model.CorsPolicyNotFoundException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withModeledClass(
                                     com.amazonaws.services.mediastore.model.InternalServerErrorException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
                                     com.amazonaws.services.mediastore.model.LimitExceededException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ContainerNotFoundException").withModeledClass(
-                                    com.amazonaws.services.mediastore.model.ContainerNotFoundException.class))
                     .withBaseServiceExceptionClass(com.amazonaws.services.mediastore.model.AWSMediaStoreException.class));
 
     public static AWSMediaStoreClientBuilder builder() {
@@ -291,9 +294,72 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
 
     /**
      * <p>
-     * Retrieves the properties of the requested container. This returns a single <code>Container</code> object based on
-     * <code>ContainerName</code>. To return all <code>Container</code> objects that are associated with a specified AWS
-     * account, use <a>ListContainers</a>.
+     * Deletes the cross-origin resource sharing (CORS) configuration information that is set for the container.
+     * </p>
+     * <p>
+     * To use this operation, you must have permission to perform the <code>MediaStore:DeleteCorsPolicy</code> action.
+     * The container owner has this permission by default and can grant this permission to others.
+     * </p>
+     * 
+     * @param deleteCorsPolicyRequest
+     * @return Result of the DeleteCorsPolicy operation returned by the service.
+     * @throws ContainerInUseException
+     *         Resource already exists or is being updated.
+     * @throws ContainerNotFoundException
+     *         Could not perform an operation on a container that does not exist.
+     * @throws CorsPolicyNotFoundException
+     *         Could not perform an operation on a policy that does not exist.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @sample AWSMediaStore.DeleteCorsPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteCorsPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteCorsPolicyResult deleteCorsPolicy(DeleteCorsPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCorsPolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteCorsPolicyResult executeDeleteCorsPolicy(DeleteCorsPolicyRequest deleteCorsPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteCorsPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteCorsPolicyRequest> request = null;
+        Response<DeleteCorsPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteCorsPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCorsPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteCorsPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteCorsPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the properties of the requested container. This request is commonly used to retrieve the endpoint of a
+     * container. An endpoint is a value assigned by the service when a new container is created. A container's endpoint
+     * does not change after it has been assigned. The <code>DescribeContainer</code> request returns a single
+     * <code>Container</code> object based on <code>ContainerName</code>. To return all <code>Container</code> objects
+     * that are associated with a specified AWS account, use <a>ListContainers</a>.
      * </p>
      * 
      * @param describeContainerRequest
@@ -393,6 +459,67 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
 
             HttpResponseHandler<AmazonWebServiceResponse<GetContainerPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetContainerPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the cross-origin resource sharing (CORS) configuration information that is set for the container.
+     * </p>
+     * <p>
+     * To use this operation, you must have permission to perform the <code>MediaStore:GetCorsPolicy</code> action. By
+     * default, the container owner has this permission and can grant it to others.
+     * </p>
+     * 
+     * @param getCorsPolicyRequest
+     * @return Result of the GetCorsPolicy operation returned by the service.
+     * @throws ContainerInUseException
+     *         Resource already exists or is being updated.
+     * @throws ContainerNotFoundException
+     *         Could not perform an operation on a container that does not exist.
+     * @throws CorsPolicyNotFoundException
+     *         Could not perform an operation on a policy that does not exist.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @sample AWSMediaStore.GetCorsPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetCorsPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetCorsPolicyResult getCorsPolicy(GetCorsPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCorsPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetCorsPolicyResult executeGetCorsPolicy(GetCorsPolicyRequest getCorsPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCorsPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCorsPolicyRequest> request = null;
+        Response<GetCorsPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCorsPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCorsPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCorsPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetCorsPolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -515,6 +642,70 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
 
             HttpResponseHandler<AmazonWebServiceResponse<PutContainerPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutContainerPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Sets the cross-origin resource sharing (CORS) configuration on a container so that the container can service
+     * cross-origin requests. For example, you might want to enable a request whose origin is http://www.example.com to
+     * access your AWS Elemental MediaStore container at my.example.container.com by using the browser's XMLHttpRequest
+     * capability.
+     * </p>
+     * <p>
+     * To enable CORS on a container, you attach a CORS policy to the container. In the CORS policy, you configure rules
+     * that identify origins and the HTTP methods that can be executed on your container. The policy can contain up to
+     * 398,000 characters. You can add up to 100 rules to a CORS policy. If more than one rule applies, the service uses
+     * the first applicable rule listed.
+     * </p>
+     * 
+     * @param putCorsPolicyRequest
+     * @return Result of the PutCorsPolicy operation returned by the service.
+     * @throws ContainerNotFoundException
+     *         Could not perform an operation on a container that does not exist.
+     * @throws ContainerInUseException
+     *         Resource already exists or is being updated.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @sample AWSMediaStore.PutCorsPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutCorsPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PutCorsPolicyResult putCorsPolicy(PutCorsPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutCorsPolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutCorsPolicyResult executePutCorsPolicy(PutCorsPolicyRequest putCorsPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putCorsPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutCorsPolicyRequest> request = null;
+        Response<PutCorsPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutCorsPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putCorsPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutCorsPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutCorsPolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

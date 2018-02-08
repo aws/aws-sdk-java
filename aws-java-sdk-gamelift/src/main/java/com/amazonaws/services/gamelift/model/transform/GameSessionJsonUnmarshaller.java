@@ -104,6 +104,10 @@ public class GameSessionJsonUnmarshaller implements Unmarshaller<GameSession, Js
                     context.nextToken();
                     gameSession.setGameSessionData(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("MatchmakerData", targetDepth)) {
+                    context.nextToken();
+                    gameSession.setMatchmakerData(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

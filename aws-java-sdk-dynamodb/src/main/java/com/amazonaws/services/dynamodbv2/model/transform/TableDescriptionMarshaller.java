@@ -60,6 +60,8 @@ public class TableDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LatestStreamArn").build();
     private static final MarshallingInfo<StructuredPojo> RESTORESUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RestoreSummary").build();
+    private static final MarshallingInfo<StructuredPojo> SSEDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SSEDescription").build();
 
     private static final TableDescriptionMarshaller instance = new TableDescriptionMarshaller();
 
@@ -93,6 +95,7 @@ public class TableDescriptionMarshaller {
             protocolMarshaller.marshall(tableDescription.getLatestStreamLabel(), LATESTSTREAMLABEL_BINDING);
             protocolMarshaller.marshall(tableDescription.getLatestStreamArn(), LATESTSTREAMARN_BINDING);
             protocolMarshaller.marshall(tableDescription.getRestoreSummary(), RESTORESUMMARY_BINDING);
+            protocolMarshaller.marshall(tableDescription.getSSEDescription(), SSEDESCRIPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -66,6 +66,12 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<StorageConnector> storageConnectors;
     /**
      * <p>
+     * The URL the user is redirected to after the streaming session ends.
+     * </p>
+     */
+    private String redirectURL;
+    /**
+     * <p>
      * The errors for the stack.
      * </p>
      */
@@ -343,6 +349,46 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The URL the user is redirected to after the streaming session ends.
+     * </p>
+     * 
+     * @param redirectURL
+     *        The URL the user is redirected to after the streaming session ends.
+     */
+
+    public void setRedirectURL(String redirectURL) {
+        this.redirectURL = redirectURL;
+    }
+
+    /**
+     * <p>
+     * The URL the user is redirected to after the streaming session ends.
+     * </p>
+     * 
+     * @return The URL the user is redirected to after the streaming session ends.
+     */
+
+    public String getRedirectURL() {
+        return this.redirectURL;
+    }
+
+    /**
+     * <p>
+     * The URL the user is redirected to after the streaming session ends.
+     * </p>
+     * 
+     * @param redirectURL
+     *        The URL the user is redirected to after the streaming session ends.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Stack withRedirectURL(String redirectURL) {
+        setRedirectURL(redirectURL);
+        return this;
+    }
+
+    /**
+     * <p>
      * The errors for the stack.
      * </p>
      * 
@@ -434,6 +480,8 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
             sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
         if (getStorageConnectors() != null)
             sb.append("StorageConnectors: ").append(getStorageConnectors()).append(",");
+        if (getRedirectURL() != null)
+            sb.append("RedirectURL: ").append(getRedirectURL()).append(",");
         if (getStackErrors() != null)
             sb.append("StackErrors: ").append(getStackErrors());
         sb.append("}");
@@ -474,6 +522,10 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStorageConnectors() != null && other.getStorageConnectors().equals(this.getStorageConnectors()) == false)
             return false;
+        if (other.getRedirectURL() == null ^ this.getRedirectURL() == null)
+            return false;
+        if (other.getRedirectURL() != null && other.getRedirectURL().equals(this.getRedirectURL()) == false)
+            return false;
         if (other.getStackErrors() == null ^ this.getStackErrors() == null)
             return false;
         if (other.getStackErrors() != null && other.getStackErrors().equals(this.getStackErrors()) == false)
@@ -492,6 +544,7 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         hashCode = prime * hashCode + ((getStorageConnectors() == null) ? 0 : getStorageConnectors().hashCode());
+        hashCode = prime * hashCode + ((getRedirectURL() == null) ? 0 : getRedirectURL().hashCode());
         hashCode = prime * hashCode + ((getStackErrors() == null) ? 0 : getStackErrors().hashCode());
         return hashCode;
     }

@@ -39,7 +39,8 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.
      */
     private String requestId;
-    /** Reserved for future use. */
+    /** Deprecated field that's only usable by whitelisted customers. */
+    @Deprecated
     private String reserved;
     /** An optional Amazon Resource Name (ARN) of the role to assume when running the Channel. */
     private String roleArn;
@@ -287,34 +288,34 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Reserved for future use.
+     * Deprecated field that's only usable by whitelisted customers.
      * 
      * @param reserved
-     *        Reserved for future use.
+     *        Deprecated field that's only usable by whitelisted customers.
      */
-
+    @Deprecated
     public void setReserved(String reserved) {
         this.reserved = reserved;
     }
 
     /**
-     * Reserved for future use.
+     * Deprecated field that's only usable by whitelisted customers.
      * 
-     * @return Reserved for future use.
+     * @return Deprecated field that's only usable by whitelisted customers.
      */
-
+    @Deprecated
     public String getReserved() {
         return this.reserved;
     }
 
     /**
-     * Reserved for future use.
+     * Deprecated field that's only usable by whitelisted customers.
      * 
      * @param reserved
-     *        Reserved for future use.
+     *        Deprecated field that's only usable by whitelisted customers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public CreateChannelRequest withReserved(String reserved) {
         setReserved(reserved);
         return this;

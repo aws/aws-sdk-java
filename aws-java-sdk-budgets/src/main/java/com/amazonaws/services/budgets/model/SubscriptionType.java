@@ -15,7 +15,9 @@ package com.amazonaws.services.budgets.model;
 import javax.annotation.Generated;
 
 /**
+ * <p>
  * The subscription type of the subscriber. It can be SMS or EMAIL.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum SubscriptionType {

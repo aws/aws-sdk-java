@@ -15,9 +15,9 @@
  * <fullname>Amazon GameLift Service</fullname>
  * <p>
  * Amazon GameLift is a managed service for developers who need a scalable, dedicated server solution for their
- * multiplayer games. Amazon GameLift provides tools for the following tasks: (1) acquire computing resources and deploy
- * game servers, (2) scale game server capacity to meet player demand, (3) host game sessions and manage player access,
- * and (4) track in-depth metrics on player usage and server performance.
+ * multiplayer games. Use Amazon GameLift for these tasks: (1) set up computing resources and deploy your game servers,
+ * (2) run game sessions and get players into games, (3) automatically scale your resources to meet player demand and
+ * manage costs, and (4) track in-depth metrics on game server performance and player usage.
  * </p>
  * <p>
  * The Amazon GameLift service API includes two important function sets:
@@ -76,19 +76,19 @@
  * </li>
  * </ul>
  * <p>
- * <b>MORE RESOURCES</b>
+ * <b>Learn more</b>
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift Developer Guide</a> -- Learn
- * more about Amazon GameLift features and how to use them.
+ * <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/"> Developer Guide</a> -- Read about Amazon
+ * GameLift features and how to use them.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="https://gamedev.amazon.com/forums/tutorials">Lumberyard and Amazon GameLift Tutorials</a> -- Get started
- * fast with walkthroughs and sample projects.
+ * <a href="https://gamedev.amazon.com/forums/tutorials">Tutorials</a> -- Get started fast with walkthroughs and sample
+ * projects.
  * </p>
  * </li>
  * <li>
@@ -104,9 +104,9 @@
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html">Amazon GameLift Document
- * History</a> -- See changes to the Amazon GameLift service, SDKs, and documentation, as well as links to release
- * notes.
+ * <a href="http://aws.amazon.com/releasenotes/Amazon-GameLift/">Release notes</a> and <a
+ * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html">document history</a> -- Stay
+ * current with updates to the Amazon GameLift service, SDKs, and documentation.
  * </p>
  * </li>
  * </ul>
@@ -194,6 +194,11 @@
  * </li>
  * <li>
  * <p>
+ * <a>StartMatchBackfill</a> - Request additional player matches to fill empty slots in an existing game session.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>StopMatchmaking</a> -- Cancel a matchmaking request.
  * </p>
  * </li>
@@ -271,9 +276,8 @@
  * <ul>
  * <li>
  * <p>
- * <a>CreateBuild</a> -- Create a new build using files stored in an Amazon S3 bucket. (Update uploading permissions
- * with <a>RequestUploadCredentials</a>.) To create a build and upload files from a local path, use the AWS CLI command
- * <code>upload-build</code>.
+ * <a>CreateBuild</a> -- Create a new build using files stored in an Amazon S3 bucket. To create a build and upload
+ * files from a local path, use the AWS CLI command <code>upload-build</code>.
  * </p>
  * </li>
  * <li>

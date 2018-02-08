@@ -1570,6 +1570,62 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
 
     /**
      * <p>
+     * Returns information about the task logs for the specified task.
+     * </p>
+     * 
+     * @param describeReplicationInstanceTaskLogsRequest
+     * @return Result of the DescribeReplicationInstanceTaskLogs operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @sample AWSDatabaseMigrationService.DescribeReplicationInstanceTaskLogs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationInstanceTaskLogs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeReplicationInstanceTaskLogsResult describeReplicationInstanceTaskLogs(DescribeReplicationInstanceTaskLogsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeReplicationInstanceTaskLogs(request);
+    }
+
+    @SdkInternalApi
+    final DescribeReplicationInstanceTaskLogsResult executeDescribeReplicationInstanceTaskLogs(
+            DescribeReplicationInstanceTaskLogsRequest describeReplicationInstanceTaskLogsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeReplicationInstanceTaskLogsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeReplicationInstanceTaskLogsRequest> request = null;
+        Response<DescribeReplicationInstanceTaskLogsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeReplicationInstanceTaskLogsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeReplicationInstanceTaskLogsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeReplicationInstanceTaskLogsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeReplicationInstanceTaskLogsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns information about replication instances for your account in the current region.
      * </p>
      * 
@@ -1907,6 +1963,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *         The resource you are attempting to create already exists.
      * @throws InvalidCertificateException
      *         The certificate was not valid.
+     * @throws ResourceQuotaExceededException
+     *         The quota for this resource quota has been exceeded.
      * @sample AWSDatabaseMigrationService.ImportCertificate
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ImportCertificate" target="_top">AWS API
      *      Documentation</a>
@@ -2305,6 +2363,62 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
             HttpResponseHandler<AmazonWebServiceResponse<ModifyReplicationTaskResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new ModifyReplicationTaskResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Reboots a replication instance. Rebooting results in a momentary outage, until the replication instance becomes
+     * available again.
+     * </p>
+     * 
+     * @param rebootReplicationInstanceRequest
+     * @return Result of the RebootReplicationInstance operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @sample AWSDatabaseMigrationService.RebootReplicationInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RebootReplicationInstance" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public RebootReplicationInstanceResult rebootReplicationInstance(RebootReplicationInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeRebootReplicationInstance(request);
+    }
+
+    @SdkInternalApi
+    final RebootReplicationInstanceResult executeRebootReplicationInstance(RebootReplicationInstanceRequest rebootReplicationInstanceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(rebootReplicationInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RebootReplicationInstanceRequest> request = null;
+        Response<RebootReplicationInstanceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RebootReplicationInstanceRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(rebootReplicationInstanceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RebootReplicationInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new RebootReplicationInstanceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

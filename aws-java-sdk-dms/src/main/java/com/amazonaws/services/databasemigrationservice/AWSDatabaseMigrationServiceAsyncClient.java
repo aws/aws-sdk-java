@@ -986,6 +986,41 @@ public class AWSDatabaseMigrationServiceAsyncClient extends AWSDatabaseMigration
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeReplicationInstanceTaskLogsResult> describeReplicationInstanceTaskLogsAsync(
+            DescribeReplicationInstanceTaskLogsRequest request) {
+
+        return describeReplicationInstanceTaskLogsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeReplicationInstanceTaskLogsResult> describeReplicationInstanceTaskLogsAsync(
+            final DescribeReplicationInstanceTaskLogsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeReplicationInstanceTaskLogsRequest, DescribeReplicationInstanceTaskLogsResult> asyncHandler) {
+        final DescribeReplicationInstanceTaskLogsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeReplicationInstanceTaskLogsResult>() {
+            @Override
+            public DescribeReplicationInstanceTaskLogsResult call() throws Exception {
+                DescribeReplicationInstanceTaskLogsResult result = null;
+
+                try {
+                    result = executeDescribeReplicationInstanceTaskLogs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeReplicationInstancesResult> describeReplicationInstancesAsync(DescribeReplicationInstancesRequest request) {
 
         return describeReplicationInstancesAsync(request, null);
@@ -1403,6 +1438,39 @@ public class AWSDatabaseMigrationServiceAsyncClient extends AWSDatabaseMigration
 
                 try {
                     result = executeModifyReplicationTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RebootReplicationInstanceResult> rebootReplicationInstanceAsync(RebootReplicationInstanceRequest request) {
+
+        return rebootReplicationInstanceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RebootReplicationInstanceResult> rebootReplicationInstanceAsync(final RebootReplicationInstanceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RebootReplicationInstanceRequest, RebootReplicationInstanceResult> asyncHandler) {
+        final RebootReplicationInstanceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RebootReplicationInstanceResult>() {
+            @Override
+            public RebootReplicationInstanceResult call() throws Exception {
+                RebootReplicationInstanceResult result = null;
+
+                try {
+                    result = executeRebootReplicationInstance(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

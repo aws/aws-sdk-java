@@ -18,17 +18,34 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * A structure to relate notification and a list of subscribers who belong to the notification.
+ * <p>
+ * A notification with subscribers. A notification can have one SNS subscriber and up to ten email subscribers, for a
+ * total of 11 subscribers.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NotificationWithSubscribers implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The notification associated with a budget.
+     * </p>
+     */
     private Notification notification;
-
+    /**
+     * <p>
+     * A list of subscribers who are subscribed to this notification.
+     * </p>
+     */
     private java.util.List<Subscriber> subscribers;
 
     /**
+     * <p>
+     * The notification associated with a budget.
+     * </p>
+     * 
      * @param notification
+     *        The notification associated with a budget.
      */
 
     public void setNotification(Notification notification) {
@@ -36,7 +53,11 @@ public class NotificationWithSubscribers implements Serializable, Cloneable, Str
     }
 
     /**
-     * @return
+     * <p>
+     * The notification associated with a budget.
+     * </p>
+     * 
+     * @return The notification associated with a budget.
      */
 
     public Notification getNotification() {
@@ -44,7 +65,12 @@ public class NotificationWithSubscribers implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * The notification associated with a budget.
+     * </p>
+     * 
      * @param notification
+     *        The notification associated with a budget.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -54,7 +80,11 @@ public class NotificationWithSubscribers implements Serializable, Cloneable, Str
     }
 
     /**
-     * @return
+     * <p>
+     * A list of subscribers who are subscribed to this notification.
+     * </p>
+     * 
+     * @return A list of subscribers who are subscribed to this notification.
      */
 
     public java.util.List<Subscriber> getSubscribers() {
@@ -62,7 +92,12 @@ public class NotificationWithSubscribers implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * A list of subscribers who are subscribed to this notification.
+     * </p>
+     * 
      * @param subscribers
+     *        A list of subscribers who are subscribed to this notification.
      */
 
     public void setSubscribers(java.util.Collection<Subscriber> subscribers) {
@@ -76,12 +111,16 @@ public class NotificationWithSubscribers implements Serializable, Cloneable, Str
 
     /**
      * <p>
+     * A list of subscribers who are subscribed to this notification.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSubscribers(java.util.Collection)} or {@link #withSubscribers(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param subscribers
+     *        A list of subscribers who are subscribed to this notification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,7 +135,12 @@ public class NotificationWithSubscribers implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * A list of subscribers who are subscribed to this notification.
+     * </p>
+     * 
      * @param subscribers
+     *        A list of subscribers who are subscribed to this notification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

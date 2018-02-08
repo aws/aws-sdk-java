@@ -18,17 +18,33 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * Request of UpdateBudget
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateBudgetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The <code>accountId</code> that is associated with the budget that you want to update.
+     * </p>
+     */
     private String accountId;
-
+    /**
+     * <p>
+     * The budget that you want to update your budget to.
+     * </p>
+     */
     private Budget newBudget;
 
     /**
+     * <p>
+     * The <code>accountId</code> that is associated with the budget that you want to update.
+     * </p>
+     * 
      * @param accountId
+     *        The <code>accountId</code> that is associated with the budget that you want to update.
      */
 
     public void setAccountId(String accountId) {
@@ -36,7 +52,11 @@ public class UpdateBudgetRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * @return
+     * <p>
+     * The <code>accountId</code> that is associated with the budget that you want to update.
+     * </p>
+     * 
+     * @return The <code>accountId</code> that is associated with the budget that you want to update.
      */
 
     public String getAccountId() {
@@ -44,7 +64,12 @@ public class UpdateBudgetRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The <code>accountId</code> that is associated with the budget that you want to update.
+     * </p>
+     * 
      * @param accountId
+     *        The <code>accountId</code> that is associated with the budget that you want to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -54,7 +79,12 @@ public class UpdateBudgetRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The budget that you want to update your budget to.
+     * </p>
+     * 
      * @param newBudget
+     *        The budget that you want to update your budget to.
      */
 
     public void setNewBudget(Budget newBudget) {
@@ -62,7 +92,11 @@ public class UpdateBudgetRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * @return
+     * <p>
+     * The budget that you want to update your budget to.
+     * </p>
+     * 
+     * @return The budget that you want to update your budget to.
      */
 
     public Budget getNewBudget() {
@@ -70,7 +104,12 @@ public class UpdateBudgetRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The budget that you want to update your budget to.
+     * </p>
+     * 
      * @param newBudget
+     *        The budget that you want to update your budget to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -990,7 +990,8 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Describes the specified directory configurations.
+     * Describes the specified directory configurations. Note that although the response syntax in this topic includes
+     * the account password, this password is not returned in the actual response.
      * </p>
      * 
      * @param describeDirectoryConfigsRequest
@@ -1508,8 +1509,8 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * </p>
      * <p>
      * For more information about tags, see <a
-     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic">Tagging Your Resources</a> in
-     * the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -1795,8 +1796,8 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * </p>
      * <p>
      * For more information about tags, see <a
-     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic">Tagging Your Resources</a> in
-     * the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
      * </p>
      * 
      * @param tagResourceRequest
@@ -1856,8 +1857,8 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * </p>
      * <p>
      * For more information about tags, see <a
-     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic">Tagging Your Resources</a> in
-     * the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
      * </p>
      * 
      * @param untagResourceRequest

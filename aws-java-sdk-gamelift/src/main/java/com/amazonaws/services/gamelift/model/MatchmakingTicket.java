@@ -80,7 +80,7 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * <li>
      * <p>
      * <b>FAILED</b> -- The matchmaking request was not completed. Tickets with players who fail to accept a proposed
-     * match are placed in <code>FAILED</code> status; new matchmaking requests can be submitted for these players.
+     * match are placed in <code>FAILED</code> status.
      * </p>
      * </li>
      * <li>
@@ -90,11 +90,17 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * <b>TIMED_OUT</b> -- The matchmaking request was not completed within the duration specified in the matchmaking
-     * configuration. Matchmaking requests that time out can be resubmitted.
+     * <b>TIMED_OUT</b> -- The matchmaking request was not successful within the duration specified in the matchmaking
+     * configuration.
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * Matchmaking requests that fail to successfully complete (statuses FAILED, CANCELLED, TIMED_OUT) can be
+     * resubmitted as new requests with new ticket IDs.
+     * </p>
+     * </note>
      */
     private String status;
     /**
@@ -271,7 +277,7 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * <li>
      * <p>
      * <b>FAILED</b> -- The matchmaking request was not completed. Tickets with players who fail to accept a proposed
-     * match are placed in <code>FAILED</code> status; new matchmaking requests can be submitted for these players.
+     * match are placed in <code>FAILED</code> status.
      * </p>
      * </li>
      * <li>
@@ -281,11 +287,17 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * <b>TIMED_OUT</b> -- The matchmaking request was not completed within the duration specified in the matchmaking
-     * configuration. Matchmaking requests that time out can be resubmitted.
+     * <b>TIMED_OUT</b> -- The matchmaking request was not successful within the duration specified in the matchmaking
+     * configuration.
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * Matchmaking requests that fail to successfully complete (statuses FAILED, CANCELLED, TIMED_OUT) can be
+     * resubmitted as new requests with new ticket IDs.
+     * </p>
+     * </note>
      * 
      * @param status
      *        Current status of the matchmaking request.</p>
@@ -322,8 +334,7 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      *        <li>
      *        <p>
      *        <b>FAILED</b> -- The matchmaking request was not completed. Tickets with players who fail to accept a
-     *        proposed match are placed in <code>FAILED</code> status; new matchmaking requests can be submitted for
-     *        these players.
+     *        proposed match are placed in <code>FAILED</code> status.
      *        </p>
      *        </li>
      *        <li>
@@ -333,10 +344,16 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        <b>TIMED_OUT</b> -- The matchmaking request was not completed within the duration specified in the
-     *        matchmaking configuration. Matchmaking requests that time out can be resubmitted.
+     *        <b>TIMED_OUT</b> -- The matchmaking request was not successful within the duration specified in the
+     *        matchmaking configuration.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        Matchmaking requests that fail to successfully complete (statuses FAILED, CANCELLED, TIMED_OUT) can be
+     *        resubmitted as new requests with new ticket IDs.
+     *        </p>
      * @see MatchmakingConfigurationStatus
      */
 
@@ -381,7 +398,7 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * <li>
      * <p>
      * <b>FAILED</b> -- The matchmaking request was not completed. Tickets with players who fail to accept a proposed
-     * match are placed in <code>FAILED</code> status; new matchmaking requests can be submitted for these players.
+     * match are placed in <code>FAILED</code> status.
      * </p>
      * </li>
      * <li>
@@ -391,11 +408,17 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * <b>TIMED_OUT</b> -- The matchmaking request was not completed within the duration specified in the matchmaking
-     * configuration. Matchmaking requests that time out can be resubmitted.
+     * <b>TIMED_OUT</b> -- The matchmaking request was not successful within the duration specified in the matchmaking
+     * configuration.
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * Matchmaking requests that fail to successfully complete (statuses FAILED, CANCELLED, TIMED_OUT) can be
+     * resubmitted as new requests with new ticket IDs.
+     * </p>
+     * </note>
      * 
      * @return Current status of the matchmaking request.</p>
      *         <ul>
@@ -431,8 +454,7 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      *         <li>
      *         <p>
      *         <b>FAILED</b> -- The matchmaking request was not completed. Tickets with players who fail to accept a
-     *         proposed match are placed in <code>FAILED</code> status; new matchmaking requests can be submitted for
-     *         these players.
+     *         proposed match are placed in <code>FAILED</code> status.
      *         </p>
      *         </li>
      *         <li>
@@ -442,10 +464,16 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      *         </li>
      *         <li>
      *         <p>
-     *         <b>TIMED_OUT</b> -- The matchmaking request was not completed within the duration specified in the
-     *         matchmaking configuration. Matchmaking requests that time out can be resubmitted.
+     *         <b>TIMED_OUT</b> -- The matchmaking request was not successful within the duration specified in the
+     *         matchmaking configuration.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         Matchmaking requests that fail to successfully complete (statuses FAILED, CANCELLED, TIMED_OUT) can be
+     *         resubmitted as new requests with new ticket IDs.
+     *         </p>
      * @see MatchmakingConfigurationStatus
      */
 
@@ -490,7 +518,7 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * <li>
      * <p>
      * <b>FAILED</b> -- The matchmaking request was not completed. Tickets with players who fail to accept a proposed
-     * match are placed in <code>FAILED</code> status; new matchmaking requests can be submitted for these players.
+     * match are placed in <code>FAILED</code> status.
      * </p>
      * </li>
      * <li>
@@ -500,11 +528,17 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * <b>TIMED_OUT</b> -- The matchmaking request was not completed within the duration specified in the matchmaking
-     * configuration. Matchmaking requests that time out can be resubmitted.
+     * <b>TIMED_OUT</b> -- The matchmaking request was not successful within the duration specified in the matchmaking
+     * configuration.
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * Matchmaking requests that fail to successfully complete (statuses FAILED, CANCELLED, TIMED_OUT) can be
+     * resubmitted as new requests with new ticket IDs.
+     * </p>
+     * </note>
      * 
      * @param status
      *        Current status of the matchmaking request.</p>
@@ -541,8 +575,7 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      *        <li>
      *        <p>
      *        <b>FAILED</b> -- The matchmaking request was not completed. Tickets with players who fail to accept a
-     *        proposed match are placed in <code>FAILED</code> status; new matchmaking requests can be submitted for
-     *        these players.
+     *        proposed match are placed in <code>FAILED</code> status.
      *        </p>
      *        </li>
      *        <li>
@@ -552,10 +585,16 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        <b>TIMED_OUT</b> -- The matchmaking request was not completed within the duration specified in the
-     *        matchmaking configuration. Matchmaking requests that time out can be resubmitted.
+     *        <b>TIMED_OUT</b> -- The matchmaking request was not successful within the duration specified in the
+     *        matchmaking configuration.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        Matchmaking requests that fail to successfully complete (statuses FAILED, CANCELLED, TIMED_OUT) can be
+     *        resubmitted as new requests with new ticket IDs.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MatchmakingConfigurationStatus
      */
@@ -602,7 +641,7 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * <li>
      * <p>
      * <b>FAILED</b> -- The matchmaking request was not completed. Tickets with players who fail to accept a proposed
-     * match are placed in <code>FAILED</code> status; new matchmaking requests can be submitted for these players.
+     * match are placed in <code>FAILED</code> status.
      * </p>
      * </li>
      * <li>
@@ -612,11 +651,17 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * <b>TIMED_OUT</b> -- The matchmaking request was not completed within the duration specified in the matchmaking
-     * configuration. Matchmaking requests that time out can be resubmitted.
+     * <b>TIMED_OUT</b> -- The matchmaking request was not successful within the duration specified in the matchmaking
+     * configuration.
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * Matchmaking requests that fail to successfully complete (statuses FAILED, CANCELLED, TIMED_OUT) can be
+     * resubmitted as new requests with new ticket IDs.
+     * </p>
+     * </note>
      * 
      * @param status
      *        Current status of the matchmaking request.</p>
@@ -653,8 +698,7 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      *        <li>
      *        <p>
      *        <b>FAILED</b> -- The matchmaking request was not completed. Tickets with players who fail to accept a
-     *        proposed match are placed in <code>FAILED</code> status; new matchmaking requests can be submitted for
-     *        these players.
+     *        proposed match are placed in <code>FAILED</code> status.
      *        </p>
      *        </li>
      *        <li>
@@ -664,10 +708,16 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        <b>TIMED_OUT</b> -- The matchmaking request was not completed within the duration specified in the
-     *        matchmaking configuration. Matchmaking requests that time out can be resubmitted.
+     *        <b>TIMED_OUT</b> -- The matchmaking request was not successful within the duration specified in the
+     *        matchmaking configuration.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        Matchmaking requests that fail to successfully complete (statuses FAILED, CANCELLED, TIMED_OUT) can be
+     *        resubmitted as new requests with new ticket IDs.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MatchmakingConfigurationStatus
      */

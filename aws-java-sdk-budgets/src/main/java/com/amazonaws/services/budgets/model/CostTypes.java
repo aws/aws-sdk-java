@@ -18,39 +18,125 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * This includes the options for getting the cost of a budget.
+ * <p>
+ * The types of cost included in a budget, such as tax and subscriptions.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CostTypes implements Serializable, Cloneable, StructuredPojo {
 
-    /** A boolean value whether to include tax in the cost budget. */
+    /**
+     * <p>
+     * Specifies whether a budget includes taxes.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
+     */
     private Boolean includeTax;
-    /** A boolean value whether to include subscriptions in the cost budget. */
+    /**
+     * <p>
+     * Specifies whether a budget includes subscriptions.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
+     */
     private Boolean includeSubscription;
-    /** A boolean value whether to use blended costs in the cost budget. */
+    /**
+     * <p>
+     * Specifies whether a budget uses blended rate.
+     * </p>
+     * <p>
+     * The default value is <code>false</code>.
+     * </p>
+     */
     private Boolean useBlended;
-    /** A boolean value whether to include refunds in the cost budget. */
+    /**
+     * <p>
+     * Specifies whether a budget includes refunds.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
+     */
     private Boolean includeRefund;
-    /** A boolean value whether to include credits in the cost budget. */
+    /**
+     * <p>
+     * Specifies whether a budget includes credits.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
+     */
     private Boolean includeCredit;
-    /** A boolean value whether to include upfront costs in the cost budget. */
+    /**
+     * <p>
+     * Specifies whether a budget includes upfront RI costs.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
+     */
     private Boolean includeUpfront;
-    /** A boolean value whether to include recurring costs in the cost budget. */
+    /**
+     * <p>
+     * Specifies whether a budget includes recurring fees such as monthly RI fees.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
+     */
     private Boolean includeRecurring;
-    /** A boolean value whether to include other subscription costs in the cost budget. */
+    /**
+     * <p>
+     * Specifies whether a budget includes non-RI subscription costs.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
+     */
     private Boolean includeOtherSubscription;
-    /** A boolean value whether to include support costs in the cost budget. */
+    /**
+     * <p>
+     * Specifies whether a budget includes support subscription fees.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
+     */
     private Boolean includeSupport;
-    /** A boolean value whether to include discounts in the cost budget. */
+    /**
+     * <p>
+     * Specifies whether a budget includes discounts.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
+     */
     private Boolean includeDiscount;
-    /** A boolean value whether to include amortized costs in the cost budget. */
+    /**
+     * <p>
+     * Specifies whether a budget uses the amortized rate.
+     * </p>
+     * <p>
+     * The default value is <code>false</code>.
+     * </p>
+     */
     private Boolean useAmortized;
 
     /**
-     * A boolean value whether to include tax in the cost budget.
+     * <p>
+     * Specifies whether a budget includes taxes.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
      * @param includeTax
-     *        A boolean value whether to include tax in the cost budget.
+     *        Specifies whether a budget includes taxes.</p>
+     *        <p>
+     *        The default value is <code>true</code>.
      */
 
     public void setIncludeTax(Boolean includeTax) {
@@ -58,9 +144,16 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include tax in the cost budget.
+     * <p>
+     * Specifies whether a budget includes taxes.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
-     * @return A boolean value whether to include tax in the cost budget.
+     * @return Specifies whether a budget includes taxes.</p>
+     *         <p>
+     *         The default value is <code>true</code>.
      */
 
     public Boolean getIncludeTax() {
@@ -68,10 +161,17 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include tax in the cost budget.
+     * <p>
+     * Specifies whether a budget includes taxes.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
      * @param includeTax
-     *        A boolean value whether to include tax in the cost budget.
+     *        Specifies whether a budget includes taxes.</p>
+     *        <p>
+     *        The default value is <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,9 +181,16 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include tax in the cost budget.
+     * <p>
+     * Specifies whether a budget includes taxes.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
-     * @return A boolean value whether to include tax in the cost budget.
+     * @return Specifies whether a budget includes taxes.</p>
+     *         <p>
+     *         The default value is <code>true</code>.
      */
 
     public Boolean isIncludeTax() {
@@ -91,10 +198,17 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include subscriptions in the cost budget.
+     * <p>
+     * Specifies whether a budget includes subscriptions.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
      * @param includeSubscription
-     *        A boolean value whether to include subscriptions in the cost budget.
+     *        Specifies whether a budget includes subscriptions.</p>
+     *        <p>
+     *        The default value is <code>true</code>.
      */
 
     public void setIncludeSubscription(Boolean includeSubscription) {
@@ -102,9 +216,16 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include subscriptions in the cost budget.
+     * <p>
+     * Specifies whether a budget includes subscriptions.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
-     * @return A boolean value whether to include subscriptions in the cost budget.
+     * @return Specifies whether a budget includes subscriptions.</p>
+     *         <p>
+     *         The default value is <code>true</code>.
      */
 
     public Boolean getIncludeSubscription() {
@@ -112,10 +233,17 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include subscriptions in the cost budget.
+     * <p>
+     * Specifies whether a budget includes subscriptions.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
      * @param includeSubscription
-     *        A boolean value whether to include subscriptions in the cost budget.
+     *        Specifies whether a budget includes subscriptions.</p>
+     *        <p>
+     *        The default value is <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -125,9 +253,16 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include subscriptions in the cost budget.
+     * <p>
+     * Specifies whether a budget includes subscriptions.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
-     * @return A boolean value whether to include subscriptions in the cost budget.
+     * @return Specifies whether a budget includes subscriptions.</p>
+     *         <p>
+     *         The default value is <code>true</code>.
      */
 
     public Boolean isIncludeSubscription() {
@@ -135,10 +270,17 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to use blended costs in the cost budget.
+     * <p>
+     * Specifies whether a budget uses blended rate.
+     * </p>
+     * <p>
+     * The default value is <code>false</code>.
+     * </p>
      * 
      * @param useBlended
-     *        A boolean value whether to use blended costs in the cost budget.
+     *        Specifies whether a budget uses blended rate.</p>
+     *        <p>
+     *        The default value is <code>false</code>.
      */
 
     public void setUseBlended(Boolean useBlended) {
@@ -146,9 +288,16 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to use blended costs in the cost budget.
+     * <p>
+     * Specifies whether a budget uses blended rate.
+     * </p>
+     * <p>
+     * The default value is <code>false</code>.
+     * </p>
      * 
-     * @return A boolean value whether to use blended costs in the cost budget.
+     * @return Specifies whether a budget uses blended rate.</p>
+     *         <p>
+     *         The default value is <code>false</code>.
      */
 
     public Boolean getUseBlended() {
@@ -156,10 +305,17 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to use blended costs in the cost budget.
+     * <p>
+     * Specifies whether a budget uses blended rate.
+     * </p>
+     * <p>
+     * The default value is <code>false</code>.
+     * </p>
      * 
      * @param useBlended
-     *        A boolean value whether to use blended costs in the cost budget.
+     *        Specifies whether a budget uses blended rate.</p>
+     *        <p>
+     *        The default value is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,9 +325,16 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to use blended costs in the cost budget.
+     * <p>
+     * Specifies whether a budget uses blended rate.
+     * </p>
+     * <p>
+     * The default value is <code>false</code>.
+     * </p>
      * 
-     * @return A boolean value whether to use blended costs in the cost budget.
+     * @return Specifies whether a budget uses blended rate.</p>
+     *         <p>
+     *         The default value is <code>false</code>.
      */
 
     public Boolean isUseBlended() {
@@ -179,10 +342,17 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include refunds in the cost budget.
+     * <p>
+     * Specifies whether a budget includes refunds.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
      * @param includeRefund
-     *        A boolean value whether to include refunds in the cost budget.
+     *        Specifies whether a budget includes refunds.</p>
+     *        <p>
+     *        The default value is <code>true</code>.
      */
 
     public void setIncludeRefund(Boolean includeRefund) {
@@ -190,9 +360,16 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include refunds in the cost budget.
+     * <p>
+     * Specifies whether a budget includes refunds.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
-     * @return A boolean value whether to include refunds in the cost budget.
+     * @return Specifies whether a budget includes refunds.</p>
+     *         <p>
+     *         The default value is <code>true</code>.
      */
 
     public Boolean getIncludeRefund() {
@@ -200,10 +377,17 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include refunds in the cost budget.
+     * <p>
+     * Specifies whether a budget includes refunds.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
      * @param includeRefund
-     *        A boolean value whether to include refunds in the cost budget.
+     *        Specifies whether a budget includes refunds.</p>
+     *        <p>
+     *        The default value is <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -213,9 +397,16 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include refunds in the cost budget.
+     * <p>
+     * Specifies whether a budget includes refunds.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
-     * @return A boolean value whether to include refunds in the cost budget.
+     * @return Specifies whether a budget includes refunds.</p>
+     *         <p>
+     *         The default value is <code>true</code>.
      */
 
     public Boolean isIncludeRefund() {
@@ -223,10 +414,17 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include credits in the cost budget.
+     * <p>
+     * Specifies whether a budget includes credits.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
      * @param includeCredit
-     *        A boolean value whether to include credits in the cost budget.
+     *        Specifies whether a budget includes credits.</p>
+     *        <p>
+     *        The default value is <code>true</code>.
      */
 
     public void setIncludeCredit(Boolean includeCredit) {
@@ -234,9 +432,16 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include credits in the cost budget.
+     * <p>
+     * Specifies whether a budget includes credits.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
-     * @return A boolean value whether to include credits in the cost budget.
+     * @return Specifies whether a budget includes credits.</p>
+     *         <p>
+     *         The default value is <code>true</code>.
      */
 
     public Boolean getIncludeCredit() {
@@ -244,10 +449,17 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include credits in the cost budget.
+     * <p>
+     * Specifies whether a budget includes credits.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
      * @param includeCredit
-     *        A boolean value whether to include credits in the cost budget.
+     *        Specifies whether a budget includes credits.</p>
+     *        <p>
+     *        The default value is <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -257,9 +469,16 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include credits in the cost budget.
+     * <p>
+     * Specifies whether a budget includes credits.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
-     * @return A boolean value whether to include credits in the cost budget.
+     * @return Specifies whether a budget includes credits.</p>
+     *         <p>
+     *         The default value is <code>true</code>.
      */
 
     public Boolean isIncludeCredit() {
@@ -267,10 +486,17 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include upfront costs in the cost budget.
+     * <p>
+     * Specifies whether a budget includes upfront RI costs.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
      * @param includeUpfront
-     *        A boolean value whether to include upfront costs in the cost budget.
+     *        Specifies whether a budget includes upfront RI costs.</p>
+     *        <p>
+     *        The default value is <code>true</code>.
      */
 
     public void setIncludeUpfront(Boolean includeUpfront) {
@@ -278,9 +504,16 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include upfront costs in the cost budget.
+     * <p>
+     * Specifies whether a budget includes upfront RI costs.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
-     * @return A boolean value whether to include upfront costs in the cost budget.
+     * @return Specifies whether a budget includes upfront RI costs.</p>
+     *         <p>
+     *         The default value is <code>true</code>.
      */
 
     public Boolean getIncludeUpfront() {
@@ -288,10 +521,17 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include upfront costs in the cost budget.
+     * <p>
+     * Specifies whether a budget includes upfront RI costs.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
      * @param includeUpfront
-     *        A boolean value whether to include upfront costs in the cost budget.
+     *        Specifies whether a budget includes upfront RI costs.</p>
+     *        <p>
+     *        The default value is <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -301,9 +541,16 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include upfront costs in the cost budget.
+     * <p>
+     * Specifies whether a budget includes upfront RI costs.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
-     * @return A boolean value whether to include upfront costs in the cost budget.
+     * @return Specifies whether a budget includes upfront RI costs.</p>
+     *         <p>
+     *         The default value is <code>true</code>.
      */
 
     public Boolean isIncludeUpfront() {
@@ -311,10 +558,17 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include recurring costs in the cost budget.
+     * <p>
+     * Specifies whether a budget includes recurring fees such as monthly RI fees.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
      * @param includeRecurring
-     *        A boolean value whether to include recurring costs in the cost budget.
+     *        Specifies whether a budget includes recurring fees such as monthly RI fees.</p>
+     *        <p>
+     *        The default value is <code>true</code>.
      */
 
     public void setIncludeRecurring(Boolean includeRecurring) {
@@ -322,9 +576,16 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include recurring costs in the cost budget.
+     * <p>
+     * Specifies whether a budget includes recurring fees such as monthly RI fees.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
-     * @return A boolean value whether to include recurring costs in the cost budget.
+     * @return Specifies whether a budget includes recurring fees such as monthly RI fees.</p>
+     *         <p>
+     *         The default value is <code>true</code>.
      */
 
     public Boolean getIncludeRecurring() {
@@ -332,10 +593,17 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include recurring costs in the cost budget.
+     * <p>
+     * Specifies whether a budget includes recurring fees such as monthly RI fees.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
      * @param includeRecurring
-     *        A boolean value whether to include recurring costs in the cost budget.
+     *        Specifies whether a budget includes recurring fees such as monthly RI fees.</p>
+     *        <p>
+     *        The default value is <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -345,9 +613,16 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include recurring costs in the cost budget.
+     * <p>
+     * Specifies whether a budget includes recurring fees such as monthly RI fees.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
-     * @return A boolean value whether to include recurring costs in the cost budget.
+     * @return Specifies whether a budget includes recurring fees such as monthly RI fees.</p>
+     *         <p>
+     *         The default value is <code>true</code>.
      */
 
     public Boolean isIncludeRecurring() {
@@ -355,10 +630,17 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include other subscription costs in the cost budget.
+     * <p>
+     * Specifies whether a budget includes non-RI subscription costs.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
      * @param includeOtherSubscription
-     *        A boolean value whether to include other subscription costs in the cost budget.
+     *        Specifies whether a budget includes non-RI subscription costs.</p>
+     *        <p>
+     *        The default value is <code>true</code>.
      */
 
     public void setIncludeOtherSubscription(Boolean includeOtherSubscription) {
@@ -366,9 +648,16 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include other subscription costs in the cost budget.
+     * <p>
+     * Specifies whether a budget includes non-RI subscription costs.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
-     * @return A boolean value whether to include other subscription costs in the cost budget.
+     * @return Specifies whether a budget includes non-RI subscription costs.</p>
+     *         <p>
+     *         The default value is <code>true</code>.
      */
 
     public Boolean getIncludeOtherSubscription() {
@@ -376,10 +665,17 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include other subscription costs in the cost budget.
+     * <p>
+     * Specifies whether a budget includes non-RI subscription costs.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
      * @param includeOtherSubscription
-     *        A boolean value whether to include other subscription costs in the cost budget.
+     *        Specifies whether a budget includes non-RI subscription costs.</p>
+     *        <p>
+     *        The default value is <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -389,9 +685,16 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include other subscription costs in the cost budget.
+     * <p>
+     * Specifies whether a budget includes non-RI subscription costs.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
-     * @return A boolean value whether to include other subscription costs in the cost budget.
+     * @return Specifies whether a budget includes non-RI subscription costs.</p>
+     *         <p>
+     *         The default value is <code>true</code>.
      */
 
     public Boolean isIncludeOtherSubscription() {
@@ -399,10 +702,17 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include support costs in the cost budget.
+     * <p>
+     * Specifies whether a budget includes support subscription fees.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
      * @param includeSupport
-     *        A boolean value whether to include support costs in the cost budget.
+     *        Specifies whether a budget includes support subscription fees.</p>
+     *        <p>
+     *        The default value is <code>true</code>.
      */
 
     public void setIncludeSupport(Boolean includeSupport) {
@@ -410,9 +720,16 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include support costs in the cost budget.
+     * <p>
+     * Specifies whether a budget includes support subscription fees.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
-     * @return A boolean value whether to include support costs in the cost budget.
+     * @return Specifies whether a budget includes support subscription fees.</p>
+     *         <p>
+     *         The default value is <code>true</code>.
      */
 
     public Boolean getIncludeSupport() {
@@ -420,10 +737,17 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include support costs in the cost budget.
+     * <p>
+     * Specifies whether a budget includes support subscription fees.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
      * @param includeSupport
-     *        A boolean value whether to include support costs in the cost budget.
+     *        Specifies whether a budget includes support subscription fees.</p>
+     *        <p>
+     *        The default value is <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -433,9 +757,16 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include support costs in the cost budget.
+     * <p>
+     * Specifies whether a budget includes support subscription fees.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
-     * @return A boolean value whether to include support costs in the cost budget.
+     * @return Specifies whether a budget includes support subscription fees.</p>
+     *         <p>
+     *         The default value is <code>true</code>.
      */
 
     public Boolean isIncludeSupport() {
@@ -443,10 +774,17 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include discounts in the cost budget.
+     * <p>
+     * Specifies whether a budget includes discounts.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
      * @param includeDiscount
-     *        A boolean value whether to include discounts in the cost budget.
+     *        Specifies whether a budget includes discounts.</p>
+     *        <p>
+     *        The default value is <code>true</code>.
      */
 
     public void setIncludeDiscount(Boolean includeDiscount) {
@@ -454,9 +792,16 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include discounts in the cost budget.
+     * <p>
+     * Specifies whether a budget includes discounts.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
-     * @return A boolean value whether to include discounts in the cost budget.
+     * @return Specifies whether a budget includes discounts.</p>
+     *         <p>
+     *         The default value is <code>true</code>.
      */
 
     public Boolean getIncludeDiscount() {
@@ -464,10 +809,17 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include discounts in the cost budget.
+     * <p>
+     * Specifies whether a budget includes discounts.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
      * @param includeDiscount
-     *        A boolean value whether to include discounts in the cost budget.
+     *        Specifies whether a budget includes discounts.</p>
+     *        <p>
+     *        The default value is <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -477,9 +829,16 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include discounts in the cost budget.
+     * <p>
+     * Specifies whether a budget includes discounts.
+     * </p>
+     * <p>
+     * The default value is <code>true</code>.
+     * </p>
      * 
-     * @return A boolean value whether to include discounts in the cost budget.
+     * @return Specifies whether a budget includes discounts.</p>
+     *         <p>
+     *         The default value is <code>true</code>.
      */
 
     public Boolean isIncludeDiscount() {
@@ -487,10 +846,17 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include amortized costs in the cost budget.
+     * <p>
+     * Specifies whether a budget uses the amortized rate.
+     * </p>
+     * <p>
+     * The default value is <code>false</code>.
+     * </p>
      * 
      * @param useAmortized
-     *        A boolean value whether to include amortized costs in the cost budget.
+     *        Specifies whether a budget uses the amortized rate.</p>
+     *        <p>
+     *        The default value is <code>false</code>.
      */
 
     public void setUseAmortized(Boolean useAmortized) {
@@ -498,9 +864,16 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include amortized costs in the cost budget.
+     * <p>
+     * Specifies whether a budget uses the amortized rate.
+     * </p>
+     * <p>
+     * The default value is <code>false</code>.
+     * </p>
      * 
-     * @return A boolean value whether to include amortized costs in the cost budget.
+     * @return Specifies whether a budget uses the amortized rate.</p>
+     *         <p>
+     *         The default value is <code>false</code>.
      */
 
     public Boolean getUseAmortized() {
@@ -508,10 +881,17 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include amortized costs in the cost budget.
+     * <p>
+     * Specifies whether a budget uses the amortized rate.
+     * </p>
+     * <p>
+     * The default value is <code>false</code>.
+     * </p>
      * 
      * @param useAmortized
-     *        A boolean value whether to include amortized costs in the cost budget.
+     *        Specifies whether a budget uses the amortized rate.</p>
+     *        <p>
+     *        The default value is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -521,9 +901,16 @@ public class CostTypes implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A boolean value whether to include amortized costs in the cost budget.
+     * <p>
+     * Specifies whether a budget uses the amortized rate.
+     * </p>
+     * <p>
+     * The default value is <code>false</code>.
+     * </p>
      * 
-     * @return A boolean value whether to include amortized costs in the cost budget.
+     * @return Specifies whether a budget uses the amortized rate.</p>
+     *         <p>
+     *         The default value is <code>false</code>.
      */
 
     public Boolean isUseAmortized() {

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Values for use in <a>Player</a> attribute type:value pairs. This object lets you specify an attribute value using any
+ * Values for use in <a>Player</a> attribute key:value pairs. This object lets you specify an attribute value using any
  * of the valid data types: string, number, string array or data map. Each <code>AttributeValue</code> object can use
  * only one of the available properties.
  * </p>
@@ -51,7 +51,7 @@ public class AttributeValue implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> sL;
     /**
      * <p>
-     * For a map of up to 10 type:value pairs. Maximum length for each string value is 100 characters.
+     * For a map of up to 10 data type:value pairs. Maximum length for each string value is 100 characters.
      * </p>
      */
     private java.util.Map<String, Double> sDM;
@@ -216,10 +216,10 @@ public class AttributeValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * For a map of up to 10 type:value pairs. Maximum length for each string value is 100 characters.
+     * For a map of up to 10 data type:value pairs. Maximum length for each string value is 100 characters.
      * </p>
      * 
-     * @return For a map of up to 10 type:value pairs. Maximum length for each string value is 100 characters.
+     * @return For a map of up to 10 data type:value pairs. Maximum length for each string value is 100 characters.
      */
 
     public java.util.Map<String, Double> getSDM() {
@@ -228,11 +228,11 @@ public class AttributeValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * For a map of up to 10 type:value pairs. Maximum length for each string value is 100 characters.
+     * For a map of up to 10 data type:value pairs. Maximum length for each string value is 100 characters.
      * </p>
      * 
      * @param sDM
-     *        For a map of up to 10 type:value pairs. Maximum length for each string value is 100 characters.
+     *        For a map of up to 10 data type:value pairs. Maximum length for each string value is 100 characters.
      */
 
     public void setSDM(java.util.Map<String, Double> sDM) {
@@ -241,11 +241,11 @@ public class AttributeValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * For a map of up to 10 type:value pairs. Maximum length for each string value is 100 characters.
+     * For a map of up to 10 data type:value pairs. Maximum length for each string value is 100 characters.
      * </p>
      * 
      * @param sDM
-     *        For a map of up to 10 type:value pairs. Maximum length for each string value is 100 characters.
+     *        For a map of up to 10 data type:value pairs. Maximum length for each string value is 100 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

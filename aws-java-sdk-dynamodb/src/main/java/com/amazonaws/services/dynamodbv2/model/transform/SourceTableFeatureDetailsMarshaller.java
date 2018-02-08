@@ -36,6 +36,8 @@ public class SourceTableFeatureDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StreamDescription").build();
     private static final MarshallingInfo<StructuredPojo> TIMETOLIVEDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimeToLiveDescription").build();
+    private static final MarshallingInfo<StructuredPojo> SSEDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SSEDescription").build();
 
     private static final SourceTableFeatureDetailsMarshaller instance = new SourceTableFeatureDetailsMarshaller();
 
@@ -57,6 +59,7 @@ public class SourceTableFeatureDetailsMarshaller {
             protocolMarshaller.marshall(sourceTableFeatureDetails.getGlobalSecondaryIndexes(), GLOBALSECONDARYINDEXES_BINDING);
             protocolMarshaller.marshall(sourceTableFeatureDetails.getStreamDescription(), STREAMDESCRIPTION_BINDING);
             protocolMarshaller.marshall(sourceTableFeatureDetails.getTimeToLiveDescription(), TIMETOLIVEDESCRIPTION_BINDING);
+            protocolMarshaller.marshall(sourceTableFeatureDetails.getSSEDescription(), SSEDESCRIPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

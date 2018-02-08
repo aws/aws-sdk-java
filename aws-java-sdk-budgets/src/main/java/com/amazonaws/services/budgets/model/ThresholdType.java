@@ -15,7 +15,9 @@ package com.amazonaws.services.budgets.model;
 import javax.annotation.Generated;
 
 /**
+ * <p>
  * The type of threshold for a notification. It can be PERCENTAGE or ABSOLUTE_VALUE.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ThresholdType {

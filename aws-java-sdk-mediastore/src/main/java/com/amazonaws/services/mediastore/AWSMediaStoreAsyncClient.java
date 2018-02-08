@@ -162,6 +162,39 @@ public class AWSMediaStoreAsyncClient extends AWSMediaStoreClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteCorsPolicyResult> deleteCorsPolicyAsync(DeleteCorsPolicyRequest request) {
+
+        return deleteCorsPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCorsPolicyResult> deleteCorsPolicyAsync(final DeleteCorsPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteCorsPolicyRequest, DeleteCorsPolicyResult> asyncHandler) {
+        final DeleteCorsPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteCorsPolicyResult>() {
+            @Override
+            public DeleteCorsPolicyResult call() throws Exception {
+                DeleteCorsPolicyResult result = null;
+
+                try {
+                    result = executeDeleteCorsPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeContainerResult> describeContainerAsync(DescribeContainerRequest request) {
 
         return describeContainerAsync(request, null);
@@ -228,6 +261,39 @@ public class AWSMediaStoreAsyncClient extends AWSMediaStoreClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<GetCorsPolicyResult> getCorsPolicyAsync(GetCorsPolicyRequest request) {
+
+        return getCorsPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCorsPolicyResult> getCorsPolicyAsync(final GetCorsPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCorsPolicyRequest, GetCorsPolicyResult> asyncHandler) {
+        final GetCorsPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCorsPolicyResult>() {
+            @Override
+            public GetCorsPolicyResult call() throws Exception {
+                GetCorsPolicyResult result = null;
+
+                try {
+                    result = executeGetCorsPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListContainersResult> listContainersAsync(ListContainersRequest request) {
 
         return listContainersAsync(request, null);
@@ -278,6 +344,39 @@ public class AWSMediaStoreAsyncClient extends AWSMediaStoreClient implements AWS
 
                 try {
                     result = executePutContainerPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutCorsPolicyResult> putCorsPolicyAsync(PutCorsPolicyRequest request) {
+
+        return putCorsPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutCorsPolicyResult> putCorsPolicyAsync(final PutCorsPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutCorsPolicyRequest, PutCorsPolicyResult> asyncHandler) {
+        final PutCorsPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutCorsPolicyResult>() {
+            @Override
+            public PutCorsPolicyResult call() throws Exception {
+                PutCorsPolicyResult result = null;
+
+                try {
+                    result = executePutCorsPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

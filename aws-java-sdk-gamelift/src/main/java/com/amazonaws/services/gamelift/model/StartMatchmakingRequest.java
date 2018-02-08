@@ -30,8 +30,8 @@ public class StartMatchmakingRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Unique identifier for a matchmaking ticket. Use this identifier to track the matchmaking ticket status and
-     * retrieve match results.
+     * Unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one
+     * in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.
      * </p>
      */
     private String ticketId;
@@ -53,12 +53,13 @@ public class StartMatchmakingRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Unique identifier for a matchmaking ticket. Use this identifier to track the matchmaking ticket status and
-     * retrieve match results.
+     * Unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one
+     * in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.
      * </p>
      * 
      * @param ticketId
-     *        Unique identifier for a matchmaking ticket. Use this identifier to track the matchmaking ticket status and
+     *        Unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will
+     *        generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and
      *        retrieve match results.
      */
 
@@ -68,12 +69,13 @@ public class StartMatchmakingRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Unique identifier for a matchmaking ticket. Use this identifier to track the matchmaking ticket status and
-     * retrieve match results.
+     * Unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one
+     * in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.
      * </p>
      * 
-     * @return Unique identifier for a matchmaking ticket. Use this identifier to track the matchmaking ticket status
-     *         and retrieve match results.
+     * @return Unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will
+     *         generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and
+     *         retrieve match results.
      */
 
     public String getTicketId() {
@@ -82,12 +84,13 @@ public class StartMatchmakingRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Unique identifier for a matchmaking ticket. Use this identifier to track the matchmaking ticket status and
-     * retrieve match results.
+     * Unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will generate one
+     * in the form of a UUID. Use this identifier to track the matchmaking ticket status and retrieve match results.
      * </p>
      * 
      * @param ticketId
-     *        Unique identifier for a matchmaking ticket. Use this identifier to track the matchmaking ticket status and
+     *        Unique identifier for a matchmaking ticket. If no ticket ID is specified here, Amazon GameLift will
+     *        generate one in the form of a UUID. Use this identifier to track the matchmaking ticket status and
      *        retrieve match results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

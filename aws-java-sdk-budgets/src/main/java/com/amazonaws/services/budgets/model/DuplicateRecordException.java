@@ -15,7 +15,9 @@ package com.amazonaws.services.budgets.model;
 import javax.annotation.Generated;
 
 /**
- * The exception is thrown when customer tries to create a record (e.g. budget) that already exists.
+ * <p>
+ * The budget name already exists. Budget names must be unique within an account.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DuplicateRecordException extends com.amazonaws.services.budgets.model.AWSBudgetsException {
