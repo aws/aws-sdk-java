@@ -56,6 +56,10 @@ public class MessageJsonUnmarshaller implements Unmarshaller<Message, JsonUnmars
                     context.nextToken();
                     message.setContent(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("groupNumber", targetDepth)) {
+                    context.nextToken();
+                    message.setGroupNumber(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

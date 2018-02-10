@@ -27,7 +27,7 @@ public class DescribeSpotPriceHistoryResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The token required to retrieve the next set of results. This value is <code>null</code> when there are no more
+     * The token required to retrieve the next set of results. This value is an empty string when there are no more
      * results to return.
      * </p>
      */
@@ -41,12 +41,12 @@ public class DescribeSpotPriceHistoryResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The token required to retrieve the next set of results. This value is <code>null</code> when there are no more
+     * The token required to retrieve the next set of results. This value is an empty string when there are no more
      * results to return.
      * </p>
      * 
      * @param nextToken
-     *        The token required to retrieve the next set of results. This value is <code>null</code> when there are no
+     *        The token required to retrieve the next set of results. This value is an empty string when there are no
      *        more results to return.
      */
 
@@ -56,11 +56,11 @@ public class DescribeSpotPriceHistoryResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The token required to retrieve the next set of results. This value is <code>null</code> when there are no more
+     * The token required to retrieve the next set of results. This value is an empty string when there are no more
      * results to return.
      * </p>
      * 
-     * @return The token required to retrieve the next set of results. This value is <code>null</code> when there are no
+     * @return The token required to retrieve the next set of results. This value is an empty string when there are no
      *         more results to return.
      */
 
@@ -70,12 +70,12 @@ public class DescribeSpotPriceHistoryResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The token required to retrieve the next set of results. This value is <code>null</code> when there are no more
+     * The token required to retrieve the next set of results. This value is an empty string when there are no more
      * results to return.
      * </p>
      * 
      * @param nextToken
-     *        The token required to retrieve the next set of results. This value is <code>null</code> when there are no
+     *        The token required to retrieve the next set of results. This value is an empty string when there are no
      *        more results to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

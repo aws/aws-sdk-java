@@ -53,6 +53,10 @@ public class PostContentResultJsonUnmarshaller implements Unmarshaller<PostConte
                 context.setCurrentHeader("x-amz-lex-message");
                 postContentResult.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
             }
+            if (context.getHeader("x-amz-lex-message-format") != null) {
+                context.setCurrentHeader("x-amz-lex-message-format");
+                postContentResult.setMessageFormat(context.getUnmarshaller(String.class).unmarshall(context));
+            }
             if (context.getHeader("x-amz-lex-dialog-state") != null) {
                 context.setCurrentHeader("x-amz-lex-dialog-state");
                 postContentResult.setDialogState(context.getUnmarshaller(String.class).unmarshall(context));

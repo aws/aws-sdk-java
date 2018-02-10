@@ -1,3 +1,16 @@
+# __1.11.275__ __2018-02-09__
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Users can now better understand the longer ID opt-in status of their account using the two new APIs DescribeAggregateIdFormat and DescribePrincipalIdFormat
+
+## __Amazon Lex Model Building Service__
+  - ### Features
+    - You can now define a response for your Amazon Lex chatbot directly from the AWS console. A response consists of messages dynamically selected from a group of pre-defined messages, populated by the developer.
+
+## __Amazon Lex Runtime Service__
+  - ### Features
+    - You can now define a response for your Amazon Lex chatbot directly from the AWS console. A response consists of messages dynamically selected from a group of pre-defined messages, populated by the developer.
+
 # __1.11.274__ __2018-02-08__
 ## __AWS Budgets__
   - ### Features

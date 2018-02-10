@@ -40,6 +40,13 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String content;
+    /**
+     * <p>
+     * Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex
+     * returns one message from each group in the response.
+     * </p>
+     */
+    private Integer groupNumber;
 
     /**
      * <p>
@@ -155,6 +162,52 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex
+     * returns one message from each group in the response.
+     * </p>
+     * 
+     * @param groupNumber
+     *        Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon
+     *        Lex returns one message from each group in the response.
+     */
+
+    public void setGroupNumber(Integer groupNumber) {
+        this.groupNumber = groupNumber;
+    }
+
+    /**
+     * <p>
+     * Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex
+     * returns one message from each group in the response.
+     * </p>
+     * 
+     * @return Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon
+     *         Lex returns one message from each group in the response.
+     */
+
+    public Integer getGroupNumber() {
+        return this.groupNumber;
+    }
+
+    /**
+     * <p>
+     * Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex
+     * returns one message from each group in the response.
+     * </p>
+     * 
+     * @param groupNumber
+     *        Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon
+     *        Lex returns one message from each group in the response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Message withGroupNumber(Integer groupNumber) {
+        setGroupNumber(groupNumber);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -168,7 +221,9 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
         if (getContentType() != null)
             sb.append("ContentType: ").append(getContentType()).append(",");
         if (getContent() != null)
-            sb.append("Content: ").append(getContent());
+            sb.append("Content: ").append(getContent()).append(",");
+        if (getGroupNumber() != null)
+            sb.append("GroupNumber: ").append(getGroupNumber());
         sb.append("}");
         return sb.toString();
     }
@@ -191,6 +246,10 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getContent() != null && other.getContent().equals(this.getContent()) == false)
             return false;
+        if (other.getGroupNumber() == null ^ this.getGroupNumber() == null)
+            return false;
+        if (other.getGroupNumber() != null && other.getGroupNumber().equals(this.getGroupNumber()) == false)
+            return false;
         return true;
     }
 
@@ -201,6 +260,7 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getContentType() == null) ? 0 : getContentType().hashCode());
         hashCode = prime * hashCode + ((getContent() == null) ? 0 : getContent().hashCode());
+        hashCode = prime * hashCode + ((getGroupNumber() == null) ? 0 : getGroupNumber().hashCode());
         return hashCode;
     }
 

@@ -37,7 +37,7 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
      * The format of the disk image being imported.
      * </p>
      * <p>
-     * Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
+     * Valid values: <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
      * </p>
      */
     private String format;
@@ -100,13 +100,13 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
      * The format of the disk image being imported.
      * </p>
      * <p>
-     * Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
+     * Valid values: <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
      * </p>
      * 
      * @param format
      *        The format of the disk image being imported.</p>
      *        <p>
-     *        Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
+     *        Valid values: <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
      */
 
     public void setFormat(String format) {
@@ -118,12 +118,12 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
      * The format of the disk image being imported.
      * </p>
      * <p>
-     * Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
+     * Valid values: <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
      * </p>
      * 
      * @return The format of the disk image being imported.</p>
      *         <p>
-     *         Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
+     *         Valid values: <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
      */
 
     public String getFormat() {
@@ -135,13 +135,13 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
      * The format of the disk image being imported.
      * </p>
      * <p>
-     * Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
+     * Valid values: <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
      * </p>
      * 
      * @param format
      *        The format of the disk image being imported.</p>
      *        <p>
-     *        Valid values: <code>RAW</code> | <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
+     *        Valid values: <code>VHD</code> | <code>VMDK</code> | <code>OVA</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

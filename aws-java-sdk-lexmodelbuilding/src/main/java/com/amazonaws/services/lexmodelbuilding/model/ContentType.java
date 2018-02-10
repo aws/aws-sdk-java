@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum ContentType {
 
     PlainText("PlainText"),
-    SSML("SSML");
+    SSML("SSML"),
+    CustomPayload("CustomPayload");
 
     private String value;
 

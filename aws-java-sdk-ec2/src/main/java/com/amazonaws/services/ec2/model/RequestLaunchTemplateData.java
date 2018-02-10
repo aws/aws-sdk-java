@@ -144,12 +144,11 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
     private String instanceInitiatedShutdownBehavior;
     /**
      * <p>
-     * The user data to make available to the instance. For more information, see <a
+     * The Base64-encoded user data to make available to the instance. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux Instance
      * at Launch</a> (Linux) and <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     * >Adding User Data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you and
-     * you can load the text from a file. Otherwise, you must provide base64-encoded text.
+     * >Adding User Data</a> (Windows).
      * </p>
      */
     private String userData;
@@ -1081,21 +1080,19 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user data to make available to the instance. For more information, see <a
+     * The Base64-encoded user data to make available to the instance. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux Instance
      * at Launch</a> (Linux) and <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     * >Adding User Data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you and
-     * you can load the text from a file. Otherwise, you must provide base64-encoded text.
+     * >Adding User Data</a> (Windows).
      * </p>
      * 
      * @param userData
-     *        The user data to make available to the instance. For more information, see <a
+     *        The Base64-encoded user data to make available to the instance. For more information, see <a
      *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux
      *        Instance at Launch</a> (Linux) and <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     *        >Adding User Data</a> (Windows). If you are using a command line tool, base64-encoding is performed for
-     *        you and you can load the text from a file. Otherwise, you must provide base64-encoded text.
+     *        >Adding User Data</a> (Windows).
      */
 
     public void setUserData(String userData) {
@@ -1104,20 +1101,18 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user data to make available to the instance. For more information, see <a
+     * The Base64-encoded user data to make available to the instance. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux Instance
      * at Launch</a> (Linux) and <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     * >Adding User Data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you and
-     * you can load the text from a file. Otherwise, you must provide base64-encoded text.
+     * >Adding User Data</a> (Windows).
      * </p>
      * 
-     * @return The user data to make available to the instance. For more information, see <a
+     * @return The Base64-encoded user data to make available to the instance. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux
      *         Instance at Launch</a> (Linux) and <a href=
      *         "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     *         >Adding User Data</a> (Windows). If you are using a command line tool, base64-encoding is performed for
-     *         you and you can load the text from a file. Otherwise, you must provide base64-encoded text.
+     *         >Adding User Data</a> (Windows).
      */
 
     public String getUserData() {
@@ -1126,21 +1121,19 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The user data to make available to the instance. For more information, see <a
+     * The Base64-encoded user data to make available to the instance. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux Instance
      * at Launch</a> (Linux) and <a href=
      * "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     * >Adding User Data</a> (Windows). If you are using a command line tool, base64-encoding is performed for you and
-     * you can load the text from a file. Otherwise, you must provide base64-encoded text.
+     * >Adding User Data</a> (Windows).
      * </p>
      * 
      * @param userData
-     *        The user data to make available to the instance. For more information, see <a
+     *        The Base64-encoded user data to make available to the instance. For more information, see <a
      *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html">Running Commands on Your Linux
      *        Instance at Launch</a> (Linux) and <a href=
      *        "http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html#instancedata-add-user-data"
-     *        >Adding User Data</a> (Windows). If you are using a command line tool, base64-encoding is performed for
-     *        you and you can load the text from a file. Otherwise, you must provide base64-encoded text.
+     *        >Adding User Data</a> (Windows).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -6247,6 +6247,71 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Describes the longer ID format settings for all resource types in a specific region. This request is useful for
+     * performing a quick audit to determine whether a specific region is fully opted in for longer IDs (17-character
+     * IDs).
+     * </p>
+     * <p>
+     * This request only returns information about resource types that support longer IDs.
+     * </p>
+     * <p>
+     * The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
+     * <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+     * | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code>
+     * | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> |
+     * <code>vpc-cidr-block-association</code> | <code>vpc-peering-connection</code>.
+     * </p>
+     * 
+     * @param describeAggregateIdFormatRequest
+     * @return Result of the DescribeAggregateIdFormat operation returned by the service.
+     * @sample AmazonEC2.DescribeAggregateIdFormat
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAggregateIdFormat" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeAggregateIdFormatResult describeAggregateIdFormat(DescribeAggregateIdFormatRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAggregateIdFormat(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAggregateIdFormatResult executeDescribeAggregateIdFormat(DescribeAggregateIdFormatRequest describeAggregateIdFormatRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAggregateIdFormatRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAggregateIdFormatRequest> request = null;
+        Response<DescribeAggregateIdFormatResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAggregateIdFormatRequestMarshaller().marshall(super.beforeMarshalling(describeAggregateIdFormatRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeAggregateIdFormatResult> responseHandler = new StaxResponseHandler<DescribeAggregateIdFormatResult>(
+                    new DescribeAggregateIdFormatResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes one or more of the Availability Zones that are available to you. The results include zones only for the
      * region you're currently using. If there is an event impacting an Availability Zone, you can use this request to
      * view the state and any provided message for that Availability Zone.
@@ -7141,8 +7206,15 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * be modified; it does not return information about other resource types.
      * </p>
      * <p>
-     * The following resource types support longer IDs: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code>.
+     * The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
+     * <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+     * | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code>
+     * | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> |
+     * <code>vpc-cidr-block-association</code> | <code>vpc-peering-connection</code>.
      * </p>
      * <p>
      * These settings apply to the IAM user who makes the request; they do not apply to the entire AWS account. By
@@ -7211,8 +7283,15 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * The following resource types support longer IDs: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code>.
+     * The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
+     * <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+     * | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code>
+     * | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> |
+     * <code>vpc-cidr-block-association</code> | <code>vpc-peering-connection</code>.
      * </p>
      * <p>
      * These settings apply to the principal specified in the request. They do not apply to the principal that makes the
@@ -8418,6 +8497,72 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     @Override
     public DescribePrefixListsResult describePrefixLists() {
         return describePrefixLists(new DescribePrefixListsRequest());
+    }
+
+    /**
+     * <p>
+     * Describes the ID format settings for the root user and all IAM roles and IAM users that have explicitly specified
+     * a longer ID (17-character ID) preference.
+     * </p>
+     * <p>
+     * By default, all IAM roles and IAM users default to the same ID settings as the root user, unless they explicitly
+     * override the settings. This request is useful for identifying those IAM users and IAM roles that have overridden
+     * the default ID settings.
+     * </p>
+     * <p>
+     * The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
+     * <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+     * | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code>
+     * | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> |
+     * <code>vpc-cidr-block-association</code> | <code>vpc-peering-connection</code>.
+     * </p>
+     * 
+     * @param describePrincipalIdFormatRequest
+     * @return Result of the DescribePrincipalIdFormat operation returned by the service.
+     * @sample AmazonEC2.DescribePrincipalIdFormat
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePrincipalIdFormat" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribePrincipalIdFormatResult describePrincipalIdFormat(DescribePrincipalIdFormatRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribePrincipalIdFormat(request);
+    }
+
+    @SdkInternalApi
+    final DescribePrincipalIdFormatResult executeDescribePrincipalIdFormat(DescribePrincipalIdFormatRequest describePrincipalIdFormatRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describePrincipalIdFormatRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribePrincipalIdFormatRequest> request = null;
+        Response<DescribePrincipalIdFormatResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribePrincipalIdFormatRequestMarshaller().marshall(super.beforeMarshalling(describePrincipalIdFormatRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribePrincipalIdFormatResult> responseHandler = new StaxResponseHandler<DescribePrincipalIdFormatResult>(
+                    new DescribePrincipalIdFormatResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -12347,8 +12492,18 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Modifies the ID format for the specified resource on a per-region basis. You can specify that resources should
-     * receive longer IDs (17-character IDs) when they are created. The following resource types support longer IDs:
-     * <code>instance</code> | <code>reservation</code> | <code>snapshot</code> | <code>volume</code>.
+     * receive longer IDs (17-character IDs) when they are created.
+     * </p>
+     * <p>
+     * This request can only be used to modify longer ID settings for resource types that are within the opt-in period.
+     * Resources currently in their opt-in period include: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
+     * <code>internet-gateway</code> | <code>network-acl</code> | <code>network-acl-association</code> |
+     * <code>network-interface</code> | <code>network-interface-attachment</code> | <code>prefix-list</code> |
+     * <code>route-table</code> | <code>route-table-association</code> | <code>security-group</code> |
+     * <code>subnet</code> | <code>subnet-cidr-block-association</code> | <code>vpc</code> |
+     * <code>vpc-cidr-block-association</code> | <code>vpc-peering-connection</code>.
      * </p>
      * <p>
      * This setting applies to the IAM user who makes the request; it does not apply to the entire AWS account. By
@@ -12415,10 +12570,19 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * (17-character IDs) when they are created.
      * </p>
      * <p>
-     * The following resource types support longer IDs: <code>instance</code> | <code>reservation</code> |
-     * <code>snapshot</code> | <code>volume</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource IDs</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * This request can only be used to modify longer ID settings for resource types that are within the opt-in period.
+     * Resources currently in their opt-in period include: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
+     * <code>internet-gateway</code> | <code>network-acl</code> | <code>network-acl-association</code> |
+     * <code>network-interface</code> | <code>network-interface-attachment</code> | <code>prefix-list</code> |
+     * <code>route-table</code> | <code>route-table-association</code> | <code>security-group</code> |
+     * <code>subnet</code> | <code>subnet-cidr-block-association</code> | <code>vpc</code> |
+     * <code>vpc-cidr-block-association</code> | <code>vpc-peering-connection</code>..
+     * </p>
+     * <p>
+     * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
+     * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * This setting applies to the principal specified in the request; it does not apply to the principal that makes the

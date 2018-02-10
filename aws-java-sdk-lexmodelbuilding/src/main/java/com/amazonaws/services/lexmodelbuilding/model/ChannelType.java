@@ -22,7 +22,8 @@ public enum ChannelType {
 
     Facebook("Facebook"),
     Slack("Slack"),
-    TwilioSms("Twilio-Sms");
+    TwilioSms("Twilio-Sms"),
+    Kik("Kik");
 
     private String value;
 

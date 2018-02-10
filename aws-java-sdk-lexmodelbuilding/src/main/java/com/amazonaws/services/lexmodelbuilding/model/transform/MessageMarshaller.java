@@ -31,6 +31,8 @@ public class MessageMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("contentType").build();
     private static final MarshallingInfo<String> CONTENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("content").build();
+    private static final MarshallingInfo<Integer> GROUPNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("groupNumber").build();
 
     private static final MessageMarshaller instance = new MessageMarshaller();
 
@@ -50,6 +52,7 @@ public class MessageMarshaller {
         try {
             protocolMarshaller.marshall(message.getContentType(), CONTENTTYPE_BINDING);
             protocolMarshaller.marshall(message.getContent(), CONTENT_BINDING);
+            protocolMarshaller.marshall(message.getGroupNumber(), GROUPNUMBER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

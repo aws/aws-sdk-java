@@ -589,6 +589,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public DescribeAggregateIdFormatResult describeAggregateIdFormat(DescribeAggregateIdFormatRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeAvailabilityZonesResult describeAvailabilityZones(DescribeAvailabilityZonesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -886,6 +891,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     @Override
     public DescribePrefixListsResult describePrefixLists() {
         return describePrefixLists(new DescribePrefixListsRequest());
+    }
+
+    @Override
+    public DescribePrincipalIdFormatResult describePrincipalIdFormat(DescribePrincipalIdFormatRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

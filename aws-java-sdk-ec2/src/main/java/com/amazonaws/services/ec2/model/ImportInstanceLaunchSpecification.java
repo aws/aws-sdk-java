@@ -91,9 +91,7 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
     private String subnetId;
     /**
      * <p>
-     * The user data to make available to the instance. If you are using an AWS SDK or command line tool,
-     * Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
-     * Base64-encoded text.
+     * The Base64-encoded user data to make available to the instance.
      * </p>
      */
     private UserData userData;
@@ -707,15 +705,11 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The user data to make available to the instance. If you are using an AWS SDK or command line tool,
-     * Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
-     * Base64-encoded text.
+     * The Base64-encoded user data to make available to the instance.
      * </p>
      * 
      * @param userData
-     *        The user data to make available to the instance. If you are using an AWS SDK or command line tool,
-     *        Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
-     *        Base64-encoded text.
+     *        The Base64-encoded user data to make available to the instance.
      */
 
     public void setUserData(UserData userData) {
@@ -724,14 +718,10 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The user data to make available to the instance. If you are using an AWS SDK or command line tool,
-     * Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
-     * Base64-encoded text.
+     * The Base64-encoded user data to make available to the instance.
      * </p>
      * 
-     * @return The user data to make available to the instance. If you are using an AWS SDK or command line tool,
-     *         Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
-     *         Base64-encoded text.
+     * @return The Base64-encoded user data to make available to the instance.
      */
 
     public UserData getUserData() {
@@ -740,15 +730,11 @@ public class ImportInstanceLaunchSpecification implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The user data to make available to the instance. If you are using an AWS SDK or command line tool,
-     * Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
-     * Base64-encoded text.
+     * The Base64-encoded user data to make available to the instance.
      * </p>
      * 
      * @param userData
-     *        The user data to make available to the instance. If you are using an AWS SDK or command line tool,
-     *        Base64-encoding is performed for you, and you can load the text from a file. Otherwise, you must provide
-     *        Base64-encoded text.
+     *        The Base64-encoded user data to make available to the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -659,7 +659,7 @@
       "asyncReturnType" : "DeleteUtterancesResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Deletes stored utterances.</p> <p>Amazon Lex stores the utterances that users send to your bot unless the <code>childDirected</code> field in the bot is set to <code>true</code>. Utterances are stored for 15 days for use with the <a>GetUtterancesView</a> operation, and then stored indefinitely for use in improving the ability of your bot to respond to user input.</p> <p>Use the <code>DeleteStoredUtterances</code> operation to manually delete stored utterances for a specific user.</p> <p>This operation requires permissions for the <code>lex:DeleteUtterances</code> action.</p>",
+      "documentation" : "<p>Deletes stored utterances.</p> <p>Amazon Lex stores the utterances that users send to your bot. Utterances are stored for 15 days for use with the <a>GetUtterancesView</a> operation, and then stored indefinitely for use in improving the ability of your bot to respond to user input.</p> <p>Use the <code>DeleteStoredUtterances</code> operation to manually delete stored utterances for a specific user.</p> <p>This operation requires permissions for the <code>lex:DeleteUtterances</code> action.</p>",
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource specified in the request was not found. Check the resource and try again.</p>",
@@ -1417,7 +1417,7 @@
       "asyncReturnType" : "GetUtterancesViewResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Use the <code>GetUtterancesView</code> operation to get information about the utterances that your users have made to your bot. You can use this list to tune the utterances that your bot responds to.</p> <p>For example, say that you have created a bot to order flowers. After your users have used your bot for a while, use the <code>GetUtterancesView</code> operation to see the requests that they have made and whether they have been successful. You might find that the utterance \"I want flowers\" is not being recognized. You could add this utterance to the <code>OrderFlowers</code> intent so that your bot recognizes that utterance.</p> <p>After you publish a new version of a bot, you can get information about the old version and the new so that you can compare the performance across the two versions. </p> <p>Data is available for the last 15 days. You can request information for up to 5 versions in each request. The response contains information about a maximum of 100 utterances for each version.</p> <p>If the bot's <code>childDirected</code> field is set to <code>true</code>, utterances for the bot are not stored and cannot be retrieved with the <code>GetUtterancesView</code> operation. For more information, see <a>PutBot</a>.</p> <p>This operation requires permissions for the <code>lex:GetUtterancesView</code> action.</p>",
+      "documentation" : "<p>Use the <code>GetUtterancesView</code> operation to get information about the utterances that your users have made to your bot. You can use this list to tune the utterances that your bot responds to.</p> <p>For example, say that you have created a bot to order flowers. After your users have used your bot for a while, use the <code>GetUtterancesView</code> operation to see the requests that they have made and whether they have been successful. You might find that the utterance \"I want flowers\" is not being recognized. You could add this utterance to the <code>OrderFlowers</code> intent so that your bot recognizes that utterance.</p> <p>After you publish a new version of a bot, you can get information about the old version and the new so that you can compare the performance across the two versions. </p> <note> <p>Utterance statistics are generated once a day. Data is available for the last 15 days. You can request information for up to 5 versions in each request. The response contains information about a maximum of 100 utterances for each version.</p> </note> <p>This operation requires permissions for the <code>lex:GetUtterancesView</code> action.</p>",
       "exceptions" : [ {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>The request exceeded a limit. Try your request again.</p>",
@@ -1456,7 +1456,7 @@
       "asyncReturnType" : "PutBotResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Creates an Amazon Lex conversational bot or replaces an existing bot. When you create or update a bot you are only required to specify a name. You can use this to add intents later, or to remove intents from an existing bot. When you create a bot with a name only, the bot is created or updated but Amazon Lex returns the <code/> response <code>FAILED</code>. You can build the bot after you add one or more intents. For more information about Amazon Lex bots, see <a>how-it-works</a>. </p> <p>If you specify the name of an existing bot, the fields in the request replace the existing values in the <code>$LATEST</code> version of the bot. Amazon Lex removes any fields that you don't provide values for in the request, except for the <code>idleTTLInSeconds</code> and <code>privacySettings</code> fields, which are set to their default values. If you don't specify values for required fields, Amazon Lex throws an exception.</p> <p>This operation requires permissions for the <code>lex:PutBot</code> action. For more information, see <a>auth-and-access-control</a>.</p>",
+      "documentation" : "<p>Creates an Amazon Lex conversational bot or replaces an existing bot. When you create or update a bot you are only required to specify a name, a locale, and whether the bot is directed toward children under age 13. You can use this to add intents later, or to remove intents from an existing bot. When you create a bot with the minimum information, the bot is created or updated but Amazon Lex returns the <code/> response <code>FAILED</code>. You can build the bot after you add one or more intents. For more information about Amazon Lex bots, see <a>how-it-works</a>. </p> <p>If you specify the name of an existing bot, the fields in the request replace the existing values in the <code>$LATEST</code> version of the bot. Amazon Lex removes any fields that you don't provide values for in the request, except for the <code>idleTTLInSeconds</code> and <code>privacySettings</code> fields, which are set to their default values. If you don't specify values for required fields, Amazon Lex throws an exception.</p> <p>This operation requires permissions for the <code>lex:PutBot</code> action. For more information, see <a>auth-and-access-control</a>.</p>",
       "exceptions" : [ {
         "exceptionName" : "ConflictException",
         "documentation" : "<p> There was a conflict processing the request. Try your request again. </p>",
@@ -5879,6 +5879,9 @@
       }, {
         "name" : "TwilioSms",
         "value" : "Twilio-Sms"
+      }, {
+        "name" : "Kik",
+        "value" : "Kik"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -6254,6 +6257,9 @@
       }, {
         "name" : "SSML",
         "value" : "SSML"
+      }, {
+        "name" : "CustomPayload",
+        "value" : "CustomPayload"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -40309,6 +40315,69 @@
           "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "groupNumber",
+        "c2jShape" : "GroupNumber",
+        "deprecated" : false,
+        "documentation" : "<p>Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.</p>\n@param groupNumber Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withGroupNumber",
+        "getterDocumentation" : "/**<p>Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.</p>\n@return Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.*/",
+        "getterMethodName" : "getGroupNumber",
+        "getterModel" : {
+          "returnType" : "Integer",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "groupNumber",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "groupNumber",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Integer",
+        "marshallingType" : "INTEGER",
+        "name" : "GroupNumber",
+        "setterDocumentation" : "/**<p>Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.</p>\n@param groupNumber Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.*/",
+        "setterMethodName" : "setGroupNumber",
+        "setterModel" : {
+          "variableDeclarationType" : "Integer",
+          "variableName" : "groupNumber",
+          "variableType" : "Integer",
+          "documentation" : "",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "shouldEmitLegacyEnumSetter" : true,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.</p>\n@param groupNumber Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "Integer",
+          "variableName" : "groupNumber",
+          "variableType" : "Integer",
+          "documentation" : "<p>Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.</p>",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "Content" : {
@@ -40436,6 +40505,70 @@
             "documentation" : "<p>The content type of the message string.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "GroupNumber" : {
+          "c2jName" : "groupNumber",
+          "c2jShape" : "GroupNumber",
+          "deprecated" : false,
+          "documentation" : "<p>Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.</p>\n@param groupNumber Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withGroupNumber",
+          "getterDocumentation" : "/**<p>Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.</p>\n@return Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.*/",
+          "getterMethodName" : "getGroupNumber",
+          "getterModel" : {
+            "returnType" : "Integer",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "groupNumber",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "groupNumber",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Integer",
+          "marshallingType" : "INTEGER",
+          "name" : "GroupNumber",
+          "setterDocumentation" : "/**<p>Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.</p>\n@param groupNumber Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.*/",
+          "setterMethodName" : "setGroupNumber",
+          "setterModel" : {
+            "variableDeclarationType" : "Integer",
+            "variableName" : "groupNumber",
+            "variableType" : "Integer",
+            "documentation" : "",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "shouldEmitLegacyEnumSetter" : true,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.</p>\n@param groupNumber Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "Integer",
+            "variableName" : "groupNumber",
+            "variableType" : "Integer",
+            "documentation" : "<p>Identifies the message group that the message belongs to. When a group is assigned to a message, Amazon Lex returns one message from each group in the response.</p>",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
           },
           "xmlNameSpaceUri" : null
         }
