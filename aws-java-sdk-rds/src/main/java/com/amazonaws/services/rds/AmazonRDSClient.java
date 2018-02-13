@@ -1404,12 +1404,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * and MariaDB Read Replicas</a>.
      * </p>
      * <p>
-     * Amazon Aurora does not support this action. You must call the <code>CreateDBInstance</code> action to create a DB
+     * Amazon Aurora doesn't support this action. You must call the <code>CreateDBInstance</code> action to create a DB
      * instance for an Aurora DB cluster.
      * </p>
      * <p>
      * All Read Replica DB instances are created with backups disabled. All other DB instance attributes (including DB
-     * security groups and DB parameter groups) are inherited from the source DB instance, except as specified below.
+     * security groups and DB parameter groups) are inherited from the source DB instance, except as specified
+     * following.
      * </p>
      * <important>
      * <p>
@@ -2490,7 +2491,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * toward that quota, and the quota's maximum value.
      * </p>
      * <p>
-     * This command does not take any parameters.
+     * This command doesn't take any parameters.
      * </p>
      * 
      * @param describeAccountAttributesRequest
@@ -4991,11 +4992,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * Promotes a Read Replica DB instance to a standalone DB instance.
      * </p>
      * <note>
+     * <ul>
+     * <li>
      * <p>
      * We recommend that you enable automated backups on your Read Replica before promoting the Read Replica. This
      * ensures that no backup is taken during the promotion process. Once the instance is promoted to a primary
      * instance, backups are taken based on your backup settings.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.
+     * </p>
+     * </li>
+     * </ul>
      * </note>
      * 
      * @param promoteReadReplicaRequest
@@ -5800,7 +5810,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * </p>
      * <p>
      * If your intent is to replace your original DB instance with the new, restored DB instance, then rename your
-     * original DB instance before you call the RestoreDBInstanceFromDBSnapshot action. RDS does not allow two DB
+     * original DB instance before you call the RestoreDBInstanceFromDBSnapshot action. RDS doesn't allow two DB
      * instances with the same name. Once you have renamed your original DB instance with a different identifier, then
      * you can pass the original name of the DB instance as the DBInstanceIdentifier in the call to the
      * RestoreDBInstanceFromDBSnapshot action. The result is that you will replace the original DB instance with the DB
@@ -5810,6 +5820,12 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of
      * the shared DB snapshot.
      * </p>
+     * <note>
+     * <p>
+     * This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use
+     * <a>RestoreDBClusterFromSnapshot</a>.
+     * </p>
+     * </note>
      * 
      * @param restoreDBInstanceFromDBSnapshotRequest
      * @return Result of the RestoreDBInstanceFromDBSnapshot operation returned by the service.
@@ -5995,6 +6011,12 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * has an option group that is associated with mirroring; in this case, the instance becomes a mirrored deployment
      * and not a single-AZ deployment.
      * </p>
+     * <note>
+     * <p>
+     * This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use
+     * <a>RestoreDBClusterToPointInTime</a>.
+     * </p>
+     * </note>
      * 
      * @param restoreDBInstanceToPointInTimeRequest
      * @return Result of the RestoreDBInstanceToPointInTime operation returned by the service.
@@ -6145,7 +6167,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * </p>
      * <note>
      * <p>
-     * This command does not apply to Aurora MySQL and Aurora PostgreSQL.
+     * This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.
      * </p>
      * </note>
      * 
@@ -6226,7 +6248,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * </p>
      * <note>
      * <p>
-     * This command does not apply to Aurora MySQL and Aurora PostgreSQL.
+     * This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.
      * </p>
      * </note>
      * 

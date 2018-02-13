@@ -56,6 +56,12 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * to be used for next challenge execution.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next
+     * challenge or tokens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Valid values include:
@@ -83,6 +89,13 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * if the flow is enabled for calling the app client.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
+     * user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME is not
+     * found in the user pool.
+     * </p>
+     * </li>
      * </ul>
      */
     private String authFlow;
@@ -100,9 +113,8 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code>
-     * (required if the app client is configured with a client secret), <code>REFRESH_TOKEN</code> (required),
-     * <code>DEVICE_KEY</code>
+     * For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>
      * </p>
      * </li>
      * <li>
@@ -237,6 +249,12 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * to be used for next challenge execution.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next
+     * challenge or tokens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Valid values include:
@@ -264,6 +282,13 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * if the flow is enabled for calling the app client.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
+     * user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME is not
+     * found in the user pool.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param authFlow
@@ -279,6 +304,12 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <p>
      *        <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP
      *        variables to be used for next challenge execution.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return
+     *        the next challenge or tokens.
      *        </p>
      *        </li>
      *        </ul>
@@ -308,6 +339,13 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *        directly if the flow is enabled for calling the app client.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly.
+     *        If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME
+     *        is not found in the user pool.
+     *        </p>
+     *        </li>
      * @see AuthFlowType
      */
 
@@ -329,6 +367,12 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP variables
      * to be used for next challenge execution.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next
+     * challenge or tokens.
      * </p>
      * </li>
      * </ul>
@@ -358,6 +402,13 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * if the flow is enabled for calling the app client.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
+     * user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME is not
+     * found in the user pool.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The authentication flow for this call to execute. The API action will depend on this value. For
@@ -372,6 +423,12 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *         <p>
      *         <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP
      *         variables to be used for next challenge execution.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return
+     *         the next challenge or tokens.
      *         </p>
      *         </li>
      *         </ul>
@@ -401,6 +458,13 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *         directly if the flow is enabled for calling the app client.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly.
+     *         If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the
+     *         USERNAME is not found in the user pool.
+     *         </p>
+     *         </li>
      * @see AuthFlowType
      */
 
@@ -422,6 +486,12 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP variables
      * to be used for next challenge execution.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next
+     * challenge or tokens.
      * </p>
      * </li>
      * </ul>
@@ -451,6 +521,13 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * if the flow is enabled for calling the app client.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
+     * user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME is not
+     * found in the user pool.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param authFlow
@@ -466,6 +543,12 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <p>
      *        <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP
      *        variables to be used for next challenge execution.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return
+     *        the next challenge or tokens.
      *        </p>
      *        </li>
      *        </ul>
@@ -493,6 +576,13 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <p>
      *        <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication flow; you can pass in the USERNAME and PASSWORD
      *        directly if the flow is enabled for calling the app client.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly.
+     *        If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME
+     *        is not found in the user pool.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -520,6 +610,12 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * to be used for next challenge execution.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next
+     * challenge or tokens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Valid values include:
@@ -547,6 +643,13 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * if the flow is enabled for calling the app client.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
+     * user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME is not
+     * found in the user pool.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param authFlow
@@ -562,6 +665,12 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <p>
      *        <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP
      *        variables to be used for next challenge execution.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return
+     *        the next challenge or tokens.
      *        </p>
      *        </li>
      *        </ul>
@@ -589,6 +698,13 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <p>
      *        <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication flow; you can pass in the USERNAME and PASSWORD
      *        directly if the flow is enabled for calling the app client.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly.
+     *        If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME
+     *        is not found in the user pool.
      *        </p>
      *        </li>
      * @see AuthFlowType
@@ -614,6 +730,12 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * to be used for next challenge execution.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return the next
+     * challenge or tokens.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Valid values include:
@@ -641,6 +763,13 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * if the flow is enabled for calling the app client.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
+     * user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME is not
+     * found in the user pool.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param authFlow
@@ -656,6 +785,12 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <p>
      *        <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code> and return the SRP
      *        variables to be used for next challenge execution.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code> and return
+     *        the next challenge or tokens.
      *        </p>
      *        </li>
      *        </ul>
@@ -685,6 +820,13 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *        directly if the flow is enabled for calling the app client.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly.
+     *        If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if the USERNAME
+     *        is not found in the user pool.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthFlowType
      */
@@ -708,9 +850,8 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code>
-     * (required if the app client is configured with a client secret), <code>REFRESH_TOKEN</code> (required),
-     * <code>DEVICE_KEY</code>
+     * For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>
      * </p>
      * </li>
      * <li>
@@ -739,9 +880,9 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *         </li>
      *         <li>
      *         <p>
-     *         For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
+     *         For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required),
      *         <code>SECRET_HASH</code> (required if the app client is configured with a client secret),
-     *         <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code>
+     *         <code>DEVICE_KEY</code>
      *         </p>
      *         </li>
      *         <li>
@@ -776,9 +917,8 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code>
-     * (required if the app client is configured with a client secret), <code>REFRESH_TOKEN</code> (required),
-     * <code>DEVICE_KEY</code>
+     * For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>
      * </p>
      * </li>
      * <li>
@@ -808,9 +948,9 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </li>
      *        <li>
      *        <p>
-     *        For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
+     *        For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required),
      *        <code>SECRET_HASH</code> (required if the app client is configured with a client secret),
-     *        <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code>
+     *        <code>DEVICE_KEY</code>
      *        </p>
      *        </li>
      *        <li>
@@ -845,9 +985,8 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * <li>
      * <p>
-     * For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code>
-     * (required if the app client is configured with a client secret), <code>REFRESH_TOKEN</code> (required),
-     * <code>DEVICE_KEY</code>
+     * For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required),
+     * <code>SECRET_HASH</code> (required if the app client is configured with a client secret), <code>DEVICE_KEY</code>
      * </p>
      * </li>
      * <li>
@@ -877,9 +1016,9 @@ public class AdminInitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </li>
      *        <li>
      *        <p>
-     *        For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>USERNAME</code> (required),
+     *        For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required),
      *        <code>SECRET_HASH</code> (required if the app client is configured with a client secret),
-     *        <code>REFRESH_TOKEN</code> (required), <code>DEVICE_KEY</code>
+     *        <code>DEVICE_KEY</code>
      *        </p>
      *        </li>
      *        <li>

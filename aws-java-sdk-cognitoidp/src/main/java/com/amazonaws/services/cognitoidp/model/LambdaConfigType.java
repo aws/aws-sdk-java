@@ -82,6 +82,12 @@ public class LambdaConfigType implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String preTokenGeneration;
+    /**
+     * <p>
+     * The user migration Lambda config type.
+     * </p>
+     */
+    private String userMigration;
 
     /**
      * <p>
@@ -444,6 +450,46 @@ public class LambdaConfigType implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The user migration Lambda config type.
+     * </p>
+     * 
+     * @param userMigration
+     *        The user migration Lambda config type.
+     */
+
+    public void setUserMigration(String userMigration) {
+        this.userMigration = userMigration;
+    }
+
+    /**
+     * <p>
+     * The user migration Lambda config type.
+     * </p>
+     * 
+     * @return The user migration Lambda config type.
+     */
+
+    public String getUserMigration() {
+        return this.userMigration;
+    }
+
+    /**
+     * <p>
+     * The user migration Lambda config type.
+     * </p>
+     * 
+     * @param userMigration
+     *        The user migration Lambda config type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LambdaConfigType withUserMigration(String userMigration) {
+        setUserMigration(userMigration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -471,7 +517,9 @@ public class LambdaConfigType implements Serializable, Cloneable, StructuredPojo
         if (getVerifyAuthChallengeResponse() != null)
             sb.append("VerifyAuthChallengeResponse: ").append(getVerifyAuthChallengeResponse()).append(",");
         if (getPreTokenGeneration() != null)
-            sb.append("PreTokenGeneration: ").append(getPreTokenGeneration());
+            sb.append("PreTokenGeneration: ").append(getPreTokenGeneration()).append(",");
+        if (getUserMigration() != null)
+            sb.append("UserMigration: ").append(getUserMigration());
         sb.append("}");
         return sb.toString();
     }
@@ -522,6 +570,10 @@ public class LambdaConfigType implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getPreTokenGeneration() != null && other.getPreTokenGeneration().equals(this.getPreTokenGeneration()) == false)
             return false;
+        if (other.getUserMigration() == null ^ this.getUserMigration() == null)
+            return false;
+        if (other.getUserMigration() != null && other.getUserMigration().equals(this.getUserMigration()) == false)
+            return false;
         return true;
     }
 
@@ -539,6 +591,7 @@ public class LambdaConfigType implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getCreateAuthChallenge() == null) ? 0 : getCreateAuthChallenge().hashCode());
         hashCode = prime * hashCode + ((getVerifyAuthChallengeResponse() == null) ? 0 : getVerifyAuthChallengeResponse().hashCode());
         hashCode = prime * hashCode + ((getPreTokenGeneration() == null) ? 0 : getPreTokenGeneration().hashCode());
+        hashCode = prime * hashCode + ((getUserMigration() == null) ? 0 : getUserMigration().hashCode());
         return hashCode;
     }
 

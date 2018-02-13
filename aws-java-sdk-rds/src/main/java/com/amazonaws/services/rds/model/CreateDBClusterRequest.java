@@ -136,7 +136,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The name of the database engine to be used for this DB cluster.
      * </p>
      * <p>
-     * Valid Values: <code>aurora</code>, <code>aurora-postgresql</code>
+     * Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code> (for MySQL
+     * 5.7-compatible Aurora), and <code>aurora-postgresql</code>
      * </p>
      */
     private String engine;
@@ -145,10 +146,16 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The version number of the database engine to use.
      * </p>
      * <p>
-     * <b>Aurora</b>
+     * <b>Aurora MySQL</b>
      * </p>
      * <p>
-     * Example: <code>5.6.10a</code>
+     * Example: <code>5.6.10a</code>, <code>5.7.12</code>
+     * </p>
+     * <p>
+     * <b>Aurora PostgreSQL</b>
+     * </p>
+     * <p>
+     * Example: <code>9.6.3</code>
      * </p>
      */
     private String engineVersion;
@@ -1103,13 +1110,15 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The name of the database engine to be used for this DB cluster.
      * </p>
      * <p>
-     * Valid Values: <code>aurora</code>, <code>aurora-postgresql</code>
+     * Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code> (for MySQL
+     * 5.7-compatible Aurora), and <code>aurora-postgresql</code>
      * </p>
      * 
      * @param engine
      *        The name of the database engine to be used for this DB cluster.</p>
      *        <p>
-     *        Valid Values: <code>aurora</code>, <code>aurora-postgresql</code>
+     *        Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code> (for MySQL
+     *        5.7-compatible Aurora), and <code>aurora-postgresql</code>
      */
 
     public void setEngine(String engine) {
@@ -1121,12 +1130,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The name of the database engine to be used for this DB cluster.
      * </p>
      * <p>
-     * Valid Values: <code>aurora</code>, <code>aurora-postgresql</code>
+     * Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code> (for MySQL
+     * 5.7-compatible Aurora), and <code>aurora-postgresql</code>
      * </p>
      * 
      * @return The name of the database engine to be used for this DB cluster.</p>
      *         <p>
-     *         Valid Values: <code>aurora</code>, <code>aurora-postgresql</code>
+     *         Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code> (for MySQL
+     *         5.7-compatible Aurora), and <code>aurora-postgresql</code>
      */
 
     public String getEngine() {
@@ -1138,13 +1149,15 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The name of the database engine to be used for this DB cluster.
      * </p>
      * <p>
-     * Valid Values: <code>aurora</code>, <code>aurora-postgresql</code>
+     * Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code> (for MySQL
+     * 5.7-compatible Aurora), and <code>aurora-postgresql</code>
      * </p>
      * 
      * @param engine
      *        The name of the database engine to be used for this DB cluster.</p>
      *        <p>
-     *        Valid Values: <code>aurora</code>, <code>aurora-postgresql</code>
+     *        Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code> (for MySQL
+     *        5.7-compatible Aurora), and <code>aurora-postgresql</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1158,19 +1171,31 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The version number of the database engine to use.
      * </p>
      * <p>
-     * <b>Aurora</b>
+     * <b>Aurora MySQL</b>
      * </p>
      * <p>
-     * Example: <code>5.6.10a</code>
+     * Example: <code>5.6.10a</code>, <code>5.7.12</code>
+     * </p>
+     * <p>
+     * <b>Aurora PostgreSQL</b>
+     * </p>
+     * <p>
+     * Example: <code>9.6.3</code>
      * </p>
      * 
      * @param engineVersion
      *        The version number of the database engine to use.</p>
      *        <p>
-     *        <b>Aurora</b>
+     *        <b>Aurora MySQL</b>
      *        </p>
      *        <p>
-     *        Example: <code>5.6.10a</code>
+     *        Example: <code>5.6.10a</code>, <code>5.7.12</code>
+     *        </p>
+     *        <p>
+     *        <b>Aurora PostgreSQL</b>
+     *        </p>
+     *        <p>
+     *        Example: <code>9.6.3</code>
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -1182,18 +1207,30 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The version number of the database engine to use.
      * </p>
      * <p>
-     * <b>Aurora</b>
+     * <b>Aurora MySQL</b>
      * </p>
      * <p>
-     * Example: <code>5.6.10a</code>
+     * Example: <code>5.6.10a</code>, <code>5.7.12</code>
+     * </p>
+     * <p>
+     * <b>Aurora PostgreSQL</b>
+     * </p>
+     * <p>
+     * Example: <code>9.6.3</code>
      * </p>
      * 
      * @return The version number of the database engine to use.</p>
      *         <p>
-     *         <b>Aurora</b>
+     *         <b>Aurora MySQL</b>
      *         </p>
      *         <p>
-     *         Example: <code>5.6.10a</code>
+     *         Example: <code>5.6.10a</code>, <code>5.7.12</code>
+     *         </p>
+     *         <p>
+     *         <b>Aurora PostgreSQL</b>
+     *         </p>
+     *         <p>
+     *         Example: <code>9.6.3</code>
      */
 
     public String getEngineVersion() {
@@ -1205,19 +1242,31 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The version number of the database engine to use.
      * </p>
      * <p>
-     * <b>Aurora</b>
+     * <b>Aurora MySQL</b>
      * </p>
      * <p>
-     * Example: <code>5.6.10a</code>
+     * Example: <code>5.6.10a</code>, <code>5.7.12</code>
+     * </p>
+     * <p>
+     * <b>Aurora PostgreSQL</b>
+     * </p>
+     * <p>
+     * Example: <code>9.6.3</code>
      * </p>
      * 
      * @param engineVersion
      *        The version number of the database engine to use.</p>
      *        <p>
-     *        <b>Aurora</b>
+     *        <b>Aurora MySQL</b>
      *        </p>
      *        <p>
-     *        Example: <code>5.6.10a</code>
+     *        Example: <code>5.6.10a</code>, <code>5.7.12</code>
+     *        </p>
+     *        <p>
+     *        <b>Aurora PostgreSQL</b>
+     *        </p>
+     *        <p>
+     *        Example: <code>9.6.3</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

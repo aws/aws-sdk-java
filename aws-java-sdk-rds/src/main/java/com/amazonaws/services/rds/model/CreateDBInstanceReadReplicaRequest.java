@@ -118,7 +118,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     private Integer port;
     /**
      * <p>
-     * Specifies whether the read replica is in a Multi-AZ deployment.
+     * Specifies whether the Read Replica is in a Multi-AZ deployment.
      * </p>
      * <p>
      * You can create a Read Replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another
@@ -127,7 +127,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * Currently PostgreSQL Read Replicas can only be created as single-AZ DB instances.
+     * Currently, you can't create PostgreSQL Read Replicas as Multi-AZ DB instances.
      * </p>
      * </note>
      */
@@ -1034,7 +1034,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specifies whether the read replica is in a Multi-AZ deployment.
+     * Specifies whether the Read Replica is in a Multi-AZ deployment.
      * </p>
      * <p>
      * You can create a Read Replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another
@@ -1043,12 +1043,12 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * Currently PostgreSQL Read Replicas can only be created as single-AZ DB instances.
+     * Currently, you can't create PostgreSQL Read Replicas as Multi-AZ DB instances.
      * </p>
      * </note>
      * 
      * @param multiAZ
-     *        Specifies whether the read replica is in a Multi-AZ deployment. </p>
+     *        Specifies whether the Read Replica is in a Multi-AZ deployment. </p>
      *        <p>
      *        You can create a Read Replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another
      *        Availability Zone for failover support for the replica. Creating your Read Replica as a Multi-AZ DB
@@ -1056,7 +1056,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        </p>
      *        <note>
      *        <p>
-     *        Currently PostgreSQL Read Replicas can only be created as single-AZ DB instances.
+     *        Currently, you can't create PostgreSQL Read Replicas as Multi-AZ DB instances.
      *        </p>
      */
 
@@ -1066,7 +1066,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specifies whether the read replica is in a Multi-AZ deployment.
+     * Specifies whether the Read Replica is in a Multi-AZ deployment.
      * </p>
      * <p>
      * You can create a Read Replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another
@@ -1075,11 +1075,11 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * Currently PostgreSQL Read Replicas can only be created as single-AZ DB instances.
+     * Currently, you can't create PostgreSQL Read Replicas as Multi-AZ DB instances.
      * </p>
      * </note>
      * 
-     * @return Specifies whether the read replica is in a Multi-AZ deployment. </p>
+     * @return Specifies whether the Read Replica is in a Multi-AZ deployment. </p>
      *         <p>
      *         You can create a Read Replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another
      *         Availability Zone for failover support for the replica. Creating your Read Replica as a Multi-AZ DB
@@ -1087,7 +1087,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *         </p>
      *         <note>
      *         <p>
-     *         Currently PostgreSQL Read Replicas can only be created as single-AZ DB instances.
+     *         Currently, you can't create PostgreSQL Read Replicas as Multi-AZ DB instances.
      *         </p>
      */
 
@@ -1097,7 +1097,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specifies whether the read replica is in a Multi-AZ deployment.
+     * Specifies whether the Read Replica is in a Multi-AZ deployment.
      * </p>
      * <p>
      * You can create a Read Replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another
@@ -1106,12 +1106,12 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * Currently PostgreSQL Read Replicas can only be created as single-AZ DB instances.
+     * Currently, you can't create PostgreSQL Read Replicas as Multi-AZ DB instances.
      * </p>
      * </note>
      * 
      * @param multiAZ
-     *        Specifies whether the read replica is in a Multi-AZ deployment. </p>
+     *        Specifies whether the Read Replica is in a Multi-AZ deployment. </p>
      *        <p>
      *        You can create a Read Replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another
      *        Availability Zone for failover support for the replica. Creating your Read Replica as a Multi-AZ DB
@@ -1119,7 +1119,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        </p>
      *        <note>
      *        <p>
-     *        Currently PostgreSQL Read Replicas can only be created as single-AZ DB instances.
+     *        Currently, you can't create PostgreSQL Read Replicas as Multi-AZ DB instances.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1131,7 +1131,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specifies whether the read replica is in a Multi-AZ deployment.
+     * Specifies whether the Read Replica is in a Multi-AZ deployment.
      * </p>
      * <p>
      * You can create a Read Replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another
@@ -1140,11 +1140,11 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      * <note>
      * <p>
-     * Currently PostgreSQL Read Replicas can only be created as single-AZ DB instances.
+     * Currently, you can't create PostgreSQL Read Replicas as Multi-AZ DB instances.
      * </p>
      * </note>
      * 
-     * @return Specifies whether the read replica is in a Multi-AZ deployment. </p>
+     * @return Specifies whether the Read Replica is in a Multi-AZ deployment. </p>
      *         <p>
      *         You can create a Read Replica as a Multi-AZ DB instance. RDS creates a standby of your replica in another
      *         Availability Zone for failover support for the replica. Creating your Read Replica as a Multi-AZ DB
@@ -1152,7 +1152,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *         </p>
      *         <note>
      *         <p>
-     *         Currently PostgreSQL Read Replicas can only be created as single-AZ DB instances.
+     *         Currently, you can't create PostgreSQL Read Replicas as Multi-AZ DB instances.
      *         </p>
      */
 

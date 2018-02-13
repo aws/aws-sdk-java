@@ -33,7 +33,7 @@ public class AdminListUserAuthEventsRequest extends com.amazonaws.AmazonWebServi
     private String userPoolId;
     /**
      * <p>
-     * The user pool username.
+     * The user pool username or an alias.
      * </p>
      */
     private String username;
@@ -92,11 +92,11 @@ public class AdminListUserAuthEventsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The user pool username.
+     * The user pool username or an alias.
      * </p>
      * 
      * @param username
-     *        The user pool username.
+     *        The user pool username or an alias.
      */
 
     public void setUsername(String username) {
@@ -105,10 +105,10 @@ public class AdminListUserAuthEventsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The user pool username.
+     * The user pool username or an alias.
      * </p>
      * 
-     * @return The user pool username.
+     * @return The user pool username or an alias.
      */
 
     public String getUsername() {
@@ -117,11 +117,11 @@ public class AdminListUserAuthEventsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The user pool username.
+     * The user pool username or an alias.
      * </p>
      * 
      * @param username
-     *        The user pool username.
+     *        The user pool username or an alias.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

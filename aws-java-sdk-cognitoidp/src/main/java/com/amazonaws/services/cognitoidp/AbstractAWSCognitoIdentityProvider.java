@@ -333,6 +333,11 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
     }
 
     @Override
+    public GetSigningCertificateResult getSigningCertificate(GetSigningCertificateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetUICustomizationResult getUICustomization(GetUICustomizationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -30,7 +30,7 @@ import com.amazonaws.services.ec2.waiters.AmazonEC2Waiters;
  * <fullname>Amazon Elastic Compute Cloud</fullname>
  * <p>
  * Amazon Elastic Compute Cloud (Amazon EC2) provides resizable computing capacity in the AWS Cloud. Using Amazon EC2
- * eliminates your need to invest in hardware up front, so you can develop and deploy applications faster.
+ * eliminates the need to invest in hardware up front, so you can develop and deploy applications faster.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -2370,7 +2370,7 @@ public interface AmazonEC2 {
      * </li>
      * <li>
      * <p>
-     * <code>max-instances</code>: The maximum number of On-Demand instances that you can run.
+     * <code>max-instances</code>: The maximum number of On-Demand Instances that you can run.
      * </p>
      * </li>
      * <li>

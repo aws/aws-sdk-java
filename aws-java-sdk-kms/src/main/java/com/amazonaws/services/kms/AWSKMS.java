@@ -1408,6 +1408,8 @@ public interface AWSKMS {
      * 
      * @param retireGrantRequest
      * @return Result of the RetireGrant operation returned by the service.
+     * @throws InvalidArnException
+     *         The request was rejected because a specified ARN was not valid.
      * @throws InvalidGrantTokenException
      *         The request was rejected because the specified grant token is not valid.
      * @throws InvalidGrantIdException

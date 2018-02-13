@@ -1,3 +1,24 @@
+# __1.11.276__ __2018-02-12__
+## __AWS Key Management Service__
+  - ### Features
+    - This release of AWS Key Management Service includes support for InvalidArnException in the RetireGrant API.
+
+## __Amazon Cognito Identity Provider__
+  - ### Features
+    - Support for user migration using AWS Lambda trigger. Support to obtain signing certificate for user pools.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Network interfaces now supply the following additional status of "associated" to better distinguish the current status.
+
+## __Amazon GuardDuty__
+  - ### Features
+    - Added PortProbeAction information to the Action section of the port probe-type finding.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Aurora MySQL now supports MySQL 5.7.
+
 # __1.11.275__ __2018-02-09__
 ## __Amazon Elastic Compute Cloud__
   - ### Features

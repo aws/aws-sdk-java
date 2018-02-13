@@ -60,7 +60,8 @@ public class EbsBlockDevice implements Serializable, Cloneable {
     private Integer iops;
     /**
      * <p>
-     * ID for a user-managed CMK under which the EBS volume is encrypted.
+     * Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK under which the EBS volume is
+     * encrypted.
      * </p>
      * <p>
      * Note: This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a
@@ -340,7 +341,8 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ID for a user-managed CMK under which the EBS volume is encrypted.
+     * Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK under which the EBS volume is
+     * encrypted.
      * </p>
      * <p>
      * Note: This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a
@@ -352,7 +354,8 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * </p>
      * 
      * @param kmsKeyId
-     *        ID for a user-managed CMK under which the EBS volume is encrypted.</p>
+     *        Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK under which the EBS volume is
+     *        encrypted.</p>
      *        <p>
      *        Note: This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a
      *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>, <a
@@ -368,7 +371,8 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ID for a user-managed CMK under which the EBS volume is encrypted.
+     * Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK under which the EBS volume is
+     * encrypted.
      * </p>
      * <p>
      * Note: This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a
@@ -379,7 +383,8 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * </a>.
      * </p>
      * 
-     * @return ID for a user-managed CMK under which the EBS volume is encrypted.</p>
+     * @return Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK under which the EBS volume is
+     *         encrypted.</p>
      *         <p>
      *         Note: This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>, <a
@@ -395,7 +400,8 @@ public class EbsBlockDevice implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ID for a user-managed CMK under which the EBS volume is encrypted.
+     * Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK under which the EBS volume is
+     * encrypted.
      * </p>
      * <p>
      * Note: This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a
@@ -407,7 +413,8 @@ public class EbsBlockDevice implements Serializable, Cloneable {
      * </p>
      * 
      * @param kmsKeyId
-     *        ID for a user-managed CMK under which the EBS volume is encrypted.</p>
+     *        Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK under which the EBS volume is
+     *        encrypted.</p>
      *        <p>
      *        Note: This parameter is only supported on <code>BlockDeviceMapping</code> objects called by <a
      *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>, <a

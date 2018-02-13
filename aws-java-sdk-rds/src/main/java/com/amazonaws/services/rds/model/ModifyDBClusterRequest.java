@@ -147,7 +147,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A value that indicates that the DB cluster should be associated with the specified option group. Changing this
-     * parameter does not result in an outage except in the following case, and the change is applied during the next
+     * parameter doesn't result in an outage except in the following case, and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this
      * request. If the parameter change results in an option group that enables OEM, this change can cause a brief
      * (sub-second) period during which new connections are rejected but existing connections are not interrupted.
@@ -1023,7 +1023,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A value that indicates that the DB cluster should be associated with the specified option group. Changing this
-     * parameter does not result in an outage except in the following case, and the change is applied during the next
+     * parameter doesn't result in an outage except in the following case, and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this
      * request. If the parameter change results in an option group that enables OEM, this change can cause a brief
      * (sub-second) period during which new connections are rejected but existing connections are not interrupted.
@@ -1035,7 +1035,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param optionGroupName
      *        A value that indicates that the DB cluster should be associated with the specified option group. Changing
-     *        this parameter does not result in an outage except in the following case, and the change is applied during
+     *        this parameter doesn't result in an outage except in the following case, and the change is applied during
      *        the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code>
      *        for this request. If the parameter change results in an option group that enables OEM, this change can
      *        cause a brief (sub-second) period during which new connections are rejected but existing connections are
@@ -1052,7 +1052,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A value that indicates that the DB cluster should be associated with the specified option group. Changing this
-     * parameter does not result in an outage except in the following case, and the change is applied during the next
+     * parameter doesn't result in an outage except in the following case, and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this
      * request. If the parameter change results in an option group that enables OEM, this change can cause a brief
      * (sub-second) period during which new connections are rejected but existing connections are not interrupted.
@@ -1063,8 +1063,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @return A value that indicates that the DB cluster should be associated with the specified option group. Changing
-     *         this parameter does not result in an outage except in the following case, and the change is applied
-     *         during the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to
+     *         this parameter doesn't result in an outage except in the following case, and the change is applied during
+     *         the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to
      *         <code>true</code> for this request. If the parameter change results in an option group that enables OEM,
      *         this change can cause a brief (sub-second) period during which new connections are rejected but existing
      *         connections are not interrupted. </p>
@@ -1080,7 +1080,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A value that indicates that the DB cluster should be associated with the specified option group. Changing this
-     * parameter does not result in an outage except in the following case, and the change is applied during the next
+     * parameter doesn't result in an outage except in the following case, and the change is applied during the next
      * maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code> for this
      * request. If the parameter change results in an option group that enables OEM, this change can cause a brief
      * (sub-second) period during which new connections are rejected but existing connections are not interrupted.
@@ -1092,7 +1092,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param optionGroupName
      *        A value that indicates that the DB cluster should be associated with the specified option group. Changing
-     *        this parameter does not result in an outage except in the following case, and the change is applied during
+     *        this parameter doesn't result in an outage except in the following case, and the change is applied during
      *        the next maintenance window unless the <code>ApplyImmediately</code> parameter is set to <code>true</code>
      *        for this request. If the parameter change results in an option group that enables OEM, this change can
      *        cause a brief (sub-second) period during which new connections are rejected but existing connections are

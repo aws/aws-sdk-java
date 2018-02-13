@@ -2274,6 +2274,39 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
+     * This method takes a user pool ID, and returns the signing certificate.
+     * </p>
+     * 
+     * @param getSigningCertificateRequest
+     *        Request to get a signing certificate from Cognito.
+     * @return A Java Future containing the result of the GetSigningCertificate operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsync.GetSigningCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetSigningCertificate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSigningCertificateResult> getSigningCertificateAsync(GetSigningCertificateRequest getSigningCertificateRequest);
+
+    /**
+     * <p>
+     * This method takes a user pool ID, and returns the signing certificate.
+     * </p>
+     * 
+     * @param getSigningCertificateRequest
+     *        Request to get a signing certificate from Cognito.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSigningCertificate operation returned by the service.
+     * @sample AWSCognitoIdentityProviderAsyncHandler.GetSigningCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetSigningCertificate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSigningCertificateResult> getSigningCertificateAsync(GetSigningCertificateRequest getSigningCertificateRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSigningCertificateRequest, GetSigningCertificateResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets the UI Customization information for a particular app client's app UI, if there is something set. If nothing
      * is set for the particular client, but there is an existing pool level customization (app <code>clientId</code>
      * will be <code>ALL</code>), then that is returned. If nothing is present, then an empty shape is returned.

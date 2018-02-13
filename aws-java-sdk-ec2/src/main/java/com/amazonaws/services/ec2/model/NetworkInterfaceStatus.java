@@ -21,6 +21,7 @@ import javax.annotation.Generated;
 public enum NetworkInterfaceStatus {
 
     Available("available"),
+    Associated("associated"),
     Attaching("attaching"),
     InUse("in-use"),
     Detaching("detaching");

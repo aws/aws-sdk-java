@@ -142,10 +142,16 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The version number of the database engine to use.
      * </p>
      * <p>
-     * <b>Aurora</b>
+     * <b>Aurora MySQL</b>
      * </p>
      * <p>
      * Example: <code>5.6.10a</code>
+     * </p>
+     * <p>
+     * <b>Aurora PostgreSQL</b>
+     * </p>
+     * <p>
+     * Example: <code>9.6.3</code>
      * </p>
      */
     private String engineVersion;
@@ -1105,19 +1111,31 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The version number of the database engine to use.
      * </p>
      * <p>
-     * <b>Aurora</b>
+     * <b>Aurora MySQL</b>
      * </p>
      * <p>
      * Example: <code>5.6.10a</code>
+     * </p>
+     * <p>
+     * <b>Aurora PostgreSQL</b>
+     * </p>
+     * <p>
+     * Example: <code>9.6.3</code>
      * </p>
      * 
      * @param engineVersion
      *        The version number of the database engine to use.</p>
      *        <p>
-     *        <b>Aurora</b>
+     *        <b>Aurora MySQL</b>
      *        </p>
      *        <p>
      *        Example: <code>5.6.10a</code>
+     *        </p>
+     *        <p>
+     *        <b>Aurora PostgreSQL</b>
+     *        </p>
+     *        <p>
+     *        Example: <code>9.6.3</code>
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -1129,18 +1147,30 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The version number of the database engine to use.
      * </p>
      * <p>
-     * <b>Aurora</b>
+     * <b>Aurora MySQL</b>
      * </p>
      * <p>
      * Example: <code>5.6.10a</code>
      * </p>
+     * <p>
+     * <b>Aurora PostgreSQL</b>
+     * </p>
+     * <p>
+     * Example: <code>9.6.3</code>
+     * </p>
      * 
      * @return The version number of the database engine to use.</p>
      *         <p>
-     *         <b>Aurora</b>
+     *         <b>Aurora MySQL</b>
      *         </p>
      *         <p>
      *         Example: <code>5.6.10a</code>
+     *         </p>
+     *         <p>
+     *         <b>Aurora PostgreSQL</b>
+     *         </p>
+     *         <p>
+     *         Example: <code>9.6.3</code>
      */
 
     public String getEngineVersion() {
@@ -1152,19 +1182,31 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The version number of the database engine to use.
      * </p>
      * <p>
-     * <b>Aurora</b>
+     * <b>Aurora MySQL</b>
      * </p>
      * <p>
      * Example: <code>5.6.10a</code>
+     * </p>
+     * <p>
+     * <b>Aurora PostgreSQL</b>
+     * </p>
+     * <p>
+     * Example: <code>9.6.3</code>
      * </p>
      * 
      * @param engineVersion
      *        The version number of the database engine to use.</p>
      *        <p>
-     *        <b>Aurora</b>
+     *        <b>Aurora MySQL</b>
      *        </p>
      *        <p>
      *        Example: <code>5.6.10a</code>
+     *        </p>
+     *        <p>
+     *        <b>Aurora PostgreSQL</b>
+     *        </p>
+     *        <p>
+     *        Example: <code>9.6.3</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

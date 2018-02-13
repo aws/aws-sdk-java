@@ -4447,6 +4447,61 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * This method takes a user pool ID, and returns the signing certificate.
+     * </p>
+     * 
+     * @param getSigningCertificateRequest
+     *        Request to get a signing certificate from Cognito.
+     * @return Result of the GetSigningCertificate operation returned by the service.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @sample AWSCognitoIdentityProvider.GetSigningCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetSigningCertificate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetSigningCertificateResult getSigningCertificate(GetSigningCertificateRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSigningCertificate(request);
+    }
+
+    @SdkInternalApi
+    final GetSigningCertificateResult executeGetSigningCertificate(GetSigningCertificateRequest getSigningCertificateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSigningCertificateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSigningCertificateRequest> request = null;
+        Response<GetSigningCertificateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSigningCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSigningCertificateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSigningCertificateResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new GetSigningCertificateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets the UI Customization information for a particular app client's app UI, if there is something set. If nothing
      * is set for the particular client, but there is an existing pool level customization (app <code>clientId</code>
      * will be <code>ALL</code>), then that is returned. If nothing is present, then an empty shape is returned.

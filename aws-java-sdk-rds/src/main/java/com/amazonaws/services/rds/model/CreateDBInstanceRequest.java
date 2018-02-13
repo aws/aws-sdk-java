@@ -374,7 +374,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>aurora</code>
+     * <code>aurora</code> (for MySQL 5.6-compatible Aurora)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora)
      * </p>
      * </li>
      * <li>
@@ -1787,7 +1792,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>aurora</code>
+     *        <code>aurora</code> (for MySQL 5.6-compatible Aurora)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora)
      *        </p>
      *        </li>
      *        <li>
@@ -4076,7 +4086,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>aurora</code>
+     * <code>aurora</code> (for MySQL 5.6-compatible Aurora)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora)
      * </p>
      * </li>
      * <li>
@@ -4152,7 +4167,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>aurora</code>
+     *        <code>aurora</code> (for MySQL 5.6-compatible Aurora)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora)
      *        </p>
      *        </li>
      *        <li>
@@ -4234,7 +4254,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>aurora</code>
+     * <code>aurora</code> (for MySQL 5.6-compatible Aurora)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora)
      * </p>
      * </li>
      * <li>
@@ -4309,7 +4334,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>aurora</code>
+     *         <code>aurora</code> (for MySQL 5.6-compatible Aurora)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora)
      *         </p>
      *         </li>
      *         <li>
@@ -4391,7 +4421,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <code>aurora</code>
+     * <code>aurora</code> (for MySQL 5.6-compatible Aurora)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora)
      * </p>
      * </li>
      * <li>
@@ -4467,7 +4502,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>aurora</code>
+     *        <code>aurora</code> (for MySQL 5.6-compatible Aurora)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora)
      *        </p>
      *        </li>
      *        <li>

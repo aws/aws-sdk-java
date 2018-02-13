@@ -797,6 +797,19 @@ public class AbstractAWSCognitoIdentityProviderAsync extends AbstractAWSCognitoI
     }
 
     @Override
+    public java.util.concurrent.Future<GetSigningCertificateResult> getSigningCertificateAsync(GetSigningCertificateRequest request) {
+
+        return getSigningCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSigningCertificateResult> getSigningCertificateAsync(GetSigningCertificateRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetSigningCertificateRequest, GetSigningCertificateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetUICustomizationResult> getUICustomizationAsync(GetUICustomizationRequest request) {
 
         return getUICustomizationAsync(request, null);

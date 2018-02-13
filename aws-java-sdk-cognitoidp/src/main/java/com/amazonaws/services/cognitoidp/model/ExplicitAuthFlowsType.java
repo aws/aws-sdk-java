@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum ExplicitAuthFlowsType {
 
     ADMIN_NO_SRP_AUTH("ADMIN_NO_SRP_AUTH"),
-    CUSTOM_AUTH_FLOW_ONLY("CUSTOM_AUTH_FLOW_ONLY");
+    CUSTOM_AUTH_FLOW_ONLY("CUSTOM_AUTH_FLOW_ONLY"),
+    USER_PASSWORD_AUTH("USER_PASSWORD_AUTH");
 
     private String value;
 

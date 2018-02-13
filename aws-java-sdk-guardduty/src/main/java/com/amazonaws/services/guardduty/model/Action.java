@@ -34,6 +34,8 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     private DnsRequestAction dnsRequestAction;
     /** Information about the NETWORK_CONNECTION action described in this finding. */
     private NetworkConnectionAction networkConnectionAction;
+    /** Information about the PORT_PROBE action described in this finding. */
+    private PortProbeAction portProbeAction;
 
     /**
      * GuardDuty Finding activity type.
@@ -172,6 +174,40 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Information about the PORT_PROBE action described in this finding.
+     * 
+     * @param portProbeAction
+     *        Information about the PORT_PROBE action described in this finding.
+     */
+
+    public void setPortProbeAction(PortProbeAction portProbeAction) {
+        this.portProbeAction = portProbeAction;
+    }
+
+    /**
+     * Information about the PORT_PROBE action described in this finding.
+     * 
+     * @return Information about the PORT_PROBE action described in this finding.
+     */
+
+    public PortProbeAction getPortProbeAction() {
+        return this.portProbeAction;
+    }
+
+    /**
+     * Information about the PORT_PROBE action described in this finding.
+     * 
+     * @param portProbeAction
+     *        Information about the PORT_PROBE action described in this finding.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Action withPortProbeAction(PortProbeAction portProbeAction) {
+        setPortProbeAction(portProbeAction);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -189,7 +225,9 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
         if (getDnsRequestAction() != null)
             sb.append("DnsRequestAction: ").append(getDnsRequestAction()).append(",");
         if (getNetworkConnectionAction() != null)
-            sb.append("NetworkConnectionAction: ").append(getNetworkConnectionAction());
+            sb.append("NetworkConnectionAction: ").append(getNetworkConnectionAction()).append(",");
+        if (getPortProbeAction() != null)
+            sb.append("PortProbeAction: ").append(getPortProbeAction());
         sb.append("}");
         return sb.toString();
     }
@@ -220,6 +258,10 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNetworkConnectionAction() != null && other.getNetworkConnectionAction().equals(this.getNetworkConnectionAction()) == false)
             return false;
+        if (other.getPortProbeAction() == null ^ this.getPortProbeAction() == null)
+            return false;
+        if (other.getPortProbeAction() != null && other.getPortProbeAction().equals(this.getPortProbeAction()) == false)
+            return false;
         return true;
     }
 
@@ -232,6 +274,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAwsApiCallAction() == null) ? 0 : getAwsApiCallAction().hashCode());
         hashCode = prime * hashCode + ((getDnsRequestAction() == null) ? 0 : getDnsRequestAction().hashCode());
         hashCode = prime * hashCode + ((getNetworkConnectionAction() == null) ? 0 : getNetworkConnectionAction().hashCode());
+        hashCode = prime * hashCode + ((getPortProbeAction() == null) ? 0 : getPortProbeAction().hashCode());
         return hashCode;
     }
 

@@ -94,7 +94,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).
      * </p>
      * <p>
-     * The value of the <code>USER_IF_FOR_SRP</code> attribute will be the user's actual username, not an alias (such as
+     * The value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual username, not an alias (such as
      * email address or phone number), even if you specified an alias in your call to <code>AdminInitiateAuth</code>.
      * This is because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the
      * <code>USERNAME</code> attribute cannot be an alias.
@@ -686,7 +686,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).
      * </p>
      * <p>
-     * The value of the <code>USER_IF_FOR_SRP</code> attribute will be the user's actual username, not an alias (such as
+     * The value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual username, not an alias (such as
      * email address or phone number), even if you specified an alias in your call to <code>AdminInitiateAuth</code>.
      * This is because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the
      * <code>USERNAME</code> attribute cannot be an alias.
@@ -699,7 +699,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *         All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).
      *         </p>
      *         <p>
-     *         The value of the <code>USER_IF_FOR_SRP</code> attribute will be the user's actual username, not an alias
+     *         The value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual username, not an alias
      *         (such as email address or phone number), even if you specified an alias in your call to
      *         <code>AdminInitiateAuth</code>. This is because, in the <code>AdminRespondToAuthChallenge</code> API
      *         <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute cannot be an alias.
@@ -719,7 +719,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).
      * </p>
      * <p>
-     * The value of the <code>USER_IF_FOR_SRP</code> attribute will be the user's actual username, not an alias (such as
+     * The value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual username, not an alias (such as
      * email address or phone number), even if you specified an alias in your call to <code>AdminInitiateAuth</code>.
      * This is because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the
      * <code>USERNAME</code> attribute cannot be an alias.
@@ -733,7 +733,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *        All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).
      *        </p>
      *        <p>
-     *        The value of the <code>USER_IF_FOR_SRP</code> attribute will be the user's actual username, not an alias
+     *        The value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual username, not an alias
      *        (such as email address or phone number), even if you specified an alias in your call to
      *        <code>AdminInitiateAuth</code>. This is because, in the <code>AdminRespondToAuthChallenge</code> API
      *        <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute cannot be an alias.
@@ -753,7 +753,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).
      * </p>
      * <p>
-     * The value of the <code>USER_IF_FOR_SRP</code> attribute will be the user's actual username, not an alias (such as
+     * The value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual username, not an alias (such as
      * email address or phone number), even if you specified an alias in your call to <code>AdminInitiateAuth</code>.
      * This is because, in the <code>AdminRespondToAuthChallenge</code> API <code>ChallengeResponses</code>, the
      * <code>USERNAME</code> attribute cannot be an alias.
@@ -767,7 +767,7 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *        All challenges require <code>USERNAME</code> and <code>SECRET_HASH</code> (if applicable).
      *        </p>
      *        <p>
-     *        The value of the <code>USER_IF_FOR_SRP</code> attribute will be the user's actual username, not an alias
+     *        The value of the <code>USER_ID_FOR_SRP</code> attribute will be the user's actual username, not an alias
      *        (such as email address or phone number), even if you specified an alias in your call to
      *        <code>AdminInitiateAuth</code>. This is because, in the <code>AdminRespondToAuthChallenge</code> API
      *        <code>ChallengeResponses</code>, the <code>USERNAME</code> attribute cannot be an alias.

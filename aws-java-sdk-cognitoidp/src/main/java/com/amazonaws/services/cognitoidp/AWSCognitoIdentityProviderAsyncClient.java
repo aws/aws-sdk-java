@@ -2202,6 +2202,39 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
     }
 
     @Override
+    public java.util.concurrent.Future<GetSigningCertificateResult> getSigningCertificateAsync(GetSigningCertificateRequest request) {
+
+        return getSigningCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSigningCertificateResult> getSigningCertificateAsync(final GetSigningCertificateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSigningCertificateRequest, GetSigningCertificateResult> asyncHandler) {
+        final GetSigningCertificateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSigningCertificateResult>() {
+            @Override
+            public GetSigningCertificateResult call() throws Exception {
+                GetSigningCertificateResult result = null;
+
+                try {
+                    result = executeGetSigningCertificate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetUICustomizationResult> getUICustomizationAsync(GetUICustomizationRequest request) {
 
         return getUICustomizationAsync(request, null);

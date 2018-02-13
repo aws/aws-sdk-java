@@ -52,14 +52,46 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
     private Boolean encrypted;
     /**
      * <p>
-     * The full ARN of the AWS Key Management Service (AWS KMS) CMK to use when encrypting the snapshots of an image
-     * during a copy operation. This parameter is only required if you want to use a non-default CMK; if this parameter
-     * is not specified, the default CMK for EBS is used. The ARN contains the <code>arn:aws:kms</code> namespace,
-     * followed by the region of the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace, and then
-     * the CMK ID. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>. The specified
-     * CMK must exist in the region that the snapshot is being copied to. If a <code>KmsKeyId</code> is specified, the
-     * <code>Encrypted</code> flag must also be set.
+     * An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating the
+     * encrypted volume. This parameter is only required if you want to use a non-default CMK; if this parameter is not
+     * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
+     * flag must also be set.
+     * </p>
+     * <p>
+     * The CMK identifier may be provided in any of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Key alias
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
+     * the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the
+     * CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete even
+     * though you provided an invalid identifier. This action will eventually report failure.
+     * </p>
+     * <p>
+     * The specified CMK must exist in the region that the snapshot is being copied to.
      * </p>
      */
     private String kmsKeyId;
@@ -256,25 +288,88 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * <p>
-     * The full ARN of the AWS Key Management Service (AWS KMS) CMK to use when encrypting the snapshots of an image
-     * during a copy operation. This parameter is only required if you want to use a non-default CMK; if this parameter
-     * is not specified, the default CMK for EBS is used. The ARN contains the <code>arn:aws:kms</code> namespace,
-     * followed by the region of the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace, and then
-     * the CMK ID. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>. The specified
-     * CMK must exist in the region that the snapshot is being copied to. If a <code>KmsKeyId</code> is specified, the
-     * <code>Encrypted</code> flag must also be set.
+     * An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating the
+     * encrypted volume. This parameter is only required if you want to use a non-default CMK; if this parameter is not
+     * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
+     * flag must also be set.
+     * </p>
+     * <p>
+     * The CMK identifier may be provided in any of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Key alias
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
+     * the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the
+     * CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete even
+     * though you provided an invalid identifier. This action will eventually report failure.
+     * </p>
+     * <p>
+     * The specified CMK must exist in the region that the snapshot is being copied to.
      * </p>
      * 
      * @param kmsKeyId
-     *        The full ARN of the AWS Key Management Service (AWS KMS) CMK to use when encrypting the snapshots of an
-     *        image during a copy operation. This parameter is only required if you want to use a non-default CMK; if
-     *        this parameter is not specified, the default CMK for EBS is used. The ARN contains the
-     *        <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the AWS account ID of the CMK
-     *        owner, the <code>key</code> namespace, and then the CMK ID. For example,
-     *        arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>. The
-     *        specified CMK must exist in the region that the snapshot is being copied to. If a <code>KmsKeyId</code> is
-     *        specified, the <code>Encrypted</code> flag must also be set.
+     *        An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating
+     *        the encrypted volume. This parameter is only required if you want to use a non-default CMK; if this
+     *        parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
+     *        <code>Encrypted</code> flag must also be set. </p>
+     *        <p>
+     *        The CMK identifier may be provided in any of the following formats:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Key ID
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Key alias
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of
+     *        the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For
+     *        example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region
+     *        of the CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias.
+     *        For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete
+     *        even though you provided an invalid identifier. This action will eventually report failure.
+     *        </p>
+     *        <p>
+     *        The specified CMK must exist in the region that the snapshot is being copied to.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -283,24 +378,88 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * <p>
-     * The full ARN of the AWS Key Management Service (AWS KMS) CMK to use when encrypting the snapshots of an image
-     * during a copy operation. This parameter is only required if you want to use a non-default CMK; if this parameter
-     * is not specified, the default CMK for EBS is used. The ARN contains the <code>arn:aws:kms</code> namespace,
-     * followed by the region of the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace, and then
-     * the CMK ID. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>. The specified
-     * CMK must exist in the region that the snapshot is being copied to. If a <code>KmsKeyId</code> is specified, the
-     * <code>Encrypted</code> flag must also be set.
+     * An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating the
+     * encrypted volume. This parameter is only required if you want to use a non-default CMK; if this parameter is not
+     * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
+     * flag must also be set.
+     * </p>
+     * <p>
+     * The CMK identifier may be provided in any of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Key alias
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
+     * the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the
+     * CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete even
+     * though you provided an invalid identifier. This action will eventually report failure.
+     * </p>
+     * <p>
+     * The specified CMK must exist in the region that the snapshot is being copied to.
      * </p>
      * 
-     * @return The full ARN of the AWS Key Management Service (AWS KMS) CMK to use when encrypting the snapshots of an
-     *         image during a copy operation. This parameter is only required if you want to use a non-default CMK; if
-     *         this parameter is not specified, the default CMK for EBS is used. The ARN contains the
-     *         <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the AWS account ID of the CMK
-     *         owner, the <code>key</code> namespace, and then the CMK ID. For example,
-     *         arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>. The
-     *         specified CMK must exist in the region that the snapshot is being copied to. If a <code>KmsKeyId</code>
-     *         is specified, the <code>Encrypted</code> flag must also be set.
+     * @return An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating
+     *         the encrypted volume. This parameter is only required if you want to use a non-default CMK; if this
+     *         parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
+     *         <code>Encrypted</code> flag must also be set. </p>
+     *         <p>
+     *         The CMK identifier may be provided in any of the following formats:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Key ID
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Key alias
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of
+     *         the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For
+     *         example,
+     *         arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the
+     *         region of the CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the
+     *         CMK alias. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete
+     *         even though you provided an invalid identifier. This action will eventually report failure.
+     *         </p>
+     *         <p>
+     *         The specified CMK must exist in the region that the snapshot is being copied to.
      */
 
     public String getKmsKeyId() {
@@ -309,25 +468,88 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
 
     /**
      * <p>
-     * The full ARN of the AWS Key Management Service (AWS KMS) CMK to use when encrypting the snapshots of an image
-     * during a copy operation. This parameter is only required if you want to use a non-default CMK; if this parameter
-     * is not specified, the default CMK for EBS is used. The ARN contains the <code>arn:aws:kms</code> namespace,
-     * followed by the region of the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace, and then
-     * the CMK ID. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>. The specified
-     * CMK must exist in the region that the snapshot is being copied to. If a <code>KmsKeyId</code> is specified, the
-     * <code>Encrypted</code> flag must also be set.
+     * An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating the
+     * encrypted volume. This parameter is only required if you want to use a non-default CMK; if this parameter is not
+     * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the <code>Encrypted</code>
+     * flag must also be set.
+     * </p>
+     * <p>
+     * The CMK identifier may be provided in any of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Key ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Key alias
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the CMK,
+     * the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of the
+     * CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias. For example,
+     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete even
+     * though you provided an invalid identifier. This action will eventually report failure.
+     * </p>
+     * <p>
+     * The specified CMK must exist in the region that the snapshot is being copied to.
      * </p>
      * 
      * @param kmsKeyId
-     *        The full ARN of the AWS Key Management Service (AWS KMS) CMK to use when encrypting the snapshots of an
-     *        image during a copy operation. This parameter is only required if you want to use a non-default CMK; if
-     *        this parameter is not specified, the default CMK for EBS is used. The ARN contains the
-     *        <code>arn:aws:kms</code> namespace, followed by the region of the CMK, the AWS account ID of the CMK
-     *        owner, the <code>key</code> namespace, and then the CMK ID. For example,
-     *        arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>. The
-     *        specified CMK must exist in the region that the snapshot is being copied to. If a <code>KmsKeyId</code> is
-     *        specified, the <code>Encrypted</code> flag must also be set.
+     *        An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating
+     *        the encrypted volume. This parameter is only required if you want to use a non-default CMK; if this
+     *        parameter is not specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is specified, the
+     *        <code>Encrypted</code> flag must also be set. </p>
+     *        <p>
+     *        The CMK identifier may be provided in any of the following formats:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Key ID
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Key alias
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ARN using key ID. The ID ARN contains the <code>arn:aws:kms</code> namespace, followed by the region of
+     *        the CMK, the AWS account ID of the CMK owner, the <code>key</code> namespace, and then the CMK ID. For
+     *        example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ARN using key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the region
+     *        of the CMK, the AWS account ID of the CMK owner, the <code>alias</code> namespace, and then the CMK alias.
+     *        For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        AWS parses <code>KmsKeyId</code> asynchronously, meaning that the action you call may appear to complete
+     *        even though you provided an invalid identifier. This action will eventually report failure.
+     *        </p>
+     *        <p>
+     *        The specified CMK must exist in the region that the snapshot is being copied to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

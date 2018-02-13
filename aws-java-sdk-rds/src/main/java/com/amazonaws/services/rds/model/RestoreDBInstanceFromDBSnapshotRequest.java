@@ -216,16 +216,6 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <code>aurora</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>aurora-postgresql</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>mariadb</code>
      * </p>
      * </li>
@@ -374,11 +364,6 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * <li>
      * <p>
      * For MySQL 5.7, minor version 5.7.16 or higher
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Aurora 5.6 or higher.
      * </p>
      * </li>
      * </ul>
@@ -1611,16 +1596,6 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <code>aurora</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>aurora-postgresql</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>mariadb</code>
      * </p>
      * </li>
@@ -1689,16 +1664,6 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        Valid Values:
      *        </p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>aurora</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>aurora-postgresql</code>
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>mariadb</code>
@@ -1777,16 +1742,6 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <code>aurora</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>aurora-postgresql</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>mariadb</code>
      * </p>
      * </li>
@@ -1854,16 +1809,6 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *         Valid Values:
      *         </p>
      *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>aurora</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>aurora-postgresql</code>
-     *         </p>
-     *         </li>
      *         <li>
      *         <p>
      *         <code>mariadb</code>
@@ -1942,16 +1887,6 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <code>aurora</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>aurora-postgresql</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>mariadb</code>
      * </p>
      * </li>
@@ -2020,16 +1955,6 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        Valid Values:
      *        </p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>aurora</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>aurora-postgresql</code>
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>mariadb</code>
@@ -2646,11 +2571,6 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * For MySQL 5.7, minor version 5.7.16 or higher
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * Aurora 5.6 or higher.
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * Default: <code>false</code>
@@ -2671,11 +2591,6 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        <li>
      *        <p>
      *        For MySQL 5.7, minor version 5.7.16 or higher
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Aurora 5.6 or higher.
      *        </p>
      *        </li>
      *        </ul>
@@ -2706,11 +2621,6 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * For MySQL 5.7, minor version 5.7.16 or higher
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * Aurora 5.6 or higher.
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * Default: <code>false</code>
@@ -2730,11 +2640,6 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *         <li>
      *         <p>
      *         For MySQL 5.7, minor version 5.7.16 or higher
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Aurora 5.6 or higher.
      *         </p>
      *         </li>
      *         </ul>
@@ -2765,11 +2670,6 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * For MySQL 5.7, minor version 5.7.16 or higher
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * Aurora 5.6 or higher.
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * Default: <code>false</code>
@@ -2790,11 +2690,6 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        <li>
      *        <p>
      *        For MySQL 5.7, minor version 5.7.16 or higher
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Aurora 5.6 or higher.
      *        </p>
      *        </li>
      *        </ul>
@@ -2827,11 +2722,6 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * For MySQL 5.7, minor version 5.7.16 or higher
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * Aurora 5.6 or higher.
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * Default: <code>false</code>
@@ -2851,11 +2741,6 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *         <li>
      *         <p>
      *         For MySQL 5.7, minor version 5.7.16 or higher
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Aurora 5.6 or higher.
      *         </p>
      *         </li>
      *         </ul>

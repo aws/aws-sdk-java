@@ -53,6 +53,18 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * DB cluster parameter group family, and can be applied only to a DB cluster running a database engine and engine
      * version compatible with that DB cluster parameter group family.
      * </p>
+     * <p>
+     * <b>Aurora MySQL</b>
+     * </p>
+     * <p>
+     * Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>
+     * </p>
+     * <p>
+     * <b>Aurora PostgreSQL</b>
+     * </p>
+     * <p>
+     * Example: <code>aurora-postgresql9.6</code>
+     * </p>
      */
     private String dBParameterGroupFamily;
     /**
@@ -197,11 +209,34 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * DB cluster parameter group family, and can be applied only to a DB cluster running a database engine and engine
      * version compatible with that DB cluster parameter group family.
      * </p>
+     * <p>
+     * <b>Aurora MySQL</b>
+     * </p>
+     * <p>
+     * Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>
+     * </p>
+     * <p>
+     * <b>Aurora PostgreSQL</b>
+     * </p>
+     * <p>
+     * Example: <code>aurora-postgresql9.6</code>
+     * </p>
      * 
      * @param dBParameterGroupFamily
      *        The DB cluster parameter group family name. A DB cluster parameter group can be associated with one and
      *        only one DB cluster parameter group family, and can be applied only to a DB cluster running a database
-     *        engine and engine version compatible with that DB cluster parameter group family.
+     *        engine and engine version compatible with that DB cluster parameter group family.</p>
+     *        <p>
+     *        <b>Aurora MySQL</b>
+     *        </p>
+     *        <p>
+     *        Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>
+     *        </p>
+     *        <p>
+     *        <b>Aurora PostgreSQL</b>
+     *        </p>
+     *        <p>
+     *        Example: <code>aurora-postgresql9.6</code>
      */
 
     public void setDBParameterGroupFamily(String dBParameterGroupFamily) {
@@ -214,10 +249,33 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * DB cluster parameter group family, and can be applied only to a DB cluster running a database engine and engine
      * version compatible with that DB cluster parameter group family.
      * </p>
+     * <p>
+     * <b>Aurora MySQL</b>
+     * </p>
+     * <p>
+     * Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>
+     * </p>
+     * <p>
+     * <b>Aurora PostgreSQL</b>
+     * </p>
+     * <p>
+     * Example: <code>aurora-postgresql9.6</code>
+     * </p>
      * 
      * @return The DB cluster parameter group family name. A DB cluster parameter group can be associated with one and
      *         only one DB cluster parameter group family, and can be applied only to a DB cluster running a database
-     *         engine and engine version compatible with that DB cluster parameter group family.
+     *         engine and engine version compatible with that DB cluster parameter group family.</p>
+     *         <p>
+     *         <b>Aurora MySQL</b>
+     *         </p>
+     *         <p>
+     *         Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>
+     *         </p>
+     *         <p>
+     *         <b>Aurora PostgreSQL</b>
+     *         </p>
+     *         <p>
+     *         Example: <code>aurora-postgresql9.6</code>
      */
 
     public String getDBParameterGroupFamily() {
@@ -230,11 +288,34 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * DB cluster parameter group family, and can be applied only to a DB cluster running a database engine and engine
      * version compatible with that DB cluster parameter group family.
      * </p>
+     * <p>
+     * <b>Aurora MySQL</b>
+     * </p>
+     * <p>
+     * Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>
+     * </p>
+     * <p>
+     * <b>Aurora PostgreSQL</b>
+     * </p>
+     * <p>
+     * Example: <code>aurora-postgresql9.6</code>
+     * </p>
      * 
      * @param dBParameterGroupFamily
      *        The DB cluster parameter group family name. A DB cluster parameter group can be associated with one and
      *        only one DB cluster parameter group family, and can be applied only to a DB cluster running a database
-     *        engine and engine version compatible with that DB cluster parameter group family.
+     *        engine and engine version compatible with that DB cluster parameter group family.</p>
+     *        <p>
+     *        <b>Aurora MySQL</b>
+     *        </p>
+     *        <p>
+     *        Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>
+     *        </p>
+     *        <p>
+     *        <b>Aurora PostgreSQL</b>
+     *        </p>
+     *        <p>
+     *        Example: <code>aurora-postgresql9.6</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
