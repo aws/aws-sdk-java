@@ -33,6 +33,7 @@ public enum VPCRegion {
     ApSouth1("ap-south-1"),
     ApNortheast1("ap-northeast-1"),
     ApNortheast2("ap-northeast-2"),
+    ApNortheast3("ap-northeast-3"),
     SaEast1("sa-east-1"),
     CaCentral1("ca-central-1"),
     CnNorth1("cn-north-1");

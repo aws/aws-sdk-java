@@ -42,7 +42,7 @@ public class Encryption implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Optional. If the encryption type is <code>aws:kms</code>, you can use this value to specify the encryption
-     * context for the restore results.
+     * context for the job results.
      * </p>
      */
     private String kMSContext;
@@ -163,12 +163,12 @@ public class Encryption implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Optional. If the encryption type is <code>aws:kms</code>, you can use this value to specify the encryption
-     * context for the restore results.
+     * context for the job results.
      * </p>
      * 
      * @param kMSContext
      *        Optional. If the encryption type is <code>aws:kms</code>, you can use this value to specify the encryption
-     *        context for the restore results.
+     *        context for the job results.
      */
 
     public void setKMSContext(String kMSContext) {
@@ -178,11 +178,11 @@ public class Encryption implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Optional. If the encryption type is <code>aws:kms</code>, you can use this value to specify the encryption
-     * context for the restore results.
+     * context for the job results.
      * </p>
      * 
      * @return Optional. If the encryption type is <code>aws:kms</code>, you can use this value to specify the
-     *         encryption context for the restore results.
+     *         encryption context for the job results.
      */
 
     public String getKMSContext() {
@@ -192,12 +192,12 @@ public class Encryption implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Optional. If the encryption type is <code>aws:kms</code>, you can use this value to specify the encryption
-     * context for the restore results.
+     * context for the job results.
      * </p>
      * 
      * @param kMSContext
      *        Optional. If the encryption type is <code>aws:kms</code>, you can use this value to specify the encryption
-     *        context for the restore results.
+     *        context for the job results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

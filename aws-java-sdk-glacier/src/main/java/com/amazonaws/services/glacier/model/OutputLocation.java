@@ -27,18 +27,18 @@ public class OutputLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes an S3 location that will receive the results of the restore request.
+     * Describes an S3 location that will receive the results of the job request.
      * </p>
      */
     private S3Location s3;
 
     /**
      * <p>
-     * Describes an S3 location that will receive the results of the restore request.
+     * Describes an S3 location that will receive the results of the job request.
      * </p>
      * 
      * @param s3
-     *        Describes an S3 location that will receive the results of the restore request.
+     *        Describes an S3 location that will receive the results of the job request.
      */
 
     public void setS3(S3Location s3) {
@@ -47,10 +47,10 @@ public class OutputLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes an S3 location that will receive the results of the restore request.
+     * Describes an S3 location that will receive the results of the job request.
      * </p>
      * 
-     * @return Describes an S3 location that will receive the results of the restore request.
+     * @return Describes an S3 location that will receive the results of the job request.
      */
 
     public S3Location getS3() {
@@ -59,11 +59,11 @@ public class OutputLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes an S3 location that will receive the results of the restore request.
+     * Describes an S3 location that will receive the results of the job request.
      * </p>
      * 
      * @param s3
-     *        Describes an S3 location that will receive the results of the restore request.
+     *        Describes an S3 location that will receive the results of the job request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

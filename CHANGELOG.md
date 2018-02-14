@@ -1,3 +1,12 @@
+# __1.11.277__ __2018-02-13__
+## __Amazon Glacier__
+  - ### Features
+    - Documentation updates for glacier
+
+## __Amazon Route 53__
+  - ### Features
+    - Added support for creating Private Hosted Zones and metric-based healthchecks in the ap-northeast-3 region for whitelisted customers.
+
 # __1.11.276__ __2018-02-12__
 ## __AWS Key Management Service__
   - ### Features

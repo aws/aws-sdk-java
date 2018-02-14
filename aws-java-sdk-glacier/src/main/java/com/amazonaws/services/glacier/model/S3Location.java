@@ -27,13 +27,13 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the bucket where the restore results are stored.
+     * The name of the Amazon S3 bucket where the job results are stored.
      * </p>
      */
     private String bucketName;
     /**
      * <p>
-     * The prefix that is prepended to the restore results for this request.
+     * The prefix that is prepended to the results for this request.
      * </p>
      */
     private String prefix;
@@ -45,7 +45,7 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
     private Encryption encryption;
     /**
      * <p>
-     * The canned ACL to apply to the restore results.
+     * The canned access control list (ACL) to apply to the job results.
      * </p>
      */
     private String cannedACL;
@@ -57,30 +57,30 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<Grant> accessControlList;
     /**
      * <p>
-     * The tag-set that is applied to the restore results.
+     * The tag-set that is applied to the job results.
      * </p>
      */
     private java.util.Map<String, String> tagging;
     /**
      * <p>
-     * A map of metadata to store with the restore results in Amazon S3.
+     * A map of metadata to store with the job results in Amazon S3.
      * </p>
      */
     private java.util.Map<String, String> userMetadata;
     /**
      * <p>
-     * The storage class used to store the restore results.
+     * The storage class used to store the job results.
      * </p>
      */
     private String storageClass;
 
     /**
      * <p>
-     * The name of the bucket where the restore results are stored.
+     * The name of the Amazon S3 bucket where the job results are stored.
      * </p>
      * 
      * @param bucketName
-     *        The name of the bucket where the restore results are stored.
+     *        The name of the Amazon S3 bucket where the job results are stored.
      */
 
     public void setBucketName(String bucketName) {
@@ -89,10 +89,10 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the bucket where the restore results are stored.
+     * The name of the Amazon S3 bucket where the job results are stored.
      * </p>
      * 
-     * @return The name of the bucket where the restore results are stored.
+     * @return The name of the Amazon S3 bucket where the job results are stored.
      */
 
     public String getBucketName() {
@@ -101,11 +101,11 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the bucket where the restore results are stored.
+     * The name of the Amazon S3 bucket where the job results are stored.
      * </p>
      * 
      * @param bucketName
-     *        The name of the bucket where the restore results are stored.
+     *        The name of the Amazon S3 bucket where the job results are stored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,11 +116,11 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The prefix that is prepended to the restore results for this request.
+     * The prefix that is prepended to the results for this request.
      * </p>
      * 
      * @param prefix
-     *        The prefix that is prepended to the restore results for this request.
+     *        The prefix that is prepended to the results for this request.
      */
 
     public void setPrefix(String prefix) {
@@ -129,10 +129,10 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The prefix that is prepended to the restore results for this request.
+     * The prefix that is prepended to the results for this request.
      * </p>
      * 
-     * @return The prefix that is prepended to the restore results for this request.
+     * @return The prefix that is prepended to the results for this request.
      */
 
     public String getPrefix() {
@@ -141,11 +141,11 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The prefix that is prepended to the restore results for this request.
+     * The prefix that is prepended to the results for this request.
      * </p>
      * 
      * @param prefix
-     *        The prefix that is prepended to the restore results for this request.
+     *        The prefix that is prepended to the results for this request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -196,11 +196,11 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The canned ACL to apply to the restore results.
+     * The canned access control list (ACL) to apply to the job results.
      * </p>
      * 
      * @param cannedACL
-     *        The canned ACL to apply to the restore results.
+     *        The canned access control list (ACL) to apply to the job results.
      * @see CannedACL
      */
 
@@ -210,10 +210,10 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The canned ACL to apply to the restore results.
+     * The canned access control list (ACL) to apply to the job results.
      * </p>
      * 
-     * @return The canned ACL to apply to the restore results.
+     * @return The canned access control list (ACL) to apply to the job results.
      * @see CannedACL
      */
 
@@ -223,11 +223,11 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The canned ACL to apply to the restore results.
+     * The canned access control list (ACL) to apply to the job results.
      * </p>
      * 
      * @param cannedACL
-     *        The canned ACL to apply to the restore results.
+     *        The canned access control list (ACL) to apply to the job results.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CannedACL
      */
@@ -239,11 +239,11 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The canned ACL to apply to the restore results.
+     * The canned access control list (ACL) to apply to the job results.
      * </p>
      * 
      * @param cannedACL
-     *        The canned ACL to apply to the restore results.
+     *        The canned access control list (ACL) to apply to the job results.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CannedACL
      */
@@ -325,10 +325,10 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag-set that is applied to the restore results.
+     * The tag-set that is applied to the job results.
      * </p>
      * 
-     * @return The tag-set that is applied to the restore results.
+     * @return The tag-set that is applied to the job results.
      */
 
     public java.util.Map<String, String> getTagging() {
@@ -337,11 +337,11 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag-set that is applied to the restore results.
+     * The tag-set that is applied to the job results.
      * </p>
      * 
      * @param tagging
-     *        The tag-set that is applied to the restore results.
+     *        The tag-set that is applied to the job results.
      */
 
     public void setTagging(java.util.Map<String, String> tagging) {
@@ -350,11 +350,11 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag-set that is applied to the restore results.
+     * The tag-set that is applied to the job results.
      * </p>
      * 
      * @param tagging
-     *        The tag-set that is applied to the restore results.
+     *        The tag-set that is applied to the job results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -386,10 +386,10 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A map of metadata to store with the restore results in Amazon S3.
+     * A map of metadata to store with the job results in Amazon S3.
      * </p>
      * 
-     * @return A map of metadata to store with the restore results in Amazon S3.
+     * @return A map of metadata to store with the job results in Amazon S3.
      */
 
     public java.util.Map<String, String> getUserMetadata() {
@@ -398,11 +398,11 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A map of metadata to store with the restore results in Amazon S3.
+     * A map of metadata to store with the job results in Amazon S3.
      * </p>
      * 
      * @param userMetadata
-     *        A map of metadata to store with the restore results in Amazon S3.
+     *        A map of metadata to store with the job results in Amazon S3.
      */
 
     public void setUserMetadata(java.util.Map<String, String> userMetadata) {
@@ -411,11 +411,11 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A map of metadata to store with the restore results in Amazon S3.
+     * A map of metadata to store with the job results in Amazon S3.
      * </p>
      * 
      * @param userMetadata
-     *        A map of metadata to store with the restore results in Amazon S3.
+     *        A map of metadata to store with the job results in Amazon S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -447,11 +447,11 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The storage class used to store the restore results.
+     * The storage class used to store the job results.
      * </p>
      * 
      * @param storageClass
-     *        The storage class used to store the restore results.
+     *        The storage class used to store the job results.
      * @see StorageClass
      */
 
@@ -461,10 +461,10 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The storage class used to store the restore results.
+     * The storage class used to store the job results.
      * </p>
      * 
-     * @return The storage class used to store the restore results.
+     * @return The storage class used to store the job results.
      * @see StorageClass
      */
 
@@ -474,11 +474,11 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The storage class used to store the restore results.
+     * The storage class used to store the job results.
      * </p>
      * 
      * @param storageClass
-     *        The storage class used to store the restore results.
+     *        The storage class used to store the job results.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StorageClass
      */
@@ -490,11 +490,11 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The storage class used to store the restore results.
+     * The storage class used to store the job results.
      * </p>
      * 
      * @param storageClass
-     *        The storage class used to store the restore results.
+     *        The storage class used to store the job results.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StorageClass
      */

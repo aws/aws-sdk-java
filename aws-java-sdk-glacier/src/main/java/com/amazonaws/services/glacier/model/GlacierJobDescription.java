@@ -169,7 +169,7 @@ public class GlacierJobDescription implements Serializable, Cloneable, Structure
     private String retrievalByteRange;
     /**
      * <p>
-     * The retrieval option to use for the archive retrieval. Valid values are <code>Expedited</code>,
+     * The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>,
      * <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
      * </p>
      */
@@ -188,7 +188,7 @@ public class GlacierJobDescription implements Serializable, Cloneable, Structure
     private String jobOutputPath;
     /**
      * <p>
-     * Contains the parameters that define a select job.
+     * Contains the parameters used for a select.
      * </p>
      */
     private SelectParameters selectParameters;
@@ -1203,12 +1203,12 @@ public class GlacierJobDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The retrieval option to use for the archive retrieval. Valid values are <code>Expedited</code>,
+     * The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>,
      * <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
      * </p>
      * 
      * @param tier
-     *        The retrieval option to use for the archive retrieval. Valid values are <code>Expedited</code>,
+     *        The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>,
      *        <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
      */
 
@@ -1218,11 +1218,11 @@ public class GlacierJobDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The retrieval option to use for the archive retrieval. Valid values are <code>Expedited</code>,
+     * The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>,
      * <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
      * </p>
      * 
-     * @return The retrieval option to use for the archive retrieval. Valid values are <code>Expedited</code>,
+     * @return The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>,
      *         <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
      */
 
@@ -1232,12 +1232,12 @@ public class GlacierJobDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The retrieval option to use for the archive retrieval. Valid values are <code>Expedited</code>,
+     * The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>,
      * <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
      * </p>
      * 
      * @param tier
-     *        The retrieval option to use for the archive retrieval. Valid values are <code>Expedited</code>,
+     *        The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>,
      *        <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1329,11 +1329,11 @@ public class GlacierJobDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Contains the parameters that define a select job.
+     * Contains the parameters used for a select.
      * </p>
      * 
      * @param selectParameters
-     *        Contains the parameters that define a select job.
+     *        Contains the parameters used for a select.
      */
 
     public void setSelectParameters(SelectParameters selectParameters) {
@@ -1342,10 +1342,10 @@ public class GlacierJobDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Contains the parameters that define a select job.
+     * Contains the parameters used for a select.
      * </p>
      * 
-     * @return Contains the parameters that define a select job.
+     * @return Contains the parameters used for a select.
      */
 
     public SelectParameters getSelectParameters() {
@@ -1354,11 +1354,11 @@ public class GlacierJobDescription implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Contains the parameters that define a select job.
+     * Contains the parameters used for a select.
      * </p>
      * 
      * @param selectParameters
-     *        Contains the parameters that define a select job.
+     *        Contains the parameters used for a select.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
