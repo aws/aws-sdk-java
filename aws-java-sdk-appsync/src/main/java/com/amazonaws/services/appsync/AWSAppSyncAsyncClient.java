@@ -788,6 +788,39 @@ public class AWSAppSyncAsyncClient extends AWSAppSyncClient implements AWSAppSyn
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateApiKeyResult> updateApiKeyAsync(UpdateApiKeyRequest request) {
+
+        return updateApiKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateApiKeyResult> updateApiKeyAsync(final UpdateApiKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateApiKeyRequest, UpdateApiKeyResult> asyncHandler) {
+        final UpdateApiKeyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateApiKeyResult>() {
+            @Override
+            public UpdateApiKeyResult call() throws Exception {
+                UpdateApiKeyResult result = null;
+
+                try {
+                    result = executeUpdateApiKey(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateDataSourceResult> updateDataSourceAsync(UpdateDataSourceRequest request) {
 
         return updateDataSourceAsync(request, null);

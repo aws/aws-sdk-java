@@ -851,6 +851,28 @@ public interface AmazonLexModelBuilding {
 
     /**
      * <p>
+     * Gets information about an import job started with the <code>StartImport</code> operation.
+     * </p>
+     * 
+     * @param getImportRequest
+     * @return Result of the GetImport operation returned by the service.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource and try again.
+     * @throws LimitExceededException
+     *         The request exceeded a limit. Try your request again.
+     * @throws InternalFailureException
+     *         An internal Amazon Lex error occurred. Try your request again.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and try again.
+     * @sample AmazonLexModelBuilding.GetImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetImport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetImportResult getImport(GetImportRequest getImportRequest);
+
+    /**
+     * <p>
      * Returns information about an intent. In addition to the intent name, you must specify the intent version.
      * </p>
      * <p>
@@ -1291,6 +1313,26 @@ public interface AmazonLexModelBuilding {
      *      Documentation</a>
      */
     PutSlotTypeResult putSlotType(PutSlotTypeRequest putSlotTypeRequest);
+
+    /**
+     * <p>
+     * Starts a job to import a resource to Amazon Lex.
+     * </p>
+     * 
+     * @param startImportRequest
+     * @return Result of the StartImport operation returned by the service.
+     * @throws LimitExceededException
+     *         The request exceeded a limit. Try your request again.
+     * @throws InternalFailureException
+     *         An internal Amazon Lex error occurred. Try your request again.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and try again.
+     * @sample AmazonLexModelBuilding.StartImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/StartImport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartImportResult startImport(StartImportRequest startImportRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

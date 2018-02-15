@@ -79,6 +79,9 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                             new JsonErrorShapeMetadata().withErrorCode("InternalFailureException").withModeledClass(
                                     com.amazonaws.services.appsync.model.InternalFailureException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ApiKeyValidityOutOfBoundsException").withModeledClass(
+                                    com.amazonaws.services.appsync.model.ApiKeyValidityOutOfBoundsException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("GraphQLSchemaException").withModeledClass(
                                     com.amazonaws.services.appsync.model.GraphQLSchemaException.class))
                     .addErrorMetadata(
@@ -154,6 +157,8 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
      *         An internal AWS AppSync error occurred. Try your request again.
      * @throws ApiKeyLimitExceededException
      *         The API key exceeded a limit. Try your request again.
+     * @throws ApiKeyValidityOutOfBoundsException
+     *         The API key expiration must be set to a value between 1 and 365 days.
      * @sample AWSAppSync.CreateApiKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateApiKey" target="_top">AWS API
      *      Documentation</a>
@@ -1430,6 +1435,68 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
 
             HttpResponseHandler<AmazonWebServiceResponse<StartSchemaCreationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartSchemaCreationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an API key.
+     * </p>
+     * 
+     * @param updateApiKeyRequest
+     * @return Result of the UpdateApiKey operation returned by the service.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and try again.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource and try again.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws LimitExceededException
+     *         The request exceeded a limit. Try your request again.
+     * @throws InternalFailureException
+     *         An internal AWS AppSync error occurred. Try your request again.
+     * @throws ApiKeyValidityOutOfBoundsException
+     *         The API key expiration must be set to a value between 1 and 365 days.
+     * @sample AWSAppSync.UpdateApiKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateApiKeyResult updateApiKey(UpdateApiKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateApiKey(request);
+    }
+
+    @SdkInternalApi
+    final UpdateApiKeyResult executeUpdateApiKey(UpdateApiKeyRequest updateApiKeyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateApiKeyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateApiKeyRequest> request = null;
+        Response<UpdateApiKeyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateApiKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateApiKeyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateApiKeyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateApiKeyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

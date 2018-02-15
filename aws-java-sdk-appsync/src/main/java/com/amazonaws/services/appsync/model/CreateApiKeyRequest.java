@@ -37,6 +37,13 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * The time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the
+     * nearest hour. The default value for this parameter is 7 days from creation time.
+     * </p>
+     */
+    private Long expires;
 
     /**
      * <p>
@@ -119,6 +126,52 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the
+     * nearest hour. The default value for this parameter is 7 days from creation time.
+     * </p>
+     * 
+     * @param expires
+     *        The time after which the API key expires. The date is represented as seconds since the epoch, rounded down
+     *        to the nearest hour. The default value for this parameter is 7 days from creation time.
+     */
+
+    public void setExpires(Long expires) {
+        this.expires = expires;
+    }
+
+    /**
+     * <p>
+     * The time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the
+     * nearest hour. The default value for this parameter is 7 days from creation time.
+     * </p>
+     * 
+     * @return The time after which the API key expires. The date is represented as seconds since the epoch, rounded
+     *         down to the nearest hour. The default value for this parameter is 7 days from creation time.
+     */
+
+    public Long getExpires() {
+        return this.expires;
+    }
+
+    /**
+     * <p>
+     * The time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the
+     * nearest hour. The default value for this parameter is 7 days from creation time.
+     * </p>
+     * 
+     * @param expires
+     *        The time after which the API key expires. The date is represented as seconds since the epoch, rounded down
+     *        to the nearest hour. The default value for this parameter is 7 days from creation time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApiKeyRequest withExpires(Long expires) {
+        setExpires(expires);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -132,7 +185,9 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getApiId() != null)
             sb.append("ApiId: ").append(getApiId()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getExpires() != null)
+            sb.append("Expires: ").append(getExpires());
         sb.append("}");
         return sb.toString();
     }
@@ -155,6 +210,10 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getExpires() == null ^ this.getExpires() == null)
+            return false;
+        if (other.getExpires() != null && other.getExpires().equals(this.getExpires()) == false)
+            return false;
         return true;
     }
 
@@ -165,6 +224,7 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
         hashCode = prime * hashCode + ((getApiId() == null) ? 0 : getApiId().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getExpires() == null) ? 0 : getExpires().hashCode());
         return hashCode;
     }
 

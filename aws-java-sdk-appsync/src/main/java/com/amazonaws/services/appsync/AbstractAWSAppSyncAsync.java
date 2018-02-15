@@ -314,6 +314,19 @@ public class AbstractAWSAppSyncAsync extends AbstractAWSAppSync implements AWSAp
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateApiKeyResult> updateApiKeyAsync(UpdateApiKeyRequest request) {
+
+        return updateApiKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateApiKeyResult> updateApiKeyAsync(UpdateApiKeyRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateApiKeyRequest, UpdateApiKeyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateDataSourceResult> updateDataSourceAsync(UpdateDataSourceRequest request) {
 
         return updateDataSourceAsync(request, null);

@@ -74,6 +74,8 @@ public class PutSlotTypeResult extends com.amazonaws.AmazonWebServiceResult<com.
      */
     private String valueSelectionStrategy;
 
+    private Boolean createVersion;
+
     /**
      * <p>
      * The name of the slot type.
@@ -458,6 +460,40 @@ public class PutSlotTypeResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * @param createVersion
+     */
+
+    public void setCreateVersion(Boolean createVersion) {
+        this.createVersion = createVersion;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean getCreateVersion() {
+        return this.createVersion;
+    }
+
+    /**
+     * @param createVersion
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutSlotTypeResult withCreateVersion(Boolean createVersion) {
+        setCreateVersion(createVersion);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean isCreateVersion() {
+        return this.createVersion;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -483,7 +519,9 @@ public class PutSlotTypeResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (getChecksum() != null)
             sb.append("Checksum: ").append(getChecksum()).append(",");
         if (getValueSelectionStrategy() != null)
-            sb.append("ValueSelectionStrategy: ").append(getValueSelectionStrategy());
+            sb.append("ValueSelectionStrategy: ").append(getValueSelectionStrategy()).append(",");
+        if (getCreateVersion() != null)
+            sb.append("CreateVersion: ").append(getCreateVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -530,6 +568,10 @@ public class PutSlotTypeResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getValueSelectionStrategy() != null && other.getValueSelectionStrategy().equals(this.getValueSelectionStrategy()) == false)
             return false;
+        if (other.getCreateVersion() == null ^ this.getCreateVersion() == null)
+            return false;
+        if (other.getCreateVersion() != null && other.getCreateVersion().equals(this.getCreateVersion()) == false)
+            return false;
         return true;
     }
 
@@ -546,6 +588,7 @@ public class PutSlotTypeResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getChecksum() == null) ? 0 : getChecksum().hashCode());
         hashCode = prime * hashCode + ((getValueSelectionStrategy() == null) ? 0 : getValueSelectionStrategy().hashCode());
+        hashCode = prime * hashCode + ((getCreateVersion() == null) ? 0 : getCreateVersion().hashCode());
         return hashCode;
     }
 

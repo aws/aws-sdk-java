@@ -119,6 +119,8 @@ public class PutIntentResult extends com.amazonaws.AmazonWebServiceResult<com.am
      */
     private String checksum;
 
+    private Boolean createVersion;
+
     /**
      * <p>
      * The name of the intent.
@@ -810,6 +812,40 @@ public class PutIntentResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
+     * @param createVersion
+     */
+
+    public void setCreateVersion(Boolean createVersion) {
+        this.createVersion = createVersion;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean getCreateVersion() {
+        return this.createVersion;
+    }
+
+    /**
+     * @param createVersion
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutIntentResult withCreateVersion(Boolean createVersion) {
+        setCreateVersion(createVersion);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean isCreateVersion() {
+        return this.createVersion;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -849,7 +885,9 @@ public class PutIntentResult extends com.amazonaws.AmazonWebServiceResult<com.am
         if (getVersion() != null)
             sb.append("Version: ").append(getVersion()).append(",");
         if (getChecksum() != null)
-            sb.append("Checksum: ").append(getChecksum());
+            sb.append("Checksum: ").append(getChecksum()).append(",");
+        if (getCreateVersion() != null)
+            sb.append("CreateVersion: ").append(getCreateVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -924,6 +962,10 @@ public class PutIntentResult extends com.amazonaws.AmazonWebServiceResult<com.am
             return false;
         if (other.getChecksum() != null && other.getChecksum().equals(this.getChecksum()) == false)
             return false;
+        if (other.getCreateVersion() == null ^ this.getCreateVersion() == null)
+            return false;
+        if (other.getCreateVersion() != null && other.getCreateVersion().equals(this.getCreateVersion()) == false)
+            return false;
         return true;
     }
 
@@ -947,6 +989,7 @@ public class PutIntentResult extends com.amazonaws.AmazonWebServiceResult<com.am
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getChecksum() == null) ? 0 : getChecksum().hashCode());
+        hashCode = prime * hashCode + ((getCreateVersion() == null) ? 0 : getCreateVersion().hashCode());
         return hashCode;
     }
 

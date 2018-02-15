@@ -144,6 +144,8 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      */
     private Boolean childDirected;
 
+    private Boolean createVersion;
+
     /**
      * <p>
      * The name of the bot.
@@ -1099,6 +1101,40 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     }
 
     /**
+     * @param createVersion
+     */
+
+    public void setCreateVersion(Boolean createVersion) {
+        this.createVersion = createVersion;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean getCreateVersion() {
+        return this.createVersion;
+    }
+
+    /**
+     * @param createVersion
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutBotResult withCreateVersion(Boolean createVersion) {
+        setCreateVersion(createVersion);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean isCreateVersion() {
+        return this.createVersion;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1138,7 +1174,9 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
         if (getLocale() != null)
             sb.append("Locale: ").append(getLocale()).append(",");
         if (getChildDirected() != null)
-            sb.append("ChildDirected: ").append(getChildDirected());
+            sb.append("ChildDirected: ").append(getChildDirected()).append(",");
+        if (getCreateVersion() != null)
+            sb.append("CreateVersion: ").append(getCreateVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -1213,6 +1251,10 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
             return false;
         if (other.getChildDirected() != null && other.getChildDirected().equals(this.getChildDirected()) == false)
             return false;
+        if (other.getCreateVersion() == null ^ this.getCreateVersion() == null)
+            return false;
+        if (other.getCreateVersion() != null && other.getCreateVersion().equals(this.getCreateVersion()) == false)
+            return false;
         return true;
     }
 
@@ -1236,6 +1278,7 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getLocale() == null) ? 0 : getLocale().hashCode());
         hashCode = prime * hashCode + ((getChildDirected() == null) ? 0 : getChildDirected().hashCode());
+        hashCode = prime * hashCode + ((getCreateVersion() == null) ? 0 : getCreateVersion().hashCode());
         return hashCode;
     }
 

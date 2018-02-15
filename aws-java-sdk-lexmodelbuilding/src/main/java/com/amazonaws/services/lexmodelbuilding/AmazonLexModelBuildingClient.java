@@ -1773,6 +1773,64 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Gets information about an import job started with the <code>StartImport</code> operation.
+     * </p>
+     * 
+     * @param getImportRequest
+     * @return Result of the GetImport operation returned by the service.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource and try again.
+     * @throws LimitExceededException
+     *         The request exceeded a limit. Try your request again.
+     * @throws InternalFailureException
+     *         An internal Amazon Lex error occurred. Try your request again.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and try again.
+     * @sample AmazonLexModelBuilding.GetImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetImport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetImportResult getImport(GetImportRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetImport(request);
+    }
+
+    @SdkInternalApi
+    final GetImportResult executeGetImport(GetImportRequest getImportRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getImportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetImportRequest> request = null;
+        Response<GetImportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetImportRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getImportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetImportResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetImportResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns information about an intent. In addition to the intent name, you must specify the intent version.
      * </p>
      * <p>
@@ -2600,6 +2658,62 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<PutSlotTypeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutSlotTypeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts a job to import a resource to Amazon Lex.
+     * </p>
+     * 
+     * @param startImportRequest
+     * @return Result of the StartImport operation returned by the service.
+     * @throws LimitExceededException
+     *         The request exceeded a limit. Try your request again.
+     * @throws InternalFailureException
+     *         An internal Amazon Lex error occurred. Try your request again.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and try again.
+     * @sample AmazonLexModelBuilding.StartImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/StartImport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StartImportResult startImport(StartImportRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartImport(request);
+    }
+
+    @SdkInternalApi
+    final StartImportResult executeStartImport(StartImportRequest startImportRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startImportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartImportRequest> request = null;
+        Response<StartImportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartImportRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startImportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartImportResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartImportResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

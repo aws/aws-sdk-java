@@ -20,7 +20,9 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ResourceType {
 
-    BOT("BOT");
+    BOT("BOT"),
+    INTENT("INTENT"),
+    SLOT_TYPE("SLOT_TYPE");
 
     private String value;
 

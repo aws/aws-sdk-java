@@ -20,7 +20,9 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Locale {
 
-    EnUS("en-US");
+    EnUS("en-US"),
+    EnGB("en-GB"),
+    DeDE("de-DE");
 
     private String value;
 

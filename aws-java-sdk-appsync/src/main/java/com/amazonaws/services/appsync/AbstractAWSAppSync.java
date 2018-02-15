@@ -138,6 +138,11 @@ public class AbstractAWSAppSync implements AWSAppSync {
     }
 
     @Override
+    public UpdateApiKeyResult updateApiKey(UpdateApiKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateDataSourceResult updateDataSource(UpdateDataSourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

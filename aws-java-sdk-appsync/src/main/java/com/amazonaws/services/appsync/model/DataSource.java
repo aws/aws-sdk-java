@@ -50,6 +50,29 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of the data source.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>AWS_LAMBDA</b>: The data source is an AWS Lambda function.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>NONE</b>: There is no data source. This type is used when the required information can be computed on the fly
+     * without connecting to a back-end data source.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String type;
     /**
@@ -201,9 +224,54 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of the data source.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>AWS_LAMBDA</b>: The data source is an AWS Lambda function.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>NONE</b>: There is no data source. This type is used when the required information can be computed on the fly
+     * without connecting to a back-end data source.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of the data source.
+     *        The type of the data source.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service domain.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>AWS_LAMBDA</b>: The data source is an AWS Lambda function.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>NONE</b>: There is no data source. This type is used when the required information can be computed on
+     *        the fly without connecting to a back-end data source.
+     *        </p>
+     *        </li>
      * @see DataSourceType
      */
 
@@ -215,8 +283,53 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of the data source.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>AWS_LAMBDA</b>: The data source is an AWS Lambda function.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>NONE</b>: There is no data source. This type is used when the required information can be computed on the fly
+     * without connecting to a back-end data source.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The type of the data source.
+     * @return The type of the data source.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service domain.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>AWS_LAMBDA</b>: The data source is an AWS Lambda function.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>NONE</b>: There is no data source. This type is used when the required information can be computed on
+     *         the fly without connecting to a back-end data source.
+     *         </p>
+     *         </li>
      * @see DataSourceType
      */
 
@@ -228,9 +341,54 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of the data source.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>AWS_LAMBDA</b>: The data source is an AWS Lambda function.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>NONE</b>: There is no data source. This type is used when the required information can be computed on the fly
+     * without connecting to a back-end data source.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of the data source.
+     *        The type of the data source.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service domain.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>AWS_LAMBDA</b>: The data source is an AWS Lambda function.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>NONE</b>: There is no data source. This type is used when the required information can be computed on
+     *        the fly without connecting to a back-end data source.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSourceType
      */
@@ -244,9 +402,54 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of the data source.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>AWS_LAMBDA</b>: The data source is an AWS Lambda function.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>NONE</b>: There is no data source. This type is used when the required information can be computed on the fly
+     * without connecting to a back-end data source.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of the data source.
+     *        The type of the data source.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>AMAZON_DYNAMODB</b>: The data source is an Amazon DynamoDB table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>AMAZON_ELASTICSEARCH</b>: The data source is an Amazon Elasticsearch Service domain.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>AWS_LAMBDA</b>: The data source is an AWS Lambda function.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>NONE</b>: There is no data source. This type is used when the required information can be computed on
+     *        the fly without connecting to a back-end data source.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSourceType
      */

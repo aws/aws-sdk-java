@@ -54,7 +54,7 @@ public class CreateResolverRequest extends com.amazonaws.AmazonWebServiceRequest
      * The mapping template to be used for requests.
      * </p>
      * <p>
-     * A resolver use a request mapping template to convert a GraphQL expression into a format that a data source can
+     * A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can
      * understand. Mapping templates are written in Apache Velocity Template Language (VTL).
      * </p>
      */
@@ -231,15 +231,15 @@ public class CreateResolverRequest extends com.amazonaws.AmazonWebServiceRequest
      * The mapping template to be used for requests.
      * </p>
      * <p>
-     * A resolver use a request mapping template to convert a GraphQL expression into a format that a data source can
+     * A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can
      * understand. Mapping templates are written in Apache Velocity Template Language (VTL).
      * </p>
      * 
      * @param requestMappingTemplate
      *        The mapping template to be used for requests.</p>
      *        <p>
-     *        A resolver use a request mapping template to convert a GraphQL expression into a format that a data source
-     *        can understand. Mapping templates are written in Apache Velocity Template Language (VTL).
+     *        A resolver uses a request mapping template to convert a GraphQL expression into a format that a data
+     *        source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).
      */
 
     public void setRequestMappingTemplate(String requestMappingTemplate) {
@@ -251,13 +251,13 @@ public class CreateResolverRequest extends com.amazonaws.AmazonWebServiceRequest
      * The mapping template to be used for requests.
      * </p>
      * <p>
-     * A resolver use a request mapping template to convert a GraphQL expression into a format that a data source can
+     * A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can
      * understand. Mapping templates are written in Apache Velocity Template Language (VTL).
      * </p>
      * 
      * @return The mapping template to be used for requests.</p>
      *         <p>
-     *         A resolver use a request mapping template to convert a GraphQL expression into a format that a data
+     *         A resolver uses a request mapping template to convert a GraphQL expression into a format that a data
      *         source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).
      */
 
@@ -270,15 +270,15 @@ public class CreateResolverRequest extends com.amazonaws.AmazonWebServiceRequest
      * The mapping template to be used for requests.
      * </p>
      * <p>
-     * A resolver use a request mapping template to convert a GraphQL expression into a format that a data source can
+     * A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can
      * understand. Mapping templates are written in Apache Velocity Template Language (VTL).
      * </p>
      * 
      * @param requestMappingTemplate
      *        The mapping template to be used for requests.</p>
      *        <p>
-     *        A resolver use a request mapping template to convert a GraphQL expression into a format that a data source
-     *        can understand. Mapping templates are written in Apache Velocity Template Language (VTL).
+     *        A resolver uses a request mapping template to convert a GraphQL expression into a format that a data
+     *        source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

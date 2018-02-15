@@ -108,6 +108,10 @@ public class PutBotResultJsonUnmarshaller implements Unmarshaller<PutBotResult, 
                     context.nextToken();
                     putBotResult.setChildDirected(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("createVersion", targetDepth)) {
+                    context.nextToken();
+                    putBotResult.setCreateVersion(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

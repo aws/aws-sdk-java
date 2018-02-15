@@ -730,6 +730,37 @@ public interface AWSAppSyncAsync extends AWSAppSync {
 
     /**
      * <p>
+     * Updates an API key.
+     * </p>
+     * 
+     * @param updateApiKeyRequest
+     * @return A Java Future containing the result of the UpdateApiKey operation returned by the service.
+     * @sample AWSAppSyncAsync.UpdateApiKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateApiKeyResult> updateApiKeyAsync(UpdateApiKeyRequest updateApiKeyRequest);
+
+    /**
+     * <p>
+     * Updates an API key.
+     * </p>
+     * 
+     * @param updateApiKeyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateApiKey operation returned by the service.
+     * @sample AWSAppSyncAsyncHandler.UpdateApiKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateApiKeyResult> updateApiKeyAsync(UpdateApiKeyRequest updateApiKeyRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateApiKeyRequest, UpdateApiKeyResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates a <code>DataSource</code> object.
      * </p>
      * 

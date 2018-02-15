@@ -42,7 +42,8 @@ public class ApiKey implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * The time when the API key expires.
+     * The time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the
+     * nearest hour.
      * </p>
      */
     private Long expires;
@@ -129,11 +130,13 @@ public class ApiKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time when the API key expires.
+     * The time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the
+     * nearest hour.
      * </p>
      * 
      * @param expires
-     *        The time when the API key expires.
+     *        The time after which the API key expires. The date is represented as seconds since the epoch, rounded down
+     *        to the nearest hour.
      */
 
     public void setExpires(Long expires) {
@@ -142,10 +145,12 @@ public class ApiKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time when the API key expires.
+     * The time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the
+     * nearest hour.
      * </p>
      * 
-     * @return The time when the API key expires.
+     * @return The time after which the API key expires. The date is represented as seconds since the epoch, rounded
+     *         down to the nearest hour.
      */
 
     public Long getExpires() {
@@ -154,11 +159,13 @@ public class ApiKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time when the API key expires.
+     * The time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the
+     * nearest hour.
      * </p>
      * 
      * @param expires
-     *        The time when the API key expires.
+     *        The time after which the API key expires. The date is represented as seconds since the epoch, rounded down
+     *        to the nearest hour.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

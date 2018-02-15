@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ExportType {
 
-    ALEXA_SKILLS_KIT("ALEXA_SKILLS_KIT");
+    ALEXA_SKILLS_KIT("ALEXA_SKILLS_KIT"),
+    LEX("LEX");
 
     private String value;
 

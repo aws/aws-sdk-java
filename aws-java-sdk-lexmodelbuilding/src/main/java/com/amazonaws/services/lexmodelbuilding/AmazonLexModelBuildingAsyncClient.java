@@ -824,6 +824,39 @@ public class AmazonLexModelBuildingAsyncClient extends AmazonLexModelBuildingCli
     }
 
     @Override
+    public java.util.concurrent.Future<GetImportResult> getImportAsync(GetImportRequest request) {
+
+        return getImportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetImportResult> getImportAsync(final GetImportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetImportRequest, GetImportResult> asyncHandler) {
+        final GetImportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetImportResult>() {
+            @Override
+            public GetImportResult call() throws Exception {
+                GetImportResult result = null;
+
+                try {
+                    result = executeGetImport(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetIntentResult> getIntentAsync(GetIntentRequest request) {
 
         return getIntentAsync(request, null);
@@ -1171,6 +1204,39 @@ public class AmazonLexModelBuildingAsyncClient extends AmazonLexModelBuildingCli
 
                 try {
                     result = executePutSlotType(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartImportResult> startImportAsync(StartImportRequest request) {
+
+        return startImportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartImportResult> startImportAsync(final StartImportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartImportRequest, StartImportResult> asyncHandler) {
+        final StartImportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartImportResult>() {
+            @Override
+            public StartImportResult call() throws Exception {
+                StartImportResult result = null;
+
+                try {
+                    result = executeStartImport(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

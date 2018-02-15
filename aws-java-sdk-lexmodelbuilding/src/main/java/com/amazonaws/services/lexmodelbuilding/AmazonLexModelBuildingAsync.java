@@ -1111,6 +1111,37 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
 
     /**
      * <p>
+     * Gets information about an import job started with the <code>StartImport</code> operation.
+     * </p>
+     * 
+     * @param getImportRequest
+     * @return A Java Future containing the result of the GetImport operation returned by the service.
+     * @sample AmazonLexModelBuildingAsync.GetImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetImport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetImportResult> getImportAsync(GetImportRequest getImportRequest);
+
+    /**
+     * <p>
+     * Gets information about an import job started with the <code>StartImport</code> operation.
+     * </p>
+     * 
+     * @param getImportRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetImport operation returned by the service.
+     * @sample AmazonLexModelBuildingAsyncHandler.GetImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetImport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetImportResult> getImportAsync(GetImportRequest getImportRequest,
+            com.amazonaws.handlers.AsyncHandler<GetImportRequest, GetImportResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about an intent. In addition to the intent name, you must specify the intent version.
      * </p>
      * <p>
@@ -1831,5 +1862,36 @@ public interface AmazonLexModelBuildingAsync extends AmazonLexModelBuilding {
      */
     java.util.concurrent.Future<PutSlotTypeResult> putSlotTypeAsync(PutSlotTypeRequest putSlotTypeRequest,
             com.amazonaws.handlers.AsyncHandler<PutSlotTypeRequest, PutSlotTypeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts a job to import a resource to Amazon Lex.
+     * </p>
+     * 
+     * @param startImportRequest
+     * @return A Java Future containing the result of the StartImport operation returned by the service.
+     * @sample AmazonLexModelBuildingAsync.StartImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/StartImport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartImportResult> startImportAsync(StartImportRequest startImportRequest);
+
+    /**
+     * <p>
+     * Starts a job to import a resource to Amazon Lex.
+     * </p>
+     * 
+     * @param startImportRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartImport operation returned by the service.
+     * @sample AmazonLexModelBuildingAsyncHandler.StartImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/StartImport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartImportResult> startImportAsync(StartImportRequest startImportRequest,
+            com.amazonaws.handlers.AsyncHandler<StartImportRequest, StartImportResult> asyncHandler);
 
 }

@@ -31,6 +31,8 @@ public class CreateApiKeyRequestMarshaller {
             .marshallLocationName("apiId").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<Long> EXPIRES_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("expires").build();
 
     private static final CreateApiKeyRequestMarshaller instance = new CreateApiKeyRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class CreateApiKeyRequestMarshaller {
         try {
             protocolMarshaller.marshall(createApiKeyRequest.getApiId(), APIID_BINDING);
             protocolMarshaller.marshall(createApiKeyRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createApiKeyRequest.getExpires(), EXPIRES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

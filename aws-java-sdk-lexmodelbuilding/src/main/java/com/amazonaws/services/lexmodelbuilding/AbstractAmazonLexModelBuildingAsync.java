@@ -327,6 +327,19 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     }
 
     @Override
+    public java.util.concurrent.Future<GetImportResult> getImportAsync(GetImportRequest request) {
+
+        return getImportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetImportResult> getImportAsync(GetImportRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetImportRequest, GetImportResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetIntentResult> getIntentAsync(GetIntentRequest request) {
 
         return getIntentAsync(request, null);
@@ -465,6 +478,19 @@ public class AbstractAmazonLexModelBuildingAsync extends AbstractAmazonLexModelB
     @Override
     public java.util.concurrent.Future<PutSlotTypeResult> putSlotTypeAsync(PutSlotTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<PutSlotTypeRequest, PutSlotTypeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartImportResult> startImportAsync(StartImportRequest request) {
+
+        return startImportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartImportResult> startImportAsync(StartImportRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartImportRequest, StartImportResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
