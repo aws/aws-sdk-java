@@ -1,7 +1,15 @@
-# __1.11.278__ __2018-02-14__
+# __1.11.279__ __2018-02-15__
 ## __AWS AppSync__
   - ### Features
     - AWS AppSync now supports for None Data Source, CreateApiKey now supports setting expiration on API keys, new API UpdateApiKey supports updating expiration on API keys. 
+
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - Nielsen ID3 tags can now be inserted into transport stream (TS) and HLS outputs. For more information on Nielsen configuration you can go to https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs.html#jobs-nielsenconfiguration
+
+## __Amazon GameLift__
+  - ### Features
+    - Updates to allow Fleets to run on On-Demand or Spot instances.
 
 ## __Amazon Lex Model Building Service__
   - ### Features

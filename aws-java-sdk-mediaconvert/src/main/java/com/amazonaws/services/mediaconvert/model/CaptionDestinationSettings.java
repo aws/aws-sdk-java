@@ -28,7 +28,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class CaptionDestinationSettings implements Serializable, Cloneable, StructuredPojo {
 
     private BurninDestinationSettings burninDestinationSettings;
-    /** Type of Caption output, including Burn-In, Embedded, SCC, SRT, TTML, WebVTT, DVB-Sub, Teletext. */
+
     private String destinationType;
 
     private DvbSubDestinationSettings dvbSubDestinationSettings;
@@ -36,7 +36,7 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     private SccDestinationSettings sccDestinationSettings;
 
     private TeletextDestinationSettings teletextDestinationSettings;
-    /** Settings specific to TTML caption outputs, including Pass style information (TtmlStylePassthrough). */
+
     private TtmlDestinationSettings ttmlDestinationSettings;
 
     /**
@@ -66,10 +66,7 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Type of Caption output, including Burn-In, Embedded, SCC, SRT, TTML, WebVTT, DVB-Sub, Teletext.
-     * 
      * @param destinationType
-     *        Type of Caption output, including Burn-In, Embedded, SCC, SRT, TTML, WebVTT, DVB-Sub, Teletext.
      * @see CaptionDestinationType
      */
 
@@ -78,9 +75,7 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Type of Caption output, including Burn-In, Embedded, SCC, SRT, TTML, WebVTT, DVB-Sub, Teletext.
-     * 
-     * @return Type of Caption output, including Burn-In, Embedded, SCC, SRT, TTML, WebVTT, DVB-Sub, Teletext.
+     * @return
      * @see CaptionDestinationType
      */
 
@@ -89,10 +84,7 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Type of Caption output, including Burn-In, Embedded, SCC, SRT, TTML, WebVTT, DVB-Sub, Teletext.
-     * 
      * @param destinationType
-     *        Type of Caption output, including Burn-In, Embedded, SCC, SRT, TTML, WebVTT, DVB-Sub, Teletext.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CaptionDestinationType
      */
@@ -103,10 +95,7 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Type of Caption output, including Burn-In, Embedded, SCC, SRT, TTML, WebVTT, DVB-Sub, Teletext.
-     * 
      * @param destinationType
-     *        Type of Caption output, including Burn-In, Embedded, SCC, SRT, TTML, WebVTT, DVB-Sub, Teletext.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CaptionDestinationType
      */
@@ -195,10 +184,7 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Settings specific to TTML caption outputs, including Pass style information (TtmlStylePassthrough).
-     * 
      * @param ttmlDestinationSettings
-     *        Settings specific to TTML caption outputs, including Pass style information (TtmlStylePassthrough).
      */
 
     public void setTtmlDestinationSettings(TtmlDestinationSettings ttmlDestinationSettings) {
@@ -206,9 +192,7 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Settings specific to TTML caption outputs, including Pass style information (TtmlStylePassthrough).
-     * 
-     * @return Settings specific to TTML caption outputs, including Pass style information (TtmlStylePassthrough).
+     * @return
      */
 
     public TtmlDestinationSettings getTtmlDestinationSettings() {
@@ -216,10 +200,7 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Settings specific to TTML caption outputs, including Pass style information (TtmlStylePassthrough).
-     * 
      * @param ttmlDestinationSettings
-     *        Settings specific to TTML caption outputs, including Pass style information (TtmlStylePassthrough).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

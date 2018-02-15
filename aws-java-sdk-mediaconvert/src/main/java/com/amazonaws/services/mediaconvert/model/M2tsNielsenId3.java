@@ -15,17 +15,18 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output.
+ * If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag
+ * will be inserted in the output.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public enum M2tsScte35Source {
+public enum M2tsNielsenId3 {
 
-    PASSTHROUGH("PASSTHROUGH"),
+    INSERT("INSERT"),
     NONE("NONE");
 
     private String value;
 
-    private M2tsScte35Source(String value) {
+    private M2tsNielsenId3(String value) {
         this.value = value;
     }
 
@@ -39,17 +40,17 @@ public enum M2tsScte35Source {
      *
      * @param value
      *        real value
-     * @return M2tsScte35Source corresponding to the value
+     * @return M2tsNielsenId3 corresponding to the value
      *
      * @throws IllegalArgumentException
      *         If the specified value does not map to one of the known values in this enum.
      */
-    public static M2tsScte35Source fromValue(String value) {
+    public static M2tsNielsenId3 fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         }
 
-        for (M2tsScte35Source enumEntry : M2tsScte35Source.values()) {
+        for (M2tsNielsenId3 enumEntry : M2tsNielsenId3.values()) {
             if (enumEntry.toString().equals(value)) {
                 return enumEntry;
             }

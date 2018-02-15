@@ -125,8 +125,8 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
     private java.util.Date startTime;
     /**
      * <p>
-     * Time stamp indicating when the matchmaking request stopped being processed due to successful completion, timeout,
-     * or cancellation. Format is a number expressed in Unix time as milliseconds (for example "1469498468.057").
+     * Time stamp indicating when this matchmaking request stopped being processed due to success, failure, or
+     * cancellation. Format is a number expressed in Unix time as milliseconds (for example "1469498468.057").
      * </p>
      */
     private java.util.Date endTime;
@@ -861,14 +861,13 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Time stamp indicating when the matchmaking request stopped being processed due to successful completion, timeout,
-     * or cancellation. Format is a number expressed in Unix time as milliseconds (for example "1469498468.057").
+     * Time stamp indicating when this matchmaking request stopped being processed due to success, failure, or
+     * cancellation. Format is a number expressed in Unix time as milliseconds (for example "1469498468.057").
      * </p>
      * 
      * @param endTime
-     *        Time stamp indicating when the matchmaking request stopped being processed due to successful completion,
-     *        timeout, or cancellation. Format is a number expressed in Unix time as milliseconds (for example
-     *        "1469498468.057").
+     *        Time stamp indicating when this matchmaking request stopped being processed due to success, failure, or
+     *        cancellation. Format is a number expressed in Unix time as milliseconds (for example "1469498468.057").
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -877,13 +876,12 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Time stamp indicating when the matchmaking request stopped being processed due to successful completion, timeout,
-     * or cancellation. Format is a number expressed in Unix time as milliseconds (for example "1469498468.057").
+     * Time stamp indicating when this matchmaking request stopped being processed due to success, failure, or
+     * cancellation. Format is a number expressed in Unix time as milliseconds (for example "1469498468.057").
      * </p>
      * 
-     * @return Time stamp indicating when the matchmaking request stopped being processed due to successful completion,
-     *         timeout, or cancellation. Format is a number expressed in Unix time as milliseconds (for example
-     *         "1469498468.057").
+     * @return Time stamp indicating when this matchmaking request stopped being processed due to success, failure, or
+     *         cancellation. Format is a number expressed in Unix time as milliseconds (for example "1469498468.057").
      */
 
     public java.util.Date getEndTime() {
@@ -892,14 +890,13 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Time stamp indicating when the matchmaking request stopped being processed due to successful completion, timeout,
-     * or cancellation. Format is a number expressed in Unix time as milliseconds (for example "1469498468.057").
+     * Time stamp indicating when this matchmaking request stopped being processed due to success, failure, or
+     * cancellation. Format is a number expressed in Unix time as milliseconds (for example "1469498468.057").
      * </p>
      * 
      * @param endTime
-     *        Time stamp indicating when the matchmaking request stopped being processed due to successful completion,
-     *        timeout, or cancellation. Format is a number expressed in Unix time as milliseconds (for example
-     *        "1469498468.057").
+     *        Time stamp indicating when this matchmaking request stopped being processed due to success, failure, or
+     *        cancellation. Format is a number expressed in Unix time as milliseconds (for example "1469498468.057").
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

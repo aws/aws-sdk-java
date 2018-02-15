@@ -15,8 +15,7 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output. This is only available
- * for certain containers.
+ * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum M3u8Scte35Source {

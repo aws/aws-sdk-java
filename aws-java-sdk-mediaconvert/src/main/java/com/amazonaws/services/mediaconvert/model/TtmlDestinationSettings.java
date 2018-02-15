@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Settings for TTML caption output
+ * Settings specific to TTML caption outputs, including Pass style information (TtmlStylePassthrough).
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/TtmlDestinationSettings"
  *      target="_top">AWS API Documentation</a>

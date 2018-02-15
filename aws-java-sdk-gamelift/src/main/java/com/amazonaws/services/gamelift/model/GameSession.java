@@ -148,6 +148,13 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
+     * Provides additional information about game session status. <code>INTERRUPTED</code> indicates that the game
+     * session was hosted on a spot instance that was reclaimed, causing the active game session to be terminated.
+     * </p>
+     */
+    private String statusReason;
+    /**
+     * <p>
      * Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game
      * server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
      * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
@@ -588,6 +595,94 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     public GameSession withStatus(GameSessionStatus status) {
         this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides additional information about game session status. <code>INTERRUPTED</code> indicates that the game
+     * session was hosted on a spot instance that was reclaimed, causing the active game session to be terminated.
+     * </p>
+     * 
+     * @param statusReason
+     *        Provides additional information about game session status. <code>INTERRUPTED</code> indicates that the
+     *        game session was hosted on a spot instance that was reclaimed, causing the active game session to be
+     *        terminated.
+     * @see GameSessionStatusReason
+     */
+
+    public void setStatusReason(String statusReason) {
+        this.statusReason = statusReason;
+    }
+
+    /**
+     * <p>
+     * Provides additional information about game session status. <code>INTERRUPTED</code> indicates that the game
+     * session was hosted on a spot instance that was reclaimed, causing the active game session to be terminated.
+     * </p>
+     * 
+     * @return Provides additional information about game session status. <code>INTERRUPTED</code> indicates that the
+     *         game session was hosted on a spot instance that was reclaimed, causing the active game session to be
+     *         terminated.
+     * @see GameSessionStatusReason
+     */
+
+    public String getStatusReason() {
+        return this.statusReason;
+    }
+
+    /**
+     * <p>
+     * Provides additional information about game session status. <code>INTERRUPTED</code> indicates that the game
+     * session was hosted on a spot instance that was reclaimed, causing the active game session to be terminated.
+     * </p>
+     * 
+     * @param statusReason
+     *        Provides additional information about game session status. <code>INTERRUPTED</code> indicates that the
+     *        game session was hosted on a spot instance that was reclaimed, causing the active game session to be
+     *        terminated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see GameSessionStatusReason
+     */
+
+    public GameSession withStatusReason(String statusReason) {
+        setStatusReason(statusReason);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides additional information about game session status. <code>INTERRUPTED</code> indicates that the game
+     * session was hosted on a spot instance that was reclaimed, causing the active game session to be terminated.
+     * </p>
+     * 
+     * @param statusReason
+     *        Provides additional information about game session status. <code>INTERRUPTED</code> indicates that the
+     *        game session was hosted on a spot instance that was reclaimed, causing the active game session to be
+     *        terminated.
+     * @see GameSessionStatusReason
+     */
+
+    public void setStatusReason(GameSessionStatusReason statusReason) {
+        withStatusReason(statusReason);
+    }
+
+    /**
+     * <p>
+     * Provides additional information about game session status. <code>INTERRUPTED</code> indicates that the game
+     * session was hosted on a spot instance that was reclaimed, causing the active game session to be terminated.
+     * </p>
+     * 
+     * @param statusReason
+     *        Provides additional information about game session status. <code>INTERRUPTED</code> indicates that the
+     *        game session was hosted on a spot instance that was reclaimed, causing the active game session to be
+     *        terminated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see GameSessionStatusReason
+     */
+
+    public GameSession withStatusReason(GameSessionStatusReason statusReason) {
+        this.statusReason = statusReason.toString();
         return this;
     }
 
@@ -1066,6 +1161,8 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
             sb.append("MaximumPlayerSessionCount: ").append(getMaximumPlayerSessionCount()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getStatusReason() != null)
+            sb.append("StatusReason: ").append(getStatusReason()).append(",");
         if (getGameProperties() != null)
             sb.append("GameProperties: ").append(getGameProperties()).append(",");
         if (getIpAddress() != null)
@@ -1126,6 +1223,10 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getStatusReason() == null ^ this.getStatusReason() == null)
+            return false;
+        if (other.getStatusReason() != null && other.getStatusReason().equals(this.getStatusReason()) == false)
+            return false;
         if (other.getGameProperties() == null ^ this.getGameProperties() == null)
             return false;
         if (other.getGameProperties() != null && other.getGameProperties().equals(this.getGameProperties()) == false)
@@ -1170,6 +1271,7 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCurrentPlayerSessionCount() == null) ? 0 : getCurrentPlayerSessionCount().hashCode());
         hashCode = prime * hashCode + ((getMaximumPlayerSessionCount() == null) ? 0 : getMaximumPlayerSessionCount().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
         hashCode = prime * hashCode + ((getGameProperties() == null) ? 0 : getGameProperties().hashCode());
         hashCode = prime * hashCode + ((getIpAddress() == null) ? 0 : getIpAddress().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());

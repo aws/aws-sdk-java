@@ -10,22 +10,22 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.mediaconvert.model;
+package com.amazonaws.services.gamelift.model;
 
 import javax.annotation.Generated;
 
 /**
- * Enables SCTE-35 passthrough (scte35Source) to pass any SCTE-35 signals from input to output.
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public enum M2tsScte35Source {
+public enum FleetType {
 
-    PASSTHROUGH("PASSTHROUGH"),
-    NONE("NONE");
+    ON_DEMAND("ON_DEMAND"),
+    SPOT("SPOT");
 
     private String value;
 
-    private M2tsScte35Source(String value) {
+    private FleetType(String value) {
         this.value = value;
     }
 
@@ -39,17 +39,17 @@ public enum M2tsScte35Source {
      *
      * @param value
      *        real value
-     * @return M2tsScte35Source corresponding to the value
+     * @return FleetType corresponding to the value
      *
      * @throws IllegalArgumentException
      *         If the specified value does not map to one of the known values in this enum.
      */
-    public static M2tsScte35Source fromValue(String value) {
+    public static FleetType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         }
 
-        for (M2tsScte35Source enumEntry : M2tsScte35Source.values()) {
+        for (FleetType enumEntry : FleetType.values()) {
             if (enumEntry.toString().equals(value)) {
                 return enumEntry;
             }

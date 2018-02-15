@@ -56,6 +56,14 @@ public class FleetAttributesJsonUnmarshaller implements Unmarshaller<FleetAttrib
                     context.nextToken();
                     fleetAttributes.setFleetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("FleetType", targetDepth)) {
+                    context.nextToken();
+                    fleetAttributes.setFleetType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("InstanceType", targetDepth)) {
+                    context.nextToken();
+                    fleetAttributes.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();
                     fleetAttributes.setDescription(context.getUnmarshaller(String.class).unmarshall(context));

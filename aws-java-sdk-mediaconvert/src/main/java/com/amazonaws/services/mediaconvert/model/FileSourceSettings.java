@@ -29,7 +29,7 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
     private String convert608To708;
     /**
      * External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl',
-     * 'srt', and 'smi'. Auto-populated when Infer External Filename is checked.
+     * 'srt', and 'smi'.
      */
     private String sourceFile;
     /** Specifies a time delta in seconds to offset the captions from the source file. */
@@ -77,11 +77,11 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl',
-     * 'srt', and 'smi'. Auto-populated when Infer External Filename is checked.
+     * 'srt', and 'smi'.
      * 
      * @param sourceFile
      *        External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp',
-     *        'stl', 'srt', and 'smi'. Auto-populated when Infer External Filename is checked.
+     *        'stl', 'srt', and 'smi'.
      */
 
     public void setSourceFile(String sourceFile) {
@@ -90,10 +90,10 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl',
-     * 'srt', and 'smi'. Auto-populated when Infer External Filename is checked.
+     * 'srt', and 'smi'.
      * 
      * @return External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp',
-     *         'stl', 'srt', and 'smi'. Auto-populated when Infer External Filename is checked.
+     *         'stl', 'srt', and 'smi'.
      */
 
     public String getSourceFile() {
@@ -102,11 +102,11 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl',
-     * 'srt', and 'smi'. Auto-populated when Infer External Filename is checked.
+     * 'srt', and 'smi'.
      * 
      * @param sourceFile
      *        External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp',
-     *        'stl', 'srt', and 'smi'. Auto-populated when Infer External Filename is checked.
+     *        'stl', 'srt', and 'smi'.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

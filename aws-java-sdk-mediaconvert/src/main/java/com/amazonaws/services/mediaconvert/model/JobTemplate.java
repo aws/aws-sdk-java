@@ -46,7 +46,7 @@ public class JobTemplate implements Serializable, Cloneable, StructuredPojo {
 
     private JobTemplateSettings settings;
     /**
-     * A job template can be of two types: system or custom. System or built-in job templates can’t be modified or
+     * A job template can be of two types: system or custom. System or built-in job templates can't be modified or
      * deleted by the user.
      */
     private String type;
@@ -322,11 +322,11 @@ public class JobTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A job template can be of two types: system or custom. System or built-in job templates can’t be modified or
+     * A job template can be of two types: system or custom. System or built-in job templates can't be modified or
      * deleted by the user.
      * 
      * @param type
-     *        A job template can be of two types: system or custom. System or built-in job templates can’t be modified
+     *        A job template can be of two types: system or custom. System or built-in job templates can't be modified
      *        or deleted by the user.
      * @see Type
      */
@@ -336,10 +336,10 @@ public class JobTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A job template can be of two types: system or custom. System or built-in job templates can’t be modified or
+     * A job template can be of two types: system or custom. System or built-in job templates can't be modified or
      * deleted by the user.
      * 
-     * @return A job template can be of two types: system or custom. System or built-in job templates can’t be modified
+     * @return A job template can be of two types: system or custom. System or built-in job templates can't be modified
      *         or deleted by the user.
      * @see Type
      */
@@ -349,11 +349,11 @@ public class JobTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A job template can be of two types: system or custom. System or built-in job templates can’t be modified or
+     * A job template can be of two types: system or custom. System or built-in job templates can't be modified or
      * deleted by the user.
      * 
      * @param type
-     *        A job template can be of two types: system or custom. System or built-in job templates can’t be modified
+     *        A job template can be of two types: system or custom. System or built-in job templates can't be modified
      *        or deleted by the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Type
@@ -365,11 +365,11 @@ public class JobTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A job template can be of two types: system or custom. System or built-in job templates can’t be modified or
+     * A job template can be of two types: system or custom. System or built-in job templates can't be modified or
      * deleted by the user.
      * 
      * @param type
-     *        A job template can be of two types: system or custom. System or built-in job templates can’t be modified
+     *        A job template can be of two types: system or custom. System or built-in job templates can't be modified
      *        or deleted by the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Type

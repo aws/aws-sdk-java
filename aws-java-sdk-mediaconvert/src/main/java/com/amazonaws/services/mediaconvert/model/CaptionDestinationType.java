@@ -15,7 +15,7 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * Type of Caption output, including Burn-In, Embedded, SCC, SRT, TTML, WebVTT, DVB-Sub, Teletext.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum CaptionDestinationType {

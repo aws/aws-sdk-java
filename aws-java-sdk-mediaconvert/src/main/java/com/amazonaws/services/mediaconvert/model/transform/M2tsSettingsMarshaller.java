@@ -60,6 +60,8 @@ public class M2tsSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxPcrInterval").build();
     private static final MarshallingInfo<Integer> MINEBPINTERVAL_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("minEbpInterval").build();
+    private static final MarshallingInfo<String> NIELSENID3_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nielsenId3").build();
     private static final MarshallingInfo<Double> NULLPACKETBITRATE_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nullPacketBitrate").build();
     private static final MarshallingInfo<Integer> PATINTERVAL_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -88,6 +90,8 @@ public class M2tsSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("segmentationStyle").build();
     private static final MarshallingInfo<Double> SEGMENTATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("segmentationTime").build();
+    private static final MarshallingInfo<Integer> TIMEDMETADATAPID_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timedMetadataPid").build();
     private static final MarshallingInfo<Integer> TRANSPORTSTREAMID_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("transportStreamId").build();
     private static final MarshallingInfo<Integer> VIDEOPID_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -125,6 +129,7 @@ public class M2tsSettingsMarshaller {
             protocolMarshaller.marshall(m2tsSettings.getFragmentTime(), FRAGMENTTIME_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getMaxPcrInterval(), MAXPCRINTERVAL_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getMinEbpInterval(), MINEBPINTERVAL_BINDING);
+            protocolMarshaller.marshall(m2tsSettings.getNielsenId3(), NIELSENID3_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getNullPacketBitrate(), NULLPACKETBITRATE_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getPatInterval(), PATINTERVAL_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getPcrControl(), PCRCONTROL_BINDING);
@@ -139,6 +144,7 @@ public class M2tsSettingsMarshaller {
             protocolMarshaller.marshall(m2tsSettings.getSegmentationMarkers(), SEGMENTATIONMARKERS_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getSegmentationStyle(), SEGMENTATIONSTYLE_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getSegmentationTime(), SEGMENTATIONTIME_BINDING);
+            protocolMarshaller.marshall(m2tsSettings.getTimedMetadataPid(), TIMEDMETADATAPID_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getTransportStreamId(), TRANSPORTSTREAMID_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getVideoPid(), VIDEOPID_BINDING);
         } catch (Exception e) {

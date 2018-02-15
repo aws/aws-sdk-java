@@ -44,6 +44,8 @@ public class GameSessionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaximumPlayerSessionCount").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
+    private static final MarshallingInfo<String> STATUSREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusReason").build();
     private static final MarshallingInfo<List> GAMEPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GameProperties").build();
     private static final MarshallingInfo<String> IPADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -83,6 +85,7 @@ public class GameSessionMarshaller {
             protocolMarshaller.marshall(gameSession.getCurrentPlayerSessionCount(), CURRENTPLAYERSESSIONCOUNT_BINDING);
             protocolMarshaller.marshall(gameSession.getMaximumPlayerSessionCount(), MAXIMUMPLAYERSESSIONCOUNT_BINDING);
             protocolMarshaller.marshall(gameSession.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(gameSession.getStatusReason(), STATUSREASON_BINDING);
             protocolMarshaller.marshall(gameSession.getGameProperties(), GAMEPROPERTIES_BINDING);
             protocolMarshaller.marshall(gameSession.getIpAddress(), IPADDRESS_BINDING);
             protocolMarshaller.marshall(gameSession.getPort(), PORT_BINDING);

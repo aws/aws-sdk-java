@@ -26,7 +26,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AudioDescription implements Serializable, Cloneable, StructuredPojo {
 
-    /** Settings for Audio Normalization */
     private AudioNormalizationSettings audioNormalizationSettings;
     /**
      * Specifies which audio data to use from each input. In the simplest case, specify an
@@ -65,10 +64,7 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     private String streamName;
 
     /**
-     * Settings for Audio Normalization
-     * 
      * @param audioNormalizationSettings
-     *        Settings for Audio Normalization
      */
 
     public void setAudioNormalizationSettings(AudioNormalizationSettings audioNormalizationSettings) {
@@ -76,9 +72,7 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Settings for Audio Normalization
-     * 
-     * @return Settings for Audio Normalization
+     * @return
      */
 
     public AudioNormalizationSettings getAudioNormalizationSettings() {
@@ -86,10 +80,7 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Settings for Audio Normalization
-     * 
      * @param audioNormalizationSettings
-     *        Settings for Audio Normalization
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

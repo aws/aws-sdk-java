@@ -15,8 +15,7 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * If PASSTHROUGH, inserts ID3 timed metadata from the timed_metadata REST command into this output. Only available for
- * certain containers.
+ * If PASSTHROUGH, inserts ID3 timed metadata from the timed_metadata REST command into this output.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum TimedMetadata {

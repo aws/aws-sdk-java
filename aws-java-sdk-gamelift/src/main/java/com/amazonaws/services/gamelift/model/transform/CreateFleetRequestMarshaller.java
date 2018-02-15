@@ -56,6 +56,8 @@ public class CreateFleetRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PeerVpcAwsAccountId").build();
     private static final MarshallingInfo<String> PEERVPCID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("PeerVpcId").build();
+    private static final MarshallingInfo<String> FLEETTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("FleetType").build();
 
     private static final CreateFleetRequestMarshaller instance = new CreateFleetRequestMarshaller();
 
@@ -87,6 +89,7 @@ public class CreateFleetRequestMarshaller {
             protocolMarshaller.marshall(createFleetRequest.getMetricGroups(), METRICGROUPS_BINDING);
             protocolMarshaller.marshall(createFleetRequest.getPeerVpcAwsAccountId(), PEERVPCAWSACCOUNTID_BINDING);
             protocolMarshaller.marshall(createFleetRequest.getPeerVpcId(), PEERVPCID_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getFleetType(), FLEETTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

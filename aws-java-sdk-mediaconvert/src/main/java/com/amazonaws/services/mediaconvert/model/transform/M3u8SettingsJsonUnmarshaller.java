@@ -56,6 +56,10 @@ public class M3u8SettingsJsonUnmarshaller implements Unmarshaller<M3u8Settings, 
                     context.nextToken();
                     m3u8Settings.setAudioPids(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class)).unmarshall(context));
                 }
+                if (context.testExpression("nielsenId3", targetDepth)) {
+                    context.nextToken();
+                    m3u8Settings.setNielsenId3(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("patInterval", targetDepth)) {
                     context.nextToken();
                     m3u8Settings.setPatInterval(context.getUnmarshaller(Integer.class).unmarshall(context));

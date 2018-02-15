@@ -46,16 +46,6 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * Type of event being logged. The following events are currently in use:
      * </p>
      * <p>
-     * <b>General events:</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * GENERIC_EVENT -- An unspecified event has occurred.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
      * <b>Fleet creation events:</b>
      * </p>
      * <ul>
@@ -171,6 +161,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
+     * <b>Spot instance events:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * <b>Other fleet events:</b>
      * </p>
      * <ul>
@@ -189,6 +189,11 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * FLEET_DELETED -- A request to delete a fleet was initiated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GENERIC_EVENT -- An unspecified event has occurred.
      * </p>
      * </li>
      * </ul>
@@ -300,16 +305,6 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * Type of event being logged. The following events are currently in use:
      * </p>
      * <p>
-     * <b>General events:</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * GENERIC_EVENT -- An unspecified event has occurred.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
      * <b>Fleet creation events:</b>
      * </p>
      * <ul>
@@ -425,6 +420,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
+     * <b>Spot instance events:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * <b>Other fleet events:</b>
      * </p>
      * <ul>
@@ -445,20 +450,15 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * FLEET_DELETED -- A request to delete a fleet was initiated.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * GENERIC_EVENT -- An unspecified event has occurred.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param eventCode
      *        Type of event being logged. The following events are currently in use:</p>
-     *        <p>
-     *        <b>General events:</b>
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        GENERIC_EVENT -- An unspecified event has occurred.
-     *        </p>
-     *        </li>
-     *        </ul>
      *        <p>
      *        <b>Fleet creation events:</b>
      *        </p>
@@ -578,6 +578,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
+     *        <b>Spot instance events:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
      *        <b>Other fleet events:</b>
      *        </p>
      *        <ul>
@@ -598,6 +608,11 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        FLEET_DELETED -- A request to delete a fleet was initiated.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        GENERIC_EVENT -- An unspecified event has occurred.
+     *        </p>
+     *        </li>
      * @see EventCode
      */
 
@@ -609,16 +624,6 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Type of event being logged. The following events are currently in use:
      * </p>
-     * <p>
-     * <b>General events:</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * GENERIC_EVENT -- An unspecified event has occurred.
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * <b>Fleet creation events:</b>
      * </p>
@@ -735,6 +740,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
+     * <b>Spot instance events:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * <b>Other fleet events:</b>
      * </p>
      * <ul>
@@ -755,19 +770,14 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * FLEET_DELETED -- A request to delete a fleet was initiated.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * GENERIC_EVENT -- An unspecified event has occurred.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Type of event being logged. The following events are currently in use:</p>
-     *         <p>
-     *         <b>General events:</b>
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         GENERIC_EVENT -- An unspecified event has occurred.
-     *         </p>
-     *         </li>
-     *         </ul>
      *         <p>
      *         <b>Fleet creation events:</b>
      *         </p>
@@ -886,6 +896,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         </ul>
      *         <p>
+     *         <b>Spot instance events:</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
      *         <b>Other fleet events:</b>
      *         </p>
      *         <ul>
@@ -906,6 +926,11 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *         FLEET_DELETED -- A request to delete a fleet was initiated.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         GENERIC_EVENT -- An unspecified event has occurred.
+     *         </p>
+     *         </li>
      * @see EventCode
      */
 
@@ -917,16 +942,6 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Type of event being logged. The following events are currently in use:
      * </p>
-     * <p>
-     * <b>General events:</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * GENERIC_EVENT -- An unspecified event has occurred.
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * <b>Fleet creation events:</b>
      * </p>
@@ -1043,6 +1058,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
+     * <b>Spot instance events:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * <b>Other fleet events:</b>
      * </p>
      * <ul>
@@ -1063,20 +1088,15 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * FLEET_DELETED -- A request to delete a fleet was initiated.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * GENERIC_EVENT -- An unspecified event has occurred.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param eventCode
      *        Type of event being logged. The following events are currently in use:</p>
-     *        <p>
-     *        <b>General events:</b>
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        GENERIC_EVENT -- An unspecified event has occurred.
-     *        </p>
-     *        </li>
-     *        </ul>
      *        <p>
      *        <b>Fleet creation events:</b>
      *        </p>
@@ -1196,6 +1216,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
+     *        <b>Spot instance events:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
      *        <b>Other fleet events:</b>
      *        </p>
      *        <ul>
@@ -1214,6 +1244,11 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        FLEET_DELETED -- A request to delete a fleet was initiated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        GENERIC_EVENT -- An unspecified event has occurred.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1230,16 +1265,6 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * Type of event being logged. The following events are currently in use:
      * </p>
      * <p>
-     * <b>General events:</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * GENERIC_EVENT -- An unspecified event has occurred.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
      * <b>Fleet creation events:</b>
      * </p>
      * <ul>
@@ -1355,6 +1380,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
+     * <b>Spot instance events:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * <b>Other fleet events:</b>
      * </p>
      * <ul>
@@ -1375,20 +1410,15 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * FLEET_DELETED -- A request to delete a fleet was initiated.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * GENERIC_EVENT -- An unspecified event has occurred.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param eventCode
      *        Type of event being logged. The following events are currently in use:</p>
-     *        <p>
-     *        <b>General events:</b>
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        GENERIC_EVENT -- An unspecified event has occurred.
-     *        </p>
-     *        </li>
-     *        </ul>
      *        <p>
      *        <b>Fleet creation events:</b>
      *        </p>
@@ -1508,6 +1538,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
+     *        <b>Spot instance events:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
      *        <b>Other fleet events:</b>
      *        </p>
      *        <ul>
@@ -1526,6 +1566,11 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        FLEET_DELETED -- A request to delete a fleet was initiated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        GENERIC_EVENT -- An unspecified event has occurred.
      *        </p>
      *        </li>
      * @see EventCode
@@ -1540,16 +1585,6 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * Type of event being logged. The following events are currently in use:
      * </p>
      * <p>
-     * <b>General events:</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * GENERIC_EVENT -- An unspecified event has occurred.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
      * <b>Fleet creation events:</b>
      * </p>
      * <ul>
@@ -1665,6 +1700,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
+     * <b>Spot instance events:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * <b>Other fleet events:</b>
      * </p>
      * <ul>
@@ -1685,20 +1730,15 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * FLEET_DELETED -- A request to delete a fleet was initiated.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * GENERIC_EVENT -- An unspecified event has occurred.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param eventCode
      *        Type of event being logged. The following events are currently in use:</p>
-     *        <p>
-     *        <b>General events:</b>
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        GENERIC_EVENT -- An unspecified event has occurred.
-     *        </p>
-     *        </li>
-     *        </ul>
      *        <p>
      *        <b>Fleet creation events:</b>
      *        </p>
@@ -1818,6 +1858,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
+     *        <b>Spot instance events:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
      *        <b>Other fleet events:</b>
      *        </p>
      *        <ul>
@@ -1836,6 +1886,11 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        FLEET_DELETED -- A request to delete a fleet was initiated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        GENERIC_EVENT -- An unspecified event has occurred.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

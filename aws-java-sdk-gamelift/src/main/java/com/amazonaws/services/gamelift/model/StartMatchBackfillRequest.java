@@ -60,7 +60,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * PlayerID, PlayerAttributes, Team -- This information is maintained in the <a>GameSession</a> object,
+     * PlayerID, PlayerAttributes, Team -\\- This information is maintained in the <a>GameSession</a> object,
      * <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The
      * matchmaker data is in JSON syntax, formatted as a string. For more details, see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data"> Match
@@ -69,7 +69,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the region
+     * LatencyInMs -\\- If the matchmaker uses player latency, include a latency value, in milliseconds, for the region
      * that the game session is currently in. Do not include latency values for any other region.
      * </p>
      * </li>
@@ -245,7 +245,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * PlayerID, PlayerAttributes, Team -- This information is maintained in the <a>GameSession</a> object,
+     * PlayerID, PlayerAttributes, Team -\\- This information is maintained in the <a>GameSession</a> object,
      * <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The
      * matchmaker data is in JSON syntax, formatted as a string. For more details, see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data"> Match
@@ -254,7 +254,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the region
+     * LatencyInMs -\\- If the matchmaker uses player latency, include a latency value, in milliseconds, for the region
      * that the game session is currently in. Do not include latency values for any other region.
      * </p>
      * </li>
@@ -265,7 +265,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      *         <ul>
      *         <li>
      *         <p>
-     *         PlayerID, PlayerAttributes, Team -- This information is maintained in the <a>GameSession</a> object,
+     *         PlayerID, PlayerAttributes, Team -\\- This information is maintained in the <a>GameSession</a> object,
      *         <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The
      *         matchmaker data is in JSON syntax, formatted as a string. For more details, see <a
      *         href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
@@ -274,7 +274,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         <li>
      *         <p>
-     *         LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the
+     *         LatencyInMs -\\- If the matchmaker uses player latency, include a latency value, in milliseconds, for the
      *         region that the game session is currently in. Do not include latency values for any other region.
      *         </p>
      *         </li>
@@ -292,7 +292,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * PlayerID, PlayerAttributes, Team -- This information is maintained in the <a>GameSession</a> object,
+     * PlayerID, PlayerAttributes, Team -\\- This information is maintained in the <a>GameSession</a> object,
      * <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The
      * matchmaker data is in JSON syntax, formatted as a string. For more details, see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data"> Match
@@ -301,7 +301,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the region
+     * LatencyInMs -\\- If the matchmaker uses player latency, include a latency value, in milliseconds, for the region
      * that the game session is currently in. Do not include latency values for any other region.
      * </p>
      * </li>
@@ -313,7 +313,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        PlayerID, PlayerAttributes, Team -- This information is maintained in the <a>GameSession</a> object,
+     *        PlayerID, PlayerAttributes, Team -\\- This information is maintained in the <a>GameSession</a> object,
      *        <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The
      *        matchmaker data is in JSON syntax, formatted as a string. For more details, see <a
      *        href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
@@ -322,7 +322,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the
+     *        LatencyInMs -\\- If the matchmaker uses player latency, include a latency value, in milliseconds, for the
      *        region that the game session is currently in. Do not include latency values for any other region.
      *        </p>
      *        </li>
@@ -345,7 +345,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * PlayerID, PlayerAttributes, Team -- This information is maintained in the <a>GameSession</a> object,
+     * PlayerID, PlayerAttributes, Team -\\- This information is maintained in the <a>GameSession</a> object,
      * <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The
      * matchmaker data is in JSON syntax, formatted as a string. For more details, see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data"> Match
@@ -354,7 +354,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the region
+     * LatencyInMs -\\- If the matchmaker uses player latency, include a latency value, in milliseconds, for the region
      * that the game session is currently in. Do not include latency values for any other region.
      * </p>
      * </li>
@@ -371,7 +371,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        PlayerID, PlayerAttributes, Team -- This information is maintained in the <a>GameSession</a> object,
+     *        PlayerID, PlayerAttributes, Team -\\- This information is maintained in the <a>GameSession</a> object,
      *        <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The
      *        matchmaker data is in JSON syntax, formatted as a string. For more details, see <a
      *        href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
@@ -380,7 +380,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the
+     *        LatencyInMs -\\- If the matchmaker uses player latency, include a latency value, in milliseconds, for the
      *        region that the game session is currently in. Do not include latency values for any other region.
      *        </p>
      *        </li>
@@ -405,7 +405,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * PlayerID, PlayerAttributes, Team -- This information is maintained in the <a>GameSession</a> object,
+     * PlayerID, PlayerAttributes, Team -\\- This information is maintained in the <a>GameSession</a> object,
      * <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The
      * matchmaker data is in JSON syntax, formatted as a string. For more details, see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data"> Match
@@ -414,7 +414,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the region
+     * LatencyInMs -\\- If the matchmaker uses player latency, include a latency value, in milliseconds, for the region
      * that the game session is currently in. Do not include latency values for any other region.
      * </p>
      * </li>
@@ -426,7 +426,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        PlayerID, PlayerAttributes, Team -- This information is maintained in the <a>GameSession</a> object,
+     *        PlayerID, PlayerAttributes, Team -\\- This information is maintained in the <a>GameSession</a> object,
      *        <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The
      *        matchmaker data is in JSON syntax, formatted as a string. For more details, see <a
      *        href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
@@ -435,7 +435,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the
+     *        LatencyInMs -\\- If the matchmaker uses player latency, include a latency value, in milliseconds, for the
      *        region that the game session is currently in. Do not include latency values for any other region.
      *        </p>
      *        </li>

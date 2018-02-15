@@ -192,12 +192,17 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
- * <b>Start new game sessions with FlexMatch matchmaking</b>
+ * <b>Match players to game sessions with FlexMatch matchmaking</b>
  * </p>
  * <ul>
  * <li>
  * <p>
  * <a>StartMatchmaking</a> -- Request matchmaking for one players or a group who want to play together.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>StartMatchBackfill</a> - Request additional player matches to fill empty slots in an existing game session.
  * </p>
  * </li>
  * <li>
@@ -208,11 +213,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <li>
  * <p>
  * <a>AcceptMatch</a> -- Register that a player accepts a proposed match, for matches that require player acceptance.
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>StartMatchBackfill</a> - Request additional player matches to fill empty slots in an existing game session.
  * </p>
  * </li>
  * <li>

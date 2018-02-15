@@ -15,7 +15,7 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming)
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum OutputGroupType {

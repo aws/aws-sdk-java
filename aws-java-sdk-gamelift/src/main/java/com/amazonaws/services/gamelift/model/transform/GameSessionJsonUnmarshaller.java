@@ -80,6 +80,10 @@ public class GameSessionJsonUnmarshaller implements Unmarshaller<GameSession, Js
                     context.nextToken();
                     gameSession.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("StatusReason", targetDepth)) {
+                    context.nextToken();
+                    gameSession.setStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("GameProperties", targetDepth)) {
                     context.nextToken();
                     gameSession.setGameProperties(new ListUnmarshaller<GameProperty>(GamePropertyJsonUnmarshaller.getInstance()).unmarshall(context));
