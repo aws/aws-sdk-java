@@ -1,4 +1,4 @@
-# __1.11.279__ __2018-02-15__
+# __1.11.280__ __2018-02-16__
 ## __AWS AppSync__
   - ### Features
     - AWS AppSync now supports for None Data Source, CreateApiKey now supports setting expiration on API keys, new API UpdateApiKey supports updating expiration on API keys. 
@@ -14,6 +14,10 @@
 ## __Amazon Lex Model Building Service__
   - ### Features
     - Amazon Lex now provides the ability to export and import your Amazon Lex chatbot definition as a JSON file.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Updates RDS API to indicate whether a DBEngine supports read replicas.
 
 # __1.11.277__ __2018-02-13__
 ## __Amazon Glacier__

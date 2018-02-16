@@ -96,6 +96,12 @@ public class DBEngineVersion implements Serializable, Cloneable {
      * </p>
      */
     private Boolean supportsLogExportsToCloudwatchLogs;
+    /**
+     * <p>
+     * Indicates whether the database engine version supports read replicas.
+     * </p>
+     */
+    private Boolean supportsReadReplica;
 
     /**
      * <p>
@@ -712,6 +718,58 @@ public class DBEngineVersion implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether the database engine version supports read replicas.
+     * </p>
+     * 
+     * @param supportsReadReplica
+     *        Indicates whether the database engine version supports read replicas.
+     */
+
+    public void setSupportsReadReplica(Boolean supportsReadReplica) {
+        this.supportsReadReplica = supportsReadReplica;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the database engine version supports read replicas.
+     * </p>
+     * 
+     * @return Indicates whether the database engine version supports read replicas.
+     */
+
+    public Boolean getSupportsReadReplica() {
+        return this.supportsReadReplica;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the database engine version supports read replicas.
+     * </p>
+     * 
+     * @param supportsReadReplica
+     *        Indicates whether the database engine version supports read replicas.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBEngineVersion withSupportsReadReplica(Boolean supportsReadReplica) {
+        setSupportsReadReplica(supportsReadReplica);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the database engine version supports read replicas.
+     * </p>
+     * 
+     * @return Indicates whether the database engine version supports read replicas.
+     */
+
+    public Boolean isSupportsReadReplica() {
+        return this.supportsReadReplica;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -743,7 +801,9 @@ public class DBEngineVersion implements Serializable, Cloneable {
         if (getExportableLogTypes() != null)
             sb.append("ExportableLogTypes: ").append(getExportableLogTypes()).append(",");
         if (getSupportsLogExportsToCloudwatchLogs() != null)
-            sb.append("SupportsLogExportsToCloudwatchLogs: ").append(getSupportsLogExportsToCloudwatchLogs());
+            sb.append("SupportsLogExportsToCloudwatchLogs: ").append(getSupportsLogExportsToCloudwatchLogs()).append(",");
+        if (getSupportsReadReplica() != null)
+            sb.append("SupportsReadReplica: ").append(getSupportsReadReplica());
         sb.append("}");
         return sb.toString();
     }
@@ -803,6 +863,10 @@ public class DBEngineVersion implements Serializable, Cloneable {
         if (other.getSupportsLogExportsToCloudwatchLogs() != null
                 && other.getSupportsLogExportsToCloudwatchLogs().equals(this.getSupportsLogExportsToCloudwatchLogs()) == false)
             return false;
+        if (other.getSupportsReadReplica() == null ^ this.getSupportsReadReplica() == null)
+            return false;
+        if (other.getSupportsReadReplica() != null && other.getSupportsReadReplica().equals(this.getSupportsReadReplica()) == false)
+            return false;
         return true;
     }
 
@@ -822,6 +886,7 @@ public class DBEngineVersion implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSupportedTimezones() == null) ? 0 : getSupportedTimezones().hashCode());
         hashCode = prime * hashCode + ((getExportableLogTypes() == null) ? 0 : getExportableLogTypes().hashCode());
         hashCode = prime * hashCode + ((getSupportsLogExportsToCloudwatchLogs() == null) ? 0 : getSupportsLogExportsToCloudwatchLogs().hashCode());
+        hashCode = prime * hashCode + ((getSupportsReadReplica() == null) ? 0 : getSupportsReadReplica().hashCode());
         return hashCode;
     }
 
