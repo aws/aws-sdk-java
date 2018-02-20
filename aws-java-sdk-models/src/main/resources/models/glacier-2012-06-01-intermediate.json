@@ -180,6 +180,7 @@
         "exclude" : null,
         "excludeShape" : false,
         "inject" : null,
+        "injectEnumValues" : null,
         "modify" : [ {
           "marker" : {
             "emitAsType" : null,
@@ -209,6 +210,7 @@
             "xmlNamespace" : null
           }
         } ],
+        "injectEnumValues" : null,
         "modify" : null
       }
     },

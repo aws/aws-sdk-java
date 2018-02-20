@@ -37,12 +37,14 @@
         "exclude" : [ "error" ],
         "excludeShape" : false,
         "inject" : null,
+        "injectEnumValues" : null,
         "modify" : null
       },
       "InvalidGatewayRequestException" : {
         "exclude" : [ "error" ],
         "excludeShape" : false,
         "inject" : null,
+        "injectEnumValues" : null,
         "modify" : null
       }
     },

@@ -53,6 +53,7 @@
             "xmlNamespace" : null
           }
         } ],
+        "injectEnumValues" : null,
         "modify" : null
       }
     },

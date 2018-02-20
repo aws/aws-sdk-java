@@ -20,10 +20,15 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ConfigurationItemStatus {
 
-    Ok("Ok"),
-    Failed("Failed"),
     Discovered("Discovered"),
-    Deleted("Deleted");
+    ResourceDeletedNotRecorded("ResourceDeletedNotRecorded"),
+    Failed("Failed"),
+    ResourceNotRecorded("ResourceNotRecorded"),
+    Deleted("Deleted"),
+    OK("OK"),
+    Ok("Ok"),
+    ResourceDiscovered("ResourceDiscovered"),
+    ResourceDeleted("ResourceDeleted");
 
     private String value;
 

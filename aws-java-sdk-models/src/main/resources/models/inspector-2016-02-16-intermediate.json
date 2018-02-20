@@ -54,6 +54,7 @@
         "exclude" : null,
         "excludeShape" : false,
         "inject" : null,
+        "injectEnumValues" : null,
         "modify" : [ {
           "errorCode" : {
             "emitAsType" : null,
@@ -68,6 +69,7 @@
         "exclude" : null,
         "excludeShape" : false,
         "inject" : null,
+        "injectEnumValues" : null,
         "modify" : [ {
           "errorCode" : {
             "emitAsType" : null,
@@ -82,6 +84,7 @@
         "exclude" : null,
         "excludeShape" : false,
         "inject" : null,
+        "injectEnumValues" : null,
         "modify" : [ {
           "errorCode" : {
             "emitAsType" : null,
@@ -96,6 +99,7 @@
         "exclude" : null,
         "excludeShape" : false,
         "inject" : null,
+        "injectEnumValues" : null,
         "modify" : [ {
           "errorCode" : {
             "emitAsType" : null,
@@ -110,6 +114,7 @@
         "exclude" : null,
         "excludeShape" : false,
         "inject" : null,
+        "injectEnumValues" : null,
         "modify" : [ {
           "errorCode" : {
             "emitAsType" : null,

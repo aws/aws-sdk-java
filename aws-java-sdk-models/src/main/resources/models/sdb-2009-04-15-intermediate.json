@@ -81,6 +81,7 @@
         "exclude" : null,
         "excludeShape" : false,
         "inject" : null,
+        "injectEnumValues" : null,
         "modify" : [ {
           "AlternateNameEncoding" : {
             "emitAsType" : null,
@@ -103,6 +104,7 @@
         "exclude" : null,
         "excludeShape" : false,
         "inject" : null,
+        "injectEnumValues" : null,
         "modify" : [ {
           "AlternateNameEncoding" : {
             "emitAsType" : null,

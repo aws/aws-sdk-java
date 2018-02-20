@@ -46,7 +46,15 @@
     "sendEmptyAutoConstructedListAsEmptyList" : null,
     "sendExplicitlyEmptyListsForQuery" : false,
     "serviceClientHoldInputStream" : false,
-    "shapeModifiers" : null,
+    "shapeModifiers" : {
+      "ConfigurationItemStatus" : {
+        "exclude" : null,
+        "excludeShape" : false,
+        "inject" : null,
+        "injectEnumValues" : [ "Ok", "Failed", "Discovered", "Deleted" ],
+        "modify" : null
+      }
+    },
     "shapeSubstitutions" : null,
     "simpleMethods" : {
       "DescribeComplianceByConfigRule" : {
@@ -10403,17 +10411,32 @@
       "deprecated" : false,
       "documentation" : "",
       "enums" : [ {
-        "name" : "Ok",
-        "value" : "Ok"
+        "name" : "Discovered",
+        "value" : "Discovered"
+      }, {
+        "name" : "ResourceDeletedNotRecorded",
+        "value" : "ResourceDeletedNotRecorded"
       }, {
         "name" : "Failed",
         "value" : "Failed"
       }, {
-        "name" : "Discovered",
-        "value" : "Discovered"
+        "name" : "ResourceNotRecorded",
+        "value" : "ResourceNotRecorded"
       }, {
         "name" : "Deleted",
         "value" : "Deleted"
+      }, {
+        "name" : "OK",
+        "value" : "OK"
+      }, {
+        "name" : "Ok",
+        "value" : "Ok"
+      }, {
+        "name" : "ResourceDiscovered",
+        "value" : "ResourceDiscovered"
+      }, {
+        "name" : "ResourceDeleted",
+        "value" : "ResourceDeleted"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,

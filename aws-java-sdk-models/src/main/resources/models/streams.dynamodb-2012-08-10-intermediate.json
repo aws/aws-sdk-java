@@ -41,42 +41,49 @@
         "exclude" : null,
         "excludeShape" : true,
         "inject" : null,
+        "injectEnumValues" : null,
         "modify" : null
       },
       "InternalServerError" : {
         "exclude" : null,
         "excludeShape" : true,
         "inject" : null,
+        "injectEnumValues" : null,
         "modify" : null
       },
       "KeySchemaElement" : {
         "exclude" : null,
         "excludeShape" : true,
         "inject" : null,
+        "injectEnumValues" : null,
         "modify" : null
       },
       "KeyType" : {
         "exclude" : null,
         "excludeShape" : true,
         "inject" : null,
+        "injectEnumValues" : null,
         "modify" : null
       },
       "LimitExceededException" : {
         "exclude" : null,
         "excludeShape" : true,
         "inject" : null,
+        "injectEnumValues" : null,
         "modify" : null
       },
       "ResourceNotFoundException" : {
         "exclude" : null,
         "excludeShape" : true,
         "inject" : null,
+        "injectEnumValues" : null,
         "modify" : null
       },
       "StreamViewType" : {
         "exclude" : null,
         "excludeShape" : true,
         "inject" : null,
+        "injectEnumValues" : null,
         "modify" : null
       }
     },

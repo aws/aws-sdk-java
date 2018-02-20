@@ -81,6 +81,7 @@
         "exclude" : null,
         "excludeShape" : false,
         "inject" : null,
+        "injectEnumValues" : null,
         "modify" : [ {
           "AWSAccountId" : {
             "emitAsType" : null,

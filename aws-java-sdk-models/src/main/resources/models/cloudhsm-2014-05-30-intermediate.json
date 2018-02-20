@@ -40,6 +40,7 @@
         "exclude" : null,
         "excludeShape" : false,
         "inject" : null,
+        "injectEnumValues" : null,
         "modify" : [ {
           "5.1" : {
             "emitAsType" : null,
@@ -62,6 +63,7 @@
         "exclude" : [ "retryable" ],
         "excludeShape" : false,
         "inject" : null,
+        "injectEnumValues" : null,
         "modify" : null
       }
     },
