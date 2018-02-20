@@ -199,6 +199,11 @@ public class AutoScalingGroupStaxUnmarshaller implements Unmarshaller<AutoScalin
                     autoScalingGroup.setNewInstancesProtectedFromScaleIn(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ServiceLinkedRoleARN", targetDepth)) {
+                    autoScalingGroup.setServiceLinkedRoleARN(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return autoScalingGroup;

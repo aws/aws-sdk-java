@@ -40,7 +40,10 @@ public class LaunchTemplateSpecification implements Serializable, Cloneable {
     private String launchTemplateName;
     /**
      * <p>
-     * The version number. By default, the default version of the launch template is used.
+     * The version number, <code>$Latest</code>, or <code>$Default</code>. If the value is <code>$Latest</code>, Auto
+     * Scaling selects the latest version of the launch template when launching instances. If the value is
+     * <code>$Default</code>, Auto Scaling selects the default version of the launch template when launching instances.
+     * The default value is <code>$Default</code>.
      * </p>
      */
     private String version;
@@ -127,11 +130,17 @@ public class LaunchTemplateSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The version number. By default, the default version of the launch template is used.
+     * The version number, <code>$Latest</code>, or <code>$Default</code>. If the value is <code>$Latest</code>, Auto
+     * Scaling selects the latest version of the launch template when launching instances. If the value is
+     * <code>$Default</code>, Auto Scaling selects the default version of the launch template when launching instances.
+     * The default value is <code>$Default</code>.
      * </p>
      * 
      * @param version
-     *        The version number. By default, the default version of the launch template is used.
+     *        The version number, <code>$Latest</code>, or <code>$Default</code>. If the value is <code>$Latest</code>,
+     *        Auto Scaling selects the latest version of the launch template when launching instances. If the value is
+     *        <code>$Default</code>, Auto Scaling selects the default version of the launch template when launching
+     *        instances. The default value is <code>$Default</code>.
      */
 
     public void setVersion(String version) {
@@ -140,10 +149,16 @@ public class LaunchTemplateSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The version number. By default, the default version of the launch template is used.
+     * The version number, <code>$Latest</code>, or <code>$Default</code>. If the value is <code>$Latest</code>, Auto
+     * Scaling selects the latest version of the launch template when launching instances. If the value is
+     * <code>$Default</code>, Auto Scaling selects the default version of the launch template when launching instances.
+     * The default value is <code>$Default</code>.
      * </p>
      * 
-     * @return The version number. By default, the default version of the launch template is used.
+     * @return The version number, <code>$Latest</code>, or <code>$Default</code>. If the value is <code>$Latest</code>,
+     *         Auto Scaling selects the latest version of the launch template when launching instances. If the value is
+     *         <code>$Default</code>, Auto Scaling selects the default version of the launch template when launching
+     *         instances. The default value is <code>$Default</code>.
      */
 
     public String getVersion() {
@@ -152,11 +167,17 @@ public class LaunchTemplateSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The version number. By default, the default version of the launch template is used.
+     * The version number, <code>$Latest</code>, or <code>$Default</code>. If the value is <code>$Latest</code>, Auto
+     * Scaling selects the latest version of the launch template when launching instances. If the value is
+     * <code>$Default</code>, Auto Scaling selects the default version of the launch template when launching instances.
+     * The default value is <code>$Default</code>.
      * </p>
      * 
      * @param version
-     *        The version number. By default, the default version of the launch template is used.
+     *        The version number, <code>$Latest</code>, or <code>$Default</code>. If the value is <code>$Latest</code>,
+     *        Auto Scaling selects the latest version of the launch template when launching instances. If the value is
+     *        <code>$Default</code>, Auto Scaling selects the default version of the launch template when launching
+     *        instances. The default value is <code>$Default</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

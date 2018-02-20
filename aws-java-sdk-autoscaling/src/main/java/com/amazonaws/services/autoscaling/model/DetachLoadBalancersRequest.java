@@ -33,7 +33,7 @@ public class DetachLoadBalancersRequest extends com.amazonaws.AmazonWebServiceRe
     private String autoScalingGroupName;
     /**
      * <p>
-     * One or more load balancer names.
+     * The names of the load balancers. You can specify up to 10 load balancers.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> loadBalancerNames;
@@ -80,10 +80,10 @@ public class DetachLoadBalancersRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * One or more load balancer names.
+     * The names of the load balancers. You can specify up to 10 load balancers.
      * </p>
      * 
-     * @return One or more load balancer names.
+     * @return The names of the load balancers. You can specify up to 10 load balancers.
      */
 
     public java.util.List<String> getLoadBalancerNames() {
@@ -95,11 +95,11 @@ public class DetachLoadBalancersRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * One or more load balancer names.
+     * The names of the load balancers. You can specify up to 10 load balancers.
      * </p>
      * 
      * @param loadBalancerNames
-     *        One or more load balancer names.
+     *        The names of the load balancers. You can specify up to 10 load balancers.
      */
 
     public void setLoadBalancerNames(java.util.Collection<String> loadBalancerNames) {
@@ -113,7 +113,7 @@ public class DetachLoadBalancersRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * One or more load balancer names.
+     * The names of the load balancers. You can specify up to 10 load balancers.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +122,7 @@ public class DetachLoadBalancersRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param loadBalancerNames
-     *        One or more load balancer names.
+     *        The names of the load balancers. You can specify up to 10 load balancers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class DetachLoadBalancersRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * One or more load balancer names.
+     * The names of the load balancers. You can specify up to 10 load balancers.
      * </p>
      * 
      * @param loadBalancerNames
-     *        One or more load balancer names.
+     *        The names of the load balancers. You can specify up to 10 load balancers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

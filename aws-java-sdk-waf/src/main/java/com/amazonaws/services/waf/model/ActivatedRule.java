@@ -80,9 +80,9 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * The <code>Action</code> data type within <code>ActivatedRule</code> is used only when submitting an
-     * <code>UpdateWebACL</code> request. <code>ActivatedRule|Action</code> is not applicable and therefore not
-     * available for <code>UpdateRuleGroup</code>.
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a
+     * <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+     * requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
      * </p>
      */
     private WafAction action;
@@ -100,9 +100,9 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
      * requests using <a>GetSampledRequests</a>.
      * </p>
      * <p>
-     * The <code>OverrideAction</code> data type within <code>ActivatedRule</code> is used only when submitting an
-     * <code>UpdateRuleGroup</code> request. <code>ActivatedRule|OverrideAction</code> is not applicable and therefore
-     * not available for <code>UpdateWebACL</code>.
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a
+     * <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+     * requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
      * </p>
      */
     private WafOverrideAction overrideAction;
@@ -272,9 +272,9 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * The <code>Action</code> data type within <code>ActivatedRule</code> is used only when submitting an
-     * <code>UpdateWebACL</code> request. <code>ActivatedRule|Action</code> is not applicable and therefore not
-     * available for <code>UpdateRuleGroup</code>.
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a
+     * <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+     * requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
      * </p>
      * 
      * @param action
@@ -299,9 +299,9 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        The <code>Action</code> data type within <code>ActivatedRule</code> is used only when submitting an
-     *        <code>UpdateWebACL</code> request. <code>ActivatedRule|Action</code> is not applicable and therefore not
-     *        available for <code>UpdateRuleGroup</code>.
+     *        <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to
+     *        a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+     *        requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
      */
 
     public void setAction(WafAction action) {
@@ -332,9 +332,9 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * The <code>Action</code> data type within <code>ActivatedRule</code> is used only when submitting an
-     * <code>UpdateWebACL</code> request. <code>ActivatedRule|Action</code> is not applicable and therefore not
-     * available for <code>UpdateRuleGroup</code>.
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a
+     * <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+     * requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
      * </p>
      * 
      * @return Specifies the action that CloudFront or AWS WAF takes when a web request matches the conditions in the
@@ -358,9 +358,10 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         </ul>
      *         <p>
-     *         The <code>Action</code> data type within <code>ActivatedRule</code> is used only when submitting an
-     *         <code>UpdateWebACL</code> request. <code>ActivatedRule|Action</code> is not applicable and therefore not
-     *         available for <code>UpdateRuleGroup</code>.
+     *         <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code>
+     *         to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other
+     *         update requests, <code>ActivatedRule|Action</code> is used instead of
+     *         <code>ActivatedRule|OverrideAction</code>.
      */
 
     public WafAction getAction() {
@@ -391,9 +392,9 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * The <code>Action</code> data type within <code>ActivatedRule</code> is used only when submitting an
-     * <code>UpdateWebACL</code> request. <code>ActivatedRule|Action</code> is not applicable and therefore not
-     * available for <code>UpdateRuleGroup</code>.
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a
+     * <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+     * requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
      * </p>
      * 
      * @param action
@@ -418,9 +419,9 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        The <code>Action</code> data type within <code>ActivatedRule</code> is used only when submitting an
-     *        <code>UpdateWebACL</code> request. <code>ActivatedRule|Action</code> is not applicable and therefore not
-     *        available for <code>UpdateRuleGroup</code>.
+     *        <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to
+     *        a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+     *        requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -443,9 +444,9 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
      * requests using <a>GetSampledRequests</a>.
      * </p>
      * <p>
-     * The <code>OverrideAction</code> data type within <code>ActivatedRule</code> is used only when submitting an
-     * <code>UpdateRuleGroup</code> request. <code>ActivatedRule|OverrideAction</code> is not applicable and therefore
-     * not available for <code>UpdateWebACL</code>.
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a
+     * <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+     * requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
      * </p>
      * 
      * @param overrideAction
@@ -460,9 +461,9 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
      *        You can view a record of counted requests using <a>GetSampledRequests</a>.
      *        </p>
      *        <p>
-     *        The <code>OverrideAction</code> data type within <code>ActivatedRule</code> is used only when submitting
-     *        an <code>UpdateRuleGroup</code> request. <code>ActivatedRule|OverrideAction</code> is not applicable and
-     *        therefore not available for <code>UpdateWebACL</code>.
+     *        <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to
+     *        a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+     *        requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
      */
 
     public void setOverrideAction(WafOverrideAction overrideAction) {
@@ -483,9 +484,9 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
      * requests using <a>GetSampledRequests</a>.
      * </p>
      * <p>
-     * The <code>OverrideAction</code> data type within <code>ActivatedRule</code> is used only when submitting an
-     * <code>UpdateRuleGroup</code> request. <code>ActivatedRule|OverrideAction</code> is not applicable and therefore
-     * not available for <code>UpdateWebACL</code>.
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a
+     * <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+     * requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
      * </p>
      * 
      * @return Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.</p>
@@ -500,9 +501,10 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
      *         <a>GetSampledRequests</a>.
      *         </p>
      *         <p>
-     *         The <code>OverrideAction</code> data type within <code>ActivatedRule</code> is used only when submitting
-     *         an <code>UpdateRuleGroup</code> request. <code>ActivatedRule|OverrideAction</code> is not applicable and
-     *         therefore not available for <code>UpdateWebACL</code>.
+     *         <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code>
+     *         to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other
+     *         update requests, <code>ActivatedRule|Action</code> is used instead of
+     *         <code>ActivatedRule|OverrideAction</code>.
      */
 
     public WafOverrideAction getOverrideAction() {
@@ -523,9 +525,9 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
      * requests using <a>GetSampledRequests</a>.
      * </p>
      * <p>
-     * The <code>OverrideAction</code> data type within <code>ActivatedRule</code> is used only when submitting an
-     * <code>UpdateRuleGroup</code> request. <code>ActivatedRule|OverrideAction</code> is not applicable and therefore
-     * not available for <code>UpdateWebACL</code>.
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a
+     * <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+     * requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
      * </p>
      * 
      * @param overrideAction
@@ -540,9 +542,9 @@ public class ActivatedRule implements Serializable, Cloneable, StructuredPojo {
      *        You can view a record of counted requests using <a>GetSampledRequests</a>.
      *        </p>
      *        <p>
-     *        The <code>OverrideAction</code> data type within <code>ActivatedRule</code> is used only when submitting
-     *        an <code>UpdateRuleGroup</code> request. <code>ActivatedRule|OverrideAction</code> is not applicable and
-     *        therefore not available for <code>UpdateWebACL</code>.
+     *        <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to
+     *        a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+     *        requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

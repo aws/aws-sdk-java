@@ -171,6 +171,13 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * </p>
      */
     private Boolean newInstancesProtectedFromScaleIn;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other AWS
+     * services on your behalf.
+     * </p>
+     */
+    private String serviceLinkedRoleARN;
 
     /**
      * <p>
@@ -1413,6 +1420,52 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other AWS
+     * services on your behalf.
+     * </p>
+     * 
+     * @param serviceLinkedRoleARN
+     *        The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other
+     *        AWS services on your behalf.
+     */
+
+    public void setServiceLinkedRoleARN(String serviceLinkedRoleARN) {
+        this.serviceLinkedRoleARN = serviceLinkedRoleARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other AWS
+     * services on your behalf.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other
+     *         AWS services on your behalf.
+     */
+
+    public String getServiceLinkedRoleARN() {
+        return this.serviceLinkedRoleARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other AWS
+     * services on your behalf.
+     * </p>
+     * 
+     * @param serviceLinkedRoleARN
+     *        The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other
+     *        AWS services on your behalf.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoScalingGroup withServiceLinkedRoleARN(String serviceLinkedRoleARN) {
+        setServiceLinkedRoleARN(serviceLinkedRoleARN);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1468,7 +1521,9 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         if (getTerminationPolicies() != null)
             sb.append("TerminationPolicies: ").append(getTerminationPolicies()).append(",");
         if (getNewInstancesProtectedFromScaleIn() != null)
-            sb.append("NewInstancesProtectedFromScaleIn: ").append(getNewInstancesProtectedFromScaleIn());
+            sb.append("NewInstancesProtectedFromScaleIn: ").append(getNewInstancesProtectedFromScaleIn()).append(",");
+        if (getServiceLinkedRoleARN() != null)
+            sb.append("ServiceLinkedRoleARN: ").append(getServiceLinkedRoleARN());
         sb.append("}");
         return sb.toString();
     }
@@ -1576,6 +1631,10 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         if (other.getNewInstancesProtectedFromScaleIn() != null
                 && other.getNewInstancesProtectedFromScaleIn().equals(this.getNewInstancesProtectedFromScaleIn()) == false)
             return false;
+        if (other.getServiceLinkedRoleARN() == null ^ this.getServiceLinkedRoleARN() == null)
+            return false;
+        if (other.getServiceLinkedRoleARN() != null && other.getServiceLinkedRoleARN().equals(this.getServiceLinkedRoleARN()) == false)
+            return false;
         return true;
     }
 
@@ -1607,6 +1666,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getTerminationPolicies() == null) ? 0 : getTerminationPolicies().hashCode());
         hashCode = prime * hashCode + ((getNewInstancesProtectedFromScaleIn() == null) ? 0 : getNewInstancesProtectedFromScaleIn().hashCode());
+        hashCode = prime * hashCode + ((getServiceLinkedRoleARN() == null) ? 0 : getServiceLinkedRoleARN().hashCode());
         return hashCode;
     }
 

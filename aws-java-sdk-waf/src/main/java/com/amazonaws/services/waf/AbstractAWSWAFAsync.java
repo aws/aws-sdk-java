@@ -222,6 +222,19 @@ public class AbstractAWSWAFAsync extends AbstractAWSWAF implements AWSWAFAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeletePermissionPolicyResult> deletePermissionPolicyAsync(DeletePermissionPolicyRequest request) {
+
+        return deletePermissionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePermissionPolicyResult> deletePermissionPolicyAsync(DeletePermissionPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeletePermissionPolicyRequest, DeletePermissionPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteRateBasedRuleResult> deleteRateBasedRuleAsync(DeleteRateBasedRuleRequest request) {
 
         return deleteRateBasedRuleAsync(request, null);
@@ -399,6 +412,19 @@ public class AbstractAWSWAFAsync extends AbstractAWSWAF implements AWSWAFAsync {
     @Override
     public java.util.concurrent.Future<GetIPSetResult> getIPSetAsync(GetIPSetRequest request,
             com.amazonaws.handlers.AsyncHandler<GetIPSetRequest, GetIPSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPermissionPolicyResult> getPermissionPolicyAsync(GetPermissionPolicyRequest request) {
+
+        return getPermissionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPermissionPolicyResult> getPermissionPolicyAsync(GetPermissionPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetPermissionPolicyRequest, GetPermissionPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -724,6 +750,19 @@ public class AbstractAWSWAFAsync extends AbstractAWSWAF implements AWSWAFAsync {
     @Override
     public java.util.concurrent.Future<ListXssMatchSetsResult> listXssMatchSetsAsync(ListXssMatchSetsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListXssMatchSetsRequest, ListXssMatchSetsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPermissionPolicyResult> putPermissionPolicyAsync(PutPermissionPolicyRequest request) {
+
+        return putPermissionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPermissionPolicyResult> putPermissionPolicyAsync(PutPermissionPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutPermissionPolicyRequest, PutPermissionPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

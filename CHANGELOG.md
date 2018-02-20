@@ -1,4 +1,4 @@
-# __1.11.281__ __2018-02-19__
+# __1.11.282__ __2018-02-20__
 ## __AWS AppSync__
   - ### Features
     - AWS AppSync now supports for None Data Source, CreateApiKey now supports setting expiration on API keys, new API UpdateApiKey supports updating expiration on API keys. 
@@ -11,6 +11,14 @@
   - ### Features
     - Nielsen ID3 tags can now be inserted into transport stream (TS) and HLS outputs. For more information on Nielsen configuration you can go to https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs.html#jobs-nielsenconfiguration
 
+## __AWS WAF__
+  - ### Features
+    - The new PermissionPolicy APIs in AWS WAF Regional allow customers to attach resource-based policies to their entities.
+
+## __AWS WAF Regional__
+  - ### Features
+    - The new PermissionPolicy APIs in AWS WAF Regional allow customers to attach resource-based policies to their entities.
+
 ## __Amazon GameLift__
   - ### Features
     - Updates to allow Fleets to run on On-Demand or Spot instances.
@@ -22,6 +30,10 @@
 ## __Amazon Relational Database Service__
   - ### Features
     - Updates RDS API to indicate whether a DBEngine supports read replicas.
+
+## __Auto Scaling__
+  - ### Features
+    - Amazon EC2 Auto Scaling support for service-linked roles
 
 # __1.11.277__ __2018-02-13__
 ## __Amazon Glacier__

@@ -127,6 +127,10 @@ public class UpdateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
                     StringUtils.fromBoolean(updateAutoScalingGroupRequest.getNewInstancesProtectedFromScaleIn()));
         }
 
+        if (updateAutoScalingGroupRequest.getServiceLinkedRoleARN() != null) {
+            request.addParameter("ServiceLinkedRoleARN", StringUtils.fromString(updateAutoScalingGroupRequest.getServiceLinkedRoleARN()));
+        }
+
         return request;
     }
 

@@ -57,6 +57,8 @@ public enum WafRegionalActions implements Action {
     DeleteGeoMatchSet("waf-regional:DeleteGeoMatchSet"),
     /** Action for the DeleteIPSet operation. */
     DeleteIPSet("waf-regional:DeleteIPSet"),
+    /** Action for the DeletePermissionPolicy operation. */
+    DeletePermissionPolicy("waf-regional:DeletePermissionPolicy"),
     /** Action for the DeleteRateBasedRule operation. */
     DeleteRateBasedRule("waf-regional:DeleteRateBasedRule"),
     /** Action for the DeleteRegexMatchSet operation. */
@@ -87,6 +89,8 @@ public enum WafRegionalActions implements Action {
     GetGeoMatchSet("waf-regional:GetGeoMatchSet"),
     /** Action for the GetIPSet operation. */
     GetIPSet("waf-regional:GetIPSet"),
+    /** Action for the GetPermissionPolicy operation. */
+    GetPermissionPolicy("waf-regional:GetPermissionPolicy"),
     /** Action for the GetRateBasedRule operation. */
     GetRateBasedRule("waf-regional:GetRateBasedRule"),
     /** Action for the GetRateBasedRuleManagedKeys operation. */
@@ -141,6 +145,8 @@ public enum WafRegionalActions implements Action {
     ListWebACLs("waf-regional:ListWebACLs"),
     /** Action for the ListXssMatchSets operation. */
     ListXssMatchSets("waf-regional:ListXssMatchSets"),
+    /** Action for the PutPermissionPolicy operation. */
+    PutPermissionPolicy("waf-regional:PutPermissionPolicy"),
     /** Action for the UpdateByteMatchSet operation. */
     UpdateByteMatchSet("waf-regional:UpdateByteMatchSet"),
     /** Action for the UpdateGeoMatchSet operation. */

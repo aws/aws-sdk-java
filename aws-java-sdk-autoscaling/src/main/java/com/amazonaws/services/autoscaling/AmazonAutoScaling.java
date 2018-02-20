@@ -27,11 +27,11 @@ import com.amazonaws.services.autoscaling.waiters.AmazonAutoScalingWaiters;
  * {@link com.amazonaws.services.autoscaling.AbstractAmazonAutoScaling} instead.
  * </p>
  * <p>
- * <fullname>Auto Scaling</fullname>
+ * <fullname>Amazon EC2 Auto Scaling</fullname>
  * <p>
- * Auto Scaling is designed to automatically launch or terminate EC2 instances based on user-defined policies,
- * schedules, and health checks. Use this service in conjunction with the Amazon CloudWatch and Elastic Load Balancing
- * services.
+ * Amazon EC2 Auto Scaling is designed to automatically launch or terminate EC2 instances based on user-defined
+ * policies, schedules, and health checks. Use this service in conjunction with the AWS Auto Scaling, Amazon CloudWatch,
+ * and Elastic Load Balancing services.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -121,6 +121,8 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
+     * @throws ServiceLinkedRoleFailureException
+     *         The service-linked role is not yet ready for use.
      * @sample AmazonAutoScaling.AttachInstances
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachInstances" target="_top">AWS
      *      API Documentation</a>
@@ -146,6 +148,8 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
+     * @throws ServiceLinkedRoleFailureException
+     *         The service-linked role is not yet ready for use.
      * @sample AmazonAutoScaling.AttachLoadBalancerTargetGroups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancerTargetGroups"
      *      target="_top">AWS API Documentation</a>
@@ -174,6 +178,8 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
+     * @throws ServiceLinkedRoleFailureException
+     *         The service-linked role is not yet ready for use.
      * @sample AmazonAutoScaling.AttachLoadBalancers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancers"
      *      target="_top">AWS API Documentation</a>
@@ -245,8 +251,10 @@ public interface AmazonAutoScaling {
      * Creates an Auto Scaling group with the specified name and attributes.
      * </p>
      * <p>
-     * If you exceed your maximum limit of Auto Scaling groups, which by default is 20 per region, the call fails. For
-     * information about viewing and updating this limit, see <a>DescribeAccountLimits</a>.
+     * If you exceed your maximum limit of Auto Scaling groups, the call fails. For information about viewing this
+     * limit, see <a>DescribeAccountLimits</a>. For information about updating this limit, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-account-limits.html">Auto Scaling Limits</a> in
+     * the <i>Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
@@ -264,6 +272,8 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
+     * @throws ServiceLinkedRoleFailureException
+     *         The service-linked role is not yet ready for use.
      * @sample AmazonAutoScaling.CreateAutoScalingGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateAutoScalingGroup"
      *      target="_top">AWS API Documentation</a>
@@ -275,8 +285,10 @@ public interface AmazonAutoScaling {
      * Creates a launch configuration.
      * </p>
      * <p>
-     * If you exceed your maximum limit of launch configurations, which by default is 100 per region, the call fails.
-     * For information about viewing and updating this limit, see <a>DescribeAccountLimits</a>.
+     * If you exceed your maximum limit of launch configurations, the call fails. For information about viewing this
+     * limit, see <a>DescribeAccountLimits</a>. For information about updating this limit, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-account-limits.html">Auto Scaling Limits</a> in
+     * the <i>Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
@@ -441,6 +453,8 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
+     * @throws ServiceLinkedRoleFailureException
+     *         The service-linked role is not yet ready for use.
      * @sample AmazonAutoScaling.DeletePolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeletePolicy" target="_top">AWS API
      *      Documentation</a>
@@ -487,8 +501,8 @@ public interface AmazonAutoScaling {
      * </p>
      * <p>
      * For information about requesting an increase in these limits, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS Service Limits</a> in the
-     * <i>Amazon Web Services General Reference</i>.
+     * href="http://docs.aws.amazon.com/autoscaling/latest/userguide/as-account-limits.html">Auto Scaling Limits</a> in
+     * the <i>Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param describeAccountLimitsRequest
@@ -771,6 +785,8 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
+     * @throws ServiceLinkedRoleFailureException
+     *         The service-linked role is not yet ready for use.
      * @sample AmazonAutoScaling.DescribePolicies
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribePolicies" target="_top">AWS
      *      API Documentation</a>
@@ -1178,6 +1194,8 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
+     * @throws ServiceLinkedRoleFailureException
+     *         The service-linked role is not yet ready for use.
      * @sample AmazonAutoScaling.PutNotificationConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutNotificationConfiguration"
      *      target="_top">AWS API Documentation</a>
@@ -1205,6 +1223,8 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
+     * @throws ServiceLinkedRoleFailureException
+     *         The service-linked role is not yet ready for use.
      * @sample AmazonAutoScaling.PutScalingPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScalingPolicy" target="_top">AWS
      *      API Documentation</a>
@@ -1482,6 +1502,8 @@ public interface AmazonAutoScaling {
      * @throws ResourceContentionException
      *         You already have a pending update to an Auto Scaling resource (for example, a group, instance, or load
      *         balancer).
+     * @throws ServiceLinkedRoleFailureException
+     *         The service-linked role is not yet ready for use.
      * @sample AmazonAutoScaling.UpdateAutoScalingGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/UpdateAutoScalingGroup"
      *      target="_top">AWS API Documentation</a>

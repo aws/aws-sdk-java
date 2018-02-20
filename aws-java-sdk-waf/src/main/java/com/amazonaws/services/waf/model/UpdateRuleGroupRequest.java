@@ -40,9 +40,9 @@ public class UpdateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * You can only insert <code>REGULAR</code> rules into a rule group.
      * </p>
      * <p>
-     * The <code>Action</code> data type within <code>ActivatedRule</code> is used only when submitting an
-     * <code>UpdateWebACL</code> request. <code>ActivatedRule|Action</code> is not applicable and therefore not
-     * available for <code>UpdateRuleGroup</code>.
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a
+     * <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+     * requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
      * </p>
      */
     private java.util.List<RuleGroupUpdate> updates;
@@ -107,9 +107,9 @@ public class UpdateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * You can only insert <code>REGULAR</code> rules into a rule group.
      * </p>
      * <p>
-     * The <code>Action</code> data type within <code>ActivatedRule</code> is used only when submitting an
-     * <code>UpdateWebACL</code> request. <code>ActivatedRule|Action</code> is not applicable and therefore not
-     * available for <code>UpdateRuleGroup</code>.
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a
+     * <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+     * requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
      * </p>
      * 
      * @return An array of <code>RuleGroupUpdate</code> objects that you want to insert into or delete from a
@@ -118,9 +118,10 @@ public class UpdateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
      *         You can only insert <code>REGULAR</code> rules into a rule group.
      *         </p>
      *         <p>
-     *         The <code>Action</code> data type within <code>ActivatedRule</code> is used only when submitting an
-     *         <code>UpdateWebACL</code> request. <code>ActivatedRule|Action</code> is not applicable and therefore not
-     *         available for <code>UpdateRuleGroup</code>.
+     *         <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code>
+     *         to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other
+     *         update requests, <code>ActivatedRule|Action</code> is used instead of
+     *         <code>ActivatedRule|OverrideAction</code>.
      */
 
     public java.util.List<RuleGroupUpdate> getUpdates() {
@@ -135,9 +136,9 @@ public class UpdateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * You can only insert <code>REGULAR</code> rules into a rule group.
      * </p>
      * <p>
-     * The <code>Action</code> data type within <code>ActivatedRule</code> is used only when submitting an
-     * <code>UpdateWebACL</code> request. <code>ActivatedRule|Action</code> is not applicable and therefore not
-     * available for <code>UpdateRuleGroup</code>.
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a
+     * <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+     * requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
      * </p>
      * 
      * @param updates
@@ -147,9 +148,9 @@ public class UpdateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
      *        You can only insert <code>REGULAR</code> rules into a rule group.
      *        </p>
      *        <p>
-     *        The <code>Action</code> data type within <code>ActivatedRule</code> is used only when submitting an
-     *        <code>UpdateWebACL</code> request. <code>ActivatedRule|Action</code> is not applicable and therefore not
-     *        available for <code>UpdateRuleGroup</code>.
+     *        <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to
+     *        a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+     *        requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
      */
 
     public void setUpdates(java.util.Collection<RuleGroupUpdate> updates) {
@@ -169,9 +170,9 @@ public class UpdateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * You can only insert <code>REGULAR</code> rules into a rule group.
      * </p>
      * <p>
-     * The <code>Action</code> data type within <code>ActivatedRule</code> is used only when submitting an
-     * <code>UpdateWebACL</code> request. <code>ActivatedRule|Action</code> is not applicable and therefore not
-     * available for <code>UpdateRuleGroup</code>.
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a
+     * <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+     * requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -186,9 +187,9 @@ public class UpdateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
      *        You can only insert <code>REGULAR</code> rules into a rule group.
      *        </p>
      *        <p>
-     *        The <code>Action</code> data type within <code>ActivatedRule</code> is used only when submitting an
-     *        <code>UpdateWebACL</code> request. <code>ActivatedRule|Action</code> is not applicable and therefore not
-     *        available for <code>UpdateRuleGroup</code>.
+     *        <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to
+     *        a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+     *        requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -210,9 +211,9 @@ public class UpdateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * You can only insert <code>REGULAR</code> rules into a rule group.
      * </p>
      * <p>
-     * The <code>Action</code> data type within <code>ActivatedRule</code> is used only when submitting an
-     * <code>UpdateWebACL</code> request. <code>ActivatedRule|Action</code> is not applicable and therefore not
-     * available for <code>UpdateRuleGroup</code>.
+     * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to a
+     * <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+     * requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
      * </p>
      * 
      * @param updates
@@ -222,9 +223,9 @@ public class UpdateRuleGroupRequest extends com.amazonaws.AmazonWebServiceReques
      *        You can only insert <code>REGULAR</code> rules into a rule group.
      *        </p>
      *        <p>
-     *        The <code>Action</code> data type within <code>ActivatedRule</code> is used only when submitting an
-     *        <code>UpdateWebACL</code> request. <code>ActivatedRule|Action</code> is not applicable and therefore not
-     *        available for <code>UpdateRuleGroup</code>.
+     *        <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a <code>RuleGroup</code> to
+     *        a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+     *        requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

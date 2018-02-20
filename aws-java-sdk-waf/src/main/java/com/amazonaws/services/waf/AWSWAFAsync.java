@@ -1708,6 +1708,43 @@ public interface AWSWAFAsync extends AWSWAF {
 
     /**
      * <p>
+     * Permanently deletes an IAM policy from the specified RuleGroup.
+     * </p>
+     * <p>
+     * The user making the request must be the owner of the RuleGroup.
+     * </p>
+     * 
+     * @param deletePermissionPolicyRequest
+     * @return A Java Future containing the result of the DeletePermissionPolicy operation returned by the service.
+     * @sample AWSWAFAsync.DeletePermissionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeletePermissionPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePermissionPolicyResult> deletePermissionPolicyAsync(DeletePermissionPolicyRequest deletePermissionPolicyRequest);
+
+    /**
+     * <p>
+     * Permanently deletes an IAM policy from the specified RuleGroup.
+     * </p>
+     * <p>
+     * The user making the request must be the owner of the RuleGroup.
+     * </p>
+     * 
+     * @param deletePermissionPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePermissionPolicy operation returned by the service.
+     * @sample AWSWAFAsyncHandler.DeletePermissionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeletePermissionPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePermissionPolicyResult> deletePermissionPolicyAsync(DeletePermissionPolicyRequest deletePermissionPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeletePermissionPolicyRequest, DeletePermissionPolicyResult> asyncHandler);
+
+    /**
+     * <p>
      * Permanently deletes a <a>RateBasedRule</a>. You can't delete a rule if it's still used in any <code>WebACL</code>
      * objects or if it still includes any predicates, such as <code>ByteMatchSet</code> objects.
      * </p>
@@ -2620,6 +2657,37 @@ public interface AWSWAFAsync extends AWSWAF {
 
     /**
      * <p>
+     * Returns the IAM policy attached to the RuleGroup.
+     * </p>
+     * 
+     * @param getPermissionPolicyRequest
+     * @return A Java Future containing the result of the GetPermissionPolicy operation returned by the service.
+     * @sample AWSWAFAsync.GetPermissionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetPermissionPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetPermissionPolicyResult> getPermissionPolicyAsync(GetPermissionPolicyRequest getPermissionPolicyRequest);
+
+    /**
+     * <p>
+     * Returns the IAM policy attached to the RuleGroup.
+     * </p>
+     * 
+     * @param getPermissionPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPermissionPolicy operation returned by the service.
+     * @sample AWSWAFAsyncHandler.GetPermissionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetPermissionPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetPermissionPolicyResult> getPermissionPolicyAsync(GetPermissionPolicyRequest getPermissionPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPermissionPolicyRequest, GetPermissionPolicyResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the <a>RateBasedRule</a> that is specified by the <code>RuleId</code> that you included in the
      * <code>GetRateBasedRule</code> request.
      * </p>
@@ -3440,6 +3508,145 @@ public interface AWSWAFAsync extends AWSWAF {
      */
     java.util.concurrent.Future<ListXssMatchSetsResult> listXssMatchSetsAsync(ListXssMatchSetsRequest listXssMatchSetsRequest,
             com.amazonaws.handlers.AsyncHandler<ListXssMatchSetsRequest, ListXssMatchSetsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Attaches a IAM policy to the specified resource. The only supported use for this action is to share a RuleGroup
+     * across accounts.
+     * </p>
+     * <p>
+     * The <code>PutPermissionPolicy</code> is subject to the following restrictions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can attach only one policy with each <code>PutPermissionPolicy</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The policy must include an <code>Effect</code>, <code>Action</code> and <code>Principal</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Effect</code> must specify <code>Allow</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code> and
+     * <code>waf-regional:UpdateWebACL</code>. Any extra or wildcard actions in the policy will be rejected.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The policy cannot include a <code>Resource</code> parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ARN in the request must be a valid WAF RuleGroup ARN and the RuleGroup must exist in the same region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The user making the request must be the owner of the RuleGroup.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Your policy must be composed using IAM Policy version 2012-10-17.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM
+     * Policies</a>.
+     * </p>
+     * <p>
+     * An example of a valid policy parameter is shown in the Examples section below.
+     * </p>
+     * 
+     * @param putPermissionPolicyRequest
+     * @return A Java Future containing the result of the PutPermissionPolicy operation returned by the service.
+     * @sample AWSWAFAsync.PutPermissionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/PutPermissionPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutPermissionPolicyResult> putPermissionPolicyAsync(PutPermissionPolicyRequest putPermissionPolicyRequest);
+
+    /**
+     * <p>
+     * Attaches a IAM policy to the specified resource. The only supported use for this action is to share a RuleGroup
+     * across accounts.
+     * </p>
+     * <p>
+     * The <code>PutPermissionPolicy</code> is subject to the following restrictions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can attach only one policy with each <code>PutPermissionPolicy</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The policy must include an <code>Effect</code>, <code>Action</code> and <code>Principal</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Effect</code> must specify <code>Allow</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code> and
+     * <code>waf-regional:UpdateWebACL</code>. Any extra or wildcard actions in the policy will be rejected.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The policy cannot include a <code>Resource</code> parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ARN in the request must be a valid WAF RuleGroup ARN and the RuleGroup must exist in the same region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The user making the request must be the owner of the RuleGroup.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Your policy must be composed using IAM Policy version 2012-10-17.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM
+     * Policies</a>.
+     * </p>
+     * <p>
+     * An example of a valid policy parameter is shown in the Examples section below.
+     * </p>
+     * 
+     * @param putPermissionPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutPermissionPolicy operation returned by the service.
+     * @sample AWSWAFAsyncHandler.PutPermissionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/PutPermissionPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutPermissionPolicyResult> putPermissionPolicyAsync(PutPermissionPolicyRequest putPermissionPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<PutPermissionPolicyRequest, PutPermissionPolicyResult> asyncHandler);
 
     /**
      * <p>

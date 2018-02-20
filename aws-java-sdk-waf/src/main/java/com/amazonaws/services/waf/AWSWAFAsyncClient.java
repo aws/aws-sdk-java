@@ -744,6 +744,39 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeletePermissionPolicyResult> deletePermissionPolicyAsync(DeletePermissionPolicyRequest request) {
+
+        return deletePermissionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePermissionPolicyResult> deletePermissionPolicyAsync(final DeletePermissionPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeletePermissionPolicyRequest, DeletePermissionPolicyResult> asyncHandler) {
+        final DeletePermissionPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeletePermissionPolicyResult>() {
+            @Override
+            public DeletePermissionPolicyResult call() throws Exception {
+                DeletePermissionPolicyResult result = null;
+
+                try {
+                    result = executeDeletePermissionPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteRateBasedRuleResult> deleteRateBasedRuleAsync(DeleteRateBasedRuleRequest request) {
 
         return deleteRateBasedRuleAsync(request, null);
@@ -1190,6 +1223,39 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
 
                 try {
                     result = executeGetIPSet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPermissionPolicyResult> getPermissionPolicyAsync(GetPermissionPolicyRequest request) {
+
+        return getPermissionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPermissionPolicyResult> getPermissionPolicyAsync(final GetPermissionPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetPermissionPolicyRequest, GetPermissionPolicyResult> asyncHandler) {
+        final GetPermissionPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetPermissionPolicyResult>() {
+            @Override
+            public GetPermissionPolicyResult call() throws Exception {
+                GetPermissionPolicyResult result = null;
+
+                try {
+                    result = executeGetPermissionPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2016,6 +2082,39 @@ public class AWSWAFAsyncClient extends AWSWAFClient implements AWSWAFAsync {
 
                 try {
                     result = executeListXssMatchSets(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPermissionPolicyResult> putPermissionPolicyAsync(PutPermissionPolicyRequest request) {
+
+        return putPermissionPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPermissionPolicyResult> putPermissionPolicyAsync(final PutPermissionPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutPermissionPolicyRequest, PutPermissionPolicyResult> asyncHandler) {
+        final PutPermissionPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutPermissionPolicyResult>() {
+            @Override
+            public PutPermissionPolicyResult call() throws Exception {
+                PutPermissionPolicyResult result = null;
+
+                try {
+                    result = executePutPermissionPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

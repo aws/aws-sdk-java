@@ -60,10 +60,7 @@ public class Ebs implements Serializable, Cloneable {
     private String volumeType;
     /**
      * <p>
-     * Indicates whether the volume is deleted on instance termination.
-     * </p>
-     * <p>
-     * Default: <code>true</code>
+     * Indicates whether the volume is deleted on instance termination. The default is <code>true</code>.
      * </p>
      */
     private Boolean deleteOnTermination;
@@ -291,16 +288,11 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the volume is deleted on instance termination.
-     * </p>
-     * <p>
-     * Default: <code>true</code>
+     * Indicates whether the volume is deleted on instance termination. The default is <code>true</code>.
      * </p>
      * 
      * @param deleteOnTermination
-     *        Indicates whether the volume is deleted on instance termination.</p>
-     *        <p>
-     *        Default: <code>true</code>
+     *        Indicates whether the volume is deleted on instance termination. The default is <code>true</code>.
      */
 
     public void setDeleteOnTermination(Boolean deleteOnTermination) {
@@ -309,15 +301,10 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the volume is deleted on instance termination.
-     * </p>
-     * <p>
-     * Default: <code>true</code>
+     * Indicates whether the volume is deleted on instance termination. The default is <code>true</code>.
      * </p>
      * 
-     * @return Indicates whether the volume is deleted on instance termination.</p>
-     *         <p>
-     *         Default: <code>true</code>
+     * @return Indicates whether the volume is deleted on instance termination. The default is <code>true</code>.
      */
 
     public Boolean getDeleteOnTermination() {
@@ -326,16 +313,11 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the volume is deleted on instance termination.
-     * </p>
-     * <p>
-     * Default: <code>true</code>
+     * Indicates whether the volume is deleted on instance termination. The default is <code>true</code>.
      * </p>
      * 
      * @param deleteOnTermination
-     *        Indicates whether the volume is deleted on instance termination.</p>
-     *        <p>
-     *        Default: <code>true</code>
+     *        Indicates whether the volume is deleted on instance termination. The default is <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -346,15 +328,10 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the volume is deleted on instance termination.
-     * </p>
-     * <p>
-     * Default: <code>true</code>
+     * Indicates whether the volume is deleted on instance termination. The default is <code>true</code>.
      * </p>
      * 
-     * @return Indicates whether the volume is deleted on instance termination.</p>
-     *         <p>
-     *         Default: <code>true</code>
+     * @return Indicates whether the volume is deleted on instance termination. The default is <code>true</code>.
      */
 
     public Boolean isDeleteOnTermination() {

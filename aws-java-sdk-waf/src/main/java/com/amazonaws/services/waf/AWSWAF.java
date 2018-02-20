@@ -1698,6 +1698,29 @@ public interface AWSWAF {
 
     /**
      * <p>
+     * Permanently deletes an IAM policy from the specified RuleGroup.
+     * </p>
+     * <p>
+     * The user making the request must be the owner of the RuleGroup.
+     * </p>
+     * 
+     * @param deletePermissionPolicyRequest
+     * @return Result of the DeletePermissionPolicy operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or delete an object by using a change token
+     *         that has already been used.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @sample AWSWAF.DeletePermissionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeletePermissionPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeletePermissionPolicyResult deletePermissionPolicy(DeletePermissionPolicyRequest deletePermissionPolicyRequest);
+
+    /**
+     * <p>
      * Permanently deletes a <a>RateBasedRule</a>. You can't delete a rule if it's still used in any <code>WebACL</code>
      * objects or if it still includes any predicates, such as <code>ByteMatchSet</code> objects.
      * </p>
@@ -2574,6 +2597,23 @@ public interface AWSWAF {
 
     /**
      * <p>
+     * Returns the IAM policy attached to the RuleGroup.
+     * </p>
+     * 
+     * @param getPermissionPolicyRequest
+     * @return Result of the GetPermissionPolicy operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @sample AWSWAF.GetPermissionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetPermissionPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetPermissionPolicyResult getPermissionPolicy(GetPermissionPolicyRequest getPermissionPolicyRequest);
+
+    /**
+     * <p>
      * Returns the <a>RateBasedRule</a> that is specified by the <code>RuleId</code> that you included in the
      * <code>GetRateBasedRule</code> request.
      * </p>
@@ -3162,6 +3202,127 @@ public interface AWSWAF {
      *      Documentation</a>
      */
     ListXssMatchSetsResult listXssMatchSets(ListXssMatchSetsRequest listXssMatchSetsRequest);
+
+    /**
+     * <p>
+     * Attaches a IAM policy to the specified resource. The only supported use for this action is to share a RuleGroup
+     * across accounts.
+     * </p>
+     * <p>
+     * The <code>PutPermissionPolicy</code> is subject to the following restrictions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can attach only one policy with each <code>PutPermissionPolicy</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The policy must include an <code>Effect</code>, <code>Action</code> and <code>Principal</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Effect</code> must specify <code>Allow</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code> and
+     * <code>waf-regional:UpdateWebACL</code>. Any extra or wildcard actions in the policy will be rejected.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The policy cannot include a <code>Resource</code> parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ARN in the request must be a valid WAF RuleGroup ARN and the RuleGroup must exist in the same region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The user making the request must be the owner of the RuleGroup.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Your policy must be composed using IAM Policy version 2012-10-17.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM
+     * Policies</a>.
+     * </p>
+     * <p>
+     * An example of a valid policy parameter is shown in the Examples section below.
+     * </p>
+     * 
+     * @param putPermissionPolicyRequest
+     * @return Result of the PutPermissionPolicy operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or delete an object by using a change token
+     *         that has already been used.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFInvalidPermissionPolicyException
+     *         The operation failed because the specified policy is not in the proper format. </p>
+     *         <p>
+     *         The policy is subject to the following restrictions:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You can attach only one policy with each <code>PutPermissionPolicy</code> request.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The policy must include an <code>Effect</code>, <code>Action</code> and <code>Principal</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Effect</code> must specify <code>Allow</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code> or
+     *         <code>waf-regional:UpdateWebACL</code>. Any extra or wildcard actions in the policy will be rejected.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The policy cannot include a <code>Resource</code> parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The ARN in the request must be a valid WAF RuleGroup ARN and the RuleGroup must exist in the same region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The user making the request must be the owner of the RuleGroup.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your policy must be composed using IAM Policy version 2012-10-17.
+     *         </p>
+     *         </li>
+     * @sample AWSWAF.PutPermissionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/PutPermissionPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PutPermissionPolicyResult putPermissionPolicy(PutPermissionPolicyRequest putPermissionPolicyRequest);
 
     /**
      * <p>

@@ -231,6 +231,10 @@ public class CreateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
             }
         }
 
+        if (createAutoScalingGroupRequest.getServiceLinkedRoleARN() != null) {
+            request.addParameter("ServiceLinkedRoleARN", StringUtils.fromString(createAutoScalingGroupRequest.getServiceLinkedRoleARN()));
+        }
+
         return request;
     }
 

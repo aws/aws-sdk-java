@@ -202,6 +202,14 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other AWS
+     * services on your behalf. By default, Auto Scaling uses a service-linked role named AWSServiceRoleForAutoScaling,
+     * which it creates if it does not exist.
+     * </p>
+     */
+    private String serviceLinkedRoleARN;
 
     /**
      * <p>
@@ -1571,6 +1579,58 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other AWS
+     * services on your behalf. By default, Auto Scaling uses a service-linked role named AWSServiceRoleForAutoScaling,
+     * which it creates if it does not exist.
+     * </p>
+     * 
+     * @param serviceLinkedRoleARN
+     *        The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other
+     *        AWS services on your behalf. By default, Auto Scaling uses a service-linked role named
+     *        AWSServiceRoleForAutoScaling, which it creates if it does not exist.
+     */
+
+    public void setServiceLinkedRoleARN(String serviceLinkedRoleARN) {
+        this.serviceLinkedRoleARN = serviceLinkedRoleARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other AWS
+     * services on your behalf. By default, Auto Scaling uses a service-linked role named AWSServiceRoleForAutoScaling,
+     * which it creates if it does not exist.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other
+     *         AWS services on your behalf. By default, Auto Scaling uses a service-linked role named
+     *         AWSServiceRoleForAutoScaling, which it creates if it does not exist.
+     */
+
+    public String getServiceLinkedRoleARN() {
+        return this.serviceLinkedRoleARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other AWS
+     * services on your behalf. By default, Auto Scaling uses a service-linked role named AWSServiceRoleForAutoScaling,
+     * which it creates if it does not exist.
+     * </p>
+     * 
+     * @param serviceLinkedRoleARN
+     *        The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other
+     *        AWS services on your behalf. By default, Auto Scaling uses a service-linked role named
+     *        AWSServiceRoleForAutoScaling, which it creates if it does not exist.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAutoScalingGroupRequest withServiceLinkedRoleARN(String serviceLinkedRoleARN) {
+        setServiceLinkedRoleARN(serviceLinkedRoleARN);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1618,7 +1678,9 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
         if (getLifecycleHookSpecificationList() != null)
             sb.append("LifecycleHookSpecificationList: ").append(getLifecycleHookSpecificationList()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getServiceLinkedRoleARN() != null)
+            sb.append("ServiceLinkedRoleARN: ").append(getServiceLinkedRoleARN());
         sb.append("}");
         return sb.toString();
     }
@@ -1711,6 +1773,10 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getServiceLinkedRoleARN() == null ^ this.getServiceLinkedRoleARN() == null)
+            return false;
+        if (other.getServiceLinkedRoleARN() != null && other.getServiceLinkedRoleARN().equals(this.getServiceLinkedRoleARN()) == false)
+            return false;
         return true;
     }
 
@@ -1738,6 +1804,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getNewInstancesProtectedFromScaleIn() == null) ? 0 : getNewInstancesProtectedFromScaleIn().hashCode());
         hashCode = prime * hashCode + ((getLifecycleHookSpecificationList() == null) ? 0 : getLifecycleHookSpecificationList().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getServiceLinkedRoleARN() == null) ? 0 : getServiceLinkedRoleARN().hashCode());
         return hashCode;
     }
 

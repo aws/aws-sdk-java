@@ -39,7 +39,7 @@ public class DescribeLoadBalancerTargetGroupsRequest extends com.amazonaws.Amazo
     private String nextToken;
     /**
      * <p>
-     * The maximum number of items to return with this call. The default value is 50 and the maximum value is 100.
+     * The maximum number of items to return with this call. The default value is 100 and the maximum value is 100.
      * </p>
      */
     private Integer maxRecords;
@@ -126,11 +126,11 @@ public class DescribeLoadBalancerTargetGroupsRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The maximum number of items to return with this call. The default value is 50 and the maximum value is 100.
+     * The maximum number of items to return with this call. The default value is 100 and the maximum value is 100.
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of items to return with this call. The default value is 50 and the maximum value is
+     *        The maximum number of items to return with this call. The default value is 100 and the maximum value is
      *        100.
      */
 
@@ -140,10 +140,10 @@ public class DescribeLoadBalancerTargetGroupsRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The maximum number of items to return with this call. The default value is 50 and the maximum value is 100.
+     * The maximum number of items to return with this call. The default value is 100 and the maximum value is 100.
      * </p>
      * 
-     * @return The maximum number of items to return with this call. The default value is 50 and the maximum value is
+     * @return The maximum number of items to return with this call. The default value is 100 and the maximum value is
      *         100.
      */
 
@@ -153,11 +153,11 @@ public class DescribeLoadBalancerTargetGroupsRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The maximum number of items to return with this call. The default value is 50 and the maximum value is 100.
+     * The maximum number of items to return with this call. The default value is 100 and the maximum value is 100.
      * </p>
      * 
      * @param maxRecords
-     *        The maximum number of items to return with this call. The default value is 50 and the maximum value is
+     *        The maximum number of items to return with this call. The default value is 100 and the maximum value is
      *        100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

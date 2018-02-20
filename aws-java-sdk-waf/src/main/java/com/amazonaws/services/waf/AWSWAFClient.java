@@ -83,6 +83,9 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
                             new JsonErrorShapeMetadata().withErrorCode("WAFStaleDataException").withModeledClass(
                                     com.amazonaws.services.waf.model.WAFStaleDataException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("WAFInvalidPermissionPolicyException").withModeledClass(
+                                    com.amazonaws.services.waf.model.WAFInvalidPermissionPolicyException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("WAFInvalidParameterException").withModeledClass(
                                     com.amazonaws.services.waf.model.WAFInvalidParameterException.class))
                     .addErrorMetadata(
@@ -2444,6 +2447,66 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
 
     /**
      * <p>
+     * Permanently deletes an IAM policy from the specified RuleGroup.
+     * </p>
+     * <p>
+     * The user making the request must be the owner of the RuleGroup.
+     * </p>
+     * 
+     * @param deletePermissionPolicyRequest
+     * @return Result of the DeletePermissionPolicy operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or delete an object by using a change token
+     *         that has already been used.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @sample AWSWAF.DeletePermissionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/DeletePermissionPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeletePermissionPolicyResult deletePermissionPolicy(DeletePermissionPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeletePermissionPolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeletePermissionPolicyResult executeDeletePermissionPolicy(DeletePermissionPolicyRequest deletePermissionPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deletePermissionPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeletePermissionPolicyRequest> request = null;
+        Response<DeletePermissionPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeletePermissionPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePermissionPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeletePermissionPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeletePermissionPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Permanently deletes a <a>RateBasedRule</a>. You can't delete a rule if it's still used in any <code>WebACL</code>
      * objects or if it still includes any predicates, such as <code>ByteMatchSet</code> objects.
      * </p>
@@ -3817,6 +3880,59 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
 
             HttpResponseHandler<AmazonWebServiceResponse<GetIPSetResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetIPSetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the IAM policy attached to the RuleGroup.
+     * </p>
+     * 
+     * @param getPermissionPolicyRequest
+     * @return Result of the GetPermissionPolicy operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @sample AWSWAF.GetPermissionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetPermissionPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetPermissionPolicyResult getPermissionPolicy(GetPermissionPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetPermissionPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetPermissionPolicyResult executeGetPermissionPolicy(GetPermissionPolicyRequest getPermissionPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getPermissionPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetPermissionPolicyRequest> request = null;
+        Response<GetPermissionPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetPermissionPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPermissionPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetPermissionPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetPermissionPolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5319,6 +5435,163 @@ public class AWSWAFClient extends AmazonWebServiceClient implements AWSWAF {
 
             HttpResponseHandler<AmazonWebServiceResponse<ListXssMatchSetsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListXssMatchSetsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Attaches a IAM policy to the specified resource. The only supported use for this action is to share a RuleGroup
+     * across accounts.
+     * </p>
+     * <p>
+     * The <code>PutPermissionPolicy</code> is subject to the following restrictions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can attach only one policy with each <code>PutPermissionPolicy</code> request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The policy must include an <code>Effect</code>, <code>Action</code> and <code>Principal</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Effect</code> must specify <code>Allow</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code> and
+     * <code>waf-regional:UpdateWebACL</code>. Any extra or wildcard actions in the policy will be rejected.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The policy cannot include a <code>Resource</code> parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ARN in the request must be a valid WAF RuleGroup ARN and the RuleGroup must exist in the same region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The user making the request must be the owner of the RuleGroup.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Your policy must be composed using IAM Policy version 2012-10-17.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">IAM
+     * Policies</a>.
+     * </p>
+     * <p>
+     * An example of a valid policy parameter is shown in the Examples section below.
+     * </p>
+     * 
+     * @param putPermissionPolicyRequest
+     * @return Result of the PutPermissionPolicy operation returned by the service.
+     * @throws WAFInternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws WAFStaleDataException
+     *         The operation failed because you tried to create, update, or delete an object by using a change token
+     *         that has already been used.
+     * @throws WAFNonexistentItemException
+     *         The operation failed because the referenced object doesn't exist.
+     * @throws WAFInvalidPermissionPolicyException
+     *         The operation failed because the specified policy is not in the proper format. </p>
+     *         <p>
+     *         The policy is subject to the following restrictions:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You can attach only one policy with each <code>PutPermissionPolicy</code> request.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The policy must include an <code>Effect</code>, <code>Action</code> and <code>Principal</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Effect</code> must specify <code>Allow</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>Action</code> in the policy must be <code>waf:UpdateWebACL</code> or
+     *         <code>waf-regional:UpdateWebACL</code>. Any extra or wildcard actions in the policy will be rejected.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The policy cannot include a <code>Resource</code> parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The ARN in the request must be a valid WAF RuleGroup ARN and the RuleGroup must exist in the same region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The user making the request must be the owner of the RuleGroup.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your policy must be composed using IAM Policy version 2012-10-17.
+     *         </p>
+     *         </li>
+     * @sample AWSWAF.PutPermissionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/PutPermissionPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PutPermissionPolicyResult putPermissionPolicy(PutPermissionPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutPermissionPolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutPermissionPolicyResult executePutPermissionPolicy(PutPermissionPolicyRequest putPermissionPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putPermissionPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutPermissionPolicyRequest> request = null;
+        Response<PutPermissionPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutPermissionPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putPermissionPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutPermissionPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutPermissionPolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

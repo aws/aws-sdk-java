@@ -113,6 +113,11 @@ public class AbstractAWSWAF implements AWSWAF {
     }
 
     @Override
+    public DeletePermissionPolicyResult deletePermissionPolicy(DeletePermissionPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteRateBasedRuleResult deleteRateBasedRule(DeleteRateBasedRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -179,6 +184,11 @@ public class AbstractAWSWAF implements AWSWAF {
 
     @Override
     public GetIPSetResult getIPSet(GetIPSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetPermissionPolicyResult getPermissionPolicy(GetPermissionPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -304,6 +314,11 @@ public class AbstractAWSWAF implements AWSWAF {
 
     @Override
     public ListXssMatchSetsResult listXssMatchSets(ListXssMatchSetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutPermissionPolicyResult putPermissionPolicy(PutPermissionPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -27,7 +27,7 @@ public class AttachInstancesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The IDs of the instances. You can specify up to 20 instances.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> instanceIds;
@@ -40,10 +40,10 @@ public class AttachInstancesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The IDs of the instances. You can specify up to 20 instances.
      * </p>
      * 
-     * @return One or more instance IDs.
+     * @return The IDs of the instances. You can specify up to 20 instances.
      */
 
     public java.util.List<String> getInstanceIds() {
@@ -55,11 +55,11 @@ public class AttachInstancesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The IDs of the instances. You can specify up to 20 instances.
      * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs.
+     *        The IDs of the instances. You can specify up to 20 instances.
      */
 
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
@@ -73,7 +73,7 @@ public class AttachInstancesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The IDs of the instances. You can specify up to 20 instances.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class AttachInstancesRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs.
+     *        The IDs of the instances. You can specify up to 20 instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class AttachInstancesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * One or more instance IDs.
+     * The IDs of the instances. You can specify up to 20 instances.
      * </p>
      * 
      * @param instanceIds
-     *        One or more instance IDs.
+     *        The IDs of the instances. You can specify up to 20 instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
