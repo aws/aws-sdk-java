@@ -25,16 +25,26 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListApplicationsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The total number of items to return */
+    /**
+     * <p>
+     * The total number of items to return.
+     * </p>
+     */
     private Integer maxItems;
-    /** A token to specify where to start paginating */
+    /**
+     * <p>
+     * A token to specify where to start paginating.
+     * </p>
+     */
     private String nextToken;
 
     /**
-     * The total number of items to return
+     * <p>
+     * The total number of items to return.
+     * </p>
      * 
      * @param maxItems
-     *        The total number of items to return
+     *        The total number of items to return.
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -42,9 +52,11 @@ public class ListApplicationsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * The total number of items to return
+     * <p>
+     * The total number of items to return.
+     * </p>
      * 
-     * @return The total number of items to return
+     * @return The total number of items to return.
      */
 
     public Integer getMaxItems() {
@@ -52,10 +64,12 @@ public class ListApplicationsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * The total number of items to return
+     * <p>
+     * The total number of items to return.
+     * </p>
      * 
      * @param maxItems
-     *        The total number of items to return
+     *        The total number of items to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -65,10 +79,12 @@ public class ListApplicationsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * A token to specify where to start paginating
+     * <p>
+     * A token to specify where to start paginating.
+     * </p>
      * 
      * @param nextToken
-     *        A token to specify where to start paginating
+     *        A token to specify where to start paginating.
      */
 
     public void setNextToken(String nextToken) {
@@ -76,9 +92,11 @@ public class ListApplicationsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * A token to specify where to start paginating
+     * <p>
+     * A token to specify where to start paginating.
+     * </p>
      * 
-     * @return A token to specify where to start paginating
+     * @return A token to specify where to start paginating.
      */
 
     public String getNextToken() {
@@ -86,10 +104,12 @@ public class ListApplicationsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * A token to specify where to start paginating
+     * <p>
+     * A token to specify where to start paginating.
+     * </p>
      * 
      * @param nextToken
-     *        A token to specify where to start paginating
+     *        A token to specify where to start paginating.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

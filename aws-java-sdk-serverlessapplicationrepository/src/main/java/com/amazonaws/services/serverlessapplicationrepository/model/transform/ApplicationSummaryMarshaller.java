@@ -36,6 +36,8 @@ public class ApplicationSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationTime").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<String> HOMEPAGEURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("homePageUrl").build();
     private static final MarshallingInfo<List> LABELS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("labels").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -63,6 +65,7 @@ public class ApplicationSummaryMarshaller {
             protocolMarshaller.marshall(applicationSummary.getAuthor(), AUTHOR_BINDING);
             protocolMarshaller.marshall(applicationSummary.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(applicationSummary.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(applicationSummary.getHomePageUrl(), HOMEPAGEURL_BINDING);
             protocolMarshaller.marshall(applicationSummary.getLabels(), LABELS_BINDING);
             protocolMarshaller.marshall(applicationSummary.getName(), NAME_BINDING);
             protocolMarshaller.marshall(applicationSummary.getSpdxLicenseId(), SPDXLICENSEID_BINDING);

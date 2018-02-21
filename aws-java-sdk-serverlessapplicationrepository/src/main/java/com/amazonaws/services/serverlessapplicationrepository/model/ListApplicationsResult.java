@@ -23,13 +23,23 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** Array of application summaries. */
+    /**
+     * <p>
+     * Array of application summaries.
+     * </p>
+     */
     private java.util.List<ApplicationSummary> applications;
-    /** The token to request the next page of results. */
+    /**
+     * <p>
+     * The token to request the next page of results.
+     * </p>
+     */
     private String nextToken;
 
     /**
+     * <p>
      * Array of application summaries.
+     * </p>
      * 
      * @return Array of application summaries.
      */
@@ -39,7 +49,9 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
      * Array of application summaries.
+     * </p>
      * 
      * @param applications
      *        Array of application summaries.
@@ -55,7 +67,9 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
      * Array of application summaries.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setApplications(java.util.Collection)} or {@link #withApplications(java.util.Collection)} if you want to
@@ -78,7 +92,9 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
      * Array of application summaries.
+     * </p>
      * 
      * @param applications
      *        Array of application summaries.
@@ -91,7 +107,9 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
      * The token to request the next page of results.
+     * </p>
      * 
      * @param nextToken
      *        The token to request the next page of results.
@@ -102,7 +120,9 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
      * The token to request the next page of results.
+     * </p>
      * 
      * @return The token to request the next page of results.
      */
@@ -112,7 +132,9 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
      * The token to request the next page of results.
+     * </p>
      * 
      * @param nextToken
      *        The token to request the next page of results.

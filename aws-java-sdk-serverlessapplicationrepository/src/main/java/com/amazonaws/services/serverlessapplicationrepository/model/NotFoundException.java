@@ -15,13 +15,19 @@ package com.amazonaws.services.serverlessapplicationrepository.model;
 import javax.annotation.Generated;
 
 /**
+ * <p>
  * The resource (for example, an access policy statement) specified in the request does not exist.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NotFoundException extends com.amazonaws.services.serverlessapplicationrepository.model.AWSServerlessApplicationRepositoryException {
     private static final long serialVersionUID = 1L;
 
-    /** 404 */
+    /**
+     * <p>
+     * 404
+     * </p>
+     */
     private String errorCode;
 
     /**
@@ -35,7 +41,9 @@ public class NotFoundException extends com.amazonaws.services.serverlessapplicat
     }
 
     /**
+     * <p>
      * 404
+     * </p>
      * 
      * @param errorCode
      *        404
@@ -47,7 +55,9 @@ public class NotFoundException extends com.amazonaws.services.serverlessapplicat
     }
 
     /**
+     * <p>
      * 404
+     * </p>
      * 
      * @return 404
      */
@@ -58,7 +68,9 @@ public class NotFoundException extends com.amazonaws.services.serverlessapplicat
     }
 
     /**
+     * <p>
      * 404
+     * </p>
      * 
      * @param errorCode
      *        404

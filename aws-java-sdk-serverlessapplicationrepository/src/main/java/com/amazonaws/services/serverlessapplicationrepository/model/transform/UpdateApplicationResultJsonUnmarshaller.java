@@ -64,6 +64,10 @@ public class UpdateApplicationResultJsonUnmarshaller implements Unmarshaller<Upd
                     context.nextToken();
                     updateApplicationResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("homePageUrl", targetDepth)) {
+                    context.nextToken();
+                    updateApplicationResult.setHomePageUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("labels", targetDepth)) {
                     context.nextToken();
                     updateApplicationResult.setLabels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));

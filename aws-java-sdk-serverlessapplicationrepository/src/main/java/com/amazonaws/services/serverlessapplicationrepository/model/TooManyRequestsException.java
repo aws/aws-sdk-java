@@ -15,13 +15,19 @@ package com.amazonaws.services.serverlessapplicationrepository.model;
 import javax.annotation.Generated;
 
 /**
+ * <p>
  * The client is sending more than the allowed number of requests per unit time.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TooManyRequestsException extends com.amazonaws.services.serverlessapplicationrepository.model.AWSServerlessApplicationRepositoryException {
     private static final long serialVersionUID = 1L;
 
-    /** 429 */
+    /**
+     * <p>
+     * 429
+     * </p>
+     */
     private String errorCode;
 
     /**
@@ -35,7 +41,9 @@ public class TooManyRequestsException extends com.amazonaws.services.serverlessa
     }
 
     /**
+     * <p>
      * 429
+     * </p>
      * 
      * @param errorCode
      *        429
@@ -47,7 +55,9 @@ public class TooManyRequestsException extends com.amazonaws.services.serverlessa
     }
 
     /**
+     * <p>
      * 429
+     * </p>
      * 
      * @return 429
      */
@@ -58,7 +68,9 @@ public class TooManyRequestsException extends com.amazonaws.services.serverlessa
     }
 
     /**
+     * <p>
      * 429
+     * </p>
      * 
      * @param errorCode
      *        429

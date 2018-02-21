@@ -93,6 +93,16 @@
  * </li>
  * </ul>
  * <p>
+ * Files, by calling the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>PutFile</a>, which adds or modifies a file in a specified repository and branch.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
  * Information about committed code in a repository, by calling the following:
  * </p>
  * <ul>

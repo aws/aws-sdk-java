@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
  * Application version summary.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/VersionSummary" target="_top">AWS API
  *      Documentation</a>
@@ -26,17 +28,38 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
 
-    /** The application Amazon Resource Name (ARN). */
+    /**
+     * <p>
+     * The application Amazon Resource Name (ARN).
+     * </p>
+     */
     private String applicationId;
-    /** The date/time this resource was created. */
+    /**
+     * <p>
+     * The date/time this resource was created.
+     * </p>
+     */
     private String creationTime;
-    /** The semantic version of the application:\n\n https://semver.org/ */
+    /**
+     * <p>
+     * The semantic version of the application:
+     * </p>
+     * <p>
+     * <a href=""https://semver.org/"">https://semver.org/</a>
+     * </p>
+     */
     private String semanticVersion;
-    /** A link to a public repository for the source code of your application. */
+    /**
+     * <p>
+     * A link to a public repository for the source code of your application.
+     * </p>
+     */
     private String sourceCodeUrl;
 
     /**
+     * <p>
      * The application Amazon Resource Name (ARN).
+     * </p>
      * 
      * @param applicationId
      *        The application Amazon Resource Name (ARN).
@@ -47,7 +70,9 @@ public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The application Amazon Resource Name (ARN).
+     * </p>
      * 
      * @return The application Amazon Resource Name (ARN).
      */
@@ -57,7 +82,9 @@ public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The application Amazon Resource Name (ARN).
+     * </p>
      * 
      * @param applicationId
      *        The application Amazon Resource Name (ARN).
@@ -70,7 +97,9 @@ public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The date/time this resource was created.
+     * </p>
      * 
      * @param creationTime
      *        The date/time this resource was created.
@@ -81,7 +110,9 @@ public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The date/time this resource was created.
+     * </p>
      * 
      * @return The date/time this resource was created.
      */
@@ -91,7 +122,9 @@ public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The date/time this resource was created.
+     * </p>
      * 
      * @param creationTime
      *        The date/time this resource was created.
@@ -104,10 +137,17 @@ public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The semantic version of the application:\n\n https://semver.org/
+     * <p>
+     * The semantic version of the application:
+     * </p>
+     * <p>
+     * <a href=""https://semver.org/"">https://semver.org/</a>
+     * </p>
      * 
      * @param semanticVersion
-     *        The semantic version of the application:\n\n https://semver.org/
+     *        The semantic version of the application:</p>
+     *        <p>
+     *        <a href=""https://semver.org/"">https://semver.org/</a>
      */
 
     public void setSemanticVersion(String semanticVersion) {
@@ -115,9 +155,16 @@ public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The semantic version of the application:\n\n https://semver.org/
+     * <p>
+     * The semantic version of the application:
+     * </p>
+     * <p>
+     * <a href=""https://semver.org/"">https://semver.org/</a>
+     * </p>
      * 
-     * @return The semantic version of the application:\n\n https://semver.org/
+     * @return The semantic version of the application:</p>
+     *         <p>
+     *         <a href=""https://semver.org/"">https://semver.org/</a>
      */
 
     public String getSemanticVersion() {
@@ -125,10 +172,17 @@ public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The semantic version of the application:\n\n https://semver.org/
+     * <p>
+     * The semantic version of the application:
+     * </p>
+     * <p>
+     * <a href=""https://semver.org/"">https://semver.org/</a>
+     * </p>
      * 
      * @param semanticVersion
-     *        The semantic version of the application:\n\n https://semver.org/
+     *        The semantic version of the application:</p>
+     *        <p>
+     *        <a href=""https://semver.org/"">https://semver.org/</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,7 +192,9 @@ public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * A link to a public repository for the source code of your application.
+     * </p>
      * 
      * @param sourceCodeUrl
      *        A link to a public repository for the source code of your application.
@@ -149,7 +205,9 @@ public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * A link to a public repository for the source code of your application.
+     * </p>
      * 
      * @return A link to a public repository for the source code of your application.
      */
@@ -159,7 +217,9 @@ public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * A link to a public repository for the source code of your application.
+     * </p>
      * 
      * @param sourceCodeUrl
      *        A link to a public repository for the source code of your application.

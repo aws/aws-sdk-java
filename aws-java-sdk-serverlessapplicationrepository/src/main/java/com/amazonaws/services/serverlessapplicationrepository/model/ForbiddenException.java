@@ -15,13 +15,19 @@ package com.amazonaws.services.serverlessapplicationrepository.model;
 import javax.annotation.Generated;
 
 /**
+ * <p>
  * The client is not authenticated.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ForbiddenException extends com.amazonaws.services.serverlessapplicationrepository.model.AWSServerlessApplicationRepositoryException {
     private static final long serialVersionUID = 1L;
 
-    /** 403 */
+    /**
+     * <p>
+     * 403
+     * </p>
+     */
     private String errorCode;
 
     /**
@@ -35,7 +41,9 @@ public class ForbiddenException extends com.amazonaws.services.serverlessapplica
     }
 
     /**
+     * <p>
      * 403
+     * </p>
      * 
      * @param errorCode
      *        403
@@ -47,7 +55,9 @@ public class ForbiddenException extends com.amazonaws.services.serverlessapplica
     }
 
     /**
+     * <p>
      * 403
+     * </p>
      * 
      * @return 403
      */
@@ -58,7 +68,9 @@ public class ForbiddenException extends com.amazonaws.services.serverlessapplica
     }
 
     /**
+     * <p>
      * 403
+     * </p>
      * 
      * @param errorCode
      *        403

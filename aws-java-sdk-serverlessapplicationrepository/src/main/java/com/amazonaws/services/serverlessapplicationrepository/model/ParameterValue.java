@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
  * Parameter value of the application.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ParameterValue" target="_top">AWS API
  *      Documentation</a>
@@ -27,20 +29,28 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class ParameterValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
+     * <p>
      * The key associated with the parameter. If you don't specify a key and value for a particular parameter, AWS
-     * CloudFormation\n uses the default value that is specified in your template.
+     * CloudFormation uses the default value that is specified in your template.
+     * </p>
      */
     private String name;
-    /** The input value associated with the parameter. */
+    /**
+     * <p>
+     * The input value associated with the parameter.
+     * </p>
+     */
     private String value;
 
     /**
+     * <p>
      * The key associated with the parameter. If you don't specify a key and value for a particular parameter, AWS
-     * CloudFormation\n uses the default value that is specified in your template.
+     * CloudFormation uses the default value that is specified in your template.
+     * </p>
      * 
      * @param name
      *        The key associated with the parameter. If you don't specify a key and value for a particular parameter,
-     *        AWS CloudFormation\n uses the default value that is specified in your template.
+     *        AWS CloudFormation uses the default value that is specified in your template.
      */
 
     public void setName(String name) {
@@ -48,11 +58,13 @@ public class ParameterValue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The key associated with the parameter. If you don't specify a key and value for a particular parameter, AWS
-     * CloudFormation\n uses the default value that is specified in your template.
+     * CloudFormation uses the default value that is specified in your template.
+     * </p>
      * 
      * @return The key associated with the parameter. If you don't specify a key and value for a particular parameter,
-     *         AWS CloudFormation\n uses the default value that is specified in your template.
+     *         AWS CloudFormation uses the default value that is specified in your template.
      */
 
     public String getName() {
@@ -60,12 +72,14 @@ public class ParameterValue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The key associated with the parameter. If you don't specify a key and value for a particular parameter, AWS
-     * CloudFormation\n uses the default value that is specified in your template.
+     * CloudFormation uses the default value that is specified in your template.
+     * </p>
      * 
      * @param name
      *        The key associated with the parameter. If you don't specify a key and value for a particular parameter,
-     *        AWS CloudFormation\n uses the default value that is specified in your template.
+     *        AWS CloudFormation uses the default value that is specified in your template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -75,7 +89,9 @@ public class ParameterValue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The input value associated with the parameter.
+     * </p>
      * 
      * @param value
      *        The input value associated with the parameter.
@@ -86,7 +102,9 @@ public class ParameterValue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The input value associated with the parameter.
+     * </p>
      * 
      * @return The input value associated with the parameter.
      */
@@ -96,7 +114,9 @@ public class ParameterValue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The input value associated with the parameter.
+     * </p>
      * 
      * @param value
      *        The input value associated with the parameter.

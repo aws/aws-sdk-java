@@ -366,6 +366,19 @@ public class AbstractAWSCodeCommitAsync extends AbstractAWSCodeCommit implements
     }
 
     @Override
+    public java.util.concurrent.Future<PutFileResult> putFileAsync(PutFileRequest request) {
+
+        return putFileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutFileResult> putFileAsync(PutFileRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutFileRequest, PutFileResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<PutRepositoryTriggersResult> putRepositoryTriggersAsync(PutRepositoryTriggersRequest request) {
 
         return putRepositoryTriggersAsync(request, null);

@@ -168,6 +168,11 @@ public class AbstractAWSCodeCommit implements AWSCodeCommit {
     }
 
     @Override
+    public PutFileResult putFile(PutFileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutRepositoryTriggersResult putRepositoryTriggers(PutRepositoryTriggersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

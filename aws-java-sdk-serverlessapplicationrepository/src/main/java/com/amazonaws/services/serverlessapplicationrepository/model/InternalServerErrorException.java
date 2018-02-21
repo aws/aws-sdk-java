@@ -15,13 +15,19 @@ package com.amazonaws.services.serverlessapplicationrepository.model;
 import javax.annotation.Generated;
 
 /**
+ * <p>
  * The AWS Serverless Application Repository service encountered an internal error.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InternalServerErrorException extends com.amazonaws.services.serverlessapplicationrepository.model.AWSServerlessApplicationRepositoryException {
     private static final long serialVersionUID = 1L;
 
-    /** 500 */
+    /**
+     * <p>
+     * 500
+     * </p>
+     */
     private String errorCode;
 
     /**
@@ -35,7 +41,9 @@ public class InternalServerErrorException extends com.amazonaws.services.serverl
     }
 
     /**
+     * <p>
      * 500
+     * </p>
      * 
      * @param errorCode
      *        500
@@ -47,7 +55,9 @@ public class InternalServerErrorException extends com.amazonaws.services.serverl
     }
 
     /**
+     * <p>
      * 500
+     * </p>
      * 
      * @return 500
      */
@@ -58,7 +68,9 @@ public class InternalServerErrorException extends com.amazonaws.services.serverl
     }
 
     /**
+     * <p>
      * 500
+     * </p>
      * 
      * @param errorCode
      *        500

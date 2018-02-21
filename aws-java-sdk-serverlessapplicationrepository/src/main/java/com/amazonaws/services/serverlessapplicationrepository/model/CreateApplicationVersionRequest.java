@@ -25,22 +25,44 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The id of the application to create a new version for */
+    /**
+     * <p>
+     * The ID of the application to get.
+     * </p>
+     */
     private String applicationId;
-    /** The semantic version of the new version */
+    /**
+     * <p>
+     * The semantic version of the new version.
+     * </p>
+     */
     private String semanticVersion;
-    /** A link to a public repository for the source code of your application. */
+    /**
+     * <p>
+     * A link to a public repository for the source code of your application.
+     * </p>
+     */
     private String sourceCodeUrl;
-    /** The raw packaged SAM template of your application. */
+    /**
+     * <p>
+     * The raw packaged AWS SAM template of your application.
+     * </p>
+     */
     private String templateBody;
-    /** A link to the packaged SAM template of your application. */
+    /**
+     * <p>
+     * A link to the packaged AWS SAM template of your application.
+     * </p>
+     */
     private String templateUrl;
 
     /**
-     * The id of the application to create a new version for
+     * <p>
+     * The ID of the application to get.
+     * </p>
      * 
      * @param applicationId
-     *        The id of the application to create a new version for
+     *        The ID of the application to get.
      */
 
     public void setApplicationId(String applicationId) {
@@ -48,9 +70,11 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * The id of the application to create a new version for
+     * <p>
+     * The ID of the application to get.
+     * </p>
      * 
-     * @return The id of the application to create a new version for
+     * @return The ID of the application to get.
      */
 
     public String getApplicationId() {
@@ -58,10 +82,12 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * The id of the application to create a new version for
+     * <p>
+     * The ID of the application to get.
+     * </p>
      * 
      * @param applicationId
-     *        The id of the application to create a new version for
+     *        The ID of the application to get.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -71,10 +97,12 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * The semantic version of the new version
+     * <p>
+     * The semantic version of the new version.
+     * </p>
      * 
      * @param semanticVersion
-     *        The semantic version of the new version
+     *        The semantic version of the new version.
      */
 
     public void setSemanticVersion(String semanticVersion) {
@@ -82,9 +110,11 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * The semantic version of the new version
+     * <p>
+     * The semantic version of the new version.
+     * </p>
      * 
-     * @return The semantic version of the new version
+     * @return The semantic version of the new version.
      */
 
     public String getSemanticVersion() {
@@ -92,10 +122,12 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * The semantic version of the new version
+     * <p>
+     * The semantic version of the new version.
+     * </p>
      * 
      * @param semanticVersion
-     *        The semantic version of the new version
+     *        The semantic version of the new version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,7 +137,9 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
      * A link to a public repository for the source code of your application.
+     * </p>
      * 
      * @param sourceCodeUrl
      *        A link to a public repository for the source code of your application.
@@ -116,7 +150,9 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
      * A link to a public repository for the source code of your application.
+     * </p>
      * 
      * @return A link to a public repository for the source code of your application.
      */
@@ -126,7 +162,9 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
      * A link to a public repository for the source code of your application.
+     * </p>
      * 
      * @param sourceCodeUrl
      *        A link to a public repository for the source code of your application.
@@ -139,10 +177,12 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * The raw packaged SAM template of your application.
+     * <p>
+     * The raw packaged AWS SAM template of your application.
+     * </p>
      * 
      * @param templateBody
-     *        The raw packaged SAM template of your application.
+     *        The raw packaged AWS SAM template of your application.
      */
 
     public void setTemplateBody(String templateBody) {
@@ -150,9 +190,11 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * The raw packaged SAM template of your application.
+     * <p>
+     * The raw packaged AWS SAM template of your application.
+     * </p>
      * 
-     * @return The raw packaged SAM template of your application.
+     * @return The raw packaged AWS SAM template of your application.
      */
 
     public String getTemplateBody() {
@@ -160,10 +202,12 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * The raw packaged SAM template of your application.
+     * <p>
+     * The raw packaged AWS SAM template of your application.
+     * </p>
      * 
      * @param templateBody
-     *        The raw packaged SAM template of your application.
+     *        The raw packaged AWS SAM template of your application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,10 +217,12 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * A link to the packaged SAM template of your application.
+     * <p>
+     * A link to the packaged AWS SAM template of your application.
+     * </p>
      * 
      * @param templateUrl
-     *        A link to the packaged SAM template of your application.
+     *        A link to the packaged AWS SAM template of your application.
      */
 
     public void setTemplateUrl(String templateUrl) {
@@ -184,9 +230,11 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * A link to the packaged SAM template of your application.
+     * <p>
+     * A link to the packaged AWS SAM template of your application.
+     * </p>
      * 
-     * @return A link to the packaged SAM template of your application.
+     * @return A link to the packaged AWS SAM template of your application.
      */
 
     public String getTemplateUrl() {
@@ -194,10 +242,12 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * A link to the packaged SAM template of your application.
+     * <p>
+     * A link to the packaged AWS SAM template of your application.
+     * </p>
      * 
      * @param templateUrl
-     *        A link to the packaged SAM template of your application.
+     *        A link to the packaged AWS SAM template of your application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

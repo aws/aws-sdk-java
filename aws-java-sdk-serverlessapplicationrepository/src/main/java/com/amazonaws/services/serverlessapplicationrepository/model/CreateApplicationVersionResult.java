@@ -23,21 +23,50 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** The application Amazon Resource Name (ARN). */
+    /**
+     * <p>
+     * The application Amazon Resource Name (ARN).
+     * </p>
+     */
     private String applicationId;
-    /** The date/time this resource was created. */
+    /**
+     * <p>
+     * The date/time this resource was created.
+     * </p>
+     */
     private String creationTime;
-    /** Array of parameter types supported by the application. */
+    /**
+     * <p>
+     * Array of parameter types supported by the application.
+     * </p>
+     */
     private java.util.List<ParameterDefinition> parameterDefinitions;
-    /** The semantic version of the application:\n\n https://semver.org/ */
+    /**
+     * <p>
+     * The semantic version of the application:
+     * </p>
+     * <p>
+     * <a href=""https://semver.org/"">https://semver.org/</a>
+     * </p>
+     */
     private String semanticVersion;
-    /** A link to a public repository for the source code of your application. */
+    /**
+     * <p>
+     * A link to a public repository for the source code of your application.
+     * </p>
+     */
     private String sourceCodeUrl;
-    /** A link to the packaged SAM template of your application. */
+    /**
+     * <p>
+     * A link to the packaged AWS SAM template of your application.
+     * </p>
+     */
     private String templateUrl;
 
     /**
+     * <p>
      * The application Amazon Resource Name (ARN).
+     * </p>
      * 
      * @param applicationId
      *        The application Amazon Resource Name (ARN).
@@ -48,7 +77,9 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
      * The application Amazon Resource Name (ARN).
+     * </p>
      * 
      * @return The application Amazon Resource Name (ARN).
      */
@@ -58,7 +89,9 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
      * The application Amazon Resource Name (ARN).
+     * </p>
      * 
      * @param applicationId
      *        The application Amazon Resource Name (ARN).
@@ -71,7 +104,9 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
      * The date/time this resource was created.
+     * </p>
      * 
      * @param creationTime
      *        The date/time this resource was created.
@@ -82,7 +117,9 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
      * The date/time this resource was created.
+     * </p>
      * 
      * @return The date/time this resource was created.
      */
@@ -92,7 +129,9 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
      * The date/time this resource was created.
+     * </p>
      * 
      * @param creationTime
      *        The date/time this resource was created.
@@ -105,7 +144,9 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
      * Array of parameter types supported by the application.
+     * </p>
      * 
      * @return Array of parameter types supported by the application.
      */
@@ -115,7 +156,9 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
      * Array of parameter types supported by the application.
+     * </p>
      * 
      * @param parameterDefinitions
      *        Array of parameter types supported by the application.
@@ -131,7 +174,9 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
      * Array of parameter types supported by the application.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setParameterDefinitions(java.util.Collection)} or {@link #withParameterDefinitions(java.util.Collection)}
@@ -154,7 +199,9 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
      * Array of parameter types supported by the application.
+     * </p>
      * 
      * @param parameterDefinitions
      *        Array of parameter types supported by the application.
@@ -167,10 +214,17 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * The semantic version of the application:\n\n https://semver.org/
+     * <p>
+     * The semantic version of the application:
+     * </p>
+     * <p>
+     * <a href=""https://semver.org/"">https://semver.org/</a>
+     * </p>
      * 
      * @param semanticVersion
-     *        The semantic version of the application:\n\n https://semver.org/
+     *        The semantic version of the application:</p>
+     *        <p>
+     *        <a href=""https://semver.org/"">https://semver.org/</a>
      */
 
     public void setSemanticVersion(String semanticVersion) {
@@ -178,9 +232,16 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * The semantic version of the application:\n\n https://semver.org/
+     * <p>
+     * The semantic version of the application:
+     * </p>
+     * <p>
+     * <a href=""https://semver.org/"">https://semver.org/</a>
+     * </p>
      * 
-     * @return The semantic version of the application:\n\n https://semver.org/
+     * @return The semantic version of the application:</p>
+     *         <p>
+     *         <a href=""https://semver.org/"">https://semver.org/</a>
      */
 
     public String getSemanticVersion() {
@@ -188,10 +249,17 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * The semantic version of the application:\n\n https://semver.org/
+     * <p>
+     * The semantic version of the application:
+     * </p>
+     * <p>
+     * <a href=""https://semver.org/"">https://semver.org/</a>
+     * </p>
      * 
      * @param semanticVersion
-     *        The semantic version of the application:\n\n https://semver.org/
+     *        The semantic version of the application:</p>
+     *        <p>
+     *        <a href=""https://semver.org/"">https://semver.org/</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -201,7 +269,9 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
      * A link to a public repository for the source code of your application.
+     * </p>
      * 
      * @param sourceCodeUrl
      *        A link to a public repository for the source code of your application.
@@ -212,7 +282,9 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
      * A link to a public repository for the source code of your application.
+     * </p>
      * 
      * @return A link to a public repository for the source code of your application.
      */
@@ -222,7 +294,9 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
      * A link to a public repository for the source code of your application.
+     * </p>
      * 
      * @param sourceCodeUrl
      *        A link to a public repository for the source code of your application.
@@ -235,10 +309,12 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * A link to the packaged SAM template of your application.
+     * <p>
+     * A link to the packaged AWS SAM template of your application.
+     * </p>
      * 
      * @param templateUrl
-     *        A link to the packaged SAM template of your application.
+     *        A link to the packaged AWS SAM template of your application.
      */
 
     public void setTemplateUrl(String templateUrl) {
@@ -246,9 +322,11 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * A link to the packaged SAM template of your application.
+     * <p>
+     * A link to the packaged AWS SAM template of your application.
+     * </p>
      * 
-     * @return A link to the packaged SAM template of your application.
+     * @return A link to the packaged AWS SAM template of your application.
      */
 
     public String getTemplateUrl() {
@@ -256,10 +334,12 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * A link to the packaged SAM template of your application.
+     * <p>
+     * A link to the packaged AWS SAM template of your application.
+     * </p>
      * 
      * @param templateUrl
-     *        A link to the packaged SAM template of your application.
+     *        A link to the packaged AWS SAM template of your application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

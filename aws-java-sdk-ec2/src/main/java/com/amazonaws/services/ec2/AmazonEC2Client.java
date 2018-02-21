@@ -3597,6 +3597,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * remain protected.
      * </p>
      * <p>
+     * You can tag your snapshots during creation. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>.
+     * </p>
+     * <p>
      * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon
      * Elastic Block Store</a> and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the

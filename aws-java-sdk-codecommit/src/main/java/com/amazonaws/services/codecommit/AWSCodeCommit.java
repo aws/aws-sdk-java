@@ -107,6 +107,16 @@ import com.amazonaws.services.codecommit.model.*;
  * </li>
  * </ul>
  * <p>
+ * Files, by calling the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>PutFile</a>, which adds or modifies a file in a specified repository and branch.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
  * Information about committed code in a repository, by calling the following:
  * </p>
  * <ul>
@@ -1474,6 +1484,92 @@ public interface AWSCodeCommit {
      *      API Documentation</a>
      */
     PostCommentReplyResult postCommentReply(PostCommentReplyRequest postCommentReplyRequest);
+
+    /**
+     * <p>
+     * Adds or updates a file in an AWS CodeCommit repository.
+     * </p>
+     * 
+     * @param putFileRequest
+     * @return Result of the PutFile operation returned by the service.
+     * @throws RepositoryNameRequiredException
+     *         A repository name is required but was not specified.
+     * @throws InvalidRepositoryNameException
+     *         At least one specified repository name is not valid.</p> <note>
+     *         <p>
+     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         required repository parameter is missing, or when a specified repository does not exist.
+     *         </p>
+     * @throws RepositoryDoesNotExistException
+     *         The specified repository does not exist.
+     * @throws ParentCommitIdRequiredException
+     *         A parent commit ID is required. To view the full commit ID of a branch in a repository, use
+     *         <a>GetBranch</a> or a Git command (for example, git pull or git log).
+     * @throws InvalidParentCommitIdException
+     *         The parent commit ID is not valid. The commit ID cannot be empty, and must match the head commit ID for
+     *         the branch of the repository where you want to add or update a file.
+     * @throws ParentCommitDoesNotExistException
+     *         The parent commit ID is not valid. The specified parent commit ID does not exist in the specified branch
+     *         of the repository.
+     * @throws ParentCommitIdOutdatedException
+     *         The file could not be added because the provided parent commit ID is not the current tip of the specified
+     *         branch. To view the full commit ID of the current head of the branch, use <a>GetBranch</a>.
+     * @throws FileContentRequiredException
+     *         The file cannot be added because it is empty. Empty files cannot be added to the repository with this
+     *         API.
+     * @throws FileContentSizeLimitExceededException
+     *         The file cannot be added because it is too large. The maximum file size that can be added using PutFile
+     *         is 6 MB. For files larger than 6 MB but smaller than 2 GB, add them using a Git client.
+     * @throws PathRequiredException
+     *         The filePath for a location cannot be empty or null.
+     * @throws InvalidPathException
+     *         The specified path is not valid.
+     * @throws BranchNameRequiredException
+     *         A branch name is required but was not specified.
+     * @throws InvalidBranchNameException
+     *         The specified reference name is not valid.
+     * @throws BranchDoesNotExistException
+     *         The specified branch does not exist.
+     * @throws BranchNameIsTagNameException
+     *         The specified branch name is not valid because it is a tag name. Type the name of a current branch in the
+     *         repository. For a list of valid branch names, use <a>ListBranches</a>.
+     * @throws InvalidFileModeException
+     *         The specified file mode permission is not valid. For a list of valid file mode permissions, see
+     *         <a>PutFile</a>.
+     * @throws NameLengthExceededException
+     *         The file name is not valid because it has exceeded the character limit for file names. File names,
+     *         including the path to the file, cannot exceed the character limit.
+     * @throws InvalidEmailException
+     *         The specified email address either contains one or more characters that are not allowed, or it exceeds
+     *         the maximum number of characters allowed for an email address.
+     * @throws CommitMessageLengthExceededException
+     *         The commit message is too long. Provide a shorter string.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @throws SameFileContentException
+     *         The file was not added or updated because the content of the file is exactly the same as the content of
+     *         that file in the repository and branch that you specified.
+     * @throws FileNameConflictsWithDirectoryNameException
+     *         A file cannot be added to the repository because the specified file name has the same name as a directory
+     *         in this repository. Either provide another name for the file, or add the file in a directory that does
+     *         not match the file name.
+     * @throws DirectoryNameConflictsWithFileNameException
+     *         A file cannot be added to the repository because the specified path name has the same name as a file that
+     *         already exists in this repository. Either provide a different name for the file, or specify a different
+     *         path for the file.
+     * @sample AWSCodeCommit.PutFile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutFile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PutFileResult putFile(PutFileRequest putFileRequest);
 
     /**
      * <p>

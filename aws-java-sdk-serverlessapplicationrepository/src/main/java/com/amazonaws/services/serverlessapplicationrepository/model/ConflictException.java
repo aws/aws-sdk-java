@@ -15,13 +15,19 @@ package com.amazonaws.services.serverlessapplicationrepository.model;
 import javax.annotation.Generated;
 
 /**
+ * <p>
  * The resource already exists.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConflictException extends com.amazonaws.services.serverlessapplicationrepository.model.AWSServerlessApplicationRepositoryException {
     private static final long serialVersionUID = 1L;
 
-    /** 409 */
+    /**
+     * <p>
+     * 409
+     * </p>
+     */
     private String errorCode;
 
     /**
@@ -35,7 +41,9 @@ public class ConflictException extends com.amazonaws.services.serverlessapplicat
     }
 
     /**
+     * <p>
      * 409
+     * </p>
      * 
      * @param errorCode
      *        409
@@ -47,7 +55,9 @@ public class ConflictException extends com.amazonaws.services.serverlessapplicat
     }
 
     /**
+     * <p>
      * 409
+     * </p>
      * 
      * @return 409
      */
@@ -58,7 +68,9 @@ public class ConflictException extends com.amazonaws.services.serverlessapplicat
     }
 
     /**
+     * <p>
      * 409
+     * </p>
      * 
      * @param errorCode
      *        409

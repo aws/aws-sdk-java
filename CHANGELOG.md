@@ -1,7 +1,11 @@
-# __1.11.282__ __2018-02-20__
+# __1.11.283__ __2018-02-21__
 ## __AWS AppSync__
   - ### Features
     - AWS AppSync now supports for None Data Source, CreateApiKey now supports setting expiration on API keys, new API UpdateApiKey supports updating expiration on API keys. 
+
+## __AWS CodeCommit__
+  - ### Features
+    - This release adds an API for adding a file directly to an AWS CodeCommit repository without requiring a Git client.
 
 ## __AWS Config__
   - ### Features
@@ -18,6 +22,14 @@
 ## __AWS WAF Regional__
   - ### Features
     - The new PermissionPolicy APIs in AWS WAF Regional allow customers to attach resource-based policies to their entities.
+
+## __AWSServerlessApplicationRepository__
+  - ### Features
+    - Added support for delete-application API and the ability for developers to set a homepage for their application. The homepage is a URL with more information about the application, for example the location of your GitHub repository for the application. 
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Adds support for tagging an EBS snapshot as part of the API call that creates the EBS snapshot
 
 ## __Amazon GameLift__
   - ### Features

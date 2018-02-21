@@ -25,16 +25,26 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetApplicationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The id of the application to get */
+    /**
+     * <p>
+     * The ID of the application to get.
+     * </p>
+     */
     private String applicationId;
-    /** The semantic version of the application to get */
+    /**
+     * <p>
+     * The semantic version of the application to get.
+     * </p>
+     */
     private String semanticVersion;
 
     /**
-     * The id of the application to get
+     * <p>
+     * The ID of the application to get.
+     * </p>
      * 
      * @param applicationId
-     *        The id of the application to get
+     *        The ID of the application to get.
      */
 
     public void setApplicationId(String applicationId) {
@@ -42,9 +52,11 @@ public class GetApplicationRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * The id of the application to get
+     * <p>
+     * The ID of the application to get.
+     * </p>
      * 
-     * @return The id of the application to get
+     * @return The ID of the application to get.
      */
 
     public String getApplicationId() {
@@ -52,10 +64,12 @@ public class GetApplicationRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * The id of the application to get
+     * <p>
+     * The ID of the application to get.
+     * </p>
      * 
      * @param applicationId
-     *        The id of the application to get
+     *        The ID of the application to get.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -65,10 +79,12 @@ public class GetApplicationRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * The semantic version of the application to get
+     * <p>
+     * The semantic version of the application to get.
+     * </p>
      * 
      * @param semanticVersion
-     *        The semantic version of the application to get
+     *        The semantic version of the application to get.
      */
 
     public void setSemanticVersion(String semanticVersion) {
@@ -76,9 +92,11 @@ public class GetApplicationRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * The semantic version of the application to get
+     * <p>
+     * The semantic version of the application to get.
+     * </p>
      * 
-     * @return The semantic version of the application to get
+     * @return The semantic version of the application to get.
      */
 
     public String getSemanticVersion() {
@@ -86,10 +104,12 @@ public class GetApplicationRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * The semantic version of the application to get
+     * <p>
+     * The semantic version of the application to get.
+     * </p>
      * 
      * @param semanticVersion
-     *        The semantic version of the application to get
+     *        The semantic version of the application to get.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

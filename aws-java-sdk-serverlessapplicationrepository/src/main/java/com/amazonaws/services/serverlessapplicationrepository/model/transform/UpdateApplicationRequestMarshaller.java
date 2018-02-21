@@ -34,6 +34,8 @@ public class UpdateApplicationRequestMarshaller {
             .marshallLocationName("author").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<String> HOMEPAGEURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("homePageUrl").build();
     private static final MarshallingInfo<List> LABELS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("labels").build();
     private static final MarshallingInfo<String> READMEBODY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -60,6 +62,7 @@ public class UpdateApplicationRequestMarshaller {
             protocolMarshaller.marshall(updateApplicationRequest.getApplicationId(), APPLICATIONID_BINDING);
             protocolMarshaller.marshall(updateApplicationRequest.getAuthor(), AUTHOR_BINDING);
             protocolMarshaller.marshall(updateApplicationRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(updateApplicationRequest.getHomePageUrl(), HOMEPAGEURL_BINDING);
             protocolMarshaller.marshall(updateApplicationRequest.getLabels(), LABELS_BINDING);
             protocolMarshaller.marshall(updateApplicationRequest.getReadmeBody(), READMEBODY_BINDING);
             protocolMarshaller.marshall(updateApplicationRequest.getReadmeUrl(), READMEURL_BINDING);

@@ -25,36 +25,80 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The id of the application to update */
+    /**
+     * <p>
+     * The ID of the application to get.
+     * </p>
+     */
     private String applicationId;
     /**
-     * The name of the author publishing the app.\nMin Length=1. Max Length=127.\nPattern
-     * "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";
+     * <p>
+     * The name of the author publishing the app.
+     * </p>
+     * <p>
+     * Min Length=1. Max Length=127.
+     * </p>
+     * <p>
+     * Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";
+     * </p>
      */
     private String author;
-    /** The description of the application.\nMin Length=1. Max Length=256 */
+    /**
+     * <p>
+     * The description of the application.
+     * </p>
+     * <p>
+     * Min Length=1. Max Length=256
+     * </p>
+     */
     private String description;
     /**
-     * Labels to improve discovery of apps in search results.\nMin Length=1. Max Length=127. Maximum number of labels:
-     * 10\nPattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
+     * <p>
+     * A URL with more information about the application, for example the location of your GitHub repository for the
+     * application.
+     * </p>
+     */
+    private String homePageUrl;
+    /**
+     * <p>
+     * Labels to improve discovery of apps in search results.
+     * </p>
+     * <p>
+     * Min Length=1. Max Length=127. Maximum number of labels: 10
+     * </p>
+     * <p>
+     * Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
+     * </p>
      */
     private java.util.List<String> labels;
     /**
+     * <p>
      * A raw text Readme file that contains a more detailed description of the application and how it works in markdown
-     * language.\nMax size 5 MB
+     * language.
+     * </p>
+     * <p>
+     * Max size 5 MB
+     * </p>
      */
     private String readmeBody;
     /**
+     * <p>
      * A link to the Readme file that contains a more detailed description of the application and how it works in
-     * markdown language.\nMax size 5 MB
+     * markdown language.
+     * </p>
+     * <p>
+     * Max size 5 MB
+     * </p>
      */
     private String readmeUrl;
 
     /**
-     * The id of the application to update
+     * <p>
+     * The ID of the application to get.
+     * </p>
      * 
      * @param applicationId
-     *        The id of the application to update
+     *        The ID of the application to get.
      */
 
     public void setApplicationId(String applicationId) {
@@ -62,9 +106,11 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * The id of the application to update
+     * <p>
+     * The ID of the application to get.
+     * </p>
      * 
-     * @return The id of the application to update
+     * @return The ID of the application to get.
      */
 
     public String getApplicationId() {
@@ -72,10 +118,12 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * The id of the application to update
+     * <p>
+     * The ID of the application to get.
+     * </p>
      * 
      * @param applicationId
-     *        The id of the application to update
+     *        The ID of the application to get.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -85,12 +133,23 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * The name of the author publishing the app.\nMin Length=1. Max Length=127.\nPattern
-     * "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";
+     * <p>
+     * The name of the author publishing the app.
+     * </p>
+     * <p>
+     * Min Length=1. Max Length=127.
+     * </p>
+     * <p>
+     * Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";
+     * </p>
      * 
      * @param author
-     *        The name of the author publishing the app.\nMin Length=1. Max Length=127.\nPattern
-     *        "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";
+     *        The name of the author publishing the app.</p>
+     *        <p>
+     *        Min Length=1. Max Length=127.
+     *        </p>
+     *        <p>
+     *        Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";
      */
 
     public void setAuthor(String author) {
@@ -98,11 +157,22 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * The name of the author publishing the app.\nMin Length=1. Max Length=127.\nPattern
-     * "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";
+     * <p>
+     * The name of the author publishing the app.
+     * </p>
+     * <p>
+     * Min Length=1. Max Length=127.
+     * </p>
+     * <p>
+     * Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";
+     * </p>
      * 
-     * @return The name of the author publishing the app.\nMin Length=1. Max Length=127.\nPattern
-     *         "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";
+     * @return The name of the author publishing the app.</p>
+     *         <p>
+     *         Min Length=1. Max Length=127.
+     *         </p>
+     *         <p>
+     *         Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";
      */
 
     public String getAuthor() {
@@ -110,12 +180,23 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * The name of the author publishing the app.\nMin Length=1. Max Length=127.\nPattern
-     * "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";
+     * <p>
+     * The name of the author publishing the app.
+     * </p>
+     * <p>
+     * Min Length=1. Max Length=127.
+     * </p>
+     * <p>
+     * Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";
+     * </p>
      * 
      * @param author
-     *        The name of the author publishing the app.\nMin Length=1. Max Length=127.\nPattern
-     *        "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";
+     *        The name of the author publishing the app.</p>
+     *        <p>
+     *        Min Length=1. Max Length=127.
+     *        </p>
+     *        <p>
+     *        Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -125,10 +206,17 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * The description of the application.\nMin Length=1. Max Length=256
+     * <p>
+     * The description of the application.
+     * </p>
+     * <p>
+     * Min Length=1. Max Length=256
+     * </p>
      * 
      * @param description
-     *        The description of the application.\nMin Length=1. Max Length=256
+     *        The description of the application.</p>
+     *        <p>
+     *        Min Length=1. Max Length=256
      */
 
     public void setDescription(String description) {
@@ -136,9 +224,16 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * The description of the application.\nMin Length=1. Max Length=256
+     * <p>
+     * The description of the application.
+     * </p>
+     * <p>
+     * Min Length=1. Max Length=256
+     * </p>
      * 
-     * @return The description of the application.\nMin Length=1. Max Length=256
+     * @return The description of the application.</p>
+     *         <p>
+     *         Min Length=1. Max Length=256
      */
 
     public String getDescription() {
@@ -146,10 +241,17 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * The description of the application.\nMin Length=1. Max Length=256
+     * <p>
+     * The description of the application.
+     * </p>
+     * <p>
+     * Min Length=1. Max Length=256
+     * </p>
      * 
      * @param description
-     *        The description of the application.\nMin Length=1. Max Length=256
+     *        The description of the application.</p>
+     *        <p>
+     *        Min Length=1. Max Length=256
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,11 +261,68 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * Labels to improve discovery of apps in search results.\nMin Length=1. Max Length=127. Maximum number of labels:
-     * 10\nPattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
+     * <p>
+     * A URL with more information about the application, for example the location of your GitHub repository for the
+     * application.
+     * </p>
      * 
-     * @return Labels to improve discovery of apps in search results.\nMin Length=1. Max Length=127. Maximum number of
-     *         labels: 10\nPattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
+     * @param homePageUrl
+     *        A URL with more information about the application, for example the location of your GitHub repository for
+     *        the application.
+     */
+
+    public void setHomePageUrl(String homePageUrl) {
+        this.homePageUrl = homePageUrl;
+    }
+
+    /**
+     * <p>
+     * A URL with more information about the application, for example the location of your GitHub repository for the
+     * application.
+     * </p>
+     * 
+     * @return A URL with more information about the application, for example the location of your GitHub repository for
+     *         the application.
+     */
+
+    public String getHomePageUrl() {
+        return this.homePageUrl;
+    }
+
+    /**
+     * <p>
+     * A URL with more information about the application, for example the location of your GitHub repository for the
+     * application.
+     * </p>
+     * 
+     * @param homePageUrl
+     *        A URL with more information about the application, for example the location of your GitHub repository for
+     *        the application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateApplicationRequest withHomePageUrl(String homePageUrl) {
+        setHomePageUrl(homePageUrl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Labels to improve discovery of apps in search results.
+     * </p>
+     * <p>
+     * Min Length=1. Max Length=127. Maximum number of labels: 10
+     * </p>
+     * <p>
+     * Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
+     * </p>
+     * 
+     * @return Labels to improve discovery of apps in search results.</p>
+     *         <p>
+     *         Min Length=1. Max Length=127. Maximum number of labels: 10
+     *         </p>
+     *         <p>
+     *         Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
      */
 
     public java.util.List<String> getLabels() {
@@ -171,12 +330,23 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * Labels to improve discovery of apps in search results.\nMin Length=1. Max Length=127. Maximum number of labels:
-     * 10\nPattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
+     * <p>
+     * Labels to improve discovery of apps in search results.
+     * </p>
+     * <p>
+     * Min Length=1. Max Length=127. Maximum number of labels: 10
+     * </p>
+     * <p>
+     * Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
+     * </p>
      * 
      * @param labels
-     *        Labels to improve discovery of apps in search results.\nMin Length=1. Max Length=127. Maximum number of
-     *        labels: 10\nPattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
+     *        Labels to improve discovery of apps in search results.</p>
+     *        <p>
+     *        Min Length=1. Max Length=127. Maximum number of labels: 10
+     *        </p>
+     *        <p>
+     *        Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
      */
 
     public void setLabels(java.util.Collection<String> labels) {
@@ -189,8 +359,15 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * Labels to improve discovery of apps in search results.\nMin Length=1. Max Length=127. Maximum number of labels:
-     * 10\nPattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
+     * <p>
+     * Labels to improve discovery of apps in search results.
+     * </p>
+     * <p>
+     * Min Length=1. Max Length=127. Maximum number of labels: 10
+     * </p>
+     * <p>
+     * Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setLabels(java.util.Collection)} or {@link #withLabels(java.util.Collection)} if you want to override the
@@ -198,8 +375,12 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param labels
-     *        Labels to improve discovery of apps in search results.\nMin Length=1. Max Length=127. Maximum number of
-     *        labels: 10\nPattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
+     *        Labels to improve discovery of apps in search results.</p>
+     *        <p>
+     *        Min Length=1. Max Length=127. Maximum number of labels: 10
+     *        </p>
+     *        <p>
+     *        Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,12 +395,23 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * Labels to improve discovery of apps in search results.\nMin Length=1. Max Length=127. Maximum number of labels:
-     * 10\nPattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
+     * <p>
+     * Labels to improve discovery of apps in search results.
+     * </p>
+     * <p>
+     * Min Length=1. Max Length=127. Maximum number of labels: 10
+     * </p>
+     * <p>
+     * Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
+     * </p>
      * 
      * @param labels
-     *        Labels to improve discovery of apps in search results.\nMin Length=1. Max Length=127. Maximum number of
-     *        labels: 10\nPattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
+     *        Labels to improve discovery of apps in search results.</p>
+     *        <p>
+     *        Min Length=1. Max Length=127. Maximum number of labels: 10
+     *        </p>
+     *        <p>
+     *        Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -229,12 +421,19 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
      * A raw text Readme file that contains a more detailed description of the application and how it works in markdown
-     * language.\nMax size 5 MB
+     * language.
+     * </p>
+     * <p>
+     * Max size 5 MB
+     * </p>
      * 
      * @param readmeBody
      *        A raw text Readme file that contains a more detailed description of the application and how it works in
-     *        markdown language.\nMax size 5 MB
+     *        markdown language.</p>
+     *        <p>
+     *        Max size 5 MB
      */
 
     public void setReadmeBody(String readmeBody) {
@@ -242,11 +441,18 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
      * A raw text Readme file that contains a more detailed description of the application and how it works in markdown
-     * language.\nMax size 5 MB
+     * language.
+     * </p>
+     * <p>
+     * Max size 5 MB
+     * </p>
      * 
      * @return A raw text Readme file that contains a more detailed description of the application and how it works in
-     *         markdown language.\nMax size 5 MB
+     *         markdown language.</p>
+     *         <p>
+     *         Max size 5 MB
      */
 
     public String getReadmeBody() {
@@ -254,12 +460,19 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
      * A raw text Readme file that contains a more detailed description of the application and how it works in markdown
-     * language.\nMax size 5 MB
+     * language.
+     * </p>
+     * <p>
+     * Max size 5 MB
+     * </p>
      * 
      * @param readmeBody
      *        A raw text Readme file that contains a more detailed description of the application and how it works in
-     *        markdown language.\nMax size 5 MB
+     *        markdown language.</p>
+     *        <p>
+     *        Max size 5 MB
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -269,12 +482,19 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
      * A link to the Readme file that contains a more detailed description of the application and how it works in
-     * markdown language.\nMax size 5 MB
+     * markdown language.
+     * </p>
+     * <p>
+     * Max size 5 MB
+     * </p>
      * 
      * @param readmeUrl
      *        A link to the Readme file that contains a more detailed description of the application and how it works in
-     *        markdown language.\nMax size 5 MB
+     *        markdown language.</p>
+     *        <p>
+     *        Max size 5 MB
      */
 
     public void setReadmeUrl(String readmeUrl) {
@@ -282,11 +502,18 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
      * A link to the Readme file that contains a more detailed description of the application and how it works in
-     * markdown language.\nMax size 5 MB
+     * markdown language.
+     * </p>
+     * <p>
+     * Max size 5 MB
+     * </p>
      * 
      * @return A link to the Readme file that contains a more detailed description of the application and how it works
-     *         in markdown language.\nMax size 5 MB
+     *         in markdown language.</p>
+     *         <p>
+     *         Max size 5 MB
      */
 
     public String getReadmeUrl() {
@@ -294,12 +521,19 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
      * A link to the Readme file that contains a more detailed description of the application and how it works in
-     * markdown language.\nMax size 5 MB
+     * markdown language.
+     * </p>
+     * <p>
+     * Max size 5 MB
+     * </p>
      * 
      * @param readmeUrl
      *        A link to the Readme file that contains a more detailed description of the application and how it works in
-     *        markdown language.\nMax size 5 MB
+     *        markdown language.</p>
+     *        <p>
+     *        Max size 5 MB
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -325,6 +559,8 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("Author: ").append(getAuthor()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getHomePageUrl() != null)
+            sb.append("HomePageUrl: ").append(getHomePageUrl()).append(",");
         if (getLabels() != null)
             sb.append("Labels: ").append(getLabels()).append(",");
         if (getReadmeBody() != null)
@@ -357,6 +593,10 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getHomePageUrl() == null ^ this.getHomePageUrl() == null)
+            return false;
+        if (other.getHomePageUrl() != null && other.getHomePageUrl().equals(this.getHomePageUrl()) == false)
+            return false;
         if (other.getLabels() == null ^ this.getLabels() == null)
             return false;
         if (other.getLabels() != null && other.getLabels().equals(this.getLabels()) == false)
@@ -380,6 +620,7 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
         hashCode = prime * hashCode + ((getAuthor() == null) ? 0 : getAuthor().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getHomePageUrl() == null) ? 0 : getHomePageUrl().hashCode());
         hashCode = prime * hashCode + ((getLabels() == null) ? 0 : getLabels().hashCode());
         hashCode = prime * hashCode + ((getReadmeBody() == null) ? 0 : getReadmeBody().hashCode());
         hashCode = prime * hashCode + ((getReadmeUrl() == null) ? 0 : getReadmeUrl().hashCode());

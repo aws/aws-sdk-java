@@ -23,13 +23,23 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListApplicationVersionsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** The token to request the next page of results. */
+    /**
+     * <p>
+     * The token to request the next page of results.
+     * </p>
+     */
     private String nextToken;
-    /** Array of version summaries for the application. */
+    /**
+     * <p>
+     * Array of version summaries for the application.
+     * </p>
+     */
     private java.util.List<VersionSummary> versions;
 
     /**
+     * <p>
      * The token to request the next page of results.
+     * </p>
      * 
      * @param nextToken
      *        The token to request the next page of results.
@@ -40,7 +50,9 @@ public class ListApplicationVersionsResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
      * The token to request the next page of results.
+     * </p>
      * 
      * @return The token to request the next page of results.
      */
@@ -50,7 +62,9 @@ public class ListApplicationVersionsResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
      * The token to request the next page of results.
+     * </p>
      * 
      * @param nextToken
      *        The token to request the next page of results.
@@ -63,7 +77,9 @@ public class ListApplicationVersionsResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
      * Array of version summaries for the application.
+     * </p>
      * 
      * @return Array of version summaries for the application.
      */
@@ -73,7 +89,9 @@ public class ListApplicationVersionsResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
      * Array of version summaries for the application.
+     * </p>
      * 
      * @param versions
      *        Array of version summaries for the application.
@@ -89,7 +107,9 @@ public class ListApplicationVersionsResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
      * Array of version summaries for the application.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setVersions(java.util.Collection)} or {@link #withVersions(java.util.Collection)} if you want to override
@@ -112,7 +132,9 @@ public class ListApplicationVersionsResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
      * Array of version summaries for the application.
+     * </p>
      * 
      * @param versions
      *        Array of version summaries for the application.

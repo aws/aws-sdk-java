@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Create application ChangeSet request
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet"
  *      target="_top">AWS API Documentation</a>
@@ -26,25 +25,49 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The id of the application to create the ChangeSet for */
+    /**
+     * <p>
+     * The ID of the application to get.
+     * </p>
+     */
     private String applicationId;
-    /** A list of parameter values for the parameters of the application. */
+    /**
+     * <p>
+     * A list of parameter values for the parameters of the application.
+     * </p>
+     */
     private java.util.List<ParameterValue> parameterOverrides;
-    /** The semantic version of the application:\n\n https://semver.org/ */
+    /**
+     * <p>
+     * The semantic version of the application:
+     * </p>
+     * <p>
+     * <a href=""https://semver.org/"">https://semver.org/</a>
+     * </p>
+     */
     private String semanticVersion;
     /**
-     * The name or the unique ID of the stack for which you are creating a change set. AWS CloudFormation generates\n
-     * the change set by comparing this stack's information with the information that you submit, such as a modified\n
-     * template or different parameter input values. \nConstraints: Minimum length of 1.\nPattern:
-     * ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+     * <p>
+     * The name or the unique ID of the stack for which you are creating a change set. AWS CloudFormation generates the
+     * change set by comparing this stack's information with the information that you submit, such as a modified
+     * template or different parameter input values.
+     * </p>
+     * <p>
+     * Constraints: Minimum length of 1.
+     * </p>
+     * <p>
+     * Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+     * </p>
      */
     private String stackName;
 
     /**
-     * The id of the application to create the ChangeSet for
+     * <p>
+     * The ID of the application to get.
+     * </p>
      * 
      * @param applicationId
-     *        The id of the application to create the ChangeSet for
+     *        The ID of the application to get.
      */
 
     public void setApplicationId(String applicationId) {
@@ -52,9 +75,11 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * The id of the application to create the ChangeSet for
+     * <p>
+     * The ID of the application to get.
+     * </p>
      * 
-     * @return The id of the application to create the ChangeSet for
+     * @return The ID of the application to get.
      */
 
     public String getApplicationId() {
@@ -62,10 +87,12 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * The id of the application to create the ChangeSet for
+     * <p>
+     * The ID of the application to get.
+     * </p>
      * 
      * @param applicationId
-     *        The id of the application to create the ChangeSet for
+     *        The ID of the application to get.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -75,7 +102,9 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
      * A list of parameter values for the parameters of the application.
+     * </p>
      * 
      * @return A list of parameter values for the parameters of the application.
      */
@@ -85,7 +114,9 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
      * A list of parameter values for the parameters of the application.
+     * </p>
      * 
      * @param parameterOverrides
      *        A list of parameter values for the parameters of the application.
@@ -101,7 +132,9 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
      * A list of parameter values for the parameters of the application.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setParameterOverrides(java.util.Collection)} or {@link #withParameterOverrides(java.util.Collection)} if
@@ -124,7 +157,9 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
      * A list of parameter values for the parameters of the application.
+     * </p>
      * 
      * @param parameterOverrides
      *        A list of parameter values for the parameters of the application.
@@ -137,10 +172,17 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * The semantic version of the application:\n\n https://semver.org/
+     * <p>
+     * The semantic version of the application:
+     * </p>
+     * <p>
+     * <a href=""https://semver.org/"">https://semver.org/</a>
+     * </p>
      * 
      * @param semanticVersion
-     *        The semantic version of the application:\n\n https://semver.org/
+     *        The semantic version of the application:</p>
+     *        <p>
+     *        <a href=""https://semver.org/"">https://semver.org/</a>
      */
 
     public void setSemanticVersion(String semanticVersion) {
@@ -148,9 +190,16 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * The semantic version of the application:\n\n https://semver.org/
+     * <p>
+     * The semantic version of the application:
+     * </p>
+     * <p>
+     * <a href=""https://semver.org/"">https://semver.org/</a>
+     * </p>
      * 
-     * @return The semantic version of the application:\n\n https://semver.org/
+     * @return The semantic version of the application:</p>
+     *         <p>
+     *         <a href=""https://semver.org/"">https://semver.org/</a>
      */
 
     public String getSemanticVersion() {
@@ -158,10 +207,17 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * The semantic version of the application:\n\n https://semver.org/
+     * <p>
+     * The semantic version of the application:
+     * </p>
+     * <p>
+     * <a href=""https://semver.org/"">https://semver.org/</a>
+     * </p>
      * 
      * @param semanticVersion
-     *        The semantic version of the application:\n\n https://semver.org/
+     *        The semantic version of the application:</p>
+     *        <p>
+     *        <a href=""https://semver.org/"">https://semver.org/</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -171,16 +227,27 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * The name or the unique ID of the stack for which you are creating a change set. AWS CloudFormation generates\n
-     * the change set by comparing this stack's information with the information that you submit, such as a modified\n
-     * template or different parameter input values. \nConstraints: Minimum length of 1.\nPattern:
-     * ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+     * <p>
+     * The name or the unique ID of the stack for which you are creating a change set. AWS CloudFormation generates the
+     * change set by comparing this stack's information with the information that you submit, such as a modified
+     * template or different parameter input values.
+     * </p>
+     * <p>
+     * Constraints: Minimum length of 1.
+     * </p>
+     * <p>
+     * Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+     * </p>
      * 
      * @param stackName
      *        The name or the unique ID of the stack for which you are creating a change set. AWS CloudFormation
-     *        generates\n the change set by comparing this stack's information with the information that you submit,
-     *        such as a modified\n template or different parameter input values. \nConstraints: Minimum length of
-     *        1.\nPattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+     *        generates the change set by comparing this stack's information with the information that you submit, such
+     *        as a modified template or different parameter input values. </p>
+     *        <p>
+     *        Constraints: Minimum length of 1.
+     *        </p>
+     *        <p>
+     *        Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
      */
 
     public void setStackName(String stackName) {
@@ -188,15 +255,26 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * The name or the unique ID of the stack for which you are creating a change set. AWS CloudFormation generates\n
-     * the change set by comparing this stack's information with the information that you submit, such as a modified\n
-     * template or different parameter input values. \nConstraints: Minimum length of 1.\nPattern:
-     * ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+     * <p>
+     * The name or the unique ID of the stack for which you are creating a change set. AWS CloudFormation generates the
+     * change set by comparing this stack's information with the information that you submit, such as a modified
+     * template or different parameter input values.
+     * </p>
+     * <p>
+     * Constraints: Minimum length of 1.
+     * </p>
+     * <p>
+     * Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+     * </p>
      * 
      * @return The name or the unique ID of the stack for which you are creating a change set. AWS CloudFormation
-     *         generates\n the change set by comparing this stack's information with the information that you submit,
-     *         such as a modified\n template or different parameter input values. \nConstraints: Minimum length of
-     *         1.\nPattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+     *         generates the change set by comparing this stack's information with the information that you submit, such
+     *         as a modified template or different parameter input values. </p>
+     *         <p>
+     *         Constraints: Minimum length of 1.
+     *         </p>
+     *         <p>
+     *         Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
      */
 
     public String getStackName() {
@@ -204,16 +282,27 @@ public class CreateCloudFormationChangeSetRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * The name or the unique ID of the stack for which you are creating a change set. AWS CloudFormation generates\n
-     * the change set by comparing this stack's information with the information that you submit, such as a modified\n
-     * template or different parameter input values. \nConstraints: Minimum length of 1.\nPattern:
-     * ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+     * <p>
+     * The name or the unique ID of the stack for which you are creating a change set. AWS CloudFormation generates the
+     * change set by comparing this stack's information with the information that you submit, such as a modified
+     * template or different parameter input values.
+     * </p>
+     * <p>
+     * Constraints: Minimum length of 1.
+     * </p>
+     * <p>
+     * Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+     * </p>
      * 
      * @param stackName
      *        The name or the unique ID of the stack for which you are creating a change set. AWS CloudFormation
-     *        generates\n the change set by comparing this stack's information with the information that you submit,
-     *        such as a modified\n template or different parameter input values. \nConstraints: Minimum length of
-     *        1.\nPattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+     *        generates the change set by comparing this stack's information with the information that you submit, such
+     *        as a modified template or different parameter input values. </p>
+     *        <p>
+     *        Constraints: Minimum length of 1.
+     *        </p>
+     *        <p>
+     *        Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -43,6 +43,11 @@ public class AbstractAWSServerlessApplicationRepository implements AWSServerless
     }
 
     @Override
+    public DeleteApplicationResult deleteApplication(DeleteApplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetApplicationResult getApplication(GetApplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Put policy request
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/PutApplicationPolicy"
  *      target="_top">AWS API Documentation</a>
@@ -26,16 +25,26 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PutApplicationPolicyRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The id of the application to put policy for */
+    /**
+     * <p>
+     * The ID of the application to get.
+     * </p>
+     */
     private String applicationId;
-    /** Array of policy statements applied to the application. */
+    /**
+     * <p>
+     * Array of policy statements applied to the application.
+     * </p>
+     */
     private java.util.List<ApplicationPolicyStatement> statements;
 
     /**
-     * The id of the application to put policy for
+     * <p>
+     * The ID of the application to get.
+     * </p>
      * 
      * @param applicationId
-     *        The id of the application to put policy for
+     *        The ID of the application to get.
      */
 
     public void setApplicationId(String applicationId) {
@@ -43,9 +52,11 @@ public class PutApplicationPolicyRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * The id of the application to put policy for
+     * <p>
+     * The ID of the application to get.
+     * </p>
      * 
-     * @return The id of the application to put policy for
+     * @return The ID of the application to get.
      */
 
     public String getApplicationId() {
@@ -53,10 +64,12 @@ public class PutApplicationPolicyRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * The id of the application to put policy for
+     * <p>
+     * The ID of the application to get.
+     * </p>
      * 
      * @param applicationId
-     *        The id of the application to put policy for
+     *        The ID of the application to get.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,7 +79,9 @@ public class PutApplicationPolicyRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
      * Array of policy statements applied to the application.
+     * </p>
      * 
      * @return Array of policy statements applied to the application.
      */
@@ -76,7 +91,9 @@ public class PutApplicationPolicyRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
      * Array of policy statements applied to the application.
+     * </p>
      * 
      * @param statements
      *        Array of policy statements applied to the application.
@@ -92,7 +109,9 @@ public class PutApplicationPolicyRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
      * Array of policy statements applied to the application.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setStatements(java.util.Collection)} or {@link #withStatements(java.util.Collection)} if you want to
@@ -115,7 +134,9 @@ public class PutApplicationPolicyRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
      * Array of policy statements applied to the application.
+     * </p>
      * 
      * @param statements
      *        Array of policy statements applied to the application.

@@ -64,6 +64,10 @@ public class ApplicationSummaryJsonUnmarshaller implements Unmarshaller<Applicat
                     context.nextToken();
                     applicationSummary.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("homePageUrl", targetDepth)) {
+                    context.nextToken();
+                    applicationSummary.setHomePageUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("labels", targetDepth)) {
                     context.nextToken();
                     applicationSummary.setLabels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));

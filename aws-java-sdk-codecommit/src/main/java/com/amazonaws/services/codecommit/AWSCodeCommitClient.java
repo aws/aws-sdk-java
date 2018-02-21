@@ -129,6 +129,16 @@ import com.amazonaws.services.codecommit.model.transform.*;
  * </li>
  * </ul>
  * <p>
+ * Files, by calling the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>PutFile</a>, which adds or modifies a file in a specified repository and branch.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
  * Information about committed code in a repository, by calling the following:
  * </p>
  * <ul>
@@ -302,6 +312,12 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                             new JsonErrorShapeMetadata().withErrorCode("RepositoryLimitExceededException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.RepositoryLimitExceededException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("FileContentRequiredException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.FileContentRequiredException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("BranchNameIsTagNameException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.BranchNameIsTagNameException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("CommitIdRequiredException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.CommitIdRequiredException.class))
                     .addErrorMetadata(
@@ -340,6 +356,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidFilePositionException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.InvalidFilePositionException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("FileNameConflictsWithDirectoryNameException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.FileNameConflictsWithDirectoryNameException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("EncryptionKeyAccessDeniedException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.EncryptionKeyAccessDeniedException.class))
@@ -428,11 +447,17 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                             new JsonErrorShapeMetadata().withErrorCode("InvalidPullRequestStatusException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.InvalidPullRequestStatusException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParentCommitIdException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.InvalidParentCommitIdException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ReferenceNameRequiredException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.ReferenceNameRequiredException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidPullRequestStatusUpdateException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.InvalidPullRequestStatusUpdateException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ParentCommitIdRequiredException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.ParentCommitIdRequiredException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidCommentIdException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.InvalidCommentIdException.class))
@@ -485,11 +510,17 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                             new JsonErrorShapeMetadata().withErrorCode("EncryptionIntegrityChecksFailedException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.EncryptionIntegrityChecksFailedException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CommitMessageLengthExceededException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.CommitMessageLengthExceededException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidCommitIdException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.InvalidCommitIdException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidOrderException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.InvalidOrderException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidEmailException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.InvalidEmailException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("PullRequestAlreadyClosedException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.PullRequestAlreadyClosedException.class))
@@ -506,6 +537,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                             new JsonErrorShapeMetadata().withErrorCode("InvalidMergeOptionException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.InvalidMergeOptionException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ParentCommitIdOutdatedException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.ParentCommitIdOutdatedException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidContinuationTokenException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.InvalidContinuationTokenException.class))
                     .addErrorMetadata(
@@ -515,11 +549,17 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                             new JsonErrorShapeMetadata().withErrorCode("ClientRequestTokenRequiredException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.ClientRequestTokenRequiredException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NameLengthExceededException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.NameLengthExceededException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("EncryptionKeyDisabledException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.EncryptionKeyDisabledException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("CommentNotCreatedByCallerException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.CommentNotCreatedByCallerException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("FileContentSizeLimitExceededException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.FileContentSizeLimitExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TargetRequiredException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.TargetRequiredException.class))
@@ -542,6 +582,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                             new JsonErrorShapeMetadata().withErrorCode("InvalidSortByException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.InvalidSortByException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("SameFileContentException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.SameFileContentException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidTargetException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.InvalidTargetException.class))
                     .addErrorMetadata(
@@ -557,6 +600,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                             new JsonErrorShapeMetadata().withErrorCode("InvalidMaxResultsException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.InvalidMaxResultsException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ParentCommitDoesNotExistException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.ParentCommitDoesNotExistException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidActorArnException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.InvalidActorArnException.class))
                     .addErrorMetadata(
@@ -566,8 +612,14 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                             new JsonErrorShapeMetadata().withErrorCode("RepositoryTriggerBranchNameListRequiredException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.RepositoryTriggerBranchNameListRequiredException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidFileModeException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.InvalidFileModeException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidSourceCommitSpecifierException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.InvalidSourceCommitSpecifierException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DirectoryNameConflictsWithFileNameException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.DirectoryNameConflictsWithFileNameException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("SourceAndDestinationAreSameException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.SourceAndDestinationAreSameException.class))
@@ -2865,6 +2917,128 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
 
             HttpResponseHandler<AmazonWebServiceResponse<PostCommentReplyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PostCommentReplyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds or updates a file in an AWS CodeCommit repository.
+     * </p>
+     * 
+     * @param putFileRequest
+     * @return Result of the PutFile operation returned by the service.
+     * @throws RepositoryNameRequiredException
+     *         A repository name is required but was not specified.
+     * @throws InvalidRepositoryNameException
+     *         At least one specified repository name is not valid.</p> <note>
+     *         <p>
+     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         required repository parameter is missing, or when a specified repository does not exist.
+     *         </p>
+     * @throws RepositoryDoesNotExistException
+     *         The specified repository does not exist.
+     * @throws ParentCommitIdRequiredException
+     *         A parent commit ID is required. To view the full commit ID of a branch in a repository, use
+     *         <a>GetBranch</a> or a Git command (for example, git pull or git log).
+     * @throws InvalidParentCommitIdException
+     *         The parent commit ID is not valid. The commit ID cannot be empty, and must match the head commit ID for
+     *         the branch of the repository where you want to add or update a file.
+     * @throws ParentCommitDoesNotExistException
+     *         The parent commit ID is not valid. The specified parent commit ID does not exist in the specified branch
+     *         of the repository.
+     * @throws ParentCommitIdOutdatedException
+     *         The file could not be added because the provided parent commit ID is not the current tip of the specified
+     *         branch. To view the full commit ID of the current head of the branch, use <a>GetBranch</a>.
+     * @throws FileContentRequiredException
+     *         The file cannot be added because it is empty. Empty files cannot be added to the repository with this
+     *         API.
+     * @throws FileContentSizeLimitExceededException
+     *         The file cannot be added because it is too large. The maximum file size that can be added using PutFile
+     *         is 6 MB. For files larger than 6 MB but smaller than 2 GB, add them using a Git client.
+     * @throws PathRequiredException
+     *         The filePath for a location cannot be empty or null.
+     * @throws InvalidPathException
+     *         The specified path is not valid.
+     * @throws BranchNameRequiredException
+     *         A branch name is required but was not specified.
+     * @throws InvalidBranchNameException
+     *         The specified reference name is not valid.
+     * @throws BranchDoesNotExistException
+     *         The specified branch does not exist.
+     * @throws BranchNameIsTagNameException
+     *         The specified branch name is not valid because it is a tag name. Type the name of a current branch in the
+     *         repository. For a list of valid branch names, use <a>ListBranches</a>.
+     * @throws InvalidFileModeException
+     *         The specified file mode permission is not valid. For a list of valid file mode permissions, see
+     *         <a>PutFile</a>.
+     * @throws NameLengthExceededException
+     *         The file name is not valid because it has exceeded the character limit for file names. File names,
+     *         including the path to the file, cannot exceed the character limit.
+     * @throws InvalidEmailException
+     *         The specified email address either contains one or more characters that are not allowed, or it exceeds
+     *         the maximum number of characters allowed for an email address.
+     * @throws CommitMessageLengthExceededException
+     *         The commit message is too long. Provide a shorter string.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @throws SameFileContentException
+     *         The file was not added or updated because the content of the file is exactly the same as the content of
+     *         that file in the repository and branch that you specified.
+     * @throws FileNameConflictsWithDirectoryNameException
+     *         A file cannot be added to the repository because the specified file name has the same name as a directory
+     *         in this repository. Either provide another name for the file, or add the file in a directory that does
+     *         not match the file name.
+     * @throws DirectoryNameConflictsWithFileNameException
+     *         A file cannot be added to the repository because the specified path name has the same name as a file that
+     *         already exists in this repository. Either provide a different name for the file, or specify a different
+     *         path for the file.
+     * @sample AWSCodeCommit.PutFile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutFile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PutFileResult putFile(PutFileRequest request) {
+        request = beforeClientExecution(request);
+        return executePutFile(request);
+    }
+
+    @SdkInternalApi
+    final PutFileResult executePutFile(PutFileRequest putFileRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putFileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutFileRequest> request = null;
+        Response<PutFileResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutFileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putFileRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutFileResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutFileResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

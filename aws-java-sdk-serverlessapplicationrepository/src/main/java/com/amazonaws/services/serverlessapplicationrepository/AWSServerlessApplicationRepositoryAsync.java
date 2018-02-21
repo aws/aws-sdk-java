@@ -26,14 +26,50 @@ import com.amazonaws.services.serverlessapplicationrepository.model.*;
  * instead.
  * </p>
  * <p>
- * AWS Serverless Repository
+ * <p>
+ * The AWS Serverless Application Repository makes it easy for developers and enterprises to quickly find and deploy
+ * serverless applications in the AWS Cloud. For more information about serverless applications, see Serverless
+ * Computing and Applications on the AWS website.
+ * </p>
+ * <p>
+ * The AWS Serverless Application Repository is deeply integrated with the AWS Lambda console, so that developers of all
+ * levels can get started with serverless computing without needing to learn anything new. You can use category keywords
+ * to browse for applications such as web and mobile backends, data processing applications, or chatbots. You can also
+ * search for applications by name, publisher, or event source. To use an application, you simply choose it, configure
+ * any required fields, and deploy it with a few clicks.
+ * </p>
+ * <p>
+ * You can also easily publish applications, sharing them publicly with the community at large, or privately within your
+ * team or across your organization. To publish a serverless application (or app), you can use the AWS Management
+ * Console, AWS Command Line Interface (AWS CLI), or AWS SDKs to upload the code. Along with the code, you upload a
+ * simple manifest file, also known as the AWS Serverless Application Model (AWS SAM) template. For more information
+ * about AWS SAM, see AWS Serverless Application Model (AWS SAM) on the AWS Labs GitHub repository.
+ * </p>
+ * <p>
+ * The AWS Serverless Application Repository Developer Guide contains more information about the two developer
+ * experiences available:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Consuming Applications – Browse for applications and view information about them, including source code and readme
+ * files. Also install, configure, and deploy applications of your choosing.
+ * </p>
+ * <p>
+ * Publishing Applications – Configure and upload applications to make them available to other developers, and publish
+ * new versions of applications.
+ * </p>
+ * </li>
+ * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSServerlessApplicationRepositoryAsync extends AWSServerlessApplicationRepository {
 
     /**
+     * <p>
      * Creates an application, optionally including an AWS SAM file to create the first application version in the same
      * call.
+     * </p>
      * 
      * @param createApplicationRequest
      * @return A Java Future containing the result of the CreateApplication operation returned by the service.
@@ -44,8 +80,10 @@ public interface AWSServerlessApplicationRepositoryAsync extends AWSServerlessAp
     java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest createApplicationRequest);
 
     /**
+     * <p>
      * Creates an application, optionally including an AWS SAM file to create the first application version in the same
      * call.
+     * </p>
      * 
      * @param createApplicationRequest
      * @param asyncHandler
@@ -61,7 +99,9 @@ public interface AWSServerlessApplicationRepositoryAsync extends AWSServerlessAp
             com.amazonaws.handlers.AsyncHandler<CreateApplicationRequest, CreateApplicationResult> asyncHandler);
 
     /**
+     * <p>
      * Creates an application version.
+     * </p>
      * 
      * @param createApplicationVersionRequest
      * @return A Java Future containing the result of the CreateApplicationVersion operation returned by the service.
@@ -72,7 +112,9 @@ public interface AWSServerlessApplicationRepositoryAsync extends AWSServerlessAp
     java.util.concurrent.Future<CreateApplicationVersionResult> createApplicationVersionAsync(CreateApplicationVersionRequest createApplicationVersionRequest);
 
     /**
+     * <p>
      * Creates an application version.
+     * </p>
      * 
      * @param createApplicationVersionRequest
      * @param asyncHandler
@@ -88,10 +130,11 @@ public interface AWSServerlessApplicationRepositoryAsync extends AWSServerlessAp
             com.amazonaws.handlers.AsyncHandler<CreateApplicationVersionRequest, CreateApplicationVersionResult> asyncHandler);
 
     /**
+     * <p>
      * Creates an AWS CloudFormation ChangeSet for the given application.
+     * </p>
      * 
      * @param createCloudFormationChangeSetRequest
-     *        Create application ChangeSet request
      * @return A Java Future containing the result of the CreateCloudFormationChangeSet operation returned by the
      *         service.
      * @sample AWSServerlessApplicationRepositoryAsync.CreateCloudFormationChangeSet
@@ -102,10 +145,11 @@ public interface AWSServerlessApplicationRepositoryAsync extends AWSServerlessAp
             CreateCloudFormationChangeSetRequest createCloudFormationChangeSetRequest);
 
     /**
+     * <p>
      * Creates an AWS CloudFormation ChangeSet for the given application.
+     * </p>
      * 
      * @param createCloudFormationChangeSetRequest
-     *        Create application ChangeSet request
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -121,7 +165,40 @@ public interface AWSServerlessApplicationRepositoryAsync extends AWSServerlessAp
             com.amazonaws.handlers.AsyncHandler<CreateCloudFormationChangeSetRequest, CreateCloudFormationChangeSetResult> asyncHandler);
 
     /**
+     * <p>
+     * Deletes the specified application.
+     * </p>
+     * 
+     * @param deleteApplicationRequest
+     * @return A Java Future containing the result of the DeleteApplication operation returned by the service.
+     * @sample AWSServerlessApplicationRepositoryAsync.DeleteApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/DeleteApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(DeleteApplicationRequest deleteApplicationRequest);
+
+    /**
+     * <p>
+     * Deletes the specified application.
+     * </p>
+     * 
+     * @param deleteApplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteApplication operation returned by the service.
+     * @sample AWSServerlessApplicationRepositoryAsyncHandler.DeleteApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/DeleteApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(DeleteApplicationRequest deleteApplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets the specified application.
+     * </p>
      * 
      * @param getApplicationRequest
      * @return A Java Future containing the result of the GetApplication operation returned by the service.
@@ -132,7 +209,9 @@ public interface AWSServerlessApplicationRepositoryAsync extends AWSServerlessAp
     java.util.concurrent.Future<GetApplicationResult> getApplicationAsync(GetApplicationRequest getApplicationRequest);
 
     /**
+     * <p>
      * Gets the specified application.
+     * </p>
      * 
      * @param getApplicationRequest
      * @param asyncHandler
@@ -148,7 +227,9 @@ public interface AWSServerlessApplicationRepositoryAsync extends AWSServerlessAp
             com.amazonaws.handlers.AsyncHandler<GetApplicationRequest, GetApplicationResult> asyncHandler);
 
     /**
+     * <p>
      * Gets the policy for the specified application.
+     * </p>
      * 
      * @param getApplicationPolicyRequest
      * @return A Java Future containing the result of the GetApplicationPolicy operation returned by the service.
@@ -159,7 +240,9 @@ public interface AWSServerlessApplicationRepositoryAsync extends AWSServerlessAp
     java.util.concurrent.Future<GetApplicationPolicyResult> getApplicationPolicyAsync(GetApplicationPolicyRequest getApplicationPolicyRequest);
 
     /**
+     * <p>
      * Gets the policy for the specified application.
+     * </p>
      * 
      * @param getApplicationPolicyRequest
      * @param asyncHandler
@@ -175,7 +258,9 @@ public interface AWSServerlessApplicationRepositoryAsync extends AWSServerlessAp
             com.amazonaws.handlers.AsyncHandler<GetApplicationPolicyRequest, GetApplicationPolicyResult> asyncHandler);
 
     /**
+     * <p>
      * Lists versions for the specified application.
+     * </p>
      * 
      * @param listApplicationVersionsRequest
      * @return A Java Future containing the result of the ListApplicationVersions operation returned by the service.
@@ -186,7 +271,9 @@ public interface AWSServerlessApplicationRepositoryAsync extends AWSServerlessAp
     java.util.concurrent.Future<ListApplicationVersionsResult> listApplicationVersionsAsync(ListApplicationVersionsRequest listApplicationVersionsRequest);
 
     /**
+     * <p>
      * Lists versions for the specified application.
+     * </p>
      * 
      * @param listApplicationVersionsRequest
      * @param asyncHandler
@@ -202,7 +289,9 @@ public interface AWSServerlessApplicationRepositoryAsync extends AWSServerlessAp
             com.amazonaws.handlers.AsyncHandler<ListApplicationVersionsRequest, ListApplicationVersionsResult> asyncHandler);
 
     /**
+     * <p>
      * Lists applications owned by the requester.
+     * </p>
      * 
      * @param listApplicationsRequest
      * @return A Java Future containing the result of the ListApplications operation returned by the service.
@@ -213,7 +302,9 @@ public interface AWSServerlessApplicationRepositoryAsync extends AWSServerlessAp
     java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(ListApplicationsRequest listApplicationsRequest);
 
     /**
+     * <p>
      * Lists applications owned by the requester.
+     * </p>
      * 
      * @param listApplicationsRequest
      * @param asyncHandler
@@ -229,10 +320,11 @@ public interface AWSServerlessApplicationRepositoryAsync extends AWSServerlessAp
             com.amazonaws.handlers.AsyncHandler<ListApplicationsRequest, ListApplicationsResult> asyncHandler);
 
     /**
+     * <p>
      * Puts the policy for the specified application.
+     * </p>
      * 
      * @param putApplicationPolicyRequest
-     *        Put policy request
      * @return A Java Future containing the result of the PutApplicationPolicy operation returned by the service.
      * @sample AWSServerlessApplicationRepositoryAsync.PutApplicationPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/PutApplicationPolicy"
@@ -241,10 +333,11 @@ public interface AWSServerlessApplicationRepositoryAsync extends AWSServerlessAp
     java.util.concurrent.Future<PutApplicationPolicyResult> putApplicationPolicyAsync(PutApplicationPolicyRequest putApplicationPolicyRequest);
 
     /**
+     * <p>
      * Puts the policy for the specified application.
+     * </p>
      * 
      * @param putApplicationPolicyRequest
-     *        Put policy request
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -258,7 +351,9 @@ public interface AWSServerlessApplicationRepositoryAsync extends AWSServerlessAp
             com.amazonaws.handlers.AsyncHandler<PutApplicationPolicyRequest, PutApplicationPolicyResult> asyncHandler);
 
     /**
+     * <p>
      * Updates the specified application.
+     * </p>
      * 
      * @param updateApplicationRequest
      * @return A Java Future containing the result of the UpdateApplication operation returned by the service.
@@ -269,7 +364,9 @@ public interface AWSServerlessApplicationRepositoryAsync extends AWSServerlessAp
     java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest updateApplicationRequest);
 
     /**
+     * <p>
      * Updates the specified application.
+     * </p>
      * 
      * @param updateApplicationRequest
      * @param asyncHandler

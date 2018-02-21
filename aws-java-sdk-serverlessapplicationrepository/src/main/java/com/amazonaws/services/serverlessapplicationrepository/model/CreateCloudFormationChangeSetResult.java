@@ -24,17 +24,44 @@ import javax.annotation.Generated;
 public class CreateCloudFormationChangeSetResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {
 
-    /** The application Amazon Resource Name (ARN). */
+    /**
+     * <p>
+     * The application Amazon Resource Name (ARN).
+     * </p>
+     */
     private String applicationId;
-    /** The ARN of the change set.\nLength Constraints: Minimum length of 1.\nPattern: arn:[-a-zA-Z0-9:/]* */
+    /**
+     * <p>
+     * The ARN of the change set.
+     * </p>
+     * <p>
+     * Length Constraints: Minimum length of 1.
+     * </p>
+     * <p>
+     * Pattern: Amazon Resource Name (ARN):[-a-zA-Z0-9:/]*
+     * </p>
+     */
     private String changeSetId;
-    /** The semantic version of the application:\n\n https://semver.org/ */
+    /**
+     * <p>
+     * The semantic version of the application:
+     * </p>
+     * <p>
+     * <a href=""https://semver.org/"">https://semver.org/</a>
+     * </p>
+     */
     private String semanticVersion;
-    /** The unique ID of the stack. */
+    /**
+     * <p>
+     * The unique ID of the stack.
+     * </p>
+     */
     private String stackId;
 
     /**
+     * <p>
      * The application Amazon Resource Name (ARN).
+     * </p>
      * 
      * @param applicationId
      *        The application Amazon Resource Name (ARN).
@@ -45,7 +72,9 @@ public class CreateCloudFormationChangeSetResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
      * The application Amazon Resource Name (ARN).
+     * </p>
      * 
      * @return The application Amazon Resource Name (ARN).
      */
@@ -55,7 +84,9 @@ public class CreateCloudFormationChangeSetResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
      * The application Amazon Resource Name (ARN).
+     * </p>
      * 
      * @param applicationId
      *        The application Amazon Resource Name (ARN).
@@ -68,10 +99,23 @@ public class CreateCloudFormationChangeSetResult extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * The ARN of the change set.\nLength Constraints: Minimum length of 1.\nPattern: arn:[-a-zA-Z0-9:/]*
+     * <p>
+     * The ARN of the change set.
+     * </p>
+     * <p>
+     * Length Constraints: Minimum length of 1.
+     * </p>
+     * <p>
+     * Pattern: Amazon Resource Name (ARN):[-a-zA-Z0-9:/]*
+     * </p>
      * 
      * @param changeSetId
-     *        The ARN of the change set.\nLength Constraints: Minimum length of 1.\nPattern: arn:[-a-zA-Z0-9:/]
+     *        The ARN of the change set.</p>
+     *        <p>
+     *        Length Constraints: Minimum length of 1.
+     *        </p>
+     *        <p>
+     *        Pattern: Amazon Resource Name (ARN):[-a-zA-Z0-9:/]
      **/
 
     public void setChangeSetId(String changeSetId) {
@@ -79,9 +123,22 @@ public class CreateCloudFormationChangeSetResult extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * The ARN of the change set.\nLength Constraints: Minimum length of 1.\nPattern: arn:[-a-zA-Z0-9:/]*
+     * <p>
+     * The ARN of the change set.
+     * </p>
+     * <p>
+     * Length Constraints: Minimum length of 1.
+     * </p>
+     * <p>
+     * Pattern: Amazon Resource Name (ARN):[-a-zA-Z0-9:/]*
+     * </p>
      * 
-     * @return The ARN of the change set.\nLength Constraints: Minimum length of 1.\nPattern: arn:[-a-zA-Z0-9:/]
+     * @return The ARN of the change set.</p>
+     *         <p>
+     *         Length Constraints: Minimum length of 1.
+     *         </p>
+     *         <p>
+     *         Pattern: Amazon Resource Name (ARN):[-a-zA-Z0-9:/]
      **/
 
     public String getChangeSetId() {
@@ -89,10 +146,23 @@ public class CreateCloudFormationChangeSetResult extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * The ARN of the change set.\nLength Constraints: Minimum length of 1.\nPattern: arn:[-a-zA-Z0-9:/]*
+     * <p>
+     * The ARN of the change set.
+     * </p>
+     * <p>
+     * Length Constraints: Minimum length of 1.
+     * </p>
+     * <p>
+     * Pattern: Amazon Resource Name (ARN):[-a-zA-Z0-9:/]*
+     * </p>
      * 
      * @param changeSetId
-     *        The ARN of the change set.\nLength Constraints: Minimum length of 1.\nPattern: arn:[-a-zA-Z0-9:/]*
+     *        The ARN of the change set.</p>
+     *        <p>
+     *        Length Constraints: Minimum length of 1.
+     *        </p>
+     *        <p>
+     *        Pattern: Amazon Resource Name (ARN):[-a-zA-Z0-9:/]*
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,10 +172,17 @@ public class CreateCloudFormationChangeSetResult extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * The semantic version of the application:\n\n https://semver.org/
+     * <p>
+     * The semantic version of the application:
+     * </p>
+     * <p>
+     * <a href=""https://semver.org/"">https://semver.org/</a>
+     * </p>
      * 
      * @param semanticVersion
-     *        The semantic version of the application:\n\n https://semver.org/
+     *        The semantic version of the application:</p>
+     *        <p>
+     *        <a href=""https://semver.org/"">https://semver.org/</a>
      */
 
     public void setSemanticVersion(String semanticVersion) {
@@ -113,9 +190,16 @@ public class CreateCloudFormationChangeSetResult extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * The semantic version of the application:\n\n https://semver.org/
+     * <p>
+     * The semantic version of the application:
+     * </p>
+     * <p>
+     * <a href=""https://semver.org/"">https://semver.org/</a>
+     * </p>
      * 
-     * @return The semantic version of the application:\n\n https://semver.org/
+     * @return The semantic version of the application:</p>
+     *         <p>
+     *         <a href=""https://semver.org/"">https://semver.org/</a>
      */
 
     public String getSemanticVersion() {
@@ -123,10 +207,17 @@ public class CreateCloudFormationChangeSetResult extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * The semantic version of the application:\n\n https://semver.org/
+     * <p>
+     * The semantic version of the application:
+     * </p>
+     * <p>
+     * <a href=""https://semver.org/"">https://semver.org/</a>
+     * </p>
      * 
      * @param semanticVersion
-     *        The semantic version of the application:\n\n https://semver.org/
+     *        The semantic version of the application:</p>
+     *        <p>
+     *        <a href=""https://semver.org/"">https://semver.org/</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,7 +227,9 @@ public class CreateCloudFormationChangeSetResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
      * The unique ID of the stack.
+     * </p>
      * 
      * @param stackId
      *        The unique ID of the stack.
@@ -147,7 +240,9 @@ public class CreateCloudFormationChangeSetResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
      * The unique ID of the stack.
+     * </p>
      * 
      * @return The unique ID of the stack.
      */
@@ -157,7 +252,9 @@ public class CreateCloudFormationChangeSetResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
      * The unique ID of the stack.
+     * </p>
      * 
      * @param stackId
      *        The unique ID of the stack.

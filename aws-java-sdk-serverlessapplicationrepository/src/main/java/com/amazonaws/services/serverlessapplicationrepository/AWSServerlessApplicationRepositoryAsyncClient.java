@@ -25,7 +25,41 @@ import java.util.concurrent.ExecutorService;
  * Future object representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to
  * receive notification when an asynchronous operation completes.
  * <p>
- * AWS Serverless Repository
+ * <p>
+ * The AWS Serverless Application Repository makes it easy for developers and enterprises to quickly find and deploy
+ * serverless applications in the AWS Cloud. For more information about serverless applications, see Serverless
+ * Computing and Applications on the AWS website.
+ * </p>
+ * <p>
+ * The AWS Serverless Application Repository is deeply integrated with the AWS Lambda console, so that developers of all
+ * levels can get started with serverless computing without needing to learn anything new. You can use category keywords
+ * to browse for applications such as web and mobile backends, data processing applications, or chatbots. You can also
+ * search for applications by name, publisher, or event source. To use an application, you simply choose it, configure
+ * any required fields, and deploy it with a few clicks.
+ * </p>
+ * <p>
+ * You can also easily publish applications, sharing them publicly with the community at large, or privately within your
+ * team or across your organization. To publish a serverless application (or app), you can use the AWS Management
+ * Console, AWS Command Line Interface (AWS CLI), or AWS SDKs to upload the code. Along with the code, you upload a
+ * simple manifest file, also known as the AWS Serverless Application Model (AWS SAM) template. For more information
+ * about AWS SAM, see AWS Serverless Application Model (AWS SAM) on the AWS Labs GitHub repository.
+ * </p>
+ * <p>
+ * The AWS Serverless Application Repository Developer Guide contains more information about the two developer
+ * experiences available:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Consuming Applications – Browse for applications and view information about them, including source code and readme
+ * files. Also install, configure, and deploy applications of your choosing.
+ * </p>
+ * <p>
+ * Publishing Applications – Configure and upload applications to make them available to other developers, and publish
+ * new versions of applications.
+ * </p>
+ * </li>
+ * </ul>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -145,6 +179,39 @@ public class AWSServerlessApplicationRepositoryAsyncClient extends AWSServerless
 
                 try {
                     result = executeCreateCloudFormationChangeSet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(DeleteApplicationRequest request) {
+
+        return deleteApplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(final DeleteApplicationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResult> asyncHandler) {
+        final DeleteApplicationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteApplicationResult>() {
+            @Override
+            public DeleteApplicationResult call() throws Exception {
+                DeleteApplicationResult result = null;
+
+                try {
+                    result = executeDeleteApplication(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
