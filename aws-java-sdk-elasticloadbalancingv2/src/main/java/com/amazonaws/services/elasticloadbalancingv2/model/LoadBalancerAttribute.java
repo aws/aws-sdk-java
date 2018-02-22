@@ -62,6 +62,18 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * valid range is 1-4000. The default is 60 seconds.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>load_balancing.cross_zone.enabled</code> - [Network Load Balancers] Indicates whether cross-zone load
+     * balancing is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>routing.http2.enabled</code> - [Application Load Balancers] Indicates whether HTTP/2 is enabled. The value
+     * is <code>true</code> or <code>false</code>. The default is <code>true</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String key;
@@ -108,6 +120,18 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * valid range is 1-4000. The default is 60 seconds.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>load_balancing.cross_zone.enabled</code> - [Network Load Balancers] Indicates whether cross-zone load
+     * balancing is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>routing.http2.enabled</code> - [Application Load Balancers] Indicates whether HTTP/2 is enabled. The value
+     * is <code>true</code> or <code>false</code>. The default is <code>true</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param key
@@ -143,6 +167,19 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        <p>
      *        <code>idle_timeout.timeout_seconds</code> - [Application Load Balancers] The idle timeout value, in
      *        seconds. The valid range is 1-4000. The default is 60 seconds.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>load_balancing.cross_zone.enabled</code> - [Network Load Balancers] Indicates whether cross-zone
+     *        load balancing is enabled. The value is <code>true</code> or <code>false</code>. The default is
+     *        <code>false</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>routing.http2.enabled</code> - [Application Load Balancers] Indicates whether HTTP/2 is enabled. The
+     *        value is <code>true</code> or <code>false</code>. The default is <code>true</code>.
      *        </p>
      *        </li>
      */
@@ -187,6 +224,18 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * valid range is 1-4000. The default is 60 seconds.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>load_balancing.cross_zone.enabled</code> - [Network Load Balancers] Indicates whether cross-zone load
+     * balancing is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>routing.http2.enabled</code> - [Application Load Balancers] Indicates whether HTTP/2 is enabled. The value
+     * is <code>true</code> or <code>false</code>. The default is <code>true</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The name of the attribute.</p>
@@ -221,6 +270,19 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *         <p>
      *         <code>idle_timeout.timeout_seconds</code> - [Application Load Balancers] The idle timeout value, in
      *         seconds. The valid range is 1-4000. The default is 60 seconds.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>load_balancing.cross_zone.enabled</code> - [Network Load Balancers] Indicates whether cross-zone
+     *         load balancing is enabled. The value is <code>true</code> or <code>false</code>. The default is
+     *         <code>false</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>routing.http2.enabled</code> - [Application Load Balancers] Indicates whether HTTP/2 is enabled.
+     *         The value is <code>true</code> or <code>false</code>. The default is <code>true</code>.
      *         </p>
      *         </li>
      */
@@ -265,6 +327,18 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * valid range is 1-4000. The default is 60 seconds.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>load_balancing.cross_zone.enabled</code> - [Network Load Balancers] Indicates whether cross-zone load
+     * balancing is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>routing.http2.enabled</code> - [Application Load Balancers] Indicates whether HTTP/2 is enabled. The value
+     * is <code>true</code> or <code>false</code>. The default is <code>true</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param key
@@ -300,6 +374,19 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        <p>
      *        <code>idle_timeout.timeout_seconds</code> - [Application Load Balancers] The idle timeout value, in
      *        seconds. The valid range is 1-4000. The default is 60 seconds.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>load_balancing.cross_zone.enabled</code> - [Network Load Balancers] Indicates whether cross-zone
+     *        load balancing is enabled. The value is <code>true</code> or <code>false</code>. The default is
+     *        <code>false</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>routing.http2.enabled</code> - [Application Load Balancers] Indicates whether HTTP/2 is enabled. The
+     *        value is <code>true</code> or <code>false</code>. The default is <code>true</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

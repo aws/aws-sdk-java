@@ -144,6 +144,39 @@ public class AWSCostExplorerAsyncClient extends AWSCostExplorerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetReservationCoverageResult> getReservationCoverageAsync(GetReservationCoverageRequest request) {
+
+        return getReservationCoverageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetReservationCoverageResult> getReservationCoverageAsync(final GetReservationCoverageRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetReservationCoverageRequest, GetReservationCoverageResult> asyncHandler) {
+        final GetReservationCoverageRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetReservationCoverageResult>() {
+            @Override
+            public GetReservationCoverageResult call() throws Exception {
+                GetReservationCoverageResult result = null;
+
+                try {
+                    result = executeGetReservationCoverage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetReservationUtilizationResult> getReservationUtilizationAsync(GetReservationUtilizationRequest request) {
 
         return getReservationUtilizationAsync(request, null);

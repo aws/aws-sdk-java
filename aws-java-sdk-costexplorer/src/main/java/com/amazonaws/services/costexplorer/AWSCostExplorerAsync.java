@@ -51,9 +51,9 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
      * <p>
      * Retrieve cost and usage metrics for your account. You can specify which cost and usage-related metric, such as
      * <code>BlendedCosts</code> or <code>UsageQuantity</code>, that you want the request to return. You can also filter
-     * and group your data by various dimensions, such as <code>AWS Service</code> or <code>AvailabilityZone</code>, in
-     * a specific time range. See the <code>GetDimensionValues</code> action for a complete list of the valid
-     * dimensions. Master accounts in an organization have access to all member accounts.
+     * and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time
+     * range. See the <code>GetDimensionValues</code> action for a complete list of the valid dimensions. Master
+     * accounts in an organization have access to all member accounts.
      * </p>
      * 
      * @param getCostAndUsageRequest
@@ -68,9 +68,9 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
      * <p>
      * Retrieve cost and usage metrics for your account. You can specify which cost and usage-related metric, such as
      * <code>BlendedCosts</code> or <code>UsageQuantity</code>, that you want the request to return. You can also filter
-     * and group your data by various dimensions, such as <code>AWS Service</code> or <code>AvailabilityZone</code>, in
-     * a specific time range. See the <code>GetDimensionValues</code> action for a complete list of the valid
-     * dimensions. Master accounts in an organization have access to all member accounts.
+     * and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time
+     * range. See the <code>GetDimensionValues</code> action for a complete list of the valid dimensions. Master
+     * accounts in an organization have access to all member accounts.
      * </p>
      * 
      * @param getCostAndUsageRequest
@@ -118,6 +118,111 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
      */
     java.util.concurrent.Future<GetDimensionValuesResult> getDimensionValuesAsync(GetDimensionValuesRequest getDimensionValuesRequest,
             com.amazonaws.handlers.AsyncHandler<GetDimensionValuesRequest, GetDimensionValuesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieve the reservation coverage for your account. An organization's master account has access to the associated
+     * member accounts. For any time period, you can filter data about reservation usage by the following dimensions.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AZ
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTANCE_TYPE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * LINKED_ACCOUNT
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PLATFORM
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REGION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TENANCY
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To determine valid values for a dimension, use the <code>GetDimensionValues</code> operation.
+     * </p>
+     * 
+     * @param getReservationCoverageRequest
+     *        You can query for how much of your instance usage was covered by a reservation.
+     * @return A Java Future containing the result of the GetReservationCoverage operation returned by the service.
+     * @sample AWSCostExplorerAsync.GetReservationCoverage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationCoverage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetReservationCoverageResult> getReservationCoverageAsync(GetReservationCoverageRequest getReservationCoverageRequest);
+
+    /**
+     * <p>
+     * Retrieve the reservation coverage for your account. An organization's master account has access to the associated
+     * member accounts. For any time period, you can filter data about reservation usage by the following dimensions.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AZ
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTANCE_TYPE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * LINKED_ACCOUNT
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PLATFORM
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REGION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TENANCY
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To determine valid values for a dimension, use the <code>GetDimensionValues</code> operation.
+     * </p>
+     * 
+     * @param getReservationCoverageRequest
+     *        You can query for how much of your instance usage was covered by a reservation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetReservationCoverage operation returned by the service.
+     * @sample AWSCostExplorerAsyncHandler.GetReservationCoverage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationCoverage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetReservationCoverageResult> getReservationCoverageAsync(GetReservationCoverageRequest getReservationCoverageRequest,
+            com.amazonaws.handlers.AsyncHandler<GetReservationCoverageRequest, GetReservationCoverageResult> asyncHandler);
 
     /**
      * <p>

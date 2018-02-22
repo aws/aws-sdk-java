@@ -1,4 +1,4 @@
-# __1.11.283__ __2018-02-21__
+# __1.11.284__ __2018-02-22__
 ## __AWS AppSync__
   - ### Features
     - AWS AppSync now supports for None Data Source, CreateApiKey now supports setting expiration on API keys, new API UpdateApiKey supports updating expiration on API keys. 
@@ -10,6 +10,10 @@
 ## __AWS Config__
   - ### Features
     - With this release, AWS Config updated the ConfigurationItemStatus enum values. The values prior to this update did not represent appropriate values returned by GetResourceConfigHistory. You must update your code to enumerate the new enum values so this is a breaking change.  To map old properties to new properties, use the following descriptions: New discovered resource - Old property: Discovered, New property: ResourceDiscovered. Updated resource - Old property: Ok, New property: OK. Deleted resource - Old property: Deleted, New property: ResourceDeleted or ResourceDeletedNotRecorded. Not-recorded resource - Old property: N/A, New property: ResourceNotRecorded or ResourceDeletedNotRecorded.
+
+## __AWS Cost Explorer Service__
+  - ### Features
+    - Added GetReservationCoverage API for retrieving reservation coverage information.
 
 ## __AWS Elemental MediaConvert__
   - ### Features
@@ -46,6 +50,10 @@
 ## __Auto Scaling__
   - ### Features
     - Amazon EC2 Auto Scaling support for service-linked roles
+
+## __Elastic Load Balancing__
+  - ### Features
+    - Added a new load balancer attribute related to Network Load Balancers that enables cross zone capabilities. This feature allows Network Load Balancers to distribute requests regardless of Availability Zone.
 
 # __1.11.277__ __2018-02-13__
 ## __Amazon Glacier__

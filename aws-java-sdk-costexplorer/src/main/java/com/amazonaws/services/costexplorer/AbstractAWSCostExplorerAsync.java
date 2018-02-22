@@ -54,6 +54,19 @@ public class AbstractAWSCostExplorerAsync extends AbstractAWSCostExplorer implem
     }
 
     @Override
+    public java.util.concurrent.Future<GetReservationCoverageResult> getReservationCoverageAsync(GetReservationCoverageRequest request) {
+
+        return getReservationCoverageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetReservationCoverageResult> getReservationCoverageAsync(GetReservationCoverageRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetReservationCoverageRequest, GetReservationCoverageResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetReservationUtilizationResult> getReservationUtilizationAsync(GetReservationUtilizationRequest request) {
 
         return getReservationUtilizationAsync(request, null);

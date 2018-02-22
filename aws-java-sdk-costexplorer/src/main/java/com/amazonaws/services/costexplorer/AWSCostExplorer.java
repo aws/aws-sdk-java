@@ -60,15 +60,21 @@ public interface AWSCostExplorer {
      * <p>
      * Retrieve cost and usage metrics for your account. You can specify which cost and usage-related metric, such as
      * <code>BlendedCosts</code> or <code>UsageQuantity</code>, that you want the request to return. You can also filter
-     * and group your data by various dimensions, such as <code>AWS Service</code> or <code>AvailabilityZone</code>, in
-     * a specific time range. See the <code>GetDimensionValues</code> action for a complete list of the valid
-     * dimensions. Master accounts in an organization have access to all member accounts.
+     * and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time
+     * range. See the <code>GetDimensionValues</code> action for a complete list of the valid dimensions. Master
+     * accounts in an organization have access to all member accounts.
      * </p>
      * 
      * @param getCostAndUsageRequest
      * @return Result of the GetCostAndUsage operation returned by the service.
      * @throws LimitExceededException
      *         You made too many calls in a short period of time. Try again later.
+     * @throws BillExpirationException
+     *         The requested report expired. Update the date interval and try again.
+     * @throws DataUnavailableException
+     *         The requested data is unavailable.
+     * @throws InvalidNextTokenException
+     *         The pagination token is invalid. Try again without a pagination token.
      * @sample AWSCostExplorer.GetCostAndUsage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsage" target="_top">AWS API
      *      Documentation</a>
@@ -85,11 +91,71 @@ public interface AWSCostExplorer {
      * @return Result of the GetDimensionValues operation returned by the service.
      * @throws LimitExceededException
      *         You made too many calls in a short period of time. Try again later.
+     * @throws BillExpirationException
+     *         The requested report expired. Update the date interval and try again.
+     * @throws InvalidNextTokenException
+     *         The pagination token is invalid. Try again without a pagination token.
      * @sample AWSCostExplorer.GetDimensionValues
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetDimensionValues" target="_top">AWS API
      *      Documentation</a>
      */
     GetDimensionValuesResult getDimensionValues(GetDimensionValuesRequest getDimensionValuesRequest);
+
+    /**
+     * <p>
+     * Retrieve the reservation coverage for your account. An organization's master account has access to the associated
+     * member accounts. For any time period, you can filter data about reservation usage by the following dimensions.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AZ
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTANCE_TYPE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * LINKED_ACCOUNT
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PLATFORM
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REGION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TENANCY
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To determine valid values for a dimension, use the <code>GetDimensionValues</code> operation.
+     * </p>
+     * 
+     * @param getReservationCoverageRequest
+     *        You can query for how much of your instance usage was covered by a reservation.
+     * @return Result of the GetReservationCoverage operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws DataUnavailableException
+     *         The requested data is unavailable.
+     * @throws InvalidNextTokenException
+     *         The pagination token is invalid. Try again without a pagination token.
+     * @sample AWSCostExplorer.GetReservationCoverage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationCoverage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetReservationCoverageResult getReservationCoverage(GetReservationCoverageRequest getReservationCoverageRequest);
 
     /**
      * <p>
@@ -103,6 +169,10 @@ public interface AWSCostExplorer {
      * @return Result of the GetReservationUtilization operation returned by the service.
      * @throws LimitExceededException
      *         You made too many calls in a short period of time. Try again later.
+     * @throws DataUnavailableException
+     *         The requested data is unavailable.
+     * @throws InvalidNextTokenException
+     *         The pagination token is invalid. Try again without a pagination token.
      * @sample AWSCostExplorer.GetReservationUtilization
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationUtilization" target="_top">AWS
      *      API Documentation</a>
@@ -119,6 +189,10 @@ public interface AWSCostExplorer {
      * @return Result of the GetTags operation returned by the service.
      * @throws LimitExceededException
      *         You made too many calls in a short period of time. Try again later.
+     * @throws BillExpirationException
+     *         The requested report expired. Update the date interval and try again.
+     * @throws InvalidNextTokenException
+     *         The pagination token is invalid. Try again without a pagination token.
      * @sample AWSCostExplorer.GetTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetTags" target="_top">AWS API
      *      Documentation</a>

@@ -36,16 +36,16 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
     private DateInterval timePeriod;
     /**
      * <p>
-     * Groups only by <code>SubscriptionId</code>. Metadata is included.
+     * Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.
      * </p>
      */
     private java.util.List<GroupDefinition> groupBy;
     /**
      * <p>
-     * Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>. If both <code>GroupBy</code> and
-     * <code>granularity</code> are not set, <code>GetReservationUtilization</code> defaults to <code>DAILY</code>. If
-     * <code>GroupBy</code> is set, <code>Granularity</code> can't be set, and the response object doesn't include
-     * <code>MONTHLY</code> or <code>DAILY</code> granularity.
+     * If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the
+     * response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.
+     * If both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code>
+     * defaults to <code>DAILY</code>.
      * </p>
      */
     private String granularity;
@@ -129,10 +129,10 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Groups only by <code>SubscriptionId</code>. Metadata is included.
+     * Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.
      * </p>
      * 
-     * @return Groups only by <code>SubscriptionId</code>. Metadata is included.
+     * @return Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.
      */
 
     public java.util.List<GroupDefinition> getGroupBy() {
@@ -141,11 +141,11 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Groups only by <code>SubscriptionId</code>. Metadata is included.
+     * Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.
      * </p>
      * 
      * @param groupBy
-     *        Groups only by <code>SubscriptionId</code>. Metadata is included.
+     *        Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.
      */
 
     public void setGroupBy(java.util.Collection<GroupDefinition> groupBy) {
@@ -159,7 +159,7 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Groups only by <code>SubscriptionId</code>. Metadata is included.
+     * Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -168,7 +168,7 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param groupBy
-     *        Groups only by <code>SubscriptionId</code>. Metadata is included.
+     *        Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,11 +184,11 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Groups only by <code>SubscriptionId</code>. Metadata is included.
+     * Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.
      * </p>
      * 
      * @param groupBy
-     *        Groups only by <code>SubscriptionId</code>. Metadata is included.
+     *        Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,17 +199,17 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>. If both <code>GroupBy</code> and
-     * <code>granularity</code> are not set, <code>GetReservationUtilization</code> defaults to <code>DAILY</code>. If
-     * <code>GroupBy</code> is set, <code>Granularity</code> can't be set, and the response object doesn't include
-     * <code>MONTHLY</code> or <code>DAILY</code> granularity.
+     * If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the
+     * response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.
+     * If both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code>
+     * defaults to <code>DAILY</code>.
      * </p>
      * 
      * @param granularity
-     *        Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>. If both <code>GroupBy</code>
-     *        and <code>granularity</code> are not set, <code>GetReservationUtilization</code> defaults to
-     *        <code>DAILY</code>. If <code>GroupBy</code> is set, <code>Granularity</code> can't be set, and the
-     *        response object doesn't include <code>MONTHLY</code> or <code>DAILY</code> granularity.
+     *        If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
+     *        set, the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or
+     *        <code>DAILY</code>. If both <code>GroupBy</code> and <code>Granularity</code> aren't set,
+     *        <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.
      * @see Granularity
      */
 
@@ -219,16 +219,16 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>. If both <code>GroupBy</code> and
-     * <code>granularity</code> are not set, <code>GetReservationUtilization</code> defaults to <code>DAILY</code>. If
-     * <code>GroupBy</code> is set, <code>Granularity</code> can't be set, and the response object doesn't include
-     * <code>MONTHLY</code> or <code>DAILY</code> granularity.
+     * If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the
+     * response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.
+     * If both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code>
+     * defaults to <code>DAILY</code>.
      * </p>
      * 
-     * @return Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>. If both <code>GroupBy</code>
-     *         and <code>granularity</code> are not set, <code>GetReservationUtilization</code> defaults to
-     *         <code>DAILY</code>. If <code>GroupBy</code> is set, <code>Granularity</code> can't be set, and the
-     *         response object doesn't include <code>MONTHLY</code> or <code>DAILY</code> granularity.
+     * @return If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
+     *         set, the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or
+     *         <code>DAILY</code>. If both <code>GroupBy</code> and <code>Granularity</code> aren't set,
+     *         <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.
      * @see Granularity
      */
 
@@ -238,17 +238,17 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>. If both <code>GroupBy</code> and
-     * <code>granularity</code> are not set, <code>GetReservationUtilization</code> defaults to <code>DAILY</code>. If
-     * <code>GroupBy</code> is set, <code>Granularity</code> can't be set, and the response object doesn't include
-     * <code>MONTHLY</code> or <code>DAILY</code> granularity.
+     * If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the
+     * response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.
+     * If both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code>
+     * defaults to <code>DAILY</code>.
      * </p>
      * 
      * @param granularity
-     *        Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>. If both <code>GroupBy</code>
-     *        and <code>granularity</code> are not set, <code>GetReservationUtilization</code> defaults to
-     *        <code>DAILY</code>. If <code>GroupBy</code> is set, <code>Granularity</code> can't be set, and the
-     *        response object doesn't include <code>MONTHLY</code> or <code>DAILY</code> granularity.
+     *        If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
+     *        set, the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or
+     *        <code>DAILY</code>. If both <code>GroupBy</code> and <code>Granularity</code> aren't set,
+     *        <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Granularity
      */
@@ -260,17 +260,17 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>. If both <code>GroupBy</code> and
-     * <code>granularity</code> are not set, <code>GetReservationUtilization</code> defaults to <code>DAILY</code>. If
-     * <code>GroupBy</code> is set, <code>Granularity</code> can't be set, and the response object doesn't include
-     * <code>MONTHLY</code> or <code>DAILY</code> granularity.
+     * If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the
+     * response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.
+     * If both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code>
+     * defaults to <code>DAILY</code>.
      * </p>
      * 
      * @param granularity
-     *        Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>. If both <code>GroupBy</code>
-     *        and <code>granularity</code> are not set, <code>GetReservationUtilization</code> defaults to
-     *        <code>DAILY</code>. If <code>GroupBy</code> is set, <code>Granularity</code> can't be set, and the
-     *        response object doesn't include <code>MONTHLY</code> or <code>DAILY</code> granularity.
+     *        If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
+     *        set, the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or
+     *        <code>DAILY</code>. If both <code>GroupBy</code> and <code>Granularity</code> aren't set,
+     *        <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Granularity
      */

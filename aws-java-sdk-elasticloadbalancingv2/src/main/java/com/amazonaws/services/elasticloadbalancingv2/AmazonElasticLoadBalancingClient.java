@@ -496,12 +496,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * Creates a listener for the specified Application Load Balancer or Network Load Balancer.
      * </p>
      * <p>
-     * You can create up to 10 listeners per load balancer.
-     * </p>
-     * <p>
      * To update a listener, use <a>ModifyListener</a>. When you are finished with a listener, you can delete it using
      * <a>DeleteListener</a>. If you are finished with both the listener and the load balancer, you can delete them both
      * using <a>DeleteLoadBalancer</a>.
+     * </p>
+     * <p>
+     * This operation is idempotent, which means that it completes at most one time. If you attempt to create multiple
+     * listeners with the same settings, each call succeeds.
      * </p>
      * <p>
      * For more information, see <a
@@ -586,8 +587,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * Creates an Application Load Balancer or a Network Load Balancer.
      * </p>
      * <p>
-     * When you create a load balancer, you can specify security groups, subnets, IP address type, and tags. Otherwise,
-     * you could do so later using <a>SetSecurityGroups</a>, <a>SetSubnets</a>, <a>SetIpAddressType</a>, and
+     * When you create a load balancer, you can specify security groups, public subnets, IP address type, and tags.
+     * Otherwise, you could do so later using <a>SetSecurityGroups</a>, <a>SetSubnets</a>, <a>SetIpAddressType</a>, and
      * <a>AddTags</a>.
      * </p>
      * <p>
@@ -596,12 +597,15 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * <a>DeleteLoadBalancer</a>.
      * </p>
      * <p>
-     * You can create up to 20 load balancers per region per account. You can request an increase for the number of load
-     * balancers for your account. For more information, see <a
+     * For limit information, see <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits for
      * Your Application Load Balancer</a> in the <i>Application Load Balancers Guide</i> and <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits for Your
      * Network Load Balancer</a> in the <i>Network Load Balancers Guide</i>.
+     * </p>
+     * <p>
+     * This operation is idempotent, which means that it completes at most one time. If you attempt to create multiple
+     * load balancers with the same settings, each call succeeds.
      * </p>
      * <p>
      * For more information, see <a
@@ -775,6 +779,10 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * </p>
      * <p>
      * To delete a target group, use <a>DeleteTargetGroup</a>.
+     * </p>
+     * <p>
+     * This operation is idempotent, which means that it completes at most one time. If you attempt to create multiple
+     * target groups with the same settings, each call succeeds.
      * </p>
      * <p>
      * For more information, see <a
@@ -1071,7 +1079,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * @throws TargetGroupNotFoundException
      *         The specified target group does not exist.
      * @throws InvalidTargetException
-     *         The specified target does not exist or is not in the same VPC as the target group.
+     *         The specified target does not exist, is not in the same VPC as the target group, or has an unsupported
+     *         instance type.
      * @sample AmazonElasticLoadBalancing.DeregisterTargets
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeregisterTargets"
      *      target="_top">AWS API Documentation</a>
@@ -1668,7 +1677,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * @param describeTargetHealthRequest
      * @return Result of the DescribeTargetHealth operation returned by the service.
      * @throws InvalidTargetException
-     *         The specified target does not exist or is not in the same VPC as the target group.
+     *         The specified target does not exist, is not in the same VPC as the target group, or has an unsupported
+     *         instance type.
      * @throws TargetGroupNotFoundException
      *         The specified target group does not exist.
      * @throws HealthUnavailableException
@@ -2060,7 +2070,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * @throws TooManyTargetsException
      *         You've reached the limit on the number of targets.
      * @throws InvalidTargetException
-     *         The specified target does not exist or is not in the same VPC as the target group.
+     *         The specified target does not exist, is not in the same VPC as the target group, or has an unsupported
+     *         instance type.
      * @throws TooManyRegistrationsForTargetIdException
      *         You've reached the limit on the number of times a target can be registered with a load balancer.
      * @sample AmazonElasticLoadBalancing.RegisterTargets
@@ -2406,7 +2417,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Enables the Availability Zone for the specified subnets for the specified Application Load Balancer. The
+     * Enables the Availability Zone for the specified public subnets for the specified Application Load Balancer. The
      * specified subnets replace the previously enabled subnets.
      * </p>
      * <p>

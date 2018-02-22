@@ -38,6 +38,11 @@ public class AbstractAWSCostExplorer implements AWSCostExplorer {
     }
 
     @Override
+    public GetReservationCoverageResult getReservationCoverage(GetReservationCoverageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetReservationUtilizationResult getReservationUtilization(GetReservationUtilizationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
