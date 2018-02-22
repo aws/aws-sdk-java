@@ -104,7 +104,7 @@ import static com.amazonaws.services.s3.internal.ServiceUtils.OVERWRITE_MODE;
  * <code> TransferManager.shutdownNow()</code> to release the resources once the
  * transfer is complete.
  * <p>
- * Using <code>TransferManager</code> to upload options to Amazon S3 is easy:
+ * Using <code>TransferManager</code> to upload objects to Amazon S3 is easy:
  *
  * <pre class="brush: java">
  * DefaultAWSCredentialsProviderChain credentialProviderChain = new DefaultAWSCredentialsProviderChain();
