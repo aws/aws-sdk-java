@@ -23,6 +23,7 @@ public enum ImageState {
     PENDING("PENDING"),
     AVAILABLE("AVAILABLE"),
     FAILED("FAILED"),
+    COPYING("COPYING"),
     DELETING("DELETING");
 
     private String value;

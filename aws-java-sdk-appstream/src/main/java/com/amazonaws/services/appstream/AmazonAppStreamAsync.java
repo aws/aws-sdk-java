@@ -67,6 +67,39 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
 
     /**
      * <p>
+     * Copies the image within the same region or to a new region within the same AWS account. Note that any tags you
+     * added to the image will not be copied.
+     * </p>
+     * 
+     * @param copyImageRequest
+     * @return A Java Future containing the result of the CopyImage operation returned by the service.
+     * @sample AmazonAppStreamAsync.CopyImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CopyImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CopyImageResult> copyImageAsync(CopyImageRequest copyImageRequest);
+
+    /**
+     * <p>
+     * Copies the image within the same region or to a new region within the same AWS account. Note that any tags you
+     * added to the image will not be copied.
+     * </p>
+     * 
+     * @param copyImageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CopyImage operation returned by the service.
+     * @sample AmazonAppStreamAsyncHandler.CopyImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CopyImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CopyImageResult> copyImageAsync(CopyImageRequest copyImageRequest,
+            com.amazonaws.handlers.AsyncHandler<CopyImageRequest, CopyImageResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a directory configuration.
      * </p>
      * 

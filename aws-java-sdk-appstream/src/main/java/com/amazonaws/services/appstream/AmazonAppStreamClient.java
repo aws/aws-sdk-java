@@ -352,6 +352,66 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Copies the image within the same region or to a new region within the same AWS account. Note that any tags you
+     * added to the image will not be copied.
+     * </p>
+     * 
+     * @param copyImageRequest
+     * @return Result of the CopyImage operation returned by the service.
+     * @throws ResourceAlreadyExistsException
+     *         The specified resource already exists.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ResourceNotAvailableException
+     *         The specified resource exists and is not in use, but isn't available.
+     * @throws LimitExceededException
+     *         The requested limit exceeds the permitted limit for an account.
+     * @throws IncompatibleImageException
+     *         The image does not support storage connectors.
+     * @sample AmazonAppStream.CopyImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CopyImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CopyImageResult copyImage(CopyImageRequest request) {
+        request = beforeClientExecution(request);
+        return executeCopyImage(request);
+    }
+
+    @SdkInternalApi
+    final CopyImageResult executeCopyImage(CopyImageRequest copyImageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(copyImageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CopyImageRequest> request = null;
+        Response<CopyImageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CopyImageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(copyImageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CopyImageResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CopyImageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a directory configuration.
      * </p>
      * 

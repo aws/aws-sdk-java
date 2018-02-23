@@ -120,6 +120,30 @@ public interface AmazonAppStream {
 
     /**
      * <p>
+     * Copies the image within the same region or to a new region within the same AWS account. Note that any tags you
+     * added to the image will not be copied.
+     * </p>
+     * 
+     * @param copyImageRequest
+     * @return Result of the CopyImage operation returned by the service.
+     * @throws ResourceAlreadyExistsException
+     *         The specified resource already exists.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ResourceNotAvailableException
+     *         The specified resource exists and is not in use, but isn't available.
+     * @throws LimitExceededException
+     *         The requested limit exceeds the permitted limit for an account.
+     * @throws IncompatibleImageException
+     *         The image does not support storage connectors.
+     * @sample AmazonAppStream.CopyImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CopyImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CopyImageResult copyImage(CopyImageRequest copyImageRequest);
+
+    /**
+     * <p>
      * Creates a directory configuration.
      * </p>
      * 

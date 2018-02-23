@@ -280,6 +280,39 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<CopyImageResult> copyImageAsync(CopyImageRequest request) {
+
+        return copyImageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CopyImageResult> copyImageAsync(final CopyImageRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CopyImageRequest, CopyImageResult> asyncHandler) {
+        final CopyImageRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CopyImageResult>() {
+            @Override
+            public CopyImageResult call() throws Exception {
+                CopyImageResult result = null;
+
+                try {
+                    result = executeCopyImage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDirectoryConfigResult> createDirectoryConfigAsync(CreateDirectoryConfigRequest request) {
 
         return createDirectoryConfigAsync(request, null);

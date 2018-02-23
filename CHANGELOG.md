@@ -1,3 +1,12 @@
+# __1.11.285__ __2018-02-23__
+## __AWS SDK for Java__
+  - ### Features
+    - Add support for AWS_EC2_METADATA_DISABLED environment variable to disable EC2 Metadata Service usage to retrieve credentials and region.
+
+## __Amazon AppStream__
+  - ### Features
+    - This API update is to enable customers to copy their Amazon AppStream 2.0 images within and between AWS Regions
+
 # __1.11.284__ __2018-02-22__
 ## __AWS AppSync__
   - ### Features
@@ -54,6 +63,117 @@
 ## __Elastic Load Balancing__
   - ### Features
     - Added a new load balancer attribute related to Network Load Balancers that enables cross zone capabilities. This feature allows Network Load Balancers to distribute requests regardless of Availability Zone.
+
+# __1.11.283__ __2018-02-21__
+## __AWS AppSync__
+  - ### Features
+    - AWS AppSync now supports for None Data Source, CreateApiKey now supports setting expiration on API keys, new API UpdateApiKey supports updating expiration on API keys. 
+
+## __AWS CodeCommit__
+  - ### Features
+    - This release adds an API for adding a file directly to an AWS CodeCommit repository without requiring a Git client.
+
+## __AWS Config__
+  - ### Features
+    - With this release, AWS Config updated the ConfigurationItemStatus enum values. The values prior to this update did not represent appropriate values returned by GetResourceConfigHistory. You must update your code to enumerate the new enum values so this is a breaking change.  To map old properties to new properties, use the following descriptions: New discovered resource - Old property: Discovered, New property: ResourceDiscovered. Updated resource - Old property: Ok, New property: OK. Deleted resource - Old property: Deleted, New property: ResourceDeleted or ResourceDeletedNotRecorded. Not-recorded resource - Old property: N/A, New property: ResourceNotRecorded or ResourceDeletedNotRecorded.
+
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - Nielsen ID3 tags can now be inserted into transport stream (TS) and HLS outputs. For more information on Nielsen configuration you can go to https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs.html#jobs-nielsenconfiguration
+
+## __AWS WAF__
+  - ### Features
+    - The new PermissionPolicy APIs in AWS WAF Regional allow customers to attach resource-based policies to their entities.
+
+## __AWS WAF Regional__
+  - ### Features
+    - The new PermissionPolicy APIs in AWS WAF Regional allow customers to attach resource-based policies to their entities.
+
+## __AWSServerlessApplicationRepository__
+  - ### Features
+    - Added support for delete-application API and the ability for developers to set a homepage for their application. The homepage is a URL with more information about the application, for example the location of your GitHub repository for the application. 
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Adds support for tagging an EBS snapshot as part of the API call that creates the EBS snapshot
+
+## __Amazon GameLift__
+  - ### Features
+    - Updates to allow Fleets to run on On-Demand or Spot instances.
+
+## __Amazon Lex Model Building Service__
+  - ### Features
+    - Amazon Lex now provides the ability to export and import your Amazon Lex chatbot definition as a JSON file.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Updates RDS API to indicate whether a DBEngine supports read replicas.
+
+## __Auto Scaling__
+  - ### Features
+    - Amazon EC2 Auto Scaling support for service-linked roles
+
+# __1.11.282__ __2018-02-20__
+## __AWS AppSync__
+  - ### Features
+    - AWS AppSync now supports for None Data Source, CreateApiKey now supports setting expiration on API keys, new API UpdateApiKey supports updating expiration on API keys. 
+
+## __AWS Config__
+  - ### Features
+    - With this release, AWS Config updated the ConfigurationItemStatus enum values. The values prior to this update did not represent appropriate values returned by GetResourceConfigHistory. You must update your code to enumerate the new enum values so this is a breaking change.  To map old properties to new properties, use the following descriptions: New discovered resource - Old property: Discovered, New property: ResourceDiscovered. Updated resource - Old property: Ok, New property: OK. Deleted resource - Old property: Deleted, New property: ResourceDeleted or ResourceDeletedNotRecorded. Not-recorded resource - Old property: N/A, New property: ResourceNotRecorded or ResourceDeletedNotRecorded.
+
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - Nielsen ID3 tags can now be inserted into transport stream (TS) and HLS outputs. For more information on Nielsen configuration you can go to https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs.html#jobs-nielsenconfiguration
+
+## __AWS WAF__
+  - ### Features
+    - The new PermissionPolicy APIs in AWS WAF Regional allow customers to attach resource-based policies to their entities.
+
+## __AWS WAF Regional__
+  - ### Features
+    - The new PermissionPolicy APIs in AWS WAF Regional allow customers to attach resource-based policies to their entities.
+
+## __Amazon GameLift__
+  - ### Features
+    - Updates to allow Fleets to run on On-Demand or Spot instances.
+
+## __Amazon Lex Model Building Service__
+  - ### Features
+    - Amazon Lex now provides the ability to export and import your Amazon Lex chatbot definition as a JSON file.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Updates RDS API to indicate whether a DBEngine supports read replicas.
+
+## __Auto Scaling__
+  - ### Features
+    - Amazon EC2 Auto Scaling support for service-linked roles
+
+# __1.11.281__ __2018-02-19__
+## __AWS AppSync__
+  - ### Features
+    - AWS AppSync now supports for None Data Source, CreateApiKey now supports setting expiration on API keys, new API UpdateApiKey supports updating expiration on API keys. 
+
+## __AWS Config__
+  - ### Features
+    - With this release, AWS Config updated the ConfigurationItemStatus enum values. The values prior to this update did not represent appropriate values returned by GetResourceConfigHistory. You must update your code to enumerate the new enum values so this is a breaking change.  To map old properties to new properties, use the following descriptions: New discovered resource - Old property: Discovered, New property: ResourceDiscovered. Updated resource - Old property: Ok, New property: OK. Deleted resource - Old property: Deleted, New property: ResourceDeleted or ResourceDeletedNotRecorded. Not-recorded resource - Old property: N/A, New property: ResourceNotRecorded or ResourceDeletedNotRecorded.
+
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - Nielsen ID3 tags can now be inserted into transport stream (TS) and HLS outputs. For more information on Nielsen configuration you can go to https://docs.aws.amazon.com/mediaconvert/latest/apireference/jobs.html#jobs-nielsenconfiguration
+
+## __Amazon GameLift__
+  - ### Features
+    - Updates to allow Fleets to run on On-Demand or Spot instances.
+
+## __Amazon Lex Model Building Service__
+  - ### Features
+    - Amazon Lex now provides the ability to export and import your Amazon Lex chatbot definition as a JSON file.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Updates RDS API to indicate whether a DBEngine supports read replicas.
 
 # __1.11.277__ __2018-02-13__
 ## __Amazon Glacier__

@@ -44,6 +44,11 @@ public class AbstractAmazonAppStream implements AmazonAppStream {
     }
 
     @Override
+    public CopyImageResult copyImage(CopyImageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateDirectoryConfigResult createDirectoryConfig(CreateDirectoryConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

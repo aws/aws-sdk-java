@@ -41,6 +41,19 @@ public class AbstractAmazonAppStreamAsync extends AbstractAmazonAppStream implem
     }
 
     @Override
+    public java.util.concurrent.Future<CopyImageResult> copyImageAsync(CopyImageRequest request) {
+
+        return copyImageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CopyImageResult> copyImageAsync(CopyImageRequest request,
+            com.amazonaws.handlers.AsyncHandler<CopyImageRequest, CopyImageResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDirectoryConfigResult> createDirectoryConfigAsync(CreateDirectoryConfigRequest request) {
 
         return createDirectoryConfigAsync(request, null);

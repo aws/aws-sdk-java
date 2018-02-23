@@ -17,6 +17,7 @@ package com.amazonaws.util;
 import static com.amazonaws.SDKGlobalConfiguration.EC2_METADATA_SERVICE_OVERRIDE_SYSTEM_PROPERTY;
 
 import com.amazonaws.AmazonClientException;
+import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.SdkClientException;
 import com.amazonaws.internal.EC2CredentialsUtils;
 import com.amazonaws.util.json.Jackson;
@@ -45,6 +46,11 @@ import org.apache.commons.logging.LogFactory;
  * retrieve their content from the Amazon S3 bucket you specify at launch. To
  * add a new customer at any time, simply create a bucket for the customer, add
  * their content, and launch your AMI.<br>
+ *
+ * <p>
+ * You can disable the use of the EC2 Instance meta data service by either setting the
+ * {@link SDKGlobalConfiguration#AWS_EC2_METADATA_DISABLED_ENV_VAR} or
+ * {@link SDKGlobalConfiguration#AWS_EC2_METADATA_DISABLED_SYSTEM_PROPERTY} to 'true'(not case sensitive).
  *
  * More information about Amazon EC2 Metadata
  *

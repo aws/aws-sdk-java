@@ -15,6 +15,7 @@
 package com.amazonaws.auth;
 
 import com.amazonaws.AmazonClientException;
+import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.SdkClientException;
 import com.amazonaws.internal.CredentialsEndpointProvider;
 import com.amazonaws.internal.EC2CredentialsUtils;
@@ -102,22 +103,25 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
     }
 
     private InstanceProfileCredentialsProvider(boolean refreshCredentialsAsync, final boolean eagerlyRefreshCredentialsAsync) {
+
         credentialsFetcher = new EC2CredentialsFetcher(new InstanceMetadataCredentialsEndpointProvider());
-        shouldRefresh = eagerlyRefreshCredentialsAsync;
-        if (refreshCredentialsAsync) {
-            executor = Executors.newScheduledThreadPool(1);
-            executor.scheduleWithFixedDelay(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        if (shouldRefresh) credentialsFetcher.getCredentials();
-                    } catch (AmazonClientException ace) {
-                        handleError(ace);
-                    } catch (RuntimeException re) {
-                        handleError(re);
+
+        if (!SDKGlobalConfiguration.isEc2MetadataDisabled()) {
+            if (refreshCredentialsAsync) {
+                executor = Executors.newScheduledThreadPool(1);
+                executor.scheduleWithFixedDelay(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            if (shouldRefresh) credentialsFetcher.getCredentials();
+                        } catch (AmazonClientException ace) {
+                            handleError(ace);
+                        } catch (RuntimeException re) {
+                            handleError(re);
+                        }
                     }
-                }
-            }, 0, ASYNC_REFRESH_INTERVAL_TIME_MINUTES, TimeUnit.MINUTES);
+                }, 0, ASYNC_REFRESH_INTERVAL_TIME_MINUTES, TimeUnit.MINUTES);
+            }
         }
     }
 
@@ -146,8 +150,17 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
     }
 
 
+    /**
+     * {@inheritDoc}
+     *
+     * @throws AmazonClientException if {@link SDKGlobalConfiguration#isEc2MetadataDisabled()} is true
+     */
     @Override
     public AWSCredentials getCredentials() {
+        if (SDKGlobalConfiguration.isEc2MetadataDisabled()) {
+            throw new AmazonClientException("AWS_EC2_METADATA_DISABLED is set to true, not loading credentials from EC2 Instance "
+                                         + "Metadata service");
+        }
         AWSCredentials creds = credentialsFetcher.getCredentials();
         shouldRefresh = true;
         return creds;
@@ -155,7 +168,9 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
 
     @Override
     public void refresh() {
-        credentialsFetcher.refresh();
+        if (credentialsFetcher != null) {
+            credentialsFetcher.refresh();
+        }
     }
 
     @Override
@@ -180,5 +195,4 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
             return new URI(host + EC2MetadataUtils.SECURITY_CREDENTIALS_RESOURCE + securityCredentials[0]);
         }
     }
-
 }
