@@ -28,4 +28,4 @@ The basic steps for running the Amazon S3 sample are:
 
 **NOTE:** The sample also includes an Ant build.xml file to run the sample.
 
-See the [Amazon S3 Getting Started Guide](http://docs.amazonwebservices.com/AmazonS3/latest/gsg/) for step-by-step instructions on running this sample.
+See the [AWS SDK's Instructions for Building and Running the Samples](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-samples.html#samples-cmdline) for step-by-step instructions on running the samples.
