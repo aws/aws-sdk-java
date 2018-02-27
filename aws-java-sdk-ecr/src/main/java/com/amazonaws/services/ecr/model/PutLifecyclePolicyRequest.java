@@ -27,7 +27,7 @@ public class PutLifecyclePolicyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the repository. If you do&#8232; not specify a
+     * The AWS account ID associated with the registry that contains the repository. If you do&#x2028; not specify a
      * registry, the default registry is assumed.
      * </p>
      */
@@ -47,13 +47,13 @@ public class PutLifecyclePolicyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the repository. If you do&#8232; not specify a
+     * The AWS account ID associated with the registry that contains the repository. If you do&#x2028; not specify a
      * registry, the default registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the registry that contains the repository. If you do&#8232; not specify
-     *        a registry, the default registry is assumed.
+     *        The AWS account ID associated with the registry that contains the repository. If you do&#x2028; not
+     *        specify a registry, the default registry is assumed.
      */
 
     public void setRegistryId(String registryId) {
@@ -62,11 +62,11 @@ public class PutLifecyclePolicyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the repository. If you do&#8232; not specify a
+     * The AWS account ID associated with the registry that contains the repository. If you do&#x2028; not specify a
      * registry, the default registry is assumed.
      * </p>
      * 
-     * @return The AWS account ID associated with the registry that contains the repository. If you do&#8232; not
+     * @return The AWS account ID associated with the registry that contains the repository. If you do&#x2028; not
      *         specify a registry, the default registry is assumed.
      */
 
@@ -76,13 +76,13 @@ public class PutLifecyclePolicyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The AWS account ID associated with the registry that contains the repository. If you do&#8232; not specify a
+     * The AWS account ID associated with the registry that contains the repository. If you do&#x2028; not specify a
      * registry, the default registry is assumed.
      * </p>
      * 
      * @param registryId
-     *        The AWS account ID associated with the registry that contains the repository. If you do&#8232; not specify
-     *        a registry, the default registry is assumed.
+     *        The AWS account ID associated with the registry that contains the repository. If you do&#x2028; not
+     *        specify a registry, the default registry is assumed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

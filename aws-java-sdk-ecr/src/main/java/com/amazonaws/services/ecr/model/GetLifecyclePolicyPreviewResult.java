@@ -37,7 +37,7 @@ public class GetLifecyclePolicyPreviewResult extends com.amazonaws.AmazonWebServ
     private String repositoryName;
     /**
      * <p>
-     * The JSON repository policy text.
+     * The JSON lifecycle policy text.
      * </p>
      */
     private String lifecyclePolicyText;
@@ -151,11 +151,11 @@ public class GetLifecyclePolicyPreviewResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The JSON repository policy text.
+     * The JSON lifecycle policy text.
      * </p>
      * 
      * @param lifecyclePolicyText
-     *        The JSON repository policy text.
+     *        The JSON lifecycle policy text.
      */
 
     public void setLifecyclePolicyText(String lifecyclePolicyText) {
@@ -164,10 +164,10 @@ public class GetLifecyclePolicyPreviewResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The JSON repository policy text.
+     * The JSON lifecycle policy text.
      * </p>
      * 
-     * @return The JSON repository policy text.
+     * @return The JSON lifecycle policy text.
      */
 
     public String getLifecyclePolicyText() {
@@ -176,11 +176,11 @@ public class GetLifecyclePolicyPreviewResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The JSON repository policy text.
+     * The JSON lifecycle policy text.
      * </p>
      * 
      * @param lifecyclePolicyText
-     *        The JSON repository policy text.
+     *        The JSON lifecycle policy text.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

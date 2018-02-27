@@ -1,3 +1,8 @@
+# __1.11.287__ __2018-02-27__
+## __Amazon EC2 Container Registry__
+  - ### Features
+    - Documentation updates for Amazon ECR.
+
 # __1.11.286__ __2018-02-26__
 ## __AWS Security Token Service__
   - ### Features
