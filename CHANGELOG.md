@@ -1,3 +1,12 @@
+# __1.11.286__ __2018-02-26__
+## __AWS Security Token Service__
+  - ### Features
+    - Increased SAMLAssertion parameter size from 50000 to 100000 for AWS Security Token Service AssumeRoleWithSAML API to allow customers to pass bigger SAML assertions
+
+## __Amazon Route 53__
+  - ### Features
+    - Added support for creating LBR rules using ap-northeast-3 region.
+
 # __1.11.285__ __2018-02-23__
 ## __AWS SDK for Java__
   - ### Features
