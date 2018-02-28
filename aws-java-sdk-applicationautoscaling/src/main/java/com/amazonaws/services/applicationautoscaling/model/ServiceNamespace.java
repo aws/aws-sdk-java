@@ -25,7 +25,8 @@ public enum ServiceNamespace {
     Ec2("ec2"),
     Appstream("appstream"),
     Dynamodb("dynamodb"),
-    Rds("rds");
+    Rds("rds"),
+    Sagemaker("sagemaker");
 
     private String value;
 

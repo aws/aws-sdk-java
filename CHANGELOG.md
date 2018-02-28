@@ -1,3 +1,8 @@
+# __1.11.288__ __2018-02-28__
+## __Application Auto Scaling__
+  - ### Features
+    - Application Auto Scaling now supports automatic scaling of SageMaker Production Variants on an Endpoint.
+
 # __1.11.287__ __2018-02-27__
 ## __Amazon EC2 Container Registry__
   - ### Features

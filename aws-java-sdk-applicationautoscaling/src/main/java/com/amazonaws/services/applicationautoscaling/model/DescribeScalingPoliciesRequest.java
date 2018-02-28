@@ -87,6 +87,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * Example: <code>cluster:my-db-cluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon SageMaker endpoint variants - The resource type is <code>variant</code> and the unique identifier is the
+     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String resourceId;
@@ -142,6 +148,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for
      * Aurora MySQL-compatible edition.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model
+     * endpoint variant.
      * </p>
      * </li>
      * </ul>
@@ -377,6 +389,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * Example: <code>cluster:my-db-cluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon SageMaker endpoint variants - The resource type is <code>variant</code> and the unique identifier is the
+     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -423,6 +441,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        <p>
      *        Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster
      *        name. Example: <code>cluster:my-db-cluster</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon SageMaker endpoint variants - The resource type is <code>variant</code> and the unique identifier
+     *        is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      *        </p>
      *        </li>
      */
@@ -479,6 +503,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * Example: <code>cluster:my-db-cluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon SageMaker endpoint variants - The resource type is <code>variant</code> and the unique identifier is the
+     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The identifier of the resource associated with the scaling policy. This string consists of the resource
@@ -525,6 +555,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *         <p>
      *         Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster
      *         name. Example: <code>cluster:my-db-cluster</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon SageMaker endpoint variants - The resource type is <code>variant</code> and the unique identifier
+     *         is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      *         </p>
      *         </li>
      */
@@ -581,6 +617,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * Example: <code>cluster:my-db-cluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon SageMaker endpoint variants - The resource type is <code>variant</code> and the unique identifier is the
+     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -627,6 +669,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        <p>
      *        Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster
      *        name. Example: <code>cluster:my-db-cluster</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon SageMaker endpoint variants - The resource type is <code>variant</code> and the unique identifier
+     *        is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -691,6 +739,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * Aurora MySQL-compatible edition.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model
+     * endpoint variant.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -743,6 +797,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        <p>
      *        <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster.
      *        Available for Aurora MySQL-compatible edition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker
+     *        model endpoint variant.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -806,6 +866,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * Aurora MySQL-compatible edition.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model
+     * endpoint variant.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The scalable dimension. This string consists of the service namespace, resource type, and scaling
@@ -857,6 +923,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *         <p>
      *         <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster.
      *         Available for Aurora MySQL-compatible edition.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker
+     *         model endpoint variant.
      *         </p>
      *         </li>
      * @see ScalableDimension
@@ -920,6 +992,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * Aurora MySQL-compatible edition.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model
+     * endpoint variant.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -972,6 +1050,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        <p>
      *        <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster.
      *        Available for Aurora MySQL-compatible edition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker
+     *        model endpoint variant.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1037,6 +1121,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * Aurora MySQL-compatible edition.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model
+     * endpoint variant.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1089,6 +1179,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        <p>
      *        <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster.
      *        Available for Aurora MySQL-compatible edition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker
+     *        model endpoint variant.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -1152,6 +1248,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * Aurora MySQL-compatible edition.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker model
+     * endpoint variant.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1204,6 +1306,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        <p>
      *        <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster.
      *        Available for Aurora MySQL-compatible edition.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an Amazon SageMaker
+     *        model endpoint variant.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

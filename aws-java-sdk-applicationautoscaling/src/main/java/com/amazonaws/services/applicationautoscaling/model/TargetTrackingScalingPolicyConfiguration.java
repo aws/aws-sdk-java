@@ -44,7 +44,7 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
     private PredefinedMetricSpecification predefinedMetricSpecification;
     /**
      * <p>
-     * Reserved for future use.
+     * A customized metric.
      * </p>
      */
     private CustomizedMetricSpecification customizedMetricSpecification;
@@ -169,11 +169,11 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
 
     /**
      * <p>
-     * Reserved for future use.
+     * A customized metric.
      * </p>
      * 
      * @param customizedMetricSpecification
-     *        Reserved for future use.
+     *        A customized metric.
      */
 
     public void setCustomizedMetricSpecification(CustomizedMetricSpecification customizedMetricSpecification) {
@@ -182,10 +182,10 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
 
     /**
      * <p>
-     * Reserved for future use.
+     * A customized metric.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return A customized metric.
      */
 
     public CustomizedMetricSpecification getCustomizedMetricSpecification() {
@@ -194,11 +194,11 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
 
     /**
      * <p>
-     * Reserved for future use.
+     * A customized metric.
      * </p>
      * 
      * @param customizedMetricSpecification
-     *        Reserved for future use.
+     *        A customized metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
