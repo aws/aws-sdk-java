@@ -104,14 +104,14 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
                                     com.amazonaws.services.cloudwatchevents.model.ResourceNotFoundException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("PolicyLengthExceededException").withModeledClass(
+                                    com.amazonaws.services.cloudwatchevents.model.PolicyLengthExceededException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidEventPatternException").withModeledClass(
                                     com.amazonaws.services.cloudwatchevents.model.InvalidEventPatternException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalException").withModeledClass(
                                     com.amazonaws.services.cloudwatchevents.model.InternalException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PolicyLengthExceededException").withModeledClass(
-                                    com.amazonaws.services.cloudwatchevents.model.PolicyLengthExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
                                     com.amazonaws.services.cloudwatchevents.model.LimitExceededException.class))
@@ -872,6 +872,11 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * disable a rule using <a>DisableRule</a>.
      * </p>
      * <p>
+     * If you are updating an existing rule, the rule is completely replaced with what you specify in this
+     * <code>PutRule</code> command. If you omit arguments in <code>PutRule</code>, the old values for those arguments
+     * are not kept. Instead, they are replaced with null values.
+     * </p>
+     * <p>
      * When you create or update a rule, incoming events might not immediately start matching to new or updated rules.
      * Please allow a short period of time for changes to take effect.
      * </p>
@@ -983,6 +988,11 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * </li>
      * <li>
      * <p>
+     * AWS Batch jobs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Pipelines in Amazon Code Pipeline
      * </p>
      * </li>
@@ -1068,8 +1078,8 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * </li>
      * </ul>
      * <p>
-     * When you specify <code>Input</code>, <code>InputPath</code>, or <code>InputTransformer</code>, you must use JSON
-     * dot notation, not bracket notation.
+     * When you specify <code>InputPath</code> or <code>InputTransformer</code>, you must use JSON dot notation, not
+     * bracket notation.
      * </p>
      * <p>
      * When you add targets to a rule and the associated rule triggers soon after, new or updated targets might not be

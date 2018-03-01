@@ -84,6 +84,10 @@ public class TargetJsonUnmarshaller implements Unmarshaller<Target, JsonUnmarsha
                     context.nextToken();
                     target.setEcsParameters(EcsParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("BatchParameters", targetDepth)) {
+                    context.nextToken();
+                    target.setBatchParameters(BatchParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

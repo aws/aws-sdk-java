@@ -72,6 +72,10 @@ public class ResourceDataSyncItemJsonUnmarshaller implements Unmarshaller<Resour
                     context.nextToken();
                     resourceDataSyncItem.setSyncCreatedTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
+                if (context.testExpression("LastSyncStatusMessage", targetDepth)) {
+                    context.nextToken();
+                    resourceDataSyncItem.setLastSyncStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

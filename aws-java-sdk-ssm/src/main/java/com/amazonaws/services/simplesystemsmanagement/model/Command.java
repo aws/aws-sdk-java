@@ -179,7 +179,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The maximum number of errors allowed before the system stops sending the command to additional targets. You can
-     * specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is 50. For more
+     * specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is 0. For more
      * information about how to use MaxErrors, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
      * Systems Manager Run Command</a>.
@@ -1297,7 +1297,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The maximum number of errors allowed before the system stops sending the command to additional targets. You can
-     * specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is 50. For more
+     * specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is 0. For more
      * information about how to use MaxErrors, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
      * Systems Manager Run Command</a>.
@@ -1306,7 +1306,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * @param maxErrors
      *        The maximum number of errors allowed before the system stops sending the command to additional targets.
      *        You can specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value
-     *        is 50. For more information about how to use MaxErrors, see <a
+     *        is 0. For more information about how to use MaxErrors, see <a
      *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
      *        Using Systems Manager Run Command</a>.
      */
@@ -1318,7 +1318,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The maximum number of errors allowed before the system stops sending the command to additional targets. You can
-     * specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is 50. For more
+     * specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is 0. For more
      * information about how to use MaxErrors, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
      * Systems Manager Run Command</a>.
@@ -1326,7 +1326,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return The maximum number of errors allowed before the system stops sending the command to additional targets.
      *         You can specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value
-     *         is 50. For more information about how to use MaxErrors, see <a
+     *         is 0. For more information about how to use MaxErrors, see <a
      *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
      *         Using Systems Manager Run Command</a>.
      */
@@ -1338,7 +1338,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The maximum number of errors allowed before the system stops sending the command to additional targets. You can
-     * specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is 50. For more
+     * specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value is 0. For more
      * information about how to use MaxErrors, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command Using
      * Systems Manager Run Command</a>.
@@ -1347,7 +1347,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
      * @param maxErrors
      *        The maximum number of errors allowed before the system stops sending the command to additional targets.
      *        You can specify a number of errors, such as 10, or a percentage or errors, such as 10%. The default value
-     *        is 50. For more information about how to use MaxErrors, see <a
+     *        is 0. For more information about how to use MaxErrors, see <a
      *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Executing a Command
      *        Using Systems Manager Run Command</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

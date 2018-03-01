@@ -39,6 +39,8 @@ public class ResourceDataSyncItemMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastStatus").build();
     private static final MarshallingInfo<java.util.Date> SYNCCREATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SyncCreatedTime").build();
+    private static final MarshallingInfo<String> LASTSYNCSTATUSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastSyncStatusMessage").build();
 
     private static final ResourceDataSyncItemMarshaller instance = new ResourceDataSyncItemMarshaller();
 
@@ -62,6 +64,7 @@ public class ResourceDataSyncItemMarshaller {
             protocolMarshaller.marshall(resourceDataSyncItem.getLastSuccessfulSyncTime(), LASTSUCCESSFULSYNCTIME_BINDING);
             protocolMarshaller.marshall(resourceDataSyncItem.getLastStatus(), LASTSTATUS_BINDING);
             protocolMarshaller.marshall(resourceDataSyncItem.getSyncCreatedTime(), SYNCCREATEDTIME_BINDING);
+            protocolMarshaller.marshall(resourceDataSyncItem.getLastSyncStatusMessage(), LASTSYNCSTATUSMESSAGE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

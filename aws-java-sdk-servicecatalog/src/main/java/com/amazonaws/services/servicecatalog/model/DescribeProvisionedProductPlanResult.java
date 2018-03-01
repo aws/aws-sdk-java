@@ -32,7 +32,7 @@ public class DescribeProvisionedProductPlanResult extends com.amazonaws.AmazonWe
     private ProvisionedProductPlanDetails provisionedProductPlanDetails;
     /**
      * <p>
-     * Information about the resources changes that will occur when the plan is executed.
+     * Information about the resource changes that will occur when the plan is executed.
      * </p>
      */
     private java.util.List<ResourceChange> resourceChanges;
@@ -86,10 +86,10 @@ public class DescribeProvisionedProductPlanResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Information about the resources changes that will occur when the plan is executed.
+     * Information about the resource changes that will occur when the plan is executed.
      * </p>
      * 
-     * @return Information about the resources changes that will occur when the plan is executed.
+     * @return Information about the resource changes that will occur when the plan is executed.
      */
 
     public java.util.List<ResourceChange> getResourceChanges() {
@@ -98,11 +98,11 @@ public class DescribeProvisionedProductPlanResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Information about the resources changes that will occur when the plan is executed.
+     * Information about the resource changes that will occur when the plan is executed.
      * </p>
      * 
      * @param resourceChanges
-     *        Information about the resources changes that will occur when the plan is executed.
+     *        Information about the resource changes that will occur when the plan is executed.
      */
 
     public void setResourceChanges(java.util.Collection<ResourceChange> resourceChanges) {
@@ -116,7 +116,7 @@ public class DescribeProvisionedProductPlanResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Information about the resources changes that will occur when the plan is executed.
+     * Information about the resource changes that will occur when the plan is executed.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -125,7 +125,7 @@ public class DescribeProvisionedProductPlanResult extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param resourceChanges
-     *        Information about the resources changes that will occur when the plan is executed.
+     *        Information about the resource changes that will occur when the plan is executed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +141,11 @@ public class DescribeProvisionedProductPlanResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Information about the resources changes that will occur when the plan is executed.
+     * Information about the resource changes that will occur when the plan is executed.
      * </p>
      * 
      * @param resourceChanges
-     *        Information about the resources changes that will occur when the plan is executed.
+     *        Information about the resource changes that will occur when the plan is executed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

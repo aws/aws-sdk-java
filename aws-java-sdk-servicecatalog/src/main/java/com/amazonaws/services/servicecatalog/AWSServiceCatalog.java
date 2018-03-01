@@ -299,12 +299,12 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Creates a plan. A plan includes the list of resources that will be created (when provisioning a new product) or
-     * modified (when updating a provisioned product) when the plan is executed.
+     * Creates a plan. A plan includes the list of resources to be created (when provisioning a new product) or modified
+     * (when updating a provisioned product) when the plan is executed.
      * </p>
      * <p>
-     * You can create one plan per provisioned product. To create a plan for an existing provisioned product, it's
-     * status must be AVAILBLE or TAINTED.
+     * You can create one plan per provisioned product. To create a plan for an existing provisioned product, the
+     * product status must be AVAILBLE or TAINTED.
      * </p>
      * <p>
      * To view the resource changes in the change set, use <a>DescribeProvisionedProductPlan</a>. To create or modify
@@ -495,6 +495,30 @@ public interface AWSServiceCatalog {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteProvisioningArtifactResult deleteProvisioningArtifact(DeleteProvisioningArtifactRequest deleteProvisioningArtifactRequest);
+
+    /**
+     * <p>
+     * Deletes the specified TagOption.
+     * </p>
+     * <p>
+     * You cannot delete a TagOption if it is associated with a product or portfolio.
+     * </p>
+     * 
+     * @param deleteTagOptionRequest
+     * @return Result of the DeleteTagOption operation returned by the service.
+     * @throws TagOptionNotMigratedException
+     *         An operation requiring TagOptions failed because the TagOptions migration process has not been performed
+     *         for this account. Please use the AWS console to perform the migration process before retrying the
+     *         operation.
+     * @throws ResourceInUseException
+     *         A resource that is currently in use. Ensure that the resource is not in use and retry the operation.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.DeleteTagOption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteTagOption" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteTagOptionResult deleteTagOption(DeleteTagOptionRequest deleteTagOptionRequest);
 
     /**
      * <p>
@@ -893,7 +917,7 @@ public interface AWSServiceCatalog {
 
     /**
      * <p>
-     * Lists the plans for the specified provisioned product or all plans the user has access to.
+     * Lists the plans for the specified provisioned product or all plans to which the user has access.
      * </p>
      * 
      * @param listProvisionedProductPlansRequest

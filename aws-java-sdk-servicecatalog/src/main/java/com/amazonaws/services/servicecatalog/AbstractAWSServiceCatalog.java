@@ -128,6 +128,11 @@ public class AbstractAWSServiceCatalog implements AWSServiceCatalog {
     }
 
     @Override
+    public DeleteTagOptionResult deleteTagOption(DeleteTagOptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeConstraintResult describeConstraint(DescribeConstraintRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

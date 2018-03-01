@@ -30,7 +30,7 @@ public class ResourceTargetDefinition implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The attribute that will change.
+     * The attribute to be changed.
      * </p>
      */
     private String attribute;
@@ -43,18 +43,18 @@ public class ResourceTargetDefinition implements Serializable, Cloneable, Struct
     /**
      * <p>
      * If the attribute is <code>Properties</code>, indicates whether a change to this property causes the resource to
-     * be recreated.
+     * be re-created.
      * </p>
      */
     private String requiresRecreation;
 
     /**
      * <p>
-     * The attribute that will change.
+     * The attribute to be changed.
      * </p>
      * 
      * @param attribute
-     *        The attribute that will change.
+     *        The attribute to be changed.
      * @see ResourceAttribute
      */
 
@@ -64,10 +64,10 @@ public class ResourceTargetDefinition implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The attribute that will change.
+     * The attribute to be changed.
      * </p>
      * 
-     * @return The attribute that will change.
+     * @return The attribute to be changed.
      * @see ResourceAttribute
      */
 
@@ -77,11 +77,11 @@ public class ResourceTargetDefinition implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The attribute that will change.
+     * The attribute to be changed.
      * </p>
      * 
      * @param attribute
-     *        The attribute that will change.
+     *        The attribute to be changed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceAttribute
      */
@@ -93,11 +93,11 @@ public class ResourceTargetDefinition implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The attribute that will change.
+     * The attribute to be changed.
      * </p>
      * 
      * @param attribute
-     *        The attribute that will change.
+     *        The attribute to be changed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceAttribute
      */
@@ -153,12 +153,12 @@ public class ResourceTargetDefinition implements Serializable, Cloneable, Struct
     /**
      * <p>
      * If the attribute is <code>Properties</code>, indicates whether a change to this property causes the resource to
-     * be recreated.
+     * be re-created.
      * </p>
      * 
      * @param requiresRecreation
      *        If the attribute is <code>Properties</code>, indicates whether a change to this property causes the
-     *        resource to be recreated.
+     *        resource to be re-created.
      * @see RequiresRecreation
      */
 
@@ -169,11 +169,11 @@ public class ResourceTargetDefinition implements Serializable, Cloneable, Struct
     /**
      * <p>
      * If the attribute is <code>Properties</code>, indicates whether a change to this property causes the resource to
-     * be recreated.
+     * be re-created.
      * </p>
      * 
      * @return If the attribute is <code>Properties</code>, indicates whether a change to this property causes the
-     *         resource to be recreated.
+     *         resource to be re-created.
      * @see RequiresRecreation
      */
 
@@ -184,12 +184,12 @@ public class ResourceTargetDefinition implements Serializable, Cloneable, Struct
     /**
      * <p>
      * If the attribute is <code>Properties</code>, indicates whether a change to this property causes the resource to
-     * be recreated.
+     * be re-created.
      * </p>
      * 
      * @param requiresRecreation
      *        If the attribute is <code>Properties</code>, indicates whether a change to this property causes the
-     *        resource to be recreated.
+     *        resource to be re-created.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RequiresRecreation
      */
@@ -202,12 +202,12 @@ public class ResourceTargetDefinition implements Serializable, Cloneable, Struct
     /**
      * <p>
      * If the attribute is <code>Properties</code>, indicates whether a change to this property causes the resource to
-     * be recreated.
+     * be re-created.
      * </p>
      * 
      * @param requiresRecreation
      *        If the attribute is <code>Properties</code>, indicates whether a change to this property causes the
-     *        resource to be recreated.
+     *        resource to be re-created.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RequiresRecreation
      */

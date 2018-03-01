@@ -44,6 +44,10 @@ public class ModifyInstancePlacementRequestMarshaller implements Marshaller<Requ
             request.addParameter("Affinity", StringUtils.fromString(modifyInstancePlacementRequest.getAffinity()));
         }
 
+        if (modifyInstancePlacementRequest.getGroupName() != null) {
+            request.addParameter("GroupName", StringUtils.fromString(modifyInstancePlacementRequest.getGroupName()));
+        }
+
         if (modifyInstancePlacementRequest.getHostId() != null) {
             request.addParameter("HostId", StringUtils.fromString(modifyInstancePlacementRequest.getHostId()));
         }

@@ -346,12 +346,12 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Creates a plan. A plan includes the list of resources that will be created (when provisioning a new product) or
-     * modified (when updating a provisioned product) when the plan is executed.
+     * Creates a plan. A plan includes the list of resources to be created (when provisioning a new product) or modified
+     * (when updating a provisioned product) when the plan is executed.
      * </p>
      * <p>
-     * You can create one plan per provisioned product. To create a plan for an existing provisioned product, it's
-     * status must be AVAILBLE or TAINTED.
+     * You can create one plan per provisioned product. To create a plan for an existing provisioned product, the
+     * product status must be AVAILBLE or TAINTED.
      * </p>
      * <p>
      * To view the resource changes in the change set, use <a>DescribeProvisionedProductPlan</a>. To create or modify
@@ -370,12 +370,12 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Creates a plan. A plan includes the list of resources that will be created (when provisioning a new product) or
-     * modified (when updating a provisioned product) when the plan is executed.
+     * Creates a plan. A plan includes the list of resources to be created (when provisioning a new product) or modified
+     * (when updating a provisioned product) when the plan is executed.
      * </p>
      * <p>
-     * You can create one plan per provisioned product. To create a plan for an existing provisioned product, it's
-     * status must be AVAILBLE or TAINTED.
+     * You can create one plan per provisioned product. To create a plan for an existing provisioned product, the
+     * product status must be AVAILBLE or TAINTED.
      * </p>
      * <p>
      * To view the resource changes in the change set, use <a>DescribeProvisionedProductPlan</a>. To create or modify
@@ -680,6 +680,43 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     java.util.concurrent.Future<DeleteProvisioningArtifactResult> deleteProvisioningArtifactAsync(
             DeleteProvisioningArtifactRequest deleteProvisioningArtifactRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteProvisioningArtifactRequest, DeleteProvisioningArtifactResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified TagOption.
+     * </p>
+     * <p>
+     * You cannot delete a TagOption if it is associated with a product or portfolio.
+     * </p>
+     * 
+     * @param deleteTagOptionRequest
+     * @return A Java Future containing the result of the DeleteTagOption operation returned by the service.
+     * @sample AWSServiceCatalogAsync.DeleteTagOption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteTagOption" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTagOptionResult> deleteTagOptionAsync(DeleteTagOptionRequest deleteTagOptionRequest);
+
+    /**
+     * <p>
+     * Deletes the specified TagOption.
+     * </p>
+     * <p>
+     * You cannot delete a TagOption if it is associated with a product or portfolio.
+     * </p>
+     * 
+     * @param deleteTagOptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTagOption operation returned by the service.
+     * @sample AWSServiceCatalogAsyncHandler.DeleteTagOption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeleteTagOption" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTagOptionResult> deleteTagOptionAsync(DeleteTagOptionRequest deleteTagOptionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTagOptionRequest, DeleteTagOptionResult> asyncHandler);
 
     /**
      * <p>
@@ -1462,7 +1499,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Lists the plans for the specified provisioned product or all plans the user has access to.
+     * Lists the plans for the specified provisioned product or all plans to which the user has access.
      * </p>
      * 
      * @param listProvisionedProductPlansRequest
@@ -1476,7 +1513,7 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Lists the plans for the specified provisioned product or all plans the user has access to.
+     * Lists the plans for the specified provisioned product or all plans to which the user has access.
      * </p>
      * 
      * @param listProvisionedProductPlansRequest

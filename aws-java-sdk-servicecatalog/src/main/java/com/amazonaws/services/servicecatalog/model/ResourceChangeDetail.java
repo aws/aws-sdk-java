@@ -30,13 +30,13 @@ public class ResourceChangeDetail implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Information about the resource attribute that will be modified.
+     * Information about the resource attribute to be modified.
      * </p>
      */
     private ResourceTargetDefinition target;
     /**
      * <p>
-     * For static evaluations, the value the resource attribute will change and the new value is known. For dynamic
+     * For static evaluations, the value of the resource attribute will change and the new value is known. For dynamic
      * evaluations, the value might change, and any new value will be determined when the plan is updated.
      * </p>
      */
@@ -50,11 +50,11 @@ public class ResourceChangeDetail implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Information about the resource attribute that will be modified.
+     * Information about the resource attribute to be modified.
      * </p>
      * 
      * @param target
-     *        Information about the resource attribute that will be modified.
+     *        Information about the resource attribute to be modified.
      */
 
     public void setTarget(ResourceTargetDefinition target) {
@@ -63,10 +63,10 @@ public class ResourceChangeDetail implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Information about the resource attribute that will be modified.
+     * Information about the resource attribute to be modified.
      * </p>
      * 
-     * @return Information about the resource attribute that will be modified.
+     * @return Information about the resource attribute to be modified.
      */
 
     public ResourceTargetDefinition getTarget() {
@@ -75,11 +75,11 @@ public class ResourceChangeDetail implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Information about the resource attribute that will be modified.
+     * Information about the resource attribute to be modified.
      * </p>
      * 
      * @param target
-     *        Information about the resource attribute that will be modified.
+     *        Information about the resource attribute to be modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,12 +90,12 @@ public class ResourceChangeDetail implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * For static evaluations, the value the resource attribute will change and the new value is known. For dynamic
+     * For static evaluations, the value of the resource attribute will change and the new value is known. For dynamic
      * evaluations, the value might change, and any new value will be determined when the plan is updated.
      * </p>
      * 
      * @param evaluation
-     *        For static evaluations, the value the resource attribute will change and the new value is known. For
+     *        For static evaluations, the value of the resource attribute will change and the new value is known. For
      *        dynamic evaluations, the value might change, and any new value will be determined when the plan is
      *        updated.
      * @see EvaluationType
@@ -107,11 +107,11 @@ public class ResourceChangeDetail implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * For static evaluations, the value the resource attribute will change and the new value is known. For dynamic
+     * For static evaluations, the value of the resource attribute will change and the new value is known. For dynamic
      * evaluations, the value might change, and any new value will be determined when the plan is updated.
      * </p>
      * 
-     * @return For static evaluations, the value the resource attribute will change and the new value is known. For
+     * @return For static evaluations, the value of the resource attribute will change and the new value is known. For
      *         dynamic evaluations, the value might change, and any new value will be determined when the plan is
      *         updated.
      * @see EvaluationType
@@ -123,12 +123,12 @@ public class ResourceChangeDetail implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * For static evaluations, the value the resource attribute will change and the new value is known. For dynamic
+     * For static evaluations, the value of the resource attribute will change and the new value is known. For dynamic
      * evaluations, the value might change, and any new value will be determined when the plan is updated.
      * </p>
      * 
      * @param evaluation
-     *        For static evaluations, the value the resource attribute will change and the new value is known. For
+     *        For static evaluations, the value of the resource attribute will change and the new value is known. For
      *        dynamic evaluations, the value might change, and any new value will be determined when the plan is
      *        updated.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -142,12 +142,12 @@ public class ResourceChangeDetail implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * For static evaluations, the value the resource attribute will change and the new value is known. For dynamic
+     * For static evaluations, the value of the resource attribute will change and the new value is known. For dynamic
      * evaluations, the value might change, and any new value will be determined when the plan is updated.
      * </p>
      * 
      * @param evaluation
-     *        For static evaluations, the value the resource attribute will change and the new value is known. For
+     *        For static evaluations, the value of the resource attribute will change and the new value is known. For
      *        dynamic evaluations, the value might change, and any new value will be determined when the plan is
      *        updated.
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -1,3 +1,24 @@
+# __1.11.289__ __2018-03-01__
+## __AWS Service Catalog__
+  - ### Features
+    - This release of ServiceCatalog adds the DeleteTagOption API.
+
+## __AWS Storage Gateway__
+  - ### Features
+    - AWS Storage Gateway (File) support for two new file share attributes are added.           1. Users can specify the S3 Canned ACL to use for new objects created in the file share.         2. Users can create file shares for requester-pays buckets.
+
+## __Amazon CloudWatch Events__
+  - ### Features
+    - Added BatchParameters to the PutTargets API
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Added support for modifying Placement Group association of instances via ModifyInstancePlacement API.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - This Inventory release supports the status message details reported by the last sync for the resource data sync API.
+
 # __1.11.288__ __2018-02-28__
 ## __Application Auto Scaling__
   - ### Features

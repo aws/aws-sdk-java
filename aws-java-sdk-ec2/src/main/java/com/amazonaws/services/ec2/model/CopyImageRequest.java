@@ -68,7 +68,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      * </li>
      * <li>
      * <p>
-     * Key alias
+     * Key alias, in the form <code>alias/<i>ExampleAlias</i> </code>
      * </p>
      * </li>
      * <li>
@@ -304,7 +304,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      * </li>
      * <li>
      * <p>
-     * Key alias
+     * Key alias, in the form <code>alias/<i>ExampleAlias</i> </code>
      * </p>
      * </li>
      * <li>
@@ -346,7 +346,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      *        </li>
      *        <li>
      *        <p>
-     *        Key alias
+     *        Key alias, in the form <code>alias/<i>ExampleAlias</i> </code>
      *        </p>
      *        </li>
      *        <li>
@@ -394,7 +394,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      * </li>
      * <li>
      * <p>
-     * Key alias
+     * Key alias, in the form <code>alias/<i>ExampleAlias</i> </code>
      * </p>
      * </li>
      * <li>
@@ -435,7 +435,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      *         </li>
      *         <li>
      *         <p>
-     *         Key alias
+     *         Key alias, in the form <code>alias/<i>ExampleAlias</i> </code>
      *         </p>
      *         </li>
      *         <li>
@@ -484,7 +484,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      * </li>
      * <li>
      * <p>
-     * Key alias
+     * Key alias, in the form <code>alias/<i>ExampleAlias</i> </code>
      * </p>
      * </li>
      * <li>
@@ -526,7 +526,7 @@ public class CopyImageRequest extends AmazonWebServiceRequest implements Seriali
      *        </li>
      *        <li>
      *        <p>
-     *        Key alias
+     *        Key alias, in the form <code>alias/<i>ExampleAlias</i> </code>
      *        </p>
      *        </li>
      *        <li>

@@ -2486,6 +2486,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * In your request, you must also specify an IAM role that has permission to publish logs to CloudWatch Logs.
      * </p>
+     * <p>
+     * For more information, see <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html">VPC Flow
+     * Logs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * </p>
      * 
      * @param createFlowLogsRequest
      *        Contains the parameters for CreateFlowLogs.
@@ -5831,7 +5835,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * Deletes a VPC peering connection. Either the owner of the requester VPC or the owner of the accepter VPC can
      * delete the VPC peering connection if it's in the <code>active</code> state. The owner of the requester VPC can
-     * delete a VPC peering connection in the <code>pending-acceptance</code> state.
+     * delete a VPC peering connection in the <code>pending-acceptance</code> state. You cannot delete a VPC peering
+     * connection that's in the <code>failed</code> state.
      * </p>
      * 
      * @param deleteVpcPeeringConnectionRequest
@@ -6260,14 +6265,15 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code> |
-     * <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
-     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
-     * <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> |
+     * <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
      * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
      * | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
      * <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code>
      * | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> |
-     * <code>vpc-cidr-block-association</code> | <code>vpc-peering-connection</code>.
+     * <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.
      * </p>
      * 
      * @param describeAggregateIdFormatRequest
@@ -7211,14 +7217,15 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code> |
-     * <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
-     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
-     * <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> |
+     * <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
      * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
      * | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
      * <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code>
      * | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> |
-     * <code>vpc-cidr-block-association</code> | <code>vpc-peering-connection</code>.
+     * <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.
      * </p>
      * <p>
      * These settings apply to the IAM user who makes the request; they do not apply to the entire AWS account. By
@@ -7288,14 +7295,15 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code> |
-     * <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
-     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
-     * <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> |
+     * <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
      * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
      * | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
      * <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code>
      * | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> |
-     * <code>vpc-cidr-block-association</code> | <code>vpc-peering-connection</code>.
+     * <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.
      * </p>
      * <p>
      * These settings apply to the principal specified in the request. They do not apply to the principal that makes the
@@ -8515,14 +8523,15 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code> |
-     * <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
-     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
-     * <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> |
+     * <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> |
      * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
      * | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
      * <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code>
      * | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> |
-     * <code>vpc-cidr-block-association</code> | <code>vpc-peering-connection</code>.
+     * <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.
      * </p>
      * 
      * @param describePrincipalIdFormatRequest
@@ -12501,13 +12510,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * This request can only be used to modify longer ID settings for resource types that are within the opt-in period.
      * Resources currently in their opt-in period include: <code>bundle</code> | <code>conversion-task</code> |
-     * <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
-     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
-     * <code>internet-gateway</code> | <code>network-acl</code> | <code>network-acl-association</code> |
-     * <code>network-interface</code> | <code>network-interface-attachment</code> | <code>prefix-list</code> |
-     * <code>route-table</code> | <code>route-table-association</code> | <code>security-group</code> |
-     * <code>subnet</code> | <code>subnet-cidr-block-association</code> | <code>vpc</code> |
-     * <code>vpc-cidr-block-association</code> | <code>vpc-peering-connection</code>.
+     * <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> |
+     * <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+     * | <code>prefix-list</code> | <code>route-table</code> | <code>route-table-association</code> |
+     * <code>security-group</code> | <code>subnet</code> | <code>subnet-cidr-block-association</code> | <code>vpc</code>
+     * | <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.
      * </p>
      * <p>
      * This setting applies to the IAM user who makes the request; it does not apply to the entire AWS account. By
@@ -12576,13 +12586,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * This request can only be used to modify longer ID settings for resource types that are within the opt-in period.
      * Resources currently in their opt-in period include: <code>bundle</code> | <code>conversion-task</code> |
-     * <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
-     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code> |
-     * <code>internet-gateway</code> | <code>network-acl</code> | <code>network-acl-association</code> |
-     * <code>network-interface</code> | <code>network-interface-attachment</code> | <code>prefix-list</code> |
-     * <code>route-table</code> | <code>route-table-association</code> | <code>security-group</code> |
-     * <code>subnet</code> | <code>subnet-cidr-block-association</code> | <code>vpc</code> |
-     * <code>vpc-cidr-block-association</code> | <code>vpc-peering-connection</code>..
+     * <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> |
+     * <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>internet-gateway</code> | <code>network-acl</code> |
+     * <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code>
+     * | <code>prefix-list</code> | <code>route-table</code> | <code>route-table-association</code> |
+     * <code>security-group</code> | <code>subnet</code> | <code>subnet-cidr-block-association</code> | <code>vpc</code>
+     * | <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code>.
      * </p>
      * <p>
      * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
@@ -12814,24 +12825,43 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Set the instance affinity value for a specific stopped instance and modify the instance tenancy setting.
+     * Modifies the placement attributes for a specified instance. You can do the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Modify the affinity between an instance and a <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated Host</a>. When
+     * affinity is set to <code>host</code> and the instance is not associated with a specific Dedicated Host, the next
+     * time the instance is launched, it is automatically associated with the host on which it lands. If the instance is
+     * restarted or rebooted, this relationship persists.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Change the Dedicated Host with which an instance is associated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Change the instance tenancy of an instance from <code>host</code> to <code>dedicated</code>, or from
+     * <code>dedicated</code> to <code>host</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Move an instance to or from a <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">placement group</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * At least one attribute for affinity, host ID, tenancy, or placement group name must be specified in the request.
+     * Affinity and tenancy can be modified in the same request.
      * </p>
      * <p>
-     * Instance affinity is disabled by default. When instance affinity is <code>host</code> and it is not associated
-     * with a specific Dedicated Host, the next time it is launched it will automatically be associated with the host it
-     * lands on. This relationship will persist if the instance is stopped/started, or rebooted.
-     * </p>
-     * <p>
-     * You can modify the host ID associated with a stopped instance. If a stopped instance has a new host ID
-     * association, the instance will target that host when restarted.
-     * </p>
-     * <p>
-     * You can modify the tenancy of a stopped instance with a tenancy of <code>host</code> or <code>dedicated</code>.
-     * </p>
-     * <p>
-     * Affinity, hostID, and tenancy are not required parameters, but at least one of them must be specified in the
-     * request. Affinity and tenancy can be modified in the same request, but tenancy can only be modified on instances
-     * that are stopped.
+     * To modify the host ID, tenancy, or placement group for an instance, the instance must be in the
+     * <code>stopped</code> state.
      * </p>
      * 
      * @param modifyInstancePlacementRequest
@@ -13648,7 +13678,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </li>
      * <li>
      * <p>
-     * Enable/disable a local VPC to resolve public DNS hostnames to private IP addresses when queried from instances in
+     * Enable/disable the ability to resolve public DNS hostnames to private IP addresses when queried from instances in
      * the peer VPC.
      * </p>
      * </li>
