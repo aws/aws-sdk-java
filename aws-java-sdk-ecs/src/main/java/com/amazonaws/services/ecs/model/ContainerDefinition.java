@@ -58,6 +58,13 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
+     * When a new task starts, the Amazon ECS container agent pulls the latest version of the specified image and tag
+     * for the container to use. However, subsequent updates to a repository image are not propagated to already running
+     * tasks.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Images in Amazon ECR repositories can be specified by either using the full <code>registry/repository:tag</code>
      * or <code>registry/repository@digest</code>. For example,
      * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;:latest</code> or
@@ -369,7 +376,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      */
@@ -705,6 +712,13 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
+     * When a new task starts, the Amazon ECS container agent pulls the latest version of the specified image and tag
+     * for the container to use. However, subsequent updates to a repository image are not propagated to already running
+     * tasks.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Images in Amazon ECR repositories can be specified by either using the full <code>registry/repository:tag</code>
      * or <code>registry/repository@digest</code>. For example,
      * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;:latest</code> or
@@ -745,6 +759,13 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        When a new task starts, the Amazon ECS container agent pulls the latest version of the specified image and
+     *        tag for the container to use. However, subsequent updates to a repository image are not propagated to
+     *        already running tasks.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        Images in Amazon ECR repositories can be specified by either using the full
@@ -794,6 +815,13 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
+     * When a new task starts, the Amazon ECS container agent pulls the latest version of the specified image and tag
+     * for the container to use. However, subsequent updates to a repository image are not propagated to already running
+     * tasks.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Images in Amazon ECR repositories can be specified by either using the full <code>registry/repository:tag</code>
      * or <code>registry/repository@digest</code>. For example,
      * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;:latest</code> or
@@ -833,6 +861,13 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         the <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker
      *         run</a>.</p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         When a new task starts, the Amazon ECS container agent pulls the latest version of the specified image
+     *         and tag for the container to use. However, subsequent updates to a repository image are not propagated to
+     *         already running tasks.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         Images in Amazon ECR repositories can be specified by either using the full
@@ -882,6 +917,13 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
+     * When a new task starts, the Amazon ECS container agent pulls the latest version of the specified image and tag
+     * for the container to use. However, subsequent updates to a repository image are not propagated to already running
+     * tasks.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Images in Amazon ECR repositories can be specified by either using the full <code>registry/repository:tag</code>
      * or <code>registry/repository@digest</code>. For example,
      * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;:latest</code> or
@@ -922,6 +964,13 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <code>IMAGE</code> parameter of <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        When a new task starts, the Amazon ECS container agent pulls the latest version of the specified image and
+     *        tag for the container to use. However, subsequent updates to a repository image are not propagated to
+     *        already running tasks.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        Images in Amazon ECR repositories can be specified by either using the full
@@ -3130,7 +3179,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      * 
@@ -3138,7 +3187,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        Linux-specific modifications that are applied to the container, such as Linux
      *        <a>KernelCapabilities</a>.</p> <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        This parameter is not supported for Windows containers.
      *        </p>
      */
 
@@ -3152,14 +3201,14 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      * 
      * @return Linux-specific modifications that are applied to the container, such as Linux
      *         <a>KernelCapabilities</a>.</p> <note>
      *         <p>
-     *         This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *         This parameter is not supported for Windows containers.
      *         </p>
      */
 
@@ -3173,7 +3222,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      * 
@@ -3181,7 +3230,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        Linux-specific modifications that are applied to the container, such as Linux
      *        <a>KernelCapabilities</a>.</p> <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        This parameter is not supported for Windows containers.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

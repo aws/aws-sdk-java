@@ -33,6 +33,12 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * The Linux capabilities for the container that are added to or dropped from the default configuration provided by
      * Docker.
      * </p>
+     * <note>
+     * <p>
+     * If you are using tasks that use the Fargate launch type, <code>capabilities</code> is supported but the
+     * <code>add</code> parameter is not supported.
+     * </p>
+     * </note>
      */
     private KernelCapabilities capabilities;
     /**
@@ -43,6 +49,11 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      * <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * If you are using tasks that use the Fargate launch type, the <code>devices</code> parameter is not supported.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<Device> devices;
     /**
@@ -61,10 +72,20 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * The Linux capabilities for the container that are added to or dropped from the default configuration provided by
      * Docker.
      * </p>
+     * <note>
+     * <p>
+     * If you are using tasks that use the Fargate launch type, <code>capabilities</code> is supported but the
+     * <code>add</code> parameter is not supported.
+     * </p>
+     * </note>
      * 
      * @param capabilities
      *        The Linux capabilities for the container that are added to or dropped from the default configuration
-     *        provided by Docker.
+     *        provided by Docker.</p> <note>
+     *        <p>
+     *        If you are using tasks that use the Fargate launch type, <code>capabilities</code> is supported but the
+     *        <code>add</code> parameter is not supported.
+     *        </p>
      */
 
     public void setCapabilities(KernelCapabilities capabilities) {
@@ -76,9 +97,19 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * The Linux capabilities for the container that are added to or dropped from the default configuration provided by
      * Docker.
      * </p>
+     * <note>
+     * <p>
+     * If you are using tasks that use the Fargate launch type, <code>capabilities</code> is supported but the
+     * <code>add</code> parameter is not supported.
+     * </p>
+     * </note>
      * 
      * @return The Linux capabilities for the container that are added to or dropped from the default configuration
-     *         provided by Docker.
+     *         provided by Docker.</p> <note>
+     *         <p>
+     *         If you are using tasks that use the Fargate launch type, <code>capabilities</code> is supported but the
+     *         <code>add</code> parameter is not supported.
+     *         </p>
      */
 
     public KernelCapabilities getCapabilities() {
@@ -90,10 +121,20 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * The Linux capabilities for the container that are added to or dropped from the default configuration provided by
      * Docker.
      * </p>
+     * <note>
+     * <p>
+     * If you are using tasks that use the Fargate launch type, <code>capabilities</code> is supported but the
+     * <code>add</code> parameter is not supported.
+     * </p>
+     * </note>
      * 
      * @param capabilities
      *        The Linux capabilities for the container that are added to or dropped from the default configuration
-     *        provided by Docker.
+     *        provided by Docker.</p> <note>
+     *        <p>
+     *        If you are using tasks that use the Fargate launch type, <code>capabilities</code> is supported but the
+     *        <code>add</code> parameter is not supported.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,13 +151,22 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      * <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * If you are using tasks that use the Fargate launch type, the <code>devices</code> parameter is not supported.
+     * </p>
+     * </note>
      * 
      * @return Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a
      *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *         container</a> section of the <a
      *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and
      *         the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *         run</a>.
+     *         run</a>.</p> <note>
+     *         <p>
+     *         If you are using tasks that use the Fargate launch type, the <code>devices</code> parameter is not
+     *         supported.
+     *         </p>
      */
 
     public java.util.List<Device> getDevices() {
@@ -134,13 +184,23 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      * <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * If you are using tasks that use the Fargate launch type, the <code>devices</code> parameter is not supported.
+     * </p>
+     * </note>
      * 
      * @param devices
      *        Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
-     *        <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *        <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>.</p> <note>
+     *        <p>
+     *        If you are using tasks that use the Fargate launch type, the <code>devices</code> parameter is not
+     *        supported.
+     *        </p>
      */
 
     public void setDevices(java.util.Collection<Device> devices) {
@@ -160,6 +220,11 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      * <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * If you are using tasks that use the Fargate launch type, the <code>devices</code> parameter is not supported.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setDevices(java.util.Collection)} or {@link #withDevices(java.util.Collection)} if you want to override
@@ -171,7 +236,12 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
-     *        <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *        <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>.</p> <note>
+     *        <p>
+     *        If you are using tasks that use the Fargate launch type, the <code>devices</code> parameter is not
+     *        supported.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,13 +263,23 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      * <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * If you are using tasks that use the Fargate launch type, the <code>devices</code> parameter is not supported.
+     * </p>
+     * </note>
      * 
      * @param devices
      *        Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
-     *        <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *        <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>.</p> <note>
+     *        <p>
+     *        If you are using tasks that use the Fargate launch type, the <code>devices</code> parameter is not
+     *        supported.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

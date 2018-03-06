@@ -112,8 +112,9 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     private com.amazonaws.internal.SdkInternalList<String> requiresCompatibilities;
     /**
      * <p>
-     * The number of <code>cpu</code> units used by the task. If using the EC2 launch type, this field is optional and
-     * any value can be used.
+     * The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
+     * <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task
+     * definition but will be converted to an integer indicating the CPU units when the task definition is registered.
      * </p>
      * <note>
      * <p>
@@ -122,33 +123,40 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * <p>
-     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
-     * which determines your range of valid values for the <code>memory</code> parameter:
+     * If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU units (
+     * <code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     * </p>
+     * <p>
+     * If using the Fargate launch type, this field is required and you must use one of the following values, which
+     * determines your range of supported values for the <code>memory</code> parameter:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * 256 (.25 vCPU) - Available <code>memory</code> values: 0.5GB, 1GB, 2GB
+     * 256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5GB), 1024 (1GB), 2048 (2GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 512 (.5 vCPU) - Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB
+     * 512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 1024 (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB
+     * 1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144 (6GB),
+     * 7168 (7GB), 8192 (8GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 2048 (2 vCPU) - Available <code>memory</code> values: Between 4GB and 16GB in 1GB increments
+     * 2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4GB) and 16384 (16GB) in increments of 1024
+     * (1GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 4096 (4 vCPU) - Available <code>memory</code> values: Between 8GB and 30GB in 1GB increments
+     * 4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8GB) and 30720 (30GB) in increments of 1024
+     * (1GB)
      * </p>
      * </li>
      * </ul>
@@ -156,8 +164,9 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     private String cpu;
     /**
      * <p>
-     * The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and any
-     * value can be used.
+     * The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
+     * <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
+     * definition but will be converted to an integer indicating the MiB when the task definition is registered.
      * </p>
      * <note>
      * <p>
@@ -166,33 +175,39 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * <p>
-     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
-     * which determines your range of valid values for the <code>cpu</code> parameter:
+     * If using the EC2 launch type, this field is optional.
+     * </p>
+     * <p>
+     * If using the Fargate launch type, this field is required and you must use one of the following values, which
+     * determines your range of supported values for the <code>cpu</code> parameter:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * 0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     * 512 (0.5GB), 1024 (1GB), 2048 (2GB) - Available <code>cpu</code> values: 256 (.25 vCPU)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values: 512 (.5 vCPU)
+     * 1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB) - Available <code>cpu</code> values: 512 (.5 vCPU)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available <code>cpu</code> values: 1024 (1 vCPU)
+     * 2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144 (6GB), 7168 (7GB), 8192 (8GB) - Available <code>cpu</code>
+     * values: 1024 (1 vCPU)
      * </p>
      * </li>
      * <li>
      * <p>
-     * Between 4GB and 16GB in 1GB increments - Available <code>cpu</code> values: 2048 (2 vCPU)
+     * Between 4096 (4GB) and 16384 (16GB) in increments of 1024 (1GB) - Available <code>cpu</code> values: 2048 (2
+     * vCPU)
      * </p>
      * </li>
      * <li>
      * <p>
-     * Between 8GB and 30GB in 1GB increments - Available <code>cpu</code> values: 4096 (4 vCPU)
+     * Between 8192 (8GB) and 30720 (30GB) in increments of 1024 (1GB) - Available <code>cpu</code> values: 4096 (4
+     * vCPU)
      * </p>
      * </li>
      * </ul>
@@ -1072,8 +1087,9 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of <code>cpu</code> units used by the task. If using the EC2 launch type, this field is optional and
-     * any value can be used.
+     * The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
+     * <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task
+     * definition but will be converted to an integer indicating the CPU units when the task definition is registered.
      * </p>
      * <note>
      * <p>
@@ -1082,73 +1098,89 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * <p>
-     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
-     * which determines your range of valid values for the <code>memory</code> parameter:
+     * If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU units (
+     * <code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     * </p>
+     * <p>
+     * If using the Fargate launch type, this field is required and you must use one of the following values, which
+     * determines your range of supported values for the <code>memory</code> parameter:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * 256 (.25 vCPU) - Available <code>memory</code> values: 0.5GB, 1GB, 2GB
+     * 256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5GB), 1024 (1GB), 2048 (2GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 512 (.5 vCPU) - Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB
+     * 512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 1024 (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB
+     * 1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144 (6GB),
+     * 7168 (7GB), 8192 (8GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 2048 (2 vCPU) - Available <code>memory</code> values: Between 4GB and 16GB in 1GB increments
+     * 2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4GB) and 16384 (16GB) in increments of 1024
+     * (1GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 4096 (4 vCPU) - Available <code>memory</code> values: Between 8GB and 30GB in 1GB increments
+     * 4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8GB) and 30720 (30GB) in increments of 1024
+     * (1GB)
      * </p>
      * </li>
      * </ul>
      * 
      * @param cpu
-     *        The number of <code>cpu</code> units used by the task. If using the EC2 launch type, this field is
-     *        optional and any value can be used.</p> <note>
+     *        The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
+     *        <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in
+     *        a task definition but will be converted to an integer indicating the CPU units when the task definition is
+     *        registered.</p> <note>
      *        <p>
      *        Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying
      *        container-level resources for Windows containers.
      *        </p>
      *        </note>
      *        <p>
-     *        If you are using the Fargate launch type, this field is required and you must use one of the following
-     *        values, which determines your range of valid values for the <code>memory</code> parameter:
+     *        If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
+     *        units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     *        </p>
+     *        <p>
+     *        If using the Fargate launch type, this field is required and you must use one of the following values,
+     *        which determines your range of supported values for the <code>memory</code> parameter:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        256 (.25 vCPU) - Available <code>memory</code> values: 0.5GB, 1GB, 2GB
+     *        256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5GB), 1024 (1GB), 2048 (2GB)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        512 (.5 vCPU) - Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB
+     *        512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        1024 (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB
+     *        1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144
+     *        (6GB), 7168 (7GB), 8192 (8GB)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        2048 (2 vCPU) - Available <code>memory</code> values: Between 4GB and 16GB in 1GB increments
+     *        2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4GB) and 16384 (16GB) in increments of
+     *        1024 (1GB)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        4096 (4 vCPU) - Available <code>memory</code> values: Between 8GB and 30GB in 1GB increments
+     *        4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8GB) and 30720 (30GB) in increments of
+     *        1024 (1GB)
      *        </p>
      *        </li>
      */
@@ -1159,8 +1191,9 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of <code>cpu</code> units used by the task. If using the EC2 launch type, this field is optional and
-     * any value can be used.
+     * The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
+     * <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task
+     * definition but will be converted to an integer indicating the CPU units when the task definition is registered.
      * </p>
      * <note>
      * <p>
@@ -1169,72 +1202,88 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * <p>
-     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
-     * which determines your range of valid values for the <code>memory</code> parameter:
+     * If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU units (
+     * <code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     * </p>
+     * <p>
+     * If using the Fargate launch type, this field is required and you must use one of the following values, which
+     * determines your range of supported values for the <code>memory</code> parameter:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * 256 (.25 vCPU) - Available <code>memory</code> values: 0.5GB, 1GB, 2GB
+     * 256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5GB), 1024 (1GB), 2048 (2GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 512 (.5 vCPU) - Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB
+     * 512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 1024 (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB
+     * 1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144 (6GB),
+     * 7168 (7GB), 8192 (8GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 2048 (2 vCPU) - Available <code>memory</code> values: Between 4GB and 16GB in 1GB increments
+     * 2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4GB) and 16384 (16GB) in increments of 1024
+     * (1GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 4096 (4 vCPU) - Available <code>memory</code> values: Between 8GB and 30GB in 1GB increments
+     * 4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8GB) and 30720 (30GB) in increments of 1024
+     * (1GB)
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The number of <code>cpu</code> units used by the task. If using the EC2 launch type, this field is
-     *         optional and any value can be used.</p> <note>
+     * @return The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
+     *         <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in
+     *         a task definition but will be converted to an integer indicating the CPU units when the task definition
+     *         is registered.</p> <note>
      *         <p>
      *         Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying
      *         container-level resources for Windows containers.
      *         </p>
      *         </note>
      *         <p>
-     *         If you are using the Fargate launch type, this field is required and you must use one of the following
-     *         values, which determines your range of valid values for the <code>memory</code> parameter:
+     *         If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
+     *         units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     *         </p>
+     *         <p>
+     *         If using the Fargate launch type, this field is required and you must use one of the following values,
+     *         which determines your range of supported values for the <code>memory</code> parameter:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         256 (.25 vCPU) - Available <code>memory</code> values: 0.5GB, 1GB, 2GB
+     *         256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5GB), 1024 (1GB), 2048 (2GB)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         512 (.5 vCPU) - Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB
+     *         512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         1024 (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB
+     *         1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB),
+     *         6144 (6GB), 7168 (7GB), 8192 (8GB)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         2048 (2 vCPU) - Available <code>memory</code> values: Between 4GB and 16GB in 1GB increments
+     *         2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4GB) and 16384 (16GB) in increments
+     *         of 1024 (1GB)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         4096 (4 vCPU) - Available <code>memory</code> values: Between 8GB and 30GB in 1GB increments
+     *         4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8GB) and 30720 (30GB) in increments
+     *         of 1024 (1GB)
      *         </p>
      *         </li>
      */
@@ -1245,8 +1294,9 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The number of <code>cpu</code> units used by the task. If using the EC2 launch type, this field is optional and
-     * any value can be used.
+     * The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
+     * <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task
+     * definition but will be converted to an integer indicating the CPU units when the task definition is registered.
      * </p>
      * <note>
      * <p>
@@ -1255,73 +1305,89 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * <p>
-     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
-     * which determines your range of valid values for the <code>memory</code> parameter:
+     * If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU units (
+     * <code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     * </p>
+     * <p>
+     * If using the Fargate launch type, this field is required and you must use one of the following values, which
+     * determines your range of supported values for the <code>memory</code> parameter:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * 256 (.25 vCPU) - Available <code>memory</code> values: 0.5GB, 1GB, 2GB
+     * 256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5GB), 1024 (1GB), 2048 (2GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 512 (.5 vCPU) - Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB
+     * 512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 1024 (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB
+     * 1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144 (6GB),
+     * 7168 (7GB), 8192 (8GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 2048 (2 vCPU) - Available <code>memory</code> values: Between 4GB and 16GB in 1GB increments
+     * 2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4GB) and 16384 (16GB) in increments of 1024
+     * (1GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 4096 (4 vCPU) - Available <code>memory</code> values: Between 8GB and 30GB in 1GB increments
+     * 4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8GB) and 30720 (30GB) in increments of 1024
+     * (1GB)
      * </p>
      * </li>
      * </ul>
      * 
      * @param cpu
-     *        The number of <code>cpu</code> units used by the task. If using the EC2 launch type, this field is
-     *        optional and any value can be used.</p> <note>
+     *        The number of CPU units used by the task. It can be expressed as an integer using CPU units, for example
+     *        <code>1024</code>, or as a string using vCPUs, for example <code>1 vCPU</code> or <code>1 vcpu</code>, in
+     *        a task definition but will be converted to an integer indicating the CPU units when the task definition is
+     *        registered.</p> <note>
      *        <p>
      *        Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying
      *        container-level resources for Windows containers.
      *        </p>
      *        </note>
      *        <p>
-     *        If you are using the Fargate launch type, this field is required and you must use one of the following
-     *        values, which determines your range of valid values for the <code>memory</code> parameter:
+     *        If using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
+     *        units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     *        </p>
+     *        <p>
+     *        If using the Fargate launch type, this field is required and you must use one of the following values,
+     *        which determines your range of supported values for the <code>memory</code> parameter:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        256 (.25 vCPU) - Available <code>memory</code> values: 0.5GB, 1GB, 2GB
+     *        256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5GB), 1024 (1GB), 2048 (2GB)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        512 (.5 vCPU) - Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB
+     *        512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        1024 (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB
+     *        1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144
+     *        (6GB), 7168 (7GB), 8192 (8GB)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        2048 (2 vCPU) - Available <code>memory</code> values: Between 4GB and 16GB in 1GB increments
+     *        2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4GB) and 16384 (16GB) in increments of
+     *        1024 (1GB)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        4096 (4 vCPU) - Available <code>memory</code> values: Between 8GB and 30GB in 1GB increments
+     *        4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8GB) and 30720 (30GB) in increments of
+     *        1024 (1GB)
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1334,8 +1400,9 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and any
-     * value can be used.
+     * The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
+     * <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
+     * definition but will be converted to an integer indicating the MiB when the task definition is registered.
      * </p>
      * <note>
      * <p>
@@ -1344,73 +1411,87 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * <p>
-     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
-     * which determines your range of valid values for the <code>cpu</code> parameter:
+     * If using the EC2 launch type, this field is optional.
+     * </p>
+     * <p>
+     * If using the Fargate launch type, this field is required and you must use one of the following values, which
+     * determines your range of supported values for the <code>cpu</code> parameter:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * 0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     * 512 (0.5GB), 1024 (1GB), 2048 (2GB) - Available <code>cpu</code> values: 256 (.25 vCPU)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values: 512 (.5 vCPU)
+     * 1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB) - Available <code>cpu</code> values: 512 (.5 vCPU)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available <code>cpu</code> values: 1024 (1 vCPU)
+     * 2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144 (6GB), 7168 (7GB), 8192 (8GB) - Available <code>cpu</code>
+     * values: 1024 (1 vCPU)
      * </p>
      * </li>
      * <li>
      * <p>
-     * Between 4GB and 16GB in 1GB increments - Available <code>cpu</code> values: 2048 (2 vCPU)
+     * Between 4096 (4GB) and 16384 (16GB) in increments of 1024 (1GB) - Available <code>cpu</code> values: 2048 (2
+     * vCPU)
      * </p>
      * </li>
      * <li>
      * <p>
-     * Between 8GB and 30GB in 1GB increments - Available <code>cpu</code> values: 4096 (4 vCPU)
+     * Between 8192 (8GB) and 30720 (30GB) in increments of 1024 (1GB) - Available <code>cpu</code> values: 4096 (4
+     * vCPU)
      * </p>
      * </li>
      * </ul>
      * 
      * @param memory
-     *        The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and
-     *        any value can be used.</p> <note>
+     *        The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
+     *        <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
+     *        definition but will be converted to an integer indicating the MiB when the task definition is
+     *        registered.</p> <note>
      *        <p>
      *        Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying
      *        container-level resources for Windows containers.
      *        </p>
      *        </note>
      *        <p>
-     *        If you are using the Fargate launch type, this field is required and you must use one of the following
-     *        values, which determines your range of valid values for the <code>cpu</code> parameter:
+     *        If using the EC2 launch type, this field is optional.
+     *        </p>
+     *        <p>
+     *        If using the Fargate launch type, this field is required and you must use one of the following values,
+     *        which determines your range of supported values for the <code>cpu</code> parameter:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     *        512 (0.5GB), 1024 (1GB), 2048 (2GB) - Available <code>cpu</code> values: 256 (.25 vCPU)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values: 512 (.5 vCPU)
+     *        1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB) - Available <code>cpu</code> values: 512 (.5 vCPU)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available <code>cpu</code> values: 1024 (1 vCPU)
+     *        2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144 (6GB), 7168 (7GB), 8192 (8GB) - Available
+     *        <code>cpu</code> values: 1024 (1 vCPU)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Between 4GB and 16GB in 1GB increments - Available <code>cpu</code> values: 2048 (2 vCPU)
+     *        Between 4096 (4GB) and 16384 (16GB) in increments of 1024 (1GB) - Available <code>cpu</code> values: 2048
+     *        (2 vCPU)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Between 8GB and 30GB in 1GB increments - Available <code>cpu</code> values: 4096 (4 vCPU)
+     *        Between 8192 (8GB) and 30720 (30GB) in increments of 1024 (1GB) - Available <code>cpu</code> values: 4096
+     *        (4 vCPU)
      *        </p>
      *        </li>
      */
@@ -1421,8 +1502,9 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and any
-     * value can be used.
+     * The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
+     * <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
+     * definition but will be converted to an integer indicating the MiB when the task definition is registered.
      * </p>
      * <note>
      * <p>
@@ -1431,72 +1513,86 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * <p>
-     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
-     * which determines your range of valid values for the <code>cpu</code> parameter:
+     * If using the EC2 launch type, this field is optional.
+     * </p>
+     * <p>
+     * If using the Fargate launch type, this field is required and you must use one of the following values, which
+     * determines your range of supported values for the <code>cpu</code> parameter:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * 0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     * 512 (0.5GB), 1024 (1GB), 2048 (2GB) - Available <code>cpu</code> values: 256 (.25 vCPU)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values: 512 (.5 vCPU)
+     * 1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB) - Available <code>cpu</code> values: 512 (.5 vCPU)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available <code>cpu</code> values: 1024 (1 vCPU)
+     * 2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144 (6GB), 7168 (7GB), 8192 (8GB) - Available <code>cpu</code>
+     * values: 1024 (1 vCPU)
      * </p>
      * </li>
      * <li>
      * <p>
-     * Between 4GB and 16GB in 1GB increments - Available <code>cpu</code> values: 2048 (2 vCPU)
+     * Between 4096 (4GB) and 16384 (16GB) in increments of 1024 (1GB) - Available <code>cpu</code> values: 2048 (2
+     * vCPU)
      * </p>
      * </li>
      * <li>
      * <p>
-     * Between 8GB and 30GB in 1GB increments - Available <code>cpu</code> values: 4096 (4 vCPU)
+     * Between 8192 (8GB) and 30720 (30GB) in increments of 1024 (1GB) - Available <code>cpu</code> values: 4096 (4
+     * vCPU)
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and
-     *         any value can be used.</p> <note>
+     * @return The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
+     *         <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
+     *         definition but will be converted to an integer indicating the MiB when the task definition is
+     *         registered.</p> <note>
      *         <p>
      *         Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying
      *         container-level resources for Windows containers.
      *         </p>
      *         </note>
      *         <p>
-     *         If you are using the Fargate launch type, this field is required and you must use one of the following
-     *         values, which determines your range of valid values for the <code>cpu</code> parameter:
+     *         If using the EC2 launch type, this field is optional.
+     *         </p>
+     *         <p>
+     *         If using the Fargate launch type, this field is required and you must use one of the following values,
+     *         which determines your range of supported values for the <code>cpu</code> parameter:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     *         512 (0.5GB), 1024 (1GB), 2048 (2GB) - Available <code>cpu</code> values: 256 (.25 vCPU)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values: 512 (.5 vCPU)
+     *         1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB) - Available <code>cpu</code> values: 512 (.5 vCPU)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available <code>cpu</code> values: 1024 (1 vCPU)
+     *         2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144 (6GB), 7168 (7GB), 8192 (8GB) - Available
+     *         <code>cpu</code> values: 1024 (1 vCPU)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Between 4GB and 16GB in 1GB increments - Available <code>cpu</code> values: 2048 (2 vCPU)
+     *         Between 4096 (4GB) and 16384 (16GB) in increments of 1024 (1GB) - Available <code>cpu</code> values: 2048
+     *         (2 vCPU)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Between 8GB and 30GB in 1GB increments - Available <code>cpu</code> values: 4096 (4 vCPU)
+     *         Between 8192 (8GB) and 30720 (30GB) in increments of 1024 (1GB) - Available <code>cpu</code> values: 4096
+     *         (4 vCPU)
      *         </p>
      *         </li>
      */
@@ -1507,8 +1603,9 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and any
-     * value can be used.
+     * The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
+     * <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
+     * definition but will be converted to an integer indicating the MiB when the task definition is registered.
      * </p>
      * <note>
      * <p>
@@ -1517,73 +1614,87 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * <p>
-     * If you are using the Fargate launch type, this field is required and you must use one of the following values,
-     * which determines your range of valid values for the <code>cpu</code> parameter:
+     * If using the EC2 launch type, this field is optional.
+     * </p>
+     * <p>
+     * If using the Fargate launch type, this field is required and you must use one of the following values, which
+     * determines your range of supported values for the <code>cpu</code> parameter:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * 0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     * 512 (0.5GB), 1024 (1GB), 2048 (2GB) - Available <code>cpu</code> values: 256 (.25 vCPU)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values: 512 (.5 vCPU)
+     * 1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB) - Available <code>cpu</code> values: 512 (.5 vCPU)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available <code>cpu</code> values: 1024 (1 vCPU)
+     * 2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144 (6GB), 7168 (7GB), 8192 (8GB) - Available <code>cpu</code>
+     * values: 1024 (1 vCPU)
      * </p>
      * </li>
      * <li>
      * <p>
-     * Between 4GB and 16GB in 1GB increments - Available <code>cpu</code> values: 2048 (2 vCPU)
+     * Between 4096 (4GB) and 16384 (16GB) in increments of 1024 (1GB) - Available <code>cpu</code> values: 2048 (2
+     * vCPU)
      * </p>
      * </li>
      * <li>
      * <p>
-     * Between 8GB and 30GB in 1GB increments - Available <code>cpu</code> values: 4096 (4 vCPU)
+     * Between 8192 (8GB) and 30720 (30GB) in increments of 1024 (1GB) - Available <code>cpu</code> values: 4096 (4
+     * vCPU)
      * </p>
      * </li>
      * </ul>
      * 
      * @param memory
-     *        The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and
-     *        any value can be used.</p> <note>
+     *        The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB, for example
+     *        <code>1024</code>, or as a string using GB, for example <code>1GB</code> or <code>1 GB</code>, in a task
+     *        definition but will be converted to an integer indicating the MiB when the task definition is
+     *        registered.</p> <note>
      *        <p>
      *        Task-level CPU and memory parameters are ignored for Windows containers. We recommend specifying
      *        container-level resources for Windows containers.
      *        </p>
      *        </note>
      *        <p>
-     *        If you are using the Fargate launch type, this field is required and you must use one of the following
-     *        values, which determines your range of valid values for the <code>cpu</code> parameter:
+     *        If using the EC2 launch type, this field is optional.
+     *        </p>
+     *        <p>
+     *        If using the Fargate launch type, this field is required and you must use one of the following values,
+     *        which determines your range of supported values for the <code>cpu</code> parameter:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     *        512 (0.5GB), 1024 (1GB), 2048 (2GB) - Available <code>cpu</code> values: 256 (.25 vCPU)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values: 512 (.5 vCPU)
+     *        1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB) - Available <code>cpu</code> values: 512 (.5 vCPU)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available <code>cpu</code> values: 1024 (1 vCPU)
+     *        2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144 (6GB), 7168 (7GB), 8192 (8GB) - Available
+     *        <code>cpu</code> values: 1024 (1 vCPU)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Between 4GB and 16GB in 1GB increments - Available <code>cpu</code> values: 2048 (2 vCPU)
+     *        Between 4096 (4GB) and 16384 (16GB) in increments of 1024 (1GB) - Available <code>cpu</code> values: 2048
+     *        (2 vCPU)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Between 8GB and 30GB in 1GB increments - Available <code>cpu</code> values: 4096 (4 vCPU)
+     *        Between 8192 (8GB) and 30720 (30GB) in increments of 1024 (1GB) - Available <code>cpu</code> values: 4096
+     *        (4 vCPU)
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

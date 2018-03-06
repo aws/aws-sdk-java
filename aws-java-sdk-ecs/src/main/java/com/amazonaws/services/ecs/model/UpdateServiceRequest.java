@@ -85,7 +85,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String platformVersion;
     /**
      * <p>
-     * Whether or not to force a new deployment of the service.
+     * Whether or not to force a new deployment of the service. By default, <code>--no-force-new-deployment</code> is
+     * assumed unless specified otherwise.
      * </p>
      */
     private Boolean forceNewDeployment;
@@ -476,11 +477,13 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Whether or not to force a new deployment of the service.
+     * Whether or not to force a new deployment of the service. By default, <code>--no-force-new-deployment</code> is
+     * assumed unless specified otherwise.
      * </p>
      * 
      * @param forceNewDeployment
-     *        Whether or not to force a new deployment of the service.
+     *        Whether or not to force a new deployment of the service. By default,
+     *        <code>--no-force-new-deployment</code> is assumed unless specified otherwise.
      */
 
     public void setForceNewDeployment(Boolean forceNewDeployment) {
@@ -489,10 +492,12 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Whether or not to force a new deployment of the service.
+     * Whether or not to force a new deployment of the service. By default, <code>--no-force-new-deployment</code> is
+     * assumed unless specified otherwise.
      * </p>
      * 
-     * @return Whether or not to force a new deployment of the service.
+     * @return Whether or not to force a new deployment of the service. By default,
+     *         <code>--no-force-new-deployment</code> is assumed unless specified otherwise.
      */
 
     public Boolean getForceNewDeployment() {
@@ -501,11 +506,13 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Whether or not to force a new deployment of the service.
+     * Whether or not to force a new deployment of the service. By default, <code>--no-force-new-deployment</code> is
+     * assumed unless specified otherwise.
      * </p>
      * 
      * @param forceNewDeployment
-     *        Whether or not to force a new deployment of the service.
+     *        Whether or not to force a new deployment of the service. By default,
+     *        <code>--no-force-new-deployment</code> is assumed unless specified otherwise.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -516,10 +523,12 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Whether or not to force a new deployment of the service.
+     * Whether or not to force a new deployment of the service. By default, <code>--no-force-new-deployment</code> is
+     * assumed unless specified otherwise.
      * </p>
      * 
-     * @return Whether or not to force a new deployment of the service.
+     * @return Whether or not to force a new deployment of the service. By default,
+     *         <code>--no-force-new-deployment</code> is assumed unless specified otherwise.
      */
 
     public Boolean isForceNewDeployment() {

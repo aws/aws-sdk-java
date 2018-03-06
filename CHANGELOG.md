@@ -1,3 +1,8 @@
+# __1.11.290__ __2018-03-06__
+## __Amazon EC2 Container Service__
+  - ### Features
+    - Documentation updates for Amazon ECS
+
 # __1.11.289__ __2018-03-01__
 ## __AWS Service Catalog__
   - ### Features

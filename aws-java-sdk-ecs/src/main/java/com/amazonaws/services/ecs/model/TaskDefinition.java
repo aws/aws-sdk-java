@@ -180,27 +180,30 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * 256 (.25 vCPU) - Available <code>memory</code> values: 0.5GB, 1GB, 2GB
+     * 256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5GB), 1024 (1GB), 2048 (2GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 512 (.5 vCPU) - Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB
+     * 512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 1024 (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB
+     * 1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144 (6GB),
+     * 7168 (7GB), 8192 (8GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 2048 (2 vCPU) - Available <code>memory</code> values: Between 4GB and 16GB in 1GB increments
+     * 2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4GB) and 16384 (16GB) in increments of 1024
+     * (1GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 4096 (4 vCPU) - Available <code>memory</code> values: Between 8GB and 30GB in 1GB increments
+     * 4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8GB) and 30720 (30GB) in increments of 1024
+     * (1GB)
      * </p>
      * </li>
      * </ul>
@@ -215,27 +218,30 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * 0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     * 512 (0.5GB), 1024 (1GB), 2048 (2GB) - Available <code>cpu</code> values: 256 (.25 vCPU)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values: 512 (.5 vCPU)
+     * 1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB) - Available <code>cpu</code> values: 512 (.5 vCPU)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available <code>cpu</code> values: 1024 (1 vCPU)
+     * 2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144 (6GB), 7168 (7GB), 8192 (8GB) - Available <code>cpu</code>
+     * values: 1024 (1 vCPU)
      * </p>
      * </li>
      * <li>
      * <p>
-     * Between 4GB and 16GB in 1GB increments - Available <code>cpu</code> values: 2048 (2 vCPU)
+     * Between 4096 (4GB) and 16384 (16GB) in increments of 1024 (1GB) - Available <code>cpu</code> values: 2048 (2
+     * vCPU)
      * </p>
      * </li>
      * <li>
      * <p>
-     * Between 8GB and 30GB in 1GB increments - Available <code>cpu</code> values: 4096 (4 vCPU)
+     * Between 8192 (8GB) and 30720 (30GB) in increments of 1024 (1GB) - Available <code>cpu</code> values: 4096 (4
+     * vCPU)
      * </p>
      * </li>
      * </ul>
@@ -1666,27 +1672,30 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * 256 (.25 vCPU) - Available <code>memory</code> values: 0.5GB, 1GB, 2GB
+     * 256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5GB), 1024 (1GB), 2048 (2GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 512 (.5 vCPU) - Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB
+     * 512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 1024 (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB
+     * 1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144 (6GB),
+     * 7168 (7GB), 8192 (8GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 2048 (2 vCPU) - Available <code>memory</code> values: Between 4GB and 16GB in 1GB increments
+     * 2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4GB) and 16384 (16GB) in increments of 1024
+     * (1GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 4096 (4 vCPU) - Available <code>memory</code> values: Between 8GB and 30GB in 1GB increments
+     * 4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8GB) and 30720 (30GB) in increments of 1024
+     * (1GB)
      * </p>
      * </li>
      * </ul>
@@ -1699,27 +1708,30 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        256 (.25 vCPU) - Available <code>memory</code> values: 0.5GB, 1GB, 2GB
+     *        256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5GB), 1024 (1GB), 2048 (2GB)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        512 (.5 vCPU) - Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB
+     *        512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        1024 (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB
+     *        1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144
+     *        (6GB), 7168 (7GB), 8192 (8GB)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        2048 (2 vCPU) - Available <code>memory</code> values: Between 4GB and 16GB in 1GB increments
+     *        2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4GB) and 16384 (16GB) in increments of
+     *        1024 (1GB)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        4096 (4 vCPU) - Available <code>memory</code> values: Between 8GB and 30GB in 1GB increments
+     *        4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8GB) and 30720 (30GB) in increments of
+     *        1024 (1GB)
      *        </p>
      *        </li>
      */
@@ -1737,27 +1749,30 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * 256 (.25 vCPU) - Available <code>memory</code> values: 0.5GB, 1GB, 2GB
+     * 256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5GB), 1024 (1GB), 2048 (2GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 512 (.5 vCPU) - Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB
+     * 512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 1024 (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB
+     * 1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144 (6GB),
+     * 7168 (7GB), 8192 (8GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 2048 (2 vCPU) - Available <code>memory</code> values: Between 4GB and 16GB in 1GB increments
+     * 2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4GB) and 16384 (16GB) in increments of 1024
+     * (1GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 4096 (4 vCPU) - Available <code>memory</code> values: Between 8GB and 30GB in 1GB increments
+     * 4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8GB) and 30720 (30GB) in increments of 1024
+     * (1GB)
      * </p>
      * </li>
      * </ul>
@@ -1769,27 +1784,30 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         256 (.25 vCPU) - Available <code>memory</code> values: 0.5GB, 1GB, 2GB
+     *         256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5GB), 1024 (1GB), 2048 (2GB)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         512 (.5 vCPU) - Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB
+     *         512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         1024 (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB
+     *         1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB),
+     *         6144 (6GB), 7168 (7GB), 8192 (8GB)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         2048 (2 vCPU) - Available <code>memory</code> values: Between 4GB and 16GB in 1GB increments
+     *         2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4GB) and 16384 (16GB) in increments
+     *         of 1024 (1GB)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         4096 (4 vCPU) - Available <code>memory</code> values: Between 8GB and 30GB in 1GB increments
+     *         4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8GB) and 30720 (30GB) in increments
+     *         of 1024 (1GB)
      *         </p>
      *         </li>
      */
@@ -1807,27 +1825,30 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * 256 (.25 vCPU) - Available <code>memory</code> values: 0.5GB, 1GB, 2GB
+     * 256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5GB), 1024 (1GB), 2048 (2GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 512 (.5 vCPU) - Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB
+     * 512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 1024 (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB
+     * 1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144 (6GB),
+     * 7168 (7GB), 8192 (8GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 2048 (2 vCPU) - Available <code>memory</code> values: Between 4GB and 16GB in 1GB increments
+     * 2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4GB) and 16384 (16GB) in increments of 1024
+     * (1GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 4096 (4 vCPU) - Available <code>memory</code> values: Between 8GB and 30GB in 1GB increments
+     * 4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8GB) and 30720 (30GB) in increments of 1024
+     * (1GB)
      * </p>
      * </li>
      * </ul>
@@ -1840,27 +1861,30 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        256 (.25 vCPU) - Available <code>memory</code> values: 0.5GB, 1GB, 2GB
+     *        256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5GB), 1024 (1GB), 2048 (2GB)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        512 (.5 vCPU) - Available <code>memory</code> values: 1GB, 2GB, 3GB, 4GB
+     *        512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        1024 (1 vCPU) - Available <code>memory</code> values: 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB
+     *        1024 (1 vCPU) - Available <code>memory</code> values: 2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144
+     *        (6GB), 7168 (7GB), 8192 (8GB)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        2048 (2 vCPU) - Available <code>memory</code> values: Between 4GB and 16GB in 1GB increments
+     *        2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4GB) and 16384 (16GB) in increments of
+     *        1024 (1GB)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        4096 (4 vCPU) - Available <code>memory</code> values: Between 8GB and 30GB in 1GB increments
+     *        4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8GB) and 30720 (30GB) in increments of
+     *        1024 (1GB)
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1880,27 +1904,30 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * 0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     * 512 (0.5GB), 1024 (1GB), 2048 (2GB) - Available <code>cpu</code> values: 256 (.25 vCPU)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values: 512 (.5 vCPU)
+     * 1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB) - Available <code>cpu</code> values: 512 (.5 vCPU)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available <code>cpu</code> values: 1024 (1 vCPU)
+     * 2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144 (6GB), 7168 (7GB), 8192 (8GB) - Available <code>cpu</code>
+     * values: 1024 (1 vCPU)
      * </p>
      * </li>
      * <li>
      * <p>
-     * Between 4GB and 16GB in 1GB increments - Available <code>cpu</code> values: 2048 (2 vCPU)
+     * Between 4096 (4GB) and 16384 (16GB) in increments of 1024 (1GB) - Available <code>cpu</code> values: 2048 (2
+     * vCPU)
      * </p>
      * </li>
      * <li>
      * <p>
-     * Between 8GB and 30GB in 1GB increments - Available <code>cpu</code> values: 4096 (4 vCPU)
+     * Between 8192 (8GB) and 30720 (30GB) in increments of 1024 (1GB) - Available <code>cpu</code> values: 4096 (4
+     * vCPU)
      * </p>
      * </li>
      * </ul>
@@ -1912,27 +1939,30 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     *        512 (0.5GB), 1024 (1GB), 2048 (2GB) - Available <code>cpu</code> values: 256 (.25 vCPU)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values: 512 (.5 vCPU)
+     *        1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB) - Available <code>cpu</code> values: 512 (.5 vCPU)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available <code>cpu</code> values: 1024 (1 vCPU)
+     *        2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144 (6GB), 7168 (7GB), 8192 (8GB) - Available
+     *        <code>cpu</code> values: 1024 (1 vCPU)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Between 4GB and 16GB in 1GB increments - Available <code>cpu</code> values: 2048 (2 vCPU)
+     *        Between 4096 (4GB) and 16384 (16GB) in increments of 1024 (1GB) - Available <code>cpu</code> values: 2048
+     *        (2 vCPU)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Between 8GB and 30GB in 1GB increments - Available <code>cpu</code> values: 4096 (4 vCPU)
+     *        Between 8192 (8GB) and 30720 (30GB) in increments of 1024 (1GB) - Available <code>cpu</code> values: 4096
+     *        (4 vCPU)
      *        </p>
      *        </li>
      */
@@ -1950,27 +1980,30 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * 0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     * 512 (0.5GB), 1024 (1GB), 2048 (2GB) - Available <code>cpu</code> values: 256 (.25 vCPU)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values: 512 (.5 vCPU)
+     * 1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB) - Available <code>cpu</code> values: 512 (.5 vCPU)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available <code>cpu</code> values: 1024 (1 vCPU)
+     * 2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144 (6GB), 7168 (7GB), 8192 (8GB) - Available <code>cpu</code>
+     * values: 1024 (1 vCPU)
      * </p>
      * </li>
      * <li>
      * <p>
-     * Between 4GB and 16GB in 1GB increments - Available <code>cpu</code> values: 2048 (2 vCPU)
+     * Between 4096 (4GB) and 16384 (16GB) in increments of 1024 (1GB) - Available <code>cpu</code> values: 2048 (2
+     * vCPU)
      * </p>
      * </li>
      * <li>
      * <p>
-     * Between 8GB and 30GB in 1GB increments - Available <code>cpu</code> values: 4096 (4 vCPU)
+     * Between 8192 (8GB) and 30720 (30GB) in increments of 1024 (1GB) - Available <code>cpu</code> values: 4096 (4
+     * vCPU)
      * </p>
      * </li>
      * </ul>
@@ -1981,27 +2014,30 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     *         512 (0.5GB), 1024 (1GB), 2048 (2GB) - Available <code>cpu</code> values: 256 (.25 vCPU)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values: 512 (.5 vCPU)
+     *         1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB) - Available <code>cpu</code> values: 512 (.5 vCPU)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available <code>cpu</code> values: 1024 (1 vCPU)
+     *         2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144 (6GB), 7168 (7GB), 8192 (8GB) - Available
+     *         <code>cpu</code> values: 1024 (1 vCPU)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Between 4GB and 16GB in 1GB increments - Available <code>cpu</code> values: 2048 (2 vCPU)
+     *         Between 4096 (4GB) and 16384 (16GB) in increments of 1024 (1GB) - Available <code>cpu</code> values: 2048
+     *         (2 vCPU)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Between 8GB and 30GB in 1GB increments - Available <code>cpu</code> values: 4096 (4 vCPU)
+     *         Between 8192 (8GB) and 30720 (30GB) in increments of 1024 (1GB) - Available <code>cpu</code> values: 4096
+     *         (4 vCPU)
      *         </p>
      *         </li>
      */
@@ -2019,27 +2055,30 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * 0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     * 512 (0.5GB), 1024 (1GB), 2048 (2GB) - Available <code>cpu</code> values: 256 (.25 vCPU)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values: 512 (.5 vCPU)
+     * 1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB) - Available <code>cpu</code> values: 512 (.5 vCPU)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available <code>cpu</code> values: 1024 (1 vCPU)
+     * 2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144 (6GB), 7168 (7GB), 8192 (8GB) - Available <code>cpu</code>
+     * values: 1024 (1 vCPU)
      * </p>
      * </li>
      * <li>
      * <p>
-     * Between 4GB and 16GB in 1GB increments - Available <code>cpu</code> values: 2048 (2 vCPU)
+     * Between 4096 (4GB) and 16384 (16GB) in increments of 1024 (1GB) - Available <code>cpu</code> values: 2048 (2
+     * vCPU)
      * </p>
      * </li>
      * <li>
      * <p>
-     * Between 8GB and 30GB in 1GB increments - Available <code>cpu</code> values: 4096 (4 vCPU)
+     * Between 8192 (8GB) and 30720 (30GB) in increments of 1024 (1GB) - Available <code>cpu</code> values: 4096 (4
+     * vCPU)
      * </p>
      * </li>
      * </ul>
@@ -2051,27 +2090,30 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        0.5GB, 1GB, 2GB - Available <code>cpu</code> values: 256 (.25 vCPU)
+     *        512 (0.5GB), 1024 (1GB), 2048 (2GB) - Available <code>cpu</code> values: 256 (.25 vCPU)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        1GB, 2GB, 3GB, 4GB - Available <code>cpu</code> values: 512 (.5 vCPU)
+     *        1024 (1GB), 2048 (2GB), 3072 (3GB), 4096 (4GB) - Available <code>cpu</code> values: 512 (.5 vCPU)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        2GB, 3GB, 4GB, 5GB, 6GB, 7GB, 8GB - Available <code>cpu</code> values: 1024 (1 vCPU)
+     *        2048 (2GB), 3072 (3GB), 4096 (4GB), 5120 (5GB), 6144 (6GB), 7168 (7GB), 8192 (8GB) - Available
+     *        <code>cpu</code> values: 1024 (1 vCPU)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Between 4GB and 16GB in 1GB increments - Available <code>cpu</code> values: 2048 (2 vCPU)
+     *        Between 4096 (4GB) and 16384 (16GB) in increments of 1024 (1GB) - Available <code>cpu</code> values: 2048
+     *        (2 vCPU)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Between 8GB and 30GB in 1GB increments - Available <code>cpu</code> values: 4096 (4 vCPU)
+     *        Between 8192 (8GB) and 30720 (30GB) in increments of 1024 (1GB) - Available <code>cpu</code> values: 4096
+     *        (4 vCPU)
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
