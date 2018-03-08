@@ -1,3 +1,8 @@
+# __1.11.291__ __2018-03-07__
+## __AWS Elemental MediaLive__
+  - ### Features
+    - Updates API to model required traits and minimum/maximum constraints.
+
 # __1.11.290__ __2018-03-06__
 ## __Amazon EC2 Container Service__
   - ### Features
