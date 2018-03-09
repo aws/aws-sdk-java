@@ -29,6 +29,8 @@ public enum PinpointActions implements Action {
     CreateApp("pinpoint:CreateApp"),
     /** Action for the CreateCampaign operation. */
     CreateCampaign("pinpoint:CreateCampaign"),
+    /** Action for the CreateExportJob operation. */
+    CreateExportJob("pinpoint:CreateExportJob"),
     /** Action for the CreateImportJob operation. */
     CreateImportJob("pinpoint:CreateImportJob"),
     /** Action for the CreateSegment operation. */
@@ -93,6 +95,10 @@ public enum PinpointActions implements Action {
     GetEndpoint("pinpoint:GetEndpoint"),
     /** Action for the GetEventStream operation. */
     GetEventStream("pinpoint:GetEventStream"),
+    /** Action for the GetExportJob operation. */
+    GetExportJob("pinpoint:GetExportJob"),
+    /** Action for the GetExportJobs operation. */
+    GetExportJobs("pinpoint:GetExportJobs"),
     /** Action for the GetGcmChannel operation. */
     GetGcmChannel("pinpoint:GetGcmChannel"),
     /** Action for the GetImportJob operation. */
@@ -101,6 +107,8 @@ public enum PinpointActions implements Action {
     GetImportJobs("pinpoint:GetImportJobs"),
     /** Action for the GetSegment operation. */
     GetSegment("pinpoint:GetSegment"),
+    /** Action for the GetSegmentExportJobs operation. */
+    GetSegmentExportJobs("pinpoint:GetSegmentExportJobs"),
     /** Action for the GetSegmentImportJobs operation. */
     GetSegmentImportJobs("pinpoint:GetSegmentImportJobs"),
     /** Action for the GetSegmentVersion operation. */

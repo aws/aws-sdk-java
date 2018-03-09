@@ -40,9 +40,10 @@ public class DescribeTagsRequestMarshaller implements Marshaller<Request<Describ
         request.addParameter("Version", "2012-06-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> loadBalancerNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeTagsRequest
-                .getLoadBalancerNames();
-        if (!loadBalancerNamesList.isEmpty() || !loadBalancerNamesList.isAutoConstruct()) {
+        if (!describeTagsRequest.getLoadBalancerNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeTagsRequest.getLoadBalancerNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> loadBalancerNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeTagsRequest
+                    .getLoadBalancerNames();
             int loadBalancerNamesListIndex = 1;
 
             for (String loadBalancerNamesListValue : loadBalancerNamesList) {

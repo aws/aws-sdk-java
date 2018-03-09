@@ -28,7 +28,11 @@ public class SegmentImportResource implements Serializable, Cloneable, Structure
 
     /** Channel type counts */
     private java.util.Map<String, Integer> channelCounts;
-    /** A unique, custom ID assigned to the IAM role that restricts who can assume the role. */
+    /**
+     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by Amazon
+     * Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not recommended for IAM roles
+     * assumed by Amazon Pinpoint.
+     */
     private String externalId;
     /**
      * The format of the endpoint files that were imported to create this segment. Valid values: CSV, JSON
@@ -97,10 +101,14 @@ public class SegmentImportResource implements Serializable, Cloneable, Structure
     }
 
     /**
-     * A unique, custom ID assigned to the IAM role that restricts who can assume the role.
+     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by Amazon
+     * Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not recommended for IAM roles
+     * assumed by Amazon Pinpoint.
      * 
      * @param externalId
-     *        A unique, custom ID assigned to the IAM role that restricts who can assume the role.
+     *        DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by
+     *        Amazon Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not recommended
+     *        for IAM roles assumed by Amazon Pinpoint.
      */
 
     public void setExternalId(String externalId) {
@@ -108,9 +116,13 @@ public class SegmentImportResource implements Serializable, Cloneable, Structure
     }
 
     /**
-     * A unique, custom ID assigned to the IAM role that restricts who can assume the role.
+     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by Amazon
+     * Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not recommended for IAM roles
+     * assumed by Amazon Pinpoint.
      * 
-     * @return A unique, custom ID assigned to the IAM role that restricts who can assume the role.
+     * @return DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by
+     *         Amazon Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not recommended
+     *         for IAM roles assumed by Amazon Pinpoint.
      */
 
     public String getExternalId() {
@@ -118,10 +130,14 @@ public class SegmentImportResource implements Serializable, Cloneable, Structure
     }
 
     /**
-     * A unique, custom ID assigned to the IAM role that restricts who can assume the role.
+     * DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by Amazon
+     * Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not recommended for IAM roles
+     * assumed by Amazon Pinpoint.
      * 
      * @param externalId
-     *        A unique, custom ID assigned to the IAM role that restricts who can assume the role.
+     *        DEPRECATED. Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by
+     *        Amazon Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not recommended
+     *        for IAM roles assumed by Amazon Pinpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

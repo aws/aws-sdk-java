@@ -40,6 +40,8 @@ public class CampaignResponseMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<Integer> HOLDOUTPERCENT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HoldoutPercent").build();
+    private static final MarshallingInfo<StructuredPojo> HOOK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Hook").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Id").build();
     private static final MarshallingInfo<Boolean> ISPAUSED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -89,6 +91,7 @@ public class CampaignResponseMarshaller {
             protocolMarshaller.marshall(campaignResponse.getDefaultState(), DEFAULTSTATE_BINDING);
             protocolMarshaller.marshall(campaignResponse.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(campaignResponse.getHoldoutPercent(), HOLDOUTPERCENT_BINDING);
+            protocolMarshaller.marshall(campaignResponse.getHook(), HOOK_BINDING);
             protocolMarshaller.marshall(campaignResponse.getId(), ID_BINDING);
             protocolMarshaller.marshall(campaignResponse.getIsPaused(), ISPAUSED_BINDING);
             protocolMarshaller.marshall(campaignResponse.getLastModifiedDate(), LASTMODIFIEDDATE_BINDING);

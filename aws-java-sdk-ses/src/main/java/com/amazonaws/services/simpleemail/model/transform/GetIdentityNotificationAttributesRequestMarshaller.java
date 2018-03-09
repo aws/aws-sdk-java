@@ -42,9 +42,10 @@ public class GetIdentityNotificationAttributesRequestMarshaller implements
         request.addParameter("Version", "2010-12-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> identitiesList = (com.amazonaws.internal.SdkInternalList<String>) getIdentityNotificationAttributesRequest
-                .getIdentities();
-        if (!identitiesList.isEmpty() || !identitiesList.isAutoConstruct()) {
+        if (!getIdentityNotificationAttributesRequest.getIdentities().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) getIdentityNotificationAttributesRequest.getIdentities()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> identitiesList = (com.amazonaws.internal.SdkInternalList<String>) getIdentityNotificationAttributesRequest
+                    .getIdentities();
             int identitiesListIndex = 1;
 
             for (String identitiesListValue : identitiesList) {

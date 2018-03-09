@@ -36,7 +36,7 @@ public class Attachment implements Serializable, Cloneable, StructuredPojo {
     private String id;
     /**
      * <p>
-     * The type of the attachment, such as an <code>ElasticNetworkInterface</code>.
+     * The type of the attachment, such as <code>ElasticNetworkInterface</code>.
      * </p>
      */
     private String type;
@@ -98,11 +98,11 @@ public class Attachment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the attachment, such as an <code>ElasticNetworkInterface</code>.
+     * The type of the attachment, such as <code>ElasticNetworkInterface</code>.
      * </p>
      * 
      * @param type
-     *        The type of the attachment, such as an <code>ElasticNetworkInterface</code>.
+     *        The type of the attachment, such as <code>ElasticNetworkInterface</code>.
      */
 
     public void setType(String type) {
@@ -111,10 +111,10 @@ public class Attachment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the attachment, such as an <code>ElasticNetworkInterface</code>.
+     * The type of the attachment, such as <code>ElasticNetworkInterface</code>.
      * </p>
      * 
-     * @return The type of the attachment, such as an <code>ElasticNetworkInterface</code>.
+     * @return The type of the attachment, such as <code>ElasticNetworkInterface</code>.
      */
 
     public String getType() {
@@ -123,11 +123,11 @@ public class Attachment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the attachment, such as an <code>ElasticNetworkInterface</code>.
+     * The type of the attachment, such as <code>ElasticNetworkInterface</code>.
      * </p>
      * 
      * @param type
-     *        The type of the attachment, such as an <code>ElasticNetworkInterface</code>.
+     *        The type of the attachment, such as <code>ElasticNetworkInterface</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

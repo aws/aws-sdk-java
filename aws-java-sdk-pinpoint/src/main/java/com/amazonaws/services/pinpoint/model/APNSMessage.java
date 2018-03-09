@@ -47,8 +47,9 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
      */
     private String category;
     /**
-     * Multiple notifications with the same collapse identifier are displayed to the user as a single notification. The
-     * value of this key must not exceed 64 bytes.
+     * An ID that, if assigned to multiple messages, causes APNs to coalesce the messages into a single push
+     * notification instead of delivering each message individually. The value must not exceed 64 bytes. Amazon Pinpoint
+     * uses this value to set the apns-collapse-id request header when it sends the message to APNs.
      */
     private String collapseId;
     /**
@@ -60,7 +61,23 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     private String mediaUrl;
     /** The preferred authentication method, either "CERTIFICATE" or "TOKEN" */
     private String preferredAuthenticationMethod;
-    /** Is this a transaction priority message or lower priority. */
+    /**
+     * The message priority. Amazon Pinpoint uses this value to set the apns-priority request header when it sends the
+     * message to APNs. Accepts the following values:
+     * 
+     * "5" - Low priority. Messages might be delayed, delivered in groups, and throttled.
+     * 
+     * "10" - High priority. Messages are sent immediately. High priority messages must cause an alert, sound, or badge
+     * on the receiving device.
+     * 
+     * The default value is "10".
+     * 
+     * The equivalent values for FCM or GCM messages are "normal" and "high". Amazon Pinpoint accepts these values for
+     * APNs messages and converts them.
+     * 
+     * For more information about the apns-priority parameter, see Communicating with APNs in the APNs Local and Remote
+     * Notification Programming Guide.
+     */
     private String priority;
     /** The Raw JSON formatted string to be used as the payload. This value overrides the message. */
     private String rawContent;
@@ -83,10 +100,9 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
      */
     private String threadId;
     /**
-     * This parameter specifies how long (in seconds) the message should be kept if APNS is unable to deliver the
-     * notification the first time. If the value is 0, APNS treats the notification as if it expires immediately and
-     * does not store the notification or attempt to redeliver it. This value is converted to the expiration field when
-     * sent to APNS
+     * The length of time (in seconds) that APNs stores and attempts to deliver the message. If the value is 0, APNs
+     * does not store the message or attempt to deliver it more than once. Amazon Pinpoint uses this value to set the
+     * apns-expiration request header when it sends the message to APNs.
      */
     private Integer timeToLive;
     /** The message title that displays above the message on the user's device. */
@@ -313,12 +329,14 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Multiple notifications with the same collapse identifier are displayed to the user as a single notification. The
-     * value of this key must not exceed 64 bytes.
+     * An ID that, if assigned to multiple messages, causes APNs to coalesce the messages into a single push
+     * notification instead of delivering each message individually. The value must not exceed 64 bytes. Amazon Pinpoint
+     * uses this value to set the apns-collapse-id request header when it sends the message to APNs.
      * 
      * @param collapseId
-     *        Multiple notifications with the same collapse identifier are displayed to the user as a single
-     *        notification. The value of this key must not exceed 64 bytes.
+     *        An ID that, if assigned to multiple messages, causes APNs to coalesce the messages into a single push
+     *        notification instead of delivering each message individually. The value must not exceed 64 bytes. Amazon
+     *        Pinpoint uses this value to set the apns-collapse-id request header when it sends the message to APNs.
      */
 
     public void setCollapseId(String collapseId) {
@@ -326,11 +344,13 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Multiple notifications with the same collapse identifier are displayed to the user as a single notification. The
-     * value of this key must not exceed 64 bytes.
+     * An ID that, if assigned to multiple messages, causes APNs to coalesce the messages into a single push
+     * notification instead of delivering each message individually. The value must not exceed 64 bytes. Amazon Pinpoint
+     * uses this value to set the apns-collapse-id request header when it sends the message to APNs.
      * 
-     * @return Multiple notifications with the same collapse identifier are displayed to the user as a single
-     *         notification. The value of this key must not exceed 64 bytes.
+     * @return An ID that, if assigned to multiple messages, causes APNs to coalesce the messages into a single push
+     *         notification instead of delivering each message individually. The value must not exceed 64 bytes. Amazon
+     *         Pinpoint uses this value to set the apns-collapse-id request header when it sends the message to APNs.
      */
 
     public String getCollapseId() {
@@ -338,12 +358,14 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Multiple notifications with the same collapse identifier are displayed to the user as a single notification. The
-     * value of this key must not exceed 64 bytes.
+     * An ID that, if assigned to multiple messages, causes APNs to coalesce the messages into a single push
+     * notification instead of delivering each message individually. The value must not exceed 64 bytes. Amazon Pinpoint
+     * uses this value to set the apns-collapse-id request header when it sends the message to APNs.
      * 
      * @param collapseId
-     *        Multiple notifications with the same collapse identifier are displayed to the user as a single
-     *        notification. The value of this key must not exceed 64 bytes.
+     *        An ID that, if assigned to multiple messages, causes APNs to coalesce the messages into a single push
+     *        notification instead of delivering each message individually. The value must not exceed 64 bytes. Amazon
+     *        Pinpoint uses this value to set the apns-collapse-id request header when it sends the message to APNs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -482,10 +504,38 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Is this a transaction priority message or lower priority.
+     * The message priority. Amazon Pinpoint uses this value to set the apns-priority request header when it sends the
+     * message to APNs. Accepts the following values:
+     * 
+     * "5" - Low priority. Messages might be delayed, delivered in groups, and throttled.
+     * 
+     * "10" - High priority. Messages are sent immediately. High priority messages must cause an alert, sound, or badge
+     * on the receiving device.
+     * 
+     * The default value is "10".
+     * 
+     * The equivalent values for FCM or GCM messages are "normal" and "high". Amazon Pinpoint accepts these values for
+     * APNs messages and converts them.
+     * 
+     * For more information about the apns-priority parameter, see Communicating with APNs in the APNs Local and Remote
+     * Notification Programming Guide.
      * 
      * @param priority
-     *        Is this a transaction priority message or lower priority.
+     *        The message priority. Amazon Pinpoint uses this value to set the apns-priority request header when it
+     *        sends the message to APNs. Accepts the following values:
+     * 
+     *        "5" - Low priority. Messages might be delayed, delivered in groups, and throttled.
+     * 
+     *        "10" - High priority. Messages are sent immediately. High priority messages must cause an alert, sound, or
+     *        badge on the receiving device.
+     * 
+     *        The default value is "10".
+     * 
+     *        The equivalent values for FCM or GCM messages are "normal" and "high". Amazon Pinpoint accepts these
+     *        values for APNs messages and converts them.
+     * 
+     *        For more information about the apns-priority parameter, see Communicating with APNs in the APNs Local and
+     *        Remote Notification Programming Guide.
      */
 
     public void setPriority(String priority) {
@@ -493,9 +543,37 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Is this a transaction priority message or lower priority.
+     * The message priority. Amazon Pinpoint uses this value to set the apns-priority request header when it sends the
+     * message to APNs. Accepts the following values:
      * 
-     * @return Is this a transaction priority message or lower priority.
+     * "5" - Low priority. Messages might be delayed, delivered in groups, and throttled.
+     * 
+     * "10" - High priority. Messages are sent immediately. High priority messages must cause an alert, sound, or badge
+     * on the receiving device.
+     * 
+     * The default value is "10".
+     * 
+     * The equivalent values for FCM or GCM messages are "normal" and "high". Amazon Pinpoint accepts these values for
+     * APNs messages and converts them.
+     * 
+     * For more information about the apns-priority parameter, see Communicating with APNs in the APNs Local and Remote
+     * Notification Programming Guide.
+     * 
+     * @return The message priority. Amazon Pinpoint uses this value to set the apns-priority request header when it
+     *         sends the message to APNs. Accepts the following values:
+     * 
+     *         "5" - Low priority. Messages might be delayed, delivered in groups, and throttled.
+     * 
+     *         "10" - High priority. Messages are sent immediately. High priority messages must cause an alert, sound,
+     *         or badge on the receiving device.
+     * 
+     *         The default value is "10".
+     * 
+     *         The equivalent values for FCM or GCM messages are "normal" and "high". Amazon Pinpoint accepts these
+     *         values for APNs messages and converts them.
+     * 
+     *         For more information about the apns-priority parameter, see Communicating with APNs in the APNs Local and
+     *         Remote Notification Programming Guide.
      */
 
     public String getPriority() {
@@ -503,10 +581,38 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Is this a transaction priority message or lower priority.
+     * The message priority. Amazon Pinpoint uses this value to set the apns-priority request header when it sends the
+     * message to APNs. Accepts the following values:
+     * 
+     * "5" - Low priority. Messages might be delayed, delivered in groups, and throttled.
+     * 
+     * "10" - High priority. Messages are sent immediately. High priority messages must cause an alert, sound, or badge
+     * on the receiving device.
+     * 
+     * The default value is "10".
+     * 
+     * The equivalent values for FCM or GCM messages are "normal" and "high". Amazon Pinpoint accepts these values for
+     * APNs messages and converts them.
+     * 
+     * For more information about the apns-priority parameter, see Communicating with APNs in the APNs Local and Remote
+     * Notification Programming Guide.
      * 
      * @param priority
-     *        Is this a transaction priority message or lower priority.
+     *        The message priority. Amazon Pinpoint uses this value to set the apns-priority request header when it
+     *        sends the message to APNs. Accepts the following values:
+     * 
+     *        "5" - Low priority. Messages might be delayed, delivered in groups, and throttled.
+     * 
+     *        "10" - High priority. Messages are sent immediately. High priority messages must cause an alert, sound, or
+     *        badge on the receiving device.
+     * 
+     *        The default value is "10".
+     * 
+     *        The equivalent values for FCM or GCM messages are "normal" and "high". Amazon Pinpoint accepts these
+     *        values for APNs messages and converts them.
+     * 
+     *        For more information about the apns-priority parameter, see Communicating with APNs in the APNs Local and
+     *        Remote Notification Programming Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -746,16 +852,14 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * This parameter specifies how long (in seconds) the message should be kept if APNS is unable to deliver the
-     * notification the first time. If the value is 0, APNS treats the notification as if it expires immediately and
-     * does not store the notification or attempt to redeliver it. This value is converted to the expiration field when
-     * sent to APNS
+     * The length of time (in seconds) that APNs stores and attempts to deliver the message. If the value is 0, APNs
+     * does not store the message or attempt to deliver it more than once. Amazon Pinpoint uses this value to set the
+     * apns-expiration request header when it sends the message to APNs.
      * 
      * @param timeToLive
-     *        This parameter specifies how long (in seconds) the message should be kept if APNS is unable to deliver the
-     *        notification the first time. If the value is 0, APNS treats the notification as if it expires immediately
-     *        and does not store the notification or attempt to redeliver it. This value is converted to the expiration
-     *        field when sent to APNS
+     *        The length of time (in seconds) that APNs stores and attempts to deliver the message. If the value is 0,
+     *        APNs does not store the message or attempt to deliver it more than once. Amazon Pinpoint uses this value
+     *        to set the apns-expiration request header when it sends the message to APNs.
      */
 
     public void setTimeToLive(Integer timeToLive) {
@@ -763,15 +867,13 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * This parameter specifies how long (in seconds) the message should be kept if APNS is unable to deliver the
-     * notification the first time. If the value is 0, APNS treats the notification as if it expires immediately and
-     * does not store the notification or attempt to redeliver it. This value is converted to the expiration field when
-     * sent to APNS
+     * The length of time (in seconds) that APNs stores and attempts to deliver the message. If the value is 0, APNs
+     * does not store the message or attempt to deliver it more than once. Amazon Pinpoint uses this value to set the
+     * apns-expiration request header when it sends the message to APNs.
      * 
-     * @return This parameter specifies how long (in seconds) the message should be kept if APNS is unable to deliver
-     *         the notification the first time. If the value is 0, APNS treats the notification as if it expires
-     *         immediately and does not store the notification or attempt to redeliver it. This value is converted to
-     *         the expiration field when sent to APNS
+     * @return The length of time (in seconds) that APNs stores and attempts to deliver the message. If the value is 0,
+     *         APNs does not store the message or attempt to deliver it more than once. Amazon Pinpoint uses this value
+     *         to set the apns-expiration request header when it sends the message to APNs.
      */
 
     public Integer getTimeToLive() {
@@ -779,16 +881,14 @@ public class APNSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * This parameter specifies how long (in seconds) the message should be kept if APNS is unable to deliver the
-     * notification the first time. If the value is 0, APNS treats the notification as if it expires immediately and
-     * does not store the notification or attempt to redeliver it. This value is converted to the expiration field when
-     * sent to APNS
+     * The length of time (in seconds) that APNs stores and attempts to deliver the message. If the value is 0, APNs
+     * does not store the message or attempt to deliver it more than once. Amazon Pinpoint uses this value to set the
+     * apns-expiration request header when it sends the message to APNs.
      * 
      * @param timeToLive
-     *        This parameter specifies how long (in seconds) the message should be kept if APNS is unable to deliver the
-     *        notification the first time. If the value is 0, APNS treats the notification as if it expires immediately
-     *        and does not store the notification or attempt to redeliver it. This value is converted to the expiration
-     *        field when sent to APNS
+     *        The length of time (in seconds) that APNs stores and attempts to deliver the message. If the value is 0,
+     *        APNs does not store the message or attempt to deliver it more than once. Amazon Pinpoint uses this value
+     *        to set the apns-expiration request header when it sends the message to APNs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

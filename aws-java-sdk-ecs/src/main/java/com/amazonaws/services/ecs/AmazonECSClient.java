@@ -2005,8 +2005,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * @throws AccessDeniedException
      *         You do not have authorization to perform the requested action.
      * @throws BlockedException
-     *         Your AWS account has been blocked. <a href="http://aws.amazon.com/contact-us/">Contact AWS Customer
-     *         Support</a> for more information.
+     *         Your AWS account has been blocked. <a href="http://aws.amazon.com/contact-us/">Contact AWS Support</a>
+     *         for more information.
      * @sample AmazonECS.RunTask
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask" target="_top">AWS API
      *      Documentation</a>

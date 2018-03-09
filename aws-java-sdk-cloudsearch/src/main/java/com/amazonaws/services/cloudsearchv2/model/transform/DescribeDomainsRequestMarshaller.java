@@ -40,9 +40,10 @@ public class DescribeDomainsRequestMarshaller implements Marshaller<Request<Desc
         request.addParameter("Version", "2013-01-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> domainNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeDomainsRequest
-                .getDomainNames();
-        if (!domainNamesList.isEmpty() || !domainNamesList.isAutoConstruct()) {
+        if (!describeDomainsRequest.getDomainNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeDomainsRequest.getDomainNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> domainNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeDomainsRequest
+                    .getDomainNames();
             int domainNamesListIndex = 1;
 
             for (String domainNamesListValue : domainNamesList) {

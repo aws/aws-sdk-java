@@ -48,9 +48,10 @@ public class AddPermissionRequestMarshaller implements Marshaller<Request<AddPer
             request.addParameter("Label", StringUtils.fromString(addPermissionRequest.getLabel()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> aWSAccountIdsList = (com.amazonaws.internal.SdkInternalList<String>) addPermissionRequest
-                .getAWSAccountIds();
-        if (!aWSAccountIdsList.isEmpty() || !aWSAccountIdsList.isAutoConstruct()) {
+        if (!addPermissionRequest.getAWSAccountIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) addPermissionRequest.getAWSAccountIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> aWSAccountIdsList = (com.amazonaws.internal.SdkInternalList<String>) addPermissionRequest
+                    .getAWSAccountIds();
             int aWSAccountIdsListIndex = 1;
 
             for (String aWSAccountIdsListValue : aWSAccountIdsList) {
@@ -61,8 +62,10 @@ public class AddPermissionRequestMarshaller implements Marshaller<Request<AddPer
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> actionNamesList = (com.amazonaws.internal.SdkInternalList<String>) addPermissionRequest.getActionNames();
-        if (!actionNamesList.isEmpty() || !actionNamesList.isAutoConstruct()) {
+        if (!addPermissionRequest.getActionNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) addPermissionRequest.getActionNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> actionNamesList = (com.amazonaws.internal.SdkInternalList<String>) addPermissionRequest
+                    .getActionNames();
             int actionNamesListIndex = 1;
 
             for (String actionNamesListValue : actionNamesList) {

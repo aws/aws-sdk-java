@@ -45,9 +45,10 @@ public class ReorderReceiptRuleSetRequestMarshaller implements Marshaller<Reques
             request.addParameter("RuleSetName", StringUtils.fromString(reorderReceiptRuleSetRequest.getRuleSetName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> ruleNamesList = (com.amazonaws.internal.SdkInternalList<String>) reorderReceiptRuleSetRequest
-                .getRuleNames();
-        if (!ruleNamesList.isEmpty() || !ruleNamesList.isAutoConstruct()) {
+        if (!reorderReceiptRuleSetRequest.getRuleNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) reorderReceiptRuleSetRequest.getRuleNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> ruleNamesList = (com.amazonaws.internal.SdkInternalList<String>) reorderReceiptRuleSetRequest
+                    .getRuleNames();
             int ruleNamesListIndex = 1;
 
             for (String ruleNamesListValue : ruleNamesList) {

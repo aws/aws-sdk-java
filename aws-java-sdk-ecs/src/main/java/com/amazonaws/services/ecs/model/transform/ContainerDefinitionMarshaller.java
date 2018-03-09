@@ -83,6 +83,8 @@ public class ContainerDefinitionMarshaller {
             .marshallLocationName("ulimits").build();
     private static final MarshallingInfo<StructuredPojo> LOGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> HEALTHCHECK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("healthCheck").build();
 
     private static final ContainerDefinitionMarshaller instance = new ContainerDefinitionMarshaller();
 
@@ -127,6 +129,7 @@ public class ContainerDefinitionMarshaller {
             protocolMarshaller.marshall(containerDefinition.getDockerLabels(), DOCKERLABELS_BINDING);
             protocolMarshaller.marshall(containerDefinition.getUlimits(), ULIMITS_BINDING);
             protocolMarshaller.marshall(containerDefinition.getLogConfiguration(), LOGCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(containerDefinition.getHealthCheck(), HEALTHCHECK_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

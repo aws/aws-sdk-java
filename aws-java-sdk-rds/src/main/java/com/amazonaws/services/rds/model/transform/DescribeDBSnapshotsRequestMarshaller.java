@@ -52,8 +52,10 @@ public class DescribeDBSnapshotsRequestMarshaller implements Marshaller<Request<
             request.addParameter("SnapshotType", StringUtils.fromString(describeDBSnapshotsRequest.getSnapshotType()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeDBSnapshotsRequest.getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        if (!describeDBSnapshotsRequest.getFilters().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Filter>) describeDBSnapshotsRequest.getFilters()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeDBSnapshotsRequest
+                    .getFilters();
             int filtersListIndex = 1;
 
             for (Filter filtersListValue : filtersList) {
@@ -62,8 +64,9 @@ public class DescribeDBSnapshotsRequestMarshaller implements Marshaller<Request<
                     request.addParameter("Filters.Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                if (!filtersListValue.getValues().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
                     int valuesListIndex = 1;
 
                     for (String valuesListValue : valuesList) {

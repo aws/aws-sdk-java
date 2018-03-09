@@ -41,9 +41,10 @@ public class DescribeScalingActivitiesRequestMarshaller implements Marshaller<Re
         request.addParameter("Version", "2011-01-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> activityIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeScalingActivitiesRequest
-                .getActivityIds();
-        if (!activityIdsList.isEmpty() || !activityIdsList.isAutoConstruct()) {
+        if (!describeScalingActivitiesRequest.getActivityIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeScalingActivitiesRequest.getActivityIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> activityIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeScalingActivitiesRequest
+                    .getActivityIds();
             int activityIdsListIndex = 1;
 
             for (String activityIdsListValue : activityIdsList) {

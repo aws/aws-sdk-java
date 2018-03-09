@@ -40,9 +40,10 @@ public class RemoveTagsRequestMarshaller implements Marshaller<Request<RemoveTag
         request.addParameter("Version", "2012-06-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> loadBalancerNamesList = (com.amazonaws.internal.SdkInternalList<String>) removeTagsRequest
-                .getLoadBalancerNames();
-        if (!loadBalancerNamesList.isEmpty() || !loadBalancerNamesList.isAutoConstruct()) {
+        if (!removeTagsRequest.getLoadBalancerNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) removeTagsRequest.getLoadBalancerNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> loadBalancerNamesList = (com.amazonaws.internal.SdkInternalList<String>) removeTagsRequest
+                    .getLoadBalancerNames();
             int loadBalancerNamesListIndex = 1;
 
             for (String loadBalancerNamesListValue : loadBalancerNamesList) {
@@ -53,8 +54,8 @@ public class RemoveTagsRequestMarshaller implements Marshaller<Request<RemoveTag
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<TagKeyOnly> tagsList = (com.amazonaws.internal.SdkInternalList<TagKeyOnly>) removeTagsRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!removeTagsRequest.getTags().isEmpty() || !((com.amazonaws.internal.SdkInternalList<TagKeyOnly>) removeTagsRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<TagKeyOnly> tagsList = (com.amazonaws.internal.SdkInternalList<TagKeyOnly>) removeTagsRequest.getTags();
             int tagsListIndex = 1;
 
             for (TagKeyOnly tagsListValue : tagsList) {

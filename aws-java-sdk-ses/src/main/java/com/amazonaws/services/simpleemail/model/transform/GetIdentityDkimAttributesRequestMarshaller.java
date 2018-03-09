@@ -41,9 +41,10 @@ public class GetIdentityDkimAttributesRequestMarshaller implements Marshaller<Re
         request.addParameter("Version", "2010-12-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> identitiesList = (com.amazonaws.internal.SdkInternalList<String>) getIdentityDkimAttributesRequest
-                .getIdentities();
-        if (!identitiesList.isEmpty() || !identitiesList.isAutoConstruct()) {
+        if (!getIdentityDkimAttributesRequest.getIdentities().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) getIdentityDkimAttributesRequest.getIdentities()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> identitiesList = (com.amazonaws.internal.SdkInternalList<String>) getIdentityDkimAttributesRequest
+                    .getIdentities();
             int identitiesListIndex = 1;
 
             for (String identitiesListValue : identitiesList) {

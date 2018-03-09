@@ -48,6 +48,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
     }
 
     @Override
+    public CreateExportJobResult createExportJob(CreateExportJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateImportJobResult createImportJob(CreateImportJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -208,6 +213,16 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
     }
 
     @Override
+    public GetExportJobResult getExportJob(GetExportJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetExportJobsResult getExportJobs(GetExportJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetGcmChannelResult getGcmChannel(GetGcmChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -224,6 +239,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
 
     @Override
     public GetSegmentResult getSegment(GetSegmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetSegmentExportJobsResult getSegmentExportJobs(GetSegmentExportJobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

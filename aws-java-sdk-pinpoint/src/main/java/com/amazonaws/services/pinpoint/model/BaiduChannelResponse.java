@@ -34,7 +34,11 @@ public class BaiduChannelResponse implements Serializable, Cloneable, Structured
     private String credential;
     /** If the channel is enabled for sending messages. */
     private Boolean enabled;
-    /** If the channel is registered with a credential for authentication. */
+    /**
+     * Indicates whether the channel is configured with Baidu Cloud Push credentials. Amazon Pinpoint uses your
+     * credentials to authenticate push notifications with Baidu Cloud Push. Provide your credentials by setting the
+     * ApiKey and SecretKey attributes.
+     */
     private Boolean hasCredential;
     /** Channel ID. Not used, only for backwards compatibility. */
     private String id;
@@ -196,10 +200,14 @@ public class BaiduChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Indicates whether the channel is configured with Baidu Cloud Push credentials. Amazon Pinpoint uses your
+     * credentials to authenticate push notifications with Baidu Cloud Push. Provide your credentials by setting the
+     * ApiKey and SecretKey attributes.
      * 
      * @param hasCredential
-     *        If the channel is registered with a credential for authentication.
+     *        Indicates whether the channel is configured with Baidu Cloud Push credentials. Amazon Pinpoint uses your
+     *        credentials to authenticate push notifications with Baidu Cloud Push. Provide your credentials by setting
+     *        the ApiKey and SecretKey attributes.
      */
 
     public void setHasCredential(Boolean hasCredential) {
@@ -207,9 +215,13 @@ public class BaiduChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Indicates whether the channel is configured with Baidu Cloud Push credentials. Amazon Pinpoint uses your
+     * credentials to authenticate push notifications with Baidu Cloud Push. Provide your credentials by setting the
+     * ApiKey and SecretKey attributes.
      * 
-     * @return If the channel is registered with a credential for authentication.
+     * @return Indicates whether the channel is configured with Baidu Cloud Push credentials. Amazon Pinpoint uses your
+     *         credentials to authenticate push notifications with Baidu Cloud Push. Provide your credentials by setting
+     *         the ApiKey and SecretKey attributes.
      */
 
     public Boolean getHasCredential() {
@@ -217,10 +229,14 @@ public class BaiduChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Indicates whether the channel is configured with Baidu Cloud Push credentials. Amazon Pinpoint uses your
+     * credentials to authenticate push notifications with Baidu Cloud Push. Provide your credentials by setting the
+     * ApiKey and SecretKey attributes.
      * 
      * @param hasCredential
-     *        If the channel is registered with a credential for authentication.
+     *        Indicates whether the channel is configured with Baidu Cloud Push credentials. Amazon Pinpoint uses your
+     *        credentials to authenticate push notifications with Baidu Cloud Push. Provide your credentials by setting
+     *        the ApiKey and SecretKey attributes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -230,9 +246,13 @@ public class BaiduChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Indicates whether the channel is configured with Baidu Cloud Push credentials. Amazon Pinpoint uses your
+     * credentials to authenticate push notifications with Baidu Cloud Push. Provide your credentials by setting the
+     * ApiKey and SecretKey attributes.
      * 
-     * @return If the channel is registered with a credential for authentication.
+     * @return Indicates whether the channel is configured with Baidu Cloud Push credentials. Amazon Pinpoint uses your
+     *         credentials to authenticate push notifications with Baidu Cloud Push. Provide your credentials by setting
+     *         the ApiKey and SecretKey attributes.
      */
 
     public Boolean isHasCredential() {

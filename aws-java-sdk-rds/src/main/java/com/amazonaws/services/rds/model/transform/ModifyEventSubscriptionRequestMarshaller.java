@@ -52,9 +52,10 @@ public class ModifyEventSubscriptionRequestMarshaller implements Marshaller<Requ
             request.addParameter("SourceType", StringUtils.fromString(modifyEventSubscriptionRequest.getSourceType()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> eventCategoriesList = (com.amazonaws.internal.SdkInternalList<String>) modifyEventSubscriptionRequest
-                .getEventCategories();
-        if (!eventCategoriesList.isEmpty() || !eventCategoriesList.isAutoConstruct()) {
+        if (!modifyEventSubscriptionRequest.getEventCategories().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) modifyEventSubscriptionRequest.getEventCategories()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> eventCategoriesList = (com.amazonaws.internal.SdkInternalList<String>) modifyEventSubscriptionRequest
+                    .getEventCategories();
             int eventCategoriesListIndex = 1;
 
             for (String eventCategoriesListValue : eventCategoriesList) {

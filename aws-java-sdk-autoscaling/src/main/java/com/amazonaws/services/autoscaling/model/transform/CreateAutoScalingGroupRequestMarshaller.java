@@ -84,9 +84,10 @@ public class CreateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
             request.addParameter("DefaultCooldown", StringUtils.fromInteger(createAutoScalingGroupRequest.getDefaultCooldown()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> availabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) createAutoScalingGroupRequest
-                .getAvailabilityZones();
-        if (!availabilityZonesList.isEmpty() || !availabilityZonesList.isAutoConstruct()) {
+        if (!createAutoScalingGroupRequest.getAvailabilityZones().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createAutoScalingGroupRequest.getAvailabilityZones()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> availabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) createAutoScalingGroupRequest
+                    .getAvailabilityZones();
             int availabilityZonesListIndex = 1;
 
             for (String availabilityZonesListValue : availabilityZonesList) {
@@ -97,9 +98,10 @@ public class CreateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> loadBalancerNamesList = (com.amazonaws.internal.SdkInternalList<String>) createAutoScalingGroupRequest
-                .getLoadBalancerNames();
-        if (!loadBalancerNamesList.isEmpty() || !loadBalancerNamesList.isAutoConstruct()) {
+        if (!createAutoScalingGroupRequest.getLoadBalancerNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createAutoScalingGroupRequest.getLoadBalancerNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> loadBalancerNamesList = (com.amazonaws.internal.SdkInternalList<String>) createAutoScalingGroupRequest
+                    .getLoadBalancerNames();
             int loadBalancerNamesListIndex = 1;
 
             for (String loadBalancerNamesListValue : loadBalancerNamesList) {
@@ -110,9 +112,10 @@ public class CreateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> targetGroupARNsList = (com.amazonaws.internal.SdkInternalList<String>) createAutoScalingGroupRequest
-                .getTargetGroupARNs();
-        if (!targetGroupARNsList.isEmpty() || !targetGroupARNsList.isAutoConstruct()) {
+        if (!createAutoScalingGroupRequest.getTargetGroupARNs().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createAutoScalingGroupRequest.getTargetGroupARNs()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> targetGroupARNsList = (com.amazonaws.internal.SdkInternalList<String>) createAutoScalingGroupRequest
+                    .getTargetGroupARNs();
             int targetGroupARNsListIndex = 1;
 
             for (String targetGroupARNsListValue : targetGroupARNsList) {
@@ -139,9 +142,10 @@ public class CreateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
             request.addParameter("VPCZoneIdentifier", StringUtils.fromString(createAutoScalingGroupRequest.getVPCZoneIdentifier()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> terminationPoliciesList = (com.amazonaws.internal.SdkInternalList<String>) createAutoScalingGroupRequest
-                .getTerminationPolicies();
-        if (!terminationPoliciesList.isEmpty() || !terminationPoliciesList.isAutoConstruct()) {
+        if (!createAutoScalingGroupRequest.getTerminationPolicies().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createAutoScalingGroupRequest.getTerminationPolicies()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> terminationPoliciesList = (com.amazonaws.internal.SdkInternalList<String>) createAutoScalingGroupRequest
+                    .getTerminationPolicies();
             int terminationPoliciesListIndex = 1;
 
             for (String terminationPoliciesListValue : terminationPoliciesList) {
@@ -157,9 +161,11 @@ public class CreateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
                     StringUtils.fromBoolean(createAutoScalingGroupRequest.getNewInstancesProtectedFromScaleIn()));
         }
 
-        com.amazonaws.internal.SdkInternalList<LifecycleHookSpecification> lifecycleHookSpecificationListList = (com.amazonaws.internal.SdkInternalList<LifecycleHookSpecification>) createAutoScalingGroupRequest
-                .getLifecycleHookSpecificationList();
-        if (!lifecycleHookSpecificationListList.isEmpty() || !lifecycleHookSpecificationListList.isAutoConstruct()) {
+        if (!createAutoScalingGroupRequest.getLifecycleHookSpecificationList().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<LifecycleHookSpecification>) createAutoScalingGroupRequest.getLifecycleHookSpecificationList())
+                        .isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<LifecycleHookSpecification> lifecycleHookSpecificationListList = (com.amazonaws.internal.SdkInternalList<LifecycleHookSpecification>) createAutoScalingGroupRequest
+                    .getLifecycleHookSpecificationList();
             int lifecycleHookSpecificationListListIndex = 1;
 
             for (LifecycleHookSpecification lifecycleHookSpecificationListListValue : lifecycleHookSpecificationListList) {
@@ -202,8 +208,9 @@ public class CreateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createAutoScalingGroupRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!createAutoScalingGroupRequest.getTags().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Tag>) createAutoScalingGroupRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createAutoScalingGroupRequest.getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {

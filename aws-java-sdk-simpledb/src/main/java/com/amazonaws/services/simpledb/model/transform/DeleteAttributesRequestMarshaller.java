@@ -48,9 +48,10 @@ public class DeleteAttributesRequestMarshaller implements Marshaller<Request<Del
             request.addParameter("ItemName", StringUtils.fromString(deleteAttributesRequest.getItemName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Attribute> attributesList = (com.amazonaws.internal.SdkInternalList<Attribute>) deleteAttributesRequest
-                .getAttributes();
-        if (!attributesList.isEmpty() || !attributesList.isAutoConstruct()) {
+        if (!deleteAttributesRequest.getAttributes().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Attribute>) deleteAttributesRequest.getAttributes()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Attribute> attributesList = (com.amazonaws.internal.SdkInternalList<Attribute>) deleteAttributesRequest
+                    .getAttributes();
             int attributesListIndex = 1;
 
             for (Attribute attributesListValue : attributesList) {

@@ -56,9 +56,10 @@ public class ModifyClusterRequestMarshaller implements Marshaller<Request<Modify
             request.addParameter("NumberOfNodes", StringUtils.fromInteger(modifyClusterRequest.getNumberOfNodes()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> clusterSecurityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) modifyClusterRequest
-                .getClusterSecurityGroups();
-        if (!clusterSecurityGroupsList.isEmpty() || !clusterSecurityGroupsList.isAutoConstruct()) {
+        if (!modifyClusterRequest.getClusterSecurityGroups().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) modifyClusterRequest.getClusterSecurityGroups()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> clusterSecurityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) modifyClusterRequest
+                    .getClusterSecurityGroups();
             int clusterSecurityGroupsListIndex = 1;
 
             for (String clusterSecurityGroupsListValue : clusterSecurityGroupsList) {
@@ -70,9 +71,10 @@ public class ModifyClusterRequestMarshaller implements Marshaller<Request<Modify
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyClusterRequest
-                .getVpcSecurityGroupIds();
-        if (!vpcSecurityGroupIdsList.isEmpty() || !vpcSecurityGroupIdsList.isAutoConstruct()) {
+        if (!modifyClusterRequest.getVpcSecurityGroupIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) modifyClusterRequest.getVpcSecurityGroupIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyClusterRequest
+                    .getVpcSecurityGroupIds();
             int vpcSecurityGroupIdsListIndex = 1;
 
             for (String vpcSecurityGroupIdsListValue : vpcSecurityGroupIdsList) {

@@ -26,6 +26,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class WriteApplicationSettingsRequest implements Serializable, Cloneable, StructuredPojo {
 
+    /** Default campaign hook information. */
+    private CampaignHook campaignHook;
     /**
      * The default campaign limits for the app. These limits apply to each campaign for the app, unless the campaign
      * overrides the default with limits of its own.
@@ -36,6 +38,40 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
      * campaign overrides the default with a quiet time of its own.
      */
     private QuietTime quietTime;
+
+    /**
+     * Default campaign hook information.
+     * 
+     * @param campaignHook
+     *        Default campaign hook information.
+     */
+
+    public void setCampaignHook(CampaignHook campaignHook) {
+        this.campaignHook = campaignHook;
+    }
+
+    /**
+     * Default campaign hook information.
+     * 
+     * @return Default campaign hook information.
+     */
+
+    public CampaignHook getCampaignHook() {
+        return this.campaignHook;
+    }
+
+    /**
+     * Default campaign hook information.
+     * 
+     * @param campaignHook
+     *        Default campaign hook information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WriteApplicationSettingsRequest withCampaignHook(CampaignHook campaignHook) {
+        setCampaignHook(campaignHook);
+        return this;
+    }
 
     /**
      * The default campaign limits for the app. These limits apply to each campaign for the app, unless the campaign
@@ -128,6 +164,8 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCampaignHook() != null)
+            sb.append("CampaignHook: ").append(getCampaignHook()).append(",");
         if (getLimits() != null)
             sb.append("Limits: ").append(getLimits()).append(",");
         if (getQuietTime() != null)
@@ -146,6 +184,10 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
         if (obj instanceof WriteApplicationSettingsRequest == false)
             return false;
         WriteApplicationSettingsRequest other = (WriteApplicationSettingsRequest) obj;
+        if (other.getCampaignHook() == null ^ this.getCampaignHook() == null)
+            return false;
+        if (other.getCampaignHook() != null && other.getCampaignHook().equals(this.getCampaignHook()) == false)
+            return false;
         if (other.getLimits() == null ^ this.getLimits() == null)
             return false;
         if (other.getLimits() != null && other.getLimits().equals(this.getLimits()) == false)
@@ -162,6 +204,7 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCampaignHook() == null) ? 0 : getCampaignHook().hashCode());
         hashCode = prime * hashCode + ((getLimits() == null) ? 0 : getLimits().hashCode());
         hashCode = prime * hashCode + ((getQuietTime() == null) ? 0 : getQuietTime().hashCode());
         return hashCode;

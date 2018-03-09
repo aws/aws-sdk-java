@@ -44,9 +44,10 @@ public class RebootCacheClusterRequestMarshaller implements Marshaller<Request<R
             request.addParameter("CacheClusterId", StringUtils.fromString(rebootCacheClusterRequest.getCacheClusterId()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> cacheNodeIdsToRebootList = (com.amazonaws.internal.SdkInternalList<String>) rebootCacheClusterRequest
-                .getCacheNodeIdsToReboot();
-        if (!cacheNodeIdsToRebootList.isEmpty() || !cacheNodeIdsToRebootList.isAutoConstruct()) {
+        if (!rebootCacheClusterRequest.getCacheNodeIdsToReboot().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) rebootCacheClusterRequest.getCacheNodeIdsToReboot()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> cacheNodeIdsToRebootList = (com.amazonaws.internal.SdkInternalList<String>) rebootCacheClusterRequest
+                    .getCacheNodeIdsToReboot();
             int cacheNodeIdsToRebootListIndex = 1;
 
             for (String cacheNodeIdsToRebootListValue : cacheNodeIdsToRebootList) {

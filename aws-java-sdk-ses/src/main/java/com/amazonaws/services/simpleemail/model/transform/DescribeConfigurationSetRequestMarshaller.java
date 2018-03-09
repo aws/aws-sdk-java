@@ -45,9 +45,10 @@ public class DescribeConfigurationSetRequestMarshaller implements Marshaller<Req
             request.addParameter("ConfigurationSetName", StringUtils.fromString(describeConfigurationSetRequest.getConfigurationSetName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> configurationSetAttributeNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeConfigurationSetRequest
-                .getConfigurationSetAttributeNames();
-        if (!configurationSetAttributeNamesList.isEmpty() || !configurationSetAttributeNamesList.isAutoConstruct()) {
+        if (!describeConfigurationSetRequest.getConfigurationSetAttributeNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeConfigurationSetRequest.getConfigurationSetAttributeNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> configurationSetAttributeNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeConfigurationSetRequest
+                    .getConfigurationSetAttributeNames();
             int configurationSetAttributeNamesListIndex = 1;
 
             for (String configurationSetAttributeNamesListValue : configurationSetAttributeNamesList) {

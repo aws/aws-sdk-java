@@ -391,6 +391,65 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
     }
 
     /**
+     * Creates an export job.
+     * 
+     * @param createExportJobRequest
+     * @return Result of the CreateExportJob operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.CreateExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateExportJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateExportJobResult createExportJob(CreateExportJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateExportJob(request);
+    }
+
+    @SdkInternalApi
+    final CreateExportJobResult executeCreateExportJob(CreateExportJobRequest createExportJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createExportJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateExportJobRequest> request = null;
+        Response<CreateExportJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateExportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createExportJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateExportJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateExportJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Creates or updates an import job.
      * 
      * @param createImportJobRequest
@@ -1519,7 +1578,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
     }
 
     /**
-     * Get an APNS VoipSandbox channel
+     * Get an APNS VoIPSandbox channel
      * 
      * @param getApnsVoipSandboxChannelRequest
      * @return Result of the GetApnsVoipSandboxChannel operation returned by the service.
@@ -2291,6 +2350,124 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
     }
 
     /**
+     * Returns information about an export job.
+     * 
+     * @param getExportJobRequest
+     * @return Result of the GetExportJob operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.GetExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetExportJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetExportJobResult getExportJob(GetExportJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetExportJob(request);
+    }
+
+    @SdkInternalApi
+    final GetExportJobResult executeGetExportJob(GetExportJobRequest getExportJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getExportJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetExportJobRequest> request = null;
+        Response<GetExportJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetExportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getExportJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetExportJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetExportJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Returns information about your export jobs.
+     * 
+     * @param getExportJobsRequest
+     * @return Result of the GetExportJobs operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.GetExportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetExportJobs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetExportJobsResult getExportJobs(GetExportJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetExportJobs(request);
+    }
+
+    @SdkInternalApi
+    final GetExportJobsResult executeGetExportJobs(GetExportJobsRequest getExportJobsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getExportJobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetExportJobsRequest> request = null;
+        Response<GetExportJobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetExportJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getExportJobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetExportJobsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetExportJobsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Returns information about the GCM channel for an app.
      * 
      * @param getGcmChannelRequest
@@ -2516,6 +2693,65 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<GetSegmentResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSegmentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Returns a list of export jobs for a specific segment.
+     * 
+     * @param getSegmentExportJobsRequest
+     * @return Result of the GetSegmentExportJobs operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.GetSegmentExportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentExportJobs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetSegmentExportJobsResult getSegmentExportJobs(GetSegmentExportJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSegmentExportJobs(request);
+    }
+
+    @SdkInternalApi
+    final GetSegmentExportJobsResult executeGetSegmentExportJobs(GetSegmentExportJobsRequest getSegmentExportJobsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSegmentExportJobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSegmentExportJobsRequest> request = null;
+        Response<GetSegmentExportJobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSegmentExportJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSegmentExportJobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSegmentExportJobsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSegmentExportJobsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

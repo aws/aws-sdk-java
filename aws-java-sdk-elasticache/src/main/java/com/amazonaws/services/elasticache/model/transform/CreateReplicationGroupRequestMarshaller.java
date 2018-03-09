@@ -60,9 +60,10 @@ public class CreateReplicationGroupRequestMarshaller implements Marshaller<Reque
             request.addParameter("NumCacheClusters", StringUtils.fromInteger(createReplicationGroupRequest.getNumCacheClusters()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> preferredCacheClusterAZsList = (com.amazonaws.internal.SdkInternalList<String>) createReplicationGroupRequest
-                .getPreferredCacheClusterAZs();
-        if (!preferredCacheClusterAZsList.isEmpty() || !preferredCacheClusterAZsList.isAutoConstruct()) {
+        if (!createReplicationGroupRequest.getPreferredCacheClusterAZs().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createReplicationGroupRequest.getPreferredCacheClusterAZs()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> preferredCacheClusterAZsList = (com.amazonaws.internal.SdkInternalList<String>) createReplicationGroupRequest
+                    .getPreferredCacheClusterAZs();
             int preferredCacheClusterAZsListIndex = 1;
 
             for (String preferredCacheClusterAZsListValue : preferredCacheClusterAZsList) {
@@ -82,9 +83,11 @@ public class CreateReplicationGroupRequestMarshaller implements Marshaller<Reque
             request.addParameter("ReplicasPerNodeGroup", StringUtils.fromInteger(createReplicationGroupRequest.getReplicasPerNodeGroup()));
         }
 
-        com.amazonaws.internal.SdkInternalList<NodeGroupConfiguration> nodeGroupConfigurationList = (com.amazonaws.internal.SdkInternalList<NodeGroupConfiguration>) createReplicationGroupRequest
-                .getNodeGroupConfiguration();
-        if (!nodeGroupConfigurationList.isEmpty() || !nodeGroupConfigurationList.isAutoConstruct()) {
+        if (!createReplicationGroupRequest.getNodeGroupConfiguration().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<NodeGroupConfiguration>) createReplicationGroupRequest.getNodeGroupConfiguration())
+                        .isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<NodeGroupConfiguration> nodeGroupConfigurationList = (com.amazonaws.internal.SdkInternalList<NodeGroupConfiguration>) createReplicationGroupRequest
+                    .getNodeGroupConfiguration();
             int nodeGroupConfigurationListIndex = 1;
 
             for (NodeGroupConfiguration nodeGroupConfigurationListValue : nodeGroupConfigurationList) {
@@ -104,9 +107,10 @@ public class CreateReplicationGroupRequestMarshaller implements Marshaller<Reque
                             StringUtils.fromString(nodeGroupConfigurationListValue.getPrimaryAvailabilityZone()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> replicaAvailabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) nodeGroupConfigurationListValue
-                        .getReplicaAvailabilityZones();
-                if (!replicaAvailabilityZonesList.isEmpty() || !replicaAvailabilityZonesList.isAutoConstruct()) {
+                if (!nodeGroupConfigurationListValue.getReplicaAvailabilityZones().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) nodeGroupConfigurationListValue.getReplicaAvailabilityZones()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> replicaAvailabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) nodeGroupConfigurationListValue
+                            .getReplicaAvailabilityZones();
                     int replicaAvailabilityZonesListIndex = 1;
 
                     for (String replicaAvailabilityZonesListValue : replicaAvailabilityZonesList) {
@@ -142,9 +146,10 @@ public class CreateReplicationGroupRequestMarshaller implements Marshaller<Reque
             request.addParameter("CacheSubnetGroupName", StringUtils.fromString(createReplicationGroupRequest.getCacheSubnetGroupName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> cacheSecurityGroupNamesList = (com.amazonaws.internal.SdkInternalList<String>) createReplicationGroupRequest
-                .getCacheSecurityGroupNames();
-        if (!cacheSecurityGroupNamesList.isEmpty() || !cacheSecurityGroupNamesList.isAutoConstruct()) {
+        if (!createReplicationGroupRequest.getCacheSecurityGroupNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createReplicationGroupRequest.getCacheSecurityGroupNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> cacheSecurityGroupNamesList = (com.amazonaws.internal.SdkInternalList<String>) createReplicationGroupRequest
+                    .getCacheSecurityGroupNames();
             int cacheSecurityGroupNamesListIndex = 1;
 
             for (String cacheSecurityGroupNamesListValue : cacheSecurityGroupNamesList) {
@@ -156,9 +161,10 @@ public class CreateReplicationGroupRequestMarshaller implements Marshaller<Reque
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> securityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) createReplicationGroupRequest
-                .getSecurityGroupIds();
-        if (!securityGroupIdsList.isEmpty() || !securityGroupIdsList.isAutoConstruct()) {
+        if (!createReplicationGroupRequest.getSecurityGroupIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createReplicationGroupRequest.getSecurityGroupIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> securityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) createReplicationGroupRequest
+                    .getSecurityGroupIds();
             int securityGroupIdsListIndex = 1;
 
             for (String securityGroupIdsListValue : securityGroupIdsList) {
@@ -169,8 +175,9 @@ public class CreateReplicationGroupRequestMarshaller implements Marshaller<Reque
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createReplicationGroupRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!createReplicationGroupRequest.getTags().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Tag>) createReplicationGroupRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createReplicationGroupRequest.getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {
@@ -186,9 +193,10 @@ public class CreateReplicationGroupRequestMarshaller implements Marshaller<Reque
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> snapshotArnsList = (com.amazonaws.internal.SdkInternalList<String>) createReplicationGroupRequest
-                .getSnapshotArns();
-        if (!snapshotArnsList.isEmpty() || !snapshotArnsList.isAutoConstruct()) {
+        if (!createReplicationGroupRequest.getSnapshotArns().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createReplicationGroupRequest.getSnapshotArns()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> snapshotArnsList = (com.amazonaws.internal.SdkInternalList<String>) createReplicationGroupRequest
+                    .getSnapshotArns();
             int snapshotArnsListIndex = 1;
 
             for (String snapshotArnsListValue : snapshotArnsList) {

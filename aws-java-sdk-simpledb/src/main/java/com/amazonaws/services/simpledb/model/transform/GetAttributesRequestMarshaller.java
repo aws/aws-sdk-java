@@ -48,9 +48,10 @@ public class GetAttributesRequestMarshaller implements Marshaller<Request<GetAtt
             request.addParameter("ItemName", StringUtils.fromString(getAttributesRequest.getItemName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> attributeNamesList = (com.amazonaws.internal.SdkInternalList<String>) getAttributesRequest
-                .getAttributeNames();
-        if (!attributeNamesList.isEmpty() || !attributeNamesList.isAutoConstruct()) {
+        if (!getAttributesRequest.getAttributeNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) getAttributesRequest.getAttributeNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> attributeNamesList = (com.amazonaws.internal.SdkInternalList<String>) getAttributesRequest
+                    .getAttributeNames();
             int attributeNamesListIndex = 1;
 
             for (String attributeNamesListValue : attributeNamesList) {

@@ -44,12 +44,14 @@ public class DeleteStackRequestMarshaller implements Marshaller<Request<DeleteSt
             request.addParameter("StackName", StringUtils.fromString(deleteStackRequest.getStackName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> retainResourcesList = (com.amazonaws.internal.SdkInternalList<String>) deleteStackRequest
-                .getRetainResources();
-        if (retainResourcesList.isEmpty() && !retainResourcesList.isAutoConstruct()) {
+        if (deleteStackRequest.getRetainResources().isEmpty()
+                && !((com.amazonaws.internal.SdkInternalList<String>) deleteStackRequest.getRetainResources()).isAutoConstruct()) {
             request.addParameter("RetainResources", "");
         }
-        if (!retainResourcesList.isEmpty() || !retainResourcesList.isAutoConstruct()) {
+        if (!deleteStackRequest.getRetainResources().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) deleteStackRequest.getRetainResources()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> retainResourcesList = (com.amazonaws.internal.SdkInternalList<String>) deleteStackRequest
+                    .getRetainResources();
             int retainResourcesListIndex = 1;
 
             for (String retainResourcesListValue : retainResourcesList) {

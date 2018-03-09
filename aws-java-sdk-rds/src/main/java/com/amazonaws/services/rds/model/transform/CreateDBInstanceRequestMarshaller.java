@@ -68,9 +68,10 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
             request.addParameter("MasterUserPassword", StringUtils.fromString(createDBInstanceRequest.getMasterUserPassword()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> dBSecurityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) createDBInstanceRequest
-                .getDBSecurityGroups();
-        if (!dBSecurityGroupsList.isEmpty() || !dBSecurityGroupsList.isAutoConstruct()) {
+        if (!createDBInstanceRequest.getDBSecurityGroups().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createDBInstanceRequest.getDBSecurityGroups()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> dBSecurityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) createDBInstanceRequest
+                    .getDBSecurityGroups();
             int dBSecurityGroupsListIndex = 1;
 
             for (String dBSecurityGroupsListValue : dBSecurityGroupsList) {
@@ -81,9 +82,10 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) createDBInstanceRequest
-                .getVpcSecurityGroupIds();
-        if (!vpcSecurityGroupIdsList.isEmpty() || !vpcSecurityGroupIdsList.isAutoConstruct()) {
+        if (!createDBInstanceRequest.getVpcSecurityGroupIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createDBInstanceRequest.getVpcSecurityGroupIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) createDBInstanceRequest
+                    .getVpcSecurityGroupIds();
             int vpcSecurityGroupIdsListIndex = 1;
 
             for (String vpcSecurityGroupIdsListValue : vpcSecurityGroupIdsList) {
@@ -155,8 +157,9 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
             request.addParameter("PubliclyAccessible", StringUtils.fromBoolean(createDBInstanceRequest.getPubliclyAccessible()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createDBInstanceRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!createDBInstanceRequest.getTags().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Tag>) createDBInstanceRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createDBInstanceRequest.getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {
@@ -236,9 +239,10 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
             request.addParameter("PerformanceInsightsKMSKeyId", StringUtils.fromString(createDBInstanceRequest.getPerformanceInsightsKMSKeyId()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExportsList = (com.amazonaws.internal.SdkInternalList<String>) createDBInstanceRequest
-                .getEnableCloudwatchLogsExports();
-        if (!enableCloudwatchLogsExportsList.isEmpty() || !enableCloudwatchLogsExportsList.isAutoConstruct()) {
+        if (!createDBInstanceRequest.getEnableCloudwatchLogsExports().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createDBInstanceRequest.getEnableCloudwatchLogsExports()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExportsList = (com.amazonaws.internal.SdkInternalList<String>) createDBInstanceRequest
+                    .getEnableCloudwatchLogsExports();
             int enableCloudwatchLogsExportsListIndex = 1;
 
             for (String enableCloudwatchLogsExportsListValue : enableCloudwatchLogsExportsList) {

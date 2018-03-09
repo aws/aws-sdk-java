@@ -48,8 +48,9 @@ public class CreateDBSnapshotRequestMarshaller implements Marshaller<Request<Cre
             request.addParameter("DBInstanceIdentifier", StringUtils.fromString(createDBSnapshotRequest.getDBInstanceIdentifier()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createDBSnapshotRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!createDBSnapshotRequest.getTags().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Tag>) createDBSnapshotRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createDBSnapshotRequest.getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {

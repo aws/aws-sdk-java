@@ -78,9 +78,11 @@ public class CreateConfigurationTemplateRequestMarshaller implements
             request.addParameter("Description", StringUtils.fromString(createConfigurationTemplateRequest.getDescription()));
         }
 
-        com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting> optionSettingsList = (com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>) createConfigurationTemplateRequest
-                .getOptionSettings();
-        if (!optionSettingsList.isEmpty() || !optionSettingsList.isAutoConstruct()) {
+        if (!createConfigurationTemplateRequest.getOptionSettings().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>) createConfigurationTemplateRequest.getOptionSettings())
+                        .isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting> optionSettingsList = (com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>) createConfigurationTemplateRequest
+                    .getOptionSettings();
             int optionSettingsListIndex = 1;
 
             for (ConfigurationOptionSetting optionSettingsListValue : optionSettingsList) {

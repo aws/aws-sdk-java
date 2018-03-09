@@ -44,9 +44,10 @@ public class DescribeLifecycleHooksRequestMarshaller implements Marshaller<Reque
             request.addParameter("AutoScalingGroupName", StringUtils.fromString(describeLifecycleHooksRequest.getAutoScalingGroupName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> lifecycleHookNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeLifecycleHooksRequest
-                .getLifecycleHookNames();
-        if (!lifecycleHookNamesList.isEmpty() || !lifecycleHookNamesList.isAutoConstruct()) {
+        if (!describeLifecycleHooksRequest.getLifecycleHookNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeLifecycleHooksRequest.getLifecycleHookNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> lifecycleHookNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeLifecycleHooksRequest
+                    .getLifecycleHookNames();
             int lifecycleHookNamesListIndex = 1;
 
             for (String lifecycleHookNamesListValue : lifecycleHookNamesList) {

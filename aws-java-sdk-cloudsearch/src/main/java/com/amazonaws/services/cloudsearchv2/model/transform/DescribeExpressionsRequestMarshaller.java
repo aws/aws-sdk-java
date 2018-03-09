@@ -44,9 +44,10 @@ public class DescribeExpressionsRequestMarshaller implements Marshaller<Request<
             request.addParameter("DomainName", StringUtils.fromString(describeExpressionsRequest.getDomainName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> expressionNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeExpressionsRequest
-                .getExpressionNames();
-        if (!expressionNamesList.isEmpty() || !expressionNamesList.isAutoConstruct()) {
+        if (!describeExpressionsRequest.getExpressionNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeExpressionsRequest.getExpressionNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> expressionNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeExpressionsRequest
+                    .getExpressionNames();
             int expressionNamesListIndex = 1;
 
             for (String expressionNamesListValue : expressionNamesList) {

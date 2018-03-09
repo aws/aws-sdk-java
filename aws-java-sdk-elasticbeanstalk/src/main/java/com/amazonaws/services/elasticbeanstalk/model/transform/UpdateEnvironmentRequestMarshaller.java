@@ -92,9 +92,10 @@ public class UpdateEnvironmentRequestMarshaller implements Marshaller<Request<Up
             request.addParameter("PlatformArn", StringUtils.fromString(updateEnvironmentRequest.getPlatformArn()));
         }
 
-        com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting> optionSettingsList = (com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>) updateEnvironmentRequest
-                .getOptionSettings();
-        if (!optionSettingsList.isEmpty() || !optionSettingsList.isAutoConstruct()) {
+        if (!updateEnvironmentRequest.getOptionSettings().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>) updateEnvironmentRequest.getOptionSettings()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting> optionSettingsList = (com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>) updateEnvironmentRequest
+                    .getOptionSettings();
             int optionSettingsListIndex = 1;
 
             for (ConfigurationOptionSetting optionSettingsListValue : optionSettingsList) {
@@ -122,9 +123,10 @@ public class UpdateEnvironmentRequestMarshaller implements Marshaller<Request<Up
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<OptionSpecification> optionsToRemoveList = (com.amazonaws.internal.SdkInternalList<OptionSpecification>) updateEnvironmentRequest
-                .getOptionsToRemove();
-        if (!optionsToRemoveList.isEmpty() || !optionsToRemoveList.isAutoConstruct()) {
+        if (!updateEnvironmentRequest.getOptionsToRemove().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<OptionSpecification>) updateEnvironmentRequest.getOptionsToRemove()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<OptionSpecification> optionsToRemoveList = (com.amazonaws.internal.SdkInternalList<OptionSpecification>) updateEnvironmentRequest
+                    .getOptionsToRemove();
             int optionsToRemoveListIndex = 1;
 
             for (OptionSpecification optionsToRemoveListValue : optionsToRemoveList) {

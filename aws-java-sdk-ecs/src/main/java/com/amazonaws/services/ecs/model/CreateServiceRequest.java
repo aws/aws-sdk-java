@@ -154,10 +154,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
      * Balancing target health checks after a task has first started. This is only valid if your service is configured
-     * to use a load balancer. If your service's tasks take a while to start and respond to ELB health checks, you can
-     * specify a health check grace period of up to 1,800 seconds during which the ECS service scheduler will ignore ELB
-     * health check status. This grace period can prevent the ECS service scheduler from marking tasks as unhealthy and
-     * stopping them before they have time to come up.
+     * to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing
+     * health checks, you can specify a health check grace period of up to 1,800 seconds during which the ECS service
+     * scheduler ignores health check status. This grace period can prevent the ECS service scheduler from marking tasks
+     * as unhealthy and stopping them before they have time to come up.
      * </p>
      */
     private Integer healthCheckGracePeriodSeconds;
@@ -1124,19 +1124,19 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
      * Balancing target health checks after a task has first started. This is only valid if your service is configured
-     * to use a load balancer. If your service's tasks take a while to start and respond to ELB health checks, you can
-     * specify a health check grace period of up to 1,800 seconds during which the ECS service scheduler will ignore ELB
-     * health check status. This grace period can prevent the ECS service scheduler from marking tasks as unhealthy and
-     * stopping them before they have time to come up.
+     * to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing
+     * health checks, you can specify a health check grace period of up to 1,800 seconds during which the ECS service
+     * scheduler ignores health check status. This grace period can prevent the ECS service scheduler from marking tasks
+     * as unhealthy and stopping them before they have time to come up.
      * </p>
      * 
      * @param healthCheckGracePeriodSeconds
      *        The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
      *        Balancing target health checks after a task has first started. This is only valid if your service is
-     *        configured to use a load balancer. If your service's tasks take a while to start and respond to ELB health
-     *        checks, you can specify a health check grace period of up to 1,800 seconds during which the ECS service
-     *        scheduler will ignore ELB health check status. This grace period can prevent the ECS service scheduler
-     *        from marking tasks as unhealthy and stopping them before they have time to come up.
+     *        configured to use a load balancer. If your service's tasks take a while to start and respond to Elastic
+     *        Load Balancing health checks, you can specify a health check grace period of up to 1,800 seconds during
+     *        which the ECS service scheduler ignores health check status. This grace period can prevent the ECS service
+     *        scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
      */
 
     public void setHealthCheckGracePeriodSeconds(Integer healthCheckGracePeriodSeconds) {
@@ -1147,18 +1147,18 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
      * Balancing target health checks after a task has first started. This is only valid if your service is configured
-     * to use a load balancer. If your service's tasks take a while to start and respond to ELB health checks, you can
-     * specify a health check grace period of up to 1,800 seconds during which the ECS service scheduler will ignore ELB
-     * health check status. This grace period can prevent the ECS service scheduler from marking tasks as unhealthy and
-     * stopping them before they have time to come up.
+     * to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing
+     * health checks, you can specify a health check grace period of up to 1,800 seconds during which the ECS service
+     * scheduler ignores health check status. This grace period can prevent the ECS service scheduler from marking tasks
+     * as unhealthy and stopping them before they have time to come up.
      * </p>
      * 
      * @return The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic
      *         Load Balancing target health checks after a task has first started. This is only valid if your service is
-     *         configured to use a load balancer. If your service's tasks take a while to start and respond to ELB
-     *         health checks, you can specify a health check grace period of up to 1,800 seconds during which the ECS
-     *         service scheduler will ignore ELB health check status. This grace period can prevent the ECS service
-     *         scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
+     *         configured to use a load balancer. If your service's tasks take a while to start and respond to Elastic
+     *         Load Balancing health checks, you can specify a health check grace period of up to 1,800 seconds during
+     *         which the ECS service scheduler ignores health check status. This grace period can prevent the ECS
+     *         service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
      */
 
     public Integer getHealthCheckGracePeriodSeconds() {
@@ -1169,19 +1169,19 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
      * Balancing target health checks after a task has first started. This is only valid if your service is configured
-     * to use a load balancer. If your service's tasks take a while to start and respond to ELB health checks, you can
-     * specify a health check grace period of up to 1,800 seconds during which the ECS service scheduler will ignore ELB
-     * health check status. This grace period can prevent the ECS service scheduler from marking tasks as unhealthy and
-     * stopping them before they have time to come up.
+     * to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing
+     * health checks, you can specify a health check grace period of up to 1,800 seconds during which the ECS service
+     * scheduler ignores health check status. This grace period can prevent the ECS service scheduler from marking tasks
+     * as unhealthy and stopping them before they have time to come up.
      * </p>
      * 
      * @param healthCheckGracePeriodSeconds
      *        The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
      *        Balancing target health checks after a task has first started. This is only valid if your service is
-     *        configured to use a load balancer. If your service's tasks take a while to start and respond to ELB health
-     *        checks, you can specify a health check grace period of up to 1,800 seconds during which the ECS service
-     *        scheduler will ignore ELB health check status. This grace period can prevent the ECS service scheduler
-     *        from marking tasks as unhealthy and stopping them before they have time to come up.
+     *        configured to use a load balancer. If your service's tasks take a while to start and respond to Elastic
+     *        Load Balancing health checks, you can specify a health check grace period of up to 1,800 seconds during
+     *        which the ECS service scheduler ignores health check status. This grace period can prevent the ECS service
+     *        scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

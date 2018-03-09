@@ -51,12 +51,13 @@ public class SetLoadBalancerPoliciesForBackendServerRequestMarshaller implements
             request.addParameter("InstancePort", StringUtils.fromInteger(setLoadBalancerPoliciesForBackendServerRequest.getInstancePort()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> policyNamesList = (com.amazonaws.internal.SdkInternalList<String>) setLoadBalancerPoliciesForBackendServerRequest
-                .getPolicyNames();
-        if (policyNamesList.isEmpty()) {
+        if (setLoadBalancerPoliciesForBackendServerRequest.getPolicyNames().isEmpty()) {
             request.addParameter("PolicyNames", "");
         }
-        if (!policyNamesList.isEmpty() || !policyNamesList.isAutoConstruct()) {
+        if (!setLoadBalancerPoliciesForBackendServerRequest.getPolicyNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) setLoadBalancerPoliciesForBackendServerRequest.getPolicyNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> policyNamesList = (com.amazonaws.internal.SdkInternalList<String>) setLoadBalancerPoliciesForBackendServerRequest
+                    .getPolicyNames();
             int policyNamesListIndex = 1;
 
             for (String policyNamesListValue : policyNamesList) {

@@ -40,9 +40,10 @@ public class EnableAlarmActionsRequestMarshaller implements Marshaller<Request<E
         request.addParameter("Version", "2010-08-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> alarmNamesList = (com.amazonaws.internal.SdkInternalList<String>) enableAlarmActionsRequest
-                .getAlarmNames();
-        if (!alarmNamesList.isEmpty() || !alarmNamesList.isAutoConstruct()) {
+        if (!enableAlarmActionsRequest.getAlarmNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) enableAlarmActionsRequest.getAlarmNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> alarmNamesList = (com.amazonaws.internal.SdkInternalList<String>) enableAlarmActionsRequest
+                    .getAlarmNames();
             int alarmNamesListIndex = 1;
 
             for (String alarmNamesListValue : alarmNamesList) {

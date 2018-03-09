@@ -45,9 +45,10 @@ public class ModifyCacheParameterGroupRequestMarshaller implements Marshaller<Re
             request.addParameter("CacheParameterGroupName", StringUtils.fromString(modifyCacheParameterGroupRequest.getCacheParameterGroupName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<ParameterNameValue> parameterNameValuesList = (com.amazonaws.internal.SdkInternalList<ParameterNameValue>) modifyCacheParameterGroupRequest
-                .getParameterNameValues();
-        if (!parameterNameValuesList.isEmpty() || !parameterNameValuesList.isAutoConstruct()) {
+        if (!modifyCacheParameterGroupRequest.getParameterNameValues().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<ParameterNameValue>) modifyCacheParameterGroupRequest.getParameterNameValues()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<ParameterNameValue> parameterNameValuesList = (com.amazonaws.internal.SdkInternalList<ParameterNameValue>) modifyCacheParameterGroupRequest
+                    .getParameterNameValues();
             int parameterNameValuesListIndex = 1;
 
             for (ParameterNameValue parameterNameValuesListValue : parameterNameValuesList) {

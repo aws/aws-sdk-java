@@ -60,7 +60,7 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
-     * <code>hostPort</code> can either be left blank or needs to be the same value as the <code>containerPort</code>.
+     * <code>hostPort</code> can either be left blank or set to the same value as the <code>containerPort</code>.
      * </p>
      * <p>
      * If using containers in a task with the <code>bridge</code> network mode, you can specify a non-reserved host port
@@ -204,7 +204,7 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
-     * <code>hostPort</code> can either be left blank or needs to be the same value as the <code>containerPort</code>.
+     * <code>hostPort</code> can either be left blank or set to the same value as the <code>containerPort</code>.
      * </p>
      * <p>
      * If using containers in a task with the <code>bridge</code> network mode, you can specify a non-reserved host port
@@ -237,8 +237,7 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      *        The port number on the container instance to reserve for your container.</p>
      *        <p>
      *        If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
-     *        <code>hostPort</code> can either be left blank or needs to be the same value as the
-     *        <code>containerPort</code>.
+     *        <code>hostPort</code> can either be left blank or set to the same value as the <code>containerPort</code>.
      *        </p>
      *        <p>
      *        If using containers in a task with the <code>bridge</code> network mode, you can specify a non-reserved
@@ -277,7 +276,7 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
-     * <code>hostPort</code> can either be left blank or needs to be the same value as the <code>containerPort</code>.
+     * <code>hostPort</code> can either be left blank or set to the same value as the <code>containerPort</code>.
      * </p>
      * <p>
      * If using containers in a task with the <code>bridge</code> network mode, you can specify a non-reserved host port
@@ -309,8 +308,8 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * @return The port number on the container instance to reserve for your container.</p>
      *         <p>
      *         If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
-     *         <code>hostPort</code> can either be left blank or needs to be the same value as the
-     *         <code>containerPort</code>.
+     *         <code>hostPort</code> can either be left blank or set to the same value as the <code>containerPort</code>
+     *         .
      *         </p>
      *         <p>
      *         If using containers in a task with the <code>bridge</code> network mode, you can specify a non-reserved
@@ -350,7 +349,7 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
-     * <code>hostPort</code> can either be left blank or needs to be the same value as the <code>containerPort</code>.
+     * <code>hostPort</code> can either be left blank or set to the same value as the <code>containerPort</code>.
      * </p>
      * <p>
      * If using containers in a task with the <code>bridge</code> network mode, you can specify a non-reserved host port
@@ -383,8 +382,7 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      *        The port number on the container instance to reserve for your container.</p>
      *        <p>
      *        If using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
-     *        <code>hostPort</code> can either be left blank or needs to be the same value as the
-     *        <code>containerPort</code>.
+     *        <code>hostPort</code> can either be left blank or set to the same value as the <code>containerPort</code>.
      *        </p>
      *        <p>
      *        If using containers in a task with the <code>bridge</code> network mode, you can specify a non-reserved

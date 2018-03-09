@@ -40,9 +40,10 @@ public class ListPlatformVersionsRequestMarshaller implements Marshaller<Request
         request.addParameter("Version", "2010-12-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<PlatformFilter> filtersList = (com.amazonaws.internal.SdkInternalList<PlatformFilter>) listPlatformVersionsRequest
-                .getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        if (!listPlatformVersionsRequest.getFilters().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<PlatformFilter>) listPlatformVersionsRequest.getFilters()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<PlatformFilter> filtersList = (com.amazonaws.internal.SdkInternalList<PlatformFilter>) listPlatformVersionsRequest
+                    .getFilters();
             int filtersListIndex = 1;
 
             for (PlatformFilter filtersListValue : filtersList) {
@@ -55,8 +56,9 @@ public class ListPlatformVersionsRequestMarshaller implements Marshaller<Request
                     request.addParameter("Filters.member." + filtersListIndex + ".Operator", StringUtils.fromString(filtersListValue.getOperator()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                if (!filtersListValue.getValues().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
                     int valuesListIndex = 1;
 
                     for (String valuesListValue : valuesList) {

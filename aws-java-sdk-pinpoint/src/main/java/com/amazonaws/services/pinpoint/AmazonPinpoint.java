@@ -135,6 +135,29 @@ public interface AmazonPinpoint {
     CreateCampaignResult createCampaign(CreateCampaignRequest createCampaignRequest);
 
     /**
+     * Creates an export job.
+     * 
+     * @param createExportJobRequest
+     * @return Result of the CreateExportJob operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.CreateExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateExportJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateExportJobResult createExportJob(CreateExportJobRequest createExportJobRequest);
+
+    /**
      * Creates or updates an import job.
      * 
      * @param createImportJobRequest
@@ -573,7 +596,7 @@ public interface AmazonPinpoint {
     GetApnsVoipChannelResult getApnsVoipChannel(GetApnsVoipChannelRequest getApnsVoipChannelRequest);
 
     /**
-     * Get an APNS VoipSandbox channel
+     * Get an APNS VoIPSandbox channel
      * 
      * @param getApnsVoipSandboxChannelRequest
      * @return Result of the GetApnsVoipSandboxChannel operation returned by the service.
@@ -873,6 +896,52 @@ public interface AmazonPinpoint {
     GetEventStreamResult getEventStream(GetEventStreamRequest getEventStreamRequest);
 
     /**
+     * Returns information about an export job.
+     * 
+     * @param getExportJobRequest
+     * @return Result of the GetExportJob operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.GetExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetExportJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetExportJobResult getExportJob(GetExportJobRequest getExportJobRequest);
+
+    /**
+     * Returns information about your export jobs.
+     * 
+     * @param getExportJobsRequest
+     * @return Result of the GetExportJobs operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.GetExportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetExportJobs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetExportJobsResult getExportJobs(GetExportJobsRequest getExportJobsRequest);
+
+    /**
      * Returns information about the GCM channel for an app.
      * 
      * @param getGcmChannelRequest
@@ -963,6 +1032,29 @@ public interface AmazonPinpoint {
      *      Documentation</a>
      */
     GetSegmentResult getSegment(GetSegmentRequest getSegmentRequest);
+
+    /**
+     * Returns a list of export jobs for a specific segment.
+     * 
+     * @param getSegmentExportJobsRequest
+     * @return Result of the GetSegmentExportJobs operation returned by the service.
+     * @throws BadRequestException
+     *         Simple message object.
+     * @throws InternalServerErrorException
+     *         Simple message object.
+     * @throws ForbiddenException
+     *         Simple message object.
+     * @throws NotFoundException
+     *         Simple message object.
+     * @throws MethodNotAllowedException
+     *         Simple message object.
+     * @throws TooManyRequestsException
+     *         Simple message object.
+     * @sample AmazonPinpoint.GetSegmentExportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentExportJobs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetSegmentExportJobsResult getSegmentExportJobs(GetSegmentExportJobsRequest getSegmentExportJobsRequest);
 
     /**
      * Returns a list of import jobs for a specific segment.

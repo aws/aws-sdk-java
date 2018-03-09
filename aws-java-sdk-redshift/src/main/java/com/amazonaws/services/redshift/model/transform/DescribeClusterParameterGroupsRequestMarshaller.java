@@ -54,9 +54,10 @@ public class DescribeClusterParameterGroupsRequestMarshaller implements
             request.addParameter("Marker", StringUtils.fromString(describeClusterParameterGroupsRequest.getMarker()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> tagKeysList = (com.amazonaws.internal.SdkInternalList<String>) describeClusterParameterGroupsRequest
-                .getTagKeys();
-        if (!tagKeysList.isEmpty() || !tagKeysList.isAutoConstruct()) {
+        if (!describeClusterParameterGroupsRequest.getTagKeys().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeClusterParameterGroupsRequest.getTagKeys()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> tagKeysList = (com.amazonaws.internal.SdkInternalList<String>) describeClusterParameterGroupsRequest
+                    .getTagKeys();
             int tagKeysListIndex = 1;
 
             for (String tagKeysListValue : tagKeysList) {
@@ -67,9 +68,10 @@ public class DescribeClusterParameterGroupsRequestMarshaller implements
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> tagValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeClusterParameterGroupsRequest
-                .getTagValues();
-        if (!tagValuesList.isEmpty() || !tagValuesList.isAutoConstruct()) {
+        if (!describeClusterParameterGroupsRequest.getTagValues().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeClusterParameterGroupsRequest.getTagValues()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> tagValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeClusterParameterGroupsRequest
+                    .getTagValues();
             int tagValuesListIndex = 1;
 
             for (String tagValuesListValue : tagValuesList) {

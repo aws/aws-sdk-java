@@ -51,9 +51,10 @@ public class ModifyDBClusterSnapshotAttributeRequestMarshaller implements
             request.addParameter("AttributeName", StringUtils.fromString(modifyDBClusterSnapshotAttributeRequest.getAttributeName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> valuesToAddList = (com.amazonaws.internal.SdkInternalList<String>) modifyDBClusterSnapshotAttributeRequest
-                .getValuesToAdd();
-        if (!valuesToAddList.isEmpty() || !valuesToAddList.isAutoConstruct()) {
+        if (!modifyDBClusterSnapshotAttributeRequest.getValuesToAdd().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) modifyDBClusterSnapshotAttributeRequest.getValuesToAdd()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> valuesToAddList = (com.amazonaws.internal.SdkInternalList<String>) modifyDBClusterSnapshotAttributeRequest
+                    .getValuesToAdd();
             int valuesToAddListIndex = 1;
 
             for (String valuesToAddListValue : valuesToAddList) {
@@ -64,9 +65,10 @@ public class ModifyDBClusterSnapshotAttributeRequestMarshaller implements
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> valuesToRemoveList = (com.amazonaws.internal.SdkInternalList<String>) modifyDBClusterSnapshotAttributeRequest
-                .getValuesToRemove();
-        if (!valuesToRemoveList.isEmpty() || !valuesToRemoveList.isAutoConstruct()) {
+        if (!modifyDBClusterSnapshotAttributeRequest.getValuesToRemove().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) modifyDBClusterSnapshotAttributeRequest.getValuesToRemove()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> valuesToRemoveList = (com.amazonaws.internal.SdkInternalList<String>) modifyDBClusterSnapshotAttributeRequest
+                    .getValuesToRemove();
             int valuesToRemoveListIndex = 1;
 
             for (String valuesToRemoveListValue : valuesToRemoveList) {

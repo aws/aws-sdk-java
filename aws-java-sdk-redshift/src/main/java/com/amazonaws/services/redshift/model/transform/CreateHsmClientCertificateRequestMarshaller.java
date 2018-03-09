@@ -46,8 +46,9 @@ public class CreateHsmClientCertificateRequestMarshaller implements Marshaller<R
                     StringUtils.fromString(createHsmClientCertificateRequest.getHsmClientCertificateIdentifier()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createHsmClientCertificateRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!createHsmClientCertificateRequest.getTags().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Tag>) createHsmClientCertificateRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createHsmClientCertificateRequest.getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {

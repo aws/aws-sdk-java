@@ -56,9 +56,10 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
             request.addParameter("DBSubnetGroupName", StringUtils.fromString(modifyDBInstanceRequest.getDBSubnetGroupName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> dBSecurityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) modifyDBInstanceRequest
-                .getDBSecurityGroups();
-        if (!dBSecurityGroupsList.isEmpty() || !dBSecurityGroupsList.isAutoConstruct()) {
+        if (!modifyDBInstanceRequest.getDBSecurityGroups().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) modifyDBInstanceRequest.getDBSecurityGroups()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> dBSecurityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) modifyDBInstanceRequest
+                    .getDBSecurityGroups();
             int dBSecurityGroupsListIndex = 1;
 
             for (String dBSecurityGroupsListValue : dBSecurityGroupsList) {
@@ -69,9 +70,10 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyDBInstanceRequest
-                .getVpcSecurityGroupIds();
-        if (!vpcSecurityGroupIdsList.isEmpty() || !vpcSecurityGroupIdsList.isAutoConstruct()) {
+        if (!modifyDBInstanceRequest.getVpcSecurityGroupIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) modifyDBInstanceRequest.getVpcSecurityGroupIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyDBInstanceRequest
+                    .getVpcSecurityGroupIds();
             int vpcSecurityGroupIdsListIndex = 1;
 
             for (String vpcSecurityGroupIdsListValue : vpcSecurityGroupIdsList) {
@@ -202,9 +204,10 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
         CloudwatchLogsExportConfiguration cloudwatchLogsExportConfiguration = modifyDBInstanceRequest.getCloudwatchLogsExportConfiguration();
         if (cloudwatchLogsExportConfiguration != null) {
 
-            com.amazonaws.internal.SdkInternalList<String> enableLogTypesList = (com.amazonaws.internal.SdkInternalList<String>) cloudwatchLogsExportConfiguration
-                    .getEnableLogTypes();
-            if (!enableLogTypesList.isEmpty() || !enableLogTypesList.isAutoConstruct()) {
+            if (!cloudwatchLogsExportConfiguration.getEnableLogTypes().isEmpty()
+                    || !((com.amazonaws.internal.SdkInternalList<String>) cloudwatchLogsExportConfiguration.getEnableLogTypes()).isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> enableLogTypesList = (com.amazonaws.internal.SdkInternalList<String>) cloudwatchLogsExportConfiguration
+                        .getEnableLogTypes();
                 int enableLogTypesListIndex = 1;
 
                 for (String enableLogTypesListValue : enableLogTypesList) {
@@ -216,9 +219,10 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
                 }
             }
 
-            com.amazonaws.internal.SdkInternalList<String> disableLogTypesList = (com.amazonaws.internal.SdkInternalList<String>) cloudwatchLogsExportConfiguration
-                    .getDisableLogTypes();
-            if (!disableLogTypesList.isEmpty() || !disableLogTypesList.isAutoConstruct()) {
+            if (!cloudwatchLogsExportConfiguration.getDisableLogTypes().isEmpty()
+                    || !((com.amazonaws.internal.SdkInternalList<String>) cloudwatchLogsExportConfiguration.getDisableLogTypes()).isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> disableLogTypesList = (com.amazonaws.internal.SdkInternalList<String>) cloudwatchLogsExportConfiguration
+                        .getDisableLogTypes();
                 int disableLogTypesListIndex = 1;
 
                 for (String disableLogTypesListValue : disableLogTypesList) {

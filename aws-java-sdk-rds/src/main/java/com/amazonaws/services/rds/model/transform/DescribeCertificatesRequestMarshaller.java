@@ -44,8 +44,10 @@ public class DescribeCertificatesRequestMarshaller implements Marshaller<Request
             request.addParameter("CertificateIdentifier", StringUtils.fromString(describeCertificatesRequest.getCertificateIdentifier()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeCertificatesRequest.getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        if (!describeCertificatesRequest.getFilters().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Filter>) describeCertificatesRequest.getFilters()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeCertificatesRequest
+                    .getFilters();
             int filtersListIndex = 1;
 
             for (Filter filtersListValue : filtersList) {
@@ -54,8 +56,9 @@ public class DescribeCertificatesRequestMarshaller implements Marshaller<Request
                     request.addParameter("Filters.Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                if (!filtersListValue.getValues().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
                     int valuesListIndex = 1;
 
                     for (String valuesListValue : valuesList) {

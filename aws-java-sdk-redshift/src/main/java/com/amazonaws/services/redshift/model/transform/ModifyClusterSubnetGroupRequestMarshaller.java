@@ -49,9 +49,10 @@ public class ModifyClusterSubnetGroupRequestMarshaller implements Marshaller<Req
             request.addParameter("Description", StringUtils.fromString(modifyClusterSubnetGroupRequest.getDescription()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> subnetIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyClusterSubnetGroupRequest
-                .getSubnetIds();
-        if (!subnetIdsList.isEmpty() || !subnetIdsList.isAutoConstruct()) {
+        if (!modifyClusterSubnetGroupRequest.getSubnetIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) modifyClusterSubnetGroupRequest.getSubnetIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> subnetIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyClusterSubnetGroupRequest
+                    .getSubnetIds();
             int subnetIdsListIndex = 1;
 
             for (String subnetIdsListValue : subnetIdsList) {

@@ -46,9 +46,10 @@ public class DeleteLoadBalancerListenersRequestMarshaller implements
             request.addParameter("LoadBalancerName", StringUtils.fromString(deleteLoadBalancerListenersRequest.getLoadBalancerName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Integer> loadBalancerPortsList = (com.amazonaws.internal.SdkInternalList<Integer>) deleteLoadBalancerListenersRequest
-                .getLoadBalancerPorts();
-        if (!loadBalancerPortsList.isEmpty() || !loadBalancerPortsList.isAutoConstruct()) {
+        if (!deleteLoadBalancerListenersRequest.getLoadBalancerPorts().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Integer>) deleteLoadBalancerListenersRequest.getLoadBalancerPorts()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Integer> loadBalancerPortsList = (com.amazonaws.internal.SdkInternalList<Integer>) deleteLoadBalancerListenersRequest
+                    .getLoadBalancerPorts();
             int loadBalancerPortsListIndex = 1;
 
             for (Integer loadBalancerPortsListValue : loadBalancerPortsList) {

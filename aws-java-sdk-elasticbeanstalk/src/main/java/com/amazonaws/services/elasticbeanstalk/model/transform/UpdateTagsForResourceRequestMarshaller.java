@@ -44,8 +44,10 @@ public class UpdateTagsForResourceRequestMarshaller implements Marshaller<Reques
             request.addParameter("ResourceArn", StringUtils.fromString(updateTagsForResourceRequest.getResourceArn()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsToAddList = (com.amazonaws.internal.SdkInternalList<Tag>) updateTagsForResourceRequest.getTagsToAdd();
-        if (!tagsToAddList.isEmpty() || !tagsToAddList.isAutoConstruct()) {
+        if (!updateTagsForResourceRequest.getTagsToAdd().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Tag>) updateTagsForResourceRequest.getTagsToAdd()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsToAddList = (com.amazonaws.internal.SdkInternalList<Tag>) updateTagsForResourceRequest
+                    .getTagsToAdd();
             int tagsToAddListIndex = 1;
 
             for (Tag tagsToAddListValue : tagsToAddList) {
@@ -61,9 +63,10 @@ public class UpdateTagsForResourceRequestMarshaller implements Marshaller<Reques
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> tagsToRemoveList = (com.amazonaws.internal.SdkInternalList<String>) updateTagsForResourceRequest
-                .getTagsToRemove();
-        if (!tagsToRemoveList.isEmpty() || !tagsToRemoveList.isAutoConstruct()) {
+        if (!updateTagsForResourceRequest.getTagsToRemove().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) updateTagsForResourceRequest.getTagsToRemove()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> tagsToRemoveList = (com.amazonaws.internal.SdkInternalList<String>) updateTagsForResourceRequest
+                    .getTagsToRemove();
             int tagsToRemoveListIndex = 1;
 
             for (String tagsToRemoveListValue : tagsToRemoveList) {

@@ -63,8 +63,8 @@ public class CreateReceiptRuleRequestMarshaller implements Marshaller<Request<Cr
                 request.addParameter("Rule.TlsPolicy", StringUtils.fromString(rule.getTlsPolicy()));
             }
 
-            com.amazonaws.internal.SdkInternalList<String> recipientsList = (com.amazonaws.internal.SdkInternalList<String>) rule.getRecipients();
-            if (!recipientsList.isEmpty() || !recipientsList.isAutoConstruct()) {
+            if (!rule.getRecipients().isEmpty() || !((com.amazonaws.internal.SdkInternalList<String>) rule.getRecipients()).isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<String> recipientsList = (com.amazonaws.internal.SdkInternalList<String>) rule.getRecipients();
                 int recipientsListIndex = 1;
 
                 for (String recipientsListValue : recipientsList) {
@@ -75,8 +75,8 @@ public class CreateReceiptRuleRequestMarshaller implements Marshaller<Request<Cr
                 }
             }
 
-            com.amazonaws.internal.SdkInternalList<ReceiptAction> actionsList = (com.amazonaws.internal.SdkInternalList<ReceiptAction>) rule.getActions();
-            if (!actionsList.isEmpty() || !actionsList.isAutoConstruct()) {
+            if (!rule.getActions().isEmpty() || !((com.amazonaws.internal.SdkInternalList<ReceiptAction>) rule.getActions()).isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<ReceiptAction> actionsList = (com.amazonaws.internal.SdkInternalList<ReceiptAction>) rule.getActions();
                 int actionsListIndex = 1;
 
                 for (ReceiptAction actionsListValue : actionsList) {

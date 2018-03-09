@@ -48,9 +48,10 @@ public class ModifyCacheSubnetGroupRequestMarshaller implements Marshaller<Reque
             request.addParameter("CacheSubnetGroupDescription", StringUtils.fromString(modifyCacheSubnetGroupRequest.getCacheSubnetGroupDescription()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> subnetIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyCacheSubnetGroupRequest
-                .getSubnetIds();
-        if (!subnetIdsList.isEmpty() || !subnetIdsList.isAutoConstruct()) {
+        if (!modifyCacheSubnetGroupRequest.getSubnetIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) modifyCacheSubnetGroupRequest.getSubnetIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> subnetIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyCacheSubnetGroupRequest
+                    .getSubnetIds();
             int subnetIdsListIndex = 1;
 
             for (String subnetIdsListValue : subnetIdsList) {

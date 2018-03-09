@@ -34,6 +34,8 @@ public class WriteCampaignRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<Integer> HOLDOUTPERCENT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HoldoutPercent").build();
+    private static final MarshallingInfo<StructuredPojo> HOOK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Hook").build();
     private static final MarshallingInfo<Boolean> ISPAUSED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IsPaused").build();
     private static final MarshallingInfo<StructuredPojo> LIMITS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -72,6 +74,7 @@ public class WriteCampaignRequestMarshaller {
             protocolMarshaller.marshall(writeCampaignRequest.getAdditionalTreatments(), ADDITIONALTREATMENTS_BINDING);
             protocolMarshaller.marshall(writeCampaignRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(writeCampaignRequest.getHoldoutPercent(), HOLDOUTPERCENT_BINDING);
+            protocolMarshaller.marshall(writeCampaignRequest.getHook(), HOOK_BINDING);
             protocolMarshaller.marshall(writeCampaignRequest.getIsPaused(), ISPAUSED_BINDING);
             protocolMarshaller.marshall(writeCampaignRequest.getLimits(), LIMITS_BINDING);
             protocolMarshaller.marshall(writeCampaignRequest.getMessageConfiguration(), MESSAGECONFIGURATION_BINDING);

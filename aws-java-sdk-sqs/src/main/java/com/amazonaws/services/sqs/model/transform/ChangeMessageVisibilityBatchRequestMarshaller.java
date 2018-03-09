@@ -46,9 +46,11 @@ public class ChangeMessageVisibilityBatchRequestMarshaller implements
             request.addParameter("QueueUrl", StringUtils.fromString(changeMessageVisibilityBatchRequest.getQueueUrl()));
         }
 
-        com.amazonaws.internal.SdkInternalList<ChangeMessageVisibilityBatchRequestEntry> entriesList = (com.amazonaws.internal.SdkInternalList<ChangeMessageVisibilityBatchRequestEntry>) changeMessageVisibilityBatchRequest
-                .getEntries();
-        if (!entriesList.isEmpty() || !entriesList.isAutoConstruct()) {
+        if (!changeMessageVisibilityBatchRequest.getEntries().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<ChangeMessageVisibilityBatchRequestEntry>) changeMessageVisibilityBatchRequest.getEntries())
+                        .isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<ChangeMessageVisibilityBatchRequestEntry> entriesList = (com.amazonaws.internal.SdkInternalList<ChangeMessageVisibilityBatchRequestEntry>) changeMessageVisibilityBatchRequest
+                    .getEntries();
             int entriesListIndex = 1;
 
             for (ChangeMessageVisibilityBatchRequestEntry entriesListValue : entriesList) {

@@ -52,8 +52,8 @@ public class CopyDBSnapshotRequestMarshaller implements Marshaller<Request<CopyD
             request.addParameter("KmsKeyId", StringUtils.fromString(copyDBSnapshotRequest.getKmsKeyId()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) copyDBSnapshotRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!copyDBSnapshotRequest.getTags().isEmpty() || !((com.amazonaws.internal.SdkInternalList<Tag>) copyDBSnapshotRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) copyDBSnapshotRequest.getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {

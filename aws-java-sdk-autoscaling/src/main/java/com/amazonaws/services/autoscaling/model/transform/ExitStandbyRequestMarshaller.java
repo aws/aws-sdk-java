@@ -40,8 +40,10 @@ public class ExitStandbyRequestMarshaller implements Marshaller<Request<ExitStan
         request.addParameter("Version", "2011-01-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> instanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) exitStandbyRequest.getInstanceIds();
-        if (!instanceIdsList.isEmpty() || !instanceIdsList.isAutoConstruct()) {
+        if (!exitStandbyRequest.getInstanceIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) exitStandbyRequest.getInstanceIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> instanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) exitStandbyRequest
+                    .getInstanceIds();
             int instanceIdsListIndex = 1;
 
             for (String instanceIdsListValue : instanceIdsList) {

@@ -43,7 +43,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 255 letters, numbers, or hyphens
+     * Must contain from 1 to 63 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -272,7 +272,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 255 letters, numbers, or hyphens
+     * Must contain from 1 to 63 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -299,7 +299,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 255 letters, numbers, or hyphens
+     *        Must contain from 1 to 63 letters, numbers, or hyphens
      *        </p>
      *        </li>
      *        <li>
@@ -332,7 +332,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 255 letters, numbers, or hyphens
+     * Must contain from 1 to 63 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -358,7 +358,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 255 letters, numbers, or hyphens
+     *         Must contain from 1 to 63 letters, numbers, or hyphens
      *         </p>
      *         </li>
      *         <li>
@@ -391,7 +391,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 255 letters, numbers, or hyphens
+     * Must contain from 1 to 63 letters, numbers, or hyphens
      * </p>
      * </li>
      * <li>
@@ -418,7 +418,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 255 letters, numbers, or hyphens
+     *        Must contain from 1 to 63 letters, numbers, or hyphens
      *        </p>
      *        </li>
      *        <li>

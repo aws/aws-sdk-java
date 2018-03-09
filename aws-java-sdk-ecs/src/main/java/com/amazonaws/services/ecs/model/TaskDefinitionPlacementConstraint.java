@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * An object representing a constraint on task placement in the task definition.
  * </p>
  * <p>
- * If you are using the Fargate launch type, task placement contraints are not supported.
+ * If you are using the Fargate launch type, task placement constraints are not supported.
  * </p>
  * <p>
  * For more information, see <a

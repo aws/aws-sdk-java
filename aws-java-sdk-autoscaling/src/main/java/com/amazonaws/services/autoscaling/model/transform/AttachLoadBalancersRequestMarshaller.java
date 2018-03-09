@@ -44,9 +44,10 @@ public class AttachLoadBalancersRequestMarshaller implements Marshaller<Request<
             request.addParameter("AutoScalingGroupName", StringUtils.fromString(attachLoadBalancersRequest.getAutoScalingGroupName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> loadBalancerNamesList = (com.amazonaws.internal.SdkInternalList<String>) attachLoadBalancersRequest
-                .getLoadBalancerNames();
-        if (!loadBalancerNamesList.isEmpty() || !loadBalancerNamesList.isAutoConstruct()) {
+        if (!attachLoadBalancersRequest.getLoadBalancerNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) attachLoadBalancersRequest.getLoadBalancerNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> loadBalancerNamesList = (com.amazonaws.internal.SdkInternalList<String>) attachLoadBalancersRequest
+                    .getLoadBalancerNames();
             int loadBalancerNamesListIndex = 1;
 
             for (String loadBalancerNamesListValue : loadBalancerNamesList) {

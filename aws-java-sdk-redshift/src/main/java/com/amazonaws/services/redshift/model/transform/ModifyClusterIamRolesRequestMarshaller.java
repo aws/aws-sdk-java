@@ -44,9 +44,10 @@ public class ModifyClusterIamRolesRequestMarshaller implements Marshaller<Reques
             request.addParameter("ClusterIdentifier", StringUtils.fromString(modifyClusterIamRolesRequest.getClusterIdentifier()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> addIamRolesList = (com.amazonaws.internal.SdkInternalList<String>) modifyClusterIamRolesRequest
-                .getAddIamRoles();
-        if (!addIamRolesList.isEmpty() || !addIamRolesList.isAutoConstruct()) {
+        if (!modifyClusterIamRolesRequest.getAddIamRoles().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) modifyClusterIamRolesRequest.getAddIamRoles()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> addIamRolesList = (com.amazonaws.internal.SdkInternalList<String>) modifyClusterIamRolesRequest
+                    .getAddIamRoles();
             int addIamRolesListIndex = 1;
 
             for (String addIamRolesListValue : addIamRolesList) {
@@ -57,9 +58,10 @@ public class ModifyClusterIamRolesRequestMarshaller implements Marshaller<Reques
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> removeIamRolesList = (com.amazonaws.internal.SdkInternalList<String>) modifyClusterIamRolesRequest
-                .getRemoveIamRoles();
-        if (!removeIamRolesList.isEmpty() || !removeIamRolesList.isAutoConstruct()) {
+        if (!modifyClusterIamRolesRequest.getRemoveIamRoles().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) modifyClusterIamRolesRequest.getRemoveIamRoles()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> removeIamRolesList = (com.amazonaws.internal.SdkInternalList<String>) modifyClusterIamRolesRequest
+                    .getRemoveIamRoles();
             int removeIamRolesListIndex = 1;
 
             for (String removeIamRolesListValue : removeIamRolesList) {

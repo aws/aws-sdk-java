@@ -42,9 +42,10 @@ public class GetContextKeysForCustomPolicyRequestMarshaller implements
         request.addParameter("Version", "2010-05-08");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> policyInputListList = (com.amazonaws.internal.SdkInternalList<String>) getContextKeysForCustomPolicyRequest
-                .getPolicyInputList();
-        if (!policyInputListList.isEmpty() || !policyInputListList.isAutoConstruct()) {
+        if (!getContextKeysForCustomPolicyRequest.getPolicyInputList().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) getContextKeysForCustomPolicyRequest.getPolicyInputList()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> policyInputListList = (com.amazonaws.internal.SdkInternalList<String>) getContextKeysForCustomPolicyRequest
+                    .getPolicyInputList();
             int policyInputListListIndex = 1;
 
             for (String policyInputListListValue : policyInputListList) {

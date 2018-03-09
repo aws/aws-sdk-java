@@ -44,9 +44,10 @@ public class ModifyDBParameterGroupRequestMarshaller implements Marshaller<Reque
             request.addParameter("DBParameterGroupName", StringUtils.fromString(modifyDBParameterGroupRequest.getDBParameterGroupName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Parameter> parametersList = (com.amazonaws.internal.SdkInternalList<Parameter>) modifyDBParameterGroupRequest
-                .getParameters();
-        if (!parametersList.isEmpty() || !parametersList.isAutoConstruct()) {
+        if (!modifyDBParameterGroupRequest.getParameters().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Parameter>) modifyDBParameterGroupRequest.getParameters()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Parameter> parametersList = (com.amazonaws.internal.SdkInternalList<Parameter>) modifyDBParameterGroupRequest
+                    .getParameters();
             int parametersListIndex = 1;
 
             for (Parameter parametersListValue : parametersList) {

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Exception raised when the account making the call is not whitelisted or there are other authentication errors.
+ * You do not have sufficient access to perform this action.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

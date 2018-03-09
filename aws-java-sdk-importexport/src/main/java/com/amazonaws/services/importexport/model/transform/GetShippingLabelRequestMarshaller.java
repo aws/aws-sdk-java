@@ -40,8 +40,9 @@ public class GetShippingLabelRequestMarshaller implements Marshaller<Request<Get
         request.addParameter("Version", "2010-06-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> jobIdsList = (com.amazonaws.internal.SdkInternalList<String>) getShippingLabelRequest.getJobIds();
-        if (!jobIdsList.isEmpty() || !jobIdsList.isAutoConstruct()) {
+        if (!getShippingLabelRequest.getJobIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) getShippingLabelRequest.getJobIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> jobIdsList = (com.amazonaws.internal.SdkInternalList<String>) getShippingLabelRequest.getJobIds();
             int jobIdsListIndex = 1;
 
             for (String jobIdsListValue : jobIdsList) {

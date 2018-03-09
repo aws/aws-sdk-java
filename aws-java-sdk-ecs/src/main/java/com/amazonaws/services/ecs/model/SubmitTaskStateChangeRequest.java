@@ -75,7 +75,7 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
     private java.util.Date pullStoppedAt;
     /**
      * <p>
-     * The Unix timestamp for when the task execution stopped.
+     * The Unix time stamp for when the task execution stopped.
      * </p>
      */
     private java.util.Date executionStoppedAt;
@@ -468,11 +468,11 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Unix timestamp for when the task execution stopped.
+     * The Unix time stamp for when the task execution stopped.
      * </p>
      * 
      * @param executionStoppedAt
-     *        The Unix timestamp for when the task execution stopped.
+     *        The Unix time stamp for when the task execution stopped.
      */
 
     public void setExecutionStoppedAt(java.util.Date executionStoppedAt) {
@@ -481,10 +481,10 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Unix timestamp for when the task execution stopped.
+     * The Unix time stamp for when the task execution stopped.
      * </p>
      * 
-     * @return The Unix timestamp for when the task execution stopped.
+     * @return The Unix time stamp for when the task execution stopped.
      */
 
     public java.util.Date getExecutionStoppedAt() {
@@ -493,11 +493,11 @@ public class SubmitTaskStateChangeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Unix timestamp for when the task execution stopped.
+     * The Unix time stamp for when the task execution stopped.
      * </p>
      * 
      * @param executionStoppedAt
-     *        The Unix timestamp for when the task execution stopped.
+     *        The Unix time stamp for when the task execution stopped.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

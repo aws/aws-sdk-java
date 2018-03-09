@@ -46,9 +46,10 @@ public class RegisterInstancesWithLoadBalancerRequestMarshaller implements
             request.addParameter("LoadBalancerName", StringUtils.fromString(registerInstancesWithLoadBalancerRequest.getLoadBalancerName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Instance> instancesList = (com.amazonaws.internal.SdkInternalList<Instance>) registerInstancesWithLoadBalancerRequest
-                .getInstances();
-        if (!instancesList.isEmpty() || !instancesList.isAutoConstruct()) {
+        if (!registerInstancesWithLoadBalancerRequest.getInstances().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Instance>) registerInstancesWithLoadBalancerRequest.getInstances()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Instance> instancesList = (com.amazonaws.internal.SdkInternalList<Instance>) registerInstancesWithLoadBalancerRequest
+                    .getInstances();
             int instancesListIndex = 1;
 
             for (Instance instancesListValue : instancesList) {

@@ -157,6 +157,10 @@ public class ContainerDefinitionJsonUnmarshaller implements Unmarshaller<Contain
                     context.nextToken();
                     containerDefinition.setLogConfiguration(LogConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("healthCheck", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setHealthCheck(HealthCheckJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

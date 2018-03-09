@@ -98,8 +98,10 @@ public class RestoreDBInstanceFromDBSnapshotRequestMarshaller implements
             request.addParameter("OptionGroupName", StringUtils.fromString(restoreDBInstanceFromDBSnapshotRequest.getOptionGroupName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) restoreDBInstanceFromDBSnapshotRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!restoreDBInstanceFromDBSnapshotRequest.getTags().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Tag>) restoreDBInstanceFromDBSnapshotRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) restoreDBInstanceFromDBSnapshotRequest
+                    .getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {
@@ -144,9 +146,11 @@ public class RestoreDBInstanceFromDBSnapshotRequestMarshaller implements
                     StringUtils.fromBoolean(restoreDBInstanceFromDBSnapshotRequest.getEnableIAMDatabaseAuthentication()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExportsList = (com.amazonaws.internal.SdkInternalList<String>) restoreDBInstanceFromDBSnapshotRequest
-                .getEnableCloudwatchLogsExports();
-        if (!enableCloudwatchLogsExportsList.isEmpty() || !enableCloudwatchLogsExportsList.isAutoConstruct()) {
+        if (!restoreDBInstanceFromDBSnapshotRequest.getEnableCloudwatchLogsExports().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) restoreDBInstanceFromDBSnapshotRequest.getEnableCloudwatchLogsExports())
+                        .isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExportsList = (com.amazonaws.internal.SdkInternalList<String>) restoreDBInstanceFromDBSnapshotRequest
+                    .getEnableCloudwatchLogsExports();
             int enableCloudwatchLogsExportsListIndex = 1;
 
             for (String enableCloudwatchLogsExportsListValue : enableCloudwatchLogsExportsList) {

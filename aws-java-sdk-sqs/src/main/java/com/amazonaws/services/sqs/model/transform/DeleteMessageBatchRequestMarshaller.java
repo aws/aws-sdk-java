@@ -44,9 +44,10 @@ public class DeleteMessageBatchRequestMarshaller implements Marshaller<Request<D
             request.addParameter("QueueUrl", StringUtils.fromString(deleteMessageBatchRequest.getQueueUrl()));
         }
 
-        com.amazonaws.internal.SdkInternalList<DeleteMessageBatchRequestEntry> entriesList = (com.amazonaws.internal.SdkInternalList<DeleteMessageBatchRequestEntry>) deleteMessageBatchRequest
-                .getEntries();
-        if (!entriesList.isEmpty() || !entriesList.isAutoConstruct()) {
+        if (!deleteMessageBatchRequest.getEntries().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<DeleteMessageBatchRequestEntry>) deleteMessageBatchRequest.getEntries()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<DeleteMessageBatchRequestEntry> entriesList = (com.amazonaws.internal.SdkInternalList<DeleteMessageBatchRequestEntry>) deleteMessageBatchRequest
+                    .getEntries();
             int entriesListIndex = 1;
 
             for (DeleteMessageBatchRequestEntry entriesListValue : entriesList) {

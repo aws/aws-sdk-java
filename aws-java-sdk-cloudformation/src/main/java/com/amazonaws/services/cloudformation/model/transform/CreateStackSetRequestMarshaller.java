@@ -57,12 +57,14 @@ public class CreateStackSetRequestMarshaller implements Marshaller<Request<Creat
             request.addParameter("TemplateURL", StringUtils.fromString(createStackSetRequest.getTemplateURL()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Parameter> parametersList = (com.amazonaws.internal.SdkInternalList<Parameter>) createStackSetRequest
-                .getParameters();
-        if (parametersList.isEmpty() && !parametersList.isAutoConstruct()) {
+        if (createStackSetRequest.getParameters().isEmpty()
+                && !((com.amazonaws.internal.SdkInternalList<Parameter>) createStackSetRequest.getParameters()).isAutoConstruct()) {
             request.addParameter("Parameters", "");
         }
-        if (!parametersList.isEmpty() || !parametersList.isAutoConstruct()) {
+        if (!createStackSetRequest.getParameters().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Parameter>) createStackSetRequest.getParameters()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Parameter> parametersList = (com.amazonaws.internal.SdkInternalList<Parameter>) createStackSetRequest
+                    .getParameters();
             int parametersListIndex = 1;
 
             for (Parameter parametersListValue : parametersList) {
@@ -90,12 +92,14 @@ public class CreateStackSetRequestMarshaller implements Marshaller<Request<Creat
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> capabilitiesList = (com.amazonaws.internal.SdkInternalList<String>) createStackSetRequest
-                .getCapabilities();
-        if (capabilitiesList.isEmpty() && !capabilitiesList.isAutoConstruct()) {
+        if (createStackSetRequest.getCapabilities().isEmpty()
+                && !((com.amazonaws.internal.SdkInternalList<String>) createStackSetRequest.getCapabilities()).isAutoConstruct()) {
             request.addParameter("Capabilities", "");
         }
-        if (!capabilitiesList.isEmpty() || !capabilitiesList.isAutoConstruct()) {
+        if (!createStackSetRequest.getCapabilities().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createStackSetRequest.getCapabilities()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> capabilitiesList = (com.amazonaws.internal.SdkInternalList<String>) createStackSetRequest
+                    .getCapabilities();
             int capabilitiesListIndex = 1;
 
             for (String capabilitiesListValue : capabilitiesList) {
@@ -106,11 +110,11 @@ public class CreateStackSetRequestMarshaller implements Marshaller<Request<Creat
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createStackSetRequest.getTags();
-        if (tagsList.isEmpty() && !tagsList.isAutoConstruct()) {
+        if (createStackSetRequest.getTags().isEmpty() && !((com.amazonaws.internal.SdkInternalList<Tag>) createStackSetRequest.getTags()).isAutoConstruct()) {
             request.addParameter("Tags", "");
         }
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!createStackSetRequest.getTags().isEmpty() || !((com.amazonaws.internal.SdkInternalList<Tag>) createStackSetRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createStackSetRequest.getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {

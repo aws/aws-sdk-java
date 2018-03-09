@@ -28,7 +28,8 @@ public enum ChannelType {
     ADM("ADM"),
     SMS("SMS"),
     EMAIL("EMAIL"),
-    BAIDU("BAIDU");
+    BAIDU("BAIDU"),
+    CUSTOM("CUSTOM");
 
     private String value;
 

@@ -48,9 +48,10 @@ public class PutAttributesRequestMarshaller implements Marshaller<Request<PutAtt
             request.addParameter("ItemName", StringUtils.fromString(putAttributesRequest.getItemName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<ReplaceableAttribute> attributesList = (com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>) putAttributesRequest
-                .getAttributes();
-        if (!attributesList.isEmpty() || !attributesList.isAutoConstruct()) {
+        if (!putAttributesRequest.getAttributes().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>) putAttributesRequest.getAttributes()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<ReplaceableAttribute> attributesList = (com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>) putAttributesRequest
+                    .getAttributes();
             int attributesListIndex = 1;
 
             for (ReplaceableAttribute attributesListValue : attributesList) {

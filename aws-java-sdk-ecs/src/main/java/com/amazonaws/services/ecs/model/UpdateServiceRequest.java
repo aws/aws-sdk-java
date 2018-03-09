@@ -63,7 +63,7 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The network configuration for the service. This parameter is required for task definitions that use the
-     * <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported for
+     * <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported for
      * other network modes. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
      * <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -85,8 +85,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String platformVersion;
     /**
      * <p>
-     * Whether or not to force a new deployment of the service. By default, <code>--no-force-new-deployment</code> is
-     * assumed unless specified otherwise.
+     * Whether to force a new deployment of the service. By default, <code>--no-force-new-deployment</code> is assumed
+     * unless otherwise specified.
      * </p>
      */
     private Boolean forceNewDeployment;
@@ -94,10 +94,10 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
      * Balancing target health checks after a task has first started. This is only valid if your service is configured
-     * to use a load balancer. If your service's tasks take a while to start and respond to ELB health checks, you can
-     * specify a health check grace period of up to 1,800 seconds during which the ECS service scheduler will ignore ELB
-     * health check status. This grace period can prevent the ECS service scheduler from marking tasks as unhealthy and
-     * stopping them before they have time to come up.
+     * to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing
+     * health checks, you can specify a health check grace period of up to 1,800 seconds during which the ECS service
+     * scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the ECS service
+     * scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
      * </p>
      */
     private Integer healthCheckGracePeriodSeconds;
@@ -338,7 +338,7 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The network configuration for the service. This parameter is required for task definitions that use the
-     * <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported for
+     * <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported for
      * other network modes. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
      * <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -353,7 +353,7 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param networkConfiguration
      *        The network configuration for the service. This parameter is required for task definitions that use the
-     *        <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported
+     *        <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported
      *        for other network modes. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
      *        in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
@@ -371,7 +371,7 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The network configuration for the service. This parameter is required for task definitions that use the
-     * <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported for
+     * <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported for
      * other network modes. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
      * <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -385,7 +385,7 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </note>
      * 
      * @return The network configuration for the service. This parameter is required for task definitions that use the
-     *         <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported
+     *         <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported
      *         for other network modes. For more information, see <a
      *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      *         Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
@@ -403,7 +403,7 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The network configuration for the service. This parameter is required for task definitions that use the
-     * <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported for
+     * <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported for
      * other network modes. For more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the
      * <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -418,7 +418,7 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param networkConfiguration
      *        The network configuration for the service. This parameter is required for task definitions that use the
-     *        <code>awsvpc</code> network mode to receive their own Elastic Network Interface, and it is not supported
+     *        <code>awsvpc</code> network mode to receive their own elastic network interface, and it is not supported
      *        for other network modes. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
      *        in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
@@ -477,13 +477,13 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Whether or not to force a new deployment of the service. By default, <code>--no-force-new-deployment</code> is
-     * assumed unless specified otherwise.
+     * Whether to force a new deployment of the service. By default, <code>--no-force-new-deployment</code> is assumed
+     * unless otherwise specified.
      * </p>
      * 
      * @param forceNewDeployment
-     *        Whether or not to force a new deployment of the service. By default,
-     *        <code>--no-force-new-deployment</code> is assumed unless specified otherwise.
+     *        Whether to force a new deployment of the service. By default, <code>--no-force-new-deployment</code> is
+     *        assumed unless otherwise specified.
      */
 
     public void setForceNewDeployment(Boolean forceNewDeployment) {
@@ -492,12 +492,12 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Whether or not to force a new deployment of the service. By default, <code>--no-force-new-deployment</code> is
-     * assumed unless specified otherwise.
+     * Whether to force a new deployment of the service. By default, <code>--no-force-new-deployment</code> is assumed
+     * unless otherwise specified.
      * </p>
      * 
-     * @return Whether or not to force a new deployment of the service. By default,
-     *         <code>--no-force-new-deployment</code> is assumed unless specified otherwise.
+     * @return Whether to force a new deployment of the service. By default, <code>--no-force-new-deployment</code> is
+     *         assumed unless otherwise specified.
      */
 
     public Boolean getForceNewDeployment() {
@@ -506,13 +506,13 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Whether or not to force a new deployment of the service. By default, <code>--no-force-new-deployment</code> is
-     * assumed unless specified otherwise.
+     * Whether to force a new deployment of the service. By default, <code>--no-force-new-deployment</code> is assumed
+     * unless otherwise specified.
      * </p>
      * 
      * @param forceNewDeployment
-     *        Whether or not to force a new deployment of the service. By default,
-     *        <code>--no-force-new-deployment</code> is assumed unless specified otherwise.
+     *        Whether to force a new deployment of the service. By default, <code>--no-force-new-deployment</code> is
+     *        assumed unless otherwise specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -523,12 +523,12 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Whether or not to force a new deployment of the service. By default, <code>--no-force-new-deployment</code> is
-     * assumed unless specified otherwise.
+     * Whether to force a new deployment of the service. By default, <code>--no-force-new-deployment</code> is assumed
+     * unless otherwise specified.
      * </p>
      * 
-     * @return Whether or not to force a new deployment of the service. By default,
-     *         <code>--no-force-new-deployment</code> is assumed unless specified otherwise.
+     * @return Whether to force a new deployment of the service. By default, <code>--no-force-new-deployment</code> is
+     *         assumed unless otherwise specified.
      */
 
     public Boolean isForceNewDeployment() {
@@ -539,19 +539,20 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
      * Balancing target health checks after a task has first started. This is only valid if your service is configured
-     * to use a load balancer. If your service's tasks take a while to start and respond to ELB health checks, you can
-     * specify a health check grace period of up to 1,800 seconds during which the ECS service scheduler will ignore ELB
-     * health check status. This grace period can prevent the ECS service scheduler from marking tasks as unhealthy and
-     * stopping them before they have time to come up.
+     * to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing
+     * health checks, you can specify a health check grace period of up to 1,800 seconds during which the ECS service
+     * scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the ECS service
+     * scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
      * </p>
      * 
      * @param healthCheckGracePeriodSeconds
      *        The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
      *        Balancing target health checks after a task has first started. This is only valid if your service is
-     *        configured to use a load balancer. If your service's tasks take a while to start and respond to ELB health
-     *        checks, you can specify a health check grace period of up to 1,800 seconds during which the ECS service
-     *        scheduler will ignore ELB health check status. This grace period can prevent the ECS service scheduler
-     *        from marking tasks as unhealthy and stopping them before they have time to come up.
+     *        configured to use a load balancer. If your service's tasks take a while to start and respond to Elastic
+     *        Load Balancing health checks, you can specify a health check grace period of up to 1,800 seconds during
+     *        which the ECS service scheduler ignores the Elastic Load Balancing health check status. This grace period
+     *        can prevent the ECS service scheduler from marking tasks as unhealthy and stopping them before they have
+     *        time to come up.
      */
 
     public void setHealthCheckGracePeriodSeconds(Integer healthCheckGracePeriodSeconds) {
@@ -562,18 +563,19 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
      * Balancing target health checks after a task has first started. This is only valid if your service is configured
-     * to use a load balancer. If your service's tasks take a while to start and respond to ELB health checks, you can
-     * specify a health check grace period of up to 1,800 seconds during which the ECS service scheduler will ignore ELB
-     * health check status. This grace period can prevent the ECS service scheduler from marking tasks as unhealthy and
-     * stopping them before they have time to come up.
+     * to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing
+     * health checks, you can specify a health check grace period of up to 1,800 seconds during which the ECS service
+     * scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the ECS service
+     * scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
      * </p>
      * 
      * @return The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic
      *         Load Balancing target health checks after a task has first started. This is only valid if your service is
-     *         configured to use a load balancer. If your service's tasks take a while to start and respond to ELB
-     *         health checks, you can specify a health check grace period of up to 1,800 seconds during which the ECS
-     *         service scheduler will ignore ELB health check status. This grace period can prevent the ECS service
-     *         scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
+     *         configured to use a load balancer. If your service's tasks take a while to start and respond to Elastic
+     *         Load Balancing health checks, you can specify a health check grace period of up to 1,800 seconds during
+     *         which the ECS service scheduler ignores the Elastic Load Balancing health check status. This grace period
+     *         can prevent the ECS service scheduler from marking tasks as unhealthy and stopping them before they have
+     *         time to come up.
      */
 
     public Integer getHealthCheckGracePeriodSeconds() {
@@ -584,19 +586,20 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
      * Balancing target health checks after a task has first started. This is only valid if your service is configured
-     * to use a load balancer. If your service's tasks take a while to start and respond to ELB health checks, you can
-     * specify a health check grace period of up to 1,800 seconds during which the ECS service scheduler will ignore ELB
-     * health check status. This grace period can prevent the ECS service scheduler from marking tasks as unhealthy and
-     * stopping them before they have time to come up.
+     * to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing
+     * health checks, you can specify a health check grace period of up to 1,800 seconds during which the ECS service
+     * scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the ECS service
+     * scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
      * </p>
      * 
      * @param healthCheckGracePeriodSeconds
      *        The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load
      *        Balancing target health checks after a task has first started. This is only valid if your service is
-     *        configured to use a load balancer. If your service's tasks take a while to start and respond to ELB health
-     *        checks, you can specify a health check grace period of up to 1,800 seconds during which the ECS service
-     *        scheduler will ignore ELB health check status. This grace period can prevent the ECS service scheduler
-     *        from marking tasks as unhealthy and stopping them before they have time to come up.
+     *        configured to use a load balancer. If your service's tasks take a while to start and respond to Elastic
+     *        Load Balancing health checks, you can specify a health check grace period of up to 1,800 seconds during
+     *        which the ECS service scheduler ignores the Elastic Load Balancing health check status. This grace period
+     *        can prevent the ECS service scheduler from marking tasks as unhealthy and stopping them before they have
+     *        time to come up.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

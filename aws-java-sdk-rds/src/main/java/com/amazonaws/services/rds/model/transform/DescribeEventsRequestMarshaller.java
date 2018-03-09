@@ -60,9 +60,10 @@ public class DescribeEventsRequestMarshaller implements Marshaller<Request<Descr
             request.addParameter("Duration", StringUtils.fromInteger(describeEventsRequest.getDuration()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> eventCategoriesList = (com.amazonaws.internal.SdkInternalList<String>) describeEventsRequest
-                .getEventCategories();
-        if (!eventCategoriesList.isEmpty() || !eventCategoriesList.isAutoConstruct()) {
+        if (!describeEventsRequest.getEventCategories().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeEventsRequest.getEventCategories()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> eventCategoriesList = (com.amazonaws.internal.SdkInternalList<String>) describeEventsRequest
+                    .getEventCategories();
             int eventCategoriesListIndex = 1;
 
             for (String eventCategoriesListValue : eventCategoriesList) {
@@ -73,8 +74,9 @@ public class DescribeEventsRequestMarshaller implements Marshaller<Request<Descr
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeEventsRequest.getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        if (!describeEventsRequest.getFilters().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Filter>) describeEventsRequest.getFilters()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describeEventsRequest.getFilters();
             int filtersListIndex = 1;
 
             for (Filter filtersListValue : filtersList) {
@@ -83,8 +85,9 @@ public class DescribeEventsRequestMarshaller implements Marshaller<Request<Descr
                     request.addParameter("Filters.Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                if (!filtersListValue.getValues().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
                     int valuesListIndex = 1;
 
                     for (String valuesListValue : valuesList) {

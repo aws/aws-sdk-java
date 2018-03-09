@@ -97,9 +97,10 @@ public class ModifyLoadBalancerAttributesRequestMarshaller implements
                 }
             }
 
-            com.amazonaws.internal.SdkInternalList<AdditionalAttribute> additionalAttributesList = (com.amazonaws.internal.SdkInternalList<AdditionalAttribute>) loadBalancerAttributes
-                    .getAdditionalAttributes();
-            if (!additionalAttributesList.isEmpty() || !additionalAttributesList.isAutoConstruct()) {
+            if (!loadBalancerAttributes.getAdditionalAttributes().isEmpty()
+                    || !((com.amazonaws.internal.SdkInternalList<AdditionalAttribute>) loadBalancerAttributes.getAdditionalAttributes()).isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<AdditionalAttribute> additionalAttributesList = (com.amazonaws.internal.SdkInternalList<AdditionalAttribute>) loadBalancerAttributes
+                        .getAdditionalAttributes();
                 int additionalAttributesListIndex = 1;
 
                 for (AdditionalAttribute additionalAttributesListValue : additionalAttributesList) {

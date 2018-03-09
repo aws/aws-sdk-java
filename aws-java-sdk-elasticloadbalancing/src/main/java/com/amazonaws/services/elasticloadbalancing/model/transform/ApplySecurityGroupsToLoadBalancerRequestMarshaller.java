@@ -46,9 +46,10 @@ public class ApplySecurityGroupsToLoadBalancerRequestMarshaller implements
             request.addParameter("LoadBalancerName", StringUtils.fromString(applySecurityGroupsToLoadBalancerRequest.getLoadBalancerName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> securityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) applySecurityGroupsToLoadBalancerRequest
-                .getSecurityGroups();
-        if (!securityGroupsList.isEmpty() || !securityGroupsList.isAutoConstruct()) {
+        if (!applySecurityGroupsToLoadBalancerRequest.getSecurityGroups().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) applySecurityGroupsToLoadBalancerRequest.getSecurityGroups()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> securityGroupsList = (com.amazonaws.internal.SdkInternalList<String>) applySecurityGroupsToLoadBalancerRequest
+                    .getSecurityGroups();
             int securityGroupsListIndex = 1;
 
             for (String securityGroupsListValue : securityGroupsList) {

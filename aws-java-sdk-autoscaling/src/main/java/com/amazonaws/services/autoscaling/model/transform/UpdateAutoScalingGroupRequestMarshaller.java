@@ -80,9 +80,10 @@ public class UpdateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
             request.addParameter("DefaultCooldown", StringUtils.fromInteger(updateAutoScalingGroupRequest.getDefaultCooldown()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> availabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) updateAutoScalingGroupRequest
-                .getAvailabilityZones();
-        if (!availabilityZonesList.isEmpty() || !availabilityZonesList.isAutoConstruct()) {
+        if (!updateAutoScalingGroupRequest.getAvailabilityZones().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) updateAutoScalingGroupRequest.getAvailabilityZones()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> availabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) updateAutoScalingGroupRequest
+                    .getAvailabilityZones();
             int availabilityZonesListIndex = 1;
 
             for (String availabilityZonesListValue : availabilityZonesList) {
@@ -109,9 +110,10 @@ public class UpdateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
             request.addParameter("VPCZoneIdentifier", StringUtils.fromString(updateAutoScalingGroupRequest.getVPCZoneIdentifier()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> terminationPoliciesList = (com.amazonaws.internal.SdkInternalList<String>) updateAutoScalingGroupRequest
-                .getTerminationPolicies();
-        if (!terminationPoliciesList.isEmpty() || !terminationPoliciesList.isAutoConstruct()) {
+        if (!updateAutoScalingGroupRequest.getTerminationPolicies().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) updateAutoScalingGroupRequest.getTerminationPolicies()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> terminationPoliciesList = (com.amazonaws.internal.SdkInternalList<String>) updateAutoScalingGroupRequest
+                    .getTerminationPolicies();
             int terminationPoliciesListIndex = 1;
 
             for (String terminationPoliciesListValue : terminationPoliciesList) {

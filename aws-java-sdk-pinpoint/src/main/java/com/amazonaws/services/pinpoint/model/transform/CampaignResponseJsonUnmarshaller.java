@@ -73,6 +73,10 @@ public class CampaignResponseJsonUnmarshaller implements Unmarshaller<CampaignRe
                     context.nextToken();
                     campaignResponse.setHoldoutPercent(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("Hook", targetDepth)) {
+                    context.nextToken();
+                    campaignResponse.setHook(CampaignHookJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Id", targetDepth)) {
                     context.nextToken();
                     campaignResponse.setId(context.getUnmarshaller(String.class).unmarshall(context));

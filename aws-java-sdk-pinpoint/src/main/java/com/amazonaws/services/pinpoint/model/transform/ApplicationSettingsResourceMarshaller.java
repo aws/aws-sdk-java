@@ -29,6 +29,8 @@ public class ApplicationSettingsResourceMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationId").build();
+    private static final MarshallingInfo<StructuredPojo> CAMPAIGNHOOK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CampaignHook").build();
     private static final MarshallingInfo<String> LASTMODIFIEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedDate").build();
     private static final MarshallingInfo<StructuredPojo> LIMITS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -53,6 +55,7 @@ public class ApplicationSettingsResourceMarshaller {
 
         try {
             protocolMarshaller.marshall(applicationSettingsResource.getApplicationId(), APPLICATIONID_BINDING);
+            protocolMarshaller.marshall(applicationSettingsResource.getCampaignHook(), CAMPAIGNHOOK_BINDING);
             protocolMarshaller.marshall(applicationSettingsResource.getLastModifiedDate(), LASTMODIFIEDDATE_BINDING);
             protocolMarshaller.marshall(applicationSettingsResource.getLimits(), LIMITS_BINDING);
             protocolMarshaller.marshall(applicationSettingsResource.getQuietTime(), QUIETTIME_BINDING);

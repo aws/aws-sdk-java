@@ -53,8 +53,9 @@ public class CopyDBParameterGroupRequestMarshaller implements Marshaller<Request
                     StringUtils.fromString(copyDBParameterGroupRequest.getTargetDBParameterGroupDescription()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) copyDBParameterGroupRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!copyDBParameterGroupRequest.getTags().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Tag>) copyDBParameterGroupRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) copyDBParameterGroupRequest.getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {

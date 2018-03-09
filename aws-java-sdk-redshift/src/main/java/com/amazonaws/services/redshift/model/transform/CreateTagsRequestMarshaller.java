@@ -44,8 +44,8 @@ public class CreateTagsRequestMarshaller implements Marshaller<Request<CreateTag
             request.addParameter("ResourceName", StringUtils.fromString(createTagsRequest.getResourceName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createTagsRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!createTagsRequest.getTags().isEmpty() || !((com.amazonaws.internal.SdkInternalList<Tag>) createTagsRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createTagsRequest.getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {

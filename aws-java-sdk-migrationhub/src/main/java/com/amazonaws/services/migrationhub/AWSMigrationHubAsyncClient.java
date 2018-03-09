@@ -25,7 +25,10 @@ import java.util.concurrent.ExecutorService;
  * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
- * <p/>
+ * <p>
+ * The AWS Migration Hub API methods help to obtain server and application migration status and integrate your
+ * resource-specific migration tool by providing a programmatic interface to Migration Hub.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

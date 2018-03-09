@@ -46,9 +46,10 @@ public class DescribePendingMaintenanceActionsRequestMarshaller implements
             request.addParameter("ResourceIdentifier", StringUtils.fromString(describePendingMaintenanceActionsRequest.getResourceIdentifier()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describePendingMaintenanceActionsRequest
-                .getFilters();
-        if (!filtersList.isEmpty() || !filtersList.isAutoConstruct()) {
+        if (!describePendingMaintenanceActionsRequest.getFilters().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Filter>) describePendingMaintenanceActionsRequest.getFilters()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Filter> filtersList = (com.amazonaws.internal.SdkInternalList<Filter>) describePendingMaintenanceActionsRequest
+                    .getFilters();
             int filtersListIndex = 1;
 
             for (Filter filtersListValue : filtersList) {
@@ -57,8 +58,9 @@ public class DescribePendingMaintenanceActionsRequestMarshaller implements
                     request.addParameter("Filters.Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                if (!valuesList.isEmpty() || !valuesList.isAutoConstruct()) {
+                if (!filtersListValue.getValues().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
                     int valuesListIndex = 1;
 
                     for (String valuesListValue : valuesList) {

@@ -57,18 +57,18 @@
     </#if>
 
     <#if customConfig.useAutoConstructList>
-        ${listModel.templateImplType} ${listVariable} = (${listModel.templateImplType})${getMember}();
         <#if listModel.sendEmptyQueryString>
-            if (${listVariable}.isEmpty()) {
+            if (${getMember}().isEmpty()) {
                 request.addParameter("${parameterRootPath}", "");
             }
         </#if>
         <#if listModel.marshallNonAutoConstructedEmptyLists>
-            if (${listVariable}.isEmpty() && !${listVariable}.isAutoConstruct()) {
+            if (${getMember}().isEmpty() && !((${listModel.templateImplType})${getMember}()).isAutoConstruct()) {
                 request.addParameter("${parameterRootPath}", "");
             }
         </#if>
-        if (!${listVariable}.isEmpty() || !${listVariable}.isAutoConstruct()) {
+        if (!${getMember}().isEmpty() || !((${listModel.templateImplType})${getMember}()).isAutoConstruct()) {
+            ${listModel.templateImplType} ${listVariable} = (${listModel.templateImplType})${getMember}();
     <#else>
 
         if (${getMember}() != null) {

@@ -46,9 +46,10 @@ public class AttachLoadBalancerTargetGroupsRequestMarshaller implements
             request.addParameter("AutoScalingGroupName", StringUtils.fromString(attachLoadBalancerTargetGroupsRequest.getAutoScalingGroupName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> targetGroupARNsList = (com.amazonaws.internal.SdkInternalList<String>) attachLoadBalancerTargetGroupsRequest
-                .getTargetGroupARNs();
-        if (!targetGroupARNsList.isEmpty() || !targetGroupARNsList.isAutoConstruct()) {
+        if (!attachLoadBalancerTargetGroupsRequest.getTargetGroupARNs().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) attachLoadBalancerTargetGroupsRequest.getTargetGroupARNs()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> targetGroupARNsList = (com.amazonaws.internal.SdkInternalList<String>) attachLoadBalancerTargetGroupsRequest
+                    .getTargetGroupARNs();
             int targetGroupARNsListIndex = 1;
 
             for (String targetGroupARNsListValue : targetGroupARNsList) {

@@ -40,9 +40,10 @@ public class DescribeApplicationsRequestMarshaller implements Marshaller<Request
         request.addParameter("Version", "2010-12-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> applicationNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeApplicationsRequest
-                .getApplicationNames();
-        if (!applicationNamesList.isEmpty() || !applicationNamesList.isAutoConstruct()) {
+        if (!describeApplicationsRequest.getApplicationNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeApplicationsRequest.getApplicationNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> applicationNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeApplicationsRequest
+                    .getApplicationNames();
             int applicationNamesListIndex = 1;
 
             for (String applicationNamesListValue : applicationNamesList) {

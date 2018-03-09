@@ -55,9 +55,10 @@ public class PurchaseReservedDBInstancesOfferingRequestMarshaller implements
             request.addParameter("DBInstanceCount", StringUtils.fromInteger(purchaseReservedDBInstancesOfferingRequest.getDBInstanceCount()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) purchaseReservedDBInstancesOfferingRequest
-                .getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!purchaseReservedDBInstancesOfferingRequest.getTags().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Tag>) purchaseReservedDBInstancesOfferingRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) purchaseReservedDBInstancesOfferingRequest
+                    .getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {

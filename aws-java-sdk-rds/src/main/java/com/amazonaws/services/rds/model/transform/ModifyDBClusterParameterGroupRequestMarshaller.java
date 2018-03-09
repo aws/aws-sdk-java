@@ -46,9 +46,10 @@ public class ModifyDBClusterParameterGroupRequestMarshaller implements
             request.addParameter("DBClusterParameterGroupName", StringUtils.fromString(modifyDBClusterParameterGroupRequest.getDBClusterParameterGroupName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Parameter> parametersList = (com.amazonaws.internal.SdkInternalList<Parameter>) modifyDBClusterParameterGroupRequest
-                .getParameters();
-        if (!parametersList.isEmpty() || !parametersList.isAutoConstruct()) {
+        if (!modifyDBClusterParameterGroupRequest.getParameters().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Parameter>) modifyDBClusterParameterGroupRequest.getParameters()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Parameter> parametersList = (com.amazonaws.internal.SdkInternalList<Parameter>) modifyDBClusterParameterGroupRequest
+                    .getParameters();
             int parametersListIndex = 1;
 
             for (Parameter parametersListValue : parametersList) {

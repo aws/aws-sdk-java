@@ -40,8 +40,10 @@ public class EnterStandbyRequestMarshaller implements Marshaller<Request<EnterSt
         request.addParameter("Version", "2011-01-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> instanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) enterStandbyRequest.getInstanceIds();
-        if (!instanceIdsList.isEmpty() || !instanceIdsList.isAutoConstruct()) {
+        if (!enterStandbyRequest.getInstanceIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) enterStandbyRequest.getInstanceIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> instanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) enterStandbyRequest
+                    .getInstanceIds();
             int instanceIdsListIndex = 1;
 
             for (String instanceIdsListValue : instanceIdsList) {

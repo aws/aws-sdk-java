@@ -49,9 +49,10 @@ public class ResetCacheParameterGroupRequestMarshaller implements Marshaller<Req
             request.addParameter("ResetAllParameters", StringUtils.fromBoolean(resetCacheParameterGroupRequest.getResetAllParameters()));
         }
 
-        com.amazonaws.internal.SdkInternalList<ParameterNameValue> parameterNameValuesList = (com.amazonaws.internal.SdkInternalList<ParameterNameValue>) resetCacheParameterGroupRequest
-                .getParameterNameValues();
-        if (!parameterNameValuesList.isEmpty() || !parameterNameValuesList.isAutoConstruct()) {
+        if (!resetCacheParameterGroupRequest.getParameterNameValues().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<ParameterNameValue>) resetCacheParameterGroupRequest.getParameterNameValues()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<ParameterNameValue> parameterNameValuesList = (com.amazonaws.internal.SdkInternalList<ParameterNameValue>) resetCacheParameterGroupRequest
+                    .getParameterNameValues();
             int parameterNameValuesListIndex = 1;
 
             for (ParameterNameValue parameterNameValuesListValue : parameterNameValuesList) {

@@ -44,9 +44,10 @@ public class BatchPutAttributesRequestMarshaller implements Marshaller<Request<B
             request.addParameter("DomainName", StringUtils.fromString(batchPutAttributesRequest.getDomainName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<ReplaceableItem> itemsList = (com.amazonaws.internal.SdkInternalList<ReplaceableItem>) batchPutAttributesRequest
-                .getItems();
-        if (!itemsList.isEmpty() || !itemsList.isAutoConstruct()) {
+        if (!batchPutAttributesRequest.getItems().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<ReplaceableItem>) batchPutAttributesRequest.getItems()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<ReplaceableItem> itemsList = (com.amazonaws.internal.SdkInternalList<ReplaceableItem>) batchPutAttributesRequest
+                    .getItems();
             int itemsListIndex = 1;
 
             for (ReplaceableItem itemsListValue : itemsList) {
@@ -55,9 +56,10 @@ public class BatchPutAttributesRequestMarshaller implements Marshaller<Request<B
                     request.addParameter("Item." + itemsListIndex + ".ItemName", StringUtils.fromString(itemsListValue.getName()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<ReplaceableAttribute> attributesList = (com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>) itemsListValue
-                        .getAttributes();
-                if (!attributesList.isEmpty() || !attributesList.isAutoConstruct()) {
+                if (!itemsListValue.getAttributes().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>) itemsListValue.getAttributes()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<ReplaceableAttribute> attributesList = (com.amazonaws.internal.SdkInternalList<ReplaceableAttribute>) itemsListValue
+                            .getAttributes();
                     int attributesListIndex = 1;
 
                     for (ReplaceableAttribute attributesListValue : attributesList) {

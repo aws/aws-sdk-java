@@ -60,9 +60,10 @@ public class GetClusterCredentialsRequestMarshaller implements Marshaller<Reques
             request.addParameter("AutoCreate", StringUtils.fromBoolean(getClusterCredentialsRequest.getAutoCreate()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> dbGroupsList = (com.amazonaws.internal.SdkInternalList<String>) getClusterCredentialsRequest
-                .getDbGroups();
-        if (!dbGroupsList.isEmpty() || !dbGroupsList.isAutoConstruct()) {
+        if (!getClusterCredentialsRequest.getDbGroups().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) getClusterCredentialsRequest.getDbGroups()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> dbGroupsList = (com.amazonaws.internal.SdkInternalList<String>) getClusterCredentialsRequest
+                    .getDbGroups();
             int dbGroupsListIndex = 1;
 
             for (String dbGroupsListValue : dbGroupsList) {

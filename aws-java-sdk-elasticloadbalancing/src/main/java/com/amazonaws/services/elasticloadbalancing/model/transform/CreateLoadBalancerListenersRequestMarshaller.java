@@ -46,9 +46,10 @@ public class CreateLoadBalancerListenersRequestMarshaller implements
             request.addParameter("LoadBalancerName", StringUtils.fromString(createLoadBalancerListenersRequest.getLoadBalancerName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Listener> listenersList = (com.amazonaws.internal.SdkInternalList<Listener>) createLoadBalancerListenersRequest
-                .getListeners();
-        if (!listenersList.isEmpty() || !listenersList.isAutoConstruct()) {
+        if (!createLoadBalancerListenersRequest.getListeners().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Listener>) createLoadBalancerListenersRequest.getListeners()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Listener> listenersList = (com.amazonaws.internal.SdkInternalList<Listener>) createLoadBalancerListenersRequest
+                    .getListeners();
             int listenersListIndex = 1;
 
             for (Listener listenersListValue : listenersList) {

@@ -12,7 +12,10 @@
  */
 
 /**
- * <p/>
+ * <p>
+ * The AWS Migration Hub API methods help to obtain server and application migration status and integrate your
+ * resource-specific migration tool by providing a programmatic interface to Migration Hub.
+ * </p>
  */
 package com.amazonaws.services.migrationhub;
 

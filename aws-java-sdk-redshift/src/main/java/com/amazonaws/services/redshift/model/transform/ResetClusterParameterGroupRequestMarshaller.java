@@ -49,9 +49,10 @@ public class ResetClusterParameterGroupRequestMarshaller implements Marshaller<R
             request.addParameter("ResetAllParameters", StringUtils.fromBoolean(resetClusterParameterGroupRequest.getResetAllParameters()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Parameter> parametersList = (com.amazonaws.internal.SdkInternalList<Parameter>) resetClusterParameterGroupRequest
-                .getParameters();
-        if (!parametersList.isEmpty() || !parametersList.isAutoConstruct()) {
+        if (!resetClusterParameterGroupRequest.getParameters().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Parameter>) resetClusterParameterGroupRequest.getParameters()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Parameter> parametersList = (com.amazonaws.internal.SdkInternalList<Parameter>) resetClusterParameterGroupRequest
+                    .getParameters();
             int parametersListIndex = 1;
 
             for (Parameter parametersListValue : parametersList) {

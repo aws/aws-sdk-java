@@ -44,8 +44,9 @@ public class AddTagsToResourceRequestMarshaller implements Marshaller<Request<Ad
             request.addParameter("ResourceName", StringUtils.fromString(addTagsToResourceRequest.getResourceName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) addTagsToResourceRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!addTagsToResourceRequest.getTags().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Tag>) addTagsToResourceRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) addTagsToResourceRequest.getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {

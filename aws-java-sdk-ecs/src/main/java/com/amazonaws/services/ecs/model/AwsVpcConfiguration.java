@@ -43,7 +43,7 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
     private com.amazonaws.internal.SdkInternalList<String> securityGroups;
     /**
      * <p>
-     * Specifies whether or not the task's elastic network interface receives a public IP address.
+     * Whether the task's elastic network interface receives a public IP address.
      * </p>
      */
     private String assignPublicIp;
@@ -204,11 +204,11 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies whether or not the task's elastic network interface receives a public IP address.
+     * Whether the task's elastic network interface receives a public IP address.
      * </p>
      * 
      * @param assignPublicIp
-     *        Specifies whether or not the task's elastic network interface receives a public IP address.
+     *        Whether the task's elastic network interface receives a public IP address.
      * @see AssignPublicIp
      */
 
@@ -218,10 +218,10 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies whether or not the task's elastic network interface receives a public IP address.
+     * Whether the task's elastic network interface receives a public IP address.
      * </p>
      * 
-     * @return Specifies whether or not the task's elastic network interface receives a public IP address.
+     * @return Whether the task's elastic network interface receives a public IP address.
      * @see AssignPublicIp
      */
 
@@ -231,11 +231,11 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies whether or not the task's elastic network interface receives a public IP address.
+     * Whether the task's elastic network interface receives a public IP address.
      * </p>
      * 
      * @param assignPublicIp
-     *        Specifies whether or not the task's elastic network interface receives a public IP address.
+     *        Whether the task's elastic network interface receives a public IP address.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AssignPublicIp
      */
@@ -247,11 +247,11 @@ public class AwsVpcConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies whether or not the task's elastic network interface receives a public IP address.
+     * Whether the task's elastic network interface receives a public IP address.
      * </p>
      * 
      * @param assignPublicIp
-     *        Specifies whether or not the task's elastic network interface receives a public IP address.
+     *        Whether the task's elastic network interface receives a public IP address.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AssignPublicIp
      */

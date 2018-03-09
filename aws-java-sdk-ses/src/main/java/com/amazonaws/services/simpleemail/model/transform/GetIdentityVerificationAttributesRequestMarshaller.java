@@ -42,9 +42,10 @@ public class GetIdentityVerificationAttributesRequestMarshaller implements
         request.addParameter("Version", "2010-12-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> identitiesList = (com.amazonaws.internal.SdkInternalList<String>) getIdentityVerificationAttributesRequest
-                .getIdentities();
-        if (!identitiesList.isEmpty() || !identitiesList.isAutoConstruct()) {
+        if (!getIdentityVerificationAttributesRequest.getIdentities().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) getIdentityVerificationAttributesRequest.getIdentities()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> identitiesList = (com.amazonaws.internal.SdkInternalList<String>) getIdentityVerificationAttributesRequest
+                    .getIdentities();
             int identitiesListIndex = 1;
 
             for (String identitiesListValue : identitiesList) {

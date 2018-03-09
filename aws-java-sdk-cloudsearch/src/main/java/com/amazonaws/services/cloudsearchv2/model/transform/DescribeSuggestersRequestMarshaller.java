@@ -44,9 +44,10 @@ public class DescribeSuggestersRequestMarshaller implements Marshaller<Request<D
             request.addParameter("DomainName", StringUtils.fromString(describeSuggestersRequest.getDomainName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> suggesterNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeSuggestersRequest
-                .getSuggesterNames();
-        if (!suggesterNamesList.isEmpty() || !suggesterNamesList.isAutoConstruct()) {
+        if (!describeSuggestersRequest.getSuggesterNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeSuggestersRequest.getSuggesterNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> suggesterNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeSuggestersRequest
+                    .getSuggesterNames();
             int suggesterNamesListIndex = 1;
 
             for (String suggesterNamesListValue : suggesterNamesList) {

@@ -46,9 +46,10 @@ public class AttachLoadBalancerToSubnetsRequestMarshaller implements
             request.addParameter("LoadBalancerName", StringUtils.fromString(attachLoadBalancerToSubnetsRequest.getLoadBalancerName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> subnetsList = (com.amazonaws.internal.SdkInternalList<String>) attachLoadBalancerToSubnetsRequest
-                .getSubnets();
-        if (!subnetsList.isEmpty() || !subnetsList.isAutoConstruct()) {
+        if (!attachLoadBalancerToSubnetsRequest.getSubnets().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) attachLoadBalancerToSubnetsRequest.getSubnets()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> subnetsList = (com.amazonaws.internal.SdkInternalList<String>) attachLoadBalancerToSubnetsRequest
+                    .getSubnets();
             int subnetsListIndex = 1;
 
             for (String subnetsListValue : subnetsList) {

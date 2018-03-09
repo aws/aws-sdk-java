@@ -64,9 +64,10 @@ public class CreatePlatformVersionRequestMarshaller implements Marshaller<Reques
             request.addParameter("EnvironmentName", StringUtils.fromString(createPlatformVersionRequest.getEnvironmentName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting> optionSettingsList = (com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>) createPlatformVersionRequest
-                .getOptionSettings();
-        if (!optionSettingsList.isEmpty() || !optionSettingsList.isAutoConstruct()) {
+        if (!createPlatformVersionRequest.getOptionSettings().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>) createPlatformVersionRequest.getOptionSettings()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting> optionSettingsList = (com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>) createPlatformVersionRequest
+                    .getOptionSettings();
             int optionSettingsListIndex = 1;
 
             for (ConfigurationOptionSetting optionSettingsListValue : optionSettingsList) {

@@ -44,12 +44,14 @@ public class ListStacksRequestMarshaller implements Marshaller<Request<ListStack
             request.addParameter("NextToken", StringUtils.fromString(listStacksRequest.getNextToken()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> stackStatusFiltersList = (com.amazonaws.internal.SdkInternalList<String>) listStacksRequest
-                .getStackStatusFilters();
-        if (stackStatusFiltersList.isEmpty() && !stackStatusFiltersList.isAutoConstruct()) {
+        if (listStacksRequest.getStackStatusFilters().isEmpty()
+                && !((com.amazonaws.internal.SdkInternalList<String>) listStacksRequest.getStackStatusFilters()).isAutoConstruct()) {
             request.addParameter("StackStatusFilter", "");
         }
-        if (!stackStatusFiltersList.isEmpty() || !stackStatusFiltersList.isAutoConstruct()) {
+        if (!listStacksRequest.getStackStatusFilters().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) listStacksRequest.getStackStatusFilters()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> stackStatusFiltersList = (com.amazonaws.internal.SdkInternalList<String>) listStacksRequest
+                    .getStackStatusFilters();
             int stackStatusFiltersListIndex = 1;
 
             for (String stackStatusFiltersListValue : stackStatusFiltersList) {

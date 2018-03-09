@@ -44,9 +44,10 @@ public class SuspendProcessesRequestMarshaller implements Marshaller<Request<Sus
             request.addParameter("AutoScalingGroupName", StringUtils.fromString(suspendProcessesRequest.getAutoScalingGroupName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> scalingProcessesList = (com.amazonaws.internal.SdkInternalList<String>) suspendProcessesRequest
-                .getScalingProcesses();
-        if (!scalingProcessesList.isEmpty() || !scalingProcessesList.isAutoConstruct()) {
+        if (!suspendProcessesRequest.getScalingProcesses().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) suspendProcessesRequest.getScalingProcesses()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> scalingProcessesList = (com.amazonaws.internal.SdkInternalList<String>) suspendProcessesRequest
+                    .getScalingProcesses();
             int scalingProcessesListIndex = 1;
 
             for (String scalingProcessesListValue : scalingProcessesList) {

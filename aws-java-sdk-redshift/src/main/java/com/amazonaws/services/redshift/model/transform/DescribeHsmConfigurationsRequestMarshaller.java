@@ -53,9 +53,10 @@ public class DescribeHsmConfigurationsRequestMarshaller implements Marshaller<Re
             request.addParameter("Marker", StringUtils.fromString(describeHsmConfigurationsRequest.getMarker()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> tagKeysList = (com.amazonaws.internal.SdkInternalList<String>) describeHsmConfigurationsRequest
-                .getTagKeys();
-        if (!tagKeysList.isEmpty() || !tagKeysList.isAutoConstruct()) {
+        if (!describeHsmConfigurationsRequest.getTagKeys().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeHsmConfigurationsRequest.getTagKeys()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> tagKeysList = (com.amazonaws.internal.SdkInternalList<String>) describeHsmConfigurationsRequest
+                    .getTagKeys();
             int tagKeysListIndex = 1;
 
             for (String tagKeysListValue : tagKeysList) {
@@ -66,9 +67,10 @@ public class DescribeHsmConfigurationsRequestMarshaller implements Marshaller<Re
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> tagValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeHsmConfigurationsRequest
-                .getTagValues();
-        if (!tagValuesList.isEmpty() || !tagValuesList.isAutoConstruct()) {
+        if (!describeHsmConfigurationsRequest.getTagValues().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeHsmConfigurationsRequest.getTagValues()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> tagValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeHsmConfigurationsRequest
+                    .getTagValues();
             int tagValuesListIndex = 1;
 
             for (String tagValuesListValue : tagValuesList) {

@@ -34,7 +34,10 @@ public class GCMChannelResponse implements Serializable, Cloneable, StructuredPo
     private String credential;
     /** If the channel is enabled for sending messages. */
     private Boolean enabled;
-    /** If the channel is registered with a credential for authentication. */
+    /**
+     * Indicates whether the channel is configured with FCM or GCM credentials. Amazon Pinpoint uses your credentials to
+     * authenticate push notifications with FCM or GCM. Provide your credentials by setting the ApiKey attribute.
+     */
     private Boolean hasCredential;
     /** Channel ID. Not used. Present only for backwards compatibility. */
     private String id;
@@ -196,10 +199,13 @@ public class GCMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Indicates whether the channel is configured with FCM or GCM credentials. Amazon Pinpoint uses your credentials to
+     * authenticate push notifications with FCM or GCM. Provide your credentials by setting the ApiKey attribute.
      * 
      * @param hasCredential
-     *        If the channel is registered with a credential for authentication.
+     *        Indicates whether the channel is configured with FCM or GCM credentials. Amazon Pinpoint uses your
+     *        credentials to authenticate push notifications with FCM or GCM. Provide your credentials by setting the
+     *        ApiKey attribute.
      */
 
     public void setHasCredential(Boolean hasCredential) {
@@ -207,9 +213,12 @@ public class GCMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Indicates whether the channel is configured with FCM or GCM credentials. Amazon Pinpoint uses your credentials to
+     * authenticate push notifications with FCM or GCM. Provide your credentials by setting the ApiKey attribute.
      * 
-     * @return If the channel is registered with a credential for authentication.
+     * @return Indicates whether the channel is configured with FCM or GCM credentials. Amazon Pinpoint uses your
+     *         credentials to authenticate push notifications with FCM or GCM. Provide your credentials by setting the
+     *         ApiKey attribute.
      */
 
     public Boolean getHasCredential() {
@@ -217,10 +226,13 @@ public class GCMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Indicates whether the channel is configured with FCM or GCM credentials. Amazon Pinpoint uses your credentials to
+     * authenticate push notifications with FCM or GCM. Provide your credentials by setting the ApiKey attribute.
      * 
      * @param hasCredential
-     *        If the channel is registered with a credential for authentication.
+     *        Indicates whether the channel is configured with FCM or GCM credentials. Amazon Pinpoint uses your
+     *        credentials to authenticate push notifications with FCM or GCM. Provide your credentials by setting the
+     *        ApiKey attribute.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -230,9 +242,12 @@ public class GCMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Indicates whether the channel is configured with FCM or GCM credentials. Amazon Pinpoint uses your credentials to
+     * authenticate push notifications with FCM or GCM. Provide your credentials by setting the ApiKey attribute.
      * 
-     * @return If the channel is registered with a credential for authentication.
+     * @return Indicates whether the channel is configured with FCM or GCM credentials. Amazon Pinpoint uses your
+     *         credentials to authenticate push notifications with FCM or GCM. Provide your credentials by setting the
+     *         ApiKey attribute.
      */
 
     public Boolean isHasCredential() {

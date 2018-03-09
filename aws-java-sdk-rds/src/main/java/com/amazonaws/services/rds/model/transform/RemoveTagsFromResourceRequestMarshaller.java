@@ -44,9 +44,10 @@ public class RemoveTagsFromResourceRequestMarshaller implements Marshaller<Reque
             request.addParameter("ResourceName", StringUtils.fromString(removeTagsFromResourceRequest.getResourceName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> tagKeysList = (com.amazonaws.internal.SdkInternalList<String>) removeTagsFromResourceRequest
-                .getTagKeys();
-        if (!tagKeysList.isEmpty() || !tagKeysList.isAutoConstruct()) {
+        if (!removeTagsFromResourceRequest.getTagKeys().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) removeTagsFromResourceRequest.getTagKeys()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> tagKeysList = (com.amazonaws.internal.SdkInternalList<String>) removeTagsFromResourceRequest
+                    .getTagKeys();
             int tagKeysListIndex = 1;
 
             for (String tagKeysListValue : tagKeysList) {

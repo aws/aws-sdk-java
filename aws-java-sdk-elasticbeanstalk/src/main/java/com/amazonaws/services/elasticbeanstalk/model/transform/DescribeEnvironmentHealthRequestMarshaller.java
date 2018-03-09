@@ -49,9 +49,10 @@ public class DescribeEnvironmentHealthRequestMarshaller implements Marshaller<Re
             request.addParameter("EnvironmentId", StringUtils.fromString(describeEnvironmentHealthRequest.getEnvironmentId()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> attributeNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeEnvironmentHealthRequest
-                .getAttributeNames();
-        if (!attributeNamesList.isEmpty() || !attributeNamesList.isAutoConstruct()) {
+        if (!describeEnvironmentHealthRequest.getAttributeNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeEnvironmentHealthRequest.getAttributeNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> attributeNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeEnvironmentHealthRequest
+                    .getAttributeNames();
             int attributeNamesListIndex = 1;
 
             for (String attributeNamesListValue : attributeNamesList) {

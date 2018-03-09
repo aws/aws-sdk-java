@@ -54,9 +54,10 @@ public class DescribeClusterSecurityGroupsRequestMarshaller implements
             request.addParameter("Marker", StringUtils.fromString(describeClusterSecurityGroupsRequest.getMarker()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> tagKeysList = (com.amazonaws.internal.SdkInternalList<String>) describeClusterSecurityGroupsRequest
-                .getTagKeys();
-        if (!tagKeysList.isEmpty() || !tagKeysList.isAutoConstruct()) {
+        if (!describeClusterSecurityGroupsRequest.getTagKeys().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeClusterSecurityGroupsRequest.getTagKeys()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> tagKeysList = (com.amazonaws.internal.SdkInternalList<String>) describeClusterSecurityGroupsRequest
+                    .getTagKeys();
             int tagKeysListIndex = 1;
 
             for (String tagKeysListValue : tagKeysList) {
@@ -67,9 +68,10 @@ public class DescribeClusterSecurityGroupsRequestMarshaller implements
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> tagValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeClusterSecurityGroupsRequest
-                .getTagValues();
-        if (!tagValuesList.isEmpty() || !tagValuesList.isAutoConstruct()) {
+        if (!describeClusterSecurityGroupsRequest.getTagValues().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeClusterSecurityGroupsRequest.getTagValues()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> tagValuesList = (com.amazonaws.internal.SdkInternalList<String>) describeClusterSecurityGroupsRequest
+                    .getTagValues();
             int tagValuesListIndex = 1;
 
             for (String tagValuesListValue : tagValuesList) {

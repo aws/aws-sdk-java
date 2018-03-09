@@ -42,9 +42,10 @@ public class GetAccountAuthorizationDetailsRequestMarshaller implements
         request.addParameter("Version", "2010-05-08");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> filterList = (com.amazonaws.internal.SdkInternalList<String>) getAccountAuthorizationDetailsRequest
-                .getFilter();
-        if (!filterList.isEmpty() || !filterList.isAutoConstruct()) {
+        if (!getAccountAuthorizationDetailsRequest.getFilter().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) getAccountAuthorizationDetailsRequest.getFilter()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> filterList = (com.amazonaws.internal.SdkInternalList<String>) getAccountAuthorizationDetailsRequest
+                    .getFilter();
             int filterListIndex = 1;
 
             for (String filterListValue : filterList) {

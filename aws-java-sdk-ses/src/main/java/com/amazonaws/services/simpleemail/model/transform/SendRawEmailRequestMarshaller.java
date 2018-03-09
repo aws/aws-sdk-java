@@ -44,9 +44,10 @@ public class SendRawEmailRequestMarshaller implements Marshaller<Request<SendRaw
             request.addParameter("Source", StringUtils.fromString(sendRawEmailRequest.getSource()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> destinationsList = (com.amazonaws.internal.SdkInternalList<String>) sendRawEmailRequest
-                .getDestinations();
-        if (!destinationsList.isEmpty() || !destinationsList.isAutoConstruct()) {
+        if (!sendRawEmailRequest.getDestinations().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) sendRawEmailRequest.getDestinations()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> destinationsList = (com.amazonaws.internal.SdkInternalList<String>) sendRawEmailRequest
+                    .getDestinations();
             int destinationsListIndex = 1;
 
             for (String destinationsListValue : destinationsList) {
@@ -77,8 +78,8 @@ public class SendRawEmailRequestMarshaller implements Marshaller<Request<SendRaw
             request.addParameter("ReturnPathArn", StringUtils.fromString(sendRawEmailRequest.getReturnPathArn()));
         }
 
-        com.amazonaws.internal.SdkInternalList<MessageTag> tagsList = (com.amazonaws.internal.SdkInternalList<MessageTag>) sendRawEmailRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!sendRawEmailRequest.getTags().isEmpty() || !((com.amazonaws.internal.SdkInternalList<MessageTag>) sendRawEmailRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<MessageTag> tagsList = (com.amazonaws.internal.SdkInternalList<MessageTag>) sendRawEmailRequest.getTags();
             int tagsListIndex = 1;
 
             for (MessageTag tagsListValue : tagsList) {

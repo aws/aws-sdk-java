@@ -54,9 +54,11 @@ public class ValidateConfigurationSettingsRequestMarshaller implements
             request.addParameter("EnvironmentName", StringUtils.fromString(validateConfigurationSettingsRequest.getEnvironmentName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting> optionSettingsList = (com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>) validateConfigurationSettingsRequest
-                .getOptionSettings();
-        if (!optionSettingsList.isEmpty() || !optionSettingsList.isAutoConstruct()) {
+        if (!validateConfigurationSettingsRequest.getOptionSettings().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>) validateConfigurationSettingsRequest.getOptionSettings())
+                        .isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting> optionSettingsList = (com.amazonaws.internal.SdkInternalList<ConfigurationOptionSetting>) validateConfigurationSettingsRequest
+                    .getOptionSettings();
             int optionSettingsListIndex = 1;
 
             for (ConfigurationOptionSetting optionSettingsListValue : optionSettingsList) {

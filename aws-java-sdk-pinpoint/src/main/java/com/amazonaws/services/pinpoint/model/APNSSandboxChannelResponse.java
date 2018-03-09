@@ -26,7 +26,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class APNSSandboxChannelResponse implements Serializable, Cloneable, StructuredPojo {
 
-    /** Application id */
+    /** The ID of the application to which the channel applies. */
     private String applicationId;
     /** When was this segment created */
     private String creationDate;
@@ -34,9 +34,16 @@ public class APNSSandboxChannelResponse implements Serializable, Cloneable, Stru
     private String defaultAuthenticationMethod;
     /** If the channel is enabled for sending messages. */
     private Boolean enabled;
-    /** If the channel is registered with a credential for authentication. */
+    /**
+     * Indicates whether the channel is configured with APNs credentials. Amazon Pinpoint uses your credentials to
+     * authenticate push notifications with APNs. To use APNs token authentication, set the BundleId, TeamId, TokenKey,
+     * and TokenKeyId attributes. To use certificate authentication, set the Certificate and PrivateKey attributes.
+     */
     private Boolean hasCredential;
-    /** If the channel is registered with a token key for authentication. */
+    /**
+     * Indicates whether the channel is configured with a key for APNs token authentication. Provide a token key by
+     * setting the TokenKey attribute.
+     */
     private Boolean hasTokenKey;
     /** Channel ID. Not used, only for backwards compatibility. */
     private String id;
@@ -52,10 +59,10 @@ public class APNSSandboxChannelResponse implements Serializable, Cloneable, Stru
     private Integer version;
 
     /**
-     * Application id
+     * The ID of the application to which the channel applies.
      * 
      * @param applicationId
-     *        Application id
+     *        The ID of the application to which the channel applies.
      */
 
     public void setApplicationId(String applicationId) {
@@ -63,9 +70,9 @@ public class APNSSandboxChannelResponse implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Application id
+     * The ID of the application to which the channel applies.
      * 
-     * @return Application id
+     * @return The ID of the application to which the channel applies.
      */
 
     public String getApplicationId() {
@@ -73,10 +80,10 @@ public class APNSSandboxChannelResponse implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Application id
+     * The ID of the application to which the channel applies.
      * 
      * @param applicationId
-     *        Application id
+     *        The ID of the application to which the channel applies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -198,10 +205,15 @@ public class APNSSandboxChannelResponse implements Serializable, Cloneable, Stru
     }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Indicates whether the channel is configured with APNs credentials. Amazon Pinpoint uses your credentials to
+     * authenticate push notifications with APNs. To use APNs token authentication, set the BundleId, TeamId, TokenKey,
+     * and TokenKeyId attributes. To use certificate authentication, set the Certificate and PrivateKey attributes.
      * 
      * @param hasCredential
-     *        If the channel is registered with a credential for authentication.
+     *        Indicates whether the channel is configured with APNs credentials. Amazon Pinpoint uses your credentials
+     *        to authenticate push notifications with APNs. To use APNs token authentication, set the BundleId, TeamId,
+     *        TokenKey, and TokenKeyId attributes. To use certificate authentication, set the Certificate and PrivateKey
+     *        attributes.
      */
 
     public void setHasCredential(Boolean hasCredential) {
@@ -209,9 +221,14 @@ public class APNSSandboxChannelResponse implements Serializable, Cloneable, Stru
     }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Indicates whether the channel is configured with APNs credentials. Amazon Pinpoint uses your credentials to
+     * authenticate push notifications with APNs. To use APNs token authentication, set the BundleId, TeamId, TokenKey,
+     * and TokenKeyId attributes. To use certificate authentication, set the Certificate and PrivateKey attributes.
      * 
-     * @return If the channel is registered with a credential for authentication.
+     * @return Indicates whether the channel is configured with APNs credentials. Amazon Pinpoint uses your credentials
+     *         to authenticate push notifications with APNs. To use APNs token authentication, set the BundleId, TeamId,
+     *         TokenKey, and TokenKeyId attributes. To use certificate authentication, set the Certificate and
+     *         PrivateKey attributes.
      */
 
     public Boolean getHasCredential() {
@@ -219,10 +236,15 @@ public class APNSSandboxChannelResponse implements Serializable, Cloneable, Stru
     }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Indicates whether the channel is configured with APNs credentials. Amazon Pinpoint uses your credentials to
+     * authenticate push notifications with APNs. To use APNs token authentication, set the BundleId, TeamId, TokenKey,
+     * and TokenKeyId attributes. To use certificate authentication, set the Certificate and PrivateKey attributes.
      * 
      * @param hasCredential
-     *        If the channel is registered with a credential for authentication.
+     *        Indicates whether the channel is configured with APNs credentials. Amazon Pinpoint uses your credentials
+     *        to authenticate push notifications with APNs. To use APNs token authentication, set the BundleId, TeamId,
+     *        TokenKey, and TokenKeyId attributes. To use certificate authentication, set the Certificate and PrivateKey
+     *        attributes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -232,9 +254,14 @@ public class APNSSandboxChannelResponse implements Serializable, Cloneable, Stru
     }
 
     /**
-     * If the channel is registered with a credential for authentication.
+     * Indicates whether the channel is configured with APNs credentials. Amazon Pinpoint uses your credentials to
+     * authenticate push notifications with APNs. To use APNs token authentication, set the BundleId, TeamId, TokenKey,
+     * and TokenKeyId attributes. To use certificate authentication, set the Certificate and PrivateKey attributes.
      * 
-     * @return If the channel is registered with a credential for authentication.
+     * @return Indicates whether the channel is configured with APNs credentials. Amazon Pinpoint uses your credentials
+     *         to authenticate push notifications with APNs. To use APNs token authentication, set the BundleId, TeamId,
+     *         TokenKey, and TokenKeyId attributes. To use certificate authentication, set the Certificate and
+     *         PrivateKey attributes.
      */
 
     public Boolean isHasCredential() {
@@ -242,10 +269,12 @@ public class APNSSandboxChannelResponse implements Serializable, Cloneable, Stru
     }
 
     /**
-     * If the channel is registered with a token key for authentication.
+     * Indicates whether the channel is configured with a key for APNs token authentication. Provide a token key by
+     * setting the TokenKey attribute.
      * 
      * @param hasTokenKey
-     *        If the channel is registered with a token key for authentication.
+     *        Indicates whether the channel is configured with a key for APNs token authentication. Provide a token key
+     *        by setting the TokenKey attribute.
      */
 
     public void setHasTokenKey(Boolean hasTokenKey) {
@@ -253,9 +282,11 @@ public class APNSSandboxChannelResponse implements Serializable, Cloneable, Stru
     }
 
     /**
-     * If the channel is registered with a token key for authentication.
+     * Indicates whether the channel is configured with a key for APNs token authentication. Provide a token key by
+     * setting the TokenKey attribute.
      * 
-     * @return If the channel is registered with a token key for authentication.
+     * @return Indicates whether the channel is configured with a key for APNs token authentication. Provide a token key
+     *         by setting the TokenKey attribute.
      */
 
     public Boolean getHasTokenKey() {
@@ -263,10 +294,12 @@ public class APNSSandboxChannelResponse implements Serializable, Cloneable, Stru
     }
 
     /**
-     * If the channel is registered with a token key for authentication.
+     * Indicates whether the channel is configured with a key for APNs token authentication. Provide a token key by
+     * setting the TokenKey attribute.
      * 
      * @param hasTokenKey
-     *        If the channel is registered with a token key for authentication.
+     *        Indicates whether the channel is configured with a key for APNs token authentication. Provide a token key
+     *        by setting the TokenKey attribute.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -276,9 +309,11 @@ public class APNSSandboxChannelResponse implements Serializable, Cloneable, Stru
     }
 
     /**
-     * If the channel is registered with a token key for authentication.
+     * Indicates whether the channel is configured with a key for APNs token authentication. Provide a token key by
+     * setting the TokenKey attribute.
      * 
-     * @return If the channel is registered with a token key for authentication.
+     * @return Indicates whether the channel is configured with a key for APNs token authentication. Provide a token key
+     *         by setting the TokenKey attribute.
      */
 
     public Boolean isHasTokenKey() {

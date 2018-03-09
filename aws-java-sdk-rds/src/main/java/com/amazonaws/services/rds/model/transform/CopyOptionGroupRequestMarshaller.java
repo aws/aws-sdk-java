@@ -52,8 +52,8 @@ public class CopyOptionGroupRequestMarshaller implements Marshaller<Request<Copy
             request.addParameter("TargetOptionGroupDescription", StringUtils.fromString(copyOptionGroupRequest.getTargetOptionGroupDescription()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) copyOptionGroupRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!copyOptionGroupRequest.getTags().isEmpty() || !((com.amazonaws.internal.SdkInternalList<Tag>) copyOptionGroupRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) copyOptionGroupRequest.getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {

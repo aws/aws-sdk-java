@@ -76,9 +76,10 @@ public class PutScalingPolicyRequestMarshaller implements Marshaller<Request<Put
             request.addParameter("MetricAggregationType", StringUtils.fromString(putScalingPolicyRequest.getMetricAggregationType()));
         }
 
-        com.amazonaws.internal.SdkInternalList<StepAdjustment> stepAdjustmentsList = (com.amazonaws.internal.SdkInternalList<StepAdjustment>) putScalingPolicyRequest
-                .getStepAdjustments();
-        if (!stepAdjustmentsList.isEmpty() || !stepAdjustmentsList.isAutoConstruct()) {
+        if (!putScalingPolicyRequest.getStepAdjustments().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<StepAdjustment>) putScalingPolicyRequest.getStepAdjustments()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<StepAdjustment> stepAdjustmentsList = (com.amazonaws.internal.SdkInternalList<StepAdjustment>) putScalingPolicyRequest
+                    .getStepAdjustments();
             int stepAdjustmentsListIndex = 1;
 
             for (StepAdjustment stepAdjustmentsListValue : stepAdjustmentsList) {
@@ -135,9 +136,10 @@ public class PutScalingPolicyRequestMarshaller implements Marshaller<Request<Put
                             StringUtils.fromString(customizedMetricSpecification.getNamespace()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<MetricDimension> dimensionsList = (com.amazonaws.internal.SdkInternalList<MetricDimension>) customizedMetricSpecification
-                        .getDimensions();
-                if (!dimensionsList.isEmpty() || !dimensionsList.isAutoConstruct()) {
+                if (!customizedMetricSpecification.getDimensions().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<MetricDimension>) customizedMetricSpecification.getDimensions()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<MetricDimension> dimensionsList = (com.amazonaws.internal.SdkInternalList<MetricDimension>) customizedMetricSpecification
+                            .getDimensions();
                     int dimensionsListIndex = 1;
 
                     for (MetricDimension dimensionsListValue : dimensionsList) {

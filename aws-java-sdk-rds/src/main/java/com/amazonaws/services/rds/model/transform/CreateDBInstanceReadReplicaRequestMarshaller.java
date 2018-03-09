@@ -82,8 +82,9 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements
             request.addParameter("PubliclyAccessible", StringUtils.fromBoolean(createDBInstanceReadReplicaRequest.getPubliclyAccessible()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createDBInstanceReadReplicaRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!createDBInstanceReadReplicaRequest.getTags().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Tag>) createDBInstanceReadReplicaRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createDBInstanceReadReplicaRequest.getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {
@@ -140,9 +141,10 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements
             request.addParameter("PerformanceInsightsKMSKeyId", StringUtils.fromString(createDBInstanceReadReplicaRequest.getPerformanceInsightsKMSKeyId()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExportsList = (com.amazonaws.internal.SdkInternalList<String>) createDBInstanceReadReplicaRequest
-                .getEnableCloudwatchLogsExports();
-        if (!enableCloudwatchLogsExportsList.isEmpty() || !enableCloudwatchLogsExportsList.isAutoConstruct()) {
+        if (!createDBInstanceReadReplicaRequest.getEnableCloudwatchLogsExports().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createDBInstanceReadReplicaRequest.getEnableCloudwatchLogsExports()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExportsList = (com.amazonaws.internal.SdkInternalList<String>) createDBInstanceReadReplicaRequest
+                    .getEnableCloudwatchLogsExports();
             int enableCloudwatchLogsExportsListIndex = 1;
 
             for (String enableCloudwatchLogsExportsListValue : enableCloudwatchLogsExportsList) {

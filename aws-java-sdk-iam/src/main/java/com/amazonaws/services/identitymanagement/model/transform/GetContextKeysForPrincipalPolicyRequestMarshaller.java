@@ -46,9 +46,10 @@ public class GetContextKeysForPrincipalPolicyRequestMarshaller implements
             request.addParameter("PolicySourceArn", StringUtils.fromString(getContextKeysForPrincipalPolicyRequest.getPolicySourceArn()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> policyInputListList = (com.amazonaws.internal.SdkInternalList<String>) getContextKeysForPrincipalPolicyRequest
-                .getPolicyInputList();
-        if (!policyInputListList.isEmpty() || !policyInputListList.isAutoConstruct()) {
+        if (!getContextKeysForPrincipalPolicyRequest.getPolicyInputList().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) getContextKeysForPrincipalPolicyRequest.getPolicyInputList()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> policyInputListList = (com.amazonaws.internal.SdkInternalList<String>) getContextKeysForPrincipalPolicyRequest
+                    .getPolicyInputList();
             int policyInputListListIndex = 1;
 
             for (String policyInputListListValue : policyInputListList) {

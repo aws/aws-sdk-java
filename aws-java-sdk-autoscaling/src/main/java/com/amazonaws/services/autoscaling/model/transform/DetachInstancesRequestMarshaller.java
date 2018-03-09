@@ -40,9 +40,10 @@ public class DetachInstancesRequestMarshaller implements Marshaller<Request<Deta
         request.addParameter("Version", "2011-01-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> instanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) detachInstancesRequest
-                .getInstanceIds();
-        if (!instanceIdsList.isEmpty() || !instanceIdsList.isAutoConstruct()) {
+        if (!detachInstancesRequest.getInstanceIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) detachInstancesRequest.getInstanceIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> instanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) detachInstancesRequest
+                    .getInstanceIds();
             int instanceIdsListIndex = 1;
 
             for (String instanceIdsListValue : instanceIdsList) {

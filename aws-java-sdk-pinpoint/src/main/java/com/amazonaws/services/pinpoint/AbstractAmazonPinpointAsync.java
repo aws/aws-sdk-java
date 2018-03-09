@@ -54,6 +54,19 @@ public class AbstractAmazonPinpointAsync extends AbstractAmazonPinpoint implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateExportJobResult> createExportJobAsync(CreateExportJobRequest request) {
+
+        return createExportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateExportJobResult> createExportJobAsync(CreateExportJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateExportJobRequest, CreateExportJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateImportJobResult> createImportJobAsync(CreateImportJobRequest request) {
 
         return createImportJobAsync(request, null);
@@ -470,6 +483,32 @@ public class AbstractAmazonPinpointAsync extends AbstractAmazonPinpoint implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetExportJobResult> getExportJobAsync(GetExportJobRequest request) {
+
+        return getExportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExportJobResult> getExportJobAsync(GetExportJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetExportJobRequest, GetExportJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExportJobsResult> getExportJobsAsync(GetExportJobsRequest request) {
+
+        return getExportJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExportJobsResult> getExportJobsAsync(GetExportJobsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetExportJobsRequest, GetExportJobsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetGcmChannelResult> getGcmChannelAsync(GetGcmChannelRequest request) {
 
         return getGcmChannelAsync(request, null);
@@ -517,6 +556,19 @@ public class AbstractAmazonPinpointAsync extends AbstractAmazonPinpoint implemen
     @Override
     public java.util.concurrent.Future<GetSegmentResult> getSegmentAsync(GetSegmentRequest request,
             com.amazonaws.handlers.AsyncHandler<GetSegmentRequest, GetSegmentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSegmentExportJobsResult> getSegmentExportJobsAsync(GetSegmentExportJobsRequest request) {
+
+        return getSegmentExportJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSegmentExportJobsResult> getSegmentExportJobsAsync(GetSegmentExportJobsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetSegmentExportJobsRequest, GetSegmentExportJobsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

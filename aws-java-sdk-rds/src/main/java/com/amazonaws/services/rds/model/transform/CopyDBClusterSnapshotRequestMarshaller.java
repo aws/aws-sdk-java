@@ -62,8 +62,9 @@ public class CopyDBClusterSnapshotRequestMarshaller implements Marshaller<Reques
             request.addParameter("CopyTags", StringUtils.fromBoolean(copyDBClusterSnapshotRequest.getCopyTags()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) copyDBClusterSnapshotRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!copyDBClusterSnapshotRequest.getTags().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Tag>) copyDBClusterSnapshotRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) copyDBClusterSnapshotRequest.getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {

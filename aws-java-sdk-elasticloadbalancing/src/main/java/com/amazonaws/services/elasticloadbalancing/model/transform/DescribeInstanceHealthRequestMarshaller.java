@@ -45,9 +45,10 @@ public class DescribeInstanceHealthRequestMarshaller implements Marshaller<Reque
             request.addParameter("LoadBalancerName", StringUtils.fromString(describeInstanceHealthRequest.getLoadBalancerName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Instance> instancesList = (com.amazonaws.internal.SdkInternalList<Instance>) describeInstanceHealthRequest
-                .getInstances();
-        if (!instancesList.isEmpty() || !instancesList.isAutoConstruct()) {
+        if (!describeInstanceHealthRequest.getInstances().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Instance>) describeInstanceHealthRequest.getInstances()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Instance> instancesList = (com.amazonaws.internal.SdkInternalList<Instance>) describeInstanceHealthRequest
+                    .getInstances();
             int instancesListIndex = 1;
 
             for (Instance instancesListValue : instancesList) {

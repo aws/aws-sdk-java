@@ -48,9 +48,10 @@ public class DescribeEnvironmentsRequestMarshaller implements Marshaller<Request
             request.addParameter("VersionLabel", StringUtils.fromString(describeEnvironmentsRequest.getVersionLabel()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> environmentIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeEnvironmentsRequest
-                .getEnvironmentIds();
-        if (!environmentIdsList.isEmpty() || !environmentIdsList.isAutoConstruct()) {
+        if (!describeEnvironmentsRequest.getEnvironmentIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeEnvironmentsRequest.getEnvironmentIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> environmentIdsList = (com.amazonaws.internal.SdkInternalList<String>) describeEnvironmentsRequest
+                    .getEnvironmentIds();
             int environmentIdsListIndex = 1;
 
             for (String environmentIdsListValue : environmentIdsList) {
@@ -61,9 +62,10 @@ public class DescribeEnvironmentsRequestMarshaller implements Marshaller<Request
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> environmentNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeEnvironmentsRequest
-                .getEnvironmentNames();
-        if (!environmentNamesList.isEmpty() || !environmentNamesList.isAutoConstruct()) {
+        if (!describeEnvironmentsRequest.getEnvironmentNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeEnvironmentsRequest.getEnvironmentNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> environmentNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeEnvironmentsRequest
+                    .getEnvironmentNames();
             int environmentNamesListIndex = 1;
 
             for (String environmentNamesListValue : environmentNamesList) {

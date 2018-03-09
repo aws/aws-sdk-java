@@ -40,9 +40,10 @@ public class AttachInstancesRequestMarshaller implements Marshaller<Request<Atta
         request.addParameter("Version", "2011-01-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> instanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) attachInstancesRequest
-                .getInstanceIds();
-        if (!instanceIdsList.isEmpty() || !instanceIdsList.isAutoConstruct()) {
+        if (!attachInstancesRequest.getInstanceIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) attachInstancesRequest.getInstanceIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> instanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) attachInstancesRequest
+                    .getInstanceIds();
             int instanceIdsListIndex = 1;
 
             for (String instanceIdsListValue : instanceIdsList) {

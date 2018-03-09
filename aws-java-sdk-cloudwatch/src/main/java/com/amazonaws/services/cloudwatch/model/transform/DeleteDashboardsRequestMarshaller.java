@@ -40,9 +40,10 @@ public class DeleteDashboardsRequestMarshaller implements Marshaller<Request<Del
         request.addParameter("Version", "2010-08-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> dashboardNamesList = (com.amazonaws.internal.SdkInternalList<String>) deleteDashboardsRequest
-                .getDashboardNames();
-        if (!dashboardNamesList.isEmpty() || !dashboardNamesList.isAutoConstruct()) {
+        if (!deleteDashboardsRequest.getDashboardNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) deleteDashboardsRequest.getDashboardNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> dashboardNamesList = (com.amazonaws.internal.SdkInternalList<String>) deleteDashboardsRequest
+                    .getDashboardNames();
             int dashboardNamesListIndex = 1;
 
             for (String dashboardNamesListValue : dashboardNamesList) {

@@ -42,9 +42,10 @@ public class DescribeLoadBalancerPolicyTypesRequestMarshaller implements
         request.addParameter("Version", "2012-06-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> policyTypeNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeLoadBalancerPolicyTypesRequest
-                .getPolicyTypeNames();
-        if (!policyTypeNamesList.isEmpty() || !policyTypeNamesList.isAutoConstruct()) {
+        if (!describeLoadBalancerPolicyTypesRequest.getPolicyTypeNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeLoadBalancerPolicyTypesRequest.getPolicyTypeNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> policyTypeNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeLoadBalancerPolicyTypesRequest
+                    .getPolicyTypeNames();
             int policyTypeNamesListIndex = 1;
 
             for (String policyTypeNamesListValue : policyTypeNamesList) {

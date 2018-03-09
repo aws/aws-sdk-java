@@ -1266,7 +1266,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <b>Version 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
+     * <b>Version 10.1</b>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 9.6.x:</b> <code> 9.6.6 | 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
      * </p>
      * </li>
      * <li>
@@ -7781,7 +7786,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <b>Version 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
+     * <b>Version 10.1</b>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 9.6.x:</b> <code> 9.6.6 | 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
      * </p>
      * </li>
      * <li>
@@ -8177,7 +8187,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
+     *        <b>Version 10.1</b>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 9.6.x:</b> <code> 9.6.6 | 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
      *        </p>
      *        </li>
      *        <li>
@@ -8570,7 +8585,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <b>Version 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
+     * <b>Version 10.1</b>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 9.6.x:</b> <code> 9.6.6 | 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
      * </p>
      * </li>
      * <li>
@@ -8965,7 +8985,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Version 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
+     *         <b>Version 10.1</b>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Version 9.6.x:</b> <code> 9.6.6 | 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
      *         </p>
      *         </li>
      *         <li>
@@ -9358,7 +9383,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <b>Version 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
+     * <b>Version 10.1</b>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Version 9.6.x:</b> <code> 9.6.6 | 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
      * </p>
      * </li>
      * <li>
@@ -9754,7 +9784,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Version 9.6.x:</b> <code> 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
+     *        <b>Version 10.1</b>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Version 9.6.x:</b> <code> 9.6.6 | 9.6.5 | 9.6.3 | 9.6.2 | 9.6.1</code>
      *        </p>
      *        </li>
      *        <li>

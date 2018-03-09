@@ -48,9 +48,10 @@ public class ResetDBParameterGroupRequestMarshaller implements Marshaller<Reques
             request.addParameter("ResetAllParameters", StringUtils.fromBoolean(resetDBParameterGroupRequest.getResetAllParameters()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Parameter> parametersList = (com.amazonaws.internal.SdkInternalList<Parameter>) resetDBParameterGroupRequest
-                .getParameters();
-        if (!parametersList.isEmpty() || !parametersList.isAutoConstruct()) {
+        if (!resetDBParameterGroupRequest.getParameters().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Parameter>) resetDBParameterGroupRequest.getParameters()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Parameter> parametersList = (com.amazonaws.internal.SdkInternalList<Parameter>) resetDBParameterGroupRequest
+                    .getParameters();
             int parametersListIndex = 1;
 
             for (Parameter parametersListValue : parametersList) {

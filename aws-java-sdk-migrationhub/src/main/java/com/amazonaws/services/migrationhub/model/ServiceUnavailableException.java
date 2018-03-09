@@ -16,8 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Exception raised when the service encounters throttled communication with upstream dependencies or is overloaded with
- * requests.
+ * Exception raised when there is an internal, configuration, or dependency error encountered.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

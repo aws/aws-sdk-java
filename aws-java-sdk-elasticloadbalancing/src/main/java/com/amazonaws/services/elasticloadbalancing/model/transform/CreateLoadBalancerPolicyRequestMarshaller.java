@@ -53,9 +53,10 @@ public class CreateLoadBalancerPolicyRequestMarshaller implements Marshaller<Req
             request.addParameter("PolicyTypeName", StringUtils.fromString(createLoadBalancerPolicyRequest.getPolicyTypeName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<PolicyAttribute> policyAttributesList = (com.amazonaws.internal.SdkInternalList<PolicyAttribute>) createLoadBalancerPolicyRequest
-                .getPolicyAttributes();
-        if (!policyAttributesList.isEmpty() || !policyAttributesList.isAutoConstruct()) {
+        if (!createLoadBalancerPolicyRequest.getPolicyAttributes().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<PolicyAttribute>) createLoadBalancerPolicyRequest.getPolicyAttributes()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<PolicyAttribute> policyAttributesList = (com.amazonaws.internal.SdkInternalList<PolicyAttribute>) createLoadBalancerPolicyRequest
+                    .getPolicyAttributes();
             int policyAttributesListIndex = 1;
 
             for (PolicyAttribute policyAttributesListValue : policyAttributesList) {

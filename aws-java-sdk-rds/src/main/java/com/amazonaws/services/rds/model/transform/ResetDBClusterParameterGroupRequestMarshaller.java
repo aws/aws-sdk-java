@@ -50,9 +50,10 @@ public class ResetDBClusterParameterGroupRequestMarshaller implements
             request.addParameter("ResetAllParameters", StringUtils.fromBoolean(resetDBClusterParameterGroupRequest.getResetAllParameters()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Parameter> parametersList = (com.amazonaws.internal.SdkInternalList<Parameter>) resetDBClusterParameterGroupRequest
-                .getParameters();
-        if (!parametersList.isEmpty() || !parametersList.isAutoConstruct()) {
+        if (!resetDBClusterParameterGroupRequest.getParameters().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Parameter>) resetDBClusterParameterGroupRequest.getParameters()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Parameter> parametersList = (com.amazonaws.internal.SdkInternalList<Parameter>) resetDBClusterParameterGroupRequest
+                    .getParameters();
             int parametersListIndex = 1;
 
             for (Parameter parametersListValue : parametersList) {

@@ -44,9 +44,10 @@ public class GetQueueAttributesRequestMarshaller implements Marshaller<Request<G
             request.addParameter("QueueUrl", StringUtils.fromString(getQueueAttributesRequest.getQueueUrl()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> attributeNamesList = (com.amazonaws.internal.SdkInternalList<String>) getQueueAttributesRequest
-                .getAttributeNames();
-        if (!attributeNamesList.isEmpty() || !attributeNamesList.isAutoConstruct()) {
+        if (!getQueueAttributesRequest.getAttributeNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) getQueueAttributesRequest.getAttributeNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> attributeNamesList = (com.amazonaws.internal.SdkInternalList<String>) getQueueAttributesRequest
+                    .getAttributeNames();
             int attributeNamesListIndex = 1;
 
             for (String attributeNamesListValue : attributeNamesList) {

@@ -40,9 +40,10 @@ public class GetSMSAttributesRequestMarshaller implements Marshaller<Request<Get
         request.addParameter("Version", "2010-03-31");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> attributesList = (com.amazonaws.internal.SdkInternalList<String>) getSMSAttributesRequest
-                .getAttributes();
-        if (!attributesList.isEmpty() || !attributesList.isAutoConstruct()) {
+        if (!getSMSAttributesRequest.getAttributes().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) getSMSAttributesRequest.getAttributes()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> attributesList = (com.amazonaws.internal.SdkInternalList<String>) getSMSAttributesRequest
+                    .getAttributes();
             int attributesListIndex = 1;
 
             for (String attributesListValue : attributesList) {

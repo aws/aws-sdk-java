@@ -40,8 +40,10 @@ public class DescribeAlarmsRequestMarshaller implements Marshaller<Request<Descr
         request.addParameter("Version", "2010-08-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> alarmNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeAlarmsRequest.getAlarmNames();
-        if (!alarmNamesList.isEmpty() || !alarmNamesList.isAutoConstruct()) {
+        if (!describeAlarmsRequest.getAlarmNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeAlarmsRequest.getAlarmNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> alarmNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeAlarmsRequest
+                    .getAlarmNames();
             int alarmNamesListIndex = 1;
 
             for (String alarmNamesListValue : alarmNamesList) {

@@ -52,9 +52,10 @@ public class CreateEventSubscriptionRequestMarshaller implements Marshaller<Requ
             request.addParameter("SourceType", StringUtils.fromString(createEventSubscriptionRequest.getSourceType()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> eventCategoriesList = (com.amazonaws.internal.SdkInternalList<String>) createEventSubscriptionRequest
-                .getEventCategories();
-        if (!eventCategoriesList.isEmpty() || !eventCategoriesList.isAutoConstruct()) {
+        if (!createEventSubscriptionRequest.getEventCategories().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createEventSubscriptionRequest.getEventCategories()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> eventCategoriesList = (com.amazonaws.internal.SdkInternalList<String>) createEventSubscriptionRequest
+                    .getEventCategories();
             int eventCategoriesListIndex = 1;
 
             for (String eventCategoriesListValue : eventCategoriesList) {
@@ -65,9 +66,10 @@ public class CreateEventSubscriptionRequestMarshaller implements Marshaller<Requ
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> sourceIdsList = (com.amazonaws.internal.SdkInternalList<String>) createEventSubscriptionRequest
-                .getSourceIds();
-        if (!sourceIdsList.isEmpty() || !sourceIdsList.isAutoConstruct()) {
+        if (!createEventSubscriptionRequest.getSourceIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createEventSubscriptionRequest.getSourceIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> sourceIdsList = (com.amazonaws.internal.SdkInternalList<String>) createEventSubscriptionRequest
+                    .getSourceIds();
             int sourceIdsListIndex = 1;
 
             for (String sourceIdsListValue : sourceIdsList) {
@@ -82,8 +84,9 @@ public class CreateEventSubscriptionRequestMarshaller implements Marshaller<Requ
             request.addParameter("Enabled", StringUtils.fromBoolean(createEventSubscriptionRequest.getEnabled()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createEventSubscriptionRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!createEventSubscriptionRequest.getTags().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Tag>) createEventSubscriptionRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createEventSubscriptionRequest.getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {

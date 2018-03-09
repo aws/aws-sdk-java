@@ -48,9 +48,10 @@ public class ListMetricsRequestMarshaller implements Marshaller<Request<ListMetr
             request.addParameter("MetricName", StringUtils.fromString(listMetricsRequest.getMetricName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<DimensionFilter> dimensionsList = (com.amazonaws.internal.SdkInternalList<DimensionFilter>) listMetricsRequest
-                .getDimensions();
-        if (!dimensionsList.isEmpty() || !dimensionsList.isAutoConstruct()) {
+        if (!listMetricsRequest.getDimensions().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<DimensionFilter>) listMetricsRequest.getDimensions()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<DimensionFilter> dimensionsList = (com.amazonaws.internal.SdkInternalList<DimensionFilter>) listMetricsRequest
+                    .getDimensions();
             int dimensionsListIndex = 1;
 
             for (DimensionFilter dimensionsListValue : dimensionsList) {

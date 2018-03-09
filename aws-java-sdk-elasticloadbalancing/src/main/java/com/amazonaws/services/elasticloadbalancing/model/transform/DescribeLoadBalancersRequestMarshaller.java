@@ -41,9 +41,10 @@ public class DescribeLoadBalancersRequestMarshaller implements Marshaller<Reques
         request.addParameter("Version", "2012-06-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> loadBalancerNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeLoadBalancersRequest
-                .getLoadBalancerNames();
-        if (!loadBalancerNamesList.isEmpty() || !loadBalancerNamesList.isAutoConstruct()) {
+        if (!describeLoadBalancersRequest.getLoadBalancerNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeLoadBalancersRequest.getLoadBalancerNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> loadBalancerNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeLoadBalancersRequest
+                    .getLoadBalancerNames();
             int loadBalancerNamesListIndex = 1;
 
             for (String loadBalancerNamesListValue : loadBalancerNamesList) {

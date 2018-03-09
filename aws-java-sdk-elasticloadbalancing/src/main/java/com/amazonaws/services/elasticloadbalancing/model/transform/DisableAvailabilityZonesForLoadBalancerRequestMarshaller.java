@@ -47,9 +47,10 @@ public class DisableAvailabilityZonesForLoadBalancerRequestMarshaller implements
             request.addParameter("LoadBalancerName", StringUtils.fromString(disableAvailabilityZonesForLoadBalancerRequest.getLoadBalancerName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> availabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) disableAvailabilityZonesForLoadBalancerRequest
-                .getAvailabilityZones();
-        if (!availabilityZonesList.isEmpty() || !availabilityZonesList.isAutoConstruct()) {
+        if (!disableAvailabilityZonesForLoadBalancerRequest.getAvailabilityZones().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) disableAvailabilityZonesForLoadBalancerRequest.getAvailabilityZones()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> availabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) disableAvailabilityZonesForLoadBalancerRequest
+                    .getAvailabilityZones();
             int availabilityZonesListIndex = 1;
 
             for (String availabilityZonesListValue : availabilityZonesList) {

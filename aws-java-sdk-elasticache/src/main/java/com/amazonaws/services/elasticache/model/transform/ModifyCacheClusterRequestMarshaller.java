@@ -48,9 +48,10 @@ public class ModifyCacheClusterRequestMarshaller implements Marshaller<Request<M
             request.addParameter("NumCacheNodes", StringUtils.fromInteger(modifyCacheClusterRequest.getNumCacheNodes()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> cacheNodeIdsToRemoveList = (com.amazonaws.internal.SdkInternalList<String>) modifyCacheClusterRequest
-                .getCacheNodeIdsToRemove();
-        if (!cacheNodeIdsToRemoveList.isEmpty() || !cacheNodeIdsToRemoveList.isAutoConstruct()) {
+        if (!modifyCacheClusterRequest.getCacheNodeIdsToRemove().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) modifyCacheClusterRequest.getCacheNodeIdsToRemove()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> cacheNodeIdsToRemoveList = (com.amazonaws.internal.SdkInternalList<String>) modifyCacheClusterRequest
+                    .getCacheNodeIdsToRemove();
             int cacheNodeIdsToRemoveListIndex = 1;
 
             for (String cacheNodeIdsToRemoveListValue : cacheNodeIdsToRemoveList) {
@@ -66,9 +67,10 @@ public class ModifyCacheClusterRequestMarshaller implements Marshaller<Request<M
             request.addParameter("AZMode", StringUtils.fromString(modifyCacheClusterRequest.getAZMode()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> newAvailabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) modifyCacheClusterRequest
-                .getNewAvailabilityZones();
-        if (!newAvailabilityZonesList.isEmpty() || !newAvailabilityZonesList.isAutoConstruct()) {
+        if (!modifyCacheClusterRequest.getNewAvailabilityZones().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) modifyCacheClusterRequest.getNewAvailabilityZones()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> newAvailabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) modifyCacheClusterRequest
+                    .getNewAvailabilityZones();
             int newAvailabilityZonesListIndex = 1;
 
             for (String newAvailabilityZonesListValue : newAvailabilityZonesList) {
@@ -80,9 +82,10 @@ public class ModifyCacheClusterRequestMarshaller implements Marshaller<Request<M
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> cacheSecurityGroupNamesList = (com.amazonaws.internal.SdkInternalList<String>) modifyCacheClusterRequest
-                .getCacheSecurityGroupNames();
-        if (!cacheSecurityGroupNamesList.isEmpty() || !cacheSecurityGroupNamesList.isAutoConstruct()) {
+        if (!modifyCacheClusterRequest.getCacheSecurityGroupNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) modifyCacheClusterRequest.getCacheSecurityGroupNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> cacheSecurityGroupNamesList = (com.amazonaws.internal.SdkInternalList<String>) modifyCacheClusterRequest
+                    .getCacheSecurityGroupNames();
             int cacheSecurityGroupNamesListIndex = 1;
 
             for (String cacheSecurityGroupNamesListValue : cacheSecurityGroupNamesList) {
@@ -94,9 +97,10 @@ public class ModifyCacheClusterRequestMarshaller implements Marshaller<Request<M
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> securityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyCacheClusterRequest
-                .getSecurityGroupIds();
-        if (!securityGroupIdsList.isEmpty() || !securityGroupIdsList.isAutoConstruct()) {
+        if (!modifyCacheClusterRequest.getSecurityGroupIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) modifyCacheClusterRequest.getSecurityGroupIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> securityGroupIdsList = (com.amazonaws.internal.SdkInternalList<String>) modifyCacheClusterRequest
+                    .getSecurityGroupIds();
             int securityGroupIdsListIndex = 1;
 
             for (String securityGroupIdsListValue : securityGroupIdsList) {

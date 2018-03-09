@@ -45,9 +45,10 @@ public class DescribeAnalysisSchemesRequestMarshaller implements Marshaller<Requ
             request.addParameter("DomainName", StringUtils.fromString(describeAnalysisSchemesRequest.getDomainName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> analysisSchemeNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeAnalysisSchemesRequest
-                .getAnalysisSchemeNames();
-        if (!analysisSchemeNamesList.isEmpty() || !analysisSchemeNamesList.isAutoConstruct()) {
+        if (!describeAnalysisSchemesRequest.getAnalysisSchemeNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeAnalysisSchemesRequest.getAnalysisSchemeNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> analysisSchemeNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeAnalysisSchemesRequest
+                    .getAnalysisSchemeNames();
             int analysisSchemeNamesListIndex = 1;
 
             for (String analysisSchemeNamesListValue : analysisSchemeNamesList) {

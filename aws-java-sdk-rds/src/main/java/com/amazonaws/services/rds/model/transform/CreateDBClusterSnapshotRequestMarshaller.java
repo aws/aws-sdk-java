@@ -48,8 +48,9 @@ public class CreateDBClusterSnapshotRequestMarshaller implements Marshaller<Requ
             request.addParameter("DBClusterIdentifier", StringUtils.fromString(createDBClusterSnapshotRequest.getDBClusterIdentifier()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createDBClusterSnapshotRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!createDBClusterSnapshotRequest.getTags().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Tag>) createDBClusterSnapshotRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createDBClusterSnapshotRequest.getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {

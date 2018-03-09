@@ -41,9 +41,10 @@ public class DescribeAutoScalingGroupsRequestMarshaller implements Marshaller<Re
         request.addParameter("Version", "2011-01-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> autoScalingGroupNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeAutoScalingGroupsRequest
-                .getAutoScalingGroupNames();
-        if (!autoScalingGroupNamesList.isEmpty() || !autoScalingGroupNamesList.isAutoConstruct()) {
+        if (!describeAutoScalingGroupsRequest.getAutoScalingGroupNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeAutoScalingGroupsRequest.getAutoScalingGroupNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> autoScalingGroupNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeAutoScalingGroupsRequest
+                    .getAutoScalingGroupNames();
             int autoScalingGroupNamesListIndex = 1;
 
             for (String autoScalingGroupNamesListValue : autoScalingGroupNamesList) {

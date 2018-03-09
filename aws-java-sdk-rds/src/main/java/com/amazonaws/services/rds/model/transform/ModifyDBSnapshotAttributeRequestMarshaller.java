@@ -48,9 +48,10 @@ public class ModifyDBSnapshotAttributeRequestMarshaller implements Marshaller<Re
             request.addParameter("AttributeName", StringUtils.fromString(modifyDBSnapshotAttributeRequest.getAttributeName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> valuesToAddList = (com.amazonaws.internal.SdkInternalList<String>) modifyDBSnapshotAttributeRequest
-                .getValuesToAdd();
-        if (!valuesToAddList.isEmpty() || !valuesToAddList.isAutoConstruct()) {
+        if (!modifyDBSnapshotAttributeRequest.getValuesToAdd().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) modifyDBSnapshotAttributeRequest.getValuesToAdd()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> valuesToAddList = (com.amazonaws.internal.SdkInternalList<String>) modifyDBSnapshotAttributeRequest
+                    .getValuesToAdd();
             int valuesToAddListIndex = 1;
 
             for (String valuesToAddListValue : valuesToAddList) {
@@ -61,9 +62,10 @@ public class ModifyDBSnapshotAttributeRequestMarshaller implements Marshaller<Re
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> valuesToRemoveList = (com.amazonaws.internal.SdkInternalList<String>) modifyDBSnapshotAttributeRequest
-                .getValuesToRemove();
-        if (!valuesToRemoveList.isEmpty() || !valuesToRemoveList.isAutoConstruct()) {
+        if (!modifyDBSnapshotAttributeRequest.getValuesToRemove().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) modifyDBSnapshotAttributeRequest.getValuesToRemove()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> valuesToRemoveList = (com.amazonaws.internal.SdkInternalList<String>) modifyDBSnapshotAttributeRequest
+                    .getValuesToRemove();
             int valuesToRemoveListIndex = 1;
 
             for (String valuesToRemoveListValue : valuesToRemoveList) {

@@ -61,6 +61,10 @@ public class WriteCampaignRequestJsonUnmarshaller implements Unmarshaller<WriteC
                     context.nextToken();
                     writeCampaignRequest.setHoldoutPercent(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("Hook", targetDepth)) {
+                    context.nextToken();
+                    writeCampaignRequest.setHook(CampaignHookJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("IsPaused", targetDepth)) {
                     context.nextToken();
                     writeCampaignRequest.setIsPaused(context.getUnmarshaller(Boolean.class).unmarshall(context));

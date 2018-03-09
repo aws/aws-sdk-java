@@ -48,9 +48,10 @@ public class ComposeEnvironmentsRequestMarshaller implements Marshaller<Request<
             request.addParameter("GroupName", StringUtils.fromString(composeEnvironmentsRequest.getGroupName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> versionLabelsList = (com.amazonaws.internal.SdkInternalList<String>) composeEnvironmentsRequest
-                .getVersionLabels();
-        if (!versionLabelsList.isEmpty() || !versionLabelsList.isAutoConstruct()) {
+        if (!composeEnvironmentsRequest.getVersionLabels().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) composeEnvironmentsRequest.getVersionLabels()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> versionLabelsList = (com.amazonaws.internal.SdkInternalList<String>) composeEnvironmentsRequest
+                    .getVersionLabels();
             int versionLabelsListIndex = 1;
 
             for (String versionLabelsListValue : versionLabelsList) {

@@ -48,12 +48,14 @@ public class EstimateTemplateCostRequestMarshaller implements Marshaller<Request
             request.addParameter("TemplateURL", StringUtils.fromString(estimateTemplateCostRequest.getTemplateURL()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Parameter> parametersList = (com.amazonaws.internal.SdkInternalList<Parameter>) estimateTemplateCostRequest
-                .getParameters();
-        if (parametersList.isEmpty() && !parametersList.isAutoConstruct()) {
+        if (estimateTemplateCostRequest.getParameters().isEmpty()
+                && !((com.amazonaws.internal.SdkInternalList<Parameter>) estimateTemplateCostRequest.getParameters()).isAutoConstruct()) {
             request.addParameter("Parameters", "");
         }
-        if (!parametersList.isEmpty() || !parametersList.isAutoConstruct()) {
+        if (!estimateTemplateCostRequest.getParameters().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Parameter>) estimateTemplateCostRequest.getParameters()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Parameter> parametersList = (com.amazonaws.internal.SdkInternalList<Parameter>) estimateTemplateCostRequest
+                    .getParameters();
             int parametersListIndex = 1;
 
             for (Parameter parametersListValue : parametersList) {

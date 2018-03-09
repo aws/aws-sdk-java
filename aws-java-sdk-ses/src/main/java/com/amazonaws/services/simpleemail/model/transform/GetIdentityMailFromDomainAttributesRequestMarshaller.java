@@ -42,9 +42,10 @@ public class GetIdentityMailFromDomainAttributesRequestMarshaller implements
         request.addParameter("Version", "2010-12-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> identitiesList = (com.amazonaws.internal.SdkInternalList<String>) getIdentityMailFromDomainAttributesRequest
-                .getIdentities();
-        if (!identitiesList.isEmpty() || !identitiesList.isAutoConstruct()) {
+        if (!getIdentityMailFromDomainAttributesRequest.getIdentities().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) getIdentityMailFromDomainAttributesRequest.getIdentities()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> identitiesList = (com.amazonaws.internal.SdkInternalList<String>) getIdentityMailFromDomainAttributesRequest
+                    .getIdentities();
             int identitiesListIndex = 1;
 
             for (String identitiesListValue : identitiesList) {

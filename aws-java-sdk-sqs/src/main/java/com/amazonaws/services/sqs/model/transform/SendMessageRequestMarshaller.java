@@ -71,9 +71,10 @@ public class SendMessageRequestMarshaller implements Marshaller<Request<SendMess
                             StringUtils.fromByteBuffer(entry.getValue().getBinaryValue()));
                 }
 
-                com.amazonaws.internal.SdkInternalList<String> stringListValuesList = (com.amazonaws.internal.SdkInternalList<String>) entry.getValue()
-                        .getStringListValues();
-                if (!stringListValuesList.isEmpty() || !stringListValuesList.isAutoConstruct()) {
+                if (!entry.getValue().getStringListValues().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<String>) entry.getValue().getStringListValues()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<String> stringListValuesList = (com.amazonaws.internal.SdkInternalList<String>) entry.getValue()
+                            .getStringListValues();
                     int stringListValuesListIndex = 1;
 
                     for (String stringListValuesListValue : stringListValuesList) {
@@ -85,9 +86,10 @@ public class SendMessageRequestMarshaller implements Marshaller<Request<SendMess
                     }
                 }
 
-                com.amazonaws.internal.SdkInternalList<java.nio.ByteBuffer> binaryListValuesList = (com.amazonaws.internal.SdkInternalList<java.nio.ByteBuffer>) entry
-                        .getValue().getBinaryListValues();
-                if (!binaryListValuesList.isEmpty() || !binaryListValuesList.isAutoConstruct()) {
+                if (!entry.getValue().getBinaryListValues().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<java.nio.ByteBuffer>) entry.getValue().getBinaryListValues()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<java.nio.ByteBuffer> binaryListValuesList = (com.amazonaws.internal.SdkInternalList<java.nio.ByteBuffer>) entry
+                            .getValue().getBinaryListValues();
                     int binaryListValuesListIndex = 1;
 
                     for (java.nio.ByteBuffer binaryListValuesListValue : binaryListValuesList) {

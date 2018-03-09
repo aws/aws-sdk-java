@@ -44,6 +44,8 @@ public class ContainerMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkBindings").build();
     private static final MarshallingInfo<List> NETWORKINTERFACES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkInterfaces").build();
+    private static final MarshallingInfo<String> HEALTHSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("healthStatus").build();
 
     private static final ContainerMarshaller instance = new ContainerMarshaller();
 
@@ -69,6 +71,7 @@ public class ContainerMarshaller {
             protocolMarshaller.marshall(container.getReason(), REASON_BINDING);
             protocolMarshaller.marshall(container.getNetworkBindings(), NETWORKBINDINGS_BINDING);
             protocolMarshaller.marshall(container.getNetworkInterfaces(), NETWORKINTERFACES_BINDING);
+            protocolMarshaller.marshall(container.getHealthStatus(), HEALTHSTATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

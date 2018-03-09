@@ -46,9 +46,10 @@ public class DeregisterInstancesFromLoadBalancerRequestMarshaller implements
             request.addParameter("LoadBalancerName", StringUtils.fromString(deregisterInstancesFromLoadBalancerRequest.getLoadBalancerName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Instance> instancesList = (com.amazonaws.internal.SdkInternalList<Instance>) deregisterInstancesFromLoadBalancerRequest
-                .getInstances();
-        if (!instancesList.isEmpty() || !instancesList.isAutoConstruct()) {
+        if (!deregisterInstancesFromLoadBalancerRequest.getInstances().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Instance>) deregisterInstancesFromLoadBalancerRequest.getInstances()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Instance> instancesList = (com.amazonaws.internal.SdkInternalList<Instance>) deregisterInstancesFromLoadBalancerRequest
+                    .getInstances();
             int instancesListIndex = 1;
 
             for (Instance instancesListValue : instancesList) {

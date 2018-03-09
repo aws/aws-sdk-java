@@ -52,6 +52,10 @@ public class ApplicationSettingsResourceJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     applicationSettingsResource.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CampaignHook", targetDepth)) {
+                    context.nextToken();
+                    applicationSettingsResource.setCampaignHook(CampaignHookJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("LastModifiedDate", targetDepth)) {
                     context.nextToken();
                     applicationSettingsResource.setLastModifiedDate(context.getUnmarshaller(String.class).unmarshall(context));

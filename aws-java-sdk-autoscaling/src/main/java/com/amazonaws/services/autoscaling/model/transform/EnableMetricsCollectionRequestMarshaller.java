@@ -45,9 +45,10 @@ public class EnableMetricsCollectionRequestMarshaller implements Marshaller<Requ
             request.addParameter("AutoScalingGroupName", StringUtils.fromString(enableMetricsCollectionRequest.getAutoScalingGroupName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> metricsList = (com.amazonaws.internal.SdkInternalList<String>) enableMetricsCollectionRequest
-                .getMetrics();
-        if (!metricsList.isEmpty() || !metricsList.isAutoConstruct()) {
+        if (!enableMetricsCollectionRequest.getMetrics().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) enableMetricsCollectionRequest.getMetrics()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> metricsList = (com.amazonaws.internal.SdkInternalList<String>) enableMetricsCollectionRequest
+                    .getMetrics();
             int metricsListIndex = 1;
 
             for (String metricsListValue : metricsList) {

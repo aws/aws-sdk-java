@@ -46,9 +46,10 @@ public class DescribeLoadBalancerPoliciesRequestMarshaller implements
             request.addParameter("LoadBalancerName", StringUtils.fromString(describeLoadBalancerPoliciesRequest.getLoadBalancerName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> policyNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeLoadBalancerPoliciesRequest
-                .getPolicyNames();
-        if (!policyNamesList.isEmpty() || !policyNamesList.isAutoConstruct()) {
+        if (!describeLoadBalancerPoliciesRequest.getPolicyNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeLoadBalancerPoliciesRequest.getPolicyNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> policyNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeLoadBalancerPoliciesRequest
+                    .getPolicyNames();
             int policyNamesListIndex = 1;
 
             for (String policyNamesListValue : policyNamesList) {

@@ -48,8 +48,9 @@ public class CreateSnapshotCopyGrantRequestMarshaller implements Marshaller<Requ
             request.addParameter("KmsKeyId", StringUtils.fromString(createSnapshotCopyGrantRequest.getKmsKeyId()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createSnapshotCopyGrantRequest.getTags();
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!createSnapshotCopyGrantRequest.getTags().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Tag>) createSnapshotCopyGrantRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createSnapshotCopyGrantRequest.getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {

@@ -48,6 +48,10 @@ public class WriteApplicationSettingsRequestJsonUnmarshaller implements Unmarsha
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("CampaignHook", targetDepth)) {
+                    context.nextToken();
+                    writeApplicationSettingsRequest.setCampaignHook(CampaignHookJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Limits", targetDepth)) {
                     context.nextToken();
                     writeApplicationSettingsRequest.setLimits(CampaignLimitsJsonUnmarshaller.getInstance().unmarshall(context));

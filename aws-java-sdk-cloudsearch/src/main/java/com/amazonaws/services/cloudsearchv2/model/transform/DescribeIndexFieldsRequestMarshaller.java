@@ -44,9 +44,10 @@ public class DescribeIndexFieldsRequestMarshaller implements Marshaller<Request<
             request.addParameter("DomainName", StringUtils.fromString(describeIndexFieldsRequest.getDomainName()));
         }
 
-        com.amazonaws.internal.SdkInternalList<String> fieldNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeIndexFieldsRequest
-                .getFieldNames();
-        if (!fieldNamesList.isEmpty() || !fieldNamesList.isAutoConstruct()) {
+        if (!describeIndexFieldsRequest.getFieldNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeIndexFieldsRequest.getFieldNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> fieldNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeIndexFieldsRequest
+                    .getFieldNames();
             int fieldNamesListIndex = 1;
 
             for (String fieldNamesListValue : fieldNamesList) {

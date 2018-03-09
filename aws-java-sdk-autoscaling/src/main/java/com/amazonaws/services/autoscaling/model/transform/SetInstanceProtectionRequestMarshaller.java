@@ -40,9 +40,10 @@ public class SetInstanceProtectionRequestMarshaller implements Marshaller<Reques
         request.addParameter("Version", "2011-01-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> instanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) setInstanceProtectionRequest
-                .getInstanceIds();
-        if (!instanceIdsList.isEmpty() || !instanceIdsList.isAutoConstruct()) {
+        if (!setInstanceProtectionRequest.getInstanceIds().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) setInstanceProtectionRequest.getInstanceIds()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> instanceIdsList = (com.amazonaws.internal.SdkInternalList<String>) setInstanceProtectionRequest
+                    .getInstanceIds();
             int instanceIdsListIndex = 1;
 
             for (String instanceIdsListValue : instanceIdsList) {

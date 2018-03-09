@@ -42,9 +42,10 @@ public class DescribeLaunchConfigurationsRequestMarshaller implements
         request.addParameter("Version", "2011-01-01");
         request.setHttpMethod(HttpMethodName.POST);
 
-        com.amazonaws.internal.SdkInternalList<String> launchConfigurationNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeLaunchConfigurationsRequest
-                .getLaunchConfigurationNames();
-        if (!launchConfigurationNamesList.isEmpty() || !launchConfigurationNamesList.isAutoConstruct()) {
+        if (!describeLaunchConfigurationsRequest.getLaunchConfigurationNames().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) describeLaunchConfigurationsRequest.getLaunchConfigurationNames()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> launchConfigurationNamesList = (com.amazonaws.internal.SdkInternalList<String>) describeLaunchConfigurationsRequest
+                    .getLaunchConfigurationNames();
             int launchConfigurationNamesListIndex = 1;
 
             for (String launchConfigurationNamesListValue : launchConfigurationNamesList) {

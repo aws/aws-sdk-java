@@ -56,12 +56,14 @@ public class CreateChangeSetRequestMarshaller implements Marshaller<Request<Crea
             request.addParameter("UsePreviousTemplate", StringUtils.fromBoolean(createChangeSetRequest.getUsePreviousTemplate()));
         }
 
-        com.amazonaws.internal.SdkInternalList<Parameter> parametersList = (com.amazonaws.internal.SdkInternalList<Parameter>) createChangeSetRequest
-                .getParameters();
-        if (parametersList.isEmpty() && !parametersList.isAutoConstruct()) {
+        if (createChangeSetRequest.getParameters().isEmpty()
+                && !((com.amazonaws.internal.SdkInternalList<Parameter>) createChangeSetRequest.getParameters()).isAutoConstruct()) {
             request.addParameter("Parameters", "");
         }
-        if (!parametersList.isEmpty() || !parametersList.isAutoConstruct()) {
+        if (!createChangeSetRequest.getParameters().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Parameter>) createChangeSetRequest.getParameters()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Parameter> parametersList = (com.amazonaws.internal.SdkInternalList<Parameter>) createChangeSetRequest
+                    .getParameters();
             int parametersListIndex = 1;
 
             for (Parameter parametersListValue : parametersList) {
@@ -89,12 +91,14 @@ public class CreateChangeSetRequestMarshaller implements Marshaller<Request<Crea
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> capabilitiesList = (com.amazonaws.internal.SdkInternalList<String>) createChangeSetRequest
-                .getCapabilities();
-        if (capabilitiesList.isEmpty() && !capabilitiesList.isAutoConstruct()) {
+        if (createChangeSetRequest.getCapabilities().isEmpty()
+                && !((com.amazonaws.internal.SdkInternalList<String>) createChangeSetRequest.getCapabilities()).isAutoConstruct()) {
             request.addParameter("Capabilities", "");
         }
-        if (!capabilitiesList.isEmpty() || !capabilitiesList.isAutoConstruct()) {
+        if (!createChangeSetRequest.getCapabilities().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createChangeSetRequest.getCapabilities()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> capabilitiesList = (com.amazonaws.internal.SdkInternalList<String>) createChangeSetRequest
+                    .getCapabilities();
             int capabilitiesListIndex = 1;
 
             for (String capabilitiesListValue : capabilitiesList) {
@@ -105,12 +109,14 @@ public class CreateChangeSetRequestMarshaller implements Marshaller<Request<Crea
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> resourceTypesList = (com.amazonaws.internal.SdkInternalList<String>) createChangeSetRequest
-                .getResourceTypes();
-        if (resourceTypesList.isEmpty() && !resourceTypesList.isAutoConstruct()) {
+        if (createChangeSetRequest.getResourceTypes().isEmpty()
+                && !((com.amazonaws.internal.SdkInternalList<String>) createChangeSetRequest.getResourceTypes()).isAutoConstruct()) {
             request.addParameter("ResourceTypes", "");
         }
-        if (!resourceTypesList.isEmpty() || !resourceTypesList.isAutoConstruct()) {
+        if (!createChangeSetRequest.getResourceTypes().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createChangeSetRequest.getResourceTypes()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> resourceTypesList = (com.amazonaws.internal.SdkInternalList<String>) createChangeSetRequest
+                    .getResourceTypes();
             int resourceTypesListIndex = 1;
 
             for (String resourceTypesListValue : resourceTypesList) {
@@ -128,12 +134,14 @@ public class CreateChangeSetRequestMarshaller implements Marshaller<Request<Crea
         RollbackConfiguration rollbackConfiguration = createChangeSetRequest.getRollbackConfiguration();
         if (rollbackConfiguration != null) {
 
-            com.amazonaws.internal.SdkInternalList<RollbackTrigger> rollbackTriggersList = (com.amazonaws.internal.SdkInternalList<RollbackTrigger>) rollbackConfiguration
-                    .getRollbackTriggers();
-            if (rollbackTriggersList.isEmpty() && !rollbackTriggersList.isAutoConstruct()) {
+            if (rollbackConfiguration.getRollbackTriggers().isEmpty()
+                    && !((com.amazonaws.internal.SdkInternalList<RollbackTrigger>) rollbackConfiguration.getRollbackTriggers()).isAutoConstruct()) {
                 request.addParameter("RollbackConfiguration.RollbackTriggers", "");
             }
-            if (!rollbackTriggersList.isEmpty() || !rollbackTriggersList.isAutoConstruct()) {
+            if (!rollbackConfiguration.getRollbackTriggers().isEmpty()
+                    || !((com.amazonaws.internal.SdkInternalList<RollbackTrigger>) rollbackConfiguration.getRollbackTriggers()).isAutoConstruct()) {
+                com.amazonaws.internal.SdkInternalList<RollbackTrigger> rollbackTriggersList = (com.amazonaws.internal.SdkInternalList<RollbackTrigger>) rollbackConfiguration
+                        .getRollbackTriggers();
                 int rollbackTriggersListIndex = 1;
 
                 for (RollbackTrigger rollbackTriggersListValue : rollbackTriggersList) {
@@ -157,12 +165,14 @@ public class CreateChangeSetRequestMarshaller implements Marshaller<Request<Crea
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<String> notificationARNsList = (com.amazonaws.internal.SdkInternalList<String>) createChangeSetRequest
-                .getNotificationARNs();
-        if (notificationARNsList.isEmpty() && !notificationARNsList.isAutoConstruct()) {
+        if (createChangeSetRequest.getNotificationARNs().isEmpty()
+                && !((com.amazonaws.internal.SdkInternalList<String>) createChangeSetRequest.getNotificationARNs()).isAutoConstruct()) {
             request.addParameter("NotificationARNs", "");
         }
-        if (!notificationARNsList.isEmpty() || !notificationARNsList.isAutoConstruct()) {
+        if (!createChangeSetRequest.getNotificationARNs().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createChangeSetRequest.getNotificationARNs()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> notificationARNsList = (com.amazonaws.internal.SdkInternalList<String>) createChangeSetRequest
+                    .getNotificationARNs();
             int notificationARNsListIndex = 1;
 
             for (String notificationARNsListValue : notificationARNsList) {
@@ -173,11 +183,11 @@ public class CreateChangeSetRequestMarshaller implements Marshaller<Request<Crea
             }
         }
 
-        com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createChangeSetRequest.getTags();
-        if (tagsList.isEmpty() && !tagsList.isAutoConstruct()) {
+        if (createChangeSetRequest.getTags().isEmpty() && !((com.amazonaws.internal.SdkInternalList<Tag>) createChangeSetRequest.getTags()).isAutoConstruct()) {
             request.addParameter("Tags", "");
         }
-        if (!tagsList.isEmpty() || !tagsList.isAutoConstruct()) {
+        if (!createChangeSetRequest.getTags().isEmpty() || !((com.amazonaws.internal.SdkInternalList<Tag>) createChangeSetRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createChangeSetRequest.getTags();
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {

@@ -29,8 +29,7 @@ public enum ResourceAttributeType {
     VM_NAME("VM_NAME"),
     VM_PATH("VM_PATH"),
     BIOS_ID("BIOS_ID"),
-    MOTHERBOARD_SERIAL_NUMBER("MOTHERBOARD_SERIAL_NUMBER"),
-    LABEL("LABEL");
+    MOTHERBOARD_SERIAL_NUMBER("MOTHERBOARD_SERIAL_NUMBER");
 
     private String value;
 
