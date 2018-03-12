@@ -110,6 +110,10 @@ public class ReservedNodeStaxUnmarshaller implements Unmarshaller<ReservedNode, 
                     continue;
                 }
 
+                if (context.testExpression("ReservedNodeOfferingType", targetDepth)) {
+                    reservedNode.setReservedNodeOfferingType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return reservedNode;

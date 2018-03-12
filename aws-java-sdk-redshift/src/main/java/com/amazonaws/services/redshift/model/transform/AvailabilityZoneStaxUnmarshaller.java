@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.redshift.model.transform;
 
+import java.util.ArrayList;
+
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -47,6 +49,17 @@ public class AvailabilityZoneStaxUnmarshaller implements Unmarshaller<Availabili
                     availabilityZone.setName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("SupportedPlatforms", targetDepth)) {
+                    availabilityZone.withSupportedPlatforms(new ArrayList<SupportedPlatform>());
+                    continue;
+                }
+
+                if (context.testExpression("SupportedPlatforms/SupportedPlatform", targetDepth)) {
+                    availabilityZone.withSupportedPlatforms(SupportedPlatformStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return availabilityZone;

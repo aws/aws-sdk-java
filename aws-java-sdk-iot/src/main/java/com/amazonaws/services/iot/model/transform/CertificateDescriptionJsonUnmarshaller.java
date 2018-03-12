@@ -84,9 +84,17 @@ public class CertificateDescriptionJsonUnmarshaller implements Unmarshaller<Cert
                     context.nextToken();
                     certificateDescription.setLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
+                if (context.testExpression("customerVersion", targetDepth)) {
+                    context.nextToken();
+                    certificateDescription.setCustomerVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("transferData", targetDepth)) {
                     context.nextToken();
                     certificateDescription.setTransferData(TransferDataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("generationId", targetDepth)) {
+                    context.nextToken();
+                    certificateDescription.setGenerationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

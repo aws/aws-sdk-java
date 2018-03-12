@@ -1,3 +1,20 @@
+# __1.11.293__ __2018-03-12__
+## __AWS Application Discovery Service__
+  - ### Features
+    - Documentation updates for discovery
+
+## __AWS CloudHSM V2__
+  - ### Features
+    - CreateCluster can now take both 8 and 17 character Subnet IDs. DeleteHsm can now take both 8 and 17 character ENI IDs.
+
+## __AWS IoT__
+  - ### Features
+    - We added new fields to the response of the following APIs. (1) describe-certificate: added new generationId, customerVersion fields (2) describe-ca-certificate: added new generationId, customerVersion and lastModifiedDate fields (3) get-policy: added generationId, creationDate and lastModifiedDate fields
+
+## __Amazon Redshift__
+  - ### Features
+    - DescribeClusterSnapshotsMessage with ClusterExists flag returns snapshots of existing clusters. Else both existing and deleted cluster snapshots are returned
+
 # __1.11.292__ __2018-03-08__
 ## __AWS Migration Hub__
   - ### Features

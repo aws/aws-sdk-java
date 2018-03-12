@@ -6595,6 +6595,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      *         The service is temporarily unavailable.
      * @throws InternalFailureException
      *         An unexpected error has occurred.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
      * @sample AWSIot.SetDefaultAuthorizer
      */
     @Override

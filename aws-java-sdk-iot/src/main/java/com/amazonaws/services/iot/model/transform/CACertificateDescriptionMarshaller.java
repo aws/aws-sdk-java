@@ -41,6 +41,12 @@ public class CACertificateDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationDate").build();
     private static final MarshallingInfo<String> AUTOREGISTRATIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoRegistrationStatus").build();
+    private static final MarshallingInfo<java.util.Date> LASTMODIFIEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastModifiedDate").build();
+    private static final MarshallingInfo<Integer> CUSTOMERVERSION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customerVersion").build();
+    private static final MarshallingInfo<String> GENERATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("generationId").build();
 
     private static final CACertificateDescriptionMarshaller instance = new CACertificateDescriptionMarshaller();
 
@@ -65,6 +71,9 @@ public class CACertificateDescriptionMarshaller {
             protocolMarshaller.marshall(cACertificateDescription.getOwnedBy(), OWNEDBY_BINDING);
             protocolMarshaller.marshall(cACertificateDescription.getCreationDate(), CREATIONDATE_BINDING);
             protocolMarshaller.marshall(cACertificateDescription.getAutoRegistrationStatus(), AUTOREGISTRATIONSTATUS_BINDING);
+            protocolMarshaller.marshall(cACertificateDescription.getLastModifiedDate(), LASTMODIFIEDDATE_BINDING);
+            protocolMarshaller.marshall(cACertificateDescription.getCustomerVersion(), CUSTOMERVERSION_BINDING);
+            protocolMarshaller.marshall(cACertificateDescription.getGenerationId(), GENERATIONID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

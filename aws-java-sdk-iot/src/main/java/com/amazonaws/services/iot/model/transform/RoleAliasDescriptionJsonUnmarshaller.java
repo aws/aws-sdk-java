@@ -52,6 +52,10 @@ public class RoleAliasDescriptionJsonUnmarshaller implements Unmarshaller<RoleAl
                     context.nextToken();
                     roleAliasDescription.setRoleAlias(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("roleAliasArn", targetDepth)) {
+                    context.nextToken();
+                    roleAliasDescription.setRoleAliasArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
                     roleAliasDescription.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));

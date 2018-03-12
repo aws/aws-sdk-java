@@ -76,6 +76,8 @@ public class ReservedNodeOffering implements Serializable, Cloneable {
      */
     private com.amazonaws.internal.SdkInternalList<RecurringCharge> recurringCharges;
 
+    private String reservedNodeOfferingType;
+
     /**
      * <p>
      * The offering identifier.
@@ -438,6 +440,46 @@ public class ReservedNodeOffering implements Serializable, Cloneable {
     }
 
     /**
+     * @param reservedNodeOfferingType
+     * @see ReservedNodeOfferingType
+     */
+
+    public void setReservedNodeOfferingType(String reservedNodeOfferingType) {
+        this.reservedNodeOfferingType = reservedNodeOfferingType;
+    }
+
+    /**
+     * @return
+     * @see ReservedNodeOfferingType
+     */
+
+    public String getReservedNodeOfferingType() {
+        return this.reservedNodeOfferingType;
+    }
+
+    /**
+     * @param reservedNodeOfferingType
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReservedNodeOfferingType
+     */
+
+    public ReservedNodeOffering withReservedNodeOfferingType(String reservedNodeOfferingType) {
+        setReservedNodeOfferingType(reservedNodeOfferingType);
+        return this;
+    }
+
+    /**
+     * @param reservedNodeOfferingType
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReservedNodeOfferingType
+     */
+
+    public ReservedNodeOffering withReservedNodeOfferingType(ReservedNodeOfferingType reservedNodeOfferingType) {
+        this.reservedNodeOfferingType = reservedNodeOfferingType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -463,7 +505,9 @@ public class ReservedNodeOffering implements Serializable, Cloneable {
         if (getOfferingType() != null)
             sb.append("OfferingType: ").append(getOfferingType()).append(",");
         if (getRecurringCharges() != null)
-            sb.append("RecurringCharges: ").append(getRecurringCharges());
+            sb.append("RecurringCharges: ").append(getRecurringCharges()).append(",");
+        if (getReservedNodeOfferingType() != null)
+            sb.append("ReservedNodeOfferingType: ").append(getReservedNodeOfferingType());
         sb.append("}");
         return sb.toString();
     }
@@ -510,6 +554,10 @@ public class ReservedNodeOffering implements Serializable, Cloneable {
             return false;
         if (other.getRecurringCharges() != null && other.getRecurringCharges().equals(this.getRecurringCharges()) == false)
             return false;
+        if (other.getReservedNodeOfferingType() == null ^ this.getReservedNodeOfferingType() == null)
+            return false;
+        if (other.getReservedNodeOfferingType() != null && other.getReservedNodeOfferingType().equals(this.getReservedNodeOfferingType()) == false)
+            return false;
         return true;
     }
 
@@ -526,6 +574,7 @@ public class ReservedNodeOffering implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCurrencyCode() == null) ? 0 : getCurrencyCode().hashCode());
         hashCode = prime * hashCode + ((getOfferingType() == null) ? 0 : getOfferingType().hashCode());
         hashCode = prime * hashCode + ((getRecurringCharges() == null) ? 0 : getRecurringCharges().hashCode());
+        hashCode = prime * hashCode + ((getReservedNodeOfferingType() == null) ? 0 : getReservedNodeOfferingType().hashCode());
         return hashCode;
     }
 

@@ -2132,6 +2132,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * 
      * @param describeClusterSnapshotsRequest
      * @return Result of the DescribeClusterSnapshots operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
      * @throws ClusterSnapshotNotFoundException
      *         The snapshot identifier does not refer to an existing cluster snapshot.
      * @throws InvalidTagException

@@ -45,8 +45,12 @@ public class CertificateDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationDate").build();
     private static final MarshallingInfo<java.util.Date> LASTMODIFIEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastModifiedDate").build();
+    private static final MarshallingInfo<Integer> CUSTOMERVERSION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customerVersion").build();
     private static final MarshallingInfo<StructuredPojo> TRANSFERDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("transferData").build();
+    private static final MarshallingInfo<String> GENERATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("generationId").build();
 
     private static final CertificateDescriptionMarshaller instance = new CertificateDescriptionMarshaller();
 
@@ -73,7 +77,9 @@ public class CertificateDescriptionMarshaller {
             protocolMarshaller.marshall(certificateDescription.getPreviousOwnedBy(), PREVIOUSOWNEDBY_BINDING);
             protocolMarshaller.marshall(certificateDescription.getCreationDate(), CREATIONDATE_BINDING);
             protocolMarshaller.marshall(certificateDescription.getLastModifiedDate(), LASTMODIFIEDDATE_BINDING);
+            protocolMarshaller.marshall(certificateDescription.getCustomerVersion(), CUSTOMERVERSION_BINDING);
             protocolMarshaller.marshall(certificateDescription.getTransferData(), TRANSFERDATA_BINDING);
+            protocolMarshaller.marshall(certificateDescription.getGenerationId(), GENERATIONID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

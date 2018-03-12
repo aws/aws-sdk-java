@@ -118,6 +118,14 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> tagValues;
+    /**
+     * <p>
+     * A value that indicates whether to return snapshots only for an existing cluster. Table-level restore can be
+     * performed only using a snapshot of an existing cluster, that is, a cluster that has not been deleted. If
+     * <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.
+     * </p>
+     */
+    private Boolean clusterExists;
 
     /**
      * <p>
@@ -795,6 +803,74 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * A value that indicates whether to return snapshots only for an existing cluster. Table-level restore can be
+     * performed only using a snapshot of an existing cluster, that is, a cluster that has not been deleted. If
+     * <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.
+     * </p>
+     * 
+     * @param clusterExists
+     *        A value that indicates whether to return snapshots only for an existing cluster. Table-level restore can
+     *        be performed only using a snapshot of an existing cluster, that is, a cluster that has not been deleted.
+     *        If <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.
+     */
+
+    public void setClusterExists(Boolean clusterExists) {
+        this.clusterExists = clusterExists;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether to return snapshots only for an existing cluster. Table-level restore can be
+     * performed only using a snapshot of an existing cluster, that is, a cluster that has not been deleted. If
+     * <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.
+     * </p>
+     * 
+     * @return A value that indicates whether to return snapshots only for an existing cluster. Table-level restore can
+     *         be performed only using a snapshot of an existing cluster, that is, a cluster that has not been deleted.
+     *         If <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.
+     */
+
+    public Boolean getClusterExists() {
+        return this.clusterExists;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether to return snapshots only for an existing cluster. Table-level restore can be
+     * performed only using a snapshot of an existing cluster, that is, a cluster that has not been deleted. If
+     * <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.
+     * </p>
+     * 
+     * @param clusterExists
+     *        A value that indicates whether to return snapshots only for an existing cluster. Table-level restore can
+     *        be performed only using a snapshot of an existing cluster, that is, a cluster that has not been deleted.
+     *        If <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeClusterSnapshotsRequest withClusterExists(Boolean clusterExists) {
+        setClusterExists(clusterExists);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether to return snapshots only for an existing cluster. Table-level restore can be
+     * performed only using a snapshot of an existing cluster, that is, a cluster that has not been deleted. If
+     * <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.
+     * </p>
+     * 
+     * @return A value that indicates whether to return snapshots only for an existing cluster. Table-level restore can
+     *         be performed only using a snapshot of an existing cluster, that is, a cluster that has not been deleted.
+     *         If <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.
+     */
+
+    public Boolean isClusterExists() {
+        return this.clusterExists;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -824,7 +900,9 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
         if (getTagKeys() != null)
             sb.append("TagKeys: ").append(getTagKeys()).append(",");
         if (getTagValues() != null)
-            sb.append("TagValues: ").append(getTagValues());
+            sb.append("TagValues: ").append(getTagValues()).append(",");
+        if (getClusterExists() != null)
+            sb.append("ClusterExists: ").append(getClusterExists());
         sb.append("}");
         return sb.toString();
     }
@@ -879,6 +957,10 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getTagValues() != null && other.getTagValues().equals(this.getTagValues()) == false)
             return false;
+        if (other.getClusterExists() == null ^ this.getClusterExists() == null)
+            return false;
+        if (other.getClusterExists() != null && other.getClusterExists().equals(this.getClusterExists()) == false)
+            return false;
         return true;
     }
 
@@ -897,6 +979,7 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getOwnerAccount() == null) ? 0 : getOwnerAccount().hashCode());
         hashCode = prime * hashCode + ((getTagKeys() == null) ? 0 : getTagKeys().hashCode());
         hashCode = prime * hashCode + ((getTagValues() == null) ? 0 : getTagValues().hashCode());
+        hashCode = prime * hashCode + ((getClusterExists() == null) ? 0 : getClusterExists().hashCode());
         return hashCode;
     }
 

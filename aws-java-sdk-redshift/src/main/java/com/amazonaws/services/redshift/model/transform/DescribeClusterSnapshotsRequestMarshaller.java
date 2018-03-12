@@ -101,6 +101,10 @@ public class DescribeClusterSnapshotsRequestMarshaller implements Marshaller<Req
             }
         }
 
+        if (describeClusterSnapshotsRequest.getClusterExists() != null) {
+            request.addParameter("ClusterExists", StringUtils.fromBoolean(describeClusterSnapshotsRequest.getClusterExists()));
+        }
+
         return request;
     }
 

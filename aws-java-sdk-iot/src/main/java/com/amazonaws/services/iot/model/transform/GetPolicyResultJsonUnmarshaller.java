@@ -64,6 +64,18 @@ public class GetPolicyResultJsonUnmarshaller implements Unmarshaller<GetPolicyRe
                     context.nextToken();
                     getPolicyResult.setDefaultVersionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("creationDate", targetDepth)) {
+                    context.nextToken();
+                    getPolicyResult.setCreationDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                }
+                if (context.testExpression("lastModifiedDate", targetDepth)) {
+                    context.nextToken();
+                    getPolicyResult.setLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                }
+                if (context.testExpression("generationId", targetDepth)) {
+                    context.nextToken();
+                    getPolicyResult.setGenerationId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

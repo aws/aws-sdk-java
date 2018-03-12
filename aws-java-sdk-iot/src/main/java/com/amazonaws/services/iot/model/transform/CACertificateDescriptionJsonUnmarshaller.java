@@ -76,6 +76,18 @@ public class CACertificateDescriptionJsonUnmarshaller implements Unmarshaller<CA
                     context.nextToken();
                     cACertificateDescription.setAutoRegistrationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("lastModifiedDate", targetDepth)) {
+                    context.nextToken();
+                    cACertificateDescription.setLastModifiedDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                }
+                if (context.testExpression("customerVersion", targetDepth)) {
+                    context.nextToken();
+                    cACertificateDescription.setCustomerVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("generationId", targetDepth)) {
+                    context.nextToken();
+                    cACertificateDescription.setGenerationId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

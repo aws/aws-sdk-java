@@ -48,6 +48,12 @@ public class GetPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
      */
     private String defaultVersionId;
 
+    private java.util.Date creationDate;
+
+    private java.util.Date lastModifiedDate;
+
+    private String generationId;
+
     /**
      * <p>
      * The policy name.
@@ -209,6 +215,84 @@ public class GetPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
+     * @param creationDate
+     */
+
+    public void setCreationDate(java.util.Date creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.Date getCreationDate() {
+        return this.creationDate;
+    }
+
+    /**
+     * @param creationDate
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPolicyResult withCreationDate(java.util.Date creationDate) {
+        setCreationDate(creationDate);
+        return this;
+    }
+
+    /**
+     * @param lastModifiedDate
+     */
+
+    public void setLastModifiedDate(java.util.Date lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.Date getLastModifiedDate() {
+        return this.lastModifiedDate;
+    }
+
+    /**
+     * @param lastModifiedDate
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPolicyResult withLastModifiedDate(java.util.Date lastModifiedDate) {
+        setLastModifiedDate(lastModifiedDate);
+        return this;
+    }
+
+    /**
+     * @param generationId
+     */
+
+    public void setGenerationId(String generationId) {
+        this.generationId = generationId;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getGenerationId() {
+        return this.generationId;
+    }
+
+    /**
+     * @param generationId
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPolicyResult withGenerationId(String generationId) {
+        setGenerationId(generationId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -226,7 +310,13 @@ public class GetPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
         if (getPolicyDocument() != null)
             sb.append("PolicyDocument: ").append(getPolicyDocument()).append(",");
         if (getDefaultVersionId() != null)
-            sb.append("DefaultVersionId: ").append(getDefaultVersionId());
+            sb.append("DefaultVersionId: ").append(getDefaultVersionId()).append(",");
+        if (getCreationDate() != null)
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
+        if (getLastModifiedDate() != null)
+            sb.append("LastModifiedDate: ").append(getLastModifiedDate()).append(",");
+        if (getGenerationId() != null)
+            sb.append("GenerationId: ").append(getGenerationId());
         sb.append("}");
         return sb.toString();
     }
@@ -257,6 +347,18 @@ public class GetPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
             return false;
         if (other.getDefaultVersionId() != null && other.getDefaultVersionId().equals(this.getDefaultVersionId()) == false)
             return false;
+        if (other.getCreationDate() == null ^ this.getCreationDate() == null)
+            return false;
+        if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false)
+            return false;
+        if (other.getLastModifiedDate() == null ^ this.getLastModifiedDate() == null)
+            return false;
+        if (other.getLastModifiedDate() != null && other.getLastModifiedDate().equals(this.getLastModifiedDate()) == false)
+            return false;
+        if (other.getGenerationId() == null ^ this.getGenerationId() == null)
+            return false;
+        if (other.getGenerationId() != null && other.getGenerationId().equals(this.getGenerationId()) == false)
+            return false;
         return true;
     }
 
@@ -269,6 +371,9 @@ public class GetPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
         hashCode = prime * hashCode + ((getPolicyArn() == null) ? 0 : getPolicyArn().hashCode());
         hashCode = prime * hashCode + ((getPolicyDocument() == null) ? 0 : getPolicyDocument().hashCode());
         hashCode = prime * hashCode + ((getDefaultVersionId() == null) ? 0 : getDefaultVersionId().hashCode());
+        hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
+        hashCode = prime * hashCode + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate().hashCode());
+        hashCode = prime * hashCode + ((getGenerationId() == null) ? 0 : getGenerationId().hashCode());
         return hashCode;
     }
 

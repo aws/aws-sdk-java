@@ -29,6 +29,8 @@ public class RoleAliasDescriptionMarshaller {
 
     private static final MarshallingInfo<String> ROLEALIAS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("roleAlias").build();
+    private static final MarshallingInfo<String> ROLEALIASARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("roleAliasArn").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("roleArn").build();
     private static final MarshallingInfo<String> OWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -57,6 +59,7 @@ public class RoleAliasDescriptionMarshaller {
 
         try {
             protocolMarshaller.marshall(roleAliasDescription.getRoleAlias(), ROLEALIAS_BINDING);
+            protocolMarshaller.marshall(roleAliasDescription.getRoleAliasArn(), ROLEALIASARN_BINDING);
             protocolMarshaller.marshall(roleAliasDescription.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(roleAliasDescription.getOwner(), OWNER_BINDING);
             protocolMarshaller.marshall(roleAliasDescription.getCredentialDurationSeconds(), CREDENTIALDURATIONSECONDS_BINDING);
