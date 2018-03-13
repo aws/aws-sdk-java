@@ -105,11 +105,13 @@ public class AWSCredentialsProviderChain implements AWSCredentialsProvider {
         this.reuseLastProvider = b;
     }
 
+    @Override
     public AWSCredentials getCredentials() {
         if (reuseLastProvider && lastUsedProvider != null) {
             return lastUsedProvider.getCredentials();
         }
 
+        List<String> exceptionMessages = new LinkedList<String>();
         for (AWSCredentialsProvider provider : credentialsProviders) {
             try {
                 AWSCredentials credentials = provider.getCredentials();
@@ -123,14 +125,17 @@ public class AWSCredentialsProviderChain implements AWSCredentialsProvider {
                 }
             } catch (Exception e) {
                 // Ignore any exceptions and move onto the next provider
-                log.debug("Unable to load credentials from " + provider.toString() +
-                          ": " + e.getMessage());
+                String message = provider + ": " + e.getMessage();
+                log.debug("Unable to load credentials from " + message);
+                exceptionMessages.add(message);
             }
         }
 
-        throw new SdkClientException("Unable to load AWS credentials from any provider in the chain");
+        throw new SdkClientException("Unable to load AWS credentials from any provider in the chain: "
+                + exceptionMessages);
     }
 
+    @Override
     public void refresh() {
         for (AWSCredentialsProvider provider : credentialsProviders) {
             provider.refresh();
