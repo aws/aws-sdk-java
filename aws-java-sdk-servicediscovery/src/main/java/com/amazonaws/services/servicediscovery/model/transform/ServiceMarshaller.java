@@ -41,6 +41,8 @@ public class ServiceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DnsConfig").build();
     private static final MarshallingInfo<StructuredPojo> HEALTHCHECKCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HealthCheckConfig").build();
+    private static final MarshallingInfo<StructuredPojo> HEALTHCHECKCUSTOMCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HealthCheckCustomConfig").build();
     private static final MarshallingInfo<java.util.Date> CREATEDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateDate").build();
     private static final MarshallingInfo<String> CREATORREQUESTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -69,6 +71,7 @@ public class ServiceMarshaller {
             protocolMarshaller.marshall(service.getInstanceCount(), INSTANCECOUNT_BINDING);
             protocolMarshaller.marshall(service.getDnsConfig(), DNSCONFIG_BINDING);
             protocolMarshaller.marshall(service.getHealthCheckConfig(), HEALTHCHECKCONFIG_BINDING);
+            protocolMarshaller.marshall(service.getHealthCheckCustomConfig(), HEALTHCHECKCUSTOMCONFIG_BINDING);
             protocolMarshaller.marshall(service.getCreateDate(), CREATEDATE_BINDING);
             protocolMarshaller.marshall(service.getCreatorRequestId(), CREATORREQUESTID_BINDING);
         } catch (Exception e) {

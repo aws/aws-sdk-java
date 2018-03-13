@@ -236,6 +236,21 @@ public class AbstractAWSServiceDiscoveryAsync extends AbstractAWSServiceDiscover
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateInstanceCustomHealthStatusResult> updateInstanceCustomHealthStatusAsync(
+            UpdateInstanceCustomHealthStatusRequest request) {
+
+        return updateInstanceCustomHealthStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInstanceCustomHealthStatusResult> updateInstanceCustomHealthStatusAsync(
+            UpdateInstanceCustomHealthStatusRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateInstanceCustomHealthStatusRequest, UpdateInstanceCustomHealthStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateServiceResult> updateServiceAsync(UpdateServiceRequest request) {
 
         return updateServiceAsync(request, null);

@@ -102,6 +102,9 @@ public class AWSServiceDiscoveryClient extends AmazonWebServiceClient implements
                             new JsonErrorShapeMetadata().withErrorCode("NamespaceNotFound").withModeledClass(
                                     com.amazonaws.services.servicediscovery.model.NamespaceNotFoundException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CustomHealthNotFound").withModeledClass(
+                                    com.amazonaws.services.servicediscovery.model.CustomHealthNotFoundException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceLimitExceeded").withModeledClass(
                                     com.amazonaws.services.servicediscovery.model.ResourceLimitExceededException.class))
                     .withBaseServiceExceptionClass(com.amazonaws.services.servicediscovery.model.AWSServiceDiscoveryException.class));
@@ -142,7 +145,10 @@ public class AWSServiceDiscoveryClient extends AmazonWebServiceClient implements
      * Creates a private namespace based on DNS, which will be visible only inside a specified Amazon VPC. The namespace
      * defines your service naming scheme. For example, if you name your namespace <code>example.com</code> and name
      * your service <code>backend</code>, the resulting DNS name for the service will be
-     * <code>backend.example.com</code>. You can associate more than one service with the same namespace.
+     * <code>backend.example.com</code>. For the current limit on the number of namespaces that you can create using the
+     * same AWS account, see <a href=
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-autonaming"
+     * >Limits on Auto Naming</a> in the <i>Route 53 Developer Guide</i>.
      * </p>
      * 
      * @param createPrivateDnsNamespaceRequest
@@ -204,8 +210,10 @@ public class AWSServiceDiscoveryClient extends AmazonWebServiceClient implements
      * <p>
      * Creates a public namespace based on DNS, which will be visible on the internet. The namespace defines your
      * service naming scheme. For example, if you name your namespace <code>example.com</code> and name your service
-     * <code>backend</code>, the resulting DNS name for the service will be <code>backend.example.com</code>. You can
-     * associate more than one service with the same namespace.
+     * <code>backend</code>, the resulting DNS name for the service will be <code>backend.example.com</code>. For the
+     * current limit on the number of namespaces that you can create using the same AWS account, see <a href=
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-autonaming"
+     * >Limits on Auto Naming</a> in the <i>Route 53 Developer Guide</i>.
      * </p>
      * 
      * @param createPublicDnsNamespaceRequest
@@ -282,6 +290,12 @@ public class AWSServiceDiscoveryClient extends AmazonWebServiceClient implements
      * <p>
      * After you create the service, you can submit a <a>RegisterInstance</a> request, and Amazon Route 53 uses the
      * values in the configuration to create the specified entities.
+     * </p>
+     * <p>
+     * For the current limit on the number of instances that you can register using the same namespace and using the
+     * same service, see <a href=
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-autonaming"
+     * >Limits on Auto Naming</a> in the <i>Route 53 Developer Guide</i>.
      * </p>
      * 
      * @param createServiceRequest
@@ -1028,8 +1042,8 @@ public class AWSServiceDiscoveryClient extends AmazonWebServiceClient implements
      * </li>
      * <li>
      * <p>
-     * Creates or updates a health check based on the settings in the health check configuration, if any, for the
-     * service
+     * If the service includes <code>HealthCheckConfig</code>, creates or updates a health check based on the settings
+     * in the health check configuration
      * </p>
      * </li>
      * <li>
@@ -1058,7 +1072,7 @@ public class AWSServiceDiscoveryClient extends AmazonWebServiceClient implements
      * </li>
      * <li>
      * <p>
-     * <b>If the health check is unhealthy</b>: returns the IP address of the last healthy instance
+     * <b>If the health check is unhealthy</b>: returns the applicable value for the last healthy instance
      * </p>
      * </li>
      * <li>
@@ -1067,6 +1081,12 @@ public class AWSServiceDiscoveryClient extends AmazonWebServiceClient implements
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For the current limit on the number of instances that you can register using the same namespace and using the
+     * same service, see <a href=
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-autonaming"
+     * >Limits on Auto Naming</a> in the <i>Route 53 Developer Guide</i>.
+     * </p>
      * 
      * @param registerInstanceRequest
      * @return Result of the RegisterInstance operation returned by the service.
@@ -1125,6 +1145,64 @@ public class AWSServiceDiscoveryClient extends AmazonWebServiceClient implements
     }
 
     /**
+     * @param updateInstanceCustomHealthStatusRequest
+     * @return Result of the UpdateInstanceCustomHealthStatus operation returned by the service.
+     * @throws InstanceNotFoundException
+     *         No instance exists with the specified ID, or the instance was recently registered, and information about
+     *         the instance hasn't propagated yet.
+     * @throws ServiceNotFoundException
+     *         No service exists with the specified ID.
+     * @throws CustomHealthNotFoundException
+     * @throws InvalidInputException
+     *         One or more specified values aren't valid. For example, when you're creating a namespace, the value of
+     *         <code>Name</code> might not be a valid DNS name.
+     * @sample AWSServiceDiscovery.UpdateInstanceCustomHealthStatus
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdateInstanceCustomHealthStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateInstanceCustomHealthStatusResult updateInstanceCustomHealthStatus(UpdateInstanceCustomHealthStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateInstanceCustomHealthStatus(request);
+    }
+
+    @SdkInternalApi
+    final UpdateInstanceCustomHealthStatusResult executeUpdateInstanceCustomHealthStatus(
+            UpdateInstanceCustomHealthStatusRequest updateInstanceCustomHealthStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateInstanceCustomHealthStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateInstanceCustomHealthStatusRequest> request = null;
+        Response<UpdateInstanceCustomHealthStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateInstanceCustomHealthStatusRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateInstanceCustomHealthStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateInstanceCustomHealthStatusResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateInstanceCustomHealthStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Submits a request to perform the following operations:
      * </p>
@@ -1144,8 +1222,6 @@ public class AWSServiceDiscoveryClient extends AmazonWebServiceClient implements
      * Add, update, or delete <code>HealthCheckConfig</code> for a specified service
      * </p>
      * </li>
-     * <li>
-     * <p/></li>
      * </ul>
      * <p>
      * You must specify all <code>DnsRecords</code> configurations (and, optionally, <code>HealthCheckConfig</code>)

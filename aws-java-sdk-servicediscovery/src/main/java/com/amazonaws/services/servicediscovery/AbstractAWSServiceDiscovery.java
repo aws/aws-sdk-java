@@ -108,6 +108,11 @@ public class AbstractAWSServiceDiscovery implements AWSServiceDiscovery {
     }
 
     @Override
+    public UpdateInstanceCustomHealthStatusResult updateInstanceCustomHealthStatus(UpdateInstanceCustomHealthStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateServiceResult updateService(UpdateServiceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

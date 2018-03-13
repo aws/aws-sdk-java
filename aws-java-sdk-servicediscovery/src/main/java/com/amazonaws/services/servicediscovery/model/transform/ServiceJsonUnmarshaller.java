@@ -76,6 +76,10 @@ public class ServiceJsonUnmarshaller implements Unmarshaller<Service, JsonUnmars
                     context.nextToken();
                     service.setHealthCheckConfig(HealthCheckConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("HealthCheckCustomConfig", targetDepth)) {
+                    context.nextToken();
+                    service.setHealthCheckCustomConfig(HealthCheckCustomConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("CreateDate", targetDepth)) {
                     context.nextToken();
                     service.setCreateDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));

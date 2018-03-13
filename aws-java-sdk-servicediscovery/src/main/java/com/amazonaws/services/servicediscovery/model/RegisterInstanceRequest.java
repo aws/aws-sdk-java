@@ -164,9 +164,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * to DNS queries, for example, <code>192.0.2.44</code>.
      * </p>
      * <p>
-     * This value is required if the service specified by <code>ServiceId</code> includes settings for an A record.
-     * Either <code>AWS_INSTANCE_IPV4</code> or <code>AWS_INSTANCE_IPV6</code> is required if the service includes
-     * settings for an SRV record.
+     * This value is required if the service specified by <code>ServiceId</code> includes settings for an A record. If
+     * the service includes settings for an SRV record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>,
+     * <code>AWS_INSTANCE_IPV6</code>, or both.
      * </p>
      * <p>
      * <b>AWS_INSTANCE_IPV6</b>
@@ -177,8 +177,8 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * This value is required if the service specified by <code>ServiceId</code> includes settings for an AAAA record.
-     * Either <code>AWS_INSTANCE_IPV4</code> or <code>AWS_INSTANCE_IPV6</code> is required if the service includes
-     * settings for an SRV record.
+     * If the service includes settings for an SRV record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>,
+     * <code>AWS_INSTANCE_IPV6</code>, or both.
      * </p>
      * <p>
      * <b>AWS_INSTANCE_PORT</b>
@@ -617,9 +617,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * to DNS queries, for example, <code>192.0.2.44</code>.
      * </p>
      * <p>
-     * This value is required if the service specified by <code>ServiceId</code> includes settings for an A record.
-     * Either <code>AWS_INSTANCE_IPV4</code> or <code>AWS_INSTANCE_IPV6</code> is required if the service includes
-     * settings for an SRV record.
+     * This value is required if the service specified by <code>ServiceId</code> includes settings for an A record. If
+     * the service includes settings for an SRV record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>,
+     * <code>AWS_INSTANCE_IPV6</code>, or both.
      * </p>
      * <p>
      * <b>AWS_INSTANCE_IPV6</b>
@@ -630,8 +630,8 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * This value is required if the service specified by <code>ServiceId</code> includes settings for an AAAA record.
-     * Either <code>AWS_INSTANCE_IPV4</code> or <code>AWS_INSTANCE_IPV6</code> is required if the service includes
-     * settings for an SRV record.
+     * If the service includes settings for an SRV record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>,
+     * <code>AWS_INSTANCE_IPV6</code>, or both.
      * </p>
      * <p>
      * <b>AWS_INSTANCE_PORT</b>
@@ -733,8 +733,8 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </p>
      *         <p>
      *         This value is required if the service specified by <code>ServiceId</code> includes settings for an A
-     *         record. Either <code>AWS_INSTANCE_IPV4</code> or <code>AWS_INSTANCE_IPV6</code> is required if the
-     *         service includes settings for an SRV record.
+     *         record. If the service includes settings for an SRV record, you must specify a value for
+     *         <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      *         </p>
      *         <p>
      *         <b>AWS_INSTANCE_IPV6</b>
@@ -745,8 +745,8 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </p>
      *         <p>
      *         This value is required if the service specified by <code>ServiceId</code> includes settings for an AAAA
-     *         record. Either <code>AWS_INSTANCE_IPV4</code> or <code>AWS_INSTANCE_IPV6</code> is required if the
-     *         service includes settings for an SRV record.
+     *         record. If the service includes settings for an SRV record, you must specify a value for
+     *         <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      *         </p>
      *         <p>
      *         <b>AWS_INSTANCE_PORT</b>
@@ -851,9 +851,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * to DNS queries, for example, <code>192.0.2.44</code>.
      * </p>
      * <p>
-     * This value is required if the service specified by <code>ServiceId</code> includes settings for an A record.
-     * Either <code>AWS_INSTANCE_IPV4</code> or <code>AWS_INSTANCE_IPV6</code> is required if the service includes
-     * settings for an SRV record.
+     * This value is required if the service specified by <code>ServiceId</code> includes settings for an A record. If
+     * the service includes settings for an SRV record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>,
+     * <code>AWS_INSTANCE_IPV6</code>, or both.
      * </p>
      * <p>
      * <b>AWS_INSTANCE_IPV6</b>
@@ -864,8 +864,8 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * This value is required if the service specified by <code>ServiceId</code> includes settings for an AAAA record.
-     * Either <code>AWS_INSTANCE_IPV4</code> or <code>AWS_INSTANCE_IPV6</code> is required if the service includes
-     * settings for an SRV record.
+     * If the service includes settings for an SRV record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>,
+     * <code>AWS_INSTANCE_IPV6</code>, or both.
      * </p>
      * <p>
      * <b>AWS_INSTANCE_PORT</b>
@@ -968,8 +968,8 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        <p>
      *        This value is required if the service specified by <code>ServiceId</code> includes settings for an A
-     *        record. Either <code>AWS_INSTANCE_IPV4</code> or <code>AWS_INSTANCE_IPV6</code> is required if the service
-     *        includes settings for an SRV record.
+     *        record. If the service includes settings for an SRV record, you must specify a value for
+     *        <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      *        </p>
      *        <p>
      *        <b>AWS_INSTANCE_IPV6</b>
@@ -980,8 +980,8 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        <p>
      *        This value is required if the service specified by <code>ServiceId</code> includes settings for an AAAA
-     *        record. Either <code>AWS_INSTANCE_IPV4</code> or <code>AWS_INSTANCE_IPV6</code> is required if the service
-     *        includes settings for an SRV record.
+     *        record. If the service includes settings for an SRV record, you must specify a value for
+     *        <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      *        </p>
      *        <p>
      *        <b>AWS_INSTANCE_PORT</b>
@@ -1086,9 +1086,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * to DNS queries, for example, <code>192.0.2.44</code>.
      * </p>
      * <p>
-     * This value is required if the service specified by <code>ServiceId</code> includes settings for an A record.
-     * Either <code>AWS_INSTANCE_IPV4</code> or <code>AWS_INSTANCE_IPV6</code> is required if the service includes
-     * settings for an SRV record.
+     * This value is required if the service specified by <code>ServiceId</code> includes settings for an A record. If
+     * the service includes settings for an SRV record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>,
+     * <code>AWS_INSTANCE_IPV6</code>, or both.
      * </p>
      * <p>
      * <b>AWS_INSTANCE_IPV6</b>
@@ -1099,8 +1099,8 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * This value is required if the service specified by <code>ServiceId</code> includes settings for an AAAA record.
-     * Either <code>AWS_INSTANCE_IPV4</code> or <code>AWS_INSTANCE_IPV6</code> is required if the service includes
-     * settings for an SRV record.
+     * If the service includes settings for an SRV record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>,
+     * <code>AWS_INSTANCE_IPV6</code>, or both.
      * </p>
      * <p>
      * <b>AWS_INSTANCE_PORT</b>
@@ -1203,8 +1203,8 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        <p>
      *        This value is required if the service specified by <code>ServiceId</code> includes settings for an A
-     *        record. Either <code>AWS_INSTANCE_IPV4</code> or <code>AWS_INSTANCE_IPV6</code> is required if the service
-     *        includes settings for an SRV record.
+     *        record. If the service includes settings for an SRV record, you must specify a value for
+     *        <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      *        </p>
      *        <p>
      *        <b>AWS_INSTANCE_IPV6</b>
@@ -1215,8 +1215,8 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        <p>
      *        This value is required if the service specified by <code>ServiceId</code> includes settings for an AAAA
-     *        record. Either <code>AWS_INSTANCE_IPV4</code> or <code>AWS_INSTANCE_IPV6</code> is required if the service
-     *        includes settings for an SRV record.
+     *        record. If the service includes settings for an SRV record, you must specify a value for
+     *        <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      *        </p>
      *        <p>
      *        <b>AWS_INSTANCE_PORT</b>

@@ -1,3 +1,8 @@
+# __1.11.294__ __2018-03-13__
+## __Amazon Route 53 Auto Naming__
+  - ### Features
+    - This release adds support for custom health checks, which let you check the health of resources that aren't accessible over the internet. For example, you can use a custom health check when the instance is in an Amazon VPC.
+
 # __1.11.293__ __2018-03-12__
 ## __AWS Application Discovery Service__
   - ### Features

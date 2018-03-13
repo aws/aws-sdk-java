@@ -40,6 +40,8 @@ public class CreateServiceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DnsConfig").build();
     private static final MarshallingInfo<StructuredPojo> HEALTHCHECKCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HealthCheckConfig").build();
+    private static final MarshallingInfo<StructuredPojo> HEALTHCHECKCUSTOMCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HealthCheckCustomConfig").build();
 
     private static final CreateServiceRequestMarshaller instance = new CreateServiceRequestMarshaller();
 
@@ -62,6 +64,7 @@ public class CreateServiceRequestMarshaller {
             protocolMarshaller.marshall(createServiceRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createServiceRequest.getDnsConfig(), DNSCONFIG_BINDING);
             protocolMarshaller.marshall(createServiceRequest.getHealthCheckConfig(), HEALTHCHECKCONFIG_BINDING);
+            protocolMarshaller.marshall(createServiceRequest.getHealthCheckCustomConfig(), HEALTHCHECKCUSTOMCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

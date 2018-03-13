@@ -65,6 +65,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
     private HealthCheckConfig healthCheckConfig;
 
+    private HealthCheckCustomConfig healthCheckCustomConfig;
+
     /**
      * <p>
      * The name that you want to assign to the service.
@@ -317,6 +319,32 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * @param healthCheckCustomConfig
+     */
+
+    public void setHealthCheckCustomConfig(HealthCheckCustomConfig healthCheckCustomConfig) {
+        this.healthCheckCustomConfig = healthCheckCustomConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public HealthCheckCustomConfig getHealthCheckCustomConfig() {
+        return this.healthCheckCustomConfig;
+    }
+
+    /**
+     * @param healthCheckCustomConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateServiceRequest withHealthCheckCustomConfig(HealthCheckCustomConfig healthCheckCustomConfig) {
+        setHealthCheckCustomConfig(healthCheckCustomConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -336,7 +364,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getDnsConfig() != null)
             sb.append("DnsConfig: ").append(getDnsConfig()).append(",");
         if (getHealthCheckConfig() != null)
-            sb.append("HealthCheckConfig: ").append(getHealthCheckConfig());
+            sb.append("HealthCheckConfig: ").append(getHealthCheckConfig()).append(",");
+        if (getHealthCheckCustomConfig() != null)
+            sb.append("HealthCheckCustomConfig: ").append(getHealthCheckCustomConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -371,6 +401,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getHealthCheckConfig() != null && other.getHealthCheckConfig().equals(this.getHealthCheckConfig()) == false)
             return false;
+        if (other.getHealthCheckCustomConfig() == null ^ this.getHealthCheckCustomConfig() == null)
+            return false;
+        if (other.getHealthCheckCustomConfig() != null && other.getHealthCheckCustomConfig().equals(this.getHealthCheckCustomConfig()) == false)
+            return false;
         return true;
     }
 
@@ -384,6 +418,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getDnsConfig() == null) ? 0 : getDnsConfig().hashCode());
         hashCode = prime * hashCode + ((getHealthCheckConfig() == null) ? 0 : getHealthCheckConfig().hashCode());
+        hashCode = prime * hashCode + ((getHealthCheckCustomConfig() == null) ? 0 : getHealthCheckCustomConfig().hashCode());
         return hashCode;
     }
 

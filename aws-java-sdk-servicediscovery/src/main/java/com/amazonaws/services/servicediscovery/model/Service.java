@@ -78,6 +78,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private HealthCheckConfig healthCheckConfig;
+
+    private HealthCheckCustomConfig healthCheckCustomConfig;
     /**
      * <p>
      * The date and time that the service was created, in Unix format and Coordinated Universal Time (UTC). The value of
@@ -421,6 +423,32 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param healthCheckCustomConfig
+     */
+
+    public void setHealthCheckCustomConfig(HealthCheckCustomConfig healthCheckCustomConfig) {
+        this.healthCheckCustomConfig = healthCheckCustomConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public HealthCheckCustomConfig getHealthCheckCustomConfig() {
+        return this.healthCheckCustomConfig;
+    }
+
+    /**
+     * @param healthCheckCustomConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Service withHealthCheckCustomConfig(HealthCheckCustomConfig healthCheckCustomConfig) {
+        setHealthCheckCustomConfig(healthCheckCustomConfig);
+        return this;
+    }
+
+    /**
      * <p>
      * The date and time that the service was created, in Unix format and Coordinated Universal Time (UTC). The value of
      * <code>CreateDate</code> is accurate to milliseconds. For example, the value <code>1516925490.087</code>
@@ -549,6 +577,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
             sb.append("DnsConfig: ").append(getDnsConfig()).append(",");
         if (getHealthCheckConfig() != null)
             sb.append("HealthCheckConfig: ").append(getHealthCheckConfig()).append(",");
+        if (getHealthCheckCustomConfig() != null)
+            sb.append("HealthCheckCustomConfig: ").append(getHealthCheckCustomConfig()).append(",");
         if (getCreateDate() != null)
             sb.append("CreateDate: ").append(getCreateDate()).append(",");
         if (getCreatorRequestId() != null)
@@ -595,6 +625,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getHealthCheckConfig() != null && other.getHealthCheckConfig().equals(this.getHealthCheckConfig()) == false)
             return false;
+        if (other.getHealthCheckCustomConfig() == null ^ this.getHealthCheckCustomConfig() == null)
+            return false;
+        if (other.getHealthCheckCustomConfig() != null && other.getHealthCheckCustomConfig().equals(this.getHealthCheckCustomConfig()) == false)
+            return false;
         if (other.getCreateDate() == null ^ this.getCreateDate() == null)
             return false;
         if (other.getCreateDate() != null && other.getCreateDate().equals(this.getCreateDate()) == false)
@@ -618,6 +652,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode());
         hashCode = prime * hashCode + ((getDnsConfig() == null) ? 0 : getDnsConfig().hashCode());
         hashCode = prime * hashCode + ((getHealthCheckConfig() == null) ? 0 : getHealthCheckConfig().hashCode());
+        hashCode = prime * hashCode + ((getHealthCheckCustomConfig() == null) ? 0 : getHealthCheckCustomConfig().hashCode());
         hashCode = prime * hashCode + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());
         hashCode = prime * hashCode + ((getCreatorRequestId() == null) ? 0 : getCreatorRequestId().hashCode());
         return hashCode;

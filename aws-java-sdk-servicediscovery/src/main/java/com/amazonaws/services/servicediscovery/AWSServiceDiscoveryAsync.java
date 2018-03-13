@@ -40,7 +40,10 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * Creates a private namespace based on DNS, which will be visible only inside a specified Amazon VPC. The namespace
      * defines your service naming scheme. For example, if you name your namespace <code>example.com</code> and name
      * your service <code>backend</code>, the resulting DNS name for the service will be
-     * <code>backend.example.com</code>. You can associate more than one service with the same namespace.
+     * <code>backend.example.com</code>. For the current limit on the number of namespaces that you can create using the
+     * same AWS account, see <a href=
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-autonaming"
+     * >Limits on Auto Naming</a> in the <i>Route 53 Developer Guide</i>.
      * </p>
      * 
      * @param createPrivateDnsNamespaceRequest
@@ -57,7 +60,10 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * Creates a private namespace based on DNS, which will be visible only inside a specified Amazon VPC. The namespace
      * defines your service naming scheme. For example, if you name your namespace <code>example.com</code> and name
      * your service <code>backend</code>, the resulting DNS name for the service will be
-     * <code>backend.example.com</code>. You can associate more than one service with the same namespace.
+     * <code>backend.example.com</code>. For the current limit on the number of namespaces that you can create using the
+     * same AWS account, see <a href=
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-autonaming"
+     * >Limits on Auto Naming</a> in the <i>Route 53 Developer Guide</i>.
      * </p>
      * 
      * @param createPrivateDnsNamespaceRequest
@@ -78,8 +84,10 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * <p>
      * Creates a public namespace based on DNS, which will be visible on the internet. The namespace defines your
      * service naming scheme. For example, if you name your namespace <code>example.com</code> and name your service
-     * <code>backend</code>, the resulting DNS name for the service will be <code>backend.example.com</code>. You can
-     * associate more than one service with the same namespace.
+     * <code>backend</code>, the resulting DNS name for the service will be <code>backend.example.com</code>. For the
+     * current limit on the number of namespaces that you can create using the same AWS account, see <a href=
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-autonaming"
+     * >Limits on Auto Naming</a> in the <i>Route 53 Developer Guide</i>.
      * </p>
      * 
      * @param createPublicDnsNamespaceRequest
@@ -94,8 +102,10 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * <p>
      * Creates a public namespace based on DNS, which will be visible on the internet. The namespace defines your
      * service naming scheme. For example, if you name your namespace <code>example.com</code> and name your service
-     * <code>backend</code>, the resulting DNS name for the service will be <code>backend.example.com</code>. You can
-     * associate more than one service with the same namespace.
+     * <code>backend</code>, the resulting DNS name for the service will be <code>backend.example.com</code>. For the
+     * current limit on the number of namespaces that you can create using the same AWS account, see <a href=
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-autonaming"
+     * >Limits on Auto Naming</a> in the <i>Route 53 Developer Guide</i>.
      * </p>
      * 
      * @param createPublicDnsNamespaceRequest
@@ -131,6 +141,12 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * After you create the service, you can submit a <a>RegisterInstance</a> request, and Amazon Route 53 uses the
      * values in the configuration to create the specified entities.
      * </p>
+     * <p>
+     * For the current limit on the number of instances that you can register using the same namespace and using the
+     * same service, see <a href=
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-autonaming"
+     * >Limits on Auto Naming</a> in the <i>Route 53 Developer Guide</i>.
+     * </p>
      * 
      * @param createServiceRequest
      * @return A Java Future containing the result of the CreateService operation returned by the service.
@@ -159,6 +175,12 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * <p>
      * After you create the service, you can submit a <a>RegisterInstance</a> request, and Amazon Route 53 uses the
      * values in the configuration to create the specified entities.
+     * </p>
+     * <p>
+     * For the current limit on the number of instances that you can register using the same namespace and using the
+     * same service, see <a href=
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-autonaming"
+     * >Limits on Auto Naming</a> in the <i>Route 53 Developer Guide</i>.
      * </p>
      * 
      * @param createServiceRequest
@@ -588,8 +610,8 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * </li>
      * <li>
      * <p>
-     * Creates or updates a health check based on the settings in the health check configuration, if any, for the
-     * service
+     * If the service includes <code>HealthCheckConfig</code>, creates or updates a health check based on the settings
+     * in the health check configuration
      * </p>
      * </li>
      * <li>
@@ -618,7 +640,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * </li>
      * <li>
      * <p>
-     * <b>If the health check is unhealthy</b>: returns the IP address of the last healthy instance
+     * <b>If the health check is unhealthy</b>: returns the applicable value for the last healthy instance
      * </p>
      * </li>
      * <li>
@@ -627,6 +649,12 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For the current limit on the number of instances that you can register using the same namespace and using the
+     * same service, see <a href=
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-autonaming"
+     * >Limits on Auto Naming</a> in the <i>Route 53 Developer Guide</i>.
+     * </p>
      * 
      * @param registerInstanceRequest
      * @return A Java Future containing the result of the RegisterInstance operation returned by the service.
@@ -650,8 +678,8 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * </li>
      * <li>
      * <p>
-     * Creates or updates a health check based on the settings in the health check configuration, if any, for the
-     * service
+     * If the service includes <code>HealthCheckConfig</code>, creates or updates a health check based on the settings
+     * in the health check configuration
      * </p>
      * </li>
      * <li>
@@ -680,7 +708,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * </li>
      * <li>
      * <p>
-     * <b>If the health check is unhealthy</b>: returns the IP address of the last healthy instance
+     * <b>If the health check is unhealthy</b>: returns the applicable value for the last healthy instance
      * </p>
      * </li>
      * <li>
@@ -689,6 +717,12 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For the current limit on the number of instances that you can register using the same namespace and using the
+     * same service, see <a href=
+     * "http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-autonaming"
+     * >Limits on Auto Naming</a> in the <i>Route 53 Developer Guide</i>.
+     * </p>
      * 
      * @param registerInstanceRequest
      * @param asyncHandler
@@ -702,6 +736,35 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      */
     java.util.concurrent.Future<RegisterInstanceResult> registerInstanceAsync(RegisterInstanceRequest registerInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<RegisterInstanceRequest, RegisterInstanceResult> asyncHandler);
+
+    /**
+     * @param updateInstanceCustomHealthStatusRequest
+     * @return A Java Future containing the result of the UpdateInstanceCustomHealthStatus operation returned by the
+     *         service.
+     * @sample AWSServiceDiscoveryAsync.UpdateInstanceCustomHealthStatus
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdateInstanceCustomHealthStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateInstanceCustomHealthStatusResult> updateInstanceCustomHealthStatusAsync(
+            UpdateInstanceCustomHealthStatusRequest updateInstanceCustomHealthStatusRequest);
+
+    /**
+     * @param updateInstanceCustomHealthStatusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateInstanceCustomHealthStatus operation returned by the
+     *         service.
+     * @sample AWSServiceDiscoveryAsyncHandler.UpdateInstanceCustomHealthStatus
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/UpdateInstanceCustomHealthStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateInstanceCustomHealthStatusResult> updateInstanceCustomHealthStatusAsync(
+            UpdateInstanceCustomHealthStatusRequest updateInstanceCustomHealthStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateInstanceCustomHealthStatusRequest, UpdateInstanceCustomHealthStatusResult> asyncHandler);
 
     /**
      * <p>
@@ -723,8 +786,6 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * Add, update, or delete <code>HealthCheckConfig</code> for a specified service
      * </p>
      * </li>
-     * <li>
-     * <p/></li>
      * </ul>
      * <p>
      * You must specify all <code>DnsRecords</code> configurations (and, optionally, <code>HealthCheckConfig</code>)
@@ -764,8 +825,6 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * Add, update, or delete <code>HealthCheckConfig</code> for a specified service
      * </p>
      * </li>
-     * <li>
-     * <p/></li>
      * </ul>
      * <p>
      * You must specify all <code>DnsRecords</code> configurations (and, optionally, <code>HealthCheckConfig</code>)

@@ -594,6 +594,41 @@ public class AWSServiceDiscoveryAsyncClient extends AWSServiceDiscoveryClient im
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateInstanceCustomHealthStatusResult> updateInstanceCustomHealthStatusAsync(
+            UpdateInstanceCustomHealthStatusRequest request) {
+
+        return updateInstanceCustomHealthStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInstanceCustomHealthStatusResult> updateInstanceCustomHealthStatusAsync(
+            final UpdateInstanceCustomHealthStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateInstanceCustomHealthStatusRequest, UpdateInstanceCustomHealthStatusResult> asyncHandler) {
+        final UpdateInstanceCustomHealthStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateInstanceCustomHealthStatusResult>() {
+            @Override
+            public UpdateInstanceCustomHealthStatusResult call() throws Exception {
+                UpdateInstanceCustomHealthStatusResult result = null;
+
+                try {
+                    result = executeUpdateInstanceCustomHealthStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateServiceResult> updateServiceAsync(UpdateServiceRequest request) {
 
         return updateServiceAsync(request, null);
