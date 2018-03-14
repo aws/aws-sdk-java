@@ -111,7 +111,7 @@ public class AWSCredentialsProviderChain implements AWSCredentialsProvider {
             return lastUsedProvider.getCredentials();
         }
 
-        List<String> exceptionMessages = new LinkedList<String>();
+        List<String> exceptionMessages = null;
         for (AWSCredentialsProvider provider : credentialsProviders) {
             try {
                 AWSCredentials credentials = provider.getCredentials();
@@ -127,6 +127,9 @@ public class AWSCredentialsProviderChain implements AWSCredentialsProvider {
                 // Ignore any exceptions and move onto the next provider
                 String message = provider + ": " + e.getMessage();
                 log.debug("Unable to load credentials from " + message);
+                if (exceptionMessages == null) {
+                    exceptionMessages = new LinkedList<String>();
+                }
                 exceptionMessages.add(message);
             }
         }
