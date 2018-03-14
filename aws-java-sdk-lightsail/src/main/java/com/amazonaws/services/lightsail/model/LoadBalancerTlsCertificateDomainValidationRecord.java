@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the validation record of each domain name in the TLS/SSL certificate.
+ * Describes the validation record of each domain name in the SSL/TLS certificate.
  * </p>
  * 
  * @see <a
@@ -55,7 +55,7 @@ public class LoadBalancerTlsCertificateDomainValidationRecord implements Seriali
     private String validationStatus;
     /**
      * <p>
-     * The domain name against which your TLS/SSL certificate was validated.
+     * The domain name against which your SSL/TLS certificate was validated.
      * </p>
      */
     private String domainName;
@@ -241,11 +241,11 @@ public class LoadBalancerTlsCertificateDomainValidationRecord implements Seriali
 
     /**
      * <p>
-     * The domain name against which your TLS/SSL certificate was validated.
+     * The domain name against which your SSL/TLS certificate was validated.
      * </p>
      * 
      * @param domainName
-     *        The domain name against which your TLS/SSL certificate was validated.
+     *        The domain name against which your SSL/TLS certificate was validated.
      */
 
     public void setDomainName(String domainName) {
@@ -254,10 +254,10 @@ public class LoadBalancerTlsCertificateDomainValidationRecord implements Seriali
 
     /**
      * <p>
-     * The domain name against which your TLS/SSL certificate was validated.
+     * The domain name against which your SSL/TLS certificate was validated.
      * </p>
      * 
-     * @return The domain name against which your TLS/SSL certificate was validated.
+     * @return The domain name against which your SSL/TLS certificate was validated.
      */
 
     public String getDomainName() {
@@ -266,11 +266,11 @@ public class LoadBalancerTlsCertificateDomainValidationRecord implements Seriali
 
     /**
      * <p>
-     * The domain name against which your TLS/SSL certificate was validated.
+     * The domain name against which your SSL/TLS certificate was validated.
      * </p>
      * 
      * @param domainName
-     *        The domain name against which your TLS/SSL certificate was validated.
+     *        The domain name against which your SSL/TLS certificate was validated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,18 +27,18 @@ public class GetLoadBalancerTlsCertificatesRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The name of the load balancer where you stored your TLS/SSL certificate.
+     * The name of the load balancer you associated with your SSL/TLS certificate.
      * </p>
      */
     private String loadBalancerName;
 
     /**
      * <p>
-     * The name of the load balancer where you stored your TLS/SSL certificate.
+     * The name of the load balancer you associated with your SSL/TLS certificate.
      * </p>
      * 
      * @param loadBalancerName
-     *        The name of the load balancer where you stored your TLS/SSL certificate.
+     *        The name of the load balancer you associated with your SSL/TLS certificate.
      */
 
     public void setLoadBalancerName(String loadBalancerName) {
@@ -47,10 +47,10 @@ public class GetLoadBalancerTlsCertificatesRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The name of the load balancer where you stored your TLS/SSL certificate.
+     * The name of the load balancer you associated with your SSL/TLS certificate.
      * </p>
      * 
-     * @return The name of the load balancer where you stored your TLS/SSL certificate.
+     * @return The name of the load balancer you associated with your SSL/TLS certificate.
      */
 
     public String getLoadBalancerName() {
@@ -59,11 +59,11 @@ public class GetLoadBalancerTlsCertificatesRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The name of the load balancer where you stored your TLS/SSL certificate.
+     * The name of the load balancer you associated with your SSL/TLS certificate.
      * </p>
      * 
      * @param loadBalancerName
-     *        The name of the load balancer where you stored your TLS/SSL certificate.
+     *        The name of the load balancer you associated with your SSL/TLS certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

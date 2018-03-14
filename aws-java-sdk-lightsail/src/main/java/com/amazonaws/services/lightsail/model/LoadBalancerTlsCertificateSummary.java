@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides a summary of TLS/SSL certificate metadata.
+ * Provides a summary of SSL/TLS certificate metadata.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/LoadBalancerTlsCertificateSummary"
@@ -30,24 +30,24 @@ public class LoadBalancerTlsCertificateSummary implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The name of the TLS/SSL certificate.
+     * The name of the SSL/TLS certificate.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * When <code>true</code>, the TLS/SSL certificate is attached to the Lightsail load balancer.
+     * When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load balancer.
      * </p>
      */
     private Boolean isAttached;
 
     /**
      * <p>
-     * The name of the TLS/SSL certificate.
+     * The name of the SSL/TLS certificate.
      * </p>
      * 
      * @param name
-     *        The name of the TLS/SSL certificate.
+     *        The name of the SSL/TLS certificate.
      */
 
     public void setName(String name) {
@@ -56,10 +56,10 @@ public class LoadBalancerTlsCertificateSummary implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The name of the TLS/SSL certificate.
+     * The name of the SSL/TLS certificate.
      * </p>
      * 
-     * @return The name of the TLS/SSL certificate.
+     * @return The name of the SSL/TLS certificate.
      */
 
     public String getName() {
@@ -68,11 +68,11 @@ public class LoadBalancerTlsCertificateSummary implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The name of the TLS/SSL certificate.
+     * The name of the SSL/TLS certificate.
      * </p>
      * 
      * @param name
-     *        The name of the TLS/SSL certificate.
+     *        The name of the SSL/TLS certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class LoadBalancerTlsCertificateSummary implements Serializable, Cloneabl
 
     /**
      * <p>
-     * When <code>true</code>, the TLS/SSL certificate is attached to the Lightsail load balancer.
+     * When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load balancer.
      * </p>
      * 
      * @param isAttached
-     *        When <code>true</code>, the TLS/SSL certificate is attached to the Lightsail load balancer.
+     *        When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load balancer.
      */
 
     public void setIsAttached(Boolean isAttached) {
@@ -96,10 +96,10 @@ public class LoadBalancerTlsCertificateSummary implements Serializable, Cloneabl
 
     /**
      * <p>
-     * When <code>true</code>, the TLS/SSL certificate is attached to the Lightsail load balancer.
+     * When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load balancer.
      * </p>
      * 
-     * @return When <code>true</code>, the TLS/SSL certificate is attached to the Lightsail load balancer.
+     * @return When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load balancer.
      */
 
     public Boolean getIsAttached() {
@@ -108,11 +108,11 @@ public class LoadBalancerTlsCertificateSummary implements Serializable, Cloneabl
 
     /**
      * <p>
-     * When <code>true</code>, the TLS/SSL certificate is attached to the Lightsail load balancer.
+     * When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load balancer.
      * </p>
      * 
      * @param isAttached
-     *        When <code>true</code>, the TLS/SSL certificate is attached to the Lightsail load balancer.
+     *        When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,10 +123,10 @@ public class LoadBalancerTlsCertificateSummary implements Serializable, Cloneabl
 
     /**
      * <p>
-     * When <code>true</code>, the TLS/SSL certificate is attached to the Lightsail load balancer.
+     * When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load balancer.
      * </p>
      * 
-     * @return When <code>true</code>, the TLS/SSL certificate is attached to the Lightsail load balancer.
+     * @return When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load balancer.
      */
 
     public Boolean isAttached() {

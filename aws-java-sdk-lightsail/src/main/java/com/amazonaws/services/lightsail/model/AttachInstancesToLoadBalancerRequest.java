@@ -35,6 +35,13 @@ public class AttachInstancesToLoadBalancerRequest extends com.amazonaws.AmazonWe
      * <p>
      * An array of strings representing the instance name(s) you want to attach to your load balancer.
      * </p>
+     * <p>
+     * An instance must be <code>running</code> before you can attach it to your load balancer.
+     * </p>
+     * <p>
+     * There are no additional limits on the number of instances you can attach to your load balancer, aside from the
+     * limit of Lightsail instances you can create in your account (20).
+     * </p>
      */
     private java.util.List<String> instanceNames;
 
@@ -82,8 +89,21 @@ public class AttachInstancesToLoadBalancerRequest extends com.amazonaws.AmazonWe
      * <p>
      * An array of strings representing the instance name(s) you want to attach to your load balancer.
      * </p>
+     * <p>
+     * An instance must be <code>running</code> before you can attach it to your load balancer.
+     * </p>
+     * <p>
+     * There are no additional limits on the number of instances you can attach to your load balancer, aside from the
+     * limit of Lightsail instances you can create in your account (20).
+     * </p>
      * 
-     * @return An array of strings representing the instance name(s) you want to attach to your load balancer.
+     * @return An array of strings representing the instance name(s) you want to attach to your load balancer.</p>
+     *         <p>
+     *         An instance must be <code>running</code> before you can attach it to your load balancer.
+     *         </p>
+     *         <p>
+     *         There are no additional limits on the number of instances you can attach to your load balancer, aside
+     *         from the limit of Lightsail instances you can create in your account (20).
      */
 
     public java.util.List<String> getInstanceNames() {
@@ -94,9 +114,22 @@ public class AttachInstancesToLoadBalancerRequest extends com.amazonaws.AmazonWe
      * <p>
      * An array of strings representing the instance name(s) you want to attach to your load balancer.
      * </p>
+     * <p>
+     * An instance must be <code>running</code> before you can attach it to your load balancer.
+     * </p>
+     * <p>
+     * There are no additional limits on the number of instances you can attach to your load balancer, aside from the
+     * limit of Lightsail instances you can create in your account (20).
+     * </p>
      * 
      * @param instanceNames
-     *        An array of strings representing the instance name(s) you want to attach to your load balancer.
+     *        An array of strings representing the instance name(s) you want to attach to your load balancer.</p>
+     *        <p>
+     *        An instance must be <code>running</code> before you can attach it to your load balancer.
+     *        </p>
+     *        <p>
+     *        There are no additional limits on the number of instances you can attach to your load balancer, aside from
+     *        the limit of Lightsail instances you can create in your account (20).
      */
 
     public void setInstanceNames(java.util.Collection<String> instanceNames) {
@@ -113,13 +146,26 @@ public class AttachInstancesToLoadBalancerRequest extends com.amazonaws.AmazonWe
      * An array of strings representing the instance name(s) you want to attach to your load balancer.
      * </p>
      * <p>
+     * An instance must be <code>running</code> before you can attach it to your load balancer.
+     * </p>
+     * <p>
+     * There are no additional limits on the number of instances you can attach to your load balancer, aside from the
+     * limit of Lightsail instances you can create in your account (20).
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setInstanceNames(java.util.Collection)} or {@link #withInstanceNames(java.util.Collection)} if you want
      * to override the existing values.
      * </p>
      * 
      * @param instanceNames
-     *        An array of strings representing the instance name(s) you want to attach to your load balancer.
+     *        An array of strings representing the instance name(s) you want to attach to your load balancer.</p>
+     *        <p>
+     *        An instance must be <code>running</code> before you can attach it to your load balancer.
+     *        </p>
+     *        <p>
+     *        There are no additional limits on the number of instances you can attach to your load balancer, aside from
+     *        the limit of Lightsail instances you can create in your account (20).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,9 +183,22 @@ public class AttachInstancesToLoadBalancerRequest extends com.amazonaws.AmazonWe
      * <p>
      * An array of strings representing the instance name(s) you want to attach to your load balancer.
      * </p>
+     * <p>
+     * An instance must be <code>running</code> before you can attach it to your load balancer.
+     * </p>
+     * <p>
+     * There are no additional limits on the number of instances you can attach to your load balancer, aside from the
+     * limit of Lightsail instances you can create in your account (20).
+     * </p>
      * 
      * @param instanceNames
-     *        An array of strings representing the instance name(s) you want to attach to your load balancer.
+     *        An array of strings representing the instance name(s) you want to attach to your load balancer.</p>
+     *        <p>
+     *        An instance must be <code>running</code> before you can attach it to your load balancer.
+     *        </p>
+     *        <p>
+     *        There are no additional limits on the number of instances you can attach to your load balancer, aside from
+     *        the limit of Lightsail instances you can create in your account (20).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

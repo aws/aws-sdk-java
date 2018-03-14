@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes a load balancer TLS/SSL certificate.
+ * Describes a load balancer SSL/TLS certificate.
  * </p>
  * <p>
  * TLS is just an updated, more secure version of Secure Socket Layer (SSL).
@@ -33,27 +33,27 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The name of the TLS/SSL certificate (e.g., <code>my-certificate</code>).
+     * The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the TLS/SSL certificate.
+     * The Amazon Resource Name (ARN) of the SSL/TLS certificate.
      * </p>
      */
     private String arn;
     /**
      * <p>
      * The support code. Include this code in your email to support when you have questions about your Lightsail load
-     * balancer or TLS/SSL certificate. This code enables our support team to look up your Lightsail information more
+     * balancer or SSL/TLS certificate. This code enables our support team to look up your Lightsail information more
      * easily.
      * </p>
      */
     private String supportCode;
     /**
      * <p>
-     * The time when you created your TLS/SSL certificate.
+     * The time when you created your SSL/TLS certificate.
      * </p>
      */
     private java.util.Date createdAt;
@@ -65,31 +65,84 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
     private ResourceLocation location;
     /**
      * <p>
-     * The resource type (e.g., <code>LoadBalancerTlsCertificate</code>.
+     * The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>Instance</code> </b> - A Lightsail instance (a virtual private server)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>StaticIp</code> </b> - A static IP address
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>KeyPair</code> </b> - The key pair used to connect to a Lightsail instance
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>InstanceSnapshot</code> </b> - A Lightsail instance snapshot
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>Domain</code> </b> - A DNS zone
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>PeeredVpc</code> </b> - A peered VPC
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>LoadBalancer</code> </b> - A Lightsail load balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>LoadBalancerTlsCertificate</code> </b> - An SSL/TLS certificate associated with a Lightsail load
+     * balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>Disk</code> </b> - A Lightsail block storage disk
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>DiskSnapshot</code> </b> - A block storage disk snapshot
+     * </p>
+     * </li>
+     * </ul>
      */
     private String resourceType;
     /**
      * <p>
-     * The load balancer name where your TLS/SSL certificate is attached.
+     * The load balancer name where your SSL/TLS certificate is attached.
      * </p>
      */
     private String loadBalancerName;
     /**
      * <p>
-     * When <code>true</code>, the TLS/SSL certificate is attached to the Lightsail load balancer.
+     * When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load balancer.
      * </p>
      */
     private Boolean isAttached;
     /**
      * <p>
-     * The status of the TLS/SSL certificate. Valid values are below.
+     * The status of the SSL/TLS certificate. Valid values are below.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * The domain name for your TLS/SSL certificate.
+     * The domain name for your SSL/TLS certificate.
      * </p>
      */
     private String domainName;
@@ -101,13 +154,13 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
     private java.util.List<LoadBalancerTlsCertificateDomainValidationRecord> domainValidationRecords;
     /**
      * <p>
-     * The reason for the TLS/SSL certificate validation failure.
+     * The reason for the SSL/TLS certificate validation failure.
      * </p>
      */
     private String failureReason;
     /**
      * <p>
-     * The time when the TLS/SSL certificate was issued.
+     * The time when the SSL/TLS certificate was issued.
      * </p>
      */
     private java.util.Date issuedAt;
@@ -125,13 +178,13 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
     private String keyAlgorithm;
     /**
      * <p>
-     * The timestamp when the TLS/SSL certificate expires.
+     * The timestamp when the SSL/TLS certificate expires.
      * </p>
      */
     private java.util.Date notAfter;
     /**
      * <p>
-     * The timestamp when the TLS/SSL certificate is first valid.
+     * The timestamp when the SSL/TLS certificate is first valid.
      * </p>
      */
     private java.util.Date notBefore;
@@ -149,7 +202,7 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
     private String revocationReason;
     /**
      * <p>
-     * The timestamp when the TLS/SSL certificate was revoked.
+     * The timestamp when the SSL/TLS certificate was revoked.
      * </p>
      */
     private java.util.Date revokedAt;
@@ -173,21 +226,21 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
     private String subject;
     /**
      * <p>
-     * One or more domain names (subject alternative names) included in the certificate. This list contains the domain
-     * names that are bound to the public key that is contained in the certificate. The subject alternative names
-     * include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect
-     * to the website.
+     * One or more domains or subdomains included in the certificate. This list contains the domain names that are bound
+     * to the public key that is contained in the certificate. The subject alternative names include the canonical
+     * domain name (CNAME) of the certificate and additional domain names that can be used to connect to the website,
+     * such as <code>example.com</code>, <code>www.example.com</code>, or <code>m.example.com</code>.
      * </p>
      */
     private java.util.List<String> subjectAlternativeNames;
 
     /**
      * <p>
-     * The name of the TLS/SSL certificate (e.g., <code>my-certificate</code>).
+     * The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).
      * </p>
      * 
      * @param name
-     *        The name of the TLS/SSL certificate (e.g., <code>my-certificate</code>).
+     *        The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).
      */
 
     public void setName(String name) {
@@ -196,10 +249,10 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The name of the TLS/SSL certificate (e.g., <code>my-certificate</code>).
+     * The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).
      * </p>
      * 
-     * @return The name of the TLS/SSL certificate (e.g., <code>my-certificate</code>).
+     * @return The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).
      */
 
     public String getName() {
@@ -208,11 +261,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The name of the TLS/SSL certificate (e.g., <code>my-certificate</code>).
+     * The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).
      * </p>
      * 
      * @param name
-     *        The name of the TLS/SSL certificate (e.g., <code>my-certificate</code>).
+     *        The name of the SSL/TLS certificate (e.g., <code>my-certificate</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -223,11 +276,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the TLS/SSL certificate.
+     * The Amazon Resource Name (ARN) of the SSL/TLS certificate.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the TLS/SSL certificate.
+     *        The Amazon Resource Name (ARN) of the SSL/TLS certificate.
      */
 
     public void setArn(String arn) {
@@ -236,10 +289,10 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the TLS/SSL certificate.
+     * The Amazon Resource Name (ARN) of the SSL/TLS certificate.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the TLS/SSL certificate.
+     * @return The Amazon Resource Name (ARN) of the SSL/TLS certificate.
      */
 
     public String getArn() {
@@ -248,11 +301,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the TLS/SSL certificate.
+     * The Amazon Resource Name (ARN) of the SSL/TLS certificate.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the TLS/SSL certificate.
+     *        The Amazon Resource Name (ARN) of the SSL/TLS certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -264,13 +317,13 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The support code. Include this code in your email to support when you have questions about your Lightsail load
-     * balancer or TLS/SSL certificate. This code enables our support team to look up your Lightsail information more
+     * balancer or SSL/TLS certificate. This code enables our support team to look up your Lightsail information more
      * easily.
      * </p>
      * 
      * @param supportCode
      *        The support code. Include this code in your email to support when you have questions about your Lightsail
-     *        load balancer or TLS/SSL certificate. This code enables our support team to look up your Lightsail
+     *        load balancer or SSL/TLS certificate. This code enables our support team to look up your Lightsail
      *        information more easily.
      */
 
@@ -281,12 +334,12 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The support code. Include this code in your email to support when you have questions about your Lightsail load
-     * balancer or TLS/SSL certificate. This code enables our support team to look up your Lightsail information more
+     * balancer or SSL/TLS certificate. This code enables our support team to look up your Lightsail information more
      * easily.
      * </p>
      * 
      * @return The support code. Include this code in your email to support when you have questions about your Lightsail
-     *         load balancer or TLS/SSL certificate. This code enables our support team to look up your Lightsail
+     *         load balancer or SSL/TLS certificate. This code enables our support team to look up your Lightsail
      *         information more easily.
      */
 
@@ -297,13 +350,13 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The support code. Include this code in your email to support when you have questions about your Lightsail load
-     * balancer or TLS/SSL certificate. This code enables our support team to look up your Lightsail information more
+     * balancer or SSL/TLS certificate. This code enables our support team to look up your Lightsail information more
      * easily.
      * </p>
      * 
      * @param supportCode
      *        The support code. Include this code in your email to support when you have questions about your Lightsail
-     *        load balancer or TLS/SSL certificate. This code enables our support team to look up your Lightsail
+     *        load balancer or SSL/TLS certificate. This code enables our support team to look up your Lightsail
      *        information more easily.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -315,11 +368,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The time when you created your TLS/SSL certificate.
+     * The time when you created your SSL/TLS certificate.
      * </p>
      * 
      * @param createdAt
-     *        The time when you created your TLS/SSL certificate.
+     *        The time when you created your SSL/TLS certificate.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -328,10 +381,10 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The time when you created your TLS/SSL certificate.
+     * The time when you created your SSL/TLS certificate.
      * </p>
      * 
-     * @return The time when you created your TLS/SSL certificate.
+     * @return The time when you created your SSL/TLS certificate.
      */
 
     public java.util.Date getCreatedAt() {
@@ -340,11 +393,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The time when you created your TLS/SSL certificate.
+     * The time when you created your SSL/TLS certificate.
      * </p>
      * 
      * @param createdAt
-     *        The time when you created your TLS/SSL certificate.
+     *        The time when you created your SSL/TLS certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -395,11 +448,116 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The resource type (e.g., <code>LoadBalancerTlsCertificate</code>.
+     * The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>Instance</code> </b> - A Lightsail instance (a virtual private server)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>StaticIp</code> </b> - A static IP address
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>KeyPair</code> </b> - The key pair used to connect to a Lightsail instance
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>InstanceSnapshot</code> </b> - A Lightsail instance snapshot
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>Domain</code> </b> - A DNS zone
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>PeeredVpc</code> </b> - A peered VPC
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>LoadBalancer</code> </b> - A Lightsail load balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>LoadBalancerTlsCertificate</code> </b> - An SSL/TLS certificate associated with a Lightsail load
+     * balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>Disk</code> </b> - A Lightsail block storage disk
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>DiskSnapshot</code> </b> - A block storage disk snapshot
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceType
-     *        The resource type (e.g., <code>LoadBalancerTlsCertificate</code>.
+     *        The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b> <code>Instance</code> </b> - A Lightsail instance (a virtual private server)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>StaticIp</code> </b> - A static IP address
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>KeyPair</code> </b> - The key pair used to connect to a Lightsail instance
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>InstanceSnapshot</code> </b> - A Lightsail instance snapshot
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>Domain</code> </b> - A DNS zone
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>PeeredVpc</code> </b> - A peered VPC
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>LoadBalancer</code> </b> - A Lightsail load balancer
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>LoadBalancerTlsCertificate</code> </b> - An SSL/TLS certificate associated with a Lightsail load
+     *        balancer
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>Disk</code> </b> - A Lightsail block storage disk
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>DiskSnapshot</code> </b> - A block storage disk snapshot
+     *        </p>
+     *        </li>
      * @see ResourceType
      */
 
@@ -409,10 +567,115 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The resource type (e.g., <code>LoadBalancerTlsCertificate</code>.
+     * The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>Instance</code> </b> - A Lightsail instance (a virtual private server)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>StaticIp</code> </b> - A static IP address
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>KeyPair</code> </b> - The key pair used to connect to a Lightsail instance
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>InstanceSnapshot</code> </b> - A Lightsail instance snapshot
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>Domain</code> </b> - A DNS zone
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>PeeredVpc</code> </b> - A peered VPC
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>LoadBalancer</code> </b> - A Lightsail load balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>LoadBalancerTlsCertificate</code> </b> - An SSL/TLS certificate associated with a Lightsail load
+     * balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>Disk</code> </b> - A Lightsail block storage disk
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>DiskSnapshot</code> </b> - A block storage disk snapshot
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The resource type (e.g., <code>LoadBalancerTlsCertificate</code>.
+     * @return The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b> <code>Instance</code> </b> - A Lightsail instance (a virtual private server)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>StaticIp</code> </b> - A static IP address
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>KeyPair</code> </b> - The key pair used to connect to a Lightsail instance
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>InstanceSnapshot</code> </b> - A Lightsail instance snapshot
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>Domain</code> </b> - A DNS zone
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>PeeredVpc</code> </b> - A peered VPC
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>LoadBalancer</code> </b> - A Lightsail load balancer
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>LoadBalancerTlsCertificate</code> </b> - An SSL/TLS certificate associated with a Lightsail
+     *         load balancer
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>Disk</code> </b> - A Lightsail block storage disk
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>DiskSnapshot</code> </b> - A block storage disk snapshot
+     *         </p>
+     *         </li>
      * @see ResourceType
      */
 
@@ -422,11 +685,116 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The resource type (e.g., <code>LoadBalancerTlsCertificate</code>.
+     * The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>Instance</code> </b> - A Lightsail instance (a virtual private server)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>StaticIp</code> </b> - A static IP address
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>KeyPair</code> </b> - The key pair used to connect to a Lightsail instance
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>InstanceSnapshot</code> </b> - A Lightsail instance snapshot
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>Domain</code> </b> - A DNS zone
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>PeeredVpc</code> </b> - A peered VPC
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>LoadBalancer</code> </b> - A Lightsail load balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>LoadBalancerTlsCertificate</code> </b> - An SSL/TLS certificate associated with a Lightsail load
+     * balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>Disk</code> </b> - A Lightsail block storage disk
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>DiskSnapshot</code> </b> - A block storage disk snapshot
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceType
-     *        The resource type (e.g., <code>LoadBalancerTlsCertificate</code>.
+     *        The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b> <code>Instance</code> </b> - A Lightsail instance (a virtual private server)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>StaticIp</code> </b> - A static IP address
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>KeyPair</code> </b> - The key pair used to connect to a Lightsail instance
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>InstanceSnapshot</code> </b> - A Lightsail instance snapshot
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>Domain</code> </b> - A DNS zone
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>PeeredVpc</code> </b> - A peered VPC
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>LoadBalancer</code> </b> - A Lightsail load balancer
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>LoadBalancerTlsCertificate</code> </b> - An SSL/TLS certificate associated with a Lightsail load
+     *        balancer
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>Disk</code> </b> - A Lightsail block storage disk
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>DiskSnapshot</code> </b> - A block storage disk snapshot
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -438,11 +806,116 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The resource type (e.g., <code>LoadBalancerTlsCertificate</code>.
+     * The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>Instance</code> </b> - A Lightsail instance (a virtual private server)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>StaticIp</code> </b> - A static IP address
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>KeyPair</code> </b> - The key pair used to connect to a Lightsail instance
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>InstanceSnapshot</code> </b> - A Lightsail instance snapshot
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>Domain</code> </b> - A DNS zone
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>PeeredVpc</code> </b> - A peered VPC
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>LoadBalancer</code> </b> - A Lightsail load balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>LoadBalancerTlsCertificate</code> </b> - An SSL/TLS certificate associated with a Lightsail load
+     * balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>Disk</code> </b> - A Lightsail block storage disk
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>DiskSnapshot</code> </b> - A block storage disk snapshot
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceType
-     *        The resource type (e.g., <code>LoadBalancerTlsCertificate</code>.
+     *        The resource type (e.g., <code>LoadBalancerTlsCertificate</code>).</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b> <code>Instance</code> </b> - A Lightsail instance (a virtual private server)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>StaticIp</code> </b> - A static IP address
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>KeyPair</code> </b> - The key pair used to connect to a Lightsail instance
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>InstanceSnapshot</code> </b> - A Lightsail instance snapshot
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>Domain</code> </b> - A DNS zone
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>PeeredVpc</code> </b> - A peered VPC
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>LoadBalancer</code> </b> - A Lightsail load balancer
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>LoadBalancerTlsCertificate</code> </b> - An SSL/TLS certificate associated with a Lightsail load
+     *        balancer
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>Disk</code> </b> - A Lightsail block storage disk
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>DiskSnapshot</code> </b> - A block storage disk snapshot
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -454,11 +927,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The load balancer name where your TLS/SSL certificate is attached.
+     * The load balancer name where your SSL/TLS certificate is attached.
      * </p>
      * 
      * @param loadBalancerName
-     *        The load balancer name where your TLS/SSL certificate is attached.
+     *        The load balancer name where your SSL/TLS certificate is attached.
      */
 
     public void setLoadBalancerName(String loadBalancerName) {
@@ -467,10 +940,10 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The load balancer name where your TLS/SSL certificate is attached.
+     * The load balancer name where your SSL/TLS certificate is attached.
      * </p>
      * 
-     * @return The load balancer name where your TLS/SSL certificate is attached.
+     * @return The load balancer name where your SSL/TLS certificate is attached.
      */
 
     public String getLoadBalancerName() {
@@ -479,11 +952,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The load balancer name where your TLS/SSL certificate is attached.
+     * The load balancer name where your SSL/TLS certificate is attached.
      * </p>
      * 
      * @param loadBalancerName
-     *        The load balancer name where your TLS/SSL certificate is attached.
+     *        The load balancer name where your SSL/TLS certificate is attached.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -494,11 +967,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * When <code>true</code>, the TLS/SSL certificate is attached to the Lightsail load balancer.
+     * When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load balancer.
      * </p>
      * 
      * @param isAttached
-     *        When <code>true</code>, the TLS/SSL certificate is attached to the Lightsail load balancer.
+     *        When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load balancer.
      */
 
     public void setIsAttached(Boolean isAttached) {
@@ -507,10 +980,10 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * When <code>true</code>, the TLS/SSL certificate is attached to the Lightsail load balancer.
+     * When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load balancer.
      * </p>
      * 
-     * @return When <code>true</code>, the TLS/SSL certificate is attached to the Lightsail load balancer.
+     * @return When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load balancer.
      */
 
     public Boolean getIsAttached() {
@@ -519,11 +992,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * When <code>true</code>, the TLS/SSL certificate is attached to the Lightsail load balancer.
+     * When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load balancer.
      * </p>
      * 
      * @param isAttached
-     *        When <code>true</code>, the TLS/SSL certificate is attached to the Lightsail load balancer.
+     *        When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -534,10 +1007,10 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * When <code>true</code>, the TLS/SSL certificate is attached to the Lightsail load balancer.
+     * When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load balancer.
      * </p>
      * 
-     * @return When <code>true</code>, the TLS/SSL certificate is attached to the Lightsail load balancer.
+     * @return When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load balancer.
      */
 
     public Boolean isAttached() {
@@ -546,11 +1019,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The status of the TLS/SSL certificate. Valid values are below.
+     * The status of the SSL/TLS certificate. Valid values are below.
      * </p>
      * 
      * @param status
-     *        The status of the TLS/SSL certificate. Valid values are below.
+     *        The status of the SSL/TLS certificate. Valid values are below.
      * @see LoadBalancerTlsCertificateStatus
      */
 
@@ -560,10 +1033,10 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The status of the TLS/SSL certificate. Valid values are below.
+     * The status of the SSL/TLS certificate. Valid values are below.
      * </p>
      * 
-     * @return The status of the TLS/SSL certificate. Valid values are below.
+     * @return The status of the SSL/TLS certificate. Valid values are below.
      * @see LoadBalancerTlsCertificateStatus
      */
 
@@ -573,11 +1046,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The status of the TLS/SSL certificate. Valid values are below.
+     * The status of the SSL/TLS certificate. Valid values are below.
      * </p>
      * 
      * @param status
-     *        The status of the TLS/SSL certificate. Valid values are below.
+     *        The status of the SSL/TLS certificate. Valid values are below.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoadBalancerTlsCertificateStatus
      */
@@ -589,11 +1062,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The status of the TLS/SSL certificate. Valid values are below.
+     * The status of the SSL/TLS certificate. Valid values are below.
      * </p>
      * 
      * @param status
-     *        The status of the TLS/SSL certificate. Valid values are below.
+     *        The status of the SSL/TLS certificate. Valid values are below.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoadBalancerTlsCertificateStatus
      */
@@ -605,11 +1078,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The domain name for your TLS/SSL certificate.
+     * The domain name for your SSL/TLS certificate.
      * </p>
      * 
      * @param domainName
-     *        The domain name for your TLS/SSL certificate.
+     *        The domain name for your SSL/TLS certificate.
      */
 
     public void setDomainName(String domainName) {
@@ -618,10 +1091,10 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The domain name for your TLS/SSL certificate.
+     * The domain name for your SSL/TLS certificate.
      * </p>
      * 
-     * @return The domain name for your TLS/SSL certificate.
+     * @return The domain name for your SSL/TLS certificate.
      */
 
     public String getDomainName() {
@@ -630,11 +1103,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The domain name for your TLS/SSL certificate.
+     * The domain name for your SSL/TLS certificate.
      * </p>
      * 
      * @param domainName
-     *        The domain name for your TLS/SSL certificate.
+     *        The domain name for your SSL/TLS certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -715,11 +1188,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The reason for the TLS/SSL certificate validation failure.
+     * The reason for the SSL/TLS certificate validation failure.
      * </p>
      * 
      * @param failureReason
-     *        The reason for the TLS/SSL certificate validation failure.
+     *        The reason for the SSL/TLS certificate validation failure.
      * @see LoadBalancerTlsCertificateFailureReason
      */
 
@@ -729,10 +1202,10 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The reason for the TLS/SSL certificate validation failure.
+     * The reason for the SSL/TLS certificate validation failure.
      * </p>
      * 
-     * @return The reason for the TLS/SSL certificate validation failure.
+     * @return The reason for the SSL/TLS certificate validation failure.
      * @see LoadBalancerTlsCertificateFailureReason
      */
 
@@ -742,11 +1215,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The reason for the TLS/SSL certificate validation failure.
+     * The reason for the SSL/TLS certificate validation failure.
      * </p>
      * 
      * @param failureReason
-     *        The reason for the TLS/SSL certificate validation failure.
+     *        The reason for the SSL/TLS certificate validation failure.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoadBalancerTlsCertificateFailureReason
      */
@@ -758,11 +1231,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The reason for the TLS/SSL certificate validation failure.
+     * The reason for the SSL/TLS certificate validation failure.
      * </p>
      * 
      * @param failureReason
-     *        The reason for the TLS/SSL certificate validation failure.
+     *        The reason for the SSL/TLS certificate validation failure.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoadBalancerTlsCertificateFailureReason
      */
@@ -774,11 +1247,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The time when the TLS/SSL certificate was issued.
+     * The time when the SSL/TLS certificate was issued.
      * </p>
      * 
      * @param issuedAt
-     *        The time when the TLS/SSL certificate was issued.
+     *        The time when the SSL/TLS certificate was issued.
      */
 
     public void setIssuedAt(java.util.Date issuedAt) {
@@ -787,10 +1260,10 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The time when the TLS/SSL certificate was issued.
+     * The time when the SSL/TLS certificate was issued.
      * </p>
      * 
-     * @return The time when the TLS/SSL certificate was issued.
+     * @return The time when the SSL/TLS certificate was issued.
      */
 
     public java.util.Date getIssuedAt() {
@@ -799,11 +1272,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The time when the TLS/SSL certificate was issued.
+     * The time when the SSL/TLS certificate was issued.
      * </p>
      * 
      * @param issuedAt
-     *        The time when the TLS/SSL certificate was issued.
+     *        The time when the SSL/TLS certificate was issued.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -894,11 +1367,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The timestamp when the TLS/SSL certificate expires.
+     * The timestamp when the SSL/TLS certificate expires.
      * </p>
      * 
      * @param notAfter
-     *        The timestamp when the TLS/SSL certificate expires.
+     *        The timestamp when the SSL/TLS certificate expires.
      */
 
     public void setNotAfter(java.util.Date notAfter) {
@@ -907,10 +1380,10 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The timestamp when the TLS/SSL certificate expires.
+     * The timestamp when the SSL/TLS certificate expires.
      * </p>
      * 
-     * @return The timestamp when the TLS/SSL certificate expires.
+     * @return The timestamp when the SSL/TLS certificate expires.
      */
 
     public java.util.Date getNotAfter() {
@@ -919,11 +1392,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The timestamp when the TLS/SSL certificate expires.
+     * The timestamp when the SSL/TLS certificate expires.
      * </p>
      * 
      * @param notAfter
-     *        The timestamp when the TLS/SSL certificate expires.
+     *        The timestamp when the SSL/TLS certificate expires.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -934,11 +1407,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The timestamp when the TLS/SSL certificate is first valid.
+     * The timestamp when the SSL/TLS certificate is first valid.
      * </p>
      * 
      * @param notBefore
-     *        The timestamp when the TLS/SSL certificate is first valid.
+     *        The timestamp when the SSL/TLS certificate is first valid.
      */
 
     public void setNotBefore(java.util.Date notBefore) {
@@ -947,10 +1420,10 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The timestamp when the TLS/SSL certificate is first valid.
+     * The timestamp when the SSL/TLS certificate is first valid.
      * </p>
      * 
-     * @return The timestamp when the TLS/SSL certificate is first valid.
+     * @return The timestamp when the SSL/TLS certificate is first valid.
      */
 
     public java.util.Date getNotBefore() {
@@ -959,11 +1432,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The timestamp when the TLS/SSL certificate is first valid.
+     * The timestamp when the SSL/TLS certificate is first valid.
      * </p>
      * 
      * @param notBefore
-     *        The timestamp when the TLS/SSL certificate is first valid.
+     *        The timestamp when the SSL/TLS certificate is first valid.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1073,11 +1546,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The timestamp when the TLS/SSL certificate was revoked.
+     * The timestamp when the SSL/TLS certificate was revoked.
      * </p>
      * 
      * @param revokedAt
-     *        The timestamp when the TLS/SSL certificate was revoked.
+     *        The timestamp when the SSL/TLS certificate was revoked.
      */
 
     public void setRevokedAt(java.util.Date revokedAt) {
@@ -1086,10 +1559,10 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The timestamp when the TLS/SSL certificate was revoked.
+     * The timestamp when the SSL/TLS certificate was revoked.
      * </p>
      * 
-     * @return The timestamp when the TLS/SSL certificate was revoked.
+     * @return The timestamp when the SSL/TLS certificate was revoked.
      */
 
     public java.util.Date getRevokedAt() {
@@ -1098,11 +1571,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The timestamp when the TLS/SSL certificate was revoked.
+     * The timestamp when the SSL/TLS certificate was revoked.
      * </p>
      * 
      * @param revokedAt
-     *        The timestamp when the TLS/SSL certificate was revoked.
+     *        The timestamp when the SSL/TLS certificate was revoked.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1233,16 +1706,17 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * One or more domain names (subject alternative names) included in the certificate. This list contains the domain
-     * names that are bound to the public key that is contained in the certificate. The subject alternative names
-     * include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect
-     * to the website.
+     * One or more domains or subdomains included in the certificate. This list contains the domain names that are bound
+     * to the public key that is contained in the certificate. The subject alternative names include the canonical
+     * domain name (CNAME) of the certificate and additional domain names that can be used to connect to the website,
+     * such as <code>example.com</code>, <code>www.example.com</code>, or <code>m.example.com</code>.
      * </p>
      * 
-     * @return One or more domain names (subject alternative names) included in the certificate. This list contains the
-     *         domain names that are bound to the public key that is contained in the certificate. The subject
-     *         alternative names include the canonical domain name (CN) of the certificate and additional domain names
-     *         that can be used to connect to the website.
+     * @return One or more domains or subdomains included in the certificate. This list contains the domain names that
+     *         are bound to the public key that is contained in the certificate. The subject alternative names include
+     *         the canonical domain name (CNAME) of the certificate and additional domain names that can be used to
+     *         connect to the website, such as <code>example.com</code>, <code>www.example.com</code>, or
+     *         <code>m.example.com</code>.
      */
 
     public java.util.List<String> getSubjectAlternativeNames() {
@@ -1251,17 +1725,18 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * One or more domain names (subject alternative names) included in the certificate. This list contains the domain
-     * names that are bound to the public key that is contained in the certificate. The subject alternative names
-     * include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect
-     * to the website.
+     * One or more domains or subdomains included in the certificate. This list contains the domain names that are bound
+     * to the public key that is contained in the certificate. The subject alternative names include the canonical
+     * domain name (CNAME) of the certificate and additional domain names that can be used to connect to the website,
+     * such as <code>example.com</code>, <code>www.example.com</code>, or <code>m.example.com</code>.
      * </p>
      * 
      * @param subjectAlternativeNames
-     *        One or more domain names (subject alternative names) included in the certificate. This list contains the
-     *        domain names that are bound to the public key that is contained in the certificate. The subject
-     *        alternative names include the canonical domain name (CN) of the certificate and additional domain names
-     *        that can be used to connect to the website.
+     *        One or more domains or subdomains included in the certificate. This list contains the domain names that
+     *        are bound to the public key that is contained in the certificate. The subject alternative names include
+     *        the canonical domain name (CNAME) of the certificate and additional domain names that can be used to
+     *        connect to the website, such as <code>example.com</code>, <code>www.example.com</code>, or
+     *        <code>m.example.com</code>.
      */
 
     public void setSubjectAlternativeNames(java.util.Collection<String> subjectAlternativeNames) {
@@ -1275,10 +1750,10 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * One or more domain names (subject alternative names) included in the certificate. This list contains the domain
-     * names that are bound to the public key that is contained in the certificate. The subject alternative names
-     * include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect
-     * to the website.
+     * One or more domains or subdomains included in the certificate. This list contains the domain names that are bound
+     * to the public key that is contained in the certificate. The subject alternative names include the canonical
+     * domain name (CNAME) of the certificate and additional domain names that can be used to connect to the website,
+     * such as <code>example.com</code>, <code>www.example.com</code>, or <code>m.example.com</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1287,10 +1762,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
      * </p>
      * 
      * @param subjectAlternativeNames
-     *        One or more domain names (subject alternative names) included in the certificate. This list contains the
-     *        domain names that are bound to the public key that is contained in the certificate. The subject
-     *        alternative names include the canonical domain name (CN) of the certificate and additional domain names
-     *        that can be used to connect to the website.
+     *        One or more domains or subdomains included in the certificate. This list contains the domain names that
+     *        are bound to the public key that is contained in the certificate. The subject alternative names include
+     *        the canonical domain name (CNAME) of the certificate and additional domain names that can be used to
+     *        connect to the website, such as <code>example.com</code>, <code>www.example.com</code>, or
+     *        <code>m.example.com</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1306,17 +1782,18 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * One or more domain names (subject alternative names) included in the certificate. This list contains the domain
-     * names that are bound to the public key that is contained in the certificate. The subject alternative names
-     * include the canonical domain name (CN) of the certificate and additional domain names that can be used to connect
-     * to the website.
+     * One or more domains or subdomains included in the certificate. This list contains the domain names that are bound
+     * to the public key that is contained in the certificate. The subject alternative names include the canonical
+     * domain name (CNAME) of the certificate and additional domain names that can be used to connect to the website,
+     * such as <code>example.com</code>, <code>www.example.com</code>, or <code>m.example.com</code>.
      * </p>
      * 
      * @param subjectAlternativeNames
-     *        One or more domain names (subject alternative names) included in the certificate. This list contains the
-     *        domain names that are bound to the public key that is contained in the certificate. The subject
-     *        alternative names include the canonical domain name (CN) of the certificate and additional domain names
-     *        that can be used to connect to the website.
+     *        One or more domains or subdomains included in the certificate. This list contains the domain names that
+     *        are bound to the public key that is contained in the certificate. The subject alternative names include
+     *        the canonical domain name (CNAME) of the certificate and additional domain names that can be used to
+     *        connect to the website, such as <code>example.com</code>, <code>www.example.com</code>, or
+     *        <code>m.example.com</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

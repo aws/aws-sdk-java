@@ -23,7 +23,8 @@ public enum OperationStatus {
     NotStarted("NotStarted"),
     Started("Started"),
     Failed("Failed"),
-    Completed("Completed");
+    Completed("Completed"),
+    Succeeded("Succeeded");
 
     private String value;
 

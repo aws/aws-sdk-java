@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about the domain names on a TLS/SSL certificate that you will use to validate domain ownership.
+ * Contains information about the domain names on an SSL/TLS certificate that you will use to validate domain ownership.
  * </p>
  * 
  * @see <a
@@ -31,7 +31,7 @@ public class LoadBalancerTlsCertificateDomainValidationOption implements Seriali
 
     /**
      * <p>
-     * A fully qualified domain name in the certificate request.
+     * The fully qualified domain name in the certificate request.
      * </p>
      */
     private String domainName;
@@ -44,11 +44,11 @@ public class LoadBalancerTlsCertificateDomainValidationOption implements Seriali
 
     /**
      * <p>
-     * A fully qualified domain name in the certificate request.
+     * The fully qualified domain name in the certificate request.
      * </p>
      * 
      * @param domainName
-     *        A fully qualified domain name in the certificate request.
+     *        The fully qualified domain name in the certificate request.
      */
 
     public void setDomainName(String domainName) {
@@ -57,10 +57,10 @@ public class LoadBalancerTlsCertificateDomainValidationOption implements Seriali
 
     /**
      * <p>
-     * A fully qualified domain name in the certificate request.
+     * The fully qualified domain name in the certificate request.
      * </p>
      * 
-     * @return A fully qualified domain name in the certificate request.
+     * @return The fully qualified domain name in the certificate request.
      */
 
     public String getDomainName() {
@@ -69,11 +69,11 @@ public class LoadBalancerTlsCertificateDomainValidationOption implements Seriali
 
     /**
      * <p>
-     * A fully qualified domain name in the certificate request.
+     * The fully qualified domain name in the certificate request.
      * </p>
      * 
      * @param domainName
-     *        A fully qualified domain name in the certificate request.
+     *        The fully qualified domain name in the certificate request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

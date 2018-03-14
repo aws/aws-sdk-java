@@ -28,6 +28,10 @@ public class AttachLoadBalancerTlsCertificateResult extends com.amazonaws.Amazon
      * <p>
      * An object representing the API operations.
      * </p>
+     * <p>
+     * These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and use it
+     * for another purpose.
+     * </p>
      */
     private java.util.List<Operation> operations;
 
@@ -35,8 +39,15 @@ public class AttachLoadBalancerTlsCertificateResult extends com.amazonaws.Amazon
      * <p>
      * An object representing the API operations.
      * </p>
+     * <p>
+     * These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and use it
+     * for another purpose.
+     * </p>
      * 
-     * @return An object representing the API operations.
+     * @return An object representing the API operations.</p>
+     *         <p>
+     *         These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and
+     *         use it for another purpose.
      */
 
     public java.util.List<Operation> getOperations() {
@@ -47,9 +58,16 @@ public class AttachLoadBalancerTlsCertificateResult extends com.amazonaws.Amazon
      * <p>
      * An object representing the API operations.
      * </p>
+     * <p>
+     * These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and use it
+     * for another purpose.
+     * </p>
      * 
      * @param operations
-     *        An object representing the API operations.
+     *        An object representing the API operations.</p>
+     *        <p>
+     *        These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and
+     *        use it for another purpose.
      */
 
     public void setOperations(java.util.Collection<Operation> operations) {
@@ -66,13 +84,20 @@ public class AttachLoadBalancerTlsCertificateResult extends com.amazonaws.Amazon
      * An object representing the API operations.
      * </p>
      * <p>
+     * These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and use it
+     * for another purpose.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setOperations(java.util.Collection)} or {@link #withOperations(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param operations
-     *        An object representing the API operations.
+     *        An object representing the API operations.</p>
+     *        <p>
+     *        These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and
+     *        use it for another purpose.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,9 +115,16 @@ public class AttachLoadBalancerTlsCertificateResult extends com.amazonaws.Amazon
      * <p>
      * An object representing the API operations.
      * </p>
+     * <p>
+     * These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and use it
+     * for another purpose.
+     * </p>
      * 
      * @param operations
-     *        An object representing the API operations.
+     *        An object representing the API operations.</p>
+     *        <p>
+     *        These SSL/TLS certificates are only usable by Lightsail load balancers. You can't get the certificate and
+     *        use it for another purpose.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

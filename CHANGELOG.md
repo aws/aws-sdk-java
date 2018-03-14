@@ -1,3 +1,8 @@
+# __1.11.295__ __2018-03-14__
+## __Amazon Lightsail__
+  - ### Features
+    - Updates to existing Lightsail documentation
+
 # __1.11.294__ __2018-03-13__
 ## __Amazon Route 53 Auto Naming__
   - ### Features

@@ -113,6 +113,9 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Attaches one or more Lightsail instances to a load balancer.
      * </p>
+     * <p>
+     * After some time, the instances are attached to the load balancer and the health check status is available.
+     * </p>
      * 
      * @param attachInstancesToLoadBalancerRequest
      * @return A Java Future containing the result of the AttachInstancesToLoadBalancer operation returned by the
@@ -127,6 +130,9 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
     /**
      * <p>
      * Attaches one or more Lightsail instances to a load balancer.
+     * </p>
+     * <p>
+     * After some time, the instances are attached to the load balancer and the health check status is available.
      * </p>
      * 
      * @param attachInstancesToLoadBalancerRequest
@@ -146,10 +152,13 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Attaches a Transport Layer Security (TLS) certificate to your load balancer.
+     * Attaches a Transport Layer Security (TLS) certificate to your load balancer. TLS is just an updated, more secure
+     * version of Secure Socket Layer (SSL).
      * </p>
      * <p>
-     * TLS is just an updated, more secure version of Secure Socket Layer (SSL).
+     * Once you create and validate your certificate, you can attach it to your load balancer. You can also use this API
+     * to rotate the certificates on your account. Use the <code>AttachLoadBalancerTlsCertificate</code> operation with
+     * the non-attached certificate, and it will replace the existing one and become the attached certificate.
      * </p>
      * 
      * @param attachLoadBalancerTlsCertificateRequest
@@ -164,10 +173,13 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Attaches a Transport Layer Security (TLS) certificate to your load balancer.
+     * Attaches a Transport Layer Security (TLS) certificate to your load balancer. TLS is just an updated, more secure
+     * version of Secure Socket Layer (SSL).
      * </p>
      * <p>
-     * TLS is just an updated, more secure version of Secure Socket Layer (SSL).
+     * Once you create and validate your certificate, you can attach it to your load balancer. You can also use this API
+     * to rotate the certificates on your account. Use the <code>AttachLoadBalancerTlsCertificate</code> operation with
+     * the non-attached certificate, and it will replace the existing one and become the attached certificate.
      * </p>
      * 
      * @param attachLoadBalancerTlsCertificateRequest
@@ -572,11 +584,14 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Creates a Lightsail load balancer.
+     * Creates a Lightsail load balancer. To learn more about deciding whether to load balance your application, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/how-to/article/configure-lightsail-instances-for-load-balancing">
+     * Configure your Lightsail instances for load balancing</a>. You can create up to 5 load balancers per AWS Region
+     * in your account.
      * </p>
      * <p>
-     * When you create a load balancer, you can specify certificates and port settings. You can create up to 5 load
-     * balancers per AWS Region in your account.
+     * When you create a load balancer, you can specify a unique name and port settings. To change additional load
+     * balancer settings, use the <code>UpdateLoadBalancerAttribute</code> operation.
      * </p>
      * 
      * @param createLoadBalancerRequest
@@ -589,11 +604,14 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Creates a Lightsail load balancer.
+     * Creates a Lightsail load balancer. To learn more about deciding whether to load balance your application, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/how-to/article/configure-lightsail-instances-for-load-balancing">
+     * Configure your Lightsail instances for load balancing</a>. You can create up to 5 load balancers per AWS Region
+     * in your account.
      * </p>
      * <p>
-     * When you create a load balancer, you can specify certificates and port settings. You can create up to 5 load
-     * balancers per AWS Region in your account.
+     * When you create a load balancer, you can specify a unique name and port settings. To change additional load
+     * balancer settings, use the <code>UpdateLoadBalancerAttribute</code> operation.
      * </p>
      * 
      * @param createLoadBalancerRequest
@@ -893,7 +911,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Deletes a Lightsail load balancer.
+     * Deletes a Lightsail load balancer and all its associated SSL/TLS certificates. Once the load balancer is deleted,
+     * you will need to create a new load balancer, create a new certificate, and verify domain ownership again.
      * </p>
      * 
      * @param deleteLoadBalancerRequest
@@ -906,7 +925,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Deletes a Lightsail load balancer.
+     * Deletes a Lightsail load balancer and all its associated SSL/TLS certificates. Once the load balancer is deleted,
+     * you will need to create a new load balancer, create a new certificate, and verify domain ownership again.
      * </p>
      * 
      * @param deleteLoadBalancerRequest
@@ -924,7 +944,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Deletes a TLS/SSL certificate associated with a Lightsail load balancer.
+     * Deletes an SSL/TLS certificate associated with a Lightsail load balancer.
      * </p>
      * 
      * @param deleteLoadBalancerTlsCertificateRequest
@@ -939,7 +959,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Deletes a TLS/SSL certificate associated with a Lightsail load balancer.
+     * Deletes an SSL/TLS certificate associated with a Lightsail load balancer.
      * </p>
      * 
      * @param deleteLoadBalancerTlsCertificateRequest
@@ -994,6 +1014,9 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Detaches the specified instances from a Lightsail load balancer.
      * </p>
+     * <p>
+     * This operation waits until the instances are no longer needed before they are detached from the load balancer.
+     * </p>
      * 
      * @param detachInstancesFromLoadBalancerRequest
      * @return A Java Future containing the result of the DetachInstancesFromLoadBalancer operation returned by the
@@ -1008,6 +1031,9 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
     /**
      * <p>
      * Detaches the specified instances from a Lightsail load balancer.
+     * </p>
+     * <p>
+     * This operation waits until the instances are no longer needed before they are detached from the load balancer.
      * </p>
      * 
      * @param detachInstancesFromLoadBalancerRequest
@@ -1769,6 +1795,10 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * TLS is just an updated, more secure version of Secure Socket Layer (SSL).
      * </p>
+     * <p>
+     * You can have a maximum of 2 certificates associated with a Lightsail load balancer. One is active and the other
+     * is inactive.
+     * </p>
      * 
      * @param getLoadBalancerTlsCertificatesRequest
      * @return A Java Future containing the result of the GetLoadBalancerTlsCertificates operation returned by the
@@ -1786,6 +1816,10 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * </p>
      * <p>
      * TLS is just an updated, more secure version of Secure Socket Layer (SSL).
+     * </p>
+     * <p>
+     * You can have a maximum of 2 certificates associated with a Lightsail load balancer. One is active and the other
+     * is inactive.
      * </p>
      * 
      * @param getLoadBalancerTlsCertificatesRequest
@@ -2393,7 +2427,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Updates the specified attribute for a load balancer.
+     * Updates the specified attribute for a load balancer. You can only update one attribute at a time.
      * </p>
      * 
      * @param updateLoadBalancerAttributeRequest
@@ -2407,7 +2441,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Updates the specified attribute for a load balancer.
+     * Updates the specified attribute for a load balancer. You can only update one attribute at a time.
      * </p>
      * 
      * @param updateLoadBalancerAttributeRequest

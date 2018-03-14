@@ -26,17 +26,17 @@ public class GetLoadBalancerTlsCertificatesResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * An array of LoadBalancerTlsCertificate objects describing your TLS/SSL certificates.
+     * An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.
      * </p>
      */
     private java.util.List<LoadBalancerTlsCertificate> tlsCertificates;
 
     /**
      * <p>
-     * An array of LoadBalancerTlsCertificate objects describing your TLS/SSL certificates.
+     * An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.
      * </p>
      * 
-     * @return An array of LoadBalancerTlsCertificate objects describing your TLS/SSL certificates.
+     * @return An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.
      */
 
     public java.util.List<LoadBalancerTlsCertificate> getTlsCertificates() {
@@ -45,11 +45,11 @@ public class GetLoadBalancerTlsCertificatesResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * An array of LoadBalancerTlsCertificate objects describing your TLS/SSL certificates.
+     * An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.
      * </p>
      * 
      * @param tlsCertificates
-     *        An array of LoadBalancerTlsCertificate objects describing your TLS/SSL certificates.
+     *        An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.
      */
 
     public void setTlsCertificates(java.util.Collection<LoadBalancerTlsCertificate> tlsCertificates) {
@@ -63,7 +63,7 @@ public class GetLoadBalancerTlsCertificatesResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * An array of LoadBalancerTlsCertificate objects describing your TLS/SSL certificates.
+     * An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -72,7 +72,7 @@ public class GetLoadBalancerTlsCertificatesResult extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param tlsCertificates
-     *        An array of LoadBalancerTlsCertificate objects describing your TLS/SSL certificates.
+     *        An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,11 +88,11 @@ public class GetLoadBalancerTlsCertificatesResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * An array of LoadBalancerTlsCertificate objects describing your TLS/SSL certificates.
+     * An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.
      * </p>
      * 
      * @param tlsCertificates
-     *        An array of LoadBalancerTlsCertificate objects describing your TLS/SSL certificates.
+     *        An array of LoadBalancerTlsCertificate objects describing your SSL/TLS certificates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

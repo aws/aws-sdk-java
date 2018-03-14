@@ -33,13 +33,18 @@ public class DeleteLoadBalancerTlsCertificateRequest extends com.amazonaws.Amazo
     private String loadBalancerName;
     /**
      * <p>
-     * The TLS/SSL certificate name.
+     * The SSL/TLS certificate name.
      * </p>
      */
     private String certificateName;
     /**
      * <p>
-     * When <code>true</code>, forces the deletion of a TLS/SSL certificate.
+     * When <code>true</code>, forces the deletion of an SSL/TLS certificate.
+     * </p>
+     * <p>
+     * There can be two certificates associated with a Lightsail load balancer: the primary and the backup. The force
+     * parameter is required when the primary SSL/TLS certificate is in use by an instance attached to the load
+     * balancer.
      * </p>
      */
     private Boolean force;
@@ -86,11 +91,11 @@ public class DeleteLoadBalancerTlsCertificateRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The TLS/SSL certificate name.
+     * The SSL/TLS certificate name.
      * </p>
      * 
      * @param certificateName
-     *        The TLS/SSL certificate name.
+     *        The SSL/TLS certificate name.
      */
 
     public void setCertificateName(String certificateName) {
@@ -99,10 +104,10 @@ public class DeleteLoadBalancerTlsCertificateRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The TLS/SSL certificate name.
+     * The SSL/TLS certificate name.
      * </p>
      * 
-     * @return The TLS/SSL certificate name.
+     * @return The SSL/TLS certificate name.
      */
 
     public String getCertificateName() {
@@ -111,11 +116,11 @@ public class DeleteLoadBalancerTlsCertificateRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The TLS/SSL certificate name.
+     * The SSL/TLS certificate name.
      * </p>
      * 
      * @param certificateName
-     *        The TLS/SSL certificate name.
+     *        The SSL/TLS certificate name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +131,20 @@ public class DeleteLoadBalancerTlsCertificateRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * When <code>true</code>, forces the deletion of a TLS/SSL certificate.
+     * When <code>true</code>, forces the deletion of an SSL/TLS certificate.
+     * </p>
+     * <p>
+     * There can be two certificates associated with a Lightsail load balancer: the primary and the backup. The force
+     * parameter is required when the primary SSL/TLS certificate is in use by an instance attached to the load
+     * balancer.
      * </p>
      * 
      * @param force
-     *        When <code>true</code>, forces the deletion of a TLS/SSL certificate.
+     *        When <code>true</code>, forces the deletion of an SSL/TLS certificate.</p>
+     *        <p>
+     *        There can be two certificates associated with a Lightsail load balancer: the primary and the backup. The
+     *        force parameter is required when the primary SSL/TLS certificate is in use by an instance attached to the
+     *        load balancer.
      */
 
     public void setForce(Boolean force) {
@@ -139,10 +153,19 @@ public class DeleteLoadBalancerTlsCertificateRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * When <code>true</code>, forces the deletion of a TLS/SSL certificate.
+     * When <code>true</code>, forces the deletion of an SSL/TLS certificate.
+     * </p>
+     * <p>
+     * There can be two certificates associated with a Lightsail load balancer: the primary and the backup. The force
+     * parameter is required when the primary SSL/TLS certificate is in use by an instance attached to the load
+     * balancer.
      * </p>
      * 
-     * @return When <code>true</code>, forces the deletion of a TLS/SSL certificate.
+     * @return When <code>true</code>, forces the deletion of an SSL/TLS certificate.</p>
+     *         <p>
+     *         There can be two certificates associated with a Lightsail load balancer: the primary and the backup. The
+     *         force parameter is required when the primary SSL/TLS certificate is in use by an instance attached to the
+     *         load balancer.
      */
 
     public Boolean getForce() {
@@ -151,11 +174,20 @@ public class DeleteLoadBalancerTlsCertificateRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * When <code>true</code>, forces the deletion of a TLS/SSL certificate.
+     * When <code>true</code>, forces the deletion of an SSL/TLS certificate.
+     * </p>
+     * <p>
+     * There can be two certificates associated with a Lightsail load balancer: the primary and the backup. The force
+     * parameter is required when the primary SSL/TLS certificate is in use by an instance attached to the load
+     * balancer.
      * </p>
      * 
      * @param force
-     *        When <code>true</code>, forces the deletion of a TLS/SSL certificate.
+     *        When <code>true</code>, forces the deletion of an SSL/TLS certificate.</p>
+     *        <p>
+     *        There can be two certificates associated with a Lightsail load balancer: the primary and the backup. The
+     *        force parameter is required when the primary SSL/TLS certificate is in use by an instance attached to the
+     *        load balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,10 +198,19 @@ public class DeleteLoadBalancerTlsCertificateRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * When <code>true</code>, forces the deletion of a TLS/SSL certificate.
+     * When <code>true</code>, forces the deletion of an SSL/TLS certificate.
+     * </p>
+     * <p>
+     * There can be two certificates associated with a Lightsail load balancer: the primary and the backup. The force
+     * parameter is required when the primary SSL/TLS certificate is in use by an instance attached to the load
+     * balancer.
      * </p>
      * 
-     * @return When <code>true</code>, forces the deletion of a TLS/SSL certificate.
+     * @return When <code>true</code>, forces the deletion of an SSL/TLS certificate.</p>
+     *         <p>
+     *         There can be two certificates associated with a Lightsail load balancer: the primary and the backup. The
+     *         force parameter is required when the primary SSL/TLS certificate is in use by an instance attached to the
+     *         load balancer.
      */
 
     public Boolean isForce() {

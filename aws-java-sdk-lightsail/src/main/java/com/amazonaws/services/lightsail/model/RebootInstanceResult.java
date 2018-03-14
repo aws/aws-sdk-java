@@ -25,17 +25,17 @@ public class RebootInstanceResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the request operation.
+     * An array of key-value pairs containing information about the request operations.
      * </p>
      */
     private java.util.List<Operation> operations;
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the request operation.
+     * An array of key-value pairs containing information about the request operations.
      * </p>
      * 
-     * @return An array of key-value pairs containing information about the request operation.
+     * @return An array of key-value pairs containing information about the request operations.
      */
 
     public java.util.List<Operation> getOperations() {
@@ -44,11 +44,11 @@ public class RebootInstanceResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the request operation.
+     * An array of key-value pairs containing information about the request operations.
      * </p>
      * 
      * @param operations
-     *        An array of key-value pairs containing information about the request operation.
+     *        An array of key-value pairs containing information about the request operations.
      */
 
     public void setOperations(java.util.Collection<Operation> operations) {
@@ -62,7 +62,7 @@ public class RebootInstanceResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the request operation.
+     * An array of key-value pairs containing information about the request operations.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -71,7 +71,7 @@ public class RebootInstanceResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param operations
-     *        An array of key-value pairs containing information about the request operation.
+     *        An array of key-value pairs containing information about the request operations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class RebootInstanceResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * An array of key-value pairs containing information about the request operation.
+     * An array of key-value pairs containing information about the request operations.
      * </p>
      * 
      * @param operations
-     *        An array of key-value pairs containing information about the request operation.
+     *        An array of key-value pairs containing information about the request operations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
