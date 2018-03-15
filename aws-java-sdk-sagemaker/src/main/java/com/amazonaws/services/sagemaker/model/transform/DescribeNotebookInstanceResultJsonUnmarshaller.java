@@ -100,6 +100,14 @@ public class DescribeNotebookInstanceResultJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     describeNotebookInstanceResult.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
+                if (context.testExpression("NotebookInstanceLifecycleConfigName", targetDepth)) {
+                    context.nextToken();
+                    describeNotebookInstanceResult.setNotebookInstanceLifecycleConfigName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DirectInternetAccess", targetDepth)) {
+                    context.nextToken();
+                    describeNotebookInstanceResult.setDirectInternetAccess(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

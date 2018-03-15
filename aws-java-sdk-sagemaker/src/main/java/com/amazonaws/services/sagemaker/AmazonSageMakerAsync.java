@@ -296,17 +296,17 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Creates an Amazon SageMaker notebook instance. A notebook instance is an ML compute instance running on a Jupyter
-     * notebook.
+     * Creates an Amazon SageMaker notebook instance. A notebook instance is a machine learning (ML) compute instance
+     * running on a Jupyter notebook.
      * </p>
      * <p>
-     * In a <code>CreateNotebookInstance</code> request, you specify the type of ML compute instance that you want to
-     * run. Amazon SageMaker launches the instance, installs common libraries that you can use to explore datasets for
-     * model training, and attaches an ML storage volume to the notebook instance.
+     * In a <code>CreateNotebookInstance</code> request, specify the type of ML compute instance that you want to run.
+     * Amazon SageMaker launches the instance, installs common libraries that you can use to explore datasets for model
+     * training, and attaches an ML storage volume to the notebook instance.
      * </p>
      * <p>
      * Amazon SageMaker also provides a set of example notebooks. Each notebook demonstrates how to use Amazon SageMaker
-     * with a specific an algorithm or with a machine learning framework.
+     * with a specific algorithm or with a machine learning framework.
      * </p>
      * <p>
      * After receiving the request, Amazon SageMaker does the following:
@@ -319,9 +319,10 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </li>
      * <li>
      * <p>
-     * (Option) If you specified <code>SubnetId</code>, creates a network interface in your own VPC, which is inferred
-     * from the subnet ID that you provide in the input. When creating this network interface, Amazon SageMaker attaches
-     * the security group that you specified in the request to the network interface that it creates in your VPC.
+     * (Option) If you specified <code>SubnetId</code>, Amazon SageMaker creates a network interface in your own VPC,
+     * which is inferred from the subnet ID that you provide in the input. When creating this network interface, Amazon
+     * SageMaker attaches the security group that you specified in the request to the network interface that it creates
+     * in your VPC.
      * </p>
      * </li>
      * <li>
@@ -356,17 +357,17 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Creates an Amazon SageMaker notebook instance. A notebook instance is an ML compute instance running on a Jupyter
-     * notebook.
+     * Creates an Amazon SageMaker notebook instance. A notebook instance is a machine learning (ML) compute instance
+     * running on a Jupyter notebook.
      * </p>
      * <p>
-     * In a <code>CreateNotebookInstance</code> request, you specify the type of ML compute instance that you want to
-     * run. Amazon SageMaker launches the instance, installs common libraries that you can use to explore datasets for
-     * model training, and attaches an ML storage volume to the notebook instance.
+     * In a <code>CreateNotebookInstance</code> request, specify the type of ML compute instance that you want to run.
+     * Amazon SageMaker launches the instance, installs common libraries that you can use to explore datasets for model
+     * training, and attaches an ML storage volume to the notebook instance.
      * </p>
      * <p>
      * Amazon SageMaker also provides a set of example notebooks. Each notebook demonstrates how to use Amazon SageMaker
-     * with a specific an algorithm or with a machine learning framework.
+     * with a specific algorithm or with a machine learning framework.
      * </p>
      * <p>
      * After receiving the request, Amazon SageMaker does the following:
@@ -379,9 +380,10 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </li>
      * <li>
      * <p>
-     * (Option) If you specified <code>SubnetId</code>, creates a network interface in your own VPC, which is inferred
-     * from the subnet ID that you provide in the input. When creating this network interface, Amazon SageMaker attaches
-     * the security group that you specified in the request to the network interface that it creates in your VPC.
+     * (Option) If you specified <code>SubnetId</code>, Amazon SageMaker creates a network interface in your own VPC,
+     * which is inferred from the subnet ID that you provide in the input. When creating this network interface, Amazon
+     * SageMaker attaches the security group that you specified in the request to the network interface that it creates
+     * in your VPC.
      * </p>
      * </li>
      * <li>
@@ -418,6 +420,49 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<CreateNotebookInstanceResult> createNotebookInstanceAsync(CreateNotebookInstanceRequest createNotebookInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<CreateNotebookInstanceRequest, CreateNotebookInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a lifecycle configuration that you can associate with a notebook instance. A <i>lifecycle
+     * configuration</i> is a collection of shell scripts that run when you create or start a notebook instance.
+     * </p>
+     * <p>
+     * For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     * </p>
+     * 
+     * @param createNotebookInstanceLifecycleConfigRequest
+     * @return A Java Future containing the result of the CreateNotebookInstanceLifecycleConfig operation returned by
+     *         the service.
+     * @sample AmazonSageMakerAsync.CreateNotebookInstanceLifecycleConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateNotebookInstanceLifecycleConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateNotebookInstanceLifecycleConfigResult> createNotebookInstanceLifecycleConfigAsync(
+            CreateNotebookInstanceLifecycleConfigRequest createNotebookInstanceLifecycleConfigRequest);
+
+    /**
+     * <p>
+     * Creates a lifecycle configuration that you can associate with a notebook instance. A <i>lifecycle
+     * configuration</i> is a collection of shell scripts that run when you create or start a notebook instance.
+     * </p>
+     * <p>
+     * For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     * </p>
+     * 
+     * @param createNotebookInstanceLifecycleConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateNotebookInstanceLifecycleConfig operation returned by
+     *         the service.
+     * @sample AmazonSageMakerAsyncHandler.CreateNotebookInstanceLifecycleConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateNotebookInstanceLifecycleConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateNotebookInstanceLifecycleConfigResult> createNotebookInstanceLifecycleConfigAsync(
+            CreateNotebookInstanceLifecycleConfigRequest createNotebookInstanceLifecycleConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateNotebookInstanceLifecycleConfigRequest, CreateNotebookInstanceLifecycleConfigResult> asyncHandler);
 
     /**
      * <p>
@@ -753,6 +798,41 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Deletes a notebook instance lifecycle configuration.
+     * </p>
+     * 
+     * @param deleteNotebookInstanceLifecycleConfigRequest
+     * @return A Java Future containing the result of the DeleteNotebookInstanceLifecycleConfig operation returned by
+     *         the service.
+     * @sample AmazonSageMakerAsync.DeleteNotebookInstanceLifecycleConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteNotebookInstanceLifecycleConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteNotebookInstanceLifecycleConfigResult> deleteNotebookInstanceLifecycleConfigAsync(
+            DeleteNotebookInstanceLifecycleConfigRequest deleteNotebookInstanceLifecycleConfigRequest);
+
+    /**
+     * <p>
+     * Deletes a notebook instance lifecycle configuration.
+     * </p>
+     * 
+     * @param deleteNotebookInstanceLifecycleConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteNotebookInstanceLifecycleConfig operation returned by
+     *         the service.
+     * @sample AmazonSageMakerAsyncHandler.DeleteNotebookInstanceLifecycleConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteNotebookInstanceLifecycleConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteNotebookInstanceLifecycleConfigResult> deleteNotebookInstanceLifecycleConfigAsync(
+            DeleteNotebookInstanceLifecycleConfigRequest deleteNotebookInstanceLifecycleConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteNotebookInstanceLifecycleConfigRequest, DeleteNotebookInstanceLifecycleConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified tags from an Amazon SageMaker resource.
      * </p>
      * <p>
@@ -914,6 +994,49 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Returns a description of a notebook instance lifecycle configuration.
+     * </p>
+     * <p>
+     * For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     * </p>
+     * 
+     * @param describeNotebookInstanceLifecycleConfigRequest
+     * @return A Java Future containing the result of the DescribeNotebookInstanceLifecycleConfig operation returned by
+     *         the service.
+     * @sample AmazonSageMakerAsync.DescribeNotebookInstanceLifecycleConfig
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeNotebookInstanceLifecycleConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeNotebookInstanceLifecycleConfigResult> describeNotebookInstanceLifecycleConfigAsync(
+            DescribeNotebookInstanceLifecycleConfigRequest describeNotebookInstanceLifecycleConfigRequest);
+
+    /**
+     * <p>
+     * Returns a description of a notebook instance lifecycle configuration.
+     * </p>
+     * <p>
+     * For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     * </p>
+     * 
+     * @param describeNotebookInstanceLifecycleConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeNotebookInstanceLifecycleConfig operation returned by
+     *         the service.
+     * @sample AmazonSageMakerAsyncHandler.DescribeNotebookInstanceLifecycleConfig
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeNotebookInstanceLifecycleConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeNotebookInstanceLifecycleConfigResult> describeNotebookInstanceLifecycleConfigAsync(
+            DescribeNotebookInstanceLifecycleConfigRequest describeNotebookInstanceLifecycleConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeNotebookInstanceLifecycleConfigRequest, DescribeNotebookInstanceLifecycleConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about a training job.
      * </p>
      * 
@@ -1037,6 +1160,41 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<ListModelsResult> listModelsAsync(ListModelsRequest listModelsRequest,
             com.amazonaws.handlers.AsyncHandler<ListModelsRequest, ListModelsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists notebook instance lifestyle configurations created with the API.
+     * </p>
+     * 
+     * @param listNotebookInstanceLifecycleConfigsRequest
+     * @return A Java Future containing the result of the ListNotebookInstanceLifecycleConfigs operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsync.ListNotebookInstanceLifecycleConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListNotebookInstanceLifecycleConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListNotebookInstanceLifecycleConfigsResult> listNotebookInstanceLifecycleConfigsAsync(
+            ListNotebookInstanceLifecycleConfigsRequest listNotebookInstanceLifecycleConfigsRequest);
+
+    /**
+     * <p>
+     * Lists notebook instance lifestyle configurations created with the API.
+     * </p>
+     * 
+     * @param listNotebookInstanceLifecycleConfigsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListNotebookInstanceLifecycleConfigs operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsyncHandler.ListNotebookInstanceLifecycleConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListNotebookInstanceLifecycleConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListNotebookInstanceLifecycleConfigsResult> listNotebookInstanceLifecycleConfigsAsync(
+            ListNotebookInstanceLifecycleConfigsRequest listNotebookInstanceLifecycleConfigsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListNotebookInstanceLifecycleConfigsRequest, ListNotebookInstanceLifecycleConfigsResult> asyncHandler);
 
     /**
      * <p>
@@ -1386,5 +1544,40 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<UpdateNotebookInstanceResult> updateNotebookInstanceAsync(UpdateNotebookInstanceRequest updateNotebookInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateNotebookInstanceRequest, UpdateNotebookInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a notebook instance lifecycle configuration created with the API.
+     * </p>
+     * 
+     * @param updateNotebookInstanceLifecycleConfigRequest
+     * @return A Java Future containing the result of the UpdateNotebookInstanceLifecycleConfig operation returned by
+     *         the service.
+     * @sample AmazonSageMakerAsync.UpdateNotebookInstanceLifecycleConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateNotebookInstanceLifecycleConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateNotebookInstanceLifecycleConfigResult> updateNotebookInstanceLifecycleConfigAsync(
+            UpdateNotebookInstanceLifecycleConfigRequest updateNotebookInstanceLifecycleConfigRequest);
+
+    /**
+     * <p>
+     * Updates a notebook instance lifecycle configuration created with the API.
+     * </p>
+     * 
+     * @param updateNotebookInstanceLifecycleConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateNotebookInstanceLifecycleConfig operation returned by
+     *         the service.
+     * @sample AmazonSageMakerAsyncHandler.UpdateNotebookInstanceLifecycleConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateNotebookInstanceLifecycleConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateNotebookInstanceLifecycleConfigResult> updateNotebookInstanceLifecycleConfigAsync(
+            UpdateNotebookInstanceLifecycleConfigRequest updateNotebookInstanceLifecycleConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateNotebookInstanceLifecycleConfigRequest, UpdateNotebookInstanceLifecycleConfigResult> asyncHandler);
 
 }

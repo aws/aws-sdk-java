@@ -93,6 +93,21 @@ public class AbstractAmazonSageMakerAsync extends AbstractAmazonSageMaker implem
     }
 
     @Override
+    public java.util.concurrent.Future<CreateNotebookInstanceLifecycleConfigResult> createNotebookInstanceLifecycleConfigAsync(
+            CreateNotebookInstanceLifecycleConfigRequest request) {
+
+        return createNotebookInstanceLifecycleConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateNotebookInstanceLifecycleConfigResult> createNotebookInstanceLifecycleConfigAsync(
+            CreateNotebookInstanceLifecycleConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateNotebookInstanceLifecycleConfigRequest, CreateNotebookInstanceLifecycleConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreatePresignedNotebookInstanceUrlResult> createPresignedNotebookInstanceUrlAsync(
             CreatePresignedNotebookInstanceUrlRequest request) {
 
@@ -173,6 +188,21 @@ public class AbstractAmazonSageMakerAsync extends AbstractAmazonSageMaker implem
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteNotebookInstanceLifecycleConfigResult> deleteNotebookInstanceLifecycleConfigAsync(
+            DeleteNotebookInstanceLifecycleConfigRequest request) {
+
+        return deleteNotebookInstanceLifecycleConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteNotebookInstanceLifecycleConfigResult> deleteNotebookInstanceLifecycleConfigAsync(
+            DeleteNotebookInstanceLifecycleConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteNotebookInstanceLifecycleConfigRequest, DeleteNotebookInstanceLifecycleConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(DeleteTagsRequest request) {
 
         return deleteTagsAsync(request, null);
@@ -238,6 +268,21 @@ public class AbstractAmazonSageMakerAsync extends AbstractAmazonSageMaker implem
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeNotebookInstanceLifecycleConfigResult> describeNotebookInstanceLifecycleConfigAsync(
+            DescribeNotebookInstanceLifecycleConfigRequest request) {
+
+        return describeNotebookInstanceLifecycleConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeNotebookInstanceLifecycleConfigResult> describeNotebookInstanceLifecycleConfigAsync(
+            DescribeNotebookInstanceLifecycleConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeNotebookInstanceLifecycleConfigRequest, DescribeNotebookInstanceLifecycleConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeTrainingJobResult> describeTrainingJobAsync(DescribeTrainingJobRequest request) {
 
         return describeTrainingJobAsync(request, null);
@@ -285,6 +330,21 @@ public class AbstractAmazonSageMakerAsync extends AbstractAmazonSageMaker implem
     @Override
     public java.util.concurrent.Future<ListModelsResult> listModelsAsync(ListModelsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListModelsRequest, ListModelsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListNotebookInstanceLifecycleConfigsResult> listNotebookInstanceLifecycleConfigsAsync(
+            ListNotebookInstanceLifecycleConfigsRequest request) {
+
+        return listNotebookInstanceLifecycleConfigsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListNotebookInstanceLifecycleConfigsResult> listNotebookInstanceLifecycleConfigsAsync(
+            ListNotebookInstanceLifecycleConfigsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListNotebookInstanceLifecycleConfigsRequest, ListNotebookInstanceLifecycleConfigsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -404,6 +464,21 @@ public class AbstractAmazonSageMakerAsync extends AbstractAmazonSageMaker implem
     @Override
     public java.util.concurrent.Future<UpdateNotebookInstanceResult> updateNotebookInstanceAsync(UpdateNotebookInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateNotebookInstanceRequest, UpdateNotebookInstanceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNotebookInstanceLifecycleConfigResult> updateNotebookInstanceLifecycleConfigAsync(
+            UpdateNotebookInstanceLifecycleConfigRequest request) {
+
+        return updateNotebookInstanceLifecycleConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNotebookInstanceLifecycleConfigResult> updateNotebookInstanceLifecycleConfigAsync(
+            UpdateNotebookInstanceLifecycleConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateNotebookInstanceLifecycleConfigRequest, UpdateNotebookInstanceLifecycleConfigResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

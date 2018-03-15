@@ -66,6 +66,13 @@ public class Root implements Serializable, Cloneable, StructuredPojo {
      * The types of policies that are currently enabled for the root and therefore can be attached to the root or to its
      * OUs or accounts.
      * </p>
+     * <note>
+     * <p>
+     * Even if a policy type is shown as available in the organization, you can separately enable and disable them at
+     * the root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use <a>DescribeOrganization</a> to
+     * see the availability of the policy types in that organization.
+     * </p>
+     * </note>
      */
     private java.util.List<PolicyTypeSummary> policyTypes;
 
@@ -263,9 +270,21 @@ public class Root implements Serializable, Cloneable, StructuredPojo {
      * The types of policies that are currently enabled for the root and therefore can be attached to the root or to its
      * OUs or accounts.
      * </p>
+     * <note>
+     * <p>
+     * Even if a policy type is shown as available in the organization, you can separately enable and disable them at
+     * the root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use <a>DescribeOrganization</a> to
+     * see the availability of the policy types in that organization.
+     * </p>
+     * </note>
      * 
      * @return The types of policies that are currently enabled for the root and therefore can be attached to the root
-     *         or to its OUs or accounts.
+     *         or to its OUs or accounts.</p> <note>
+     *         <p>
+     *         Even if a policy type is shown as available in the organization, you can separately enable and disable
+     *         them at the root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use
+     *         <a>DescribeOrganization</a> to see the availability of the policy types in that organization.
+     *         </p>
      */
 
     public java.util.List<PolicyTypeSummary> getPolicyTypes() {
@@ -277,10 +296,22 @@ public class Root implements Serializable, Cloneable, StructuredPojo {
      * The types of policies that are currently enabled for the root and therefore can be attached to the root or to its
      * OUs or accounts.
      * </p>
+     * <note>
+     * <p>
+     * Even if a policy type is shown as available in the organization, you can separately enable and disable them at
+     * the root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use <a>DescribeOrganization</a> to
+     * see the availability of the policy types in that organization.
+     * </p>
+     * </note>
      * 
      * @param policyTypes
      *        The types of policies that are currently enabled for the root and therefore can be attached to the root or
-     *        to its OUs or accounts.
+     *        to its OUs or accounts.</p> <note>
+     *        <p>
+     *        Even if a policy type is shown as available in the organization, you can separately enable and disable
+     *        them at the root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use
+     *        <a>DescribeOrganization</a> to see the availability of the policy types in that organization.
+     *        </p>
      */
 
     public void setPolicyTypes(java.util.Collection<PolicyTypeSummary> policyTypes) {
@@ -297,6 +328,13 @@ public class Root implements Serializable, Cloneable, StructuredPojo {
      * The types of policies that are currently enabled for the root and therefore can be attached to the root or to its
      * OUs or accounts.
      * </p>
+     * <note>
+     * <p>
+     * Even if a policy type is shown as available in the organization, you can separately enable and disable them at
+     * the root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use <a>DescribeOrganization</a> to
+     * see the availability of the policy types in that organization.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setPolicyTypes(java.util.Collection)} or {@link #withPolicyTypes(java.util.Collection)} if you want to
@@ -305,7 +343,12 @@ public class Root implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param policyTypes
      *        The types of policies that are currently enabled for the root and therefore can be attached to the root or
-     *        to its OUs or accounts.
+     *        to its OUs or accounts.</p> <note>
+     *        <p>
+     *        Even if a policy type is shown as available in the organization, you can separately enable and disable
+     *        them at the root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use
+     *        <a>DescribeOrganization</a> to see the availability of the policy types in that organization.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -324,10 +367,22 @@ public class Root implements Serializable, Cloneable, StructuredPojo {
      * The types of policies that are currently enabled for the root and therefore can be attached to the root or to its
      * OUs or accounts.
      * </p>
+     * <note>
+     * <p>
+     * Even if a policy type is shown as available in the organization, you can separately enable and disable them at
+     * the root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use <a>DescribeOrganization</a> to
+     * see the availability of the policy types in that organization.
+     * </p>
+     * </note>
      * 
      * @param policyTypes
      *        The types of policies that are currently enabled for the root and therefore can be attached to the root or
-     *        to its OUs or accounts.
+     *        to its OUs or accounts.</p> <note>
+     *        <p>
+     *        Even if a policy type is shown as available in the organization, you can separately enable and disable
+     *        them at the root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use
+     *        <a>DescribeOrganization</a> to see the availability of the policy types in that organization.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

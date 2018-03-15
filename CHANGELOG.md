@@ -1,3 +1,16 @@
+# __1.11.296__ __2018-03-15__
+## __AWS Organizations__
+  - ### Features
+    - This release adds additional reason codes to improve clarity to exceptions that can occur.
+
+## __Amazon Pinpoint__
+  - ### Features
+    - With this release, you can delete endpoints from your Amazon Pinpoint projects. Customers can now specify one of their leased dedicated long or short codes to send text messages.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - This release provides support for ml.p3.xlarge instance types for notebook instances.  Lifecycle configuration is now available to customize your notebook instances on start; the configuration can be reused between multiple notebooks.  If a notebook instance is attached to a VPC you can now opt out of internet access that by default is provided by SageMaker.
+
 # __1.11.295__ __2018-03-14__
 ## __Amazon Lightsail__
   - ### Features

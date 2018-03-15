@@ -20,8 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Describes weight and capacities for a production variant associated with an endpoint. If you sent a request to the
- * <code>UpdateWeightAndCapacities</code> API and the endpoint status is <code>Updating</code>, you get different
- * desired and current values.
+ * <code>UpdateEndpointWeightsAndCapacities</code> API and the endpoint status is <code>Updating</code>, you get
+ * different desired and current values.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProductionVariantSummary" target="_top">AWS
@@ -44,7 +44,7 @@ public class ProductionVariantSummary implements Serializable, Cloneable, Struct
     private Float currentWeight;
     /**
      * <p>
-     * The requested weight, as specified in the <code>UpdateWeightAndCapacities</code> request.
+     * The requested weight, as specified in the <code>UpdateEndpointWeightsAndCapacities</code> request.
      * </p>
      */
     private Float desiredWeight;
@@ -56,7 +56,7 @@ public class ProductionVariantSummary implements Serializable, Cloneable, Struct
     private Integer currentInstanceCount;
     /**
      * <p>
-     * The number of instances requested in the <code>UpdateWeightAndCapacities</code> request.
+     * The number of instances requested in the <code>UpdateEndpointWeightsAndCapacities</code> request.
      * </p>
      */
     private Integer desiredInstanceCount;
@@ -143,11 +143,11 @@ public class ProductionVariantSummary implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The requested weight, as specified in the <code>UpdateWeightAndCapacities</code> request.
+     * The requested weight, as specified in the <code>UpdateEndpointWeightsAndCapacities</code> request.
      * </p>
      * 
      * @param desiredWeight
-     *        The requested weight, as specified in the <code>UpdateWeightAndCapacities</code> request.
+     *        The requested weight, as specified in the <code>UpdateEndpointWeightsAndCapacities</code> request.
      */
 
     public void setDesiredWeight(Float desiredWeight) {
@@ -156,10 +156,10 @@ public class ProductionVariantSummary implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The requested weight, as specified in the <code>UpdateWeightAndCapacities</code> request.
+     * The requested weight, as specified in the <code>UpdateEndpointWeightsAndCapacities</code> request.
      * </p>
      * 
-     * @return The requested weight, as specified in the <code>UpdateWeightAndCapacities</code> request.
+     * @return The requested weight, as specified in the <code>UpdateEndpointWeightsAndCapacities</code> request.
      */
 
     public Float getDesiredWeight() {
@@ -168,11 +168,11 @@ public class ProductionVariantSummary implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The requested weight, as specified in the <code>UpdateWeightAndCapacities</code> request.
+     * The requested weight, as specified in the <code>UpdateEndpointWeightsAndCapacities</code> request.
      * </p>
      * 
      * @param desiredWeight
-     *        The requested weight, as specified in the <code>UpdateWeightAndCapacities</code> request.
+     *        The requested weight, as specified in the <code>UpdateEndpointWeightsAndCapacities</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -223,11 +223,11 @@ public class ProductionVariantSummary implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The number of instances requested in the <code>UpdateWeightAndCapacities</code> request.
+     * The number of instances requested in the <code>UpdateEndpointWeightsAndCapacities</code> request.
      * </p>
      * 
      * @param desiredInstanceCount
-     *        The number of instances requested in the <code>UpdateWeightAndCapacities</code> request.
+     *        The number of instances requested in the <code>UpdateEndpointWeightsAndCapacities</code> request.
      */
 
     public void setDesiredInstanceCount(Integer desiredInstanceCount) {
@@ -236,10 +236,10 @@ public class ProductionVariantSummary implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The number of instances requested in the <code>UpdateWeightAndCapacities</code> request.
+     * The number of instances requested in the <code>UpdateEndpointWeightsAndCapacities</code> request.
      * </p>
      * 
-     * @return The number of instances requested in the <code>UpdateWeightAndCapacities</code> request.
+     * @return The number of instances requested in the <code>UpdateEndpointWeightsAndCapacities</code> request.
      */
 
     public Integer getDesiredInstanceCount() {
@@ -248,11 +248,11 @@ public class ProductionVariantSummary implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The number of instances requested in the <code>UpdateWeightAndCapacities</code> request.
+     * The number of instances requested in the <code>UpdateEndpointWeightsAndCapacities</code> request.
      * </p>
      * 
      * @param desiredInstanceCount
-     *        The number of instances requested in the <code>UpdateWeightAndCapacities</code> request.
+     *        The number of instances requested in the <code>UpdateEndpointWeightsAndCapacities</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

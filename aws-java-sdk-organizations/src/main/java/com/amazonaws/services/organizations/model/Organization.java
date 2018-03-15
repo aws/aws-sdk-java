@@ -94,6 +94,13 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * A list of policy types that are enabled for this organization. For example, if your organization has all features
      * enabled, then service control policies (SCPs) are included in the list.
      * </p>
+     * <note>
+     * <p>
+     * Even if a policy type is shown as available in the organization, you can separately enable and disable them at
+     * the root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use <a>ListRoots</a> to see the
+     * status of a policy type in that root.
+     * </p>
+     * </note>
      */
     private java.util.List<PolicyTypeSummary> availablePolicyTypes;
 
@@ -520,9 +527,21 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * A list of policy types that are enabled for this organization. For example, if your organization has all features
      * enabled, then service control policies (SCPs) are included in the list.
      * </p>
+     * <note>
+     * <p>
+     * Even if a policy type is shown as available in the organization, you can separately enable and disable them at
+     * the root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use <a>ListRoots</a> to see the
+     * status of a policy type in that root.
+     * </p>
+     * </note>
      * 
      * @return A list of policy types that are enabled for this organization. For example, if your organization has all
-     *         features enabled, then service control policies (SCPs) are included in the list.
+     *         features enabled, then service control policies (SCPs) are included in the list.</p> <note>
+     *         <p>
+     *         Even if a policy type is shown as available in the organization, you can separately enable and disable
+     *         them at the root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use
+     *         <a>ListRoots</a> to see the status of a policy type in that root.
+     *         </p>
      */
 
     public java.util.List<PolicyTypeSummary> getAvailablePolicyTypes() {
@@ -534,10 +553,22 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * A list of policy types that are enabled for this organization. For example, if your organization has all features
      * enabled, then service control policies (SCPs) are included in the list.
      * </p>
+     * <note>
+     * <p>
+     * Even if a policy type is shown as available in the organization, you can separately enable and disable them at
+     * the root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use <a>ListRoots</a> to see the
+     * status of a policy type in that root.
+     * </p>
+     * </note>
      * 
      * @param availablePolicyTypes
      *        A list of policy types that are enabled for this organization. For example, if your organization has all
-     *        features enabled, then service control policies (SCPs) are included in the list.
+     *        features enabled, then service control policies (SCPs) are included in the list.</p> <note>
+     *        <p>
+     *        Even if a policy type is shown as available in the organization, you can separately enable and disable
+     *        them at the root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use <a>ListRoots</a>
+     *        to see the status of a policy type in that root.
+     *        </p>
      */
 
     public void setAvailablePolicyTypes(java.util.Collection<PolicyTypeSummary> availablePolicyTypes) {
@@ -554,6 +585,13 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * A list of policy types that are enabled for this organization. For example, if your organization has all features
      * enabled, then service control policies (SCPs) are included in the list.
      * </p>
+     * <note>
+     * <p>
+     * Even if a policy type is shown as available in the organization, you can separately enable and disable them at
+     * the root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use <a>ListRoots</a> to see the
+     * status of a policy type in that root.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAvailablePolicyTypes(java.util.Collection)} or {@link #withAvailablePolicyTypes(java.util.Collection)}
@@ -562,7 +600,12 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param availablePolicyTypes
      *        A list of policy types that are enabled for this organization. For example, if your organization has all
-     *        features enabled, then service control policies (SCPs) are included in the list.
+     *        features enabled, then service control policies (SCPs) are included in the list.</p> <note>
+     *        <p>
+     *        Even if a policy type is shown as available in the organization, you can separately enable and disable
+     *        them at the root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use <a>ListRoots</a>
+     *        to see the status of a policy type in that root.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -581,10 +624,22 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * A list of policy types that are enabled for this organization. For example, if your organization has all features
      * enabled, then service control policies (SCPs) are included in the list.
      * </p>
+     * <note>
+     * <p>
+     * Even if a policy type is shown as available in the organization, you can separately enable and disable them at
+     * the root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use <a>ListRoots</a> to see the
+     * status of a policy type in that root.
+     * </p>
+     * </note>
      * 
      * @param availablePolicyTypes
      *        A list of policy types that are enabled for this organization. For example, if your organization has all
-     *        features enabled, then service control policies (SCPs) are included in the list.
+     *        features enabled, then service control policies (SCPs) are included in the list.</p> <note>
+     *        <p>
+     *        Even if a policy type is shown as available in the organization, you can separately enable and disable
+     *        them at the root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use <a>ListRoots</a>
+     *        to see the status of a policy type in that root.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

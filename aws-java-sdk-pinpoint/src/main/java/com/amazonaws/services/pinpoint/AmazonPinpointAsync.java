@@ -411,6 +411,33 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
             com.amazonaws.handlers.AsyncHandler<DeleteEmailChannelRequest, DeleteEmailChannelResult> asyncHandler);
 
     /**
+     * Deletes an endpoint.
+     * 
+     * @param deleteEndpointRequest
+     * @return A Java Future containing the result of the DeleteEndpoint operation returned by the service.
+     * @sample AmazonPinpointAsync.DeleteEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEndpoint" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteEndpointResult> deleteEndpointAsync(DeleteEndpointRequest deleteEndpointRequest);
+
+    /**
+     * Deletes an endpoint.
+     * 
+     * @param deleteEndpointRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteEndpoint operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.DeleteEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEndpoint" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteEndpointResult> deleteEndpointAsync(DeleteEndpointRequest deleteEndpointRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteEndpointRequest, DeleteEndpointResult> asyncHandler);
+
+    /**
      * Deletes the event stream for an app.
      * 
      * @param deleteEventStreamRequest

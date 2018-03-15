@@ -94,6 +94,14 @@ public class ListNotebookInstancesRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private String statusEquals;
+    /**
+     * <p>
+     * A string in the name of a notebook instances lifecycle configuration associated with this notebook instance. This
+     * filter returns only notebook instances associated with a lifecycle configuration with a name that contains the
+     * specified string.
+     * </p>
+     */
+    private String notebookInstanceLifecycleConfigNameContains;
 
     /**
      * <p>
@@ -601,6 +609,58 @@ public class ListNotebookInstancesRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * A string in the name of a notebook instances lifecycle configuration associated with this notebook instance. This
+     * filter returns only notebook instances associated with a lifecycle configuration with a name that contains the
+     * specified string.
+     * </p>
+     * 
+     * @param notebookInstanceLifecycleConfigNameContains
+     *        A string in the name of a notebook instances lifecycle configuration associated with this notebook
+     *        instance. This filter returns only notebook instances associated with a lifecycle configuration with a
+     *        name that contains the specified string.
+     */
+
+    public void setNotebookInstanceLifecycleConfigNameContains(String notebookInstanceLifecycleConfigNameContains) {
+        this.notebookInstanceLifecycleConfigNameContains = notebookInstanceLifecycleConfigNameContains;
+    }
+
+    /**
+     * <p>
+     * A string in the name of a notebook instances lifecycle configuration associated with this notebook instance. This
+     * filter returns only notebook instances associated with a lifecycle configuration with a name that contains the
+     * specified string.
+     * </p>
+     * 
+     * @return A string in the name of a notebook instances lifecycle configuration associated with this notebook
+     *         instance. This filter returns only notebook instances associated with a lifecycle configuration with a
+     *         name that contains the specified string.
+     */
+
+    public String getNotebookInstanceLifecycleConfigNameContains() {
+        return this.notebookInstanceLifecycleConfigNameContains;
+    }
+
+    /**
+     * <p>
+     * A string in the name of a notebook instances lifecycle configuration associated with this notebook instance. This
+     * filter returns only notebook instances associated with a lifecycle configuration with a name that contains the
+     * specified string.
+     * </p>
+     * 
+     * @param notebookInstanceLifecycleConfigNameContains
+     *        A string in the name of a notebook instances lifecycle configuration associated with this notebook
+     *        instance. This filter returns only notebook instances associated with a lifecycle configuration with a
+     *        name that contains the specified string.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListNotebookInstancesRequest withNotebookInstanceLifecycleConfigNameContains(String notebookInstanceLifecycleConfigNameContains) {
+        setNotebookInstanceLifecycleConfigNameContains(notebookInstanceLifecycleConfigNameContains);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -630,7 +690,9 @@ public class ListNotebookInstancesRequest extends com.amazonaws.AmazonWebService
         if (getLastModifiedTimeAfter() != null)
             sb.append("LastModifiedTimeAfter: ").append(getLastModifiedTimeAfter()).append(",");
         if (getStatusEquals() != null)
-            sb.append("StatusEquals: ").append(getStatusEquals());
+            sb.append("StatusEquals: ").append(getStatusEquals()).append(",");
+        if (getNotebookInstanceLifecycleConfigNameContains() != null)
+            sb.append("NotebookInstanceLifecycleConfigNameContains: ").append(getNotebookInstanceLifecycleConfigNameContains());
         sb.append("}");
         return sb.toString();
     }
@@ -685,6 +747,11 @@ public class ListNotebookInstancesRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getStatusEquals() != null && other.getStatusEquals().equals(this.getStatusEquals()) == false)
             return false;
+        if (other.getNotebookInstanceLifecycleConfigNameContains() == null ^ this.getNotebookInstanceLifecycleConfigNameContains() == null)
+            return false;
+        if (other.getNotebookInstanceLifecycleConfigNameContains() != null
+                && other.getNotebookInstanceLifecycleConfigNameContains().equals(this.getNotebookInstanceLifecycleConfigNameContains()) == false)
+            return false;
         return true;
     }
 
@@ -703,6 +770,8 @@ public class ListNotebookInstancesRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getLastModifiedTimeBefore() == null) ? 0 : getLastModifiedTimeBefore().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTimeAfter() == null) ? 0 : getLastModifiedTimeAfter().hashCode());
         hashCode = prime * hashCode + ((getStatusEquals() == null) ? 0 : getStatusEquals().hashCode());
+        hashCode = prime * hashCode
+                + ((getNotebookInstanceLifecycleConfigNameContains() == null) ? 0 : getNotebookInstanceLifecycleConfigNameContains().hashCode());
         return hashCode;
     }
 

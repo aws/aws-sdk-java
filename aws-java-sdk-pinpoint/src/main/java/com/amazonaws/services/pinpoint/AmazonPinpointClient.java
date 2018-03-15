@@ -1104,6 +1104,65 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
     }
 
     /**
+     * Deletes an endpoint.
+     * 
+     * @param deleteEndpointRequest
+     * @return Result of the DeleteEndpoint operation returned by the service.
+     * @throws BadRequestException
+     *         400 response
+     * @throws InternalServerErrorException
+     *         500 response
+     * @throws ForbiddenException
+     *         403 response
+     * @throws NotFoundException
+     *         404 response
+     * @throws MethodNotAllowedException
+     *         405 response
+     * @throws TooManyRequestsException
+     *         429 response
+     * @sample AmazonPinpoint.DeleteEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEndpoint" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteEndpointResult deleteEndpoint(DeleteEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final DeleteEndpointResult executeDeleteEndpoint(DeleteEndpointRequest deleteEndpointRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteEndpointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteEndpointRequest> request = null;
+        Response<DeleteEndpointResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteEndpointRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteEndpointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteEndpointResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteEndpointResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Deletes the event stream for an app.
      * 
      * @param deleteEventStreamRequest

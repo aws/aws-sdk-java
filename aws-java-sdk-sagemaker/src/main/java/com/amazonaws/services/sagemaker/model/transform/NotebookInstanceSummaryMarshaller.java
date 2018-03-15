@@ -41,6 +41,8 @@ public class NotebookInstanceSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTime").build();
     private static final MarshallingInfo<java.util.Date> LASTMODIFIEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedTime").build();
+    private static final MarshallingInfo<String> NOTEBOOKINSTANCELIFECYCLECONFIGNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotebookInstanceLifecycleConfigName").build();
 
     private static final NotebookInstanceSummaryMarshaller instance = new NotebookInstanceSummaryMarshaller();
 
@@ -65,6 +67,7 @@ public class NotebookInstanceSummaryMarshaller {
             protocolMarshaller.marshall(notebookInstanceSummary.getInstanceType(), INSTANCETYPE_BINDING);
             protocolMarshaller.marshall(notebookInstanceSummary.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(notebookInstanceSummary.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);
+            protocolMarshaller.marshall(notebookInstanceSummary.getNotebookInstanceLifecycleConfigName(), NOTEBOOKINSTANCELIFECYCLECONFIGNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

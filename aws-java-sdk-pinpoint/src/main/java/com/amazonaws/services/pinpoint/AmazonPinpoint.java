@@ -411,6 +411,29 @@ public interface AmazonPinpoint {
     DeleteEmailChannelResult deleteEmailChannel(DeleteEmailChannelRequest deleteEmailChannelRequest);
 
     /**
+     * Deletes an endpoint.
+     * 
+     * @param deleteEndpointRequest
+     * @return Result of the DeleteEndpoint operation returned by the service.
+     * @throws BadRequestException
+     *         400 response
+     * @throws InternalServerErrorException
+     *         500 response
+     * @throws ForbiddenException
+     *         403 response
+     * @throws NotFoundException
+     *         404 response
+     * @throws MethodNotAllowedException
+     *         405 response
+     * @throws TooManyRequestsException
+     *         429 response
+     * @sample AmazonPinpoint.DeleteEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEndpoint" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteEndpointResult deleteEndpoint(DeleteEndpointRequest deleteEndpointRequest);
+
+    /**
      * Deletes the event stream for an app.
      * 
      * @param deleteEventStreamRequest

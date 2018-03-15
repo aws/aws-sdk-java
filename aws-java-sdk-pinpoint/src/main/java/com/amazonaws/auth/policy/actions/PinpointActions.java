@@ -53,6 +53,8 @@ public enum PinpointActions implements Action {
     DeleteCampaign("pinpoint:DeleteCampaign"),
     /** Action for the DeleteEmailChannel operation. */
     DeleteEmailChannel("pinpoint:DeleteEmailChannel"),
+    /** Action for the DeleteEndpoint operation. */
+    DeleteEndpoint("pinpoint:DeleteEndpoint"),
     /** Action for the DeleteEventStream operation. */
     DeleteEventStream("pinpoint:DeleteEventStream"),
     /** Action for the DeleteGcmChannel operation. */

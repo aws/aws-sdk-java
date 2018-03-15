@@ -74,6 +74,26 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle
+     * configurations, see <a>notebook-lifecycle-config</a>.
+     * </p>
+     */
+    private String lifecycleConfigName;
+    /**
+     * <p>
+     * Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to
+     * <code>Disabled</code> this notebook instance will be able to access resources only in your VPC, and will not be
+     * able to connect to Amazon SageMaker training and endpoint services unless your configure a NAT Gateway in your
+     * VPC.
+     * </p>
+     * <p>
+     * For more information, see <a>appendix-notebook-and-internet-access</a>. You can set the value of this parameter
+     * to <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
+     * </p>
+     */
+    private String directInternetAccess;
 
     /**
      * <p>
@@ -484,6 +504,163 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle
+     * configurations, see <a>notebook-lifecycle-config</a>.
+     * </p>
+     * 
+     * @param lifecycleConfigName
+     *        The name of a lifecycle configuration to associate with the notebook instance. For information about
+     *        lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     */
+
+    public void setLifecycleConfigName(String lifecycleConfigName) {
+        this.lifecycleConfigName = lifecycleConfigName;
+    }
+
+    /**
+     * <p>
+     * The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle
+     * configurations, see <a>notebook-lifecycle-config</a>.
+     * </p>
+     * 
+     * @return The name of a lifecycle configuration to associate with the notebook instance. For information about
+     *         lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     */
+
+    public String getLifecycleConfigName() {
+        return this.lifecycleConfigName;
+    }
+
+    /**
+     * <p>
+     * The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle
+     * configurations, see <a>notebook-lifecycle-config</a>.
+     * </p>
+     * 
+     * @param lifecycleConfigName
+     *        The name of a lifecycle configuration to associate with the notebook instance. For information about
+     *        lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNotebookInstanceRequest withLifecycleConfigName(String lifecycleConfigName) {
+        setLifecycleConfigName(lifecycleConfigName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to
+     * <code>Disabled</code> this notebook instance will be able to access resources only in your VPC, and will not be
+     * able to connect to Amazon SageMaker training and endpoint services unless your configure a NAT Gateway in your
+     * VPC.
+     * </p>
+     * <p>
+     * For more information, see <a>appendix-notebook-and-internet-access</a>. You can set the value of this parameter
+     * to <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
+     * </p>
+     * 
+     * @param directInternetAccess
+     *        Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to
+     *        <code>Disabled</code> this notebook instance will be able to access resources only in your VPC, and will
+     *        not be able to connect to Amazon SageMaker training and endpoint services unless your configure a NAT
+     *        Gateway in your VPC.</p>
+     *        <p>
+     *        For more information, see <a>appendix-notebook-and-internet-access</a>. You can set the value of this
+     *        parameter to <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
+     * @see DirectInternetAccess
+     */
+
+    public void setDirectInternetAccess(String directInternetAccess) {
+        this.directInternetAccess = directInternetAccess;
+    }
+
+    /**
+     * <p>
+     * Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to
+     * <code>Disabled</code> this notebook instance will be able to access resources only in your VPC, and will not be
+     * able to connect to Amazon SageMaker training and endpoint services unless your configure a NAT Gateway in your
+     * VPC.
+     * </p>
+     * <p>
+     * For more information, see <a>appendix-notebook-and-internet-access</a>. You can set the value of this parameter
+     * to <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
+     * </p>
+     * 
+     * @return Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to
+     *         <code>Disabled</code> this notebook instance will be able to access resources only in your VPC, and will
+     *         not be able to connect to Amazon SageMaker training and endpoint services unless your configure a NAT
+     *         Gateway in your VPC.</p>
+     *         <p>
+     *         For more information, see <a>appendix-notebook-and-internet-access</a>. You can set the value of this
+     *         parameter to <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
+     * @see DirectInternetAccess
+     */
+
+    public String getDirectInternetAccess() {
+        return this.directInternetAccess;
+    }
+
+    /**
+     * <p>
+     * Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to
+     * <code>Disabled</code> this notebook instance will be able to access resources only in your VPC, and will not be
+     * able to connect to Amazon SageMaker training and endpoint services unless your configure a NAT Gateway in your
+     * VPC.
+     * </p>
+     * <p>
+     * For more information, see <a>appendix-notebook-and-internet-access</a>. You can set the value of this parameter
+     * to <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
+     * </p>
+     * 
+     * @param directInternetAccess
+     *        Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to
+     *        <code>Disabled</code> this notebook instance will be able to access resources only in your VPC, and will
+     *        not be able to connect to Amazon SageMaker training and endpoint services unless your configure a NAT
+     *        Gateway in your VPC.</p>
+     *        <p>
+     *        For more information, see <a>appendix-notebook-and-internet-access</a>. You can set the value of this
+     *        parameter to <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DirectInternetAccess
+     */
+
+    public CreateNotebookInstanceRequest withDirectInternetAccess(String directInternetAccess) {
+        setDirectInternetAccess(directInternetAccess);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to
+     * <code>Disabled</code> this notebook instance will be able to access resources only in your VPC, and will not be
+     * able to connect to Amazon SageMaker training and endpoint services unless your configure a NAT Gateway in your
+     * VPC.
+     * </p>
+     * <p>
+     * For more information, see <a>appendix-notebook-and-internet-access</a>. You can set the value of this parameter
+     * to <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
+     * </p>
+     * 
+     * @param directInternetAccess
+     *        Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to
+     *        <code>Disabled</code> this notebook instance will be able to access resources only in your VPC, and will
+     *        not be able to connect to Amazon SageMaker training and endpoint services unless your configure a NAT
+     *        Gateway in your VPC.</p>
+     *        <p>
+     *        For more information, see <a>appendix-notebook-and-internet-access</a>. You can set the value of this
+     *        parameter to <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DirectInternetAccess
+     */
+
+    public CreateNotebookInstanceRequest withDirectInternetAccess(DirectInternetAccess directInternetAccess) {
+        this.directInternetAccess = directInternetAccess.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -507,7 +684,11 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getLifecycleConfigName() != null)
+            sb.append("LifecycleConfigName: ").append(getLifecycleConfigName()).append(",");
+        if (getDirectInternetAccess() != null)
+            sb.append("DirectInternetAccess: ").append(getDirectInternetAccess());
         sb.append("}");
         return sb.toString();
     }
@@ -550,6 +731,14 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getLifecycleConfigName() == null ^ this.getLifecycleConfigName() == null)
+            return false;
+        if (other.getLifecycleConfigName() != null && other.getLifecycleConfigName().equals(this.getLifecycleConfigName()) == false)
+            return false;
+        if (other.getDirectInternetAccess() == null ^ this.getDirectInternetAccess() == null)
+            return false;
+        if (other.getDirectInternetAccess() != null && other.getDirectInternetAccess().equals(this.getDirectInternetAccess()) == false)
+            return false;
         return true;
     }
 
@@ -565,6 +754,8 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getLifecycleConfigName() == null) ? 0 : getLifecycleConfigName().hashCode());
+        hashCode = prime * hashCode + ((getDirectInternetAccess() == null) ? 0 : getDirectInternetAccess().hashCode());
         return hashCode;
     }
 

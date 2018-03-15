@@ -391,17 +391,17 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Creates an Amazon SageMaker notebook instance. A notebook instance is an ML compute instance running on a Jupyter
-     * notebook.
+     * Creates an Amazon SageMaker notebook instance. A notebook instance is a machine learning (ML) compute instance
+     * running on a Jupyter notebook.
      * </p>
      * <p>
-     * In a <code>CreateNotebookInstance</code> request, you specify the type of ML compute instance that you want to
-     * run. Amazon SageMaker launches the instance, installs common libraries that you can use to explore datasets for
-     * model training, and attaches an ML storage volume to the notebook instance.
+     * In a <code>CreateNotebookInstance</code> request, specify the type of ML compute instance that you want to run.
+     * Amazon SageMaker launches the instance, installs common libraries that you can use to explore datasets for model
+     * training, and attaches an ML storage volume to the notebook instance.
      * </p>
      * <p>
      * Amazon SageMaker also provides a set of example notebooks. Each notebook demonstrates how to use Amazon SageMaker
-     * with a specific an algorithm or with a machine learning framework.
+     * with a specific algorithm or with a machine learning framework.
      * </p>
      * <p>
      * After receiving the request, Amazon SageMaker does the following:
@@ -414,9 +414,10 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * </li>
      * <li>
      * <p>
-     * (Option) If you specified <code>SubnetId</code>, creates a network interface in your own VPC, which is inferred
-     * from the subnet ID that you provide in the input. When creating this network interface, Amazon SageMaker attaches
-     * the security group that you specified in the request to the network interface that it creates in your VPC.
+     * (Option) If you specified <code>SubnetId</code>, Amazon SageMaker creates a network interface in your own VPC,
+     * which is inferred from the subnet ID that you provide in the input. When creating this network interface, Amazon
+     * SageMaker attaches the security group that you specified in the request to the network interface that it creates
+     * in your VPC.
      * </p>
      * </li>
      * <li>
@@ -479,6 +480,65 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
             HttpResponseHandler<AmazonWebServiceResponse<CreateNotebookInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateNotebookInstanceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a lifecycle configuration that you can associate with a notebook instance. A <i>lifecycle
+     * configuration</i> is a collection of shell scripts that run when you create or start a notebook instance.
+     * </p>
+     * <p>
+     * For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     * </p>
+     * 
+     * @param createNotebookInstanceLifecycleConfigRequest
+     * @return Result of the CreateNotebookInstanceLifecycleConfig operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.CreateNotebookInstanceLifecycleConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateNotebookInstanceLifecycleConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateNotebookInstanceLifecycleConfigResult createNotebookInstanceLifecycleConfig(CreateNotebookInstanceLifecycleConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateNotebookInstanceLifecycleConfig(request);
+    }
+
+    @SdkInternalApi
+    final CreateNotebookInstanceLifecycleConfigResult executeCreateNotebookInstanceLifecycleConfig(
+            CreateNotebookInstanceLifecycleConfigRequest createNotebookInstanceLifecycleConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createNotebookInstanceLifecycleConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateNotebookInstanceLifecycleConfigRequest> request = null;
+        Response<CreateNotebookInstanceLifecycleConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateNotebookInstanceLifecycleConfigRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createNotebookInstanceLifecycleConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateNotebookInstanceLifecycleConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateNotebookInstanceLifecycleConfigResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -865,6 +925,58 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Deletes a notebook instance lifecycle configuration.
+     * </p>
+     * 
+     * @param deleteNotebookInstanceLifecycleConfigRequest
+     * @return Result of the DeleteNotebookInstanceLifecycleConfig operation returned by the service.
+     * @sample AmazonSageMaker.DeleteNotebookInstanceLifecycleConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteNotebookInstanceLifecycleConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteNotebookInstanceLifecycleConfigResult deleteNotebookInstanceLifecycleConfig(DeleteNotebookInstanceLifecycleConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteNotebookInstanceLifecycleConfig(request);
+    }
+
+    @SdkInternalApi
+    final DeleteNotebookInstanceLifecycleConfigResult executeDeleteNotebookInstanceLifecycleConfig(
+            DeleteNotebookInstanceLifecycleConfigRequest deleteNotebookInstanceLifecycleConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteNotebookInstanceLifecycleConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteNotebookInstanceLifecycleConfigRequest> request = null;
+        Response<DeleteNotebookInstanceLifecycleConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteNotebookInstanceLifecycleConfigRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteNotebookInstanceLifecycleConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteNotebookInstanceLifecycleConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteNotebookInstanceLifecycleConfigResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified tags from an Amazon SageMaker resource.
      * </p>
      * <p>
@@ -1116,6 +1228,62 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Returns a description of a notebook instance lifecycle configuration.
+     * </p>
+     * <p>
+     * For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     * </p>
+     * 
+     * @param describeNotebookInstanceLifecycleConfigRequest
+     * @return Result of the DescribeNotebookInstanceLifecycleConfig operation returned by the service.
+     * @sample AmazonSageMaker.DescribeNotebookInstanceLifecycleConfig
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeNotebookInstanceLifecycleConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeNotebookInstanceLifecycleConfigResult describeNotebookInstanceLifecycleConfig(DescribeNotebookInstanceLifecycleConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeNotebookInstanceLifecycleConfig(request);
+    }
+
+    @SdkInternalApi
+    final DescribeNotebookInstanceLifecycleConfigResult executeDescribeNotebookInstanceLifecycleConfig(
+            DescribeNotebookInstanceLifecycleConfigRequest describeNotebookInstanceLifecycleConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeNotebookInstanceLifecycleConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeNotebookInstanceLifecycleConfigRequest> request = null;
+        Response<DescribeNotebookInstanceLifecycleConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeNotebookInstanceLifecycleConfigRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeNotebookInstanceLifecycleConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeNotebookInstanceLifecycleConfigResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeNotebookInstanceLifecycleConfigResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns information about a training job.
      * </p>
      * 
@@ -1303,6 +1471,58 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<ListModelsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListModelsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists notebook instance lifestyle configurations created with the API.
+     * </p>
+     * 
+     * @param listNotebookInstanceLifecycleConfigsRequest
+     * @return Result of the ListNotebookInstanceLifecycleConfigs operation returned by the service.
+     * @sample AmazonSageMaker.ListNotebookInstanceLifecycleConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListNotebookInstanceLifecycleConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListNotebookInstanceLifecycleConfigsResult listNotebookInstanceLifecycleConfigs(ListNotebookInstanceLifecycleConfigsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListNotebookInstanceLifecycleConfigs(request);
+    }
+
+    @SdkInternalApi
+    final ListNotebookInstanceLifecycleConfigsResult executeListNotebookInstanceLifecycleConfigs(
+            ListNotebookInstanceLifecycleConfigsRequest listNotebookInstanceLifecycleConfigsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listNotebookInstanceLifecycleConfigsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListNotebookInstanceLifecycleConfigsRequest> request = null;
+        Response<ListNotebookInstanceLifecycleConfigsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListNotebookInstanceLifecycleConfigsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listNotebookInstanceLifecycleConfigsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListNotebookInstanceLifecycleConfigsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListNotebookInstanceLifecycleConfigsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1797,6 +2017,61 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
             HttpResponseHandler<AmazonWebServiceResponse<UpdateNotebookInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateNotebookInstanceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a notebook instance lifecycle configuration created with the API.
+     * </p>
+     * 
+     * @param updateNotebookInstanceLifecycleConfigRequest
+     * @return Result of the UpdateNotebookInstanceLifecycleConfig operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.UpdateNotebookInstanceLifecycleConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateNotebookInstanceLifecycleConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateNotebookInstanceLifecycleConfigResult updateNotebookInstanceLifecycleConfig(UpdateNotebookInstanceLifecycleConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateNotebookInstanceLifecycleConfig(request);
+    }
+
+    @SdkInternalApi
+    final UpdateNotebookInstanceLifecycleConfigResult executeUpdateNotebookInstanceLifecycleConfig(
+            UpdateNotebookInstanceLifecycleConfigRequest updateNotebookInstanceLifecycleConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateNotebookInstanceLifecycleConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateNotebookInstanceLifecycleConfigRequest> request = null;
+        Response<UpdateNotebookInstanceLifecycleConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateNotebookInstanceLifecycleConfigRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateNotebookInstanceLifecycleConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateNotebookInstanceLifecycleConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateNotebookInstanceLifecycleConfigResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

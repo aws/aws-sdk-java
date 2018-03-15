@@ -22,7 +22,8 @@ public enum InstanceType {
 
     MlT2Medium("ml.t2.medium"),
     MlM4Xlarge("ml.m4.xlarge"),
-    MlP2Xlarge("ml.p2.xlarge");
+    MlP2Xlarge("ml.p2.xlarge"),
+    MlP32xlarge("ml.p3.2xlarge");
 
     private String value;
 

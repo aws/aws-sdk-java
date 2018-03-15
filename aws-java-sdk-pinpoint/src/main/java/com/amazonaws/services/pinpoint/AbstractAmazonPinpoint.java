@@ -108,6 +108,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
     }
 
     @Override
+    public DeleteEndpointResult deleteEndpoint(DeleteEndpointRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteEventStreamResult deleteEventStream(DeleteEventStreamRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

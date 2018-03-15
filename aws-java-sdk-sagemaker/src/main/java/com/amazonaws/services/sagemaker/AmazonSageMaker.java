@@ -173,17 +173,17 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Creates an Amazon SageMaker notebook instance. A notebook instance is an ML compute instance running on a Jupyter
-     * notebook.
+     * Creates an Amazon SageMaker notebook instance. A notebook instance is a machine learning (ML) compute instance
+     * running on a Jupyter notebook.
      * </p>
      * <p>
-     * In a <code>CreateNotebookInstance</code> request, you specify the type of ML compute instance that you want to
-     * run. Amazon SageMaker launches the instance, installs common libraries that you can use to explore datasets for
-     * model training, and attaches an ML storage volume to the notebook instance.
+     * In a <code>CreateNotebookInstance</code> request, specify the type of ML compute instance that you want to run.
+     * Amazon SageMaker launches the instance, installs common libraries that you can use to explore datasets for model
+     * training, and attaches an ML storage volume to the notebook instance.
      * </p>
      * <p>
      * Amazon SageMaker also provides a set of example notebooks. Each notebook demonstrates how to use Amazon SageMaker
-     * with a specific an algorithm or with a machine learning framework.
+     * with a specific algorithm or with a machine learning framework.
      * </p>
      * <p>
      * After receiving the request, Amazon SageMaker does the following:
@@ -196,9 +196,10 @@ public interface AmazonSageMaker {
      * </li>
      * <li>
      * <p>
-     * (Option) If you specified <code>SubnetId</code>, creates a network interface in your own VPC, which is inferred
-     * from the subnet ID that you provide in the input. When creating this network interface, Amazon SageMaker attaches
-     * the security group that you specified in the request to the network interface that it creates in your VPC.
+     * (Option) If you specified <code>SubnetId</code>, Amazon SageMaker creates a network interface in your own VPC,
+     * which is inferred from the subnet ID that you provide in the input. When creating this network interface, Amazon
+     * SageMaker attaches the security group that you specified in the request to the network interface that it creates
+     * in your VPC.
      * </p>
      * </li>
      * <li>
@@ -233,6 +234,27 @@ public interface AmazonSageMaker {
      *      target="_top">AWS API Documentation</a>
      */
     CreateNotebookInstanceResult createNotebookInstance(CreateNotebookInstanceRequest createNotebookInstanceRequest);
+
+    /**
+     * <p>
+     * Creates a lifecycle configuration that you can associate with a notebook instance. A <i>lifecycle
+     * configuration</i> is a collection of shell scripts that run when you create or start a notebook instance.
+     * </p>
+     * <p>
+     * For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     * </p>
+     * 
+     * @param createNotebookInstanceLifecycleConfigRequest
+     * @return Result of the CreateNotebookInstanceLifecycleConfig operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.CreateNotebookInstanceLifecycleConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateNotebookInstanceLifecycleConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateNotebookInstanceLifecycleConfigResult createNotebookInstanceLifecycleConfig(
+            CreateNotebookInstanceLifecycleConfigRequest createNotebookInstanceLifecycleConfigRequest);
 
     /**
      * <p>
@@ -391,6 +413,20 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Deletes a notebook instance lifecycle configuration.
+     * </p>
+     * 
+     * @param deleteNotebookInstanceLifecycleConfigRequest
+     * @return Result of the DeleteNotebookInstanceLifecycleConfig operation returned by the service.
+     * @sample AmazonSageMaker.DeleteNotebookInstanceLifecycleConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteNotebookInstanceLifecycleConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteNotebookInstanceLifecycleConfigResult deleteNotebookInstanceLifecycleConfig(
+            DeleteNotebookInstanceLifecycleConfigRequest deleteNotebookInstanceLifecycleConfigRequest);
+
+    /**
+     * <p>
      * Deletes the specified tags from an Amazon SageMaker resource.
      * </p>
      * <p>
@@ -459,6 +495,24 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Returns a description of a notebook instance lifecycle configuration.
+     * </p>
+     * <p>
+     * For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     * </p>
+     * 
+     * @param describeNotebookInstanceLifecycleConfigRequest
+     * @return Result of the DescribeNotebookInstanceLifecycleConfig operation returned by the service.
+     * @sample AmazonSageMaker.DescribeNotebookInstanceLifecycleConfig
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeNotebookInstanceLifecycleConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeNotebookInstanceLifecycleConfigResult describeNotebookInstanceLifecycleConfig(
+            DescribeNotebookInstanceLifecycleConfigRequest describeNotebookInstanceLifecycleConfigRequest);
+
+    /**
+     * <p>
      * Returns information about a training job.
      * </p>
      * 
@@ -511,6 +565,20 @@ public interface AmazonSageMaker {
      *      Documentation</a>
      */
     ListModelsResult listModels(ListModelsRequest listModelsRequest);
+
+    /**
+     * <p>
+     * Lists notebook instance lifestyle configurations created with the API.
+     * </p>
+     * 
+     * @param listNotebookInstanceLifecycleConfigsRequest
+     * @return Result of the ListNotebookInstanceLifecycleConfigs operation returned by the service.
+     * @sample AmazonSageMaker.ListNotebookInstanceLifecycleConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListNotebookInstanceLifecycleConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListNotebookInstanceLifecycleConfigsResult listNotebookInstanceLifecycleConfigs(
+            ListNotebookInstanceLifecycleConfigsRequest listNotebookInstanceLifecycleConfigsRequest);
 
     /**
      * <p>
@@ -676,6 +744,23 @@ public interface AmazonSageMaker {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateNotebookInstanceResult updateNotebookInstance(UpdateNotebookInstanceRequest updateNotebookInstanceRequest);
+
+    /**
+     * <p>
+     * Updates a notebook instance lifecycle configuration created with the API.
+     * </p>
+     * 
+     * @param updateNotebookInstanceLifecycleConfigRequest
+     * @return Result of the UpdateNotebookInstanceLifecycleConfig operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.UpdateNotebookInstanceLifecycleConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateNotebookInstanceLifecycleConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateNotebookInstanceLifecycleConfigResult updateNotebookInstanceLifecycleConfig(
+            UpdateNotebookInstanceLifecycleConfigRequest updateNotebookInstanceLifecycleConfigRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

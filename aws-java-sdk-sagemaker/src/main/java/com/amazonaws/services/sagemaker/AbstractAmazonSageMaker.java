@@ -54,6 +54,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public CreateNotebookInstanceLifecycleConfigResult createNotebookInstanceLifecycleConfig(CreateNotebookInstanceLifecycleConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreatePresignedNotebookInstanceUrlResult createPresignedNotebookInstanceUrl(CreatePresignedNotebookInstanceUrlRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -84,6 +89,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public DeleteNotebookInstanceLifecycleConfigResult deleteNotebookInstanceLifecycleConfig(DeleteNotebookInstanceLifecycleConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteTagsResult deleteTags(DeleteTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -109,6 +119,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public DescribeNotebookInstanceLifecycleConfigResult describeNotebookInstanceLifecycleConfig(DescribeNotebookInstanceLifecycleConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeTrainingJobResult describeTrainingJob(DescribeTrainingJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -125,6 +140,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
 
     @Override
     public ListModelsResult listModels(ListModelsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListNotebookInstanceLifecycleConfigsResult listNotebookInstanceLifecycleConfigs(ListNotebookInstanceLifecycleConfigsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -170,6 +190,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
 
     @Override
     public UpdateNotebookInstanceResult updateNotebookInstance(UpdateNotebookInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateNotebookInstanceLifecycleConfigResult updateNotebookInstanceLifecycleConfig(UpdateNotebookInstanceLifecycleConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

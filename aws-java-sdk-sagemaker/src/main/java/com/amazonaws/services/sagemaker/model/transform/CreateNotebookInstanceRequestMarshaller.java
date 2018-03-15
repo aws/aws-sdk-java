@@ -42,6 +42,10 @@ public class CreateNotebookInstanceRequestMarshaller {
             .marshallLocationName("KmsKeyId").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> LIFECYCLECONFIGNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LifecycleConfigName").build();
+    private static final MarshallingInfo<String> DIRECTINTERNETACCESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DirectInternetAccess").build();
 
     private static final CreateNotebookInstanceRequestMarshaller instance = new CreateNotebookInstanceRequestMarshaller();
 
@@ -66,6 +70,8 @@ public class CreateNotebookInstanceRequestMarshaller {
             protocolMarshaller.marshall(createNotebookInstanceRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(createNotebookInstanceRequest.getKmsKeyId(), KMSKEYID_BINDING);
             protocolMarshaller.marshall(createNotebookInstanceRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createNotebookInstanceRequest.getLifecycleConfigName(), LIFECYCLECONFIGNAME_BINDING);
+            protocolMarshaller.marshall(createNotebookInstanceRequest.getDirectInternetAccess(), DIRECTINTERNETACCESS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -225,6 +225,41 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateNotebookInstanceLifecycleConfigResult> createNotebookInstanceLifecycleConfigAsync(
+            CreateNotebookInstanceLifecycleConfigRequest request) {
+
+        return createNotebookInstanceLifecycleConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateNotebookInstanceLifecycleConfigResult> createNotebookInstanceLifecycleConfigAsync(
+            final CreateNotebookInstanceLifecycleConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateNotebookInstanceLifecycleConfigRequest, CreateNotebookInstanceLifecycleConfigResult> asyncHandler) {
+        final CreateNotebookInstanceLifecycleConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateNotebookInstanceLifecycleConfigResult>() {
+            @Override
+            public CreateNotebookInstanceLifecycleConfigResult call() throws Exception {
+                CreateNotebookInstanceLifecycleConfigResult result = null;
+
+                try {
+                    result = executeCreateNotebookInstanceLifecycleConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreatePresignedNotebookInstanceUrlResult> createPresignedNotebookInstanceUrlAsync(
             CreatePresignedNotebookInstanceUrlRequest request) {
 
@@ -425,6 +460,41 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteNotebookInstanceLifecycleConfigResult> deleteNotebookInstanceLifecycleConfigAsync(
+            DeleteNotebookInstanceLifecycleConfigRequest request) {
+
+        return deleteNotebookInstanceLifecycleConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteNotebookInstanceLifecycleConfigResult> deleteNotebookInstanceLifecycleConfigAsync(
+            final DeleteNotebookInstanceLifecycleConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteNotebookInstanceLifecycleConfigRequest, DeleteNotebookInstanceLifecycleConfigResult> asyncHandler) {
+        final DeleteNotebookInstanceLifecycleConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteNotebookInstanceLifecycleConfigResult>() {
+            @Override
+            public DeleteNotebookInstanceLifecycleConfigResult call() throws Exception {
+                DeleteNotebookInstanceLifecycleConfigResult result = null;
+
+                try {
+                    result = executeDeleteNotebookInstanceLifecycleConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(DeleteTagsRequest request) {
 
         return deleteTagsAsync(request, null);
@@ -590,6 +660,41 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeNotebookInstanceLifecycleConfigResult> describeNotebookInstanceLifecycleConfigAsync(
+            DescribeNotebookInstanceLifecycleConfigRequest request) {
+
+        return describeNotebookInstanceLifecycleConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeNotebookInstanceLifecycleConfigResult> describeNotebookInstanceLifecycleConfigAsync(
+            final DescribeNotebookInstanceLifecycleConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeNotebookInstanceLifecycleConfigRequest, DescribeNotebookInstanceLifecycleConfigResult> asyncHandler) {
+        final DescribeNotebookInstanceLifecycleConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeNotebookInstanceLifecycleConfigResult>() {
+            @Override
+            public DescribeNotebookInstanceLifecycleConfigResult call() throws Exception {
+                DescribeNotebookInstanceLifecycleConfigResult result = null;
+
+                try {
+                    result = executeDescribeNotebookInstanceLifecycleConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeTrainingJobResult> describeTrainingJobAsync(DescribeTrainingJobRequest request) {
 
         return describeTrainingJobAsync(request, null);
@@ -706,6 +811,41 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
 
                 try {
                     result = executeListModels(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListNotebookInstanceLifecycleConfigsResult> listNotebookInstanceLifecycleConfigsAsync(
+            ListNotebookInstanceLifecycleConfigsRequest request) {
+
+        return listNotebookInstanceLifecycleConfigsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListNotebookInstanceLifecycleConfigsResult> listNotebookInstanceLifecycleConfigsAsync(
+            final ListNotebookInstanceLifecycleConfigsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListNotebookInstanceLifecycleConfigsRequest, ListNotebookInstanceLifecycleConfigsResult> asyncHandler) {
+        final ListNotebookInstanceLifecycleConfigsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListNotebookInstanceLifecycleConfigsResult>() {
+            @Override
+            public ListNotebookInstanceLifecycleConfigsResult call() throws Exception {
+                ListNotebookInstanceLifecycleConfigsResult result = null;
+
+                try {
+                    result = executeListNotebookInstanceLifecycleConfigs(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1005,6 +1145,41 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
 
                 try {
                     result = executeUpdateNotebookInstance(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNotebookInstanceLifecycleConfigResult> updateNotebookInstanceLifecycleConfigAsync(
+            UpdateNotebookInstanceLifecycleConfigRequest request) {
+
+        return updateNotebookInstanceLifecycleConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNotebookInstanceLifecycleConfigResult> updateNotebookInstanceLifecycleConfigAsync(
+            final UpdateNotebookInstanceLifecycleConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateNotebookInstanceLifecycleConfigRequest, UpdateNotebookInstanceLifecycleConfigResult> asyncHandler) {
+        final UpdateNotebookInstanceLifecycleConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateNotebookInstanceLifecycleConfigResult>() {
+            @Override
+            public UpdateNotebookInstanceLifecycleConfigResult call() throws Exception {
+                UpdateNotebookInstanceLifecycleConfigResult result = null;
+
+                try {
+                    result = executeUpdateNotebookInstanceLifecycleConfig(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

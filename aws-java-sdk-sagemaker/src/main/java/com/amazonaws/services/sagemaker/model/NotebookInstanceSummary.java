@@ -70,6 +70,15 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
      * </p>
      */
     private java.util.Date lastModifiedTime;
+    /**
+     * <p>
+     * The name of a notebook instance lifecycle configuration associated with this notebook instance.
+     * </p>
+     * <p>
+     * For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     * </p>
+     */
+    private String notebookInstanceLifecycleConfigName;
 
     /**
      * <p>
@@ -390,6 +399,61 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * The name of a notebook instance lifecycle configuration associated with this notebook instance.
+     * </p>
+     * <p>
+     * For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     * </p>
+     * 
+     * @param notebookInstanceLifecycleConfigName
+     *        The name of a notebook instance lifecycle configuration associated with this notebook instance.</p>
+     *        <p>
+     *        For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     */
+
+    public void setNotebookInstanceLifecycleConfigName(String notebookInstanceLifecycleConfigName) {
+        this.notebookInstanceLifecycleConfigName = notebookInstanceLifecycleConfigName;
+    }
+
+    /**
+     * <p>
+     * The name of a notebook instance lifecycle configuration associated with this notebook instance.
+     * </p>
+     * <p>
+     * For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     * </p>
+     * 
+     * @return The name of a notebook instance lifecycle configuration associated with this notebook instance.</p>
+     *         <p>
+     *         For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     */
+
+    public String getNotebookInstanceLifecycleConfigName() {
+        return this.notebookInstanceLifecycleConfigName;
+    }
+
+    /**
+     * <p>
+     * The name of a notebook instance lifecycle configuration associated with this notebook instance.
+     * </p>
+     * <p>
+     * For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     * </p>
+     * 
+     * @param notebookInstanceLifecycleConfigName
+     *        The name of a notebook instance lifecycle configuration associated with this notebook instance.</p>
+     *        <p>
+     *        For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NotebookInstanceSummary withNotebookInstanceLifecycleConfigName(String notebookInstanceLifecycleConfigName) {
+        setNotebookInstanceLifecycleConfigName(notebookInstanceLifecycleConfigName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -413,7 +477,9 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getLastModifiedTime() != null)
-            sb.append("LastModifiedTime: ").append(getLastModifiedTime());
+            sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
+        if (getNotebookInstanceLifecycleConfigName() != null)
+            sb.append("NotebookInstanceLifecycleConfigName: ").append(getNotebookInstanceLifecycleConfigName());
         sb.append("}");
         return sb.toString();
     }
@@ -456,6 +522,11 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
             return false;
         if (other.getLastModifiedTime() != null && other.getLastModifiedTime().equals(this.getLastModifiedTime()) == false)
             return false;
+        if (other.getNotebookInstanceLifecycleConfigName() == null ^ this.getNotebookInstanceLifecycleConfigName() == null)
+            return false;
+        if (other.getNotebookInstanceLifecycleConfigName() != null
+                && other.getNotebookInstanceLifecycleConfigName().equals(this.getNotebookInstanceLifecycleConfigName()) == false)
+            return false;
         return true;
     }
 
@@ -471,6 +542,7 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
+        hashCode = prime * hashCode + ((getNotebookInstanceLifecycleConfigName() == null) ? 0 : getNotebookInstanceLifecycleConfigName().hashCode());
         return hashCode;
     }
 
