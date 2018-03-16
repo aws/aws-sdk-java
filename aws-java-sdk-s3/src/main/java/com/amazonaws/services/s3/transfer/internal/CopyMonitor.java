@@ -154,6 +154,10 @@ public class CopyMonitor implements Callable<CopyResult>, TransferMonitor {
     void copyComplete() {
         markAllDone();
         transfer.setState(TransferState.Completed);
+        // Since the copy has completed we can assume all bytes were successfully transferred
+        // This is required since there are no progress updates available during server side
+        // copying of data.
+        transfer.getProgress().updateProgress(transfer.getProgress().getTotalBytesToTransfer());
         // AmazonS3Client takes care of all the events for single part uploads,
         // so we only need to send a completed event for multipart uploads.
         if (multipartCopyCallable.isMultipartCopy()) {
