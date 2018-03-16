@@ -25,8 +25,9 @@ import com.amazonaws.services.s3.transfer.model.CopyResult;
  * </p>
  *
  * Please note that when copying data between s3 buckets there is no progress
- * updates whilst data is in transit. This means that the bytesTransferred
- * will not be accurate until the copy is complete.
+ * updates whilst data is in transit. This means that the
+ * {@link TransferProgress#getBytesTransferred()} will not be accurate until
+ * the copy is complete.
  *
  * @see TransferManager#copy(String, String, String, String)
  * @see TransferManager#copy(com.amazonaws.services.s3.model.CopyObjectRequest)

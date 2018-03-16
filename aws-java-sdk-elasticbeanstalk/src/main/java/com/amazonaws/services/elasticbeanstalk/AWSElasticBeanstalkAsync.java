@@ -730,6 +730,31 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
             com.amazonaws.handlers.AsyncHandler<DeletePlatformVersionRequest, DeletePlatformVersionResult> asyncHandler);
 
     /**
+     * @param describeAccountAttributesRequest
+     * @return A Java Future containing the result of the DescribeAccountAttributes operation returned by the service.
+     * @sample AWSElasticBeanstalkAsync.DescribeAccountAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeAccountAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAccountAttributesResult> describeAccountAttributesAsync(
+            DescribeAccountAttributesRequest describeAccountAttributesRequest);
+
+    /**
+     * @param describeAccountAttributesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAccountAttributes operation returned by the service.
+     * @sample AWSElasticBeanstalkAsyncHandler.DescribeAccountAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeAccountAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAccountAttributesResult> describeAccountAttributesAsync(
+            DescribeAccountAttributesRequest describeAccountAttributesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAccountAttributesRequest, DescribeAccountAttributesResult> asyncHandler);
+
+    /**
      * <p>
      * Retrieve a list of application versions.
      * </p>

@@ -123,6 +123,11 @@ public class AbstractAWSElasticBeanstalk implements AWSElasticBeanstalk {
     }
 
     @Override
+    public DescribeAccountAttributesResult describeAccountAttributes(DescribeAccountAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeApplicationVersionsResult describeApplicationVersions(DescribeApplicationVersionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

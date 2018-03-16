@@ -509,6 +509,17 @@ public interface AWSElasticBeanstalk {
     DeletePlatformVersionResult deletePlatformVersion(DeletePlatformVersionRequest deletePlatformVersionRequest);
 
     /**
+     * @param describeAccountAttributesRequest
+     * @return Result of the DescribeAccountAttributes operation returned by the service.
+     * @throws InsufficientPrivilegesException
+     *         The specified account does not have sufficient privileges for one of more AWS services.
+     * @sample AWSElasticBeanstalk.DescribeAccountAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeAccountAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeAccountAttributesResult describeAccountAttributes(DescribeAccountAttributesRequest describeAccountAttributesRequest);
+
+    /**
      * <p>
      * Retrieve a list of application versions.
      * </p>

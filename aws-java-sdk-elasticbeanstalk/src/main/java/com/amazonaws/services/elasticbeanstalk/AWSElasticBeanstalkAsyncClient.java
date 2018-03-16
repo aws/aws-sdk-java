@@ -807,6 +807,39 @@ public class AWSElasticBeanstalkAsyncClient extends AWSElasticBeanstalkClient im
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAccountAttributesResult> describeAccountAttributesAsync(DescribeAccountAttributesRequest request) {
+
+        return describeAccountAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccountAttributesResult> describeAccountAttributesAsync(final DescribeAccountAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAccountAttributesRequest, DescribeAccountAttributesResult> asyncHandler) {
+        final DescribeAccountAttributesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAccountAttributesResult>() {
+            @Override
+            public DescribeAccountAttributesResult call() throws Exception {
+                DescribeAccountAttributesResult result = null;
+
+                try {
+                    result = executeDescribeAccountAttributes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeApplicationVersionsResult> describeApplicationVersionsAsync(DescribeApplicationVersionsRequest request) {
 
         return describeApplicationVersionsAsync(request, null);

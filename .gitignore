@@ -1,6 +1,2 @@
 target/
 *settings.xml
-
-#intellij idea generated files
-.idea/
-*.iml

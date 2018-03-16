@@ -269,6 +269,19 @@ public class AbstractAWSElasticBeanstalkAsync extends AbstractAWSElasticBeanstal
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAccountAttributesResult> describeAccountAttributesAsync(DescribeAccountAttributesRequest request) {
+
+        return describeAccountAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccountAttributesResult> describeAccountAttributesAsync(DescribeAccountAttributesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAccountAttributesRequest, DescribeAccountAttributesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeApplicationVersionsResult> describeApplicationVersionsAsync(DescribeApplicationVersionsRequest request) {
 
         return describeApplicationVersionsAsync(request, null);

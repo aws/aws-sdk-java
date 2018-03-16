@@ -1228,6 +1228,53 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
     }
 
     /**
+     * @param describeAccountAttributesRequest
+     * @return Result of the DescribeAccountAttributes operation returned by the service.
+     * @throws InsufficientPrivilegesException
+     *         The specified account does not have sufficient privileges for one of more AWS services.
+     * @sample AWSElasticBeanstalk.DescribeAccountAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeAccountAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeAccountAttributesResult describeAccountAttributes(DescribeAccountAttributesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAccountAttributes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAccountAttributesResult executeDescribeAccountAttributes(DescribeAccountAttributesRequest describeAccountAttributesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAccountAttributesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAccountAttributesRequest> request = null;
+        Response<DescribeAccountAttributesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAccountAttributesRequestMarshaller().marshall(super.beforeMarshalling(describeAccountAttributesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeAccountAttributesResult> responseHandler = new StaxResponseHandler<DescribeAccountAttributesResult>(
+                    new DescribeAccountAttributesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Retrieve a list of application versions.
      * </p>

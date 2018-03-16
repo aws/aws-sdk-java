@@ -55,6 +55,8 @@ public enum ElasticBeanstalkActions implements Action {
     DeleteEnvironmentConfiguration("elasticbeanstalk:DeleteEnvironmentConfiguration"),
     /** Action for the DeletePlatformVersion operation. */
     DeletePlatformVersion("elasticbeanstalk:DeletePlatformVersion"),
+    /** Action for the DescribeAccountAttributes operation. */
+    DescribeAccountAttributes("elasticbeanstalk:DescribeAccountAttributes"),
     /** Action for the DescribeApplicationVersions operation. */
     DescribeApplicationVersions("elasticbeanstalk:DescribeApplicationVersions"),
     /** Action for the DescribeApplications operation. */
