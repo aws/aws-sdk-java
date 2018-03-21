@@ -94,7 +94,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
     private String name;
     /**
      * <p>
-     * A valid identifier from <a href=""https://spdx.org/licenses/"">https://spdx.org/licenses/</a>.
+     * A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.
      * </p>
      */
     private String spdxLicenseId;
@@ -542,11 +542,11 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A valid identifier from <a href=""https://spdx.org/licenses/"">https://spdx.org/licenses/</a>.
+     * A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.
      * </p>
      * 
      * @param spdxLicenseId
-     *        A valid identifier from <a href=""https://spdx.org/licenses/"">https://spdx.org/licenses/</a>.
+     *        A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.
      */
 
     public void setSpdxLicenseId(String spdxLicenseId) {
@@ -555,10 +555,10 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A valid identifier from <a href=""https://spdx.org/licenses/"">https://spdx.org/licenses/</a>.
+     * A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.
      * </p>
      * 
-     * @return A valid identifier from <a href=""https://spdx.org/licenses/"">https://spdx.org/licenses/</a>.
+     * @return A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.
      */
 
     public String getSpdxLicenseId() {
@@ -567,11 +567,11 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A valid identifier from <a href=""https://spdx.org/licenses/"">https://spdx.org/licenses/</a>.
+     * A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.
      * </p>
      * 
      * @param spdxLicenseId
-     *        A valid identifier from <a href=""https://spdx.org/licenses/"">https://spdx.org/licenses/</a>.
+     *        A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,3 +1,8 @@
+# __1.11.299__ __2018-03-21__
+## __AWSServerlessApplicationRepository__
+  - ### Features
+    - Documentation updates for Serverless Application Respository
+
 # __1.11.298__ __2018-03-20__
 ## __AWS Config__
   - ### Features

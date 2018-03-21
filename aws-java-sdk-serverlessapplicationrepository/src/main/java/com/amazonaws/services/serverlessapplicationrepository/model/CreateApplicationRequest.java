@@ -120,7 +120,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * The semantic version of the application:
      * </p>
      * <p>
-     * <a href=""https://semver.org/"">https://semver.org/</a>
+     * <a href="https://semver.org/">https://semver.org/</a>
      * </p>
      */
     private String semanticVersion;
@@ -132,7 +132,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     private String sourceCodeUrl;
     /**
      * <p>
-     * A valid identifier from <a href=""https://spdx.org/licenses/"">https://spdx.org/licenses/</a>.
+     * A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.
      * </p>
      */
     private String spdxLicenseId;
@@ -750,13 +750,13 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * The semantic version of the application:
      * </p>
      * <p>
-     * <a href=""https://semver.org/"">https://semver.org/</a>
+     * <a href="https://semver.org/">https://semver.org/</a>
      * </p>
      * 
      * @param semanticVersion
      *        The semantic version of the application:</p>
      *        <p>
-     *        <a href=""https://semver.org/"">https://semver.org/</a>
+     *        <a href="https://semver.org/">https://semver.org/</a>
      */
 
     public void setSemanticVersion(String semanticVersion) {
@@ -768,12 +768,12 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * The semantic version of the application:
      * </p>
      * <p>
-     * <a href=""https://semver.org/"">https://semver.org/</a>
+     * <a href="https://semver.org/">https://semver.org/</a>
      * </p>
      * 
      * @return The semantic version of the application:</p>
      *         <p>
-     *         <a href=""https://semver.org/"">https://semver.org/</a>
+     *         <a href="https://semver.org/">https://semver.org/</a>
      */
 
     public String getSemanticVersion() {
@@ -785,13 +785,13 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * The semantic version of the application:
      * </p>
      * <p>
-     * <a href=""https://semver.org/"">https://semver.org/</a>
+     * <a href="https://semver.org/">https://semver.org/</a>
      * </p>
      * 
      * @param semanticVersion
      *        The semantic version of the application:</p>
      *        <p>
-     *        <a href=""https://semver.org/"">https://semver.org/</a>
+     *        <a href="https://semver.org/">https://semver.org/</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -842,11 +842,11 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A valid identifier from <a href=""https://spdx.org/licenses/"">https://spdx.org/licenses/</a>.
+     * A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.
      * </p>
      * 
      * @param spdxLicenseId
-     *        A valid identifier from <a href=""https://spdx.org/licenses/"">https://spdx.org/licenses/</a>.
+     *        A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.
      */
 
     public void setSpdxLicenseId(String spdxLicenseId) {
@@ -855,10 +855,10 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A valid identifier from <a href=""https://spdx.org/licenses/"">https://spdx.org/licenses/</a>.
+     * A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.
      * </p>
      * 
-     * @return A valid identifier from <a href=""https://spdx.org/licenses/"">https://spdx.org/licenses/</a>.
+     * @return A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.
      */
 
     public String getSpdxLicenseId() {
@@ -867,11 +867,11 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A valid identifier from <a href=""https://spdx.org/licenses/"">https://spdx.org/licenses/</a>.
+     * A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.
      * </p>
      * 
      * @param spdxLicenseId
-     *        A valid identifier from <a href=""https://spdx.org/licenses/"">https://spdx.org/licenses/</a>.
+     *        A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

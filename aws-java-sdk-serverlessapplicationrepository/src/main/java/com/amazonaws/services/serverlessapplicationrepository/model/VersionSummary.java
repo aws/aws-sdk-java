@@ -45,7 +45,7 @@ public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
      * The semantic version of the application:
      * </p>
      * <p>
-     * <a href=""https://semver.org/"">https://semver.org/</a>
+     * <a href="https://semver.org/">https://semver.org/</a>
      * </p>
      */
     private String semanticVersion;
@@ -141,13 +141,13 @@ public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
      * The semantic version of the application:
      * </p>
      * <p>
-     * <a href=""https://semver.org/"">https://semver.org/</a>
+     * <a href="https://semver.org/">https://semver.org/</a>
      * </p>
      * 
      * @param semanticVersion
      *        The semantic version of the application:</p>
      *        <p>
-     *        <a href=""https://semver.org/"">https://semver.org/</a>
+     *        <a href="https://semver.org/">https://semver.org/</a>
      */
 
     public void setSemanticVersion(String semanticVersion) {
@@ -159,12 +159,12 @@ public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
      * The semantic version of the application:
      * </p>
      * <p>
-     * <a href=""https://semver.org/"">https://semver.org/</a>
+     * <a href="https://semver.org/">https://semver.org/</a>
      * </p>
      * 
      * @return The semantic version of the application:</p>
      *         <p>
-     *         <a href=""https://semver.org/"">https://semver.org/</a>
+     *         <a href="https://semver.org/">https://semver.org/</a>
      */
 
     public String getSemanticVersion() {
@@ -176,13 +176,13 @@ public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
      * The semantic version of the application:
      * </p>
      * <p>
-     * <a href=""https://semver.org/"">https://semver.org/</a>
+     * <a href="https://semver.org/">https://semver.org/</a>
      * </p>
      * 
      * @param semanticVersion
      *        The semantic version of the application:</p>
      *        <p>
-     *        <a href=""https://semver.org/"">https://semver.org/</a>
+     *        <a href="https://semver.org/">https://semver.org/</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
