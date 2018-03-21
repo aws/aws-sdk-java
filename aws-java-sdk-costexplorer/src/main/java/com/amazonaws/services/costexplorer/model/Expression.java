@@ -26,7 +26,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For
  * example, you can filter for <code>INSTANCE_TYPE==m4.xlarge OR INSTANCE_TYPE==c4.large</code>. The
- * <code>Expression</code> for that looks like this.
+ * <code>Expression</code> for that looks like this:
  * </p>
  * <p>
  * <code>{ "Dimensions": { "Key": "INSTANCE_TYPE", "Values": [ "m4.xlarge", “c4.large” ] } }</code>
@@ -43,7 +43,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This
  * allows you to filter on more advanced options. For example, you can filter on
  * <code>((INSTANCE_TYPE == m4.large OR INSTANCE_TYPE == m3.large) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>
- * . The <code>Expression</code> for that looks like this.
+ * . The <code>Expression</code> for that looks like this:
  * </p>
  * <p>
  * <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "INSTANCE_TYPE", "Values": [ "m4.x.large", "c4.large" ] }}, {"Tag": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code>
@@ -51,7 +51,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <note>
  * <p>
  * Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is
- * specified. The following example shows an Expression object that will create an error.
+ * specified. The following example shows an <code>Expression</code> object that creates an error.
  * </p>
  * </note>
  * <p>
@@ -68,7 +68,7 @@ public class Expression implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Return results that match either <code>Dimension</code>.
+     * Return results that match either <code>Dimension</code> object.
      * </p>
      */
     private java.util.List<Expression> or;
@@ -80,7 +80,7 @@ public class Expression implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<Expression> and;
     /**
      * <p>
-     * Return results that don't match <code>Dimension</code>.
+     * Return results that don't match a <code>Dimension</code> object.
      * </p>
      */
     private Expression not;
@@ -99,10 +99,10 @@ public class Expression implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Return results that match either <code>Dimension</code>.
+     * Return results that match either <code>Dimension</code> object.
      * </p>
      * 
-     * @return Return results that match either <code>Dimension</code>.
+     * @return Return results that match either <code>Dimension</code> object.
      */
 
     public java.util.List<Expression> getOr() {
@@ -111,11 +111,11 @@ public class Expression implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Return results that match either <code>Dimension</code>.
+     * Return results that match either <code>Dimension</code> object.
      * </p>
      * 
      * @param or
-     *        Return results that match either <code>Dimension</code>.
+     *        Return results that match either <code>Dimension</code> object.
      */
 
     public void setOr(java.util.Collection<Expression> or) {
@@ -129,7 +129,7 @@ public class Expression implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Return results that match either <code>Dimension</code>.
+     * Return results that match either <code>Dimension</code> object.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -138,7 +138,7 @@ public class Expression implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param or
-     *        Return results that match either <code>Dimension</code>.
+     *        Return results that match either <code>Dimension</code> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,11 +154,11 @@ public class Expression implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Return results that match either <code>Dimension</code>.
+     * Return results that match either <code>Dimension</code> object.
      * </p>
      * 
      * @param or
-     *        Return results that match either <code>Dimension</code>.
+     *        Return results that match either <code>Dimension</code> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -239,11 +239,11 @@ public class Expression implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Return results that don't match <code>Dimension</code>.
+     * Return results that don't match a <code>Dimension</code> object.
      * </p>
      * 
      * @param not
-     *        Return results that don't match <code>Dimension</code>.
+     *        Return results that don't match a <code>Dimension</code> object.
      */
 
     public void setNot(Expression not) {
@@ -252,10 +252,10 @@ public class Expression implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Return results that don't match <code>Dimension</code>.
+     * Return results that don't match a <code>Dimension</code> object.
      * </p>
      * 
-     * @return Return results that don't match <code>Dimension</code>.
+     * @return Return results that don't match a <code>Dimension</code> object.
      */
 
     public Expression getNot() {
@@ -264,11 +264,11 @@ public class Expression implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Return results that don't match <code>Dimension</code>.
+     * Return results that don't match a <code>Dimension</code> object.
      * </p>
      * 
      * @param not
-     *        Return results that don't match <code>Dimension</code>.
+     *        Return results that don't match a <code>Dimension</code> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

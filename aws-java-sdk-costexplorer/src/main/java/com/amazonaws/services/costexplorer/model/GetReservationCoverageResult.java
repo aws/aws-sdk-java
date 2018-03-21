@@ -31,7 +31,7 @@ public class GetReservationCoverageResult extends com.amazonaws.AmazonWebService
     private java.util.List<CoverageByTime> coveragesByTime;
     /**
      * <p>
-     * The total amount of instance usage covered by a reservation.
+     * The total amount of instance usage that is covered by a reservation.
      * </p>
      */
     private Coverage total;
@@ -115,11 +115,11 @@ public class GetReservationCoverageResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The total amount of instance usage covered by a reservation.
+     * The total amount of instance usage that is covered by a reservation.
      * </p>
      * 
      * @param total
-     *        The total amount of instance usage covered by a reservation.
+     *        The total amount of instance usage that is covered by a reservation.
      */
 
     public void setTotal(Coverage total) {
@@ -128,10 +128,10 @@ public class GetReservationCoverageResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The total amount of instance usage covered by a reservation.
+     * The total amount of instance usage that is covered by a reservation.
      * </p>
      * 
-     * @return The total amount of instance usage covered by a reservation.
+     * @return The total amount of instance usage that is covered by a reservation.
      */
 
     public Coverage getTotal() {
@@ -140,11 +140,11 @@ public class GetReservationCoverageResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The total amount of instance usage covered by a reservation.
+     * The total amount of instance usage that is covered by a reservation.
      * </p>
      * 
      * @param total
-     *        The total amount of instance usage covered by a reservation.
+     *        The total amount of instance usage that is covered by a reservation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Reservation coverage, in hours.
+ * Reservation coverage for a specified period, in hours.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CoverageByTime" target="_top">AWS API
@@ -36,7 +36,7 @@ public class CoverageByTime implements Serializable, Cloneable, StructuredPojo {
     private DateInterval timePeriod;
     /**
      * <p>
-     * The group of instances that a reservation covered.
+     * The groups of instances that are covered by a reservation.
      * </p>
      */
     private java.util.List<ReservationCoverageGroup> groups;
@@ -89,10 +89,10 @@ public class CoverageByTime implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The group of instances that a reservation covered.
+     * The groups of instances that are covered by a reservation.
      * </p>
      * 
-     * @return The group of instances that a reservation covered.
+     * @return The groups of instances that are covered by a reservation.
      */
 
     public java.util.List<ReservationCoverageGroup> getGroups() {
@@ -101,11 +101,11 @@ public class CoverageByTime implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The group of instances that a reservation covered.
+     * The groups of instances that are covered by a reservation.
      * </p>
      * 
      * @param groups
-     *        The group of instances that a reservation covered.
+     *        The groups of instances that are covered by a reservation.
      */
 
     public void setGroups(java.util.Collection<ReservationCoverageGroup> groups) {
@@ -119,7 +119,7 @@ public class CoverageByTime implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The group of instances that a reservation covered.
+     * The groups of instances that are covered by a reservation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -128,7 +128,7 @@ public class CoverageByTime implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param groups
-     *        The group of instances that a reservation covered.
+     *        The groups of instances that are covered by a reservation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,11 +144,11 @@ public class CoverageByTime implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The group of instances that a reservation covered.
+     * The groups of instances that are covered by a reservation.
      * </p>
      * 
      * @param groups
-     *        The group of instances that a reservation covered.
+     *        The groups of instances that are covered by a reservation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -16,6 +16,10 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
+ * <p>
+ * The AWS Elastic Beanstalk quota information for a single resource type in an AWS account. It reflects the resource's
+ * limits for this account.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ResourceQuota" target="_top">AWS API
  *      Documentation</a>
@@ -23,10 +27,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceQuota implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The maximum number of instances of this Elastic Beanstalk resource type that an AWS account can use.
+     * </p>
+     */
     private Integer maximum;
 
     /**
+     * <p>
+     * The maximum number of instances of this Elastic Beanstalk resource type that an AWS account can use.
+     * </p>
+     * 
      * @param maximum
+     *        The maximum number of instances of this Elastic Beanstalk resource type that an AWS account can use.
      */
 
     public void setMaximum(Integer maximum) {
@@ -34,7 +48,11 @@ public class ResourceQuota implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The maximum number of instances of this Elastic Beanstalk resource type that an AWS account can use.
+     * </p>
+     * 
+     * @return The maximum number of instances of this Elastic Beanstalk resource type that an AWS account can use.
      */
 
     public Integer getMaximum() {
@@ -42,7 +60,12 @@ public class ResourceQuota implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The maximum number of instances of this Elastic Beanstalk resource type that an AWS account can use.
+     * </p>
+     * 
      * @param maximum
+     *        The maximum number of instances of this Elastic Beanstalk resource type that an AWS account can use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -32,6 +32,10 @@ public class InputSecurityGroupMarshaller {
             .marshallLocationName("arn").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("id").build();
+    private static final MarshallingInfo<List> INPUTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("inputs").build();
+    private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("state").build();
     private static final MarshallingInfo<List> WHITELISTRULES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("whitelistRules").build();
 
@@ -53,6 +57,8 @@ public class InputSecurityGroupMarshaller {
         try {
             protocolMarshaller.marshall(inputSecurityGroup.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(inputSecurityGroup.getId(), ID_BINDING);
+            protocolMarshaller.marshall(inputSecurityGroup.getInputs(), INPUTS_BINDING);
+            protocolMarshaller.marshall(inputSecurityGroup.getState(), STATE_BINDING);
             protocolMarshaller.marshall(inputSecurityGroup.getWhitelistRules(), WHITELISTRULES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

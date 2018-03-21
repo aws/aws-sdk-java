@@ -270,6 +270,39 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<BatchGetResourceConfigResult> batchGetResourceConfigAsync(BatchGetResourceConfigRequest request) {
+
+        return batchGetResourceConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetResourceConfigResult> batchGetResourceConfigAsync(final BatchGetResourceConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchGetResourceConfigRequest, BatchGetResourceConfigResult> asyncHandler) {
+        final BatchGetResourceConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchGetResourceConfigResult>() {
+            @Override
+            public BatchGetResourceConfigResult call() throws Exception {
+                BatchGetResourceConfigResult result = null;
+
+                try {
+                    result = executeBatchGetResourceConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteConfigRuleResult> deleteConfigRuleAsync(DeleteConfigRuleRequest request) {
 
         return deleteConfigRuleAsync(request, null);

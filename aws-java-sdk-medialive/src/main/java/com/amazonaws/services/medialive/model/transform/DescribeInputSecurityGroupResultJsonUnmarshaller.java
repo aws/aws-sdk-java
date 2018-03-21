@@ -56,6 +56,14 @@ public class DescribeInputSecurityGroupResultJsonUnmarshaller implements Unmarsh
                     context.nextToken();
                     describeInputSecurityGroupResult.setId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("inputs", targetDepth)) {
+                    context.nextToken();
+                    describeInputSecurityGroupResult.setInputs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("state", targetDepth)) {
+                    context.nextToken();
+                    describeInputSecurityGroupResult.setState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("whitelistRules", targetDepth)) {
                     context.nextToken();
                     describeInputSecurityGroupResult.setWhitelistRules(new ListUnmarshaller<InputWhitelistRule>(InputWhitelistRuleJsonUnmarshaller

@@ -28,6 +28,19 @@ public class AbstractAmazonConfigAsync extends AbstractAmazonConfig implements A
     }
 
     @Override
+    public java.util.concurrent.Future<BatchGetResourceConfigResult> batchGetResourceConfigAsync(BatchGetResourceConfigRequest request) {
+
+        return batchGetResourceConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetResourceConfigResult> batchGetResourceConfigAsync(BatchGetResourceConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchGetResourceConfigRequest, BatchGetResourceConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteConfigRuleResult> deleteConfigRuleAsync(DeleteConfigRuleRequest request) {
 
         return deleteConfigRuleAsync(request, null);

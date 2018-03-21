@@ -45,6 +45,7 @@
       "skip" : true
     },
     "calculateCRC32FromCompressedData" : false,
+    "contentTypeOverride" : null,
     "convenienceTypeOverloads" : [ ],
     "customClientConfigFactory" : null,
     "customCodeTemplates" : null,

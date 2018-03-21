@@ -177,6 +177,41 @@ public class AWSCostExplorerAsyncClient extends AWSCostExplorerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetReservationPurchaseRecommendationResult> getReservationPurchaseRecommendationAsync(
+            GetReservationPurchaseRecommendationRequest request) {
+
+        return getReservationPurchaseRecommendationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetReservationPurchaseRecommendationResult> getReservationPurchaseRecommendationAsync(
+            final GetReservationPurchaseRecommendationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetReservationPurchaseRecommendationRequest, GetReservationPurchaseRecommendationResult> asyncHandler) {
+        final GetReservationPurchaseRecommendationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetReservationPurchaseRecommendationResult>() {
+            @Override
+            public GetReservationPurchaseRecommendationResult call() throws Exception {
+                GetReservationPurchaseRecommendationResult result = null;
+
+                try {
+                    result = executeGetReservationPurchaseRecommendation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetReservationUtilizationResult> getReservationUtilizationAsync(GetReservationUtilizationRequest request) {
 
         return getReservationUtilizationAsync(request, null);

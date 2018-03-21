@@ -66,6 +66,20 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private Boolean initProcessEnabled;
+    /**
+     * <p>
+     * The value for the size of the <code>/dev/shm</code> volume. This parameter maps to the <code>--shm-size</code>
+     * option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     */
+    private Integer sharedMemorySize;
+    /**
+     * <p>
+     * The container path, mount options, and size of the tmpfs mount. This parameter maps to the <code>--tmpfs</code>
+     * option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tmpfs> tmpfs;
 
     /**
      * <p>
@@ -377,6 +391,133 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The value for the size of the <code>/dev/shm</code> volume. This parameter maps to the <code>--shm-size</code>
+     * option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * 
+     * @param sharedMemorySize
+     *        The value for the size of the <code>/dev/shm</code> volume. This parameter maps to the
+     *        <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     */
+
+    public void setSharedMemorySize(Integer sharedMemorySize) {
+        this.sharedMemorySize = sharedMemorySize;
+    }
+
+    /**
+     * <p>
+     * The value for the size of the <code>/dev/shm</code> volume. This parameter maps to the <code>--shm-size</code>
+     * option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * 
+     * @return The value for the size of the <code>/dev/shm</code> volume. This parameter maps to the
+     *         <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     */
+
+    public Integer getSharedMemorySize() {
+        return this.sharedMemorySize;
+    }
+
+    /**
+     * <p>
+     * The value for the size of the <code>/dev/shm</code> volume. This parameter maps to the <code>--shm-size</code>
+     * option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * 
+     * @param sharedMemorySize
+     *        The value for the size of the <code>/dev/shm</code> volume. This parameter maps to the
+     *        <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LinuxParameters withSharedMemorySize(Integer sharedMemorySize) {
+        setSharedMemorySize(sharedMemorySize);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The container path, mount options, and size of the tmpfs mount. This parameter maps to the <code>--tmpfs</code>
+     * option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * 
+     * @return The container path, mount options, and size of the tmpfs mount. This parameter maps to the
+     *         <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     */
+
+    public java.util.List<Tmpfs> getTmpfs() {
+        if (tmpfs == null) {
+            tmpfs = new com.amazonaws.internal.SdkInternalList<Tmpfs>();
+        }
+        return tmpfs;
+    }
+
+    /**
+     * <p>
+     * The container path, mount options, and size of the tmpfs mount. This parameter maps to the <code>--tmpfs</code>
+     * option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * 
+     * @param tmpfs
+     *        The container path, mount options, and size of the tmpfs mount. This parameter maps to the
+     *        <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     */
+
+    public void setTmpfs(java.util.Collection<Tmpfs> tmpfs) {
+        if (tmpfs == null) {
+            this.tmpfs = null;
+            return;
+        }
+
+        this.tmpfs = new com.amazonaws.internal.SdkInternalList<Tmpfs>(tmpfs);
+    }
+
+    /**
+     * <p>
+     * The container path, mount options, and size of the tmpfs mount. This parameter maps to the <code>--tmpfs</code>
+     * option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTmpfs(java.util.Collection)} or {@link #withTmpfs(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tmpfs
+     *        The container path, mount options, and size of the tmpfs mount. This parameter maps to the
+     *        <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LinuxParameters withTmpfs(Tmpfs... tmpfs) {
+        if (this.tmpfs == null) {
+            setTmpfs(new com.amazonaws.internal.SdkInternalList<Tmpfs>(tmpfs.length));
+        }
+        for (Tmpfs ele : tmpfs) {
+            this.tmpfs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The container path, mount options, and size of the tmpfs mount. This parameter maps to the <code>--tmpfs</code>
+     * option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * 
+     * @param tmpfs
+     *        The container path, mount options, and size of the tmpfs mount. This parameter maps to the
+     *        <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LinuxParameters withTmpfs(java.util.Collection<Tmpfs> tmpfs) {
+        setTmpfs(tmpfs);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -392,7 +533,11 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
         if (getDevices() != null)
             sb.append("Devices: ").append(getDevices()).append(",");
         if (getInitProcessEnabled() != null)
-            sb.append("InitProcessEnabled: ").append(getInitProcessEnabled());
+            sb.append("InitProcessEnabled: ").append(getInitProcessEnabled()).append(",");
+        if (getSharedMemorySize() != null)
+            sb.append("SharedMemorySize: ").append(getSharedMemorySize()).append(",");
+        if (getTmpfs() != null)
+            sb.append("Tmpfs: ").append(getTmpfs());
         sb.append("}");
         return sb.toString();
     }
@@ -419,6 +564,14 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getInitProcessEnabled() != null && other.getInitProcessEnabled().equals(this.getInitProcessEnabled()) == false)
             return false;
+        if (other.getSharedMemorySize() == null ^ this.getSharedMemorySize() == null)
+            return false;
+        if (other.getSharedMemorySize() != null && other.getSharedMemorySize().equals(this.getSharedMemorySize()) == false)
+            return false;
+        if (other.getTmpfs() == null ^ this.getTmpfs() == null)
+            return false;
+        if (other.getTmpfs() != null && other.getTmpfs().equals(this.getTmpfs()) == false)
+            return false;
         return true;
     }
 
@@ -430,6 +583,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getCapabilities() == null) ? 0 : getCapabilities().hashCode());
         hashCode = prime * hashCode + ((getDevices() == null) ? 0 : getDevices().hashCode());
         hashCode = prime * hashCode + ((getInitProcessEnabled() == null) ? 0 : getInitProcessEnabled().hashCode());
+        hashCode = prime * hashCode + ((getSharedMemorySize() == null) ? 0 : getSharedMemorySize().hashCode());
+        hashCode = prime * hashCode + ((getTmpfs() == null) ? 0 : getTmpfs().hashCode());
         return hashCode;
     }
 

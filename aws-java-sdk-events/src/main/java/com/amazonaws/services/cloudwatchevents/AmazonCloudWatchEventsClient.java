@@ -1008,7 +1008,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * </li>
      * <li>
      * <p>
-     * Amazon SQS queues
+     * Amazon SQS queues, including FIFO queues
      * </p>
      * </li>
      * <li>

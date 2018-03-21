@@ -24,5 +24,6 @@ public class JsonDocumentFields {
      public static final String PRINCIPAL = "Principal";
      public static final String ACTION = "Action";
      public static final String RESOURCE = "Resource";
+     public static final String NOT_RESOURCE = "NotResource";
      public static final String CONDITION = "Condition";
 }

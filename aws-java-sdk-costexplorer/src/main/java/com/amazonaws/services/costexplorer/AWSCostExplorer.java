@@ -58,11 +58,12 @@ public interface AWSCostExplorer {
 
     /**
      * <p>
-     * Retrieve cost and usage metrics for your account. You can specify which cost and usage-related metric, such as
+     * Retrieves cost and usage metrics for your account. You can specify which cost and usage-related metric, such as
      * <code>BlendedCosts</code> or <code>UsageQuantity</code>, that you want the request to return. You can also filter
      * and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time
-     * range. See the <code>GetDimensionValues</code> action for a complete list of the valid dimensions. Master
-     * accounts in an organization have access to all member accounts.
+     * range. For a complete list of valid dimensions, see the
+     * <code> <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a> </code>
+     * operation. Master accounts in an organization in AWS Organizations have access to all member accounts.
      * </p>
      * 
      * @param getCostAndUsageRequest
@@ -83,8 +84,8 @@ public interface AWSCostExplorer {
 
     /**
      * <p>
-     * You can use <code>GetDimensionValues</code> to retrieve all available filter values for a specific filter over a
-     * period of time. You can search the dimension values for an arbitrary string.
+     * Retrieves all available filter values for a specific filter over a period of time. You can search the dimension
+     * values for an arbitrary string.
      * </p>
      * 
      * @param getDimensionValuesRequest
@@ -103,8 +104,10 @@ public interface AWSCostExplorer {
 
     /**
      * <p>
-     * Retrieve the reservation coverage for your account. An organization's master account has access to the associated
-     * member accounts. For any time period, you can filter data about reservation usage by the following dimensions.
+     * Retrieves the reservation coverage for your account. This allows you to see how much of your Amazon Elastic
+     * Compute Cloud, Amazon ElastiCache, Amazon Relational Database Service, or Amazon Redshift usage is covered by a
+     * reservation. An organization's master account can see the coverage of the associated member accounts. For any
+     * time period, you can filter data about reservation usage by the following dimensions:
      * </p>
      * <ul>
      * <li>
@@ -143,7 +146,8 @@ public interface AWSCostExplorer {
      * </p>
      * 
      * @param getReservationCoverageRequest
-     *        You can query for how much of your instance usage was covered by a reservation.
+     *        You can use the following request parameters to query for how much of your instance usage is covered by a
+     *        reservation.
      * @return Result of the GetReservationCoverage operation returned by the service.
      * @throws LimitExceededException
      *         You made too many calls in a short period of time. Try again later.
@@ -159,10 +163,45 @@ public interface AWSCostExplorer {
 
     /**
      * <p>
-     * You can retrieve the Reservation utilization for your account. Master accounts in an organization have access to
-     * their associated member accounts. You can filter data by dimensions in a time period. You can use
-     * <code>GetDimensionValues</code> to determine the possible dimension values. Currently, you can group only by
-     * <code>SUBSCRIPTION_ID</code>.
+     * Gets recommendations for which reservations to purchase. These recommendations could help you reduce your costs.
+     * Reservations provide a discounted hourly rate (up to 75%) compared to On-Demand pricing.
+     * </p>
+     * <p>
+     * AWS generates your recommendations by identifying your On-Demand usage during a specific time period and
+     * collecting your usage into categories that are eligible for a reservation. After AWS has these categories, it
+     * simulates every combination of reservations in each category of usage to identify the best number of each type of
+     * RI to purchase to maximize your estimated savings.
+     * </p>
+     * <p>
+     * For example, AWS automatically aggregates your EC2 Linux, shared tenancy, and c4 family usage in the US West
+     * (Oregon) Region and recommends that you buy size-flexible regional reservations to apply to the c4 family usage.
+     * AWS recommends the smallest size instance in an instance family. This makes it easier to purchase a size-flexible
+     * RI. AWS also shows the equal number of normalized units so that you can purchase any instance size that you want.
+     * For this example, your RI recommendation would be for <code>c4.large</code>, because that is the smallest size
+     * instance in the c4 instance family.
+     * </p>
+     * 
+     * @param getReservationPurchaseRecommendationRequest
+     * @return Result of the GetReservationPurchaseRecommendation operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws DataUnavailableException
+     *         The requested data is unavailable.
+     * @throws InvalidNextTokenException
+     *         The pagination token is invalid. Try again without a pagination token.
+     * @sample AWSCostExplorer.GetReservationPurchaseRecommendation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationPurchaseRecommendation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetReservationPurchaseRecommendationResult getReservationPurchaseRecommendation(
+            GetReservationPurchaseRecommendationRequest getReservationPurchaseRecommendationRequest);
+
+    /**
+     * <p>
+     * You can retrieve the reservation utilization for your account. Master accounts in an organization in AWS
+     * Organizations have access to their associated member accounts. You can filter data by dimensions in a time
+     * period. You can use <code>GetDimensionValues</code> to determine the possible dimension values. Currently, you
+     * can group only by <code>SUBSCRIPTION_ID</code>.
      * </p>
      * 
      * @param getReservationUtilizationRequest

@@ -8,6 +8,7 @@
       "skip" : true
     },
     "calculateCRC32FromCompressedData" : false,
+    "contentTypeOverride" : null,
     "convenienceTypeOverloads" : [ {
       "convenienceType" : "com.amazonaws.services.stepfunctions.builder.StateMachine",
       "memberName" : "definition",

@@ -36,7 +36,7 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
     private String utilizationPercentage;
     /**
      * <p>
-     * How many RI hours you purchased.
+     * How many RI hours that you purchased.
      * </p>
      */
     private String purchasedHours;
@@ -95,11 +95,11 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * How many RI hours you purchased.
+     * How many RI hours that you purchased.
      * </p>
      * 
      * @param purchasedHours
-     *        How many RI hours you purchased.
+     *        How many RI hours that you purchased.
      */
 
     public void setPurchasedHours(String purchasedHours) {
@@ -108,10 +108,10 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * How many RI hours you purchased.
+     * How many RI hours that you purchased.
      * </p>
      * 
-     * @return How many RI hours you purchased.
+     * @return How many RI hours that you purchased.
      */
 
     public String getPurchasedHours() {
@@ -120,11 +120,11 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * How many RI hours you purchased.
+     * How many RI hours that you purchased.
      * </p>
      * 
      * @param purchasedHours
-     *        How many RI hours you purchased.
+     *        How many RI hours that you purchased.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

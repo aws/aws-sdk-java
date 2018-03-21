@@ -19,7 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * You can query for how much of your instance usage was covered by a reservation.
+ * You can use the following request parameters to query for how much of your instance usage is covered by a
+ * reservation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationCoverage" target="_top">AWS API
@@ -31,7 +32,7 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The start and end dates of the period for which you want to retrieve data about reservation coverage. You can
-     * retrieve data for a maximum of 13 months-the last 12 months and the current month. The start date is inclusive,
+     * retrieve data for a maximum of 13 months: the last 12 months and the current month. The start date is inclusive,
      * but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
      * is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
      * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
@@ -40,7 +41,7 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
     private DateInterval timePeriod;
     /**
      * <p>
-     * You can group the data by the following attributes.
+     * You can group the data by the following attributes:
      * </p>
      * <ul>
      * <li>
@@ -89,7 +90,7 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
     private String granularity;
     /**
      * <p>
-     * Filters utilization data by dimensions. You can filter by the following dimensions.
+     * Filters utilization data by dimensions. You can filter by the following dimensions:
      * </p>
      * <ul>
      * <li>
@@ -124,9 +125,10 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * </ul>
      * <p>
-     * <code>GetReservationCoverage</code> uses the same <code>Expression</code> object as the other operations, but
-     * only <code>AND</code> is supported among each dimension. You can nest only one level deep. If there are multiple
-     * values for a dimension, they are OR'd together.
+     * <code>GetReservationCoverage</code> uses the same
+     * <code> <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> </code>
+     * object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only
+     * one level deep. If there are multiple values for a dimension, they are OR'd together.
      * </p>
      */
     private Expression filter;
@@ -141,7 +143,7 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The start and end dates of the period for which you want to retrieve data about reservation coverage. You can
-     * retrieve data for a maximum of 13 months-the last 12 months and the current month. The start date is inclusive,
+     * retrieve data for a maximum of 13 months: the last 12 months and the current month. The start date is inclusive,
      * but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
      * is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
      * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
@@ -149,7 +151,7 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param timePeriod
      *        The start and end dates of the period for which you want to retrieve data about reservation coverage. You
-     *        can retrieve data for a maximum of 13 months-the last 12 months and the current month. The start date is
+     *        can retrieve data for a maximum of 13 months: the last 12 months and the current month. The start date is
      *        inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code>
      *        and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from
      *        <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including
@@ -163,14 +165,14 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The start and end dates of the period for which you want to retrieve data about reservation coverage. You can
-     * retrieve data for a maximum of 13 months-the last 12 months and the current month. The start date is inclusive,
+     * retrieve data for a maximum of 13 months: the last 12 months and the current month. The start date is inclusive,
      * but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
      * is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
      * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
      * </p>
      * 
      * @return The start and end dates of the period for which you want to retrieve data about reservation coverage. You
-     *         can retrieve data for a maximum of 13 months-the last 12 months and the current month. The start date is
+     *         can retrieve data for a maximum of 13 months: the last 12 months and the current month. The start date is
      *         inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code>
      *         and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from
      *         <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including
@@ -184,7 +186,7 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The start and end dates of the period for which you want to retrieve data about reservation coverage. You can
-     * retrieve data for a maximum of 13 months-the last 12 months and the current month. The start date is inclusive,
+     * retrieve data for a maximum of 13 months: the last 12 months and the current month. The start date is inclusive,
      * but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
      * is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
      * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
@@ -192,7 +194,7 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param timePeriod
      *        The start and end dates of the period for which you want to retrieve data about reservation coverage. You
-     *        can retrieve data for a maximum of 13 months-the last 12 months and the current month. The start date is
+     *        can retrieve data for a maximum of 13 months: the last 12 months and the current month. The start date is
      *        inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code>
      *        and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from
      *        <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including
@@ -207,7 +209,7 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * You can group the data by the following attributes.
+     * You can group the data by the following attributes:
      * </p>
      * <ul>
      * <li>
@@ -242,7 +244,7 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * </ul>
      * 
-     * @return You can group the data by the following attributes. </p>
+     * @return You can group the data by the following attributes:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -282,7 +284,7 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * You can group the data by the following attributes.
+     * You can group the data by the following attributes:
      * </p>
      * <ul>
      * <li>
@@ -318,7 +320,7 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * 
      * @param groupBy
-     *        You can group the data by the following attributes. </p>
+     *        You can group the data by the following attributes:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -363,7 +365,7 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * You can group the data by the following attributes.
+     * You can group the data by the following attributes:
      * </p>
      * <ul>
      * <li>
@@ -404,7 +406,7 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param groupBy
-     *        You can group the data by the following attributes. </p>
+     *        You can group the data by the following attributes:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -451,7 +453,7 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * You can group the data by the following attributes.
+     * You can group the data by the following attributes:
      * </p>
      * <ul>
      * <li>
@@ -487,7 +489,7 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * 
      * @param groupBy
-     *        You can group the data by the following attributes. </p>
+     *        You can group the data by the following attributes:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -628,7 +630,7 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Filters utilization data by dimensions. You can filter by the following dimensions.
+     * Filters utilization data by dimensions. You can filter by the following dimensions:
      * </p>
      * <ul>
      * <li>
@@ -663,13 +665,14 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * </ul>
      * <p>
-     * <code>GetReservationCoverage</code> uses the same <code>Expression</code> object as the other operations, but
-     * only <code>AND</code> is supported among each dimension. You can nest only one level deep. If there are multiple
-     * values for a dimension, they are OR'd together.
+     * <code>GetReservationCoverage</code> uses the same
+     * <code> <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> </code>
+     * object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only
+     * one level deep. If there are multiple values for a dimension, they are OR'd together.
      * </p>
      * 
      * @param filter
-     *        Filters utilization data by dimensions. You can filter by the following dimensions.</p>
+     *        Filters utilization data by dimensions. You can filter by the following dimensions:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -703,9 +706,10 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        </ul>
      *        <p>
-     *        <code>GetReservationCoverage</code> uses the same <code>Expression</code> object as the other operations,
-     *        but only <code>AND</code> is supported among each dimension. You can nest only one level deep. If there
-     *        are multiple values for a dimension, they are OR'd together.
+     *        <code>GetReservationCoverage</code> uses the same
+     *        <code> <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> </code>
+     *        object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest
+     *        only one level deep. If there are multiple values for a dimension, they are OR'd together.
      */
 
     public void setFilter(Expression filter) {
@@ -714,7 +718,7 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Filters utilization data by dimensions. You can filter by the following dimensions.
+     * Filters utilization data by dimensions. You can filter by the following dimensions:
      * </p>
      * <ul>
      * <li>
@@ -749,12 +753,13 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * </ul>
      * <p>
-     * <code>GetReservationCoverage</code> uses the same <code>Expression</code> object as the other operations, but
-     * only <code>AND</code> is supported among each dimension. You can nest only one level deep. If there are multiple
-     * values for a dimension, they are OR'd together.
+     * <code>GetReservationCoverage</code> uses the same
+     * <code> <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> </code>
+     * object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only
+     * one level deep. If there are multiple values for a dimension, they are OR'd together.
      * </p>
      * 
-     * @return Filters utilization data by dimensions. You can filter by the following dimensions.</p>
+     * @return Filters utilization data by dimensions. You can filter by the following dimensions:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -788,9 +793,10 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      *         </li>
      *         </ul>
      *         <p>
-     *         <code>GetReservationCoverage</code> uses the same <code>Expression</code> object as the other operations,
-     *         but only <code>AND</code> is supported among each dimension. You can nest only one level deep. If there
-     *         are multiple values for a dimension, they are OR'd together.
+     *         <code>GetReservationCoverage</code> uses the same
+     *         <code> <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> </code>
+     *         object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest
+     *         only one level deep. If there are multiple values for a dimension, they are OR'd together.
      */
 
     public Expression getFilter() {
@@ -799,7 +805,7 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Filters utilization data by dimensions. You can filter by the following dimensions.
+     * Filters utilization data by dimensions. You can filter by the following dimensions:
      * </p>
      * <ul>
      * <li>
@@ -834,13 +840,14 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * </ul>
      * <p>
-     * <code>GetReservationCoverage</code> uses the same <code>Expression</code> object as the other operations, but
-     * only <code>AND</code> is supported among each dimension. You can nest only one level deep. If there are multiple
-     * values for a dimension, they are OR'd together.
+     * <code>GetReservationCoverage</code> uses the same
+     * <code> <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> </code>
+     * object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only
+     * one level deep. If there are multiple values for a dimension, they are OR'd together.
      * </p>
      * 
      * @param filter
-     *        Filters utilization data by dimensions. You can filter by the following dimensions.</p>
+     *        Filters utilization data by dimensions. You can filter by the following dimensions:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -874,9 +881,10 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        </ul>
      *        <p>
-     *        <code>GetReservationCoverage</code> uses the same <code>Expression</code> object as the other operations,
-     *        but only <code>AND</code> is supported among each dimension. You can nest only one level deep. If there
-     *        are multiple values for a dimension, they are OR'd together.
+     *        <code>GetReservationCoverage</code> uses the same
+     *        <code> <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> </code>
+     *        object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest
+     *        only one level deep. If there are multiple values for a dimension, they are OR'd together.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

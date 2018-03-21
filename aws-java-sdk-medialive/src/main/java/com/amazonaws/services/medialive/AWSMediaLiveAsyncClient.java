@@ -554,6 +554,72 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
         });
     }
 
+    @Override
+    public java.util.concurrent.Future<UpdateInputResult> updateInputAsync(UpdateInputRequest request) {
+
+        return updateInputAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInputResult> updateInputAsync(final UpdateInputRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateInputRequest, UpdateInputResult> asyncHandler) {
+        final UpdateInputRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateInputResult>() {
+            @Override
+            public UpdateInputResult call() throws Exception {
+                UpdateInputResult result = null;
+
+                try {
+                    result = executeUpdateInput(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInputSecurityGroupResult> updateInputSecurityGroupAsync(UpdateInputSecurityGroupRequest request) {
+
+        return updateInputSecurityGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInputSecurityGroupResult> updateInputSecurityGroupAsync(final UpdateInputSecurityGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateInputSecurityGroupRequest, UpdateInputSecurityGroupResult> asyncHandler) {
+        final UpdateInputSecurityGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateInputSecurityGroupResult>() {
+            @Override
+            public UpdateInputSecurityGroupResult call() throws Exception {
+                UpdateInputSecurityGroupResult result = null;
+
+                try {
+                    result = executeUpdateInputSecurityGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
     /**
      * Shuts down the client, releasing all managed resources. This includes forcibly terminating all pending
      * asynchronous service calls. Clients who wish to give pending asynchronous service calls time to complete should

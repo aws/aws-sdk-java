@@ -222,4 +222,30 @@ public class AbstractAWSMediaLiveAsync extends AbstractAWSMediaLive implements A
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Override
+    public java.util.concurrent.Future<UpdateInputResult> updateInputAsync(UpdateInputRequest request) {
+
+        return updateInputAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInputResult> updateInputAsync(UpdateInputRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateInputRequest, UpdateInputResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInputSecurityGroupResult> updateInputSecurityGroupAsync(UpdateInputSecurityGroupRequest request) {
+
+        return updateInputSecurityGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInputSecurityGroupResult> updateInputSecurityGroupAsync(UpdateInputSecurityGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateInputSecurityGroupRequest, UpdateInputSecurityGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
 }

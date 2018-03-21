@@ -85,8 +85,10 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String platformVersion;
     /**
      * <p>
-     * Whether to force a new deployment of the service. By default, <code>--no-force-new-deployment</code> is assumed
-     * unless otherwise specified.
+     * Whether to force a new deployment of the service. Deployments are not forced by default. You can use this option
+     * to trigger a new deployment with no service definition changes. For example, you can update a service's tasks to
+     * use a newer Docker image with the same image/tag combination (<code>my_image:latest</code>) or to roll Fargate
+     * tasks onto a newer platform version.
      * </p>
      */
     private Boolean forceNewDeployment;
@@ -477,13 +479,17 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Whether to force a new deployment of the service. By default, <code>--no-force-new-deployment</code> is assumed
-     * unless otherwise specified.
+     * Whether to force a new deployment of the service. Deployments are not forced by default. You can use this option
+     * to trigger a new deployment with no service definition changes. For example, you can update a service's tasks to
+     * use a newer Docker image with the same image/tag combination (<code>my_image:latest</code>) or to roll Fargate
+     * tasks onto a newer platform version.
      * </p>
      * 
      * @param forceNewDeployment
-     *        Whether to force a new deployment of the service. By default, <code>--no-force-new-deployment</code> is
-     *        assumed unless otherwise specified.
+     *        Whether to force a new deployment of the service. Deployments are not forced by default. You can use this
+     *        option to trigger a new deployment with no service definition changes. For example, you can update a
+     *        service's tasks to use a newer Docker image with the same image/tag combination (
+     *        <code>my_image:latest</code>) or to roll Fargate tasks onto a newer platform version.
      */
 
     public void setForceNewDeployment(Boolean forceNewDeployment) {
@@ -492,12 +498,16 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Whether to force a new deployment of the service. By default, <code>--no-force-new-deployment</code> is assumed
-     * unless otherwise specified.
+     * Whether to force a new deployment of the service. Deployments are not forced by default. You can use this option
+     * to trigger a new deployment with no service definition changes. For example, you can update a service's tasks to
+     * use a newer Docker image with the same image/tag combination (<code>my_image:latest</code>) or to roll Fargate
+     * tasks onto a newer platform version.
      * </p>
      * 
-     * @return Whether to force a new deployment of the service. By default, <code>--no-force-new-deployment</code> is
-     *         assumed unless otherwise specified.
+     * @return Whether to force a new deployment of the service. Deployments are not forced by default. You can use this
+     *         option to trigger a new deployment with no service definition changes. For example, you can update a
+     *         service's tasks to use a newer Docker image with the same image/tag combination (
+     *         <code>my_image:latest</code>) or to roll Fargate tasks onto a newer platform version.
      */
 
     public Boolean getForceNewDeployment() {
@@ -506,13 +516,17 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Whether to force a new deployment of the service. By default, <code>--no-force-new-deployment</code> is assumed
-     * unless otherwise specified.
+     * Whether to force a new deployment of the service. Deployments are not forced by default. You can use this option
+     * to trigger a new deployment with no service definition changes. For example, you can update a service's tasks to
+     * use a newer Docker image with the same image/tag combination (<code>my_image:latest</code>) or to roll Fargate
+     * tasks onto a newer platform version.
      * </p>
      * 
      * @param forceNewDeployment
-     *        Whether to force a new deployment of the service. By default, <code>--no-force-new-deployment</code> is
-     *        assumed unless otherwise specified.
+     *        Whether to force a new deployment of the service. Deployments are not forced by default. You can use this
+     *        option to trigger a new deployment with no service definition changes. For example, you can update a
+     *        service's tasks to use a newer Docker image with the same image/tag combination (
+     *        <code>my_image:latest</code>) or to roll Fargate tasks onto a newer platform version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -523,12 +537,16 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Whether to force a new deployment of the service. By default, <code>--no-force-new-deployment</code> is assumed
-     * unless otherwise specified.
+     * Whether to force a new deployment of the service. Deployments are not forced by default. You can use this option
+     * to trigger a new deployment with no service definition changes. For example, you can update a service's tasks to
+     * use a newer Docker image with the same image/tag combination (<code>my_image:latest</code>) or to roll Fargate
+     * tasks onto a newer platform version.
      * </p>
      * 
-     * @return Whether to force a new deployment of the service. By default, <code>--no-force-new-deployment</code> is
-     *         assumed unless otherwise specified.
+     * @return Whether to force a new deployment of the service. Deployments are not forced by default. You can use this
+     *         option to trigger a new deployment with no service definition changes. For example, you can update a
+     *         service's tasks to use a newer Docker image with the same image/tag combination (
+     *         <code>my_image:latest</code>) or to roll Fargate tasks onto a newer platform version.
      */
 
     public Boolean isForceNewDeployment() {

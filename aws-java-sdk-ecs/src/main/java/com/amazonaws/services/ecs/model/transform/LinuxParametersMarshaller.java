@@ -34,6 +34,10 @@ public class LinuxParametersMarshaller {
             .marshallLocationName("devices").build();
     private static final MarshallingInfo<Boolean> INITPROCESSENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("initProcessEnabled").build();
+    private static final MarshallingInfo<Integer> SHAREDMEMORYSIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sharedMemorySize").build();
+    private static final MarshallingInfo<List> TMPFS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tmpfs").build();
 
     private static final LinuxParametersMarshaller instance = new LinuxParametersMarshaller();
 
@@ -54,6 +58,8 @@ public class LinuxParametersMarshaller {
             protocolMarshaller.marshall(linuxParameters.getCapabilities(), CAPABILITIES_BINDING);
             protocolMarshaller.marshall(linuxParameters.getDevices(), DEVICES_BINDING);
             protocolMarshaller.marshall(linuxParameters.getInitProcessEnabled(), INITPROCESSENABLED_BINDING);
+            protocolMarshaller.marshall(linuxParameters.getSharedMemorySize(), SHAREDMEMORYSIZE_BINDING);
+            protocolMarshaller.marshall(linuxParameters.getTmpfs(), TMPFS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

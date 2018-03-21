@@ -103,6 +103,16 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
     }
 
     @Override
+    public UpdateInputResult updateInput(UpdateInputRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateInputSecurityGroupResult updateInputSecurityGroup(UpdateInputSecurityGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public void shutdown() {
         throw new java.lang.UnsupportedOperationException();
     }

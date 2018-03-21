@@ -16,6 +16,10 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
+ * <p>
+ * A set of per-resource AWS Elastic Beanstalk quotas associated with an AWS account. They reflect Elastic Beanstalk
+ * resource limits for this account.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ResourceQuotas" target="_top">AWS
  *      API Documentation</a>
@@ -23,18 +27,44 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceQuotas implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The quota for applications in the AWS account.
+     * </p>
+     */
     private ResourceQuota applicationQuota;
-
+    /**
+     * <p>
+     * The quota for application versions in the AWS account.
+     * </p>
+     */
     private ResourceQuota applicationVersionQuota;
-
+    /**
+     * <p>
+     * The quota for environments in the AWS account.
+     * </p>
+     */
     private ResourceQuota environmentQuota;
-
+    /**
+     * <p>
+     * The quota for configuration templates in the AWS account.
+     * </p>
+     */
     private ResourceQuota configurationTemplateQuota;
-
+    /**
+     * <p>
+     * The quota for custom platforms in the AWS account.
+     * </p>
+     */
     private ResourceQuota customPlatformQuota;
 
     /**
+     * <p>
+     * The quota for applications in the AWS account.
+     * </p>
+     * 
      * @param applicationQuota
+     *        The quota for applications in the AWS account.
      */
 
     public void setApplicationQuota(ResourceQuota applicationQuota) {
@@ -42,7 +72,11 @@ public class ResourceQuotas implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The quota for applications in the AWS account.
+     * </p>
+     * 
+     * @return The quota for applications in the AWS account.
      */
 
     public ResourceQuota getApplicationQuota() {
@@ -50,7 +84,12 @@ public class ResourceQuotas implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The quota for applications in the AWS account.
+     * </p>
+     * 
      * @param applicationQuota
+     *        The quota for applications in the AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -60,7 +99,12 @@ public class ResourceQuotas implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The quota for application versions in the AWS account.
+     * </p>
+     * 
      * @param applicationVersionQuota
+     *        The quota for application versions in the AWS account.
      */
 
     public void setApplicationVersionQuota(ResourceQuota applicationVersionQuota) {
@@ -68,7 +112,11 @@ public class ResourceQuotas implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The quota for application versions in the AWS account.
+     * </p>
+     * 
+     * @return The quota for application versions in the AWS account.
      */
 
     public ResourceQuota getApplicationVersionQuota() {
@@ -76,7 +124,12 @@ public class ResourceQuotas implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The quota for application versions in the AWS account.
+     * </p>
+     * 
      * @param applicationVersionQuota
+     *        The quota for application versions in the AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,7 +139,12 @@ public class ResourceQuotas implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The quota for environments in the AWS account.
+     * </p>
+     * 
      * @param environmentQuota
+     *        The quota for environments in the AWS account.
      */
 
     public void setEnvironmentQuota(ResourceQuota environmentQuota) {
@@ -94,7 +152,11 @@ public class ResourceQuotas implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The quota for environments in the AWS account.
+     * </p>
+     * 
+     * @return The quota for environments in the AWS account.
      */
 
     public ResourceQuota getEnvironmentQuota() {
@@ -102,7 +164,12 @@ public class ResourceQuotas implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The quota for environments in the AWS account.
+     * </p>
+     * 
      * @param environmentQuota
+     *        The quota for environments in the AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,7 +179,12 @@ public class ResourceQuotas implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The quota for configuration templates in the AWS account.
+     * </p>
+     * 
      * @param configurationTemplateQuota
+     *        The quota for configuration templates in the AWS account.
      */
 
     public void setConfigurationTemplateQuota(ResourceQuota configurationTemplateQuota) {
@@ -120,7 +192,11 @@ public class ResourceQuotas implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The quota for configuration templates in the AWS account.
+     * </p>
+     * 
+     * @return The quota for configuration templates in the AWS account.
      */
 
     public ResourceQuota getConfigurationTemplateQuota() {
@@ -128,7 +204,12 @@ public class ResourceQuotas implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The quota for configuration templates in the AWS account.
+     * </p>
+     * 
      * @param configurationTemplateQuota
+     *        The quota for configuration templates in the AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,7 +219,12 @@ public class ResourceQuotas implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The quota for custom platforms in the AWS account.
+     * </p>
+     * 
      * @param customPlatformQuota
+     *        The quota for custom platforms in the AWS account.
      */
 
     public void setCustomPlatformQuota(ResourceQuota customPlatformQuota) {
@@ -146,7 +232,11 @@ public class ResourceQuotas implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The quota for custom platforms in the AWS account.
+     * </p>
+     * 
+     * @return The quota for custom platforms in the AWS account.
      */
 
     public ResourceQuota getCustomPlatformQuota() {
@@ -154,7 +244,12 @@ public class ResourceQuotas implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The quota for custom platforms in the AWS account.
+     * </p>
+     * 
      * @param customPlatformQuota
+     *        The quota for custom platforms in the AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -38,6 +38,11 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
+    public BatchGetResourceConfigResult batchGetResourceConfig(BatchGetResourceConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteConfigRuleResult deleteConfigRule(DeleteConfigRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

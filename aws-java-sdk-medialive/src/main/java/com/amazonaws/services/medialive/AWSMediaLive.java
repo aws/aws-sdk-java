@@ -45,10 +45,10 @@ public interface AWSMediaLive {
      * @param createChannelRequest
      *        A request to create a channel
      * @return Result of the CreateChannel operation returned by the service.
-     * @throws BadRequestException
-     *         This request was invalid.
      * @throws UnprocessableEntityException
      *         The Channel failed validation and could not be created.
+     * @throws BadRequestException
+     *         This request was invalid.
      * @throws InternalServerErrorException
      *         Unexpected internal service error.
      * @throws ForbiddenException
@@ -409,10 +409,10 @@ public interface AWSMediaLive {
      * @param updateChannelRequest
      *        A request to update a channel.
      * @return Result of the UpdateChannel operation returned by the service.
-     * @throws BadRequestException
-     *         This request was invalid.
      * @throws UnprocessableEntityException
      *         The channel configuration failed validation and could not be updated.
+     * @throws BadRequestException
+     *         This request was invalid.
      * @throws InternalServerErrorException
      *         Unexpected internal service error.
      * @throws ForbiddenException
@@ -428,6 +428,59 @@ public interface AWSMediaLive {
      *      Documentation</a>
      */
     UpdateChannelResult updateChannel(UpdateChannelRequest updateChannelRequest);
+
+    /**
+     * Updates an input.
+     * 
+     * @param updateInputRequest
+     *        A request to update an input.
+     * @return Result of the UpdateInput operation returned by the service.
+     * @throws BadRequestException
+     *         This request to update the input was invalid.
+     * @throws InternalServerErrorException
+     *         Internal Service Error
+     * @throws ForbiddenException
+     *         The requester does not have permission to update an input.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws NotFoundException
+     *         The input was not found.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws ConflictException
+     *         The input was unable to be updated at this time due to an issue with input resources.
+     * @sample AWSMediaLive.UpdateInput
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateInput" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateInputResult updateInput(UpdateInputRequest updateInputRequest);
+
+    /**
+     * Update an Input Security Group's Whilelists.
+     * 
+     * @param updateInputSecurityGroupRequest
+     *        The request to update some combination of the Input Security Group name and the IPv4 CIDRs the Input
+     *        Security Group should allow.
+     * @return Result of the UpdateInputSecurityGroup operation returned by the service.
+     * @throws BadRequestException
+     *         The request to update the Input Security Group was invalid
+     * @throws InternalServerErrorException
+     *         Internal Server Error
+     * @throws ForbiddenException
+     *         The requester does not have permission to update an Input Security Group
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws NotFoundException
+     *         The Input Security Group was not found.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws ConflictException
+     *         The Input Security Group was unable to be updated due to an issue with input security group resources.
+     * @sample AWSMediaLive.UpdateInputSecurityGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateInputSecurityGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateInputSecurityGroupResult updateInputSecurityGroup(UpdateInputSecurityGroupRequest updateInputSecurityGroupRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

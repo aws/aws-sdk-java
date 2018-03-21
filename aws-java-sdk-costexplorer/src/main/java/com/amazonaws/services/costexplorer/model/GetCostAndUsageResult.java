@@ -32,13 +32,13 @@ public class GetCostAndUsageResult extends com.amazonaws.AmazonWebServiceResult<
     private String nextPageToken;
     /**
      * <p>
-     * The groups specified by the the <code>Filter</code> or <code>GroupBy</code> parameters in the request.
+     * The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the request.
      * </p>
      */
     private java.util.List<GroupDefinition> groupDefinitions;
     /**
      * <p>
-     * The time period covered by the results in the response.
+     * The time period that is covered by the results in the response.
      * </p>
      */
     private java.util.List<ResultByTime> resultsByTime;
@@ -91,10 +91,11 @@ public class GetCostAndUsageResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The groups specified by the the <code>Filter</code> or <code>GroupBy</code> parameters in the request.
+     * The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the request.
      * </p>
      * 
-     * @return The groups specified by the the <code>Filter</code> or <code>GroupBy</code> parameters in the request.
+     * @return The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the
+     *         request.
      */
 
     public java.util.List<GroupDefinition> getGroupDefinitions() {
@@ -103,11 +104,12 @@ public class GetCostAndUsageResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The groups specified by the the <code>Filter</code> or <code>GroupBy</code> parameters in the request.
+     * The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the request.
      * </p>
      * 
      * @param groupDefinitions
-     *        The groups specified by the the <code>Filter</code> or <code>GroupBy</code> parameters in the request.
+     *        The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the
+     *        request.
      */
 
     public void setGroupDefinitions(java.util.Collection<GroupDefinition> groupDefinitions) {
@@ -121,7 +123,7 @@ public class GetCostAndUsageResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The groups specified by the the <code>Filter</code> or <code>GroupBy</code> parameters in the request.
+     * The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -130,7 +132,8 @@ public class GetCostAndUsageResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param groupDefinitions
-     *        The groups specified by the the <code>Filter</code> or <code>GroupBy</code> parameters in the request.
+     *        The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the
+     *        request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,11 +149,12 @@ public class GetCostAndUsageResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The groups specified by the the <code>Filter</code> or <code>GroupBy</code> parameters in the request.
+     * The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the request.
      * </p>
      * 
      * @param groupDefinitions
-     *        The groups specified by the the <code>Filter</code> or <code>GroupBy</code> parameters in the request.
+     *        The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the
+     *        request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,10 +165,10 @@ public class GetCostAndUsageResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The time period covered by the results in the response.
+     * The time period that is covered by the results in the response.
      * </p>
      * 
-     * @return The time period covered by the results in the response.
+     * @return The time period that is covered by the results in the response.
      */
 
     public java.util.List<ResultByTime> getResultsByTime() {
@@ -173,11 +177,11 @@ public class GetCostAndUsageResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The time period covered by the results in the response.
+     * The time period that is covered by the results in the response.
      * </p>
      * 
      * @param resultsByTime
-     *        The time period covered by the results in the response.
+     *        The time period that is covered by the results in the response.
      */
 
     public void setResultsByTime(java.util.Collection<ResultByTime> resultsByTime) {
@@ -191,7 +195,7 @@ public class GetCostAndUsageResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The time period covered by the results in the response.
+     * The time period that is covered by the results in the response.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -200,7 +204,7 @@ public class GetCostAndUsageResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param resultsByTime
-     *        The time period covered by the results in the response.
+     *        The time period that is covered by the results in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -216,11 +220,11 @@ public class GetCostAndUsageResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The time period covered by the results in the response.
+     * The time period that is covered by the results in the response.
      * </p>
      * 
      * @param resultsByTime
-     *        The time period covered by the results in the response.
+     *        The time period that is covered by the results in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

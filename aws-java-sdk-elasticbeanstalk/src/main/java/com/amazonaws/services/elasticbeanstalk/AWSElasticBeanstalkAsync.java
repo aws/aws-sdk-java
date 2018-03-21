@@ -730,6 +730,13 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
             com.amazonaws.handlers.AsyncHandler<DeletePlatformVersionRequest, DeletePlatformVersionResult> asyncHandler);
 
     /**
+     * <p>
+     * Returns attributes related to AWS Elastic Beanstalk that are associated with the calling AWS account.
+     * </p>
+     * <p>
+     * The result currently has one set of attributes—resource quotas.
+     * </p>
+     * 
      * @param describeAccountAttributesRequest
      * @return A Java Future containing the result of the DescribeAccountAttributes operation returned by the service.
      * @sample AWSElasticBeanstalkAsync.DescribeAccountAttributes
@@ -740,6 +747,13 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
             DescribeAccountAttributesRequest describeAccountAttributesRequest);
 
     /**
+     * <p>
+     * Returns attributes related to AWS Elastic Beanstalk that are associated with the calling AWS account.
+     * </p>
+     * <p>
+     * The result currently has one set of attributes—resource quotas.
+     * </p>
+     * 
      * @param describeAccountAttributesRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an

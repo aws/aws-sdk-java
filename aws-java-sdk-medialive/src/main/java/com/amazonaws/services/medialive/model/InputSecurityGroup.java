@@ -30,6 +30,10 @@ public class InputSecurityGroup implements Serializable, Cloneable, StructuredPo
     private String arn;
     /** The Id of the Input Security Group */
     private String id;
+    /** The list of inputs currently using this Input Security Group. */
+    private java.util.List<String> inputs;
+    /** The current state of the Input Security Group. */
+    private String state;
     /** Whitelist rules and their sync status */
     private java.util.List<InputWhitelistRule> whitelistRules;
 
@@ -98,6 +102,119 @@ public class InputSecurityGroup implements Serializable, Cloneable, StructuredPo
 
     public InputSecurityGroup withId(String id) {
         setId(id);
+        return this;
+    }
+
+    /**
+     * The list of inputs currently using this Input Security Group.
+     * 
+     * @return The list of inputs currently using this Input Security Group.
+     */
+
+    public java.util.List<String> getInputs() {
+        return inputs;
+    }
+
+    /**
+     * The list of inputs currently using this Input Security Group.
+     * 
+     * @param inputs
+     *        The list of inputs currently using this Input Security Group.
+     */
+
+    public void setInputs(java.util.Collection<String> inputs) {
+        if (inputs == null) {
+            this.inputs = null;
+            return;
+        }
+
+        this.inputs = new java.util.ArrayList<String>(inputs);
+    }
+
+    /**
+     * The list of inputs currently using this Input Security Group.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInputs(java.util.Collection)} or {@link #withInputs(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param inputs
+     *        The list of inputs currently using this Input Security Group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InputSecurityGroup withInputs(String... inputs) {
+        if (this.inputs == null) {
+            setInputs(new java.util.ArrayList<String>(inputs.length));
+        }
+        for (String ele : inputs) {
+            this.inputs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * The list of inputs currently using this Input Security Group.
+     * 
+     * @param inputs
+     *        The list of inputs currently using this Input Security Group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InputSecurityGroup withInputs(java.util.Collection<String> inputs) {
+        setInputs(inputs);
+        return this;
+    }
+
+    /**
+     * The current state of the Input Security Group.
+     * 
+     * @param state
+     *        The current state of the Input Security Group.
+     * @see InputSecurityGroupState
+     */
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    /**
+     * The current state of the Input Security Group.
+     * 
+     * @return The current state of the Input Security Group.
+     * @see InputSecurityGroupState
+     */
+
+    public String getState() {
+        return this.state;
+    }
+
+    /**
+     * The current state of the Input Security Group.
+     * 
+     * @param state
+     *        The current state of the Input Security Group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InputSecurityGroupState
+     */
+
+    public InputSecurityGroup withState(String state) {
+        setState(state);
+        return this;
+    }
+
+    /**
+     * The current state of the Input Security Group.
+     * 
+     * @param state
+     *        The current state of the Input Security Group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InputSecurityGroupState
+     */
+
+    public InputSecurityGroup withState(InputSecurityGroupState state) {
+        this.state = state.toString();
         return this;
     }
 
@@ -178,6 +295,10 @@ public class InputSecurityGroup implements Serializable, Cloneable, StructuredPo
             sb.append("Arn: ").append(getArn()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
+        if (getInputs() != null)
+            sb.append("Inputs: ").append(getInputs()).append(",");
+        if (getState() != null)
+            sb.append("State: ").append(getState()).append(",");
         if (getWhitelistRules() != null)
             sb.append("WhitelistRules: ").append(getWhitelistRules());
         sb.append("}");
@@ -202,6 +323,14 @@ public class InputSecurityGroup implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
+        if (other.getInputs() == null ^ this.getInputs() == null)
+            return false;
+        if (other.getInputs() != null && other.getInputs().equals(this.getInputs()) == false)
+            return false;
+        if (other.getState() == null ^ this.getState() == null)
+            return false;
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
+            return false;
         if (other.getWhitelistRules() == null ^ this.getWhitelistRules() == null)
             return false;
         if (other.getWhitelistRules() != null && other.getWhitelistRules().equals(this.getWhitelistRules()) == false)
@@ -216,6 +345,8 @@ public class InputSecurityGroup implements Serializable, Cloneable, StructuredPo
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getInputs() == null) ? 0 : getInputs().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getWhitelistRules() == null) ? 0 : getWhitelistRules().hashCode());
         return hashCode;
     }

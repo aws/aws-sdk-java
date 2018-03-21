@@ -23,6 +23,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import com.amazonaws.util.PolicyUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -186,12 +187,19 @@ public class JsonPolicyWriter {
     private void writeResources(List<Resource> resources)
             throws JsonGenerationException, IOException {
 
+        PolicyUtils.validateResourceList(resources);
         List<String> resourceStrings = new ArrayList<String>();
 
         for (Resource resource : resources) {
             resourceStrings.add(resource.getId());
         }
-        writeJsonArray(JsonDocumentFields.RESOURCE, resourceStrings);
+
+        // all resources are validated to be of the same type, so it is safe to take the type of the first one
+        if (resources.get(0).isNotType()) {
+            writeJsonArray(JsonDocumentFields.NOT_RESOURCE, resourceStrings);
+        } else {
+            writeJsonArray(JsonDocumentFields.RESOURCE, resourceStrings);
+        }
     }
 
     /**

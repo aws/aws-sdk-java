@@ -69,8 +69,9 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * If you want your custom rule to be triggered by configuration changes, specify both
-     * <code>ConfigurationItemChangeNotification</code> and <code>OversizedConfigurationItemChangeNotification</code>.
+     * If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects, one for
+     * <code>ConfigurationItemChangeNotification</code> and one for
+     * <code>OversizedConfigurationItemChangeNotification</code>.
      * </p>
      */
     private String messageType;
@@ -84,6 +85,11 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
      * value for the <code>MaximumExecutionFrequency</code> parameter.
+     * </p>
+     * <p>
+     * Based on the valid value you choose, AWS Config runs evaluations once for each valid value. For example, if you
+     * choose <code>Three_Hours</code>, AWS Config runs evaluations once every three hours. In this case,
+     * <code>Three_Hours</code> is the frequency of this rule.
      * </p>
      * </note>
      */
@@ -195,8 +201,9 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * If you want your custom rule to be triggered by configuration changes, specify both
-     * <code>ConfigurationItemChangeNotification</code> and <code>OversizedConfigurationItemChangeNotification</code>.
+     * If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects, one for
+     * <code>ConfigurationItemChangeNotification</code> and one for
+     * <code>OversizedConfigurationItemChangeNotification</code>.
      * </p>
      * 
      * @param messageType
@@ -230,8 +237,8 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        If you want your custom rule to be triggered by configuration changes, specify both
-     *        <code>ConfigurationItemChangeNotification</code> and
+     *        If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects,
+     *        one for <code>ConfigurationItemChangeNotification</code> and one for
      *        <code>OversizedConfigurationItemChangeNotification</code>.
      * @see MessageType
      */
@@ -273,8 +280,9 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * If you want your custom rule to be triggered by configuration changes, specify both
-     * <code>ConfigurationItemChangeNotification</code> and <code>OversizedConfigurationItemChangeNotification</code>.
+     * If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects, one for
+     * <code>ConfigurationItemChangeNotification</code> and one for
+     * <code>OversizedConfigurationItemChangeNotification</code>.
      * </p>
      * 
      * @return The type of notification that triggers AWS Config to run an evaluation for a rule. You can specify the
@@ -307,8 +315,8 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         </ul>
      *         <p>
-     *         If you want your custom rule to be triggered by configuration changes, specify both
-     *         <code>ConfigurationItemChangeNotification</code> and
+     *         If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects,
+     *         one for <code>ConfigurationItemChangeNotification</code> and one for
      *         <code>OversizedConfigurationItemChangeNotification</code>.
      * @see MessageType
      */
@@ -350,8 +358,9 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * If you want your custom rule to be triggered by configuration changes, specify both
-     * <code>ConfigurationItemChangeNotification</code> and <code>OversizedConfigurationItemChangeNotification</code>.
+     * If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects, one for
+     * <code>ConfigurationItemChangeNotification</code> and one for
+     * <code>OversizedConfigurationItemChangeNotification</code>.
      * </p>
      * 
      * @param messageType
@@ -385,8 +394,8 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        If you want your custom rule to be triggered by configuration changes, specify both
-     *        <code>ConfigurationItemChangeNotification</code> and
+     *        If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects,
+     *        one for <code>ConfigurationItemChangeNotification</code> and one for
      *        <code>OversizedConfigurationItemChangeNotification</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MessageType
@@ -430,8 +439,9 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * If you want your custom rule to be triggered by configuration changes, specify both
-     * <code>ConfigurationItemChangeNotification</code> and <code>OversizedConfigurationItemChangeNotification</code>.
+     * If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects, one for
+     * <code>ConfigurationItemChangeNotification</code> and one for
+     * <code>OversizedConfigurationItemChangeNotification</code>.
      * </p>
      * 
      * @param messageType
@@ -465,8 +475,8 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        If you want your custom rule to be triggered by configuration changes, specify both
-     *        <code>ConfigurationItemChangeNotification</code> and
+     *        If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects,
+     *        one for <code>ConfigurationItemChangeNotification</code> and one for
      *        <code>OversizedConfigurationItemChangeNotification</code>.
      * @see MessageType
      */
@@ -508,8 +518,9 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * If you want your custom rule to be triggered by configuration changes, specify both
-     * <code>ConfigurationItemChangeNotification</code> and <code>OversizedConfigurationItemChangeNotification</code>.
+     * If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects, one for
+     * <code>ConfigurationItemChangeNotification</code> and one for
+     * <code>OversizedConfigurationItemChangeNotification</code>.
      * </p>
      * 
      * @param messageType
@@ -543,8 +554,8 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        If you want your custom rule to be triggered by configuration changes, specify both
-     *        <code>ConfigurationItemChangeNotification</code> and
+     *        If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects,
+     *        one for <code>ConfigurationItemChangeNotification</code> and one for
      *        <code>OversizedConfigurationItemChangeNotification</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MessageType
@@ -566,6 +577,11 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      * By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
      * value for the <code>MaximumExecutionFrequency</code> parameter.
      * </p>
+     * <p>
+     * Based on the valid value you choose, AWS Config runs evaluations once for each valid value. For example, if you
+     * choose <code>Three_Hours</code>, AWS Config runs evaluations once every three hours. In this case,
+     * <code>Three_Hours</code> is the frequency of this rule.
+     * </p>
      * </note>
      * 
      * @param maximumExecutionFrequency
@@ -575,6 +591,11 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a
      *        valid value for the <code>MaximumExecutionFrequency</code> parameter.
+     *        </p>
+     *        <p>
+     *        Based on the valid value you choose, AWS Config runs evaluations once for each valid value. For example,
+     *        if you choose <code>Three_Hours</code>, AWS Config runs evaluations once every three hours. In this case,
+     *        <code>Three_Hours</code> is the frequency of this rule.
      *        </p>
      * @see MaximumExecutionFrequency
      */
@@ -594,6 +615,11 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      * By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
      * value for the <code>MaximumExecutionFrequency</code> parameter.
      * </p>
+     * <p>
+     * Based on the valid value you choose, AWS Config runs evaluations once for each valid value. For example, if you
+     * choose <code>Three_Hours</code>, AWS Config runs evaluations once every three hours. In this case,
+     * <code>Three_Hours</code> is the frequency of this rule.
+     * </p>
      * </note>
      * 
      * @return The frequency that you want AWS Config to run evaluations for a custom rule with a periodic trigger. If
@@ -602,6 +628,11 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify
      *         a valid value for the <code>MaximumExecutionFrequency</code> parameter.
+     *         </p>
+     *         <p>
+     *         Based on the valid value you choose, AWS Config runs evaluations once for each valid value. For example,
+     *         if you choose <code>Three_Hours</code>, AWS Config runs evaluations once every three hours. In this case,
+     *         <code>Three_Hours</code> is the frequency of this rule.
      *         </p>
      * @see MaximumExecutionFrequency
      */
@@ -621,6 +652,11 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      * By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
      * value for the <code>MaximumExecutionFrequency</code> parameter.
      * </p>
+     * <p>
+     * Based on the valid value you choose, AWS Config runs evaluations once for each valid value. For example, if you
+     * choose <code>Three_Hours</code>, AWS Config runs evaluations once every three hours. In this case,
+     * <code>Three_Hours</code> is the frequency of this rule.
+     * </p>
      * </note>
      * 
      * @param maximumExecutionFrequency
@@ -630,6 +666,11 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a
      *        valid value for the <code>MaximumExecutionFrequency</code> parameter.
+     *        </p>
+     *        <p>
+     *        Based on the valid value you choose, AWS Config runs evaluations once for each valid value. For example,
+     *        if you choose <code>Three_Hours</code>, AWS Config runs evaluations once every three hours. In this case,
+     *        <code>Three_Hours</code> is the frequency of this rule.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaximumExecutionFrequency
@@ -651,6 +692,11 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      * By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
      * value for the <code>MaximumExecutionFrequency</code> parameter.
      * </p>
+     * <p>
+     * Based on the valid value you choose, AWS Config runs evaluations once for each valid value. For example, if you
+     * choose <code>Three_Hours</code>, AWS Config runs evaluations once every three hours. In this case,
+     * <code>Three_Hours</code> is the frequency of this rule.
+     * </p>
      * </note>
      * 
      * @param maximumExecutionFrequency
@@ -660,6 +706,11 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a
      *        valid value for the <code>MaximumExecutionFrequency</code> parameter.
+     *        </p>
+     *        <p>
+     *        Based on the valid value you choose, AWS Config runs evaluations once for each valid value. For example,
+     *        if you choose <code>Three_Hours</code>, AWS Config runs evaluations once every three hours. In this case,
+     *        <code>Three_Hours</code> is the frequency of this rule.
      *        </p>
      * @see MaximumExecutionFrequency
      */
@@ -679,6 +730,11 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      * By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
      * value for the <code>MaximumExecutionFrequency</code> parameter.
      * </p>
+     * <p>
+     * Based on the valid value you choose, AWS Config runs evaluations once for each valid value. For example, if you
+     * choose <code>Three_Hours</code>, AWS Config runs evaluations once every three hours. In this case,
+     * <code>Three_Hours</code> is the frequency of this rule.
+     * </p>
      * </note>
      * 
      * @param maximumExecutionFrequency
@@ -688,6 +744,11 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a
      *        valid value for the <code>MaximumExecutionFrequency</code> parameter.
+     *        </p>
+     *        <p>
+     *        Based on the valid value you choose, AWS Config runs evaluations once for each valid value. For example,
+     *        if you choose <code>Three_Hours</code>, AWS Config runs evaluations once every three hours. In this case,
+     *        <code>Three_Hours</code> is the frequency of this rule.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaximumExecutionFrequency

@@ -61,18 +61,21 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     private VersionInfo versionInfo;
     /**
      * <p>
-     * For most resource types, this parameter describes the remaining resources of the container instance that are
-     * available for new tasks. For port resource types, this parameter describes the ports that are reserved by the
-     * Amazon ECS container agent and any containers that have reserved port mappings; any port that is not specified
-     * here is available for new tasks.
+     * For CPU and memory resource types, this parameter describes the remaining CPU and memory on the that has not
+     * already been allocated to tasks (and is therefore available for new tasks). For port resource types, this
+     * parameter describes the ports that were reserved by the Amazon ECS container agent (at instance registration
+     * time) and any task containers that have reserved port mappings on the host (with the <code>host</code> or
+     * <code>bridge</code> network mode). Any port that is not specified here is available for new tasks.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Resource> remainingResources;
     /**
      * <p>
-     * For most resource types, this parameter describes the registered resources on the container instance that are in
-     * use by current tasks. For port resource types, this parameter describes the ports that were reserved by the
-     * Amazon ECS container agent when it registered the container instance with Amazon ECS.
+     * For CPU and memory resource types, this parameter describes the amount of each resource that was available on the
+     * container instance when the container agent registered it with Amazon ECS; this value represents the total amount
+     * of CPU and memory that can be allocated on this container instance to tasks. For port resource types, this
+     * parameter describes the ports that were reserved by the Amazon ECS container agent when it registered the
+     * container instance with Amazon ECS.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Resource> registeredResources;
@@ -344,16 +347,19 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * For most resource types, this parameter describes the remaining resources of the container instance that are
-     * available for new tasks. For port resource types, this parameter describes the ports that are reserved by the
-     * Amazon ECS container agent and any containers that have reserved port mappings; any port that is not specified
-     * here is available for new tasks.
+     * For CPU and memory resource types, this parameter describes the remaining CPU and memory on the that has not
+     * already been allocated to tasks (and is therefore available for new tasks). For port resource types, this
+     * parameter describes the ports that were reserved by the Amazon ECS container agent (at instance registration
+     * time) and any task containers that have reserved port mappings on the host (with the <code>host</code> or
+     * <code>bridge</code> network mode). Any port that is not specified here is available for new tasks.
      * </p>
      * 
-     * @return For most resource types, this parameter describes the remaining resources of the container instance that
-     *         are available for new tasks. For port resource types, this parameter describes the ports that are
-     *         reserved by the Amazon ECS container agent and any containers that have reserved port mappings; any port
-     *         that is not specified here is available for new tasks.
+     * @return For CPU and memory resource types, this parameter describes the remaining CPU and memory on the that has
+     *         not already been allocated to tasks (and is therefore available for new tasks). For port resource types,
+     *         this parameter describes the ports that were reserved by the Amazon ECS container agent (at instance
+     *         registration time) and any task containers that have reserved port mappings on the host (with the
+     *         <code>host</code> or <code>bridge</code> network mode). Any port that is not specified here is available
+     *         for new tasks.
      */
 
     public java.util.List<Resource> getRemainingResources() {
@@ -365,17 +371,20 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * For most resource types, this parameter describes the remaining resources of the container instance that are
-     * available for new tasks. For port resource types, this parameter describes the ports that are reserved by the
-     * Amazon ECS container agent and any containers that have reserved port mappings; any port that is not specified
-     * here is available for new tasks.
+     * For CPU and memory resource types, this parameter describes the remaining CPU and memory on the that has not
+     * already been allocated to tasks (and is therefore available for new tasks). For port resource types, this
+     * parameter describes the ports that were reserved by the Amazon ECS container agent (at instance registration
+     * time) and any task containers that have reserved port mappings on the host (with the <code>host</code> or
+     * <code>bridge</code> network mode). Any port that is not specified here is available for new tasks.
      * </p>
      * 
      * @param remainingResources
-     *        For most resource types, this parameter describes the remaining resources of the container instance that
-     *        are available for new tasks. For port resource types, this parameter describes the ports that are reserved
-     *        by the Amazon ECS container agent and any containers that have reserved port mappings; any port that is
-     *        not specified here is available for new tasks.
+     *        For CPU and memory resource types, this parameter describes the remaining CPU and memory on the that has
+     *        not already been allocated to tasks (and is therefore available for new tasks). For port resource types,
+     *        this parameter describes the ports that were reserved by the Amazon ECS container agent (at instance
+     *        registration time) and any task containers that have reserved port mappings on the host (with the
+     *        <code>host</code> or <code>bridge</code> network mode). Any port that is not specified here is available
+     *        for new tasks.
      */
 
     public void setRemainingResources(java.util.Collection<Resource> remainingResources) {
@@ -389,10 +398,11 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * For most resource types, this parameter describes the remaining resources of the container instance that are
-     * available for new tasks. For port resource types, this parameter describes the ports that are reserved by the
-     * Amazon ECS container agent and any containers that have reserved port mappings; any port that is not specified
-     * here is available for new tasks.
+     * For CPU and memory resource types, this parameter describes the remaining CPU and memory on the that has not
+     * already been allocated to tasks (and is therefore available for new tasks). For port resource types, this
+     * parameter describes the ports that were reserved by the Amazon ECS container agent (at instance registration
+     * time) and any task containers that have reserved port mappings on the host (with the <code>host</code> or
+     * <code>bridge</code> network mode). Any port that is not specified here is available for new tasks.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -401,10 +411,12 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param remainingResources
-     *        For most resource types, this parameter describes the remaining resources of the container instance that
-     *        are available for new tasks. For port resource types, this parameter describes the ports that are reserved
-     *        by the Amazon ECS container agent and any containers that have reserved port mappings; any port that is
-     *        not specified here is available for new tasks.
+     *        For CPU and memory resource types, this parameter describes the remaining CPU and memory on the that has
+     *        not already been allocated to tasks (and is therefore available for new tasks). For port resource types,
+     *        this parameter describes the ports that were reserved by the Amazon ECS container agent (at instance
+     *        registration time) and any task containers that have reserved port mappings on the host (with the
+     *        <code>host</code> or <code>bridge</code> network mode). Any port that is not specified here is available
+     *        for new tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -420,17 +432,20 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * For most resource types, this parameter describes the remaining resources of the container instance that are
-     * available for new tasks. For port resource types, this parameter describes the ports that are reserved by the
-     * Amazon ECS container agent and any containers that have reserved port mappings; any port that is not specified
-     * here is available for new tasks.
+     * For CPU and memory resource types, this parameter describes the remaining CPU and memory on the that has not
+     * already been allocated to tasks (and is therefore available for new tasks). For port resource types, this
+     * parameter describes the ports that were reserved by the Amazon ECS container agent (at instance registration
+     * time) and any task containers that have reserved port mappings on the host (with the <code>host</code> or
+     * <code>bridge</code> network mode). Any port that is not specified here is available for new tasks.
      * </p>
      * 
      * @param remainingResources
-     *        For most resource types, this parameter describes the remaining resources of the container instance that
-     *        are available for new tasks. For port resource types, this parameter describes the ports that are reserved
-     *        by the Amazon ECS container agent and any containers that have reserved port mappings; any port that is
-     *        not specified here is available for new tasks.
+     *        For CPU and memory resource types, this parameter describes the remaining CPU and memory on the that has
+     *        not already been allocated to tasks (and is therefore available for new tasks). For port resource types,
+     *        this parameter describes the ports that were reserved by the Amazon ECS container agent (at instance
+     *        registration time) and any task containers that have reserved port mappings on the host (with the
+     *        <code>host</code> or <code>bridge</code> network mode). Any port that is not specified here is available
+     *        for new tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -441,14 +456,18 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * For most resource types, this parameter describes the registered resources on the container instance that are in
-     * use by current tasks. For port resource types, this parameter describes the ports that were reserved by the
-     * Amazon ECS container agent when it registered the container instance with Amazon ECS.
+     * For CPU and memory resource types, this parameter describes the amount of each resource that was available on the
+     * container instance when the container agent registered it with Amazon ECS; this value represents the total amount
+     * of CPU and memory that can be allocated on this container instance to tasks. For port resource types, this
+     * parameter describes the ports that were reserved by the Amazon ECS container agent when it registered the
+     * container instance with Amazon ECS.
      * </p>
      * 
-     * @return For most resource types, this parameter describes the registered resources on the container instance that
-     *         are in use by current tasks. For port resource types, this parameter describes the ports that were
-     *         reserved by the Amazon ECS container agent when it registered the container instance with Amazon ECS.
+     * @return For CPU and memory resource types, this parameter describes the amount of each resource that was
+     *         available on the container instance when the container agent registered it with Amazon ECS; this value
+     *         represents the total amount of CPU and memory that can be allocated on this container instance to tasks.
+     *         For port resource types, this parameter describes the ports that were reserved by the Amazon ECS
+     *         container agent when it registered the container instance with Amazon ECS.
      */
 
     public java.util.List<Resource> getRegisteredResources() {
@@ -460,15 +479,19 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * For most resource types, this parameter describes the registered resources on the container instance that are in
-     * use by current tasks. For port resource types, this parameter describes the ports that were reserved by the
-     * Amazon ECS container agent when it registered the container instance with Amazon ECS.
+     * For CPU and memory resource types, this parameter describes the amount of each resource that was available on the
+     * container instance when the container agent registered it with Amazon ECS; this value represents the total amount
+     * of CPU and memory that can be allocated on this container instance to tasks. For port resource types, this
+     * parameter describes the ports that were reserved by the Amazon ECS container agent when it registered the
+     * container instance with Amazon ECS.
      * </p>
      * 
      * @param registeredResources
-     *        For most resource types, this parameter describes the registered resources on the container instance that
-     *        are in use by current tasks. For port resource types, this parameter describes the ports that were
-     *        reserved by the Amazon ECS container agent when it registered the container instance with Amazon ECS.
+     *        For CPU and memory resource types, this parameter describes the amount of each resource that was available
+     *        on the container instance when the container agent registered it with Amazon ECS; this value represents
+     *        the total amount of CPU and memory that can be allocated on this container instance to tasks. For port
+     *        resource types, this parameter describes the ports that were reserved by the Amazon ECS container agent
+     *        when it registered the container instance with Amazon ECS.
      */
 
     public void setRegisteredResources(java.util.Collection<Resource> registeredResources) {
@@ -482,9 +505,11 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * For most resource types, this parameter describes the registered resources on the container instance that are in
-     * use by current tasks. For port resource types, this parameter describes the ports that were reserved by the
-     * Amazon ECS container agent when it registered the container instance with Amazon ECS.
+     * For CPU and memory resource types, this parameter describes the amount of each resource that was available on the
+     * container instance when the container agent registered it with Amazon ECS; this value represents the total amount
+     * of CPU and memory that can be allocated on this container instance to tasks. For port resource types, this
+     * parameter describes the ports that were reserved by the Amazon ECS container agent when it registered the
+     * container instance with Amazon ECS.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -493,9 +518,11 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param registeredResources
-     *        For most resource types, this parameter describes the registered resources on the container instance that
-     *        are in use by current tasks. For port resource types, this parameter describes the ports that were
-     *        reserved by the Amazon ECS container agent when it registered the container instance with Amazon ECS.
+     *        For CPU and memory resource types, this parameter describes the amount of each resource that was available
+     *        on the container instance when the container agent registered it with Amazon ECS; this value represents
+     *        the total amount of CPU and memory that can be allocated on this container instance to tasks. For port
+     *        resource types, this parameter describes the ports that were reserved by the Amazon ECS container agent
+     *        when it registered the container instance with Amazon ECS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -511,15 +538,19 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * For most resource types, this parameter describes the registered resources on the container instance that are in
-     * use by current tasks. For port resource types, this parameter describes the ports that were reserved by the
-     * Amazon ECS container agent when it registered the container instance with Amazon ECS.
+     * For CPU and memory resource types, this parameter describes the amount of each resource that was available on the
+     * container instance when the container agent registered it with Amazon ECS; this value represents the total amount
+     * of CPU and memory that can be allocated on this container instance to tasks. For port resource types, this
+     * parameter describes the ports that were reserved by the Amazon ECS container agent when it registered the
+     * container instance with Amazon ECS.
      * </p>
      * 
      * @param registeredResources
-     *        For most resource types, this parameter describes the registered resources on the container instance that
-     *        are in use by current tasks. For port resource types, this parameter describes the ports that were
-     *        reserved by the Amazon ECS container agent when it registered the container instance with Amazon ECS.
+     *        For CPU and memory resource types, this parameter describes the amount of each resource that was available
+     *        on the container instance when the container agent registered it with Amazon ECS; this value represents
+     *        the total amount of CPU and memory that can be allocated on this container instance to tasks. For port
+     *        resource types, this parameter describes the ports that were reserved by the Amazon ECS container agent
+     *        when it registered the container instance with Amazon ECS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

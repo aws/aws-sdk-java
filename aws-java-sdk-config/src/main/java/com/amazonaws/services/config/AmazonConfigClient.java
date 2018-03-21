@@ -367,6 +367,78 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Returns the current configuration for one or more requested resources. The operation also returns a list of
+     * resources that are not processed in the current request. If there are no unprocessed resources, the operation
+     * returns an empty unprocessedResourceKeys list.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * The API does not return results for deleted resources.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The API does not return any tags for the requested resources. This information is filtered out of the
+     * supplementaryConfiguration section of the API response.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param batchGetResourceConfigRequest
+     * @return Result of the BatchGetResourceConfig operation returned by the service.
+     * @throws ValidationException
+     *         The requested action is not valid.
+     * @throws NoAvailableConfigurationRecorderException
+     *         There are no configuration recorders available to provide the role needed to describe your resources.
+     *         Create a configuration recorder.
+     * @sample AmazonConfig.BatchGetResourceConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetResourceConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public BatchGetResourceConfigResult batchGetResourceConfig(BatchGetResourceConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchGetResourceConfig(request);
+    }
+
+    @SdkInternalApi
+    final BatchGetResourceConfigResult executeBatchGetResourceConfig(BatchGetResourceConfigRequest batchGetResourceConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchGetResourceConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchGetResourceConfigRequest> request = null;
+        Response<BatchGetResourceConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchGetResourceConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetResourceConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchGetResourceConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new BatchGetResourceConfigResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified AWS Config rule and all of its evaluation results.
      * </p>
      * <p>

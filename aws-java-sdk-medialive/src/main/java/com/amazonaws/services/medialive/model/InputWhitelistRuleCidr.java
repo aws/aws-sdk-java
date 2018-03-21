@@ -26,14 +26,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InputWhitelistRuleCidr implements Serializable, Cloneable, StructuredPojo {
 
-    /** The IPv4 CIDR to whitelist */
+    /** The IPv4 CIDR to whitelist. */
     private String cidr;
 
     /**
-     * The IPv4 CIDR to whitelist
+     * The IPv4 CIDR to whitelist.
      * 
      * @param cidr
-     *        The IPv4 CIDR to whitelist
+     *        The IPv4 CIDR to whitelist.
      */
 
     public void setCidr(String cidr) {
@@ -41,9 +41,9 @@ public class InputWhitelistRuleCidr implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The IPv4 CIDR to whitelist
+     * The IPv4 CIDR to whitelist.
      * 
-     * @return The IPv4 CIDR to whitelist
+     * @return The IPv4 CIDR to whitelist.
      */
 
     public String getCidr() {
@@ -51,10 +51,10 @@ public class InputWhitelistRuleCidr implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The IPv4 CIDR to whitelist
+     * The IPv4 CIDR to whitelist.
      * 
      * @param cidr
-     *        The IPv4 CIDR to whitelist
+     *        The IPv4 CIDR to whitelist.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

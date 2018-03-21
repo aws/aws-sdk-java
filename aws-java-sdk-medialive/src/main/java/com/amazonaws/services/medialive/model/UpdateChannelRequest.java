@@ -32,6 +32,8 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     private java.util.List<OutputDestination> destinations;
     /** The encoder settings for this channel. */
     private EncoderSettings encoderSettings;
+
+    private java.util.List<InputAttachment> inputAttachments;
     /** Specification of input for this channel (max. bitrate, resolution, codec, etc.) */
     private InputSpecification inputSpecification;
     /** The name of the channel. */
@@ -173,6 +175,58 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<InputAttachment> getInputAttachments() {
+        return inputAttachments;
+    }
+
+    /**
+     * @param inputAttachments
+     */
+
+    public void setInputAttachments(java.util.Collection<InputAttachment> inputAttachments) {
+        if (inputAttachments == null) {
+            this.inputAttachments = null;
+            return;
+        }
+
+        this.inputAttachments = new java.util.ArrayList<InputAttachment>(inputAttachments);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInputAttachments(java.util.Collection)} or {@link #withInputAttachments(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param inputAttachments
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateChannelRequest withInputAttachments(InputAttachment... inputAttachments) {
+        if (this.inputAttachments == null) {
+            setInputAttachments(new java.util.ArrayList<InputAttachment>(inputAttachments.length));
+        }
+        for (InputAttachment ele : inputAttachments) {
+            this.inputAttachments.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param inputAttachments
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateChannelRequest withInputAttachments(java.util.Collection<InputAttachment> inputAttachments) {
+        setInputAttachments(inputAttachments);
+        return this;
+    }
+
+    /**
      * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
      * 
      * @param inputSpecification
@@ -297,6 +351,8 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("Destinations: ").append(getDestinations()).append(",");
         if (getEncoderSettings() != null)
             sb.append("EncoderSettings: ").append(getEncoderSettings()).append(",");
+        if (getInputAttachments() != null)
+            sb.append("InputAttachments: ").append(getInputAttachments()).append(",");
         if (getInputSpecification() != null)
             sb.append("InputSpecification: ").append(getInputSpecification()).append(",");
         if (getName() != null)
@@ -329,6 +385,10 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getEncoderSettings() != null && other.getEncoderSettings().equals(this.getEncoderSettings()) == false)
             return false;
+        if (other.getInputAttachments() == null ^ this.getInputAttachments() == null)
+            return false;
+        if (other.getInputAttachments() != null && other.getInputAttachments().equals(this.getInputAttachments()) == false)
+            return false;
         if (other.getInputSpecification() == null ^ this.getInputSpecification() == null)
             return false;
         if (other.getInputSpecification() != null && other.getInputSpecification().equals(this.getInputSpecification()) == false)
@@ -352,6 +412,7 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getChannelId() == null) ? 0 : getChannelId().hashCode());
         hashCode = prime * hashCode + ((getDestinations() == null) ? 0 : getDestinations().hashCode());
         hashCode = prime * hashCode + ((getEncoderSettings() == null) ? 0 : getEncoderSettings().hashCode());
+        hashCode = prime * hashCode + ((getInputAttachments() == null) ? 0 : getInputAttachments().hashCode());
         hashCode = prime * hashCode + ((getInputSpecification() == null) ? 0 : getInputSpecification().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());

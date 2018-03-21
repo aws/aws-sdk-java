@@ -8,6 +8,7 @@
       "skip" : true
     },
     "calculateCRC32FromCompressedData" : false,
+    "contentTypeOverride" : null,
     "convenienceTypeOverloads" : [ ],
     "customClientConfigFactory" : null,
     "customCodeTemplates" : null,
@@ -488,7 +489,7 @@
       "asyncReturnType" : "PutTargetsResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Adds the specified targets to the specified rule, or updates the targets if they are already associated with the rule.</p> <p>Targets are the resources that are invoked when a rule is triggered.</p> <p>You can configure the following as targets for CloudWatch Events:</p> <ul> <li> <p>EC2 instances</p> </li> <li> <p>AWS Lambda functions</p> </li> <li> <p>Streams in Amazon Kinesis Streams</p> </li> <li> <p>Delivery streams in Amazon Kinesis Firehose</p> </li> <li> <p>Amazon ECS tasks</p> </li> <li> <p>AWS Step Functions state machines</p> </li> <li> <p>AWS Batch jobs</p> </li> <li> <p>Pipelines in Amazon Code Pipeline</p> </li> <li> <p>Amazon Inspector assessment templates</p> </li> <li> <p>Amazon SNS topics</p> </li> <li> <p>Amazon SQS queues</p> </li> <li> <p>The default event bus of another AWS account</p> </li> </ul> <p>Note that creating rules with built-in targets is supported only in the AWS Management Console.</p> <p>For some target types, <code>PutTargets</code> provides target-specific parameters. If the target is an Amazon Kinesis stream, you can optionally specify which shard the event goes to by using the <code>KinesisParameters</code> argument. To invoke a command on multiple EC2 instances with one rule, you can use the <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls against the resources that you own, Amazon CloudWatch Events needs the appropriate permissions. For AWS Lambda and Amazon SNS resources, CloudWatch Events relies on resource-based policies. For EC2 instances, Amazon Kinesis streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM roles that you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html\">Authentication and Access Control</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p> <p>If another AWS account is in the same region and has granted you permission (using <code>PutPermission</code>), you can send events to that account by setting that account's event bus as a target of the rules in your account. To send the matched events to the other account, specify that account's event bus as the <code>Arn</code> when you run <code>PutTargets</code>. If your account sends events to another account, your account is charged for each sent event. Each event sent to antoher account is charged as a custom event. The account receiving the event is not charged. For more information on pricing, see <a href=\"https://aws.amazon.com/cloudwatch/pricing/\">Amazon CloudWatch Pricing</a>.</p> <p>For more information about enabling cross-account events, see <a>PutPermission</a>.</p> <p> <b>Input</b>, <b>InputPath</b> and <b>InputTransformer</b> are mutually exclusive and optional parameters of a target. When a rule is triggered due to a matched event:</p> <ul> <li> <p>If none of the following arguments are specified for a target, then the entire event is passed to the target in JSON form (unless the target is Amazon EC2 Run Command or Amazon ECS task, in which case nothing from the event is passed to the target).</p> </li> <li> <p>If <b>Input</b> is specified in the form of valid JSON, then the matched event is overridden with this constant.</p> </li> <li> <p>If <b>InputPath</b> is specified in the form of JSONPath (for example, <code>$.detail</code>), then only the part of the event specified in the path is passed to the target (for example, only the detail part of the event is passed).</p> </li> <li> <p>If <b>InputTransformer</b> is specified, then one or more specified JSONPaths are extracted from the event and used as values in a template that you specify as the input to the target.</p> </li> </ul> <p>When you specify <code>InputPath</code> or <code>InputTransformer</code>, you must use JSON dot notation, not bracket notation.</p> <p>When you add targets to a rule and the associated rule triggers soon after, new or updated targets might not be immediately invoked. Please allow a short period of time for changes to take effect.</p> <p>This action can partially fail if too many requests are made at the same time. If that happens, <code>FailedEntryCount</code> is non-zero in the response and each entry in <code>FailedEntries</code> provides the ID of the failed target and the error code.</p>",
+      "documentation" : "<p>Adds the specified targets to the specified rule, or updates the targets if they are already associated with the rule.</p> <p>Targets are the resources that are invoked when a rule is triggered.</p> <p>You can configure the following as targets for CloudWatch Events:</p> <ul> <li> <p>EC2 instances</p> </li> <li> <p>AWS Lambda functions</p> </li> <li> <p>Streams in Amazon Kinesis Streams</p> </li> <li> <p>Delivery streams in Amazon Kinesis Firehose</p> </li> <li> <p>Amazon ECS tasks</p> </li> <li> <p>AWS Step Functions state machines</p> </li> <li> <p>AWS Batch jobs</p> </li> <li> <p>Pipelines in Amazon Code Pipeline</p> </li> <li> <p>Amazon Inspector assessment templates</p> </li> <li> <p>Amazon SNS topics</p> </li> <li> <p>Amazon SQS queues, including FIFO queues</p> </li> <li> <p>The default event bus of another AWS account</p> </li> </ul> <p>Note that creating rules with built-in targets is supported only in the AWS Management Console.</p> <p>For some target types, <code>PutTargets</code> provides target-specific parameters. If the target is an Amazon Kinesis stream, you can optionally specify which shard the event goes to by using the <code>KinesisParameters</code> argument. To invoke a command on multiple EC2 instances with one rule, you can use the <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls against the resources that you own, Amazon CloudWatch Events needs the appropriate permissions. For AWS Lambda and Amazon SNS resources, CloudWatch Events relies on resource-based policies. For EC2 instances, Amazon Kinesis streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM roles that you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html\">Authentication and Access Control</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p> <p>If another AWS account is in the same region and has granted you permission (using <code>PutPermission</code>), you can send events to that account by setting that account's event bus as a target of the rules in your account. To send the matched events to the other account, specify that account's event bus as the <code>Arn</code> when you run <code>PutTargets</code>. If your account sends events to another account, your account is charged for each sent event. Each event sent to antoher account is charged as a custom event. The account receiving the event is not charged. For more information on pricing, see <a href=\"https://aws.amazon.com/cloudwatch/pricing/\">Amazon CloudWatch Pricing</a>.</p> <p>For more information about enabling cross-account events, see <a>PutPermission</a>.</p> <p> <b>Input</b>, <b>InputPath</b> and <b>InputTransformer</b> are mutually exclusive and optional parameters of a target. When a rule is triggered due to a matched event:</p> <ul> <li> <p>If none of the following arguments are specified for a target, then the entire event is passed to the target in JSON form (unless the target is Amazon EC2 Run Command or Amazon ECS task, in which case nothing from the event is passed to the target).</p> </li> <li> <p>If <b>Input</b> is specified in the form of valid JSON, then the matched event is overridden with this constant.</p> </li> <li> <p>If <b>InputPath</b> is specified in the form of JSONPath (for example, <code>$.detail</code>), then only the part of the event specified in the path is passed to the target (for example, only the detail part of the event is passed).</p> </li> <li> <p>If <b>InputTransformer</b> is specified, then one or more specified JSONPaths are extracted from the event and used as values in a template that you specify as the input to the target.</p> </li> </ul> <p>When you specify <code>InputPath</code> or <code>InputTransformer</code>, you must use JSON dot notation, not bracket notation.</p> <p>When you add targets to a rule and the associated rule triggers soon after, new or updated targets might not be immediately invoked. Please allow a short period of time for changes to take effect.</p> <p>This action can partially fail if too many requests are made at the same time. If that happens, <code>FailedEntryCount</code> is non-zero in the response and each entry in <code>FailedEntries</code> provides the ID of the failed target and the error code.</p>",
       "exceptions" : [ {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>An entity that you specified does not exist.</p>",
@@ -15540,6 +15541,173 @@
       },
       "wrapper" : false
     },
+    "SqsParameters" : {
+      "c2jName" : "SqsParameters",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>This structure includes the custom parameter to be used when the target is an SQS FIFO queue.</p>",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "MessageGroupId",
+        "c2jShape" : "MessageGroupId",
+        "deprecated" : false,
+        "documentation" : "<p>The FIFO message group ID to use as the target.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The FIFO message group ID to use as the target.</p>\n@param messageGroupId The FIFO message group ID to use as the target.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withMessageGroupId",
+        "getterDocumentation" : "/**<p>The FIFO message group ID to use as the target.</p>\n@return The FIFO message group ID to use as the target.*/",
+        "getterMethodName" : "getMessageGroupId",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "MessageGroupId",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "MessageGroupId",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "MessageGroupId",
+        "setterDocumentation" : "/**<p>The FIFO message group ID to use as the target.</p>\n@param messageGroupId The FIFO message group ID to use as the target.*/",
+        "setterMethodName" : "setMessageGroupId",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "messageGroupId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The FIFO message group ID to use as the target.</p>\n@param messageGroupId The FIFO message group ID to use as the target.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "messageGroupId",
+          "variableType" : "String",
+          "documentation" : "<p>The FIFO message group ID to use as the target.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "MessageGroupId" : {
+          "c2jName" : "MessageGroupId",
+          "c2jShape" : "MessageGroupId",
+          "deprecated" : false,
+          "documentation" : "<p>The FIFO message group ID to use as the target.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The FIFO message group ID to use as the target.</p>\n@param messageGroupId The FIFO message group ID to use as the target.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withMessageGroupId",
+          "getterDocumentation" : "/**<p>The FIFO message group ID to use as the target.</p>\n@return The FIFO message group ID to use as the target.*/",
+          "getterMethodName" : "getMessageGroupId",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "MessageGroupId",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "MessageGroupId",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "MessageGroupId",
+          "setterDocumentation" : "/**<p>The FIFO message group ID to use as the target.</p>\n@param messageGroupId The FIFO message group ID to use as the target.*/",
+          "setterMethodName" : "setMessageGroupId",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "messageGroupId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The FIFO message group ID to use as the target.</p>\n@param messageGroupId The FIFO message group ID to use as the target.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "messageGroupId",
+            "variableType" : "String",
+            "documentation" : "<p>The FIFO message group ID to use as the target.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "SqsParameters",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "SqsParameters",
+        "variableName" : "sqsParameters",
+        "variableType" : "SqsParameters",
+        "documentation" : null,
+        "simpleType" : "SqsParameters",
+        "variableSetterType" : "SqsParameters"
+      },
+      "wrapper" : false
+    },
     "Target" : {
       "c2jName" : "Target",
       "customization" : {
@@ -16187,6 +16355,69 @@
           "variableSetterType" : "BatchParameters"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "SqsParameters",
+        "c2jShape" : "SqsParameters",
+        "deprecated" : false,
+        "documentation" : "<p>Contains the message group ID to use when the target is a FIFO queue.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Contains the message group ID to use when the target is a FIFO queue.</p>\n@param sqsParameters Contains the message group ID to use when the target is a FIFO queue.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withSqsParameters",
+        "getterDocumentation" : "/**<p>Contains the message group ID to use when the target is a FIFO queue.</p>\n@return Contains the message group ID to use when the target is a FIFO queue.*/",
+        "getterMethodName" : "getSqsParameters",
+        "getterModel" : {
+          "returnType" : "SqsParameters",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "SqsParameters",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "SqsParameters",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "StructuredPojo",
+        "marshallingType" : "STRUCTURED",
+        "name" : "SqsParameters",
+        "setterDocumentation" : "/**<p>Contains the message group ID to use when the target is a FIFO queue.</p>\n@param sqsParameters Contains the message group ID to use when the target is a FIFO queue.*/",
+        "setterMethodName" : "setSqsParameters",
+        "setterModel" : {
+          "variableDeclarationType" : "SqsParameters",
+          "variableName" : "sqsParameters",
+          "variableType" : "SqsParameters",
+          "documentation" : "",
+          "simpleType" : "SqsParameters",
+          "variableSetterType" : "SqsParameters"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Contains the message group ID to use when the target is a FIFO queue.</p>\n@param sqsParameters Contains the message group ID to use when the target is a FIFO queue.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "SqsParameters",
+          "variableName" : "sqsParameters",
+          "variableType" : "SqsParameters",
+          "documentation" : "<p>Contains the message group ID to use when the target is a FIFO queue.</p>",
+          "simpleType" : "SqsParameters",
+          "variableSetterType" : "SqsParameters"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "Arn" : {
@@ -16826,6 +17057,70 @@
             "documentation" : "<p>Parameters used when you are using the rule to invoke Amazon EC2 Run Command.</p>",
             "simpleType" : "RunCommandParameters",
             "variableSetterType" : "RunCommandParameters"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "SqsParameters" : {
+          "c2jName" : "SqsParameters",
+          "c2jShape" : "SqsParameters",
+          "deprecated" : false,
+          "documentation" : "<p>Contains the message group ID to use when the target is a FIFO queue.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Contains the message group ID to use when the target is a FIFO queue.</p>\n@param sqsParameters Contains the message group ID to use when the target is a FIFO queue.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withSqsParameters",
+          "getterDocumentation" : "/**<p>Contains the message group ID to use when the target is a FIFO queue.</p>\n@return Contains the message group ID to use when the target is a FIFO queue.*/",
+          "getterMethodName" : "getSqsParameters",
+          "getterModel" : {
+            "returnType" : "SqsParameters",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "SqsParameters",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "SqsParameters",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "StructuredPojo",
+          "marshallingType" : "STRUCTURED",
+          "name" : "SqsParameters",
+          "setterDocumentation" : "/**<p>Contains the message group ID to use when the target is a FIFO queue.</p>\n@param sqsParameters Contains the message group ID to use when the target is a FIFO queue.*/",
+          "setterMethodName" : "setSqsParameters",
+          "setterModel" : {
+            "variableDeclarationType" : "SqsParameters",
+            "variableName" : "sqsParameters",
+            "variableType" : "SqsParameters",
+            "documentation" : "",
+            "simpleType" : "SqsParameters",
+            "variableSetterType" : "SqsParameters"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Contains the message group ID to use when the target is a FIFO queue.</p>\n@param sqsParameters Contains the message group ID to use when the target is a FIFO queue.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "SqsParameters",
+            "variableName" : "sqsParameters",
+            "variableType" : "SqsParameters",
+            "documentation" : "<p>Contains the message group ID to use when the target is a FIFO queue.</p>",
+            "simpleType" : "SqsParameters",
+            "variableSetterType" : "SqsParameters"
           },
           "xmlNameSpaceUri" : null
         }

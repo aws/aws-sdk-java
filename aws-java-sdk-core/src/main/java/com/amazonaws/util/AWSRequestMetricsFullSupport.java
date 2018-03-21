@@ -185,7 +185,7 @@ public class AWSRequestMetricsFullSupport extends AWSRequestMetrics {
 
     @Override
     public void log() {
-        if (latencyLogger.isInfoEnabled()) {
+        if (latencyLogger.isDebugEnabled()) {
             StringBuilder builder = new StringBuilder();
 
             for (Entry<String, List<Object>> entry : properties.entrySet()) {
@@ -200,7 +200,7 @@ public class AWSRequestMetricsFullSupport extends AWSRequestMetrics {
                     .getSubMeasurementsByName().entrySet()) {
                 keyValueFormat(entry.getKey(), entry.getValue(), builder);
             }
-            latencyLogger.info(builder.toString());
+            latencyLogger.debug(builder.toString());
         }
     }
 

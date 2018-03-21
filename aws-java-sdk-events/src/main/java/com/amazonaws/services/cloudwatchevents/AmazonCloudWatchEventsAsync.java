@@ -571,7 +571,7 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * </li>
      * <li>
      * <p>
-     * Amazon SQS queues
+     * Amazon SQS queues, including FIFO queues
      * </p>
      * </li>
      * <li>
@@ -726,7 +726,7 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * </li>
      * <li>
      * <p>
-     * Amazon SQS queues
+     * Amazon SQS queues, including FIFO queues
      * </p>
      * </li>
      * <li>

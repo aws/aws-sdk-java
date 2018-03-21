@@ -29,23 +29,23 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The keys included in this group.
+     * The keys that are included in this group.
      * </p>
      */
     private java.util.List<String> keys;
     /**
      * <p>
-     * The metrics included in this group.
+     * The metrics that are included in this group.
      * </p>
      */
     private java.util.Map<String, MetricValue> metrics;
 
     /**
      * <p>
-     * The keys included in this group.
+     * The keys that are included in this group.
      * </p>
      * 
-     * @return The keys included in this group.
+     * @return The keys that are included in this group.
      */
 
     public java.util.List<String> getKeys() {
@@ -54,11 +54,11 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The keys included in this group.
+     * The keys that are included in this group.
      * </p>
      * 
      * @param keys
-     *        The keys included in this group.
+     *        The keys that are included in this group.
      */
 
     public void setKeys(java.util.Collection<String> keys) {
@@ -72,7 +72,7 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The keys included in this group.
+     * The keys that are included in this group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param keys
-     *        The keys included in this group.
+     *        The keys that are included in this group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The keys included in this group.
+     * The keys that are included in this group.
      * </p>
      * 
      * @param keys
-     *        The keys included in this group.
+     *        The keys that are included in this group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,10 +112,10 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The metrics included in this group.
+     * The metrics that are included in this group.
      * </p>
      * 
-     * @return The metrics included in this group.
+     * @return The metrics that are included in this group.
      */
 
     public java.util.Map<String, MetricValue> getMetrics() {
@@ -124,11 +124,11 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The metrics included in this group.
+     * The metrics that are included in this group.
      * </p>
      * 
      * @param metrics
-     *        The metrics included in this group.
+     *        The metrics that are included in this group.
      */
 
     public void setMetrics(java.util.Map<String, MetricValue> metrics) {
@@ -137,11 +137,11 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The metrics included in this group.
+     * The metrics that are included in this group.
      * </p>
      * 
      * @param metrics
-     *        The metrics included in this group.
+     *        The metrics that are included in this group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

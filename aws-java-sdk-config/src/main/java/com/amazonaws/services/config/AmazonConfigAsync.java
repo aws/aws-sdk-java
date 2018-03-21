@@ -60,6 +60,71 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
+     * Returns the current configuration for one or more requested resources. The operation also returns a list of
+     * resources that are not processed in the current request. If there are no unprocessed resources, the operation
+     * returns an empty unprocessedResourceKeys list.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * The API does not return results for deleted resources.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The API does not return any tags for the requested resources. This information is filtered out of the
+     * supplementaryConfiguration section of the API response.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param batchGetResourceConfigRequest
+     * @return A Java Future containing the result of the BatchGetResourceConfig operation returned by the service.
+     * @sample AmazonConfigAsync.BatchGetResourceConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetResourceConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchGetResourceConfigResult> batchGetResourceConfigAsync(BatchGetResourceConfigRequest batchGetResourceConfigRequest);
+
+    /**
+     * <p>
+     * Returns the current configuration for one or more requested resources. The operation also returns a list of
+     * resources that are not processed in the current request. If there are no unprocessed resources, the operation
+     * returns an empty unprocessedResourceKeys list.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * The API does not return results for deleted resources.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The API does not return any tags for the requested resources. This information is filtered out of the
+     * supplementaryConfiguration section of the API response.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param batchGetResourceConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchGetResourceConfig operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.BatchGetResourceConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetResourceConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchGetResourceConfigResult> batchGetResourceConfigAsync(BatchGetResourceConfigRequest batchGetResourceConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchGetResourceConfigRequest, BatchGetResourceConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified AWS Config rule and all of its evaluation results.
      * </p>
      * <p>

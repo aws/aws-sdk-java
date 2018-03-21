@@ -60,13 +60,19 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
     private String yarnEndpointAddress;
     /**
      * <p>
+     * The private address used by this DevEndpoint.
+     * </p>
+     */
+    private String privateAddress;
+    /**
+     * <p>
      * The Apache Zeppelin port for the remote Apache Spark interpreter.
      * </p>
      */
     private Integer zeppelinRemoteSparkInterpreterPort;
     /**
      * <p>
-     * The public address used by this DevEndpoint.
+     * The public VPC address used by this DevEndpoint.
      * </p>
      */
     private String publicAddress;
@@ -378,6 +384,46 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The private address used by this DevEndpoint.
+     * </p>
+     * 
+     * @param privateAddress
+     *        The private address used by this DevEndpoint.
+     */
+
+    public void setPrivateAddress(String privateAddress) {
+        this.privateAddress = privateAddress;
+    }
+
+    /**
+     * <p>
+     * The private address used by this DevEndpoint.
+     * </p>
+     * 
+     * @return The private address used by this DevEndpoint.
+     */
+
+    public String getPrivateAddress() {
+        return this.privateAddress;
+    }
+
+    /**
+     * <p>
+     * The private address used by this DevEndpoint.
+     * </p>
+     * 
+     * @param privateAddress
+     *        The private address used by this DevEndpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DevEndpoint withPrivateAddress(String privateAddress) {
+        setPrivateAddress(privateAddress);
+        return this;
+    }
+
+    /**
+     * <p>
      * The Apache Zeppelin port for the remote Apache Spark interpreter.
      * </p>
      * 
@@ -418,11 +464,11 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The public address used by this DevEndpoint.
+     * The public VPC address used by this DevEndpoint.
      * </p>
      * 
      * @param publicAddress
-     *        The public address used by this DevEndpoint.
+     *        The public VPC address used by this DevEndpoint.
      */
 
     public void setPublicAddress(String publicAddress) {
@@ -431,10 +477,10 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The public address used by this DevEndpoint.
+     * The public VPC address used by this DevEndpoint.
      * </p>
      * 
-     * @return The public address used by this DevEndpoint.
+     * @return The public VPC address used by this DevEndpoint.
      */
 
     public String getPublicAddress() {
@@ -443,11 +489,11 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The public address used by this DevEndpoint.
+     * The public VPC address used by this DevEndpoint.
      * </p>
      * 
      * @param publicAddress
-     *        The public address used by this DevEndpoint.
+     *        The public VPC address used by this DevEndpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -965,6 +1011,8 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
             sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getYarnEndpointAddress() != null)
             sb.append("YarnEndpointAddress: ").append(getYarnEndpointAddress()).append(",");
+        if (getPrivateAddress() != null)
+            sb.append("PrivateAddress: ").append(getPrivateAddress()).append(",");
         if (getZeppelinRemoteSparkInterpreterPort() != null)
             sb.append("ZeppelinRemoteSparkInterpreterPort: ").append(getZeppelinRemoteSparkInterpreterPort()).append(",");
         if (getPublicAddress() != null)
@@ -1024,6 +1072,10 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
         if (other.getYarnEndpointAddress() == null ^ this.getYarnEndpointAddress() == null)
             return false;
         if (other.getYarnEndpointAddress() != null && other.getYarnEndpointAddress().equals(this.getYarnEndpointAddress()) == false)
+            return false;
+        if (other.getPrivateAddress() == null ^ this.getPrivateAddress() == null)
+            return false;
+        if (other.getPrivateAddress() != null && other.getPrivateAddress().equals(this.getPrivateAddress()) == false)
             return false;
         if (other.getZeppelinRemoteSparkInterpreterPort() == null ^ this.getZeppelinRemoteSparkInterpreterPort() == null)
             return false;
@@ -1091,6 +1143,7 @@ public class DevEndpoint implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
         hashCode = prime * hashCode + ((getYarnEndpointAddress() == null) ? 0 : getYarnEndpointAddress().hashCode());
+        hashCode = prime * hashCode + ((getPrivateAddress() == null) ? 0 : getPrivateAddress().hashCode());
         hashCode = prime * hashCode + ((getZeppelinRemoteSparkInterpreterPort() == null) ? 0 : getZeppelinRemoteSparkInterpreterPort().hashCode());
         hashCode = prime * hashCode + ((getPublicAddress() == null) ? 0 : getPublicAddress().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());

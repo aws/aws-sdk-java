@@ -60,6 +60,14 @@ public class LinuxParametersJsonUnmarshaller implements Unmarshaller<LinuxParame
                     context.nextToken();
                     linuxParameters.setInitProcessEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("sharedMemorySize", targetDepth)) {
+                    context.nextToken();
+                    linuxParameters.setSharedMemorySize(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("tmpfs", targetDepth)) {
+                    context.nextToken();
+                    linuxParameters.setTmpfs(new ListUnmarshaller<Tmpfs>(TmpfsJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

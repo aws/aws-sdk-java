@@ -14,6 +14,8 @@
  */
 package com.amazonaws.auth.policy;
 
+import com.amazonaws.util.PolicyUtils;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -253,9 +255,13 @@ public class Statement {
      *
      * @param resources
      *            The resources associated with this policy statement.
+     * @throws IllegalArgumentException
+     *             If the list of resources contains both a Resource and a NotResource
      */
     public void setResources(Collection<Resource> resources) {
-        this.resources = new ArrayList<Resource>(resources);
+        List<Resource> resourceList = new ArrayList<Resource>(resources);
+        PolicyUtils.validateResourceList(resourceList);
+        this.resources = resourceList;
     }
 
     /**

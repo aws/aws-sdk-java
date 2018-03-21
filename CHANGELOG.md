@@ -1,3 +1,37 @@
+# __1.11.298__ __2018-03-20__
+## __AWS Config__
+  - ### Features
+    - AWS Config adds support for BatchGetResourceConfig API, allowing you to batch-retrieve the current state of one or more of your resources.
+
+## __AWS Cost Explorer Service__
+  - ### Features
+    - This launch will allow customers to access their Amazon EC2 Reserved Instance (RI) purchase recommendations programmatically via the AWS Cost Explorer API. 
+
+## __AWS Elastic Beanstalk__
+  - ### Features
+    - Documentation updates for the new Elastic Beanstalk API DescribeAccountAttributes.
+
+## __AWS Elemental MediaLive__
+  - ### Features
+    - AWS Elemental MediaLive has added support for updating Inputs and Input Security Groups. You can update Input Security Groups at any time and it will update all channels using that Input Security Group. Inputs can be updated as long as they are not attached to a currently running channel.
+
+## __AWS Glue__
+  - ### Features
+    - API Updates for DevEndpoint: PublicKey is now optional for CreateDevEndpoint. The new DevEndpoint field PrivateAddress will be populated for DevEndpoints associated with a VPC.
+
+## __AWS SDK for Java__
+  - ### Features
+    - Add support for defining and serializing NotResource elements in IAM policies.
+    - Update latency logging level in metric collection to debug level. [#1514](https://github.com/aws/aws-sdk-java/issues/1514)
+
+## __Amazon CloudWatch Events__
+  - ### Features
+    - Added SQS FIFO queue target support
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - Amazon ECS users can now mount a temporary volume in memory in containers and specify the shared memory that a container can use through the use of docker's 'tmpfs' and 'shm-size' features respectively. These fields can be specified under linuxParameters in ContainerDefinition in the Task Definition Template.
+
 # __1.11.297__ __2018-03-16__
 ## __AWS Elastic Beanstalk__
   - ### Features

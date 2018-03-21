@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified account does not have sufficient privileges for one of more AWS services.
+ * The specified account does not have sufficient privileges for one or more AWS services.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

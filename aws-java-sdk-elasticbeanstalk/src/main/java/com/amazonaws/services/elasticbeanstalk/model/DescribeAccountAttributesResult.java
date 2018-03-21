@@ -23,10 +23,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeAccountAttributesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The Elastic Beanstalk resource quotas associated with the calling AWS account.
+     * </p>
+     */
     private ResourceQuotas resourceQuotas;
 
     /**
+     * <p>
+     * The Elastic Beanstalk resource quotas associated with the calling AWS account.
+     * </p>
+     * 
      * @param resourceQuotas
+     *        The Elastic Beanstalk resource quotas associated with the calling AWS account.
      */
 
     public void setResourceQuotas(ResourceQuotas resourceQuotas) {
@@ -34,7 +44,11 @@ public class DescribeAccountAttributesResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * @return
+     * <p>
+     * The Elastic Beanstalk resource quotas associated with the calling AWS account.
+     * </p>
+     * 
+     * @return The Elastic Beanstalk resource quotas associated with the calling AWS account.
      */
 
     public ResourceQuotas getResourceQuotas() {
@@ -42,7 +56,12 @@ public class DescribeAccountAttributesResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * The Elastic Beanstalk resource quotas associated with the calling AWS account.
+     * </p>
+     * 
      * @param resourceQuotas
+     *        The Elastic Beanstalk resource quotas associated with the calling AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

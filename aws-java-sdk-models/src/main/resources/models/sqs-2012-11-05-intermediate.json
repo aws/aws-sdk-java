@@ -78,6 +78,7 @@
       "skip" : false
     },
     "calculateCRC32FromCompressedData" : false,
+    "contentTypeOverride" : null,
     "convenienceTypeOverloads" : [ ],
     "customClientConfigFactory" : "com.amazonaws.services.sqs.AmazonSQSClientConfigurationFactory",
     "customCodeTemplates" : null,

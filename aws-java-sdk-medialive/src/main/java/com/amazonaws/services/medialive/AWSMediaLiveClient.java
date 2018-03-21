@@ -136,10 +136,10 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @param createChannelRequest
      *        A request to create a channel
      * @return Result of the CreateChannel operation returned by the service.
-     * @throws BadRequestException
-     *         This request was invalid.
      * @throws UnprocessableEntityException
      *         The Channel failed validation and could not be created.
+     * @throws BadRequestException
+     *         This request was invalid.
      * @throws InternalServerErrorException
      *         Unexpected internal service error.
      * @throws ForbiddenException
@@ -1012,10 +1012,10 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @param updateChannelRequest
      *        A request to update a channel.
      * @return Result of the UpdateChannel operation returned by the service.
-     * @throws BadRequestException
-     *         This request was invalid.
      * @throws UnprocessableEntityException
      *         The channel configuration failed validation and could not be updated.
+     * @throws BadRequestException
+     *         This request was invalid.
      * @throws InternalServerErrorException
      *         Unexpected internal service error.
      * @throws ForbiddenException
@@ -1058,6 +1058,133 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateChannelResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateChannelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Updates an input.
+     * 
+     * @param updateInputRequest
+     *        A request to update an input.
+     * @return Result of the UpdateInput operation returned by the service.
+     * @throws BadRequestException
+     *         This request to update the input was invalid.
+     * @throws InternalServerErrorException
+     *         Internal Service Error
+     * @throws ForbiddenException
+     *         The requester does not have permission to update an input.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws NotFoundException
+     *         The input was not found.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws ConflictException
+     *         The input was unable to be updated at this time due to an issue with input resources.
+     * @sample AWSMediaLive.UpdateInput
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateInput" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateInputResult updateInput(UpdateInputRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateInput(request);
+    }
+
+    @SdkInternalApi
+    final UpdateInputResult executeUpdateInput(UpdateInputRequest updateInputRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateInputRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateInputRequest> request = null;
+        Response<UpdateInputResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateInputRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateInputRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateInputResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateInputResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Update an Input Security Group's Whilelists.
+     * 
+     * @param updateInputSecurityGroupRequest
+     *        The request to update some combination of the Input Security Group name and the IPv4 CIDRs the Input
+     *        Security Group should allow.
+     * @return Result of the UpdateInputSecurityGroup operation returned by the service.
+     * @throws BadRequestException
+     *         The request to update the Input Security Group was invalid
+     * @throws InternalServerErrorException
+     *         Internal Server Error
+     * @throws ForbiddenException
+     *         The requester does not have permission to update an Input Security Group
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws NotFoundException
+     *         The Input Security Group was not found.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws ConflictException
+     *         The Input Security Group was unable to be updated due to an issue with input security group resources.
+     * @sample AWSMediaLive.UpdateInputSecurityGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateInputSecurityGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateInputSecurityGroupResult updateInputSecurityGroup(UpdateInputSecurityGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateInputSecurityGroup(request);
+    }
+
+    @SdkInternalApi
+    final UpdateInputSecurityGroupResult executeUpdateInputSecurityGroup(UpdateInputSecurityGroupRequest updateInputSecurityGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateInputSecurityGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateInputSecurityGroupRequest> request = null;
+        Response<UpdateInputSecurityGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateInputSecurityGroupRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateInputSecurityGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateInputSecurityGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateInputSecurityGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

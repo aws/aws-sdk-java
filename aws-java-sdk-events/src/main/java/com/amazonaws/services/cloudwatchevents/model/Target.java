@@ -102,6 +102,12 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private BatchParameters batchParameters;
+    /**
+     * <p>
+     * Contains the message group ID to use when the target is a FIFO queue.
+     * </p>
+     */
+    private SqsParameters sqsParameters;
 
     /**
      * <p>
@@ -580,6 +586,46 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains the message group ID to use when the target is a FIFO queue.
+     * </p>
+     * 
+     * @param sqsParameters
+     *        Contains the message group ID to use when the target is a FIFO queue.
+     */
+
+    public void setSqsParameters(SqsParameters sqsParameters) {
+        this.sqsParameters = sqsParameters;
+    }
+
+    /**
+     * <p>
+     * Contains the message group ID to use when the target is a FIFO queue.
+     * </p>
+     * 
+     * @return Contains the message group ID to use when the target is a FIFO queue.
+     */
+
+    public SqsParameters getSqsParameters() {
+        return this.sqsParameters;
+    }
+
+    /**
+     * <p>
+     * Contains the message group ID to use when the target is a FIFO queue.
+     * </p>
+     * 
+     * @param sqsParameters
+     *        Contains the message group ID to use when the target is a FIFO queue.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Target withSqsParameters(SqsParameters sqsParameters) {
+        setSqsParameters(sqsParameters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -609,7 +655,9 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
         if (getEcsParameters() != null)
             sb.append("EcsParameters: ").append(getEcsParameters()).append(",");
         if (getBatchParameters() != null)
-            sb.append("BatchParameters: ").append(getBatchParameters());
+            sb.append("BatchParameters: ").append(getBatchParameters()).append(",");
+        if (getSqsParameters() != null)
+            sb.append("SqsParameters: ").append(getSqsParameters());
         sb.append("}");
         return sb.toString();
     }
@@ -664,6 +712,10 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getBatchParameters() != null && other.getBatchParameters().equals(this.getBatchParameters()) == false)
             return false;
+        if (other.getSqsParameters() == null ^ this.getSqsParameters() == null)
+            return false;
+        if (other.getSqsParameters() != null && other.getSqsParameters().equals(this.getSqsParameters()) == false)
+            return false;
         return true;
     }
 
@@ -682,6 +734,7 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRunCommandParameters() == null) ? 0 : getRunCommandParameters().hashCode());
         hashCode = prime * hashCode + ((getEcsParameters() == null) ? 0 : getEcsParameters().hashCode());
         hashCode = prime * hashCode + ((getBatchParameters() == null) ? 0 : getBatchParameters().hashCode());
+        hashCode = prime * hashCode + ((getSqsParameters() == null) ? 0 : getSqsParameters().hashCode());
         return hashCode;
     }
 

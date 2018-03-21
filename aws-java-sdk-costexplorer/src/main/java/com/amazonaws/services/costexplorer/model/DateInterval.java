@@ -31,16 +31,16 @@ public class DateInterval implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The beginning of the time period that you want the usage and costs for. The start date is inclusive. For example,
-     * if <code>start</code> is <code>2017-01-01</code>, then the cost and usage data is retrieved starting at
+     * if <code>start</code> is <code>2017-01-01</code>, AWS retrieves cost and usage data starting at
      * <code>2017-01-01</code> up to the end date.
      * </p>
      */
     private String start;
     /**
      * <p>
-     * The end of the time period that you want the usage and costs for. The end date is exclusive. For example, if the
-     * <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from the start date but
-     * not including <code>2017-05-01</code>.
+     * The end of the time period that you want the usage and costs for. The end date is exclusive. For example, if
+     * <code>end</code> is <code>2017-05-01</code>, AWS retrieves cost and usage data from the start date up to, but not
+     * including, <code>2017-05-01</code>.
      * </p>
      */
     private String end;
@@ -48,14 +48,14 @@ public class DateInterval implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The beginning of the time period that you want the usage and costs for. The start date is inclusive. For example,
-     * if <code>start</code> is <code>2017-01-01</code>, then the cost and usage data is retrieved starting at
+     * if <code>start</code> is <code>2017-01-01</code>, AWS retrieves cost and usage data starting at
      * <code>2017-01-01</code> up to the end date.
      * </p>
      * 
      * @param start
      *        The beginning of the time period that you want the usage and costs for. The start date is inclusive. For
-     *        example, if <code>start</code> is <code>2017-01-01</code>, then the cost and usage data is retrieved
-     *        starting at <code>2017-01-01</code> up to the end date.
+     *        example, if <code>start</code> is <code>2017-01-01</code>, AWS retrieves cost and usage data starting at
+     *        <code>2017-01-01</code> up to the end date.
      */
 
     public void setStart(String start) {
@@ -65,13 +65,13 @@ public class DateInterval implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The beginning of the time period that you want the usage and costs for. The start date is inclusive. For example,
-     * if <code>start</code> is <code>2017-01-01</code>, then the cost and usage data is retrieved starting at
+     * if <code>start</code> is <code>2017-01-01</code>, AWS retrieves cost and usage data starting at
      * <code>2017-01-01</code> up to the end date.
      * </p>
      * 
      * @return The beginning of the time period that you want the usage and costs for. The start date is inclusive. For
-     *         example, if <code>start</code> is <code>2017-01-01</code>, then the cost and usage data is retrieved
-     *         starting at <code>2017-01-01</code> up to the end date.
+     *         example, if <code>start</code> is <code>2017-01-01</code>, AWS retrieves cost and usage data starting at
+     *         <code>2017-01-01</code> up to the end date.
      */
 
     public String getStart() {
@@ -81,14 +81,14 @@ public class DateInterval implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The beginning of the time period that you want the usage and costs for. The start date is inclusive. For example,
-     * if <code>start</code> is <code>2017-01-01</code>, then the cost and usage data is retrieved starting at
+     * if <code>start</code> is <code>2017-01-01</code>, AWS retrieves cost and usage data starting at
      * <code>2017-01-01</code> up to the end date.
      * </p>
      * 
      * @param start
      *        The beginning of the time period that you want the usage and costs for. The start date is inclusive. For
-     *        example, if <code>start</code> is <code>2017-01-01</code>, then the cost and usage data is retrieved
-     *        starting at <code>2017-01-01</code> up to the end date.
+     *        example, if <code>start</code> is <code>2017-01-01</code>, AWS retrieves cost and usage data starting at
+     *        <code>2017-01-01</code> up to the end date.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,15 +99,15 @@ public class DateInterval implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The end of the time period that you want the usage and costs for. The end date is exclusive. For example, if the
-     * <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from the start date but
-     * not including <code>2017-05-01</code>.
+     * The end of the time period that you want the usage and costs for. The end date is exclusive. For example, if
+     * <code>end</code> is <code>2017-05-01</code>, AWS retrieves cost and usage data from the start date up to, but not
+     * including, <code>2017-05-01</code>.
      * </p>
      * 
      * @param end
      *        The end of the time period that you want the usage and costs for. The end date is exclusive. For example,
-     *        if the <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from the
-     *        start date but not including <code>2017-05-01</code>.
+     *        if <code>end</code> is <code>2017-05-01</code>, AWS retrieves cost and usage data from the start date up
+     *        to, but not including, <code>2017-05-01</code>.
      */
 
     public void setEnd(String end) {
@@ -116,14 +116,14 @@ public class DateInterval implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The end of the time period that you want the usage and costs for. The end date is exclusive. For example, if the
-     * <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from the start date but
-     * not including <code>2017-05-01</code>.
+     * The end of the time period that you want the usage and costs for. The end date is exclusive. For example, if
+     * <code>end</code> is <code>2017-05-01</code>, AWS retrieves cost and usage data from the start date up to, but not
+     * including, <code>2017-05-01</code>.
      * </p>
      * 
      * @return The end of the time period that you want the usage and costs for. The end date is exclusive. For example,
-     *         if the <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from the
-     *         start date but not including <code>2017-05-01</code>.
+     *         if <code>end</code> is <code>2017-05-01</code>, AWS retrieves cost and usage data from the start date up
+     *         to, but not including, <code>2017-05-01</code>.
      */
 
     public String getEnd() {
@@ -132,15 +132,15 @@ public class DateInterval implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The end of the time period that you want the usage and costs for. The end date is exclusive. For example, if the
-     * <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from the start date but
-     * not including <code>2017-05-01</code>.
+     * The end of the time period that you want the usage and costs for. The end date is exclusive. For example, if
+     * <code>end</code> is <code>2017-05-01</code>, AWS retrieves cost and usage data from the start date up to, but not
+     * including, <code>2017-05-01</code>.
      * </p>
      * 
      * @param end
      *        The end of the time period that you want the usage and costs for. The end date is exclusive. For example,
-     *        if the <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from the
-     *        start date but not including <code>2017-05-01</code>.
+     *        if <code>end</code> is <code>2017-05-01</code>, AWS retrieves cost and usage data from the start date up
+     *        to, but not including, <code>2017-05-01</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
