@@ -104,6 +104,9 @@ public interface AmazonAppStream {
      * @return Result of the AssociateFleet operation returned by the service.
      * @throws LimitExceededException
      *         The requested limit exceeds the permitted limit for an account.
+     * @throws InvalidAccountStatusException
+     *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
+     *         Support.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws ConcurrentModificationException
@@ -134,6 +137,9 @@ public interface AmazonAppStream {
      *         The specified resource exists and is not in use, but isn't available.
      * @throws LimitExceededException
      *         The requested limit exceeds the permitted limit for an account.
+     * @throws InvalidAccountStatusException
+     *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
+     *         Support.
      * @throws IncompatibleImageException
      *         The image does not support storage connectors.
      * @sample AmazonAppStream.CopyImage
@@ -153,6 +159,9 @@ public interface AmazonAppStream {
      *         The specified resource already exists.
      * @throws LimitExceededException
      *         The requested limit exceeds the permitted limit for an account.
+     * @throws InvalidAccountStatusException
+     *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
+     *         Support.
      * @sample AmazonAppStream.CreateDirectoryConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateDirectoryConfig"
      *      target="_top">AWS API Documentation</a>
@@ -174,6 +183,9 @@ public interface AmazonAppStream {
      *         The specified resource was not found.
      * @throws LimitExceededException
      *         The requested limit exceeds the permitted limit for an account.
+     * @throws InvalidAccountStatusException
+     *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
+     *         Support.
      * @throws InvalidRoleException
      *         The specified role is invalid.
      * @throws ConcurrentModificationException
@@ -200,6 +212,9 @@ public interface AmazonAppStream {
      * @return Result of the CreateImageBuilder operation returned by the service.
      * @throws LimitExceededException
      *         The requested limit exceeds the permitted limit for an account.
+     * @throws InvalidAccountStatusException
+     *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
+     *         Support.
      * @throws ResourceAlreadyExistsException
      *         The specified resource already exists.
      * @throws ResourceNotAvailableException
@@ -246,6 +261,9 @@ public interface AmazonAppStream {
      * @return Result of the CreateStack operation returned by the service.
      * @throws LimitExceededException
      *         The requested limit exceeds the permitted limit for an account.
+     * @throws InvalidAccountStatusException
+     *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
+     *         Support.
      * @throws ResourceAlreadyExistsException
      *         The specified resource already exists.
      * @throws ConcurrentModificationException
@@ -565,6 +583,9 @@ public interface AmazonAppStream {
      *         The attempted operation is not permitted.
      * @throws LimitExceededException
      *         The requested limit exceeds the permitted limit for an account.
+     * @throws InvalidAccountStatusException
+     *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
+     *         Support.
      * @throws ConcurrentModificationException
      *         An API error occurred. Wait a few minutes and try again.
      * @sample AmazonAppStream.StartFleet
@@ -586,6 +607,9 @@ public interface AmazonAppStream {
      *         The specified resource was not found.
      * @throws ConcurrentModificationException
      *         An API error occurred. Wait a few minutes and try again.
+     * @throws InvalidAccountStatusException
+     *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
+     *         Support.
      * @throws IncompatibleImageException
      *         The image does not support storage connectors.
      * @sample AmazonAppStream.StartImageBuilder
@@ -653,6 +677,9 @@ public interface AmazonAppStream {
      * @return Result of the TagResource operation returned by the service.
      * @throws LimitExceededException
      *         The requested limit exceeds the permitted limit for an account.
+     * @throws InvalidAccountStatusException
+     *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
+     *         Support.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @sample AmazonAppStream.TagResource
@@ -720,6 +747,9 @@ public interface AmazonAppStream {
      *         The specified resource is in use.
      * @throws LimitExceededException
      *         The requested limit exceeds the permitted limit for an account.
+     * @throws InvalidAccountStatusException
+     *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
+     *         Support.
      * @throws InvalidRoleException
      *         The specified role is invalid.
      * @throws ResourceNotFoundException
@@ -757,6 +787,9 @@ public interface AmazonAppStream {
      *         Indicates an incorrect combination of parameters, or a missing parameter.
      * @throws LimitExceededException
      *         The requested limit exceeds the permitted limit for an account.
+     * @throws InvalidAccountStatusException
+     *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
+     *         Support.
      * @throws IncompatibleImageException
      *         The image does not support storage connectors.
      * @sample AmazonAppStream.UpdateStack

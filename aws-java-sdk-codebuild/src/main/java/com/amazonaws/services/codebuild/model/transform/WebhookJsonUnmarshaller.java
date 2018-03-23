@@ -60,6 +60,14 @@ public class WebhookJsonUnmarshaller implements Unmarshaller<Webhook, JsonUnmars
                     context.nextToken();
                     webhook.setSecret(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("branchFilter", targetDepth)) {
+                    context.nextToken();
+                    webhook.setBranchFilter(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("lastModifiedSecret", targetDepth)) {
+                    context.nextToken();
+                    webhook.setLastModifiedSecret(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

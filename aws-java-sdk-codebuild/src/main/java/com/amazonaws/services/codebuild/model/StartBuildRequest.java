@@ -27,7 +27,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the build project to start running a build.
+     * The name of the AWS CodeBuild build project to start running a build.
      * </p>
      */
     private String projectName;
@@ -104,11 +104,11 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the build project to start running a build.
+     * The name of the AWS CodeBuild build project to start running a build.
      * </p>
      * 
      * @param projectName
-     *        The name of the build project to start running a build.
+     *        The name of the AWS CodeBuild build project to start running a build.
      */
 
     public void setProjectName(String projectName) {
@@ -117,10 +117,10 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the build project to start running a build.
+     * The name of the AWS CodeBuild build project to start running a build.
      * </p>
      * 
-     * @return The name of the build project to start running a build.
+     * @return The name of the AWS CodeBuild build project to start running a build.
      */
 
     public String getProjectName() {
@@ -129,11 +129,11 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the build project to start running a build.
+     * The name of the AWS CodeBuild build project to start running a build.
      * </p>
      * 
      * @param projectName
-     *        The name of the build project to start running a build.
+     *        The name of the AWS CodeBuild build project to start running a build.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

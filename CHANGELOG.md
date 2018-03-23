@@ -1,3 +1,16 @@
+# __1.11.300__ __2018-03-22__
+## __AWS CodeBuild__
+  - ### Features
+    - Adding support for branch filtering when using webhooks with AWS CodeBuild. 
+
+## __Amazon AppStream__
+  - ### Features
+    - Feedback URL allows admins to provide a feedback link or a survey link for collecting user feedback while streaming sessions. When a feedback link is provided, streaming users will see a "Send Feedback" choice in their streaming session toolbar. On selecting this choice, user will be redirected to the link provided in a new browser tab. If a feedback link is not provided, users will not see the "Send Feedback" option. 
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - Amazon Elastic Container Service (ECS) now includes integrated Service Discovery using Route 53 Auto Naming. Customers can now specify a Route 53 Auto Naming service as part of an ECS service. ECS will register task IPs with Route 53, making them available via DNS in your VPC.
+
 # __1.11.299__ __2018-03-21__
 ## __AWSServerlessApplicationRepository__
   - ### Features

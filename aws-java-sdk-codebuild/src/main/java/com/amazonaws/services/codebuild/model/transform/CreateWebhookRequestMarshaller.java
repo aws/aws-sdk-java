@@ -29,6 +29,8 @@ public class CreateWebhookRequestMarshaller {
 
     private static final MarshallingInfo<String> PROJECTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("projectName").build();
+    private static final MarshallingInfo<String> BRANCHFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("branchFilter").build();
 
     private static final CreateWebhookRequestMarshaller instance = new CreateWebhookRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class CreateWebhookRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createWebhookRequest.getProjectName(), PROJECTNAME_BINDING);
+            protocolMarshaller.marshall(createWebhookRequest.getBranchFilter(), BRANCHFILTER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

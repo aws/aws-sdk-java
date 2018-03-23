@@ -56,6 +56,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<LoadBalancer> loadBalancers;
+    /** <p/> */
+    private com.amazonaws.internal.SdkInternalList<ServiceRegistry> serviceRegistries;
     /**
      * <p>
      * The status of the service. The valid values are <code>ACTIVE</code>, <code>DRAINING</code>, or
@@ -388,6 +390,68 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     public Service withLoadBalancers(java.util.Collection<LoadBalancer> loadBalancers) {
         setLoadBalancers(loadBalancers);
+        return this;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public java.util.List<ServiceRegistry> getServiceRegistries() {
+        if (serviceRegistries == null) {
+            serviceRegistries = new com.amazonaws.internal.SdkInternalList<ServiceRegistry>();
+        }
+        return serviceRegistries;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param serviceRegistries
+     */
+
+    public void setServiceRegistries(java.util.Collection<ServiceRegistry> serviceRegistries) {
+        if (serviceRegistries == null) {
+            this.serviceRegistries = null;
+            return;
+        }
+
+        this.serviceRegistries = new com.amazonaws.internal.SdkInternalList<ServiceRegistry>(serviceRegistries);
+    }
+
+    /**
+     * <p/>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setServiceRegistries(java.util.Collection)} or {@link #withServiceRegistries(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param serviceRegistries
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Service withServiceRegistries(ServiceRegistry... serviceRegistries) {
+        if (this.serviceRegistries == null) {
+            setServiceRegistries(new com.amazonaws.internal.SdkInternalList<ServiceRegistry>(serviceRegistries.length));
+        }
+        for (ServiceRegistry ele : serviceRegistries) {
+            this.serviceRegistries.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param serviceRegistries
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Service withServiceRegistries(java.util.Collection<ServiceRegistry> serviceRegistries) {
+        setServiceRegistries(serviceRegistries);
         return this;
     }
 
@@ -1261,6 +1325,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
             sb.append("ClusterArn: ").append(getClusterArn()).append(",");
         if (getLoadBalancers() != null)
             sb.append("LoadBalancers: ").append(getLoadBalancers()).append(",");
+        if (getServiceRegistries() != null)
+            sb.append("ServiceRegistries: ").append(getServiceRegistries()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getDesiredCount() != null)
@@ -1322,6 +1388,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         if (other.getLoadBalancers() == null ^ this.getLoadBalancers() == null)
             return false;
         if (other.getLoadBalancers() != null && other.getLoadBalancers().equals(this.getLoadBalancers()) == false)
+            return false;
+        if (other.getServiceRegistries() == null ^ this.getServiceRegistries() == null)
+            return false;
+        if (other.getServiceRegistries() != null && other.getServiceRegistries().equals(this.getServiceRegistries()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
@@ -1400,6 +1470,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getServiceName() == null) ? 0 : getServiceName().hashCode());
         hashCode = prime * hashCode + ((getClusterArn() == null) ? 0 : getClusterArn().hashCode());
         hashCode = prime * hashCode + ((getLoadBalancers() == null) ? 0 : getLoadBalancers().hashCode());
+        hashCode = prime * hashCode + ((getServiceRegistries() == null) ? 0 : getServiceRegistries().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getDesiredCount() == null) ? 0 : getDesiredCount().hashCode());
         hashCode = prime * hashCode + ((getRunningCount() == null) ? 0 : getRunningCount().hashCode());

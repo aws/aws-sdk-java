@@ -38,6 +38,8 @@ public class CreateStackRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StorageConnectors").build();
     private static final MarshallingInfo<String> REDIRECTURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RedirectURL").build();
+    private static final MarshallingInfo<String> FEEDBACKURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FeedbackURL").build();
 
     private static final CreateStackRequestMarshaller instance = new CreateStackRequestMarshaller();
 
@@ -60,6 +62,7 @@ public class CreateStackRequestMarshaller {
             protocolMarshaller.marshall(createStackRequest.getDisplayName(), DISPLAYNAME_BINDING);
             protocolMarshaller.marshall(createStackRequest.getStorageConnectors(), STORAGECONNECTORS_BINDING);
             protocolMarshaller.marshall(createStackRequest.getRedirectURL(), REDIRECTURL_BINDING);
+            protocolMarshaller.marshall(createStackRequest.getFeedbackURL(), FEEDBACKURL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

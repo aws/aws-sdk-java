@@ -55,6 +55,8 @@ public enum CodebuildActions implements Action {
     StopBuild("codebuild:StopBuild"),
     /** Action for the UpdateProject operation. */
     UpdateProject("codebuild:UpdateProject"),
+    /** Action for the UpdateWebhook operation. */
+    UpdateWebhook("codebuild:UpdateWebhook"),
 
     ;
 

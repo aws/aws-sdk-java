@@ -36,17 +36,30 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
     private String url;
     /**
      * <p>
-     * This is the server endpoint that will receive the webhook payload.
+     * The CodeBuild endpoint where webhook events are sent.
      * </p>
      */
     private String payloadUrl;
     /**
      * <p>
-     * Use this secret while creating a webhook in GitHub for Enterprise. The secret allows webhook requests sent by
-     * GitHub for Enterprise to be authenticated by AWS CodeBuild.
+     * The secret token of the associated repository.
      * </p>
      */
     private String secret;
+    /**
+     * <p>
+     * A regular expression used to determine which branches in a repository are built when a webhook is triggered. If
+     * the name of a branch matches the regular expression, then it is built. If it doesn't match, then it is not. If
+     * branchFilter is empty, then all branches are built.
+     * </p>
+     */
+    private String branchFilter;
+    /**
+     * <p>
+     * A timestamp indicating the last time a repository's secret token was modified.
+     * </p>
+     */
+    private java.util.Date lastModifiedSecret;
 
     /**
      * <p>
@@ -90,11 +103,11 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This is the server endpoint that will receive the webhook payload.
+     * The CodeBuild endpoint where webhook events are sent.
      * </p>
      * 
      * @param payloadUrl
-     *        This is the server endpoint that will receive the webhook payload.
+     *        The CodeBuild endpoint where webhook events are sent.
      */
 
     public void setPayloadUrl(String payloadUrl) {
@@ -103,10 +116,10 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This is the server endpoint that will receive the webhook payload.
+     * The CodeBuild endpoint where webhook events are sent.
      * </p>
      * 
-     * @return This is the server endpoint that will receive the webhook payload.
+     * @return The CodeBuild endpoint where webhook events are sent.
      */
 
     public String getPayloadUrl() {
@@ -115,11 +128,11 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This is the server endpoint that will receive the webhook payload.
+     * The CodeBuild endpoint where webhook events are sent.
      * </p>
      * 
      * @param payloadUrl
-     *        This is the server endpoint that will receive the webhook payload.
+     *        The CodeBuild endpoint where webhook events are sent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,13 +143,11 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Use this secret while creating a webhook in GitHub for Enterprise. The secret allows webhook requests sent by
-     * GitHub for Enterprise to be authenticated by AWS CodeBuild.
+     * The secret token of the associated repository.
      * </p>
      * 
      * @param secret
-     *        Use this secret while creating a webhook in GitHub for Enterprise. The secret allows webhook requests sent
-     *        by GitHub for Enterprise to be authenticated by AWS CodeBuild.
+     *        The secret token of the associated repository.
      */
 
     public void setSecret(String secret) {
@@ -145,12 +156,10 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Use this secret while creating a webhook in GitHub for Enterprise. The secret allows webhook requests sent by
-     * GitHub for Enterprise to be authenticated by AWS CodeBuild.
+     * The secret token of the associated repository.
      * </p>
      * 
-     * @return Use this secret while creating a webhook in GitHub for Enterprise. The secret allows webhook requests
-     *         sent by GitHub for Enterprise to be authenticated by AWS CodeBuild.
+     * @return The secret token of the associated repository.
      */
 
     public String getSecret() {
@@ -159,18 +168,108 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Use this secret while creating a webhook in GitHub for Enterprise. The secret allows webhook requests sent by
-     * GitHub for Enterprise to be authenticated by AWS CodeBuild.
+     * The secret token of the associated repository.
      * </p>
      * 
      * @param secret
-     *        Use this secret while creating a webhook in GitHub for Enterprise. The secret allows webhook requests sent
-     *        by GitHub for Enterprise to be authenticated by AWS CodeBuild.
+     *        The secret token of the associated repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Webhook withSecret(String secret) {
         setSecret(secret);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A regular expression used to determine which branches in a repository are built when a webhook is triggered. If
+     * the name of a branch matches the regular expression, then it is built. If it doesn't match, then it is not. If
+     * branchFilter is empty, then all branches are built.
+     * </p>
+     * 
+     * @param branchFilter
+     *        A regular expression used to determine which branches in a repository are built when a webhook is
+     *        triggered. If the name of a branch matches the regular expression, then it is built. If it doesn't match,
+     *        then it is not. If branchFilter is empty, then all branches are built.
+     */
+
+    public void setBranchFilter(String branchFilter) {
+        this.branchFilter = branchFilter;
+    }
+
+    /**
+     * <p>
+     * A regular expression used to determine which branches in a repository are built when a webhook is triggered. If
+     * the name of a branch matches the regular expression, then it is built. If it doesn't match, then it is not. If
+     * branchFilter is empty, then all branches are built.
+     * </p>
+     * 
+     * @return A regular expression used to determine which branches in a repository are built when a webhook is
+     *         triggered. If the name of a branch matches the regular expression, then it is built. If it doesn't match,
+     *         then it is not. If branchFilter is empty, then all branches are built.
+     */
+
+    public String getBranchFilter() {
+        return this.branchFilter;
+    }
+
+    /**
+     * <p>
+     * A regular expression used to determine which branches in a repository are built when a webhook is triggered. If
+     * the name of a branch matches the regular expression, then it is built. If it doesn't match, then it is not. If
+     * branchFilter is empty, then all branches are built.
+     * </p>
+     * 
+     * @param branchFilter
+     *        A regular expression used to determine which branches in a repository are built when a webhook is
+     *        triggered. If the name of a branch matches the regular expression, then it is built. If it doesn't match,
+     *        then it is not. If branchFilter is empty, then all branches are built.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Webhook withBranchFilter(String branchFilter) {
+        setBranchFilter(branchFilter);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A timestamp indicating the last time a repository's secret token was modified.
+     * </p>
+     * 
+     * @param lastModifiedSecret
+     *        A timestamp indicating the last time a repository's secret token was modified.
+     */
+
+    public void setLastModifiedSecret(java.util.Date lastModifiedSecret) {
+        this.lastModifiedSecret = lastModifiedSecret;
+    }
+
+    /**
+     * <p>
+     * A timestamp indicating the last time a repository's secret token was modified.
+     * </p>
+     * 
+     * @return A timestamp indicating the last time a repository's secret token was modified.
+     */
+
+    public java.util.Date getLastModifiedSecret() {
+        return this.lastModifiedSecret;
+    }
+
+    /**
+     * <p>
+     * A timestamp indicating the last time a repository's secret token was modified.
+     * </p>
+     * 
+     * @param lastModifiedSecret
+     *        A timestamp indicating the last time a repository's secret token was modified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Webhook withLastModifiedSecret(java.util.Date lastModifiedSecret) {
+        setLastModifiedSecret(lastModifiedSecret);
         return this;
     }
 
@@ -190,7 +289,11 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
         if (getPayloadUrl() != null)
             sb.append("PayloadUrl: ").append(getPayloadUrl()).append(",");
         if (getSecret() != null)
-            sb.append("Secret: ").append(getSecret());
+            sb.append("Secret: ").append(getSecret()).append(",");
+        if (getBranchFilter() != null)
+            sb.append("BranchFilter: ").append(getBranchFilter()).append(",");
+        if (getLastModifiedSecret() != null)
+            sb.append("LastModifiedSecret: ").append(getLastModifiedSecret());
         sb.append("}");
         return sb.toString();
     }
@@ -217,6 +320,14 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSecret() != null && other.getSecret().equals(this.getSecret()) == false)
             return false;
+        if (other.getBranchFilter() == null ^ this.getBranchFilter() == null)
+            return false;
+        if (other.getBranchFilter() != null && other.getBranchFilter().equals(this.getBranchFilter()) == false)
+            return false;
+        if (other.getLastModifiedSecret() == null ^ this.getLastModifiedSecret() == null)
+            return false;
+        if (other.getLastModifiedSecret() != null && other.getLastModifiedSecret().equals(this.getLastModifiedSecret()) == false)
+            return false;
         return true;
     }
 
@@ -228,6 +339,8 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getUrl() == null) ? 0 : getUrl().hashCode());
         hashCode = prime * hashCode + ((getPayloadUrl() == null) ? 0 : getPayloadUrl().hashCode());
         hashCode = prime * hashCode + ((getSecret() == null) ? 0 : getSecret().hashCode());
+        hashCode = prime * hashCode + ((getBranchFilter() == null) ? 0 : getBranchFilter().hashCode());
+        hashCode = prime * hashCode + ((getLastModifiedSecret() == null) ? 0 : getLastModifiedSecret().hashCode());
         return hashCode;
     }
 

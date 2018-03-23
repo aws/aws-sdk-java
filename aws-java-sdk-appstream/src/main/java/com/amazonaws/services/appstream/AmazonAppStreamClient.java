@@ -89,6 +89,9 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotAvailableException").withModeledClass(
                                     com.amazonaws.services.appstream.model.ResourceNotAvailableException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidAccountStatusException").withModeledClass(
+                                    com.amazonaws.services.appstream.model.InvalidAccountStatusException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("OperationNotPermittedException").withModeledClass(
                                     com.amazonaws.services.appstream.model.OperationNotPermittedException.class))
                     .addErrorMetadata(
@@ -300,6 +303,9 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @return Result of the AssociateFleet operation returned by the service.
      * @throws LimitExceededException
      *         The requested limit exceeds the permitted limit for an account.
+     * @throws InvalidAccountStatusException
+     *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
+     *         Support.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws ConcurrentModificationException
@@ -366,6 +372,9 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *         The specified resource exists and is not in use, but isn't available.
      * @throws LimitExceededException
      *         The requested limit exceeds the permitted limit for an account.
+     * @throws InvalidAccountStatusException
+     *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
+     *         Support.
      * @throws IncompatibleImageException
      *         The image does not support storage connectors.
      * @sample AmazonAppStream.CopyImage
@@ -421,6 +430,9 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *         The specified resource already exists.
      * @throws LimitExceededException
      *         The requested limit exceeds the permitted limit for an account.
+     * @throws InvalidAccountStatusException
+     *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
+     *         Support.
      * @sample AmazonAppStream.CreateDirectoryConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateDirectoryConfig"
      *      target="_top">AWS API Documentation</a>
@@ -479,6 +491,9 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *         The specified resource was not found.
      * @throws LimitExceededException
      *         The requested limit exceeds the permitted limit for an account.
+     * @throws InvalidAccountStatusException
+     *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
+     *         Support.
      * @throws InvalidRoleException
      *         The specified role is invalid.
      * @throws ConcurrentModificationException
@@ -541,6 +556,9 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @return Result of the CreateImageBuilder operation returned by the service.
      * @throws LimitExceededException
      *         The requested limit exceeds the permitted limit for an account.
+     * @throws InvalidAccountStatusException
+     *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
+     *         Support.
      * @throws ResourceAlreadyExistsException
      *         The specified resource already exists.
      * @throws ResourceNotAvailableException
@@ -661,6 +679,9 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @return Result of the CreateStack operation returned by the service.
      * @throws LimitExceededException
      *         The requested limit exceeds the permitted limit for an account.
+     * @throws InvalidAccountStatusException
+     *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
+     *         Support.
      * @throws ResourceAlreadyExistsException
      *         The specified resource already exists.
      * @throws ConcurrentModificationException
@@ -1632,6 +1653,9 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *         The attempted operation is not permitted.
      * @throws LimitExceededException
      *         The requested limit exceeds the permitted limit for an account.
+     * @throws InvalidAccountStatusException
+     *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
+     *         Support.
      * @throws ConcurrentModificationException
      *         An API error occurred. Wait a few minutes and try again.
      * @sample AmazonAppStream.StartFleet
@@ -1689,6 +1713,9 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *         The specified resource was not found.
      * @throws ConcurrentModificationException
      *         An API error occurred. Wait a few minutes and try again.
+     * @throws InvalidAccountStatusException
+     *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
+     *         Support.
      * @throws IncompatibleImageException
      *         The image does not support storage connectors.
      * @sample AmazonAppStream.StartImageBuilder
@@ -1864,6 +1891,9 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @return Result of the TagResource operation returned by the service.
      * @throws LimitExceededException
      *         The requested limit exceeds the permitted limit for an account.
+     * @throws InvalidAccountStatusException
+     *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
+     *         Support.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @sample AmazonAppStream.TagResource
@@ -2040,6 +2070,9 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *         The specified resource is in use.
      * @throws LimitExceededException
      *         The requested limit exceeds the permitted limit for an account.
+     * @throws InvalidAccountStatusException
+     *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
+     *         Support.
      * @throws InvalidRoleException
      *         The specified role is invalid.
      * @throws ResourceNotFoundException
@@ -2113,6 +2146,9 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *         Indicates an incorrect combination of parameters, or a missing parameter.
      * @throws LimitExceededException
      *         The requested limit exceeds the permitted limit for an account.
+     * @throws InvalidAccountStatusException
+     *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
+     *         Support.
      * @throws IncompatibleImageException
      *         The image does not support storage connectors.
      * @sample AmazonAppStream.UpdateStack

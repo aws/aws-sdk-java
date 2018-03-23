@@ -103,6 +103,10 @@
         "documentation" : "<p>The requested limit exceeds the permitted limit for an account.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "InvalidAccountStatusException",
+        "documentation" : "<p>The resource cannot be created because your AWS account is suspended. For assistance, contact AWS Support. </p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The specified resource was not found.</p>",
         "httpStatusCode" : null
@@ -162,6 +166,10 @@
         "documentation" : "<p>The requested limit exceeds the permitted limit for an account.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "InvalidAccountStatusException",
+        "documentation" : "<p>The resource cannot be created because your AWS account is suspended. For assistance, contact AWS Support. </p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "IncompatibleImageException",
         "documentation" : "<p>The image does not support storage connectors.</p>",
         "httpStatusCode" : null
@@ -199,6 +207,10 @@
       }, {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>The requested limit exceeds the permitted limit for an account.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidAccountStatusException",
+        "documentation" : "<p>The resource cannot be created because your AWS account is suspended. For assistance, contact AWS Support. </p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -242,6 +254,10 @@
       }, {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>The requested limit exceeds the permitted limit for an account.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidAccountStatusException",
+        "documentation" : "<p>The resource cannot be created because your AWS account is suspended. For assistance, contact AWS Support. </p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidRoleException",
@@ -289,6 +305,10 @@
       "exceptions" : [ {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>The requested limit exceeds the permitted limit for an account.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidAccountStatusException",
+        "documentation" : "<p>The resource cannot be created because your AWS account is suspended. For assistance, contact AWS Support. </p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ResourceAlreadyExistsException",
@@ -383,6 +403,10 @@
       "exceptions" : [ {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>The requested limit exceeds the permitted limit for an account.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidAccountStatusException",
+        "documentation" : "<p>The resource cannot be created because your AWS account is suspended. For assistance, contact AWS Support. </p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ResourceAlreadyExistsException",
@@ -1019,6 +1043,10 @@
         "documentation" : "<p>The requested limit exceeds the permitted limit for an account.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "InvalidAccountStatusException",
+        "documentation" : "<p>The resource cannot be created because your AWS account is suspended. For assistance, contact AWS Support. </p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "ConcurrentModificationException",
         "documentation" : "<p>An API error occurred. Wait a few minutes and try again.</p>",
         "httpStatusCode" : null
@@ -1060,6 +1088,10 @@
       }, {
         "exceptionName" : "ConcurrentModificationException",
         "documentation" : "<p>An API error occurred. Wait a few minutes and try again.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidAccountStatusException",
+        "documentation" : "<p>The resource cannot be created because your AWS account is suspended. For assistance, contact AWS Support. </p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "IncompatibleImageException",
@@ -1171,6 +1203,10 @@
         "documentation" : "<p>The requested limit exceeds the permitted limit for an account.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "InvalidAccountStatusException",
+        "documentation" : "<p>The resource cannot be created because your AWS account is suspended. For assistance, contact AWS Support. </p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The specified resource was not found.</p>",
         "httpStatusCode" : null
@@ -1280,6 +1316,10 @@
         "documentation" : "<p>The requested limit exceeds the permitted limit for an account.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "InvalidAccountStatusException",
+        "documentation" : "<p>The resource cannot be created because your AWS account is suspended. For assistance, contact AWS Support. </p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "InvalidRoleException",
         "documentation" : "<p>The specified role is invalid.</p>",
         "httpStatusCode" : null
@@ -1353,6 +1393,10 @@
       }, {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>The requested limit exceeds the permitted limit for an account.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidAccountStatusException",
+        "documentation" : "<p>The resource cannot be created because your AWS account is suspended. For assistance, contact AWS Support. </p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "IncompatibleImageException",
@@ -2492,11 +2536,11 @@
         "c2jName" : "FleetName",
         "c2jShape" : "String",
         "deprecated" : false,
-        "documentation" : "<p>The name of the fleet.</p>",
+        "documentation" : "<p>The name of the fleet. </p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The name of the fleet.</p>\n@param fleetName The name of the fleet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The name of the fleet. </p>\n@param fleetName The name of the fleet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withFleetName",
-        "getterDocumentation" : "/**<p>The name of the fleet.</p>\n@return The name of the fleet.*/",
+        "getterDocumentation" : "/**<p>The name of the fleet. </p>\n@return The name of the fleet.*/",
         "getterMethodName" : "getFleetName",
         "getterModel" : {
           "returnType" : "String",
@@ -2528,7 +2572,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FleetName",
-        "setterDocumentation" : "/**<p>The name of the fleet.</p>\n@param fleetName The name of the fleet.*/",
+        "setterDocumentation" : "/**<p>The name of the fleet. </p>\n@param fleetName The name of the fleet.*/",
         "setterMethodName" : "setFleetName",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -2541,12 +2585,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The name of the fleet.</p>\n@param fleetName The name of the fleet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The name of the fleet. </p>\n@param fleetName The name of the fleet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "fleetName",
           "variableType" : "String",
-          "documentation" : "<p>The name of the fleet.</p>",
+          "documentation" : "<p>The name of the fleet. </p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -2620,11 +2664,11 @@
           "c2jName" : "FleetName",
           "c2jShape" : "String",
           "deprecated" : false,
-          "documentation" : "<p>The name of the fleet.</p>",
+          "documentation" : "<p>The name of the fleet. </p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The name of the fleet.</p>\n@param fleetName The name of the fleet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The name of the fleet. </p>\n@param fleetName The name of the fleet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withFleetName",
-          "getterDocumentation" : "/**<p>The name of the fleet.</p>\n@return The name of the fleet.*/",
+          "getterDocumentation" : "/**<p>The name of the fleet. </p>\n@return The name of the fleet.*/",
           "getterMethodName" : "getFleetName",
           "getterModel" : {
             "returnType" : "String",
@@ -2656,7 +2700,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FleetName",
-          "setterDocumentation" : "/**<p>The name of the fleet.</p>\n@param fleetName The name of the fleet.*/",
+          "setterDocumentation" : "/**<p>The name of the fleet. </p>\n@param fleetName The name of the fleet.*/",
           "setterMethodName" : "setFleetName",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -2669,12 +2713,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The name of the fleet.</p>\n@param fleetName The name of the fleet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The name of the fleet. </p>\n@param fleetName The name of the fleet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "fleetName",
             "variableType" : "String",
-            "documentation" : "<p>The name of the fleet.</p>",
+            "documentation" : "<p>The name of the fleet. </p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -9106,11 +9150,11 @@
         "c2jName" : "RedirectURL",
         "c2jShape" : "RedirectURL",
         "deprecated" : false,
-        "documentation" : "<p>The URL the user is redirected to after the streaming session ends.</p>",
+        "documentation" : "<p>The URL that users are redirected to after their streaming session ends.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The URL the user is redirected to after the streaming session ends.</p>\n@param redirectURL The URL the user is redirected to after the streaming session ends.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The URL that users are redirected to after their streaming session ends.</p>\n@param redirectURL The URL that users are redirected to after their streaming session ends.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withRedirectURL",
-        "getterDocumentation" : "/**<p>The URL the user is redirected to after the streaming session ends.</p>\n@return The URL the user is redirected to after the streaming session ends.*/",
+        "getterDocumentation" : "/**<p>The URL that users are redirected to after their streaming session ends.</p>\n@return The URL that users are redirected to after their streaming session ends.*/",
         "getterMethodName" : "getRedirectURL",
         "getterModel" : {
           "returnType" : "String",
@@ -9142,7 +9186,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RedirectURL",
-        "setterDocumentation" : "/**<p>The URL the user is redirected to after the streaming session ends.</p>\n@param redirectURL The URL the user is redirected to after the streaming session ends.*/",
+        "setterDocumentation" : "/**<p>The URL that users are redirected to after their streaming session ends.</p>\n@param redirectURL The URL that users are redirected to after their streaming session ends.*/",
         "setterMethodName" : "setRedirectURL",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -9155,12 +9199,75 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The URL the user is redirected to after the streaming session ends.</p>\n@param redirectURL The URL the user is redirected to after the streaming session ends.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The URL that users are redirected to after their streaming session ends.</p>\n@param redirectURL The URL that users are redirected to after their streaming session ends.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "redirectURL",
           "variableType" : "String",
-          "documentation" : "<p>The URL the user is redirected to after the streaming session ends.</p>",
+          "documentation" : "<p>The URL that users are redirected to after their streaming session ends.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "FeedbackURL",
+        "c2jShape" : "FeedbackURL",
+        "deprecated" : false,
+        "documentation" : "<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>\n@param feedbackURL The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withFeedbackURL",
+        "getterDocumentation" : "/**<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>\n@return The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.*/",
+        "getterMethodName" : "getFeedbackURL",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "FeedbackURL",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "FeedbackURL",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "FeedbackURL",
+        "setterDocumentation" : "/**<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>\n@param feedbackURL The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.*/",
+        "setterMethodName" : "setFeedbackURL",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "feedbackURL",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>\n@param feedbackURL The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "feedbackURL",
+          "variableType" : "String",
+          "documentation" : "<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -9295,6 +9402,70 @@
           },
           "xmlNameSpaceUri" : null
         },
+        "FeedbackURL" : {
+          "c2jName" : "FeedbackURL",
+          "c2jShape" : "FeedbackURL",
+          "deprecated" : false,
+          "documentation" : "<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>\n@param feedbackURL The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withFeedbackURL",
+          "getterDocumentation" : "/**<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>\n@return The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.*/",
+          "getterMethodName" : "getFeedbackURL",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "FeedbackURL",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "FeedbackURL",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "FeedbackURL",
+          "setterDocumentation" : "/**<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>\n@param feedbackURL The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.*/",
+          "setterMethodName" : "setFeedbackURL",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "feedbackURL",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>\n@param feedbackURL The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "feedbackURL",
+            "variableType" : "String",
+            "documentation" : "<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "Name" : {
           "c2jName" : "Name",
           "c2jShape" : "String",
@@ -9363,11 +9534,11 @@
           "c2jName" : "RedirectURL",
           "c2jShape" : "RedirectURL",
           "deprecated" : false,
-          "documentation" : "<p>The URL the user is redirected to after the streaming session ends.</p>",
+          "documentation" : "<p>The URL that users are redirected to after their streaming session ends.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The URL the user is redirected to after the streaming session ends.</p>\n@param redirectURL The URL the user is redirected to after the streaming session ends.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The URL that users are redirected to after their streaming session ends.</p>\n@param redirectURL The URL that users are redirected to after their streaming session ends.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withRedirectURL",
-          "getterDocumentation" : "/**<p>The URL the user is redirected to after the streaming session ends.</p>\n@return The URL the user is redirected to after the streaming session ends.*/",
+          "getterDocumentation" : "/**<p>The URL that users are redirected to after their streaming session ends.</p>\n@return The URL that users are redirected to after their streaming session ends.*/",
           "getterMethodName" : "getRedirectURL",
           "getterModel" : {
             "returnType" : "String",
@@ -9399,7 +9570,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RedirectURL",
-          "setterDocumentation" : "/**<p>The URL the user is redirected to after the streaming session ends.</p>\n@param redirectURL The URL the user is redirected to after the streaming session ends.*/",
+          "setterDocumentation" : "/**<p>The URL that users are redirected to after their streaming session ends.</p>\n@param redirectURL The URL that users are redirected to after their streaming session ends.*/",
           "setterMethodName" : "setRedirectURL",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -9412,12 +9583,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The URL the user is redirected to after the streaming session ends.</p>\n@param redirectURL The URL the user is redirected to after the streaming session ends.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The URL that users are redirected to after their streaming session ends.</p>\n@param redirectURL The URL that users are redirected to after their streaming session ends.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "redirectURL",
             "variableType" : "String",
-            "documentation" : "<p>The URL the user is redirected to after the streaming session ends.</p>",
+            "documentation" : "<p>The URL that users are redirected to after their streaming session ends.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -27172,6 +27343,42 @@
       },
       "wrapper" : false
     },
+    "InvalidAccountStatusException" : {
+      "c2jName" : "InvalidAccountStatusException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The resource cannot be created because your AWS account is suspended. For assistance, contact AWS Support. </p>",
+      "enums" : null,
+      "errorCode" : "InvalidAccountStatusException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ ],
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "InvalidAccountStatusException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "InvalidAccountStatusException",
+        "variableName" : "invalidAccountStatusException",
+        "variableType" : "InvalidAccountStatusException",
+        "documentation" : null,
+        "simpleType" : "InvalidAccountStatusException",
+        "variableSetterType" : "InvalidAccountStatusException"
+      },
+      "wrapper" : false
+    },
     "InvalidParameterCombinationException" : {
       "c2jName" : "InvalidParameterCombinationException",
       "customization" : {
@@ -31534,11 +31741,11 @@
         "c2jName" : "RedirectURL",
         "c2jShape" : "RedirectURL",
         "deprecated" : false,
-        "documentation" : "<p>The URL the user is redirected to after the streaming session ends.</p>",
+        "documentation" : "<p>The URL that users are redirected to after their streaming session ends.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The URL the user is redirected to after the streaming session ends.</p>\n@param redirectURL The URL the user is redirected to after the streaming session ends.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The URL that users are redirected to after their streaming session ends.</p>\n@param redirectURL The URL that users are redirected to after their streaming session ends.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withRedirectURL",
-        "getterDocumentation" : "/**<p>The URL the user is redirected to after the streaming session ends.</p>\n@return The URL the user is redirected to after the streaming session ends.*/",
+        "getterDocumentation" : "/**<p>The URL that users are redirected to after their streaming session ends.</p>\n@return The URL that users are redirected to after their streaming session ends.*/",
         "getterMethodName" : "getRedirectURL",
         "getterModel" : {
           "returnType" : "String",
@@ -31570,7 +31777,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RedirectURL",
-        "setterDocumentation" : "/**<p>The URL the user is redirected to after the streaming session ends.</p>\n@param redirectURL The URL the user is redirected to after the streaming session ends.*/",
+        "setterDocumentation" : "/**<p>The URL that users are redirected to after their streaming session ends.</p>\n@param redirectURL The URL that users are redirected to after their streaming session ends.*/",
         "setterMethodName" : "setRedirectURL",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -31583,12 +31790,75 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The URL the user is redirected to after the streaming session ends.</p>\n@param redirectURL The URL the user is redirected to after the streaming session ends.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The URL that users are redirected to after their streaming session ends.</p>\n@param redirectURL The URL that users are redirected to after their streaming session ends.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "redirectURL",
           "variableType" : "String",
-          "documentation" : "<p>The URL the user is redirected to after the streaming session ends.</p>",
+          "documentation" : "<p>The URL that users are redirected to after their streaming session ends.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "FeedbackURL",
+        "c2jShape" : "FeedbackURL",
+        "deprecated" : false,
+        "documentation" : "<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>\n@param feedbackURL The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withFeedbackURL",
+        "getterDocumentation" : "/**<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>\n@return The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.*/",
+        "getterMethodName" : "getFeedbackURL",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "FeedbackURL",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "FeedbackURL",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "FeedbackURL",
+        "setterDocumentation" : "/**<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>\n@param feedbackURL The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.*/",
+        "setterMethodName" : "setFeedbackURL",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "feedbackURL",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>\n@param feedbackURL The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "feedbackURL",
+          "variableType" : "String",
+          "documentation" : "<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -31992,6 +32262,70 @@
           },
           "xmlNameSpaceUri" : null
         },
+        "FeedbackURL" : {
+          "c2jName" : "FeedbackURL",
+          "c2jShape" : "FeedbackURL",
+          "deprecated" : false,
+          "documentation" : "<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>\n@param feedbackURL The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withFeedbackURL",
+          "getterDocumentation" : "/**<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>\n@return The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.*/",
+          "getterMethodName" : "getFeedbackURL",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "FeedbackURL",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "FeedbackURL",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "FeedbackURL",
+          "setterDocumentation" : "/**<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>\n@param feedbackURL The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.*/",
+          "setterMethodName" : "setFeedbackURL",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "feedbackURL",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>\n@param feedbackURL The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "feedbackURL",
+            "variableType" : "String",
+            "documentation" : "<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "Name" : {
           "c2jName" : "Name",
           "c2jShape" : "String",
@@ -32060,11 +32394,11 @@
           "c2jName" : "RedirectURL",
           "c2jShape" : "RedirectURL",
           "deprecated" : false,
-          "documentation" : "<p>The URL the user is redirected to after the streaming session ends.</p>",
+          "documentation" : "<p>The URL that users are redirected to after their streaming session ends.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The URL the user is redirected to after the streaming session ends.</p>\n@param redirectURL The URL the user is redirected to after the streaming session ends.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The URL that users are redirected to after their streaming session ends.</p>\n@param redirectURL The URL that users are redirected to after their streaming session ends.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withRedirectURL",
-          "getterDocumentation" : "/**<p>The URL the user is redirected to after the streaming session ends.</p>\n@return The URL the user is redirected to after the streaming session ends.*/",
+          "getterDocumentation" : "/**<p>The URL that users are redirected to after their streaming session ends.</p>\n@return The URL that users are redirected to after their streaming session ends.*/",
           "getterMethodName" : "getRedirectURL",
           "getterModel" : {
             "returnType" : "String",
@@ -32096,7 +32430,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RedirectURL",
-          "setterDocumentation" : "/**<p>The URL the user is redirected to after the streaming session ends.</p>\n@param redirectURL The URL the user is redirected to after the streaming session ends.*/",
+          "setterDocumentation" : "/**<p>The URL that users are redirected to after their streaming session ends.</p>\n@param redirectURL The URL that users are redirected to after their streaming session ends.*/",
           "setterMethodName" : "setRedirectURL",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -32109,12 +32443,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The URL the user is redirected to after the streaming session ends.</p>\n@param redirectURL The URL the user is redirected to after the streaming session ends.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The URL that users are redirected to after their streaming session ends.</p>\n@param redirectURL The URL that users are redirected to after their streaming session ends.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "redirectURL",
             "variableType" : "String",
-            "documentation" : "<p>The URL the user is redirected to after the streaming session ends.</p>",
+            "documentation" : "<p>The URL that users are redirected to after their streaming session ends.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -32441,6 +32775,12 @@
       }, {
         "name" : "REDIRECT_URL",
         "value" : "REDIRECT_URL"
+      }, {
+        "name" : "FEEDBACK_URL",
+        "value" : "FEEDBACK_URL"
+      }, {
+        "name" : "THEME_NAME",
+        "value" : "THEME_NAME"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -38541,11 +38881,11 @@
         "c2jName" : "RedirectURL",
         "c2jShape" : "RedirectURL",
         "deprecated" : false,
-        "documentation" : "<p>The URL the user is redirected to after the streaming session ends.</p>",
+        "documentation" : "<p>The URL that users are redirected to after their streaming session ends.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The URL the user is redirected to after the streaming session ends.</p>\n@param redirectURL The URL the user is redirected to after the streaming session ends.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The URL that users are redirected to after their streaming session ends.</p>\n@param redirectURL The URL that users are redirected to after their streaming session ends.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withRedirectURL",
-        "getterDocumentation" : "/**<p>The URL the user is redirected to after the streaming session ends.</p>\n@return The URL the user is redirected to after the streaming session ends.*/",
+        "getterDocumentation" : "/**<p>The URL that users are redirected to after their streaming session ends.</p>\n@return The URL that users are redirected to after their streaming session ends.*/",
         "getterMethodName" : "getRedirectURL",
         "getterModel" : {
           "returnType" : "String",
@@ -38577,7 +38917,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "RedirectURL",
-        "setterDocumentation" : "/**<p>The URL the user is redirected to after the streaming session ends.</p>\n@param redirectURL The URL the user is redirected to after the streaming session ends.*/",
+        "setterDocumentation" : "/**<p>The URL that users are redirected to after their streaming session ends.</p>\n@param redirectURL The URL that users are redirected to after their streaming session ends.*/",
         "setterMethodName" : "setRedirectURL",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -38590,12 +38930,75 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The URL the user is redirected to after the streaming session ends.</p>\n@param redirectURL The URL the user is redirected to after the streaming session ends.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The URL that users are redirected to after their streaming session ends.</p>\n@param redirectURL The URL that users are redirected to after their streaming session ends.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "redirectURL",
           "variableType" : "String",
-          "documentation" : "<p>The URL the user is redirected to after the streaming session ends.</p>",
+          "documentation" : "<p>The URL that users are redirected to after their streaming session ends.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "FeedbackURL",
+        "c2jShape" : "FeedbackURL",
+        "deprecated" : false,
+        "documentation" : "<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>\n@param feedbackURL The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withFeedbackURL",
+        "getterDocumentation" : "/**<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>\n@return The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.*/",
+        "getterMethodName" : "getFeedbackURL",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "FeedbackURL",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "FeedbackURL",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "FeedbackURL",
+        "setterDocumentation" : "/**<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>\n@param feedbackURL The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.*/",
+        "setterMethodName" : "setFeedbackURL",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "feedbackURL",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>\n@param feedbackURL The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "feedbackURL",
+          "variableType" : "String",
+          "documentation" : "<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -39077,6 +39480,70 @@
           },
           "xmlNameSpaceUri" : null
         },
+        "FeedbackURL" : {
+          "c2jName" : "FeedbackURL",
+          "c2jShape" : "FeedbackURL",
+          "deprecated" : false,
+          "documentation" : "<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>\n@param feedbackURL The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withFeedbackURL",
+          "getterDocumentation" : "/**<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>\n@return The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.*/",
+          "getterMethodName" : "getFeedbackURL",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "FeedbackURL",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "FeedbackURL",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "FeedbackURL",
+          "setterDocumentation" : "/**<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>\n@param feedbackURL The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.*/",
+          "setterMethodName" : "setFeedbackURL",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "feedbackURL",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>\n@param feedbackURL The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "feedbackURL",
+            "variableType" : "String",
+            "documentation" : "<p>The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "Name" : {
           "c2jName" : "Name",
           "c2jShape" : "String",
@@ -39145,11 +39612,11 @@
           "c2jName" : "RedirectURL",
           "c2jShape" : "RedirectURL",
           "deprecated" : false,
-          "documentation" : "<p>The URL the user is redirected to after the streaming session ends.</p>",
+          "documentation" : "<p>The URL that users are redirected to after their streaming session ends.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The URL the user is redirected to after the streaming session ends.</p>\n@param redirectURL The URL the user is redirected to after the streaming session ends.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The URL that users are redirected to after their streaming session ends.</p>\n@param redirectURL The URL that users are redirected to after their streaming session ends.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withRedirectURL",
-          "getterDocumentation" : "/**<p>The URL the user is redirected to after the streaming session ends.</p>\n@return The URL the user is redirected to after the streaming session ends.*/",
+          "getterDocumentation" : "/**<p>The URL that users are redirected to after their streaming session ends.</p>\n@return The URL that users are redirected to after their streaming session ends.*/",
           "getterMethodName" : "getRedirectURL",
           "getterModel" : {
             "returnType" : "String",
@@ -39181,7 +39648,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "RedirectURL",
-          "setterDocumentation" : "/**<p>The URL the user is redirected to after the streaming session ends.</p>\n@param redirectURL The URL the user is redirected to after the streaming session ends.*/",
+          "setterDocumentation" : "/**<p>The URL that users are redirected to after their streaming session ends.</p>\n@param redirectURL The URL that users are redirected to after their streaming session ends.*/",
           "setterMethodName" : "setRedirectURL",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -39194,12 +39661,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The URL the user is redirected to after the streaming session ends.</p>\n@param redirectURL The URL the user is redirected to after the streaming session ends.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The URL that users are redirected to after their streaming session ends.</p>\n@param redirectURL The URL that users are redirected to after their streaming session ends.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "redirectURL",
             "variableType" : "String",
-            "documentation" : "<p>The URL the user is redirected to after the streaming session ends.</p>",
+            "documentation" : "<p>The URL that users are redirected to after their streaming session ends.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },

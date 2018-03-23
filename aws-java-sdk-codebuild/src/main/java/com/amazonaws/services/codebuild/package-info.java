@@ -54,6 +54,11 @@
  * </li>
  * <li>
  * <p>
+ * <code>UpdateWebhook</code>: Changes the settings of an existing webhook.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>DeleteProject</code>: Deletes a build project.
  * </p>
  * </li>

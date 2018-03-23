@@ -85,10 +85,7 @@ public class EncryptedPutObjectRequest extends PutObjectRequest implements
      */
     @Override
     public EncryptedPutObjectRequest clone() {
-        final EncryptedPutObjectRequest cloned =
-            new EncryptedPutObjectRequest(
-                getBucketName(), getKey(), getFile());
-        super.copyPutObjectBaseTo(cloned);
+        EncryptedPutObjectRequest cloned = (EncryptedPutObjectRequest) super.clone();
         final Map<String, String> materialsDescription = getMaterialsDescription();
         cloned.withMaterialsDescription(materialsDescription == null
             ? null

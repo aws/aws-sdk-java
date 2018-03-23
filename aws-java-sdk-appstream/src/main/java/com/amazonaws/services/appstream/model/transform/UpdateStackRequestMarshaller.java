@@ -40,6 +40,8 @@ public class UpdateStackRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeleteStorageConnectors").build();
     private static final MarshallingInfo<String> REDIRECTURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RedirectURL").build();
+    private static final MarshallingInfo<String> FEEDBACKURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FeedbackURL").build();
     private static final MarshallingInfo<List> ATTRIBUTESTODELETE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AttributesToDelete").build();
 
@@ -65,6 +67,7 @@ public class UpdateStackRequestMarshaller {
             protocolMarshaller.marshall(updateStackRequest.getStorageConnectors(), STORAGECONNECTORS_BINDING);
             protocolMarshaller.marshall(updateStackRequest.getDeleteStorageConnectors(), DELETESTORAGECONNECTORS_BINDING);
             protocolMarshaller.marshall(updateStackRequest.getRedirectURL(), REDIRECTURL_BINDING);
+            protocolMarshaller.marshall(updateStackRequest.getFeedbackURL(), FEEDBACKURL_BINDING);
             protocolMarshaller.marshall(updateStackRequest.getAttributesToDelete(), ATTRIBUTESTODELETE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

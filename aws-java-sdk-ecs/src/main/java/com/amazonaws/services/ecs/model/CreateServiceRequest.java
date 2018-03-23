@@ -69,6 +69,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private com.amazonaws.internal.SdkInternalList<LoadBalancer> loadBalancers;
     /**
      * <p>
+     * The details of the service discovery registries you want to assign to this service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service Discovery</a>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ServiceRegistry> serviceRegistries;
+    /**
+     * <p>
      * The number of instantiations of the specified task definition to place and keep running on your cluster.
      * </p>
      */
@@ -490,6 +497,91 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     public CreateServiceRequest withLoadBalancers(java.util.Collection<LoadBalancer> loadBalancers) {
         setLoadBalancers(loadBalancers);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The details of the service discovery registries you want to assign to this service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service Discovery</a>.
+     * </p>
+     * 
+     * @return The details of the service discovery registries you want to assign to this service. For more information,
+     *         see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service
+     *         Discovery</a>.
+     */
+
+    public java.util.List<ServiceRegistry> getServiceRegistries() {
+        if (serviceRegistries == null) {
+            serviceRegistries = new com.amazonaws.internal.SdkInternalList<ServiceRegistry>();
+        }
+        return serviceRegistries;
+    }
+
+    /**
+     * <p>
+     * The details of the service discovery registries you want to assign to this service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service Discovery</a>.
+     * </p>
+     * 
+     * @param serviceRegistries
+     *        The details of the service discovery registries you want to assign to this service. For more information,
+     *        see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service
+     *        Discovery</a>.
+     */
+
+    public void setServiceRegistries(java.util.Collection<ServiceRegistry> serviceRegistries) {
+        if (serviceRegistries == null) {
+            this.serviceRegistries = null;
+            return;
+        }
+
+        this.serviceRegistries = new com.amazonaws.internal.SdkInternalList<ServiceRegistry>(serviceRegistries);
+    }
+
+    /**
+     * <p>
+     * The details of the service discovery registries you want to assign to this service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service Discovery</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setServiceRegistries(java.util.Collection)} or {@link #withServiceRegistries(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param serviceRegistries
+     *        The details of the service discovery registries you want to assign to this service. For more information,
+     *        see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service
+     *        Discovery</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateServiceRequest withServiceRegistries(ServiceRegistry... serviceRegistries) {
+        if (this.serviceRegistries == null) {
+            setServiceRegistries(new com.amazonaws.internal.SdkInternalList<ServiceRegistry>(serviceRegistries.length));
+        }
+        for (ServiceRegistry ele : serviceRegistries) {
+            this.serviceRegistries.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The details of the service discovery registries you want to assign to this service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service Discovery</a>.
+     * </p>
+     * 
+     * @param serviceRegistries
+     *        The details of the service discovery registries you want to assign to this service. For more information,
+     *        see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service
+     *        Discovery</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateServiceRequest withServiceRegistries(java.util.Collection<ServiceRegistry> serviceRegistries) {
+        setServiceRegistries(serviceRegistries);
         return this;
     }
 
@@ -1209,6 +1301,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("TaskDefinition: ").append(getTaskDefinition()).append(",");
         if (getLoadBalancers() != null)
             sb.append("LoadBalancers: ").append(getLoadBalancers()).append(",");
+        if (getServiceRegistries() != null)
+            sb.append("ServiceRegistries: ").append(getServiceRegistries()).append(",");
         if (getDesiredCount() != null)
             sb.append("DesiredCount: ").append(getDesiredCount()).append(",");
         if (getClientToken() != null)
@@ -1258,6 +1352,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (other.getLoadBalancers() == null ^ this.getLoadBalancers() == null)
             return false;
         if (other.getLoadBalancers() != null && other.getLoadBalancers().equals(this.getLoadBalancers()) == false)
+            return false;
+        if (other.getServiceRegistries() == null ^ this.getServiceRegistries() == null)
+            return false;
+        if (other.getServiceRegistries() != null && other.getServiceRegistries().equals(this.getServiceRegistries()) == false)
             return false;
         if (other.getDesiredCount() == null ^ this.getDesiredCount() == null)
             return false;
@@ -1312,6 +1410,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getServiceName() == null) ? 0 : getServiceName().hashCode());
         hashCode = prime * hashCode + ((getTaskDefinition() == null) ? 0 : getTaskDefinition().hashCode());
         hashCode = prime * hashCode + ((getLoadBalancers() == null) ? 0 : getLoadBalancers().hashCode());
+        hashCode = prime * hashCode + ((getServiceRegistries() == null) ? 0 : getServiceRegistries().hashCode());
         hashCode = prime * hashCode + ((getDesiredCount() == null) ? 0 : getDesiredCount().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getLaunchType() == null) ? 0 : getLaunchType().hashCode());

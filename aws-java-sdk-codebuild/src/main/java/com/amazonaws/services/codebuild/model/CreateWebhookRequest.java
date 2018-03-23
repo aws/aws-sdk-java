@@ -27,18 +27,26 @@ public class CreateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the build project.
+     * The name of the AWS CodeBuild project.
      * </p>
      */
     private String projectName;
+    /**
+     * <p>
+     * A regular expression used to determine which branches in a repository are built when a webhook is triggered. If
+     * the name of a branch matches the regular expression, then it is built. If it doesn't match, then it is not. If
+     * branchFilter is empty, then all branches are built.
+     * </p>
+     */
+    private String branchFilter;
 
     /**
      * <p>
-     * The name of the build project.
+     * The name of the AWS CodeBuild project.
      * </p>
      * 
      * @param projectName
-     *        The name of the build project.
+     *        The name of the AWS CodeBuild project.
      */
 
     public void setProjectName(String projectName) {
@@ -47,10 +55,10 @@ public class CreateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the build project.
+     * The name of the AWS CodeBuild project.
      * </p>
      * 
-     * @return The name of the build project.
+     * @return The name of the AWS CodeBuild project.
      */
 
     public String getProjectName() {
@@ -59,16 +67,68 @@ public class CreateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the build project.
+     * The name of the AWS CodeBuild project.
      * </p>
      * 
      * @param projectName
-     *        The name of the build project.
+     *        The name of the AWS CodeBuild project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateWebhookRequest withProjectName(String projectName) {
         setProjectName(projectName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A regular expression used to determine which branches in a repository are built when a webhook is triggered. If
+     * the name of a branch matches the regular expression, then it is built. If it doesn't match, then it is not. If
+     * branchFilter is empty, then all branches are built.
+     * </p>
+     * 
+     * @param branchFilter
+     *        A regular expression used to determine which branches in a repository are built when a webhook is
+     *        triggered. If the name of a branch matches the regular expression, then it is built. If it doesn't match,
+     *        then it is not. If branchFilter is empty, then all branches are built.
+     */
+
+    public void setBranchFilter(String branchFilter) {
+        this.branchFilter = branchFilter;
+    }
+
+    /**
+     * <p>
+     * A regular expression used to determine which branches in a repository are built when a webhook is triggered. If
+     * the name of a branch matches the regular expression, then it is built. If it doesn't match, then it is not. If
+     * branchFilter is empty, then all branches are built.
+     * </p>
+     * 
+     * @return A regular expression used to determine which branches in a repository are built when a webhook is
+     *         triggered. If the name of a branch matches the regular expression, then it is built. If it doesn't match,
+     *         then it is not. If branchFilter is empty, then all branches are built.
+     */
+
+    public String getBranchFilter() {
+        return this.branchFilter;
+    }
+
+    /**
+     * <p>
+     * A regular expression used to determine which branches in a repository are built when a webhook is triggered. If
+     * the name of a branch matches the regular expression, then it is built. If it doesn't match, then it is not. If
+     * branchFilter is empty, then all branches are built.
+     * </p>
+     * 
+     * @param branchFilter
+     *        A regular expression used to determine which branches in a repository are built when a webhook is
+     *        triggered. If the name of a branch matches the regular expression, then it is built. If it doesn't match,
+     *        then it is not. If branchFilter is empty, then all branches are built.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWebhookRequest withBranchFilter(String branchFilter) {
+        setBranchFilter(branchFilter);
         return this;
     }
 
@@ -84,7 +144,9 @@ public class CreateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProjectName() != null)
-            sb.append("ProjectName: ").append(getProjectName());
+            sb.append("ProjectName: ").append(getProjectName()).append(",");
+        if (getBranchFilter() != null)
+            sb.append("BranchFilter: ").append(getBranchFilter());
         sb.append("}");
         return sb.toString();
     }
@@ -103,6 +165,10 @@ public class CreateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getProjectName() != null && other.getProjectName().equals(this.getProjectName()) == false)
             return false;
+        if (other.getBranchFilter() == null ^ this.getBranchFilter() == null)
+            return false;
+        if (other.getBranchFilter() != null && other.getBranchFilter().equals(this.getBranchFilter()) == false)
+            return false;
         return true;
     }
 
@@ -112,6 +178,7 @@ public class CreateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getProjectName() == null) ? 0 : getProjectName().hashCode());
+        hashCode = prime * hashCode + ((getBranchFilter() == null) ? 0 : getBranchFilter().hashCode());
         return hashCode;
     }
 

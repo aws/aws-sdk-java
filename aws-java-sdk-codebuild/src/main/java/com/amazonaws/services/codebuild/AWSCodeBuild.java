@@ -68,6 +68,11 @@ import com.amazonaws.services.codebuild.model.*;
  * </li>
  * <li>
  * <p>
+ * <code>UpdateWebhook</code>: Changes the settings of an existing webhook.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>DeleteProject</code>: Deletes a build project.
  * </p>
  * </li>
@@ -447,6 +452,25 @@ public interface AWSCodeBuild {
      *      Documentation</a>
      */
     UpdateProjectResult updateProject(UpdateProjectRequest updateProjectRequest);
+
+    /**
+     * <p>
+     * Updates the webhook associated with an AWS CodeBuild build project.
+     * </p>
+     * 
+     * @param updateWebhookRequest
+     * @return Result of the UpdateWebhook operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @throws OAuthProviderException
+     *         There was a problem with the underlying OAuth provider.
+     * @sample AWSCodeBuild.UpdateWebhook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateWebhook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateWebhookResult updateWebhook(UpdateWebhookRequest updateWebhookRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

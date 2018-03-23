@@ -76,6 +76,10 @@ public class StackJsonUnmarshaller implements Unmarshaller<Stack, JsonUnmarshall
                     context.nextToken();
                     stack.setRedirectURL(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("FeedbackURL", targetDepth)) {
+                    context.nextToken();
+                    stack.setFeedbackURL(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("StackErrors", targetDepth)) {
                     context.nextToken();
                     stack.setStackErrors(new ListUnmarshaller<StackError>(StackErrorJsonUnmarshaller.getInstance()).unmarshall(context));

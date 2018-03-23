@@ -27,18 +27,18 @@ public class InvalidateProjectCacheRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the build project that the cache will be reset for.
+     * The name of the AWS CodeBuild build project that the cache will be reset for.
      * </p>
      */
     private String projectName;
 
     /**
      * <p>
-     * The name of the build project that the cache will be reset for.
+     * The name of the AWS CodeBuild build project that the cache will be reset for.
      * </p>
      * 
      * @param projectName
-     *        The name of the build project that the cache will be reset for.
+     *        The name of the AWS CodeBuild build project that the cache will be reset for.
      */
 
     public void setProjectName(String projectName) {
@@ -47,10 +47,10 @@ public class InvalidateProjectCacheRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the build project that the cache will be reset for.
+     * The name of the AWS CodeBuild build project that the cache will be reset for.
      * </p>
      * 
-     * @return The name of the build project that the cache will be reset for.
+     * @return The name of the AWS CodeBuild build project that the cache will be reset for.
      */
 
     public String getProjectName() {
@@ -59,11 +59,11 @@ public class InvalidateProjectCacheRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the build project that the cache will be reset for.
+     * The name of the AWS CodeBuild build project that the cache will be reset for.
      * </p>
      * 
      * @param projectName
-     *        The name of the build project that the cache will be reset for.
+     *        The name of the AWS CodeBuild build project that the cache will be reset for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
