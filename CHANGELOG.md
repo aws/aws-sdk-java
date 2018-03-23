@@ -1,3 +1,8 @@
+# __1.11.301__ __2018-03-23__
+## __Amazon Relational Database Service__
+  - ### Features
+    - Documentation updates for RDS
+
 # __1.11.300__ __2018-03-22__
 ## __AWS CodeBuild__
   - ### Features

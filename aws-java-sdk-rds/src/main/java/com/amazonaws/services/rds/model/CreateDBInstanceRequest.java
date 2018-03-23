@@ -918,12 +918,22 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>10.2.12</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>10.2.11</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * </ul>
      * <p/>
      * <ul>
+     * <li>
+     * <p>
+     * <code>10.1.31</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>10.1.26</code> (supported in all AWS Regions)
@@ -947,6 +957,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p/>
      * <ul>
+     * <li>
+     * <p>
+     * <code>10.0.34</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>10.0.32</code> (supported in all AWS Regions)
@@ -1080,6 +1095,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>5.7.21</code> (supported in all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>5.7.19</code> (supported in all AWS regions)
      * </p>
      * </li>
@@ -1096,6 +1116,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p/>
      * <ul>
+     * <li>
+     * <p>
+     * <code>5.6.39</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>5.6.37</code> (supported in all AWS Regions)
@@ -1124,6 +1149,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p/>
      * <ul>
+     * <li>
+     * <p>
+     * <code>5.5.59</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>5.5.57</code> (supported in all AWS Regions)
@@ -7438,12 +7468,22 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>10.2.12</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>10.2.11</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * </ul>
      * <p/>
      * <ul>
+     * <li>
+     * <p>
+     * <code>10.1.31</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>10.1.26</code> (supported in all AWS Regions)
@@ -7467,6 +7507,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p/>
      * <ul>
+     * <li>
+     * <p>
+     * <code>10.0.34</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>10.0.32</code> (supported in all AWS Regions)
@@ -7600,6 +7645,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>5.7.21</code> (supported in all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>5.7.19</code> (supported in all AWS regions)
      * </p>
      * </li>
@@ -7616,6 +7666,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p/>
      * <ul>
+     * <li>
+     * <p>
+     * <code>5.6.39</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>5.6.37</code> (supported in all AWS Regions)
@@ -7644,6 +7699,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p/>
      * <ul>
+     * <li>
+     * <p>
+     * <code>5.5.59</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>5.5.57</code> (supported in all AWS Regions)
@@ -7830,12 +7890,22 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
+     *        <code>10.2.12</code> (supported in all AWS Regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>10.2.11</code> (supported in all AWS Regions)
      *        </p>
      *        </li>
      *        </ul>
      *        <p/>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>10.1.31</code> (supported in all AWS Regions)
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>10.1.26</code> (supported in all AWS Regions)
@@ -7859,6 +7929,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </ul>
      *        <p/>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>10.0.34</code> (supported in all AWS Regions)
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>10.0.32</code> (supported in all AWS Regions)
@@ -7992,6 +8067,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
+     *        <code>5.7.21</code> (supported in all AWS regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>5.7.19</code> (supported in all AWS regions)
      *        </p>
      *        </li>
@@ -8008,6 +8088,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </ul>
      *        <p/>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>5.6.39</code> (supported in all AWS Regions)
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>5.6.37</code> (supported in all AWS Regions)
@@ -8036,6 +8121,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </ul>
      *        <p/>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>5.5.59</code> (supported in all AWS Regions)
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>5.5.57</code> (supported in all AWS Regions)
@@ -8237,12 +8327,22 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>10.2.12</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>10.2.11</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * </ul>
      * <p/>
      * <ul>
+     * <li>
+     * <p>
+     * <code>10.1.31</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>10.1.26</code> (supported in all AWS Regions)
@@ -8266,6 +8366,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p/>
      * <ul>
+     * <li>
+     * <p>
+     * <code>10.0.34</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>10.0.32</code> (supported in all AWS Regions)
@@ -8399,6 +8504,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>5.7.21</code> (supported in all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>5.7.19</code> (supported in all AWS regions)
      * </p>
      * </li>
@@ -8415,6 +8525,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p/>
      * <ul>
+     * <li>
+     * <p>
+     * <code>5.6.39</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>5.6.37</code> (supported in all AWS Regions)
@@ -8443,6 +8558,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p/>
      * <ul>
+     * <li>
+     * <p>
+     * <code>5.5.59</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>5.5.57</code> (supported in all AWS Regions)
@@ -8628,12 +8748,22 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
+     *         <code>10.2.12</code> (supported in all AWS Regions)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>10.2.11</code> (supported in all AWS Regions)
      *         </p>
      *         </li>
      *         </ul>
      *         <p/>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>10.1.31</code> (supported in all AWS Regions)
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <code>10.1.26</code> (supported in all AWS Regions)
@@ -8657,6 +8787,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </ul>
      *         <p/>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>10.0.34</code> (supported in all AWS Regions)
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <code>10.0.32</code> (supported in all AWS Regions)
@@ -8790,6 +8925,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
+     *         <code>5.7.21</code> (supported in all AWS regions)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>5.7.19</code> (supported in all AWS regions)
      *         </p>
      *         </li>
@@ -8806,6 +8946,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </ul>
      *         <p/>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>5.6.39</code> (supported in all AWS Regions)
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <code>5.6.37</code> (supported in all AWS Regions)
@@ -8834,6 +8979,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </ul>
      *         <p/>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>5.5.59</code> (supported in all AWS Regions)
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <code>5.5.57</code> (supported in all AWS Regions)
@@ -9035,12 +9185,22 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>10.2.12</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>10.2.11</code> (supported in all AWS Regions)
      * </p>
      * </li>
      * </ul>
      * <p/>
      * <ul>
+     * <li>
+     * <p>
+     * <code>10.1.31</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>10.1.26</code> (supported in all AWS Regions)
@@ -9064,6 +9224,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p/>
      * <ul>
+     * <li>
+     * <p>
+     * <code>10.0.34</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>10.0.32</code> (supported in all AWS Regions)
@@ -9197,6 +9362,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * <code>5.7.21</code> (supported in all AWS regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>5.7.19</code> (supported in all AWS regions)
      * </p>
      * </li>
@@ -9213,6 +9383,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p/>
      * <ul>
+     * <li>
+     * <p>
+     * <code>5.6.39</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>5.6.37</code> (supported in all AWS Regions)
@@ -9241,6 +9416,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * <p/>
      * <ul>
+     * <li>
+     * <p>
+     * <code>5.5.59</code> (supported in all AWS Regions)
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>5.5.57</code> (supported in all AWS Regions)
@@ -9427,12 +9607,22 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
+     *        <code>10.2.12</code> (supported in all AWS Regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>10.2.11</code> (supported in all AWS Regions)
      *        </p>
      *        </li>
      *        </ul>
      *        <p/>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>10.1.31</code> (supported in all AWS Regions)
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>10.1.26</code> (supported in all AWS Regions)
@@ -9456,6 +9646,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </ul>
      *        <p/>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>10.0.34</code> (supported in all AWS Regions)
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>10.0.32</code> (supported in all AWS Regions)
@@ -9589,6 +9784,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
+     *        <code>5.7.21</code> (supported in all AWS regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>5.7.19</code> (supported in all AWS regions)
      *        </p>
      *        </li>
@@ -9605,6 +9805,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </ul>
      *        <p/>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>5.6.39</code> (supported in all AWS Regions)
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>5.6.37</code> (supported in all AWS Regions)
@@ -9633,6 +9838,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </ul>
      *        <p/>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>5.5.59</code> (supported in all AWS Regions)
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>5.5.57</code> (supported in all AWS Regions)
