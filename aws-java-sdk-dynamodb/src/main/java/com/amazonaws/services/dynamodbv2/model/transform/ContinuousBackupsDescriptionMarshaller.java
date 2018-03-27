@@ -29,6 +29,8 @@ public class ContinuousBackupsDescriptionMarshaller {
 
     private static final MarshallingInfo<String> CONTINUOUSBACKUPSSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContinuousBackupsStatus").build();
+    private static final MarshallingInfo<StructuredPojo> POINTINTIMERECOVERYDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PointInTimeRecoveryDescription").build();
 
     private static final ContinuousBackupsDescriptionMarshaller instance = new ContinuousBackupsDescriptionMarshaller();
 
@@ -47,6 +49,7 @@ public class ContinuousBackupsDescriptionMarshaller {
 
         try {
             protocolMarshaller.marshall(continuousBackupsDescription.getContinuousBackupsStatus(), CONTINUOUSBACKUPSSTATUS_BINDING);
+            protocolMarshaller.marshall(continuousBackupsDescription.getPointInTimeRecoveryDescription(), POINTINTIMERECOVERYDESCRIPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

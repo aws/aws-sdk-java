@@ -69,12 +69,16 @@ public enum DynamoDBv2Actions implements Action {
     Query("dynamodb:Query"),
     /** Action for the RestoreTableFromBackup operation. */
     RestoreTableFromBackup("dynamodb:RestoreTableFromBackup"),
+    /** Action for the RestoreTableToPointInTime operation. */
+    RestoreTableToPointInTime("dynamodb:RestoreTableToPointInTime"),
     /** Action for the Scan operation. */
     Scan("dynamodb:Scan"),
     /** Action for the TagResource operation. */
     TagResource("dynamodb:TagResource"),
     /** Action for the UntagResource operation. */
     UntagResource("dynamodb:UntagResource"),
+    /** Action for the UpdateContinuousBackups operation. */
+    UpdateContinuousBackups("dynamodb:UpdateContinuousBackups"),
     /** Action for the UpdateGlobalTable operation. */
     UpdateGlobalTable("dynamodb:UpdateGlobalTable"),
     /** Action for the UpdateItem operation. */

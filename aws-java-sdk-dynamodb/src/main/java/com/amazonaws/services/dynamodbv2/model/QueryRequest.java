@@ -163,8 +163,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      * <p>
      * Items with the same partition key value are stored in sorted order by sort key. If the sort key data type is
-     * Number, the results are stored in numeric order. For type String, the results are stored in order of ASCII
-     * character code values. For type Binary, DynamoDB treats each byte of the binary data as unsigned.
+     * Number, the results are stored in numeric order. For type String, the results are stored in order of UTF-8 bytes.
+     * For type Binary, DynamoDB treats each byte of the binary data as unsigned.
      * </p>
      * <p>
      * If <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results in the order in which they
@@ -1667,8 +1667,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      * <p>
      * Items with the same partition key value are stored in sorted order by sort key. If the sort key data type is
-     * Number, the results are stored in numeric order. For type String, the results are stored in order of ASCII
-     * character code values. For type Binary, DynamoDB treats each byte of the binary data as unsigned.
+     * Number, the results are stored in numeric order. For type String, the results are stored in order of UTF-8 bytes.
+     * For type Binary, DynamoDB treats each byte of the binary data as unsigned.
      * </p>
      * <p>
      * If <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results in the order in which they
@@ -1683,7 +1683,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        <p>
      *        Items with the same partition key value are stored in sorted order by sort key. If the sort key data type
      *        is Number, the results are stored in numeric order. For type String, the results are stored in order of
-     *        ASCII character code values. For type Binary, DynamoDB treats each byte of the binary data as unsigned.
+     *        UTF-8 bytes. For type Binary, DynamoDB treats each byte of the binary data as unsigned.
      *        </p>
      *        <p>
      *        If <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results in the order in which
@@ -1703,8 +1703,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      * <p>
      * Items with the same partition key value are stored in sorted order by sort key. If the sort key data type is
-     * Number, the results are stored in numeric order. For type String, the results are stored in order of ASCII
-     * character code values. For type Binary, DynamoDB treats each byte of the binary data as unsigned.
+     * Number, the results are stored in numeric order. For type String, the results are stored in order of UTF-8 bytes.
+     * For type Binary, DynamoDB treats each byte of the binary data as unsigned.
      * </p>
      * <p>
      * If <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results in the order in which they
@@ -1718,7 +1718,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *         <p>
      *         Items with the same partition key value are stored in sorted order by sort key. If the sort key data type
      *         is Number, the results are stored in numeric order. For type String, the results are stored in order of
-     *         ASCII character code values. For type Binary, DynamoDB treats each byte of the binary data as unsigned.
+     *         UTF-8 bytes. For type Binary, DynamoDB treats each byte of the binary data as unsigned.
      *         </p>
      *         <p>
      *         If <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results in the order in which
@@ -1738,8 +1738,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      * <p>
      * Items with the same partition key value are stored in sorted order by sort key. If the sort key data type is
-     * Number, the results are stored in numeric order. For type String, the results are stored in order of ASCII
-     * character code values. For type Binary, DynamoDB treats each byte of the binary data as unsigned.
+     * Number, the results are stored in numeric order. For type String, the results are stored in order of UTF-8 bytes.
+     * For type Binary, DynamoDB treats each byte of the binary data as unsigned.
      * </p>
      * <p>
      * If <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results in the order in which they
@@ -1754,7 +1754,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *        <p>
      *        Items with the same partition key value are stored in sorted order by sort key. If the sort key data type
      *        is Number, the results are stored in numeric order. For type String, the results are stored in order of
-     *        ASCII character code values. For type Binary, DynamoDB treats each byte of the binary data as unsigned.
+     *        UTF-8 bytes. For type Binary, DynamoDB treats each byte of the binary data as unsigned.
      *        </p>
      *        <p>
      *        If <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results in the order in which
@@ -1776,8 +1776,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      * <p>
      * Items with the same partition key value are stored in sorted order by sort key. If the sort key data type is
-     * Number, the results are stored in numeric order. For type String, the results are stored in order of ASCII
-     * character code values. For type Binary, DynamoDB treats each byte of the binary data as unsigned.
+     * Number, the results are stored in numeric order. For type String, the results are stored in order of UTF-8 bytes.
+     * For type Binary, DynamoDB treats each byte of the binary data as unsigned.
      * </p>
      * <p>
      * If <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results in the order in which they
@@ -1791,7 +1791,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      *         <p>
      *         Items with the same partition key value are stored in sorted order by sort key. If the sort key data type
      *         is Number, the results are stored in numeric order. For type String, the results are stored in order of
-     *         ASCII character code values. For type Binary, DynamoDB treats each byte of the binary data as unsigned.
+     *         UTF-8 bytes. For type Binary, DynamoDB treats each byte of the binary data as unsigned.
      *         </p>
      *         <p>
      *         If <code>ScanIndexForward</code> is <code>true</code>, DynamoDB returns the results in the order in which

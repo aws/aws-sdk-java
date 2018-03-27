@@ -685,6 +685,19 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     }
 
     @Override
+    public java.util.concurrent.Future<RestoreTableToPointInTimeResult> restoreTableToPointInTimeAsync(RestoreTableToPointInTimeRequest request) {
+
+        return restoreTableToPointInTimeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreTableToPointInTimeResult> restoreTableToPointInTimeAsync(RestoreTableToPointInTimeRequest request,
+            com.amazonaws.handlers.AsyncHandler<RestoreTableToPointInTimeRequest, RestoreTableToPointInTimeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ScanResult> scanAsync(ScanRequest request) {
 
         return scanAsync(request, null);
@@ -788,6 +801,19 @@ public class AbstractAmazonDynamoDBAsync extends AbstractAmazonDynamoDB implemen
     @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContinuousBackupsResult> updateContinuousBackupsAsync(UpdateContinuousBackupsRequest request) {
+
+        return updateContinuousBackupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContinuousBackupsResult> updateContinuousBackupsAsync(UpdateContinuousBackupsRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateContinuousBackupsRequest, UpdateContinuousBackupsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

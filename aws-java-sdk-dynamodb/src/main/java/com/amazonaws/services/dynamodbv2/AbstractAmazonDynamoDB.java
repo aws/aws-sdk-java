@@ -231,6 +231,11 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     }
 
     @Override
+    public RestoreTableToPointInTimeResult restoreTableToPointInTime(RestoreTableToPointInTimeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ScanResult scan(ScanRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -257,6 +262,11 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateContinuousBackupsResult updateContinuousBackups(UpdateContinuousBackupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

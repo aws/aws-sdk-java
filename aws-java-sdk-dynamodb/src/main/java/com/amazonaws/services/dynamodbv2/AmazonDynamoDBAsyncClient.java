@@ -1357,6 +1357,39 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<RestoreTableToPointInTimeResult> restoreTableToPointInTimeAsync(RestoreTableToPointInTimeRequest request) {
+
+        return restoreTableToPointInTimeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreTableToPointInTimeResult> restoreTableToPointInTimeAsync(final RestoreTableToPointInTimeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RestoreTableToPointInTimeRequest, RestoreTableToPointInTimeResult> asyncHandler) {
+        final RestoreTableToPointInTimeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RestoreTableToPointInTimeResult>() {
+            @Override
+            public RestoreTableToPointInTimeResult call() throws Exception {
+                RestoreTableToPointInTimeResult result = null;
+
+                try {
+                    result = executeRestoreTableToPointInTime(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ScanResult> scanAsync(ScanRequest request) {
 
         return scanAsync(request, null);
@@ -1510,6 +1543,39 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient implements A
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContinuousBackupsResult> updateContinuousBackupsAsync(UpdateContinuousBackupsRequest request) {
+
+        return updateContinuousBackupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContinuousBackupsResult> updateContinuousBackupsAsync(final UpdateContinuousBackupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateContinuousBackupsRequest, UpdateContinuousBackupsResult> asyncHandler) {
+        final UpdateContinuousBackupsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateContinuousBackupsResult>() {
+            @Override
+            public UpdateContinuousBackupsResult call() throws Exception {
+                UpdateContinuousBackupsResult result = null;
+
+                try {
+                    result = executeUpdateContinuousBackups(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents the backup and restore settings on the table when the backup was created.
+ * Represents the continuous backups and point in time recovery settings on the table.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ContinuousBackupsDescription"
@@ -30,18 +30,24 @@ public class ContinuousBackupsDescription implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * ContinuousBackupsStatus can be one of the following states : ENABLED, DISABLED
+     * <code>ContinuousBackupsStatus</code> can be one of the following states : ENABLED, DISABLED
      * </p>
      */
     private String continuousBackupsStatus;
+    /**
+     * <p>
+     * The description of the point in time recovery settings applied to the table.
+     * </p>
+     */
+    private PointInTimeRecoveryDescription pointInTimeRecoveryDescription;
 
     /**
      * <p>
-     * ContinuousBackupsStatus can be one of the following states : ENABLED, DISABLED
+     * <code>ContinuousBackupsStatus</code> can be one of the following states : ENABLED, DISABLED
      * </p>
      * 
      * @param continuousBackupsStatus
-     *        ContinuousBackupsStatus can be one of the following states : ENABLED, DISABLED
+     *        <code>ContinuousBackupsStatus</code> can be one of the following states : ENABLED, DISABLED
      * @see ContinuousBackupsStatus
      */
 
@@ -51,10 +57,10 @@ public class ContinuousBackupsDescription implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * ContinuousBackupsStatus can be one of the following states : ENABLED, DISABLED
+     * <code>ContinuousBackupsStatus</code> can be one of the following states : ENABLED, DISABLED
      * </p>
      * 
-     * @return ContinuousBackupsStatus can be one of the following states : ENABLED, DISABLED
+     * @return <code>ContinuousBackupsStatus</code> can be one of the following states : ENABLED, DISABLED
      * @see ContinuousBackupsStatus
      */
 
@@ -64,11 +70,11 @@ public class ContinuousBackupsDescription implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * ContinuousBackupsStatus can be one of the following states : ENABLED, DISABLED
+     * <code>ContinuousBackupsStatus</code> can be one of the following states : ENABLED, DISABLED
      * </p>
      * 
      * @param continuousBackupsStatus
-     *        ContinuousBackupsStatus can be one of the following states : ENABLED, DISABLED
+     *        <code>ContinuousBackupsStatus</code> can be one of the following states : ENABLED, DISABLED
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContinuousBackupsStatus
      */
@@ -80,17 +86,57 @@ public class ContinuousBackupsDescription implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * ContinuousBackupsStatus can be one of the following states : ENABLED, DISABLED
+     * <code>ContinuousBackupsStatus</code> can be one of the following states : ENABLED, DISABLED
      * </p>
      * 
      * @param continuousBackupsStatus
-     *        ContinuousBackupsStatus can be one of the following states : ENABLED, DISABLED
+     *        <code>ContinuousBackupsStatus</code> can be one of the following states : ENABLED, DISABLED
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContinuousBackupsStatus
      */
 
     public ContinuousBackupsDescription withContinuousBackupsStatus(ContinuousBackupsStatus continuousBackupsStatus) {
         this.continuousBackupsStatus = continuousBackupsStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The description of the point in time recovery settings applied to the table.
+     * </p>
+     * 
+     * @param pointInTimeRecoveryDescription
+     *        The description of the point in time recovery settings applied to the table.
+     */
+
+    public void setPointInTimeRecoveryDescription(PointInTimeRecoveryDescription pointInTimeRecoveryDescription) {
+        this.pointInTimeRecoveryDescription = pointInTimeRecoveryDescription;
+    }
+
+    /**
+     * <p>
+     * The description of the point in time recovery settings applied to the table.
+     * </p>
+     * 
+     * @return The description of the point in time recovery settings applied to the table.
+     */
+
+    public PointInTimeRecoveryDescription getPointInTimeRecoveryDescription() {
+        return this.pointInTimeRecoveryDescription;
+    }
+
+    /**
+     * <p>
+     * The description of the point in time recovery settings applied to the table.
+     * </p>
+     * 
+     * @param pointInTimeRecoveryDescription
+     *        The description of the point in time recovery settings applied to the table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContinuousBackupsDescription withPointInTimeRecoveryDescription(PointInTimeRecoveryDescription pointInTimeRecoveryDescription) {
+        setPointInTimeRecoveryDescription(pointInTimeRecoveryDescription);
         return this;
     }
 
@@ -106,7 +152,9 @@ public class ContinuousBackupsDescription implements Serializable, Cloneable, St
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getContinuousBackupsStatus() != null)
-            sb.append("ContinuousBackupsStatus: ").append(getContinuousBackupsStatus());
+            sb.append("ContinuousBackupsStatus: ").append(getContinuousBackupsStatus()).append(",");
+        if (getPointInTimeRecoveryDescription() != null)
+            sb.append("PointInTimeRecoveryDescription: ").append(getPointInTimeRecoveryDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -125,6 +173,11 @@ public class ContinuousBackupsDescription implements Serializable, Cloneable, St
             return false;
         if (other.getContinuousBackupsStatus() != null && other.getContinuousBackupsStatus().equals(this.getContinuousBackupsStatus()) == false)
             return false;
+        if (other.getPointInTimeRecoveryDescription() == null ^ this.getPointInTimeRecoveryDescription() == null)
+            return false;
+        if (other.getPointInTimeRecoveryDescription() != null
+                && other.getPointInTimeRecoveryDescription().equals(this.getPointInTimeRecoveryDescription()) == false)
+            return false;
         return true;
     }
 
@@ -134,6 +187,7 @@ public class ContinuousBackupsDescription implements Serializable, Cloneable, St
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getContinuousBackupsStatus() == null) ? 0 : getContinuousBackupsStatus().hashCode());
+        hashCode = prime * hashCode + ((getPointInTimeRecoveryDescription() == null) ? 0 : getPointInTimeRecoveryDescription().hashCode());
         return hashCode;
     }
 

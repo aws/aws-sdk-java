@@ -52,6 +52,11 @@ public class ContinuousBackupsDescriptionJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     continuousBackupsDescription.setContinuousBackupsStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PointInTimeRecoveryDescription", targetDepth)) {
+                    context.nextToken();
+                    continuousBackupsDescription.setPointInTimeRecoveryDescription(PointInTimeRecoveryDescriptionJsonUnmarshaller.getInstance().unmarshall(
+                            context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

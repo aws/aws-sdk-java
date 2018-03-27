@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A table with the name <code>TableName</code> does not currently exist within the subscriber's account.
+ * A source table with the name <code>TableName</code> does not currently exist within the subscriber's account.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

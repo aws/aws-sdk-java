@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A table by that name is either being created or deleted.
+ * A target table with the specified name is either being created or deleted.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

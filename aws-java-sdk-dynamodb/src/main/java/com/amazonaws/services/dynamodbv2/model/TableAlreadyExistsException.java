@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A table with the name already exists.
+ * A target table with the specified name already exists.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
