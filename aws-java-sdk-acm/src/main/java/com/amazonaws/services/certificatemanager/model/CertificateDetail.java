@@ -194,6 +194,14 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private java.util.List<ExtendedKeyUsage> extendedKeyUsages;
+    /**
+     * <p>
+     * Value that specifies whether to add the certificate to a transparency log. Certificate transparency makes it
+     * possible to detect SSL certificates that have been mistakenly or maliciously issued. A browser might respond to
+     * certificate that has not been logged by showing an error message. The logs are cryptographicaly secure.
+     * </p>
+     */
+    private CertificateOptions options;
 
     /**
      * <p>
@@ -1651,6 +1659,61 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * Value that specifies whether to add the certificate to a transparency log. Certificate transparency makes it
+     * possible to detect SSL certificates that have been mistakenly or maliciously issued. A browser might respond to
+     * certificate that has not been logged by showing an error message. The logs are cryptographicaly secure.
+     * </p>
+     * 
+     * @param options
+     *        Value that specifies whether to add the certificate to a transparency log. Certificate transparency makes
+     *        it possible to detect SSL certificates that have been mistakenly or maliciously issued. A browser might
+     *        respond to certificate that has not been logged by showing an error message. The logs are cryptographicaly
+     *        secure.
+     */
+
+    public void setOptions(CertificateOptions options) {
+        this.options = options;
+    }
+
+    /**
+     * <p>
+     * Value that specifies whether to add the certificate to a transparency log. Certificate transparency makes it
+     * possible to detect SSL certificates that have been mistakenly or maliciously issued. A browser might respond to
+     * certificate that has not been logged by showing an error message. The logs are cryptographicaly secure.
+     * </p>
+     * 
+     * @return Value that specifies whether to add the certificate to a transparency log. Certificate transparency makes
+     *         it possible to detect SSL certificates that have been mistakenly or maliciously issued. A browser might
+     *         respond to certificate that has not been logged by showing an error message. The logs are
+     *         cryptographicaly secure.
+     */
+
+    public CertificateOptions getOptions() {
+        return this.options;
+    }
+
+    /**
+     * <p>
+     * Value that specifies whether to add the certificate to a transparency log. Certificate transparency makes it
+     * possible to detect SSL certificates that have been mistakenly or maliciously issued. A browser might respond to
+     * certificate that has not been logged by showing an error message. The logs are cryptographicaly secure.
+     * </p>
+     * 
+     * @param options
+     *        Value that specifies whether to add the certificate to a transparency log. Certificate transparency makes
+     *        it possible to detect SSL certificates that have been mistakenly or maliciously issued. A browser might
+     *        respond to certificate that has not been logged by showing an error message. The logs are cryptographicaly
+     *        secure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CertificateDetail withOptions(CertificateOptions options) {
+        setOptions(options);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1706,7 +1769,9 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
         if (getKeyUsages() != null)
             sb.append("KeyUsages: ").append(getKeyUsages()).append(",");
         if (getExtendedKeyUsages() != null)
-            sb.append("ExtendedKeyUsages: ").append(getExtendedKeyUsages());
+            sb.append("ExtendedKeyUsages: ").append(getExtendedKeyUsages()).append(",");
+        if (getOptions() != null)
+            sb.append("Options: ").append(getOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -1813,6 +1878,10 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getExtendedKeyUsages() != null && other.getExtendedKeyUsages().equals(this.getExtendedKeyUsages()) == false)
             return false;
+        if (other.getOptions() == null ^ this.getOptions() == null)
+            return false;
+        if (other.getOptions() != null && other.getOptions().equals(this.getOptions()) == false)
+            return false;
         return true;
     }
 
@@ -1844,6 +1913,7 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getRenewalSummary() == null) ? 0 : getRenewalSummary().hashCode());
         hashCode = prime * hashCode + ((getKeyUsages() == null) ? 0 : getKeyUsages().hashCode());
         hashCode = prime * hashCode + ((getExtendedKeyUsages() == null) ? 0 : getExtendedKeyUsages().hashCode());
+        hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode());
         return hashCode;
     }
 

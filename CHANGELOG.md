@@ -1,3 +1,8 @@
+# __1.11.303__ __2018-03-27__
+## __AWS Certificate Manager__
+  - ### Features
+    - AWS Certificate Manager has added support for customers to disable Certificate Transparency logging on a per-certificate basis.
+
 # __1.11.302__ __2018-03-26__
 ## __Amazon DynamoDB__
   - ### Features

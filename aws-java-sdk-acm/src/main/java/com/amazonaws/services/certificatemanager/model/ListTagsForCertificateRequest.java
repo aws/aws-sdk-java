@@ -27,7 +27,7 @@ public class ListTagsForCertificateRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * String that contains the ARN of the ACM Certificate for which you want to list the tags. This must have the
+     * String that contains the ARN of the ACM certificate for which you want to list the tags. This must have the
      * following form:
      * </p>
      * <p>
@@ -43,7 +43,7 @@ public class ListTagsForCertificateRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * String that contains the ARN of the ACM Certificate for which you want to list the tags. This must have the
+     * String that contains the ARN of the ACM certificate for which you want to list the tags. This must have the
      * following form:
      * </p>
      * <p>
@@ -56,7 +56,7 @@ public class ListTagsForCertificateRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param certificateArn
-     *        String that contains the ARN of the ACM Certificate for which you want to list the tags. This must have
+     *        String that contains the ARN of the ACM certificate for which you want to list the tags. This must have
      *        the following form:</p>
      *        <p>
      *        <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
@@ -73,7 +73,7 @@ public class ListTagsForCertificateRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * String that contains the ARN of the ACM Certificate for which you want to list the tags. This must have the
+     * String that contains the ARN of the ACM certificate for which you want to list the tags. This must have the
      * following form:
      * </p>
      * <p>
@@ -85,7 +85,7 @@ public class ListTagsForCertificateRequest extends com.amazonaws.AmazonWebServic
      * AWS Service Namespaces</a>.
      * </p>
      * 
-     * @return String that contains the ARN of the ACM Certificate for which you want to list the tags. This must have
+     * @return String that contains the ARN of the ACM certificate for which you want to list the tags. This must have
      *         the following form:</p>
      *         <p>
      *         <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
@@ -102,7 +102,7 @@ public class ListTagsForCertificateRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * String that contains the ARN of the ACM Certificate for which you want to list the tags. This must have the
+     * String that contains the ARN of the ACM certificate for which you want to list the tags. This must have the
      * following form:
      * </p>
      * <p>
@@ -115,7 +115,7 @@ public class ListTagsForCertificateRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param certificateArn
-     *        String that contains the ARN of the ACM Certificate for which you want to list the tags. This must have
+     *        String that contains the ARN of the ACM certificate for which you want to list the tags. This must have
      *        the following form:</p>
      *        <p>
      *        <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>

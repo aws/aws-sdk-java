@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified certificate cannot be found in the caller's account, or the caller's account cannot be found.
+ * The specified certificate cannot be found in the caller's account or the caller's account cannot be found.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

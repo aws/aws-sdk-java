@@ -142,6 +142,10 @@ public class CertificateDetailJsonUnmarshaller implements Unmarshaller<Certifica
                     certificateDetail.setExtendedKeyUsages(new ListUnmarshaller<ExtendedKeyUsage>(ExtendedKeyUsageJsonUnmarshaller.getInstance())
                             .unmarshall(context));
                 }
+                if (context.testExpression("Options", targetDepth)) {
+                    context.nextToken();
+                    certificateDetail.setOptions(CertificateOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

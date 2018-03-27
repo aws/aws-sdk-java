@@ -45,10 +45,10 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
     private String validationMethod;
     /**
      * <p>
-     * Additional FQDNs to be included in the Subject Alternative Name extension of the ACM Certificate. For example,
+     * Additional FQDNs to be included in the Subject Alternative Name extension of the ACM certificate. For example,
      * add the name www.example.net to a certificate for which the <code>DomainName</code> field is www.example.com if
      * users can reach your site by using either name. The maximum number of domain names that you can add to an ACM
-     * Certificate is 100. However, the initial limit is 10 domain names. If you need more than 10 names, you must
+     * certificate is 100. However, the initial limit is 10 domain names. If you need more than 10 names, you must
      * request a limit increase. For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
      * </p>
@@ -94,6 +94,16 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private java.util.List<DomainValidationOption> domainValidationOptions;
+    /**
+     * <p>
+     * Currently, you can use this parameter to specify whether to add the certificate to a certificate transparency
+     * log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or
+     * maliciously issued. Certificates that have not been logged typically produce an error message in a browser. For
+     * more information, see <a href="acm/latest/userguide/acm-bestpractices.html#best-practices-transparency"> Opting
+     * Out of Certificate Transparency Logging</a>.
+     * </p>
+     */
+    private CertificateOptions options;
 
     /**
      * <p>
@@ -232,10 +242,10 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Additional FQDNs to be included in the Subject Alternative Name extension of the ACM Certificate. For example,
+     * Additional FQDNs to be included in the Subject Alternative Name extension of the ACM certificate. For example,
      * add the name www.example.net to a certificate for which the <code>DomainName</code> field is www.example.com if
      * users can reach your site by using either name. The maximum number of domain names that you can add to an ACM
-     * Certificate is 100. However, the initial limit is 10 domain names. If you need more than 10 names, you must
+     * certificate is 100. However, the initial limit is 10 domain names. If you need more than 10 names, you must
      * request a limit increase. For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
      * </p>
@@ -264,10 +274,10 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * 
-     * @return Additional FQDNs to be included in the Subject Alternative Name extension of the ACM Certificate. For
+     * @return Additional FQDNs to be included in the Subject Alternative Name extension of the ACM certificate. For
      *         example, add the name www.example.net to a certificate for which the <code>DomainName</code> field is
      *         www.example.com if users can reach your site by using either name. The maximum number of domain names
-     *         that you can add to an ACM Certificate is 100. However, the initial limit is 10 domain names. If you need
+     *         that you can add to an ACM certificate is 100. However, the initial limit is 10 domain names. If you need
      *         more than 10 names, you must request a limit increase. For more information, see <a
      *         href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
      *         <p>
@@ -301,10 +311,10 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Additional FQDNs to be included in the Subject Alternative Name extension of the ACM Certificate. For example,
+     * Additional FQDNs to be included in the Subject Alternative Name extension of the ACM certificate. For example,
      * add the name www.example.net to a certificate for which the <code>DomainName</code> field is www.example.com if
      * users can reach your site by using either name. The maximum number of domain names that you can add to an ACM
-     * Certificate is 100. However, the initial limit is 10 domain names. If you need more than 10 names, you must
+     * certificate is 100. However, the initial limit is 10 domain names. If you need more than 10 names, you must
      * request a limit increase. For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
      * </p>
@@ -334,10 +344,10 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * 
      * @param subjectAlternativeNames
-     *        Additional FQDNs to be included in the Subject Alternative Name extension of the ACM Certificate. For
+     *        Additional FQDNs to be included in the Subject Alternative Name extension of the ACM certificate. For
      *        example, add the name www.example.net to a certificate for which the <code>DomainName</code> field is
      *        www.example.com if users can reach your site by using either name. The maximum number of domain names that
-     *        you can add to an ACM Certificate is 100. However, the initial limit is 10 domain names. If you need more
+     *        you can add to an ACM certificate is 100. However, the initial limit is 10 domain names. If you need more
      *        than 10 names, you must request a limit increase. For more information, see <a
      *        href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
      *        <p>
@@ -376,10 +386,10 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Additional FQDNs to be included in the Subject Alternative Name extension of the ACM Certificate. For example,
+     * Additional FQDNs to be included in the Subject Alternative Name extension of the ACM certificate. For example,
      * add the name www.example.net to a certificate for which the <code>DomainName</code> field is www.example.com if
      * users can reach your site by using either name. The maximum number of domain names that you can add to an ACM
-     * Certificate is 100. However, the initial limit is 10 domain names. If you need more than 10 names, you must
+     * certificate is 100. However, the initial limit is 10 domain names. If you need more than 10 names, you must
      * request a limit increase. For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
      * </p>
@@ -414,10 +424,10 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param subjectAlternativeNames
-     *        Additional FQDNs to be included in the Subject Alternative Name extension of the ACM Certificate. For
+     *        Additional FQDNs to be included in the Subject Alternative Name extension of the ACM certificate. For
      *        example, add the name www.example.net to a certificate for which the <code>DomainName</code> field is
      *        www.example.com if users can reach your site by using either name. The maximum number of domain names that
-     *        you can add to an ACM Certificate is 100. However, the initial limit is 10 domain names. If you need more
+     *        you can add to an ACM certificate is 100. However, the initial limit is 10 domain names. If you need more
      *        than 10 names, you must request a limit increase. For more information, see <a
      *        href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
      *        <p>
@@ -458,10 +468,10 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Additional FQDNs to be included in the Subject Alternative Name extension of the ACM Certificate. For example,
+     * Additional FQDNs to be included in the Subject Alternative Name extension of the ACM certificate. For example,
      * add the name www.example.net to a certificate for which the <code>DomainName</code> field is www.example.com if
      * users can reach your site by using either name. The maximum number of domain names that you can add to an ACM
-     * Certificate is 100. However, the initial limit is 10 domain names. If you need more than 10 names, you must
+     * certificate is 100. However, the initial limit is 10 domain names. If you need more than 10 names, you must
      * request a limit increase. For more information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
      * </p>
@@ -491,10 +501,10 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      * 
      * @param subjectAlternativeNames
-     *        Additional FQDNs to be included in the Subject Alternative Name extension of the ACM Certificate. For
+     *        Additional FQDNs to be included in the Subject Alternative Name extension of the ACM certificate. For
      *        example, add the name www.example.net to a certificate for which the <code>DomainName</code> field is
      *        www.example.com if users can reach your site by using either name. The maximum number of domain names that
-     *        you can add to an ACM Certificate is 100. However, the initial limit is 10 domain names. If you need more
+     *        you can add to an ACM certificate is 100. However, the initial limit is 10 domain names. If you need more
      *        than 10 names, you must request a limit increase. For more information, see <a
      *        href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
      *        <p>
@@ -663,6 +673,73 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Currently, you can use this parameter to specify whether to add the certificate to a certificate transparency
+     * log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or
+     * maliciously issued. Certificates that have not been logged typically produce an error message in a browser. For
+     * more information, see <a href="acm/latest/userguide/acm-bestpractices.html#best-practices-transparency"> Opting
+     * Out of Certificate Transparency Logging</a>.
+     * </p>
+     * 
+     * @param options
+     *        Currently, you can use this parameter to specify whether to add the certificate to a certificate
+     *        transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been
+     *        mistakenly or maliciously issued. Certificates that have not been logged typically produce an error
+     *        message in a browser. For more information, see <a
+     *        href="acm/latest/userguide/acm-bestpractices.html#best-practices-transparency"> Opting Out of Certificate
+     *        Transparency Logging</a>.
+     */
+
+    public void setOptions(CertificateOptions options) {
+        this.options = options;
+    }
+
+    /**
+     * <p>
+     * Currently, you can use this parameter to specify whether to add the certificate to a certificate transparency
+     * log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or
+     * maliciously issued. Certificates that have not been logged typically produce an error message in a browser. For
+     * more information, see <a href="acm/latest/userguide/acm-bestpractices.html#best-practices-transparency"> Opting
+     * Out of Certificate Transparency Logging</a>.
+     * </p>
+     * 
+     * @return Currently, you can use this parameter to specify whether to add the certificate to a certificate
+     *         transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have
+     *         been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error
+     *         message in a browser. For more information, see <a
+     *         href="acm/latest/userguide/acm-bestpractices.html#best-practices-transparency"> Opting Out of Certificate
+     *         Transparency Logging</a>.
+     */
+
+    public CertificateOptions getOptions() {
+        return this.options;
+    }
+
+    /**
+     * <p>
+     * Currently, you can use this parameter to specify whether to add the certificate to a certificate transparency
+     * log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or
+     * maliciously issued. Certificates that have not been logged typically produce an error message in a browser. For
+     * more information, see <a href="acm/latest/userguide/acm-bestpractices.html#best-practices-transparency"> Opting
+     * Out of Certificate Transparency Logging</a>.
+     * </p>
+     * 
+     * @param options
+     *        Currently, you can use this parameter to specify whether to add the certificate to a certificate
+     *        transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been
+     *        mistakenly or maliciously issued. Certificates that have not been logged typically produce an error
+     *        message in a browser. For more information, see <a
+     *        href="acm/latest/userguide/acm-bestpractices.html#best-practices-transparency"> Opting Out of Certificate
+     *        Transparency Logging</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RequestCertificateRequest withOptions(CertificateOptions options) {
+        setOptions(options);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -682,7 +759,9 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
         if (getIdempotencyToken() != null)
             sb.append("IdempotencyToken: ").append(getIdempotencyToken()).append(",");
         if (getDomainValidationOptions() != null)
-            sb.append("DomainValidationOptions: ").append(getDomainValidationOptions());
+            sb.append("DomainValidationOptions: ").append(getDomainValidationOptions()).append(",");
+        if (getOptions() != null)
+            sb.append("Options: ").append(getOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -717,6 +796,10 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getDomainValidationOptions() != null && other.getDomainValidationOptions().equals(this.getDomainValidationOptions()) == false)
             return false;
+        if (other.getOptions() == null ^ this.getOptions() == null)
+            return false;
+        if (other.getOptions() != null && other.getOptions().equals(this.getOptions()) == false)
+            return false;
         return true;
     }
 
@@ -730,6 +813,7 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getSubjectAlternativeNames() == null) ? 0 : getSubjectAlternativeNames().hashCode());
         hashCode = prime * hashCode + ((getIdempotencyToken() == null) ? 0 : getIdempotencyToken().hashCode());
         hashCode = prime * hashCode + ((getDomainValidationOptions() == null) ? 0 : getDomainValidationOptions().hashCode());
+        hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode());
         return hashCode;
     }
 

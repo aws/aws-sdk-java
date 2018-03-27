@@ -100,7 +100,7 @@ public interface AWSCertificateManager {
 
     /**
      * <p>
-     * Adds one or more tags to an ACM Certificate. Tags are labels that you can use to identify and organize your AWS
+     * Adds one or more tags to an ACM certificate. Tags are labels that you can use to identify and organize your AWS
      * resources. Each tag consists of a <code>key</code> and an optional <code>value</code>. You specify the
      * certificate on input by its Amazon Resource Name (ARN). You specify the tag by using a key-value pair.
      * </p>
@@ -108,10 +108,10 @@ public interface AWSCertificateManager {
      * You can apply a tag to just one certificate if you want to identify a specific characteristic of that
      * certificate, or you can apply the same tag to multiple certificates if you want to filter for a common
      * relationship among those certificates. Similarly, you can apply the same tag to multiple resources if you want to
-     * specify a relationship among those resources. For example, you can add the same tag to an ACM Certificate and an
+     * specify a relationship among those resources. For example, you can add the same tag to an ACM certificate and an
      * Elastic Load Balancing load balancer to indicate that they are both used by the same website. For more
      * information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/tags.html">Tagging ACM
-     * Certificates</a>.
+     * certificates</a>.
      * </p>
      * <p>
      * To remove one or more tags, use the <a>RemoveTagsFromCertificate</a> action. To view all of the tags that have
@@ -121,7 +121,7 @@ public interface AWSCertificateManager {
      * @param addTagsToCertificateRequest
      * @return Result of the AddTagsToCertificate operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The specified certificate cannot be found in the caller's account, or the caller's account cannot be
+     *         The specified certificate cannot be found in the caller's account or the caller's account cannot be
      *         found.
      * @throws InvalidArnException
      *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
@@ -144,7 +144,7 @@ public interface AWSCertificateManager {
      * </p>
      * <note>
      * <p>
-     * You cannot delete an ACM Certificate that is being used by another AWS service. To delete a certificate that is
+     * You cannot delete an ACM certificate that is being used by another AWS service. To delete a certificate that is
      * in use, the certificate association must first be removed.
      * </p>
      * </note>
@@ -152,7 +152,7 @@ public interface AWSCertificateManager {
      * @param deleteCertificateRequest
      * @return Result of the DeleteCertificate operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The specified certificate cannot be found in the caller's account, or the caller's account cannot be
+     *         The specified certificate cannot be found in the caller's account or the caller's account cannot be
      *         found.
      * @throws ResourceInUseException
      *         The certificate is in use by another AWS service in the caller's account. Remove the association and try
@@ -167,13 +167,13 @@ public interface AWSCertificateManager {
 
     /**
      * <p>
-     * Returns detailed metadata about the specified ACM Certificate.
+     * Returns detailed metadata about the specified ACM certificate.
      * </p>
      * 
      * @param describeCertificateRequest
      * @return Result of the DescribeCertificate operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The specified certificate cannot be found in the caller's account, or the caller's account cannot be
+     *         The specified certificate cannot be found in the caller's account or the caller's account cannot be
      *         found.
      * @throws InvalidArnException
      *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
@@ -194,7 +194,7 @@ public interface AWSCertificateManager {
      * @param getCertificateRequest
      * @return Result of the GetCertificate operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The specified certificate cannot be found in the caller's account, or the caller's account cannot be
+     *         The specified certificate cannot be found in the caller's account or the caller's account cannot be
      *         found.
      * @throws RequestInProgressException
      *         The certificate request is in process and the certificate in your account has not yet been issued.
@@ -292,13 +292,10 @@ public interface AWSCertificateManager {
      * @param importCertificateRequest
      * @return Result of the ImportCertificate operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The specified certificate cannot be found in the caller's account, or the caller's account cannot be
+     *         The specified certificate cannot be found in the caller's account or the caller's account cannot be
      *         found.
      * @throws LimitExceededException
-     *         An ACM limit has been exceeded. For example, you may have input more domains than are allowed or you've
-     *         requested too many certificates for your account. See the exception message returned by ACM to determine
-     *         which limit you have violated. For more information about ACM limits, see the <a
-     *         href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a> topic.
+     *         An ACM limit has been exceeded.
      * @sample AWSCertificateManager.ImportCertificate
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ImportCertificate" target="_top">AWS API
      *      Documentation</a>
@@ -321,15 +318,15 @@ public interface AWSCertificateManager {
 
     /**
      * <p>
-     * Lists the tags that have been applied to the ACM Certificate. Use the certificate's Amazon Resource Name (ARN) to
-     * specify the certificate. To add a tag to an ACM Certificate, use the <a>AddTagsToCertificate</a> action. To
+     * Lists the tags that have been applied to the ACM certificate. Use the certificate's Amazon Resource Name (ARN) to
+     * specify the certificate. To add a tag to an ACM certificate, use the <a>AddTagsToCertificate</a> action. To
      * delete a tag, use the <a>RemoveTagsFromCertificate</a> action.
      * </p>
      * 
      * @param listTagsForCertificateRequest
      * @return Result of the ListTagsForCertificate operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The specified certificate cannot be found in the caller's account, or the caller's account cannot be
+     *         The specified certificate cannot be found in the caller's account or the caller's account cannot be
      *         found.
      * @throws InvalidArnException
      *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
@@ -341,19 +338,19 @@ public interface AWSCertificateManager {
 
     /**
      * <p>
-     * Remove one or more tags from an ACM Certificate. A tag consists of a key-value pair. If you do not specify the
+     * Remove one or more tags from an ACM certificate. A tag consists of a key-value pair. If you do not specify the
      * value portion of the tag when calling this function, the tag will be removed regardless of value. If you specify
      * a value, the tag is removed only if it is associated with the specified value.
      * </p>
      * <p>
      * To add tags to a certificate, use the <a>AddTagsToCertificate</a> action. To view all of the tags that have been
-     * applied to a specific ACM Certificate, use the <a>ListTagsForCertificate</a> action.
+     * applied to a specific ACM certificate, use the <a>ListTagsForCertificate</a> action.
      * </p>
      * 
      * @param removeTagsFromCertificateRequest
      * @return Result of the RemoveTagsFromCertificate operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The specified certificate cannot be found in the caller's account, or the caller's account cannot be
+     *         The specified certificate cannot be found in the caller's account or the caller's account cannot be
      *         found.
      * @throws InvalidArnException
      *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
@@ -368,7 +365,7 @@ public interface AWSCertificateManager {
 
     /**
      * <p>
-     * Requests an ACM Certificate for use with other AWS services. To request an ACM Certificate, you must specify the
+     * Requests an ACM certificate for use with other AWS services. To request an ACM certificate, you must specify the
      * fully qualified domain name (FQDN) for your site in the <code>DomainName</code> parameter. You can also specify
      * additional FQDNs in the <code>SubjectAlternativeNames</code> parameter if users can reach your site by using
      * other names.
@@ -381,17 +378,14 @@ public interface AWSCertificateManager {
      * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate.html">Validate Domain Ownership</a>.
      * </p>
      * <p>
-     * After receiving approval from the domain owner, the ACM Certificate is issued. For more information, see the <a
+     * After receiving approval from the domain owner, the ACM certificate is issued. For more information, see the <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager User Guide</a>.
      * </p>
      * 
      * @param requestCertificateRequest
      * @return Result of the RequestCertificate operation returned by the service.
      * @throws LimitExceededException
-     *         An ACM limit has been exceeded. For example, you may have input more domains than are allowed or you've
-     *         requested too many certificates for your account. See the exception message returned by ACM to determine
-     *         which limit you have violated. For more information about ACM limits, see the <a
-     *         href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a> topic.
+     *         An ACM limit has been exceeded.
      * @throws InvalidDomainValidationOptionsException
      *         One or more values in the <a>DomainValidationOption</a> structure is incorrect.
      * @sample AWSCertificateManager.RequestCertificate
@@ -403,10 +397,10 @@ public interface AWSCertificateManager {
     /**
      * <p>
      * Resends the email that requests domain ownership validation. The domain owner or an authorized representative
-     * must approve the ACM Certificate before it can be issued. The certificate can be approved by clicking a link in
+     * must approve the ACM certificate before it can be issued. The certificate can be approved by clicking a link in
      * the mail to navigate to the Amazon certificate approval website and then clicking <b>I Approve</b>. However, the
      * validation email can be blocked by spam filters. Therefore, if you do not receive the original mail, you can
-     * request that the mail be resent within 72 hours of requesting the ACM Certificate. If more than 72 hours have
+     * request that the mail be resent within 72 hours of requesting the ACM certificate. If more than 72 hours have
      * elapsed since your original request or since your last attempt to resend validation mail, you must request a new
      * certificate. For more information about setting up your contact email addresses, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/setup-email.html">Configure Email for your Domain</a>.
@@ -415,12 +409,10 @@ public interface AWSCertificateManager {
      * @param resendValidationEmailRequest
      * @return Result of the ResendValidationEmail operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The specified certificate cannot be found in the caller's account, or the caller's account cannot be
+     *         The specified certificate cannot be found in the caller's account or the caller's account cannot be
      *         found.
      * @throws InvalidStateException
-     *         Processing has reached an invalid state. For example, this exception can occur if the specified domain is
-     *         not using email validation, or the current certificate status does not permit the requested operation.
-     *         See the exception message returned by ACM to determine which state is not valid.
+     *         Processing has reached an invalid state.
      * @throws InvalidArnException
      *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
      * @throws InvalidDomainValidationOptionsException
@@ -430,6 +422,33 @@ public interface AWSCertificateManager {
      *      Documentation</a>
      */
     ResendValidationEmailResult resendValidationEmail(ResendValidationEmailRequest resendValidationEmailRequest);
+
+    /**
+     * <p>
+     * Updates a certificate. Currently, you can use this function to specify whether to opt in to or out of recording
+     * your certificate in a certificate transparency log. For more information, see <a
+     * href="acm/latest/userguide/acm-bestpractices.html#best-practices-transparency"> Opting Out of Certificate
+     * Transparency Logging</a>.
+     * </p>
+     * 
+     * @param updateCertificateOptionsRequest
+     * @return Result of the UpdateCertificateOptions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified certificate cannot be found in the caller's account or the caller's account cannot be
+     *         found.
+     * @throws InvalidArnException
+     *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
+     * @throws LimitExceededException
+     *         An ACM limit has been exceeded.
+     * @throws InvalidStateException
+     *         Processing has reached an invalid state.
+     * @throws InvalidArnException
+     *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
+     * @sample AWSCertificateManager.UpdateCertificateOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/UpdateCertificateOptions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateCertificateOptionsResult updateCertificateOptions(UpdateCertificateOptionsRequest updateCertificateOptionsRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

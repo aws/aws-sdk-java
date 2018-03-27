@@ -88,6 +88,11 @@ public class AbstractAWSCertificateManager implements AWSCertificateManager {
     }
 
     @Override
+    public UpdateCertificateOptionsResult updateCertificateOptions(UpdateCertificateOptionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public void shutdown() {
         throw new java.lang.UnsupportedOperationException();
     }

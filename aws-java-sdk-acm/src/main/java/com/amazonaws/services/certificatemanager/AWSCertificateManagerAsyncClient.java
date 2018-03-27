@@ -580,6 +580,39 @@ public class AWSCertificateManagerAsyncClient extends AWSCertificateManagerClien
         });
     }
 
+    @Override
+    public java.util.concurrent.Future<UpdateCertificateOptionsResult> updateCertificateOptionsAsync(UpdateCertificateOptionsRequest request) {
+
+        return updateCertificateOptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCertificateOptionsResult> updateCertificateOptionsAsync(final UpdateCertificateOptionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateCertificateOptionsRequest, UpdateCertificateOptionsResult> asyncHandler) {
+        final UpdateCertificateOptionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateCertificateOptionsResult>() {
+            @Override
+            public UpdateCertificateOptionsResult call() throws Exception {
+                UpdateCertificateOptionsResult result = null;
+
+                try {
+                    result = executeUpdateCertificateOptions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
     /**
      * Shuts down the client, releasing all managed resources. This includes forcibly terminating all pending
      * asynchronous service calls. Clients who wish to give pending asynchronous service calls time to complete should

@@ -16,9 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Processing has reached an invalid state. For example, this exception can occur if the specified domain is not using
- * email validation, or the current certificate status does not permit the requested operation. See the exception
- * message returned by ACM to determine which state is not valid.
+ * Processing has reached an invalid state.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
