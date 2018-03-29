@@ -32,16 +32,16 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * User Guide</i>.
      * </p>
      * <p>
-     * This parameter is optional. If it is not included, it defaults to a slash (/). This paramater allows (per its <a
+     * This parameter is optional. If it is not included, it defaults to a slash (/). This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward
-     * slash (/) by itself or a string that must begin and end with forward slashes, containing any ASCII character from
-     * the ! (\u0021) thru the DEL character (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.
+     * slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any
+     * ASCII character from the ! (\u0021) through the DEL character (\u007F), including most punctuation characters,
+     * digits, and upper and lowercased letters.
      * </p>
      * <note>
      * <p>
      * If you are uploading a server certificate specifically for use with Amazon CloudFront distributions, you must
-     * specify a path using the <code>--path</code> option. The path must begin with <code>/cloudfront</code> and must
+     * specify a path using the <code>path</code> parameter. The path must begin with <code>/cloudfront</code> and must
      * include a trailing slash (for example, <code>/cloudfront/test/</code>).
      * </p>
      * </note>
@@ -55,7 +55,7 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: _+=,.@-
      * </p>
      */
     private String serverCertificateName;
@@ -65,10 +65,25 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      */
     private String certificateBody;
     /**
@@ -77,10 +92,25 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      */
     private String privateKey;
     /**
@@ -90,10 +120,25 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      */
     private String certificateChain;
 
@@ -114,25 +159,54 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      *        <p>
      *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =,.@-
+     *        any of the following characters: _+=,.@-
      * @param certificateBody
      *        The contents of the public key certificate in PEM-encoded format.
      *        </p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *        feed ( ), and carriage return ( ).
-     * @param privateKey
-     *        The contents of the private key in PEM-encoded format.
+     *        string of characters consisting of the following:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *        range
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The special characters tab ( ), line feed ( ), and carriage return ( )
+     *        </p>
+     *        </li>
+     * @param privateKey
+     *        The contents of the private key in PEM-encoded format.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *        feed ( ), and carriage return ( ).
+     *        string of characters consisting of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *        range
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The special characters tab ( ), line feed ( ), and carriage return ( )
+     *        </p>
+     *        </li>
      */
     public UploadServerCertificateRequest(String serverCertificateName, String certificateBody, String privateKey) {
         setServerCertificateName(serverCertificateName);
@@ -147,16 +221,16 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * User Guide</i>.
      * </p>
      * <p>
-     * This parameter is optional. If it is not included, it defaults to a slash (/). This paramater allows (per its <a
+     * This parameter is optional. If it is not included, it defaults to a slash (/). This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward
-     * slash (/) by itself or a string that must begin and end with forward slashes, containing any ASCII character from
-     * the ! (\u0021) thru the DEL character (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.
+     * slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any
+     * ASCII character from the ! (\u0021) through the DEL character (\u007F), including most punctuation characters,
+     * digits, and upper and lowercased letters.
      * </p>
      * <note>
      * <p>
      * If you are uploading a server certificate specifically for use with Amazon CloudFront distributions, you must
-     * specify a path using the <code>--path</code> option. The path must begin with <code>/cloudfront</code> and must
+     * specify a path using the <code>path</code> parameter. The path must begin with <code>/cloudfront</code> and must
      * include a trailing slash (for example, <code>/cloudfront/test/</code>).
      * </p>
      * </note>
@@ -166,16 +240,16 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *        <i>IAM User Guide</i>.</p>
      *        <p>
-     *        This parameter is optional. If it is not included, it defaults to a slash (/). This paramater allows (per
+     *        This parameter is optional. If it is not included, it defaults to a slash (/). This parameter allows (per
      *        its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of
-     *        either a forward slash (/) by itself or a string that must begin and end with forward slashes, containing
-     *        any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
-     *        characters, digits, and upper and lowercased letters.
+     *        either a forward slash (/) by itself or a string that must begin and end with forward slashes. In
+     *        addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     *        including most punctuation characters, digits, and upper and lowercased letters.
      *        </p>
      *        <note>
      *        <p>
      *        If you are uploading a server certificate specifically for use with Amazon CloudFront distributions, you
-     *        must specify a path using the <code>--path</code> option. The path must begin with
+     *        must specify a path using the <code>path</code> parameter. The path must begin with
      *        <code>/cloudfront</code> and must include a trailing slash (for example, <code>/cloudfront/test/</code>).
      *        </p>
      */
@@ -191,16 +265,16 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * User Guide</i>.
      * </p>
      * <p>
-     * This parameter is optional. If it is not included, it defaults to a slash (/). This paramater allows (per its <a
+     * This parameter is optional. If it is not included, it defaults to a slash (/). This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward
-     * slash (/) by itself or a string that must begin and end with forward slashes, containing any ASCII character from
-     * the ! (\u0021) thru the DEL character (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.
+     * slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any
+     * ASCII character from the ! (\u0021) through the DEL character (\u007F), including most punctuation characters,
+     * digits, and upper and lowercased letters.
      * </p>
      * <note>
      * <p>
      * If you are uploading a server certificate specifically for use with Amazon CloudFront distributions, you must
-     * specify a path using the <code>--path</code> option. The path must begin with <code>/cloudfront</code> and must
+     * specify a path using the <code>path</code> parameter. The path must begin with <code>/cloudfront</code> and must
      * include a trailing slash (for example, <code>/cloudfront/test/</code>).
      * </p>
      * </note>
@@ -209,16 +283,16 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *         <i>IAM User Guide</i>.</p>
      *         <p>
-     *         This parameter is optional. If it is not included, it defaults to a slash (/). This paramater allows (per
+     *         This parameter is optional. If it is not included, it defaults to a slash (/). This parameter allows (per
      *         its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of
-     *         either a forward slash (/) by itself or a string that must begin and end with forward slashes, containing
-     *         any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
-     *         characters, digits, and upper and lowercased letters.
+     *         either a forward slash (/) by itself or a string that must begin and end with forward slashes. In
+     *         addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     *         including most punctuation characters, digits, and upper and lowercased letters.
      *         </p>
      *         <note>
      *         <p>
      *         If you are uploading a server certificate specifically for use with Amazon CloudFront distributions, you
-     *         must specify a path using the <code>--path</code> option. The path must begin with
+     *         must specify a path using the <code>path</code> parameter. The path must begin with
      *         <code>/cloudfront</code> and must include a trailing slash (for example, <code>/cloudfront/test/</code>).
      *         </p>
      */
@@ -234,16 +308,16 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * User Guide</i>.
      * </p>
      * <p>
-     * This parameter is optional. If it is not included, it defaults to a slash (/). This paramater allows (per its <a
+     * This parameter is optional. If it is not included, it defaults to a slash (/). This parameter allows (per its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a forward
-     * slash (/) by itself or a string that must begin and end with forward slashes, containing any ASCII character from
-     * the ! (\u0021) thru the DEL character (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.
+     * slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can contain any
+     * ASCII character from the ! (\u0021) through the DEL character (\u007F), including most punctuation characters,
+     * digits, and upper and lowercased letters.
      * </p>
      * <note>
      * <p>
      * If you are uploading a server certificate specifically for use with Amazon CloudFront distributions, you must
-     * specify a path using the <code>--path</code> option. The path must begin with <code>/cloudfront</code> and must
+     * specify a path using the <code>path</code> parameter. The path must begin with <code>/cloudfront</code> and must
      * include a trailing slash (for example, <code>/cloudfront/test/</code>).
      * </p>
      * </note>
@@ -253,16 +327,16 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      *        href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
      *        <i>IAM User Guide</i>.</p>
      *        <p>
-     *        This parameter is optional. If it is not included, it defaults to a slash (/). This paramater allows (per
+     *        This parameter is optional. If it is not included, it defaults to a slash (/). This parameter allows (per
      *        its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of
-     *        either a forward slash (/) by itself or a string that must begin and end with forward slashes, containing
-     *        any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
-     *        characters, digits, and upper and lowercased letters.
+     *        either a forward slash (/) by itself or a string that must begin and end with forward slashes. In
+     *        addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     *        including most punctuation characters, digits, and upper and lowercased letters.
      *        </p>
      *        <note>
      *        <p>
      *        If you are uploading a server certificate specifically for use with Amazon CloudFront distributions, you
-     *        must specify a path using the <code>--path</code> option. The path must begin with
+     *        must specify a path using the <code>path</code> parameter. The path must begin with
      *        <code>/cloudfront</code> and must include a trailing slash (for example, <code>/cloudfront/test/</code>).
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -281,7 +355,7 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @param serverCertificateName
@@ -290,7 +364,7 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      *        <p>
      *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =,.@-
+     *        any of the following characters: _+=,.@-
      */
 
     public void setServerCertificateName(String serverCertificateName) {
@@ -305,7 +379,7 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @return The name for the server certificate. Do not include the path in this value. The name of the certificate
@@ -313,7 +387,7 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      *         <p>
      *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *         any of the following characters: =,.@-
+     *         any of the following characters: _+=,.@-
      */
 
     public String getServerCertificateName() {
@@ -328,7 +402,7 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @param serverCertificateName
@@ -337,7 +411,7 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      *        <p>
      *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =,.@-
+     *        any of the following characters: _+=,.@-
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -352,19 +426,49 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param certificateBody
      *        The contents of the public key certificate in PEM-encoded format.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *        feed ( ), and carriage return ( ).
+     *        string of characters consisting of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *        range
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The special characters tab ( ), line feed ( ), and carriage return ( )
+     *        </p>
+     *        </li>
      */
 
     public void setCertificateBody(String certificateBody) {
@@ -377,18 +481,48 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The contents of the public key certificate in PEM-encoded format.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *         string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *         through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *         Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *         feed ( ), and carriage return ( ).
+     *         string of characters consisting of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *         range
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The special characters tab ( ), line feed ( ), and carriage return ( )
+     *         </p>
+     *         </li>
      */
 
     public String getCertificateBody() {
@@ -401,19 +535,49 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param certificateBody
      *        The contents of the public key certificate in PEM-encoded format.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *        feed ( ), and carriage return ( ).
+     *        string of characters consisting of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *        range
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The special characters tab ( ), line feed ( ), and carriage return ( )
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -428,19 +592,49 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param privateKey
      *        The contents of the private key in PEM-encoded format.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *        feed ( ), and carriage return ( ).
+     *        string of characters consisting of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *        range
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The special characters tab ( ), line feed ( ), and carriage return ( )
+     *        </p>
+     *        </li>
      */
 
     public void setPrivateKey(String privateKey) {
@@ -453,18 +647,48 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The contents of the private key in PEM-encoded format.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *         string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *         through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *         Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *         feed ( ), and carriage return ( ).
+     *         string of characters consisting of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *         range
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The special characters tab ( ), line feed ( ), and carriage return ( )
+     *         </p>
+     *         </li>
      */
 
     public String getPrivateKey() {
@@ -477,19 +701,49 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param privateKey
      *        The contents of the private key in PEM-encoded format.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *        feed ( ), and carriage return ( ).
+     *        string of characters consisting of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *        range
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The special characters tab ( ), line feed ( ), and carriage return ( )
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -505,20 +759,50 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param certificateChain
      *        The contents of the certificate chain. This is typically a concatenation of the PEM-encoded public key
      *        certificates of the chain.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *        feed ( ), and carriage return ( ).
+     *        string of characters consisting of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *        range
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The special characters tab ( ), line feed ( ), and carriage return ( )
+     *        </p>
+     *        </li>
      */
 
     public void setCertificateChain(String certificateChain) {
@@ -532,19 +816,49 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The contents of the certificate chain. This is typically a concatenation of the PEM-encoded public key
      *         certificates of the chain.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *         string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *         through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *         Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *         feed ( ), and carriage return ( ).
+     *         string of characters consisting of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *         range
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The special characters tab ( ), line feed ( ), and carriage return ( )
+     *         </p>
+     *         </li>
      */
 
     public String getCertificateChain() {
@@ -558,20 +872,50 @@ public class UploadServerCertificateRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param certificateChain
      *        The contents of the certificate chain. This is typically a concatenation of the PEM-encoded public key
      *        certificates of the chain.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *        feed ( ), and carriage return ( ).
+     *        string of characters consisting of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *        range
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The special characters tab ( ), line feed ( ), and carriage return ( )
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  * entities (users, groups, and roles) that the policy is attached to.
  * </p>
  * <p>
- * This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> action.
+ * This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.
  * </p>
  * <p>
  * For more information about managed policies, see <a

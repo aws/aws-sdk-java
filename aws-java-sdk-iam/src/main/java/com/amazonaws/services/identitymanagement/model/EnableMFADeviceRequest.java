@@ -32,7 +32,7 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: _+=,.@-
      * </p>
      */
     private String userName;
@@ -53,7 +53,7 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * An authentication code emitted by the device.
      * </p>
      * <p>
-     * The format for this parameter is a string of 6 digits.
+     * The format for this parameter is a string of six digits.
      * </p>
      * <important>
      * <p>
@@ -71,7 +71,7 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * A subsequent authentication code emitted by the device.
      * </p>
      * <p>
-     * The format for this parameter is a string of 6 digits.
+     * The format for this parameter is a string of six digits.
      * </p>
      * <important>
      * <p>
@@ -101,7 +101,7 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =,.@-
+     *        any of the following characters: _+=,.@-
      * @param serialNumber
      *        The serial number that uniquely identifies the MFA device. For virtual MFA devices, the serial number is
      *        the device ARN.
@@ -114,7 +114,7 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      *        An authentication code emitted by the device.
      *        </p>
      *        <p>
-     *        The format for this parameter is a string of 6 digits.
+     *        The format for this parameter is a string of six digits.
      *        </p>
      *        <important>
      *        <p>
@@ -127,7 +127,7 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * @param authenticationCode2
      *        A subsequent authentication code emitted by the device.</p>
      *        <p>
-     *        The format for this parameter is a string of 6 digits.
+     *        The format for this parameter is a string of six digits.
      *        </p>
      *        <important>
      *        <p>
@@ -152,7 +152,7 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @param userName
@@ -160,7 +160,7 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =,.@-
+     *        any of the following characters: _+=,.@-
      */
 
     public void setUserName(String userName) {
@@ -174,14 +174,14 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @return The name of the IAM user for whom you want to enable the MFA device.</p>
      *         <p>
      *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *         any of the following characters: =,.@-
+     *         any of the following characters: _+=,.@-
      */
 
     public String getUserName() {
@@ -195,7 +195,7 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @param userName
@@ -203,7 +203,7 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =,.@-
+     *        any of the following characters: _+=,.@-
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -290,7 +290,7 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * An authentication code emitted by the device.
      * </p>
      * <p>
-     * The format for this parameter is a string of 6 digits.
+     * The format for this parameter is a string of six digits.
      * </p>
      * <important>
      * <p>
@@ -305,7 +305,7 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * @param authenticationCode1
      *        An authentication code emitted by the device. </p>
      *        <p>
-     *        The format for this parameter is a string of 6 digits.
+     *        The format for this parameter is a string of six digits.
      *        </p>
      *        <important>
      *        <p>
@@ -326,7 +326,7 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * An authentication code emitted by the device.
      * </p>
      * <p>
-     * The format for this parameter is a string of 6 digits.
+     * The format for this parameter is a string of six digits.
      * </p>
      * <important>
      * <p>
@@ -340,7 +340,7 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @return An authentication code emitted by the device. </p>
      *         <p>
-     *         The format for this parameter is a string of 6 digits.
+     *         The format for this parameter is a string of six digits.
      *         </p>
      *         <important>
      *         <p>
@@ -362,7 +362,7 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * An authentication code emitted by the device.
      * </p>
      * <p>
-     * The format for this parameter is a string of 6 digits.
+     * The format for this parameter is a string of six digits.
      * </p>
      * <important>
      * <p>
@@ -377,7 +377,7 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * @param authenticationCode1
      *        An authentication code emitted by the device. </p>
      *        <p>
-     *        The format for this parameter is a string of 6 digits.
+     *        The format for this parameter is a string of six digits.
      *        </p>
      *        <important>
      *        <p>
@@ -400,7 +400,7 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * A subsequent authentication code emitted by the device.
      * </p>
      * <p>
-     * The format for this parameter is a string of 6 digits.
+     * The format for this parameter is a string of six digits.
      * </p>
      * <important>
      * <p>
@@ -415,7 +415,7 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * @param authenticationCode2
      *        A subsequent authentication code emitted by the device.</p>
      *        <p>
-     *        The format for this parameter is a string of 6 digits.
+     *        The format for this parameter is a string of six digits.
      *        </p>
      *        <important>
      *        <p>
@@ -436,7 +436,7 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * A subsequent authentication code emitted by the device.
      * </p>
      * <p>
-     * The format for this parameter is a string of 6 digits.
+     * The format for this parameter is a string of six digits.
      * </p>
      * <important>
      * <p>
@@ -450,7 +450,7 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @return A subsequent authentication code emitted by the device.</p>
      *         <p>
-     *         The format for this parameter is a string of 6 digits.
+     *         The format for this parameter is a string of six digits.
      *         </p>
      *         <important>
      *         <p>
@@ -472,7 +472,7 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * A subsequent authentication code emitted by the device.
      * </p>
      * <p>
-     * The format for this parameter is a string of 6 digits.
+     * The format for this parameter is a string of six digits.
      * </p>
      * <important>
      * <p>
@@ -487,7 +487,7 @@ public class EnableMFADeviceRequest extends com.amazonaws.AmazonWebServiceReques
      * @param authenticationCode2
      *        A subsequent authentication code emitted by the device.</p>
      *        <p>
-     *        The format for this parameter is a string of 6 digits.
+     *        The format for this parameter is a string of six digits.
      *        </p>
      *        <important>
      *        <p>

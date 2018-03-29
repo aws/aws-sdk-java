@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Contains information about an IAM role, including all of the role's policies.
  * </p>
  * <p>
- * This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> action.
+ * This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RoleDetail" target="_top">AWS API

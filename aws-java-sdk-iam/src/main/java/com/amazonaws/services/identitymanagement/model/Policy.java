@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * This data type is used as a response element in the <a>CreatePolicy</a>, <a>GetPolicy</a>, and <a>ListPolicies</a>
- * actions.
+ * operations.
  * </p>
  * <p>
  * For more information about managed policies, refer to <a

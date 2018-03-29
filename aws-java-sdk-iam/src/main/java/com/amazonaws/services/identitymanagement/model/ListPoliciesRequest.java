@@ -53,10 +53,10 @@ public class ListPoliciesRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The path prefix for filtering the results. This parameter is optional. If it is not included, it defaults to a
-     * slash (/), listing all policies. This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * slash (/), listing all policies. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must
-     * begin and end with forward slashes, containing any ASCII character from the ! (\u0021) thru the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
+     * begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (\u0021) through
+     * the DEL character (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
      * </p>
      */
     private String pathPrefix;
@@ -322,19 +322,19 @@ public class ListPoliciesRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The path prefix for filtering the results. This parameter is optional. If it is not included, it defaults to a
-     * slash (/), listing all policies. This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * slash (/), listing all policies. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must
-     * begin and end with forward slashes, containing any ASCII character from the ! (\u0021) thru the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
+     * begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (\u0021) through
+     * the DEL character (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
      * </p>
      * 
      * @param pathPrefix
      *        The path prefix for filtering the results. This parameter is optional. If it is not included, it defaults
-     *        to a slash (/), listing all policies. This paramater allows (per its <a
+     *        to a slash (/), listing all policies. This parameter allows (per its <a
      *        href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a
-     *        forward slash (/) by itself or a string that must begin and end with forward slashes, containing any ASCII
-     *        character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation characters,
-     *        digits, and upper and lowercased letters.
+     *        forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can
+     *        contain any ASCII character from the ! (\u0021) through the DEL character (\u007F), including most
+     *        punctuation characters, digits, and upper and lowercased letters.
      */
 
     public void setPathPrefix(String pathPrefix) {
@@ -344,18 +344,18 @@ public class ListPoliciesRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The path prefix for filtering the results. This parameter is optional. If it is not included, it defaults to a
-     * slash (/), listing all policies. This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * slash (/), listing all policies. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must
-     * begin and end with forward slashes, containing any ASCII character from the ! (\u0021) thru the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
+     * begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (\u0021) through
+     * the DEL character (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
      * </p>
      * 
      * @return The path prefix for filtering the results. This parameter is optional. If it is not included, it defaults
-     *         to a slash (/), listing all policies. This paramater allows (per its <a
+     *         to a slash (/), listing all policies. This parameter allows (per its <a
      *         href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a
-     *         forward slash (/) by itself or a string that must begin and end with forward slashes, containing any
-     *         ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation
-     *         characters, digits, and upper and lowercased letters.
+     *         forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can
+     *         contain any ASCII character from the ! (\u0021) through the DEL character (\u007F), including most
+     *         punctuation characters, digits, and upper and lowercased letters.
      */
 
     public String getPathPrefix() {
@@ -365,19 +365,19 @@ public class ListPoliciesRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The path prefix for filtering the results. This parameter is optional. If it is not included, it defaults to a
-     * slash (/), listing all policies. This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * slash (/), listing all policies. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by itself or a string that must
-     * begin and end with forward slashes, containing any ASCII character from the ! (\u0021) thru the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
+     * begin and end with forward slashes. In addition, it can contain any ASCII character from the ! (\u0021) through
+     * the DEL character (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
      * </p>
      * 
      * @param pathPrefix
      *        The path prefix for filtering the results. This parameter is optional. If it is not included, it defaults
-     *        to a slash (/), listing all policies. This paramater allows (per its <a
+     *        to a slash (/), listing all policies. This parameter allows (per its <a
      *        href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of either a
-     *        forward slash (/) by itself or a string that must begin and end with forward slashes, containing any ASCII
-     *        character from the ! (\u0021) thru the DEL character (\u007F), including most punctuation characters,
-     *        digits, and upper and lowercased letters.
+     *        forward slash (/) by itself or a string that must begin and end with forward slashes. In addition, it can
+     *        contain any ASCII character from the ! (\u0021) through the DEL character (\u007F), including most
+     *        punctuation characters, digits, and upper and lowercased letters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Contains information about the last time an AWS access key was used.
  * </p>
  * <p>
- * This data type is used as a response element in the <a>GetAccessKeyLastUsed</a> action.
+ * This data type is used as a response element in the <a>GetAccessKeyLastUsed</a> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AccessKeyLastUsed" target="_top">AWS API
@@ -32,7 +32,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
     /**
      * <p>
      * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the access key
-     * was most recently used. This field is null when:
+     * was most recently used. This field is null in the following situations:
      * </p>
      * <ul>
      * <li>
@@ -56,7 +56,8 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
     private java.util.Date lastUsedDate;
     /**
      * <p>
-     * The name of the AWS service with which this access key was most recently used. This field displays "N/A" when:
+     * The name of the AWS service with which this access key was most recently used. This field displays "N/A" in the
+     * following situations:
      * </p>
      * <ul>
      * <li>
@@ -80,7 +81,8 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
     private String serviceName;
     /**
      * <p>
-     * The AWS region where this access key was most recently used. This field is displays "N/A" when:
+     * The AWS region where this access key was most recently used. This field is displays "N/A" in the following
+     * situations:
      * </p>
      * <ul>
      * <li>
@@ -111,7 +113,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
     /**
      * <p>
      * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the access key
-     * was most recently used. This field is null when:
+     * was most recently used. This field is null in the following situations:
      * </p>
      * <ul>
      * <li>
@@ -134,7 +136,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * 
      * @param lastUsedDate
      *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
-     *        access key was most recently used. This field is null when:</p>
+     *        access key was most recently used. This field is null in the following situations:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -161,7 +163,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
     /**
      * <p>
      * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the access key
-     * was most recently used. This field is null when:
+     * was most recently used. This field is null in the following situations:
      * </p>
      * <ul>
      * <li>
@@ -183,7 +185,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * </ul>
      * 
      * @return The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
-     *         access key was most recently used. This field is null when:</p>
+     *         access key was most recently used. This field is null in the following situations:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -210,7 +212,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
     /**
      * <p>
      * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the access key
-     * was most recently used. This field is null when:
+     * was most recently used. This field is null in the following situations:
      * </p>
      * <ul>
      * <li>
@@ -233,7 +235,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * 
      * @param lastUsedDate
      *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
-     *        access key was most recently used. This field is null when:</p>
+     *        access key was most recently used. This field is null in the following situations:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -261,7 +263,8 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the AWS service with which this access key was most recently used. This field displays "N/A" when:
+     * The name of the AWS service with which this access key was most recently used. This field displays "N/A" in the
+     * following situations:
      * </p>
      * <ul>
      * <li>
@@ -284,7 +287,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * 
      * @param serviceName
      *        The name of the AWS service with which this access key was most recently used. This field displays "N/A"
-     *        when:</p>
+     *        in the following situations:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -310,7 +313,8 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the AWS service with which this access key was most recently used. This field displays "N/A" when:
+     * The name of the AWS service with which this access key was most recently used. This field displays "N/A" in the
+     * following situations:
      * </p>
      * <ul>
      * <li>
@@ -332,7 +336,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * </ul>
      * 
      * @return The name of the AWS service with which this access key was most recently used. This field displays "N/A"
-     *         when:</p>
+     *         in the following situations:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -358,7 +362,8 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the AWS service with which this access key was most recently used. This field displays "N/A" when:
+     * The name of the AWS service with which this access key was most recently used. This field displays "N/A" in the
+     * following situations:
      * </p>
      * <ul>
      * <li>
@@ -381,7 +386,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * 
      * @param serviceName
      *        The name of the AWS service with which this access key was most recently used. This field displays "N/A"
-     *        when:</p>
+     *        in the following situations:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -409,7 +414,8 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS region where this access key was most recently used. This field is displays "N/A" when:
+     * The AWS region where this access key was most recently used. This field is displays "N/A" in the following
+     * situations:
      * </p>
      * <ul>
      * <li>
@@ -436,7 +442,8 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * </p>
      * 
      * @param region
-     *        The AWS region where this access key was most recently used. This field is displays "N/A" when:</p>
+     *        The AWS region where this access key was most recently used. This field is displays "N/A" in the following
+     *        situations:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -467,7 +474,8 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS region where this access key was most recently used. This field is displays "N/A" when:
+     * The AWS region where this access key was most recently used. This field is displays "N/A" in the following
+     * situations:
      * </p>
      * <ul>
      * <li>
@@ -493,7 +501,8 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * Services General Reference.
      * </p>
      * 
-     * @return The AWS region where this access key was most recently used. This field is displays "N/A" when:</p>
+     * @return The AWS region where this access key was most recently used. This field is displays "N/A" in the
+     *         following situations:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -524,7 +533,8 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS region where this access key was most recently used. This field is displays "N/A" when:
+     * The AWS region where this access key was most recently used. This field is displays "N/A" in the following
+     * situations:
      * </p>
      * <ul>
      * <li>
@@ -551,7 +561,8 @@ public class AccessKeyLastUsed implements Serializable, Cloneable {
      * </p>
      * 
      * @param region
-     *        The AWS region where this access key was most recently used. This field is displays "N/A" when:</p>
+     *        The AWS region where this access key was most recently used. This field is displays "N/A" in the following
+     *        situations:</p>
      *        <ul>
      *        <li>
      *        <p>

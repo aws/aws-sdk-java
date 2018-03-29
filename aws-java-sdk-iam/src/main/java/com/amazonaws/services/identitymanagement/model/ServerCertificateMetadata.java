@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * This data type is used as a response element in the <a>UploadServerCertificate</a> and <a>ListServerCertificates</a>
- * actions.
+ * operations.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ServerCertificateMetadata" target="_top">AWS API

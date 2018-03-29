@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Contains the user name and password create date for a user.
  * </p>
  * <p>
- * This data type is used as a response element in the <a>CreateLoginProfile</a> and <a>GetLoginProfile</a> actions.
+ * This data type is used as a response element in the <a>CreateLoginProfile</a> and <a>GetLoginProfile</a> operations.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/LoginProfile" target="_top">AWS API

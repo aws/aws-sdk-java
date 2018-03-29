@@ -35,10 +35,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
-     * slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.
+     * slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * including most punctuation characters, digits, and upper and lowercased letters.
      * </p>
      */
     private String path;
@@ -49,7 +49,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-. User names are not distinguished by case. For example, you cannot create users
+     * the following characters: _+=,.@-. User names are not distinguished by case. For example, you cannot create users
      * named both "TESTUSER" and "testuser".
      * </p>
      */
@@ -71,8 +71,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =,.@-. User names are not distinguished by case. For example, you cannot
-     *        create users named both "TESTUSER" and "testuser".
+     *        any of the following characters: _+=,.@-. User names are not distinguished by case. For example, you
+     *        cannot create users named both "TESTUSER" and "testuser".
      */
     public CreateUserRequest(String userName) {
         setUserName(userName);
@@ -88,10 +88,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
-     * slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.
+     * slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * including most punctuation characters, digits, and upper and lowercased letters.
      * </p>
      * 
      * @param path
@@ -102,10 +102,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        This parameter is optional. If it is not included, it defaults to a slash (/).
      *        </p>
      *        <p>
-     *        This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of either a forward slash (/) by itself or a string that must begin and end with
-     *        forward slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F),
-     *        including most punctuation characters, digits, and upper and lowercased letters.
+     *        forward slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL
+     *        character (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
      */
 
     public void setPath(String path) {
@@ -122,10 +122,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
-     * slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.
+     * slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * including most punctuation characters, digits, and upper and lowercased letters.
      * </p>
      * 
      * @return The path for the user name. For more information about paths, see <a
@@ -135,10 +135,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         This parameter is optional. If it is not included, it defaults to a slash (/).
      *         </p>
      *         <p>
-     *         This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of either a forward slash (/) by itself or a string that must begin and end with
-     *         forward slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F),
-     *         including most punctuation characters, digits, and upper and lowercased letters.
+     *         forward slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL
+     *         character (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
      */
 
     public String getPath() {
@@ -155,10 +155,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
-     * slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.
+     * slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * including most punctuation characters, digits, and upper and lowercased letters.
      * </p>
      * 
      * @param path
@@ -169,10 +169,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        This parameter is optional. If it is not included, it defaults to a slash (/).
      *        </p>
      *        <p>
-     *        This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of either a forward slash (/) by itself or a string that must begin and end with
-     *        forward slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F),
-     *        including most punctuation characters, digits, and upper and lowercased letters.
+     *        forward slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL
+     *        character (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -188,7 +188,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-. User names are not distinguished by case. For example, you cannot create users
+     * the following characters: _+=,.@-. User names are not distinguished by case. For example, you cannot create users
      * named both "TESTUSER" and "testuser".
      * </p>
      * 
@@ -197,8 +197,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =,.@-. User names are not distinguished by case. For example, you cannot
-     *        create users named both "TESTUSER" and "testuser".
+     *        any of the following characters: _+=,.@-. User names are not distinguished by case. For example, you
+     *        cannot create users named both "TESTUSER" and "testuser".
      */
 
     public void setUserName(String userName) {
@@ -212,7 +212,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-. User names are not distinguished by case. For example, you cannot create users
+     * the following characters: _+=,.@-. User names are not distinguished by case. For example, you cannot create users
      * named both "TESTUSER" and "testuser".
      * </p>
      * 
@@ -220,8 +220,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <p>
      *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *         any of the following characters: =,.@-. User names are not distinguished by case. For example, you cannot
-     *         create users named both "TESTUSER" and "testuser".
+     *         any of the following characters: _+=,.@-. User names are not distinguished by case. For example, you
+     *         cannot create users named both "TESTUSER" and "testuser".
      */
 
     public String getUserName() {
@@ -235,7 +235,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-. User names are not distinguished by case. For example, you cannot create users
+     * the following characters: _+=,.@-. User names are not distinguished by case. For example, you cannot create users
      * named both "TESTUSER" and "testuser".
      * </p>
      * 
@@ -244,8 +244,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =,.@-. User names are not distinguished by case. For example, you cannot
-     *        create users named both "TESTUSER" and "testuser".
+     *        any of the following characters: _+=,.@-. User names are not distinguished by case. For example, you
+     *        cannot create users named both "TESTUSER" and "testuser".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

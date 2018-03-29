@@ -249,6 +249,8 @@ public enum IdentityManagementActions implements Action {
     UpdateLoginProfile("iam:UpdateLoginProfile"),
     /** Action for the UpdateOpenIDConnectProviderThumbprint operation. */
     UpdateOpenIDConnectProviderThumbprint("iam:UpdateOpenIDConnectProviderThumbprint"),
+    /** Action for the UpdateRole operation. */
+    UpdateRole("iam:UpdateRole"),
     /** Action for the UpdateRoleDescription operation. */
     UpdateRoleDescription("iam:UpdateRoleDescription"),
     /** Action for the UpdateSAMLProvider operation. */

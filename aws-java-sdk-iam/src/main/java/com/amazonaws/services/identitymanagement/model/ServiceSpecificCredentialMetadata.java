@@ -34,8 +34,8 @@ public class ServiceSpecificCredentialMetadata implements Serializable, Cloneabl
     private String userName;
     /**
      * <p>
-     * The status of the service-specific credential. <code>Active</code> means the key is valid for API calls, while
-     * <code>Inactive</code> means it is not.
+     * The status of the service-specific credential. <code>Active</code> means that the key is valid for API calls,
+     * while <code>Inactive</code> means it is not.
      * </p>
      */
     private String status;
@@ -107,13 +107,13 @@ public class ServiceSpecificCredentialMetadata implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The status of the service-specific credential. <code>Active</code> means the key is valid for API calls, while
-     * <code>Inactive</code> means it is not.
+     * The status of the service-specific credential. <code>Active</code> means that the key is valid for API calls,
+     * while <code>Inactive</code> means it is not.
      * </p>
      * 
      * @param status
-     *        The status of the service-specific credential. <code>Active</code> means the key is valid for API calls,
-     *        while <code>Inactive</code> means it is not.
+     *        The status of the service-specific credential. <code>Active</code> means that the key is valid for API
+     *        calls, while <code>Inactive</code> means it is not.
      * @see StatusType
      */
 
@@ -123,12 +123,12 @@ public class ServiceSpecificCredentialMetadata implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The status of the service-specific credential. <code>Active</code> means the key is valid for API calls, while
-     * <code>Inactive</code> means it is not.
+     * The status of the service-specific credential. <code>Active</code> means that the key is valid for API calls,
+     * while <code>Inactive</code> means it is not.
      * </p>
      * 
-     * @return The status of the service-specific credential. <code>Active</code> means the key is valid for API calls,
-     *         while <code>Inactive</code> means it is not.
+     * @return The status of the service-specific credential. <code>Active</code> means that the key is valid for API
+     *         calls, while <code>Inactive</code> means it is not.
      * @see StatusType
      */
 
@@ -138,13 +138,13 @@ public class ServiceSpecificCredentialMetadata implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The status of the service-specific credential. <code>Active</code> means the key is valid for API calls, while
-     * <code>Inactive</code> means it is not.
+     * The status of the service-specific credential. <code>Active</code> means that the key is valid for API calls,
+     * while <code>Inactive</code> means it is not.
      * </p>
      * 
      * @param status
-     *        The status of the service-specific credential. <code>Active</code> means the key is valid for API calls,
-     *        while <code>Inactive</code> means it is not.
+     *        The status of the service-specific credential. <code>Active</code> means that the key is valid for API
+     *        calls, while <code>Inactive</code> means it is not.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusType
      */
@@ -156,13 +156,13 @@ public class ServiceSpecificCredentialMetadata implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The status of the service-specific credential. <code>Active</code> means the key is valid for API calls, while
-     * <code>Inactive</code> means it is not.
+     * The status of the service-specific credential. <code>Active</code> means that the key is valid for API calls,
+     * while <code>Inactive</code> means it is not.
      * </p>
      * 
      * @param status
-     *        The status of the service-specific credential. <code>Active</code> means the key is valid for API calls,
-     *        while <code>Inactive</code> means it is not.
+     *        The status of the service-specific credential. <code>Active</code> means that the key is valid for API
+     *        calls, while <code>Inactive</code> means it is not.
      * @see StatusType
      */
 
@@ -172,13 +172,13 @@ public class ServiceSpecificCredentialMetadata implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The status of the service-specific credential. <code>Active</code> means the key is valid for API calls, while
-     * <code>Inactive</code> means it is not.
+     * The status of the service-specific credential. <code>Active</code> means that the key is valid for API calls,
+     * while <code>Inactive</code> means it is not.
      * </p>
      * 
      * @param status
-     *        The status of the service-specific credential. <code>Active</code> means the key is valid for API calls,
-     *        while <code>Inactive</code> means it is not.
+     *        The status of the service-specific credential. <code>Active</code> means that the key is valid for API
+     *        calls, while <code>Inactive</code> means it is not.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusType
      */

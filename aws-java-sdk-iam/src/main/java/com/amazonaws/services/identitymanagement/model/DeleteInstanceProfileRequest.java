@@ -32,7 +32,7 @@ public class DeleteInstanceProfileRequest extends com.amazonaws.AmazonWebService
      * <p>
      * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: _+=,.@-
      * </p>
      */
     private String instanceProfileName;
@@ -44,7 +44,7 @@ public class DeleteInstanceProfileRequest extends com.amazonaws.AmazonWebService
      * <p>
      * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @param instanceProfileName
@@ -52,7 +52,7 @@ public class DeleteInstanceProfileRequest extends com.amazonaws.AmazonWebService
      *        <p>
      *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =,.@-
+     *        any of the following characters: _+=,.@-
      */
 
     public void setInstanceProfileName(String instanceProfileName) {
@@ -66,14 +66,14 @@ public class DeleteInstanceProfileRequest extends com.amazonaws.AmazonWebService
      * <p>
      * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @return The name of the instance profile to delete.</p>
      *         <p>
      *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *         any of the following characters: =,.@-
+     *         any of the following characters: _+=,.@-
      */
 
     public String getInstanceProfileName() {
@@ -87,7 +87,7 @@ public class DeleteInstanceProfileRequest extends com.amazonaws.AmazonWebService
      * <p>
      * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @param instanceProfileName
@@ -95,7 +95,7 @@ public class DeleteInstanceProfileRequest extends com.amazonaws.AmazonWebService
      *        <p>
      *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =,.@-
+     *        any of the following characters: _+=,.@-
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

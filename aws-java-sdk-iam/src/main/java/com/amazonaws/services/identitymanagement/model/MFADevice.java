@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Contains information about an MFA device.
  * </p>
  * <p>
- * This data type is used as a response element in the <a>ListMFADevices</a> action.
+ * This data type is used as a response element in the <a>ListMFADevices</a> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/MFADevice" target="_top">AWS API

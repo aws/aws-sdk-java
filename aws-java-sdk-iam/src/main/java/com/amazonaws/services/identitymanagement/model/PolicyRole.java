@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Contains information about a role that a managed policy is attached to.
  * </p>
  * <p>
- * This data type is used as a response element in the <a>ListEntitiesForPolicy</a> action.
+ * This data type is used as a response element in the <a>ListEntitiesForPolicy</a> operation.
  * </p>
  * <p>
  * For more information about managed policies, refer to <a

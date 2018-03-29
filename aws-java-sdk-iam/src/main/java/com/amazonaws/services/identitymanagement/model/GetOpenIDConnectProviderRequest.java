@@ -28,7 +28,7 @@ public class GetOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the OIDC provider resource object in IAM to get information for. You can get a
-     * list of OIDC provider resource ARNs by using the <a>ListOpenIDConnectProviders</a> action.
+     * list of OIDC provider resource ARNs by using the <a>ListOpenIDConnectProviders</a> operation.
      * </p>
      * <p>
      * For more information about ARNs, see <a
@@ -41,7 +41,7 @@ public class GetOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the OIDC provider resource object in IAM to get information for. You can get a
-     * list of OIDC provider resource ARNs by using the <a>ListOpenIDConnectProviders</a> action.
+     * list of OIDC provider resource ARNs by using the <a>ListOpenIDConnectProviders</a> operation.
      * </p>
      * <p>
      * For more information about ARNs, see <a
@@ -51,7 +51,7 @@ public class GetOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebServ
      * 
      * @param openIDConnectProviderArn
      *        The Amazon Resource Name (ARN) of the OIDC provider resource object in IAM to get information for. You can
-     *        get a list of OIDC provider resource ARNs by using the <a>ListOpenIDConnectProviders</a> action.</p>
+     *        get a list of OIDC provider resource ARNs by using the <a>ListOpenIDConnectProviders</a> operation.</p>
      *        <p>
      *        For more information about ARNs, see <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
@@ -65,7 +65,7 @@ public class GetOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the OIDC provider resource object in IAM to get information for. You can get a
-     * list of OIDC provider resource ARNs by using the <a>ListOpenIDConnectProviders</a> action.
+     * list of OIDC provider resource ARNs by using the <a>ListOpenIDConnectProviders</a> operation.
      * </p>
      * <p>
      * For more information about ARNs, see <a
@@ -74,7 +74,8 @@ public class GetOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the OIDC provider resource object in IAM to get information for. You
-     *         can get a list of OIDC provider resource ARNs by using the <a>ListOpenIDConnectProviders</a> action.</p>
+     *         can get a list of OIDC provider resource ARNs by using the <a>ListOpenIDConnectProviders</a>
+     *         operation.</p>
      *         <p>
      *         For more information about ARNs, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
@@ -88,7 +89,7 @@ public class GetOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the OIDC provider resource object in IAM to get information for. You can get a
-     * list of OIDC provider resource ARNs by using the <a>ListOpenIDConnectProviders</a> action.
+     * list of OIDC provider resource ARNs by using the <a>ListOpenIDConnectProviders</a> operation.
      * </p>
      * <p>
      * For more information about ARNs, see <a
@@ -98,7 +99,7 @@ public class GetOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebServ
      * 
      * @param openIDConnectProviderArn
      *        The Amazon Resource Name (ARN) of the OIDC provider resource object in IAM to get information for. You can
-     *        get a list of OIDC provider resource ARNs by using the <a>ListOpenIDConnectProviders</a> action.</p>
+     *        get a list of OIDC provider resource ARNs by using the <a>ListOpenIDConnectProviders</a> operation.</p>
      *        <p>
      *        For more information about ARNs, see <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names

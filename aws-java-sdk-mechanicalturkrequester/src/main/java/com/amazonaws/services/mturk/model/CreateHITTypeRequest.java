@@ -72,7 +72,10 @@ public class CreateHITTypeRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String description;
     /**
      * <p>
-     * A condition that a Worker's Qualifications must meet before the Worker is allowed to accept and complete the HIT.
+     * Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and
+     * ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT.
+     * Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each
+     * <code>QualificationRequirement</code> structure.
      * </p>
      */
     private java.util.List<QualificationRequirement> qualificationRequirements;
@@ -376,11 +379,16 @@ public class CreateHITTypeRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A condition that a Worker's Qualifications must meet before the Worker is allowed to accept and complete the HIT.
+     * Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and
+     * ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT.
+     * Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each
+     * <code>QualificationRequirement</code> structure.
      * </p>
      * 
-     * @return A condition that a Worker's Qualifications must meet before the Worker is allowed to accept and complete
-     *         the HIT.
+     * @return Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between
+     *         zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the
+     *         HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each
+     *         <code>QualificationRequirement</code> structure.
      */
 
     public java.util.List<QualificationRequirement> getQualificationRequirements() {
@@ -389,12 +397,17 @@ public class CreateHITTypeRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A condition that a Worker's Qualifications must meet before the Worker is allowed to accept and complete the HIT.
+     * Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and
+     * ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT.
+     * Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each
+     * <code>QualificationRequirement</code> structure.
      * </p>
      * 
      * @param qualificationRequirements
-     *        A condition that a Worker's Qualifications must meet before the Worker is allowed to accept and complete
-     *        the HIT.
+     *        Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between
+     *        zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the
+     *        HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each
+     *        <code>QualificationRequirement</code> structure.
      */
 
     public void setQualificationRequirements(java.util.Collection<QualificationRequirement> qualificationRequirements) {
@@ -408,7 +421,10 @@ public class CreateHITTypeRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A condition that a Worker's Qualifications must meet before the Worker is allowed to accept and complete the HIT.
+     * Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and
+     * ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT.
+     * Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each
+     * <code>QualificationRequirement</code> structure.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -417,8 +433,10 @@ public class CreateHITTypeRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param qualificationRequirements
-     *        A condition that a Worker's Qualifications must meet before the Worker is allowed to accept and complete
-     *        the HIT.
+     *        Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between
+     *        zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the
+     *        HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each
+     *        <code>QualificationRequirement</code> structure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -434,12 +452,17 @@ public class CreateHITTypeRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A condition that a Worker's Qualifications must meet before the Worker is allowed to accept and complete the HIT.
+     * Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and
+     * ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT.
+     * Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each
+     * <code>QualificationRequirement</code> structure.
      * </p>
      * 
      * @param qualificationRequirements
-     *        A condition that a Worker's Qualifications must meet before the Worker is allowed to accept and complete
-     *        the HIT.
+     *        Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between
+     *        zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the
+     *        HIT. Additionally, other actions can be restricted using the <code>ActionsGuarded</code> field on each
+     *        <code>QualificationRequirement</code> structure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

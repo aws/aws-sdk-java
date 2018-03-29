@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains information about an IAM role. This structure is returned as a response element in several APIs that
- * interact with roles.
+ * Contains information about an IAM role. This structure is returned as a response element in several API operations
+ * that interact with roles.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/Role" target="_top">AWS API Documentation</a>
@@ -75,6 +75,14 @@ public class Role implements Serializable, Cloneable {
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * The maximum session duration (in seconds) for the specified role. Anyone who uses the AWS CLI or API to assume
+     * the role can specify the duration using the optional <code>DurationSeconds</code> API parameter or
+     * <code>duration-seconds</code> CLI parameter.
+     * </p>
+     */
+    private Integer maxSessionDuration;
 
     /**
      * <p>
@@ -399,6 +407,58 @@ public class Role implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The maximum session duration (in seconds) for the specified role. Anyone who uses the AWS CLI or API to assume
+     * the role can specify the duration using the optional <code>DurationSeconds</code> API parameter or
+     * <code>duration-seconds</code> CLI parameter.
+     * </p>
+     * 
+     * @param maxSessionDuration
+     *        The maximum session duration (in seconds) for the specified role. Anyone who uses the AWS CLI or API to
+     *        assume the role can specify the duration using the optional <code>DurationSeconds</code> API parameter or
+     *        <code>duration-seconds</code> CLI parameter.
+     */
+
+    public void setMaxSessionDuration(Integer maxSessionDuration) {
+        this.maxSessionDuration = maxSessionDuration;
+    }
+
+    /**
+     * <p>
+     * The maximum session duration (in seconds) for the specified role. Anyone who uses the AWS CLI or API to assume
+     * the role can specify the duration using the optional <code>DurationSeconds</code> API parameter or
+     * <code>duration-seconds</code> CLI parameter.
+     * </p>
+     * 
+     * @return The maximum session duration (in seconds) for the specified role. Anyone who uses the AWS CLI or API to
+     *         assume the role can specify the duration using the optional <code>DurationSeconds</code> API parameter or
+     *         <code>duration-seconds</code> CLI parameter.
+     */
+
+    public Integer getMaxSessionDuration() {
+        return this.maxSessionDuration;
+    }
+
+    /**
+     * <p>
+     * The maximum session duration (in seconds) for the specified role. Anyone who uses the AWS CLI or API to assume
+     * the role can specify the duration using the optional <code>DurationSeconds</code> API parameter or
+     * <code>duration-seconds</code> CLI parameter.
+     * </p>
+     * 
+     * @param maxSessionDuration
+     *        The maximum session duration (in seconds) for the specified role. Anyone who uses the AWS CLI or API to
+     *        assume the role can specify the duration using the optional <code>DurationSeconds</code> API parameter or
+     *        <code>duration-seconds</code> CLI parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Role withMaxSessionDuration(Integer maxSessionDuration) {
+        setMaxSessionDuration(maxSessionDuration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -422,7 +482,9 @@ public class Role implements Serializable, Cloneable {
         if (getAssumeRolePolicyDocument() != null)
             sb.append("AssumeRolePolicyDocument: ").append(getAssumeRolePolicyDocument()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getMaxSessionDuration() != null)
+            sb.append("MaxSessionDuration: ").append(getMaxSessionDuration());
         sb.append("}");
         return sb.toString();
     }
@@ -465,6 +527,10 @@ public class Role implements Serializable, Cloneable {
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getMaxSessionDuration() == null ^ this.getMaxSessionDuration() == null)
+            return false;
+        if (other.getMaxSessionDuration() != null && other.getMaxSessionDuration().equals(this.getMaxSessionDuration()) == false)
+            return false;
         return true;
     }
 
@@ -480,6 +546,7 @@ public class Role implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());
         hashCode = prime * hashCode + ((getAssumeRolePolicyDocument() == null) ? 0 : getAssumeRolePolicyDocument().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getMaxSessionDuration() == null) ? 0 : getMaxSessionDuration().hashCode());
         return hashCode;
     }
 

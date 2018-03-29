@@ -32,10 +32,25 @@ public class GetContextKeysForCustomPolicyRequest extends com.amazonaws.AmazonWe
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> policyInputList;
 
@@ -46,19 +61,49 @@ public class GetContextKeysForCustomPolicyRequest extends com.amazonaws.AmazonWe
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return A list of policies for which you want the list of context keys referenced in those policies. Each
      *         document is specified as a string containing the complete, valid JSON text of an IAM policy.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *         string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *         through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *         Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *         feed ( ), and carriage return ( ).
+     *         string of characters consisting of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *         range
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The special characters tab ( ), line feed ( ), and carriage return ( )
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<String> getPolicyInputList() {
@@ -75,20 +120,50 @@ public class GetContextKeysForCustomPolicyRequest extends com.amazonaws.AmazonWe
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param policyInputList
      *        A list of policies for which you want the list of context keys referenced in those policies. Each document
      *        is specified as a string containing the complete, valid JSON text of an IAM policy.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *        feed ( ), and carriage return ( ).
+     *        string of characters consisting of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *        range
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The special characters tab ( ), line feed ( ), and carriage return ( )
+     *        </p>
+     *        </li>
      */
 
     public void setPolicyInputList(java.util.Collection<String> policyInputList) {
@@ -107,10 +182,25 @@ public class GetContextKeysForCustomPolicyRequest extends com.amazonaws.AmazonWe
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setPolicyInputList(java.util.Collection)} or {@link #withPolicyInputList(java.util.Collection)} if you
@@ -122,10 +212,25 @@ public class GetContextKeysForCustomPolicyRequest extends com.amazonaws.AmazonWe
      *        is specified as a string containing the complete, valid JSON text of an IAM policy.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *        feed ( ), and carriage return ( ).
+     *        string of characters consisting of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *        range
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The special characters tab ( ), line feed ( ), and carriage return ( )
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,20 +251,50 @@ public class GetContextKeysForCustomPolicyRequest extends com.amazonaws.AmazonWe
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param policyInputList
      *        A list of policies for which you want the list of context keys referenced in those policies. Each document
      *        is specified as a string containing the complete, valid JSON text of an IAM policy.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *        feed ( ), and carriage return ( ).
+     *        string of characters consisting of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *        range
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The special characters tab ( ), line feed ( ), and carriage return ( )
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

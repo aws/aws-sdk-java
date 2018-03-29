@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the details of a service specific credential.
+ * Contains the details of a service-specific credential.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ServiceSpecificCredential" target="_top">AWS API
@@ -67,8 +67,8 @@ public class ServiceSpecificCredential implements Serializable, Cloneable {
     private String userName;
     /**
      * <p>
-     * The status of the service-specific credential. <code>Active</code> means the key is valid for API calls, while
-     * <code>Inactive</code> means it is not.
+     * The status of the service-specific credential. <code>Active</code> means that the key is valid for API calls,
+     * while <code>Inactive</code> means it is not.
      * </p>
      */
     private String status;
@@ -333,13 +333,13 @@ public class ServiceSpecificCredential implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the service-specific credential. <code>Active</code> means the key is valid for API calls, while
-     * <code>Inactive</code> means it is not.
+     * The status of the service-specific credential. <code>Active</code> means that the key is valid for API calls,
+     * while <code>Inactive</code> means it is not.
      * </p>
      * 
      * @param status
-     *        The status of the service-specific credential. <code>Active</code> means the key is valid for API calls,
-     *        while <code>Inactive</code> means it is not.
+     *        The status of the service-specific credential. <code>Active</code> means that the key is valid for API
+     *        calls, while <code>Inactive</code> means it is not.
      * @see StatusType
      */
 
@@ -349,12 +349,12 @@ public class ServiceSpecificCredential implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the service-specific credential. <code>Active</code> means the key is valid for API calls, while
-     * <code>Inactive</code> means it is not.
+     * The status of the service-specific credential. <code>Active</code> means that the key is valid for API calls,
+     * while <code>Inactive</code> means it is not.
      * </p>
      * 
-     * @return The status of the service-specific credential. <code>Active</code> means the key is valid for API calls,
-     *         while <code>Inactive</code> means it is not.
+     * @return The status of the service-specific credential. <code>Active</code> means that the key is valid for API
+     *         calls, while <code>Inactive</code> means it is not.
      * @see StatusType
      */
 
@@ -364,13 +364,13 @@ public class ServiceSpecificCredential implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the service-specific credential. <code>Active</code> means the key is valid for API calls, while
-     * <code>Inactive</code> means it is not.
+     * The status of the service-specific credential. <code>Active</code> means that the key is valid for API calls,
+     * while <code>Inactive</code> means it is not.
      * </p>
      * 
      * @param status
-     *        The status of the service-specific credential. <code>Active</code> means the key is valid for API calls,
-     *        while <code>Inactive</code> means it is not.
+     *        The status of the service-specific credential. <code>Active</code> means that the key is valid for API
+     *        calls, while <code>Inactive</code> means it is not.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusType
      */
@@ -382,13 +382,13 @@ public class ServiceSpecificCredential implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the service-specific credential. <code>Active</code> means the key is valid for API calls, while
-     * <code>Inactive</code> means it is not.
+     * The status of the service-specific credential. <code>Active</code> means that the key is valid for API calls,
+     * while <code>Inactive</code> means it is not.
      * </p>
      * 
      * @param status
-     *        The status of the service-specific credential. <code>Active</code> means the key is valid for API calls,
-     *        while <code>Inactive</code> means it is not.
+     *        The status of the service-specific credential. <code>Active</code> means that the key is valid for API
+     *        calls, while <code>Inactive</code> means it is not.
      * @see StatusType
      */
 
@@ -398,13 +398,13 @@ public class ServiceSpecificCredential implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the service-specific credential. <code>Active</code> means the key is valid for API calls, while
-     * <code>Inactive</code> means it is not.
+     * The status of the service-specific credential. <code>Active</code> means that the key is valid for API calls,
+     * while <code>Inactive</code> means it is not.
      * </p>
      * 
      * @param status
-     *        The status of the service-specific credential. <code>Active</code> means the key is valid for API calls,
-     *        while <code>Inactive</code> means it is not.
+     *        The status of the service-specific credential. <code>Active</code> means that the key is valid for API
+     *        calls, while <code>Inactive</code> means it is not.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusType
      */

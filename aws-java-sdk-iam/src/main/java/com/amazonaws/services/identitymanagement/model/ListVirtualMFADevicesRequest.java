@@ -28,8 +28,8 @@ public class ListVirtualMFADevicesRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices to list. If you do not specify an
-     * <code>AssignmentStatus</code>, the action defaults to <code>Any</code> which lists both assigned and unassigned
-     * virtual MFA devices.
+     * <code>AssignmentStatus</code>, the operation defaults to <code>Any</code> which lists both assigned and
+     * unassigned virtual MFA devices.
      * </p>
      */
     private String assignmentStatus;
@@ -59,13 +59,13 @@ public class ListVirtualMFADevicesRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices to list. If you do not specify an
-     * <code>AssignmentStatus</code>, the action defaults to <code>Any</code> which lists both assigned and unassigned
-     * virtual MFA devices.
+     * <code>AssignmentStatus</code>, the operation defaults to <code>Any</code> which lists both assigned and
+     * unassigned virtual MFA devices.
      * </p>
      * 
      * @param assignmentStatus
      *        The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices to list. If you do not
-     *        specify an <code>AssignmentStatus</code>, the action defaults to <code>Any</code> which lists both
+     *        specify an <code>AssignmentStatus</code>, the operation defaults to <code>Any</code> which lists both
      *        assigned and unassigned virtual MFA devices.
      * @see AssignmentStatusType
      */
@@ -77,12 +77,12 @@ public class ListVirtualMFADevicesRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices to list. If you do not specify an
-     * <code>AssignmentStatus</code>, the action defaults to <code>Any</code> which lists both assigned and unassigned
-     * virtual MFA devices.
+     * <code>AssignmentStatus</code>, the operation defaults to <code>Any</code> which lists both assigned and
+     * unassigned virtual MFA devices.
      * </p>
      * 
      * @return The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices to list. If you do not
-     *         specify an <code>AssignmentStatus</code>, the action defaults to <code>Any</code> which lists both
+     *         specify an <code>AssignmentStatus</code>, the operation defaults to <code>Any</code> which lists both
      *         assigned and unassigned virtual MFA devices.
      * @see AssignmentStatusType
      */
@@ -94,13 +94,13 @@ public class ListVirtualMFADevicesRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices to list. If you do not specify an
-     * <code>AssignmentStatus</code>, the action defaults to <code>Any</code> which lists both assigned and unassigned
-     * virtual MFA devices.
+     * <code>AssignmentStatus</code>, the operation defaults to <code>Any</code> which lists both assigned and
+     * unassigned virtual MFA devices.
      * </p>
      * 
      * @param assignmentStatus
      *        The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices to list. If you do not
-     *        specify an <code>AssignmentStatus</code>, the action defaults to <code>Any</code> which lists both
+     *        specify an <code>AssignmentStatus</code>, the operation defaults to <code>Any</code> which lists both
      *        assigned and unassigned virtual MFA devices.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AssignmentStatusType
@@ -114,13 +114,13 @@ public class ListVirtualMFADevicesRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices to list. If you do not specify an
-     * <code>AssignmentStatus</code>, the action defaults to <code>Any</code> which lists both assigned and unassigned
-     * virtual MFA devices.
+     * <code>AssignmentStatus</code>, the operation defaults to <code>Any</code> which lists both assigned and
+     * unassigned virtual MFA devices.
      * </p>
      * 
      * @param assignmentStatus
      *        The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices to list. If you do not
-     *        specify an <code>AssignmentStatus</code>, the action defaults to <code>Any</code> which lists both
+     *        specify an <code>AssignmentStatus</code>, the operation defaults to <code>Any</code> which lists both
      *        assigned and unassigned virtual MFA devices.
      * @see AssignmentStatusType
      */
@@ -132,13 +132,13 @@ public class ListVirtualMFADevicesRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices to list. If you do not specify an
-     * <code>AssignmentStatus</code>, the action defaults to <code>Any</code> which lists both assigned and unassigned
-     * virtual MFA devices.
+     * <code>AssignmentStatus</code>, the operation defaults to <code>Any</code> which lists both assigned and
+     * unassigned virtual MFA devices.
      * </p>
      * 
      * @param assignmentStatus
      *        The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices to list. If you do not
-     *        specify an <code>AssignmentStatus</code>, the action defaults to <code>Any</code> which lists both
+     *        specify an <code>AssignmentStatus</code>, the operation defaults to <code>Any</code> which lists both
      *        assigned and unassigned virtual MFA devices.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AssignmentStatusType

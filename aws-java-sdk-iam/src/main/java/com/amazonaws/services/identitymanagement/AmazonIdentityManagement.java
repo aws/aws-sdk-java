@@ -161,7 +161,8 @@ public interface AmazonIdentityManagement {
      * OpenID Connect (OIDC) provider resource.
      * </p>
      * <p>
-     * This action is idempotent; it does not fail or return an error if you add an existing client ID to the provider.
+     * This operation is idempotent; it does not fail or return an error if you add an existing client ID to the
+     * provider.
      * </p>
      * 
      * @param addClientIDToOpenIDConnectProviderRequest
@@ -186,7 +187,13 @@ public interface AmazonIdentityManagement {
     /**
      * <p>
      * Adds the specified IAM role to the specified instance profile. An instance profile can contain only one role, and
-     * this limit cannot be increased.
+     * this limit cannot be increased. You can remove the existing role and then add a different role to an instance
+     * profile. You must then wait for the change to appear across all of AWS because of <a
+     * href="https://en.wikipedia.org/wiki/Eventual_consistency">eventual consistency</a>. To force the change, you must
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateIamInstanceProfile.html">
+     * disassociate the instance profile</a> and then <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateIamInstanceProfile.html">associate the
+     * instance profile</a>, or you can stop your instance and then restart it.
      * </p>
      * <note>
      * <p>
@@ -359,8 +366,8 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
-     * Changes the password of the IAM user who is calling this action. The root account password is not affected by
-     * this action.
+     * Changes the password of the IAM user who is calling this operation. The AWS account root user password is not
+     * affected by this operation.
      * </p>
      * <p>
      * To change the password for a different user, see <a>UpdateLoginProfile</a>. For more information about modifying
@@ -400,8 +407,8 @@ public interface AmazonIdentityManagement {
      * </p>
      * <p>
      * If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID signing
-     * the request. Because this action works for access keys under the AWS account, you can use this action to manage
-     * root credentials even if the AWS account has no associated users.
+     * the request. Because this operation works for access keys under the AWS account, you can use this operation to
+     * manage AWS account root user credentials. This is true even if the AWS account has no associated users.
      * </p>
      * <p>
      * For information about limits on the number of keys you can create, see <a
@@ -550,19 +557,37 @@ public interface AmazonIdentityManagement {
      * href="http://openid.net/connect/">OpenID Connect (OIDC)</a>.
      * </p>
      * <p>
-     * The OIDC provider that you create with this operation can be used as a principal in a role's trust policy to
-     * establish a trust relationship between AWS and the OIDC provider.
+     * The OIDC provider that you create with this operation can be used as a principal in a role's trust policy. Such a
+     * policy establishes a trust relationship between AWS and the OIDC provider.
      * </p>
      * <p>
-     * When you create the IAM OIDC provider, you specify the URL of the OIDC identity provider (IdP) to trust, a list
-     * of client IDs (also known as audiences) that identify the application or applications that are allowed to
-     * authenticate using the OIDC provider, and a list of thumbprints of the server certificate(s) that the IdP uses.
-     * You get all of this information from the OIDC IdP that you want to use for access to AWS.
+     * When you create the IAM OIDC provider, you specify the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The URL of the OIDC identity provider (IdP) to trust
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A list of client IDs (also known as audiences) that identify the application or applications that are allowed to
+     * authenticate using the OIDC provider
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A list of thumbprints of the server certificate(s) that the IdP uses.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You get all of this information from the OIDC IdP that you want to use to access AWS.
      * </p>
      * <note>
      * <p>
-     * Because trust for the OIDC provider is ultimately derived from the IAM provider that this action creates, it is a
-     * best practice to limit access to the <a>CreateOpenIDConnectProvider</a> action to highly-privileged users.
+     * Because trust for the OIDC provider is derived from the IAM provider that this operation creates, it is best to
+     * limit access to the <a>CreateOpenIDConnectProvider</a> operation to highly privileged users.
      * </p>
      * </note>
      * 
@@ -659,8 +684,8 @@ public interface AmazonIdentityManagement {
     /**
      * <p>
      * Creates a new role for your AWS account. For more information about roles, go to <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working with Roles</a>. For
-     * information about limitations on role names and the number of roles you can create, go to <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">IAM Roles</a>. For information about
+     * limitations on role names and the number of roles you can create, go to <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations on IAM Entities</a>
      * in the <i>IAM User Guide</i>.
      * </p>
@@ -691,13 +716,13 @@ public interface AmazonIdentityManagement {
      * </p>
      * <p>
      * The SAML provider resource that you create with this operation can be used as a principal in an IAM role's trust
-     * policy to enable federated users who sign-in using the SAML IdP to assume the role. You can create an IAM role
-     * that supports Web-based single sign-on (SSO) to the AWS Management Console or one that supports API access to
-     * AWS.
+     * policy. Such a policy can enable federated users who sign-in using the SAML IdP to assume the role. You can
+     * create an IAM role that supports Web-based single sign-on (SSO) to the AWS Management Console or one that
+     * supports API access to AWS.
      * </p>
      * <p>
-     * When you create the SAML provider resource, you upload an a SAML metadata document that you get from your IdP and
-     * that includes the issuer's name, expiration information, and keys that can be used to validate the SAML
+     * When you create the SAML provider resource, you upload a SAML metadata document that you get from your IdP. That
+     * document includes the issuer's name, expiration information, and keys that can be used to validate the SAML
      * authentication response (assertions) that the IdP sends. You must generate the metadata document using the
      * identity management software that is used as your organization's IdP.
      * </p>
@@ -740,9 +765,9 @@ public interface AmazonIdentityManagement {
      * improve service stability and proper cleanup when a service and its role are no longer needed.
      * </p>
      * <p>
-     * The name of the role is autogenerated by combining the string that you specify for the
-     * <code>AWSServiceName</code> parameter with the string that you specify for the <code>CustomSuffix</code>
-     * parameter. The resulting name must be unique in your account or the request fails.
+     * The name of the role is generated by combining the string that you specify for the <code>AWSServiceName</code>
+     * parameter with the string that you specify for the <code>CustomSuffix</code> parameter. The resulting name must
+     * be unique in your account or the request fails.
      * </p>
      * <p>
      * To attach a policy to this service-linked role, you must make the request using the AWS service that depends on
@@ -903,8 +928,8 @@ public interface AmazonIdentityManagement {
      * </p>
      * <p>
      * If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID signing
-     * the request. Because this action works for access keys under the AWS account, you can use this action to manage
-     * root credentials even if the AWS account has no associated users.
+     * the request. Because this operation works for access keys under the AWS account, you can use this operation to
+     * manage AWS account root user credentials even if the AWS account has no associated users.
      * </p>
      * 
      * @param deleteAccessKeyRequest
@@ -1031,9 +1056,9 @@ public interface AmazonIdentityManagement {
      * </p>
      * <important>
      * <p>
-     * Make sure you do not have any Amazon EC2 instances running with the instance profile you are about to delete.
-     * Deleting a role or instance profile that is associated with a running instance will break any applications
-     * running on the instance.
+     * Make sure that you do not have any Amazon EC2 instances running with the instance profile you are about to
+     * delete. Deleting a role or instance profile that is associated with a running instance will break any
+     * applications running on the instance.
      * </p>
      * </important>
      * <p>
@@ -1102,8 +1127,8 @@ public interface AmazonIdentityManagement {
      * their trust policies. Any attempt to assume a role that references a deleted provider fails.
      * </p>
      * <p>
-     * This action is idempotent; it does not fail or return an error if you call the action for a provider that does
-     * not exist.
+     * This operation is idempotent; it does not fail or return an error if you call the operation for a provider that
+     * does not exist.
      * </p>
      * 
      * @param deleteOpenIDConnectProviderRequest
@@ -1127,15 +1152,15 @@ public interface AmazonIdentityManagement {
      * </p>
      * <p>
      * Before you can delete a managed policy, you must first detach the policy from all users, groups, and roles that
-     * it is attached to, and you must delete all of the policy's versions. The following steps describe the process for
-     * deleting a managed policy:
+     * it is attached to. In addition you must delete all the policy's versions. The following steps describe the
+     * process for deleting a managed policy:
      * </p>
      * <ul>
      * <li>
      * <p>
      * Detach the policy from all users, groups, and roles that the policy is attached to, using the
-     * <a>DetachUserPolicy</a>, <a>DetachGroupPolicy</a>, or <a>DetachRolePolicy</a> APIs. To list all the users,
-     * groups, and roles that a policy is attached to, use <a>ListEntitiesForPolicy</a>.
+     * <a>DetachUserPolicy</a>, <a>DetachGroupPolicy</a>, or <a>DetachRolePolicy</a> API operations. To list all the
+     * users, groups, and roles that a policy is attached to, use <a>ListEntitiesForPolicy</a>.
      * </p>
      * </li>
      * <li>
@@ -1221,8 +1246,8 @@ public interface AmazonIdentityManagement {
      * </p>
      * <important>
      * <p>
-     * Make sure you do not have any Amazon EC2 instances running with the role you are about to delete. Deleting a role
-     * or instance profile that is associated with a running instance will break any applications running on the
+     * Make sure that you do not have any Amazon EC2 instances running with the role you are about to delete. Deleting a
+     * role or instance profile that is associated with a running instance will break any applications running on the
      * instance.
      * </p>
      * </important>
@@ -1320,7 +1345,7 @@ public interface AmazonIdentityManagement {
      * Deletes the specified SSH public key.
      * </p>
      * <p>
-     * The SSH public key deleted by this action is used only for authenticating the associated IAM user to an AWS
+     * The SSH public key deleted by this operation is used only for authenticating the associated IAM user to an AWS
      * CodeCommit repository. For more information about using SSH keys to authenticate to an AWS CodeCommit repository,
      * see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set up AWS
      * CodeCommit for SSH Connections</a> in the <i>AWS CodeCommit User Guide</i>.
@@ -1342,10 +1367,10 @@ public interface AmazonIdentityManagement {
      * Deletes the specified server certificate.
      * </p>
      * <p>
-     * For more information about working with server certificates, including a list of AWS services that can use the
-     * server certificates that you manage with IAM, go to <a
+     * For more information about working with server certificates, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working with Server
-     * Certificates</a> in the <i>IAM User Guide</i>.
+     * Certificates</a> in the <i>IAM User Guide</i>. This topic also includes a list of AWS services that can use the
+     * server certificates that you manage with IAM.
      * </p>
      * <important>
      * <p>
@@ -1389,10 +1414,10 @@ public interface AmazonIdentityManagement {
      * <p>
      * If you submit a deletion request for a service-linked role whose linked service is still accessing a resource,
      * then the deletion task fails. If it fails, the <a>GetServiceLinkedRoleDeletionStatus</a> API operation returns
-     * the reason for the failure, including the resources that must be deleted. To delete the service-linked role, you
-     * must first remove those resources from the linked service and then submit the deletion request again. Resources
-     * are specific to the service that is linked to the role. For more information about removing resources from a
-     * service, see the <a href="http://docs.aws.amazon.com/">AWS documentation</a> for your service.
+     * the reason for the failure, usually including the resources that must be deleted. To delete the service-linked
+     * role, you must first remove those resources from the linked service and then submit the deletion request again.
+     * Resources are specific to the service that is linked to the role. For more information about removing resources
+     * from a service, see the <a href="http://docs.aws.amazon.com/">AWS documentation</a> for your service.
      * </p>
      * <p>
      * For more information about service-linked roles, see <a href=
@@ -1438,8 +1463,8 @@ public interface AmazonIdentityManagement {
      * </p>
      * <p>
      * If you do not specify a user name, IAM determines the user name implicitly based on the AWS access key ID signing
-     * the request. Because this action works for access keys under the AWS account, you can use this action to manage
-     * root credentials even if the AWS account has no associated IAM users.
+     * the request. Because this operation works for access keys under the AWS account, you can use this operation to
+     * manage AWS account root user credentials even if the AWS account has no associated IAM users.
      * </p>
      * 
      * @param deleteSigningCertificateRequest
@@ -1713,6 +1738,14 @@ public interface AmazonIdentityManagement {
      * relationships to one another. Use this API to obtain a snapshot of the configuration of IAM permissions (users,
      * groups, roles, and policies) in your account.
      * </p>
+     * <note>
+     * <p>
+     * Policies returned by this API are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
+     * 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON text. For example, if you
+     * use Java, you can use the <code>decode</code> method of the <code>java.net.URLDecoder</code> utility class in the
+     * Java SDK. Other languages and SDKs provide similar functionality.
+     * </p>
+     * </note>
      * <p>
      * You can optionally filter the results using the <code>Filter</code> parameter. You can paginate the results using
      * the <code>MaxItems</code> and <code>Marker</code> parameters.
@@ -1797,9 +1830,9 @@ public interface AmazonIdentityManagement {
      * </p>
      * <p>
      * Context keys are variables maintained by AWS and its services that provide details about the context of an API
-     * query request, and can be evaluated by testing against a value specified in an IAM policy. Use
-     * GetContextKeysForCustomPolicy to understand what key names and values you must supply when you call
-     * <a>SimulateCustomPolicy</a>. Note that all parameters are shown in unencoded form here for clarity, but must be
+     * query request. Context keys can be evaluated by testing against a value specified in an IAM policy. Use
+     * <code>GetContextKeysForCustomPolicy</code> to understand what key names and values you must supply when you call
+     * <a>SimulateCustomPolicy</a>. Note that all parameters are shown in unencoded form here for clarity but must be
      * URL encoded to be included as a part of a real HTML request.
      * </p>
      * 
@@ -1815,7 +1848,7 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
-     * Gets a list of all of the context keys referenced in all of the IAM policies attached to the specified IAM
+     * Gets a list of all of the context keys referenced in all the IAM policies that are attached to the specified IAM
      * entity. The entity can be an IAM user, group, or role. If you specify a user, then the request also includes all
      * of the policies attached to groups that the user is a member of.
      * </p>
@@ -1830,7 +1863,7 @@ public interface AmazonIdentityManagement {
      * </p>
      * <p>
      * Context keys are variables maintained by AWS and its services that provide details about the context of an API
-     * query request, and can be evaluated by testing against a value in an IAM policy. Use
+     * query request. Context keys can be evaluated by testing against a value in an IAM policy. Use
      * <a>GetContextKeysForPrincipalPolicy</a> to understand what key names and values you must supply when you call
      * <a>SimulatePrincipalPolicy</a>.
      * </p>
@@ -1961,7 +1994,7 @@ public interface AmazonIdentityManagement {
     /**
      * <p>
      * Retrieves the user name and password-creation date for the specified IAM user. If the user has not been assigned
-     * a password, the action returns a 404 (<code>NoSuchEntity</code>) error.
+     * a password, the operation returns a 404 (<code>NoSuchEntity</code>) error.
      * </p>
      * 
      * @param getLoginProfileRequest
@@ -2178,7 +2211,7 @@ public interface AmazonIdentityManagement {
      * Retrieves the specified SSH public key, including metadata about the key.
      * </p>
      * <p>
-     * The SSH public key retrieved by this action is used only for authenticating the associated IAM user to an AWS
+     * The SSH public key retrieved by this operation is used only for authenticating the associated IAM user to an AWS
      * CodeCommit repository. For more information about using SSH keys to authenticate to an AWS CodeCommit repository,
      * see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set up AWS
      * CodeCommit for SSH Connections</a> in the <i>AWS CodeCommit User Guide</i>.
@@ -2202,10 +2235,10 @@ public interface AmazonIdentityManagement {
      * Retrieves information about the specified server certificate stored in IAM.
      * </p>
      * <p>
-     * For more information about working with server certificates, including a list of AWS services that can use the
-     * server certificates that you manage with IAM, go to <a
+     * For more information about working with server certificates, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working with Server
-     * Certificates</a> in the <i>IAM User Guide</i>.
+     * Certificates</a> in the <i>IAM User Guide</i>. This topic includes a list of AWS services that can use the server
+     * certificates that you manage with IAM.
      * </p>
      * 
      * @param getServerCertificateRequest
@@ -2226,7 +2259,7 @@ public interface AmazonIdentityManagement {
      * Retrieves the status of your service-linked role deletion. After you use the <a>DeleteServiceLinkedRole</a> API
      * operation to submit a service-linked role for deletion, you can use the <code>DeletionTaskId</code> parameter in
      * <code>GetServiceLinkedRoleDeletionStatus</code> to check the status of the deletion. If the deletion fails, this
-     * operation returns the reason that it failed.
+     * operation returns the reason that it failed, if that information is returned by the service.
      * </p>
      * 
      * @param getServiceLinkedRoleDeletionStatusRequest
@@ -2313,16 +2346,17 @@ public interface AmazonIdentityManagement {
     /**
      * <p>
      * Returns information about the access key IDs associated with the specified IAM user. If there are none, the
-     * action returns an empty list.
+     * operation returns an empty list.
      * </p>
      * <p>
      * Although each user is limited to a small number of keys, you can still paginate the results using the
      * <code>MaxItems</code> and <code>Marker</code> parameters.
      * </p>
      * <p>
-     * If the <code>UserName</code> field is not specified, the UserName is determined implicitly based on the AWS
-     * access key ID used to sign the request. Because this action works for access keys under the AWS account, you can
-     * use this action to manage root credentials even if the AWS account has no associated users.
+     * If the <code>UserName</code> field is not specified, the user name is determined implicitly based on the AWS
+     * access key ID used to sign the request. Because this operation works for access keys under the AWS account, you
+     * can use this operation to manage AWS account root user credentials even if the AWS account has no associated
+     * users.
      * </p>
      * <note>
      * <p>
@@ -2389,7 +2423,7 @@ public interface AmazonIdentityManagement {
      * You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. You can use the
      * <code>PathPrefix</code> parameter to limit the list of policies to only those matching the specified path prefix.
      * If there are no policies attached to the specified group (or none that match the specified path prefix), the
-     * action returns an empty list.
+     * operation returns an empty list.
      * </p>
      * 
      * @param listAttachedGroupPoliciesRequest
@@ -2421,7 +2455,7 @@ public interface AmazonIdentityManagement {
      * You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. You can use the
      * <code>PathPrefix</code> parameter to limit the list of policies to only those matching the specified path prefix.
      * If there are no policies attached to the specified role (or none that match the specified path prefix), the
-     * action returns an empty list.
+     * operation returns an empty list.
      * </p>
      * 
      * @param listAttachedRolePoliciesRequest
@@ -2453,7 +2487,7 @@ public interface AmazonIdentityManagement {
      * You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. You can use the
      * <code>PathPrefix</code> parameter to limit the list of policies to only those matching the specified path prefix.
      * If there are no policies attached to the specified group (or none that match the specified path prefix), the
-     * action returns an empty list.
+     * operation returns an empty list.
      * </p>
      * 
      * @param listAttachedUserPoliciesRequest
@@ -2511,7 +2545,7 @@ public interface AmazonIdentityManagement {
      * </p>
      * <p>
      * You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. If there are no
-     * inline policies embedded with the specified group, the action returns an empty list.
+     * inline policies embedded with the specified group, the operation returns an empty list.
      * </p>
      * 
      * @param listGroupPoliciesRequest
@@ -2575,8 +2609,8 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
-     * Lists the instance profiles that have the specified path prefix. If there are none, the action returns an empty
-     * list. For more information about instance profiles, go to <a
+     * Lists the instance profiles that have the specified path prefix. If there are none, the operation returns an
+     * empty list. For more information about instance profiles, go to <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance Profiles</a>.
      * </p>
      * <p>
@@ -2602,8 +2636,8 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
-     * Lists the instance profiles that have the specified associated IAM role. If there are none, the action returns an
-     * empty list. For more information about instance profiles, go to <a
+     * Lists the instance profiles that have the specified associated IAM role. If there are none, the operation returns
+     * an empty list. For more information about instance profiles, go to <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">About Instance Profiles</a>.
      * </p>
      * <p>
@@ -2625,7 +2659,7 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
-     * Lists the MFA devices for an IAM user. If the request includes a IAM user name, then this action lists all the
+     * Lists the MFA devices for an IAM user. If the request includes a IAM user name, then this operation lists all the
      * MFA devices associated with the specified user. If you do not specify a user name, IAM determines the user name
      * implicitly based on the AWS access key ID signing the request for this API.
      * </p>
@@ -2750,7 +2784,7 @@ public interface AmazonIdentityManagement {
      * </p>
      * <p>
      * You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. If there are no
-     * inline policies embedded with the specified role, the action returns an empty list.
+     * inline policies embedded with the specified role, the operation returns an empty list.
      * </p>
      * 
      * @param listRolePoliciesRequest
@@ -2768,8 +2802,8 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
-     * Lists the IAM roles that have the specified path prefix. If there are none, the action returns an empty list. For
-     * more information about roles, go to <a
+     * Lists the IAM roles that have the specified path prefix. If there are none, the operation returns an empty list.
+     * For more information about roles, go to <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working with Roles</a>.
      * </p>
      * <p>
@@ -2824,10 +2858,10 @@ public interface AmazonIdentityManagement {
     /**
      * <p>
      * Returns information about the SSH public keys associated with the specified IAM user. If there are none, the
-     * action returns an empty list.
+     * operation returns an empty list.
      * </p>
      * <p>
-     * The SSH public keys returned by this action are used only for authenticating the IAM user to an AWS CodeCommit
+     * The SSH public keys returned by this operation are used only for authenticating the IAM user to an AWS CodeCommit
      * repository. For more information about using SSH keys to authenticate to an AWS CodeCommit repository, see <a
      * href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set up AWS
      * CodeCommit for SSH Connections</a> in the <i>AWS CodeCommit User Guide</i>.
@@ -2857,17 +2891,17 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
-     * Lists the server certificates stored in IAM that have the specified path prefix. If none exist, the action
+     * Lists the server certificates stored in IAM that have the specified path prefix. If none exist, the operation
      * returns an empty list.
      * </p>
      * <p>
      * You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
      * </p>
      * <p>
-     * For more information about working with server certificates, including a list of AWS services that can use the
-     * server certificates that you manage with IAM, go to <a
+     * For more information about working with server certificates, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working with Server
-     * Certificates</a> in the <i>IAM User Guide</i>.
+     * Certificates</a> in the <i>IAM User Guide</i>. This topic also includes a list of AWS services that can use the
+     * server certificates that you manage with IAM.
      * </p>
      * 
      * @param listServerCertificatesRequest
@@ -2890,8 +2924,8 @@ public interface AmazonIdentityManagement {
     /**
      * <p>
      * Returns information about the service-specific credentials associated with the specified IAM user. If there are
-     * none, the action returns an empty list. The service-specific credentials returned by this action are used only
-     * for authenticating the IAM user to a specific service. For more information about using service-specific
+     * none, the operation returns an empty list. The service-specific credentials returned by this operation are used
+     * only for authenticating the IAM user to a specific service. For more information about using service-specific
      * credentials to authenticate to an AWS service, see <a
      * href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-gc.html">Set Up service-specific
      * credentials</a> in the AWS CodeCommit User Guide.
@@ -2913,7 +2947,7 @@ public interface AmazonIdentityManagement {
     /**
      * <p>
      * Returns information about the signing certificates associated with the specified IAM user. If there are none, the
-     * action returns an empty list.
+     * operation returns an empty list.
      * </p>
      * <p>
      * Although each user is limited to a small number of signing certificates, you can still paginate the results using
@@ -2921,8 +2955,9 @@ public interface AmazonIdentityManagement {
      * </p>
      * <p>
      * If the <code>UserName</code> field is not specified, the user name is determined implicitly based on the AWS
-     * access key ID used to sign the request for this API. Because this action works for access keys under the AWS
-     * account, you can use this action to manage root credentials even if the AWS account has no associated users.
+     * access key ID used to sign the request for this API. Because this operation works for access keys under the AWS
+     * account, you can use this operation to manage AWS account root user credentials even if the AWS account has no
+     * associated users.
      * </p>
      * 
      * @param listSigningCertificatesRequest
@@ -2957,7 +2992,7 @@ public interface AmazonIdentityManagement {
      * </p>
      * <p>
      * You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters. If there are no
-     * inline policies embedded with the specified user, the action returns an empty list.
+     * inline policies embedded with the specified user, the operation returns an empty list.
      * </p>
      * 
      * @param listUserPoliciesRequest
@@ -2975,8 +3010,8 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
-     * Lists the IAM users that have the specified path prefix. If no path prefix is specified, the action returns all
-     * users in the AWS account. If there are none, the action returns an empty list.
+     * Lists the IAM users that have the specified path prefix. If no path prefix is specified, the operation returns
+     * all users in the AWS account. If there are none, the operation returns an empty list.
      * </p>
      * <p>
      * You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
@@ -3002,7 +3037,7 @@ public interface AmazonIdentityManagement {
     /**
      * <p>
      * Lists the virtual MFA devices defined in the AWS account by assignment status. If you do not specify an
-     * assignment status, the action returns a list of all virtual MFA devices. Assignment status can be
+     * assignment status, the operation returns a list of all virtual MFA devices. Assignment status can be
      * <code>Assigned</code>, <code>Unassigned</code>, or <code>Any</code>.
      * </p>
      * <p>
@@ -3170,7 +3205,7 @@ public interface AmazonIdentityManagement {
      * IAM OpenID Connect (OIDC) provider resource object.
      * </p>
      * <p>
-     * This action is idempotent; it does not fail or return an error if you try to remove a client ID that does not
+     * This operation is idempotent; it does not fail or return an error if you try to remove a client ID that does not
      * exist.
      * </p>
      * 
@@ -3196,7 +3231,7 @@ public interface AmazonIdentityManagement {
      * </p>
      * <important>
      * <p>
-     * Make sure you do not have any Amazon EC2 instances running with the role you are about to remove from the
+     * Make sure that you do not have any Amazon EC2 instances running with the role you are about to remove from the
      * instance profile. Removing a role from an instance profile that is associated with a running instance might break
      * any applications running on the instance.
      * </p>
@@ -3301,8 +3336,8 @@ public interface AmazonIdentityManagement {
      * Sets the specified version of the specified policy as the policy's default (operative) version.
      * </p>
      * <p>
-     * This action affects all users, groups, and roles that the policy is attached to. To list the users, groups, and
-     * roles that the policy is attached to, use the <a>ListEntitiesForPolicy</a> API.
+     * This operation affects all users, groups, and roles that the policy is attached to. To list the users, groups,
+     * and roles that the policy is attached to, use the <a>ListEntitiesForPolicy</a> API.
      * </p>
      * <p>
      * For information about managed policies, see <a
@@ -3330,12 +3365,12 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
-     * Simulate how a set of IAM policies and optionally a resource-based policy works with a list of API actions and
+     * Simulate how a set of IAM policies and optionally a resource-based policy works with a list of API operations and
      * AWS resources to determine the policies' effective permissions. The policies are provided as strings.
      * </p>
      * <p>
-     * The simulation does not perform the API actions; it only checks the authorization to determine if the simulated
-     * policies allow or deny the actions.
+     * The simulation does not perform the API operations; it only checks the authorization to determine if the
+     * simulated policies allow or deny the operations.
      * </p>
      * <p>
      * If you want to simulate existing policies attached to an IAM user, group, or role, use
@@ -3367,10 +3402,10 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
-     * Simulate how a set of IAM policies attached to an IAM entity works with a list of API actions and AWS resources
-     * to determine the policies' effective permissions. The entity can be an IAM user, group, or role. If you specify a
-     * user, then the simulation also includes all of the policies that are attached to groups that the user belongs to
-     * .
+     * Simulate how a set of IAM policies attached to an IAM entity works with a list of API operations and AWS
+     * resources to determine the policies' effective permissions. The entity can be an IAM user, group, or role. If you
+     * specify a user, then the simulation also includes all of the policies that are attached to groups that the user
+     * belongs to.
      * </p>
      * <p>
      * You can optionally include a list of one or more additional policies specified as strings to include in the
@@ -3381,8 +3416,8 @@ public interface AmazonIdentityManagement {
      * the simulation.
      * </p>
      * <p>
-     * The simulation does not perform the API actions, it only checks the authorization to determine if the simulated
-     * policies allow or deny the actions.
+     * The simulation does not perform the API operations, it only checks the authorization to determine if the
+     * simulated policies allow or deny the operations.
      * </p>
      * <p>
      * <b>Note:</b> This API discloses information about the permissions granted to other users. If you do not want
@@ -3417,13 +3452,14 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
-     * Changes the status of the specified access key from Active to Inactive, or vice versa. This action can be used to
-     * disable a user's key as part of a key rotation work flow.
+     * Changes the status of the specified access key from Active to Inactive, or vice versa. This operation can be used
+     * to disable a user's key as part of a key rotation workflow.
      * </p>
      * <p>
-     * If the <code>UserName</code> field is not specified, the UserName is determined implicitly based on the AWS
-     * access key ID used to sign the request. Because this action works for access keys under the AWS account, you can
-     * use this action to manage root credentials even if the AWS account has no associated users.
+     * If the <code>UserName</code> field is not specified, the user name is determined implicitly based on the AWS
+     * access key ID used to sign the request. Because this operation works for access keys under the AWS account, you
+     * can use this operation to manage AWS account root user credentials even if the AWS account has no associated
+     * users.
      * </p>
      * <p>
      * For information about rotating keys, see <a
@@ -3452,11 +3488,17 @@ public interface AmazonIdentityManagement {
      * Updates the password policy settings for the AWS account.
      * </p>
      * <note>
+     * <ul>
+     * <li>
      * <p>
-     * This action does not support partial updates. No parameters are required, but if you do not specify a parameter,
-     * that parameter's value reverts to its default value. See the <b>Request Parameters</b> section for each
-     * parameter's default value.
+     * This operation does not support partial updates. No parameters are required, but if you do not specify a
+     * parameter, that parameter's value reverts to its default value. See the <b>Request Parameters</b> section for
+     * each parameter's default value. Also note that some parameters do not allow the default parameter to be
+     * explicitly set. Instead, to invoke the default value, do not include that parameter when you invoke the
+     * operation.
      * </p>
+     * </li>
+     * </ul>
      * </note>
      * <p>
      * For more information about using a password policy, see <a
@@ -3526,10 +3568,12 @@ public interface AmazonIdentityManagement {
      * </p>
      * </important> <note>
      * <p>
-     * To change an IAM group name the requester must have appropriate permissions on both the source object and the
-     * target object. For example, to change "Managers" to "MGRs", the entity making the request must have permission on
-     * both "Managers" and "MGRs", or must have permission on all (*). For more information about permissions, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html">Permissions and Policies</a>.
+     * The person making the request (the principal), must have permission to change the role group with the old name
+     * and the new name. For example, to change the group named <code>Managers</code> to <code>MGRs</code>, the
+     * principal must have a policy that allows them to update both groups. If the principal has permission to update
+     * the <code>Managers</code> group, but not the <code>MGRs</code> group, then the update fails. For more information
+     * about permissions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     * Management</a>.
      * </p>
      * </note>
      * 
@@ -3590,8 +3634,8 @@ public interface AmazonIdentityManagement {
      * resource object with a new list of thumbprints.
      * </p>
      * <p>
-     * The list that you pass with this action completely replaces the existing list of thumbprints. (The lists are not
-     * merged.)
+     * The list that you pass with this operation completely replaces the existing list of thumbprints. (The lists are
+     * not merged.)
      * </p>
      * <p>
      * Typically, you need to update a thumbprint only when the identity provider's certificate changes, which occurs
@@ -3600,9 +3644,9 @@ public interface AmazonIdentityManagement {
      * </p>
      * <note>
      * <p>
-     * Because trust for the OIDC provider is ultimately derived from the provider's certificate and is validated by the
-     * thumbprint, it is a best practice to limit access to the <code>UpdateOpenIDConnectProviderThumbprint</code>
-     * action to highly-privileged users.
+     * Because trust for the OIDC provider is derived from the provider's certificate and is validated by the
+     * thumbprint, it is best to limit access to the <code>UpdateOpenIDConnectProviderThumbprint</code> operation to
+     * highly privileged users.
      * </p>
      * </note>
      * 
@@ -3624,7 +3668,33 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
-     * Modifies the description of a role.
+     * Updates the description or maximum session duration setting of a role.
+     * </p>
+     * 
+     * @param updateRoleRequest
+     * @return Result of the UpdateRole operation returned by the service.
+     * @throws UnmodifiableEntityException
+     *         The request was rejected because only the service that depends on the service-linked role can modify or
+     *         delete the role on your behalf. The error message includes the name of the service that depends on this
+     *         service-linked role. You must request the change through that service.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced an entity that does not exist. The error message describes
+     *         the entity.
+     * @throws ServiceFailureException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @sample AmazonIdentityManagement.UpdateRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateRole" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateRoleResult updateRole(UpdateRoleRequest updateRoleRequest);
+
+    /**
+     * <p>
+     * Use instead.
+     * </p>
+     * <p>
+     * Modifies only the description of a role. This operation performs the same function as the
+     * <code>Description</code> parameter in the <code>UpdateRole</code> operation.
      * </p>
      * 
      * @param updateRoleDescriptionRequest
@@ -3676,11 +3746,11 @@ public interface AmazonIdentityManagement {
     /**
      * <p>
      * Sets the status of an IAM user's SSH public key to active or inactive. SSH public keys that are inactive cannot
-     * be used for authentication. This action can be used to disable a user's SSH public key as part of a key rotation
-     * work flow.
+     * be used for authentication. This operation can be used to disable a user's SSH public key as part of a key
+     * rotation work flow.
      * </p>
      * <p>
-     * The SSH public key affected by this action is used only for authenticating the associated IAM user to an AWS
+     * The SSH public key affected by this operation is used only for authenticating the associated IAM user to an AWS
      * CodeCommit repository. For more information about using SSH keys to authenticate to an AWS CodeCommit repository,
      * see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set up AWS
      * CodeCommit for SSH Connections</a> in the <i>AWS CodeCommit User Guide</i>.
@@ -3702,10 +3772,10 @@ public interface AmazonIdentityManagement {
      * Updates the name and/or the path of the specified server certificate stored in IAM.
      * </p>
      * <p>
-     * For more information about working with server certificates, including a list of AWS services that can use the
-     * server certificates that you manage with IAM, go to <a
+     * For more information about working with server certificates, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working with Server
-     * Certificates</a> in the <i>IAM User Guide</i>.
+     * Certificates</a> in the <i>IAM User Guide</i>. This topic also includes a list of AWS services that can use the
+     * server certificates that you manage with IAM.
      * </p>
      * <important>
      * <p>
@@ -3716,11 +3786,13 @@ public interface AmazonIdentityManagement {
      * </p>
      * </important> <note>
      * <p>
-     * To change a server certificate name the requester must have appropriate permissions on both the source object and
-     * the target object. For example, to change the name from "ProductionCert" to "ProdCert", the entity making the
-     * request must have permission on "ProductionCert" and "ProdCert", or must have permission on all (*). For more
-     * information about permissions, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
-     * Management</a> in the <i>IAM User Guide</i>.
+     * The person making the request (the principal), must have permission to change the server certificate with the old
+     * name and the new name. For example, to change the certificate named <code>ProductionCert</code> to
+     * <code>ProdCert</code>, the principal must have a policy that allows them to update both certificates. If the
+     * principal has permission to update the <code>ProductionCert</code> group, but not the <code>ProdCert</code>
+     * certificate, then the update fails. For more information about permissions, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access Management</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
      * </note>
      * 
@@ -3745,8 +3817,8 @@ public interface AmazonIdentityManagement {
     /**
      * <p>
      * Sets the status of a service-specific credential to <code>Active</code> or <code>Inactive</code>.
-     * Service-specific credentials that are inactive cannot be used for authentication to the service. This action can
-     * be used to disable a user’s service-specific credential as part of a credential rotation work flow.
+     * Service-specific credentials that are inactive cannot be used for authentication to the service. This operation
+     * can be used to disable a user’s service-specific credential as part of a credential rotation work flow.
      * </p>
      * 
      * @param updateServiceSpecificCredentialRequest
@@ -3762,13 +3834,14 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
-     * Changes the status of the specified user signing certificate from active to disabled, or vice versa. This action
-     * can be used to disable an IAM user's signing certificate as part of a certificate rotation work flow.
+     * Changes the status of the specified user signing certificate from active to disabled, or vice versa. This
+     * operation can be used to disable an IAM user's signing certificate as part of a certificate rotation work flow.
      * </p>
      * <p>
-     * If the <code>UserName</code> field is not specified, the UserName is determined implicitly based on the AWS
-     * access key ID used to sign the request. Because this action works for access keys under the AWS account, you can
-     * use this action to manage root credentials even if the AWS account has no associated users.
+     * If the <code>UserName</code> field is not specified, the user name is determined implicitly based on the AWS
+     * access key ID used to sign the request. Because this operation works for access keys under the AWS account, you
+     * can use this operation to manage AWS account root user credentials even if the AWS account has no associated
+     * users.
      * </p>
      * 
      * @param updateSigningCertificateRequest
@@ -3800,7 +3873,7 @@ public interface AmazonIdentityManagement {
      * </p>
      * </important> <note>
      * <p>
-     * To change a user name the requester must have appropriate permissions on both the source object and the target
+     * To change a user name, the requester must have appropriate permissions on both the source object and the target
      * object. For example, to change Bob to Robert, the entity making the request must have permission on Bob and
      * Robert, or must have permission on all (*). For more information about permissions, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/PermissionsAndPolicies.html">Permissions and Policies</a>.
@@ -3834,9 +3907,10 @@ public interface AmazonIdentityManagement {
      * Uploads an SSH public key and associates it with the specified IAM user.
      * </p>
      * <p>
-     * The SSH public key uploaded by this action can be used only for authenticating the associated IAM user to an AWS
-     * CodeCommit repository. For more information about using SSH keys to authenticate to an AWS CodeCommit repository,
-     * see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set up AWS
+     * The SSH public key uploaded by this operation can be used only for authenticating the associated IAM user to an
+     * AWS CodeCommit repository. For more information about using SSH keys to authenticate to an AWS CodeCommit
+     * repository, see <a
+     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-credentials-ssh.html">Set up AWS
      * CodeCommit for SSH Connections</a> in the <i>AWS CodeCommit User Guide</i>.
      * </p>
      * 
@@ -3873,10 +3947,10 @@ public interface AmazonIdentityManagement {
      * Manager User Guide</a>.
      * </p>
      * <p>
-     * For more information about working with server certificates, including a list of AWS services that can use the
-     * server certificates that you manage with IAM, go to <a
+     * For more information about working with server certificates, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Working with Server
-     * Certificates</a> in the <i>IAM User Guide</i>.
+     * Certificates</a> in the <i>IAM User Guide</i>. This topic includes a list of AWS services that can use the server
+     * certificates that you manage with IAM.
      * </p>
      * <p>
      * For information about the number of server certificates you can upload, see <a
@@ -3923,12 +3997,13 @@ public interface AmazonIdentityManagement {
      * </p>
      * <p>
      * If the <code>UserName</code> field is not specified, the IAM user name is determined implicitly based on the AWS
-     * access key ID used to sign the request. Because this action works for access keys under the AWS account, you can
-     * use this action to manage root credentials even if the AWS account has no associated users.
+     * access key ID used to sign the request. Because this operation works for access keys under the AWS account, you
+     * can use this operation to manage AWS account root user credentials even if the AWS account has no associated
+     * users.
      * </p>
      * <note>
      * <p>
-     * Because the body of a X.509 certificate can be large, you should use POST rather than GET when calling
+     * Because the body of an X.509 certificate can be large, you should use POST rather than GET when calling
      * <code>UploadSigningCertificate</code>. For information about setting up signatures and authorization through the
      * API, go to <a href="http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing AWS API
      * Requests</a> in the <i>AWS General Reference</i>. For general information about using the Query API with IAM, go

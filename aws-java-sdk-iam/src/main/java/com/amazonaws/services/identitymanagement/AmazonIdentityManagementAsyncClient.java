@@ -4526,6 +4526,39 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateRoleResult> updateRoleAsync(UpdateRoleRequest request) {
+
+        return updateRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRoleResult> updateRoleAsync(final UpdateRoleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateRoleRequest, UpdateRoleResult> asyncHandler) {
+        final UpdateRoleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateRoleResult>() {
+            @Override
+            public UpdateRoleResult call() throws Exception {
+                UpdateRoleResult result = null;
+
+                try {
+                    result = executeUpdateRole(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateRoleDescriptionResult> updateRoleDescriptionAsync(UpdateRoleDescriptionRequest request) {
 
         return updateRoleDescriptionAsync(request, null);

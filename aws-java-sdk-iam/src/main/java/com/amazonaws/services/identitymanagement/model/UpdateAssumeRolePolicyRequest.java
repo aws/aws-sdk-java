@@ -42,10 +42,25 @@ public class UpdateAssumeRolePolicyRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      */
     private String policyDocument;
 
@@ -122,19 +137,49 @@ public class UpdateAssumeRolePolicyRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param policyDocument
      *        The policy that grants an entity permission to assume the role.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *        feed ( ), and carriage return ( ).
+     *        string of characters consisting of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *        range
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The special characters tab ( ), line feed ( ), and carriage return ( )
+     *        </p>
+     *        </li>
      */
 
     public void setPolicyDocument(String policyDocument) {
@@ -147,18 +192,48 @@ public class UpdateAssumeRolePolicyRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The policy that grants an entity permission to assume the role.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *         string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *         through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *         Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *         feed ( ), and carriage return ( ).
+     *         string of characters consisting of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *         range
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The special characters tab ( ), line feed ( ), and carriage return ( )
+     *         </p>
+     *         </li>
      */
 
     public String getPolicyDocument() {
@@ -171,19 +246,49 @@ public class UpdateAssumeRolePolicyRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param policyDocument
      *        The policy that grants an entity permission to assume the role.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *        feed ( ), and carriage return ( ).
+     *        string of characters consisting of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *        range
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The special characters tab ( ), line feed ( ), and carriage return ( )
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

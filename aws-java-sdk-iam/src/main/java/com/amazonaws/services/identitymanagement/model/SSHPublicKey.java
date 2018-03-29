@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Contains information about an SSH public key.
  * </p>
  * <p>
- * This data type is used as a response element in the <a>GetSSHPublicKey</a> and <a>UploadSSHPublicKey</a> actions.
+ * This data type is used as a response element in the <a>GetSSHPublicKey</a> and <a>UploadSSHPublicKey</a> operations.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/SSHPublicKey" target="_top">AWS API
@@ -55,8 +55,8 @@ public class SSHPublicKey implements Serializable, Cloneable {
     private String sSHPublicKeyBody;
     /**
      * <p>
-     * The status of the SSH public key. <code>Active</code> means the key can be used for authentication with an AWS
-     * CodeCommit repository. <code>Inactive</code> means the key cannot be used.
+     * The status of the SSH public key. <code>Active</code> means that the key can be used for authentication with an
+     * AWS CodeCommit repository. <code>Inactive</code> means that the key cannot be used.
      * </p>
      */
     private String status;
@@ -230,13 +230,13 @@ public class SSHPublicKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the SSH public key. <code>Active</code> means the key can be used for authentication with an AWS
-     * CodeCommit repository. <code>Inactive</code> means the key cannot be used.
+     * The status of the SSH public key. <code>Active</code> means that the key can be used for authentication with an
+     * AWS CodeCommit repository. <code>Inactive</code> means that the key cannot be used.
      * </p>
      * 
      * @param status
-     *        The status of the SSH public key. <code>Active</code> means the key can be used for authentication with an
-     *        AWS CodeCommit repository. <code>Inactive</code> means the key cannot be used.
+     *        The status of the SSH public key. <code>Active</code> means that the key can be used for authentication
+     *        with an AWS CodeCommit repository. <code>Inactive</code> means that the key cannot be used.
      * @see StatusType
      */
 
@@ -246,12 +246,12 @@ public class SSHPublicKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the SSH public key. <code>Active</code> means the key can be used for authentication with an AWS
-     * CodeCommit repository. <code>Inactive</code> means the key cannot be used.
+     * The status of the SSH public key. <code>Active</code> means that the key can be used for authentication with an
+     * AWS CodeCommit repository. <code>Inactive</code> means that the key cannot be used.
      * </p>
      * 
-     * @return The status of the SSH public key. <code>Active</code> means the key can be used for authentication with
-     *         an AWS CodeCommit repository. <code>Inactive</code> means the key cannot be used.
+     * @return The status of the SSH public key. <code>Active</code> means that the key can be used for authentication
+     *         with an AWS CodeCommit repository. <code>Inactive</code> means that the key cannot be used.
      * @see StatusType
      */
 
@@ -261,13 +261,13 @@ public class SSHPublicKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the SSH public key. <code>Active</code> means the key can be used for authentication with an AWS
-     * CodeCommit repository. <code>Inactive</code> means the key cannot be used.
+     * The status of the SSH public key. <code>Active</code> means that the key can be used for authentication with an
+     * AWS CodeCommit repository. <code>Inactive</code> means that the key cannot be used.
      * </p>
      * 
      * @param status
-     *        The status of the SSH public key. <code>Active</code> means the key can be used for authentication with an
-     *        AWS CodeCommit repository. <code>Inactive</code> means the key cannot be used.
+     *        The status of the SSH public key. <code>Active</code> means that the key can be used for authentication
+     *        with an AWS CodeCommit repository. <code>Inactive</code> means that the key cannot be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusType
      */
@@ -279,13 +279,13 @@ public class SSHPublicKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the SSH public key. <code>Active</code> means the key can be used for authentication with an AWS
-     * CodeCommit repository. <code>Inactive</code> means the key cannot be used.
+     * The status of the SSH public key. <code>Active</code> means that the key can be used for authentication with an
+     * AWS CodeCommit repository. <code>Inactive</code> means that the key cannot be used.
      * </p>
      * 
      * @param status
-     *        The status of the SSH public key. <code>Active</code> means the key can be used for authentication with an
-     *        AWS CodeCommit repository. <code>Inactive</code> means the key cannot be used.
+     *        The status of the SSH public key. <code>Active</code> means that the key can be used for authentication
+     *        with an AWS CodeCommit repository. <code>Inactive</code> means that the key cannot be used.
      * @see StatusType
      */
 
@@ -295,13 +295,13 @@ public class SSHPublicKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the SSH public key. <code>Active</code> means the key can be used for authentication with an AWS
-     * CodeCommit repository. <code>Inactive</code> means the key cannot be used.
+     * The status of the SSH public key. <code>Active</code> means that the key can be used for authentication with an
+     * AWS CodeCommit repository. <code>Inactive</code> means that the key cannot be used.
      * </p>
      * 
      * @param status
-     *        The status of the SSH public key. <code>Active</code> means the key can be used for authentication with an
-     *        AWS CodeCommit repository. <code>Inactive</code> means the key cannot be used.
+     *        The status of the SSH public key. <code>Active</code> means that the key can be used for authentication
+     *        with an AWS CodeCommit repository. <code>Inactive</code> means that the key cannot be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusType
      */

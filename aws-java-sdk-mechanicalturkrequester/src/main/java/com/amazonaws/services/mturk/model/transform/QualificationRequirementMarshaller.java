@@ -38,6 +38,8 @@ public class QualificationRequirementMarshaller {
             .marshallLocationName("LocaleValues").build();
     private static final MarshallingInfo<Boolean> REQUIREDTOPREVIEW_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequiredToPreview").build();
+    private static final MarshallingInfo<String> ACTIONSGUARDED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ActionsGuarded").build();
 
     private static final QualificationRequirementMarshaller instance = new QualificationRequirementMarshaller();
 
@@ -60,6 +62,7 @@ public class QualificationRequirementMarshaller {
             protocolMarshaller.marshall(qualificationRequirement.getIntegerValues(), INTEGERVALUES_BINDING);
             protocolMarshaller.marshall(qualificationRequirement.getLocaleValues(), LOCALEVALUES_BINDING);
             protocolMarshaller.marshall(qualificationRequirement.getRequiredToPreview(), REQUIREDTOPREVIEW_BINDING);
+            protocolMarshaller.marshall(qualificationRequirement.getActionsGuarded(), ACTIONSGUARDED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

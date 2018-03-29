@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Contains information about an IAM user entity.
  * </p>
  * <p>
- * This data type is used as a response element in the following actions:
+ * This data type is used as a response element in the following operations:
  * </p>
  * <ul>
  * <li>
@@ -109,7 +109,7 @@ public class User implements Serializable, Cloneable {
      * password, but had one in the past, then this field contains the date and time the most recent password was used.
      * </p>
      * <p>
-     * This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> actions.
+     * This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations.
      * </p>
      */
     private java.util.Date passwordLastUsed;
@@ -421,7 +421,7 @@ public class User implements Serializable, Cloneable {
      * password, but had one in the past, then this field contains the date and time the most recent password was used.
      * </p>
      * <p>
-     * This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> actions.
+     * This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations.
      * </p>
      * 
      * @param passwordLastUsed
@@ -450,7 +450,7 @@ public class User implements Serializable, Cloneable {
      *        was used.
      *        </p>
      *        <p>
-     *        This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> actions.
+     *        This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations.
      */
 
     public void setPasswordLastUsed(java.util.Date passwordLastUsed) {
@@ -484,7 +484,7 @@ public class User implements Serializable, Cloneable {
      * password, but had one in the past, then this field contains the date and time the most recent password was used.
      * </p>
      * <p>
-     * This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> actions.
+     * This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations.
      * </p>
      * 
      * @return The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
@@ -513,7 +513,7 @@ public class User implements Serializable, Cloneable {
      *         was used.
      *         </p>
      *         <p>
-     *         This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> actions.
+     *         This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations.
      */
 
     public java.util.Date getPasswordLastUsed() {
@@ -547,7 +547,7 @@ public class User implements Serializable, Cloneable {
      * password, but had one in the past, then this field contains the date and time the most recent password was used.
      * </p>
      * <p>
-     * This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> actions.
+     * This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations.
      * </p>
      * 
      * @param passwordLastUsed
@@ -576,7 +576,7 @@ public class User implements Serializable, Cloneable {
      *        was used.
      *        </p>
      *        <p>
-     *        This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> actions.
+     *        This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

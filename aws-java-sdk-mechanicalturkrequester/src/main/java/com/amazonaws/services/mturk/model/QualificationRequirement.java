@@ -21,7 +21,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * The QualificationRequirement data structure describes a Qualification that a Worker must have before the Worker is
  * allowed to accept a HIT. A requirement may optionally state that a Worker must have the Qualification in order to
- * preview the HIT.
+ * preview the HIT, or see the HIT in search results.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/QualificationRequirement"
@@ -69,15 +69,34 @@ public class QualificationRequirement implements Serializable, Cloneable, Struct
     private java.util.List<Locale> localeValues;
     /**
      * <p>
-     * If true, the question data for the HIT will not be shown when a Worker whose Qualifications do not meet this
-     * requirement tries to preview the HIT. That is, a Worker's Qualifications must meet all of the requirements for
-     * which RequiredToPreview is true in order to preview the HIT. If a Worker meets all of the requirements where
-     * RequiredToPreview is true (or if there are no such requirements), but does not meet all of the requirements for
-     * the HIT, the Worker will be allowed to preview the HIT's question data, but will not be allowed to accept and
-     * complete the HIT. The default is false.
+     * DEPRECATED: Use the <code>ActionsGuarded</code> field instead. If RequiredToPreview is true, the question data
+     * for the HIT will not be shown when a Worker whose Qualifications do not meet this requirement tries to preview
+     * the HIT. That is, a Worker's Qualifications must meet all of the requirements for which RequiredToPreview is true
+     * in order to preview the HIT. If a Worker meets all of the requirements where RequiredToPreview is true (or if
+     * there are no such requirements), but does not meet all of the requirements for the HIT, the Worker will be
+     * allowed to preview the HIT's question data, but will not be allowed to accept and complete the HIT. The default
+     * is false. This should not be used in combination with the <code>ActionsGuarded</code> field.
      * </p>
      */
+    @Deprecated
     private Boolean requiredToPreview;
+    /**
+     * <p>
+     * Setting this attribute prevents Workers whose Qualifications do not meet this QualificationRequirement from
+     * taking the specified action. Valid arguments include "Accept" (Worker cannot accept the HIT, but can preview the
+     * HIT and see it in their search results), "PreviewAndAccept" (Worker cannot accept or preview the HIT, but can see
+     * the HIT in their search results), and "DiscoverPreviewAndAccept" (Worker cannot accept, preview, or see the HIT
+     * in their search results). It's possible for you to create a HIT with multiple QualificationRequirements (which
+     * can have different values for the ActionGuarded attribute). In this case, the Worker is only permitted to perform
+     * an action when they have met all QualificationRequirements guarding the action. The actions in the order of least
+     * restrictive to most restrictive are Discover, Preview and Accept. For example, if a Worker meets all
+     * QualificationRequirements that are set to DiscoverPreviewAndAccept, but do not meet all requirements that are set
+     * with PreviewAndAccept, then the Worker will be able to Discover, i.e. see the HIT in their search result, but
+     * will not be able to Preview or Accept the HIT. ActionsGuarded should not be used in combination with the
+     * <code>RequiredToPreview</code> field.
+     * </p>
+     */
+    private String actionsGuarded;
 
     /**
      * <p>
@@ -452,69 +471,78 @@ public class QualificationRequirement implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * If true, the question data for the HIT will not be shown when a Worker whose Qualifications do not meet this
-     * requirement tries to preview the HIT. That is, a Worker's Qualifications must meet all of the requirements for
-     * which RequiredToPreview is true in order to preview the HIT. If a Worker meets all of the requirements where
-     * RequiredToPreview is true (or if there are no such requirements), but does not meet all of the requirements for
-     * the HIT, the Worker will be allowed to preview the HIT's question data, but will not be allowed to accept and
-     * complete the HIT. The default is false.
+     * DEPRECATED: Use the <code>ActionsGuarded</code> field instead. If RequiredToPreview is true, the question data
+     * for the HIT will not be shown when a Worker whose Qualifications do not meet this requirement tries to preview
+     * the HIT. That is, a Worker's Qualifications must meet all of the requirements for which RequiredToPreview is true
+     * in order to preview the HIT. If a Worker meets all of the requirements where RequiredToPreview is true (or if
+     * there are no such requirements), but does not meet all of the requirements for the HIT, the Worker will be
+     * allowed to preview the HIT's question data, but will not be allowed to accept and complete the HIT. The default
+     * is false. This should not be used in combination with the <code>ActionsGuarded</code> field.
      * </p>
      * 
      * @param requiredToPreview
-     *        If true, the question data for the HIT will not be shown when a Worker whose Qualifications do not meet
-     *        this requirement tries to preview the HIT. That is, a Worker's Qualifications must meet all of the
-     *        requirements for which RequiredToPreview is true in order to preview the HIT. If a Worker meets all of the
-     *        requirements where RequiredToPreview is true (or if there are no such requirements), but does not meet all
-     *        of the requirements for the HIT, the Worker will be allowed to preview the HIT's question data, but will
-     *        not be allowed to accept and complete the HIT. The default is false.
+     *        DEPRECATED: Use the <code>ActionsGuarded</code> field instead. If RequiredToPreview is true, the question
+     *        data for the HIT will not be shown when a Worker whose Qualifications do not meet this requirement tries
+     *        to preview the HIT. That is, a Worker's Qualifications must meet all of the requirements for which
+     *        RequiredToPreview is true in order to preview the HIT. If a Worker meets all of the requirements where
+     *        RequiredToPreview is true (or if there are no such requirements), but does not meet all of the
+     *        requirements for the HIT, the Worker will be allowed to preview the HIT's question data, but will not be
+     *        allowed to accept and complete the HIT. The default is false. This should not be used in combination with
+     *        the <code>ActionsGuarded</code> field.
      */
-
+    @Deprecated
     public void setRequiredToPreview(Boolean requiredToPreview) {
         this.requiredToPreview = requiredToPreview;
     }
 
     /**
      * <p>
-     * If true, the question data for the HIT will not be shown when a Worker whose Qualifications do not meet this
-     * requirement tries to preview the HIT. That is, a Worker's Qualifications must meet all of the requirements for
-     * which RequiredToPreview is true in order to preview the HIT. If a Worker meets all of the requirements where
-     * RequiredToPreview is true (or if there are no such requirements), but does not meet all of the requirements for
-     * the HIT, the Worker will be allowed to preview the HIT's question data, but will not be allowed to accept and
-     * complete the HIT. The default is false.
+     * DEPRECATED: Use the <code>ActionsGuarded</code> field instead. If RequiredToPreview is true, the question data
+     * for the HIT will not be shown when a Worker whose Qualifications do not meet this requirement tries to preview
+     * the HIT. That is, a Worker's Qualifications must meet all of the requirements for which RequiredToPreview is true
+     * in order to preview the HIT. If a Worker meets all of the requirements where RequiredToPreview is true (or if
+     * there are no such requirements), but does not meet all of the requirements for the HIT, the Worker will be
+     * allowed to preview the HIT's question data, but will not be allowed to accept and complete the HIT. The default
+     * is false. This should not be used in combination with the <code>ActionsGuarded</code> field.
      * </p>
      * 
-     * @return If true, the question data for the HIT will not be shown when a Worker whose Qualifications do not meet
-     *         this requirement tries to preview the HIT. That is, a Worker's Qualifications must meet all of the
-     *         requirements for which RequiredToPreview is true in order to preview the HIT. If a Worker meets all of
-     *         the requirements where RequiredToPreview is true (or if there are no such requirements), but does not
-     *         meet all of the requirements for the HIT, the Worker will be allowed to preview the HIT's question data,
-     *         but will not be allowed to accept and complete the HIT. The default is false.
+     * @return DEPRECATED: Use the <code>ActionsGuarded</code> field instead. If RequiredToPreview is true, the question
+     *         data for the HIT will not be shown when a Worker whose Qualifications do not meet this requirement tries
+     *         to preview the HIT. That is, a Worker's Qualifications must meet all of the requirements for which
+     *         RequiredToPreview is true in order to preview the HIT. If a Worker meets all of the requirements where
+     *         RequiredToPreview is true (or if there are no such requirements), but does not meet all of the
+     *         requirements for the HIT, the Worker will be allowed to preview the HIT's question data, but will not be
+     *         allowed to accept and complete the HIT. The default is false. This should not be used in combination with
+     *         the <code>ActionsGuarded</code> field.
      */
-
+    @Deprecated
     public Boolean getRequiredToPreview() {
         return this.requiredToPreview;
     }
 
     /**
      * <p>
-     * If true, the question data for the HIT will not be shown when a Worker whose Qualifications do not meet this
-     * requirement tries to preview the HIT. That is, a Worker's Qualifications must meet all of the requirements for
-     * which RequiredToPreview is true in order to preview the HIT. If a Worker meets all of the requirements where
-     * RequiredToPreview is true (or if there are no such requirements), but does not meet all of the requirements for
-     * the HIT, the Worker will be allowed to preview the HIT's question data, but will not be allowed to accept and
-     * complete the HIT. The default is false.
+     * DEPRECATED: Use the <code>ActionsGuarded</code> field instead. If RequiredToPreview is true, the question data
+     * for the HIT will not be shown when a Worker whose Qualifications do not meet this requirement tries to preview
+     * the HIT. That is, a Worker's Qualifications must meet all of the requirements for which RequiredToPreview is true
+     * in order to preview the HIT. If a Worker meets all of the requirements where RequiredToPreview is true (or if
+     * there are no such requirements), but does not meet all of the requirements for the HIT, the Worker will be
+     * allowed to preview the HIT's question data, but will not be allowed to accept and complete the HIT. The default
+     * is false. This should not be used in combination with the <code>ActionsGuarded</code> field.
      * </p>
      * 
      * @param requiredToPreview
-     *        If true, the question data for the HIT will not be shown when a Worker whose Qualifications do not meet
-     *        this requirement tries to preview the HIT. That is, a Worker's Qualifications must meet all of the
-     *        requirements for which RequiredToPreview is true in order to preview the HIT. If a Worker meets all of the
-     *        requirements where RequiredToPreview is true (or if there are no such requirements), but does not meet all
-     *        of the requirements for the HIT, the Worker will be allowed to preview the HIT's question data, but will
-     *        not be allowed to accept and complete the HIT. The default is false.
+     *        DEPRECATED: Use the <code>ActionsGuarded</code> field instead. If RequiredToPreview is true, the question
+     *        data for the HIT will not be shown when a Worker whose Qualifications do not meet this requirement tries
+     *        to preview the HIT. That is, a Worker's Qualifications must meet all of the requirements for which
+     *        RequiredToPreview is true in order to preview the HIT. If a Worker meets all of the requirements where
+     *        RequiredToPreview is true (or if there are no such requirements), but does not meet all of the
+     *        requirements for the HIT, the Worker will be allowed to preview the HIT's question data, but will not be
+     *        allowed to accept and complete the HIT. The default is false. This should not be used in combination with
+     *        the <code>ActionsGuarded</code> field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public QualificationRequirement withRequiredToPreview(Boolean requiredToPreview) {
         setRequiredToPreview(requiredToPreview);
         return this;
@@ -522,24 +550,215 @@ public class QualificationRequirement implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * If true, the question data for the HIT will not be shown when a Worker whose Qualifications do not meet this
-     * requirement tries to preview the HIT. That is, a Worker's Qualifications must meet all of the requirements for
-     * which RequiredToPreview is true in order to preview the HIT. If a Worker meets all of the requirements where
-     * RequiredToPreview is true (or if there are no such requirements), but does not meet all of the requirements for
-     * the HIT, the Worker will be allowed to preview the HIT's question data, but will not be allowed to accept and
-     * complete the HIT. The default is false.
+     * DEPRECATED: Use the <code>ActionsGuarded</code> field instead. If RequiredToPreview is true, the question data
+     * for the HIT will not be shown when a Worker whose Qualifications do not meet this requirement tries to preview
+     * the HIT. That is, a Worker's Qualifications must meet all of the requirements for which RequiredToPreview is true
+     * in order to preview the HIT. If a Worker meets all of the requirements where RequiredToPreview is true (or if
+     * there are no such requirements), but does not meet all of the requirements for the HIT, the Worker will be
+     * allowed to preview the HIT's question data, but will not be allowed to accept and complete the HIT. The default
+     * is false. This should not be used in combination with the <code>ActionsGuarded</code> field.
      * </p>
      * 
-     * @return If true, the question data for the HIT will not be shown when a Worker whose Qualifications do not meet
-     *         this requirement tries to preview the HIT. That is, a Worker's Qualifications must meet all of the
-     *         requirements for which RequiredToPreview is true in order to preview the HIT. If a Worker meets all of
-     *         the requirements where RequiredToPreview is true (or if there are no such requirements), but does not
-     *         meet all of the requirements for the HIT, the Worker will be allowed to preview the HIT's question data,
-     *         but will not be allowed to accept and complete the HIT. The default is false.
+     * @return DEPRECATED: Use the <code>ActionsGuarded</code> field instead. If RequiredToPreview is true, the question
+     *         data for the HIT will not be shown when a Worker whose Qualifications do not meet this requirement tries
+     *         to preview the HIT. That is, a Worker's Qualifications must meet all of the requirements for which
+     *         RequiredToPreview is true in order to preview the HIT. If a Worker meets all of the requirements where
+     *         RequiredToPreview is true (or if there are no such requirements), but does not meet all of the
+     *         requirements for the HIT, the Worker will be allowed to preview the HIT's question data, but will not be
+     *         allowed to accept and complete the HIT. The default is false. This should not be used in combination with
+     *         the <code>ActionsGuarded</code> field.
      */
-
+    @Deprecated
     public Boolean isRequiredToPreview() {
         return this.requiredToPreview;
+    }
+
+    /**
+     * <p>
+     * Setting this attribute prevents Workers whose Qualifications do not meet this QualificationRequirement from
+     * taking the specified action. Valid arguments include "Accept" (Worker cannot accept the HIT, but can preview the
+     * HIT and see it in their search results), "PreviewAndAccept" (Worker cannot accept or preview the HIT, but can see
+     * the HIT in their search results), and "DiscoverPreviewAndAccept" (Worker cannot accept, preview, or see the HIT
+     * in their search results). It's possible for you to create a HIT with multiple QualificationRequirements (which
+     * can have different values for the ActionGuarded attribute). In this case, the Worker is only permitted to perform
+     * an action when they have met all QualificationRequirements guarding the action. The actions in the order of least
+     * restrictive to most restrictive are Discover, Preview and Accept. For example, if a Worker meets all
+     * QualificationRequirements that are set to DiscoverPreviewAndAccept, but do not meet all requirements that are set
+     * with PreviewAndAccept, then the Worker will be able to Discover, i.e. see the HIT in their search result, but
+     * will not be able to Preview or Accept the HIT. ActionsGuarded should not be used in combination with the
+     * <code>RequiredToPreview</code> field.
+     * </p>
+     * 
+     * @param actionsGuarded
+     *        Setting this attribute prevents Workers whose Qualifications do not meet this QualificationRequirement
+     *        from taking the specified action. Valid arguments include "Accept" (Worker cannot accept the HIT, but can
+     *        preview the HIT and see it in their search results), "PreviewAndAccept" (Worker cannot accept or preview
+     *        the HIT, but can see the HIT in their search results), and "DiscoverPreviewAndAccept" (Worker cannot
+     *        accept, preview, or see the HIT in their search results). It's possible for you to create a HIT with
+     *        multiple QualificationRequirements (which can have different values for the ActionGuarded attribute). In
+     *        this case, the Worker is only permitted to perform an action when they have met all
+     *        QualificationRequirements guarding the action. The actions in the order of least restrictive to most
+     *        restrictive are Discover, Preview and Accept. For example, if a Worker meets all QualificationRequirements
+     *        that are set to DiscoverPreviewAndAccept, but do not meet all requirements that are set with
+     *        PreviewAndAccept, then the Worker will be able to Discover, i.e. see the HIT in their search result, but
+     *        will not be able to Preview or Accept the HIT. ActionsGuarded should not be used in combination with the
+     *        <code>RequiredToPreview</code> field.
+     * @see HITAccessActions
+     */
+
+    public void setActionsGuarded(String actionsGuarded) {
+        this.actionsGuarded = actionsGuarded;
+    }
+
+    /**
+     * <p>
+     * Setting this attribute prevents Workers whose Qualifications do not meet this QualificationRequirement from
+     * taking the specified action. Valid arguments include "Accept" (Worker cannot accept the HIT, but can preview the
+     * HIT and see it in their search results), "PreviewAndAccept" (Worker cannot accept or preview the HIT, but can see
+     * the HIT in their search results), and "DiscoverPreviewAndAccept" (Worker cannot accept, preview, or see the HIT
+     * in their search results). It's possible for you to create a HIT with multiple QualificationRequirements (which
+     * can have different values for the ActionGuarded attribute). In this case, the Worker is only permitted to perform
+     * an action when they have met all QualificationRequirements guarding the action. The actions in the order of least
+     * restrictive to most restrictive are Discover, Preview and Accept. For example, if a Worker meets all
+     * QualificationRequirements that are set to DiscoverPreviewAndAccept, but do not meet all requirements that are set
+     * with PreviewAndAccept, then the Worker will be able to Discover, i.e. see the HIT in their search result, but
+     * will not be able to Preview or Accept the HIT. ActionsGuarded should not be used in combination with the
+     * <code>RequiredToPreview</code> field.
+     * </p>
+     * 
+     * @return Setting this attribute prevents Workers whose Qualifications do not meet this QualificationRequirement
+     *         from taking the specified action. Valid arguments include "Accept" (Worker cannot accept the HIT, but can
+     *         preview the HIT and see it in their search results), "PreviewAndAccept" (Worker cannot accept or preview
+     *         the HIT, but can see the HIT in their search results), and "DiscoverPreviewAndAccept" (Worker cannot
+     *         accept, preview, or see the HIT in their search results). It's possible for you to create a HIT with
+     *         multiple QualificationRequirements (which can have different values for the ActionGuarded attribute). In
+     *         this case, the Worker is only permitted to perform an action when they have met all
+     *         QualificationRequirements guarding the action. The actions in the order of least restrictive to most
+     *         restrictive are Discover, Preview and Accept. For example, if a Worker meets all
+     *         QualificationRequirements that are set to DiscoverPreviewAndAccept, but do not meet all requirements that
+     *         are set with PreviewAndAccept, then the Worker will be able to Discover, i.e. see the HIT in their search
+     *         result, but will not be able to Preview or Accept the HIT. ActionsGuarded should not be used in
+     *         combination with the <code>RequiredToPreview</code> field.
+     * @see HITAccessActions
+     */
+
+    public String getActionsGuarded() {
+        return this.actionsGuarded;
+    }
+
+    /**
+     * <p>
+     * Setting this attribute prevents Workers whose Qualifications do not meet this QualificationRequirement from
+     * taking the specified action. Valid arguments include "Accept" (Worker cannot accept the HIT, but can preview the
+     * HIT and see it in their search results), "PreviewAndAccept" (Worker cannot accept or preview the HIT, but can see
+     * the HIT in their search results), and "DiscoverPreviewAndAccept" (Worker cannot accept, preview, or see the HIT
+     * in their search results). It's possible for you to create a HIT with multiple QualificationRequirements (which
+     * can have different values for the ActionGuarded attribute). In this case, the Worker is only permitted to perform
+     * an action when they have met all QualificationRequirements guarding the action. The actions in the order of least
+     * restrictive to most restrictive are Discover, Preview and Accept. For example, if a Worker meets all
+     * QualificationRequirements that are set to DiscoverPreviewAndAccept, but do not meet all requirements that are set
+     * with PreviewAndAccept, then the Worker will be able to Discover, i.e. see the HIT in their search result, but
+     * will not be able to Preview or Accept the HIT. ActionsGuarded should not be used in combination with the
+     * <code>RequiredToPreview</code> field.
+     * </p>
+     * 
+     * @param actionsGuarded
+     *        Setting this attribute prevents Workers whose Qualifications do not meet this QualificationRequirement
+     *        from taking the specified action. Valid arguments include "Accept" (Worker cannot accept the HIT, but can
+     *        preview the HIT and see it in their search results), "PreviewAndAccept" (Worker cannot accept or preview
+     *        the HIT, but can see the HIT in their search results), and "DiscoverPreviewAndAccept" (Worker cannot
+     *        accept, preview, or see the HIT in their search results). It's possible for you to create a HIT with
+     *        multiple QualificationRequirements (which can have different values for the ActionGuarded attribute). In
+     *        this case, the Worker is only permitted to perform an action when they have met all
+     *        QualificationRequirements guarding the action. The actions in the order of least restrictive to most
+     *        restrictive are Discover, Preview and Accept. For example, if a Worker meets all QualificationRequirements
+     *        that are set to DiscoverPreviewAndAccept, but do not meet all requirements that are set with
+     *        PreviewAndAccept, then the Worker will be able to Discover, i.e. see the HIT in their search result, but
+     *        will not be able to Preview or Accept the HIT. ActionsGuarded should not be used in combination with the
+     *        <code>RequiredToPreview</code> field.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HITAccessActions
+     */
+
+    public QualificationRequirement withActionsGuarded(String actionsGuarded) {
+        setActionsGuarded(actionsGuarded);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Setting this attribute prevents Workers whose Qualifications do not meet this QualificationRequirement from
+     * taking the specified action. Valid arguments include "Accept" (Worker cannot accept the HIT, but can preview the
+     * HIT and see it in their search results), "PreviewAndAccept" (Worker cannot accept or preview the HIT, but can see
+     * the HIT in their search results), and "DiscoverPreviewAndAccept" (Worker cannot accept, preview, or see the HIT
+     * in their search results). It's possible for you to create a HIT with multiple QualificationRequirements (which
+     * can have different values for the ActionGuarded attribute). In this case, the Worker is only permitted to perform
+     * an action when they have met all QualificationRequirements guarding the action. The actions in the order of least
+     * restrictive to most restrictive are Discover, Preview and Accept. For example, if a Worker meets all
+     * QualificationRequirements that are set to DiscoverPreviewAndAccept, but do not meet all requirements that are set
+     * with PreviewAndAccept, then the Worker will be able to Discover, i.e. see the HIT in their search result, but
+     * will not be able to Preview or Accept the HIT. ActionsGuarded should not be used in combination with the
+     * <code>RequiredToPreview</code> field.
+     * </p>
+     * 
+     * @param actionsGuarded
+     *        Setting this attribute prevents Workers whose Qualifications do not meet this QualificationRequirement
+     *        from taking the specified action. Valid arguments include "Accept" (Worker cannot accept the HIT, but can
+     *        preview the HIT and see it in their search results), "PreviewAndAccept" (Worker cannot accept or preview
+     *        the HIT, but can see the HIT in their search results), and "DiscoverPreviewAndAccept" (Worker cannot
+     *        accept, preview, or see the HIT in their search results). It's possible for you to create a HIT with
+     *        multiple QualificationRequirements (which can have different values for the ActionGuarded attribute). In
+     *        this case, the Worker is only permitted to perform an action when they have met all
+     *        QualificationRequirements guarding the action. The actions in the order of least restrictive to most
+     *        restrictive are Discover, Preview and Accept. For example, if a Worker meets all QualificationRequirements
+     *        that are set to DiscoverPreviewAndAccept, but do not meet all requirements that are set with
+     *        PreviewAndAccept, then the Worker will be able to Discover, i.e. see the HIT in their search result, but
+     *        will not be able to Preview or Accept the HIT. ActionsGuarded should not be used in combination with the
+     *        <code>RequiredToPreview</code> field.
+     * @see HITAccessActions
+     */
+
+    public void setActionsGuarded(HITAccessActions actionsGuarded) {
+        withActionsGuarded(actionsGuarded);
+    }
+
+    /**
+     * <p>
+     * Setting this attribute prevents Workers whose Qualifications do not meet this QualificationRequirement from
+     * taking the specified action. Valid arguments include "Accept" (Worker cannot accept the HIT, but can preview the
+     * HIT and see it in their search results), "PreviewAndAccept" (Worker cannot accept or preview the HIT, but can see
+     * the HIT in their search results), and "DiscoverPreviewAndAccept" (Worker cannot accept, preview, or see the HIT
+     * in their search results). It's possible for you to create a HIT with multiple QualificationRequirements (which
+     * can have different values for the ActionGuarded attribute). In this case, the Worker is only permitted to perform
+     * an action when they have met all QualificationRequirements guarding the action. The actions in the order of least
+     * restrictive to most restrictive are Discover, Preview and Accept. For example, if a Worker meets all
+     * QualificationRequirements that are set to DiscoverPreviewAndAccept, but do not meet all requirements that are set
+     * with PreviewAndAccept, then the Worker will be able to Discover, i.e. see the HIT in their search result, but
+     * will not be able to Preview or Accept the HIT. ActionsGuarded should not be used in combination with the
+     * <code>RequiredToPreview</code> field.
+     * </p>
+     * 
+     * @param actionsGuarded
+     *        Setting this attribute prevents Workers whose Qualifications do not meet this QualificationRequirement
+     *        from taking the specified action. Valid arguments include "Accept" (Worker cannot accept the HIT, but can
+     *        preview the HIT and see it in their search results), "PreviewAndAccept" (Worker cannot accept or preview
+     *        the HIT, but can see the HIT in their search results), and "DiscoverPreviewAndAccept" (Worker cannot
+     *        accept, preview, or see the HIT in their search results). It's possible for you to create a HIT with
+     *        multiple QualificationRequirements (which can have different values for the ActionGuarded attribute). In
+     *        this case, the Worker is only permitted to perform an action when they have met all
+     *        QualificationRequirements guarding the action. The actions in the order of least restrictive to most
+     *        restrictive are Discover, Preview and Accept. For example, if a Worker meets all QualificationRequirements
+     *        that are set to DiscoverPreviewAndAccept, but do not meet all requirements that are set with
+     *        PreviewAndAccept, then the Worker will be able to Discover, i.e. see the HIT in their search result, but
+     *        will not be able to Preview or Accept the HIT. ActionsGuarded should not be used in combination with the
+     *        <code>RequiredToPreview</code> field.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HITAccessActions
+     */
+
+    public QualificationRequirement withActionsGuarded(HITAccessActions actionsGuarded) {
+        this.actionsGuarded = actionsGuarded.toString();
+        return this;
     }
 
     /**
@@ -562,7 +781,9 @@ public class QualificationRequirement implements Serializable, Cloneable, Struct
         if (getLocaleValues() != null)
             sb.append("LocaleValues: ").append(getLocaleValues()).append(",");
         if (getRequiredToPreview() != null)
-            sb.append("RequiredToPreview: ").append(getRequiredToPreview());
+            sb.append("RequiredToPreview: ").append(getRequiredToPreview()).append(",");
+        if (getActionsGuarded() != null)
+            sb.append("ActionsGuarded: ").append(getActionsGuarded());
         sb.append("}");
         return sb.toString();
     }
@@ -597,6 +818,10 @@ public class QualificationRequirement implements Serializable, Cloneable, Struct
             return false;
         if (other.getRequiredToPreview() != null && other.getRequiredToPreview().equals(this.getRequiredToPreview()) == false)
             return false;
+        if (other.getActionsGuarded() == null ^ this.getActionsGuarded() == null)
+            return false;
+        if (other.getActionsGuarded() != null && other.getActionsGuarded().equals(this.getActionsGuarded()) == false)
+            return false;
         return true;
     }
 
@@ -610,6 +835,7 @@ public class QualificationRequirement implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getIntegerValues() == null) ? 0 : getIntegerValues().hashCode());
         hashCode = prime * hashCode + ((getLocaleValues() == null) ? 0 : getLocaleValues().hashCode());
         hashCode = prime * hashCode + ((getRequiredToPreview() == null) ? 0 : getRequiredToPreview().hashCode());
+        hashCode = prime * hashCode + ((getActionsGuarded() == null) ? 0 : getActionsGuarded().hashCode());
         return hashCode;
     }
 

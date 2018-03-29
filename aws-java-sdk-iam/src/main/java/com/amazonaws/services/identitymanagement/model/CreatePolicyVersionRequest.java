@@ -42,10 +42,25 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      */
     private String policyDocument;
     /**
@@ -53,8 +68,8 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * Specifies whether to set this version as the policy's default version.
      * </p>
      * <p>
-     * When this parameter is <code>true</code>, the new policy version becomes the operative version; that is, the
-     * version that is in effect for the IAM users, groups, and roles that the policy is attached to.
+     * When this parameter is <code>true</code>, the new policy version becomes the operative version. That is, it
+     * becomes the version that is in effect for the IAM users, groups, and roles that the policy is attached to.
      * </p>
      * <p>
      * For more information about managed policy versions, see <a
@@ -137,19 +152,49 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param policyDocument
      *        The JSON policy document that you want to use as the content for this new version of the policy.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *        feed ( ), and carriage return ( ).
+     *        string of characters consisting of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *        range
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The special characters tab ( ), line feed ( ), and carriage return ( )
+     *        </p>
+     *        </li>
      */
 
     public void setPolicyDocument(String policyDocument) {
@@ -162,18 +207,48 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The JSON policy document that you want to use as the content for this new version of the policy.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *         string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *         through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *         Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *         feed ( ), and carriage return ( ).
+     *         string of characters consisting of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *         range
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The special characters tab ( ), line feed ( ), and carriage return ( )
+     *         </p>
+     *         </li>
      */
 
     public String getPolicyDocument() {
@@ -186,19 +261,49 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param policyDocument
      *        The JSON policy document that you want to use as the content for this new version of the policy.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *        feed ( ), and carriage return ( ).
+     *        string of characters consisting of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *        range
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The special characters tab ( ), line feed ( ), and carriage return ( )
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,8 +317,8 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * Specifies whether to set this version as the policy's default version.
      * </p>
      * <p>
-     * When this parameter is <code>true</code>, the new policy version becomes the operative version; that is, the
-     * version that is in effect for the IAM users, groups, and roles that the policy is attached to.
+     * When this parameter is <code>true</code>, the new policy version becomes the operative version. That is, it
+     * becomes the version that is in effect for the IAM users, groups, and roles that the policy is attached to.
      * </p>
      * <p>
      * For more information about managed policy versions, see <a
@@ -224,8 +329,9 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * @param setAsDefault
      *        Specifies whether to set this version as the policy's default version.</p>
      *        <p>
-     *        When this parameter is <code>true</code>, the new policy version becomes the operative version; that is,
-     *        the version that is in effect for the IAM users, groups, and roles that the policy is attached to.
+     *        When this parameter is <code>true</code>, the new policy version becomes the operative version. That is,
+     *        it becomes the version that is in effect for the IAM users, groups, and roles that the policy is attached
+     *        to.
      *        </p>
      *        <p>
      *        For more information about managed policy versions, see <a
@@ -242,8 +348,8 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * Specifies whether to set this version as the policy's default version.
      * </p>
      * <p>
-     * When this parameter is <code>true</code>, the new policy version becomes the operative version; that is, the
-     * version that is in effect for the IAM users, groups, and roles that the policy is attached to.
+     * When this parameter is <code>true</code>, the new policy version becomes the operative version. That is, it
+     * becomes the version that is in effect for the IAM users, groups, and roles that the policy is attached to.
      * </p>
      * <p>
      * For more information about managed policy versions, see <a
@@ -253,8 +359,9 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @return Specifies whether to set this version as the policy's default version.</p>
      *         <p>
-     *         When this parameter is <code>true</code>, the new policy version becomes the operative version; that is,
-     *         the version that is in effect for the IAM users, groups, and roles that the policy is attached to.
+     *         When this parameter is <code>true</code>, the new policy version becomes the operative version. That is,
+     *         it becomes the version that is in effect for the IAM users, groups, and roles that the policy is attached
+     *         to.
      *         </p>
      *         <p>
      *         For more information about managed policy versions, see <a
@@ -271,8 +378,8 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * Specifies whether to set this version as the policy's default version.
      * </p>
      * <p>
-     * When this parameter is <code>true</code>, the new policy version becomes the operative version; that is, the
-     * version that is in effect for the IAM users, groups, and roles that the policy is attached to.
+     * When this parameter is <code>true</code>, the new policy version becomes the operative version. That is, it
+     * becomes the version that is in effect for the IAM users, groups, and roles that the policy is attached to.
      * </p>
      * <p>
      * For more information about managed policy versions, see <a
@@ -283,8 +390,9 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * @param setAsDefault
      *        Specifies whether to set this version as the policy's default version.</p>
      *        <p>
-     *        When this parameter is <code>true</code>, the new policy version becomes the operative version; that is,
-     *        the version that is in effect for the IAM users, groups, and roles that the policy is attached to.
+     *        When this parameter is <code>true</code>, the new policy version becomes the operative version. That is,
+     *        it becomes the version that is in effect for the IAM users, groups, and roles that the policy is attached
+     *        to.
      *        </p>
      *        <p>
      *        For more information about managed policy versions, see <a
@@ -303,8 +411,8 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * Specifies whether to set this version as the policy's default version.
      * </p>
      * <p>
-     * When this parameter is <code>true</code>, the new policy version becomes the operative version; that is, the
-     * version that is in effect for the IAM users, groups, and roles that the policy is attached to.
+     * When this parameter is <code>true</code>, the new policy version becomes the operative version. That is, it
+     * becomes the version that is in effect for the IAM users, groups, and roles that the policy is attached to.
      * </p>
      * <p>
      * For more information about managed policy versions, see <a
@@ -314,8 +422,9 @@ public class CreatePolicyVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @return Specifies whether to set this version as the policy's default version.</p>
      *         <p>
-     *         When this parameter is <code>true</code>, the new policy version becomes the operative version; that is,
-     *         the version that is in effect for the IAM users, groups, and roles that the policy is attached to.
+     *         When this parameter is <code>true</code>, the new policy version becomes the operative version. That is,
+     *         it becomes the version that is in effect for the IAM users, groups, and roles that the policy is attached
+     *         to.
      *         </p>
      *         <p>
      *         For more information about managed policy versions, see <a

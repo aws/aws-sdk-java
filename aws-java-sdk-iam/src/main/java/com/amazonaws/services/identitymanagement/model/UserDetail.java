@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Contains information about an IAM user, including all the user's policies and all the IAM groups the user is in.
  * </p>
  * <p>
- * This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> action.
+ * This data type is used as a response element in the <a>GetAccountAuthorizationDetails</a> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UserDetail" target="_top">AWS API

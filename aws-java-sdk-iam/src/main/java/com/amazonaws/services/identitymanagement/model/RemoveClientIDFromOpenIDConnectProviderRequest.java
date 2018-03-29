@@ -28,7 +28,7 @@ public class RemoveClientIDFromOpenIDConnectProviderRequest extends com.amazonaw
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM OIDC provider resource to remove the client ID from. You can get a list
-     * of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.
+     * of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> operation.
      * </p>
      * <p>
      * For more information about ARNs, see <a
@@ -48,7 +48,7 @@ public class RemoveClientIDFromOpenIDConnectProviderRequest extends com.amazonaw
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM OIDC provider resource to remove the client ID from. You can get a list
-     * of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.
+     * of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> operation.
      * </p>
      * <p>
      * For more information about ARNs, see <a
@@ -58,7 +58,7 @@ public class RemoveClientIDFromOpenIDConnectProviderRequest extends com.amazonaw
      * 
      * @param openIDConnectProviderArn
      *        The Amazon Resource Name (ARN) of the IAM OIDC provider resource to remove the client ID from. You can get
-     *        a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.</p>
+     *        a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> operation.</p>
      *        <p>
      *        For more information about ARNs, see <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
@@ -72,7 +72,7 @@ public class RemoveClientIDFromOpenIDConnectProviderRequest extends com.amazonaw
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM OIDC provider resource to remove the client ID from. You can get a list
-     * of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.
+     * of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> operation.
      * </p>
      * <p>
      * For more information about ARNs, see <a
@@ -81,7 +81,7 @@ public class RemoveClientIDFromOpenIDConnectProviderRequest extends com.amazonaw
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the IAM OIDC provider resource to remove the client ID from. You can
-     *         get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.</p>
+     *         get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> operation.</p>
      *         <p>
      *         For more information about ARNs, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
@@ -95,7 +95,7 @@ public class RemoveClientIDFromOpenIDConnectProviderRequest extends com.amazonaw
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM OIDC provider resource to remove the client ID from. You can get a list
-     * of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.
+     * of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> operation.
      * </p>
      * <p>
      * For more information about ARNs, see <a
@@ -105,7 +105,7 @@ public class RemoveClientIDFromOpenIDConnectProviderRequest extends com.amazonaw
      * 
      * @param openIDConnectProviderArn
      *        The Amazon Resource Name (ARN) of the IAM OIDC provider resource to remove the client ID from. You can get
-     *        a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.</p>
+     *        a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> operation.</p>
      *        <p>
      *        For more information about ARNs, see <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names

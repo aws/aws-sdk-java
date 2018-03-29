@@ -56,6 +56,10 @@ public class CreateRoleRequestMarshaller implements Marshaller<Request<CreateRol
             request.addParameter("Description", StringUtils.fromString(createRoleRequest.getDescription()));
         }
 
+        if (createRoleRequest.getMaxSessionDuration() != null) {
+            request.addParameter("MaxSessionDuration", StringUtils.fromInteger(createRoleRequest.getMaxSessionDuration()));
+        }
+
         return request;
     }
 

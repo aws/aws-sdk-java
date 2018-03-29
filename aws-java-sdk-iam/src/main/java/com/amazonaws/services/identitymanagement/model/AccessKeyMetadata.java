@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Contains information about an AWS access key, without its secret key.
  * </p>
  * <p>
- * This data type is used as a response element in the <a>ListAccessKeys</a> action.
+ * This data type is used as a response element in the <a>ListAccessKeys</a> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AccessKeyMetadata" target="_top">AWS API

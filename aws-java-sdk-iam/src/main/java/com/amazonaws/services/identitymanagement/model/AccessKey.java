@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Contains information about an AWS access key.
  * </p>
  * <p>
- * This data type is used as a response element in the <a>CreateAccessKey</a> and <a>ListAccessKeys</a> actions.
+ * This data type is used as a response element in the <a>CreateAccessKey</a> and <a>ListAccessKeys</a> operations.
  * </p>
  * <note>
  * <p>
@@ -50,7 +50,7 @@ public class AccessKey implements Serializable, Cloneable {
     private String accessKeyId;
     /**
      * <p>
-     * The status of the access key. <code>Active</code> means the key is valid for API calls, while
+     * The status of the access key. <code>Active</code> means that the key is valid for API calls, while
      * <code>Inactive</code> means it is not.
      * </p>
      */
@@ -84,7 +84,7 @@ public class AccessKey implements Serializable, Cloneable {
      * @param accessKeyId
      *        The ID for this access key.
      * @param status
-     *        The status of the access key. <code>Active</code> means the key is valid for API calls, while
+     *        The status of the access key. <code>Active</code> means that the key is valid for API calls, while
      *        <code>Inactive</code> means it is not.
      * @param secretAccessKey
      *        The secret key used to sign requests.
@@ -105,7 +105,7 @@ public class AccessKey implements Serializable, Cloneable {
      * @param accessKeyId
      *        The ID for this access key.
      * @param status
-     *        The status of the access key. <code>Active</code> means the key is valid for API calls, while
+     *        The status of the access key. <code>Active</code> means that the key is valid for API calls, while
      *        <code>Inactive</code> means it is not.
      * @param secretAccessKey
      *        The secret key used to sign requests.
@@ -199,12 +199,12 @@ public class AccessKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the access key. <code>Active</code> means the key is valid for API calls, while
+     * The status of the access key. <code>Active</code> means that the key is valid for API calls, while
      * <code>Inactive</code> means it is not.
      * </p>
      * 
      * @param status
-     *        The status of the access key. <code>Active</code> means the key is valid for API calls, while
+     *        The status of the access key. <code>Active</code> means that the key is valid for API calls, while
      *        <code>Inactive</code> means it is not.
      * @see StatusType
      */
@@ -215,11 +215,11 @@ public class AccessKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the access key. <code>Active</code> means the key is valid for API calls, while
+     * The status of the access key. <code>Active</code> means that the key is valid for API calls, while
      * <code>Inactive</code> means it is not.
      * </p>
      * 
-     * @return The status of the access key. <code>Active</code> means the key is valid for API calls, while
+     * @return The status of the access key. <code>Active</code> means that the key is valid for API calls, while
      *         <code>Inactive</code> means it is not.
      * @see StatusType
      */
@@ -230,12 +230,12 @@ public class AccessKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the access key. <code>Active</code> means the key is valid for API calls, while
+     * The status of the access key. <code>Active</code> means that the key is valid for API calls, while
      * <code>Inactive</code> means it is not.
      * </p>
      * 
      * @param status
-     *        The status of the access key. <code>Active</code> means the key is valid for API calls, while
+     *        The status of the access key. <code>Active</code> means that the key is valid for API calls, while
      *        <code>Inactive</code> means it is not.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusType
@@ -248,12 +248,12 @@ public class AccessKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the access key. <code>Active</code> means the key is valid for API calls, while
+     * The status of the access key. <code>Active</code> means that the key is valid for API calls, while
      * <code>Inactive</code> means it is not.
      * </p>
      * 
      * @param status
-     *        The status of the access key. <code>Active</code> means the key is valid for API calls, while
+     *        The status of the access key. <code>Active</code> means that the key is valid for API calls, while
      *        <code>Inactive</code> means it is not.
      * @see StatusType
      */
@@ -264,12 +264,12 @@ public class AccessKey implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the access key. <code>Active</code> means the key is valid for API calls, while
+     * The status of the access key. <code>Active</code> means that the key is valid for API calls, while
      * <code>Inactive</code> means it is not.
      * </p>
      * 
      * @param status
-     *        The status of the access key. <code>Active</code> means the key is valid for API calls, while
+     *        The status of the access key. <code>Active</code> means that the key is valid for API calls, while
      *        <code>Inactive</code> means it is not.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusType

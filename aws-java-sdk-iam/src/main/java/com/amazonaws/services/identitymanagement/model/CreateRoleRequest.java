@@ -35,10 +35,10 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
-     * slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.
+     * slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * including most punctuation characters, digits, and upper and lowercased letters.
      * </p>
      */
     private String path;
@@ -63,18 +63,51 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      */
     private String assumeRolePolicyDocument;
     /**
      * <p>
-     * A customer-provided description of the role.
+     * A description of the role.
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * The maximum session duration (in seconds) that you want to set for the specified role. If you do not specify a
+     * value for this setting, the default maximum of one hour is applied. This setting can have a value from 1 hour to
+     * 12 hours.
+     * </p>
+     * <p>
+     * Anyone who assumes the role from the AWS CLI or API can use the <code>DurationSeconds</code> API parameter or the
+     * <code>duration-seconds</code> CLI parameter to request a longer session. The <code>MaxSessionDuration</code>
+     * setting determines the maximum duration that can be requested using the <code>DurationSeconds</code> parameter.
+     * If users don't specify a value for the <code>DurationSeconds</code> parameter, their security credentials are
+     * valid for one hour by default. This applies when you use the <code>AssumeRole*</code> API operations or the
+     * <code>assume-role*</code> CLI operations but does not apply when you use those operations to create a console
+     * URL. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * IAM Roles</a> in the <i>IAM User Guide</i>.
+     * </p>
+     */
+    private Integer maxSessionDuration;
 
     /**
      * <p>
@@ -86,10 +119,10 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
-     * slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.
+     * slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * including most punctuation characters, digits, and upper and lowercased letters.
      * </p>
      * 
      * @param path
@@ -100,10 +133,10 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        This parameter is optional. If it is not included, it defaults to a slash (/).
      *        </p>
      *        <p>
-     *        This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of either a forward slash (/) by itself or a string that must begin and end with
-     *        forward slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F),
-     *        including most punctuation characters, digits, and upper and lowercased letters.
+     *        forward slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL
+     *        character (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
      */
 
     public void setPath(String path) {
@@ -120,10 +153,10 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
-     * slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.
+     * slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * including most punctuation characters, digits, and upper and lowercased letters.
      * </p>
      * 
      * @return The path to the role. For more information about paths, see <a
@@ -133,10 +166,10 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         This parameter is optional. If it is not included, it defaults to a slash (/).
      *         </p>
      *         <p>
-     *         This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of either a forward slash (/) by itself or a string that must begin and end with
-     *         forward slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F),
-     *         including most punctuation characters, digits, and upper and lowercased letters.
+     *         forward slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL
+     *         character (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
      */
 
     public String getPath() {
@@ -153,10 +186,10 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * This parameter is optional. If it is not included, it defaults to a slash (/).
      * </p>
      * <p>
-     * This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of either a forward slash (/) by itself or a string that must begin and end with forward
-     * slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.
+     * slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * including most punctuation characters, digits, and upper and lowercased letters.
      * </p>
      * 
      * @param path
@@ -167,10 +200,10 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        This parameter is optional. If it is not included, it defaults to a slash (/).
      *        </p>
      *        <p>
-     *        This paramater allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of either a forward slash (/) by itself or a string that must begin and end with
-     *        forward slashes, containing any ASCII character from the ! (\u0021) thru the DEL character (\u007F),
-     *        including most punctuation characters, digits, and upper and lowercased letters.
+     *        forward slashes. In addition, it can contain any ASCII character from the ! (\u0021) through the DEL
+     *        character (\u007F), including most punctuation characters, digits, and upper and lowercased letters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -276,19 +309,49 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param assumeRolePolicyDocument
      *        The trust relationship policy document that grants an entity permission to assume the role.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *        feed ( ), and carriage return ( ).
+     *        string of characters consisting of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *        range
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The special characters tab ( ), line feed ( ), and carriage return ( )
+     *        </p>
+     *        </li>
      */
 
     public void setAssumeRolePolicyDocument(String assumeRolePolicyDocument) {
@@ -301,18 +364,48 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The trust relationship policy document that grants an entity permission to assume the role.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *         string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *         through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *         Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *         feed ( ), and carriage return ( ).
+     *         string of characters consisting of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *         range
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The special characters tab ( ), line feed ( ), and carriage return ( )
+     *         </p>
+     *         </li>
      */
 
     public String getAssumeRolePolicyDocument() {
@@ -325,19 +418,49 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param assumeRolePolicyDocument
      *        The trust relationship policy document that grants an entity permission to assume the role.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *        feed ( ), and carriage return ( ).
+     *        string of characters consisting of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *        range
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The special characters tab ( ), line feed ( ), and carriage return ( )
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -348,11 +471,11 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A customer-provided description of the role.
+     * A description of the role.
      * </p>
      * 
      * @param description
-     *        A customer-provided description of the role.
+     *        A description of the role.
      */
 
     public void setDescription(String description) {
@@ -361,10 +484,10 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A customer-provided description of the role.
+     * A description of the role.
      * </p>
      * 
-     * @return A customer-provided description of the role.
+     * @return A description of the role.
      */
 
     public String getDescription() {
@@ -373,16 +496,128 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A customer-provided description of the role.
+     * A description of the role.
      * </p>
      * 
      * @param description
-     *        A customer-provided description of the role.
+     *        A description of the role.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateRoleRequest withDescription(String description) {
         setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum session duration (in seconds) that you want to set for the specified role. If you do not specify a
+     * value for this setting, the default maximum of one hour is applied. This setting can have a value from 1 hour to
+     * 12 hours.
+     * </p>
+     * <p>
+     * Anyone who assumes the role from the AWS CLI or API can use the <code>DurationSeconds</code> API parameter or the
+     * <code>duration-seconds</code> CLI parameter to request a longer session. The <code>MaxSessionDuration</code>
+     * setting determines the maximum duration that can be requested using the <code>DurationSeconds</code> parameter.
+     * If users don't specify a value for the <code>DurationSeconds</code> parameter, their security credentials are
+     * valid for one hour by default. This applies when you use the <code>AssumeRole*</code> API operations or the
+     * <code>assume-role*</code> CLI operations but does not apply when you use those operations to create a console
+     * URL. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * IAM Roles</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @param maxSessionDuration
+     *        The maximum session duration (in seconds) that you want to set for the specified role. If you do not
+     *        specify a value for this setting, the default maximum of one hour is applied. This setting can have a
+     *        value from 1 hour to 12 hours.</p>
+     *        <p>
+     *        Anyone who assumes the role from the AWS CLI or API can use the <code>DurationSeconds</code> API parameter
+     *        or the <code>duration-seconds</code> CLI parameter to request a longer session. The
+     *        <code>MaxSessionDuration</code> setting determines the maximum duration that can be requested using the
+     *        <code>DurationSeconds</code> parameter. If users don't specify a value for the
+     *        <code>DurationSeconds</code> parameter, their security credentials are valid for one hour by default. This
+     *        applies when you use the <code>AssumeRole*</code> API operations or the <code>assume-role*</code> CLI
+     *        operations but does not apply when you use those operations to create a console URL. For more information,
+     *        see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM Roles</a> in the
+     *        <i>IAM User Guide</i>.
+     */
+
+    public void setMaxSessionDuration(Integer maxSessionDuration) {
+        this.maxSessionDuration = maxSessionDuration;
+    }
+
+    /**
+     * <p>
+     * The maximum session duration (in seconds) that you want to set for the specified role. If you do not specify a
+     * value for this setting, the default maximum of one hour is applied. This setting can have a value from 1 hour to
+     * 12 hours.
+     * </p>
+     * <p>
+     * Anyone who assumes the role from the AWS CLI or API can use the <code>DurationSeconds</code> API parameter or the
+     * <code>duration-seconds</code> CLI parameter to request a longer session. The <code>MaxSessionDuration</code>
+     * setting determines the maximum duration that can be requested using the <code>DurationSeconds</code> parameter.
+     * If users don't specify a value for the <code>DurationSeconds</code> parameter, their security credentials are
+     * valid for one hour by default. This applies when you use the <code>AssumeRole*</code> API operations or the
+     * <code>assume-role*</code> CLI operations but does not apply when you use those operations to create a console
+     * URL. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * IAM Roles</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @return The maximum session duration (in seconds) that you want to set for the specified role. If you do not
+     *         specify a value for this setting, the default maximum of one hour is applied. This setting can have a
+     *         value from 1 hour to 12 hours.</p>
+     *         <p>
+     *         Anyone who assumes the role from the AWS CLI or API can use the <code>DurationSeconds</code> API
+     *         parameter or the <code>duration-seconds</code> CLI parameter to request a longer session. The
+     *         <code>MaxSessionDuration</code> setting determines the maximum duration that can be requested using the
+     *         <code>DurationSeconds</code> parameter. If users don't specify a value for the
+     *         <code>DurationSeconds</code> parameter, their security credentials are valid for one hour by default.
+     *         This applies when you use the <code>AssumeRole*</code> API operations or the <code>assume-role*</code>
+     *         CLI operations but does not apply when you use those operations to create a console URL. For more
+     *         information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
+     *         Roles</a> in the <i>IAM User Guide</i>.
+     */
+
+    public Integer getMaxSessionDuration() {
+        return this.maxSessionDuration;
+    }
+
+    /**
+     * <p>
+     * The maximum session duration (in seconds) that you want to set for the specified role. If you do not specify a
+     * value for this setting, the default maximum of one hour is applied. This setting can have a value from 1 hour to
+     * 12 hours.
+     * </p>
+     * <p>
+     * Anyone who assumes the role from the AWS CLI or API can use the <code>DurationSeconds</code> API parameter or the
+     * <code>duration-seconds</code> CLI parameter to request a longer session. The <code>MaxSessionDuration</code>
+     * setting determines the maximum duration that can be requested using the <code>DurationSeconds</code> parameter.
+     * If users don't specify a value for the <code>DurationSeconds</code> parameter, their security credentials are
+     * valid for one hour by default. This applies when you use the <code>AssumeRole*</code> API operations or the
+     * <code>assume-role*</code> CLI operations but does not apply when you use those operations to create a console
+     * URL. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * IAM Roles</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * 
+     * @param maxSessionDuration
+     *        The maximum session duration (in seconds) that you want to set for the specified role. If you do not
+     *        specify a value for this setting, the default maximum of one hour is applied. This setting can have a
+     *        value from 1 hour to 12 hours.</p>
+     *        <p>
+     *        Anyone who assumes the role from the AWS CLI or API can use the <code>DurationSeconds</code> API parameter
+     *        or the <code>duration-seconds</code> CLI parameter to request a longer session. The
+     *        <code>MaxSessionDuration</code> setting determines the maximum duration that can be requested using the
+     *        <code>DurationSeconds</code> parameter. If users don't specify a value for the
+     *        <code>DurationSeconds</code> parameter, their security credentials are valid for one hour by default. This
+     *        applies when you use the <code>AssumeRole*</code> API operations or the <code>assume-role*</code> CLI
+     *        operations but does not apply when you use those operations to create a console URL. For more information,
+     *        see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM Roles</a> in the
+     *        <i>IAM User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRoleRequest withMaxSessionDuration(Integer maxSessionDuration) {
+        setMaxSessionDuration(maxSessionDuration);
         return this;
     }
 
@@ -404,7 +639,9 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getAssumeRolePolicyDocument() != null)
             sb.append("AssumeRolePolicyDocument: ").append(getAssumeRolePolicyDocument()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getMaxSessionDuration() != null)
+            sb.append("MaxSessionDuration: ").append(getMaxSessionDuration());
         sb.append("}");
         return sb.toString();
     }
@@ -435,6 +672,10 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getMaxSessionDuration() == null ^ this.getMaxSessionDuration() == null)
+            return false;
+        if (other.getMaxSessionDuration() != null && other.getMaxSessionDuration().equals(this.getMaxSessionDuration()) == false)
+            return false;
         return true;
     }
 
@@ -447,6 +688,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getRoleName() == null) ? 0 : getRoleName().hashCode());
         hashCode = prime * hashCode + ((getAssumeRolePolicyDocument() == null) ? 0 : getAssumeRolePolicyDocument().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getMaxSessionDuration() == null) ? 0 : getMaxSessionDuration().hashCode());
         return hashCode;
     }
 

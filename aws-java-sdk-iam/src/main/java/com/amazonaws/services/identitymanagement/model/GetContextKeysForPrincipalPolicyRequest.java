@@ -28,10 +28,10 @@ public class GetContextKeysForPrincipalPolicyRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a
-     * user, the list includes context keys that are found in all policies attached to the user as well as to all groups
-     * that the user is a member of. If you pick a group or a role, then it includes only those context keys that are
-     * found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity,
-     * but must be URL encoded to be included as a part of a real HTML request.
+     * user, the list includes context keys that are found in all policies that are attached to the user. The list also
+     * includes all groups that the user is a member of. If you pick a group or a role, then it includes only those
+     * context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded
+     * form here for clarity, but must be URL encoded to be included as a part of a real HTML request.
      * </p>
      * <p>
      * For more information about ARNs, see <a
@@ -46,20 +46,35 @@ public class GetContextKeysForPrincipalPolicyRequest extends com.amazonaws.Amazo
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> policyInputList;
 
     /**
      * <p>
      * The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a
-     * user, the list includes context keys that are found in all policies attached to the user as well as to all groups
-     * that the user is a member of. If you pick a group or a role, then it includes only those context keys that are
-     * found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity,
-     * but must be URL encoded to be included as a part of a real HTML request.
+     * user, the list includes context keys that are found in all policies that are attached to the user. The list also
+     * includes all groups that the user is a member of. If you pick a group or a role, then it includes only those
+     * context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded
+     * form here for clarity, but must be URL encoded to be included as a part of a real HTML request.
      * </p>
      * <p>
      * For more information about ARNs, see <a
@@ -69,11 +84,11 @@ public class GetContextKeysForPrincipalPolicyRequest extends com.amazonaws.Amazo
      * 
      * @param policySourceArn
      *        The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you
-     *        specify a user, the list includes context keys that are found in all policies attached to the user as well
-     *        as to all groups that the user is a member of. If you pick a group or a role, then it includes only those
-     *        context keys that are found in policies attached to that entity. Note that all parameters are shown in
-     *        unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML
-     *        request.</p>
+     *        specify a user, the list includes context keys that are found in all policies that are attached to the
+     *        user. The list also includes all groups that the user is a member of. If you pick a group or a role, then
+     *        it includes only those context keys that are found in policies attached to that entity. Note that all
+     *        parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part
+     *        of a real HTML request.</p>
      *        <p>
      *        For more information about ARNs, see <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
@@ -87,10 +102,10 @@ public class GetContextKeysForPrincipalPolicyRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a
-     * user, the list includes context keys that are found in all policies attached to the user as well as to all groups
-     * that the user is a member of. If you pick a group or a role, then it includes only those context keys that are
-     * found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity,
-     * but must be URL encoded to be included as a part of a real HTML request.
+     * user, the list includes context keys that are found in all policies that are attached to the user. The list also
+     * includes all groups that the user is a member of. If you pick a group or a role, then it includes only those
+     * context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded
+     * form here for clarity, but must be URL encoded to be included as a part of a real HTML request.
      * </p>
      * <p>
      * For more information about ARNs, see <a
@@ -99,11 +114,11 @@ public class GetContextKeysForPrincipalPolicyRequest extends com.amazonaws.Amazo
      * </p>
      * 
      * @return The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you
-     *         specify a user, the list includes context keys that are found in all policies attached to the user as
-     *         well as to all groups that the user is a member of. If you pick a group or a role, then it includes only
-     *         those context keys that are found in policies attached to that entity. Note that all parameters are shown
-     *         in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML
-     *         request.</p>
+     *         specify a user, the list includes context keys that are found in all policies that are attached to the
+     *         user. The list also includes all groups that the user is a member of. If you pick a group or a role, then
+     *         it includes only those context keys that are found in policies attached to that entity. Note that all
+     *         parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part
+     *         of a real HTML request.</p>
      *         <p>
      *         For more information about ARNs, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
@@ -117,10 +132,10 @@ public class GetContextKeysForPrincipalPolicyRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a
-     * user, the list includes context keys that are found in all policies attached to the user as well as to all groups
-     * that the user is a member of. If you pick a group or a role, then it includes only those context keys that are
-     * found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity,
-     * but must be URL encoded to be included as a part of a real HTML request.
+     * user, the list includes context keys that are found in all policies that are attached to the user. The list also
+     * includes all groups that the user is a member of. If you pick a group or a role, then it includes only those
+     * context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded
+     * form here for clarity, but must be URL encoded to be included as a part of a real HTML request.
      * </p>
      * <p>
      * For more information about ARNs, see <a
@@ -130,11 +145,11 @@ public class GetContextKeysForPrincipalPolicyRequest extends com.amazonaws.Amazo
      * 
      * @param policySourceArn
      *        The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you
-     *        specify a user, the list includes context keys that are found in all policies attached to the user as well
-     *        as to all groups that the user is a member of. If you pick a group or a role, then it includes only those
-     *        context keys that are found in policies attached to that entity. Note that all parameters are shown in
-     *        unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML
-     *        request.</p>
+     *        specify a user, the list includes context keys that are found in all policies that are attached to the
+     *        user. The list also includes all groups that the user is a member of. If you pick a group or a role, then
+     *        it includes only those context keys that are found in policies attached to that entity. Note that all
+     *        parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part
+     *        of a real HTML request.</p>
      *        <p>
      *        For more information about ARNs, see <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
@@ -153,19 +168,49 @@ public class GetContextKeysForPrincipalPolicyRequest extends com.amazonaws.Amazo
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return An optional list of additional policies for which you want the list of context keys that are
      *         referenced.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *         string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *         through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *         Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *         feed ( ), and carriage return ( ).
+     *         string of characters consisting of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *         range
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The special characters tab ( ), line feed ( ), and carriage return ( )
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<String> getPolicyInputList() {
@@ -181,20 +226,50 @@ public class GetContextKeysForPrincipalPolicyRequest extends com.amazonaws.Amazo
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param policyInputList
      *        An optional list of additional policies for which you want the list of context keys that are
      *        referenced.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *        feed ( ), and carriage return ( ).
+     *        string of characters consisting of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *        range
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The special characters tab ( ), line feed ( ), and carriage return ( )
+     *        </p>
+     *        </li>
      */
 
     public void setPolicyInputList(java.util.Collection<String> policyInputList) {
@@ -212,10 +287,25 @@ public class GetContextKeysForPrincipalPolicyRequest extends com.amazonaws.Amazo
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setPolicyInputList(java.util.Collection)} or {@link #withPolicyInputList(java.util.Collection)} if you
@@ -227,10 +317,25 @@ public class GetContextKeysForPrincipalPolicyRequest extends com.amazonaws.Amazo
      *        referenced.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *        feed ( ), and carriage return ( ).
+     *        string of characters consisting of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *        range
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The special characters tab ( ), line feed ( ), and carriage return ( )
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -250,20 +355,50 @@ public class GetContextKeysForPrincipalPolicyRequest extends com.amazonaws.Amazo
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of
-     * characters consisting of any printable ASCII character ranging from the space character ( ) through end of the
-     * ASCII character range as well as the printable characters in the Basic Latin and Latin-1 Supplement character set
-     * (through \u00FF). It also includes the special characters tab ( ), line feed ( ), and carriage return ( ).
+     * characters consisting of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character range
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The special characters tab ( ), line feed ( ), and carriage return ( )
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param policyInputList
      *        An optional list of additional policies for which you want the list of context keys that are
      *        referenced.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
-     *        string of characters consisting of any printable ASCII character ranging from the space character ( )
-     *        through end of the ASCII character range as well as the printable characters in the Basic Latin and
-     *        Latin-1 Supplement character set (through \u00FF). It also includes the special characters tab ( ), line
-     *        feed ( ), and carriage return ( ).
+     *        string of characters consisting of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Any printable ASCII character ranging from the space character ( ) through the end of the ASCII character
+     *        range
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The special characters tab ( ), line feed ( ), and carriage return ( )
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

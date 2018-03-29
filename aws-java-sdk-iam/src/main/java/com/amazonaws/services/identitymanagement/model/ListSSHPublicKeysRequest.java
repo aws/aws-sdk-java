@@ -27,13 +27,13 @@ public class ListSSHPublicKeysRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the IAM user to list SSH public keys for. If none is specified, the UserName field is determined
-     * implicitly based on the AWS access key used to sign the request.
+     * The name of the IAM user to list SSH public keys for. If none is specified, the <code>UserName</code> field is
+     * determined implicitly based on the AWS access key used to sign the request.
      * </p>
      * <p>
      * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: _+=,.@-
      * </p>
      */
     private String userName;
@@ -62,22 +62,22 @@ public class ListSSHPublicKeysRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the IAM user to list SSH public keys for. If none is specified, the UserName field is determined
-     * implicitly based on the AWS access key used to sign the request.
+     * The name of the IAM user to list SSH public keys for. If none is specified, the <code>UserName</code> field is
+     * determined implicitly based on the AWS access key used to sign the request.
      * </p>
      * <p>
      * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @param userName
-     *        The name of the IAM user to list SSH public keys for. If none is specified, the UserName field is
-     *        determined implicitly based on the AWS access key used to sign the request.</p>
+     *        The name of the IAM user to list SSH public keys for. If none is specified, the <code>UserName</code>
+     *        field is determined implicitly based on the AWS access key used to sign the request.</p>
      *        <p>
      *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =,.@-
+     *        any of the following characters: _+=,.@-
      */
 
     public void setUserName(String userName) {
@@ -86,21 +86,21 @@ public class ListSSHPublicKeysRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the IAM user to list SSH public keys for. If none is specified, the UserName field is determined
-     * implicitly based on the AWS access key used to sign the request.
+     * The name of the IAM user to list SSH public keys for. If none is specified, the <code>UserName</code> field is
+     * determined implicitly based on the AWS access key used to sign the request.
      * </p>
      * <p>
      * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: _+=,.@-
      * </p>
      * 
-     * @return The name of the IAM user to list SSH public keys for. If none is specified, the UserName field is
-     *         determined implicitly based on the AWS access key used to sign the request.</p>
+     * @return The name of the IAM user to list SSH public keys for. If none is specified, the <code>UserName</code>
+     *         field is determined implicitly based on the AWS access key used to sign the request.</p>
      *         <p>
      *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *         any of the following characters: =,.@-
+     *         any of the following characters: _+=,.@-
      */
 
     public String getUserName() {
@@ -109,22 +109,22 @@ public class ListSSHPublicKeysRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the IAM user to list SSH public keys for. If none is specified, the UserName field is determined
-     * implicitly based on the AWS access key used to sign the request.
+     * The name of the IAM user to list SSH public keys for. If none is specified, the <code>UserName</code> field is
+     * determined implicitly based on the AWS access key used to sign the request.
      * </p>
      * <p>
      * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @param userName
-     *        The name of the IAM user to list SSH public keys for. If none is specified, the UserName field is
-     *        determined implicitly based on the AWS access key used to sign the request.</p>
+     *        The name of the IAM user to list SSH public keys for. If none is specified, the <code>UserName</code>
+     *        field is determined implicitly based on the AWS access key used to sign the request.</p>
      *        <p>
      *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =,.@-
+     *        any of the following characters: _+=,.@-
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

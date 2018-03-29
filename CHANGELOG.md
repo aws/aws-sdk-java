@@ -1,3 +1,16 @@
+# __1.11.304__ __2018-03-28__
+## __AWS Identity and Access Management__
+  - ### Features
+    - Add support for Longer Role Sessions. Four APIs manage max session duration: GetRole, ListRoles, CreateRole, and the new API UpdateRole. The max session duration integer attribute is measured in seconds.
+
+## __AWS Security Token Service__
+  - ### Features
+    - Change utilizes the Max Session Duration attribute introduced for IAM Roles and allows STS customers to request session duration up to the Max Session Duration of 12 hours from AssumeRole based APIs.
+
+## __Amazon Mechanical Turk__
+  - ### Features
+    - Added a new attribute "ActionsGuarded" to QualificationRequirement: This update allows MTurk Requester customers using the AWS SDK to control which Workers can see and preview their HITs. We now support hiding HITs from unqualified Workers' search results.
+
 # __1.11.303__ __2018-03-27__
 ## __AWS Certificate Manager__
   - ### Features

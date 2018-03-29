@@ -2001,6 +2001,19 @@ public class AbstractAmazonIdentityManagementAsync extends AbstractAmazonIdentit
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateRoleResult> updateRoleAsync(UpdateRoleRequest request) {
+
+        return updateRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRoleResult> updateRoleAsync(UpdateRoleRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateRoleRequest, UpdateRoleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateRoleDescriptionResult> updateRoleDescriptionAsync(UpdateRoleDescriptionRequest request) {
 
         return updateRoleDescriptionAsync(request, null);

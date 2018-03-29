@@ -68,6 +68,10 @@ public class QualificationRequirementJsonUnmarshaller implements Unmarshaller<Qu
                     context.nextToken();
                     qualificationRequirement.setRequiredToPreview(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("ActionsGuarded", targetDepth)) {
+                    context.nextToken();
+                    qualificationRequirement.setActionsGuarded(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

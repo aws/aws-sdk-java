@@ -709,6 +709,11 @@ public class AbstractAmazonIdentityManagement implements AmazonIdentityManagemen
     }
 
     @Override
+    public UpdateRoleResult updateRole(UpdateRoleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateRoleDescriptionResult updateRoleDescription(UpdateRoleDescriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

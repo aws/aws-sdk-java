@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Contains information about a server certificate.
  * </p>
  * <p>
- * This data type is used as a response element in the <a>GetServerCertificate</a> action.
+ * This data type is used as a response element in the <a>GetServerCertificate</a> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ServerCertificate" target="_top">AWS API

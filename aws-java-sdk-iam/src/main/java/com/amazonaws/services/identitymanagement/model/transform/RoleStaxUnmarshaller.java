@@ -77,6 +77,11 @@ public class RoleStaxUnmarshaller implements Unmarshaller<Role, StaxUnmarshaller
                     role.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("MaxSessionDuration", targetDepth)) {
+                    role.setMaxSessionDuration(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return role;

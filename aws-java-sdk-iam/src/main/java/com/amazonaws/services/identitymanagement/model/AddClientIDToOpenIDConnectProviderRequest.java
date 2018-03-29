@@ -28,7 +28,7 @@ public class AddClientIDToOpenIDConnectProviderRequest extends com.amazonaws.Ama
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider resource to add the client ID to. You
-     * can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.
+     * can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> operation.
      * </p>
      */
     private String openIDConnectProviderArn;
@@ -42,12 +42,12 @@ public class AddClientIDToOpenIDConnectProviderRequest extends com.amazonaws.Ama
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider resource to add the client ID to. You
-     * can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.
+     * can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> operation.
      * </p>
      * 
      * @param openIDConnectProviderArn
      *        The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider resource to add the client ID to.
-     *        You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.
+     *        You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> operation.
      */
 
     public void setOpenIDConnectProviderArn(String openIDConnectProviderArn) {
@@ -57,11 +57,11 @@ public class AddClientIDToOpenIDConnectProviderRequest extends com.amazonaws.Ama
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider resource to add the client ID to. You
-     * can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.
+     * can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> operation.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider resource to add the client ID
-     *         to. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.
+     *         to. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> operation.
      */
 
     public String getOpenIDConnectProviderArn() {
@@ -71,12 +71,12 @@ public class AddClientIDToOpenIDConnectProviderRequest extends com.amazonaws.Ama
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider resource to add the client ID to. You
-     * can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.
+     * can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> operation.
      * </p>
      * 
      * @param openIDConnectProviderArn
      *        The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider resource to add the client ID to.
-     *        You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> action.
+     *        You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

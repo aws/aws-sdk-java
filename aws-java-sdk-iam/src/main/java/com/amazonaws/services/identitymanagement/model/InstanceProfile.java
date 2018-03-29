@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Contains information about an instance profile.
  * </p>
  * <p>
- * This data type is used as a response element in the following actions:
+ * This data type is used as a response element in the following operations:
  * </p>
  * <ul>
  * <li>

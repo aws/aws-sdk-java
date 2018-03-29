@@ -32,7 +32,7 @@ public class UpdateAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: _+=,.@-
      * </p>
      */
     private String userName;
@@ -48,8 +48,8 @@ public class UpdateAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
     private String accessKeyId;
     /**
      * <p>
-     * The status you want to assign to the secret access key. <code>Active</code> means the key can be used for API
-     * calls to AWS, while <code>Inactive</code> means the key cannot be used.
+     * The status you want to assign to the secret access key. <code>Active</code> means that the key can be used for
+     * API calls to AWS, while <code>Inactive</code> means that the key cannot be used.
      * </p>
      */
     private String status;
@@ -71,8 +71,8 @@ public class UpdateAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
      *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters that can consist of any upper or lowercased letter or digit.
      * @param status
-     *        The status you want to assign to the secret access key. <code>Active</code> means the key can be used for
-     *        API calls to AWS, while <code>Inactive</code> means the key cannot be used.
+     *        The status you want to assign to the secret access key. <code>Active</code> means that the key can be used
+     *        for API calls to AWS, while <code>Inactive</code> means that the key cannot be used.
      */
     public UpdateAccessKeyRequest(String accessKeyId, String status) {
         setAccessKeyId(accessKeyId);
@@ -89,8 +89,8 @@ public class UpdateAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
      *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters that can consist of any upper or lowercased letter or digit.
      * @param status
-     *        The status you want to assign to the secret access key. <code>Active</code> means the key can be used for
-     *        API calls to AWS, while <code>Inactive</code> means the key cannot be used.
+     *        The status you want to assign to the secret access key. <code>Active</code> means that the key can be used
+     *        for API calls to AWS, while <code>Inactive</code> means that the key cannot be used.
      */
     public UpdateAccessKeyRequest(String accessKeyId, StatusType status) {
         setAccessKeyId(accessKeyId);
@@ -106,7 +106,7 @@ public class UpdateAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =,.@-
+     *        any of the following characters: _+=,.@-
      * @param accessKeyId
      *        The access key ID of the secret access key you want to update.
      *        </p>
@@ -114,8 +114,8 @@ public class UpdateAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
      *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters that can consist of any upper or lowercased letter or digit.
      * @param status
-     *        The status you want to assign to the secret access key. <code>Active</code> means the key can be used for
-     *        API calls to AWS, while <code>Inactive</code> means the key cannot be used.
+     *        The status you want to assign to the secret access key. <code>Active</code> means that the key can be used
+     *        for API calls to AWS, while <code>Inactive</code> means that the key cannot be used.
      */
     public UpdateAccessKeyRequest(String userName, String accessKeyId, String status) {
         setUserName(userName);
@@ -132,7 +132,7 @@ public class UpdateAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =,.@-
+     *        any of the following characters: _+=,.@-
      * @param accessKeyId
      *        The access key ID of the secret access key you want to update.
      *        </p>
@@ -140,8 +140,8 @@ public class UpdateAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
      *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters that can consist of any upper or lowercased letter or digit.
      * @param status
-     *        The status you want to assign to the secret access key. <code>Active</code> means the key can be used for
-     *        API calls to AWS, while <code>Inactive</code> means the key cannot be used.
+     *        The status you want to assign to the secret access key. <code>Active</code> means that the key can be used
+     *        for API calls to AWS, while <code>Inactive</code> means that the key cannot be used.
      */
     public UpdateAccessKeyRequest(String userName, String accessKeyId, StatusType status) {
         setUserName(userName);
@@ -156,7 +156,7 @@ public class UpdateAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @param userName
@@ -164,7 +164,7 @@ public class UpdateAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =,.@-
+     *        any of the following characters: _+=,.@-
      */
 
     public void setUserName(String userName) {
@@ -178,14 +178,14 @@ public class UpdateAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @return The name of the user whose key you want to update.</p>
      *         <p>
      *         This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *         characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *         any of the following characters: =,.@-
+     *         any of the following characters: _+=,.@-
      */
 
     public String getUserName() {
@@ -199,7 +199,7 @@ public class UpdateAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of
-     * the following characters: =,.@-
+     * the following characters: _+=,.@-
      * </p>
      * 
      * @param userName
@@ -207,7 +207,7 @@ public class UpdateAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      *        characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include
-     *        any of the following characters: =,.@-
+     *        any of the following characters: _+=,.@-
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,13 +279,13 @@ public class UpdateAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The status you want to assign to the secret access key. <code>Active</code> means the key can be used for API
-     * calls to AWS, while <code>Inactive</code> means the key cannot be used.
+     * The status you want to assign to the secret access key. <code>Active</code> means that the key can be used for
+     * API calls to AWS, while <code>Inactive</code> means that the key cannot be used.
      * </p>
      * 
      * @param status
-     *        The status you want to assign to the secret access key. <code>Active</code> means the key can be used for
-     *        API calls to AWS, while <code>Inactive</code> means the key cannot be used.
+     *        The status you want to assign to the secret access key. <code>Active</code> means that the key can be used
+     *        for API calls to AWS, while <code>Inactive</code> means that the key cannot be used.
      * @see StatusType
      */
 
@@ -295,12 +295,12 @@ public class UpdateAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The status you want to assign to the secret access key. <code>Active</code> means the key can be used for API
-     * calls to AWS, while <code>Inactive</code> means the key cannot be used.
+     * The status you want to assign to the secret access key. <code>Active</code> means that the key can be used for
+     * API calls to AWS, while <code>Inactive</code> means that the key cannot be used.
      * </p>
      * 
-     * @return The status you want to assign to the secret access key. <code>Active</code> means the key can be used for
-     *         API calls to AWS, while <code>Inactive</code> means the key cannot be used.
+     * @return The status you want to assign to the secret access key. <code>Active</code> means that the key can be
+     *         used for API calls to AWS, while <code>Inactive</code> means that the key cannot be used.
      * @see StatusType
      */
 
@@ -310,13 +310,13 @@ public class UpdateAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The status you want to assign to the secret access key. <code>Active</code> means the key can be used for API
-     * calls to AWS, while <code>Inactive</code> means the key cannot be used.
+     * The status you want to assign to the secret access key. <code>Active</code> means that the key can be used for
+     * API calls to AWS, while <code>Inactive</code> means that the key cannot be used.
      * </p>
      * 
      * @param status
-     *        The status you want to assign to the secret access key. <code>Active</code> means the key can be used for
-     *        API calls to AWS, while <code>Inactive</code> means the key cannot be used.
+     *        The status you want to assign to the secret access key. <code>Active</code> means that the key can be used
+     *        for API calls to AWS, while <code>Inactive</code> means that the key cannot be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusType
      */
@@ -328,13 +328,13 @@ public class UpdateAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The status you want to assign to the secret access key. <code>Active</code> means the key can be used for API
-     * calls to AWS, while <code>Inactive</code> means the key cannot be used.
+     * The status you want to assign to the secret access key. <code>Active</code> means that the key can be used for
+     * API calls to AWS, while <code>Inactive</code> means that the key cannot be used.
      * </p>
      * 
      * @param status
-     *        The status you want to assign to the secret access key. <code>Active</code> means the key can be used for
-     *        API calls to AWS, while <code>Inactive</code> means the key cannot be used.
+     *        The status you want to assign to the secret access key. <code>Active</code> means that the key can be used
+     *        for API calls to AWS, while <code>Inactive</code> means that the key cannot be used.
      * @see StatusType
      */
 
@@ -344,13 +344,13 @@ public class UpdateAccessKeyRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The status you want to assign to the secret access key. <code>Active</code> means the key can be used for API
-     * calls to AWS, while <code>Inactive</code> means the key cannot be used.
+     * The status you want to assign to the secret access key. <code>Active</code> means that the key can be used for
+     * API calls to AWS, while <code>Inactive</code> means that the key cannot be used.
      * </p>
      * 
      * @param status
-     *        The status you want to assign to the secret access key. <code>Active</code> means the key can be used for
-     *        API calls to AWS, while <code>Inactive</code> means the key cannot be used.
+     *        The status you want to assign to the secret access key. <code>Active</code> means that the key can be used
+     *        for API calls to AWS, while <code>Inactive</code> means that the key cannot be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusType
      */
