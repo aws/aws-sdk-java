@@ -16,7 +16,6 @@ package com.amazonaws.util;
 
 import javax.xml.bind.DatatypeConverter;
 import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
 
 import com.amazonaws.log.InternalLogApi;
 import com.amazonaws.log.InternalLogFactory;
@@ -35,20 +34,33 @@ public enum Base64 {
     ;
     private static final InternalLogApi LOG = InternalLogFactory.getLog(Base64.class);
     private static final Base64Codec codec = new Base64Codec();
+    private static final boolean isJaxbAvailable;
 
     static {
-        Map<String,String> inconsistentJaxbImpls = new HashMap<String, String>();
-        inconsistentJaxbImpls.put("org.apache.ws.jaxme.impl.JAXBContextImpl", "Apache JaxMe");
-
+        boolean available;
         try {
-            String className = JAXBContext.newInstance().getClass().getName();
-            if (inconsistentJaxbImpls.containsKey(className)) {
-                LOG.warn("A JAXB implementation known to produce base64 encodings that are " +
-                        "inconsistent with the reference implementation has been detected. The " +
-                        "results of the encodeAsString() method may be incorrect. Implementation: " +
-                        inconsistentJaxbImpls.get(className));
+            Class.forName("javax.xml.bind.DatatypeConverter");
+            available = true;
+        } catch (Exception e) {
+            available = false;
+        }
+        isJaxbAvailable = available;
+        if (isJaxbAvailable) {
+            Map<String, String> inconsistentJaxbImpls = new HashMap<String, String>();
+            inconsistentJaxbImpls.put("org.apache.ws.jaxme.impl.JAXBContextImpl", "Apache JaxMe");
+
+            try {
+                String className = JAXBContext.newInstance().getClass().getName();
+                if (inconsistentJaxbImpls.containsKey(className)) {
+                    LOG.warn("A JAXB implementation known to produce base64 encodings that are " +
+                            "inconsistent with the reference implementation has been detected. The " +
+                            "results of the encodeAsString() method may be incorrect. Implementation: " +
+                            inconsistentJaxbImpls.get(className));
+                }
+            } catch (Exception ignored) {
             }
-        } catch (JAXBException ignored) {
+        } else {
+            LOG.warn("JAXB is unavailable");
         }
     }
 
@@ -58,7 +70,7 @@ public enum Base64 {
     public static String encodeAsString(byte ... bytes) {
         if (bytes == null)
             return null;
-        try {
+        if (isJaxbAvailable) try {
             return DatatypeConverter.printBase64Binary(bytes);
         } catch (NullPointerException ex) {
             // https://netbeans.org/bugzilla/show_bug.cgi?id=224923
