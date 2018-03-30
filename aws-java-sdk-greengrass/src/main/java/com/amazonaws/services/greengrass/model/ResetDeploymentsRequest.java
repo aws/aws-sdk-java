@@ -18,7 +18,7 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Information needed to perform a reset of a group's deployments.
+ * Information needed to reset deployments.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ResetDeployments" target="_top">AWS API
  *      Documentation</a>
@@ -26,18 +26,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResetDeploymentsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The client token used to request idempotent operations. */
+    /** A client token used to correlate requests and responses. */
     private String amznClientToken;
-    /** When set to true, perform a best-effort only core reset. */
+    /** If true, performs a best-effort only core reset. */
     private Boolean force;
-    /** The unique Id of the AWS Greengrass Group */
+    /** The ID of the AWS Greengrass group. */
     private String groupId;
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      * 
      * @param amznClientToken
-     *        The client token used to request idempotent operations.
+     *        A client token used to correlate requests and responses.
      */
 
     public void setAmznClientToken(String amznClientToken) {
@@ -45,9 +45,9 @@ public class ResetDeploymentsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      * 
-     * @return The client token used to request idempotent operations.
+     * @return A client token used to correlate requests and responses.
      */
 
     public String getAmznClientToken() {
@@ -55,10 +55,10 @@ public class ResetDeploymentsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      * 
      * @param amznClientToken
-     *        The client token used to request idempotent operations.
+     *        A client token used to correlate requests and responses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -68,10 +68,10 @@ public class ResetDeploymentsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * When set to true, perform a best-effort only core reset.
+     * If true, performs a best-effort only core reset.
      * 
      * @param force
-     *        When set to true, perform a best-effort only core reset.
+     *        If true, performs a best-effort only core reset.
      */
 
     public void setForce(Boolean force) {
@@ -79,9 +79,9 @@ public class ResetDeploymentsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * When set to true, perform a best-effort only core reset.
+     * If true, performs a best-effort only core reset.
      * 
-     * @return When set to true, perform a best-effort only core reset.
+     * @return If true, performs a best-effort only core reset.
      */
 
     public Boolean getForce() {
@@ -89,10 +89,10 @@ public class ResetDeploymentsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * When set to true, perform a best-effort only core reset.
+     * If true, performs a best-effort only core reset.
      * 
      * @param force
-     *        When set to true, perform a best-effort only core reset.
+     *        If true, performs a best-effort only core reset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,9 +102,9 @@ public class ResetDeploymentsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * When set to true, perform a best-effort only core reset.
+     * If true, performs a best-effort only core reset.
      * 
-     * @return When set to true, perform a best-effort only core reset.
+     * @return If true, performs a best-effort only core reset.
      */
 
     public Boolean isForce() {
@@ -112,10 +112,10 @@ public class ResetDeploymentsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      * 
      * @param groupId
-     *        The unique Id of the AWS Greengrass Group
+     *        The ID of the AWS Greengrass group.
      */
 
     public void setGroupId(String groupId) {
@@ -123,9 +123,9 @@ public class ResetDeploymentsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      * 
-     * @return The unique Id of the AWS Greengrass Group
+     * @return The ID of the AWS Greengrass group.
      */
 
     public String getGroupId() {
@@ -133,10 +133,10 @@ public class ResetDeploymentsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      * 
      * @param groupId
-     *        The unique Id of the AWS Greengrass Group
+     *        The ID of the AWS Greengrass group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

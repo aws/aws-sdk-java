@@ -25,16 +25,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateSubscriptionDefinitionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** name of the definition */
+    /** The name of the definition. */
     private String name;
-    /** subscription definition Id */
+    /** The ID of the subscription definition. */
     private String subscriptionDefinitionId;
 
     /**
-     * name of the definition
+     * The name of the definition.
      * 
      * @param name
-     *        name of the definition
+     *        The name of the definition.
      */
 
     public void setName(String name) {
@@ -42,9 +42,9 @@ public class UpdateSubscriptionDefinitionRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * name of the definition
+     * The name of the definition.
      * 
-     * @return name of the definition
+     * @return The name of the definition.
      */
 
     public String getName() {
@@ -52,10 +52,10 @@ public class UpdateSubscriptionDefinitionRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * name of the definition
+     * The name of the definition.
      * 
      * @param name
-     *        name of the definition
+     *        The name of the definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -65,10 +65,10 @@ public class UpdateSubscriptionDefinitionRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      * 
      * @param subscriptionDefinitionId
-     *        subscription definition Id
+     *        The ID of the subscription definition.
      */
 
     public void setSubscriptionDefinitionId(String subscriptionDefinitionId) {
@@ -76,9 +76,9 @@ public class UpdateSubscriptionDefinitionRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      * 
-     * @return subscription definition Id
+     * @return The ID of the subscription definition.
      */
 
     public String getSubscriptionDefinitionId() {
@@ -86,10 +86,10 @@ public class UpdateSubscriptionDefinitionRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      * 
      * @param subscriptionDefinitionId
-     *        subscription definition Id
+     *        The ID of the subscription definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

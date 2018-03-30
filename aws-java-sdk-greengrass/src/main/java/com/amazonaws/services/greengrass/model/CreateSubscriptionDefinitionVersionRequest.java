@@ -25,18 +25,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateSubscriptionDefinitionVersionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The client token used to request idempotent operations. */
+    /** A client token used to correlate requests and responses. */
     private String amznClientToken;
-    /** subscription definition Id */
+    /** The ID of the subscription definition. */
     private String subscriptionDefinitionId;
-    /** Subscriptions in the version. */
+    /** A list of subscriptions. */
     private java.util.List<Subscription> subscriptions;
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      * 
      * @param amznClientToken
-     *        The client token used to request idempotent operations.
+     *        A client token used to correlate requests and responses.
      */
 
     public void setAmznClientToken(String amznClientToken) {
@@ -44,9 +44,9 @@ public class CreateSubscriptionDefinitionVersionRequest extends com.amazonaws.Am
     }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      * 
-     * @return The client token used to request idempotent operations.
+     * @return A client token used to correlate requests and responses.
      */
 
     public String getAmznClientToken() {
@@ -54,10 +54,10 @@ public class CreateSubscriptionDefinitionVersionRequest extends com.amazonaws.Am
     }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      * 
      * @param amznClientToken
-     *        The client token used to request idempotent operations.
+     *        A client token used to correlate requests and responses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -67,10 +67,10 @@ public class CreateSubscriptionDefinitionVersionRequest extends com.amazonaws.Am
     }
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      * 
      * @param subscriptionDefinitionId
-     *        subscription definition Id
+     *        The ID of the subscription definition.
      */
 
     public void setSubscriptionDefinitionId(String subscriptionDefinitionId) {
@@ -78,9 +78,9 @@ public class CreateSubscriptionDefinitionVersionRequest extends com.amazonaws.Am
     }
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      * 
-     * @return subscription definition Id
+     * @return The ID of the subscription definition.
      */
 
     public String getSubscriptionDefinitionId() {
@@ -88,10 +88,10 @@ public class CreateSubscriptionDefinitionVersionRequest extends com.amazonaws.Am
     }
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      * 
      * @param subscriptionDefinitionId
-     *        subscription definition Id
+     *        The ID of the subscription definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,9 +101,9 @@ public class CreateSubscriptionDefinitionVersionRequest extends com.amazonaws.Am
     }
 
     /**
-     * Subscriptions in the version.
+     * A list of subscriptions.
      * 
-     * @return Subscriptions in the version.
+     * @return A list of subscriptions.
      */
 
     public java.util.List<Subscription> getSubscriptions() {
@@ -111,10 +111,10 @@ public class CreateSubscriptionDefinitionVersionRequest extends com.amazonaws.Am
     }
 
     /**
-     * Subscriptions in the version.
+     * A list of subscriptions.
      * 
      * @param subscriptions
-     *        Subscriptions in the version.
+     *        A list of subscriptions.
      */
 
     public void setSubscriptions(java.util.Collection<Subscription> subscriptions) {
@@ -127,7 +127,7 @@ public class CreateSubscriptionDefinitionVersionRequest extends com.amazonaws.Am
     }
 
     /**
-     * Subscriptions in the version.
+     * A list of subscriptions.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSubscriptions(java.util.Collection)} or {@link #withSubscriptions(java.util.Collection)} if you want
@@ -135,7 +135,7 @@ public class CreateSubscriptionDefinitionVersionRequest extends com.amazonaws.Am
      * </p>
      * 
      * @param subscriptions
-     *        Subscriptions in the version.
+     *        A list of subscriptions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,10 +150,10 @@ public class CreateSubscriptionDefinitionVersionRequest extends com.amazonaws.Am
     }
 
     /**
-     * Subscriptions in the version.
+     * A list of subscriptions.
      * 
      * @param subscriptions
-     *        Subscriptions in the version.
+     *        A list of subscriptions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

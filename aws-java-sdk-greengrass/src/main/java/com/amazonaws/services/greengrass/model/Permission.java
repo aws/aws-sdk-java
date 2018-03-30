@@ -15,7 +15,7 @@ package com.amazonaws.services.greengrass.model;
 import javax.annotation.Generated;
 
 /**
- * Type of permissions a function could have to access a resource.
+ * The type of permission a function has to access a resource.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Permission {

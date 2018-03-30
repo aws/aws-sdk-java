@@ -25,28 +25,28 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The client token used to request idempotent operations. */
+    /** A client token used to correlate requests and responses. */
     private String amznClientToken;
-    /** Core definition version arn for this group. */
+    /** The ARN of the core definition version for this group. */
     private String coreDefinitionVersionArn;
-    /** Device definition version arn for this group. */
+    /** The ARN of the device definition version for this group. */
     private String deviceDefinitionVersionArn;
-    /** Function definition version arn for this group. */
+    /** The ARN of the function definition version for this group. */
     private String functionDefinitionVersionArn;
-    /** The unique Id of the AWS Greengrass Group */
+    /** The ID of the AWS Greengrass group. */
     private String groupId;
-    /** Logger definition version arn for this group. */
+    /** The ARN of the logger definition version for this group. */
     private String loggerDefinitionVersionArn;
-    /** Resource definition version arn for this group. */
+    /** The resource definition version ARN for this group. */
     private String resourceDefinitionVersionArn;
-    /** Subscription definition version arn for this group. */
+    /** The ARN of the subscription definition version for this group. */
     private String subscriptionDefinitionVersionArn;
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      * 
      * @param amznClientToken
-     *        The client token used to request idempotent operations.
+     *        A client token used to correlate requests and responses.
      */
 
     public void setAmznClientToken(String amznClientToken) {
@@ -54,9 +54,9 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      * 
-     * @return The client token used to request idempotent operations.
+     * @return A client token used to correlate requests and responses.
      */
 
     public String getAmznClientToken() {
@@ -64,10 +64,10 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      * 
      * @param amznClientToken
-     *        The client token used to request idempotent operations.
+     *        A client token used to correlate requests and responses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -77,10 +77,10 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Core definition version arn for this group.
+     * The ARN of the core definition version for this group.
      * 
      * @param coreDefinitionVersionArn
-     *        Core definition version arn for this group.
+     *        The ARN of the core definition version for this group.
      */
 
     public void setCoreDefinitionVersionArn(String coreDefinitionVersionArn) {
@@ -88,9 +88,9 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Core definition version arn for this group.
+     * The ARN of the core definition version for this group.
      * 
-     * @return Core definition version arn for this group.
+     * @return The ARN of the core definition version for this group.
      */
 
     public String getCoreDefinitionVersionArn() {
@@ -98,10 +98,10 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Core definition version arn for this group.
+     * The ARN of the core definition version for this group.
      * 
      * @param coreDefinitionVersionArn
-     *        Core definition version arn for this group.
+     *        The ARN of the core definition version for this group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,10 +111,10 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Device definition version arn for this group.
+     * The ARN of the device definition version for this group.
      * 
      * @param deviceDefinitionVersionArn
-     *        Device definition version arn for this group.
+     *        The ARN of the device definition version for this group.
      */
 
     public void setDeviceDefinitionVersionArn(String deviceDefinitionVersionArn) {
@@ -122,9 +122,9 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Device definition version arn for this group.
+     * The ARN of the device definition version for this group.
      * 
-     * @return Device definition version arn for this group.
+     * @return The ARN of the device definition version for this group.
      */
 
     public String getDeviceDefinitionVersionArn() {
@@ -132,10 +132,10 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Device definition version arn for this group.
+     * The ARN of the device definition version for this group.
      * 
      * @param deviceDefinitionVersionArn
-     *        Device definition version arn for this group.
+     *        The ARN of the device definition version for this group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,10 +145,10 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Function definition version arn for this group.
+     * The ARN of the function definition version for this group.
      * 
      * @param functionDefinitionVersionArn
-     *        Function definition version arn for this group.
+     *        The ARN of the function definition version for this group.
      */
 
     public void setFunctionDefinitionVersionArn(String functionDefinitionVersionArn) {
@@ -156,9 +156,9 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Function definition version arn for this group.
+     * The ARN of the function definition version for this group.
      * 
-     * @return Function definition version arn for this group.
+     * @return The ARN of the function definition version for this group.
      */
 
     public String getFunctionDefinitionVersionArn() {
@@ -166,10 +166,10 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Function definition version arn for this group.
+     * The ARN of the function definition version for this group.
      * 
      * @param functionDefinitionVersionArn
-     *        Function definition version arn for this group.
+     *        The ARN of the function definition version for this group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,10 +179,10 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      * 
      * @param groupId
-     *        The unique Id of the AWS Greengrass Group
+     *        The ID of the AWS Greengrass group.
      */
 
     public void setGroupId(String groupId) {
@@ -190,9 +190,9 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      * 
-     * @return The unique Id of the AWS Greengrass Group
+     * @return The ID of the AWS Greengrass group.
      */
 
     public String getGroupId() {
@@ -200,10 +200,10 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      * 
      * @param groupId
-     *        The unique Id of the AWS Greengrass Group
+     *        The ID of the AWS Greengrass group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -213,10 +213,10 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Logger definition version arn for this group.
+     * The ARN of the logger definition version for this group.
      * 
      * @param loggerDefinitionVersionArn
-     *        Logger definition version arn for this group.
+     *        The ARN of the logger definition version for this group.
      */
 
     public void setLoggerDefinitionVersionArn(String loggerDefinitionVersionArn) {
@@ -224,9 +224,9 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Logger definition version arn for this group.
+     * The ARN of the logger definition version for this group.
      * 
-     * @return Logger definition version arn for this group.
+     * @return The ARN of the logger definition version for this group.
      */
 
     public String getLoggerDefinitionVersionArn() {
@@ -234,10 +234,10 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Logger definition version arn for this group.
+     * The ARN of the logger definition version for this group.
      * 
      * @param loggerDefinitionVersionArn
-     *        Logger definition version arn for this group.
+     *        The ARN of the logger definition version for this group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -247,10 +247,10 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Resource definition version arn for this group.
+     * The resource definition version ARN for this group.
      * 
      * @param resourceDefinitionVersionArn
-     *        Resource definition version arn for this group.
+     *        The resource definition version ARN for this group.
      */
 
     public void setResourceDefinitionVersionArn(String resourceDefinitionVersionArn) {
@@ -258,9 +258,9 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Resource definition version arn for this group.
+     * The resource definition version ARN for this group.
      * 
-     * @return Resource definition version arn for this group.
+     * @return The resource definition version ARN for this group.
      */
 
     public String getResourceDefinitionVersionArn() {
@@ -268,10 +268,10 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Resource definition version arn for this group.
+     * The resource definition version ARN for this group.
      * 
      * @param resourceDefinitionVersionArn
-     *        Resource definition version arn for this group.
+     *        The resource definition version ARN for this group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -281,10 +281,10 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Subscription definition version arn for this group.
+     * The ARN of the subscription definition version for this group.
      * 
      * @param subscriptionDefinitionVersionArn
-     *        Subscription definition version arn for this group.
+     *        The ARN of the subscription definition version for this group.
      */
 
     public void setSubscriptionDefinitionVersionArn(String subscriptionDefinitionVersionArn) {
@@ -292,9 +292,9 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Subscription definition version arn for this group.
+     * The ARN of the subscription definition version for this group.
      * 
-     * @return Subscription definition version arn for this group.
+     * @return The ARN of the subscription definition version for this group.
      */
 
     public String getSubscriptionDefinitionVersionArn() {
@@ -302,10 +302,10 @@ public class CreateGroupVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Subscription definition version arn for this group.
+     * The ARN of the subscription definition version for this group.
      * 
      * @param subscriptionDefinitionVersionArn
-     *        Subscription definition version arn for this group.
+     *        The ARN of the subscription definition version for this group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -173,6 +173,10 @@ public class UpdateStackSetRequestMarshaller implements Marshaller<Request<Updat
             }
         }
 
+        if (updateStackSetRequest.getAdministrationRoleARN() != null) {
+            request.addParameter("AdministrationRoleARN", StringUtils.fromString(updateStackSetRequest.getAdministrationRoleARN()));
+        }
+
         request.addParameter("OperationId", IdempotentUtils.resolveString(updateStackSetRequest.getOperationId()));
 
         return request;

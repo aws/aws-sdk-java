@@ -1,3 +1,20 @@
+# __1.11.305__ __2018-03-29__
+## __AWS CloudFormation__
+  - ### Features
+    - Enabling resource level permission control for StackSets APIs. Adding support for customers to use customized AdministrationRole to create security boundaries between different users.
+
+## __AWS Greengrass__
+  - ### Features
+    - Greengrass APIs now support creating Machine Learning resource types and configuring binary data as the input payload for Greengrass Lambda functions.
+
+## __Alexa For Business__
+  - ### Features
+    - Adds operations for creating and managing address books of phone contacts for use in A4B managed shared devices.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - This Patch Manager release supports creating patch baselines for CentOS.
+
 # __1.11.304__ __2018-03-28__
 ## __AWS Identity and Access Management__
   - ### Features

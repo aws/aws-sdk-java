@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Information on group certificate authority properties
+ * Information about a certificate authority for a group.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GroupCertificateAuthorityProperties"
  *      target="_top">AWS API Documentation</a>
@@ -26,16 +26,16 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GroupCertificateAuthorityProperties implements Serializable, Cloneable, StructuredPojo {
 
-    /** Arn of the certificate authority for the group. */
+    /** The ARN of the certificate authority for the group. */
     private String groupCertificateAuthorityArn;
-    /** Id of the certificate authority for the group. */
+    /** The ID of the certificate authority for the group. */
     private String groupCertificateAuthorityId;
 
     /**
-     * Arn of the certificate authority for the group.
+     * The ARN of the certificate authority for the group.
      * 
      * @param groupCertificateAuthorityArn
-     *        Arn of the certificate authority for the group.
+     *        The ARN of the certificate authority for the group.
      */
 
     public void setGroupCertificateAuthorityArn(String groupCertificateAuthorityArn) {
@@ -43,9 +43,9 @@ public class GroupCertificateAuthorityProperties implements Serializable, Clonea
     }
 
     /**
-     * Arn of the certificate authority for the group.
+     * The ARN of the certificate authority for the group.
      * 
-     * @return Arn of the certificate authority for the group.
+     * @return The ARN of the certificate authority for the group.
      */
 
     public String getGroupCertificateAuthorityArn() {
@@ -53,10 +53,10 @@ public class GroupCertificateAuthorityProperties implements Serializable, Clonea
     }
 
     /**
-     * Arn of the certificate authority for the group.
+     * The ARN of the certificate authority for the group.
      * 
      * @param groupCertificateAuthorityArn
-     *        Arn of the certificate authority for the group.
+     *        The ARN of the certificate authority for the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,10 +66,10 @@ public class GroupCertificateAuthorityProperties implements Serializable, Clonea
     }
 
     /**
-     * Id of the certificate authority for the group.
+     * The ID of the certificate authority for the group.
      * 
      * @param groupCertificateAuthorityId
-     *        Id of the certificate authority for the group.
+     *        The ID of the certificate authority for the group.
      */
 
     public void setGroupCertificateAuthorityId(String groupCertificateAuthorityId) {
@@ -77,9 +77,9 @@ public class GroupCertificateAuthorityProperties implements Serializable, Clonea
     }
 
     /**
-     * Id of the certificate authority for the group.
+     * The ID of the certificate authority for the group.
      * 
-     * @return Id of the certificate authority for the group.
+     * @return The ID of the certificate authority for the group.
      */
 
     public String getGroupCertificateAuthorityId() {
@@ -87,10 +87,10 @@ public class GroupCertificateAuthorityProperties implements Serializable, Clonea
     }
 
     /**
-     * Id of the certificate authority for the group.
+     * The ID of the certificate authority for the group.
      * 
      * @param groupCertificateAuthorityId
-     *        Id of the certificate authority for the group.
+     *        The ID of the certificate authority for the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

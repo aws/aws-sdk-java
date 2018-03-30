@@ -73,6 +73,11 @@ public class StackSetOperationStaxUnmarshaller implements Unmarshaller<StackSetO
                     continue;
                 }
 
+                if (context.testExpression("AdministrationRoleARN", targetDepth)) {
+                    stackSetOperation.setAdministrationRoleARN(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("CreationTimestamp", targetDepth)) {
                     stackSetOperation.setCreationTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

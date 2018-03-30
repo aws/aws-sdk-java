@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Policy for the function to access a resource.
+ * A policy used by the function to access a resource.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ResourceAccessPolicy" target="_top">AWS
  *      API Documentation</a>
@@ -26,16 +26,21 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceAccessPolicy implements Serializable, Cloneable, StructuredPojo {
 
-    /** The function's access permission to the resource. */
+    /**
+     * The permissions that the Lambda function has to the resource. Can be one of ''rw'' (read/write) or ''ro''
+     * (read-only).
+     */
     private String permission;
-    /** Id of the resource. A reference to the resource definiton. */
+    /** The ID of the resource. (This ID is assigned to the resource when you create the resource definiton.) */
     private String resourceId;
 
     /**
-     * The function's access permission to the resource.
+     * The permissions that the Lambda function has to the resource. Can be one of ''rw'' (read/write) or ''ro''
+     * (read-only).
      * 
      * @param permission
-     *        The function's access permission to the resource.
+     *        The permissions that the Lambda function has to the resource. Can be one of ''rw'' (read/write) or ''ro''
+     *        (read-only).
      * @see Permission
      */
 
@@ -44,9 +49,11 @@ public class ResourceAccessPolicy implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The function's access permission to the resource.
+     * The permissions that the Lambda function has to the resource. Can be one of ''rw'' (read/write) or ''ro''
+     * (read-only).
      * 
-     * @return The function's access permission to the resource.
+     * @return The permissions that the Lambda function has to the resource. Can be one of ''rw'' (read/write) or ''ro''
+     *         (read-only).
      * @see Permission
      */
 
@@ -55,10 +62,12 @@ public class ResourceAccessPolicy implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The function's access permission to the resource.
+     * The permissions that the Lambda function has to the resource. Can be one of ''rw'' (read/write) or ''ro''
+     * (read-only).
      * 
      * @param permission
-     *        The function's access permission to the resource.
+     *        The permissions that the Lambda function has to the resource. Can be one of ''rw'' (read/write) or ''ro''
+     *        (read-only).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Permission
      */
@@ -69,10 +78,12 @@ public class ResourceAccessPolicy implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The function's access permission to the resource.
+     * The permissions that the Lambda function has to the resource. Can be one of ''rw'' (read/write) or ''ro''
+     * (read-only).
      * 
      * @param permission
-     *        The function's access permission to the resource.
+     *        The permissions that the Lambda function has to the resource. Can be one of ''rw'' (read/write) or ''ro''
+     *        (read-only).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Permission
      */
@@ -83,10 +94,10 @@ public class ResourceAccessPolicy implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Id of the resource. A reference to the resource definiton.
+     * The ID of the resource. (This ID is assigned to the resource when you create the resource definiton.)
      * 
      * @param resourceId
-     *        Id of the resource. A reference to the resource definiton.
+     *        The ID of the resource. (This ID is assigned to the resource when you create the resource definiton.)
      */
 
     public void setResourceId(String resourceId) {
@@ -94,9 +105,9 @@ public class ResourceAccessPolicy implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Id of the resource. A reference to the resource definiton.
+     * The ID of the resource. (This ID is assigned to the resource when you create the resource definiton.)
      * 
-     * @return Id of the resource. A reference to the resource definiton.
+     * @return The ID of the resource. (This ID is assigned to the resource when you create the resource definiton.)
      */
 
     public String getResourceId() {
@@ -104,10 +115,10 @@ public class ResourceAccessPolicy implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Id of the resource. A reference to the resource definiton.
+     * The ID of the resource. (This ID is assigned to the resource when you create the resource definiton.)
      * 
      * @param resourceId
-     *        Id of the resource. A reference to the resource definiton.
+     *        The ID of the resource. (This ID is assigned to the resource when you create the resource definiton.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

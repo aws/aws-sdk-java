@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Information on the function definition version
+ * Information about a function definition version.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/FunctionDefinitionVersion"
  *      target="_top">AWS API Documentation</a>
@@ -26,13 +26,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class FunctionDefinitionVersion implements Serializable, Cloneable, StructuredPojo {
 
-    /** Lambda functions in this function definition version. */
+    /** A list of Lambda functions in this function definition version. */
     private java.util.List<Function> functions;
 
     /**
-     * Lambda functions in this function definition version.
+     * A list of Lambda functions in this function definition version.
      * 
-     * @return Lambda functions in this function definition version.
+     * @return A list of Lambda functions in this function definition version.
      */
 
     public java.util.List<Function> getFunctions() {
@@ -40,10 +40,10 @@ public class FunctionDefinitionVersion implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Lambda functions in this function definition version.
+     * A list of Lambda functions in this function definition version.
      * 
      * @param functions
-     *        Lambda functions in this function definition version.
+     *        A list of Lambda functions in this function definition version.
      */
 
     public void setFunctions(java.util.Collection<Function> functions) {
@@ -56,7 +56,7 @@ public class FunctionDefinitionVersion implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Lambda functions in this function definition version.
+     * A list of Lambda functions in this function definition version.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFunctions(java.util.Collection)} or {@link #withFunctions(java.util.Collection)} if you want to
@@ -64,7 +64,7 @@ public class FunctionDefinitionVersion implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param functions
-     *        Lambda functions in this function definition version.
+     *        A list of Lambda functions in this function definition version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,10 +79,10 @@ public class FunctionDefinitionVersion implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Lambda functions in this function definition version.
+     * A list of Lambda functions in this function definition version.
      * 
      * @param functions
-     *        Lambda functions in this function definition version.
+     *        A list of Lambda functions in this function definition version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

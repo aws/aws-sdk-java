@@ -25,16 +25,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetSubscriptionDefinitionVersionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** subscription definition Id */
+    /** The ID of the subscription definition. */
     private String subscriptionDefinitionId;
-    /** subscription definition version Id */
+    /** The ID of the subscription definition version. */
     private String subscriptionDefinitionVersionId;
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      * 
      * @param subscriptionDefinitionId
-     *        subscription definition Id
+     *        The ID of the subscription definition.
      */
 
     public void setSubscriptionDefinitionId(String subscriptionDefinitionId) {
@@ -42,9 +42,9 @@ public class GetSubscriptionDefinitionVersionRequest extends com.amazonaws.Amazo
     }
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      * 
-     * @return subscription definition Id
+     * @return The ID of the subscription definition.
      */
 
     public String getSubscriptionDefinitionId() {
@@ -52,10 +52,10 @@ public class GetSubscriptionDefinitionVersionRequest extends com.amazonaws.Amazo
     }
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      * 
      * @param subscriptionDefinitionId
-     *        subscription definition Id
+     *        The ID of the subscription definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -65,10 +65,10 @@ public class GetSubscriptionDefinitionVersionRequest extends com.amazonaws.Amazo
     }
 
     /**
-     * subscription definition version Id
+     * The ID of the subscription definition version.
      * 
      * @param subscriptionDefinitionVersionId
-     *        subscription definition version Id
+     *        The ID of the subscription definition version.
      */
 
     public void setSubscriptionDefinitionVersionId(String subscriptionDefinitionVersionId) {
@@ -76,9 +76,9 @@ public class GetSubscriptionDefinitionVersionRequest extends com.amazonaws.Amazo
     }
 
     /**
-     * subscription definition version Id
+     * The ID of the subscription definition version.
      * 
-     * @return subscription definition version Id
+     * @return The ID of the subscription definition version.
      */
 
     public String getSubscriptionDefinitionVersionId() {
@@ -86,10 +86,10 @@ public class GetSubscriptionDefinitionVersionRequest extends com.amazonaws.Amazo
     }
 
     /**
-     * subscription definition version Id
+     * The ID of the subscription definition version.
      * 
      * @param subscriptionDefinitionVersionId
-     *        subscription definition version Id
+     *        The ID of the subscription definition version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

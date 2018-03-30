@@ -56,6 +56,16 @@ public class ResourceDataContainerJsonUnmarshaller implements Unmarshaller<Resou
                     context.nextToken();
                     resourceDataContainer.setLocalVolumeResourceData(LocalVolumeResourceDataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("S3MachineLearningModelResourceData", targetDepth)) {
+                    context.nextToken();
+                    resourceDataContainer.setS3MachineLearningModelResourceData(S3MachineLearningModelResourceDataJsonUnmarshaller.getInstance().unmarshall(
+                            context));
+                }
+                if (context.testExpression("SageMakerMachineLearningModelResourceData", targetDepth)) {
+                    context.nextToken();
+                    resourceDataContainer.setSageMakerMachineLearningModelResourceData(SageMakerMachineLearningModelResourceDataJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

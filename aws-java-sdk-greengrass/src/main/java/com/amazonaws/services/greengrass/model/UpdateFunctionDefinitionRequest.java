@@ -25,16 +25,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateFunctionDefinitionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** the unique Id of the lambda definition */
+    /** The ID of the Lambda function definition. */
     private String functionDefinitionId;
-    /** name of the definition */
+    /** The name of the definition. */
     private String name;
 
     /**
-     * the unique Id of the lambda definition
+     * The ID of the Lambda function definition.
      * 
      * @param functionDefinitionId
-     *        the unique Id of the lambda definition
+     *        The ID of the Lambda function definition.
      */
 
     public void setFunctionDefinitionId(String functionDefinitionId) {
@@ -42,9 +42,9 @@ public class UpdateFunctionDefinitionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * the unique Id of the lambda definition
+     * The ID of the Lambda function definition.
      * 
-     * @return the unique Id of the lambda definition
+     * @return The ID of the Lambda function definition.
      */
 
     public String getFunctionDefinitionId() {
@@ -52,10 +52,10 @@ public class UpdateFunctionDefinitionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * the unique Id of the lambda definition
+     * The ID of the Lambda function definition.
      * 
      * @param functionDefinitionId
-     *        the unique Id of the lambda definition
+     *        The ID of the Lambda function definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -65,10 +65,10 @@ public class UpdateFunctionDefinitionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * name of the definition
+     * The name of the definition.
      * 
      * @param name
-     *        name of the definition
+     *        The name of the definition.
      */
 
     public void setName(String name) {
@@ -76,9 +76,9 @@ public class UpdateFunctionDefinitionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * name of the definition
+     * The name of the definition.
      * 
-     * @return name of the definition
+     * @return The name of the definition.
      */
 
     public String getName() {
@@ -86,10 +86,10 @@ public class UpdateFunctionDefinitionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * name of the definition
+     * The name of the definition.
      * 
      * @param name
-     *        name of the definition
+     *        The name of the definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

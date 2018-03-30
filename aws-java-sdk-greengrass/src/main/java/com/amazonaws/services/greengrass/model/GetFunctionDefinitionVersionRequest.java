@@ -25,16 +25,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetFunctionDefinitionVersionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** the unique Id of the lambda definition */
+    /** The ID of the Lambda function definition. */
     private String functionDefinitionId;
-    /** Function definition version Id */
+    /** The ID of the function definition version. */
     private String functionDefinitionVersionId;
 
     /**
-     * the unique Id of the lambda definition
+     * The ID of the Lambda function definition.
      * 
      * @param functionDefinitionId
-     *        the unique Id of the lambda definition
+     *        The ID of the Lambda function definition.
      */
 
     public void setFunctionDefinitionId(String functionDefinitionId) {
@@ -42,9 +42,9 @@ public class GetFunctionDefinitionVersionRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * the unique Id of the lambda definition
+     * The ID of the Lambda function definition.
      * 
-     * @return the unique Id of the lambda definition
+     * @return The ID of the Lambda function definition.
      */
 
     public String getFunctionDefinitionId() {
@@ -52,10 +52,10 @@ public class GetFunctionDefinitionVersionRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * the unique Id of the lambda definition
+     * The ID of the Lambda function definition.
      * 
      * @param functionDefinitionId
-     *        the unique Id of the lambda definition
+     *        The ID of the Lambda function definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -65,10 +65,10 @@ public class GetFunctionDefinitionVersionRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * Function definition version Id
+     * The ID of the function definition version.
      * 
      * @param functionDefinitionVersionId
-     *        Function definition version Id
+     *        The ID of the function definition version.
      */
 
     public void setFunctionDefinitionVersionId(String functionDefinitionVersionId) {
@@ -76,9 +76,9 @@ public class GetFunctionDefinitionVersionRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * Function definition version Id
+     * The ID of the function definition version.
      * 
-     * @return Function definition version Id
+     * @return The ID of the function definition version.
      */
 
     public String getFunctionDefinitionVersionId() {
@@ -86,10 +86,10 @@ public class GetFunctionDefinitionVersionRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * Function definition version Id
+     * The ID of the function definition version.
      * 
      * @param functionDefinitionVersionId
-     *        Function definition version Id
+     *        The ID of the function definition version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

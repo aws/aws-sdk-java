@@ -18,7 +18,7 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Function definition version
+ * Information needed to create a function definition version.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateFunctionDefinitionVersion"
  *      target="_top">AWS API Documentation</a>
@@ -26,18 +26,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateFunctionDefinitionVersionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The client token used to request idempotent operations. */
+    /** A client token used to correlate requests and responses. */
     private String amznClientToken;
-    /** the unique Id of the lambda definition */
+    /** The ID of the Lambda function definition. */
     private String functionDefinitionId;
-    /** Lambda functions in this function definition version. */
+    /** A list of Lambda functions in this function definition version. */
     private java.util.List<Function> functions;
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      * 
      * @param amznClientToken
-     *        The client token used to request idempotent operations.
+     *        A client token used to correlate requests and responses.
      */
 
     public void setAmznClientToken(String amznClientToken) {
@@ -45,9 +45,9 @@ public class CreateFunctionDefinitionVersionRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      * 
-     * @return The client token used to request idempotent operations.
+     * @return A client token used to correlate requests and responses.
      */
 
     public String getAmznClientToken() {
@@ -55,10 +55,10 @@ public class CreateFunctionDefinitionVersionRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      * 
      * @param amznClientToken
-     *        The client token used to request idempotent operations.
+     *        A client token used to correlate requests and responses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -68,10 +68,10 @@ public class CreateFunctionDefinitionVersionRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * the unique Id of the lambda definition
+     * The ID of the Lambda function definition.
      * 
      * @param functionDefinitionId
-     *        the unique Id of the lambda definition
+     *        The ID of the Lambda function definition.
      */
 
     public void setFunctionDefinitionId(String functionDefinitionId) {
@@ -79,9 +79,9 @@ public class CreateFunctionDefinitionVersionRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * the unique Id of the lambda definition
+     * The ID of the Lambda function definition.
      * 
-     * @return the unique Id of the lambda definition
+     * @return The ID of the Lambda function definition.
      */
 
     public String getFunctionDefinitionId() {
@@ -89,10 +89,10 @@ public class CreateFunctionDefinitionVersionRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * the unique Id of the lambda definition
+     * The ID of the Lambda function definition.
      * 
      * @param functionDefinitionId
-     *        the unique Id of the lambda definition
+     *        The ID of the Lambda function definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,9 +102,9 @@ public class CreateFunctionDefinitionVersionRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * Lambda functions in this function definition version.
+     * A list of Lambda functions in this function definition version.
      * 
-     * @return Lambda functions in this function definition version.
+     * @return A list of Lambda functions in this function definition version.
      */
 
     public java.util.List<Function> getFunctions() {
@@ -112,10 +112,10 @@ public class CreateFunctionDefinitionVersionRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * Lambda functions in this function definition version.
+     * A list of Lambda functions in this function definition version.
      * 
      * @param functions
-     *        Lambda functions in this function definition version.
+     *        A list of Lambda functions in this function definition version.
      */
 
     public void setFunctions(java.util.Collection<Function> functions) {
@@ -128,7 +128,7 @@ public class CreateFunctionDefinitionVersionRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * Lambda functions in this function definition version.
+     * A list of Lambda functions in this function definition version.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFunctions(java.util.Collection)} or {@link #withFunctions(java.util.Collection)} if you want to
@@ -136,7 +136,7 @@ public class CreateFunctionDefinitionVersionRequest extends com.amazonaws.Amazon
      * </p>
      * 
      * @param functions
-     *        Lambda functions in this function definition version.
+     *        A list of Lambda functions in this function definition version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -151,10 +151,10 @@ public class CreateFunctionDefinitionVersionRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * Lambda functions in this function definition version.
+     * A list of Lambda functions in this function definition version.
      * 
      * @param functions
-     *        Lambda functions in this function definition version.
+     *        A list of Lambda functions in this function definition version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

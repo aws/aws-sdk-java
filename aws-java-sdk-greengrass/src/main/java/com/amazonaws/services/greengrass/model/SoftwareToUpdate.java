@@ -15,7 +15,7 @@ package com.amazonaws.services.greengrass.model;
 import javax.annotation.Generated;
 
 /**
- * The piece of software on the Greengrass Core that will be updated.
+ * The piece of software on the Greengrass core that will be updated.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum SoftwareToUpdate {

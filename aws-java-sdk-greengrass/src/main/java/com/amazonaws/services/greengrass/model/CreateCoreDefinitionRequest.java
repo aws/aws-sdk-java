@@ -18,7 +18,7 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Information on the core definition request
+ * Information needed to create a core definition.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateCoreDefinition" target="_top">AWS
  *      API Documentation</a>
@@ -26,18 +26,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateCoreDefinitionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The client token used to request idempotent operations. */
+    /** A client token used to correlate requests and responses. */
     private String amznClientToken;
-    /** Information on the initial version */
+    /** Information about the initial version of the core definition. */
     private CoreDefinitionVersion initialVersion;
-    /** name of the core definition */
+    /** The name of the core definition. */
     private String name;
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      * 
      * @param amznClientToken
-     *        The client token used to request idempotent operations.
+     *        A client token used to correlate requests and responses.
      */
 
     public void setAmznClientToken(String amznClientToken) {
@@ -45,9 +45,9 @@ public class CreateCoreDefinitionRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      * 
-     * @return The client token used to request idempotent operations.
+     * @return A client token used to correlate requests and responses.
      */
 
     public String getAmznClientToken() {
@@ -55,10 +55,10 @@ public class CreateCoreDefinitionRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      * 
      * @param amznClientToken
-     *        The client token used to request idempotent operations.
+     *        A client token used to correlate requests and responses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -68,10 +68,10 @@ public class CreateCoreDefinitionRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Information on the initial version
+     * Information about the initial version of the core definition.
      * 
      * @param initialVersion
-     *        Information on the initial version
+     *        Information about the initial version of the core definition.
      */
 
     public void setInitialVersion(CoreDefinitionVersion initialVersion) {
@@ -79,9 +79,9 @@ public class CreateCoreDefinitionRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Information on the initial version
+     * Information about the initial version of the core definition.
      * 
-     * @return Information on the initial version
+     * @return Information about the initial version of the core definition.
      */
 
     public CoreDefinitionVersion getInitialVersion() {
@@ -89,10 +89,10 @@ public class CreateCoreDefinitionRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Information on the initial version
+     * Information about the initial version of the core definition.
      * 
      * @param initialVersion
-     *        Information on the initial version
+     *        Information about the initial version of the core definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,10 +102,10 @@ public class CreateCoreDefinitionRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * name of the core definition
+     * The name of the core definition.
      * 
      * @param name
-     *        name of the core definition
+     *        The name of the core definition.
      */
 
     public void setName(String name) {
@@ -113,9 +113,9 @@ public class CreateCoreDefinitionRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * name of the core definition
+     * The name of the core definition.
      * 
-     * @return name of the core definition
+     * @return The name of the core definition.
      */
 
     public String getName() {
@@ -123,10 +123,10 @@ public class CreateCoreDefinitionRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * name of the core definition
+     * The name of the core definition.
      * 
      * @param name
-     *        name of the core definition
+     *        The name of the core definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -128,6 +128,58 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Associates a contact to a given address book.
+     * </p>
+     * 
+     * @param associateContactWithAddressBookRequest
+     * @return Result of the AssociateContactWithAddressBook operation returned by the service.
+     * @sample AmazonAlexaForBusiness.AssociateContactWithAddressBook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateContactWithAddressBook"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateContactWithAddressBookResult associateContactWithAddressBook(AssociateContactWithAddressBookRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateContactWithAddressBook(request);
+    }
+
+    @SdkInternalApi
+    final AssociateContactWithAddressBookResult executeAssociateContactWithAddressBook(
+            AssociateContactWithAddressBookRequest associateContactWithAddressBookRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateContactWithAddressBookRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateContactWithAddressBookRequest> request = null;
+        Response<AssociateContactWithAddressBookResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateContactWithAddressBookRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(associateContactWithAddressBookRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateContactWithAddressBookResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AssociateContactWithAddressBookResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Associates a device to a given room. This applies all the settings from the room profile to the device, and all
      * the skills in any skill groups added to that room. This operation requires the device to be online, or a manual
      * sync is required.
@@ -223,6 +275,112 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
             HttpResponseHandler<AmazonWebServiceResponse<AssociateSkillGroupWithRoomResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new AssociateSkillGroupWithRoomResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an address book with the specified details.
+     * </p>
+     * 
+     * @param createAddressBookRequest
+     * @return Result of the CreateAddressBook operation returned by the service.
+     * @throws AlreadyExistsException
+     *         The resource being created already exists. HTTP Status Code: 400
+     * @throws LimitExceededException
+     *         You are performing an action that would put you beyond your account's limits. HTTP Status Code: 400
+     * @sample AmazonAlexaForBusiness.CreateAddressBook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateAddressBook"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateAddressBookResult createAddressBook(CreateAddressBookRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAddressBook(request);
+    }
+
+    @SdkInternalApi
+    final CreateAddressBookResult executeCreateAddressBook(CreateAddressBookRequest createAddressBookRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createAddressBookRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateAddressBookRequest> request = null;
+        Response<CreateAddressBookResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAddressBookRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAddressBookRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAddressBookResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateAddressBookResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a contact with the specified details.
+     * </p>
+     * 
+     * @param createContactRequest
+     * @return Result of the CreateContact operation returned by the service.
+     * @throws AlreadyExistsException
+     *         The resource being created already exists. HTTP Status Code: 400
+     * @throws LimitExceededException
+     *         You are performing an action that would put you beyond your account's limits. HTTP Status Code: 400
+     * @sample AmazonAlexaForBusiness.CreateContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateContact" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateContactResult createContact(CreateContactRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateContact(request);
+    }
+
+    @SdkInternalApi
+    final CreateContactResult executeCreateContact(CreateContactRequest createContactRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createContactRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateContactRequest> request = null;
+        Response<CreateContactResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateContactRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createContactRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateContactResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateContactResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -435,6 +593,108 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateUserResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateUserResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an address book by the address book ARN.
+     * </p>
+     * 
+     * @param deleteAddressBookRequest
+     * @return Result of the DeleteAddressBook operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found. HTTP Status Code: 400
+     * @sample AmazonAlexaForBusiness.DeleteAddressBook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteAddressBook"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteAddressBookResult deleteAddressBook(DeleteAddressBookRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAddressBook(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAddressBookResult executeDeleteAddressBook(DeleteAddressBookRequest deleteAddressBookRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAddressBookRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAddressBookRequest> request = null;
+        Response<DeleteAddressBookResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAddressBookRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAddressBookRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAddressBookResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteAddressBookResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a contact by the contact ARN.
+     * </p>
+     * 
+     * @param deleteContactRequest
+     * @return Result of the DeleteContact operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found. HTTP Status Code: 400
+     * @sample AmazonAlexaForBusiness.DeleteContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteContact" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteContactResult deleteContact(DeleteContactRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteContact(request);
+    }
+
+    @SdkInternalApi
+    final DeleteContactResult executeDeleteContact(DeleteContactRequest deleteContactRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteContactRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteContactRequest> request = null;
+        Response<DeleteContactResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteContactRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteContactRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteContactResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteContactResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -702,6 +962,59 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Disassociates a contact from a given address book.
+     * </p>
+     * 
+     * @param disassociateContactFromAddressBookRequest
+     * @return Result of the DisassociateContactFromAddressBook operation returned by the service.
+     * @sample AmazonAlexaForBusiness.DisassociateContactFromAddressBook
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateContactFromAddressBook"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateContactFromAddressBookResult disassociateContactFromAddressBook(DisassociateContactFromAddressBookRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateContactFromAddressBook(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateContactFromAddressBookResult executeDisassociateContactFromAddressBook(
+            DisassociateContactFromAddressBookRequest disassociateContactFromAddressBookRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateContactFromAddressBookRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateContactFromAddressBookRequest> request = null;
+        Response<DisassociateContactFromAddressBookResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateContactFromAddressBookRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateContactFromAddressBookRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateContactFromAddressBookResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateContactFromAddressBookResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Disassociates a device from its current room. The device continues to be connected to the Wi-Fi network and is
      * still registered to the account. The device settings and skills are removed from the room.
      * </p>
@@ -794,6 +1107,108 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
             HttpResponseHandler<AmazonWebServiceResponse<DisassociateSkillGroupFromRoomResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DisassociateSkillGroupFromRoomResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets address the book details by the address book ARN.
+     * </p>
+     * 
+     * @param getAddressBookRequest
+     * @return Result of the GetAddressBook operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found. HTTP Status Code: 400
+     * @sample AmazonAlexaForBusiness.GetAddressBook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetAddressBook"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetAddressBookResult getAddressBook(GetAddressBookRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAddressBook(request);
+    }
+
+    @SdkInternalApi
+    final GetAddressBookResult executeGetAddressBook(GetAddressBookRequest getAddressBookRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAddressBookRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAddressBookRequest> request = null;
+        Response<GetAddressBookResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAddressBookRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAddressBookRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAddressBookResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetAddressBookResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the contact details by the contact ARN.
+     * </p>
+     * 
+     * @param getContactRequest
+     * @return Result of the GetContact operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found. HTTP Status Code: 400
+     * @sample AmazonAlexaForBusiness.GetContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetContact" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetContactResult getContact(GetContactRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetContact(request);
+    }
+
+    @SdkInternalApi
+    final GetContactResult executeGetContact(GetContactRequest getContactRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getContactRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetContactRequest> request = null;
+        Response<GetContactResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetContactRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getContactRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetContactResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetContactResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1316,6 +1731,104 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Searches address books and lists the ones that meet a set of filter and sort criteria.
+     * </p>
+     * 
+     * @param searchAddressBooksRequest
+     * @return Result of the SearchAddressBooks operation returned by the service.
+     * @sample AmazonAlexaForBusiness.SearchAddressBooks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchAddressBooks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SearchAddressBooksResult searchAddressBooks(SearchAddressBooksRequest request) {
+        request = beforeClientExecution(request);
+        return executeSearchAddressBooks(request);
+    }
+
+    @SdkInternalApi
+    final SearchAddressBooksResult executeSearchAddressBooks(SearchAddressBooksRequest searchAddressBooksRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(searchAddressBooksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SearchAddressBooksRequest> request = null;
+        Response<SearchAddressBooksResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SearchAddressBooksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchAddressBooksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SearchAddressBooksResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SearchAddressBooksResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Searches contacts and lists the ones that meet a set of filter and sort criteria.
+     * </p>
+     * 
+     * @param searchContactsRequest
+     * @return Result of the SearchContacts operation returned by the service.
+     * @sample AmazonAlexaForBusiness.SearchContacts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchContacts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SearchContactsResult searchContacts(SearchContactsRequest request) {
+        request = beforeClientExecution(request);
+        return executeSearchContacts(request);
+    }
+
+    @SdkInternalApi
+    final SearchContactsResult executeSearchContacts(SearchContactsRequest searchContactsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(searchContactsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SearchContactsRequest> request = null;
+        Response<SearchContactsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SearchContactsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchContactsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SearchContactsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SearchContactsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Searches devices and lists the ones that meet a set of filter criteria.
      * </p>
      * 
@@ -1755,6 +2268,110 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates address book details by the address book ARN.
+     * </p>
+     * 
+     * @param updateAddressBookRequest
+     * @return Result of the UpdateAddressBook operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found. HTTP Status Code: 400
+     * @throws NameInUseException
+     *         The name sent in the request is already in use. HTTP Status Code: 400
+     * @sample AmazonAlexaForBusiness.UpdateAddressBook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateAddressBook"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateAddressBookResult updateAddressBook(UpdateAddressBookRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAddressBook(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAddressBookResult executeUpdateAddressBook(UpdateAddressBookRequest updateAddressBookRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAddressBookRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAddressBookRequest> request = null;
+        Response<UpdateAddressBookResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAddressBookRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAddressBookRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAddressBookResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateAddressBookResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the contact details by the contact ARN.
+     * </p>
+     * 
+     * @param updateContactRequest
+     * @return Result of the UpdateContact operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found. HTTP Status Code: 400
+     * @sample AmazonAlexaForBusiness.UpdateContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateContact" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateContactResult updateContact(UpdateContactRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateContact(request);
+    }
+
+    @SdkInternalApi
+    final UpdateContactResult executeUpdateContact(UpdateContactRequest updateContactRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateContactRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateContactRequest> request = null;
+        Response<UpdateContactResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateContactRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateContactRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateContactResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateContactResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

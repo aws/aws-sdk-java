@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Information on the resource.
+ * Information about a resource.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/Resource" target="_top">AWS API
  *      Documentation</a>
@@ -26,18 +26,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Resource implements Serializable, Cloneable, StructuredPojo {
 
-    /** Resource Id. */
+    /**
+     * The resource ID, used to refer to a resource in the Lambda function configuration. Max length is 128 characters
+     * with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
+     */
     private String id;
-    /** A descriptive resource name. */
+    /**
+     * The descriptive resource name, which is displayed on the Greengrass console. Max length 128 characters with
+     * pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
+     */
     private String name;
     /** A container of data for all resource types. */
     private ResourceDataContainer resourceDataContainer;
 
     /**
-     * Resource Id.
+     * The resource ID, used to refer to a resource in the Lambda function configuration. Max length is 128 characters
+     * with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
      * 
      * @param id
-     *        Resource Id.
+     *        The resource ID, used to refer to a resource in the Lambda function configuration. Max length is 128
+     *        characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
      */
 
     public void setId(String id) {
@@ -45,9 +53,11 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Resource Id.
+     * The resource ID, used to refer to a resource in the Lambda function configuration. Max length is 128 characters
+     * with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
      * 
-     * @return Resource Id.
+     * @return The resource ID, used to refer to a resource in the Lambda function configuration. Max length is 128
+     *         characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
      */
 
     public String getId() {
@@ -55,10 +65,12 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Resource Id.
+     * The resource ID, used to refer to a resource in the Lambda function configuration. Max length is 128 characters
+     * with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
      * 
      * @param id
-     *        Resource Id.
+     *        The resource ID, used to refer to a resource in the Lambda function configuration. Max length is 128
+     *        characters with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -68,10 +80,12 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A descriptive resource name.
+     * The descriptive resource name, which is displayed on the Greengrass console. Max length 128 characters with
+     * pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
      * 
      * @param name
-     *        A descriptive resource name.
+     *        The descriptive resource name, which is displayed on the Greengrass console. Max length 128 characters
+     *        with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
      */
 
     public void setName(String name) {
@@ -79,9 +93,11 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A descriptive resource name.
+     * The descriptive resource name, which is displayed on the Greengrass console. Max length 128 characters with
+     * pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
      * 
-     * @return A descriptive resource name.
+     * @return The descriptive resource name, which is displayed on the Greengrass console. Max length 128 characters
+     *         with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
      */
 
     public String getName() {
@@ -89,10 +105,12 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A descriptive resource name.
+     * The descriptive resource name, which is displayed on the Greengrass console. Max length 128 characters with
+     * pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
      * 
      * @param name
-     *        A descriptive resource name.
+     *        The descriptive resource name, which is displayed on the Greengrass console. Max length 128 characters
+     *        with pattern ''[a-zA-Z0-9:_-]+''. This must be unique within a Greengrass group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,14 +25,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteResourceDefinitionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** Resource definition Id. */
+    /** The ID of the resource definition. */
     private String resourceDefinitionId;
 
     /**
-     * Resource definition Id.
+     * The ID of the resource definition.
      * 
      * @param resourceDefinitionId
-     *        Resource definition Id.
+     *        The ID of the resource definition.
      */
 
     public void setResourceDefinitionId(String resourceDefinitionId) {
@@ -40,9 +40,9 @@ public class DeleteResourceDefinitionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * Resource definition Id.
+     * The ID of the resource definition.
      * 
-     * @return Resource definition Id.
+     * @return The ID of the resource definition.
      */
 
     public String getResourceDefinitionId() {
@@ -50,10 +50,10 @@ public class DeleteResourceDefinitionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * Resource definition Id.
+     * The ID of the resource definition.
      * 
      * @param resourceDefinitionId
-     *        Resource definition Id.
+     *        The ID of the resource definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

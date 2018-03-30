@@ -25,18 +25,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateLoggerDefinitionVersionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The client token used to request idempotent operations. */
+    /** A client token used to correlate requests and responses. */
     private String amznClientToken;
-    /** logger definition Id */
+    /** The ID of the logger definition. */
     private String loggerDefinitionId;
-    /** List of loggers. */
+    /** A list of loggers. */
     private java.util.List<Logger> loggers;
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      * 
      * @param amznClientToken
-     *        The client token used to request idempotent operations.
+     *        A client token used to correlate requests and responses.
      */
 
     public void setAmznClientToken(String amznClientToken) {
@@ -44,9 +44,9 @@ public class CreateLoggerDefinitionVersionRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      * 
-     * @return The client token used to request idempotent operations.
+     * @return A client token used to correlate requests and responses.
      */
 
     public String getAmznClientToken() {
@@ -54,10 +54,10 @@ public class CreateLoggerDefinitionVersionRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      * 
      * @param amznClientToken
-     *        The client token used to request idempotent operations.
+     *        A client token used to correlate requests and responses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -67,10 +67,10 @@ public class CreateLoggerDefinitionVersionRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      * 
      * @param loggerDefinitionId
-     *        logger definition Id
+     *        The ID of the logger definition.
      */
 
     public void setLoggerDefinitionId(String loggerDefinitionId) {
@@ -78,9 +78,9 @@ public class CreateLoggerDefinitionVersionRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      * 
-     * @return logger definition Id
+     * @return The ID of the logger definition.
      */
 
     public String getLoggerDefinitionId() {
@@ -88,10 +88,10 @@ public class CreateLoggerDefinitionVersionRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      * 
      * @param loggerDefinitionId
-     *        logger definition Id
+     *        The ID of the logger definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,9 +101,9 @@ public class CreateLoggerDefinitionVersionRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * List of loggers.
+     * A list of loggers.
      * 
-     * @return List of loggers.
+     * @return A list of loggers.
      */
 
     public java.util.List<Logger> getLoggers() {
@@ -111,10 +111,10 @@ public class CreateLoggerDefinitionVersionRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * List of loggers.
+     * A list of loggers.
      * 
      * @param loggers
-     *        List of loggers.
+     *        A list of loggers.
      */
 
     public void setLoggers(java.util.Collection<Logger> loggers) {
@@ -127,7 +127,7 @@ public class CreateLoggerDefinitionVersionRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * List of loggers.
+     * A list of loggers.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setLoggers(java.util.Collection)} or {@link #withLoggers(java.util.Collection)} if you want to override
@@ -135,7 +135,7 @@ public class CreateLoggerDefinitionVersionRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param loggers
-     *        List of loggers.
+     *        A list of loggers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,10 +150,10 @@ public class CreateLoggerDefinitionVersionRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * List of loggers.
+     * A list of loggers.
      * 
      * @param loggers
-     *        List of loggers.
+     *        A list of loggers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

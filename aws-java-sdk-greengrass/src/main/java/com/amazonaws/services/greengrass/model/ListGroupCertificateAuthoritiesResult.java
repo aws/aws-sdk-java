@@ -24,13 +24,13 @@ import javax.annotation.Generated;
 public class ListGroupCertificateAuthoritiesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {
 
-    /** List of certificate authorities associated with the group. */
+    /** A list of certificate authorities associated with the group. */
     private java.util.List<GroupCertificateAuthorityProperties> groupCertificateAuthorities;
 
     /**
-     * List of certificate authorities associated with the group.
+     * A list of certificate authorities associated with the group.
      * 
-     * @return List of certificate authorities associated with the group.
+     * @return A list of certificate authorities associated with the group.
      */
 
     public java.util.List<GroupCertificateAuthorityProperties> getGroupCertificateAuthorities() {
@@ -38,10 +38,10 @@ public class ListGroupCertificateAuthoritiesResult extends com.amazonaws.AmazonW
     }
 
     /**
-     * List of certificate authorities associated with the group.
+     * A list of certificate authorities associated with the group.
      * 
      * @param groupCertificateAuthorities
-     *        List of certificate authorities associated with the group.
+     *        A list of certificate authorities associated with the group.
      */
 
     public void setGroupCertificateAuthorities(java.util.Collection<GroupCertificateAuthorityProperties> groupCertificateAuthorities) {
@@ -54,7 +54,7 @@ public class ListGroupCertificateAuthoritiesResult extends com.amazonaws.AmazonW
     }
 
     /**
-     * List of certificate authorities associated with the group.
+     * A list of certificate authorities associated with the group.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setGroupCertificateAuthorities(java.util.Collection)} or
@@ -62,7 +62,7 @@ public class ListGroupCertificateAuthoritiesResult extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param groupCertificateAuthorities
-     *        List of certificate authorities associated with the group.
+     *        A list of certificate authorities associated with the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -77,10 +77,10 @@ public class ListGroupCertificateAuthoritiesResult extends com.amazonaws.AmazonW
     }
 
     /**
-     * List of certificate authorities associated with the group.
+     * A list of certificate authorities associated with the group.
      * 
      * @param groupCertificateAuthorities
-     *        List of certificate authorities associated with the group.
+     *        A list of certificate authorities associated with the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

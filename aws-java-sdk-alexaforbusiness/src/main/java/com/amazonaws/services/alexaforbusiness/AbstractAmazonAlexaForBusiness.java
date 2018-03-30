@@ -28,12 +28,27 @@ public class AbstractAmazonAlexaForBusiness implements AmazonAlexaForBusiness {
     }
 
     @Override
+    public AssociateContactWithAddressBookResult associateContactWithAddressBook(AssociateContactWithAddressBookRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AssociateDeviceWithRoomResult associateDeviceWithRoom(AssociateDeviceWithRoomRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public AssociateSkillGroupWithRoomResult associateSkillGroupWithRoom(AssociateSkillGroupWithRoomRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateAddressBookResult createAddressBook(CreateAddressBookRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateContactResult createContact(CreateContactRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -54,6 +69,16 @@ public class AbstractAmazonAlexaForBusiness implements AmazonAlexaForBusiness {
 
     @Override
     public CreateUserResult createUser(CreateUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAddressBookResult deleteAddressBook(DeleteAddressBookRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteContactResult deleteContact(DeleteContactRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -83,12 +108,27 @@ public class AbstractAmazonAlexaForBusiness implements AmazonAlexaForBusiness {
     }
 
     @Override
+    public DisassociateContactFromAddressBookResult disassociateContactFromAddressBook(DisassociateContactFromAddressBookRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisassociateDeviceFromRoomResult disassociateDeviceFromRoom(DisassociateDeviceFromRoomRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DisassociateSkillGroupFromRoomResult disassociateSkillGroupFromRoom(DisassociateSkillGroupFromRoomRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAddressBookResult getAddressBook(GetAddressBookRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetContactResult getContact(GetContactRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -143,6 +183,16 @@ public class AbstractAmazonAlexaForBusiness implements AmazonAlexaForBusiness {
     }
 
     @Override
+    public SearchAddressBooksResult searchAddressBooks(SearchAddressBooksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SearchContactsResult searchContacts(SearchContactsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SearchDevicesResult searchDevices(SearchDevicesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -184,6 +234,16 @@ public class AbstractAmazonAlexaForBusiness implements AmazonAlexaForBusiness {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAddressBookResult updateAddressBook(UpdateAddressBookRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateContactResult updateContact(UpdateContactRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

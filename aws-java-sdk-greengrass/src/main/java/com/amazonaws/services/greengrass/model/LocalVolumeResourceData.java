@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Attributes that define the Local Volume Resource.
+ * Attributes that define a local volume resource.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/LocalVolumeResourceData" target="_top">AWS
  *      API Documentation</a>
@@ -26,18 +26,21 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LocalVolumeResourceData implements Serializable, Cloneable, StructuredPojo {
 
-    /** Local destination path of the resource. */
+    /** The absolute local path of the resource inside the lambda environment. */
     private String destinationPath;
-    /** Group owner related settings for local resources. */
+    /** Allows you to configure additional group privileges for the Lambda process. This field is optional. */
     private GroupOwnerSetting groupOwnerSetting;
-    /** Local source path of the resource. */
+    /**
+     * The local absolute path of the volume resource on the host. The source path for a volume resource type cannot
+     * start with ''/proc'' or ''/sys''.
+     */
     private String sourcePath;
 
     /**
-     * Local destination path of the resource.
+     * The absolute local path of the resource inside the lambda environment.
      * 
      * @param destinationPath
-     *        Local destination path of the resource.
+     *        The absolute local path of the resource inside the lambda environment.
      */
 
     public void setDestinationPath(String destinationPath) {
@@ -45,9 +48,9 @@ public class LocalVolumeResourceData implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Local destination path of the resource.
+     * The absolute local path of the resource inside the lambda environment.
      * 
-     * @return Local destination path of the resource.
+     * @return The absolute local path of the resource inside the lambda environment.
      */
 
     public String getDestinationPath() {
@@ -55,10 +58,10 @@ public class LocalVolumeResourceData implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Local destination path of the resource.
+     * The absolute local path of the resource inside the lambda environment.
      * 
      * @param destinationPath
-     *        Local destination path of the resource.
+     *        The absolute local path of the resource inside the lambda environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -68,10 +71,10 @@ public class LocalVolumeResourceData implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Group owner related settings for local resources.
+     * Allows you to configure additional group privileges for the Lambda process. This field is optional.
      * 
      * @param groupOwnerSetting
-     *        Group owner related settings for local resources.
+     *        Allows you to configure additional group privileges for the Lambda process. This field is optional.
      */
 
     public void setGroupOwnerSetting(GroupOwnerSetting groupOwnerSetting) {
@@ -79,9 +82,9 @@ public class LocalVolumeResourceData implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Group owner related settings for local resources.
+     * Allows you to configure additional group privileges for the Lambda process. This field is optional.
      * 
-     * @return Group owner related settings for local resources.
+     * @return Allows you to configure additional group privileges for the Lambda process. This field is optional.
      */
 
     public GroupOwnerSetting getGroupOwnerSetting() {
@@ -89,10 +92,10 @@ public class LocalVolumeResourceData implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Group owner related settings for local resources.
+     * Allows you to configure additional group privileges for the Lambda process. This field is optional.
      * 
      * @param groupOwnerSetting
-     *        Group owner related settings for local resources.
+     *        Allows you to configure additional group privileges for the Lambda process. This field is optional.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,10 +105,12 @@ public class LocalVolumeResourceData implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Local source path of the resource.
+     * The local absolute path of the volume resource on the host. The source path for a volume resource type cannot
+     * start with ''/proc'' or ''/sys''.
      * 
      * @param sourcePath
-     *        Local source path of the resource.
+     *        The local absolute path of the volume resource on the host. The source path for a volume resource type
+     *        cannot start with ''/proc'' or ''/sys''.
      */
 
     public void setSourcePath(String sourcePath) {
@@ -113,9 +118,11 @@ public class LocalVolumeResourceData implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Local source path of the resource.
+     * The local absolute path of the volume resource on the host. The source path for a volume resource type cannot
+     * start with ''/proc'' or ''/sys''.
      * 
-     * @return Local source path of the resource.
+     * @return The local absolute path of the volume resource on the host. The source path for a volume resource type
+     *         cannot start with ''/proc'' or ''/sys''.
      */
 
     public String getSourcePath() {
@@ -123,10 +130,12 @@ public class LocalVolumeResourceData implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Local source path of the resource.
+     * The local absolute path of the volume resource on the host. The source path for a volume resource type cannot
+     * start with ''/proc'' or ''/sys''.
      * 
      * @param sourcePath
-     *        Local source path of the resource.
+     *        The local absolute path of the volume resource on the host. The source path for a volume resource type
+     *        cannot start with ''/proc'' or ''/sys''.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

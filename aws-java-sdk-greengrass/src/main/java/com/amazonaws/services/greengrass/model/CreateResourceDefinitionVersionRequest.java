@@ -25,18 +25,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateResourceDefinitionVersionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The client token used to request idempotent operations. */
+    /** A client token used to correlate requests and responses. */
     private String amznClientToken;
-    /** Resource definition Id. */
+    /** The ID of the resource definition. */
     private String resourceDefinitionId;
-    /** List of resources. */
+    /** A list of resources. */
     private java.util.List<Resource> resources;
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      * 
      * @param amznClientToken
-     *        The client token used to request idempotent operations.
+     *        A client token used to correlate requests and responses.
      */
 
     public void setAmznClientToken(String amznClientToken) {
@@ -44,9 +44,9 @@ public class CreateResourceDefinitionVersionRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      * 
-     * @return The client token used to request idempotent operations.
+     * @return A client token used to correlate requests and responses.
      */
 
     public String getAmznClientToken() {
@@ -54,10 +54,10 @@ public class CreateResourceDefinitionVersionRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      * 
      * @param amznClientToken
-     *        The client token used to request idempotent operations.
+     *        A client token used to correlate requests and responses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -67,10 +67,10 @@ public class CreateResourceDefinitionVersionRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * Resource definition Id.
+     * The ID of the resource definition.
      * 
      * @param resourceDefinitionId
-     *        Resource definition Id.
+     *        The ID of the resource definition.
      */
 
     public void setResourceDefinitionId(String resourceDefinitionId) {
@@ -78,9 +78,9 @@ public class CreateResourceDefinitionVersionRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * Resource definition Id.
+     * The ID of the resource definition.
      * 
-     * @return Resource definition Id.
+     * @return The ID of the resource definition.
      */
 
     public String getResourceDefinitionId() {
@@ -88,10 +88,10 @@ public class CreateResourceDefinitionVersionRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * Resource definition Id.
+     * The ID of the resource definition.
      * 
      * @param resourceDefinitionId
-     *        Resource definition Id.
+     *        The ID of the resource definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,9 +101,9 @@ public class CreateResourceDefinitionVersionRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * List of resources.
+     * A list of resources.
      * 
-     * @return List of resources.
+     * @return A list of resources.
      */
 
     public java.util.List<Resource> getResources() {
@@ -111,10 +111,10 @@ public class CreateResourceDefinitionVersionRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * List of resources.
+     * A list of resources.
      * 
      * @param resources
-     *        List of resources.
+     *        A list of resources.
      */
 
     public void setResources(java.util.Collection<Resource> resources) {
@@ -127,7 +127,7 @@ public class CreateResourceDefinitionVersionRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * List of resources.
+     * A list of resources.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setResources(java.util.Collection)} or {@link #withResources(java.util.Collection)} if you want to
@@ -135,7 +135,7 @@ public class CreateResourceDefinitionVersionRequest extends com.amazonaws.Amazon
      * </p>
      * 
      * @param resources
-     *        List of resources.
+     *        A list of resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,10 +150,10 @@ public class CreateResourceDefinitionVersionRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * List of resources.
+     * A list of resources.
      * 
      * @param resources
-     *        List of resources.
+     *        A list of resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

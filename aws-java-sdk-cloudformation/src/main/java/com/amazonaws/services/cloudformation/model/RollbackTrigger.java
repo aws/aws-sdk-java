@@ -18,7 +18,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * A rollback trigger AWS CloudFormation monitors during creation and updating of stacks. If any of the alarms you
- * specify goes to ALERT state during the stack operation or within the specified monitoring period afterwards,
+ * specify goes to ALARM state during the stack operation or within the specified monitoring period afterwards,
  * CloudFormation rolls back the entire stack operation.
  * </p>
  * 
@@ -31,6 +31,9 @@ public class RollbackTrigger implements Serializable, Cloneable {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the rollback trigger.
+     * </p>
+     * <p>
+     * If a specified trigger is missing, the entire stack operation fails and is rolled back.
      * </p>
      */
     private String arn;
@@ -47,9 +50,14 @@ public class RollbackTrigger implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the rollback trigger.
      * </p>
+     * <p>
+     * If a specified trigger is missing, the entire stack operation fails and is rolled back.
+     * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the rollback trigger.
+     *        The Amazon Resource Name (ARN) of the rollback trigger.</p>
+     *        <p>
+     *        If a specified trigger is missing, the entire stack operation fails and is rolled back.
      */
 
     public void setArn(String arn) {
@@ -60,8 +68,13 @@ public class RollbackTrigger implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the rollback trigger.
      * </p>
+     * <p>
+     * If a specified trigger is missing, the entire stack operation fails and is rolled back.
+     * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the rollback trigger.
+     * @return The Amazon Resource Name (ARN) of the rollback trigger.</p>
+     *         <p>
+     *         If a specified trigger is missing, the entire stack operation fails and is rolled back.
      */
 
     public String getArn() {
@@ -72,9 +85,14 @@ public class RollbackTrigger implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) of the rollback trigger.
      * </p>
+     * <p>
+     * If a specified trigger is missing, the entire stack operation fails and is rolled back.
+     * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the rollback trigger.
+     *        The Amazon Resource Name (ARN) of the rollback trigger.</p>
+     *        <p>
+     *        If a specified trigger is missing, the entire stack operation fails and is rolled back.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

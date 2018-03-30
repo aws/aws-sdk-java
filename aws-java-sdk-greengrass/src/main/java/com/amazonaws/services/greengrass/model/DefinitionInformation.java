@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Information on the Definition
+ * Information about a definition.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DefinitionInformation" target="_top">AWS
  *      API Documentation</a>
@@ -26,26 +26,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DefinitionInformation implements Serializable, Cloneable, StructuredPojo {
 
-    /** Arn of the definition. */
+    /** The ARN of the definition. */
     private String arn;
-    /** Timestamp of when the definition was created. */
+    /** The time, in milliseconds since the epoch, when the definition was created. */
     private String creationTimestamp;
-    /** Id of the definition. */
+    /** The ID of the definition. */
     private String id;
-    /** Last updated timestamp of the definition. */
+    /** The time, in milliseconds since the epoch, when the definition was last updated. */
     private String lastUpdatedTimestamp;
-    /** Last version of the definition. */
+    /** The latest version of the definition. */
     private String latestVersion;
-    /** Latest version arn of the definition. */
+    /** The ARN of the latest version of the definition. */
     private String latestVersionArn;
-    /** Name of the definition. */
+    /** The name of the definition. */
     private String name;
 
     /**
-     * Arn of the definition.
+     * The ARN of the definition.
      * 
      * @param arn
-     *        Arn of the definition.
+     *        The ARN of the definition.
      */
 
     public void setArn(String arn) {
@@ -53,9 +53,9 @@ public class DefinitionInformation implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Arn of the definition.
+     * The ARN of the definition.
      * 
-     * @return Arn of the definition.
+     * @return The ARN of the definition.
      */
 
     public String getArn() {
@@ -63,10 +63,10 @@ public class DefinitionInformation implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Arn of the definition.
+     * The ARN of the definition.
      * 
      * @param arn
-     *        Arn of the definition.
+     *        The ARN of the definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -76,10 +76,10 @@ public class DefinitionInformation implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Timestamp of when the definition was created.
+     * The time, in milliseconds since the epoch, when the definition was created.
      * 
      * @param creationTimestamp
-     *        Timestamp of when the definition was created.
+     *        The time, in milliseconds since the epoch, when the definition was created.
      */
 
     public void setCreationTimestamp(String creationTimestamp) {
@@ -87,9 +87,9 @@ public class DefinitionInformation implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Timestamp of when the definition was created.
+     * The time, in milliseconds since the epoch, when the definition was created.
      * 
-     * @return Timestamp of when the definition was created.
+     * @return The time, in milliseconds since the epoch, when the definition was created.
      */
 
     public String getCreationTimestamp() {
@@ -97,10 +97,10 @@ public class DefinitionInformation implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Timestamp of when the definition was created.
+     * The time, in milliseconds since the epoch, when the definition was created.
      * 
      * @param creationTimestamp
-     *        Timestamp of when the definition was created.
+     *        The time, in milliseconds since the epoch, when the definition was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,10 +110,10 @@ public class DefinitionInformation implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Id of the definition.
+     * The ID of the definition.
      * 
      * @param id
-     *        Id of the definition.
+     *        The ID of the definition.
      */
 
     public void setId(String id) {
@@ -121,9 +121,9 @@ public class DefinitionInformation implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Id of the definition.
+     * The ID of the definition.
      * 
-     * @return Id of the definition.
+     * @return The ID of the definition.
      */
 
     public String getId() {
@@ -131,10 +131,10 @@ public class DefinitionInformation implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Id of the definition.
+     * The ID of the definition.
      * 
      * @param id
-     *        Id of the definition.
+     *        The ID of the definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,10 +144,10 @@ public class DefinitionInformation implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Last updated timestamp of the definition.
+     * The time, in milliseconds since the epoch, when the definition was last updated.
      * 
      * @param lastUpdatedTimestamp
-     *        Last updated timestamp of the definition.
+     *        The time, in milliseconds since the epoch, when the definition was last updated.
      */
 
     public void setLastUpdatedTimestamp(String lastUpdatedTimestamp) {
@@ -155,9 +155,9 @@ public class DefinitionInformation implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Last updated timestamp of the definition.
+     * The time, in milliseconds since the epoch, when the definition was last updated.
      * 
-     * @return Last updated timestamp of the definition.
+     * @return The time, in milliseconds since the epoch, when the definition was last updated.
      */
 
     public String getLastUpdatedTimestamp() {
@@ -165,10 +165,10 @@ public class DefinitionInformation implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Last updated timestamp of the definition.
+     * The time, in milliseconds since the epoch, when the definition was last updated.
      * 
      * @param lastUpdatedTimestamp
-     *        Last updated timestamp of the definition.
+     *        The time, in milliseconds since the epoch, when the definition was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,10 +178,10 @@ public class DefinitionInformation implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Last version of the definition.
+     * The latest version of the definition.
      * 
      * @param latestVersion
-     *        Last version of the definition.
+     *        The latest version of the definition.
      */
 
     public void setLatestVersion(String latestVersion) {
@@ -189,9 +189,9 @@ public class DefinitionInformation implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Last version of the definition.
+     * The latest version of the definition.
      * 
-     * @return Last version of the definition.
+     * @return The latest version of the definition.
      */
 
     public String getLatestVersion() {
@@ -199,10 +199,10 @@ public class DefinitionInformation implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Last version of the definition.
+     * The latest version of the definition.
      * 
      * @param latestVersion
-     *        Last version of the definition.
+     *        The latest version of the definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,10 +212,10 @@ public class DefinitionInformation implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Latest version arn of the definition.
+     * The ARN of the latest version of the definition.
      * 
      * @param latestVersionArn
-     *        Latest version arn of the definition.
+     *        The ARN of the latest version of the definition.
      */
 
     public void setLatestVersionArn(String latestVersionArn) {
@@ -223,9 +223,9 @@ public class DefinitionInformation implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Latest version arn of the definition.
+     * The ARN of the latest version of the definition.
      * 
-     * @return Latest version arn of the definition.
+     * @return The ARN of the latest version of the definition.
      */
 
     public String getLatestVersionArn() {
@@ -233,10 +233,10 @@ public class DefinitionInformation implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Latest version arn of the definition.
+     * The ARN of the latest version of the definition.
      * 
      * @param latestVersionArn
-     *        Latest version arn of the definition.
+     *        The ARN of the latest version of the definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -246,10 +246,10 @@ public class DefinitionInformation implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Name of the definition.
+     * The name of the definition.
      * 
      * @param name
-     *        Name of the definition.
+     *        The name of the definition.
      */
 
     public void setName(String name) {
@@ -257,9 +257,9 @@ public class DefinitionInformation implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Name of the definition.
+     * The name of the definition.
      * 
-     * @return Name of the definition.
+     * @return The name of the definition.
      */
 
     public String getName() {
@@ -267,10 +267,10 @@ public class DefinitionInformation implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Name of the definition.
+     * The name of the definition.
      * 
      * @param name
-     *        Name of the definition.
+     *        The name of the definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

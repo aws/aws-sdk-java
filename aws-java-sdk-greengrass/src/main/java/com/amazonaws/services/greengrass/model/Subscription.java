@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Information on subscription
+ * Information about a subscription.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/Subscription" target="_top">AWS API
  *      Documentation</a>
@@ -26,20 +26,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Subscription implements Serializable, Cloneable, StructuredPojo {
 
-    /** Element Id for this entry in the list. */
+    /** The id of the subscription. */
     private String id;
-    /** Source of the subscription. Can be a thing arn, lambda arn or word 'cloud' */
+    /**
+     * The source of the subscription. Can be a thing ARN, a Lambda function ARN, 'cloud' (which represents the IoT
+     * cloud), or 'GGShadowService'.
+     */
     private String source;
-    /** Subject of the message. */
+    /** The subject of the message. */
     private String subject;
-    /** Where the message is sent to. Can be a thing arn, lambda arn or word 'cloud'. */
+    /**
+     * Where the message is sent to. Can be a thing ARN, a Lambda function ARN, 'cloud' (which represents the IoT
+     * cloud), or 'GGShadowService'.
+     */
     private String target;
 
     /**
-     * Element Id for this entry in the list.
+     * The id of the subscription.
      * 
      * @param id
-     *        Element Id for this entry in the list.
+     *        The id of the subscription.
      */
 
     public void setId(String id) {
@@ -47,9 +53,9 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Element Id for this entry in the list.
+     * The id of the subscription.
      * 
-     * @return Element Id for this entry in the list.
+     * @return The id of the subscription.
      */
 
     public String getId() {
@@ -57,10 +63,10 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Element Id for this entry in the list.
+     * The id of the subscription.
      * 
      * @param id
-     *        Element Id for this entry in the list.
+     *        The id of the subscription.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -70,10 +76,12 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Source of the subscription. Can be a thing arn, lambda arn or word 'cloud'
+     * The source of the subscription. Can be a thing ARN, a Lambda function ARN, 'cloud' (which represents the IoT
+     * cloud), or 'GGShadowService'.
      * 
      * @param source
-     *        Source of the subscription. Can be a thing arn, lambda arn or word 'cloud'
+     *        The source of the subscription. Can be a thing ARN, a Lambda function ARN, 'cloud' (which represents the
+     *        IoT cloud), or 'GGShadowService'.
      */
 
     public void setSource(String source) {
@@ -81,9 +89,11 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Source of the subscription. Can be a thing arn, lambda arn or word 'cloud'
+     * The source of the subscription. Can be a thing ARN, a Lambda function ARN, 'cloud' (which represents the IoT
+     * cloud), or 'GGShadowService'.
      * 
-     * @return Source of the subscription. Can be a thing arn, lambda arn or word 'cloud'
+     * @return The source of the subscription. Can be a thing ARN, a Lambda function ARN, 'cloud' (which represents the
+     *         IoT cloud), or 'GGShadowService'.
      */
 
     public String getSource() {
@@ -91,10 +101,12 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Source of the subscription. Can be a thing arn, lambda arn or word 'cloud'
+     * The source of the subscription. Can be a thing ARN, a Lambda function ARN, 'cloud' (which represents the IoT
+     * cloud), or 'GGShadowService'.
      * 
      * @param source
-     *        Source of the subscription. Can be a thing arn, lambda arn or word 'cloud'
+     *        The source of the subscription. Can be a thing ARN, a Lambda function ARN, 'cloud' (which represents the
+     *        IoT cloud), or 'GGShadowService'.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,10 +116,10 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Subject of the message.
+     * The subject of the message.
      * 
      * @param subject
-     *        Subject of the message.
+     *        The subject of the message.
      */
 
     public void setSubject(String subject) {
@@ -115,9 +127,9 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Subject of the message.
+     * The subject of the message.
      * 
-     * @return Subject of the message.
+     * @return The subject of the message.
      */
 
     public String getSubject() {
@@ -125,10 +137,10 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Subject of the message.
+     * The subject of the message.
      * 
      * @param subject
-     *        Subject of the message.
+     *        The subject of the message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,10 +150,12 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Where the message is sent to. Can be a thing arn, lambda arn or word 'cloud'.
+     * Where the message is sent to. Can be a thing ARN, a Lambda function ARN, 'cloud' (which represents the IoT
+     * cloud), or 'GGShadowService'.
      * 
      * @param target
-     *        Where the message is sent to. Can be a thing arn, lambda arn or word 'cloud'.
+     *        Where the message is sent to. Can be a thing ARN, a Lambda function ARN, 'cloud' (which represents the IoT
+     *        cloud), or 'GGShadowService'.
      */
 
     public void setTarget(String target) {
@@ -149,9 +163,11 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Where the message is sent to. Can be a thing arn, lambda arn or word 'cloud'.
+     * Where the message is sent to. Can be a thing ARN, a Lambda function ARN, 'cloud' (which represents the IoT
+     * cloud), or 'GGShadowService'.
      * 
-     * @return Where the message is sent to. Can be a thing arn, lambda arn or word 'cloud'.
+     * @return Where the message is sent to. Can be a thing ARN, a Lambda function ARN, 'cloud' (which represents the
+     *         IoT cloud), or 'GGShadowService'.
      */
 
     public String getTarget() {
@@ -159,10 +175,12 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Where the message is sent to. Can be a thing arn, lambda arn or word 'cloud'.
+     * Where the message is sent to. Can be a thing ARN, a Lambda function ARN, 'cloud' (which represents the IoT
+     * cloud), or 'GGShadowService'.
      * 
      * @param target
-     *        Where the message is sent to. Can be a thing arn, lambda arn or word 'cloud'.
+     *        Where the message is sent to. Can be a thing ARN, a Lambda function ARN, 'cloud' (which represents the IoT
+     *        cloud), or 'GGShadowService'.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

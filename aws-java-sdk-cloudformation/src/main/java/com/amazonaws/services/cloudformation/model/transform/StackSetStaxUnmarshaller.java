@@ -100,6 +100,15 @@ public class StackSetStaxUnmarshaller implements Unmarshaller<StackSet, StaxUnma
                     continue;
                 }
 
+                if (context.testExpression("StackSetARN", targetDepth)) {
+                    stackSet.setStackSetARN(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("AdministrationRoleARN", targetDepth)) {
+                    stackSet.setAdministrationRoleARN(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return stackSet;

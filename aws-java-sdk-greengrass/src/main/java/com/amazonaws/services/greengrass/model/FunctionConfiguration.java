@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Configuration of the function
+ * The configuration of the Lambda function.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/FunctionConfiguration" target="_top">AWS
  *      API Documentation</a>
@@ -26,27 +26,80 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class FunctionConfiguration implements Serializable, Cloneable, StructuredPojo {
 
-    /** Environment of the function configuration */
+    /** The expected encoding type of the input payload for the function. The default is ''json''. */
+    private String encodingType;
+    /** The environment configuration of the function. */
     private FunctionConfigurationEnvironment environment;
-    /** Execution Arguments */
+    /** The execution arguments. */
     private String execArgs;
-    /** Executable */
+    /** The name of the function executable. */
     private String executable;
-    /** The memory size, in KB, you configured for the function. */
+    /** The memory size, in KB, which the function requires. */
     private Integer memorySize;
-    /** Whether the function is pinned or not. Pinned means the function is long-lived and starts when the core starts. */
+    /** True if the function is pinned. Pinned means the function is long-lived and starts when the core starts. */
     private Boolean pinned;
     /**
-     * The function execution time at which Lambda should terminate the function. This timeout still applies to pinned
-     * lambdas for each request.
+     * The allowed function execution time, after which Lambda should terminate the function. This timeout still applies
+     * to pinned lambdas for each request.
      */
     private Integer timeout;
 
     /**
-     * Environment of the function configuration
+     * The expected encoding type of the input payload for the function. The default is ''json''.
+     * 
+     * @param encodingType
+     *        The expected encoding type of the input payload for the function. The default is ''json''.
+     * @see EncodingType
+     */
+
+    public void setEncodingType(String encodingType) {
+        this.encodingType = encodingType;
+    }
+
+    /**
+     * The expected encoding type of the input payload for the function. The default is ''json''.
+     * 
+     * @return The expected encoding type of the input payload for the function. The default is ''json''.
+     * @see EncodingType
+     */
+
+    public String getEncodingType() {
+        return this.encodingType;
+    }
+
+    /**
+     * The expected encoding type of the input payload for the function. The default is ''json''.
+     * 
+     * @param encodingType
+     *        The expected encoding type of the input payload for the function. The default is ''json''.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EncodingType
+     */
+
+    public FunctionConfiguration withEncodingType(String encodingType) {
+        setEncodingType(encodingType);
+        return this;
+    }
+
+    /**
+     * The expected encoding type of the input payload for the function. The default is ''json''.
+     * 
+     * @param encodingType
+     *        The expected encoding type of the input payload for the function. The default is ''json''.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EncodingType
+     */
+
+    public FunctionConfiguration withEncodingType(EncodingType encodingType) {
+        this.encodingType = encodingType.toString();
+        return this;
+    }
+
+    /**
+     * The environment configuration of the function.
      * 
      * @param environment
-     *        Environment of the function configuration
+     *        The environment configuration of the function.
      */
 
     public void setEnvironment(FunctionConfigurationEnvironment environment) {
@@ -54,9 +107,9 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Environment of the function configuration
+     * The environment configuration of the function.
      * 
-     * @return Environment of the function configuration
+     * @return The environment configuration of the function.
      */
 
     public FunctionConfigurationEnvironment getEnvironment() {
@@ -64,10 +117,10 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Environment of the function configuration
+     * The environment configuration of the function.
      * 
      * @param environment
-     *        Environment of the function configuration
+     *        The environment configuration of the function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -77,10 +130,10 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Execution Arguments
+     * The execution arguments.
      * 
      * @param execArgs
-     *        Execution Arguments
+     *        The execution arguments.
      */
 
     public void setExecArgs(String execArgs) {
@@ -88,9 +141,9 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Execution Arguments
+     * The execution arguments.
      * 
-     * @return Execution Arguments
+     * @return The execution arguments.
      */
 
     public String getExecArgs() {
@@ -98,10 +151,10 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Execution Arguments
+     * The execution arguments.
      * 
      * @param execArgs
-     *        Execution Arguments
+     *        The execution arguments.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,10 +164,10 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Executable
+     * The name of the function executable.
      * 
      * @param executable
-     *        Executable
+     *        The name of the function executable.
      */
 
     public void setExecutable(String executable) {
@@ -122,9 +175,9 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Executable
+     * The name of the function executable.
      * 
-     * @return Executable
+     * @return The name of the function executable.
      */
 
     public String getExecutable() {
@@ -132,10 +185,10 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Executable
+     * The name of the function executable.
      * 
      * @param executable
-     *        Executable
+     *        The name of the function executable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,10 +198,10 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     }
 
     /**
-     * The memory size, in KB, you configured for the function.
+     * The memory size, in KB, which the function requires.
      * 
      * @param memorySize
-     *        The memory size, in KB, you configured for the function.
+     *        The memory size, in KB, which the function requires.
      */
 
     public void setMemorySize(Integer memorySize) {
@@ -156,9 +209,9 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     }
 
     /**
-     * The memory size, in KB, you configured for the function.
+     * The memory size, in KB, which the function requires.
      * 
-     * @return The memory size, in KB, you configured for the function.
+     * @return The memory size, in KB, which the function requires.
      */
 
     public Integer getMemorySize() {
@@ -166,10 +219,10 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     }
 
     /**
-     * The memory size, in KB, you configured for the function.
+     * The memory size, in KB, which the function requires.
      * 
      * @param memorySize
-     *        The memory size, in KB, you configured for the function.
+     *        The memory size, in KB, which the function requires.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,11 +232,10 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Whether the function is pinned or not. Pinned means the function is long-lived and starts when the core starts.
+     * True if the function is pinned. Pinned means the function is long-lived and starts when the core starts.
      * 
      * @param pinned
-     *        Whether the function is pinned or not. Pinned means the function is long-lived and starts when the core
-     *        starts.
+     *        True if the function is pinned. Pinned means the function is long-lived and starts when the core starts.
      */
 
     public void setPinned(Boolean pinned) {
@@ -191,10 +243,9 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Whether the function is pinned or not. Pinned means the function is long-lived and starts when the core starts.
+     * True if the function is pinned. Pinned means the function is long-lived and starts when the core starts.
      * 
-     * @return Whether the function is pinned or not. Pinned means the function is long-lived and starts when the core
-     *         starts.
+     * @return True if the function is pinned. Pinned means the function is long-lived and starts when the core starts.
      */
 
     public Boolean getPinned() {
@@ -202,11 +253,10 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Whether the function is pinned or not. Pinned means the function is long-lived and starts when the core starts.
+     * True if the function is pinned. Pinned means the function is long-lived and starts when the core starts.
      * 
      * @param pinned
-     *        Whether the function is pinned or not. Pinned means the function is long-lived and starts when the core
-     *        starts.
+     *        True if the function is pinned. Pinned means the function is long-lived and starts when the core starts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -216,10 +266,9 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Whether the function is pinned or not. Pinned means the function is long-lived and starts when the core starts.
+     * True if the function is pinned. Pinned means the function is long-lived and starts when the core starts.
      * 
-     * @return Whether the function is pinned or not. Pinned means the function is long-lived and starts when the core
-     *         starts.
+     * @return True if the function is pinned. Pinned means the function is long-lived and starts when the core starts.
      */
 
     public Boolean isPinned() {
@@ -227,12 +276,12 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     }
 
     /**
-     * The function execution time at which Lambda should terminate the function. This timeout still applies to pinned
-     * lambdas for each request.
+     * The allowed function execution time, after which Lambda should terminate the function. This timeout still applies
+     * to pinned lambdas for each request.
      * 
      * @param timeout
-     *        The function execution time at which Lambda should terminate the function. This timeout still applies to
-     *        pinned lambdas for each request.
+     *        The allowed function execution time, after which Lambda should terminate the function. This timeout still
+     *        applies to pinned lambdas for each request.
      */
 
     public void setTimeout(Integer timeout) {
@@ -240,11 +289,11 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     }
 
     /**
-     * The function execution time at which Lambda should terminate the function. This timeout still applies to pinned
-     * lambdas for each request.
+     * The allowed function execution time, after which Lambda should terminate the function. This timeout still applies
+     * to pinned lambdas for each request.
      * 
-     * @return The function execution time at which Lambda should terminate the function. This timeout still applies to
-     *         pinned lambdas for each request.
+     * @return The allowed function execution time, after which Lambda should terminate the function. This timeout still
+     *         applies to pinned lambdas for each request.
      */
 
     public Integer getTimeout() {
@@ -252,12 +301,12 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     }
 
     /**
-     * The function execution time at which Lambda should terminate the function. This timeout still applies to pinned
-     * lambdas for each request.
+     * The allowed function execution time, after which Lambda should terminate the function. This timeout still applies
+     * to pinned lambdas for each request.
      * 
      * @param timeout
-     *        The function execution time at which Lambda should terminate the function. This timeout still applies to
-     *        pinned lambdas for each request.
+     *        The allowed function execution time, after which Lambda should terminate the function. This timeout still
+     *        applies to pinned lambdas for each request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -277,6 +326,8 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getEncodingType() != null)
+            sb.append("EncodingType: ").append(getEncodingType()).append(",");
         if (getEnvironment() != null)
             sb.append("Environment: ").append(getEnvironment()).append(",");
         if (getExecArgs() != null)
@@ -303,6 +354,10 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
         if (obj instanceof FunctionConfiguration == false)
             return false;
         FunctionConfiguration other = (FunctionConfiguration) obj;
+        if (other.getEncodingType() == null ^ this.getEncodingType() == null)
+            return false;
+        if (other.getEncodingType() != null && other.getEncodingType().equals(this.getEncodingType()) == false)
+            return false;
         if (other.getEnvironment() == null ^ this.getEnvironment() == null)
             return false;
         if (other.getEnvironment() != null && other.getEnvironment().equals(this.getEnvironment()) == false)
@@ -335,6 +390,7 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getEncodingType() == null) ? 0 : getEncodingType().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         hashCode = prime * hashCode + ((getExecArgs() == null) ? 0 : getExecArgs().hashCode());
         hashCode = prime * hashCode + ((getExecutable() == null) ? 0 : getExecutable().hashCode());

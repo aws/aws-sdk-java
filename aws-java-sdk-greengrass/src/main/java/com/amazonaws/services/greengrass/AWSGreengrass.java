@@ -43,16 +43,15 @@ public interface AWSGreengrass {
     String ENDPOINT_PREFIX = "greengrass";
 
     /**
-     * Associates a role with a group. The role will be used by the AWS Greengrass core in order to access AWS cloud
-     * services. The role's permissions will allow Greengrass core Lambda functions to perform actions against the
-     * cloud.
+     * Associates a role with a group. Your AWS Greengrass core will use the role to access AWS cloud services. The
+     * role's permissions should allow Greengrass core Lambda functions to perform actions against the cloud.
      * 
      * @param associateRoleToGroupRequest
      * @return Result of the AssociateRoleToGroup operation returned by the service.
      * @throws BadRequestException
-     *         User Error
+     *         invalid request
      * @throws InternalServerErrorException
-     *         Server Error
+     *         server error
      * @sample AWSGreengrass.AssociateRoleToGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/AssociateRoleToGroup"
      *      target="_top">AWS API Documentation</a>
@@ -60,16 +59,16 @@ public interface AWSGreengrass {
     AssociateRoleToGroupResult associateRoleToGroup(AssociateRoleToGroupRequest associateRoleToGroupRequest);
 
     /**
-     * Associates a role which is used by AWS Greengrass. AWS Greengrass uses the role to access your Lambda functions
-     * and AWS IoT resources. This is necessary for deployments to succeed. It needs to have minimum permissions in
-     * policy ``AWSGreengrassResourceAccessRolePolicy``
+     * Associates a role with your account. AWS Greengrass will use the role to access your Lambda functions and AWS IoT
+     * resources. This is necessary for deployments to succeed. The role must have at least minimum permissions in the
+     * policy ''AWSGreengrassResourceAccessRolePolicy''.
      * 
      * @param associateServiceRoleToAccountRequest
      * @return Result of the AssociateServiceRoleToAccount operation returned by the service.
      * @throws BadRequestException
-     *         User Error
+     *         invalid request
      * @throws InternalServerErrorException
-     *         Server Error
+     *         server error
      * @sample AWSGreengrass.AssociateServiceRoleToAccount
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/AssociateServiceRoleToAccount"
      *      target="_top">AWS API Documentation</a>
@@ -77,15 +76,15 @@ public interface AWSGreengrass {
     AssociateServiceRoleToAccountResult associateServiceRoleToAccount(AssociateServiceRoleToAccountRequest associateServiceRoleToAccountRequest);
 
     /**
-     * Creates a core definition. You may optionally provide the initial version of the core definition or use
-     * ''CreateCoreDefinitionVersion'' at a later time. AWS Greengrass Groups must each contain exactly 1 AWS Greengrass
-     * Core.
+     * Creates a core definition. You may provide the initial version of the core definition now or use
+     * ''CreateCoreDefinitionVersion'' at a later time. AWS Greengrass groups must each contain exactly one AWS
+     * Greengrass core.
      * 
      * @param createCoreDefinitionRequest
-     *        Information on the core definition request
+     *        Information needed to create a core definition.
      * @return Result of the CreateCoreDefinition operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.CreateCoreDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateCoreDefinition"
      *      target="_top">AWS API Documentation</a>
@@ -93,13 +92,13 @@ public interface AWSGreengrass {
     CreateCoreDefinitionResult createCoreDefinition(CreateCoreDefinitionRequest createCoreDefinitionRequest);
 
     /**
-     * Creates a version of a core definition that has already been defined. AWS Greengrass Groups must each contain
-     * exactly 1 AWS Greengrass Core.
+     * Creates a version of a core definition that has already been defined. AWS Greengrass groups must each contain
+     * exactly one AWS Greengrass core.
      * 
      * @param createCoreDefinitionVersionRequest
      * @return Result of the CreateCoreDefinitionVersion operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.CreateCoreDefinitionVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateCoreDefinitionVersion"
      *      target="_top">AWS API Documentation</a>
@@ -112,7 +111,7 @@ public interface AWSGreengrass {
      * @param createDeploymentRequest
      * @return Result of the CreateDeployment operation returned by the service.
      * @throws BadRequestException
-     *         This request was invalid.
+     *         invalid request
      * @sample AWSGreengrass.CreateDeployment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateDeployment" target="_top">AWS
      *      API Documentation</a>
@@ -120,13 +119,13 @@ public interface AWSGreengrass {
     CreateDeploymentResult createDeployment(CreateDeploymentRequest createDeploymentRequest);
 
     /**
-     * Creates a device definition. You may optinally provide the initial version of the device definition or use
-     * ``CreateDeviceDefinitionVersion`` at a later time.
+     * Creates a device definition. You may provide the initial version of the device definition now or use
+     * ''CreateDeviceDefinitionVersion'' at a later time.
      * 
      * @param createDeviceDefinitionRequest
      * @return Result of the CreateDeviceDefinition operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.CreateDeviceDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateDeviceDefinition"
      *      target="_top">AWS API Documentation</a>
@@ -139,7 +138,7 @@ public interface AWSGreengrass {
      * @param createDeviceDefinitionVersionRequest
      * @return Result of the CreateDeviceDefinitionVersion operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.CreateDeviceDefinitionVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateDeviceDefinitionVersion"
      *      target="_top">AWS API Documentation</a>
@@ -149,12 +148,12 @@ public interface AWSGreengrass {
     /**
      * Creates a Lambda function definition which contains a list of Lambda functions and their configurations to be
      * used in a group. You can create an initial version of the definition by providing a list of Lambda functions and
-     * their configurations now, or use ``CreateFunctionDefinitionVersion`` later.
+     * their configurations now, or use ''CreateFunctionDefinitionVersion'' later.
      * 
      * @param createFunctionDefinitionRequest
      * @return Result of the CreateFunctionDefinition operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.CreateFunctionDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateFunctionDefinition"
      *      target="_top">AWS API Documentation</a>
@@ -162,13 +161,13 @@ public interface AWSGreengrass {
     CreateFunctionDefinitionResult createFunctionDefinition(CreateFunctionDefinitionRequest createFunctionDefinitionRequest);
 
     /**
-     * Create a version of a Lambda function definition that has already been defined.
+     * Creates a version of a Lambda function definition that has already been defined.
      * 
      * @param createFunctionDefinitionVersionRequest
-     *        Function definition version
+     *        Information needed to create a function definition version.
      * @return Result of the CreateFunctionDefinitionVersion operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.CreateFunctionDefinitionVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateFunctionDefinitionVersion"
      *      target="_top">AWS API Documentation</a>
@@ -176,13 +175,12 @@ public interface AWSGreengrass {
     CreateFunctionDefinitionVersionResult createFunctionDefinitionVersion(CreateFunctionDefinitionVersionRequest createFunctionDefinitionVersionRequest);
 
     /**
-     * Creates a group. You may optionally provide the initial version of the group or use ''CreateGroupVersion'' at a
-     * later time.
+     * Creates a group. You may provide the initial version of the group or use ''CreateGroupVersion'' at a later time.
      * 
      * @param createGroupRequest
      * @return Result of the CreateGroup operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.CreateGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateGroup" target="_top">AWS API
      *      Documentation</a>
@@ -195,9 +193,9 @@ public interface AWSGreengrass {
      * @param createGroupCertificateAuthorityRequest
      * @return Result of the CreateGroupCertificateAuthority operation returned by the service.
      * @throws BadRequestException
-     *         This request was invalid.
+     *         invalid request
      * @throws InternalServerErrorException
-     *         The server encountered an unexpected error.
+     *         server error
      * @sample AWSGreengrass.CreateGroupCertificateAuthority
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateGroupCertificateAuthority"
      *      target="_top">AWS API Documentation</a>
@@ -210,7 +208,7 @@ public interface AWSGreengrass {
      * @param createGroupVersionRequest
      * @return Result of the CreateGroupVersion operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.CreateGroupVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateGroupVersion" target="_top">AWS
      *      API Documentation</a>
@@ -218,13 +216,13 @@ public interface AWSGreengrass {
     CreateGroupVersionResult createGroupVersion(CreateGroupVersionRequest createGroupVersionRequest);
 
     /**
-     * Creates a logger definition. You may optionally provide the initial version of the logger definition or use
-     * ``CreateLoggerDefinitionVersion`` at a later time.
+     * Creates a logger definition. You may provide the initial version of the logger definition now or use
+     * ''CreateLoggerDefinitionVersion'' at a later time.
      * 
      * @param createLoggerDefinitionRequest
      * @return Result of the CreateLoggerDefinition operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.CreateLoggerDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateLoggerDefinition"
      *      target="_top">AWS API Documentation</a>
@@ -237,7 +235,7 @@ public interface AWSGreengrass {
      * @param createLoggerDefinitionVersionRequest
      * @return Result of the CreateLoggerDefinitionVersion operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.CreateLoggerDefinitionVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateLoggerDefinitionVersion"
      *      target="_top">AWS API Documentation</a>
@@ -246,12 +244,12 @@ public interface AWSGreengrass {
 
     /**
      * Creates a resource definition which contains a list of resources to be used in a group. You can create an initial
-     * version of the definition by providing a list of resources now, or use ``CreateResourceDefinitionVersion`` later.
+     * version of the definition by providing a list of resources now, or use ''CreateResourceDefinitionVersion'' later.
      * 
      * @param createResourceDefinitionRequest
      * @return Result of the CreateResourceDefinition operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.CreateResourceDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinition"
      *      target="_top">AWS API Documentation</a>
@@ -259,12 +257,12 @@ public interface AWSGreengrass {
     CreateResourceDefinitionResult createResourceDefinition(CreateResourceDefinitionRequest createResourceDefinitionRequest);
 
     /**
-     * Create a version of a resource definition that has already been defined.
+     * Creates a version of a resource definition that has already been defined.
      * 
      * @param createResourceDefinitionVersionRequest
      * @return Result of the CreateResourceDefinitionVersion operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.CreateResourceDefinitionVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateResourceDefinitionVersion"
      *      target="_top">AWS API Documentation</a>
@@ -272,14 +270,16 @@ public interface AWSGreengrass {
     CreateResourceDefinitionVersionResult createResourceDefinitionVersion(CreateResourceDefinitionVersionRequest createResourceDefinitionVersionRequest);
 
     /**
-     * Creates an Iot Job that will trigger your Greengrass Cores to update the software they are running.
+     * Creates a software update for a core or group of cores (specified as an IoT thing group.) Use this to update the
+     * OTA Agent as well as the Greengrass core software. It makes use of the IoT Jobs feature which provides additional
+     * commands to manage a Greengrass core software update job.
      * 
      * @param createSoftwareUpdateJobRequest
      * @return Result of the CreateSoftwareUpdateJob operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         invalid request
      * @throws InternalServerErrorException
-     *         500 response
+     *         server error
      * @sample AWSGreengrass.CreateSoftwareUpdateJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSoftwareUpdateJob"
      *      target="_top">AWS API Documentation</a>
@@ -287,13 +287,13 @@ public interface AWSGreengrass {
     CreateSoftwareUpdateJobResult createSoftwareUpdateJob(CreateSoftwareUpdateJobRequest createSoftwareUpdateJobRequest);
 
     /**
-     * Creates a subscription definition. You may optionally provide the initial version of the subscription definition
-     * or use ``CreateSubscriptionDefinitionVersion`` at a later time.
+     * Creates a subscription definition. You may provide the initial version of the subscription definition now or use
+     * ''CreateSubscriptionDefinitionVersion'' at a later time.
      * 
      * @param createSubscriptionDefinitionRequest
      * @return Result of the CreateSubscriptionDefinition operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.CreateSubscriptionDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSubscriptionDefinition"
      *      target="_top">AWS API Documentation</a>
@@ -306,7 +306,7 @@ public interface AWSGreengrass {
      * @param createSubscriptionDefinitionVersionRequest
      * @return Result of the CreateSubscriptionDefinitionVersion operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.CreateSubscriptionDefinitionVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSubscriptionDefinitionVersion"
      *      target="_top">AWS API Documentation</a>
@@ -315,12 +315,12 @@ public interface AWSGreengrass {
             CreateSubscriptionDefinitionVersionRequest createSubscriptionDefinitionVersionRequest);
 
     /**
-     * Deletes a core definition. The core definition must not have been used in a deployment.
+     * Deletes a core definition.
      * 
      * @param deleteCoreDefinitionRequest
      * @return Result of the DeleteCoreDefinition operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.DeleteCoreDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteCoreDefinition"
      *      target="_top">AWS API Documentation</a>
@@ -328,12 +328,12 @@ public interface AWSGreengrass {
     DeleteCoreDefinitionResult deleteCoreDefinition(DeleteCoreDefinitionRequest deleteCoreDefinitionRequest);
 
     /**
-     * Deletes a device definition. The device definition must not have been used in a deployment.
+     * Deletes a device definition.
      * 
      * @param deleteDeviceDefinitionRequest
      * @return Result of the DeleteDeviceDefinition operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.DeleteDeviceDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteDeviceDefinition"
      *      target="_top">AWS API Documentation</a>
@@ -341,12 +341,12 @@ public interface AWSGreengrass {
     DeleteDeviceDefinitionResult deleteDeviceDefinition(DeleteDeviceDefinitionRequest deleteDeviceDefinitionRequest);
 
     /**
-     * Deletes a Lambda function definition. The Lambda function definition must not have been used in a deployment.
+     * Deletes a Lambda function definition.
      * 
      * @param deleteFunctionDefinitionRequest
      * @return Result of the DeleteFunctionDefinition operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.DeleteFunctionDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteFunctionDefinition"
      *      target="_top">AWS API Documentation</a>
@@ -354,12 +354,12 @@ public interface AWSGreengrass {
     DeleteFunctionDefinitionResult deleteFunctionDefinition(DeleteFunctionDefinitionRequest deleteFunctionDefinitionRequest);
 
     /**
-     * Deletes a group. The group must not have been used in deployment.
+     * Deletes a group.
      * 
      * @param deleteGroupRequest
      * @return Result of the DeleteGroup operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.DeleteGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteGroup" target="_top">AWS API
      *      Documentation</a>
@@ -367,12 +367,12 @@ public interface AWSGreengrass {
     DeleteGroupResult deleteGroup(DeleteGroupRequest deleteGroupRequest);
 
     /**
-     * Deletes a logger definition. The logger definition must not have been used in a deployment.
+     * Deletes a logger definition.
      * 
      * @param deleteLoggerDefinitionRequest
      * @return Result of the DeleteLoggerDefinition operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.DeleteLoggerDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteLoggerDefinition"
      *      target="_top">AWS API Documentation</a>
@@ -385,7 +385,7 @@ public interface AWSGreengrass {
      * @param deleteResourceDefinitionRequest
      * @return Result of the DeleteResourceDefinition operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.DeleteResourceDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteResourceDefinition"
      *      target="_top">AWS API Documentation</a>
@@ -393,12 +393,12 @@ public interface AWSGreengrass {
     DeleteResourceDefinitionResult deleteResourceDefinition(DeleteResourceDefinitionRequest deleteResourceDefinitionRequest);
 
     /**
-     * Deletes a subscription definition. The subscription definition must not have been used in a deployment.
+     * Deletes a subscription definition.
      * 
      * @param deleteSubscriptionDefinitionRequest
      * @return Result of the DeleteSubscriptionDefinition operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.DeleteSubscriptionDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteSubscriptionDefinition"
      *      target="_top">AWS API Documentation</a>
@@ -411,9 +411,9 @@ public interface AWSGreengrass {
      * @param disassociateRoleFromGroupRequest
      * @return Result of the DisassociateRoleFromGroup operation returned by the service.
      * @throws BadRequestException
-     *         User Error
+     *         invalid request
      * @throws InternalServerErrorException
-     *         Server Error
+     *         server error
      * @sample AWSGreengrass.DisassociateRoleFromGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DisassociateRoleFromGroup"
      *      target="_top">AWS API Documentation</a>
@@ -421,12 +421,12 @@ public interface AWSGreengrass {
     DisassociateRoleFromGroupResult disassociateRoleFromGroup(DisassociateRoleFromGroupRequest disassociateRoleFromGroupRequest);
 
     /**
-     * Disassociates the service role from the account. Without a service role, deployments will not work.
+     * Disassociates the service role from your account. Without a service role, deployments will not work.
      * 
      * @param disassociateServiceRoleFromAccountRequest
      * @return Result of the DisassociateServiceRoleFromAccount operation returned by the service.
      * @throws InternalServerErrorException
-     *         Server Error
+     *         server error
      * @sample AWSGreengrass.DisassociateServiceRoleFromAccount
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DisassociateServiceRoleFromAccount"
      *      target="_top">AWS API Documentation</a>
@@ -440,9 +440,9 @@ public interface AWSGreengrass {
      * @param getAssociatedRoleRequest
      * @return Result of the GetAssociatedRole operation returned by the service.
      * @throws BadRequestException
-     *         User Error
+     *         invalid request
      * @throws InternalServerErrorException
-     *         Server Error
+     *         server error
      * @sample AWSGreengrass.GetAssociatedRole
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetAssociatedRole" target="_top">AWS
      *      API Documentation</a>
@@ -455,9 +455,9 @@ public interface AWSGreengrass {
      * @param getConnectivityInfoRequest
      * @return Result of the GetConnectivityInfo operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         invalid request
      * @throws InternalServerErrorException
-     *         500 response
+     *         server error
      * @sample AWSGreengrass.GetConnectivityInfo
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetConnectivityInfo" target="_top">AWS
      *      API Documentation</a>
@@ -470,7 +470,7 @@ public interface AWSGreengrass {
      * @param getCoreDefinitionRequest
      * @return Result of the GetCoreDefinition operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.GetCoreDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetCoreDefinition" target="_top">AWS
      *      API Documentation</a>
@@ -483,7 +483,7 @@ public interface AWSGreengrass {
      * @param getCoreDefinitionVersionRequest
      * @return Result of the GetCoreDefinitionVersion operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.GetCoreDefinitionVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetCoreDefinitionVersion"
      *      target="_top">AWS API Documentation</a>
@@ -496,7 +496,7 @@ public interface AWSGreengrass {
      * @param getDeploymentStatusRequest
      * @return Result of the GetDeploymentStatus operation returned by the service.
      * @throws BadRequestException
-     *         This request was invalid.
+     *         invalid request
      * @sample AWSGreengrass.GetDeploymentStatus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetDeploymentStatus" target="_top">AWS
      *      API Documentation</a>
@@ -509,7 +509,7 @@ public interface AWSGreengrass {
      * @param getDeviceDefinitionRequest
      * @return Result of the GetDeviceDefinition operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.GetDeviceDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetDeviceDefinition" target="_top">AWS
      *      API Documentation</a>
@@ -522,7 +522,7 @@ public interface AWSGreengrass {
      * @param getDeviceDefinitionVersionRequest
      * @return Result of the GetDeviceDefinitionVersion operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.GetDeviceDefinitionVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetDeviceDefinitionVersion"
      *      target="_top">AWS API Documentation</a>
@@ -530,12 +530,12 @@ public interface AWSGreengrass {
     GetDeviceDefinitionVersionResult getDeviceDefinitionVersion(GetDeviceDefinitionVersionRequest getDeviceDefinitionVersionRequest);
 
     /**
-     * Retrieves information about a Lambda function definition, such as its creation time and latest version.
+     * Retrieves information about a Lambda function definition, including its creation time and latest version.
      * 
      * @param getFunctionDefinitionRequest
      * @return Result of the GetFunctionDefinition operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.GetFunctionDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetFunctionDefinition"
      *      target="_top">AWS API Documentation</a>
@@ -543,13 +543,13 @@ public interface AWSGreengrass {
     GetFunctionDefinitionResult getFunctionDefinition(GetFunctionDefinitionRequest getFunctionDefinitionRequest);
 
     /**
-     * Retrieves information about a Lambda function definition version, such as which Lambda functions are included in
-     * the version and their configurations.
+     * Retrieves information about a Lambda function definition version, including which Lambda functions are included
+     * in the version and their configurations.
      * 
      * @param getFunctionDefinitionVersionRequest
      * @return Result of the GetFunctionDefinitionVersion operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.GetFunctionDefinitionVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetFunctionDefinitionVersion"
      *      target="_top">AWS API Documentation</a>
@@ -562,7 +562,7 @@ public interface AWSGreengrass {
      * @param getGroupRequest
      * @return Result of the GetGroup operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.GetGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetGroup" target="_top">AWS API
      *      Documentation</a>
@@ -575,9 +575,9 @@ public interface AWSGreengrass {
      * @param getGroupCertificateAuthorityRequest
      * @return Result of the GetGroupCertificateAuthority operation returned by the service.
      * @throws BadRequestException
-     *         This request was invalid.
+     *         invalid request
      * @throws InternalServerErrorException
-     *         This request was invalid.
+     *         server error
      * @sample AWSGreengrass.GetGroupCertificateAuthority
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetGroupCertificateAuthority"
      *      target="_top">AWS API Documentation</a>
@@ -590,9 +590,9 @@ public interface AWSGreengrass {
      * @param getGroupCertificateConfigurationRequest
      * @return Result of the GetGroupCertificateConfiguration operation returned by the service.
      * @throws BadRequestException
-     *         This request was invalid.
+     *         invalid request
      * @throws InternalServerErrorException
-     *         This request was invalid.
+     *         server error
      * @sample AWSGreengrass.GetGroupCertificateConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetGroupCertificateConfiguration"
      *      target="_top">AWS API Documentation</a>
@@ -605,7 +605,7 @@ public interface AWSGreengrass {
      * @param getGroupVersionRequest
      * @return Result of the GetGroupVersion operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.GetGroupVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetGroupVersion" target="_top">AWS API
      *      Documentation</a>
@@ -618,7 +618,7 @@ public interface AWSGreengrass {
      * @param getLoggerDefinitionRequest
      * @return Result of the GetLoggerDefinition operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.GetLoggerDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetLoggerDefinition" target="_top">AWS
      *      API Documentation</a>
@@ -631,7 +631,7 @@ public interface AWSGreengrass {
      * @param getLoggerDefinitionVersionRequest
      * @return Result of the GetLoggerDefinitionVersion operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.GetLoggerDefinitionVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetLoggerDefinitionVersion"
      *      target="_top">AWS API Documentation</a>
@@ -639,12 +639,12 @@ public interface AWSGreengrass {
     GetLoggerDefinitionVersionResult getLoggerDefinitionVersion(GetLoggerDefinitionVersionRequest getLoggerDefinitionVersionRequest);
 
     /**
-     * Retrieves information about a resource definition, such as its creation time and latest version.
+     * Retrieves information about a resource definition, including its creation time and latest version.
      * 
      * @param getResourceDefinitionRequest
      * @return Result of the GetResourceDefinition operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.GetResourceDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinition"
      *      target="_top">AWS API Documentation</a>
@@ -652,12 +652,12 @@ public interface AWSGreengrass {
     GetResourceDefinitionResult getResourceDefinition(GetResourceDefinitionRequest getResourceDefinitionRequest);
 
     /**
-     * Retrieves information about a resource definition version, such as which resources are included in the version.
+     * Retrieves information about a resource definition version, including which resources are included in the version.
      * 
      * @param getResourceDefinitionVersionRequest
      * @return Result of the GetResourceDefinitionVersion operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.GetResourceDefinitionVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetResourceDefinitionVersion"
      *      target="_top">AWS API Documentation</a>
@@ -665,12 +665,12 @@ public interface AWSGreengrass {
     GetResourceDefinitionVersionResult getResourceDefinitionVersion(GetResourceDefinitionVersionRequest getResourceDefinitionVersionRequest);
 
     /**
-     * Retrieves the service role that is attached to the account.
+     * Retrieves the service role that is attached to your account.
      * 
      * @param getServiceRoleForAccountRequest
      * @return Result of the GetServiceRoleForAccount operation returned by the service.
      * @throws InternalServerErrorException
-     *         Server Error
+     *         server error
      * @sample AWSGreengrass.GetServiceRoleForAccount
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetServiceRoleForAccount"
      *      target="_top">AWS API Documentation</a>
@@ -683,7 +683,7 @@ public interface AWSGreengrass {
      * @param getSubscriptionDefinitionRequest
      * @return Result of the GetSubscriptionDefinition operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.GetSubscriptionDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetSubscriptionDefinition"
      *      target="_top">AWS API Documentation</a>
@@ -696,7 +696,7 @@ public interface AWSGreengrass {
      * @param getSubscriptionDefinitionVersionRequest
      * @return Result of the GetSubscriptionDefinitionVersion operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.GetSubscriptionDefinitionVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetSubscriptionDefinitionVersion"
      *      target="_top">AWS API Documentation</a>
@@ -704,12 +704,12 @@ public interface AWSGreengrass {
     GetSubscriptionDefinitionVersionResult getSubscriptionDefinitionVersion(GetSubscriptionDefinitionVersionRequest getSubscriptionDefinitionVersionRequest);
 
     /**
-     * Lists versions of a core definition.
+     * Lists the versions of a core definition.
      * 
      * @param listCoreDefinitionVersionsRequest
      * @return Result of the ListCoreDefinitionVersions operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.ListCoreDefinitionVersions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListCoreDefinitionVersions"
      *      target="_top">AWS API Documentation</a>
@@ -733,7 +733,7 @@ public interface AWSGreengrass {
      * @param listDeploymentsRequest
      * @return Result of the ListDeployments operation returned by the service.
      * @throws BadRequestException
-     *         This request was invalid.
+     *         invalid request
      * @sample AWSGreengrass.ListDeployments
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListDeployments" target="_top">AWS API
      *      Documentation</a>
@@ -746,7 +746,7 @@ public interface AWSGreengrass {
      * @param listDeviceDefinitionVersionsRequest
      * @return Result of the ListDeviceDefinitionVersions operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.ListDeviceDefinitionVersions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListDeviceDefinitionVersions"
      *      target="_top">AWS API Documentation</a>
@@ -770,7 +770,7 @@ public interface AWSGreengrass {
      * @param listFunctionDefinitionVersionsRequest
      * @return Result of the ListFunctionDefinitionVersions operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.ListFunctionDefinitionVersions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListFunctionDefinitionVersions"
      *      target="_top">AWS API Documentation</a>
@@ -794,9 +794,9 @@ public interface AWSGreengrass {
      * @param listGroupCertificateAuthoritiesRequest
      * @return Result of the ListGroupCertificateAuthorities operation returned by the service.
      * @throws BadRequestException
-     *         This request was invalid.
+     *         invalid request
      * @throws InternalServerErrorException
-     *         This request was invalid.
+     *         server error
      * @sample AWSGreengrass.ListGroupCertificateAuthorities
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListGroupCertificateAuthorities"
      *      target="_top">AWS API Documentation</a>
@@ -804,12 +804,12 @@ public interface AWSGreengrass {
     ListGroupCertificateAuthoritiesResult listGroupCertificateAuthorities(ListGroupCertificateAuthoritiesRequest listGroupCertificateAuthoritiesRequest);
 
     /**
-     * List the versions of a group.
+     * Lists the versions of a group.
      * 
      * @param listGroupVersionsRequest
      * @return Result of the ListGroupVersions operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.ListGroupVersions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListGroupVersions" target="_top">AWS
      *      API Documentation</a>
@@ -833,7 +833,7 @@ public interface AWSGreengrass {
      * @param listLoggerDefinitionVersionsRequest
      * @return Result of the ListLoggerDefinitionVersions operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.ListLoggerDefinitionVersions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListLoggerDefinitionVersions"
      *      target="_top">AWS API Documentation</a>
@@ -857,7 +857,7 @@ public interface AWSGreengrass {
      * @param listResourceDefinitionVersionsRequest
      * @return Result of the ListResourceDefinitionVersions operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.ListResourceDefinitionVersions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListResourceDefinitionVersions"
      *      target="_top">AWS API Documentation</a>
@@ -881,7 +881,7 @@ public interface AWSGreengrass {
      * @param listSubscriptionDefinitionVersionsRequest
      * @return Result of the ListSubscriptionDefinitionVersions operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.ListSubscriptionDefinitionVersions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListSubscriptionDefinitionVersions"
      *      target="_top">AWS API Documentation</a>
@@ -904,7 +904,7 @@ public interface AWSGreengrass {
      * Resets a group's deployments.
      * 
      * @param resetDeploymentsRequest
-     *        Information needed to perform a reset of a group's deployments.
+     *        Information needed to reset deployments.
      * @return Result of the ResetDeployments operation returned by the service.
      * @throws BadRequestException
      *         invalid request
@@ -919,12 +919,12 @@ public interface AWSGreengrass {
      * receive this information in order to find the location of the core and connect to it.
      * 
      * @param updateConnectivityInfoRequest
-     *        connectivity info request
+     *        Connectivity information.
      * @return Result of the UpdateConnectivityInfo operation returned by the service.
      * @throws BadRequestException
-     *         400 response
+     *         invalid request
      * @throws InternalServerErrorException
-     *         500 response
+     *         server error
      * @sample AWSGreengrass.UpdateConnectivityInfo
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateConnectivityInfo"
      *      target="_top">AWS API Documentation</a>
@@ -937,7 +937,7 @@ public interface AWSGreengrass {
      * @param updateCoreDefinitionRequest
      * @return Result of the UpdateCoreDefinition operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.UpdateCoreDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateCoreDefinition"
      *      target="_top">AWS API Documentation</a>
@@ -950,7 +950,7 @@ public interface AWSGreengrass {
      * @param updateDeviceDefinitionRequest
      * @return Result of the UpdateDeviceDefinition operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.UpdateDeviceDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateDeviceDefinition"
      *      target="_top">AWS API Documentation</a>
@@ -963,7 +963,7 @@ public interface AWSGreengrass {
      * @param updateFunctionDefinitionRequest
      * @return Result of the UpdateFunctionDefinition operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.UpdateFunctionDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateFunctionDefinition"
      *      target="_top">AWS API Documentation</a>
@@ -976,7 +976,7 @@ public interface AWSGreengrass {
      * @param updateGroupRequest
      * @return Result of the UpdateGroup operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.UpdateGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateGroup" target="_top">AWS API
      *      Documentation</a>
@@ -984,14 +984,14 @@ public interface AWSGreengrass {
     UpdateGroupResult updateGroup(UpdateGroupRequest updateGroupRequest);
 
     /**
-     * Updates the Cert expiry time for a group.
+     * Updates the Certificate expiry time for a group.
      * 
      * @param updateGroupCertificateConfigurationRequest
      * @return Result of the UpdateGroupCertificateConfiguration operation returned by the service.
      * @throws BadRequestException
-     *         This request was invalid.
+     *         invalid request
      * @throws InternalServerErrorException
-     *         This request was invalid.
+     *         server error
      * @sample AWSGreengrass.UpdateGroupCertificateConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateGroupCertificateConfiguration"
      *      target="_top">AWS API Documentation</a>
@@ -1005,7 +1005,7 @@ public interface AWSGreengrass {
      * @param updateLoggerDefinitionRequest
      * @return Result of the UpdateLoggerDefinition operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.UpdateLoggerDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateLoggerDefinition"
      *      target="_top">AWS API Documentation</a>
@@ -1018,7 +1018,7 @@ public interface AWSGreengrass {
      * @param updateResourceDefinitionRequest
      * @return Result of the UpdateResourceDefinition operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.UpdateResourceDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateResourceDefinition"
      *      target="_top">AWS API Documentation</a>
@@ -1031,7 +1031,7 @@ public interface AWSGreengrass {
      * @param updateSubscriptionDefinitionRequest
      * @return Result of the UpdateSubscriptionDefinition operation returned by the service.
      * @throws BadRequestException
-     *         user error
+     *         invalid request
      * @sample AWSGreengrass.UpdateSubscriptionDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateSubscriptionDefinition"
      *      target="_top">AWS API Documentation</a>

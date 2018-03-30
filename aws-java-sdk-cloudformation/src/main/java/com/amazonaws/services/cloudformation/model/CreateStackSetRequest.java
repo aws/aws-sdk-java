@@ -153,6 +153,18 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
+     * The Amazon Resource Number (ARN) of the IAM role to use to create this stack set.
+     * </p>
+     * <p>
+     * Specify an IAM role only if you are using customized administrator roles to control which users or groups can
+     * manage specific stack sets within the same administrator account. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions
+     * for Multiple Administrators</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     */
+    private String administrationRoleARN;
+    /**
+     * <p>
      * A unique identifier for this <code>CreateStackSet</code> request. Specify this token if you plan to retry
      * requests so that AWS CloudFormation knows that you're not attempting to create another stack set with the same
      * name. You might retry <code>CreateStackSet</code> requests to ensure that AWS CloudFormation successfully
@@ -1309,6 +1321,79 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * The Amazon Resource Number (ARN) of the IAM role to use to create this stack set.
+     * </p>
+     * <p>
+     * Specify an IAM role only if you are using customized administrator roles to control which users or groups can
+     * manage specific stack sets within the same administrator account. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions
+     * for Multiple Administrators</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * 
+     * @param administrationRoleARN
+     *        The Amazon Resource Number (ARN) of the IAM role to use to create this stack set. </p>
+     *        <p>
+     *        Specify an IAM role only if you are using customized administrator roles to control which users or groups
+     *        can manage specific stack sets within the same administrator account. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
+     *        Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User Guide</i>.
+     */
+
+    public void setAdministrationRoleARN(String administrationRoleARN) {
+        this.administrationRoleARN = administrationRoleARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the IAM role to use to create this stack set.
+     * </p>
+     * <p>
+     * Specify an IAM role only if you are using customized administrator roles to control which users or groups can
+     * manage specific stack sets within the same administrator account. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions
+     * for Multiple Administrators</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * 
+     * @return The Amazon Resource Number (ARN) of the IAM role to use to create this stack set. </p>
+     *         <p>
+     *         Specify an IAM role only if you are using customized administrator roles to control which users or groups
+     *         can manage specific stack sets within the same administrator account. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
+     *         Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User Guide</i>.
+     */
+
+    public String getAdministrationRoleARN() {
+        return this.administrationRoleARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the IAM role to use to create this stack set.
+     * </p>
+     * <p>
+     * Specify an IAM role only if you are using customized administrator roles to control which users or groups can
+     * manage specific stack sets within the same administrator account. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions
+     * for Multiple Administrators</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * 
+     * @param administrationRoleARN
+     *        The Amazon Resource Number (ARN) of the IAM role to use to create this stack set. </p>
+     *        <p>
+     *        Specify an IAM role only if you are using customized administrator roles to control which users or groups
+     *        can manage specific stack sets within the same administrator account. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
+     *        Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackSetRequest withAdministrationRoleARN(String administrationRoleARN) {
+        setAdministrationRoleARN(administrationRoleARN);
+        return this;
+    }
+
+    /**
+     * <p>
      * A unique identifier for this <code>CreateStackSet</code> request. Specify this token if you plan to retry
      * requests so that AWS CloudFormation knows that you're not attempting to create another stack set with the same
      * name. You might retry <code>CreateStackSet</code> requests to ensure that AWS CloudFormation successfully
@@ -1405,6 +1490,8 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("Capabilities: ").append(getCapabilities()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
+        if (getAdministrationRoleARN() != null)
+            sb.append("AdministrationRoleARN: ").append(getAdministrationRoleARN()).append(",");
         if (getClientRequestToken() != null)
             sb.append("ClientRequestToken: ").append(getClientRequestToken());
         sb.append("}");
@@ -1449,6 +1536,10 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getAdministrationRoleARN() == null ^ this.getAdministrationRoleARN() == null)
+            return false;
+        if (other.getAdministrationRoleARN() != null && other.getAdministrationRoleARN().equals(this.getAdministrationRoleARN()) == false)
+            return false;
         if (other.getClientRequestToken() == null ^ this.getClientRequestToken() == null)
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
@@ -1468,6 +1559,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getCapabilities() == null) ? 0 : getCapabilities().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getAdministrationRoleARN() == null) ? 0 : getAdministrationRoleARN().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         return hashCode;
     }

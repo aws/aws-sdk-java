@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * A container of data for all resource types.
+ * A container for resource data. The container takes only one of the following supported resource data types:
+ * ''LocalDeviceResourceData'', ''LocalVolumeResourceData'', ''SageMakerMachineLearningModelResourceData'',
+ * ''S3MachineLearningModelResourceData''.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ResourceDataContainer" target="_top">AWS
  *      API Documentation</a>
@@ -26,16 +28,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceDataContainer implements Serializable, Cloneable, StructuredPojo {
 
-    /** Attributes that define the Local Device Resource. */
+    /** Attributes that define the local device resource. */
     private LocalDeviceResourceData localDeviceResourceData;
-    /** Attributes that define the Local Volume Resource. */
+    /** Attributes that define the local volume resource. */
     private LocalVolumeResourceData localVolumeResourceData;
+    /** Attributes that define an S3 machine learning resource. */
+    private S3MachineLearningModelResourceData s3MachineLearningModelResourceData;
+    /** Attributes that define an SageMaker machine learning resource. */
+    private SageMakerMachineLearningModelResourceData sageMakerMachineLearningModelResourceData;
 
     /**
-     * Attributes that define the Local Device Resource.
+     * Attributes that define the local device resource.
      * 
      * @param localDeviceResourceData
-     *        Attributes that define the Local Device Resource.
+     *        Attributes that define the local device resource.
      */
 
     public void setLocalDeviceResourceData(LocalDeviceResourceData localDeviceResourceData) {
@@ -43,9 +49,9 @@ public class ResourceDataContainer implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Attributes that define the Local Device Resource.
+     * Attributes that define the local device resource.
      * 
-     * @return Attributes that define the Local Device Resource.
+     * @return Attributes that define the local device resource.
      */
 
     public LocalDeviceResourceData getLocalDeviceResourceData() {
@@ -53,10 +59,10 @@ public class ResourceDataContainer implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Attributes that define the Local Device Resource.
+     * Attributes that define the local device resource.
      * 
      * @param localDeviceResourceData
-     *        Attributes that define the Local Device Resource.
+     *        Attributes that define the local device resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,10 +72,10 @@ public class ResourceDataContainer implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Attributes that define the Local Volume Resource.
+     * Attributes that define the local volume resource.
      * 
      * @param localVolumeResourceData
-     *        Attributes that define the Local Volume Resource.
+     *        Attributes that define the local volume resource.
      */
 
     public void setLocalVolumeResourceData(LocalVolumeResourceData localVolumeResourceData) {
@@ -77,9 +83,9 @@ public class ResourceDataContainer implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Attributes that define the Local Volume Resource.
+     * Attributes that define the local volume resource.
      * 
-     * @return Attributes that define the Local Volume Resource.
+     * @return Attributes that define the local volume resource.
      */
 
     public LocalVolumeResourceData getLocalVolumeResourceData() {
@@ -87,15 +93,84 @@ public class ResourceDataContainer implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Attributes that define the Local Volume Resource.
+     * Attributes that define the local volume resource.
      * 
      * @param localVolumeResourceData
-     *        Attributes that define the Local Volume Resource.
+     *        Attributes that define the local volume resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ResourceDataContainer withLocalVolumeResourceData(LocalVolumeResourceData localVolumeResourceData) {
         setLocalVolumeResourceData(localVolumeResourceData);
+        return this;
+    }
+
+    /**
+     * Attributes that define an S3 machine learning resource.
+     * 
+     * @param s3MachineLearningModelResourceData
+     *        Attributes that define an S3 machine learning resource.
+     */
+
+    public void setS3MachineLearningModelResourceData(S3MachineLearningModelResourceData s3MachineLearningModelResourceData) {
+        this.s3MachineLearningModelResourceData = s3MachineLearningModelResourceData;
+    }
+
+    /**
+     * Attributes that define an S3 machine learning resource.
+     * 
+     * @return Attributes that define an S3 machine learning resource.
+     */
+
+    public S3MachineLearningModelResourceData getS3MachineLearningModelResourceData() {
+        return this.s3MachineLearningModelResourceData;
+    }
+
+    /**
+     * Attributes that define an S3 machine learning resource.
+     * 
+     * @param s3MachineLearningModelResourceData
+     *        Attributes that define an S3 machine learning resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDataContainer withS3MachineLearningModelResourceData(S3MachineLearningModelResourceData s3MachineLearningModelResourceData) {
+        setS3MachineLearningModelResourceData(s3MachineLearningModelResourceData);
+        return this;
+    }
+
+    /**
+     * Attributes that define an SageMaker machine learning resource.
+     * 
+     * @param sageMakerMachineLearningModelResourceData
+     *        Attributes that define an SageMaker machine learning resource.
+     */
+
+    public void setSageMakerMachineLearningModelResourceData(SageMakerMachineLearningModelResourceData sageMakerMachineLearningModelResourceData) {
+        this.sageMakerMachineLearningModelResourceData = sageMakerMachineLearningModelResourceData;
+    }
+
+    /**
+     * Attributes that define an SageMaker machine learning resource.
+     * 
+     * @return Attributes that define an SageMaker machine learning resource.
+     */
+
+    public SageMakerMachineLearningModelResourceData getSageMakerMachineLearningModelResourceData() {
+        return this.sageMakerMachineLearningModelResourceData;
+    }
+
+    /**
+     * Attributes that define an SageMaker machine learning resource.
+     * 
+     * @param sageMakerMachineLearningModelResourceData
+     *        Attributes that define an SageMaker machine learning resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDataContainer withSageMakerMachineLearningModelResourceData(
+            SageMakerMachineLearningModelResourceData sageMakerMachineLearningModelResourceData) {
+        setSageMakerMachineLearningModelResourceData(sageMakerMachineLearningModelResourceData);
         return this;
     }
 
@@ -113,7 +188,11 @@ public class ResourceDataContainer implements Serializable, Cloneable, Structure
         if (getLocalDeviceResourceData() != null)
             sb.append("LocalDeviceResourceData: ").append(getLocalDeviceResourceData()).append(",");
         if (getLocalVolumeResourceData() != null)
-            sb.append("LocalVolumeResourceData: ").append(getLocalVolumeResourceData());
+            sb.append("LocalVolumeResourceData: ").append(getLocalVolumeResourceData()).append(",");
+        if (getS3MachineLearningModelResourceData() != null)
+            sb.append("S3MachineLearningModelResourceData: ").append(getS3MachineLearningModelResourceData()).append(",");
+        if (getSageMakerMachineLearningModelResourceData() != null)
+            sb.append("SageMakerMachineLearningModelResourceData: ").append(getSageMakerMachineLearningModelResourceData());
         sb.append("}");
         return sb.toString();
     }
@@ -136,6 +215,16 @@ public class ResourceDataContainer implements Serializable, Cloneable, Structure
             return false;
         if (other.getLocalVolumeResourceData() != null && other.getLocalVolumeResourceData().equals(this.getLocalVolumeResourceData()) == false)
             return false;
+        if (other.getS3MachineLearningModelResourceData() == null ^ this.getS3MachineLearningModelResourceData() == null)
+            return false;
+        if (other.getS3MachineLearningModelResourceData() != null
+                && other.getS3MachineLearningModelResourceData().equals(this.getS3MachineLearningModelResourceData()) == false)
+            return false;
+        if (other.getSageMakerMachineLearningModelResourceData() == null ^ this.getSageMakerMachineLearningModelResourceData() == null)
+            return false;
+        if (other.getSageMakerMachineLearningModelResourceData() != null
+                && other.getSageMakerMachineLearningModelResourceData().equals(this.getSageMakerMachineLearningModelResourceData()) == false)
+            return false;
         return true;
     }
 
@@ -146,6 +235,9 @@ public class ResourceDataContainer implements Serializable, Cloneable, Structure
 
         hashCode = prime * hashCode + ((getLocalDeviceResourceData() == null) ? 0 : getLocalDeviceResourceData().hashCode());
         hashCode = prime * hashCode + ((getLocalVolumeResourceData() == null) ? 0 : getLocalVolumeResourceData().hashCode());
+        hashCode = prime * hashCode + ((getS3MachineLearningModelResourceData() == null) ? 0 : getS3MachineLearningModelResourceData().hashCode());
+        hashCode = prime * hashCode
+                + ((getSageMakerMachineLearningModelResourceData() == null) ? 0 : getSageMakerMachineLearningModelResourceData().hashCode());
         return hashCode;
     }
 

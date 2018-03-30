@@ -23,26 +23,26 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetFunctionDefinitionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** Arn of the definition. */
+    /** The ARN of the definition. */
     private String arn;
-    /** Timestamp of when the definition was created. */
+    /** The time, in milliseconds since the epoch, when the definition was created. */
     private String creationTimestamp;
-    /** Id of the definition. */
+    /** The ID of the definition. */
     private String id;
-    /** Last updated timestamp of the definition. */
+    /** The time, in milliseconds since the epoch, when the definition was last updated. */
     private String lastUpdatedTimestamp;
-    /** Last version of the definition. */
+    /** The latest version of the definition. */
     private String latestVersion;
-    /** Latest version arn of the definition. */
+    /** The ARN of the latest version of the definition. */
     private String latestVersionArn;
-    /** Name of the definition. */
+    /** The name of the definition. */
     private String name;
 
     /**
-     * Arn of the definition.
+     * The ARN of the definition.
      * 
      * @param arn
-     *        Arn of the definition.
+     *        The ARN of the definition.
      */
 
     public void setArn(String arn) {
@@ -50,9 +50,9 @@ public class GetFunctionDefinitionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Arn of the definition.
+     * The ARN of the definition.
      * 
-     * @return Arn of the definition.
+     * @return The ARN of the definition.
      */
 
     public String getArn() {
@@ -60,10 +60,10 @@ public class GetFunctionDefinitionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Arn of the definition.
+     * The ARN of the definition.
      * 
      * @param arn
-     *        Arn of the definition.
+     *        The ARN of the definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -73,10 +73,10 @@ public class GetFunctionDefinitionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Timestamp of when the definition was created.
+     * The time, in milliseconds since the epoch, when the definition was created.
      * 
      * @param creationTimestamp
-     *        Timestamp of when the definition was created.
+     *        The time, in milliseconds since the epoch, when the definition was created.
      */
 
     public void setCreationTimestamp(String creationTimestamp) {
@@ -84,9 +84,9 @@ public class GetFunctionDefinitionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Timestamp of when the definition was created.
+     * The time, in milliseconds since the epoch, when the definition was created.
      * 
-     * @return Timestamp of when the definition was created.
+     * @return The time, in milliseconds since the epoch, when the definition was created.
      */
 
     public String getCreationTimestamp() {
@@ -94,10 +94,10 @@ public class GetFunctionDefinitionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Timestamp of when the definition was created.
+     * The time, in milliseconds since the epoch, when the definition was created.
      * 
      * @param creationTimestamp
-     *        Timestamp of when the definition was created.
+     *        The time, in milliseconds since the epoch, when the definition was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,10 +107,10 @@ public class GetFunctionDefinitionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Id of the definition.
+     * The ID of the definition.
      * 
      * @param id
-     *        Id of the definition.
+     *        The ID of the definition.
      */
 
     public void setId(String id) {
@@ -118,9 +118,9 @@ public class GetFunctionDefinitionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Id of the definition.
+     * The ID of the definition.
      * 
-     * @return Id of the definition.
+     * @return The ID of the definition.
      */
 
     public String getId() {
@@ -128,10 +128,10 @@ public class GetFunctionDefinitionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Id of the definition.
+     * The ID of the definition.
      * 
      * @param id
-     *        Id of the definition.
+     *        The ID of the definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,10 +141,10 @@ public class GetFunctionDefinitionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Last updated timestamp of the definition.
+     * The time, in milliseconds since the epoch, when the definition was last updated.
      * 
      * @param lastUpdatedTimestamp
-     *        Last updated timestamp of the definition.
+     *        The time, in milliseconds since the epoch, when the definition was last updated.
      */
 
     public void setLastUpdatedTimestamp(String lastUpdatedTimestamp) {
@@ -152,9 +152,9 @@ public class GetFunctionDefinitionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Last updated timestamp of the definition.
+     * The time, in milliseconds since the epoch, when the definition was last updated.
      * 
-     * @return Last updated timestamp of the definition.
+     * @return The time, in milliseconds since the epoch, when the definition was last updated.
      */
 
     public String getLastUpdatedTimestamp() {
@@ -162,10 +162,10 @@ public class GetFunctionDefinitionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Last updated timestamp of the definition.
+     * The time, in milliseconds since the epoch, when the definition was last updated.
      * 
      * @param lastUpdatedTimestamp
-     *        Last updated timestamp of the definition.
+     *        The time, in milliseconds since the epoch, when the definition was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,10 +175,10 @@ public class GetFunctionDefinitionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Last version of the definition.
+     * The latest version of the definition.
      * 
      * @param latestVersion
-     *        Last version of the definition.
+     *        The latest version of the definition.
      */
 
     public void setLatestVersion(String latestVersion) {
@@ -186,9 +186,9 @@ public class GetFunctionDefinitionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Last version of the definition.
+     * The latest version of the definition.
      * 
-     * @return Last version of the definition.
+     * @return The latest version of the definition.
      */
 
     public String getLatestVersion() {
@@ -196,10 +196,10 @@ public class GetFunctionDefinitionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Last version of the definition.
+     * The latest version of the definition.
      * 
      * @param latestVersion
-     *        Last version of the definition.
+     *        The latest version of the definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -209,10 +209,10 @@ public class GetFunctionDefinitionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Latest version arn of the definition.
+     * The ARN of the latest version of the definition.
      * 
      * @param latestVersionArn
-     *        Latest version arn of the definition.
+     *        The ARN of the latest version of the definition.
      */
 
     public void setLatestVersionArn(String latestVersionArn) {
@@ -220,9 +220,9 @@ public class GetFunctionDefinitionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Latest version arn of the definition.
+     * The ARN of the latest version of the definition.
      * 
-     * @return Latest version arn of the definition.
+     * @return The ARN of the latest version of the definition.
      */
 
     public String getLatestVersionArn() {
@@ -230,10 +230,10 @@ public class GetFunctionDefinitionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Latest version arn of the definition.
+     * The ARN of the latest version of the definition.
      * 
      * @param latestVersionArn
-     *        Latest version arn of the definition.
+     *        The ARN of the latest version of the definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -243,10 +243,10 @@ public class GetFunctionDefinitionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Name of the definition.
+     * The name of the definition.
      * 
      * @param name
-     *        Name of the definition.
+     *        The name of the definition.
      */
 
     public void setName(String name) {
@@ -254,9 +254,9 @@ public class GetFunctionDefinitionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Name of the definition.
+     * The name of the definition.
      * 
-     * @return Name of the definition.
+     * @return The name of the definition.
      */
 
     public String getName() {
@@ -264,10 +264,10 @@ public class GetFunctionDefinitionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Name of the definition.
+     * The name of the definition.
      * 
      * @param name
-     *        Name of the definition.
+     *        The name of the definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,18 +25,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListDeviceDefinitionVersionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** device definition Id */
+    /** The ID of the device definition. */
     private String deviceDefinitionId;
-    /** Specifies the maximum number of list results to be returned in this page */
+    /** The maximum number of results to be returned per request. */
     private String maxResults;
-    /** Specifies the pagination token used when iterating through a paginated request */
+    /** The token for the next set of results, or ''null'' if there are no additional results. */
     private String nextToken;
 
     /**
-     * device definition Id
+     * The ID of the device definition.
      * 
      * @param deviceDefinitionId
-     *        device definition Id
+     *        The ID of the device definition.
      */
 
     public void setDeviceDefinitionId(String deviceDefinitionId) {
@@ -44,9 +44,9 @@ public class ListDeviceDefinitionVersionsRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * device definition Id
+     * The ID of the device definition.
      * 
-     * @return device definition Id
+     * @return The ID of the device definition.
      */
 
     public String getDeviceDefinitionId() {
@@ -54,10 +54,10 @@ public class ListDeviceDefinitionVersionsRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * device definition Id
+     * The ID of the device definition.
      * 
      * @param deviceDefinitionId
-     *        device definition Id
+     *        The ID of the device definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -67,10 +67,10 @@ public class ListDeviceDefinitionVersionsRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * Specifies the maximum number of list results to be returned in this page
+     * The maximum number of results to be returned per request.
      * 
      * @param maxResults
-     *        Specifies the maximum number of list results to be returned in this page
+     *        The maximum number of results to be returned per request.
      */
 
     public void setMaxResults(String maxResults) {
@@ -78,9 +78,9 @@ public class ListDeviceDefinitionVersionsRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * Specifies the maximum number of list results to be returned in this page
+     * The maximum number of results to be returned per request.
      * 
-     * @return Specifies the maximum number of list results to be returned in this page
+     * @return The maximum number of results to be returned per request.
      */
 
     public String getMaxResults() {
@@ -88,10 +88,10 @@ public class ListDeviceDefinitionVersionsRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * Specifies the maximum number of list results to be returned in this page
+     * The maximum number of results to be returned per request.
      * 
      * @param maxResults
-     *        Specifies the maximum number of list results to be returned in this page
+     *        The maximum number of results to be returned per request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,10 +101,10 @@ public class ListDeviceDefinitionVersionsRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * Specifies the pagination token used when iterating through a paginated request
+     * The token for the next set of results, or ''null'' if there are no additional results.
      * 
      * @param nextToken
-     *        Specifies the pagination token used when iterating through a paginated request
+     *        The token for the next set of results, or ''null'' if there are no additional results.
      */
 
     public void setNextToken(String nextToken) {
@@ -112,9 +112,9 @@ public class ListDeviceDefinitionVersionsRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * Specifies the pagination token used when iterating through a paginated request
+     * The token for the next set of results, or ''null'' if there are no additional results.
      * 
-     * @return Specifies the pagination token used when iterating through a paginated request
+     * @return The token for the next set of results, or ''null'' if there are no additional results.
      */
 
     public String getNextToken() {
@@ -122,10 +122,10 @@ public class ListDeviceDefinitionVersionsRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * Specifies the pagination token used when iterating through a paginated request
+     * The token for the next set of results, or ''null'' if there are no additional results.
      * 
      * @param nextToken
-     *        Specifies the pagination token used when iterating through a paginated request
+     *        The token for the next set of results, or ''null'' if there are no additional results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

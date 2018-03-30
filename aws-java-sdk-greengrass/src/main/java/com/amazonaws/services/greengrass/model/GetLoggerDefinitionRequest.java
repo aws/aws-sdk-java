@@ -25,14 +25,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetLoggerDefinitionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** logger definition Id */
+    /** The ID of the logger definition. */
     private String loggerDefinitionId;
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      * 
      * @param loggerDefinitionId
-     *        logger definition Id
+     *        The ID of the logger definition.
      */
 
     public void setLoggerDefinitionId(String loggerDefinitionId) {
@@ -40,9 +40,9 @@ public class GetLoggerDefinitionRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      * 
-     * @return logger definition Id
+     * @return The ID of the logger definition.
      */
 
     public String getLoggerDefinitionId() {
@@ -50,10 +50,10 @@ public class GetLoggerDefinitionRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      * 
      * @param loggerDefinitionId
-     *        logger definition Id
+     *        The ID of the logger definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

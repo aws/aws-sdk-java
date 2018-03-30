@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Information on subscription definition version
+ * Information about a subscription definition version.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/SubscriptionDefinitionVersion"
  *      target="_top">AWS API Documentation</a>
@@ -26,13 +26,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SubscriptionDefinitionVersion implements Serializable, Cloneable, StructuredPojo {
 
-    /** Subscriptions in the version. */
+    /** A list of subscriptions. */
     private java.util.List<Subscription> subscriptions;
 
     /**
-     * Subscriptions in the version.
+     * A list of subscriptions.
      * 
-     * @return Subscriptions in the version.
+     * @return A list of subscriptions.
      */
 
     public java.util.List<Subscription> getSubscriptions() {
@@ -40,10 +40,10 @@ public class SubscriptionDefinitionVersion implements Serializable, Cloneable, S
     }
 
     /**
-     * Subscriptions in the version.
+     * A list of subscriptions.
      * 
      * @param subscriptions
-     *        Subscriptions in the version.
+     *        A list of subscriptions.
      */
 
     public void setSubscriptions(java.util.Collection<Subscription> subscriptions) {
@@ -56,7 +56,7 @@ public class SubscriptionDefinitionVersion implements Serializable, Cloneable, S
     }
 
     /**
-     * Subscriptions in the version.
+     * A list of subscriptions.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSubscriptions(java.util.Collection)} or {@link #withSubscriptions(java.util.Collection)} if you want
@@ -64,7 +64,7 @@ public class SubscriptionDefinitionVersion implements Serializable, Cloneable, S
      * </p>
      * 
      * @param subscriptions
-     *        Subscriptions in the version.
+     *        A list of subscriptions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,10 +79,10 @@ public class SubscriptionDefinitionVersion implements Serializable, Cloneable, S
     }
 
     /**
-     * Subscriptions in the version.
+     * A list of subscriptions.
      * 
      * @param subscriptions
-     *        Subscriptions in the version.
+     *        A list of subscriptions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

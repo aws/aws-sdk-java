@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Information on the core
+ * Information about a core.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/Core" target="_top">AWS API
  *      Documentation</a>
@@ -26,20 +26,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Core implements Serializable, Cloneable, StructuredPojo {
 
-    /** Certificate arn of the core. */
+    /** The ARN of the certificate associated with the core. */
     private String certificateArn;
-    /** Element Id for this entry in the list. */
+    /** The ID of the core. */
     private String id;
-    /** If true, the local shadow value automatically syncs with the cloud's shadow state. */
+    /** If true, the core's local shadow is automatically synced with the cloud. */
     private Boolean syncShadow;
-    /** Thing arn of the core. */
+    /** The ARN of the thing which is the core. */
     private String thingArn;
 
     /**
-     * Certificate arn of the core.
+     * The ARN of the certificate associated with the core.
      * 
      * @param certificateArn
-     *        Certificate arn of the core.
+     *        The ARN of the certificate associated with the core.
      */
 
     public void setCertificateArn(String certificateArn) {
@@ -47,9 +47,9 @@ public class Core implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Certificate arn of the core.
+     * The ARN of the certificate associated with the core.
      * 
-     * @return Certificate arn of the core.
+     * @return The ARN of the certificate associated with the core.
      */
 
     public String getCertificateArn() {
@@ -57,10 +57,10 @@ public class Core implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Certificate arn of the core.
+     * The ARN of the certificate associated with the core.
      * 
      * @param certificateArn
-     *        Certificate arn of the core.
+     *        The ARN of the certificate associated with the core.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -70,10 +70,10 @@ public class Core implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Element Id for this entry in the list.
+     * The ID of the core.
      * 
      * @param id
-     *        Element Id for this entry in the list.
+     *        The ID of the core.
      */
 
     public void setId(String id) {
@@ -81,9 +81,9 @@ public class Core implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Element Id for this entry in the list.
+     * The ID of the core.
      * 
-     * @return Element Id for this entry in the list.
+     * @return The ID of the core.
      */
 
     public String getId() {
@@ -91,10 +91,10 @@ public class Core implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Element Id for this entry in the list.
+     * The ID of the core.
      * 
      * @param id
-     *        Element Id for this entry in the list.
+     *        The ID of the core.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,10 +104,10 @@ public class Core implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If true, the local shadow value automatically syncs with the cloud's shadow state.
+     * If true, the core's local shadow is automatically synced with the cloud.
      * 
      * @param syncShadow
-     *        If true, the local shadow value automatically syncs with the cloud's shadow state.
+     *        If true, the core's local shadow is automatically synced with the cloud.
      */
 
     public void setSyncShadow(Boolean syncShadow) {
@@ -115,9 +115,9 @@ public class Core implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If true, the local shadow value automatically syncs with the cloud's shadow state.
+     * If true, the core's local shadow is automatically synced with the cloud.
      * 
-     * @return If true, the local shadow value automatically syncs with the cloud's shadow state.
+     * @return If true, the core's local shadow is automatically synced with the cloud.
      */
 
     public Boolean getSyncShadow() {
@@ -125,10 +125,10 @@ public class Core implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If true, the local shadow value automatically syncs with the cloud's shadow state.
+     * If true, the core's local shadow is automatically synced with the cloud.
      * 
      * @param syncShadow
-     *        If true, the local shadow value automatically syncs with the cloud's shadow state.
+     *        If true, the core's local shadow is automatically synced with the cloud.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,9 +138,9 @@ public class Core implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If true, the local shadow value automatically syncs with the cloud's shadow state.
+     * If true, the core's local shadow is automatically synced with the cloud.
      * 
-     * @return If true, the local shadow value automatically syncs with the cloud's shadow state.
+     * @return If true, the core's local shadow is automatically synced with the cloud.
      */
 
     public Boolean isSyncShadow() {
@@ -148,10 +148,10 @@ public class Core implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Thing arn of the core.
+     * The ARN of the thing which is the core.
      * 
      * @param thingArn
-     *        Thing arn of the core.
+     *        The ARN of the thing which is the core.
      */
 
     public void setThingArn(String thingArn) {
@@ -159,9 +159,9 @@ public class Core implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Thing arn of the core.
+     * The ARN of the thing which is the core.
      * 
-     * @return Thing arn of the core.
+     * @return The ARN of the thing which is the core.
      */
 
     public String getThingArn() {
@@ -169,10 +169,10 @@ public class Core implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Thing arn of the core.
+     * The ARN of the thing which is the core.
      * 
      * @param thingArn
-     *        Thing arn of the core.
+     *        The ARN of the thing which is the core.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

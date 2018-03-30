@@ -31,6 +31,11 @@ public class ResourceDataContainerMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LocalDeviceResourceData").build();
     private static final MarshallingInfo<StructuredPojo> LOCALVOLUMERESOURCEDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LocalVolumeResourceData").build();
+    private static final MarshallingInfo<StructuredPojo> S3MACHINELEARNINGMODELRESOURCEDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3MachineLearningModelResourceData").build();
+    private static final MarshallingInfo<StructuredPojo> SAGEMAKERMACHINELEARNINGMODELRESOURCEDATA_BINDING = MarshallingInfo
+            .builder(MarshallingType.STRUCTURED).marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SageMakerMachineLearningModelResourceData")
+            .build();
 
     private static final ResourceDataContainerMarshaller instance = new ResourceDataContainerMarshaller();
 
@@ -50,6 +55,9 @@ public class ResourceDataContainerMarshaller {
         try {
             protocolMarshaller.marshall(resourceDataContainer.getLocalDeviceResourceData(), LOCALDEVICERESOURCEDATA_BINDING);
             protocolMarshaller.marshall(resourceDataContainer.getLocalVolumeResourceData(), LOCALVOLUMERESOURCEDATA_BINDING);
+            protocolMarshaller.marshall(resourceDataContainer.getS3MachineLearningModelResourceData(), S3MACHINELEARNINGMODELRESOURCEDATA_BINDING);
+            protocolMarshaller
+                    .marshall(resourceDataContainer.getSageMakerMachineLearningModelResourceData(), SAGEMAKERMACHINELEARNINGMODELRESOURCEDATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

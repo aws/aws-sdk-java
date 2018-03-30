@@ -25,16 +25,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateLoggerDefinitionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** logger definition Id */
+    /** The ID of the logger definition. */
     private String loggerDefinitionId;
-    /** name of the definition */
+    /** The name of the definition. */
     private String name;
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      * 
      * @param loggerDefinitionId
-     *        logger definition Id
+     *        The ID of the logger definition.
      */
 
     public void setLoggerDefinitionId(String loggerDefinitionId) {
@@ -42,9 +42,9 @@ public class UpdateLoggerDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      * 
-     * @return logger definition Id
+     * @return The ID of the logger definition.
      */
 
     public String getLoggerDefinitionId() {
@@ -52,10 +52,10 @@ public class UpdateLoggerDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      * 
      * @param loggerDefinitionId
-     *        logger definition Id
+     *        The ID of the logger definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -65,10 +65,10 @@ public class UpdateLoggerDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * name of the definition
+     * The name of the definition.
      * 
      * @param name
-     *        name of the definition
+     *        The name of the definition.
      */
 
     public void setName(String name) {
@@ -76,9 +76,9 @@ public class UpdateLoggerDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * name of the definition
+     * The name of the definition.
      * 
-     * @return name of the definition
+     * @return The name of the definition.
      */
 
     public String getName() {
@@ -86,10 +86,10 @@ public class UpdateLoggerDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * name of the definition
+     * The name of the definition.
      * 
      * @param name
-     *        name of the definition
+     *        The name of the definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

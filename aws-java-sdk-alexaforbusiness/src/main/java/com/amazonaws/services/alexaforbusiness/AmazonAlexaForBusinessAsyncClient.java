@@ -67,6 +67,41 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateContactWithAddressBookResult> associateContactWithAddressBookAsync(
+            AssociateContactWithAddressBookRequest request) {
+
+        return associateContactWithAddressBookAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateContactWithAddressBookResult> associateContactWithAddressBookAsync(
+            final AssociateContactWithAddressBookRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateContactWithAddressBookRequest, AssociateContactWithAddressBookResult> asyncHandler) {
+        final AssociateContactWithAddressBookRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateContactWithAddressBookResult>() {
+            @Override
+            public AssociateContactWithAddressBookResult call() throws Exception {
+                AssociateContactWithAddressBookResult result = null;
+
+                try {
+                    result = executeAssociateContactWithAddressBook(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateDeviceWithRoomResult> associateDeviceWithRoomAsync(AssociateDeviceWithRoomRequest request) {
 
         return associateDeviceWithRoomAsync(request, null);
@@ -117,6 +152,72 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
 
                 try {
                     result = executeAssociateSkillGroupWithRoom(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAddressBookResult> createAddressBookAsync(CreateAddressBookRequest request) {
+
+        return createAddressBookAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAddressBookResult> createAddressBookAsync(final CreateAddressBookRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAddressBookRequest, CreateAddressBookResult> asyncHandler) {
+        final CreateAddressBookRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateAddressBookResult>() {
+            @Override
+            public CreateAddressBookResult call() throws Exception {
+                CreateAddressBookResult result = null;
+
+                try {
+                    result = executeCreateAddressBook(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateContactResult> createContactAsync(CreateContactRequest request) {
+
+        return createContactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateContactResult> createContactAsync(final CreateContactRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateContactRequest, CreateContactResult> asyncHandler) {
+        final CreateContactRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateContactResult>() {
+            @Override
+            public CreateContactResult call() throws Exception {
+                CreateContactResult result = null;
+
+                try {
+                    result = executeCreateContact(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -249,6 +350,72 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
 
                 try {
                     result = executeCreateUser(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAddressBookResult> deleteAddressBookAsync(DeleteAddressBookRequest request) {
+
+        return deleteAddressBookAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAddressBookResult> deleteAddressBookAsync(final DeleteAddressBookRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAddressBookRequest, DeleteAddressBookResult> asyncHandler) {
+        final DeleteAddressBookRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAddressBookResult>() {
+            @Override
+            public DeleteAddressBookResult call() throws Exception {
+                DeleteAddressBookResult result = null;
+
+                try {
+                    result = executeDeleteAddressBook(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteContactResult> deleteContactAsync(DeleteContactRequest request) {
+
+        return deleteContactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteContactResult> deleteContactAsync(final DeleteContactRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteContactRequest, DeleteContactResult> asyncHandler) {
+        final DeleteContactRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteContactResult>() {
+            @Override
+            public DeleteContactResult call() throws Exception {
+                DeleteContactResult result = null;
+
+                try {
+                    result = executeDeleteContact(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -430,6 +597,41 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateContactFromAddressBookResult> disassociateContactFromAddressBookAsync(
+            DisassociateContactFromAddressBookRequest request) {
+
+        return disassociateContactFromAddressBookAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateContactFromAddressBookResult> disassociateContactFromAddressBookAsync(
+            final DisassociateContactFromAddressBookRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateContactFromAddressBookRequest, DisassociateContactFromAddressBookResult> asyncHandler) {
+        final DisassociateContactFromAddressBookRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateContactFromAddressBookResult>() {
+            @Override
+            public DisassociateContactFromAddressBookResult call() throws Exception {
+                DisassociateContactFromAddressBookResult result = null;
+
+                try {
+                    result = executeDisassociateContactFromAddressBook(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateDeviceFromRoomResult> disassociateDeviceFromRoomAsync(DisassociateDeviceFromRoomRequest request) {
 
         return disassociateDeviceFromRoomAsync(request, null);
@@ -481,6 +683,72 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
 
                 try {
                     result = executeDisassociateSkillGroupFromRoom(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAddressBookResult> getAddressBookAsync(GetAddressBookRequest request) {
+
+        return getAddressBookAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAddressBookResult> getAddressBookAsync(final GetAddressBookRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAddressBookRequest, GetAddressBookResult> asyncHandler) {
+        final GetAddressBookRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAddressBookResult>() {
+            @Override
+            public GetAddressBookResult call() throws Exception {
+                GetAddressBookResult result = null;
+
+                try {
+                    result = executeGetAddressBook(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContactResult> getContactAsync(GetContactRequest request) {
+
+        return getContactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContactResult> getContactAsync(final GetContactRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetContactRequest, GetContactResult> asyncHandler) {
+        final GetContactRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetContactResult>() {
+            @Override
+            public GetContactResult call() throws Exception {
+                GetContactResult result = null;
+
+                try {
+                    result = executeGetContact(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -827,6 +1095,72 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    public java.util.concurrent.Future<SearchAddressBooksResult> searchAddressBooksAsync(SearchAddressBooksRequest request) {
+
+        return searchAddressBooksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchAddressBooksResult> searchAddressBooksAsync(final SearchAddressBooksRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SearchAddressBooksRequest, SearchAddressBooksResult> asyncHandler) {
+        final SearchAddressBooksRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SearchAddressBooksResult>() {
+            @Override
+            public SearchAddressBooksResult call() throws Exception {
+                SearchAddressBooksResult result = null;
+
+                try {
+                    result = executeSearchAddressBooks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchContactsResult> searchContactsAsync(SearchContactsRequest request) {
+
+        return searchContactsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchContactsResult> searchContactsAsync(final SearchContactsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SearchContactsRequest, SearchContactsResult> asyncHandler) {
+        final SearchContactsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SearchContactsResult>() {
+            @Override
+            public SearchContactsResult call() throws Exception {
+                SearchContactsResult result = null;
+
+                try {
+                    result = executeSearchContacts(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<SearchDevicesResult> searchDevicesAsync(SearchDevicesRequest request) {
 
         return searchDevicesAsync(request, null);
@@ -1108,6 +1442,72 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAddressBookResult> updateAddressBookAsync(UpdateAddressBookRequest request) {
+
+        return updateAddressBookAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAddressBookResult> updateAddressBookAsync(final UpdateAddressBookRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAddressBookRequest, UpdateAddressBookResult> asyncHandler) {
+        final UpdateAddressBookRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateAddressBookResult>() {
+            @Override
+            public UpdateAddressBookResult call() throws Exception {
+                UpdateAddressBookResult result = null;
+
+                try {
+                    result = executeUpdateAddressBook(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContactResult> updateContactAsync(UpdateContactRequest request) {
+
+        return updateContactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContactResult> updateContactAsync(final UpdateContactRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateContactRequest, UpdateContactResult> asyncHandler) {
+        final UpdateContactRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateContactResult>() {
+            @Override
+            public UpdateContactResult call() throws Exception {
+                UpdateContactResult result = null;
+
+                try {
+                    result = executeUpdateContact(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -23,14 +23,14 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DisassociateRoleFromGroupResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** Time when the role was disassociated from the group. */
+    /** The time, in milliseconds since the epoch, when the role was disassociated from the group. */
     private String disassociatedAt;
 
     /**
-     * Time when the role was disassociated from the group.
+     * The time, in milliseconds since the epoch, when the role was disassociated from the group.
      * 
      * @param disassociatedAt
-     *        Time when the role was disassociated from the group.
+     *        The time, in milliseconds since the epoch, when the role was disassociated from the group.
      */
 
     public void setDisassociatedAt(String disassociatedAt) {
@@ -38,9 +38,9 @@ public class DisassociateRoleFromGroupResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * Time when the role was disassociated from the group.
+     * The time, in milliseconds since the epoch, when the role was disassociated from the group.
      * 
-     * @return Time when the role was disassociated from the group.
+     * @return The time, in milliseconds since the epoch, when the role was disassociated from the group.
      */
 
     public String getDisassociatedAt() {
@@ -48,10 +48,10 @@ public class DisassociateRoleFromGroupResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * Time when the role was disassociated from the group.
+     * The time, in milliseconds since the epoch, when the role was disassociated from the group.
      * 
      * @param disassociatedAt
-     *        Time when the role was disassociated from the group.
+     *        The time, in milliseconds since the epoch, when the role was disassociated from the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

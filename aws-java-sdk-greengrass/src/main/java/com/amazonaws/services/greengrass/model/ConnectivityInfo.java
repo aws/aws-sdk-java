@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Connectivity Info
+ * Information about a Greengrass core's connectivity.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ConnectivityInfo" target="_top">AWS API
  *      Documentation</a>
@@ -26,20 +26,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConnectivityInfo implements Serializable, Cloneable, StructuredPojo {
 
-    /** Endpoint for the GGC. Can be an IP address or DNS. */
+    /** The endpoint for the Greengrass core. Can be an IP address or DNS. */
     private String hostAddress;
-    /** Element Id for this entry in the list. */
+    /** The ID of the connectivity information. */
     private String id;
     /** Metadata for this endpoint. */
     private String metadata;
-    /** Port of the GGC. Usually 8883. */
+    /** The port of the Greengrass core. Usually 8883. */
     private Integer portNumber;
 
     /**
-     * Endpoint for the GGC. Can be an IP address or DNS.
+     * The endpoint for the Greengrass core. Can be an IP address or DNS.
      * 
      * @param hostAddress
-     *        Endpoint for the GGC. Can be an IP address or DNS.
+     *        The endpoint for the Greengrass core. Can be an IP address or DNS.
      */
 
     public void setHostAddress(String hostAddress) {
@@ -47,9 +47,9 @@ public class ConnectivityInfo implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Endpoint for the GGC. Can be an IP address or DNS.
+     * The endpoint for the Greengrass core. Can be an IP address or DNS.
      * 
-     * @return Endpoint for the GGC. Can be an IP address or DNS.
+     * @return The endpoint for the Greengrass core. Can be an IP address or DNS.
      */
 
     public String getHostAddress() {
@@ -57,10 +57,10 @@ public class ConnectivityInfo implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Endpoint for the GGC. Can be an IP address or DNS.
+     * The endpoint for the Greengrass core. Can be an IP address or DNS.
      * 
      * @param hostAddress
-     *        Endpoint for the GGC. Can be an IP address or DNS.
+     *        The endpoint for the Greengrass core. Can be an IP address or DNS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -70,10 +70,10 @@ public class ConnectivityInfo implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Element Id for this entry in the list.
+     * The ID of the connectivity information.
      * 
      * @param id
-     *        Element Id for this entry in the list.
+     *        The ID of the connectivity information.
      */
 
     public void setId(String id) {
@@ -81,9 +81,9 @@ public class ConnectivityInfo implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Element Id for this entry in the list.
+     * The ID of the connectivity information.
      * 
-     * @return Element Id for this entry in the list.
+     * @return The ID of the connectivity information.
      */
 
     public String getId() {
@@ -91,10 +91,10 @@ public class ConnectivityInfo implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Element Id for this entry in the list.
+     * The ID of the connectivity information.
      * 
      * @param id
-     *        Element Id for this entry in the list.
+     *        The ID of the connectivity information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,10 +138,10 @@ public class ConnectivityInfo implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Port of the GGC. Usually 8883.
+     * The port of the Greengrass core. Usually 8883.
      * 
      * @param portNumber
-     *        Port of the GGC. Usually 8883.
+     *        The port of the Greengrass core. Usually 8883.
      */
 
     public void setPortNumber(Integer portNumber) {
@@ -149,9 +149,9 @@ public class ConnectivityInfo implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Port of the GGC. Usually 8883.
+     * The port of the Greengrass core. Usually 8883.
      * 
-     * @return Port of the GGC. Usually 8883.
+     * @return The port of the Greengrass core. Usually 8883.
      */
 
     public Integer getPortNumber() {
@@ -159,10 +159,10 @@ public class ConnectivityInfo implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Port of the GGC. Usually 8883.
+     * The port of the Greengrass core. Usually 8883.
      * 
      * @param portNumber
-     *        Port of the GGC. Usually 8883.
+     *        The port of the Greengrass core. Usually 8883.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

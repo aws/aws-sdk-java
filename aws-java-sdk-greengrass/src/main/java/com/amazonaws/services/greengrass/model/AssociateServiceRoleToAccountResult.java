@@ -24,14 +24,14 @@ import javax.annotation.Generated;
 public class AssociateServiceRoleToAccountResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {
 
-    /** Time when the service role was associated to the account. */
+    /** The time when the service role was associated with the account. */
     private String associatedAt;
 
     /**
-     * Time when the service role was associated to the account.
+     * The time when the service role was associated with the account.
      * 
      * @param associatedAt
-     *        Time when the service role was associated to the account.
+     *        The time when the service role was associated with the account.
      */
 
     public void setAssociatedAt(String associatedAt) {
@@ -39,9 +39,9 @@ public class AssociateServiceRoleToAccountResult extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * Time when the service role was associated to the account.
+     * The time when the service role was associated with the account.
      * 
-     * @return Time when the service role was associated to the account.
+     * @return The time when the service role was associated with the account.
      */
 
     public String getAssociatedAt() {
@@ -49,10 +49,10 @@ public class AssociateServiceRoleToAccountResult extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * Time when the service role was associated to the account.
+     * The time when the service role was associated with the account.
      * 
      * @param associatedAt
-     *        Time when the service role was associated to the account.
+     *        The time when the service role was associated with the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

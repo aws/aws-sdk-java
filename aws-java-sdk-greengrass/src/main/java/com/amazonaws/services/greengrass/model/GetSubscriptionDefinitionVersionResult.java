@@ -24,22 +24,22 @@ import javax.annotation.Generated;
 public class GetSubscriptionDefinitionVersionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {
 
-    /** Arn of the subscription definition version. */
+    /** The ARN of the subscription definition version. */
     private String arn;
-    /** Timestamp of when the subscription definition version was created. */
+    /** The time, in milliseconds since the epoch, when the subscription definition version was created. */
     private String creationTimestamp;
-    /** Information on the definition */
+    /** Information about the subscription definition version. */
     private SubscriptionDefinitionVersion definition;
-    /** Id of the subscription definition the version belongs to. */
+    /** The ID of the subscription definition version. */
     private String id;
-    /** Version of the subscription definition version. */
+    /** The version of the subscription definition version. */
     private String version;
 
     /**
-     * Arn of the subscription definition version.
+     * The ARN of the subscription definition version.
      * 
      * @param arn
-     *        Arn of the subscription definition version.
+     *        The ARN of the subscription definition version.
      */
 
     public void setArn(String arn) {
@@ -47,9 +47,9 @@ public class GetSubscriptionDefinitionVersionResult extends com.amazonaws.Amazon
     }
 
     /**
-     * Arn of the subscription definition version.
+     * The ARN of the subscription definition version.
      * 
-     * @return Arn of the subscription definition version.
+     * @return The ARN of the subscription definition version.
      */
 
     public String getArn() {
@@ -57,10 +57,10 @@ public class GetSubscriptionDefinitionVersionResult extends com.amazonaws.Amazon
     }
 
     /**
-     * Arn of the subscription definition version.
+     * The ARN of the subscription definition version.
      * 
      * @param arn
-     *        Arn of the subscription definition version.
+     *        The ARN of the subscription definition version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -70,10 +70,10 @@ public class GetSubscriptionDefinitionVersionResult extends com.amazonaws.Amazon
     }
 
     /**
-     * Timestamp of when the subscription definition version was created.
+     * The time, in milliseconds since the epoch, when the subscription definition version was created.
      * 
      * @param creationTimestamp
-     *        Timestamp of when the subscription definition version was created.
+     *        The time, in milliseconds since the epoch, when the subscription definition version was created.
      */
 
     public void setCreationTimestamp(String creationTimestamp) {
@@ -81,9 +81,9 @@ public class GetSubscriptionDefinitionVersionResult extends com.amazonaws.Amazon
     }
 
     /**
-     * Timestamp of when the subscription definition version was created.
+     * The time, in milliseconds since the epoch, when the subscription definition version was created.
      * 
-     * @return Timestamp of when the subscription definition version was created.
+     * @return The time, in milliseconds since the epoch, when the subscription definition version was created.
      */
 
     public String getCreationTimestamp() {
@@ -91,10 +91,10 @@ public class GetSubscriptionDefinitionVersionResult extends com.amazonaws.Amazon
     }
 
     /**
-     * Timestamp of when the subscription definition version was created.
+     * The time, in milliseconds since the epoch, when the subscription definition version was created.
      * 
      * @param creationTimestamp
-     *        Timestamp of when the subscription definition version was created.
+     *        The time, in milliseconds since the epoch, when the subscription definition version was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,10 +104,10 @@ public class GetSubscriptionDefinitionVersionResult extends com.amazonaws.Amazon
     }
 
     /**
-     * Information on the definition
+     * Information about the subscription definition version.
      * 
      * @param definition
-     *        Information on the definition
+     *        Information about the subscription definition version.
      */
 
     public void setDefinition(SubscriptionDefinitionVersion definition) {
@@ -115,9 +115,9 @@ public class GetSubscriptionDefinitionVersionResult extends com.amazonaws.Amazon
     }
 
     /**
-     * Information on the definition
+     * Information about the subscription definition version.
      * 
-     * @return Information on the definition
+     * @return Information about the subscription definition version.
      */
 
     public SubscriptionDefinitionVersion getDefinition() {
@@ -125,10 +125,10 @@ public class GetSubscriptionDefinitionVersionResult extends com.amazonaws.Amazon
     }
 
     /**
-     * Information on the definition
+     * Information about the subscription definition version.
      * 
      * @param definition
-     *        Information on the definition
+     *        Information about the subscription definition version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,10 +138,10 @@ public class GetSubscriptionDefinitionVersionResult extends com.amazonaws.Amazon
     }
 
     /**
-     * Id of the subscription definition the version belongs to.
+     * The ID of the subscription definition version.
      * 
      * @param id
-     *        Id of the subscription definition the version belongs to.
+     *        The ID of the subscription definition version.
      */
 
     public void setId(String id) {
@@ -149,9 +149,9 @@ public class GetSubscriptionDefinitionVersionResult extends com.amazonaws.Amazon
     }
 
     /**
-     * Id of the subscription definition the version belongs to.
+     * The ID of the subscription definition version.
      * 
-     * @return Id of the subscription definition the version belongs to.
+     * @return The ID of the subscription definition version.
      */
 
     public String getId() {
@@ -159,10 +159,10 @@ public class GetSubscriptionDefinitionVersionResult extends com.amazonaws.Amazon
     }
 
     /**
-     * Id of the subscription definition the version belongs to.
+     * The ID of the subscription definition version.
      * 
      * @param id
-     *        Id of the subscription definition the version belongs to.
+     *        The ID of the subscription definition version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,10 +172,10 @@ public class GetSubscriptionDefinitionVersionResult extends com.amazonaws.Amazon
     }
 
     /**
-     * Version of the subscription definition version.
+     * The version of the subscription definition version.
      * 
      * @param version
-     *        Version of the subscription definition version.
+     *        The version of the subscription definition version.
      */
 
     public void setVersion(String version) {
@@ -183,9 +183,9 @@ public class GetSubscriptionDefinitionVersionResult extends com.amazonaws.Amazon
     }
 
     /**
-     * Version of the subscription definition version.
+     * The version of the subscription definition version.
      * 
-     * @return Version of the subscription definition version.
+     * @return The version of the subscription definition version.
      */
 
     public String getVersion() {
@@ -193,10 +193,10 @@ public class GetSubscriptionDefinitionVersionResult extends com.amazonaws.Amazon
     }
 
     /**
-     * Version of the subscription definition version.
+     * The version of the subscription definition version.
      * 
      * @param version
-     *        Version of the subscription definition version.
+     *        The version of the subscription definition version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * ErrorDetail
+ * Details about the error.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ErrorDetail" target="_top">AWS API
  *      Documentation</a>
@@ -26,16 +26,16 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
 
-    /** Detailed Error Code */
+    /** A detailed error code. */
     private String detailedErrorCode;
-    /** Detailed Error Message */
+    /** A detailed error message. */
     private String detailedErrorMessage;
 
     /**
-     * Detailed Error Code
+     * A detailed error code.
      * 
      * @param detailedErrorCode
-     *        Detailed Error Code
+     *        A detailed error code.
      */
 
     public void setDetailedErrorCode(String detailedErrorCode) {
@@ -43,9 +43,9 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Detailed Error Code
+     * A detailed error code.
      * 
-     * @return Detailed Error Code
+     * @return A detailed error code.
      */
 
     public String getDetailedErrorCode() {
@@ -53,10 +53,10 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Detailed Error Code
+     * A detailed error code.
      * 
      * @param detailedErrorCode
-     *        Detailed Error Code
+     *        A detailed error code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,10 +66,10 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Detailed Error Message
+     * A detailed error message.
      * 
      * @param detailedErrorMessage
-     *        Detailed Error Message
+     *        A detailed error message.
      */
 
     public void setDetailedErrorMessage(String detailedErrorMessage) {
@@ -77,9 +77,9 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Detailed Error Message
+     * A detailed error message.
      * 
-     * @return Detailed Error Message
+     * @return A detailed error message.
      */
 
     public String getDetailedErrorMessage() {
@@ -87,10 +87,10 @@ public class ErrorDetail implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Detailed Error Message
+     * A detailed error message.
      * 
      * @param detailedErrorMessage
-     *        Detailed Error Message
+     *        A detailed error message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

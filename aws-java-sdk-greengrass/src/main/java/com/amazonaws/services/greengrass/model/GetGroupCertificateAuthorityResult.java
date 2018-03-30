@@ -23,18 +23,18 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetGroupCertificateAuthorityResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** Arn of the certificate authority for the group. */
+    /** The ARN of the certificate authority for the group. */
     private String groupCertificateAuthorityArn;
-    /** Id of the certificate authority for the group. */
+    /** The ID of the certificate authority for the group. */
     private String groupCertificateAuthorityId;
-    /** PEM encoded certificate for the group. */
+    /** The PEM encoded certificate for the group. */
     private String pemEncodedCertificate;
 
     /**
-     * Arn of the certificate authority for the group.
+     * The ARN of the certificate authority for the group.
      * 
      * @param groupCertificateAuthorityArn
-     *        Arn of the certificate authority for the group.
+     *        The ARN of the certificate authority for the group.
      */
 
     public void setGroupCertificateAuthorityArn(String groupCertificateAuthorityArn) {
@@ -42,9 +42,9 @@ public class GetGroupCertificateAuthorityResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Arn of the certificate authority for the group.
+     * The ARN of the certificate authority for the group.
      * 
-     * @return Arn of the certificate authority for the group.
+     * @return The ARN of the certificate authority for the group.
      */
 
     public String getGroupCertificateAuthorityArn() {
@@ -52,10 +52,10 @@ public class GetGroupCertificateAuthorityResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Arn of the certificate authority for the group.
+     * The ARN of the certificate authority for the group.
      * 
      * @param groupCertificateAuthorityArn
-     *        Arn of the certificate authority for the group.
+     *        The ARN of the certificate authority for the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -65,10 +65,10 @@ public class GetGroupCertificateAuthorityResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Id of the certificate authority for the group.
+     * The ID of the certificate authority for the group.
      * 
      * @param groupCertificateAuthorityId
-     *        Id of the certificate authority for the group.
+     *        The ID of the certificate authority for the group.
      */
 
     public void setGroupCertificateAuthorityId(String groupCertificateAuthorityId) {
@@ -76,9 +76,9 @@ public class GetGroupCertificateAuthorityResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Id of the certificate authority for the group.
+     * The ID of the certificate authority for the group.
      * 
-     * @return Id of the certificate authority for the group.
+     * @return The ID of the certificate authority for the group.
      */
 
     public String getGroupCertificateAuthorityId() {
@@ -86,10 +86,10 @@ public class GetGroupCertificateAuthorityResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Id of the certificate authority for the group.
+     * The ID of the certificate authority for the group.
      * 
      * @param groupCertificateAuthorityId
-     *        Id of the certificate authority for the group.
+     *        The ID of the certificate authority for the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,10 +99,10 @@ public class GetGroupCertificateAuthorityResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * PEM encoded certificate for the group.
+     * The PEM encoded certificate for the group.
      * 
      * @param pemEncodedCertificate
-     *        PEM encoded certificate for the group.
+     *        The PEM encoded certificate for the group.
      */
 
     public void setPemEncodedCertificate(String pemEncodedCertificate) {
@@ -110,9 +110,9 @@ public class GetGroupCertificateAuthorityResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * PEM encoded certificate for the group.
+     * The PEM encoded certificate for the group.
      * 
-     * @return PEM encoded certificate for the group.
+     * @return The PEM encoded certificate for the group.
      */
 
     public String getPemEncodedCertificate() {
@@ -120,10 +120,10 @@ public class GetGroupCertificateAuthorityResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * PEM encoded certificate for the group.
+     * The PEM encoded certificate for the group.
      * 
      * @param pemEncodedCertificate
-     *        PEM encoded certificate for the group.
+     *        The PEM encoded certificate for the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,16 +25,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetGroupVersionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The unique Id of the AWS Greengrass Group */
+    /** The ID of the AWS Greengrass group. */
     private String groupId;
-    /** Group version Id */
+    /** The ID of the group version. */
     private String groupVersionId;
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      * 
      * @param groupId
-     *        The unique Id of the AWS Greengrass Group
+     *        The ID of the AWS Greengrass group.
      */
 
     public void setGroupId(String groupId) {
@@ -42,9 +42,9 @@ public class GetGroupVersionRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      * 
-     * @return The unique Id of the AWS Greengrass Group
+     * @return The ID of the AWS Greengrass group.
      */
 
     public String getGroupId() {
@@ -52,10 +52,10 @@ public class GetGroupVersionRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      * 
      * @param groupId
-     *        The unique Id of the AWS Greengrass Group
+     *        The ID of the AWS Greengrass group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -65,10 +65,10 @@ public class GetGroupVersionRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * Group version Id
+     * The ID of the group version.
      * 
      * @param groupVersionId
-     *        Group version Id
+     *        The ID of the group version.
      */
 
     public void setGroupVersionId(String groupVersionId) {
@@ -76,9 +76,9 @@ public class GetGroupVersionRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * Group version Id
+     * The ID of the group version.
      * 
-     * @return Group version Id
+     * @return The ID of the group version.
      */
 
     public String getGroupVersionId() {
@@ -86,10 +86,10 @@ public class GetGroupVersionRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * Group version Id
+     * The ID of the group version.
      * 
      * @param groupVersionId
-     *        Group version Id
+     *        The ID of the group version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -23,16 +23,16 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateConnectivityInfoResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** Response Text */
+    /** A message about the connectivity info update request. */
     private String message;
-    /** New Version */
+    /** The new version of the connectivity info. */
     private String version;
 
     /**
-     * Response Text
+     * A message about the connectivity info update request.
      * 
      * @param message
-     *        Response Text
+     *        A message about the connectivity info update request.
      */
 
     public void setMessage(String message) {
@@ -40,9 +40,9 @@ public class UpdateConnectivityInfoResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Response Text
+     * A message about the connectivity info update request.
      * 
-     * @return Response Text
+     * @return A message about the connectivity info update request.
      */
 
     public String getMessage() {
@@ -50,10 +50,10 @@ public class UpdateConnectivityInfoResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Response Text
+     * A message about the connectivity info update request.
      * 
      * @param message
-     *        Response Text
+     *        A message about the connectivity info update request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -63,10 +63,10 @@ public class UpdateConnectivityInfoResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * New Version
+     * The new version of the connectivity info.
      * 
      * @param version
-     *        New Version
+     *        The new version of the connectivity info.
      */
 
     public void setVersion(String version) {
@@ -74,9 +74,9 @@ public class UpdateConnectivityInfoResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * New Version
+     * The new version of the connectivity info.
      * 
-     * @return New Version
+     * @return The new version of the connectivity info.
      */
 
     public String getVersion() {
@@ -84,10 +84,10 @@ public class UpdateConnectivityInfoResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * New Version
+     * The new version of the connectivity info.
      * 
      * @param version
-     *        New Version
+     *        The new version of the connectivity info.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

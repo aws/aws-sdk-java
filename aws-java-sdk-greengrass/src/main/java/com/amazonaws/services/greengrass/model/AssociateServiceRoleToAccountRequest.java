@@ -25,14 +25,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AssociateServiceRoleToAccountRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** Role arn you wish to associate with this account. */
+    /** The ARN of the service role you wish to associate with your account. */
     private String roleArn;
 
     /**
-     * Role arn you wish to associate with this account.
+     * The ARN of the service role you wish to associate with your account.
      * 
      * @param roleArn
-     *        Role arn you wish to associate with this account.
+     *        The ARN of the service role you wish to associate with your account.
      */
 
     public void setRoleArn(String roleArn) {
@@ -40,9 +40,9 @@ public class AssociateServiceRoleToAccountRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * Role arn you wish to associate with this account.
+     * The ARN of the service role you wish to associate with your account.
      * 
-     * @return Role arn you wish to associate with this account.
+     * @return The ARN of the service role you wish to associate with your account.
      */
 
     public String getRoleArn() {
@@ -50,10 +50,10 @@ public class AssociateServiceRoleToAccountRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * Role arn you wish to associate with this account.
+     * The ARN of the service role you wish to associate with your account.
      * 
      * @param roleArn
-     *        Role arn you wish to associate with this account.
+     *        The ARN of the service role you wish to associate with your account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Information on core definition version
+ * Information about a core definition version.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CoreDefinitionVersion" target="_top">AWS
  *      API Documentation</a>
@@ -26,13 +26,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CoreDefinitionVersion implements Serializable, Cloneable, StructuredPojo {
 
-    /** Cores in the definition version. */
+    /** A list of cores in the core definition version. */
     private java.util.List<Core> cores;
 
     /**
-     * Cores in the definition version.
+     * A list of cores in the core definition version.
      * 
-     * @return Cores in the definition version.
+     * @return A list of cores in the core definition version.
      */
 
     public java.util.List<Core> getCores() {
@@ -40,10 +40,10 @@ public class CoreDefinitionVersion implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Cores in the definition version.
+     * A list of cores in the core definition version.
      * 
      * @param cores
-     *        Cores in the definition version.
+     *        A list of cores in the core definition version.
      */
 
     public void setCores(java.util.Collection<Core> cores) {
@@ -56,7 +56,7 @@ public class CoreDefinitionVersion implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Cores in the definition version.
+     * A list of cores in the core definition version.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setCores(java.util.Collection)} or {@link #withCores(java.util.Collection)} if you want to override the
@@ -64,7 +64,7 @@ public class CoreDefinitionVersion implements Serializable, Cloneable, Structure
      * </p>
      * 
      * @param cores
-     *        Cores in the definition version.
+     *        A list of cores in the core definition version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,10 +79,10 @@ public class CoreDefinitionVersion implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Cores in the definition version.
+     * A list of cores in the core definition version.
      * 
      * @param cores
-     *        Cores in the definition version.
+     *        A list of cores in the core definition version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -23,15 +23,15 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListSubscriptionDefinitionsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** Definitions */
+    /** Information about a definition. */
     private java.util.List<DefinitionInformation> definitions;
     /** The token for the next set of results, or ''null'' if there are no additional results. */
     private String nextToken;
 
     /**
-     * Definitions
+     * Information about a definition.
      * 
-     * @return Definitions
+     * @return Information about a definition.
      */
 
     public java.util.List<DefinitionInformation> getDefinitions() {
@@ -39,10 +39,10 @@ public class ListSubscriptionDefinitionsResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * Definitions
+     * Information about a definition.
      * 
      * @param definitions
-     *        Definitions
+     *        Information about a definition.
      */
 
     public void setDefinitions(java.util.Collection<DefinitionInformation> definitions) {
@@ -55,7 +55,7 @@ public class ListSubscriptionDefinitionsResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * Definitions
+     * Information about a definition.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setDefinitions(java.util.Collection)} or {@link #withDefinitions(java.util.Collection)} if you want to
@@ -63,7 +63,7 @@ public class ListSubscriptionDefinitionsResult extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param definitions
-     *        Definitions
+     *        Information about a definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,10 +78,10 @@ public class ListSubscriptionDefinitionsResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * Definitions
+     * Information about a definition.
      * 
      * @param definitions
-     *        Definitions
+     *        Information about a definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

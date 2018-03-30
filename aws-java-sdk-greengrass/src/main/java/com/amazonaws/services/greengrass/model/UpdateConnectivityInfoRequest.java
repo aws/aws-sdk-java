@@ -18,7 +18,7 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * connectivity info request
+ * Connectivity information.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateConnectivityInfo" target="_top">AWS
  *      API Documentation</a>
@@ -26,15 +26,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateConnectivityInfoRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** Connectivity info list */
+    /** A list of connectivity info. */
     private java.util.List<ConnectivityInfo> connectivityInfo;
-    /** Thing Name */
+    /** The thing name. */
     private String thingName;
 
     /**
-     * Connectivity info list
+     * A list of connectivity info.
      * 
-     * @return Connectivity info list
+     * @return A list of connectivity info.
      */
 
     public java.util.List<ConnectivityInfo> getConnectivityInfo() {
@@ -42,10 +42,10 @@ public class UpdateConnectivityInfoRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Connectivity info list
+     * A list of connectivity info.
      * 
      * @param connectivityInfo
-     *        Connectivity info list
+     *        A list of connectivity info.
      */
 
     public void setConnectivityInfo(java.util.Collection<ConnectivityInfo> connectivityInfo) {
@@ -58,7 +58,7 @@ public class UpdateConnectivityInfoRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Connectivity info list
+     * A list of connectivity info.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setConnectivityInfo(java.util.Collection)} or {@link #withConnectivityInfo(java.util.Collection)} if you
@@ -66,7 +66,7 @@ public class UpdateConnectivityInfoRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param connectivityInfo
-     *        Connectivity info list
+     *        A list of connectivity info.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,10 +81,10 @@ public class UpdateConnectivityInfoRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Connectivity info list
+     * A list of connectivity info.
      * 
      * @param connectivityInfo
-     *        Connectivity info list
+     *        A list of connectivity info.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,10 +94,10 @@ public class UpdateConnectivityInfoRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Thing Name
+     * The thing name.
      * 
      * @param thingName
-     *        Thing Name
+     *        The thing name.
      */
 
     public void setThingName(String thingName) {
@@ -105,9 +105,9 @@ public class UpdateConnectivityInfoRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Thing Name
+     * The thing name.
      * 
-     * @return Thing Name
+     * @return The thing name.
      */
 
     public String getThingName() {
@@ -115,10 +115,10 @@ public class UpdateConnectivityInfoRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Thing Name
+     * The thing name.
      * 
      * @param thingName
-     *        Thing Name
+     *        The thing name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

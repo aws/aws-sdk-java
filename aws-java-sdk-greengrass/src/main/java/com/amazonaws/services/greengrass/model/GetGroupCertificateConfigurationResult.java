@@ -24,18 +24,18 @@ import javax.annotation.Generated;
 public class GetGroupCertificateConfigurationResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {
 
-    /** Amount of time when the certificate authority expires in milliseconds. */
+    /** The amount of time remaining before the certificate authority expires, in milliseconds. */
     private String certificateAuthorityExpiryInMilliseconds;
-    /** Amount of time when the certificate expires in milliseconds. */
+    /** The amount of time remaining before the certificate expires, in milliseconds. */
     private String certificateExpiryInMilliseconds;
-    /** Id of the group the certificate configuration belongs to. */
+    /** The ID of the group certificate configuration. */
     private String groupId;
 
     /**
-     * Amount of time when the certificate authority expires in milliseconds.
+     * The amount of time remaining before the certificate authority expires, in milliseconds.
      * 
      * @param certificateAuthorityExpiryInMilliseconds
-     *        Amount of time when the certificate authority expires in milliseconds.
+     *        The amount of time remaining before the certificate authority expires, in milliseconds.
      */
 
     public void setCertificateAuthorityExpiryInMilliseconds(String certificateAuthorityExpiryInMilliseconds) {
@@ -43,9 +43,9 @@ public class GetGroupCertificateConfigurationResult extends com.amazonaws.Amazon
     }
 
     /**
-     * Amount of time when the certificate authority expires in milliseconds.
+     * The amount of time remaining before the certificate authority expires, in milliseconds.
      * 
-     * @return Amount of time when the certificate authority expires in milliseconds.
+     * @return The amount of time remaining before the certificate authority expires, in milliseconds.
      */
 
     public String getCertificateAuthorityExpiryInMilliseconds() {
@@ -53,10 +53,10 @@ public class GetGroupCertificateConfigurationResult extends com.amazonaws.Amazon
     }
 
     /**
-     * Amount of time when the certificate authority expires in milliseconds.
+     * The amount of time remaining before the certificate authority expires, in milliseconds.
      * 
      * @param certificateAuthorityExpiryInMilliseconds
-     *        Amount of time when the certificate authority expires in milliseconds.
+     *        The amount of time remaining before the certificate authority expires, in milliseconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,10 +66,10 @@ public class GetGroupCertificateConfigurationResult extends com.amazonaws.Amazon
     }
 
     /**
-     * Amount of time when the certificate expires in milliseconds.
+     * The amount of time remaining before the certificate expires, in milliseconds.
      * 
      * @param certificateExpiryInMilliseconds
-     *        Amount of time when the certificate expires in milliseconds.
+     *        The amount of time remaining before the certificate expires, in milliseconds.
      */
 
     public void setCertificateExpiryInMilliseconds(String certificateExpiryInMilliseconds) {
@@ -77,9 +77,9 @@ public class GetGroupCertificateConfigurationResult extends com.amazonaws.Amazon
     }
 
     /**
-     * Amount of time when the certificate expires in milliseconds.
+     * The amount of time remaining before the certificate expires, in milliseconds.
      * 
-     * @return Amount of time when the certificate expires in milliseconds.
+     * @return The amount of time remaining before the certificate expires, in milliseconds.
      */
 
     public String getCertificateExpiryInMilliseconds() {
@@ -87,10 +87,10 @@ public class GetGroupCertificateConfigurationResult extends com.amazonaws.Amazon
     }
 
     /**
-     * Amount of time when the certificate expires in milliseconds.
+     * The amount of time remaining before the certificate expires, in milliseconds.
      * 
      * @param certificateExpiryInMilliseconds
-     *        Amount of time when the certificate expires in milliseconds.
+     *        The amount of time remaining before the certificate expires, in milliseconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,10 +100,10 @@ public class GetGroupCertificateConfigurationResult extends com.amazonaws.Amazon
     }
 
     /**
-     * Id of the group the certificate configuration belongs to.
+     * The ID of the group certificate configuration.
      * 
      * @param groupId
-     *        Id of the group the certificate configuration belongs to.
+     *        The ID of the group certificate configuration.
      */
 
     public void setGroupId(String groupId) {
@@ -111,9 +111,9 @@ public class GetGroupCertificateConfigurationResult extends com.amazonaws.Amazon
     }
 
     /**
-     * Id of the group the certificate configuration belongs to.
+     * The ID of the group certificate configuration.
      * 
-     * @return Id of the group the certificate configuration belongs to.
+     * @return The ID of the group certificate configuration.
      */
 
     public String getGroupId() {
@@ -121,10 +121,10 @@ public class GetGroupCertificateConfigurationResult extends com.amazonaws.Amazon
     }
 
     /**
-     * Id of the group the certificate configuration belongs to.
+     * The ID of the group certificate configuration.
      * 
      * @param groupId
-     *        Id of the group the certificate configuration belongs to.
+     *        The ID of the group certificate configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

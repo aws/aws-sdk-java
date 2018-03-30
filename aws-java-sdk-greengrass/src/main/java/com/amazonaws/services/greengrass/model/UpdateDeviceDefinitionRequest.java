@@ -25,16 +25,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateDeviceDefinitionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** device definition Id */
+    /** The ID of the device definition. */
     private String deviceDefinitionId;
-    /** name of the definition */
+    /** The name of the definition. */
     private String name;
 
     /**
-     * device definition Id
+     * The ID of the device definition.
      * 
      * @param deviceDefinitionId
-     *        device definition Id
+     *        The ID of the device definition.
      */
 
     public void setDeviceDefinitionId(String deviceDefinitionId) {
@@ -42,9 +42,9 @@ public class UpdateDeviceDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * device definition Id
+     * The ID of the device definition.
      * 
-     * @return device definition Id
+     * @return The ID of the device definition.
      */
 
     public String getDeviceDefinitionId() {
@@ -52,10 +52,10 @@ public class UpdateDeviceDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * device definition Id
+     * The ID of the device definition.
      * 
      * @param deviceDefinitionId
-     *        device definition Id
+     *        The ID of the device definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -65,10 +65,10 @@ public class UpdateDeviceDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * name of the definition
+     * The name of the definition.
      * 
      * @param name
-     *        name of the definition
+     *        The name of the definition.
      */
 
     public void setName(String name) {
@@ -76,9 +76,9 @@ public class UpdateDeviceDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * name of the definition
+     * The name of the definition.
      * 
-     * @return name of the definition
+     * @return The name of the definition.
      */
 
     public String getName() {
@@ -86,10 +86,10 @@ public class UpdateDeviceDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * name of the definition
+     * The name of the definition.
      * 
      * @param name
-     *        name of the definition
+     *        The name of the definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

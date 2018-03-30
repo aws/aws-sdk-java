@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Information on the version
+ * Information about a version.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/VersionInformation" target="_top">AWS API
  *      Documentation</a>
@@ -26,20 +26,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class VersionInformation implements Serializable, Cloneable, StructuredPojo {
 
-    /** Arn of the version. */
+    /** The ARN of the version. */
     private String arn;
-    /** Timestamp of when the version was created. */
+    /** The time, in milliseconds since the epoch, when the version was created. */
     private String creationTimestamp;
-    /** Id of the resource container. */
+    /** The ID of the version. */
     private String id;
-    /** Unique Id of a version. */
+    /** The unique ID of the version. */
     private String version;
 
     /**
-     * Arn of the version.
+     * The ARN of the version.
      * 
      * @param arn
-     *        Arn of the version.
+     *        The ARN of the version.
      */
 
     public void setArn(String arn) {
@@ -47,9 +47,9 @@ public class VersionInformation implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Arn of the version.
+     * The ARN of the version.
      * 
-     * @return Arn of the version.
+     * @return The ARN of the version.
      */
 
     public String getArn() {
@@ -57,10 +57,10 @@ public class VersionInformation implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Arn of the version.
+     * The ARN of the version.
      * 
      * @param arn
-     *        Arn of the version.
+     *        The ARN of the version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -70,10 +70,10 @@ public class VersionInformation implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Timestamp of when the version was created.
+     * The time, in milliseconds since the epoch, when the version was created.
      * 
      * @param creationTimestamp
-     *        Timestamp of when the version was created.
+     *        The time, in milliseconds since the epoch, when the version was created.
      */
 
     public void setCreationTimestamp(String creationTimestamp) {
@@ -81,9 +81,9 @@ public class VersionInformation implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Timestamp of when the version was created.
+     * The time, in milliseconds since the epoch, when the version was created.
      * 
-     * @return Timestamp of when the version was created.
+     * @return The time, in milliseconds since the epoch, when the version was created.
      */
 
     public String getCreationTimestamp() {
@@ -91,10 +91,10 @@ public class VersionInformation implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Timestamp of when the version was created.
+     * The time, in milliseconds since the epoch, when the version was created.
      * 
      * @param creationTimestamp
-     *        Timestamp of when the version was created.
+     *        The time, in milliseconds since the epoch, when the version was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,10 +104,10 @@ public class VersionInformation implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Id of the resource container.
+     * The ID of the version.
      * 
      * @param id
-     *        Id of the resource container.
+     *        The ID of the version.
      */
 
     public void setId(String id) {
@@ -115,9 +115,9 @@ public class VersionInformation implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Id of the resource container.
+     * The ID of the version.
      * 
-     * @return Id of the resource container.
+     * @return The ID of the version.
      */
 
     public String getId() {
@@ -125,10 +125,10 @@ public class VersionInformation implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Id of the resource container.
+     * The ID of the version.
      * 
      * @param id
-     *        Id of the resource container.
+     *        The ID of the version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,10 +138,10 @@ public class VersionInformation implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Unique Id of a version.
+     * The unique ID of the version.
      * 
      * @param version
-     *        Unique Id of a version.
+     *        The unique ID of the version.
      */
 
     public void setVersion(String version) {
@@ -149,9 +149,9 @@ public class VersionInformation implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Unique Id of a version.
+     * The unique ID of the version.
      * 
-     * @return Unique Id of a version.
+     * @return The unique ID of the version.
      */
 
     public String getVersion() {
@@ -159,10 +159,10 @@ public class VersionInformation implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Unique Id of a version.
+     * The unique ID of the version.
      * 
      * @param version
-     *        Unique Id of a version.
+     *        The unique ID of the version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

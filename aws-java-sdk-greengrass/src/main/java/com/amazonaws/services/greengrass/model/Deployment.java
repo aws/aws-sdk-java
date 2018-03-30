@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Information on the deployment
+ * Information about a deployment.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/Deployment" target="_top">AWS API
  *      Documentation</a>
@@ -26,22 +26,22 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Deployment implements Serializable, Cloneable, StructuredPojo {
 
-    /** Timestamp when the deployment was created. */
+    /** The time, in milliseconds since the epoch, when the deployment was created. */
     private String createdAt;
-    /** Arn of the deployment. */
+    /** The ARN of the deployment. */
     private String deploymentArn;
-    /** Id of the deployment. */
+    /** The ID of the deployment. */
     private String deploymentId;
-    /** The type of deployment. */
+    /** The type of the deployment. */
     private String deploymentType;
-    /** Arn of the group for this deployment. */
+    /** The ARN of the group for this deployment. */
     private String groupArn;
 
     /**
-     * Timestamp when the deployment was created.
+     * The time, in milliseconds since the epoch, when the deployment was created.
      * 
      * @param createdAt
-     *        Timestamp when the deployment was created.
+     *        The time, in milliseconds since the epoch, when the deployment was created.
      */
 
     public void setCreatedAt(String createdAt) {
@@ -49,9 +49,9 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Timestamp when the deployment was created.
+     * The time, in milliseconds since the epoch, when the deployment was created.
      * 
-     * @return Timestamp when the deployment was created.
+     * @return The time, in milliseconds since the epoch, when the deployment was created.
      */
 
     public String getCreatedAt() {
@@ -59,10 +59,10 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Timestamp when the deployment was created.
+     * The time, in milliseconds since the epoch, when the deployment was created.
      * 
      * @param createdAt
-     *        Timestamp when the deployment was created.
+     *        The time, in milliseconds since the epoch, when the deployment was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -72,10 +72,10 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Arn of the deployment.
+     * The ARN of the deployment.
      * 
      * @param deploymentArn
-     *        Arn of the deployment.
+     *        The ARN of the deployment.
      */
 
     public void setDeploymentArn(String deploymentArn) {
@@ -83,9 +83,9 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Arn of the deployment.
+     * The ARN of the deployment.
      * 
-     * @return Arn of the deployment.
+     * @return The ARN of the deployment.
      */
 
     public String getDeploymentArn() {
@@ -93,10 +93,10 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Arn of the deployment.
+     * The ARN of the deployment.
      * 
      * @param deploymentArn
-     *        Arn of the deployment.
+     *        The ARN of the deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,10 +106,10 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Id of the deployment.
+     * The ID of the deployment.
      * 
      * @param deploymentId
-     *        Id of the deployment.
+     *        The ID of the deployment.
      */
 
     public void setDeploymentId(String deploymentId) {
@@ -117,9 +117,9 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Id of the deployment.
+     * The ID of the deployment.
      * 
-     * @return Id of the deployment.
+     * @return The ID of the deployment.
      */
 
     public String getDeploymentId() {
@@ -127,10 +127,10 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Id of the deployment.
+     * The ID of the deployment.
      * 
      * @param deploymentId
-     *        Id of the deployment.
+     *        The ID of the deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,10 +140,10 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The type of deployment.
+     * The type of the deployment.
      * 
      * @param deploymentType
-     *        The type of deployment.
+     *        The type of the deployment.
      * @see DeploymentType
      */
 
@@ -152,9 +152,9 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The type of deployment.
+     * The type of the deployment.
      * 
-     * @return The type of deployment.
+     * @return The type of the deployment.
      * @see DeploymentType
      */
 
@@ -163,10 +163,10 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The type of deployment.
+     * The type of the deployment.
      * 
      * @param deploymentType
-     *        The type of deployment.
+     *        The type of the deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeploymentType
      */
@@ -177,10 +177,10 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The type of deployment.
+     * The type of the deployment.
      * 
      * @param deploymentType
-     *        The type of deployment.
+     *        The type of the deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeploymentType
      */
@@ -191,10 +191,10 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Arn of the group for this deployment.
+     * The ARN of the group for this deployment.
      * 
      * @param groupArn
-     *        Arn of the group for this deployment.
+     *        The ARN of the group for this deployment.
      */
 
     public void setGroupArn(String groupArn) {
@@ -202,9 +202,9 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Arn of the group for this deployment.
+     * The ARN of the group for this deployment.
      * 
-     * @return Arn of the group for this deployment.
+     * @return The ARN of the group for this deployment.
      */
 
     public String getGroupArn() {
@@ -212,10 +212,10 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Arn of the group for this deployment.
+     * The ARN of the group for this deployment.
      * 
      * @param groupArn
-     *        Arn of the group for this deployment.
+     *        The ARN of the group for this deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

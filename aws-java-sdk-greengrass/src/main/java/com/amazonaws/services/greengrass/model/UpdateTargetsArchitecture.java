@@ -15,7 +15,7 @@ package com.amazonaws.services.greengrass.model;
 import javax.annotation.Generated;
 
 /**
- * The architecture of the Cores in the targets of an update
+ * The architecture of the cores which are the targets of an update.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum UpdateTargetsArchitecture {

@@ -25,18 +25,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateDeviceDefinitionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The client token used to request idempotent operations. */
+    /** A client token used to correlate requests and responses. */
     private String amznClientToken;
-    /** Information on the initial version */
+    /** Information about the initial version of the device definition. */
     private DeviceDefinitionVersion initialVersion;
-    /** name of the device definition */
+    /** The name of the device definition. */
     private String name;
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      * 
      * @param amznClientToken
-     *        The client token used to request idempotent operations.
+     *        A client token used to correlate requests and responses.
      */
 
     public void setAmznClientToken(String amznClientToken) {
@@ -44,9 +44,9 @@ public class CreateDeviceDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      * 
-     * @return The client token used to request idempotent operations.
+     * @return A client token used to correlate requests and responses.
      */
 
     public String getAmznClientToken() {
@@ -54,10 +54,10 @@ public class CreateDeviceDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      * 
      * @param amznClientToken
-     *        The client token used to request idempotent operations.
+     *        A client token used to correlate requests and responses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -67,10 +67,10 @@ public class CreateDeviceDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Information on the initial version
+     * Information about the initial version of the device definition.
      * 
      * @param initialVersion
-     *        Information on the initial version
+     *        Information about the initial version of the device definition.
      */
 
     public void setInitialVersion(DeviceDefinitionVersion initialVersion) {
@@ -78,9 +78,9 @@ public class CreateDeviceDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Information on the initial version
+     * Information about the initial version of the device definition.
      * 
-     * @return Information on the initial version
+     * @return Information about the initial version of the device definition.
      */
 
     public DeviceDefinitionVersion getInitialVersion() {
@@ -88,10 +88,10 @@ public class CreateDeviceDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * Information on the initial version
+     * Information about the initial version of the device definition.
      * 
      * @param initialVersion
-     *        Information on the initial version
+     *        Information about the initial version of the device definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,10 +101,10 @@ public class CreateDeviceDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * name of the device definition
+     * The name of the device definition.
      * 
      * @param name
-     *        name of the device definition
+     *        The name of the device definition.
      */
 
     public void setName(String name) {
@@ -112,9 +112,9 @@ public class CreateDeviceDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * name of the device definition
+     * The name of the device definition.
      * 
-     * @return name of the device definition
+     * @return The name of the device definition.
      */
 
     public String getName() {
@@ -122,10 +122,10 @@ public class CreateDeviceDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * name of the device definition
+     * The name of the device definition.
      * 
      * @param name
-     *        name of the device definition
+     *        The name of the device definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

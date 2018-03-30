@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Attributes that define the Local Device Resource.
+ * Attributes that define a local device resource.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/LocalDeviceResourceData" target="_top">AWS
  *      API Documentation</a>
@@ -26,16 +26,19 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LocalDeviceResourceData implements Serializable, Cloneable, StructuredPojo {
 
-    /** Group owner related settings for local resources. */
+    /** Group/owner related settings for local resources. */
     private GroupOwnerSetting groupOwnerSetting;
-    /** Local source path of the resource. */
+    /**
+     * The local absolute path of the device resource. The source path for a device resource can refer only to a
+     * character device or block device under ''/dev''.
+     */
     private String sourcePath;
 
     /**
-     * Group owner related settings for local resources.
+     * Group/owner related settings for local resources.
      * 
      * @param groupOwnerSetting
-     *        Group owner related settings for local resources.
+     *        Group/owner related settings for local resources.
      */
 
     public void setGroupOwnerSetting(GroupOwnerSetting groupOwnerSetting) {
@@ -43,9 +46,9 @@ public class LocalDeviceResourceData implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Group owner related settings for local resources.
+     * Group/owner related settings for local resources.
      * 
-     * @return Group owner related settings for local resources.
+     * @return Group/owner related settings for local resources.
      */
 
     public GroupOwnerSetting getGroupOwnerSetting() {
@@ -53,10 +56,10 @@ public class LocalDeviceResourceData implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Group owner related settings for local resources.
+     * Group/owner related settings for local resources.
      * 
      * @param groupOwnerSetting
-     *        Group owner related settings for local resources.
+     *        Group/owner related settings for local resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,10 +69,12 @@ public class LocalDeviceResourceData implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Local source path of the resource.
+     * The local absolute path of the device resource. The source path for a device resource can refer only to a
+     * character device or block device under ''/dev''.
      * 
      * @param sourcePath
-     *        Local source path of the resource.
+     *        The local absolute path of the device resource. The source path for a device resource can refer only to a
+     *        character device or block device under ''/dev''.
      */
 
     public void setSourcePath(String sourcePath) {
@@ -77,9 +82,11 @@ public class LocalDeviceResourceData implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Local source path of the resource.
+     * The local absolute path of the device resource. The source path for a device resource can refer only to a
+     * character device or block device under ''/dev''.
      * 
-     * @return Local source path of the resource.
+     * @return The local absolute path of the device resource. The source path for a device resource can refer only to a
+     *         character device or block device under ''/dev''.
      */
 
     public String getSourcePath() {
@@ -87,10 +94,12 @@ public class LocalDeviceResourceData implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Local source path of the resource.
+     * The local absolute path of the device resource. The source path for a device resource can refer only to a
+     * character device or block device under ''/dev''.
      * 
      * @param sourcePath
-     *        Local source path of the resource.
+     *        The local absolute path of the device resource. The source path for a device resource can refer only to a
+     *        character device or block device under ''/dev''.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

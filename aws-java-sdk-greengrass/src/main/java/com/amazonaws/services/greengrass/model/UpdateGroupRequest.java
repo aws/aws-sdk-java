@@ -25,16 +25,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The unique Id of the AWS Greengrass Group */
+    /** The ID of the AWS Greengrass group. */
     private String groupId;
-    /** name of the definition */
+    /** The name of the definition. */
     private String name;
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      * 
      * @param groupId
-     *        The unique Id of the AWS Greengrass Group
+     *        The ID of the AWS Greengrass group.
      */
 
     public void setGroupId(String groupId) {
@@ -42,9 +42,9 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      * 
-     * @return The unique Id of the AWS Greengrass Group
+     * @return The ID of the AWS Greengrass group.
      */
 
     public String getGroupId() {
@@ -52,10 +52,10 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      * 
      * @param groupId
-     *        The unique Id of the AWS Greengrass Group
+     *        The ID of the AWS Greengrass group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -65,10 +65,10 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * name of the definition
+     * The name of the definition.
      * 
      * @param name
-     *        name of the definition
+     *        The name of the definition.
      */
 
     public void setName(String name) {
@@ -76,9 +76,9 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * name of the definition
+     * The name of the definition.
      * 
-     * @return name of the definition
+     * @return The name of the definition.
      */
 
     public String getName() {
@@ -86,10 +86,10 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * name of the definition
+     * The name of the definition.
      * 
      * @param name
-     *        name of the definition
+     *        The name of the definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

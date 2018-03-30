@@ -26,16 +26,22 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GroupOwnerSetting implements Serializable, Cloneable, StructuredPojo {
 
-    /** Eanble the auto added group owner. */
+    /**
+     * If true, GreenGrass automatically adds the specified Linux OS group owner of the resource to the Lambda process
+     * privileges. Thus the Lambda process will have the file access permissions of the added Linux group.
+     */
     private Boolean autoAddGroupOwner;
-    /** Name of the group owner. */
+    /** The name of the Linux OS group whose privileges will be added to the Lambda process. This field is optional. */
     private String groupOwner;
 
     /**
-     * Eanble the auto added group owner.
+     * If true, GreenGrass automatically adds the specified Linux OS group owner of the resource to the Lambda process
+     * privileges. Thus the Lambda process will have the file access permissions of the added Linux group.
      * 
      * @param autoAddGroupOwner
-     *        Eanble the auto added group owner.
+     *        If true, GreenGrass automatically adds the specified Linux OS group owner of the resource to the Lambda
+     *        process privileges. Thus the Lambda process will have the file access permissions of the added Linux
+     *        group.
      */
 
     public void setAutoAddGroupOwner(Boolean autoAddGroupOwner) {
@@ -43,9 +49,12 @@ public class GroupOwnerSetting implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Eanble the auto added group owner.
+     * If true, GreenGrass automatically adds the specified Linux OS group owner of the resource to the Lambda process
+     * privileges. Thus the Lambda process will have the file access permissions of the added Linux group.
      * 
-     * @return Eanble the auto added group owner.
+     * @return If true, GreenGrass automatically adds the specified Linux OS group owner of the resource to the Lambda
+     *         process privileges. Thus the Lambda process will have the file access permissions of the added Linux
+     *         group.
      */
 
     public Boolean getAutoAddGroupOwner() {
@@ -53,10 +62,13 @@ public class GroupOwnerSetting implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Eanble the auto added group owner.
+     * If true, GreenGrass automatically adds the specified Linux OS group owner of the resource to the Lambda process
+     * privileges. Thus the Lambda process will have the file access permissions of the added Linux group.
      * 
      * @param autoAddGroupOwner
-     *        Eanble the auto added group owner.
+     *        If true, GreenGrass automatically adds the specified Linux OS group owner of the resource to the Lambda
+     *        process privileges. Thus the Lambda process will have the file access permissions of the added Linux
+     *        group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,9 +78,12 @@ public class GroupOwnerSetting implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Eanble the auto added group owner.
+     * If true, GreenGrass automatically adds the specified Linux OS group owner of the resource to the Lambda process
+     * privileges. Thus the Lambda process will have the file access permissions of the added Linux group.
      * 
-     * @return Eanble the auto added group owner.
+     * @return If true, GreenGrass automatically adds the specified Linux OS group owner of the resource to the Lambda
+     *         process privileges. Thus the Lambda process will have the file access permissions of the added Linux
+     *         group.
      */
 
     public Boolean isAutoAddGroupOwner() {
@@ -76,10 +91,11 @@ public class GroupOwnerSetting implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Name of the group owner.
+     * The name of the Linux OS group whose privileges will be added to the Lambda process. This field is optional.
      * 
      * @param groupOwner
-     *        Name of the group owner.
+     *        The name of the Linux OS group whose privileges will be added to the Lambda process. This field is
+     *        optional.
      */
 
     public void setGroupOwner(String groupOwner) {
@@ -87,9 +103,10 @@ public class GroupOwnerSetting implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Name of the group owner.
+     * The name of the Linux OS group whose privileges will be added to the Lambda process. This field is optional.
      * 
-     * @return Name of the group owner.
+     * @return The name of the Linux OS group whose privileges will be added to the Lambda process. This field is
+     *         optional.
      */
 
     public String getGroupOwner() {
@@ -97,10 +114,11 @@ public class GroupOwnerSetting implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Name of the group owner.
+     * The name of the Linux OS group whose privileges will be added to the Lambda process. This field is optional.
      * 
      * @param groupOwner
-     *        Name of the group owner.
+     *        The name of the Linux OS group whose privileges will be added to the Lambda process. This field is
+     *        optional.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Information on function
+ * Information about a Lambda function.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/Function" target="_top">AWS API
  *      Documentation</a>
@@ -26,18 +26,18 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Function implements Serializable, Cloneable, StructuredPojo {
 
-    /** Arn of the Lambda function. */
+    /** The ARN of the Lambda function. */
     private String functionArn;
-    /** Configuration of the function */
+    /** The configuration of the Lambda function. */
     private FunctionConfiguration functionConfiguration;
-    /** Id of the function in this version. */
+    /** The ID of the Lambda function. */
     private String id;
 
     /**
-     * Arn of the Lambda function.
+     * The ARN of the Lambda function.
      * 
      * @param functionArn
-     *        Arn of the Lambda function.
+     *        The ARN of the Lambda function.
      */
 
     public void setFunctionArn(String functionArn) {
@@ -45,9 +45,9 @@ public class Function implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Arn of the Lambda function.
+     * The ARN of the Lambda function.
      * 
-     * @return Arn of the Lambda function.
+     * @return The ARN of the Lambda function.
      */
 
     public String getFunctionArn() {
@@ -55,10 +55,10 @@ public class Function implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Arn of the Lambda function.
+     * The ARN of the Lambda function.
      * 
      * @param functionArn
-     *        Arn of the Lambda function.
+     *        The ARN of the Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -68,10 +68,10 @@ public class Function implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Configuration of the function
+     * The configuration of the Lambda function.
      * 
      * @param functionConfiguration
-     *        Configuration of the function
+     *        The configuration of the Lambda function.
      */
 
     public void setFunctionConfiguration(FunctionConfiguration functionConfiguration) {
@@ -79,9 +79,9 @@ public class Function implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Configuration of the function
+     * The configuration of the Lambda function.
      * 
-     * @return Configuration of the function
+     * @return The configuration of the Lambda function.
      */
 
     public FunctionConfiguration getFunctionConfiguration() {
@@ -89,10 +89,10 @@ public class Function implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Configuration of the function
+     * The configuration of the Lambda function.
      * 
      * @param functionConfiguration
-     *        Configuration of the function
+     *        The configuration of the Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,10 +102,10 @@ public class Function implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Id of the function in this version.
+     * The ID of the Lambda function.
      * 
      * @param id
-     *        Id of the function in this version.
+     *        The ID of the Lambda function.
      */
 
     public void setId(String id) {
@@ -113,9 +113,9 @@ public class Function implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Id of the function in this version.
+     * The ID of the Lambda function.
      * 
-     * @return Id of the function in this version.
+     * @return The ID of the Lambda function.
      */
 
     public String getId() {
@@ -123,10 +123,10 @@ public class Function implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Id of the function in this version.
+     * The ID of the Lambda function.
      * 
      * @param id
-     *        Id of the function in this version.
+     *        The ID of the Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

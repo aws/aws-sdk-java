@@ -23,22 +23,22 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetDeviceDefinitionVersionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** Arn of the device definition version. */
+    /** The ARN of the device definition version. */
     private String arn;
-    /** Timestamp of when the device definition version was created. */
+    /** The time, in milliseconds since the epoch, when the device definition version was created. */
     private String creationTimestamp;
-    /** Device definition version */
+    /** Information about the device definition version. */
     private DeviceDefinitionVersion definition;
-    /** Id of the device definition the version belongs to. */
+    /** The ID of the device definition version. */
     private String id;
-    /** Version of the device definition version. */
+    /** The version of the device definition version. */
     private String version;
 
     /**
-     * Arn of the device definition version.
+     * The ARN of the device definition version.
      * 
      * @param arn
-     *        Arn of the device definition version.
+     *        The ARN of the device definition version.
      */
 
     public void setArn(String arn) {
@@ -46,9 +46,9 @@ public class GetDeviceDefinitionVersionResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Arn of the device definition version.
+     * The ARN of the device definition version.
      * 
-     * @return Arn of the device definition version.
+     * @return The ARN of the device definition version.
      */
 
     public String getArn() {
@@ -56,10 +56,10 @@ public class GetDeviceDefinitionVersionResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Arn of the device definition version.
+     * The ARN of the device definition version.
      * 
      * @param arn
-     *        Arn of the device definition version.
+     *        The ARN of the device definition version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -69,10 +69,10 @@ public class GetDeviceDefinitionVersionResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Timestamp of when the device definition version was created.
+     * The time, in milliseconds since the epoch, when the device definition version was created.
      * 
      * @param creationTimestamp
-     *        Timestamp of when the device definition version was created.
+     *        The time, in milliseconds since the epoch, when the device definition version was created.
      */
 
     public void setCreationTimestamp(String creationTimestamp) {
@@ -80,9 +80,9 @@ public class GetDeviceDefinitionVersionResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Timestamp of when the device definition version was created.
+     * The time, in milliseconds since the epoch, when the device definition version was created.
      * 
-     * @return Timestamp of when the device definition version was created.
+     * @return The time, in milliseconds since the epoch, when the device definition version was created.
      */
 
     public String getCreationTimestamp() {
@@ -90,10 +90,10 @@ public class GetDeviceDefinitionVersionResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Timestamp of when the device definition version was created.
+     * The time, in milliseconds since the epoch, when the device definition version was created.
      * 
      * @param creationTimestamp
-     *        Timestamp of when the device definition version was created.
+     *        The time, in milliseconds since the epoch, when the device definition version was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,10 +103,10 @@ public class GetDeviceDefinitionVersionResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Device definition version
+     * Information about the device definition version.
      * 
      * @param definition
-     *        Device definition version
+     *        Information about the device definition version.
      */
 
     public void setDefinition(DeviceDefinitionVersion definition) {
@@ -114,9 +114,9 @@ public class GetDeviceDefinitionVersionResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Device definition version
+     * Information about the device definition version.
      * 
-     * @return Device definition version
+     * @return Information about the device definition version.
      */
 
     public DeviceDefinitionVersion getDefinition() {
@@ -124,10 +124,10 @@ public class GetDeviceDefinitionVersionResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Device definition version
+     * Information about the device definition version.
      * 
      * @param definition
-     *        Device definition version
+     *        Information about the device definition version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,10 +137,10 @@ public class GetDeviceDefinitionVersionResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Id of the device definition the version belongs to.
+     * The ID of the device definition version.
      * 
      * @param id
-     *        Id of the device definition the version belongs to.
+     *        The ID of the device definition version.
      */
 
     public void setId(String id) {
@@ -148,9 +148,9 @@ public class GetDeviceDefinitionVersionResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Id of the device definition the version belongs to.
+     * The ID of the device definition version.
      * 
-     * @return Id of the device definition the version belongs to.
+     * @return The ID of the device definition version.
      */
 
     public String getId() {
@@ -158,10 +158,10 @@ public class GetDeviceDefinitionVersionResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Id of the device definition the version belongs to.
+     * The ID of the device definition version.
      * 
      * @param id
-     *        Id of the device definition the version belongs to.
+     *        The ID of the device definition version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -171,10 +171,10 @@ public class GetDeviceDefinitionVersionResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Version of the device definition version.
+     * The version of the device definition version.
      * 
      * @param version
-     *        Version of the device definition version.
+     *        The version of the device definition version.
      */
 
     public void setVersion(String version) {
@@ -182,9 +182,9 @@ public class GetDeviceDefinitionVersionResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Version of the device definition version.
+     * The version of the device definition version.
      * 
-     * @return Version of the device definition version.
+     * @return The version of the device definition version.
      */
 
     public String getVersion() {
@@ -192,10 +192,10 @@ public class GetDeviceDefinitionVersionResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * Version of the device definition version.
+     * The version of the device definition version.
      * 
      * @param version
-     *        Version of the device definition version.
+     *        The version of the device definition version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

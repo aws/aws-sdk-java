@@ -24,7 +24,8 @@ public enum OperatingSystem {
     AMAZON_LINUX("AMAZON_LINUX"),
     UBUNTU("UBUNTU"),
     REDHAT_ENTERPRISE_LINUX("REDHAT_ENTERPRISE_LINUX"),
-    SUSE("SUSE");
+    SUSE("SUSE"),
+    CENTOS("CENTOS");
 
     private String value;
 

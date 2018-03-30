@@ -15,7 +15,7 @@ package com.amazonaws.services.greengrass.model;
 import javax.annotation.Generated;
 
 /**
- * The operating system of the Cores in the targets of an update
+ * The operating system of the cores which are the targets of an update.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum UpdateTargetsOperatingSystem {

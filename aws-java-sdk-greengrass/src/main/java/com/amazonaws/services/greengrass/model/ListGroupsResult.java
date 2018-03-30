@@ -23,15 +23,15 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** Groups */
+    /** Information about a group. */
     private java.util.List<GroupInformation> groups;
     /** The token for the next set of results, or ''null'' if there are no additional results. */
     private String nextToken;
 
     /**
-     * Groups
+     * Information about a group.
      * 
-     * @return Groups
+     * @return Information about a group.
      */
 
     public java.util.List<GroupInformation> getGroups() {
@@ -39,10 +39,10 @@ public class ListGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * Groups
+     * Information about a group.
      * 
      * @param groups
-     *        Groups
+     *        Information about a group.
      */
 
     public void setGroups(java.util.Collection<GroupInformation> groups) {
@@ -55,7 +55,7 @@ public class ListGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * Groups
+     * Information about a group.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setGroups(java.util.Collection)} or {@link #withGroups(java.util.Collection)} if you want to override the
@@ -63,7 +63,7 @@ public class ListGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param groups
-     *        Groups
+     *        Information about a group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,10 +78,10 @@ public class ListGroupsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
-     * Groups
+     * Information about a group.
      * 
      * @param groups
-     *        Groups
+     *        Information about a group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

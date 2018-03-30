@@ -25,14 +25,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetDeviceDefinitionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** device definition Id */
+    /** The ID of the device definition. */
     private String deviceDefinitionId;
 
     /**
-     * device definition Id
+     * The ID of the device definition.
      * 
      * @param deviceDefinitionId
-     *        device definition Id
+     *        The ID of the device definition.
      */
 
     public void setDeviceDefinitionId(String deviceDefinitionId) {
@@ -40,9 +40,9 @@ public class GetDeviceDefinitionRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * device definition Id
+     * The ID of the device definition.
      * 
-     * @return device definition Id
+     * @return The ID of the device definition.
      */
 
     public String getDeviceDefinitionId() {
@@ -50,10 +50,10 @@ public class GetDeviceDefinitionRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * device definition Id
+     * The ID of the device definition.
      * 
      * @param deviceDefinitionId
-     *        device definition Id
+     *        The ID of the device definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

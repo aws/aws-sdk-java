@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Information on logger definition version
+ * Information about a logger definition version.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/LoggerDefinitionVersion" target="_top">AWS
  *      API Documentation</a>
@@ -26,13 +26,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LoggerDefinitionVersion implements Serializable, Cloneable, StructuredPojo {
 
-    /** List of loggers. */
+    /** A list of loggers. */
     private java.util.List<Logger> loggers;
 
     /**
-     * List of loggers.
+     * A list of loggers.
      * 
-     * @return List of loggers.
+     * @return A list of loggers.
      */
 
     public java.util.List<Logger> getLoggers() {
@@ -40,10 +40,10 @@ public class LoggerDefinitionVersion implements Serializable, Cloneable, Structu
     }
 
     /**
-     * List of loggers.
+     * A list of loggers.
      * 
      * @param loggers
-     *        List of loggers.
+     *        A list of loggers.
      */
 
     public void setLoggers(java.util.Collection<Logger> loggers) {
@@ -56,7 +56,7 @@ public class LoggerDefinitionVersion implements Serializable, Cloneable, Structu
     }
 
     /**
-     * List of loggers.
+     * A list of loggers.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setLoggers(java.util.Collection)} or {@link #withLoggers(java.util.Collection)} if you want to override
@@ -64,7 +64,7 @@ public class LoggerDefinitionVersion implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @param loggers
-     *        List of loggers.
+     *        A list of loggers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,10 +79,10 @@ public class LoggerDefinitionVersion implements Serializable, Cloneable, Structu
     }
 
     /**
-     * List of loggers.
+     * A list of loggers.
      * 
      * @param loggers
-     *        List of loggers.
+     *        A list of loggers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

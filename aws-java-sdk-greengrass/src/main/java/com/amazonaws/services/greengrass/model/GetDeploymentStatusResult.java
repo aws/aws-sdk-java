@@ -23,22 +23,22 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetDeploymentStatusResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** Status of the deployment. */
+    /** The status of the deployment. */
     private String deploymentStatus;
     /** The type of the deployment. */
     private String deploymentType;
-    /** The error Details */
+    /** Error details */
     private java.util.List<ErrorDetail> errorDetails;
-    /** Error Message */
+    /** Error message */
     private String errorMessage;
-    /** Last time the deployment status was updated. */
+    /** The time, in milliseconds since the epoch, when the deployment status was updated. */
     private String updatedAt;
 
     /**
-     * Status of the deployment.
+     * The status of the deployment.
      * 
      * @param deploymentStatus
-     *        Status of the deployment.
+     *        The status of the deployment.
      */
 
     public void setDeploymentStatus(String deploymentStatus) {
@@ -46,9 +46,9 @@ public class GetDeploymentStatusResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * Status of the deployment.
+     * The status of the deployment.
      * 
-     * @return Status of the deployment.
+     * @return The status of the deployment.
      */
 
     public String getDeploymentStatus() {
@@ -56,10 +56,10 @@ public class GetDeploymentStatusResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * Status of the deployment.
+     * The status of the deployment.
      * 
      * @param deploymentStatus
-     *        Status of the deployment.
+     *        The status of the deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,9 +120,9 @@ public class GetDeploymentStatusResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * The error Details
+     * Error details
      * 
-     * @return The error Details
+     * @return Error details
      */
 
     public java.util.List<ErrorDetail> getErrorDetails() {
@@ -130,10 +130,10 @@ public class GetDeploymentStatusResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * The error Details
+     * Error details
      * 
      * @param errorDetails
-     *        The error Details
+     *        Error details
      */
 
     public void setErrorDetails(java.util.Collection<ErrorDetail> errorDetails) {
@@ -146,7 +146,7 @@ public class GetDeploymentStatusResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * The error Details
+     * Error details
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setErrorDetails(java.util.Collection)} or {@link #withErrorDetails(java.util.Collection)} if you want to
@@ -154,7 +154,7 @@ public class GetDeploymentStatusResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param errorDetails
-     *        The error Details
+     *        Error details
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,10 +169,10 @@ public class GetDeploymentStatusResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * The error Details
+     * Error details
      * 
      * @param errorDetails
-     *        The error Details
+     *        Error details
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,10 +182,10 @@ public class GetDeploymentStatusResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * Error Message
+     * Error message
      * 
      * @param errorMessage
-     *        Error Message
+     *        Error message
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -193,9 +193,9 @@ public class GetDeploymentStatusResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * Error Message
+     * Error message
      * 
-     * @return Error Message
+     * @return Error message
      */
 
     public String getErrorMessage() {
@@ -203,10 +203,10 @@ public class GetDeploymentStatusResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * Error Message
+     * Error message
      * 
      * @param errorMessage
-     *        Error Message
+     *        Error message
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -216,10 +216,10 @@ public class GetDeploymentStatusResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * Last time the deployment status was updated.
+     * The time, in milliseconds since the epoch, when the deployment status was updated.
      * 
      * @param updatedAt
-     *        Last time the deployment status was updated.
+     *        The time, in milliseconds since the epoch, when the deployment status was updated.
      */
 
     public void setUpdatedAt(String updatedAt) {
@@ -227,9 +227,9 @@ public class GetDeploymentStatusResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * Last time the deployment status was updated.
+     * The time, in milliseconds since the epoch, when the deployment status was updated.
      * 
-     * @return Last time the deployment status was updated.
+     * @return The time, in milliseconds since the epoch, when the deployment status was updated.
      */
 
     public String getUpdatedAt() {
@@ -237,10 +237,10 @@ public class GetDeploymentStatusResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * Last time the deployment status was updated.
+     * The time, in milliseconds since the epoch, when the deployment status was updated.
      * 
      * @param updatedAt
-     *        Last time the deployment status was updated.
+     *        The time, in milliseconds since the epoch, when the deployment status was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

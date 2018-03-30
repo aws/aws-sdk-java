@@ -25,13 +25,13 @@ public class GetResourceDefinitionVersionResult extends com.amazonaws.AmazonWebS
 
     /** Arn of the resource definition version. */
     private String arn;
-    /** Timestamp of when the resource definition version was created. */
+    /** The time, in milliseconds since the epoch, when the resource definition version was created. */
     private String creationTimestamp;
-    /** Information on definition. */
+    /** Information about the definition. */
     private ResourceDefinitionVersion definition;
-    /** Id of the resource definition the version belongs to. */
+    /** The ID of the resource definition version. */
     private String id;
-    /** Version of the resource definition version. */
+    /** The version of the resource definition version. */
     private String version;
 
     /**
@@ -69,10 +69,10 @@ public class GetResourceDefinitionVersionResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Timestamp of when the resource definition version was created.
+     * The time, in milliseconds since the epoch, when the resource definition version was created.
      * 
      * @param creationTimestamp
-     *        Timestamp of when the resource definition version was created.
+     *        The time, in milliseconds since the epoch, when the resource definition version was created.
      */
 
     public void setCreationTimestamp(String creationTimestamp) {
@@ -80,9 +80,9 @@ public class GetResourceDefinitionVersionResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Timestamp of when the resource definition version was created.
+     * The time, in milliseconds since the epoch, when the resource definition version was created.
      * 
-     * @return Timestamp of when the resource definition version was created.
+     * @return The time, in milliseconds since the epoch, when the resource definition version was created.
      */
 
     public String getCreationTimestamp() {
@@ -90,10 +90,10 @@ public class GetResourceDefinitionVersionResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Timestamp of when the resource definition version was created.
+     * The time, in milliseconds since the epoch, when the resource definition version was created.
      * 
      * @param creationTimestamp
-     *        Timestamp of when the resource definition version was created.
+     *        The time, in milliseconds since the epoch, when the resource definition version was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,10 +103,10 @@ public class GetResourceDefinitionVersionResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Information on definition.
+     * Information about the definition.
      * 
      * @param definition
-     *        Information on definition.
+     *        Information about the definition.
      */
 
     public void setDefinition(ResourceDefinitionVersion definition) {
@@ -114,9 +114,9 @@ public class GetResourceDefinitionVersionResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Information on definition.
+     * Information about the definition.
      * 
-     * @return Information on definition.
+     * @return Information about the definition.
      */
 
     public ResourceDefinitionVersion getDefinition() {
@@ -124,10 +124,10 @@ public class GetResourceDefinitionVersionResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Information on definition.
+     * Information about the definition.
      * 
      * @param definition
-     *        Information on definition.
+     *        Information about the definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,10 +137,10 @@ public class GetResourceDefinitionVersionResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Id of the resource definition the version belongs to.
+     * The ID of the resource definition version.
      * 
      * @param id
-     *        Id of the resource definition the version belongs to.
+     *        The ID of the resource definition version.
      */
 
     public void setId(String id) {
@@ -148,9 +148,9 @@ public class GetResourceDefinitionVersionResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Id of the resource definition the version belongs to.
+     * The ID of the resource definition version.
      * 
-     * @return Id of the resource definition the version belongs to.
+     * @return The ID of the resource definition version.
      */
 
     public String getId() {
@@ -158,10 +158,10 @@ public class GetResourceDefinitionVersionResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Id of the resource definition the version belongs to.
+     * The ID of the resource definition version.
      * 
      * @param id
-     *        Id of the resource definition the version belongs to.
+     *        The ID of the resource definition version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -171,10 +171,10 @@ public class GetResourceDefinitionVersionResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Version of the resource definition version.
+     * The version of the resource definition version.
      * 
      * @param version
-     *        Version of the resource definition version.
+     *        The version of the resource definition version.
      */
 
     public void setVersion(String version) {
@@ -182,9 +182,9 @@ public class GetResourceDefinitionVersionResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Version of the resource definition version.
+     * The version of the resource definition version.
      * 
-     * @return Version of the resource definition version.
+     * @return The version of the resource definition version.
      */
 
     public String getVersion() {
@@ -192,10 +192,10 @@ public class GetResourceDefinitionVersionResult extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Version of the resource definition version.
+     * The version of the resource definition version.
      * 
      * @param version
-     *        Version of the resource definition version.
+     *        The version of the resource definition version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

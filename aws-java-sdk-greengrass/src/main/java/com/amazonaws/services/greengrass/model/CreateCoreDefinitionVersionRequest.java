@@ -25,18 +25,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateCoreDefinitionVersionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The client token used to request idempotent operations. */
+    /** A client token used to correlate requests and responses. */
     private String amznClientToken;
-    /** core definition Id */
+    /** The ID of the core definition. */
     private String coreDefinitionId;
-    /** Cores in the definition version. */
+    /** A list of cores in the core definition version. */
     private java.util.List<Core> cores;
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      * 
      * @param amznClientToken
-     *        The client token used to request idempotent operations.
+     *        A client token used to correlate requests and responses.
      */
 
     public void setAmznClientToken(String amznClientToken) {
@@ -44,9 +44,9 @@ public class CreateCoreDefinitionVersionRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      * 
-     * @return The client token used to request idempotent operations.
+     * @return A client token used to correlate requests and responses.
      */
 
     public String getAmznClientToken() {
@@ -54,10 +54,10 @@ public class CreateCoreDefinitionVersionRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      * 
      * @param amznClientToken
-     *        The client token used to request idempotent operations.
+     *        A client token used to correlate requests and responses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -67,10 +67,10 @@ public class CreateCoreDefinitionVersionRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * core definition Id
+     * The ID of the core definition.
      * 
      * @param coreDefinitionId
-     *        core definition Id
+     *        The ID of the core definition.
      */
 
     public void setCoreDefinitionId(String coreDefinitionId) {
@@ -78,9 +78,9 @@ public class CreateCoreDefinitionVersionRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * core definition Id
+     * The ID of the core definition.
      * 
-     * @return core definition Id
+     * @return The ID of the core definition.
      */
 
     public String getCoreDefinitionId() {
@@ -88,10 +88,10 @@ public class CreateCoreDefinitionVersionRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * core definition Id
+     * The ID of the core definition.
      * 
      * @param coreDefinitionId
-     *        core definition Id
+     *        The ID of the core definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,9 +101,9 @@ public class CreateCoreDefinitionVersionRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Cores in the definition version.
+     * A list of cores in the core definition version.
      * 
-     * @return Cores in the definition version.
+     * @return A list of cores in the core definition version.
      */
 
     public java.util.List<Core> getCores() {
@@ -111,10 +111,10 @@ public class CreateCoreDefinitionVersionRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Cores in the definition version.
+     * A list of cores in the core definition version.
      * 
      * @param cores
-     *        Cores in the definition version.
+     *        A list of cores in the core definition version.
      */
 
     public void setCores(java.util.Collection<Core> cores) {
@@ -127,7 +127,7 @@ public class CreateCoreDefinitionVersionRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Cores in the definition version.
+     * A list of cores in the core definition version.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setCores(java.util.Collection)} or {@link #withCores(java.util.Collection)} if you want to override the
@@ -135,7 +135,7 @@ public class CreateCoreDefinitionVersionRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param cores
-     *        Cores in the definition version.
+     *        A list of cores in the core definition version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,10 +150,10 @@ public class CreateCoreDefinitionVersionRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * Cores in the definition version.
+     * A list of cores in the core definition version.
      * 
      * @param cores
-     *        Cores in the definition version.
+     *        A list of cores in the core definition version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

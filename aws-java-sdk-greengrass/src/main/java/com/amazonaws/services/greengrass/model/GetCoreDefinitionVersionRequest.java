@@ -25,16 +25,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetCoreDefinitionVersionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** core definition Id */
+    /** The ID of the core definition. */
     private String coreDefinitionId;
-    /** core definition version Id */
+    /** The ID of the core definition version. */
     private String coreDefinitionVersionId;
 
     /**
-     * core definition Id
+     * The ID of the core definition.
      * 
      * @param coreDefinitionId
-     *        core definition Id
+     *        The ID of the core definition.
      */
 
     public void setCoreDefinitionId(String coreDefinitionId) {
@@ -42,9 +42,9 @@ public class GetCoreDefinitionVersionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * core definition Id
+     * The ID of the core definition.
      * 
-     * @return core definition Id
+     * @return The ID of the core definition.
      */
 
     public String getCoreDefinitionId() {
@@ -52,10 +52,10 @@ public class GetCoreDefinitionVersionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * core definition Id
+     * The ID of the core definition.
      * 
      * @param coreDefinitionId
-     *        core definition Id
+     *        The ID of the core definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -65,10 +65,10 @@ public class GetCoreDefinitionVersionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * core definition version Id
+     * The ID of the core definition version.
      * 
      * @param coreDefinitionVersionId
-     *        core definition version Id
+     *        The ID of the core definition version.
      */
 
     public void setCoreDefinitionVersionId(String coreDefinitionVersionId) {
@@ -76,9 +76,9 @@ public class GetCoreDefinitionVersionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * core definition version Id
+     * The ID of the core definition version.
      * 
-     * @return core definition version Id
+     * @return The ID of the core definition version.
      */
 
     public String getCoreDefinitionVersionId() {
@@ -86,10 +86,10 @@ public class GetCoreDefinitionVersionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * core definition version Id
+     * The ID of the core definition version.
      * 
      * @param coreDefinitionVersionId
-     *        core definition version Id
+     *        The ID of the core definition version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

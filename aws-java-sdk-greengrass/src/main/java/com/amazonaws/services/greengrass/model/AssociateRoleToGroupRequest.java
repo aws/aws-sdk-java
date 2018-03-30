@@ -25,16 +25,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AssociateRoleToGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The unique Id of the AWS Greengrass Group */
+    /** The ID of the AWS Greengrass group. */
     private String groupId;
-    /** Role arn you wish to associate with this group. */
+    /** The ARN of the role you wish to associate with this group. */
     private String roleArn;
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      * 
      * @param groupId
-     *        The unique Id of the AWS Greengrass Group
+     *        The ID of the AWS Greengrass group.
      */
 
     public void setGroupId(String groupId) {
@@ -42,9 +42,9 @@ public class AssociateRoleToGroupRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      * 
-     * @return The unique Id of the AWS Greengrass Group
+     * @return The ID of the AWS Greengrass group.
      */
 
     public String getGroupId() {
@@ -52,10 +52,10 @@ public class AssociateRoleToGroupRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * The unique Id of the AWS Greengrass Group
+     * The ID of the AWS Greengrass group.
      * 
      * @param groupId
-     *        The unique Id of the AWS Greengrass Group
+     *        The ID of the AWS Greengrass group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -65,10 +65,10 @@ public class AssociateRoleToGroupRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Role arn you wish to associate with this group.
+     * The ARN of the role you wish to associate with this group.
      * 
      * @param roleArn
-     *        Role arn you wish to associate with this group.
+     *        The ARN of the role you wish to associate with this group.
      */
 
     public void setRoleArn(String roleArn) {
@@ -76,9 +76,9 @@ public class AssociateRoleToGroupRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Role arn you wish to associate with this group.
+     * The ARN of the role you wish to associate with this group.
      * 
-     * @return Role arn you wish to associate with this group.
+     * @return The ARN of the role you wish to associate with this group.
      */
 
     public String getRoleArn() {
@@ -86,10 +86,10 @@ public class AssociateRoleToGroupRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * Role arn you wish to associate with this group.
+     * The ARN of the role you wish to associate with this group.
      * 
      * @param roleArn
-     *        Role arn you wish to associate with this group.
+     *        The ARN of the role you wish to associate with this group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

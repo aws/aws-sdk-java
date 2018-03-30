@@ -24,14 +24,14 @@ import javax.annotation.Generated;
 public class CreateGroupCertificateAuthorityResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {
 
-    /** Arn of the group certificate authority. */
+    /** The ARN of the group certificate authority. */
     private String groupCertificateAuthorityArn;
 
     /**
-     * Arn of the group certificate authority.
+     * The ARN of the group certificate authority.
      * 
      * @param groupCertificateAuthorityArn
-     *        Arn of the group certificate authority.
+     *        The ARN of the group certificate authority.
      */
 
     public void setGroupCertificateAuthorityArn(String groupCertificateAuthorityArn) {
@@ -39,9 +39,9 @@ public class CreateGroupCertificateAuthorityResult extends com.amazonaws.AmazonW
     }
 
     /**
-     * Arn of the group certificate authority.
+     * The ARN of the group certificate authority.
      * 
-     * @return Arn of the group certificate authority.
+     * @return The ARN of the group certificate authority.
      */
 
     public String getGroupCertificateAuthorityArn() {
@@ -49,10 +49,10 @@ public class CreateGroupCertificateAuthorityResult extends com.amazonaws.AmazonW
     }
 
     /**
-     * Arn of the group certificate authority.
+     * The ARN of the group certificate authority.
      * 
      * @param groupCertificateAuthorityArn
-     *        Arn of the group certificate authority.
+     *        The ARN of the group certificate authority.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

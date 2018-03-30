@@ -25,16 +25,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetDeviceDefinitionVersionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** device definition Id */
+    /** The ID of the device definition. */
     private String deviceDefinitionId;
-    /** device definition version Id */
+    /** The ID of the device definition version. */
     private String deviceDefinitionVersionId;
 
     /**
-     * device definition Id
+     * The ID of the device definition.
      * 
      * @param deviceDefinitionId
-     *        device definition Id
+     *        The ID of the device definition.
      */
 
     public void setDeviceDefinitionId(String deviceDefinitionId) {
@@ -42,9 +42,9 @@ public class GetDeviceDefinitionVersionRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * device definition Id
+     * The ID of the device definition.
      * 
-     * @return device definition Id
+     * @return The ID of the device definition.
      */
 
     public String getDeviceDefinitionId() {
@@ -52,10 +52,10 @@ public class GetDeviceDefinitionVersionRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * device definition Id
+     * The ID of the device definition.
      * 
      * @param deviceDefinitionId
-     *        device definition Id
+     *        The ID of the device definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -65,10 +65,10 @@ public class GetDeviceDefinitionVersionRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * device definition version Id
+     * The ID of the device definition version.
      * 
      * @param deviceDefinitionVersionId
-     *        device definition version Id
+     *        The ID of the device definition version.
      */
 
     public void setDeviceDefinitionVersionId(String deviceDefinitionVersionId) {
@@ -76,9 +76,9 @@ public class GetDeviceDefinitionVersionRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * device definition version Id
+     * The ID of the device definition version.
      * 
-     * @return device definition version Id
+     * @return The ID of the device definition version.
      */
 
     public String getDeviceDefinitionVersionId() {
@@ -86,10 +86,10 @@ public class GetDeviceDefinitionVersionRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * device definition version Id
+     * The ID of the device definition version.
      * 
      * @param deviceDefinitionVersionId
-     *        device definition version Id
+     *        The ID of the device definition version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

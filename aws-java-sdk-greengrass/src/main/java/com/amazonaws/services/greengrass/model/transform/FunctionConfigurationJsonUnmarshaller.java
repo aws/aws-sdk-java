@@ -48,6 +48,10 @@ public class FunctionConfigurationJsonUnmarshaller implements Unmarshaller<Funct
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("EncodingType", targetDepth)) {
+                    context.nextToken();
+                    functionConfiguration.setEncodingType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Environment", targetDepth)) {
                     context.nextToken();
                     functionConfiguration.setEnvironment(FunctionConfigurationEnvironmentJsonUnmarshaller.getInstance().unmarshall(context));

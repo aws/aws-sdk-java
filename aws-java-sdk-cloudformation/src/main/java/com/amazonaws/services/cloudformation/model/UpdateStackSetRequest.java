@@ -191,6 +191,23 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
     private StackSetOperationPreferences operationPreferences;
     /**
      * <p>
+     * The Amazon Resource Number (ARN) of the IAM role to use to update this stack set.
+     * </p>
+     * <p>
+     * Specify an IAM role only if you are using customized administrator roles to control which users or groups can
+     * manage specific stack sets within the same administrator account. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions
+     * for Multiple Administrators</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * <p>
+     * If you specify a customized administrator role, AWS CloudFormation uses that role to update the stack. If you do
+     * not specify a customized administrator role, AWS CloudFormation performs the update using the role previously
+     * associated with the stack set, so long as you have permissions to perform operations on the stack set.
+     * </p>
+     */
+    private String administrationRoleARN;
+    /**
+     * <p>
      * The unique ID for this stack set operation.
      * </p>
      * <p>
@@ -1658,6 +1675,112 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * The Amazon Resource Number (ARN) of the IAM role to use to update this stack set.
+     * </p>
+     * <p>
+     * Specify an IAM role only if you are using customized administrator roles to control which users or groups can
+     * manage specific stack sets within the same administrator account. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions
+     * for Multiple Administrators</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * <p>
+     * If you specify a customized administrator role, AWS CloudFormation uses that role to update the stack. If you do
+     * not specify a customized administrator role, AWS CloudFormation performs the update using the role previously
+     * associated with the stack set, so long as you have permissions to perform operations on the stack set.
+     * </p>
+     * 
+     * @param administrationRoleARN
+     *        The Amazon Resource Number (ARN) of the IAM role to use to update this stack set.</p>
+     *        <p>
+     *        Specify an IAM role only if you are using customized administrator roles to control which users or groups
+     *        can manage specific stack sets within the same administrator account. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
+     *        Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        </p>
+     *        <p>
+     *        If you specify a customized administrator role, AWS CloudFormation uses that role to update the stack. If
+     *        you do not specify a customized administrator role, AWS CloudFormation performs the update using the role
+     *        previously associated with the stack set, so long as you have permissions to perform operations on the
+     *        stack set.
+     */
+
+    public void setAdministrationRoleARN(String administrationRoleARN) {
+        this.administrationRoleARN = administrationRoleARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the IAM role to use to update this stack set.
+     * </p>
+     * <p>
+     * Specify an IAM role only if you are using customized administrator roles to control which users or groups can
+     * manage specific stack sets within the same administrator account. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions
+     * for Multiple Administrators</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * <p>
+     * If you specify a customized administrator role, AWS CloudFormation uses that role to update the stack. If you do
+     * not specify a customized administrator role, AWS CloudFormation performs the update using the role previously
+     * associated with the stack set, so long as you have permissions to perform operations on the stack set.
+     * </p>
+     * 
+     * @return The Amazon Resource Number (ARN) of the IAM role to use to update this stack set.</p>
+     *         <p>
+     *         Specify an IAM role only if you are using customized administrator roles to control which users or groups
+     *         can manage specific stack sets within the same administrator account. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
+     *         Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User Guide</i>.
+     *         </p>
+     *         <p>
+     *         If you specify a customized administrator role, AWS CloudFormation uses that role to update the stack. If
+     *         you do not specify a customized administrator role, AWS CloudFormation performs the update using the role
+     *         previously associated with the stack set, so long as you have permissions to perform operations on the
+     *         stack set.
+     */
+
+    public String getAdministrationRoleARN() {
+        return this.administrationRoleARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the IAM role to use to update this stack set.
+     * </p>
+     * <p>
+     * Specify an IAM role only if you are using customized administrator roles to control which users or groups can
+     * manage specific stack sets within the same administrator account. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions
+     * for Multiple Administrators</a> in the <i>AWS CloudFormation User Guide</i>.
+     * </p>
+     * <p>
+     * If you specify a customized administrator role, AWS CloudFormation uses that role to update the stack. If you do
+     * not specify a customized administrator role, AWS CloudFormation performs the update using the role previously
+     * associated with the stack set, so long as you have permissions to perform operations on the stack set.
+     * </p>
+     * 
+     * @param administrationRoleARN
+     *        The Amazon Resource Number (ARN) of the IAM role to use to update this stack set.</p>
+     *        <p>
+     *        Specify an IAM role only if you are using customized administrator roles to control which users or groups
+     *        can manage specific stack sets within the same administrator account. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
+     *        Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        </p>
+     *        <p>
+     *        If you specify a customized administrator role, AWS CloudFormation uses that role to update the stack. If
+     *        you do not specify a customized administrator role, AWS CloudFormation performs the update using the role
+     *        previously associated with the stack set, so long as you have permissions to perform operations on the
+     *        stack set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateStackSetRequest withAdministrationRoleARN(String administrationRoleARN) {
+        setAdministrationRoleARN(administrationRoleARN);
+        return this;
+    }
+
+    /**
+     * <p>
      * The unique ID for this stack set operation.
      * </p>
      * <p>
@@ -1794,6 +1917,8 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("Tags: ").append(getTags()).append(",");
         if (getOperationPreferences() != null)
             sb.append("OperationPreferences: ").append(getOperationPreferences()).append(",");
+        if (getAdministrationRoleARN() != null)
+            sb.append("AdministrationRoleARN: ").append(getAdministrationRoleARN()).append(",");
         if (getOperationId() != null)
             sb.append("OperationId: ").append(getOperationId());
         sb.append("}");
@@ -1846,6 +1971,10 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getOperationPreferences() != null && other.getOperationPreferences().equals(this.getOperationPreferences()) == false)
             return false;
+        if (other.getAdministrationRoleARN() == null ^ this.getAdministrationRoleARN() == null)
+            return false;
+        if (other.getAdministrationRoleARN() != null && other.getAdministrationRoleARN().equals(this.getAdministrationRoleARN()) == false)
+            return false;
         if (other.getOperationId() == null ^ this.getOperationId() == null)
             return false;
         if (other.getOperationId() != null && other.getOperationId().equals(this.getOperationId()) == false)
@@ -1867,6 +1996,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getCapabilities() == null) ? 0 : getCapabilities().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getOperationPreferences() == null) ? 0 : getOperationPreferences().hashCode());
+        hashCode = prime * hashCode + ((getAdministrationRoleARN() == null) ? 0 : getAdministrationRoleARN().hashCode());
         hashCode = prime * hashCode + ((getOperationId() == null) ? 0 : getOperationId().hashCode());
         return hashCode;
     }

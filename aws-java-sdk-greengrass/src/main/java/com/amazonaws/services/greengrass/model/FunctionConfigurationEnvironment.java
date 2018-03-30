@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Environment of the function configuration
+ * The environment configuration of the function.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/FunctionConfigurationEnvironment"
  *      target="_top">AWS API Documentation</a>
@@ -26,18 +26,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class FunctionConfigurationEnvironment implements Serializable, Cloneable, StructuredPojo {
 
-    /** Flag to allow lambda access sys filesystem. */
+    /**
+     * If true, the Lambda function is allowed to access the host's /sys folder. Use this when the Lambda function needs
+     * to read device information from /sys.
+     */
     private Boolean accessSysfs;
-    /** Policies for the function to access resources. */
+    /**
+     * A list of the resources, with their permissions, to which the Lambda function will be granted access. A Lambda
+     * function can have at most 10 resources.
+     */
     private java.util.List<ResourceAccessPolicy> resourceAccessPolicies;
-    /** Environment variables for the lambda function. */
+    /** Environment variables for the Lambda function's configuration. */
     private java.util.Map<String, String> variables;
 
     /**
-     * Flag to allow lambda access sys filesystem.
+     * If true, the Lambda function is allowed to access the host's /sys folder. Use this when the Lambda function needs
+     * to read device information from /sys.
      * 
      * @param accessSysfs
-     *        Flag to allow lambda access sys filesystem.
+     *        If true, the Lambda function is allowed to access the host's /sys folder. Use this when the Lambda
+     *        function needs to read device information from /sys.
      */
 
     public void setAccessSysfs(Boolean accessSysfs) {
@@ -45,9 +53,11 @@ public class FunctionConfigurationEnvironment implements Serializable, Cloneable
     }
 
     /**
-     * Flag to allow lambda access sys filesystem.
+     * If true, the Lambda function is allowed to access the host's /sys folder. Use this when the Lambda function needs
+     * to read device information from /sys.
      * 
-     * @return Flag to allow lambda access sys filesystem.
+     * @return If true, the Lambda function is allowed to access the host's /sys folder. Use this when the Lambda
+     *         function needs to read device information from /sys.
      */
 
     public Boolean getAccessSysfs() {
@@ -55,10 +65,12 @@ public class FunctionConfigurationEnvironment implements Serializable, Cloneable
     }
 
     /**
-     * Flag to allow lambda access sys filesystem.
+     * If true, the Lambda function is allowed to access the host's /sys folder. Use this when the Lambda function needs
+     * to read device information from /sys.
      * 
      * @param accessSysfs
-     *        Flag to allow lambda access sys filesystem.
+     *        If true, the Lambda function is allowed to access the host's /sys folder. Use this when the Lambda
+     *        function needs to read device information from /sys.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -68,9 +80,11 @@ public class FunctionConfigurationEnvironment implements Serializable, Cloneable
     }
 
     /**
-     * Flag to allow lambda access sys filesystem.
+     * If true, the Lambda function is allowed to access the host's /sys folder. Use this when the Lambda function needs
+     * to read device information from /sys.
      * 
-     * @return Flag to allow lambda access sys filesystem.
+     * @return If true, the Lambda function is allowed to access the host's /sys folder. Use this when the Lambda
+     *         function needs to read device information from /sys.
      */
 
     public Boolean isAccessSysfs() {
@@ -78,9 +92,11 @@ public class FunctionConfigurationEnvironment implements Serializable, Cloneable
     }
 
     /**
-     * Policies for the function to access resources.
+     * A list of the resources, with their permissions, to which the Lambda function will be granted access. A Lambda
+     * function can have at most 10 resources.
      * 
-     * @return Policies for the function to access resources.
+     * @return A list of the resources, with their permissions, to which the Lambda function will be granted access. A
+     *         Lambda function can have at most 10 resources.
      */
 
     public java.util.List<ResourceAccessPolicy> getResourceAccessPolicies() {
@@ -88,10 +104,12 @@ public class FunctionConfigurationEnvironment implements Serializable, Cloneable
     }
 
     /**
-     * Policies for the function to access resources.
+     * A list of the resources, with their permissions, to which the Lambda function will be granted access. A Lambda
+     * function can have at most 10 resources.
      * 
      * @param resourceAccessPolicies
-     *        Policies for the function to access resources.
+     *        A list of the resources, with their permissions, to which the Lambda function will be granted access. A
+     *        Lambda function can have at most 10 resources.
      */
 
     public void setResourceAccessPolicies(java.util.Collection<ResourceAccessPolicy> resourceAccessPolicies) {
@@ -104,7 +122,8 @@ public class FunctionConfigurationEnvironment implements Serializable, Cloneable
     }
 
     /**
-     * Policies for the function to access resources.
+     * A list of the resources, with their permissions, to which the Lambda function will be granted access. A Lambda
+     * function can have at most 10 resources.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setResourceAccessPolicies(java.util.Collection)} or
@@ -112,7 +131,8 @@ public class FunctionConfigurationEnvironment implements Serializable, Cloneable
      * </p>
      * 
      * @param resourceAccessPolicies
-     *        Policies for the function to access resources.
+     *        A list of the resources, with their permissions, to which the Lambda function will be granted access. A
+     *        Lambda function can have at most 10 resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,10 +147,12 @@ public class FunctionConfigurationEnvironment implements Serializable, Cloneable
     }
 
     /**
-     * Policies for the function to access resources.
+     * A list of the resources, with their permissions, to which the Lambda function will be granted access. A Lambda
+     * function can have at most 10 resources.
      * 
      * @param resourceAccessPolicies
-     *        Policies for the function to access resources.
+     *        A list of the resources, with their permissions, to which the Lambda function will be granted access. A
+     *        Lambda function can have at most 10 resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,9 +162,9 @@ public class FunctionConfigurationEnvironment implements Serializable, Cloneable
     }
 
     /**
-     * Environment variables for the lambda function.
+     * Environment variables for the Lambda function's configuration.
      * 
-     * @return Environment variables for the lambda function.
+     * @return Environment variables for the Lambda function's configuration.
      */
 
     public java.util.Map<String, String> getVariables() {
@@ -150,10 +172,10 @@ public class FunctionConfigurationEnvironment implements Serializable, Cloneable
     }
 
     /**
-     * Environment variables for the lambda function.
+     * Environment variables for the Lambda function's configuration.
      * 
      * @param variables
-     *        Environment variables for the lambda function.
+     *        Environment variables for the Lambda function's configuration.
      */
 
     public void setVariables(java.util.Map<String, String> variables) {
@@ -161,10 +183,10 @@ public class FunctionConfigurationEnvironment implements Serializable, Cloneable
     }
 
     /**
-     * Environment variables for the lambda function.
+     * Environment variables for the Lambda function's configuration.
      * 
      * @param variables
-     *        Environment variables for the lambda function.
+     *        Environment variables for the Lambda function's configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

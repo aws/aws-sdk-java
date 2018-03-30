@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Information on device definition version
+ * Information about a device definition version.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeviceDefinitionVersion" target="_top">AWS
  *      API Documentation</a>
@@ -26,13 +26,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeviceDefinitionVersion implements Serializable, Cloneable, StructuredPojo {
 
-    /** Devices in the definition version. */
+    /** A list of devices in the definition version. */
     private java.util.List<Device> devices;
 
     /**
-     * Devices in the definition version.
+     * A list of devices in the definition version.
      * 
-     * @return Devices in the definition version.
+     * @return A list of devices in the definition version.
      */
 
     public java.util.List<Device> getDevices() {
@@ -40,10 +40,10 @@ public class DeviceDefinitionVersion implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Devices in the definition version.
+     * A list of devices in the definition version.
      * 
      * @param devices
-     *        Devices in the definition version.
+     *        A list of devices in the definition version.
      */
 
     public void setDevices(java.util.Collection<Device> devices) {
@@ -56,7 +56,7 @@ public class DeviceDefinitionVersion implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Devices in the definition version.
+     * A list of devices in the definition version.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setDevices(java.util.Collection)} or {@link #withDevices(java.util.Collection)} if you want to override
@@ -64,7 +64,7 @@ public class DeviceDefinitionVersion implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @param devices
-     *        Devices in the definition version.
+     *        A list of devices in the definition version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,10 +79,10 @@ public class DeviceDefinitionVersion implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Devices in the definition version.
+     * A list of devices in the definition version.
      * 
      * @param devices
-     *        Devices in the definition version.
+     *        A list of devices in the definition version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

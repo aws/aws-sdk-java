@@ -26,7 +26,7 @@ public class ListFunctionDefinitionVersionsResult extends com.amazonaws.AmazonWe
 
     /** The token for the next set of results, or ''null'' if there are no additional results. */
     private String nextToken;
-    /** Versions */
+    /** Information about a version. */
     private java.util.List<VersionInformation> versions;
 
     /**
@@ -64,9 +64,9 @@ public class ListFunctionDefinitionVersionsResult extends com.amazonaws.AmazonWe
     }
 
     /**
-     * Versions
+     * Information about a version.
      * 
-     * @return Versions
+     * @return Information about a version.
      */
 
     public java.util.List<VersionInformation> getVersions() {
@@ -74,10 +74,10 @@ public class ListFunctionDefinitionVersionsResult extends com.amazonaws.AmazonWe
     }
 
     /**
-     * Versions
+     * Information about a version.
      * 
      * @param versions
-     *        Versions
+     *        Information about a version.
      */
 
     public void setVersions(java.util.Collection<VersionInformation> versions) {
@@ -90,7 +90,7 @@ public class ListFunctionDefinitionVersionsResult extends com.amazonaws.AmazonWe
     }
 
     /**
-     * Versions
+     * Information about a version.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setVersions(java.util.Collection)} or {@link #withVersions(java.util.Collection)} if you want to override
@@ -98,7 +98,7 @@ public class ListFunctionDefinitionVersionsResult extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param versions
-     *        Versions
+     *        Information about a version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,10 +113,10 @@ public class ListFunctionDefinitionVersionsResult extends com.amazonaws.AmazonWe
     }
 
     /**
-     * Versions
+     * Information about a version.
      * 
      * @param versions
-     *        Versions
+     *        Information about a version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

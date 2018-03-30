@@ -25,14 +25,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteSubscriptionDefinitionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** subscription definition Id */
+    /** The ID of the subscription definition. */
     private String subscriptionDefinitionId;
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      * 
      * @param subscriptionDefinitionId
-     *        subscription definition Id
+     *        The ID of the subscription definition.
      */
 
     public void setSubscriptionDefinitionId(String subscriptionDefinitionId) {
@@ -40,9 +40,9 @@ public class DeleteSubscriptionDefinitionRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      * 
-     * @return subscription definition Id
+     * @return The ID of the subscription definition.
      */
 
     public String getSubscriptionDefinitionId() {
@@ -50,10 +50,10 @@ public class DeleteSubscriptionDefinitionRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * subscription definition Id
+     * The ID of the subscription definition.
      * 
      * @param subscriptionDefinitionId
-     *        subscription definition Id
+     *        The ID of the subscription definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

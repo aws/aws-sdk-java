@@ -25,16 +25,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListLoggerDefinitionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** Specifies the maximum number of list results to be returned in this page */
+    /** The maximum number of results to be returned per request. */
     private String maxResults;
-    /** Specifies the pagination token used when iterating through a paginated request */
+    /** The token for the next set of results, or ''null'' if there are no additional results. */
     private String nextToken;
 
     /**
-     * Specifies the maximum number of list results to be returned in this page
+     * The maximum number of results to be returned per request.
      * 
      * @param maxResults
-     *        Specifies the maximum number of list results to be returned in this page
+     *        The maximum number of results to be returned per request.
      */
 
     public void setMaxResults(String maxResults) {
@@ -42,9 +42,9 @@ public class ListLoggerDefinitionsRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Specifies the maximum number of list results to be returned in this page
+     * The maximum number of results to be returned per request.
      * 
-     * @return Specifies the maximum number of list results to be returned in this page
+     * @return The maximum number of results to be returned per request.
      */
 
     public String getMaxResults() {
@@ -52,10 +52,10 @@ public class ListLoggerDefinitionsRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Specifies the maximum number of list results to be returned in this page
+     * The maximum number of results to be returned per request.
      * 
      * @param maxResults
-     *        Specifies the maximum number of list results to be returned in this page
+     *        The maximum number of results to be returned per request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -65,10 +65,10 @@ public class ListLoggerDefinitionsRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Specifies the pagination token used when iterating through a paginated request
+     * The token for the next set of results, or ''null'' if there are no additional results.
      * 
      * @param nextToken
-     *        Specifies the pagination token used when iterating through a paginated request
+     *        The token for the next set of results, or ''null'' if there are no additional results.
      */
 
     public void setNextToken(String nextToken) {
@@ -76,9 +76,9 @@ public class ListLoggerDefinitionsRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Specifies the pagination token used when iterating through a paginated request
+     * The token for the next set of results, or ''null'' if there are no additional results.
      * 
-     * @return Specifies the pagination token used when iterating through a paginated request
+     * @return The token for the next set of results, or ''null'' if there are no additional results.
      */
 
     public String getNextToken() {
@@ -86,10 +86,10 @@ public class ListLoggerDefinitionsRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * Specifies the pagination token used when iterating through a paginated request
+     * The token for the next set of results, or ''null'' if there are no additional results.
      * 
      * @param nextToken
-     *        Specifies the pagination token used when iterating through a paginated request
+     *        The token for the next set of results, or ''null'' if there are no additional results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

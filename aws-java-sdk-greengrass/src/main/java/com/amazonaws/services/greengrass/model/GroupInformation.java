@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Information on the group
+ * Information about a group.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GroupInformation" target="_top">AWS API
  *      Documentation</a>
@@ -26,26 +26,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GroupInformation implements Serializable, Cloneable, StructuredPojo {
 
-    /** Arn of a group. */
+    /** The ARN of the group. */
     private String arn;
-    /** Timestamp of when the group was created. */
+    /** The time, in milliseconds since the epoch, when the group was created. */
     private String creationTimestamp;
-    /** Id of a group. */
+    /** The ID of the group. */
     private String id;
-    /** Last updated timestamp of the group. */
+    /** The time, in milliseconds since the epoch, when the group was last updated. */
     private String lastUpdatedTimestamp;
-    /** Last version of the group. */
+    /** The latest version of the group. */
     private String latestVersion;
-    /** Latest version arn of the group. */
+    /** The ARN of the latest version of the group. */
     private String latestVersionArn;
-    /** Name of a group. */
+    /** The name of the group. */
     private String name;
 
     /**
-     * Arn of a group.
+     * The ARN of the group.
      * 
      * @param arn
-     *        Arn of a group.
+     *        The ARN of the group.
      */
 
     public void setArn(String arn) {
@@ -53,9 +53,9 @@ public class GroupInformation implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Arn of a group.
+     * The ARN of the group.
      * 
-     * @return Arn of a group.
+     * @return The ARN of the group.
      */
 
     public String getArn() {
@@ -63,10 +63,10 @@ public class GroupInformation implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Arn of a group.
+     * The ARN of the group.
      * 
      * @param arn
-     *        Arn of a group.
+     *        The ARN of the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -76,10 +76,10 @@ public class GroupInformation implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Timestamp of when the group was created.
+     * The time, in milliseconds since the epoch, when the group was created.
      * 
      * @param creationTimestamp
-     *        Timestamp of when the group was created.
+     *        The time, in milliseconds since the epoch, when the group was created.
      */
 
     public void setCreationTimestamp(String creationTimestamp) {
@@ -87,9 +87,9 @@ public class GroupInformation implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Timestamp of when the group was created.
+     * The time, in milliseconds since the epoch, when the group was created.
      * 
-     * @return Timestamp of when the group was created.
+     * @return The time, in milliseconds since the epoch, when the group was created.
      */
 
     public String getCreationTimestamp() {
@@ -97,10 +97,10 @@ public class GroupInformation implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Timestamp of when the group was created.
+     * The time, in milliseconds since the epoch, when the group was created.
      * 
      * @param creationTimestamp
-     *        Timestamp of when the group was created.
+     *        The time, in milliseconds since the epoch, when the group was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,10 +110,10 @@ public class GroupInformation implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Id of a group.
+     * The ID of the group.
      * 
      * @param id
-     *        Id of a group.
+     *        The ID of the group.
      */
 
     public void setId(String id) {
@@ -121,9 +121,9 @@ public class GroupInformation implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Id of a group.
+     * The ID of the group.
      * 
-     * @return Id of a group.
+     * @return The ID of the group.
      */
 
     public String getId() {
@@ -131,10 +131,10 @@ public class GroupInformation implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Id of a group.
+     * The ID of the group.
      * 
      * @param id
-     *        Id of a group.
+     *        The ID of the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,10 +144,10 @@ public class GroupInformation implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Last updated timestamp of the group.
+     * The time, in milliseconds since the epoch, when the group was last updated.
      * 
      * @param lastUpdatedTimestamp
-     *        Last updated timestamp of the group.
+     *        The time, in milliseconds since the epoch, when the group was last updated.
      */
 
     public void setLastUpdatedTimestamp(String lastUpdatedTimestamp) {
@@ -155,9 +155,9 @@ public class GroupInformation implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Last updated timestamp of the group.
+     * The time, in milliseconds since the epoch, when the group was last updated.
      * 
-     * @return Last updated timestamp of the group.
+     * @return The time, in milliseconds since the epoch, when the group was last updated.
      */
 
     public String getLastUpdatedTimestamp() {
@@ -165,10 +165,10 @@ public class GroupInformation implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Last updated timestamp of the group.
+     * The time, in milliseconds since the epoch, when the group was last updated.
      * 
      * @param lastUpdatedTimestamp
-     *        Last updated timestamp of the group.
+     *        The time, in milliseconds since the epoch, when the group was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,10 +178,10 @@ public class GroupInformation implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Last version of the group.
+     * The latest version of the group.
      * 
      * @param latestVersion
-     *        Last version of the group.
+     *        The latest version of the group.
      */
 
     public void setLatestVersion(String latestVersion) {
@@ -189,9 +189,9 @@ public class GroupInformation implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Last version of the group.
+     * The latest version of the group.
      * 
-     * @return Last version of the group.
+     * @return The latest version of the group.
      */
 
     public String getLatestVersion() {
@@ -199,10 +199,10 @@ public class GroupInformation implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Last version of the group.
+     * The latest version of the group.
      * 
      * @param latestVersion
-     *        Last version of the group.
+     *        The latest version of the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,10 +212,10 @@ public class GroupInformation implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Latest version arn of the group.
+     * The ARN of the latest version of the group.
      * 
      * @param latestVersionArn
-     *        Latest version arn of the group.
+     *        The ARN of the latest version of the group.
      */
 
     public void setLatestVersionArn(String latestVersionArn) {
@@ -223,9 +223,9 @@ public class GroupInformation implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Latest version arn of the group.
+     * The ARN of the latest version of the group.
      * 
-     * @return Latest version arn of the group.
+     * @return The ARN of the latest version of the group.
      */
 
     public String getLatestVersionArn() {
@@ -233,10 +233,10 @@ public class GroupInformation implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Latest version arn of the group.
+     * The ARN of the latest version of the group.
      * 
      * @param latestVersionArn
-     *        Latest version arn of the group.
+     *        The ARN of the latest version of the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -246,10 +246,10 @@ public class GroupInformation implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Name of a group.
+     * The name of the group.
      * 
      * @param name
-     *        Name of a group.
+     *        The name of the group.
      */
 
     public void setName(String name) {
@@ -257,9 +257,9 @@ public class GroupInformation implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Name of a group.
+     * The name of the group.
      * 
-     * @return Name of a group.
+     * @return The name of the group.
      */
 
     public String getName() {
@@ -267,10 +267,10 @@ public class GroupInformation implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Name of a group.
+     * The name of the group.
      * 
      * @param name
-     *        Name of a group.
+     *        The name of the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

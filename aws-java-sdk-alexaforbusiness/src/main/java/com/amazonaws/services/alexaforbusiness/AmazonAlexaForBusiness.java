@@ -47,6 +47,19 @@ public interface AmazonAlexaForBusiness {
 
     /**
      * <p>
+     * Associates a contact to a given address book.
+     * </p>
+     * 
+     * @param associateContactWithAddressBookRequest
+     * @return Result of the AssociateContactWithAddressBook operation returned by the service.
+     * @sample AmazonAlexaForBusiness.AssociateContactWithAddressBook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateContactWithAddressBook"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateContactWithAddressBookResult associateContactWithAddressBook(AssociateContactWithAddressBookRequest associateContactWithAddressBookRequest);
+
+    /**
+     * <p>
      * Associates a device to a given room. This applies all the settings from the room profile to the device, and all
      * the skills in any skill groups added to that room. This operation requires the device to be online, or a manual
      * sync is required.
@@ -75,6 +88,40 @@ public interface AmazonAlexaForBusiness {
      *      target="_top">AWS API Documentation</a>
      */
     AssociateSkillGroupWithRoomResult associateSkillGroupWithRoom(AssociateSkillGroupWithRoomRequest associateSkillGroupWithRoomRequest);
+
+    /**
+     * <p>
+     * Creates an address book with the specified details.
+     * </p>
+     * 
+     * @param createAddressBookRequest
+     * @return Result of the CreateAddressBook operation returned by the service.
+     * @throws AlreadyExistsException
+     *         The resource being created already exists. HTTP Status Code: 400
+     * @throws LimitExceededException
+     *         You are performing an action that would put you beyond your account's limits. HTTP Status Code: 400
+     * @sample AmazonAlexaForBusiness.CreateAddressBook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateAddressBook"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateAddressBookResult createAddressBook(CreateAddressBookRequest createAddressBookRequest);
+
+    /**
+     * <p>
+     * Creates a contact with the specified details.
+     * </p>
+     * 
+     * @param createContactRequest
+     * @return Result of the CreateContact operation returned by the service.
+     * @throws AlreadyExistsException
+     *         The resource being created already exists. HTTP Status Code: 400
+     * @throws LimitExceededException
+     *         You are performing an action that would put you beyond your account's limits. HTTP Status Code: 400
+     * @sample AmazonAlexaForBusiness.CreateContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateContact" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateContactResult createContact(CreateContactRequest createContactRequest);
 
     /**
      * <p>
@@ -143,6 +190,36 @@ public interface AmazonAlexaForBusiness {
      *      API Documentation</a>
      */
     CreateUserResult createUser(CreateUserRequest createUserRequest);
+
+    /**
+     * <p>
+     * Deletes an address book by the address book ARN.
+     * </p>
+     * 
+     * @param deleteAddressBookRequest
+     * @return Result of the DeleteAddressBook operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found. HTTP Status Code: 400
+     * @sample AmazonAlexaForBusiness.DeleteAddressBook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteAddressBook"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteAddressBookResult deleteAddressBook(DeleteAddressBookRequest deleteAddressBookRequest);
+
+    /**
+     * <p>
+     * Deletes a contact by the contact ARN.
+     * </p>
+     * 
+     * @param deleteContactRequest
+     * @return Result of the DeleteContact operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found. HTTP Status Code: 400
+     * @sample AmazonAlexaForBusiness.DeleteContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteContact" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteContactResult deleteContact(DeleteContactRequest deleteContactRequest);
 
     /**
      * <p>
@@ -219,6 +296,21 @@ public interface AmazonAlexaForBusiness {
 
     /**
      * <p>
+     * Disassociates a contact from a given address book.
+     * </p>
+     * 
+     * @param disassociateContactFromAddressBookRequest
+     * @return Result of the DisassociateContactFromAddressBook operation returned by the service.
+     * @sample AmazonAlexaForBusiness.DisassociateContactFromAddressBook
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateContactFromAddressBook"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateContactFromAddressBookResult disassociateContactFromAddressBook(
+            DisassociateContactFromAddressBookRequest disassociateContactFromAddressBookRequest);
+
+    /**
+     * <p>
      * Disassociates a device from its current room. The device continues to be connected to the Wi-Fi network and is
      * still registered to the account. The device settings and skills are removed from the room.
      * </p>
@@ -244,6 +336,36 @@ public interface AmazonAlexaForBusiness {
      *      target="_top">AWS API Documentation</a>
      */
     DisassociateSkillGroupFromRoomResult disassociateSkillGroupFromRoom(DisassociateSkillGroupFromRoomRequest disassociateSkillGroupFromRoomRequest);
+
+    /**
+     * <p>
+     * Gets address the book details by the address book ARN.
+     * </p>
+     * 
+     * @param getAddressBookRequest
+     * @return Result of the GetAddressBook operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found. HTTP Status Code: 400
+     * @sample AmazonAlexaForBusiness.GetAddressBook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetAddressBook"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetAddressBookResult getAddressBook(GetAddressBookRequest getAddressBookRequest);
+
+    /**
+     * <p>
+     * Gets the contact details by the contact ARN.
+     * </p>
+     * 
+     * @param getContactRequest
+     * @return Result of the GetContact operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found. HTTP Status Code: 400
+     * @sample AmazonAlexaForBusiness.GetContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetContact" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetContactResult getContact(GetContactRequest getContactRequest);
 
     /**
      * <p>
@@ -395,6 +517,32 @@ public interface AmazonAlexaForBusiness {
 
     /**
      * <p>
+     * Searches address books and lists the ones that meet a set of filter and sort criteria.
+     * </p>
+     * 
+     * @param searchAddressBooksRequest
+     * @return Result of the SearchAddressBooks operation returned by the service.
+     * @sample AmazonAlexaForBusiness.SearchAddressBooks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchAddressBooks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SearchAddressBooksResult searchAddressBooks(SearchAddressBooksRequest searchAddressBooksRequest);
+
+    /**
+     * <p>
+     * Searches contacts and lists the ones that meet a set of filter and sort criteria.
+     * </p>
+     * 
+     * @param searchContactsRequest
+     * @return Result of the SearchContacts operation returned by the service.
+     * @sample AmazonAlexaForBusiness.SearchContacts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchContacts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SearchContactsResult searchContacts(SearchContactsRequest searchContactsRequest);
+
+    /**
+     * <p>
      * Searches devices and lists the ones that meet a set of filter criteria.
      * </p>
      * 
@@ -519,6 +667,38 @@ public interface AmazonAlexaForBusiness {
      *      API Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Updates address book details by the address book ARN.
+     * </p>
+     * 
+     * @param updateAddressBookRequest
+     * @return Result of the UpdateAddressBook operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found. HTTP Status Code: 400
+     * @throws NameInUseException
+     *         The name sent in the request is already in use. HTTP Status Code: 400
+     * @sample AmazonAlexaForBusiness.UpdateAddressBook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateAddressBook"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateAddressBookResult updateAddressBook(UpdateAddressBookRequest updateAddressBookRequest);
+
+    /**
+     * <p>
+     * Updates the contact details by the contact ARN.
+     * </p>
+     * 
+     * @param updateContactRequest
+     * @return Result of the UpdateContact operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found. HTTP Status Code: 400
+     * @sample AmazonAlexaForBusiness.UpdateContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateContact" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateContactResult updateContact(UpdateContactRequest updateContactRequest);
 
     /**
      * <p>

@@ -25,16 +25,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateResourceDefinitionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** name of the definition */
+    /** The name of the definition. */
     private String name;
-    /** Resource definition Id. */
+    /** The ID of the resource definition. */
     private String resourceDefinitionId;
 
     /**
-     * name of the definition
+     * The name of the definition.
      * 
      * @param name
-     *        name of the definition
+     *        The name of the definition.
      */
 
     public void setName(String name) {
@@ -42,9 +42,9 @@ public class UpdateResourceDefinitionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * name of the definition
+     * The name of the definition.
      * 
-     * @return name of the definition
+     * @return The name of the definition.
      */
 
     public String getName() {
@@ -52,10 +52,10 @@ public class UpdateResourceDefinitionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * name of the definition
+     * The name of the definition.
      * 
      * @param name
-     *        name of the definition
+     *        The name of the definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -65,10 +65,10 @@ public class UpdateResourceDefinitionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * Resource definition Id.
+     * The ID of the resource definition.
      * 
      * @param resourceDefinitionId
-     *        Resource definition Id.
+     *        The ID of the resource definition.
      */
 
     public void setResourceDefinitionId(String resourceDefinitionId) {
@@ -76,9 +76,9 @@ public class UpdateResourceDefinitionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * Resource definition Id.
+     * The ID of the resource definition.
      * 
-     * @return Resource definition Id.
+     * @return The ID of the resource definition.
      */
 
     public String getResourceDefinitionId() {
@@ -86,10 +86,10 @@ public class UpdateResourceDefinitionRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * Resource definition Id.
+     * The ID of the resource definition.
      * 
      * @param resourceDefinitionId
-     *        Resource definition Id.
+     *        The ID of the resource definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

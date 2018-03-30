@@ -23,16 +23,16 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetServiceRoleForAccountResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** Time when the service role was associated to the account. */
+    /** The time when the service role was associated with the account. */
     private String associatedAt;
-    /** Role arn which is associated to the account. */
+    /** The ARN of the role which is associated with the account. */
     private String roleArn;
 
     /**
-     * Time when the service role was associated to the account.
+     * The time when the service role was associated with the account.
      * 
      * @param associatedAt
-     *        Time when the service role was associated to the account.
+     *        The time when the service role was associated with the account.
      */
 
     public void setAssociatedAt(String associatedAt) {
@@ -40,9 +40,9 @@ public class GetServiceRoleForAccountResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Time when the service role was associated to the account.
+     * The time when the service role was associated with the account.
      * 
-     * @return Time when the service role was associated to the account.
+     * @return The time when the service role was associated with the account.
      */
 
     public String getAssociatedAt() {
@@ -50,10 +50,10 @@ public class GetServiceRoleForAccountResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Time when the service role was associated to the account.
+     * The time when the service role was associated with the account.
      * 
      * @param associatedAt
-     *        Time when the service role was associated to the account.
+     *        The time when the service role was associated with the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -63,10 +63,10 @@ public class GetServiceRoleForAccountResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Role arn which is associated to the account.
+     * The ARN of the role which is associated with the account.
      * 
      * @param roleArn
-     *        Role arn which is associated to the account.
+     *        The ARN of the role which is associated with the account.
      */
 
     public void setRoleArn(String roleArn) {
@@ -74,9 +74,9 @@ public class GetServiceRoleForAccountResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Role arn which is associated to the account.
+     * The ARN of the role which is associated with the account.
      * 
-     * @return Role arn which is associated to the account.
+     * @return The ARN of the role which is associated with the account.
      */
 
     public String getRoleArn() {
@@ -84,10 +84,10 @@ public class GetServiceRoleForAccountResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * Role arn which is associated to the account.
+     * The ARN of the role which is associated with the account.
      * 
      * @param roleArn
-     *        Role arn which is associated to the account.
+     *        The ARN of the role which is associated with the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

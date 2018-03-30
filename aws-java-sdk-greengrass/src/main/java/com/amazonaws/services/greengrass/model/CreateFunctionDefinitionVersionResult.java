@@ -24,20 +24,20 @@ import javax.annotation.Generated;
 public class CreateFunctionDefinitionVersionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {
 
-    /** Arn of the version. */
+    /** The ARN of the version. */
     private String arn;
-    /** Timestamp of when the version was created. */
+    /** The time, in milliseconds since the epoch, when the version was created. */
     private String creationTimestamp;
-    /** Id of the resource container. */
+    /** The ID of the version. */
     private String id;
-    /** Unique Id of a version. */
+    /** The unique ID of the version. */
     private String version;
 
     /**
-     * Arn of the version.
+     * The ARN of the version.
      * 
      * @param arn
-     *        Arn of the version.
+     *        The ARN of the version.
      */
 
     public void setArn(String arn) {
@@ -45,9 +45,9 @@ public class CreateFunctionDefinitionVersionResult extends com.amazonaws.AmazonW
     }
 
     /**
-     * Arn of the version.
+     * The ARN of the version.
      * 
-     * @return Arn of the version.
+     * @return The ARN of the version.
      */
 
     public String getArn() {
@@ -55,10 +55,10 @@ public class CreateFunctionDefinitionVersionResult extends com.amazonaws.AmazonW
     }
 
     /**
-     * Arn of the version.
+     * The ARN of the version.
      * 
      * @param arn
-     *        Arn of the version.
+     *        The ARN of the version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -68,10 +68,10 @@ public class CreateFunctionDefinitionVersionResult extends com.amazonaws.AmazonW
     }
 
     /**
-     * Timestamp of when the version was created.
+     * The time, in milliseconds since the epoch, when the version was created.
      * 
      * @param creationTimestamp
-     *        Timestamp of when the version was created.
+     *        The time, in milliseconds since the epoch, when the version was created.
      */
 
     public void setCreationTimestamp(String creationTimestamp) {
@@ -79,9 +79,9 @@ public class CreateFunctionDefinitionVersionResult extends com.amazonaws.AmazonW
     }
 
     /**
-     * Timestamp of when the version was created.
+     * The time, in milliseconds since the epoch, when the version was created.
      * 
-     * @return Timestamp of when the version was created.
+     * @return The time, in milliseconds since the epoch, when the version was created.
      */
 
     public String getCreationTimestamp() {
@@ -89,10 +89,10 @@ public class CreateFunctionDefinitionVersionResult extends com.amazonaws.AmazonW
     }
 
     /**
-     * Timestamp of when the version was created.
+     * The time, in milliseconds since the epoch, when the version was created.
      * 
      * @param creationTimestamp
-     *        Timestamp of when the version was created.
+     *        The time, in milliseconds since the epoch, when the version was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,10 +102,10 @@ public class CreateFunctionDefinitionVersionResult extends com.amazonaws.AmazonW
     }
 
     /**
-     * Id of the resource container.
+     * The ID of the version.
      * 
      * @param id
-     *        Id of the resource container.
+     *        The ID of the version.
      */
 
     public void setId(String id) {
@@ -113,9 +113,9 @@ public class CreateFunctionDefinitionVersionResult extends com.amazonaws.AmazonW
     }
 
     /**
-     * Id of the resource container.
+     * The ID of the version.
      * 
-     * @return Id of the resource container.
+     * @return The ID of the version.
      */
 
     public String getId() {
@@ -123,10 +123,10 @@ public class CreateFunctionDefinitionVersionResult extends com.amazonaws.AmazonW
     }
 
     /**
-     * Id of the resource container.
+     * The ID of the version.
      * 
      * @param id
-     *        Id of the resource container.
+     *        The ID of the version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,10 +136,10 @@ public class CreateFunctionDefinitionVersionResult extends com.amazonaws.AmazonW
     }
 
     /**
-     * Unique Id of a version.
+     * The unique ID of the version.
      * 
      * @param version
-     *        Unique Id of a version.
+     *        The unique ID of the version.
      */
 
     public void setVersion(String version) {
@@ -147,9 +147,9 @@ public class CreateFunctionDefinitionVersionResult extends com.amazonaws.AmazonW
     }
 
     /**
-     * Unique Id of a version.
+     * The unique ID of the version.
      * 
-     * @return Unique Id of a version.
+     * @return The unique ID of the version.
      */
 
     public String getVersion() {
@@ -157,10 +157,10 @@ public class CreateFunctionDefinitionVersionResult extends com.amazonaws.AmazonW
     }
 
     /**
-     * Unique Id of a version.
+     * The unique ID of the version.
      * 
      * @param version
-     *        Unique Id of a version.
+     *        The unique ID of the version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

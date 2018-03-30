@@ -25,16 +25,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetLoggerDefinitionVersionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** logger definition Id */
+    /** The ID of the logger definition. */
     private String loggerDefinitionId;
-    /** logger definition version Id */
+    /** The ID of the logger definition version. */
     private String loggerDefinitionVersionId;
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      * 
      * @param loggerDefinitionId
-     *        logger definition Id
+     *        The ID of the logger definition.
      */
 
     public void setLoggerDefinitionId(String loggerDefinitionId) {
@@ -42,9 +42,9 @@ public class GetLoggerDefinitionVersionRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      * 
-     * @return logger definition Id
+     * @return The ID of the logger definition.
      */
 
     public String getLoggerDefinitionId() {
@@ -52,10 +52,10 @@ public class GetLoggerDefinitionVersionRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * logger definition Id
+     * The ID of the logger definition.
      * 
      * @param loggerDefinitionId
-     *        logger definition Id
+     *        The ID of the logger definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -65,10 +65,10 @@ public class GetLoggerDefinitionVersionRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * logger definition version Id
+     * The ID of the logger definition version.
      * 
      * @param loggerDefinitionVersionId
-     *        logger definition version Id
+     *        The ID of the logger definition version.
      */
 
     public void setLoggerDefinitionVersionId(String loggerDefinitionVersionId) {
@@ -76,9 +76,9 @@ public class GetLoggerDefinitionVersionRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * logger definition version Id
+     * The ID of the logger definition version.
      * 
-     * @return logger definition version Id
+     * @return The ID of the logger definition version.
      */
 
     public String getLoggerDefinitionVersionId() {
@@ -86,10 +86,10 @@ public class GetLoggerDefinitionVersionRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * logger definition version Id
+     * The ID of the logger definition version.
      * 
      * @param loggerDefinitionVersionId
-     *        logger definition version Id
+     *        The ID of the logger definition version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

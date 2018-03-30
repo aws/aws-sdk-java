@@ -24,14 +24,14 @@ import javax.annotation.Generated;
 public class DisassociateServiceRoleFromAccountResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {
 
-    /** Time when the service role was disassociated from the account. */
+    /** The time when the service role was disassociated from the account. */
     private String disassociatedAt;
 
     /**
-     * Time when the service role was disassociated from the account.
+     * The time when the service role was disassociated from the account.
      * 
      * @param disassociatedAt
-     *        Time when the service role was disassociated from the account.
+     *        The time when the service role was disassociated from the account.
      */
 
     public void setDisassociatedAt(String disassociatedAt) {
@@ -39,9 +39,9 @@ public class DisassociateServiceRoleFromAccountResult extends com.amazonaws.Amaz
     }
 
     /**
-     * Time when the service role was disassociated from the account.
+     * The time when the service role was disassociated from the account.
      * 
-     * @return Time when the service role was disassociated from the account.
+     * @return The time when the service role was disassociated from the account.
      */
 
     public String getDisassociatedAt() {
@@ -49,10 +49,10 @@ public class DisassociateServiceRoleFromAccountResult extends com.amazonaws.Amaz
     }
 
     /**
-     * Time when the service role was disassociated from the account.
+     * The time when the service role was disassociated from the account.
      * 
      * @param disassociatedAt
-     *        Time when the service role was disassociated from the account.
+     *        The time when the service role was disassociated from the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

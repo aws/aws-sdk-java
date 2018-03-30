@@ -25,18 +25,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateDeviceDefinitionVersionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The client token used to request idempotent operations. */
+    /** A client token used to correlate requests and responses. */
     private String amznClientToken;
-    /** device definition Id */
+    /** The ID of the device definition. */
     private String deviceDefinitionId;
-    /** Devices in the definition version. */
+    /** A list of devices in the definition version. */
     private java.util.List<Device> devices;
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      * 
      * @param amznClientToken
-     *        The client token used to request idempotent operations.
+     *        A client token used to correlate requests and responses.
      */
 
     public void setAmznClientToken(String amznClientToken) {
@@ -44,9 +44,9 @@ public class CreateDeviceDefinitionVersionRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      * 
-     * @return The client token used to request idempotent operations.
+     * @return A client token used to correlate requests and responses.
      */
 
     public String getAmznClientToken() {
@@ -54,10 +54,10 @@ public class CreateDeviceDefinitionVersionRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * The client token used to request idempotent operations.
+     * A client token used to correlate requests and responses.
      * 
      * @param amznClientToken
-     *        The client token used to request idempotent operations.
+     *        A client token used to correlate requests and responses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -67,10 +67,10 @@ public class CreateDeviceDefinitionVersionRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * device definition Id
+     * The ID of the device definition.
      * 
      * @param deviceDefinitionId
-     *        device definition Id
+     *        The ID of the device definition.
      */
 
     public void setDeviceDefinitionId(String deviceDefinitionId) {
@@ -78,9 +78,9 @@ public class CreateDeviceDefinitionVersionRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * device definition Id
+     * The ID of the device definition.
      * 
-     * @return device definition Id
+     * @return The ID of the device definition.
      */
 
     public String getDeviceDefinitionId() {
@@ -88,10 +88,10 @@ public class CreateDeviceDefinitionVersionRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * device definition Id
+     * The ID of the device definition.
      * 
      * @param deviceDefinitionId
-     *        device definition Id
+     *        The ID of the device definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,9 +101,9 @@ public class CreateDeviceDefinitionVersionRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * Devices in the definition version.
+     * A list of devices in the definition version.
      * 
-     * @return Devices in the definition version.
+     * @return A list of devices in the definition version.
      */
 
     public java.util.List<Device> getDevices() {
@@ -111,10 +111,10 @@ public class CreateDeviceDefinitionVersionRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * Devices in the definition version.
+     * A list of devices in the definition version.
      * 
      * @param devices
-     *        Devices in the definition version.
+     *        A list of devices in the definition version.
      */
 
     public void setDevices(java.util.Collection<Device> devices) {
@@ -127,7 +127,7 @@ public class CreateDeviceDefinitionVersionRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * Devices in the definition version.
+     * A list of devices in the definition version.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setDevices(java.util.Collection)} or {@link #withDevices(java.util.Collection)} if you want to override
@@ -135,7 +135,7 @@ public class CreateDeviceDefinitionVersionRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param devices
-     *        Devices in the definition version.
+     *        A list of devices in the definition version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,10 +150,10 @@ public class CreateDeviceDefinitionVersionRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * Devices in the definition version.
+     * A list of devices in the definition version.
      * 
      * @param devices
-     *        Devices in the definition version.
+     *        A list of devices in the definition version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
