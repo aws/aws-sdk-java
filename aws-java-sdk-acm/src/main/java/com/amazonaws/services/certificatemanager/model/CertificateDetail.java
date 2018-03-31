@@ -198,7 +198,7 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * <p>
      * Value that specifies whether to add the certificate to a transparency log. Certificate transparency makes it
      * possible to detect SSL certificates that have been mistakenly or maliciously issued. A browser might respond to
-     * certificate that has not been logged by showing an error message. The logs are cryptographicaly secure.
+     * certificate that has not been logged by showing an error message. The logs are cryptographically secure.
      * </p>
      */
     private CertificateOptions options;
@@ -1662,14 +1662,14 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * <p>
      * Value that specifies whether to add the certificate to a transparency log. Certificate transparency makes it
      * possible to detect SSL certificates that have been mistakenly or maliciously issued. A browser might respond to
-     * certificate that has not been logged by showing an error message. The logs are cryptographicaly secure.
+     * certificate that has not been logged by showing an error message. The logs are cryptographically secure.
      * </p>
      * 
      * @param options
      *        Value that specifies whether to add the certificate to a transparency log. Certificate transparency makes
      *        it possible to detect SSL certificates that have been mistakenly or maliciously issued. A browser might
-     *        respond to certificate that has not been logged by showing an error message. The logs are cryptographicaly
-     *        secure.
+     *        respond to certificate that has not been logged by showing an error message. The logs are
+     *        cryptographically secure.
      */
 
     public void setOptions(CertificateOptions options) {
@@ -1680,13 +1680,13 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * <p>
      * Value that specifies whether to add the certificate to a transparency log. Certificate transparency makes it
      * possible to detect SSL certificates that have been mistakenly or maliciously issued. A browser might respond to
-     * certificate that has not been logged by showing an error message. The logs are cryptographicaly secure.
+     * certificate that has not been logged by showing an error message. The logs are cryptographically secure.
      * </p>
      * 
      * @return Value that specifies whether to add the certificate to a transparency log. Certificate transparency makes
      *         it possible to detect SSL certificates that have been mistakenly or maliciously issued. A browser might
      *         respond to certificate that has not been logged by showing an error message. The logs are
-     *         cryptographicaly secure.
+     *         cryptographically secure.
      */
 
     public CertificateOptions getOptions() {
@@ -1697,14 +1697,14 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * <p>
      * Value that specifies whether to add the certificate to a transparency log. Certificate transparency makes it
      * possible to detect SSL certificates that have been mistakenly or maliciously issued. A browser might respond to
-     * certificate that has not been logged by showing an error message. The logs are cryptographicaly secure.
+     * certificate that has not been logged by showing an error message. The logs are cryptographically secure.
      * </p>
      * 
      * @param options
      *        Value that specifies whether to add the certificate to a transparency log. Certificate transparency makes
      *        it possible to detect SSL certificates that have been mistakenly or maliciously issued. A browser might
-     *        respond to certificate that has not been logged by showing an error message. The logs are cryptographicaly
-     *        secure.
+     *        respond to certificate that has not been logged by showing an error message. The logs are
+     *        cryptographically secure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -152,7 +152,7 @@ public class DefaultNamingStrategy implements NamingStrategy {
         }
     }
 
-    private static boolean isJavaKeyword(String word) {
+    public static boolean isJavaKeyword(String word) {
         return reservedKeywords.contains(word) ||
                reservedKeywords.contains(StringUtils.lowerCase(word));
     }

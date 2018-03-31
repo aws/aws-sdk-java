@@ -39,7 +39,10 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
     private String domainName;
     /**
      * <p>
-     * The method you want to use to validate your domain.
+     * The method you want to use to validate that you own or control domain. You can <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate with DNS</a> or <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate with email</a>. We
+     * recommend that you use DNS validation.
      * </p>
      */
     private String validationMethod;
@@ -99,7 +102,8 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * Currently, you can use this parameter to specify whether to add the certificate to a certificate transparency
      * log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or
      * maliciously issued. Certificates that have not been logged typically produce an error message in a browser. For
-     * more information, see <a href="acm/latest/userguide/acm-bestpractices.html#best-practices-transparency"> Opting
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting
      * Out of Certificate Transparency Logging</a>.
      * </p>
      */
@@ -183,11 +187,17 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The method you want to use to validate your domain.
+     * The method you want to use to validate that you own or control domain. You can <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate with DNS</a> or <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate with email</a>. We
+     * recommend that you use DNS validation.
      * </p>
      * 
      * @param validationMethod
-     *        The method you want to use to validate your domain.
+     *        The method you want to use to validate that you own or control domain. You can <a
+     *        href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate with DNS</a> or
+     *        <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate with
+     *        email</a>. We recommend that you use DNS validation.
      * @see ValidationMethod
      */
 
@@ -197,10 +207,16 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The method you want to use to validate your domain.
+     * The method you want to use to validate that you own or control domain. You can <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate with DNS</a> or <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate with email</a>. We
+     * recommend that you use DNS validation.
      * </p>
      * 
-     * @return The method you want to use to validate your domain.
+     * @return The method you want to use to validate that you own or control domain. You can <a
+     *         href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate with DNS</a> or
+     *         <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate with
+     *         email</a>. We recommend that you use DNS validation.
      * @see ValidationMethod
      */
 
@@ -210,11 +226,17 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The method you want to use to validate your domain.
+     * The method you want to use to validate that you own or control domain. You can <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate with DNS</a> or <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate with email</a>. We
+     * recommend that you use DNS validation.
      * </p>
      * 
      * @param validationMethod
-     *        The method you want to use to validate your domain.
+     *        The method you want to use to validate that you own or control domain. You can <a
+     *        href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate with DNS</a> or
+     *        <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate with
+     *        email</a>. We recommend that you use DNS validation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ValidationMethod
      */
@@ -226,11 +248,17 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The method you want to use to validate your domain.
+     * The method you want to use to validate that you own or control domain. You can <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate with DNS</a> or <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate with email</a>. We
+     * recommend that you use DNS validation.
      * </p>
      * 
      * @param validationMethod
-     *        The method you want to use to validate your domain.
+     *        The method you want to use to validate that you own or control domain. You can <a
+     *        href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate with DNS</a> or
+     *        <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate with
+     *        email</a>. We recommend that you use DNS validation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ValidationMethod
      */
@@ -677,7 +705,8 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * Currently, you can use this parameter to specify whether to add the certificate to a certificate transparency
      * log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or
      * maliciously issued. Certificates that have not been logged typically produce an error message in a browser. For
-     * more information, see <a href="acm/latest/userguide/acm-bestpractices.html#best-practices-transparency"> Opting
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting
      * Out of Certificate Transparency Logging</a>.
      * </p>
      * 
@@ -685,9 +714,9 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      *        Currently, you can use this parameter to specify whether to add the certificate to a certificate
      *        transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been
      *        mistakenly or maliciously issued. Certificates that have not been logged typically produce an error
-     *        message in a browser. For more information, see <a
-     *        href="acm/latest/userguide/acm-bestpractices.html#best-practices-transparency"> Opting Out of Certificate
-     *        Transparency Logging</a>.
+     *        message in a browser. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency"
+     *        >Opting Out of Certificate Transparency Logging</a>.
      */
 
     public void setOptions(CertificateOptions options) {
@@ -699,16 +728,17 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * Currently, you can use this parameter to specify whether to add the certificate to a certificate transparency
      * log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or
      * maliciously issued. Certificates that have not been logged typically produce an error message in a browser. For
-     * more information, see <a href="acm/latest/userguide/acm-bestpractices.html#best-practices-transparency"> Opting
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting
      * Out of Certificate Transparency Logging</a>.
      * </p>
      * 
      * @return Currently, you can use this parameter to specify whether to add the certificate to a certificate
      *         transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have
      *         been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error
-     *         message in a browser. For more information, see <a
-     *         href="acm/latest/userguide/acm-bestpractices.html#best-practices-transparency"> Opting Out of Certificate
-     *         Transparency Logging</a>.
+     *         message in a browser. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency"
+     *         >Opting Out of Certificate Transparency Logging</a>.
      */
 
     public CertificateOptions getOptions() {
@@ -720,7 +750,8 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * Currently, you can use this parameter to specify whether to add the certificate to a certificate transparency
      * log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or
      * maliciously issued. Certificates that have not been logged typically produce an error message in a browser. For
-     * more information, see <a href="acm/latest/userguide/acm-bestpractices.html#best-practices-transparency"> Opting
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting
      * Out of Certificate Transparency Logging</a>.
      * </p>
      * 
@@ -728,9 +759,9 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      *        Currently, you can use this parameter to specify whether to add the certificate to a certificate
      *        transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been
      *        mistakenly or maliciously issued. Certificates that have not been logged typically produce an error
-     *        message in a browser. For more information, see <a
-     *        href="acm/latest/userguide/acm-bestpractices.html#best-practices-transparency"> Opting Out of Certificate
-     *        Transparency Logging</a>.
+     *        message in a browser. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency"
+     *        >Opting Out of Certificate Transparency Logging</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

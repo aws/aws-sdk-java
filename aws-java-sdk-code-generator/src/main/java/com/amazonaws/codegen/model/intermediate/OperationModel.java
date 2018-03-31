@@ -25,6 +25,7 @@ import java.util.List;
 import static com.amazonaws.codegen.internal.Constants.LINE_SEPARATOR;
 import static com.amazonaws.codegen.internal.DocumentationUtils.createLinkToServiceDocumentation;
 import static com.amazonaws.codegen.internal.DocumentationUtils.stripHTMLTags;
+import static com.amazonaws.codegen.naming.DefaultNamingStrategy.isJavaKeyword;
 
 public class OperationModel extends DocumentationModel {
 
@@ -61,7 +62,12 @@ public class OperationModel extends DocumentationModel {
     }
 
     public String getMethodName() {
-        return Utils.unCapitialize(operationName);
+
+        if (!isJavaKeyword(operationName)) {
+            return Utils.unCapitialize(operationName);
+        }
+
+        return Utils.unCapitialize(operationName) + "Operation";
     }
 
     public boolean isDeprecated() {

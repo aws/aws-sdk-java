@@ -1,3 +1,12 @@
+# __1.11.306__ __2018-03-30__
+## __AWS Certificate Manager__
+  - ### Features
+    - Documentation updates for acm
+
+## __Amazon Connect Service__
+  - ### Features
+    - Amazon Connect is a contact center as a service (CCaS) solution that offers easy, self-service configuration and enables dynamic, personal, and natural customer engagement at any scale. With this release of the Amazon Connect SDK, Outbound APIs (StartOutboundVoiceContact, StopContact) are now generally available. This release supports CTR generation for calls generated through the new APIs. Additionally IAM permissions are supported for the new APIs. 
+
 # __1.11.305__ __2018-03-29__
 ## __AWS CloudFormation__
   - ### Features
