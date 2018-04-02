@@ -27,7 +27,7 @@ public class CreateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The domain name of the <a>BasePathMapping</a> resource to create.
+     * [Required] The domain name of the <a>BasePathMapping</a> resource to create.
      * </p>
      */
     private String domainName;
@@ -41,7 +41,7 @@ public class CreateBasePathMappingRequest extends com.amazonaws.AmazonWebService
     private String basePath;
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
@@ -55,11 +55,11 @@ public class CreateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The domain name of the <a>BasePathMapping</a> resource to create.
+     * [Required] The domain name of the <a>BasePathMapping</a> resource to create.
      * </p>
      * 
      * @param domainName
-     *        The domain name of the <a>BasePathMapping</a> resource to create.
+     *        [Required] The domain name of the <a>BasePathMapping</a> resource to create.
      */
 
     public void setDomainName(String domainName) {
@@ -68,10 +68,10 @@ public class CreateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The domain name of the <a>BasePathMapping</a> resource to create.
+     * [Required] The domain name of the <a>BasePathMapping</a> resource to create.
      * </p>
      * 
-     * @return The domain name of the <a>BasePathMapping</a> resource to create.
+     * @return [Required] The domain name of the <a>BasePathMapping</a> resource to create.
      */
 
     public String getDomainName() {
@@ -80,11 +80,11 @@ public class CreateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The domain name of the <a>BasePathMapping</a> resource to create.
+     * [Required] The domain name of the <a>BasePathMapping</a> resource to create.
      * </p>
      * 
      * @param domainName
-     *        The domain name of the <a>BasePathMapping</a> resource to create.
+     *        [Required] The domain name of the <a>BasePathMapping</a> resource to create.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,11 +147,11 @@ public class CreateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -160,10 +160,10 @@ public class CreateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return The string identifier of the associated <a>RestApi</a>.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -172,11 +172,11 @@ public class CreateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

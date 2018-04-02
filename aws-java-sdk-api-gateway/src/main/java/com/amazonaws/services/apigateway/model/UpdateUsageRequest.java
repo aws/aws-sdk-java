@@ -28,14 +28,14 @@ public class UpdateUsageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Id of the usage plan associated with the usage data.
+     * [Required] The Id of the usage plan associated with the usage data.
      * </p>
      */
     private String usagePlanId;
     /**
      * <p>
-     * The identifier of the API key associated with the usage plan in which a temporary extension is granted to the
-     * remaining quota.
+     * [Required] The identifier of the API key associated with the usage plan in which a temporary extension is granted
+     * to the remaining quota.
      * </p>
      */
     private String keyId;
@@ -48,11 +48,11 @@ public class UpdateUsageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Id of the usage plan associated with the usage data.
+     * [Required] The Id of the usage plan associated with the usage data.
      * </p>
      * 
      * @param usagePlanId
-     *        The Id of the usage plan associated with the usage data.
+     *        [Required] The Id of the usage plan associated with the usage data.
      */
 
     public void setUsagePlanId(String usagePlanId) {
@@ -61,10 +61,10 @@ public class UpdateUsageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Id of the usage plan associated with the usage data.
+     * [Required] The Id of the usage plan associated with the usage data.
      * </p>
      * 
-     * @return The Id of the usage plan associated with the usage data.
+     * @return [Required] The Id of the usage plan associated with the usage data.
      */
 
     public String getUsagePlanId() {
@@ -73,11 +73,11 @@ public class UpdateUsageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Id of the usage plan associated with the usage data.
+     * [Required] The Id of the usage plan associated with the usage data.
      * </p>
      * 
      * @param usagePlanId
-     *        The Id of the usage plan associated with the usage data.
+     *        [Required] The Id of the usage plan associated with the usage data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,13 +88,13 @@ public class UpdateUsageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier of the API key associated with the usage plan in which a temporary extension is granted to the
-     * remaining quota.
+     * [Required] The identifier of the API key associated with the usage plan in which a temporary extension is granted
+     * to the remaining quota.
      * </p>
      * 
      * @param keyId
-     *        The identifier of the API key associated with the usage plan in which a temporary extension is granted to
-     *        the remaining quota.
+     *        [Required] The identifier of the API key associated with the usage plan in which a temporary extension is
+     *        granted to the remaining quota.
      */
 
     public void setKeyId(String keyId) {
@@ -103,12 +103,12 @@ public class UpdateUsageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier of the API key associated with the usage plan in which a temporary extension is granted to the
-     * remaining quota.
+     * [Required] The identifier of the API key associated with the usage plan in which a temporary extension is granted
+     * to the remaining quota.
      * </p>
      * 
-     * @return The identifier of the API key associated with the usage plan in which a temporary extension is granted to
-     *         the remaining quota.
+     * @return [Required] The identifier of the API key associated with the usage plan in which a temporary extension is
+     *         granted to the remaining quota.
      */
 
     public String getKeyId() {
@@ -117,13 +117,13 @@ public class UpdateUsageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The identifier of the API key associated with the usage plan in which a temporary extension is granted to the
-     * remaining quota.
+     * [Required] The identifier of the API key associated with the usage plan in which a temporary extension is granted
+     * to the remaining quota.
      * </p>
      * 
      * @param keyId
-     *        The identifier of the API key associated with the usage plan in which a temporary extension is granted to
-     *        the remaining quota.
+     *        [Required] The identifier of the API key associated with the usage plan in which a temporary extension is
+     *        granted to the remaining quota.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

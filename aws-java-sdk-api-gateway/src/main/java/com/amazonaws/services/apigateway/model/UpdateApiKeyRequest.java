@@ -27,7 +27,7 @@ public class UpdateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The identifier of the <a>ApiKey</a> resource to be updated.
+     * [Required] The identifier of the <a>ApiKey</a> resource to be updated.
      * </p>
      */
     private String apiKey;
@@ -40,11 +40,11 @@ public class UpdateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The identifier of the <a>ApiKey</a> resource to be updated.
+     * [Required] The identifier of the <a>ApiKey</a> resource to be updated.
      * </p>
      * 
      * @param apiKey
-     *        The identifier of the <a>ApiKey</a> resource to be updated.
+     *        [Required] The identifier of the <a>ApiKey</a> resource to be updated.
      */
 
     public void setApiKey(String apiKey) {
@@ -53,10 +53,10 @@ public class UpdateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The identifier of the <a>ApiKey</a> resource to be updated.
+     * [Required] The identifier of the <a>ApiKey</a> resource to be updated.
      * </p>
      * 
-     * @return The identifier of the <a>ApiKey</a> resource to be updated.
+     * @return [Required] The identifier of the <a>ApiKey</a> resource to be updated.
      */
 
     public String getApiKey() {
@@ -65,11 +65,11 @@ public class UpdateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The identifier of the <a>ApiKey</a> resource to be updated.
+     * [Required] The identifier of the <a>ApiKey</a> resource to be updated.
      * </p>
      * 
      * @param apiKey
-     *        The identifier of the <a>ApiKey</a> resource to be updated.
+     *        [Required] The identifier of the <a>ApiKey</a> resource to be updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

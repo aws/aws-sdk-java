@@ -27,7 +27,7 @@ public class UpdateRequestValidatorRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
@@ -46,11 +46,11 @@ public class UpdateRequestValidatorRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -59,10 +59,10 @@ public class UpdateRequestValidatorRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return The string identifier of the associated <a>RestApi</a>.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -71,11 +71,11 @@ public class UpdateRequestValidatorRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

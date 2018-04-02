@@ -27,19 +27,19 @@ public class UpdateMethodRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * The <a>Resource</a> identifier for the <a>Method</a> resource.
+     * [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      * </p>
      */
     private String resourceId;
     /**
      * <p>
-     * The HTTP verb of the <a>Method</a> resource.
+     * [Required] The HTTP verb of the <a>Method</a> resource.
      * </p>
      */
     private String httpMethod;
@@ -52,11 +52,11 @@ public class UpdateMethodRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -65,10 +65,10 @@ public class UpdateMethodRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return The string identifier of the associated <a>RestApi</a>.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -77,11 +77,11 @@ public class UpdateMethodRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class UpdateMethodRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The <a>Resource</a> identifier for the <a>Method</a> resource.
+     * [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      * </p>
      * 
      * @param resourceId
-     *        The <a>Resource</a> identifier for the <a>Method</a> resource.
+     *        [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      */
 
     public void setResourceId(String resourceId) {
@@ -105,10 +105,10 @@ public class UpdateMethodRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The <a>Resource</a> identifier for the <a>Method</a> resource.
+     * [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      * </p>
      * 
-     * @return The <a>Resource</a> identifier for the <a>Method</a> resource.
+     * @return [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      */
 
     public String getResourceId() {
@@ -117,11 +117,11 @@ public class UpdateMethodRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The <a>Resource</a> identifier for the <a>Method</a> resource.
+     * [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      * </p>
      * 
      * @param resourceId
-     *        The <a>Resource</a> identifier for the <a>Method</a> resource.
+     *        [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,11 +132,11 @@ public class UpdateMethodRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The HTTP verb of the <a>Method</a> resource.
+     * [Required] The HTTP verb of the <a>Method</a> resource.
      * </p>
      * 
      * @param httpMethod
-     *        The HTTP verb of the <a>Method</a> resource.
+     *        [Required] The HTTP verb of the <a>Method</a> resource.
      */
 
     public void setHttpMethod(String httpMethod) {
@@ -145,10 +145,10 @@ public class UpdateMethodRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The HTTP verb of the <a>Method</a> resource.
+     * [Required] The HTTP verb of the <a>Method</a> resource.
      * </p>
      * 
-     * @return The HTTP verb of the <a>Method</a> resource.
+     * @return [Required] The HTTP verb of the <a>Method</a> resource.
      */
 
     public String getHttpMethod() {
@@ -157,11 +157,11 @@ public class UpdateMethodRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The HTTP verb of the <a>Method</a> resource.
+     * [Required] The HTTP verb of the <a>Method</a> resource.
      * </p>
      * 
      * @param httpMethod
-     *        The HTTP verb of the <a>Method</a> resource.
+     *        [Required] The HTTP verb of the <a>Method</a> resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

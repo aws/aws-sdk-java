@@ -40,7 +40,7 @@ public class ListDistributionsRequestMarshaller implements Marshaller<Request<Li
 
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2017-03-25/distribution";
+        String uriResourcePath = "/2017-10-30/distribution";
 
         request.setResourcePath(uriResourcePath);
 

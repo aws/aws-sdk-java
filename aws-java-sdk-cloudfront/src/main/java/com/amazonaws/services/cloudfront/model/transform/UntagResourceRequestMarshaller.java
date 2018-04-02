@@ -47,7 +47,7 @@ public class UntagResourceRequestMarshaller implements Marshaller<Request<UntagR
 
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "/2017-03-25/tagging?Operation=Untag";
+        String uriResourcePath = "/2017-10-30/tagging?Operation=Untag";
 
         uriResourcePath = com.amazonaws.util.UriResourcePathUtils.addStaticQueryParamtersToRequest(request, uriResourcePath);
 
@@ -59,7 +59,7 @@ public class UntagResourceRequestMarshaller implements Marshaller<Request<UntagR
 
         try {
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2017-03-25/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2017-10-30/");
 
             TagKeys tagKeys = untagResourceRequest.getTagKeys();
             if (tagKeys != null) {

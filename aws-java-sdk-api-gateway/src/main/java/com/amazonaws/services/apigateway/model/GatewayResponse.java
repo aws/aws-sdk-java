@@ -75,7 +75,7 @@ public class GatewayResponse implements Serializable, Cloneable, StructuredPojo 
      * <li>RESOURCE_NOT_FOUND</li>
      * <li>THROTTLED</li>
      * <li>UNAUTHORIZED</li>
-     * <li>UNSUPPORTED_MEDIA_TYPES</li>
+     * <li>UNSUPPORTED_MEDIA_TYPE</li>
      * </ul>
      * </p>
      */
@@ -131,7 +131,7 @@ public class GatewayResponse implements Serializable, Cloneable, StructuredPojo 
      * <li>RESOURCE_NOT_FOUND</li>
      * <li>THROTTLED</li>
      * <li>UNAUTHORIZED</li>
-     * <li>UNSUPPORTED_MEDIA_TYPES</li>
+     * <li>UNSUPPORTED_MEDIA_TYPE</li>
      * </ul>
      * </p>
      * 
@@ -157,7 +157,7 @@ public class GatewayResponse implements Serializable, Cloneable, StructuredPojo 
      *        <li>RESOURCE_NOT_FOUND</li>
      *        <li>THROTTLED</li>
      *        <li>UNAUTHORIZED</li>
-     *        <li>UNSUPPORTED_MEDIA_TYPES</li>
+     *        <li>UNSUPPORTED_MEDIA_TYPE</li>
      *        </ul>
      * @see GatewayResponseType
      */
@@ -189,7 +189,7 @@ public class GatewayResponse implements Serializable, Cloneable, StructuredPojo 
      * <li>RESOURCE_NOT_FOUND</li>
      * <li>THROTTLED</li>
      * <li>UNAUTHORIZED</li>
-     * <li>UNSUPPORTED_MEDIA_TYPES</li>
+     * <li>UNSUPPORTED_MEDIA_TYPE</li>
      * </ul>
      * </p>
      * 
@@ -214,7 +214,7 @@ public class GatewayResponse implements Serializable, Cloneable, StructuredPojo 
      *         <li>RESOURCE_NOT_FOUND</li>
      *         <li>THROTTLED</li>
      *         <li>UNAUTHORIZED</li>
-     *         <li>UNSUPPORTED_MEDIA_TYPES</li>
+     *         <li>UNSUPPORTED_MEDIA_TYPE</li>
      *         </ul>
      * @see GatewayResponseType
      */
@@ -246,7 +246,7 @@ public class GatewayResponse implements Serializable, Cloneable, StructuredPojo 
      * <li>RESOURCE_NOT_FOUND</li>
      * <li>THROTTLED</li>
      * <li>UNAUTHORIZED</li>
-     * <li>UNSUPPORTED_MEDIA_TYPES</li>
+     * <li>UNSUPPORTED_MEDIA_TYPE</li>
      * </ul>
      * </p>
      * 
@@ -272,7 +272,7 @@ public class GatewayResponse implements Serializable, Cloneable, StructuredPojo 
      *        <li>RESOURCE_NOT_FOUND</li>
      *        <li>THROTTLED</li>
      *        <li>UNAUTHORIZED</li>
-     *        <li>UNSUPPORTED_MEDIA_TYPES</li>
+     *        <li>UNSUPPORTED_MEDIA_TYPE</li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GatewayResponseType
@@ -306,7 +306,7 @@ public class GatewayResponse implements Serializable, Cloneable, StructuredPojo 
      * <li>RESOURCE_NOT_FOUND</li>
      * <li>THROTTLED</li>
      * <li>UNAUTHORIZED</li>
-     * <li>UNSUPPORTED_MEDIA_TYPES</li>
+     * <li>UNSUPPORTED_MEDIA_TYPE</li>
      * </ul>
      * </p>
      * 
@@ -332,7 +332,7 @@ public class GatewayResponse implements Serializable, Cloneable, StructuredPojo 
      *        <li>RESOURCE_NOT_FOUND</li>
      *        <li>THROTTLED</li>
      *        <li>UNAUTHORIZED</li>
-     *        <li>UNSUPPORTED_MEDIA_TYPES</li>
+     *        <li>UNSUPPORTED_MEDIA_TYPE</li>
      *        </ul>
      * @see GatewayResponseType
      */
@@ -364,7 +364,7 @@ public class GatewayResponse implements Serializable, Cloneable, StructuredPojo 
      * <li>RESOURCE_NOT_FOUND</li>
      * <li>THROTTLED</li>
      * <li>UNAUTHORIZED</li>
-     * <li>UNSUPPORTED_MEDIA_TYPES</li>
+     * <li>UNSUPPORTED_MEDIA_TYPE</li>
      * </ul>
      * </p>
      * 
@@ -390,7 +390,7 @@ public class GatewayResponse implements Serializable, Cloneable, StructuredPojo 
      *        <li>RESOURCE_NOT_FOUND</li>
      *        <li>THROTTLED</li>
      *        <li>UNAUTHORIZED</li>
-     *        <li>UNSUPPORTED_MEDIA_TYPES</li>
+     *        <li>UNSUPPORTED_MEDIA_TYPE</li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GatewayResponseType

@@ -4669,11 +4669,11 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Gets the Tags collection for a given resource.
+     * Gets the <a>Tags</a> collection for a given resource.
      * </p>
      * 
      * @param getTagsRequest
-     *        Gets the Tags collection for a given resource.
+     *        Gets the <a>Tags</a> collection for a given resource.
      * @return Result of the GetTags operation returned by the service.
      * @throws BadRequestException
      *         The submitted request is not valid, for example, the input is incomplete or incorrect. See the
@@ -5668,11 +5668,11 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Adds or updates Tags on a gievn resource.
+     * Adds or updates a tag on a given resource.
      * </p>
      * 
      * @param tagResourceRequest
-     *        Adds or updates Tags on a gievn resource.
+     *        Adds or updates a tag on a given resource.
      * @return Result of the TagResource operation returned by the service.
      * @throws BadRequestException
      *         The submitted request is not valid, for example, the input is incomplete or incorrect. See the
@@ -5848,11 +5848,11 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Removes Tags from a given resource.
+     * Removes a tag from a given resource.
      * </p>
      * 
      * @param untagResourceRequest
-     *        Removes Tags from a given resource.
+     *        Removes a tag from a given resource.
      * @return Result of the UntagResource operation returned by the service.
      * @throws BadRequestException
      *         The submitted request is not valid, for example, the input is incomplete or incorrect. See the

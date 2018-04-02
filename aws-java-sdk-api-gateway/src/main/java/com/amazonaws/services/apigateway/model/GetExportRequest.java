@@ -27,19 +27,19 @@ public class GetExportRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * The name of the <a>Stage</a> that will be exported.
+     * [Required] The name of the <a>Stage</a> that will be exported.
      * </p>
      */
     private String stageName;
     /**
      * <p>
-     * The type of export. Currently only 'swagger' is supported.
+     * [Required] The type of export. Currently only 'swagger' is supported.
      * </p>
      */
     private String exportType;
@@ -64,11 +64,11 @@ public class GetExportRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -77,10 +77,10 @@ public class GetExportRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return The string identifier of the associated <a>RestApi</a>.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -89,11 +89,11 @@ public class GetExportRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,11 +104,11 @@ public class GetExportRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the <a>Stage</a> that will be exported.
+     * [Required] The name of the <a>Stage</a> that will be exported.
      * </p>
      * 
      * @param stageName
-     *        The name of the <a>Stage</a> that will be exported.
+     *        [Required] The name of the <a>Stage</a> that will be exported.
      */
 
     public void setStageName(String stageName) {
@@ -117,10 +117,10 @@ public class GetExportRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the <a>Stage</a> that will be exported.
+     * [Required] The name of the <a>Stage</a> that will be exported.
      * </p>
      * 
-     * @return The name of the <a>Stage</a> that will be exported.
+     * @return [Required] The name of the <a>Stage</a> that will be exported.
      */
 
     public String getStageName() {
@@ -129,11 +129,11 @@ public class GetExportRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the <a>Stage</a> that will be exported.
+     * [Required] The name of the <a>Stage</a> that will be exported.
      * </p>
      * 
      * @param stageName
-     *        The name of the <a>Stage</a> that will be exported.
+     *        [Required] The name of the <a>Stage</a> that will be exported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,11 +144,11 @@ public class GetExportRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of export. Currently only 'swagger' is supported.
+     * [Required] The type of export. Currently only 'swagger' is supported.
      * </p>
      * 
      * @param exportType
-     *        The type of export. Currently only 'swagger' is supported.
+     *        [Required] The type of export. Currently only 'swagger' is supported.
      */
 
     public void setExportType(String exportType) {
@@ -157,10 +157,10 @@ public class GetExportRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of export. Currently only 'swagger' is supported.
+     * [Required] The type of export. Currently only 'swagger' is supported.
      * </p>
      * 
-     * @return The type of export. Currently only 'swagger' is supported.
+     * @return [Required] The type of export. Currently only 'swagger' is supported.
      */
 
     public String getExportType() {
@@ -169,11 +169,11 @@ public class GetExportRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of export. Currently only 'swagger' is supported.
+     * [Required] The type of export. Currently only 'swagger' is supported.
      * </p>
      * 
      * @param exportType
-     *        The type of export. Currently only 'swagger' is supported.
+     *        [Required] The type of export. Currently only 'swagger' is supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

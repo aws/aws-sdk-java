@@ -46,13 +46,13 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
 
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "/2017-03-25/distribution";
+        String uriResourcePath = "/2017-10-30/distribution";
 
         request.setResourcePath(uriResourcePath);
 
         try {
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2017-03-25/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2017-10-30/");
 
             DistributionConfig distributionConfig = createDistributionRequest.getDistributionConfig();
             if (distributionConfig != null) {
@@ -434,6 +434,10 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                         }
                         xmlWriter.endElement();
                     }
+
+                    if (defaultCacheBehavior.getFieldLevelEncryptionId() != null) {
+                        xmlWriter.startElement("FieldLevelEncryptionId").value(defaultCacheBehavior.getFieldLevelEncryptionId()).endElement();
+                    }
                     xmlWriter.endElement();
                 }
 
@@ -676,6 +680,10 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                                     xmlWriter.endElement();
                                 }
                                 xmlWriter.endElement();
+                            }
+
+                            if (cacheBehaviorsItemsListValue.getFieldLevelEncryptionId() != null) {
+                                xmlWriter.startElement("FieldLevelEncryptionId").value(cacheBehaviorsItemsListValue.getFieldLevelEncryptionId()).endElement();
                             }
                             xmlWriter.endElement();
                         }

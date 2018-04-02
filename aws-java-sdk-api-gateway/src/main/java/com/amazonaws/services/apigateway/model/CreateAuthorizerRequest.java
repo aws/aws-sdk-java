@@ -27,7 +27,7 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
@@ -84,9 +84,10 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The identity source for which authorization is requested.
      * <ul>
-     * <li>For a <code>TOKEN</code> authorizer, this is required and specifies the request header mapping expression for
-     * the custom header holding the authorization token submitted by the client. For example, if the token header name
-     * is <code>Auth</code>, the header mapping expression is <code>method.request.header.Auth</code>.</li>
+     * <li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the
+     * request header mapping expression for the custom header holding the authorization token submitted by the client.
+     * For example, if the token header name is <code>Auth</code>, the header mapping expression is
+     * <code>method.request.header.Auth</code>.</li>
      * <li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is
      * a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if
      * an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this
@@ -96,7 +97,6 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
      * is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized
      * response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions
      * of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li>
-     * <li>For a <code>COGNITO_USER_POOLS</code> authorizer, this property is not used.</li>
      * </ul>
      * </p>
      */
@@ -104,10 +104,10 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a
-     * regular expression. API Gateway will match the incoming token from the client against the specified regular
-     * expression. It will invoke the authorizer's Lambda function there is a match. Otherwise, it will return a 401
-     * Unauthorized response without calling the Lambda function. The validation expression does not apply to the
-     * <code>REQUEST</code> authorizer.
+     * regular expression. API Gateway will match the <code>aud</code> field of the incoming token from the client
+     * against the specified regular expression. It will invoke the authorizer's Lambda function when there is a match.
+     * Otherwise, it will return a 401 Unauthorized response without calling the Lambda function. The validation
+     * expression does not apply to the <code>REQUEST</code> authorizer.
      * </p>
      */
     private String identityValidationExpression;
@@ -122,11 +122,11 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -135,10 +135,10 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return The string identifier of the associated <a>RestApi</a>.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -147,11 +147,11 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -557,9 +557,10 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The identity source for which authorization is requested.
      * <ul>
-     * <li>For a <code>TOKEN</code> authorizer, this is required and specifies the request header mapping expression for
-     * the custom header holding the authorization token submitted by the client. For example, if the token header name
-     * is <code>Auth</code>, the header mapping expression is <code>method.request.header.Auth</code>.</li>
+     * <li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the
+     * request header mapping expression for the custom header holding the authorization token submitted by the client.
+     * For example, if the token header name is <code>Auth</code>, the header mapping expression is
+     * <code>method.request.header.Auth</code>.</li>
      * <li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is
      * a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if
      * an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this
@@ -569,16 +570,15 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
      * is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized
      * response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions
      * of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li>
-     * <li>For a <code>COGNITO_USER_POOLS</code> authorizer, this property is not used.</li>
      * </ul>
      * </p>
      * 
      * @param identitySource
      *        The identity source for which authorization is requested.
      *        <ul>
-     *        <li>For a <code>TOKEN</code> authorizer, this is required and specifies the request header mapping
-     *        expression for the custom header holding the authorization token submitted by the client. For example, if
-     *        the token header name is <code>Auth</code>, the header mapping expression is
+     *        <li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies
+     *        the request header mapping expression for the custom header holding the authorization token submitted by
+     *        the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is
      *        <code>method.request.header.Auth</code>.</li>
      *        <li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The
      *        value is a comma-separated string of one or more mapping expressions of the specified request parameters.
@@ -590,7 +590,6 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
      *        function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid
      *        value is a string of comma-separated mapping expressions of the specified request parameters. When the
      *        authorization caching is not enabled, this property is optional.</li>
-     *        <li>For a <code>COGNITO_USER_POOLS</code> authorizer, this property is not used.</li>
      *        </ul>
      */
 
@@ -602,9 +601,10 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The identity source for which authorization is requested.
      * <ul>
-     * <li>For a <code>TOKEN</code> authorizer, this is required and specifies the request header mapping expression for
-     * the custom header holding the authorization token submitted by the client. For example, if the token header name
-     * is <code>Auth</code>, the header mapping expression is <code>method.request.header.Auth</code>.</li>
+     * <li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the
+     * request header mapping expression for the custom header holding the authorization token submitted by the client.
+     * For example, if the token header name is <code>Auth</code>, the header mapping expression is
+     * <code>method.request.header.Auth</code>.</li>
      * <li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is
      * a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if
      * an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this
@@ -614,16 +614,15 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
      * is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized
      * response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions
      * of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li>
-     * <li>For a <code>COGNITO_USER_POOLS</code> authorizer, this property is not used.</li>
      * </ul>
      * </p>
      * 
      * @return The identity source for which authorization is requested.
      *         <ul>
-     *         <li>For a <code>TOKEN</code> authorizer, this is required and specifies the request header mapping
-     *         expression for the custom header holding the authorization token submitted by the client. For example, if
-     *         the token header name is <code>Auth</code>, the header mapping expression is
-     *         <code>method.request.header.Auth</code>.</li>
+     *         <li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and
+     *         specifies the request header mapping expression for the custom header holding the authorization token
+     *         submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping
+     *         expression is <code>method.request.header.Auth</code>.</li>
      *         <li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The
      *         value is a comma-separated string of one or more mapping expressions of the specified request parameters.
      *         For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as
@@ -634,7 +633,6 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
      *         function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The
      *         valid value is a string of comma-separated mapping expressions of the specified request parameters. When
      *         the authorization caching is not enabled, this property is optional.</li>
-     *         <li>For a <code>COGNITO_USER_POOLS</code> authorizer, this property is not used.</li>
      *         </ul>
      */
 
@@ -646,9 +644,10 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The identity source for which authorization is requested.
      * <ul>
-     * <li>For a <code>TOKEN</code> authorizer, this is required and specifies the request header mapping expression for
-     * the custom header holding the authorization token submitted by the client. For example, if the token header name
-     * is <code>Auth</code>, the header mapping expression is <code>method.request.header.Auth</code>.</li>
+     * <li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the
+     * request header mapping expression for the custom header holding the authorization token submitted by the client.
+     * For example, if the token header name is <code>Auth</code>, the header mapping expression is
+     * <code>method.request.header.Auth</code>.</li>
      * <li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is
      * a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if
      * an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this
@@ -658,16 +657,15 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
      * is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized
      * response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions
      * of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li>
-     * <li>For a <code>COGNITO_USER_POOLS</code> authorizer, this property is not used.</li>
      * </ul>
      * </p>
      * 
      * @param identitySource
      *        The identity source for which authorization is requested.
      *        <ul>
-     *        <li>For a <code>TOKEN</code> authorizer, this is required and specifies the request header mapping
-     *        expression for the custom header holding the authorization token submitted by the client. For example, if
-     *        the token header name is <code>Auth</code>, the header mapping expression is
+     *        <li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies
+     *        the request header mapping expression for the custom header holding the authorization token submitted by
+     *        the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is
      *        <code>method.request.header.Auth</code>.</li>
      *        <li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The
      *        value is a comma-separated string of one or more mapping expressions of the specified request parameters.
@@ -679,7 +677,6 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
      *        function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid
      *        value is a string of comma-separated mapping expressions of the specified request parameters. When the
      *        authorization caching is not enabled, this property is optional.</li>
-     *        <li>For a <code>COGNITO_USER_POOLS</code> authorizer, this property is not used.</li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -692,18 +689,18 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a
-     * regular expression. API Gateway will match the incoming token from the client against the specified regular
-     * expression. It will invoke the authorizer's Lambda function there is a match. Otherwise, it will return a 401
-     * Unauthorized response without calling the Lambda function. The validation expression does not apply to the
-     * <code>REQUEST</code> authorizer.
+     * regular expression. API Gateway will match the <code>aud</code> field of the incoming token from the client
+     * against the specified regular expression. It will invoke the authorizer's Lambda function when there is a match.
+     * Otherwise, it will return a 401 Unauthorized response without calling the Lambda function. The validation
+     * expression does not apply to the <code>REQUEST</code> authorizer.
      * </p>
      * 
      * @param identityValidationExpression
      *        A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is
-     *        a regular expression. API Gateway will match the incoming token from the client against the specified
-     *        regular expression. It will invoke the authorizer's Lambda function there is a match. Otherwise, it will
-     *        return a 401 Unauthorized response without calling the Lambda function. The validation expression does not
-     *        apply to the <code>REQUEST</code> authorizer.
+     *        a regular expression. API Gateway will match the <code>aud</code> field of the incoming token from the
+     *        client against the specified regular expression. It will invoke the authorizer's Lambda function when
+     *        there is a match. Otherwise, it will return a 401 Unauthorized response without calling the Lambda
+     *        function. The validation expression does not apply to the <code>REQUEST</code> authorizer.
      */
 
     public void setIdentityValidationExpression(String identityValidationExpression) {
@@ -713,17 +710,17 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a
-     * regular expression. API Gateway will match the incoming token from the client against the specified regular
-     * expression. It will invoke the authorizer's Lambda function there is a match. Otherwise, it will return a 401
-     * Unauthorized response without calling the Lambda function. The validation expression does not apply to the
-     * <code>REQUEST</code> authorizer.
+     * regular expression. API Gateway will match the <code>aud</code> field of the incoming token from the client
+     * against the specified regular expression. It will invoke the authorizer's Lambda function when there is a match.
+     * Otherwise, it will return a 401 Unauthorized response without calling the Lambda function. The validation
+     * expression does not apply to the <code>REQUEST</code> authorizer.
      * </p>
      * 
      * @return A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value
-     *         is a regular expression. API Gateway will match the incoming token from the client against the specified
-     *         regular expression. It will invoke the authorizer's Lambda function there is a match. Otherwise, it will
-     *         return a 401 Unauthorized response without calling the Lambda function. The validation expression does
-     *         not apply to the <code>REQUEST</code> authorizer.
+     *         is a regular expression. API Gateway will match the <code>aud</code> field of the incoming token from the
+     *         client against the specified regular expression. It will invoke the authorizer's Lambda function when
+     *         there is a match. Otherwise, it will return a 401 Unauthorized response without calling the Lambda
+     *         function. The validation expression does not apply to the <code>REQUEST</code> authorizer.
      */
 
     public String getIdentityValidationExpression() {
@@ -733,18 +730,18 @@ public class CreateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a
-     * regular expression. API Gateway will match the incoming token from the client against the specified regular
-     * expression. It will invoke the authorizer's Lambda function there is a match. Otherwise, it will return a 401
-     * Unauthorized response without calling the Lambda function. The validation expression does not apply to the
-     * <code>REQUEST</code> authorizer.
+     * regular expression. API Gateway will match the <code>aud</code> field of the incoming token from the client
+     * against the specified regular expression. It will invoke the authorizer's Lambda function when there is a match.
+     * Otherwise, it will return a 401 Unauthorized response without calling the Lambda function. The validation
+     * expression does not apply to the <code>REQUEST</code> authorizer.
      * </p>
      * 
      * @param identityValidationExpression
      *        A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is
-     *        a regular expression. API Gateway will match the incoming token from the client against the specified
-     *        regular expression. It will invoke the authorizer's Lambda function there is a match. Otherwise, it will
-     *        return a 401 Unauthorized response without calling the Lambda function. The validation expression does not
-     *        apply to the <code>REQUEST</code> authorizer.
+     *        a regular expression. API Gateway will match the <code>aud</code> field of the incoming token from the
+     *        client against the specified regular expression. It will invoke the authorizer's Lambda function when
+     *        there is a match. Otherwise, it will return a 401 Unauthorized response without calling the Lambda
+     *        function. The validation expression does not apply to the <code>REQUEST</code> authorizer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

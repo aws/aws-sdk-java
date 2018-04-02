@@ -27,18 +27,18 @@ public class GetUsagePlanRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The identifier of the <a>UsagePlan</a> resource to be retrieved.
+     * [Required] The identifier of the <a>UsagePlan</a> resource to be retrieved.
      * </p>
      */
     private String usagePlanId;
 
     /**
      * <p>
-     * The identifier of the <a>UsagePlan</a> resource to be retrieved.
+     * [Required] The identifier of the <a>UsagePlan</a> resource to be retrieved.
      * </p>
      * 
      * @param usagePlanId
-     *        The identifier of the <a>UsagePlan</a> resource to be retrieved.
+     *        [Required] The identifier of the <a>UsagePlan</a> resource to be retrieved.
      */
 
     public void setUsagePlanId(String usagePlanId) {
@@ -47,10 +47,10 @@ public class GetUsagePlanRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The identifier of the <a>UsagePlan</a> resource to be retrieved.
+     * [Required] The identifier of the <a>UsagePlan</a> resource to be retrieved.
      * </p>
      * 
-     * @return The identifier of the <a>UsagePlan</a> resource to be retrieved.
+     * @return [Required] The identifier of the <a>UsagePlan</a> resource to be retrieved.
      */
 
     public String getUsagePlanId() {
@@ -59,11 +59,11 @@ public class GetUsagePlanRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The identifier of the <a>UsagePlan</a> resource to be retrieved.
+     * [Required] The identifier of the <a>UsagePlan</a> resource to be retrieved.
      * </p>
      * 
      * @param usagePlanId
-     *        The identifier of the <a>UsagePlan</a> resource to be retrieved.
+     *        [Required] The identifier of the <a>UsagePlan</a> resource to be retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

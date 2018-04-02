@@ -27,13 +27,13 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
+     * [Required] Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
      * </p>
      */
     private String authorizerId;
@@ -72,11 +72,11 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -85,10 +85,10 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return The string identifier of the associated <a>RestApi</a>.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -97,11 +97,11 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,11 +112,11 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
+     * [Required] Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
      * </p>
      * 
      * @param authorizerId
-     *        Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
+     *        [Required] Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
      */
 
     public void setAuthorizerId(String authorizerId) {
@@ -125,10 +125,10 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
+     * [Required] Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
      * </p>
      * 
-     * @return Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
+     * @return [Required] Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
      */
 
     public String getAuthorizerId() {
@@ -137,11 +137,11 @@ public class TestInvokeAuthorizerRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
+     * [Required] Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
      * </p>
      * 
      * @param authorizerId
-     *        Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
+     *        [Required] Specifies a test invoke authorizer request's <a>Authorizer</a> ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

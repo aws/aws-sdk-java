@@ -39,7 +39,7 @@ public class GetDocumentationVersionsRequest extends com.amazonaws.AmazonWebServ
     private String position;
     /**
      * <p>
-     * The maximum number of returned results per page.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      */
     private Integer limit;
@@ -126,11 +126,11 @@ public class GetDocumentationVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The maximum number of returned results per page.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
      * @param limit
-     *        The maximum number of returned results per page.
+     *        The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      */
 
     public void setLimit(Integer limit) {
@@ -139,10 +139,10 @@ public class GetDocumentationVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The maximum number of returned results per page.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
-     * @return The maximum number of returned results per page.
+     * @return The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      */
 
     public Integer getLimit() {
@@ -151,11 +151,11 @@ public class GetDocumentationVersionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The maximum number of returned results per page.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
      * @param limit
-     *        The maximum number of returned results per page.
+     *        The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

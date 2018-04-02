@@ -27,7 +27,7 @@ public class GetBasePathMappingsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The domain name of a <a>BasePathMapping</a> resource.
+     * [Required] The domain name of a <a>BasePathMapping</a> resource.
      * </p>
      */
     private String domainName;
@@ -39,18 +39,18 @@ public class GetBasePathMappingsRequest extends com.amazonaws.AmazonWebServiceRe
     private String position;
     /**
      * <p>
-     * The maximum number of returned results per page. The value is 25 by default and could be between 1 - 500.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      */
     private Integer limit;
 
     /**
      * <p>
-     * The domain name of a <a>BasePathMapping</a> resource.
+     * [Required] The domain name of a <a>BasePathMapping</a> resource.
      * </p>
      * 
      * @param domainName
-     *        The domain name of a <a>BasePathMapping</a> resource.
+     *        [Required] The domain name of a <a>BasePathMapping</a> resource.
      */
 
     public void setDomainName(String domainName) {
@@ -59,10 +59,10 @@ public class GetBasePathMappingsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The domain name of a <a>BasePathMapping</a> resource.
+     * [Required] The domain name of a <a>BasePathMapping</a> resource.
      * </p>
      * 
-     * @return The domain name of a <a>BasePathMapping</a> resource.
+     * @return [Required] The domain name of a <a>BasePathMapping</a> resource.
      */
 
     public String getDomainName() {
@@ -71,11 +71,11 @@ public class GetBasePathMappingsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The domain name of a <a>BasePathMapping</a> resource.
+     * [Required] The domain name of a <a>BasePathMapping</a> resource.
      * </p>
      * 
      * @param domainName
-     *        The domain name of a <a>BasePathMapping</a> resource.
+     *        [Required] The domain name of a <a>BasePathMapping</a> resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class GetBasePathMappingsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of returned results per page. The value is 25 by default and could be between 1 - 500.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
      * @param limit
-     *        The maximum number of returned results per page. The value is 25 by default and could be between 1 - 500.
+     *        The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      */
 
     public void setLimit(Integer limit) {
@@ -139,10 +139,10 @@ public class GetBasePathMappingsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of returned results per page. The value is 25 by default and could be between 1 - 500.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
-     * @return The maximum number of returned results per page. The value is 25 by default and could be between 1 - 500.
+     * @return The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      */
 
     public Integer getLimit() {
@@ -151,11 +151,11 @@ public class GetBasePathMappingsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of returned results per page. The value is 25 by default and could be between 1 - 500.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
      * @param limit
-     *        The maximum number of returned results per page. The value is 25 by default and could be between 1 - 500.
+     *        The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

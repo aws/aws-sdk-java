@@ -2250,11 +2250,11 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
 
     /**
      * <p>
-     * Gets the Tags collection for a given resource.
+     * Gets the <a>Tags</a> collection for a given resource.
      * </p>
      * 
      * @param getTagsRequest
-     *        Gets the Tags collection for a given resource.
+     *        Gets the <a>Tags</a> collection for a given resource.
      * @return A Java Future containing the result of the GetTags operation returned by the service.
      * @sample AmazonApiGatewayAsync.GetTags
      */
@@ -2262,11 +2262,11 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
 
     /**
      * <p>
-     * Gets the Tags collection for a given resource.
+     * Gets the <a>Tags</a> collection for a given resource.
      * </p>
      * 
      * @param getTagsRequest
-     *        Gets the Tags collection for a given resource.
+     *        Gets the <a>Tags</a> collection for a given resource.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -2743,11 +2743,11 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
 
     /**
      * <p>
-     * Adds or updates Tags on a gievn resource.
+     * Adds or updates a tag on a given resource.
      * </p>
      * 
      * @param tagResourceRequest
-     *        Adds or updates Tags on a gievn resource.
+     *        Adds or updates a tag on a given resource.
      * @return A Java Future containing the result of the TagResource operation returned by the service.
      * @sample AmazonApiGatewayAsync.TagResource
      */
@@ -2755,11 +2755,11 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
 
     /**
      * <p>
-     * Adds or updates Tags on a gievn resource.
+     * Adds or updates a tag on a given resource.
      * </p>
      * 
      * @param tagResourceRequest
-     *        Adds or updates Tags on a gievn resource.
+     *        Adds or updates a tag on a given resource.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -2840,11 +2840,11 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
 
     /**
      * <p>
-     * Removes Tags from a given resource.
+     * Removes a tag from a given resource.
      * </p>
      * 
      * @param untagResourceRequest
-     *        Removes Tags from a given resource.
+     *        Removes a tag from a given resource.
      * @return A Java Future containing the result of the UntagResource operation returned by the service.
      * @sample AmazonApiGatewayAsync.UntagResource
      */
@@ -2852,11 +2852,11 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
 
     /**
      * <p>
-     * Removes Tags from a given resource.
+     * Removes a tag from a given resource.
      * </p>
      * 
      * @param untagResourceRequest
-     *        Removes Tags from a given resource.
+     *        Removes a tag from a given resource.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

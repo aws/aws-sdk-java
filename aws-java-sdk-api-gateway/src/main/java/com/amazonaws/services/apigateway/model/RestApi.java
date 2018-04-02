@@ -72,15 +72,16 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> binaryMediaTypes;
     /**
      * <p>
-     * A nullable integer used to enable (non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable (null)
-     * compression on an API. When compression is enabled, compression or decompression are not applied on the payload
-     * if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.
+     * A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes,
+     * inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or
+     * decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero
+     * allows compression for any payload size.
      * </p>
      */
     private Integer minimumCompressionSize;
     /**
      * <p>
-     * The source of the API key for metring requests according to a usage plan. Valid values are
+     * The source of the API key for metering requests according to a usage plan. Valid values are:
      * <ul>
      * <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.</li>
      * <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
@@ -95,6 +96,11 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private EndpointConfiguration endpointConfiguration;
+    /**
+     * A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a>
+     * configuration.
+     */
+    private String policy;
 
     /**
      * <p>
@@ -446,16 +452,17 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A nullable integer used to enable (non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable (null)
-     * compression on an API. When compression is enabled, compression or decompression are not applied on the payload
-     * if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.
+     * A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes,
+     * inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or
+     * decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero
+     * allows compression for any payload size.
      * </p>
      * 
      * @param minimumCompressionSize
-     *        A nullable integer used to enable (non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable
-     *        (null) compression on an API. When compression is enabled, compression or decompression are not applied on
-     *        the payload if the payload size is smaller than this value. Setting it to zero allows compression for any
-     *        payload size.
+     *        A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M)
+     *        bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled,
+     *        compression or decompression is not applied on the payload if the payload size is smaller than this value.
+     *        Setting it to zero allows compression for any payload size.
      */
 
     public void setMinimumCompressionSize(Integer minimumCompressionSize) {
@@ -464,15 +471,16 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A nullable integer used to enable (non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable (null)
-     * compression on an API. When compression is enabled, compression or decompression are not applied on the payload
-     * if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.
+     * A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes,
+     * inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or
+     * decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero
+     * allows compression for any payload size.
      * </p>
      * 
-     * @return A nullable integer used to enable (non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable
-     *         (null) compression on an API. When compression is enabled, compression or decompression are not applied
-     *         on the payload if the payload size is smaller than this value. Setting it to zero allows compression for
-     *         any payload size.
+     * @return A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M)
+     *         bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled,
+     *         compression or decompression is not applied on the payload if the payload size is smaller than this
+     *         value. Setting it to zero allows compression for any payload size.
      */
 
     public Integer getMinimumCompressionSize() {
@@ -481,16 +489,17 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A nullable integer used to enable (non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable (null)
-     * compression on an API. When compression is enabled, compression or decompression are not applied on the payload
-     * if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.
+     * A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes,
+     * inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or
+     * decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero
+     * allows compression for any payload size.
      * </p>
      * 
      * @param minimumCompressionSize
-     *        A nullable integer used to enable (non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable
-     *        (null) compression on an API. When compression is enabled, compression or decompression are not applied on
-     *        the payload if the payload size is smaller than this value. Setting it to zero allows compression for any
-     *        payload size.
+     *        A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M)
+     *        bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled,
+     *        compression or decompression is not applied on the payload if the payload size is smaller than this value.
+     *        Setting it to zero allows compression for any payload size.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -501,7 +510,7 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The source of the API key for metring requests according to a usage plan. Valid values are
+     * The source of the API key for metering requests according to a usage plan. Valid values are:
      * <ul>
      * <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.</li>
      * <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
@@ -510,7 +519,7 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param apiKeySource
-     *        The source of the API key for metring requests according to a usage plan. Valid values are
+     *        The source of the API key for metering requests according to a usage plan. Valid values are:
      *        <ul>
      *        <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.</li>
      *        <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
@@ -525,7 +534,7 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The source of the API key for metring requests according to a usage plan. Valid values are
+     * The source of the API key for metering requests according to a usage plan. Valid values are:
      * <ul>
      * <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.</li>
      * <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
@@ -533,7 +542,7 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * </p>
      * 
-     * @return The source of the API key for metring requests according to a usage plan. Valid values are
+     * @return The source of the API key for metering requests according to a usage plan. Valid values are:
      *         <ul>
      *         <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.</li>
      *         <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
@@ -548,7 +557,7 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The source of the API key for metring requests according to a usage plan. Valid values are
+     * The source of the API key for metering requests according to a usage plan. Valid values are:
      * <ul>
      * <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.</li>
      * <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
@@ -557,7 +566,7 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param apiKeySource
-     *        The source of the API key for metring requests according to a usage plan. Valid values are
+     *        The source of the API key for metering requests according to a usage plan. Valid values are:
      *        <ul>
      *        <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.</li>
      *        <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
@@ -574,7 +583,7 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The source of the API key for metring requests according to a usage plan. Valid values are
+     * The source of the API key for metering requests according to a usage plan. Valid values are:
      * <ul>
      * <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.</li>
      * <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
@@ -583,7 +592,7 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param apiKeySource
-     *        The source of the API key for metring requests according to a usage plan. Valid values are
+     *        The source of the API key for metering requests according to a usage plan. Valid values are:
      *        <ul>
      *        <li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.</li>
      *        <li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
@@ -639,6 +648,46 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a>
+     * configuration.
+     * 
+     * @param policy
+     *        A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a>
+     *        configuration.
+     */
+
+    public void setPolicy(String policy) {
+        this.policy = policy;
+    }
+
+    /**
+     * A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a>
+     * configuration.
+     * 
+     * @return A stringified JSON policy document that applies to this RestApi regardless of the caller and
+     *         <a>Method</a> configuration.
+     */
+
+    public String getPolicy() {
+        return this.policy;
+    }
+
+    /**
+     * A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a>
+     * configuration.
+     * 
+     * @param policy
+     *        A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a>
+     *        configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestApi withPolicy(String policy) {
+        setPolicy(policy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -668,7 +717,9 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
         if (getApiKeySource() != null)
             sb.append("ApiKeySource: ").append(getApiKeySource()).append(",");
         if (getEndpointConfiguration() != null)
-            sb.append("EndpointConfiguration: ").append(getEndpointConfiguration());
+            sb.append("EndpointConfiguration: ").append(getEndpointConfiguration()).append(",");
+        if (getPolicy() != null)
+            sb.append("Policy: ").append(getPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -723,6 +774,10 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEndpointConfiguration() != null && other.getEndpointConfiguration().equals(this.getEndpointConfiguration()) == false)
             return false;
+        if (other.getPolicy() == null ^ this.getPolicy() == null)
+            return false;
+        if (other.getPolicy() != null && other.getPolicy().equals(this.getPolicy()) == false)
+            return false;
         return true;
     }
 
@@ -741,6 +796,7 @@ public class RestApi implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getMinimumCompressionSize() == null) ? 0 : getMinimumCompressionSize().hashCode());
         hashCode = prime * hashCode + ((getApiKeySource() == null) ? 0 : getApiKeySource().hashCode());
         hashCode = prime * hashCode + ((getEndpointConfiguration() == null) ? 0 : getEndpointConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getPolicy() == null) ? 0 : getPolicy().hashCode());
         return hashCode;
     }
 

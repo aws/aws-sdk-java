@@ -39,6 +39,8 @@ public class ElasticsearchDomainConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnapshotOptions").build();
     private static final MarshallingInfo<StructuredPojo> VPCOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VPCOptions").build();
+    private static final MarshallingInfo<StructuredPojo> COGNITOOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CognitoOptions").build();
     private static final MarshallingInfo<StructuredPojo> ENCRYPTIONATRESTOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EncryptionAtRestOptions").build();
     private static final MarshallingInfo<StructuredPojo> ADVANCEDOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -68,6 +70,7 @@ public class ElasticsearchDomainConfigMarshaller {
             protocolMarshaller.marshall(elasticsearchDomainConfig.getAccessPolicies(), ACCESSPOLICIES_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainConfig.getSnapshotOptions(), SNAPSHOTOPTIONS_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainConfig.getVPCOptions(), VPCOPTIONS_BINDING);
+            protocolMarshaller.marshall(elasticsearchDomainConfig.getCognitoOptions(), COGNITOOPTIONS_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainConfig.getEncryptionAtRestOptions(), ENCRYPTIONATRESTOPTIONS_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainConfig.getAdvancedOptions(), ADVANCEDOPTIONS_BINDING);
             protocolMarshaller.marshall(elasticsearchDomainConfig.getLogPublishingOptions(), LOGPUBLISHINGOPTIONS_BINDING);

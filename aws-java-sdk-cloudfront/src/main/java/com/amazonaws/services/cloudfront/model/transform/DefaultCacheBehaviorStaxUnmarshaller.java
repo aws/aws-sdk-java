@@ -97,6 +97,11 @@ public class DefaultCacheBehaviorStaxUnmarshaller implements Unmarshaller<Defaul
                     defaultCacheBehavior.setLambdaFunctionAssociations(LambdaFunctionAssociationsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("FieldLevelEncryptionId", targetDepth)) {
+                    defaultCacheBehavior.setFieldLevelEncryptionId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return defaultCacheBehavior;

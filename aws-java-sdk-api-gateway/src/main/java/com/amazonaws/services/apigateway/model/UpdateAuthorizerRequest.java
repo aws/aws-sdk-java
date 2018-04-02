@@ -27,13 +27,13 @@ public class UpdateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * The identifier of the <a>Authorizer</a> resource.
+     * [Required] The identifier of the <a>Authorizer</a> resource.
      * </p>
      */
     private String authorizerId;
@@ -46,11 +46,11 @@ public class UpdateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -59,10 +59,10 @@ public class UpdateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return The string identifier of the associated <a>RestApi</a>.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -71,11 +71,11 @@ public class UpdateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +86,11 @@ public class UpdateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the <a>Authorizer</a> resource.
+     * [Required] The identifier of the <a>Authorizer</a> resource.
      * </p>
      * 
      * @param authorizerId
-     *        The identifier of the <a>Authorizer</a> resource.
+     *        [Required] The identifier of the <a>Authorizer</a> resource.
      */
 
     public void setAuthorizerId(String authorizerId) {
@@ -99,10 +99,10 @@ public class UpdateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the <a>Authorizer</a> resource.
+     * [Required] The identifier of the <a>Authorizer</a> resource.
      * </p>
      * 
-     * @return The identifier of the <a>Authorizer</a> resource.
+     * @return [Required] The identifier of the <a>Authorizer</a> resource.
      */
 
     public String getAuthorizerId() {
@@ -111,11 +111,11 @@ public class UpdateAuthorizerRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the <a>Authorizer</a> resource.
+     * [Required] The identifier of the <a>Authorizer</a> resource.
      * </p>
      * 
      * @param authorizerId
-     *        The identifier of the <a>Authorizer</a> resource.
+     *        [Required] The identifier of the <a>Authorizer</a> resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -40,7 +40,7 @@ public class GetStreamingDistributionConfigRequestMarshaller implements
 
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2017-03-25/streaming-distribution/{Id}/config";
+        String uriResourcePath = "/2017-10-30/streaming-distribution/{Id}/config";
 
         uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", getStreamingDistributionConfigRequest.getId());
         request.setResourcePath(uriResourcePath);

@@ -27,30 +27,30 @@ public class GetIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * Specifies a get integration request's resource identifier
+     * [Required] Specifies a get integration request's resource identifier
      * </p>
      */
     private String resourceId;
     /**
      * <p>
-     * Specifies a get integration request's HTTP method.
+     * [Required] Specifies a get integration request's HTTP method.
      * </p>
      */
     private String httpMethod;
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -59,10 +59,10 @@ public class GetIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return The string identifier of the associated <a>RestApi</a>.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -71,11 +71,11 @@ public class GetIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +86,11 @@ public class GetIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a get integration request's resource identifier
+     * [Required] Specifies a get integration request's resource identifier
      * </p>
      * 
      * @param resourceId
-     *        Specifies a get integration request's resource identifier
+     *        [Required] Specifies a get integration request's resource identifier
      */
 
     public void setResourceId(String resourceId) {
@@ -99,10 +99,10 @@ public class GetIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a get integration request's resource identifier
+     * [Required] Specifies a get integration request's resource identifier
      * </p>
      * 
-     * @return Specifies a get integration request's resource identifier
+     * @return [Required] Specifies a get integration request's resource identifier
      */
 
     public String getResourceId() {
@@ -111,11 +111,11 @@ public class GetIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a get integration request's resource identifier
+     * [Required] Specifies a get integration request's resource identifier
      * </p>
      * 
      * @param resourceId
-     *        Specifies a get integration request's resource identifier
+     *        [Required] Specifies a get integration request's resource identifier
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class GetIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a get integration request's HTTP method.
+     * [Required] Specifies a get integration request's HTTP method.
      * </p>
      * 
      * @param httpMethod
-     *        Specifies a get integration request's HTTP method.
+     *        [Required] Specifies a get integration request's HTTP method.
      */
 
     public void setHttpMethod(String httpMethod) {
@@ -139,10 +139,10 @@ public class GetIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a get integration request's HTTP method.
+     * [Required] Specifies a get integration request's HTTP method.
      * </p>
      * 
-     * @return Specifies a get integration request's HTTP method.
+     * @return [Required] Specifies a get integration request's HTTP method.
      */
 
     public String getHttpMethod() {
@@ -151,11 +151,11 @@ public class GetIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a get integration request's HTTP method.
+     * [Required] Specifies a get integration request's HTTP method.
      * </p>
      * 
      * @param httpMethod
-     *        Specifies a get integration request's HTTP method.
+     *        [Required] Specifies a get integration request's HTTP method.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

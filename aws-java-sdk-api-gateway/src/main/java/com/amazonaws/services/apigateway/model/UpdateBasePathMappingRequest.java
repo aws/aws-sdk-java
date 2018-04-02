@@ -27,13 +27,13 @@ public class UpdateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The domain name of the <a>BasePathMapping</a> resource to change.
+     * [Required] The domain name of the <a>BasePathMapping</a> resource to change.
      * </p>
      */
     private String domainName;
     /**
      * <p>
-     * The base path of the <a>BasePathMapping</a> resource to change.
+     * [Required] The base path of the <a>BasePathMapping</a> resource to change.
      * </p>
      */
     private String basePath;
@@ -46,11 +46,11 @@ public class UpdateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The domain name of the <a>BasePathMapping</a> resource to change.
+     * [Required] The domain name of the <a>BasePathMapping</a> resource to change.
      * </p>
      * 
      * @param domainName
-     *        The domain name of the <a>BasePathMapping</a> resource to change.
+     *        [Required] The domain name of the <a>BasePathMapping</a> resource to change.
      */
 
     public void setDomainName(String domainName) {
@@ -59,10 +59,10 @@ public class UpdateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The domain name of the <a>BasePathMapping</a> resource to change.
+     * [Required] The domain name of the <a>BasePathMapping</a> resource to change.
      * </p>
      * 
-     * @return The domain name of the <a>BasePathMapping</a> resource to change.
+     * @return [Required] The domain name of the <a>BasePathMapping</a> resource to change.
      */
 
     public String getDomainName() {
@@ -71,11 +71,11 @@ public class UpdateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The domain name of the <a>BasePathMapping</a> resource to change.
+     * [Required] The domain name of the <a>BasePathMapping</a> resource to change.
      * </p>
      * 
      * @param domainName
-     *        The domain name of the <a>BasePathMapping</a> resource to change.
+     *        [Required] The domain name of the <a>BasePathMapping</a> resource to change.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +86,11 @@ public class UpdateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The base path of the <a>BasePathMapping</a> resource to change.
+     * [Required] The base path of the <a>BasePathMapping</a> resource to change.
      * </p>
      * 
      * @param basePath
-     *        The base path of the <a>BasePathMapping</a> resource to change.
+     *        [Required] The base path of the <a>BasePathMapping</a> resource to change.
      */
 
     public void setBasePath(String basePath) {
@@ -99,10 +99,10 @@ public class UpdateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The base path of the <a>BasePathMapping</a> resource to change.
+     * [Required] The base path of the <a>BasePathMapping</a> resource to change.
      * </p>
      * 
-     * @return The base path of the <a>BasePathMapping</a> resource to change.
+     * @return [Required] The base path of the <a>BasePathMapping</a> resource to change.
      */
 
     public String getBasePath() {
@@ -111,11 +111,11 @@ public class UpdateBasePathMappingRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The base path of the <a>BasePathMapping</a> resource to change.
+     * [Required] The base path of the <a>BasePathMapping</a> resource to change.
      * </p>
      * 
      * @param basePath
-     *        The base path of the <a>BasePathMapping</a> resource to change.
+     *        [Required] The base path of the <a>BasePathMapping</a> resource to change.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

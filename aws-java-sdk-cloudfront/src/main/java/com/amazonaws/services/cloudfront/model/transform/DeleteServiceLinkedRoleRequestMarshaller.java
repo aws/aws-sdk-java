@@ -38,7 +38,7 @@ public class DeleteServiceLinkedRoleRequestMarshaller implements Marshaller<Requ
 
         request.setHttpMethod(HttpMethodName.DELETE);
 
-        String uriResourcePath = "/2017-03-25/service-linked-role/{RoleName}";
+        String uriResourcePath = "/2017-10-30/service-linked-role/{RoleName}";
 
         uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY
                 .marshall(uriResourcePath, "RoleName", deleteServiceLinkedRoleRequest.getRoleName());

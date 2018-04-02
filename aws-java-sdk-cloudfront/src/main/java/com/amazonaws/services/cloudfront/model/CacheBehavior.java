@@ -48,7 +48,7 @@ import javax.annotation.Generated;
  * >Cache Behaviors</a> in the <i>Amazon CloudFront Developer Guide</i>.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CacheBehavior" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CacheBehavior" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -224,6 +224,8 @@ public class CacheBehavior implements Serializable, Cloneable {
      * </p>
      */
     private LambdaFunctionAssociations lambdaFunctionAssociations;
+
+    private String fieldLevelEncryptionId;
 
     /**
      * <p>
@@ -1519,6 +1521,32 @@ public class CacheBehavior implements Serializable, Cloneable {
     }
 
     /**
+     * @param fieldLevelEncryptionId
+     */
+
+    public void setFieldLevelEncryptionId(String fieldLevelEncryptionId) {
+        this.fieldLevelEncryptionId = fieldLevelEncryptionId;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getFieldLevelEncryptionId() {
+        return this.fieldLevelEncryptionId;
+    }
+
+    /**
+     * @param fieldLevelEncryptionId
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CacheBehavior withFieldLevelEncryptionId(String fieldLevelEncryptionId) {
+        setFieldLevelEncryptionId(fieldLevelEncryptionId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1552,7 +1580,9 @@ public class CacheBehavior implements Serializable, Cloneable {
         if (getCompress() != null)
             sb.append("Compress: ").append(getCompress()).append(",");
         if (getLambdaFunctionAssociations() != null)
-            sb.append("LambdaFunctionAssociations: ").append(getLambdaFunctionAssociations());
+            sb.append("LambdaFunctionAssociations: ").append(getLambdaFunctionAssociations()).append(",");
+        if (getFieldLevelEncryptionId() != null)
+            sb.append("FieldLevelEncryptionId: ").append(getFieldLevelEncryptionId());
         sb.append("}");
         return sb.toString();
     }
@@ -1615,6 +1645,10 @@ public class CacheBehavior implements Serializable, Cloneable {
             return false;
         if (other.getLambdaFunctionAssociations() != null && other.getLambdaFunctionAssociations().equals(this.getLambdaFunctionAssociations()) == false)
             return false;
+        if (other.getFieldLevelEncryptionId() == null ^ this.getFieldLevelEncryptionId() == null)
+            return false;
+        if (other.getFieldLevelEncryptionId() != null && other.getFieldLevelEncryptionId().equals(this.getFieldLevelEncryptionId()) == false)
+            return false;
         return true;
     }
 
@@ -1635,6 +1669,7 @@ public class CacheBehavior implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMaxTTL() == null) ? 0 : getMaxTTL().hashCode());
         hashCode = prime * hashCode + ((getCompress() == null) ? 0 : getCompress().hashCode());
         hashCode = prime * hashCode + ((getLambdaFunctionAssociations() == null) ? 0 : getLambdaFunctionAssociations().hashCode());
+        hashCode = prime * hashCode + ((getFieldLevelEncryptionId() == null) ? 0 : getFieldLevelEncryptionId().hashCode());
         return hashCode;
     }
 

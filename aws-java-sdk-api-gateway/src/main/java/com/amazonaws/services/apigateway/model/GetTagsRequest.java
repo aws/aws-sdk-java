@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Gets the Tags collection for a given resource.
+ * Gets the <a>Tags</a> collection for a given resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,7 +27,8 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * [Required] The ARN of a resource that can be tagged. At present, <a>Stage</a> is the only taggable resource.
+     * [Required] The ARN of a resource that can be tagged. The resource ARN must be URL-encoded. At present,
+     * <a>Stage</a> is the only taggable resource.
      * </p>
      */
     private String resourceArn;
@@ -39,19 +40,21 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
     private String position;
     /**
      * <p>
-     * (Not currently supported) The maximum number of returned results per page.
+     * (Not currently supported) The maximum number of returned results per page. The default value is 25 and the
+     * maximum value is 500.
      * </p>
      */
     private Integer limit;
 
     /**
      * <p>
-     * [Required] The ARN of a resource that can be tagged. At present, <a>Stage</a> is the only taggable resource.
+     * [Required] The ARN of a resource that can be tagged. The resource ARN must be URL-encoded. At present,
+     * <a>Stage</a> is the only taggable resource.
      * </p>
      * 
      * @param resourceArn
-     *        [Required] The ARN of a resource that can be tagged. At present, <a>Stage</a> is the only taggable
-     *        resource.
+     *        [Required] The ARN of a resource that can be tagged. The resource ARN must be URL-encoded. At present,
+     *        <a>Stage</a> is the only taggable resource.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -60,11 +63,12 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * [Required] The ARN of a resource that can be tagged. At present, <a>Stage</a> is the only taggable resource.
+     * [Required] The ARN of a resource that can be tagged. The resource ARN must be URL-encoded. At present,
+     * <a>Stage</a> is the only taggable resource.
      * </p>
      * 
-     * @return [Required] The ARN of a resource that can be tagged. At present, <a>Stage</a> is the only taggable
-     *         resource.
+     * @return [Required] The ARN of a resource that can be tagged. The resource ARN must be URL-encoded. At present,
+     *         <a>Stage</a> is the only taggable resource.
      */
 
     public String getResourceArn() {
@@ -73,12 +77,13 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * [Required] The ARN of a resource that can be tagged. At present, <a>Stage</a> is the only taggable resource.
+     * [Required] The ARN of a resource that can be tagged. The resource ARN must be URL-encoded. At present,
+     * <a>Stage</a> is the only taggable resource.
      * </p>
      * 
      * @param resourceArn
-     *        [Required] The ARN of a resource that can be tagged. At present, <a>Stage</a> is the only taggable
-     *        resource.
+     *        [Required] The ARN of a resource that can be tagged. The resource ARN must be URL-encoded. At present,
+     *        <a>Stage</a> is the only taggable resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +134,13 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * (Not currently supported) The maximum number of returned results per page.
+     * (Not currently supported) The maximum number of returned results per page. The default value is 25 and the
+     * maximum value is 500.
      * </p>
      * 
      * @param limit
-     *        (Not currently supported) The maximum number of returned results per page.
+     *        (Not currently supported) The maximum number of returned results per page. The default value is 25 and the
+     *        maximum value is 500.
      */
 
     public void setLimit(Integer limit) {
@@ -142,10 +149,12 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * (Not currently supported) The maximum number of returned results per page.
+     * (Not currently supported) The maximum number of returned results per page. The default value is 25 and the
+     * maximum value is 500.
      * </p>
      * 
-     * @return (Not currently supported) The maximum number of returned results per page.
+     * @return (Not currently supported) The maximum number of returned results per page. The default value is 25 and
+     *         the maximum value is 500.
      */
 
     public Integer getLimit() {
@@ -154,11 +163,13 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * (Not currently supported) The maximum number of returned results per page.
+     * (Not currently supported) The maximum number of returned results per page. The default value is 25 and the
+     * maximum value is 500.
      * </p>
      * 
      * @param limit
-     *        (Not currently supported) The maximum number of returned results per page.
+     *        (Not currently supported) The maximum number of returned results per page. The default value is 25 and the
+     *        maximum value is 500.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

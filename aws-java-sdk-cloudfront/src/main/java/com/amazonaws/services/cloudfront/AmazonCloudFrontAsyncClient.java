@@ -348,6 +348,76 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateFieldLevelEncryptionConfigResult> createFieldLevelEncryptionConfigAsync(
+            CreateFieldLevelEncryptionConfigRequest request) {
+
+        return createFieldLevelEncryptionConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFieldLevelEncryptionConfigResult> createFieldLevelEncryptionConfigAsync(
+            final CreateFieldLevelEncryptionConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateFieldLevelEncryptionConfigRequest, CreateFieldLevelEncryptionConfigResult> asyncHandler) {
+        final CreateFieldLevelEncryptionConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateFieldLevelEncryptionConfigResult>() {
+            @Override
+            public CreateFieldLevelEncryptionConfigResult call() throws Exception {
+                CreateFieldLevelEncryptionConfigResult result = null;
+
+                try {
+                    result = executeCreateFieldLevelEncryptionConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFieldLevelEncryptionProfileResult> createFieldLevelEncryptionProfileAsync(
+            CreateFieldLevelEncryptionProfileRequest request) {
+
+        return createFieldLevelEncryptionProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFieldLevelEncryptionProfileResult> createFieldLevelEncryptionProfileAsync(
+            final CreateFieldLevelEncryptionProfileRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateFieldLevelEncryptionProfileRequest, CreateFieldLevelEncryptionProfileResult> asyncHandler) {
+        final CreateFieldLevelEncryptionProfileRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateFieldLevelEncryptionProfileResult>() {
+            @Override
+            public CreateFieldLevelEncryptionProfileResult call() throws Exception {
+                CreateFieldLevelEncryptionProfileResult result = null;
+
+                try {
+                    result = executeCreateFieldLevelEncryptionProfile(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateInvalidationResult> createInvalidationAsync(CreateInvalidationRequest request) {
 
         return createInvalidationAsync(request, null);
@@ -365,6 +435,39 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
 
                 try {
                     result = executeCreateInvalidation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePublicKeyResult> createPublicKeyAsync(CreatePublicKeyRequest request) {
+
+        return createPublicKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePublicKeyResult> createPublicKeyAsync(final CreatePublicKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreatePublicKeyRequest, CreatePublicKeyResult> asyncHandler) {
+        final CreatePublicKeyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreatePublicKeyResult>() {
+            @Override
+            public CreatePublicKeyResult call() throws Exception {
+                CreatePublicKeyResult result = null;
+
+                try {
+                    result = executeCreatePublicKey(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -501,6 +604,109 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
 
                 try {
                     result = executeDeleteDistribution(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFieldLevelEncryptionConfigResult> deleteFieldLevelEncryptionConfigAsync(
+            DeleteFieldLevelEncryptionConfigRequest request) {
+
+        return deleteFieldLevelEncryptionConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFieldLevelEncryptionConfigResult> deleteFieldLevelEncryptionConfigAsync(
+            final DeleteFieldLevelEncryptionConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteFieldLevelEncryptionConfigRequest, DeleteFieldLevelEncryptionConfigResult> asyncHandler) {
+        final DeleteFieldLevelEncryptionConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteFieldLevelEncryptionConfigResult>() {
+            @Override
+            public DeleteFieldLevelEncryptionConfigResult call() throws Exception {
+                DeleteFieldLevelEncryptionConfigResult result = null;
+
+                try {
+                    result = executeDeleteFieldLevelEncryptionConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFieldLevelEncryptionProfileResult> deleteFieldLevelEncryptionProfileAsync(
+            DeleteFieldLevelEncryptionProfileRequest request) {
+
+        return deleteFieldLevelEncryptionProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFieldLevelEncryptionProfileResult> deleteFieldLevelEncryptionProfileAsync(
+            final DeleteFieldLevelEncryptionProfileRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteFieldLevelEncryptionProfileRequest, DeleteFieldLevelEncryptionProfileResult> asyncHandler) {
+        final DeleteFieldLevelEncryptionProfileRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteFieldLevelEncryptionProfileResult>() {
+            @Override
+            public DeleteFieldLevelEncryptionProfileResult call() throws Exception {
+                DeleteFieldLevelEncryptionProfileResult result = null;
+
+                try {
+                    result = executeDeleteFieldLevelEncryptionProfile(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePublicKeyResult> deletePublicKeyAsync(DeletePublicKeyRequest request) {
+
+        return deletePublicKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePublicKeyResult> deletePublicKeyAsync(final DeletePublicKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeletePublicKeyRequest, DeletePublicKeyResult> asyncHandler) {
+        final DeletePublicKeyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeletePublicKeyResult>() {
+            @Override
+            public DeletePublicKeyResult call() throws Exception {
+                DeletePublicKeyResult result = null;
+
+                try {
+                    result = executeDeletePublicKey(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -719,6 +925,142 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetFieldLevelEncryptionResult> getFieldLevelEncryptionAsync(GetFieldLevelEncryptionRequest request) {
+
+        return getFieldLevelEncryptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFieldLevelEncryptionResult> getFieldLevelEncryptionAsync(final GetFieldLevelEncryptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetFieldLevelEncryptionRequest, GetFieldLevelEncryptionResult> asyncHandler) {
+        final GetFieldLevelEncryptionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetFieldLevelEncryptionResult>() {
+            @Override
+            public GetFieldLevelEncryptionResult call() throws Exception {
+                GetFieldLevelEncryptionResult result = null;
+
+                try {
+                    result = executeGetFieldLevelEncryption(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFieldLevelEncryptionConfigResult> getFieldLevelEncryptionConfigAsync(GetFieldLevelEncryptionConfigRequest request) {
+
+        return getFieldLevelEncryptionConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFieldLevelEncryptionConfigResult> getFieldLevelEncryptionConfigAsync(
+            final GetFieldLevelEncryptionConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetFieldLevelEncryptionConfigRequest, GetFieldLevelEncryptionConfigResult> asyncHandler) {
+        final GetFieldLevelEncryptionConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetFieldLevelEncryptionConfigResult>() {
+            @Override
+            public GetFieldLevelEncryptionConfigResult call() throws Exception {
+                GetFieldLevelEncryptionConfigResult result = null;
+
+                try {
+                    result = executeGetFieldLevelEncryptionConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFieldLevelEncryptionProfileResult> getFieldLevelEncryptionProfileAsync(GetFieldLevelEncryptionProfileRequest request) {
+
+        return getFieldLevelEncryptionProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFieldLevelEncryptionProfileResult> getFieldLevelEncryptionProfileAsync(
+            final GetFieldLevelEncryptionProfileRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetFieldLevelEncryptionProfileRequest, GetFieldLevelEncryptionProfileResult> asyncHandler) {
+        final GetFieldLevelEncryptionProfileRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetFieldLevelEncryptionProfileResult>() {
+            @Override
+            public GetFieldLevelEncryptionProfileResult call() throws Exception {
+                GetFieldLevelEncryptionProfileResult result = null;
+
+                try {
+                    result = executeGetFieldLevelEncryptionProfile(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFieldLevelEncryptionProfileConfigResult> getFieldLevelEncryptionProfileConfigAsync(
+            GetFieldLevelEncryptionProfileConfigRequest request) {
+
+        return getFieldLevelEncryptionProfileConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFieldLevelEncryptionProfileConfigResult> getFieldLevelEncryptionProfileConfigAsync(
+            final GetFieldLevelEncryptionProfileConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetFieldLevelEncryptionProfileConfigRequest, GetFieldLevelEncryptionProfileConfigResult> asyncHandler) {
+        final GetFieldLevelEncryptionProfileConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetFieldLevelEncryptionProfileConfigResult>() {
+            @Override
+            public GetFieldLevelEncryptionProfileConfigResult call() throws Exception {
+                GetFieldLevelEncryptionProfileConfigResult result = null;
+
+                try {
+                    result = executeGetFieldLevelEncryptionProfileConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetInvalidationResult> getInvalidationAsync(GetInvalidationRequest request) {
 
         return getInvalidationAsync(request, null);
@@ -736,6 +1078,72 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
 
                 try {
                     result = executeGetInvalidation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPublicKeyResult> getPublicKeyAsync(GetPublicKeyRequest request) {
+
+        return getPublicKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPublicKeyResult> getPublicKeyAsync(final GetPublicKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetPublicKeyRequest, GetPublicKeyResult> asyncHandler) {
+        final GetPublicKeyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetPublicKeyResult>() {
+            @Override
+            public GetPublicKeyResult call() throws Exception {
+                GetPublicKeyResult result = null;
+
+                try {
+                    result = executeGetPublicKey(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPublicKeyConfigResult> getPublicKeyConfigAsync(GetPublicKeyConfigRequest request) {
+
+        return getPublicKeyConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPublicKeyConfigResult> getPublicKeyConfigAsync(final GetPublicKeyConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetPublicKeyConfigRequest, GetPublicKeyConfigResult> asyncHandler) {
+        final GetPublicKeyConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetPublicKeyConfigResult>() {
+            @Override
+            public GetPublicKeyConfigResult call() throws Exception {
+                GetPublicKeyConfigResult result = null;
+
+                try {
+                    result = executeGetPublicKeyConfig(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -920,6 +1328,76 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListFieldLevelEncryptionConfigsResult> listFieldLevelEncryptionConfigsAsync(
+            ListFieldLevelEncryptionConfigsRequest request) {
+
+        return listFieldLevelEncryptionConfigsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFieldLevelEncryptionConfigsResult> listFieldLevelEncryptionConfigsAsync(
+            final ListFieldLevelEncryptionConfigsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListFieldLevelEncryptionConfigsRequest, ListFieldLevelEncryptionConfigsResult> asyncHandler) {
+        final ListFieldLevelEncryptionConfigsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListFieldLevelEncryptionConfigsResult>() {
+            @Override
+            public ListFieldLevelEncryptionConfigsResult call() throws Exception {
+                ListFieldLevelEncryptionConfigsResult result = null;
+
+                try {
+                    result = executeListFieldLevelEncryptionConfigs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFieldLevelEncryptionProfilesResult> listFieldLevelEncryptionProfilesAsync(
+            ListFieldLevelEncryptionProfilesRequest request) {
+
+        return listFieldLevelEncryptionProfilesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFieldLevelEncryptionProfilesResult> listFieldLevelEncryptionProfilesAsync(
+            final ListFieldLevelEncryptionProfilesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListFieldLevelEncryptionProfilesRequest, ListFieldLevelEncryptionProfilesResult> asyncHandler) {
+        final ListFieldLevelEncryptionProfilesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListFieldLevelEncryptionProfilesResult>() {
+            @Override
+            public ListFieldLevelEncryptionProfilesResult call() throws Exception {
+                ListFieldLevelEncryptionProfilesResult result = null;
+
+                try {
+                    result = executeListFieldLevelEncryptionProfiles(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListInvalidationsResult> listInvalidationsAsync(ListInvalidationsRequest request) {
 
         return listInvalidationsAsync(request, null);
@@ -937,6 +1415,39 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
 
                 try {
                     result = executeListInvalidations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPublicKeysResult> listPublicKeysAsync(ListPublicKeysRequest request) {
+
+        return listPublicKeysAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPublicKeysResult> listPublicKeysAsync(final ListPublicKeysRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPublicKeysRequest, ListPublicKeysResult> asyncHandler) {
+        final ListPublicKeysRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPublicKeysResult>() {
+            @Override
+            public ListPublicKeysResult call() throws Exception {
+                ListPublicKeysResult result = null;
+
+                try {
+                    result = executeListPublicKeys(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1137,6 +1648,109 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
 
                 try {
                     result = executeUpdateDistribution(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFieldLevelEncryptionConfigResult> updateFieldLevelEncryptionConfigAsync(
+            UpdateFieldLevelEncryptionConfigRequest request) {
+
+        return updateFieldLevelEncryptionConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFieldLevelEncryptionConfigResult> updateFieldLevelEncryptionConfigAsync(
+            final UpdateFieldLevelEncryptionConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateFieldLevelEncryptionConfigRequest, UpdateFieldLevelEncryptionConfigResult> asyncHandler) {
+        final UpdateFieldLevelEncryptionConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateFieldLevelEncryptionConfigResult>() {
+            @Override
+            public UpdateFieldLevelEncryptionConfigResult call() throws Exception {
+                UpdateFieldLevelEncryptionConfigResult result = null;
+
+                try {
+                    result = executeUpdateFieldLevelEncryptionConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFieldLevelEncryptionProfileResult> updateFieldLevelEncryptionProfileAsync(
+            UpdateFieldLevelEncryptionProfileRequest request) {
+
+        return updateFieldLevelEncryptionProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFieldLevelEncryptionProfileResult> updateFieldLevelEncryptionProfileAsync(
+            final UpdateFieldLevelEncryptionProfileRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateFieldLevelEncryptionProfileRequest, UpdateFieldLevelEncryptionProfileResult> asyncHandler) {
+        final UpdateFieldLevelEncryptionProfileRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateFieldLevelEncryptionProfileResult>() {
+            @Override
+            public UpdateFieldLevelEncryptionProfileResult call() throws Exception {
+                UpdateFieldLevelEncryptionProfileResult result = null;
+
+                try {
+                    result = executeUpdateFieldLevelEncryptionProfile(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePublicKeyResult> updatePublicKeyAsync(UpdatePublicKeyRequest request) {
+
+        return updatePublicKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePublicKeyResult> updatePublicKeyAsync(final UpdatePublicKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdatePublicKeyRequest, UpdatePublicKeyResult> asyncHandler) {
+        final UpdatePublicKeyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdatePublicKeyResult>() {
+            @Override
+            public UpdatePublicKeyResult call() throws Exception {
+                UpdatePublicKeyResult result = null;
+
+                try {
+                    result = executeUpdatePublicKey(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

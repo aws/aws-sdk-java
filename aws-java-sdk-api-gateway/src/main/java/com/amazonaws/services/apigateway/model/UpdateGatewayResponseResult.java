@@ -73,7 +73,7 @@ public class UpdateGatewayResponseResult extends com.amazonaws.AmazonWebServiceR
      * <li>RESOURCE_NOT_FOUND</li>
      * <li>THROTTLED</li>
      * <li>UNAUTHORIZED</li>
-     * <li>UNSUPPORTED_MEDIA_TYPES</li>
+     * <li>UNSUPPORTED_MEDIA_TYPE</li>
      * </ul>
      * </p>
      */
@@ -129,7 +129,7 @@ public class UpdateGatewayResponseResult extends com.amazonaws.AmazonWebServiceR
      * <li>RESOURCE_NOT_FOUND</li>
      * <li>THROTTLED</li>
      * <li>UNAUTHORIZED</li>
-     * <li>UNSUPPORTED_MEDIA_TYPES</li>
+     * <li>UNSUPPORTED_MEDIA_TYPE</li>
      * </ul>
      * </p>
      * 
@@ -155,7 +155,7 @@ public class UpdateGatewayResponseResult extends com.amazonaws.AmazonWebServiceR
      *        <li>RESOURCE_NOT_FOUND</li>
      *        <li>THROTTLED</li>
      *        <li>UNAUTHORIZED</li>
-     *        <li>UNSUPPORTED_MEDIA_TYPES</li>
+     *        <li>UNSUPPORTED_MEDIA_TYPE</li>
      *        </ul>
      * @see GatewayResponseType
      */
@@ -187,7 +187,7 @@ public class UpdateGatewayResponseResult extends com.amazonaws.AmazonWebServiceR
      * <li>RESOURCE_NOT_FOUND</li>
      * <li>THROTTLED</li>
      * <li>UNAUTHORIZED</li>
-     * <li>UNSUPPORTED_MEDIA_TYPES</li>
+     * <li>UNSUPPORTED_MEDIA_TYPE</li>
      * </ul>
      * </p>
      * 
@@ -212,7 +212,7 @@ public class UpdateGatewayResponseResult extends com.amazonaws.AmazonWebServiceR
      *         <li>RESOURCE_NOT_FOUND</li>
      *         <li>THROTTLED</li>
      *         <li>UNAUTHORIZED</li>
-     *         <li>UNSUPPORTED_MEDIA_TYPES</li>
+     *         <li>UNSUPPORTED_MEDIA_TYPE</li>
      *         </ul>
      * @see GatewayResponseType
      */
@@ -244,7 +244,7 @@ public class UpdateGatewayResponseResult extends com.amazonaws.AmazonWebServiceR
      * <li>RESOURCE_NOT_FOUND</li>
      * <li>THROTTLED</li>
      * <li>UNAUTHORIZED</li>
-     * <li>UNSUPPORTED_MEDIA_TYPES</li>
+     * <li>UNSUPPORTED_MEDIA_TYPE</li>
      * </ul>
      * </p>
      * 
@@ -270,7 +270,7 @@ public class UpdateGatewayResponseResult extends com.amazonaws.AmazonWebServiceR
      *        <li>RESOURCE_NOT_FOUND</li>
      *        <li>THROTTLED</li>
      *        <li>UNAUTHORIZED</li>
-     *        <li>UNSUPPORTED_MEDIA_TYPES</li>
+     *        <li>UNSUPPORTED_MEDIA_TYPE</li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GatewayResponseType
@@ -304,7 +304,7 @@ public class UpdateGatewayResponseResult extends com.amazonaws.AmazonWebServiceR
      * <li>RESOURCE_NOT_FOUND</li>
      * <li>THROTTLED</li>
      * <li>UNAUTHORIZED</li>
-     * <li>UNSUPPORTED_MEDIA_TYPES</li>
+     * <li>UNSUPPORTED_MEDIA_TYPE</li>
      * </ul>
      * </p>
      * 
@@ -330,7 +330,7 @@ public class UpdateGatewayResponseResult extends com.amazonaws.AmazonWebServiceR
      *        <li>RESOURCE_NOT_FOUND</li>
      *        <li>THROTTLED</li>
      *        <li>UNAUTHORIZED</li>
-     *        <li>UNSUPPORTED_MEDIA_TYPES</li>
+     *        <li>UNSUPPORTED_MEDIA_TYPE</li>
      *        </ul>
      * @see GatewayResponseType
      */
@@ -362,7 +362,7 @@ public class UpdateGatewayResponseResult extends com.amazonaws.AmazonWebServiceR
      * <li>RESOURCE_NOT_FOUND</li>
      * <li>THROTTLED</li>
      * <li>UNAUTHORIZED</li>
-     * <li>UNSUPPORTED_MEDIA_TYPES</li>
+     * <li>UNSUPPORTED_MEDIA_TYPE</li>
      * </ul>
      * </p>
      * 
@@ -388,7 +388,7 @@ public class UpdateGatewayResponseResult extends com.amazonaws.AmazonWebServiceR
      *        <li>RESOURCE_NOT_FOUND</li>
      *        <li>THROTTLED</li>
      *        <li>UNAUTHORIZED</li>
-     *        <li>UNSUPPORTED_MEDIA_TYPES</li>
+     *        <li>UNSUPPORTED_MEDIA_TYPE</li>
      *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GatewayResponseType

@@ -27,18 +27,18 @@ public class GetClientCertificateRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The identifier of the <a>ClientCertificate</a> resource to be described.
+     * [Required] The identifier of the <a>ClientCertificate</a> resource to be described.
      * </p>
      */
     private String clientCertificateId;
 
     /**
      * <p>
-     * The identifier of the <a>ClientCertificate</a> resource to be described.
+     * [Required] The identifier of the <a>ClientCertificate</a> resource to be described.
      * </p>
      * 
      * @param clientCertificateId
-     *        The identifier of the <a>ClientCertificate</a> resource to be described.
+     *        [Required] The identifier of the <a>ClientCertificate</a> resource to be described.
      */
 
     public void setClientCertificateId(String clientCertificateId) {
@@ -47,10 +47,10 @@ public class GetClientCertificateRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The identifier of the <a>ClientCertificate</a> resource to be described.
+     * [Required] The identifier of the <a>ClientCertificate</a> resource to be described.
      * </p>
      * 
-     * @return The identifier of the <a>ClientCertificate</a> resource to be described.
+     * @return [Required] The identifier of the <a>ClientCertificate</a> resource to be described.
      */
 
     public String getClientCertificateId() {
@@ -59,11 +59,11 @@ public class GetClientCertificateRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The identifier of the <a>ClientCertificate</a> resource to be described.
+     * [Required] The identifier of the <a>ClientCertificate</a> resource to be described.
      * </p>
      * 
      * @param clientCertificateId
-     *        The identifier of the <a>ClientCertificate</a> resource to be described.
+     *        [Required] The identifier of the <a>ClientCertificate</a> resource to be described.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

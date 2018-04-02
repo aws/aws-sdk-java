@@ -27,7 +27,7 @@ public class GetApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The identifier of the <a>ApiKey</a> resource.
+     * [Required] The identifier of the <a>ApiKey</a> resource.
      * </p>
      */
     private String apiKey;
@@ -41,11 +41,11 @@ public class GetApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The identifier of the <a>ApiKey</a> resource.
+     * [Required] The identifier of the <a>ApiKey</a> resource.
      * </p>
      * 
      * @param apiKey
-     *        The identifier of the <a>ApiKey</a> resource.
+     *        [Required] The identifier of the <a>ApiKey</a> resource.
      */
 
     public void setApiKey(String apiKey) {
@@ -54,10 +54,10 @@ public class GetApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The identifier of the <a>ApiKey</a> resource.
+     * [Required] The identifier of the <a>ApiKey</a> resource.
      * </p>
      * 
-     * @return The identifier of the <a>ApiKey</a> resource.
+     * @return [Required] The identifier of the <a>ApiKey</a> resource.
      */
 
     public String getApiKey() {
@@ -66,11 +66,11 @@ public class GetApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The identifier of the <a>ApiKey</a> resource.
+     * [Required] The identifier of the <a>ApiKey</a> resource.
      * </p>
      * 
      * @param apiKey
-     *        The identifier of the <a>ApiKey</a> resource.
+     *        [Required] The identifier of the <a>ApiKey</a> resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

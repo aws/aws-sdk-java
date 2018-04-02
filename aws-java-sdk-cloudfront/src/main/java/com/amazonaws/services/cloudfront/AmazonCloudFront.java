@@ -122,7 +122,7 @@ public interface AmazonCloudFront {
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @sample AmazonCloudFront.CreateCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     CreateCloudFrontOriginAccessIdentityResult createCloudFrontOriginAccessIdentity(
@@ -208,8 +208,16 @@ public interface AmazonCloudFront {
      *         The specified Lambda function association is invalid.
      * @throws InvalidOriginReadTimeoutException
      * @throws InvalidOriginKeepaliveTimeoutException
+     * @throws NoSuchFieldLevelEncryptionConfigException
+     *         The specified configuration for field-level encryption doesn't exist.
+     * @throws IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException
+     *         The specified configuration for field-level encryption can't be associated with the specified cache
+     *         behavior.
+     * @throws TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException
+     *         The maximum number of distributions have been associated with the specified configuration for field-level
+     *         encryption.
      * @sample AmazonCloudFront.CreateDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistribution" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateDistribution" target="_top">AWS
      *      API Documentation</a>
      */
     CreateDistributionResult createDistribution(CreateDistributionRequest createDistributionRequest);
@@ -294,11 +302,77 @@ public interface AmazonCloudFront {
      *         The specified Lambda function association is invalid.
      * @throws InvalidOriginReadTimeoutException
      * @throws InvalidOriginKeepaliveTimeoutException
+     * @throws NoSuchFieldLevelEncryptionConfigException
+     *         The specified configuration for field-level encryption doesn't exist.
+     * @throws IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException
+     *         The specified configuration for field-level encryption can't be associated with the specified cache
+     *         behavior.
+     * @throws TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException
+     *         The maximum number of distributions have been associated with the specified configuration for field-level
+     *         encryption.
      * @sample AmazonCloudFront.CreateDistributionWithTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistributionWithTags"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateDistributionWithTags"
      *      target="_top">AWS API Documentation</a>
      */
     CreateDistributionWithTagsResult createDistributionWithTags(CreateDistributionWithTagsRequest createDistributionWithTagsRequest);
+
+    /**
+     * <p>
+     * Create a new field-level encryption configuration.
+     * </p>
+     * 
+     * @param createFieldLevelEncryptionConfigRequest
+     * @return Result of the CreateFieldLevelEncryptionConfig operation returned by the service.
+     * @throws InconsistentQuantitiesException
+     *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+     * @throws InvalidArgumentException
+     *         The argument is invalid.
+     * @throws NoSuchFieldLevelEncryptionProfileException
+     *         The specified profile for field-level encryption doesn't exist.
+     * @throws FieldLevelEncryptionConfigAlreadyExistsException
+     *         The specified configuration for field-level encryption already exists.
+     * @throws TooManyFieldLevelEncryptionConfigsException
+     *         The maximum number of configurations for field-level encryption have been created.
+     * @throws TooManyFieldLevelEncryptionQueryArgProfilesException
+     *         The maximum number of query arg profiles for field-level encryption have been created.
+     * @throws TooManyFieldLevelEncryptionContentTypeProfilesException
+     *         The maximum number of content type profiles for field-level encryption have been created.
+     * @throws QueryArgProfileEmptyException
+     *         No profile specified for the field-level encryption query argument.
+     * @sample AmazonCloudFront.CreateFieldLevelEncryptionConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateFieldLevelEncryptionConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateFieldLevelEncryptionConfigResult createFieldLevelEncryptionConfig(CreateFieldLevelEncryptionConfigRequest createFieldLevelEncryptionConfigRequest);
+
+    /**
+     * <p>
+     * Create a field-level encryption profile.
+     * </p>
+     * 
+     * @param createFieldLevelEncryptionProfileRequest
+     * @return Result of the CreateFieldLevelEncryptionProfile operation returned by the service.
+     * @throws InconsistentQuantitiesException
+     *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+     * @throws InvalidArgumentException
+     *         The argument is invalid.
+     * @throws NoSuchPublicKeyException
+     *         The specified public key doesn't exist.
+     * @throws FieldLevelEncryptionProfileAlreadyExistsException
+     *         The specified profile for field-level encryption already exists.
+     * @throws FieldLevelEncryptionProfileSizeExceededException
+     *         The maximum size of a profile for field-level encryption was exceeded.
+     * @throws TooManyFieldLevelEncryptionProfilesException
+     *         The maximum number of profiles for field-level encryption have been created.
+     * @throws TooManyFieldLevelEncryptionEncryptionEntitiesException
+     *         The maximum number of encryption entities for field-level encryption have been created.
+     * @throws TooManyFieldLevelEncryptionFieldPatternsException
+     *         The maximum number of field patterns for field-level encryption have been created.
+     * @sample AmazonCloudFront.CreateFieldLevelEncryptionProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateFieldLevelEncryptionProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateFieldLevelEncryptionProfileResult createFieldLevelEncryptionProfile(CreateFieldLevelEncryptionProfileRequest createFieldLevelEncryptionProfileRequest);
 
     /**
      * <p>
@@ -324,10 +398,31 @@ public interface AmazonCloudFront {
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @sample AmazonCloudFront.CreateInvalidation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateInvalidation" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateInvalidation" target="_top">AWS
      *      API Documentation</a>
      */
     CreateInvalidationResult createInvalidation(CreateInvalidationRequest createInvalidationRequest);
+
+    /**
+     * <p>
+     * Add a new public key to CloudFront to use, for example, for field-level encryption. You can add a maximum of 10
+     * public keys with one AWS account.
+     * </p>
+     * 
+     * @param createPublicKeyRequest
+     * @return Result of the CreatePublicKey operation returned by the service.
+     * @throws PublicKeyAlreadyExistsException
+     *         The specified public key already exists.
+     * @throws InvalidArgumentException
+     *         The argument is invalid.
+     * @throws TooManyPublicKeysException
+     *         The maximum number of public keys for field-level encryption have been created. To create a new public
+     *         key, delete one of the existing keys.
+     * @sample AmazonCloudFront.CreatePublicKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreatePublicKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreatePublicKeyResult createPublicKey(CreatePublicKeyRequest createPublicKeyRequest);
 
     /**
      * <p>
@@ -388,7 +483,7 @@ public interface AmazonCloudFront {
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @sample AmazonCloudFront.CreateStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     CreateStreamingDistributionResult createStreamingDistribution(CreateStreamingDistributionRequest createStreamingDistributionRequest);
@@ -425,7 +520,7 @@ public interface AmazonCloudFront {
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @throws InvalidTaggingException
      * @sample AmazonCloudFront.CreateStreamingDistributionWithTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistributionWithTags"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateStreamingDistributionWithTags"
      *      target="_top">AWS API Documentation</a>
      */
     CreateStreamingDistributionWithTagsResult createStreamingDistributionWithTags(
@@ -449,7 +544,7 @@ public interface AmazonCloudFront {
      *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
      * @throws CloudFrontOriginAccessIdentityInUseException
      * @sample AmazonCloudFront.DeleteCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     DeleteCloudFrontOriginAccessIdentityResult deleteCloudFrontOriginAccessIdentity(
@@ -533,10 +628,79 @@ public interface AmazonCloudFront {
      * @throws PreconditionFailedException
      *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
      * @sample AmazonCloudFront.DeleteDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteDistribution" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteDistribution" target="_top">AWS
      *      API Documentation</a>
      */
     DeleteDistributionResult deleteDistribution(DeleteDistributionRequest deleteDistributionRequest);
+
+    /**
+     * <p>
+     * Remove a field-level encryption configuration.
+     * </p>
+     * 
+     * @param deleteFieldLevelEncryptionConfigRequest
+     * @return Result of the DeleteFieldLevelEncryptionConfig operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws InvalidIfMatchVersionException
+     *         The <code>If-Match</code> version is missing or not valid for the distribution.
+     * @throws NoSuchFieldLevelEncryptionConfigException
+     *         The specified configuration for field-level encryption doesn't exist.
+     * @throws PreconditionFailedException
+     *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+     * @throws FieldLevelEncryptionConfigInUseException
+     *         The specified configuration for field-level encryption is in use.
+     * @sample AmazonCloudFront.DeleteFieldLevelEncryptionConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteFieldLevelEncryptionConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteFieldLevelEncryptionConfigResult deleteFieldLevelEncryptionConfig(DeleteFieldLevelEncryptionConfigRequest deleteFieldLevelEncryptionConfigRequest);
+
+    /**
+     * <p>
+     * Remove a field-level encryption profile.
+     * </p>
+     * 
+     * @param deleteFieldLevelEncryptionProfileRequest
+     * @return Result of the DeleteFieldLevelEncryptionProfile operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws InvalidIfMatchVersionException
+     *         The <code>If-Match</code> version is missing or not valid for the distribution.
+     * @throws NoSuchFieldLevelEncryptionProfileException
+     *         The specified profile for field-level encryption doesn't exist.
+     * @throws PreconditionFailedException
+     *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+     * @throws FieldLevelEncryptionProfileInUseException
+     *         The specified profile for field-level encryption is in use.
+     * @sample AmazonCloudFront.DeleteFieldLevelEncryptionProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteFieldLevelEncryptionProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteFieldLevelEncryptionProfileResult deleteFieldLevelEncryptionProfile(DeleteFieldLevelEncryptionProfileRequest deleteFieldLevelEncryptionProfileRequest);
+
+    /**
+     * <p>
+     * Remove a public key you previously added to CloudFront.
+     * </p>
+     * 
+     * @param deletePublicKeyRequest
+     * @return Result of the DeletePublicKey operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws PublicKeyInUseException
+     *         The specified public key is in use.
+     * @throws InvalidIfMatchVersionException
+     *         The <code>If-Match</code> version is missing or not valid for the distribution.
+     * @throws NoSuchPublicKeyException
+     *         The specified public key doesn't exist.
+     * @throws PreconditionFailedException
+     *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+     * @sample AmazonCloudFront.DeletePublicKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeletePublicKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeletePublicKeyResult deletePublicKey(DeletePublicKeyRequest deletePublicKeyRequest);
 
     /**
      * @param deleteServiceLinkedRoleRequest
@@ -548,7 +712,7 @@ public interface AmazonCloudFront {
      * @throws ResourceInUseException
      * @throws NoSuchResourceException
      * @sample AmazonCloudFront.DeleteServiceLinkedRole
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteServiceLinkedRole"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteServiceLinkedRole"
      *      target="_top">AWS API Documentation</a>
      */
     DeleteServiceLinkedRoleResult deleteServiceLinkedRole(DeleteServiceLinkedRoleRequest deleteServiceLinkedRoleRequest);
@@ -632,7 +796,7 @@ public interface AmazonCloudFront {
      * @throws PreconditionFailedException
      *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
      * @sample AmazonCloudFront.DeleteStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     DeleteStreamingDistributionResult deleteStreamingDistribution(DeleteStreamingDistributionRequest deleteStreamingDistributionRequest);
@@ -650,7 +814,7 @@ public interface AmazonCloudFront {
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     GetCloudFrontOriginAccessIdentityResult getCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest getCloudFrontOriginAccessIdentityRequest);
@@ -670,7 +834,7 @@ public interface AmazonCloudFront {
      *         Access denied.
      * @sample AmazonCloudFront.GetCloudFrontOriginAccessIdentityConfig
      * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentityConfig"
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetCloudFrontOriginAccessIdentityConfig"
      *      target="_top">AWS API Documentation</a>
      */
     GetCloudFrontOriginAccessIdentityConfigResult getCloudFrontOriginAccessIdentityConfig(
@@ -689,7 +853,7 @@ public interface AmazonCloudFront {
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistribution" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetDistribution" target="_top">AWS API
      *      Documentation</a>
      */
     GetDistributionResult getDistribution(GetDistributionRequest getDistributionRequest);
@@ -707,10 +871,79 @@ public interface AmazonCloudFront {
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetDistributionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistributionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetDistributionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     GetDistributionConfigResult getDistributionConfig(GetDistributionConfigRequest getDistributionConfigRequest);
+
+    /**
+     * <p>
+     * Get the field-level encryption configuration information.
+     * </p>
+     * 
+     * @param getFieldLevelEncryptionRequest
+     * @return Result of the GetFieldLevelEncryption operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws NoSuchFieldLevelEncryptionConfigException
+     *         The specified configuration for field-level encryption doesn't exist.
+     * @sample AmazonCloudFront.GetFieldLevelEncryption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryption"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetFieldLevelEncryptionResult getFieldLevelEncryption(GetFieldLevelEncryptionRequest getFieldLevelEncryptionRequest);
+
+    /**
+     * <p>
+     * Get the field-level encryption configuration information.
+     * </p>
+     * 
+     * @param getFieldLevelEncryptionConfigRequest
+     * @return Result of the GetFieldLevelEncryptionConfig operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws NoSuchFieldLevelEncryptionConfigException
+     *         The specified configuration for field-level encryption doesn't exist.
+     * @sample AmazonCloudFront.GetFieldLevelEncryptionConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryptionConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetFieldLevelEncryptionConfigResult getFieldLevelEncryptionConfig(GetFieldLevelEncryptionConfigRequest getFieldLevelEncryptionConfigRequest);
+
+    /**
+     * <p>
+     * Get the field-level encryption profile information.
+     * </p>
+     * 
+     * @param getFieldLevelEncryptionProfileRequest
+     * @return Result of the GetFieldLevelEncryptionProfile operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws NoSuchFieldLevelEncryptionProfileException
+     *         The specified profile for field-level encryption doesn't exist.
+     * @sample AmazonCloudFront.GetFieldLevelEncryptionProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryptionProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetFieldLevelEncryptionProfileResult getFieldLevelEncryptionProfile(GetFieldLevelEncryptionProfileRequest getFieldLevelEncryptionProfileRequest);
+
+    /**
+     * <p>
+     * Get the field-level encryption profile configuration information.
+     * </p>
+     * 
+     * @param getFieldLevelEncryptionProfileConfigRequest
+     * @return Result of the GetFieldLevelEncryptionProfileConfig operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws NoSuchFieldLevelEncryptionProfileException
+     *         The specified profile for field-level encryption doesn't exist.
+     * @sample AmazonCloudFront.GetFieldLevelEncryptionProfileConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryptionProfileConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetFieldLevelEncryptionProfileConfigResult getFieldLevelEncryptionProfileConfig(
+            GetFieldLevelEncryptionProfileConfigRequest getFieldLevelEncryptionProfileConfigRequest);
 
     /**
      * <p>
@@ -727,10 +960,44 @@ public interface AmazonCloudFront {
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetInvalidation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetInvalidation" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetInvalidation" target="_top">AWS API
      *      Documentation</a>
      */
     GetInvalidationResult getInvalidation(GetInvalidationRequest getInvalidationRequest);
+
+    /**
+     * <p>
+     * Get the public key information.
+     * </p>
+     * 
+     * @param getPublicKeyRequest
+     * @return Result of the GetPublicKey operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws NoSuchPublicKeyException
+     *         The specified public key doesn't exist.
+     * @sample AmazonCloudFront.GetPublicKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetPublicKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetPublicKeyResult getPublicKey(GetPublicKeyRequest getPublicKeyRequest);
+
+    /**
+     * <p>
+     * Return public key configuration informaation
+     * </p>
+     * 
+     * @param getPublicKeyConfigRequest
+     * @return Result of the GetPublicKeyConfig operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws NoSuchPublicKeyException
+     *         The specified public key doesn't exist.
+     * @sample AmazonCloudFront.GetPublicKeyConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetPublicKeyConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetPublicKeyConfigResult getPublicKeyConfig(GetPublicKeyConfigRequest getPublicKeyConfigRequest);
 
     /**
      * <p>
@@ -745,7 +1012,7 @@ public interface AmazonCloudFront {
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     GetStreamingDistributionResult getStreamingDistribution(GetStreamingDistributionRequest getStreamingDistributionRequest);
@@ -763,7 +1030,7 @@ public interface AmazonCloudFront {
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetStreamingDistributionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistributionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetStreamingDistributionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     GetStreamingDistributionConfigResult getStreamingDistributionConfig(GetStreamingDistributionConfigRequest getStreamingDistributionConfigRequest);
@@ -779,7 +1046,7 @@ public interface AmazonCloudFront {
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @sample AmazonCloudFront.ListCloudFrontOriginAccessIdentities
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListCloudFrontOriginAccessIdentities"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListCloudFrontOriginAccessIdentities"
      *      target="_top">AWS API Documentation</a>
      */
     ListCloudFrontOriginAccessIdentitiesResult listCloudFrontOriginAccessIdentities(
@@ -796,7 +1063,7 @@ public interface AmazonCloudFront {
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @sample AmazonCloudFront.ListDistributions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributions" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListDistributions" target="_top">AWS
      *      API Documentation</a>
      */
     ListDistributionsResult listDistributions(ListDistributionsRequest listDistributionsRequest);
@@ -813,10 +1080,40 @@ public interface AmazonCloudFront {
      *         The argument is invalid.
      * @throws InvalidWebACLIdException
      * @sample AmazonCloudFront.ListDistributionsByWebACLId
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributionsByWebACLId"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListDistributionsByWebACLId"
      *      target="_top">AWS API Documentation</a>
      */
     ListDistributionsByWebACLIdResult listDistributionsByWebACLId(ListDistributionsByWebACLIdRequest listDistributionsByWebACLIdRequest);
+
+    /**
+     * <p>
+     * List all field-level encryption configurations that have been created in CloudFront for this account.
+     * </p>
+     * 
+     * @param listFieldLevelEncryptionConfigsRequest
+     * @return Result of the ListFieldLevelEncryptionConfigs operation returned by the service.
+     * @throws InvalidArgumentException
+     *         The argument is invalid.
+     * @sample AmazonCloudFront.ListFieldLevelEncryptionConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListFieldLevelEncryptionConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListFieldLevelEncryptionConfigsResult listFieldLevelEncryptionConfigs(ListFieldLevelEncryptionConfigsRequest listFieldLevelEncryptionConfigsRequest);
+
+    /**
+     * <p>
+     * Request a list of field-level encryption profiles that have been created in CloudFront for this account.
+     * </p>
+     * 
+     * @param listFieldLevelEncryptionProfilesRequest
+     * @return Result of the ListFieldLevelEncryptionProfiles operation returned by the service.
+     * @throws InvalidArgumentException
+     *         The argument is invalid.
+     * @sample AmazonCloudFront.ListFieldLevelEncryptionProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListFieldLevelEncryptionProfiles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListFieldLevelEncryptionProfilesResult listFieldLevelEncryptionProfiles(ListFieldLevelEncryptionProfilesRequest listFieldLevelEncryptionProfilesRequest);
 
     /**
      * <p>
@@ -833,10 +1130,25 @@ public interface AmazonCloudFront {
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.ListInvalidations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListInvalidations" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListInvalidations" target="_top">AWS
      *      API Documentation</a>
      */
     ListInvalidationsResult listInvalidations(ListInvalidationsRequest listInvalidationsRequest);
+
+    /**
+     * <p>
+     * List all public keys that have been added to CloudFront for this account.
+     * </p>
+     * 
+     * @param listPublicKeysRequest
+     * @return Result of the ListPublicKeys operation returned by the service.
+     * @throws InvalidArgumentException
+     *         The argument is invalid.
+     * @sample AmazonCloudFront.ListPublicKeys
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListPublicKeys" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListPublicKeysResult listPublicKeys(ListPublicKeysRequest listPublicKeysRequest);
 
     /**
      * <p>
@@ -849,7 +1161,7 @@ public interface AmazonCloudFront {
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @sample AmazonCloudFront.ListStreamingDistributions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListStreamingDistributions"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListStreamingDistributions"
      *      target="_top">AWS API Documentation</a>
      */
     ListStreamingDistributionsResult listStreamingDistributions(ListStreamingDistributionsRequest listStreamingDistributionsRequest);
@@ -869,7 +1181,7 @@ public interface AmazonCloudFront {
      * @throws InvalidTaggingException
      * @throws NoSuchResourceException
      * @sample AmazonCloudFront.ListTagsForResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListTagsForResource" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListTagsForResource" target="_top">AWS
      *      API Documentation</a>
      */
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
@@ -889,7 +1201,7 @@ public interface AmazonCloudFront {
      * @throws InvalidTaggingException
      * @throws NoSuchResourceException
      * @sample AmazonCloudFront.TagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/TagResource" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/TagResource" target="_top">AWS API
      *      Documentation</a>
      */
     TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
@@ -909,7 +1221,7 @@ public interface AmazonCloudFront {
      * @throws InvalidTaggingException
      * @throws NoSuchResourceException
      * @sample AmazonCloudFront.UntagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UntagResource" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UntagResource" target="_top">AWS API
      *      Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
@@ -940,7 +1252,7 @@ public interface AmazonCloudFront {
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @sample AmazonCloudFront.UpdateCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     UpdateCloudFrontOriginAccessIdentityResult updateCloudFrontOriginAccessIdentity(
@@ -1099,11 +1411,118 @@ public interface AmazonCloudFront {
      *         The specified Lambda function association is invalid.
      * @throws InvalidOriginReadTimeoutException
      * @throws InvalidOriginKeepaliveTimeoutException
+     * @throws NoSuchFieldLevelEncryptionConfigException
+     *         The specified configuration for field-level encryption doesn't exist.
+     * @throws IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException
+     *         The specified configuration for field-level encryption can't be associated with the specified cache
+     *         behavior.
+     * @throws TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException
+     *         The maximum number of distributions have been associated with the specified configuration for field-level
+     *         encryption.
      * @sample AmazonCloudFront.UpdateDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateDistribution" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateDistribution" target="_top">AWS
      *      API Documentation</a>
      */
     UpdateDistributionResult updateDistribution(UpdateDistributionRequest updateDistributionRequest);
+
+    /**
+     * <p>
+     * Update a field-level encryption configuration.
+     * </p>
+     * 
+     * @param updateFieldLevelEncryptionConfigRequest
+     * @return Result of the UpdateFieldLevelEncryptionConfig operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws IllegalUpdateException
+     *         Origin and <code>CallerReference</code> cannot be updated.
+     * @throws InconsistentQuantitiesException
+     *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+     * @throws InvalidArgumentException
+     *         The argument is invalid.
+     * @throws InvalidIfMatchVersionException
+     *         The <code>If-Match</code> version is missing or not valid for the distribution.
+     * @throws NoSuchFieldLevelEncryptionProfileException
+     *         The specified profile for field-level encryption doesn't exist.
+     * @throws NoSuchFieldLevelEncryptionConfigException
+     *         The specified configuration for field-level encryption doesn't exist.
+     * @throws PreconditionFailedException
+     *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+     * @throws TooManyFieldLevelEncryptionQueryArgProfilesException
+     *         The maximum number of query arg profiles for field-level encryption have been created.
+     * @throws TooManyFieldLevelEncryptionContentTypeProfilesException
+     *         The maximum number of content type profiles for field-level encryption have been created.
+     * @throws QueryArgProfileEmptyException
+     *         No profile specified for the field-level encryption query argument.
+     * @sample AmazonCloudFront.UpdateFieldLevelEncryptionConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateFieldLevelEncryptionConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateFieldLevelEncryptionConfigResult updateFieldLevelEncryptionConfig(UpdateFieldLevelEncryptionConfigRequest updateFieldLevelEncryptionConfigRequest);
+
+    /**
+     * <p>
+     * Update a field-level encryption profile.
+     * </p>
+     * 
+     * @param updateFieldLevelEncryptionProfileRequest
+     * @return Result of the UpdateFieldLevelEncryptionProfile operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws FieldLevelEncryptionProfileAlreadyExistsException
+     *         The specified profile for field-level encryption already exists.
+     * @throws IllegalUpdateException
+     *         Origin and <code>CallerReference</code> cannot be updated.
+     * @throws InconsistentQuantitiesException
+     *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+     * @throws InvalidArgumentException
+     *         The argument is invalid.
+     * @throws InvalidIfMatchVersionException
+     *         The <code>If-Match</code> version is missing or not valid for the distribution.
+     * @throws NoSuchPublicKeyException
+     *         The specified public key doesn't exist.
+     * @throws NoSuchFieldLevelEncryptionProfileException
+     *         The specified profile for field-level encryption doesn't exist.
+     * @throws PreconditionFailedException
+     *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+     * @throws FieldLevelEncryptionProfileSizeExceededException
+     *         The maximum size of a profile for field-level encryption was exceeded.
+     * @throws TooManyFieldLevelEncryptionEncryptionEntitiesException
+     *         The maximum number of encryption entities for field-level encryption have been created.
+     * @throws TooManyFieldLevelEncryptionFieldPatternsException
+     *         The maximum number of field patterns for field-level encryption have been created.
+     * @sample AmazonCloudFront.UpdateFieldLevelEncryptionProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateFieldLevelEncryptionProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateFieldLevelEncryptionProfileResult updateFieldLevelEncryptionProfile(UpdateFieldLevelEncryptionProfileRequest updateFieldLevelEncryptionProfileRequest);
+
+    /**
+     * <p>
+     * Update public key information. Note that the only value you can change is the comment.
+     * </p>
+     * 
+     * @param updatePublicKeyRequest
+     * @return Result of the UpdatePublicKey operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws CannotChangeImmutablePublicKeyFieldsException
+     *         You can't change the value of a public key.
+     * @throws InvalidArgumentException
+     *         The argument is invalid.
+     * @throws InvalidIfMatchVersionException
+     *         The <code>If-Match</code> version is missing or not valid for the distribution.
+     * @throws IllegalUpdateException
+     *         Origin and <code>CallerReference</code> cannot be updated.
+     * @throws NoSuchPublicKeyException
+     *         The specified public key doesn't exist.
+     * @throws PreconditionFailedException
+     *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+     * @sample AmazonCloudFront.UpdatePublicKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdatePublicKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdatePublicKeyResult updatePublicKey(UpdatePublicKeyRequest updatePublicKeyRequest);
 
     /**
      * <p>
@@ -1139,7 +1558,7 @@ public interface AmazonCloudFront {
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @sample AmazonCloudFront.UpdateStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     UpdateStreamingDistributionResult updateStreamingDistribution(UpdateStreamingDistributionRequest updateStreamingDistributionRequest);

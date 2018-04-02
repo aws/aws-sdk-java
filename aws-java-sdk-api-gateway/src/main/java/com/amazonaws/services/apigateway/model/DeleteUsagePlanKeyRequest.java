@@ -27,27 +27,27 @@ public class DeleteUsagePlanKeyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-deleted
+     * [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-deleted
      * <a>UsagePlanKey</a> resource representing a plan customer.
      * </p>
      */
     private String usagePlanId;
     /**
      * <p>
-     * The Id of the <a>UsagePlanKey</a> resource to be deleted.
+     * [Required] The Id of the <a>UsagePlanKey</a> resource to be deleted.
      * </p>
      */
     private String keyId;
 
     /**
      * <p>
-     * The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-deleted
+     * [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-deleted
      * <a>UsagePlanKey</a> resource representing a plan customer.
      * </p>
      * 
      * @param usagePlanId
-     *        The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-deleted
-     *        <a>UsagePlanKey</a> resource representing a plan customer.
+     *        [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the
+     *        to-be-deleted <a>UsagePlanKey</a> resource representing a plan customer.
      */
 
     public void setUsagePlanId(String usagePlanId) {
@@ -56,12 +56,12 @@ public class DeleteUsagePlanKeyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-deleted
+     * [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-deleted
      * <a>UsagePlanKey</a> resource representing a plan customer.
      * </p>
      * 
-     * @return The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-deleted
-     *         <a>UsagePlanKey</a> resource representing a plan customer.
+     * @return [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the
+     *         to-be-deleted <a>UsagePlanKey</a> resource representing a plan customer.
      */
 
     public String getUsagePlanId() {
@@ -70,13 +70,13 @@ public class DeleteUsagePlanKeyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-deleted
+     * [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-deleted
      * <a>UsagePlanKey</a> resource representing a plan customer.
      * </p>
      * 
      * @param usagePlanId
-     *        The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-deleted
-     *        <a>UsagePlanKey</a> resource representing a plan customer.
+     *        [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the
+     *        to-be-deleted <a>UsagePlanKey</a> resource representing a plan customer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class DeleteUsagePlanKeyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Id of the <a>UsagePlanKey</a> resource to be deleted.
+     * [Required] The Id of the <a>UsagePlanKey</a> resource to be deleted.
      * </p>
      * 
      * @param keyId
-     *        The Id of the <a>UsagePlanKey</a> resource to be deleted.
+     *        [Required] The Id of the <a>UsagePlanKey</a> resource to be deleted.
      */
 
     public void setKeyId(String keyId) {
@@ -100,10 +100,10 @@ public class DeleteUsagePlanKeyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Id of the <a>UsagePlanKey</a> resource to be deleted.
+     * [Required] The Id of the <a>UsagePlanKey</a> resource to be deleted.
      * </p>
      * 
-     * @return The Id of the <a>UsagePlanKey</a> resource to be deleted.
+     * @return [Required] The Id of the <a>UsagePlanKey</a> resource to be deleted.
      */
 
     public String getKeyId() {
@@ -112,11 +112,11 @@ public class DeleteUsagePlanKeyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Id of the <a>UsagePlanKey</a> resource to be deleted.
+     * [Required] The Id of the <a>UsagePlanKey</a> resource to be deleted.
      * </p>
      * 
      * @param keyId
-     *        The Id of the <a>UsagePlanKey</a> resource to be deleted.
+     *        [Required] The Id of the <a>UsagePlanKey</a> resource to be deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -16,9 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * [Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single
- * authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request
- * parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
+ * The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token
+ * submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and
+ * <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -88,6 +88,10 @@ public class CreateRestApiResultJsonUnmarshaller implements Unmarshaller<CreateR
                     context.nextToken();
                     createRestApiResult.setEndpointConfiguration(EndpointConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("policy", targetDepth)) {
+                    context.nextToken();
+                    createRestApiResult.setPolicy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

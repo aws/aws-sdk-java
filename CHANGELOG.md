@@ -1,3 +1,16 @@
+# __1.11.307__ __2018-04-02__
+## __Amazon API Gateway__
+  - ### Features
+    - Amazon API Gateway now supports resource policies for APIs making it easier to set access controls for invoking APIs.
+
+## __Amazon CloudFront__
+  - ### Features
+    - You can now use a new Amazon CloudFront capability called Field-Level Encryption to further enhance the security of sensitive data, such as credit card numbers or personally identifiable information (PII) like social security numbers. CloudFront's field-level encryption further encrypts sensitive data in an HTTPS form using field-specific encryption keys (which you supply) before a POST request is forwarded to your origin. This ensures that sensitive data can only be decrypted and viewed by certain components or services in your application stack. Field-level encryption is easy to setup. Simply configure the fields that have to be further encrypted by CloudFront using the public keys you specify and you can reduce attack surface for your sensitive data.
+
+## __Amazon Elasticsearch Service__
+  - ### Features
+    - This adds Amazon Cognito authentication support to Kibana.
+
 # __1.11.306__ __2018-03-30__
 ## __AWS Certificate Manager__
   - ### Features

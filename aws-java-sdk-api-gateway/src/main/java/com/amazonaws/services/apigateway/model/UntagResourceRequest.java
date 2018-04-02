@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Removes Tags from a given resource.
+ * Removes a tag from a given resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,25 +27,27 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Required] The ARN of a resource that can be tagged. At present, <a>Stage</a> is the only taggable resource.
+     * [Required] The ARN of a resource that can be tagged. The resource ARN must be URL-encoded. At present,
+     * <a>Stage</a> is the only taggable resource.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * The Tag keys to delete.
+     * [Required] The Tag keys to delete.
      * </p>
      */
     private java.util.List<String> tagKeys;
 
     /**
      * <p>
-     * [Required] The ARN of a resource that can be tagged. At present, <a>Stage</a> is the only taggable resource.
+     * [Required] The ARN of a resource that can be tagged. The resource ARN must be URL-encoded. At present,
+     * <a>Stage</a> is the only taggable resource.
      * </p>
      * 
      * @param resourceArn
-     *        [Required] The ARN of a resource that can be tagged. At present, <a>Stage</a> is the only taggable
-     *        resource.
+     *        [Required] The ARN of a resource that can be tagged. The resource ARN must be URL-encoded. At present,
+     *        <a>Stage</a> is the only taggable resource.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -54,11 +56,12 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Required] The ARN of a resource that can be tagged. At present, <a>Stage</a> is the only taggable resource.
+     * [Required] The ARN of a resource that can be tagged. The resource ARN must be URL-encoded. At present,
+     * <a>Stage</a> is the only taggable resource.
      * </p>
      * 
-     * @return [Required] The ARN of a resource that can be tagged. At present, <a>Stage</a> is the only taggable
-     *         resource.
+     * @return [Required] The ARN of a resource that can be tagged. The resource ARN must be URL-encoded. At present,
+     *         <a>Stage</a> is the only taggable resource.
      */
 
     public String getResourceArn() {
@@ -67,12 +70,13 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * [Required] The ARN of a resource that can be tagged. At present, <a>Stage</a> is the only taggable resource.
+     * [Required] The ARN of a resource that can be tagged. The resource ARN must be URL-encoded. At present,
+     * <a>Stage</a> is the only taggable resource.
      * </p>
      * 
      * @param resourceArn
-     *        [Required] The ARN of a resource that can be tagged. At present, <a>Stage</a> is the only taggable
-     *        resource.
+     *        [Required] The ARN of a resource that can be tagged. The resource ARN must be URL-encoded. At present,
+     *        <a>Stage</a> is the only taggable resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,10 +87,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Tag keys to delete.
+     * [Required] The Tag keys to delete.
      * </p>
      * 
-     * @return The Tag keys to delete.
+     * @return [Required] The Tag keys to delete.
      */
 
     public java.util.List<String> getTagKeys() {
@@ -95,11 +99,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Tag keys to delete.
+     * [Required] The Tag keys to delete.
      * </p>
      * 
      * @param tagKeys
-     *        The Tag keys to delete.
+     *        [Required] The Tag keys to delete.
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -113,7 +117,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Tag keys to delete.
+     * [Required] The Tag keys to delete.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +126,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param tagKeys
-     *        The Tag keys to delete.
+     *        [Required] The Tag keys to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +142,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Tag keys to delete.
+     * [Required] The Tag keys to delete.
      * </p>
      * 
      * @param tagKeys
-     *        The Tag keys to delete.
+     *        [Required] The Tag keys to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,7 +27,7 @@ public class GetUsageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The Id of the usage plan associated with the usage data.
+     * [Required] The Id of the usage plan associated with the usage data.
      * </p>
      */
     private String usagePlanId;
@@ -39,13 +39,13 @@ public class GetUsageRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private String keyId;
     /**
      * <p>
-     * The starting date (e.g., 2016-01-01) of the usage data.
+     * [Required] The starting date (e.g., 2016-01-01) of the usage data.
      * </p>
      */
     private String startDate;
     /**
      * <p>
-     * The ending date (e.g., 2016-12-31) of the usage data.
+     * [Required] The ending date (e.g., 2016-12-31) of the usage data.
      * </p>
      */
     private String endDate;
@@ -57,18 +57,18 @@ public class GetUsageRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private String position;
     /**
      * <p>
-     * The maximum number of returned results per page.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      */
     private Integer limit;
 
     /**
      * <p>
-     * The Id of the usage plan associated with the usage data.
+     * [Required] The Id of the usage plan associated with the usage data.
      * </p>
      * 
      * @param usagePlanId
-     *        The Id of the usage plan associated with the usage data.
+     *        [Required] The Id of the usage plan associated with the usage data.
      */
 
     public void setUsagePlanId(String usagePlanId) {
@@ -77,10 +77,10 @@ public class GetUsageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The Id of the usage plan associated with the usage data.
+     * [Required] The Id of the usage plan associated with the usage data.
      * </p>
      * 
-     * @return The Id of the usage plan associated with the usage data.
+     * @return [Required] The Id of the usage plan associated with the usage data.
      */
 
     public String getUsagePlanId() {
@@ -89,11 +89,11 @@ public class GetUsageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The Id of the usage plan associated with the usage data.
+     * [Required] The Id of the usage plan associated with the usage data.
      * </p>
      * 
      * @param usagePlanId
-     *        The Id of the usage plan associated with the usage data.
+     *        [Required] The Id of the usage plan associated with the usage data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,11 +144,11 @@ public class GetUsageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The starting date (e.g., 2016-01-01) of the usage data.
+     * [Required] The starting date (e.g., 2016-01-01) of the usage data.
      * </p>
      * 
      * @param startDate
-     *        The starting date (e.g., 2016-01-01) of the usage data.
+     *        [Required] The starting date (e.g., 2016-01-01) of the usage data.
      */
 
     public void setStartDate(String startDate) {
@@ -157,10 +157,10 @@ public class GetUsageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The starting date (e.g., 2016-01-01) of the usage data.
+     * [Required] The starting date (e.g., 2016-01-01) of the usage data.
      * </p>
      * 
-     * @return The starting date (e.g., 2016-01-01) of the usage data.
+     * @return [Required] The starting date (e.g., 2016-01-01) of the usage data.
      */
 
     public String getStartDate() {
@@ -169,11 +169,11 @@ public class GetUsageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The starting date (e.g., 2016-01-01) of the usage data.
+     * [Required] The starting date (e.g., 2016-01-01) of the usage data.
      * </p>
      * 
      * @param startDate
-     *        The starting date (e.g., 2016-01-01) of the usage data.
+     *        [Required] The starting date (e.g., 2016-01-01) of the usage data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,11 +184,11 @@ public class GetUsageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The ending date (e.g., 2016-12-31) of the usage data.
+     * [Required] The ending date (e.g., 2016-12-31) of the usage data.
      * </p>
      * 
      * @param endDate
-     *        The ending date (e.g., 2016-12-31) of the usage data.
+     *        [Required] The ending date (e.g., 2016-12-31) of the usage data.
      */
 
     public void setEndDate(String endDate) {
@@ -197,10 +197,10 @@ public class GetUsageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The ending date (e.g., 2016-12-31) of the usage data.
+     * [Required] The ending date (e.g., 2016-12-31) of the usage data.
      * </p>
      * 
-     * @return The ending date (e.g., 2016-12-31) of the usage data.
+     * @return [Required] The ending date (e.g., 2016-12-31) of the usage data.
      */
 
     public String getEndDate() {
@@ -209,11 +209,11 @@ public class GetUsageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The ending date (e.g., 2016-12-31) of the usage data.
+     * [Required] The ending date (e.g., 2016-12-31) of the usage data.
      * </p>
      * 
      * @param endDate
-     *        The ending date (e.g., 2016-12-31) of the usage data.
+     *        [Required] The ending date (e.g., 2016-12-31) of the usage data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -264,11 +264,11 @@ public class GetUsageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The maximum number of returned results per page.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
      * @param limit
-     *        The maximum number of returned results per page.
+     *        The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      */
 
     public void setLimit(Integer limit) {
@@ -277,10 +277,10 @@ public class GetUsageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The maximum number of returned results per page.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
-     * @return The maximum number of returned results per page.
+     * @return The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      */
 
     public Integer getLimit() {
@@ -289,11 +289,11 @@ public class GetUsageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The maximum number of returned results per page.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
      * @param limit
-     *        The maximum number of returned results per page.
+     *        The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

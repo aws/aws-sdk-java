@@ -40,7 +40,7 @@ public class ListTagsForResourceRequestMarshaller implements Marshaller<Request<
 
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2017-03-25/tagging";
+        String uriResourcePath = "/2017-10-30/tagging";
 
         request.setResourcePath(uriResourcePath);
 

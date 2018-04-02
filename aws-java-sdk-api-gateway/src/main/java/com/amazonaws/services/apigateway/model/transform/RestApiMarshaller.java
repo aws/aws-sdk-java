@@ -48,6 +48,8 @@ public class RestApiMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("apiKeySource").build();
     private static final MarshallingInfo<StructuredPojo> ENDPOINTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endpointConfiguration").build();
+    private static final MarshallingInfo<String> POLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("policy").build();
 
     private static final RestApiMarshaller instance = new RestApiMarshaller();
 
@@ -75,6 +77,7 @@ public class RestApiMarshaller {
             protocolMarshaller.marshall(restApi.getMinimumCompressionSize(), MINIMUMCOMPRESSIONSIZE_BINDING);
             protocolMarshaller.marshall(restApi.getApiKeySource(), APIKEYSOURCE_BINDING);
             protocolMarshaller.marshall(restApi.getEndpointConfiguration(), ENDPOINTCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(restApi.getPolicy(), POLICY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

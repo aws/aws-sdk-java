@@ -27,7 +27,7 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * (Required) The name of the <a>DomainName</a> resource.
+     * [Required] The name of the <a>DomainName</a> resource.
      * </p>
      */
     private String domainName;
@@ -89,11 +89,11 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * (Required) The name of the <a>DomainName</a> resource.
+     * [Required] The name of the <a>DomainName</a> resource.
      * </p>
      * 
      * @param domainName
-     *        (Required) The name of the <a>DomainName</a> resource.
+     *        [Required] The name of the <a>DomainName</a> resource.
      */
 
     public void setDomainName(String domainName) {
@@ -102,10 +102,10 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * (Required) The name of the <a>DomainName</a> resource.
+     * [Required] The name of the <a>DomainName</a> resource.
      * </p>
      * 
-     * @return (Required) The name of the <a>DomainName</a> resource.
+     * @return [Required] The name of the <a>DomainName</a> resource.
      */
 
     public String getDomainName() {
@@ -114,11 +114,11 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * (Required) The name of the <a>DomainName</a> resource.
+     * [Required] The name of the <a>DomainName</a> resource.
      * </p>
      * 
      * @param domainName
-     *        (Required) The name of the <a>DomainName</a> resource.
+     *        [Required] The name of the <a>DomainName</a> resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

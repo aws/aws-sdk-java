@@ -51,14 +51,14 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
             request.addHeader("If-Match", StringUtils.fromString(updateDistributionRequest.getIfMatch()));
         }
 
-        String uriResourcePath = "/2017-03-25/distribution/{Id}/config";
+        String uriResourcePath = "/2017-10-30/distribution/{Id}/config";
 
         uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", updateDistributionRequest.getId());
         request.setResourcePath(uriResourcePath);
 
         try {
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2017-03-25/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2017-10-30/");
 
             DistributionConfig distributionConfig = updateDistributionRequest.getDistributionConfig();
             if (distributionConfig != null) {
@@ -440,6 +440,10 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
                         }
                         xmlWriter.endElement();
                     }
+
+                    if (defaultCacheBehavior.getFieldLevelEncryptionId() != null) {
+                        xmlWriter.startElement("FieldLevelEncryptionId").value(defaultCacheBehavior.getFieldLevelEncryptionId()).endElement();
+                    }
                     xmlWriter.endElement();
                 }
 
@@ -682,6 +686,10 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
                                     xmlWriter.endElement();
                                 }
                                 xmlWriter.endElement();
+                            }
+
+                            if (cacheBehaviorsItemsListValue.getFieldLevelEncryptionId() != null) {
+                                xmlWriter.startElement("FieldLevelEncryptionId").value(cacheBehaviorsItemsListValue.getFieldLevelEncryptionId()).endElement();
                             }
                             xmlWriter.endElement();
                         }

@@ -46,7 +46,7 @@ public class DeleteStreamingDistributionRequestMarshaller implements
             request.addHeader("If-Match", StringUtils.fromString(deleteStreamingDistributionRequest.getIfMatch()));
         }
 
-        String uriResourcePath = "/2017-03-25/streaming-distribution/{Id}";
+        String uriResourcePath = "/2017-10-30/streaming-distribution/{Id}";
 
         uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", deleteStreamingDistributionRequest.getId());
         request.setResourcePath(uriResourcePath);

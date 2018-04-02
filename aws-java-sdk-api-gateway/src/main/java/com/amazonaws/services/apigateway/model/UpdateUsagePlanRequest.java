@@ -27,7 +27,7 @@ public class UpdateUsagePlanRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Id of the to-be-updated usage plan.
+     * [Required] The Id of the to-be-updated usage plan.
      * </p>
      */
     private String usagePlanId;
@@ -40,11 +40,11 @@ public class UpdateUsagePlanRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Id of the to-be-updated usage plan.
+     * [Required] The Id of the to-be-updated usage plan.
      * </p>
      * 
      * @param usagePlanId
-     *        The Id of the to-be-updated usage plan.
+     *        [Required] The Id of the to-be-updated usage plan.
      */
 
     public void setUsagePlanId(String usagePlanId) {
@@ -53,10 +53,10 @@ public class UpdateUsagePlanRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Id of the to-be-updated usage plan.
+     * [Required] The Id of the to-be-updated usage plan.
      * </p>
      * 
-     * @return The Id of the to-be-updated usage plan.
+     * @return [Required] The Id of the to-be-updated usage plan.
      */
 
     public String getUsagePlanId() {
@@ -65,11 +65,11 @@ public class UpdateUsagePlanRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Id of the to-be-updated usage plan.
+     * [Required] The Id of the to-be-updated usage plan.
      * </p>
      * 
      * @param usagePlanId
-     *        The Id of the to-be-updated usage plan.
+     *        [Required] The Id of the to-be-updated usage plan.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

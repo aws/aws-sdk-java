@@ -27,7 +27,7 @@ public class GetUsagePlanKeysRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved
+     * [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved
      * <a>UsagePlanKey</a> resource representing a plan customer.
      * </p>
      */
@@ -40,7 +40,7 @@ public class GetUsagePlanKeysRequest extends com.amazonaws.AmazonWebServiceReque
     private String position;
     /**
      * <p>
-     * The maximum number of returned results per page.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      */
     private Integer limit;
@@ -53,13 +53,13 @@ public class GetUsagePlanKeysRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved
+     * [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved
      * <a>UsagePlanKey</a> resource representing a plan customer.
      * </p>
      * 
      * @param usagePlanId
-     *        The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved
-     *        <a>UsagePlanKey</a> resource representing a plan customer.
+     *        [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the
+     *        to-be-retrieved <a>UsagePlanKey</a> resource representing a plan customer.
      */
 
     public void setUsagePlanId(String usagePlanId) {
@@ -68,12 +68,12 @@ public class GetUsagePlanKeysRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved
+     * [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved
      * <a>UsagePlanKey</a> resource representing a plan customer.
      * </p>
      * 
-     * @return The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved
-     *         <a>UsagePlanKey</a> resource representing a plan customer.
+     * @return [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the
+     *         to-be-retrieved <a>UsagePlanKey</a> resource representing a plan customer.
      */
 
     public String getUsagePlanId() {
@@ -82,13 +82,13 @@ public class GetUsagePlanKeysRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved
+     * [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved
      * <a>UsagePlanKey</a> resource representing a plan customer.
      * </p>
      * 
      * @param usagePlanId
-     *        The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved
-     *        <a>UsagePlanKey</a> resource representing a plan customer.
+     *        [Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the
+     *        to-be-retrieved <a>UsagePlanKey</a> resource representing a plan customer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,11 +139,11 @@ public class GetUsagePlanKeysRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The maximum number of returned results per page.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
      * @param limit
-     *        The maximum number of returned results per page.
+     *        The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      */
 
     public void setLimit(Integer limit) {
@@ -152,10 +152,10 @@ public class GetUsagePlanKeysRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The maximum number of returned results per page.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
-     * @return The maximum number of returned results per page.
+     * @return The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      */
 
     public Integer getLimit() {
@@ -164,11 +164,11 @@ public class GetUsagePlanKeysRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The maximum number of returned results per page.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
      * @param limit
-     *        The maximum number of returned results per page.
+     *        The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

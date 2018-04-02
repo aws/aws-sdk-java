@@ -27,25 +27,25 @@ public class UpdateMethodResponseRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.
+     * [Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.
      * </p>
      */
     private String resourceId;
     /**
      * <p>
-     * The HTTP verb of the <a>Method</a> resource.
+     * [Required] The HTTP verb of the <a>Method</a> resource.
      * </p>
      */
     private String httpMethod;
     /**
      * <p>
-     * The status code for the <a>MethodResponse</a> resource.
+     * [Required] The status code for the <a>MethodResponse</a> resource.
      * </p>
      */
     private String statusCode;
@@ -58,11 +58,11 @@ public class UpdateMethodResponseRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -71,10 +71,10 @@ public class UpdateMethodResponseRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return The string identifier of the associated <a>RestApi</a>.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -83,11 +83,11 @@ public class UpdateMethodResponseRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class UpdateMethodResponseRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.
+     * [Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.
      * </p>
      * 
      * @param resourceId
-     *        The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.
+     *        [Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.
      */
 
     public void setResourceId(String resourceId) {
@@ -111,10 +111,10 @@ public class UpdateMethodResponseRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.
+     * [Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.
      * </p>
      * 
-     * @return The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.
+     * @return [Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.
      */
 
     public String getResourceId() {
@@ -123,11 +123,11 @@ public class UpdateMethodResponseRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.
+     * [Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.
      * </p>
      * 
      * @param resourceId
-     *        The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.
+     *        [Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class UpdateMethodResponseRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The HTTP verb of the <a>Method</a> resource.
+     * [Required] The HTTP verb of the <a>Method</a> resource.
      * </p>
      * 
      * @param httpMethod
-     *        The HTTP verb of the <a>Method</a> resource.
+     *        [Required] The HTTP verb of the <a>Method</a> resource.
      */
 
     public void setHttpMethod(String httpMethod) {
@@ -151,10 +151,10 @@ public class UpdateMethodResponseRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The HTTP verb of the <a>Method</a> resource.
+     * [Required] The HTTP verb of the <a>Method</a> resource.
      * </p>
      * 
-     * @return The HTTP verb of the <a>Method</a> resource.
+     * @return [Required] The HTTP verb of the <a>Method</a> resource.
      */
 
     public String getHttpMethod() {
@@ -163,11 +163,11 @@ public class UpdateMethodResponseRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The HTTP verb of the <a>Method</a> resource.
+     * [Required] The HTTP verb of the <a>Method</a> resource.
      * </p>
      * 
      * @param httpMethod
-     *        The HTTP verb of the <a>Method</a> resource.
+     *        [Required] The HTTP verb of the <a>Method</a> resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,11 +178,11 @@ public class UpdateMethodResponseRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The status code for the <a>MethodResponse</a> resource.
+     * [Required] The status code for the <a>MethodResponse</a> resource.
      * </p>
      * 
      * @param statusCode
-     *        The status code for the <a>MethodResponse</a> resource.
+     *        [Required] The status code for the <a>MethodResponse</a> resource.
      */
 
     public void setStatusCode(String statusCode) {
@@ -191,10 +191,10 @@ public class UpdateMethodResponseRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The status code for the <a>MethodResponse</a> resource.
+     * [Required] The status code for the <a>MethodResponse</a> resource.
      * </p>
      * 
-     * @return The status code for the <a>MethodResponse</a> resource.
+     * @return [Required] The status code for the <a>MethodResponse</a> resource.
      */
 
     public String getStatusCode() {
@@ -203,11 +203,11 @@ public class UpdateMethodResponseRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The status code for the <a>MethodResponse</a> resource.
+     * [Required] The status code for the <a>MethodResponse</a> resource.
      * </p>
      * 
      * @param statusCode
-     *        The status code for the <a>MethodResponse</a> resource.
+     *        [Required] The status code for the <a>MethodResponse</a> resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

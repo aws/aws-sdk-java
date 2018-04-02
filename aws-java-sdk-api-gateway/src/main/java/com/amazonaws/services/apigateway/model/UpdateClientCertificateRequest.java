@@ -27,7 +27,7 @@ public class UpdateClientCertificateRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The identifier of the <a>ClientCertificate</a> resource to be updated.
+     * [Required] The identifier of the <a>ClientCertificate</a> resource to be updated.
      * </p>
      */
     private String clientCertificateId;
@@ -40,11 +40,11 @@ public class UpdateClientCertificateRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The identifier of the <a>ClientCertificate</a> resource to be updated.
+     * [Required] The identifier of the <a>ClientCertificate</a> resource to be updated.
      * </p>
      * 
      * @param clientCertificateId
-     *        The identifier of the <a>ClientCertificate</a> resource to be updated.
+     *        [Required] The identifier of the <a>ClientCertificate</a> resource to be updated.
      */
 
     public void setClientCertificateId(String clientCertificateId) {
@@ -53,10 +53,10 @@ public class UpdateClientCertificateRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The identifier of the <a>ClientCertificate</a> resource to be updated.
+     * [Required] The identifier of the <a>ClientCertificate</a> resource to be updated.
      * </p>
      * 
-     * @return The identifier of the <a>ClientCertificate</a> resource to be updated.
+     * @return [Required] The identifier of the <a>ClientCertificate</a> resource to be updated.
      */
 
     public String getClientCertificateId() {
@@ -65,11 +65,11 @@ public class UpdateClientCertificateRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The identifier of the <a>ClientCertificate</a> resource to be updated.
+     * [Required] The identifier of the <a>ClientCertificate</a> resource to be updated.
      * </p>
      * 
      * @param clientCertificateId
-     *        The identifier of the <a>ClientCertificate</a> resource to be updated.
+     *        [Required] The identifier of the <a>ClientCertificate</a> resource to be updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

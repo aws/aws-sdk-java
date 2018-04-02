@@ -27,18 +27,18 @@ public class GetSdkTypeRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The identifier of the queried <a>SdkType</a> instance.
+     * [Required] The identifier of the queried <a>SdkType</a> instance.
      * </p>
      */
     private String id;
 
     /**
      * <p>
-     * The identifier of the queried <a>SdkType</a> instance.
+     * [Required] The identifier of the queried <a>SdkType</a> instance.
      * </p>
      * 
      * @param id
-     *        The identifier of the queried <a>SdkType</a> instance.
+     *        [Required] The identifier of the queried <a>SdkType</a> instance.
      */
 
     public void setId(String id) {
@@ -47,10 +47,10 @@ public class GetSdkTypeRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The identifier of the queried <a>SdkType</a> instance.
+     * [Required] The identifier of the queried <a>SdkType</a> instance.
      * </p>
      * 
-     * @return The identifier of the queried <a>SdkType</a> instance.
+     * @return [Required] The identifier of the queried <a>SdkType</a> instance.
      */
 
     public String getId() {
@@ -59,11 +59,11 @@ public class GetSdkTypeRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The identifier of the queried <a>SdkType</a> instance.
+     * [Required] The identifier of the queried <a>SdkType</a> instance.
      * </p>
      * 
      * @param id
-     *        The identifier of the queried <a>SdkType</a> instance.
+     *        [Required] The identifier of the queried <a>SdkType</a> instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

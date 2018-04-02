@@ -27,24 +27,24 @@ public class GetStageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * The name of the <a>Stage</a> resource to get information about.
+     * [Required] The name of the <a>Stage</a> resource to get information about.
      * </p>
      */
     private String stageName;
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -53,10 +53,10 @@ public class GetStageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return The string identifier of the associated <a>RestApi</a>.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -65,11 +65,11 @@ public class GetStageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class GetStageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The name of the <a>Stage</a> resource to get information about.
+     * [Required] The name of the <a>Stage</a> resource to get information about.
      * </p>
      * 
      * @param stageName
-     *        The name of the <a>Stage</a> resource to get information about.
+     *        [Required] The name of the <a>Stage</a> resource to get information about.
      */
 
     public void setStageName(String stageName) {
@@ -93,10 +93,10 @@ public class GetStageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The name of the <a>Stage</a> resource to get information about.
+     * [Required] The name of the <a>Stage</a> resource to get information about.
      * </p>
      * 
-     * @return The name of the <a>Stage</a> resource to get information about.
+     * @return [Required] The name of the <a>Stage</a> resource to get information about.
      */
 
     public String getStageName() {
@@ -105,11 +105,11 @@ public class GetStageRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The name of the <a>Stage</a> resource to get information about.
+     * [Required] The name of the <a>Stage</a> resource to get information about.
      * </p>
      * 
      * @param stageName
-     *        The name of the <a>Stage</a> resource to get information about.
+     *        [Required] The name of the <a>Stage</a> resource to get information about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

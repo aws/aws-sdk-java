@@ -27,7 +27,7 @@ public class UpdateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the <a>DomainName</a> resource to be changed.
+     * [Required] The name of the <a>DomainName</a> resource to be changed.
      * </p>
      */
     private String domainName;
@@ -40,11 +40,11 @@ public class UpdateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the <a>DomainName</a> resource to be changed.
+     * [Required] The name of the <a>DomainName</a> resource to be changed.
      * </p>
      * 
      * @param domainName
-     *        The name of the <a>DomainName</a> resource to be changed.
+     *        [Required] The name of the <a>DomainName</a> resource to be changed.
      */
 
     public void setDomainName(String domainName) {
@@ -53,10 +53,10 @@ public class UpdateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the <a>DomainName</a> resource to be changed.
+     * [Required] The name of the <a>DomainName</a> resource to be changed.
      * </p>
      * 
-     * @return The name of the <a>DomainName</a> resource to be changed.
+     * @return [Required] The name of the <a>DomainName</a> resource to be changed.
      */
 
     public String getDomainName() {
@@ -65,11 +65,11 @@ public class UpdateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the <a>DomainName</a> resource to be changed.
+     * [Required] The name of the <a>DomainName</a> resource to be changed.
      * </p>
      * 
      * @param domainName
-     *        The name of the <a>DomainName</a> resource to be changed.
+     *        [Required] The name of the <a>DomainName</a> resource to be changed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

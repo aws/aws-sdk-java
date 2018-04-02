@@ -27,13 +27,13 @@ public class UpdateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * The name of the model to update.
+     * [Required] The name of the model to update.
      * </p>
      */
     private String modelName;
@@ -46,11 +46,11 @@ public class UpdateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -59,10 +59,10 @@ public class UpdateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return The string identifier of the associated <a>RestApi</a>.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -71,11 +71,11 @@ public class UpdateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +86,11 @@ public class UpdateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the model to update.
+     * [Required] The name of the model to update.
      * </p>
      * 
      * @param modelName
-     *        The name of the model to update.
+     *        [Required] The name of the model to update.
      */
 
     public void setModelName(String modelName) {
@@ -99,10 +99,10 @@ public class UpdateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the model to update.
+     * [Required] The name of the model to update.
      * </p>
      * 
-     * @return The name of the model to update.
+     * @return [Required] The name of the model to update.
      */
 
     public String getModelName() {
@@ -111,11 +111,11 @@ public class UpdateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the model to update.
+     * [Required] The name of the model to update.
      * </p>
      * 
      * @param modelName
-     *        The name of the model to update.
+     *        [Required] The name of the model to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

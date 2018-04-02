@@ -28,7 +28,7 @@ public class CreateUsagePlanRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the usage plan.
+     * [Required] The name of the usage plan.
      * </p>
      */
     private String name;
@@ -59,11 +59,11 @@ public class CreateUsagePlanRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the usage plan.
+     * [Required] The name of the usage plan.
      * </p>
      * 
      * @param name
-     *        The name of the usage plan.
+     *        [Required] The name of the usage plan.
      */
 
     public void setName(String name) {
@@ -72,10 +72,10 @@ public class CreateUsagePlanRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the usage plan.
+     * [Required] The name of the usage plan.
      * </p>
      * 
-     * @return The name of the usage plan.
+     * @return [Required] The name of the usage plan.
      */
 
     public String getName() {
@@ -84,11 +84,11 @@ public class CreateUsagePlanRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the usage plan.
+     * [Required] The name of the usage plan.
      * </p>
      * 
      * @param name
-     *        The name of the usage plan.
+     *        [Required] The name of the usage plan.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

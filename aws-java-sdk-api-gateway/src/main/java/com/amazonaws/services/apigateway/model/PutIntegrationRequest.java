@@ -27,25 +27,25 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * Specifies a put integration request's resource ID.
+     * [Required] Specifies a put integration request's resource ID.
      * </p>
      */
     private String resourceId;
     /**
      * <p>
-     * Specifies a put integration request's HTTP method.
+     * [Required] Specifies a put integration request's HTTP method.
      * </p>
      */
     private String httpMethod;
     /**
      * <p>
-     * Specifies a put integration input's type.
+     * [Required] Specifies a put integration input's type.
      * </p>
      */
     private String type;
@@ -205,11 +205,11 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -218,10 +218,10 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return The string identifier of the associated <a>RestApi</a>.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -230,11 +230,11 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,11 +245,11 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a put integration request's resource ID.
+     * [Required] Specifies a put integration request's resource ID.
      * </p>
      * 
      * @param resourceId
-     *        Specifies a put integration request's resource ID.
+     *        [Required] Specifies a put integration request's resource ID.
      */
 
     public void setResourceId(String resourceId) {
@@ -258,10 +258,10 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a put integration request's resource ID.
+     * [Required] Specifies a put integration request's resource ID.
      * </p>
      * 
-     * @return Specifies a put integration request's resource ID.
+     * @return [Required] Specifies a put integration request's resource ID.
      */
 
     public String getResourceId() {
@@ -270,11 +270,11 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a put integration request's resource ID.
+     * [Required] Specifies a put integration request's resource ID.
      * </p>
      * 
      * @param resourceId
-     *        Specifies a put integration request's resource ID.
+     *        [Required] Specifies a put integration request's resource ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -285,11 +285,11 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a put integration request's HTTP method.
+     * [Required] Specifies a put integration request's HTTP method.
      * </p>
      * 
      * @param httpMethod
-     *        Specifies a put integration request's HTTP method.
+     *        [Required] Specifies a put integration request's HTTP method.
      */
 
     public void setHttpMethod(String httpMethod) {
@@ -298,10 +298,10 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a put integration request's HTTP method.
+     * [Required] Specifies a put integration request's HTTP method.
      * </p>
      * 
-     * @return Specifies a put integration request's HTTP method.
+     * @return [Required] Specifies a put integration request's HTTP method.
      */
 
     public String getHttpMethod() {
@@ -310,11 +310,11 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a put integration request's HTTP method.
+     * [Required] Specifies a put integration request's HTTP method.
      * </p>
      * 
      * @param httpMethod
-     *        Specifies a put integration request's HTTP method.
+     *        [Required] Specifies a put integration request's HTTP method.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -325,11 +325,11 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a put integration input's type.
+     * [Required] Specifies a put integration input's type.
      * </p>
      * 
      * @param type
-     *        Specifies a put integration input's type.
+     *        [Required] Specifies a put integration input's type.
      * @see IntegrationType
      */
 
@@ -339,10 +339,10 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a put integration input's type.
+     * [Required] Specifies a put integration input's type.
      * </p>
      * 
-     * @return Specifies a put integration input's type.
+     * @return [Required] Specifies a put integration input's type.
      * @see IntegrationType
      */
 
@@ -352,11 +352,11 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a put integration input's type.
+     * [Required] Specifies a put integration input's type.
      * </p>
      * 
      * @param type
-     *        Specifies a put integration input's type.
+     *        [Required] Specifies a put integration input's type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IntegrationType
      */
@@ -368,11 +368,11 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a put integration input's type.
+     * [Required] Specifies a put integration input's type.
      * </p>
      * 
      * @param type
-     *        Specifies a put integration input's type.
+     *        [Required] Specifies a put integration input's type.
      * @see IntegrationType
      */
 
@@ -382,11 +382,11 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies a put integration input's type.
+     * [Required] Specifies a put integration input's type.
      * </p>
      * 
      * @param type
-     *        Specifies a put integration input's type.
+     *        [Required] Specifies a put integration input's type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IntegrationType
      */

@@ -27,25 +27,25 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
-     * The <a>Resource</a> identifier for the <a>Method</a> resource.
+     * [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      * </p>
      */
     private String resourceId;
     /**
      * <p>
-     * The HTTP verb of the <a>Method</a> resource.
+     * [Required] The HTTP verb of the <a>Method</a> resource.
      * </p>
      */
     private String httpMethod;
     /**
      * <p>
-     * The method response's status code.
+     * [Required] The method response's status code.
      * </p>
      */
     private String statusCode;
@@ -73,11 +73,11 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -86,10 +86,10 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return The string identifier of the associated <a>RestApi</a>.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -98,11 +98,11 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,11 +113,11 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The <a>Resource</a> identifier for the <a>Method</a> resource.
+     * [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      * </p>
      * 
      * @param resourceId
-     *        The <a>Resource</a> identifier for the <a>Method</a> resource.
+     *        [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      */
 
     public void setResourceId(String resourceId) {
@@ -126,10 +126,10 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The <a>Resource</a> identifier for the <a>Method</a> resource.
+     * [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      * </p>
      * 
-     * @return The <a>Resource</a> identifier for the <a>Method</a> resource.
+     * @return [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      */
 
     public String getResourceId() {
@@ -138,11 +138,11 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The <a>Resource</a> identifier for the <a>Method</a> resource.
+     * [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      * </p>
      * 
      * @param resourceId
-     *        The <a>Resource</a> identifier for the <a>Method</a> resource.
+     *        [Required] The <a>Resource</a> identifier for the <a>Method</a> resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,11 +153,11 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The HTTP verb of the <a>Method</a> resource.
+     * [Required] The HTTP verb of the <a>Method</a> resource.
      * </p>
      * 
      * @param httpMethod
-     *        The HTTP verb of the <a>Method</a> resource.
+     *        [Required] The HTTP verb of the <a>Method</a> resource.
      */
 
     public void setHttpMethod(String httpMethod) {
@@ -166,10 +166,10 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The HTTP verb of the <a>Method</a> resource.
+     * [Required] The HTTP verb of the <a>Method</a> resource.
      * </p>
      * 
-     * @return The HTTP verb of the <a>Method</a> resource.
+     * @return [Required] The HTTP verb of the <a>Method</a> resource.
      */
 
     public String getHttpMethod() {
@@ -178,11 +178,11 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The HTTP verb of the <a>Method</a> resource.
+     * [Required] The HTTP verb of the <a>Method</a> resource.
      * </p>
      * 
      * @param httpMethod
-     *        The HTTP verb of the <a>Method</a> resource.
+     *        [Required] The HTTP verb of the <a>Method</a> resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,11 +193,11 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The method response's status code.
+     * [Required] The method response's status code.
      * </p>
      * 
      * @param statusCode
-     *        The method response's status code.
+     *        [Required] The method response's status code.
      */
 
     public void setStatusCode(String statusCode) {
@@ -206,10 +206,10 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The method response's status code.
+     * [Required] The method response's status code.
      * </p>
      * 
-     * @return The method response's status code.
+     * @return [Required] The method response's status code.
      */
 
     public String getStatusCode() {
@@ -218,11 +218,11 @@ public class PutMethodResponseRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The method response's status code.
+     * [Required] The method response's status code.
      * </p>
      * 
      * @param statusCode
-     *        The method response's status code.
+     *        [Required] The method response's status code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

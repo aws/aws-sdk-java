@@ -28,12 +28,13 @@ public class PutGatewayResponseRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
     /**
      * <p>
+     * [Required]
      * <p>
      * The response type of the associated <a>GatewayResponse</a>. Valid values are
      * <ul>
@@ -56,7 +57,7 @@ public class PutGatewayResponseRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>RESOURCE_NOT_FOUND</li>
      * <li>THROTTLED</li>
      * <li>UNAUTHORIZED</li>
-     * <li>UNSUPPORTED_MEDIA_TYPES</li>
+     * <li>UNSUPPORTED_MEDIA_TYPE</li>
      * </ul>
      * </p>
      * </p>
@@ -84,11 +85,11 @@ public class PutGatewayResponseRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -97,10 +98,10 @@ public class PutGatewayResponseRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return The string identifier of the associated <a>RestApi</a>.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -109,11 +110,11 @@ public class PutGatewayResponseRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,6 +125,7 @@ public class PutGatewayResponseRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
+     * [Required]
      * <p>
      * The response type of the associated <a>GatewayResponse</a>. Valid values are
      * <ul>
@@ -146,12 +148,14 @@ public class PutGatewayResponseRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>RESOURCE_NOT_FOUND</li>
      * <li>THROTTLED</li>
      * <li>UNAUTHORIZED</li>
-     * <li>UNSUPPORTED_MEDIA_TYPES</li>
+     * <li>UNSUPPORTED_MEDIA_TYPE</li>
      * </ul>
      * </p>
      * </p>
      * 
      * @param responseType
+     *        [Required]
+     *        <p>
      *        The response type of the associated <a>GatewayResponse</a>. Valid values are
      *        <ul>
      *        <li>ACCESS_DENIED</li>
@@ -173,8 +177,9 @@ public class PutGatewayResponseRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>RESOURCE_NOT_FOUND</li>
      *        <li>THROTTLED</li>
      *        <li>UNAUTHORIZED</li>
-     *        <li>UNSUPPORTED_MEDIA_TYPES</li>
+     *        <li>UNSUPPORTED_MEDIA_TYPE</li>
      *        </ul>
+     *        </p>
      * @see GatewayResponseType
      */
 
@@ -184,6 +189,7 @@ public class PutGatewayResponseRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
+     * [Required]
      * <p>
      * The response type of the associated <a>GatewayResponse</a>. Valid values are
      * <ul>
@@ -206,12 +212,14 @@ public class PutGatewayResponseRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>RESOURCE_NOT_FOUND</li>
      * <li>THROTTLED</li>
      * <li>UNAUTHORIZED</li>
-     * <li>UNSUPPORTED_MEDIA_TYPES</li>
+     * <li>UNSUPPORTED_MEDIA_TYPE</li>
      * </ul>
      * </p>
      * </p>
      * 
-     * @return The response type of the associated <a>GatewayResponse</a>. Valid values are
+     * @return [Required]
+     *         <p>
+     *         The response type of the associated <a>GatewayResponse</a>. Valid values are
      *         <ul>
      *         <li>ACCESS_DENIED</li>
      *         <li>API_CONFIGURATION_ERROR</li>
@@ -232,8 +240,9 @@ public class PutGatewayResponseRequest extends com.amazonaws.AmazonWebServiceReq
      *         <li>RESOURCE_NOT_FOUND</li>
      *         <li>THROTTLED</li>
      *         <li>UNAUTHORIZED</li>
-     *         <li>UNSUPPORTED_MEDIA_TYPES</li>
+     *         <li>UNSUPPORTED_MEDIA_TYPE</li>
      *         </ul>
+     *         </p>
      * @see GatewayResponseType
      */
 
@@ -243,6 +252,7 @@ public class PutGatewayResponseRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
+     * [Required]
      * <p>
      * The response type of the associated <a>GatewayResponse</a>. Valid values are
      * <ul>
@@ -265,12 +275,14 @@ public class PutGatewayResponseRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>RESOURCE_NOT_FOUND</li>
      * <li>THROTTLED</li>
      * <li>UNAUTHORIZED</li>
-     * <li>UNSUPPORTED_MEDIA_TYPES</li>
+     * <li>UNSUPPORTED_MEDIA_TYPE</li>
      * </ul>
      * </p>
      * </p>
      * 
      * @param responseType
+     *        [Required]
+     *        <p>
      *        The response type of the associated <a>GatewayResponse</a>. Valid values are
      *        <ul>
      *        <li>ACCESS_DENIED</li>
@@ -292,8 +304,9 @@ public class PutGatewayResponseRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>RESOURCE_NOT_FOUND</li>
      *        <li>THROTTLED</li>
      *        <li>UNAUTHORIZED</li>
-     *        <li>UNSUPPORTED_MEDIA_TYPES</li>
+     *        <li>UNSUPPORTED_MEDIA_TYPE</li>
      *        </ul>
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GatewayResponseType
      */
@@ -305,6 +318,7 @@ public class PutGatewayResponseRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
+     * [Required]
      * <p>
      * The response type of the associated <a>GatewayResponse</a>. Valid values are
      * <ul>
@@ -327,12 +341,14 @@ public class PutGatewayResponseRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>RESOURCE_NOT_FOUND</li>
      * <li>THROTTLED</li>
      * <li>UNAUTHORIZED</li>
-     * <li>UNSUPPORTED_MEDIA_TYPES</li>
+     * <li>UNSUPPORTED_MEDIA_TYPE</li>
      * </ul>
      * </p>
      * </p>
      * 
      * @param responseType
+     *        [Required]
+     *        <p>
      *        The response type of the associated <a>GatewayResponse</a>. Valid values are
      *        <ul>
      *        <li>ACCESS_DENIED</li>
@@ -354,8 +370,9 @@ public class PutGatewayResponseRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>RESOURCE_NOT_FOUND</li>
      *        <li>THROTTLED</li>
      *        <li>UNAUTHORIZED</li>
-     *        <li>UNSUPPORTED_MEDIA_TYPES</li>
+     *        <li>UNSUPPORTED_MEDIA_TYPE</li>
      *        </ul>
+     *        </p>
      * @see GatewayResponseType
      */
 
@@ -365,6 +382,7 @@ public class PutGatewayResponseRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
+     * [Required]
      * <p>
      * The response type of the associated <a>GatewayResponse</a>. Valid values are
      * <ul>
@@ -387,12 +405,14 @@ public class PutGatewayResponseRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>RESOURCE_NOT_FOUND</li>
      * <li>THROTTLED</li>
      * <li>UNAUTHORIZED</li>
-     * <li>UNSUPPORTED_MEDIA_TYPES</li>
+     * <li>UNSUPPORTED_MEDIA_TYPE</li>
      * </ul>
      * </p>
      * </p>
      * 
      * @param responseType
+     *        [Required]
+     *        <p>
      *        The response type of the associated <a>GatewayResponse</a>. Valid values are
      *        <ul>
      *        <li>ACCESS_DENIED</li>
@@ -414,8 +434,9 @@ public class PutGatewayResponseRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>RESOURCE_NOT_FOUND</li>
      *        <li>THROTTLED</li>
      *        <li>UNAUTHORIZED</li>
-     *        <li>UNSUPPORTED_MEDIA_TYPES</li>
+     *        <li>UNSUPPORTED_MEDIA_TYPE</li>
      *        </ul>
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GatewayResponseType
      */

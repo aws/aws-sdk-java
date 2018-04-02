@@ -65,6 +65,14 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
     private VPCDerivedInfoStatus vPCOptions;
     /**
      * <p>
+     * The <code>CognitoOptions</code> for the specified domain. For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
+     * target="_blank">Amazon Cognito Authentication for Kibana</a>.
+     * </p>
+     */
+    private CognitoOptionsStatus cognitoOptions;
+    /**
+     * <p>
      * Specifies the <code>EncryptionAtRestOptions</code> for the Elasticsearch domain.
      * </p>
      */
@@ -338,6 +346,58 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
 
     /**
      * <p>
+     * The <code>CognitoOptions</code> for the specified domain. For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
+     * target="_blank">Amazon Cognito Authentication for Kibana</a>.
+     * </p>
+     * 
+     * @param cognitoOptions
+     *        The <code>CognitoOptions</code> for the specified domain. For more information, see <a
+     *        href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
+     *        target="_blank">Amazon Cognito Authentication for Kibana</a>.
+     */
+
+    public void setCognitoOptions(CognitoOptionsStatus cognitoOptions) {
+        this.cognitoOptions = cognitoOptions;
+    }
+
+    /**
+     * <p>
+     * The <code>CognitoOptions</code> for the specified domain. For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
+     * target="_blank">Amazon Cognito Authentication for Kibana</a>.
+     * </p>
+     * 
+     * @return The <code>CognitoOptions</code> for the specified domain. For more information, see <a
+     *         href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
+     *         target="_blank">Amazon Cognito Authentication for Kibana</a>.
+     */
+
+    public CognitoOptionsStatus getCognitoOptions() {
+        return this.cognitoOptions;
+    }
+
+    /**
+     * <p>
+     * The <code>CognitoOptions</code> for the specified domain. For more information, see <a
+     * href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
+     * target="_blank">Amazon Cognito Authentication for Kibana</a>.
+     * </p>
+     * 
+     * @param cognitoOptions
+     *        The <code>CognitoOptions</code> for the specified domain. For more information, see <a
+     *        href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
+     *        target="_blank">Amazon Cognito Authentication for Kibana</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchDomainConfig withCognitoOptions(CognitoOptionsStatus cognitoOptions) {
+        setCognitoOptions(cognitoOptions);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies the <code>EncryptionAtRestOptions</code> for the Elasticsearch domain.
      * </p>
      * 
@@ -491,6 +551,8 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
             sb.append("SnapshotOptions: ").append(getSnapshotOptions()).append(",");
         if (getVPCOptions() != null)
             sb.append("VPCOptions: ").append(getVPCOptions()).append(",");
+        if (getCognitoOptions() != null)
+            sb.append("CognitoOptions: ").append(getCognitoOptions()).append(",");
         if (getEncryptionAtRestOptions() != null)
             sb.append("EncryptionAtRestOptions: ").append(getEncryptionAtRestOptions()).append(",");
         if (getAdvancedOptions() != null)
@@ -535,6 +597,10 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
             return false;
         if (other.getVPCOptions() != null && other.getVPCOptions().equals(this.getVPCOptions()) == false)
             return false;
+        if (other.getCognitoOptions() == null ^ this.getCognitoOptions() == null)
+            return false;
+        if (other.getCognitoOptions() != null && other.getCognitoOptions().equals(this.getCognitoOptions()) == false)
+            return false;
         if (other.getEncryptionAtRestOptions() == null ^ this.getEncryptionAtRestOptions() == null)
             return false;
         if (other.getEncryptionAtRestOptions() != null && other.getEncryptionAtRestOptions().equals(this.getEncryptionAtRestOptions()) == false)
@@ -561,6 +627,7 @@ public class ElasticsearchDomainConfig implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getAccessPolicies() == null) ? 0 : getAccessPolicies().hashCode());
         hashCode = prime * hashCode + ((getSnapshotOptions() == null) ? 0 : getSnapshotOptions().hashCode());
         hashCode = prime * hashCode + ((getVPCOptions() == null) ? 0 : getVPCOptions().hashCode());
+        hashCode = prime * hashCode + ((getCognitoOptions() == null) ? 0 : getCognitoOptions().hashCode());
         hashCode = prime * hashCode + ((getEncryptionAtRestOptions() == null) ? 0 : getEncryptionAtRestOptions().hashCode());
         hashCode = prime * hashCode + ((getAdvancedOptions() == null) ? 0 : getAdvancedOptions().hashCode());
         hashCode = prime * hashCode + ((getLogPublishingOptions() == null) ? 0 : getLogPublishingOptions().hashCode());

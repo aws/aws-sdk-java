@@ -33,7 +33,7 @@ public class GetDomainNamesRequest extends com.amazonaws.AmazonWebServiceRequest
     private String position;
     /**
      * <p>
-     * The maximum number of returned results per page. The value is 25 by default and could be between 1 - 500.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      */
     private Integer limit;
@@ -80,11 +80,11 @@ public class GetDomainNamesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of returned results per page. The value is 25 by default and could be between 1 - 500.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
      * @param limit
-     *        The maximum number of returned results per page. The value is 25 by default and could be between 1 - 500.
+     *        The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      */
 
     public void setLimit(Integer limit) {
@@ -93,10 +93,10 @@ public class GetDomainNamesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of returned results per page. The value is 25 by default and could be between 1 - 500.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
-     * @return The maximum number of returned results per page. The value is 25 by default and could be between 1 - 500.
+     * @return The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      */
 
     public Integer getLimit() {
@@ -105,11 +105,11 @@ public class GetDomainNamesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of returned results per page. The value is 25 by default and could be between 1 - 500.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * </p>
      * 
      * @param limit
-     *        The maximum number of returned results per page. The value is 25 by default and could be between 1 - 500.
+     *        The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -37,7 +37,7 @@ public class GetDomainNameResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The name of the <a>DomainName</a> resource.
+     * The custom domain name as an API host name, for example, <code>my-api.example.com</code>.
      * </p>
      */
     private String domainName;
@@ -120,11 +120,11 @@ public class GetDomainNameResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The name of the <a>DomainName</a> resource.
+     * The custom domain name as an API host name, for example, <code>my-api.example.com</code>.
      * </p>
      * 
      * @param domainName
-     *        The name of the <a>DomainName</a> resource.
+     *        The custom domain name as an API host name, for example, <code>my-api.example.com</code>.
      */
 
     public void setDomainName(String domainName) {
@@ -133,10 +133,10 @@ public class GetDomainNameResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The name of the <a>DomainName</a> resource.
+     * The custom domain name as an API host name, for example, <code>my-api.example.com</code>.
      * </p>
      * 
-     * @return The name of the <a>DomainName</a> resource.
+     * @return The custom domain name as an API host name, for example, <code>my-api.example.com</code>.
      */
 
     public String getDomainName() {
@@ -145,11 +145,11 @@ public class GetDomainNameResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The name of the <a>DomainName</a> resource.
+     * The custom domain name as an API host name, for example, <code>my-api.example.com</code>.
      * </p>
      * 
      * @param domainName
-     *        The name of the <a>DomainName</a> resource.
+     *        The custom domain name as an API host name, for example, <code>my-api.example.com</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

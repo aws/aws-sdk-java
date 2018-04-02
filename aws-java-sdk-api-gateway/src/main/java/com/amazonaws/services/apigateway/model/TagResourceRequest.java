@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Adds or updates Tags on a gievn resource.
+ * Adds or updates a tag on a given resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,26 +27,28 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The ARN of a resource that can be tagged. At present, <a>Stage</a> is the only taggable resource.
+     * [Required] The ARN of a resource that can be tagged. The resource ARN must be URL-encoded. At present,
+     * <a>Stage</a> is the only taggable resource.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * [Required] Key/Value map of strings. Valid character set is [a-zA-Z+-=._:/]. Tag key can be up to 128 characters
-     * and must not start with "aws:". Tag value can be up to 256 characters.
+     * [Required] The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128
+     * characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
      * </p>
      */
     private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * [Required] The ARN of a resource that can be tagged. At present, <a>Stage</a> is the only taggable resource.
+     * [Required] The ARN of a resource that can be tagged. The resource ARN must be URL-encoded. At present,
+     * <a>Stage</a> is the only taggable resource.
      * </p>
      * 
      * @param resourceArn
-     *        [Required] The ARN of a resource that can be tagged. At present, <a>Stage</a> is the only taggable
-     *        resource.
+     *        [Required] The ARN of a resource that can be tagged. The resource ARN must be URL-encoded. At present,
+     *        <a>Stage</a> is the only taggable resource.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -55,11 +57,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The ARN of a resource that can be tagged. At present, <a>Stage</a> is the only taggable resource.
+     * [Required] The ARN of a resource that can be tagged. The resource ARN must be URL-encoded. At present,
+     * <a>Stage</a> is the only taggable resource.
      * </p>
      * 
-     * @return [Required] The ARN of a resource that can be tagged. At present, <a>Stage</a> is the only taggable
-     *         resource.
+     * @return [Required] The ARN of a resource that can be tagged. The resource ARN must be URL-encoded. At present,
+     *         <a>Stage</a> is the only taggable resource.
      */
 
     public String getResourceArn() {
@@ -68,12 +71,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] The ARN of a resource that can be tagged. At present, <a>Stage</a> is the only taggable resource.
+     * [Required] The ARN of a resource that can be tagged. The resource ARN must be URL-encoded. At present,
+     * <a>Stage</a> is the only taggable resource.
      * </p>
      * 
      * @param resourceArn
-     *        [Required] The ARN of a resource that can be tagged. At present, <a>Stage</a> is the only taggable
-     *        resource.
+     *        [Required] The ARN of a resource that can be tagged. The resource ARN must be URL-encoded. At present,
+     *        <a>Stage</a> is the only taggable resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,12 +88,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] Key/Value map of strings. Valid character set is [a-zA-Z+-=._:/]. Tag key can be up to 128 characters
-     * and must not start with "aws:". Tag value can be up to 256 characters.
+     * [Required] The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128
+     * characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
      * </p>
      * 
-     * @return [Required] Key/Value map of strings. Valid character set is [a-zA-Z+-=._:/]. Tag key can be up to 128
-     *         characters and must not start with "aws:". Tag value can be up to 256 characters.
+     * @return [Required] The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be
+     *         up to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256
+     *         characters.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -98,13 +103,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] Key/Value map of strings. Valid character set is [a-zA-Z+-=._:/]. Tag key can be up to 128 characters
-     * and must not start with "aws:". Tag value can be up to 256 characters.
+     * [Required] The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128
+     * characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
      * </p>
      * 
      * @param tags
-     *        [Required] Key/Value map of strings. Valid character set is [a-zA-Z+-=._:/]. Tag key can be up to 128
-     *        characters and must not start with "aws:". Tag value can be up to 256 characters.
+     *        [Required] The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up
+     *        to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -113,13 +118,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * [Required] Key/Value map of strings. Valid character set is [a-zA-Z+-=._:/]. Tag key can be up to 128 characters
-     * and must not start with "aws:". Tag value can be up to 256 characters.
+     * [Required] The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128
+     * characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
      * </p>
      * 
      * @param tags
-     *        [Required] Key/Value map of strings. Valid character set is [a-zA-Z+-=._:/]. Tag key can be up to 128
-     *        characters and must not start with "aws:". Tag value can be up to 256 characters.
+     *        [Required] The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up
+     *        to 128 characters and must not start with <code>aws:</code>. The tag value can be up to 256 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

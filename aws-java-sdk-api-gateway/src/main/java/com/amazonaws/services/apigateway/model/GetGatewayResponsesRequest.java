@@ -29,7 +29,7 @@ public class GetGatewayResponsesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
@@ -42,19 +42,19 @@ public class GetGatewayResponsesRequest extends com.amazonaws.AmazonWebServiceRe
     private String position;
     /**
      * <p>
-     * The maximum number of returned results per page. The <a>GatewayResponses</a> collection does not support
-     * pagination and the limit does not apply here.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The
+     * <a>GatewayResponses</a> collection does not support pagination and the limit does not apply here.
      * </p>
      */
     private Integer limit;
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -63,10 +63,10 @@ public class GetGatewayResponsesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return The string identifier of the associated <a>RestApi</a>.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -75,11 +75,11 @@ public class GetGatewayResponsesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,13 +136,13 @@ public class GetGatewayResponsesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of returned results per page. The <a>GatewayResponses</a> collection does not support
-     * pagination and the limit does not apply here.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The
+     * <a>GatewayResponses</a> collection does not support pagination and the limit does not apply here.
      * </p>
      * 
      * @param limit
-     *        The maximum number of returned results per page. The <a>GatewayResponses</a> collection does not support
-     *        pagination and the limit does not apply here.
+     *        The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The
+     *        <a>GatewayResponses</a> collection does not support pagination and the limit does not apply here.
      */
 
     public void setLimit(Integer limit) {
@@ -151,12 +151,12 @@ public class GetGatewayResponsesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of returned results per page. The <a>GatewayResponses</a> collection does not support
-     * pagination and the limit does not apply here.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The
+     * <a>GatewayResponses</a> collection does not support pagination and the limit does not apply here.
      * </p>
      * 
-     * @return The maximum number of returned results per page. The <a>GatewayResponses</a> collection does not support
-     *         pagination and the limit does not apply here.
+     * @return The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
+     *         The <a>GatewayResponses</a> collection does not support pagination and the limit does not apply here.
      */
 
     public Integer getLimit() {
@@ -165,13 +165,13 @@ public class GetGatewayResponsesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of returned results per page. The <a>GatewayResponses</a> collection does not support
-     * pagination and the limit does not apply here.
+     * The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The
+     * <a>GatewayResponses</a> collection does not support pagination and the limit does not apply here.
      * </p>
      * 
      * @param limit
-     *        The maximum number of returned results per page. The <a>GatewayResponses</a> collection does not support
-     *        pagination and the limit does not apply here.
+     *        The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The
+     *        <a>GatewayResponses</a> collection does not support pagination and the limit does not apply here.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

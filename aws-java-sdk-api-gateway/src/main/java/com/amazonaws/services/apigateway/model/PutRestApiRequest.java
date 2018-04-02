@@ -27,7 +27,7 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      */
     private String restApiId;
@@ -57,19 +57,19 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private java.util.Map<String, String> parameters;
     /**
      * <p>
-     * The PUT request body containing external API definitions. Currently, only Swagger definition JSON files are
-     * supported. The maximum size of the API definition file is 2MB.
+     * [Required] The PUT request body containing external API definitions. Currently, only Swagger definition JSON
+     * files are supported. The maximum size of the API definition file is 2MB.
      * </p>
      */
     private java.nio.ByteBuffer body;
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public void setRestApiId(String restApiId) {
@@ -78,10 +78,10 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
-     * @return The string identifier of the associated <a>RestApi</a>.
+     * @return [Required] The string identifier of the associated <a>RestApi</a>.
      */
 
     public String getRestApiId() {
@@ -90,11 +90,11 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The string identifier of the associated <a>RestApi</a>.
+     * [Required] The string identifier of the associated <a>RestApi</a>.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated <a>RestApi</a>.
+     *        [Required] The string identifier of the associated <a>RestApi</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -333,8 +333,8 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The PUT request body containing external API definitions. Currently, only Swagger definition JSON files are
-     * supported. The maximum size of the API definition file is 2MB.
+     * [Required] The PUT request body containing external API definitions. Currently, only Swagger definition JSON
+     * files are supported. The maximum size of the API definition file is 2MB.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -348,8 +348,8 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param body
-     *        The PUT request body containing external API definitions. Currently, only Swagger definition JSON files
-     *        are supported. The maximum size of the API definition file is 2MB.
+     *        [Required] The PUT request body containing external API definitions. Currently, only Swagger definition
+     *        JSON files are supported. The maximum size of the API definition file is 2MB.
      */
 
     public void setBody(java.nio.ByteBuffer body) {
@@ -358,8 +358,8 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The PUT request body containing external API definitions. Currently, only Swagger definition JSON files are
-     * supported. The maximum size of the API definition file is 2MB.
+     * [Required] The PUT request body containing external API definitions. Currently, only Swagger definition JSON
+     * files are supported. The maximum size of the API definition file is 2MB.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -369,8 +369,8 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * {@code position}.
      * </p>
      * 
-     * @return The PUT request body containing external API definitions. Currently, only Swagger definition JSON files
-     *         are supported. The maximum size of the API definition file is 2MB.
+     * @return [Required] The PUT request body containing external API definitions. Currently, only Swagger definition
+     *         JSON files are supported. The maximum size of the API definition file is 2MB.
      */
 
     public java.nio.ByteBuffer getBody() {
@@ -379,8 +379,8 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The PUT request body containing external API definitions. Currently, only Swagger definition JSON files are
-     * supported. The maximum size of the API definition file is 2MB.
+     * [Required] The PUT request body containing external API definitions. Currently, only Swagger definition JSON
+     * files are supported. The maximum size of the API definition file is 2MB.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -394,8 +394,8 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param body
-     *        The PUT request body containing external API definitions. Currently, only Swagger definition JSON files
-     *        are supported. The maximum size of the API definition file is 2MB.
+     *        [Required] The PUT request body containing external API definitions. Currently, only Swagger definition
+     *        JSON files are supported. The maximum size of the API definition file is 2MB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

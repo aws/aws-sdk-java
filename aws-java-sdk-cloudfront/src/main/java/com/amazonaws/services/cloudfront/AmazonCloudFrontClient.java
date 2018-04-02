@@ -251,60 +251,81 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
     private void init() {
         exceptionUnmarshallers.add(new StreamingDistributionAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TrustedSignerDoesNotExistExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidProtocolSettingsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyOriginCustomHeadersExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchInvalidationExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidWebACLIdExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NoSuchFieldLevelEncryptionConfigExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyHeadersInForwardedValuesExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidOriginReadTimeoutExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidMinimumProtocolVersionExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyDistributionCNAMEsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyInvalidationsInProgressExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyFieldLevelEncryptionConfigsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyPublicKeysExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidErrorCodeExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyCacheBehaviorsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new CloudFrontOriginAccessIdentityInUseExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new FieldLevelEncryptionProfileAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyFieldLevelEncryptionFieldPatternsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new MissingBodyExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyOriginsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidTTLOrderExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidRequiredProtocolExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NoSuchOriginExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyTrustedSignersExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new BatchTooLargeExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidResponseCodeExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new FieldLevelEncryptionConfigAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidOriginKeepaliveTimeoutExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyStreamingDistributionsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new PublicKeyInUseExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new StreamingDistributionNotDisabledExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new PreconditionFailedExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyQueryStringParametersExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyFieldLevelEncryptionEncryptionEntitiesExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new FieldLevelEncryptionConfigInUseExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DistributionAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyStreamingDistributionCNAMEsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new CloudFrontOriginAccessIdentityAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidProtocolSettingsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyFieldLevelEncryptionProfilesExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyOriginCustomHeadersExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidLocationCodeExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ResourceInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidForwardCookiesExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidWebACLIdExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new FieldLevelEncryptionProfileSizeExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyCertificatesExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new QueryArgProfileEmptyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidOriginAccessIdentityExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidQueryStringParametersExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CNAMEAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new IllegalUpdateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyCookieNamesInWhiteListExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyHeadersInForwardedValuesExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidOriginReadTimeoutExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidMinimumProtocolVersionExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyDistributionCNAMEsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchDistributionExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyInvalidationsInProgressExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NoSuchFieldLevelEncryptionProfileExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchResourceExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidErrorCodeExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyCacheBehaviorsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InconsistentQuantitiesExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new CloudFrontOriginAccessIdentityInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidLambdaFunctionAssociationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyLambdaFunctionAssociationsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidViewerCertificateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DistributionNotDisabledExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new MissingBodyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDefaultRootObjectExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AccessDeniedExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyOriginsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidTTLOrderExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidRequiredProtocolExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidArgumentExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new NoSuchOriginExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyTrustedSignersExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchStreamingDistributionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyCloudFrontOriginAccessIdentitiesExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new BatchTooLargeExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidResponseCodeExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NoSuchPublicKeyExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyFieldLevelEncryptionContentTypeProfilesExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidRelativePathExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidOriginKeepaliveTimeoutExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyDistributionsAssociatedToFieldLevelEncryptionConfigExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyDistributionsWithLambdaAssociationsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyStreamingDistributionsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidHeadersForS3OriginExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyDistributionsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new StreamingDistributionNotDisabledExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new PreconditionFailedExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyQueryStringParametersExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new DistributionAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyStreamingDistributionCNAMEsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new CannotChangeImmutablePublicKeyFieldsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyFieldLevelEncryptionQueryArgProfilesExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new PublicKeyAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new FieldLevelEncryptionProfileInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidIfMatchVersionExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new CloudFrontOriginAccessIdentityAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidTaggingExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidOriginExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchCloudFrontOriginAccessIdentityExceptionUnmarshaller());
@@ -347,7 +368,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @sample AmazonCloudFront.CreateCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -470,8 +491,16 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         The specified Lambda function association is invalid.
      * @throws InvalidOriginReadTimeoutException
      * @throws InvalidOriginKeepaliveTimeoutException
+     * @throws NoSuchFieldLevelEncryptionConfigException
+     *         The specified configuration for field-level encryption doesn't exist.
+     * @throws IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException
+     *         The specified configuration for field-level encryption can't be associated with the specified cache
+     *         behavior.
+     * @throws TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException
+     *         The maximum number of distributions have been associated with the specified configuration for field-level
+     *         encryption.
      * @sample AmazonCloudFront.CreateDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistribution" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateDistribution" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
@@ -592,8 +621,16 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         The specified Lambda function association is invalid.
      * @throws InvalidOriginReadTimeoutException
      * @throws InvalidOriginKeepaliveTimeoutException
+     * @throws NoSuchFieldLevelEncryptionConfigException
+     *         The specified configuration for field-level encryption doesn't exist.
+     * @throws IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException
+     *         The specified configuration for field-level encryption can't be associated with the specified cache
+     *         behavior.
+     * @throws TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException
+     *         The maximum number of distributions have been associated with the specified configuration for field-level
+     *         encryption.
      * @sample AmazonCloudFront.CreateDistributionWithTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateDistributionWithTags"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateDistributionWithTags"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -636,6 +673,138 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Create a new field-level encryption configuration.
+     * </p>
+     * 
+     * @param createFieldLevelEncryptionConfigRequest
+     * @return Result of the CreateFieldLevelEncryptionConfig operation returned by the service.
+     * @throws InconsistentQuantitiesException
+     *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+     * @throws InvalidArgumentException
+     *         The argument is invalid.
+     * @throws NoSuchFieldLevelEncryptionProfileException
+     *         The specified profile for field-level encryption doesn't exist.
+     * @throws FieldLevelEncryptionConfigAlreadyExistsException
+     *         The specified configuration for field-level encryption already exists.
+     * @throws TooManyFieldLevelEncryptionConfigsException
+     *         The maximum number of configurations for field-level encryption have been created.
+     * @throws TooManyFieldLevelEncryptionQueryArgProfilesException
+     *         The maximum number of query arg profiles for field-level encryption have been created.
+     * @throws TooManyFieldLevelEncryptionContentTypeProfilesException
+     *         The maximum number of content type profiles for field-level encryption have been created.
+     * @throws QueryArgProfileEmptyException
+     *         No profile specified for the field-level encryption query argument.
+     * @sample AmazonCloudFront.CreateFieldLevelEncryptionConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateFieldLevelEncryptionConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateFieldLevelEncryptionConfigResult createFieldLevelEncryptionConfig(CreateFieldLevelEncryptionConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateFieldLevelEncryptionConfig(request);
+    }
+
+    @SdkInternalApi
+    final CreateFieldLevelEncryptionConfigResult executeCreateFieldLevelEncryptionConfig(
+            CreateFieldLevelEncryptionConfigRequest createFieldLevelEncryptionConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createFieldLevelEncryptionConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateFieldLevelEncryptionConfigRequest> request = null;
+        Response<CreateFieldLevelEncryptionConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateFieldLevelEncryptionConfigRequestMarshaller().marshall(super.beforeMarshalling(createFieldLevelEncryptionConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateFieldLevelEncryptionConfigResult> responseHandler = new StaxResponseHandler<CreateFieldLevelEncryptionConfigResult>(
+                    new CreateFieldLevelEncryptionConfigResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Create a field-level encryption profile.
+     * </p>
+     * 
+     * @param createFieldLevelEncryptionProfileRequest
+     * @return Result of the CreateFieldLevelEncryptionProfile operation returned by the service.
+     * @throws InconsistentQuantitiesException
+     *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+     * @throws InvalidArgumentException
+     *         The argument is invalid.
+     * @throws NoSuchPublicKeyException
+     *         The specified public key doesn't exist.
+     * @throws FieldLevelEncryptionProfileAlreadyExistsException
+     *         The specified profile for field-level encryption already exists.
+     * @throws FieldLevelEncryptionProfileSizeExceededException
+     *         The maximum size of a profile for field-level encryption was exceeded.
+     * @throws TooManyFieldLevelEncryptionProfilesException
+     *         The maximum number of profiles for field-level encryption have been created.
+     * @throws TooManyFieldLevelEncryptionEncryptionEntitiesException
+     *         The maximum number of encryption entities for field-level encryption have been created.
+     * @throws TooManyFieldLevelEncryptionFieldPatternsException
+     *         The maximum number of field patterns for field-level encryption have been created.
+     * @sample AmazonCloudFront.CreateFieldLevelEncryptionProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateFieldLevelEncryptionProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateFieldLevelEncryptionProfileResult createFieldLevelEncryptionProfile(CreateFieldLevelEncryptionProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateFieldLevelEncryptionProfile(request);
+    }
+
+    @SdkInternalApi
+    final CreateFieldLevelEncryptionProfileResult executeCreateFieldLevelEncryptionProfile(
+            CreateFieldLevelEncryptionProfileRequest createFieldLevelEncryptionProfileRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createFieldLevelEncryptionProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateFieldLevelEncryptionProfileRequest> request = null;
+        Response<CreateFieldLevelEncryptionProfileResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateFieldLevelEncryptionProfileRequestMarshaller().marshall(super.beforeMarshalling(createFieldLevelEncryptionProfileRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateFieldLevelEncryptionProfileResult> responseHandler = new StaxResponseHandler<CreateFieldLevelEncryptionProfileResult>(
+                    new CreateFieldLevelEncryptionProfileResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Create a new invalidation.
      * </p>
      * 
@@ -658,7 +827,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @sample AmazonCloudFront.CreateInvalidation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateInvalidation" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateInvalidation" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
@@ -689,6 +858,63 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<CreateInvalidationResult> responseHandler = new StaxResponseHandler<CreateInvalidationResult>(
                     new CreateInvalidationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Add a new public key to CloudFront to use, for example, for field-level encryption. You can add a maximum of 10
+     * public keys with one AWS account.
+     * </p>
+     * 
+     * @param createPublicKeyRequest
+     * @return Result of the CreatePublicKey operation returned by the service.
+     * @throws PublicKeyAlreadyExistsException
+     *         The specified public key already exists.
+     * @throws InvalidArgumentException
+     *         The argument is invalid.
+     * @throws TooManyPublicKeysException
+     *         The maximum number of public keys for field-level encryption have been created. To create a new public
+     *         key, delete one of the existing keys.
+     * @sample AmazonCloudFront.CreatePublicKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreatePublicKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreatePublicKeyResult createPublicKey(CreatePublicKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreatePublicKey(request);
+    }
+
+    @SdkInternalApi
+    final CreatePublicKeyResult executeCreatePublicKey(CreatePublicKeyRequest createPublicKeyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createPublicKeyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreatePublicKeyRequest> request = null;
+        Response<CreatePublicKeyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreatePublicKeyRequestMarshaller().marshall(super.beforeMarshalling(createPublicKeyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreatePublicKeyResult> responseHandler = new StaxResponseHandler<CreatePublicKeyResult>(
+                    new CreatePublicKeyResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -758,7 +984,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @sample AmazonCloudFront.CreateStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -831,7 +1057,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @throws InvalidTaggingException
      * @sample AmazonCloudFront.CreateStreamingDistributionWithTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/CreateStreamingDistributionWithTags"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/CreateStreamingDistributionWithTags"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -892,7 +1118,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
      * @throws CloudFrontOriginAccessIdentityInUseException
      * @sample AmazonCloudFront.DeleteCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1013,7 +1239,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws PreconditionFailedException
      *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
      * @sample AmazonCloudFront.DeleteDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteDistribution" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteDistribution" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
@@ -1055,6 +1281,185 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
     }
 
     /**
+     * <p>
+     * Remove a field-level encryption configuration.
+     * </p>
+     * 
+     * @param deleteFieldLevelEncryptionConfigRequest
+     * @return Result of the DeleteFieldLevelEncryptionConfig operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws InvalidIfMatchVersionException
+     *         The <code>If-Match</code> version is missing or not valid for the distribution.
+     * @throws NoSuchFieldLevelEncryptionConfigException
+     *         The specified configuration for field-level encryption doesn't exist.
+     * @throws PreconditionFailedException
+     *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+     * @throws FieldLevelEncryptionConfigInUseException
+     *         The specified configuration for field-level encryption is in use.
+     * @sample AmazonCloudFront.DeleteFieldLevelEncryptionConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteFieldLevelEncryptionConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteFieldLevelEncryptionConfigResult deleteFieldLevelEncryptionConfig(DeleteFieldLevelEncryptionConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFieldLevelEncryptionConfig(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFieldLevelEncryptionConfigResult executeDeleteFieldLevelEncryptionConfig(
+            DeleteFieldLevelEncryptionConfigRequest deleteFieldLevelEncryptionConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteFieldLevelEncryptionConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteFieldLevelEncryptionConfigRequest> request = null;
+        Response<DeleteFieldLevelEncryptionConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteFieldLevelEncryptionConfigRequestMarshaller().marshall(super.beforeMarshalling(deleteFieldLevelEncryptionConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteFieldLevelEncryptionConfigResult> responseHandler = new StaxResponseHandler<DeleteFieldLevelEncryptionConfigResult>(
+                    new DeleteFieldLevelEncryptionConfigResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Remove a field-level encryption profile.
+     * </p>
+     * 
+     * @param deleteFieldLevelEncryptionProfileRequest
+     * @return Result of the DeleteFieldLevelEncryptionProfile operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws InvalidIfMatchVersionException
+     *         The <code>If-Match</code> version is missing or not valid for the distribution.
+     * @throws NoSuchFieldLevelEncryptionProfileException
+     *         The specified profile for field-level encryption doesn't exist.
+     * @throws PreconditionFailedException
+     *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+     * @throws FieldLevelEncryptionProfileInUseException
+     *         The specified profile for field-level encryption is in use.
+     * @sample AmazonCloudFront.DeleteFieldLevelEncryptionProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteFieldLevelEncryptionProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteFieldLevelEncryptionProfileResult deleteFieldLevelEncryptionProfile(DeleteFieldLevelEncryptionProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFieldLevelEncryptionProfile(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFieldLevelEncryptionProfileResult executeDeleteFieldLevelEncryptionProfile(
+            DeleteFieldLevelEncryptionProfileRequest deleteFieldLevelEncryptionProfileRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteFieldLevelEncryptionProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteFieldLevelEncryptionProfileRequest> request = null;
+        Response<DeleteFieldLevelEncryptionProfileResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteFieldLevelEncryptionProfileRequestMarshaller().marshall(super.beforeMarshalling(deleteFieldLevelEncryptionProfileRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteFieldLevelEncryptionProfileResult> responseHandler = new StaxResponseHandler<DeleteFieldLevelEncryptionProfileResult>(
+                    new DeleteFieldLevelEncryptionProfileResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Remove a public key you previously added to CloudFront.
+     * </p>
+     * 
+     * @param deletePublicKeyRequest
+     * @return Result of the DeletePublicKey operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws PublicKeyInUseException
+     *         The specified public key is in use.
+     * @throws InvalidIfMatchVersionException
+     *         The <code>If-Match</code> version is missing or not valid for the distribution.
+     * @throws NoSuchPublicKeyException
+     *         The specified public key doesn't exist.
+     * @throws PreconditionFailedException
+     *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+     * @sample AmazonCloudFront.DeletePublicKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeletePublicKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeletePublicKeyResult deletePublicKey(DeletePublicKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeletePublicKey(request);
+    }
+
+    @SdkInternalApi
+    final DeletePublicKeyResult executeDeletePublicKey(DeletePublicKeyRequest deletePublicKeyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deletePublicKeyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeletePublicKeyRequest> request = null;
+        Response<DeletePublicKeyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeletePublicKeyRequestMarshaller().marshall(super.beforeMarshalling(deletePublicKeyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeletePublicKeyResult> responseHandler = new StaxResponseHandler<DeletePublicKeyResult>(
+                    new DeletePublicKeyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * @param deleteServiceLinkedRoleRequest
      * @return Result of the DeleteServiceLinkedRole operation returned by the service.
      * @throws InvalidArgumentException
@@ -1064,7 +1469,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws ResourceInUseException
      * @throws NoSuchResourceException
      * @sample AmazonCloudFront.DeleteServiceLinkedRole
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteServiceLinkedRole"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteServiceLinkedRole"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1184,7 +1589,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws PreconditionFailedException
      *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
      * @sample AmazonCloudFront.DeleteStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/DeleteStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1238,7 +1643,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1295,7 +1700,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         Access denied.
      * @sample AmazonCloudFront.GetCloudFrontOriginAccessIdentityConfig
      * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetCloudFrontOriginAccessIdentityConfig"
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetCloudFrontOriginAccessIdentityConfig"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1351,7 +1756,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistribution" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetDistribution" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1405,7 +1810,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetDistributionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetDistributionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetDistributionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1448,6 +1853,220 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Get the field-level encryption configuration information.
+     * </p>
+     * 
+     * @param getFieldLevelEncryptionRequest
+     * @return Result of the GetFieldLevelEncryption operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws NoSuchFieldLevelEncryptionConfigException
+     *         The specified configuration for field-level encryption doesn't exist.
+     * @sample AmazonCloudFront.GetFieldLevelEncryption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryption"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetFieldLevelEncryptionResult getFieldLevelEncryption(GetFieldLevelEncryptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetFieldLevelEncryption(request);
+    }
+
+    @SdkInternalApi
+    final GetFieldLevelEncryptionResult executeGetFieldLevelEncryption(GetFieldLevelEncryptionRequest getFieldLevelEncryptionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getFieldLevelEncryptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetFieldLevelEncryptionRequest> request = null;
+        Response<GetFieldLevelEncryptionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetFieldLevelEncryptionRequestMarshaller().marshall(super.beforeMarshalling(getFieldLevelEncryptionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetFieldLevelEncryptionResult> responseHandler = new StaxResponseHandler<GetFieldLevelEncryptionResult>(
+                    new GetFieldLevelEncryptionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Get the field-level encryption configuration information.
+     * </p>
+     * 
+     * @param getFieldLevelEncryptionConfigRequest
+     * @return Result of the GetFieldLevelEncryptionConfig operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws NoSuchFieldLevelEncryptionConfigException
+     *         The specified configuration for field-level encryption doesn't exist.
+     * @sample AmazonCloudFront.GetFieldLevelEncryptionConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryptionConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetFieldLevelEncryptionConfigResult getFieldLevelEncryptionConfig(GetFieldLevelEncryptionConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetFieldLevelEncryptionConfig(request);
+    }
+
+    @SdkInternalApi
+    final GetFieldLevelEncryptionConfigResult executeGetFieldLevelEncryptionConfig(GetFieldLevelEncryptionConfigRequest getFieldLevelEncryptionConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getFieldLevelEncryptionConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetFieldLevelEncryptionConfigRequest> request = null;
+        Response<GetFieldLevelEncryptionConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetFieldLevelEncryptionConfigRequestMarshaller().marshall(super.beforeMarshalling(getFieldLevelEncryptionConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetFieldLevelEncryptionConfigResult> responseHandler = new StaxResponseHandler<GetFieldLevelEncryptionConfigResult>(
+                    new GetFieldLevelEncryptionConfigResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Get the field-level encryption profile information.
+     * </p>
+     * 
+     * @param getFieldLevelEncryptionProfileRequest
+     * @return Result of the GetFieldLevelEncryptionProfile operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws NoSuchFieldLevelEncryptionProfileException
+     *         The specified profile for field-level encryption doesn't exist.
+     * @sample AmazonCloudFront.GetFieldLevelEncryptionProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryptionProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetFieldLevelEncryptionProfileResult getFieldLevelEncryptionProfile(GetFieldLevelEncryptionProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetFieldLevelEncryptionProfile(request);
+    }
+
+    @SdkInternalApi
+    final GetFieldLevelEncryptionProfileResult executeGetFieldLevelEncryptionProfile(GetFieldLevelEncryptionProfileRequest getFieldLevelEncryptionProfileRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getFieldLevelEncryptionProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetFieldLevelEncryptionProfileRequest> request = null;
+        Response<GetFieldLevelEncryptionProfileResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetFieldLevelEncryptionProfileRequestMarshaller().marshall(super.beforeMarshalling(getFieldLevelEncryptionProfileRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetFieldLevelEncryptionProfileResult> responseHandler = new StaxResponseHandler<GetFieldLevelEncryptionProfileResult>(
+                    new GetFieldLevelEncryptionProfileResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Get the field-level encryption profile configuration information.
+     * </p>
+     * 
+     * @param getFieldLevelEncryptionProfileConfigRequest
+     * @return Result of the GetFieldLevelEncryptionProfileConfig operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws NoSuchFieldLevelEncryptionProfileException
+     *         The specified profile for field-level encryption doesn't exist.
+     * @sample AmazonCloudFront.GetFieldLevelEncryptionProfileConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetFieldLevelEncryptionProfileConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetFieldLevelEncryptionProfileConfigResult getFieldLevelEncryptionProfileConfig(GetFieldLevelEncryptionProfileConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetFieldLevelEncryptionProfileConfig(request);
+    }
+
+    @SdkInternalApi
+    final GetFieldLevelEncryptionProfileConfigResult executeGetFieldLevelEncryptionProfileConfig(
+            GetFieldLevelEncryptionProfileConfigRequest getFieldLevelEncryptionProfileConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getFieldLevelEncryptionProfileConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetFieldLevelEncryptionProfileConfigRequest> request = null;
+        Response<GetFieldLevelEncryptionProfileConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetFieldLevelEncryptionProfileConfigRequestMarshaller().marshall(super
+                        .beforeMarshalling(getFieldLevelEncryptionProfileConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetFieldLevelEncryptionProfileConfigResult> responseHandler = new StaxResponseHandler<GetFieldLevelEncryptionProfileConfigResult>(
+                    new GetFieldLevelEncryptionProfileConfigResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Get the information about an invalidation.
      * </p>
      * 
@@ -1461,7 +2080,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetInvalidation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetInvalidation" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetInvalidation" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1504,6 +2123,111 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Get the public key information.
+     * </p>
+     * 
+     * @param getPublicKeyRequest
+     * @return Result of the GetPublicKey operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws NoSuchPublicKeyException
+     *         The specified public key doesn't exist.
+     * @sample AmazonCloudFront.GetPublicKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetPublicKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetPublicKeyResult getPublicKey(GetPublicKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetPublicKey(request);
+    }
+
+    @SdkInternalApi
+    final GetPublicKeyResult executeGetPublicKey(GetPublicKeyRequest getPublicKeyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getPublicKeyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetPublicKeyRequest> request = null;
+        Response<GetPublicKeyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetPublicKeyRequestMarshaller().marshall(super.beforeMarshalling(getPublicKeyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetPublicKeyResult> responseHandler = new StaxResponseHandler<GetPublicKeyResult>(new GetPublicKeyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Return public key configuration informaation
+     * </p>
+     * 
+     * @param getPublicKeyConfigRequest
+     * @return Result of the GetPublicKeyConfig operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws NoSuchPublicKeyException
+     *         The specified public key doesn't exist.
+     * @sample AmazonCloudFront.GetPublicKeyConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetPublicKeyConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetPublicKeyConfigResult getPublicKeyConfig(GetPublicKeyConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetPublicKeyConfig(request);
+    }
+
+    @SdkInternalApi
+    final GetPublicKeyConfigResult executeGetPublicKeyConfig(GetPublicKeyConfigRequest getPublicKeyConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getPublicKeyConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetPublicKeyConfigRequest> request = null;
+        Response<GetPublicKeyConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetPublicKeyConfigRequestMarshaller().marshall(super.beforeMarshalling(getPublicKeyConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetPublicKeyConfigResult> responseHandler = new StaxResponseHandler<GetPublicKeyConfigResult>(
+                    new GetPublicKeyConfigResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets information about a specified RTMP distribution, including the distribution configuration.
      * </p>
      * 
@@ -1515,7 +2239,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1569,7 +2293,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetStreamingDistributionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/GetStreamingDistributionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/GetStreamingDistributionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1621,7 +2345,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @sample AmazonCloudFront.ListCloudFrontOriginAccessIdentities
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListCloudFrontOriginAccessIdentities"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListCloudFrontOriginAccessIdentities"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1675,7 +2399,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @sample AmazonCloudFront.ListDistributions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributions" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListDistributions" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
@@ -1728,7 +2452,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         The argument is invalid.
      * @throws InvalidWebACLIdException
      * @sample AmazonCloudFront.ListDistributionsByWebACLId
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListDistributionsByWebACLId"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListDistributionsByWebACLId"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1771,6 +2495,110 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * List all field-level encryption configurations that have been created in CloudFront for this account.
+     * </p>
+     * 
+     * @param listFieldLevelEncryptionConfigsRequest
+     * @return Result of the ListFieldLevelEncryptionConfigs operation returned by the service.
+     * @throws InvalidArgumentException
+     *         The argument is invalid.
+     * @sample AmazonCloudFront.ListFieldLevelEncryptionConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListFieldLevelEncryptionConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListFieldLevelEncryptionConfigsResult listFieldLevelEncryptionConfigs(ListFieldLevelEncryptionConfigsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListFieldLevelEncryptionConfigs(request);
+    }
+
+    @SdkInternalApi
+    final ListFieldLevelEncryptionConfigsResult executeListFieldLevelEncryptionConfigs(
+            ListFieldLevelEncryptionConfigsRequest listFieldLevelEncryptionConfigsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listFieldLevelEncryptionConfigsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListFieldLevelEncryptionConfigsRequest> request = null;
+        Response<ListFieldLevelEncryptionConfigsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListFieldLevelEncryptionConfigsRequestMarshaller().marshall(super.beforeMarshalling(listFieldLevelEncryptionConfigsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListFieldLevelEncryptionConfigsResult> responseHandler = new StaxResponseHandler<ListFieldLevelEncryptionConfigsResult>(
+                    new ListFieldLevelEncryptionConfigsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Request a list of field-level encryption profiles that have been created in CloudFront for this account.
+     * </p>
+     * 
+     * @param listFieldLevelEncryptionProfilesRequest
+     * @return Result of the ListFieldLevelEncryptionProfiles operation returned by the service.
+     * @throws InvalidArgumentException
+     *         The argument is invalid.
+     * @sample AmazonCloudFront.ListFieldLevelEncryptionProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListFieldLevelEncryptionProfiles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListFieldLevelEncryptionProfilesResult listFieldLevelEncryptionProfiles(ListFieldLevelEncryptionProfilesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListFieldLevelEncryptionProfiles(request);
+    }
+
+    @SdkInternalApi
+    final ListFieldLevelEncryptionProfilesResult executeListFieldLevelEncryptionProfiles(
+            ListFieldLevelEncryptionProfilesRequest listFieldLevelEncryptionProfilesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listFieldLevelEncryptionProfilesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListFieldLevelEncryptionProfilesRequest> request = null;
+        Response<ListFieldLevelEncryptionProfilesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListFieldLevelEncryptionProfilesRequestMarshaller().marshall(super.beforeMarshalling(listFieldLevelEncryptionProfilesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListFieldLevelEncryptionProfilesResult> responseHandler = new StaxResponseHandler<ListFieldLevelEncryptionProfilesResult>(
+                    new ListFieldLevelEncryptionProfilesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists invalidation batches.
      * </p>
      * 
@@ -1784,7 +2612,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.ListInvalidations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListInvalidations" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListInvalidations" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
@@ -1827,6 +2655,57 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * List all public keys that have been added to CloudFront for this account.
+     * </p>
+     * 
+     * @param listPublicKeysRequest
+     * @return Result of the ListPublicKeys operation returned by the service.
+     * @throws InvalidArgumentException
+     *         The argument is invalid.
+     * @sample AmazonCloudFront.ListPublicKeys
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListPublicKeys" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListPublicKeysResult listPublicKeys(ListPublicKeysRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPublicKeys(request);
+    }
+
+    @SdkInternalApi
+    final ListPublicKeysResult executeListPublicKeys(ListPublicKeysRequest listPublicKeysRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listPublicKeysRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPublicKeysRequest> request = null;
+        Response<ListPublicKeysResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPublicKeysRequestMarshaller().marshall(super.beforeMarshalling(listPublicKeysRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListPublicKeysResult> responseHandler = new StaxResponseHandler<ListPublicKeysResult>(
+                    new ListPublicKeysResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * List streaming distributions.
      * </p>
      * 
@@ -1836,7 +2715,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidArgumentException
      *         The argument is invalid.
      * @sample AmazonCloudFront.ListStreamingDistributions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListStreamingDistributions"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListStreamingDistributions"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1892,7 +2771,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidTaggingException
      * @throws NoSuchResourceException
      * @sample AmazonCloudFront.ListTagsForResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/ListTagsForResource" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/ListTagsForResource" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
@@ -1948,7 +2827,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidTaggingException
      * @throws NoSuchResourceException
      * @sample AmazonCloudFront.TagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/TagResource" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/TagResource" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2003,7 +2882,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidTaggingException
      * @throws NoSuchResourceException
      * @sample AmazonCloudFront.UntagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UntagResource" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UntagResource" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2069,7 +2948,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @sample AmazonCloudFront.UpdateCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -2265,8 +3144,16 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         The specified Lambda function association is invalid.
      * @throws InvalidOriginReadTimeoutException
      * @throws InvalidOriginKeepaliveTimeoutException
+     * @throws NoSuchFieldLevelEncryptionConfigException
+     *         The specified configuration for field-level encryption doesn't exist.
+     * @throws IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorException
+     *         The specified configuration for field-level encryption can't be associated with the specified cache
+     *         behavior.
+     * @throws TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException
+     *         The maximum number of distributions have been associated with the specified configuration for field-level
+     *         encryption.
      * @sample AmazonCloudFront.UpdateDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateDistribution" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateDistribution" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
@@ -2297,6 +3184,215 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<UpdateDistributionResult> responseHandler = new StaxResponseHandler<UpdateDistributionResult>(
                     new UpdateDistributionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Update a field-level encryption configuration.
+     * </p>
+     * 
+     * @param updateFieldLevelEncryptionConfigRequest
+     * @return Result of the UpdateFieldLevelEncryptionConfig operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws IllegalUpdateException
+     *         Origin and <code>CallerReference</code> cannot be updated.
+     * @throws InconsistentQuantitiesException
+     *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+     * @throws InvalidArgumentException
+     *         The argument is invalid.
+     * @throws InvalidIfMatchVersionException
+     *         The <code>If-Match</code> version is missing or not valid for the distribution.
+     * @throws NoSuchFieldLevelEncryptionProfileException
+     *         The specified profile for field-level encryption doesn't exist.
+     * @throws NoSuchFieldLevelEncryptionConfigException
+     *         The specified configuration for field-level encryption doesn't exist.
+     * @throws PreconditionFailedException
+     *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+     * @throws TooManyFieldLevelEncryptionQueryArgProfilesException
+     *         The maximum number of query arg profiles for field-level encryption have been created.
+     * @throws TooManyFieldLevelEncryptionContentTypeProfilesException
+     *         The maximum number of content type profiles for field-level encryption have been created.
+     * @throws QueryArgProfileEmptyException
+     *         No profile specified for the field-level encryption query argument.
+     * @sample AmazonCloudFront.UpdateFieldLevelEncryptionConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateFieldLevelEncryptionConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateFieldLevelEncryptionConfigResult updateFieldLevelEncryptionConfig(UpdateFieldLevelEncryptionConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateFieldLevelEncryptionConfig(request);
+    }
+
+    @SdkInternalApi
+    final UpdateFieldLevelEncryptionConfigResult executeUpdateFieldLevelEncryptionConfig(
+            UpdateFieldLevelEncryptionConfigRequest updateFieldLevelEncryptionConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateFieldLevelEncryptionConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateFieldLevelEncryptionConfigRequest> request = null;
+        Response<UpdateFieldLevelEncryptionConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateFieldLevelEncryptionConfigRequestMarshaller().marshall(super.beforeMarshalling(updateFieldLevelEncryptionConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UpdateFieldLevelEncryptionConfigResult> responseHandler = new StaxResponseHandler<UpdateFieldLevelEncryptionConfigResult>(
+                    new UpdateFieldLevelEncryptionConfigResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Update a field-level encryption profile.
+     * </p>
+     * 
+     * @param updateFieldLevelEncryptionProfileRequest
+     * @return Result of the UpdateFieldLevelEncryptionProfile operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws FieldLevelEncryptionProfileAlreadyExistsException
+     *         The specified profile for field-level encryption already exists.
+     * @throws IllegalUpdateException
+     *         Origin and <code>CallerReference</code> cannot be updated.
+     * @throws InconsistentQuantitiesException
+     *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+     * @throws InvalidArgumentException
+     *         The argument is invalid.
+     * @throws InvalidIfMatchVersionException
+     *         The <code>If-Match</code> version is missing or not valid for the distribution.
+     * @throws NoSuchPublicKeyException
+     *         The specified public key doesn't exist.
+     * @throws NoSuchFieldLevelEncryptionProfileException
+     *         The specified profile for field-level encryption doesn't exist.
+     * @throws PreconditionFailedException
+     *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+     * @throws FieldLevelEncryptionProfileSizeExceededException
+     *         The maximum size of a profile for field-level encryption was exceeded.
+     * @throws TooManyFieldLevelEncryptionEncryptionEntitiesException
+     *         The maximum number of encryption entities for field-level encryption have been created.
+     * @throws TooManyFieldLevelEncryptionFieldPatternsException
+     *         The maximum number of field patterns for field-level encryption have been created.
+     * @sample AmazonCloudFront.UpdateFieldLevelEncryptionProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateFieldLevelEncryptionProfile"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateFieldLevelEncryptionProfileResult updateFieldLevelEncryptionProfile(UpdateFieldLevelEncryptionProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateFieldLevelEncryptionProfile(request);
+    }
+
+    @SdkInternalApi
+    final UpdateFieldLevelEncryptionProfileResult executeUpdateFieldLevelEncryptionProfile(
+            UpdateFieldLevelEncryptionProfileRequest updateFieldLevelEncryptionProfileRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateFieldLevelEncryptionProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateFieldLevelEncryptionProfileRequest> request = null;
+        Response<UpdateFieldLevelEncryptionProfileResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateFieldLevelEncryptionProfileRequestMarshaller().marshall(super.beforeMarshalling(updateFieldLevelEncryptionProfileRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UpdateFieldLevelEncryptionProfileResult> responseHandler = new StaxResponseHandler<UpdateFieldLevelEncryptionProfileResult>(
+                    new UpdateFieldLevelEncryptionProfileResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Update public key information. Note that the only value you can change is the comment.
+     * </p>
+     * 
+     * @param updatePublicKeyRequest
+     * @return Result of the UpdatePublicKey operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws CannotChangeImmutablePublicKeyFieldsException
+     *         You can't change the value of a public key.
+     * @throws InvalidArgumentException
+     *         The argument is invalid.
+     * @throws InvalidIfMatchVersionException
+     *         The <code>If-Match</code> version is missing or not valid for the distribution.
+     * @throws IllegalUpdateException
+     *         Origin and <code>CallerReference</code> cannot be updated.
+     * @throws NoSuchPublicKeyException
+     *         The specified public key doesn't exist.
+     * @throws PreconditionFailedException
+     *         The precondition given in one or more of the request-header fields evaluated to <code>false</code>.
+     * @sample AmazonCloudFront.UpdatePublicKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdatePublicKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdatePublicKeyResult updatePublicKey(UpdatePublicKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdatePublicKey(request);
+    }
+
+    @SdkInternalApi
+    final UpdatePublicKeyResult executeUpdatePublicKey(UpdatePublicKeyRequest updatePublicKeyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updatePublicKeyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdatePublicKeyRequest> request = null;
+        Response<UpdatePublicKeyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdatePublicKeyRequestMarshaller().marshall(super.beforeMarshalling(updatePublicKeyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UpdatePublicKeyResult> responseHandler = new StaxResponseHandler<UpdatePublicKeyResult>(
+                    new UpdatePublicKeyResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2341,7 +3437,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @sample AmazonCloudFront.UpdateStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-03-25/UpdateStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/UpdateStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     @Override

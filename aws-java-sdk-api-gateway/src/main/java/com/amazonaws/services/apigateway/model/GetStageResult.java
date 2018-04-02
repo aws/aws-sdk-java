@@ -103,7 +103,7 @@ public class GetStageResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     private CanarySettings canarySettings;
     /**
      * <p>
-     * A collection of Tags associated with a given resource.
+     * The collection of tags. Each tag element is associated with a given resource.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -716,10 +716,10 @@ public class GetStageResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * A collection of Tags associated with a given resource.
+     * The collection of tags. Each tag element is associated with a given resource.
      * </p>
      * 
-     * @return A collection of Tags associated with a given resource.
+     * @return The collection of tags. Each tag element is associated with a given resource.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -728,11 +728,11 @@ public class GetStageResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * A collection of Tags associated with a given resource.
+     * The collection of tags. Each tag element is associated with a given resource.
      * </p>
      * 
      * @param tags
-     *        A collection of Tags associated with a given resource.
+     *        The collection of tags. Each tag element is associated with a given resource.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -741,11 +741,11 @@ public class GetStageResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * A collection of Tags associated with a given resource.
+     * The collection of tags. Each tag element is associated with a given resource.
      * </p>
      * 
      * @param tags
-     *        A collection of Tags associated with a given resource.
+     *        The collection of tags. Each tag element is associated with a given resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
