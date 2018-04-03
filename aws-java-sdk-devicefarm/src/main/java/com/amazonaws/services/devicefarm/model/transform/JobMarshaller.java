@@ -49,6 +49,8 @@ public class JobMarshaller {
             .marshallLocationName("message").build();
     private static final MarshallingInfo<StructuredPojo> DEVICE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("device").build();
+    private static final MarshallingInfo<String> INSTANCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceArn").build();
     private static final MarshallingInfo<StructuredPojo> DEVICEMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deviceMinutes").build();
 
@@ -79,6 +81,7 @@ public class JobMarshaller {
             protocolMarshaller.marshall(job.getCounters(), COUNTERS_BINDING);
             protocolMarshaller.marshall(job.getMessage(), MESSAGE_BINDING);
             protocolMarshaller.marshall(job.getDevice(), DEVICE_BINDING);
+            protocolMarshaller.marshall(job.getInstanceArn(), INSTANCEARN_BINDING);
             protocolMarshaller.marshall(job.getDeviceMinutes(), DEVICEMINUTES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

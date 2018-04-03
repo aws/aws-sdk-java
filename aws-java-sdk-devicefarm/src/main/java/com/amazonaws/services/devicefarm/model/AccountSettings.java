@@ -73,6 +73,17 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private Integer defaultJobTimeoutMinutes;
+    /**
+     * <p>
+     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
+     * Device Farm always signs your apps again and this parameter has no effect.
+     * </p>
+     * <p>
+     * For more information about how Device Farm re-signs your app(s), see <a
+     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * </p>
+     */
+    private Boolean skipAppResign;
 
     /**
      * <p>
@@ -436,6 +447,98 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
+     * Device Farm always signs your apps again and this parameter has no effect.
+     * </p>
+     * <p>
+     * For more information about how Device Farm re-signs your app(s), see <a
+     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * </p>
+     * 
+     * @param skipAppResign
+     *        When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
+     *        devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     *        <p>
+     *        For more information about how Device Farm re-signs your app(s), see <a
+     *        href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *        FAQs</i>.
+     */
+
+    public void setSkipAppResign(Boolean skipAppResign) {
+        this.skipAppResign = skipAppResign;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
+     * Device Farm always signs your apps again and this parameter has no effect.
+     * </p>
+     * <p>
+     * For more information about how Device Farm re-signs your app(s), see <a
+     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * </p>
+     * 
+     * @return When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
+     *         devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     *         <p>
+     *         For more information about how Device Farm re-signs your app(s), see <a
+     *         href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *         FAQs</i>.
+     */
+
+    public Boolean getSkipAppResign() {
+        return this.skipAppResign;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
+     * Device Farm always signs your apps again and this parameter has no effect.
+     * </p>
+     * <p>
+     * For more information about how Device Farm re-signs your app(s), see <a
+     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * </p>
+     * 
+     * @param skipAppResign
+     *        When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
+     *        devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     *        <p>
+     *        For more information about how Device Farm re-signs your app(s), see <a
+     *        href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *        FAQs</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccountSettings withSkipAppResign(Boolean skipAppResign) {
+        setSkipAppResign(skipAppResign);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
+     * Device Farm always signs your apps again and this parameter has no effect.
+     * </p>
+     * <p>
+     * For more information about how Device Farm re-signs your app(s), see <a
+     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * </p>
+     * 
+     * @return When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
+     *         devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     *         <p>
+     *         For more information about how Device Farm re-signs your app(s), see <a
+     *         href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *         FAQs</i>.
+     */
+
+    public Boolean isSkipAppResign() {
+        return this.skipAppResign;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -459,7 +562,9 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
         if (getMaxSlots() != null)
             sb.append("MaxSlots: ").append(getMaxSlots()).append(",");
         if (getDefaultJobTimeoutMinutes() != null)
-            sb.append("DefaultJobTimeoutMinutes: ").append(getDefaultJobTimeoutMinutes());
+            sb.append("DefaultJobTimeoutMinutes: ").append(getDefaultJobTimeoutMinutes()).append(",");
+        if (getSkipAppResign() != null)
+            sb.append("SkipAppResign: ").append(getSkipAppResign());
         sb.append("}");
         return sb.toString();
     }
@@ -502,6 +607,10 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getDefaultJobTimeoutMinutes() != null && other.getDefaultJobTimeoutMinutes().equals(this.getDefaultJobTimeoutMinutes()) == false)
             return false;
+        if (other.getSkipAppResign() == null ^ this.getSkipAppResign() == null)
+            return false;
+        if (other.getSkipAppResign() != null && other.getSkipAppResign().equals(this.getSkipAppResign()) == false)
+            return false;
         return true;
     }
 
@@ -517,6 +626,7 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getTrialMinutes() == null) ? 0 : getTrialMinutes().hashCode());
         hashCode = prime * hashCode + ((getMaxSlots() == null) ? 0 : getMaxSlots().hashCode());
         hashCode = prime * hashCode + ((getDefaultJobTimeoutMinutes() == null) ? 0 : getDefaultJobTimeoutMinutes().hashCode());
+        hashCode = prime * hashCode + ((getSkipAppResign() == null) ? 0 : getSkipAppResign().hashCode());
         return hashCode;
     }
 

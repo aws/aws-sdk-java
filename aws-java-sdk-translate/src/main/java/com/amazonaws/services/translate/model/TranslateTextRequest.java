@@ -36,6 +36,11 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
      * One of the supported language codes for the source text. If the <code>TargetLanguageCode</code> is not "en", the
      * <code>SourceLanguageCode</code> must be "en".
      * </p>
+     * <p>
+     * To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the
+     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call Amazon
+     * Comprehend to determine the source language.
+     * </p>
      */
     private String sourceLanguageCode;
     /**
@@ -91,10 +96,19 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
      * One of the supported language codes for the source text. If the <code>TargetLanguageCode</code> is not "en", the
      * <code>SourceLanguageCode</code> must be "en".
      * </p>
+     * <p>
+     * To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the
+     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call Amazon
+     * Comprehend to determine the source language.
+     * </p>
      * 
      * @param sourceLanguageCode
      *        One of the supported language codes for the source text. If the <code>TargetLanguageCode</code> is not
-     *        "en", the <code>SourceLanguageCode</code> must be "en".
+     *        "en", the <code>SourceLanguageCode</code> must be "en".</p>
+     *        <p>
+     *        To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in
+     *        the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call
+     *        Amazon Comprehend to determine the source language.
      */
 
     public void setSourceLanguageCode(String sourceLanguageCode) {
@@ -106,9 +120,18 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
      * One of the supported language codes for the source text. If the <code>TargetLanguageCode</code> is not "en", the
      * <code>SourceLanguageCode</code> must be "en".
      * </p>
+     * <p>
+     * To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the
+     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call Amazon
+     * Comprehend to determine the source language.
+     * </p>
      * 
      * @return One of the supported language codes for the source text. If the <code>TargetLanguageCode</code> is not
-     *         "en", the <code>SourceLanguageCode</code> must be "en".
+     *         "en", the <code>SourceLanguageCode</code> must be "en".</p>
+     *         <p>
+     *         To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in
+     *         the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call
+     *         Amazon Comprehend to determine the source language.
      */
 
     public String getSourceLanguageCode() {
@@ -120,10 +143,19 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
      * One of the supported language codes for the source text. If the <code>TargetLanguageCode</code> is not "en", the
      * <code>SourceLanguageCode</code> must be "en".
      * </p>
+     * <p>
+     * To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the
+     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call Amazon
+     * Comprehend to determine the source language.
+     * </p>
      * 
      * @param sourceLanguageCode
      *        One of the supported language codes for the source text. If the <code>TargetLanguageCode</code> is not
-     *        "en", the <code>SourceLanguageCode</code> must be "en".
+     *        "en", the <code>SourceLanguageCode</code> must be "en".</p>
+     *        <p>
+     *        To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in
+     *        the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call
+     *        Amazon Comprehend to determine the source language.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

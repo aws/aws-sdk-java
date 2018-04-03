@@ -42,6 +42,12 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
     private String deviceArn;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access session.
+     * </p>
+     */
+    private String instanceArn;
+    /**
+     * <p>
      * The public key of the <code>ssh</code> key pair you want to use for connecting to remote devices in your remote
      * debugging session. This is only required if <code>remoteDebugEnabled</code> is set to <code>true</code>.
      * </p>
@@ -111,6 +117,17 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
      * </ul>
      */
     private String interactionMode;
+    /**
+     * <p>
+     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
+     * Device Farm always signs your apps again and this parameter has no effect.
+     * </p>
+     * <p>
+     * For more information about how Device Farm re-signs your app(s), see <a
+     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * </p>
+     */
+    private Boolean skipAppResign;
 
     /**
      * <p>
@@ -189,6 +206,49 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
 
     public CreateRemoteAccessSessionRequest withDeviceArn(String deviceArn) {
         setDeviceArn(deviceArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access session.
+     * </p>
+     * 
+     * @param instanceArn
+     *        The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access
+     *        session.
+     */
+
+    public void setInstanceArn(String instanceArn) {
+        this.instanceArn = instanceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access session.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access
+     *         session.
+     */
+
+    public String getInstanceArn() {
+        return this.instanceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access session.
+     * </p>
+     * 
+     * @param instanceArn
+     *        The Amazon Resource Name (ARN) of the device instance for which you want to create a remote access
+     *        session.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRemoteAccessSessionRequest withInstanceArn(String instanceArn) {
+        setInstanceArn(instanceArn);
         return this;
     }
 
@@ -737,6 +797,98 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
+     * Device Farm always signs your apps again and this parameter has no effect.
+     * </p>
+     * <p>
+     * For more information about how Device Farm re-signs your app(s), see <a
+     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * </p>
+     * 
+     * @param skipAppResign
+     *        When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
+     *        devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     *        <p>
+     *        For more information about how Device Farm re-signs your app(s), see <a
+     *        href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *        FAQs</i>.
+     */
+
+    public void setSkipAppResign(Boolean skipAppResign) {
+        this.skipAppResign = skipAppResign;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
+     * Device Farm always signs your apps again and this parameter has no effect.
+     * </p>
+     * <p>
+     * For more information about how Device Farm re-signs your app(s), see <a
+     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * </p>
+     * 
+     * @return When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
+     *         devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     *         <p>
+     *         For more information about how Device Farm re-signs your app(s), see <a
+     *         href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *         FAQs</i>.
+     */
+
+    public Boolean getSkipAppResign() {
+        return this.skipAppResign;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
+     * Device Farm always signs your apps again and this parameter has no effect.
+     * </p>
+     * <p>
+     * For more information about how Device Farm re-signs your app(s), see <a
+     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * </p>
+     * 
+     * @param skipAppResign
+     *        When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
+     *        devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     *        <p>
+     *        For more information about how Device Farm re-signs your app(s), see <a
+     *        href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *        FAQs</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRemoteAccessSessionRequest withSkipAppResign(Boolean skipAppResign) {
+        setSkipAppResign(skipAppResign);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
+     * Device Farm always signs your apps again and this parameter has no effect.
+     * </p>
+     * <p>
+     * For more information about how Device Farm re-signs your app(s), see <a
+     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * </p>
+     * 
+     * @return When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
+     *         devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     *         <p>
+     *         For more information about how Device Farm re-signs your app(s), see <a
+     *         href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *         FAQs</i>.
+     */
+
+    public Boolean isSkipAppResign() {
+        return this.skipAppResign;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -751,6 +903,8 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
             sb.append("ProjectArn: ").append(getProjectArn()).append(",");
         if (getDeviceArn() != null)
             sb.append("DeviceArn: ").append(getDeviceArn()).append(",");
+        if (getInstanceArn() != null)
+            sb.append("InstanceArn: ").append(getInstanceArn()).append(",");
         if (getSshPublicKey() != null)
             sb.append("SshPublicKey: ").append(getSshPublicKey()).append(",");
         if (getRemoteDebugEnabled() != null)
@@ -766,7 +920,9 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
         if (getConfiguration() != null)
             sb.append("Configuration: ").append(getConfiguration()).append(",");
         if (getInteractionMode() != null)
-            sb.append("InteractionMode: ").append(getInteractionMode());
+            sb.append("InteractionMode: ").append(getInteractionMode()).append(",");
+        if (getSkipAppResign() != null)
+            sb.append("SkipAppResign: ").append(getSkipAppResign());
         sb.append("}");
         return sb.toString();
     }
@@ -788,6 +944,10 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
         if (other.getDeviceArn() == null ^ this.getDeviceArn() == null)
             return false;
         if (other.getDeviceArn() != null && other.getDeviceArn().equals(this.getDeviceArn()) == false)
+            return false;
+        if (other.getInstanceArn() == null ^ this.getInstanceArn() == null)
+            return false;
+        if (other.getInstanceArn() != null && other.getInstanceArn().equals(this.getInstanceArn()) == false)
             return false;
         if (other.getSshPublicKey() == null ^ this.getSshPublicKey() == null)
             return false;
@@ -821,6 +981,10 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getInteractionMode() != null && other.getInteractionMode().equals(this.getInteractionMode()) == false)
             return false;
+        if (other.getSkipAppResign() == null ^ this.getSkipAppResign() == null)
+            return false;
+        if (other.getSkipAppResign() != null && other.getSkipAppResign().equals(this.getSkipAppResign()) == false)
+            return false;
         return true;
     }
 
@@ -831,6 +995,7 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
 
         hashCode = prime * hashCode + ((getProjectArn() == null) ? 0 : getProjectArn().hashCode());
         hashCode = prime * hashCode + ((getDeviceArn() == null) ? 0 : getDeviceArn().hashCode());
+        hashCode = prime * hashCode + ((getInstanceArn() == null) ? 0 : getInstanceArn().hashCode());
         hashCode = prime * hashCode + ((getSshPublicKey() == null) ? 0 : getSshPublicKey().hashCode());
         hashCode = prime * hashCode + ((getRemoteDebugEnabled() == null) ? 0 : getRemoteDebugEnabled().hashCode());
         hashCode = prime * hashCode + ((getRemoteRecordEnabled() == null) ? 0 : getRemoteRecordEnabled().hashCode());
@@ -839,6 +1004,7 @@ public class CreateRemoteAccessSessionRequest extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getClientId() == null) ? 0 : getClientId().hashCode());
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
         hashCode = prime * hashCode + ((getInteractionMode() == null) ? 0 : getInteractionMode().hashCode());
+        hashCode = prime * hashCode + ((getSkipAppResign() == null) ? 0 : getSkipAppResign().hashCode());
         return hashCode;
     }
 

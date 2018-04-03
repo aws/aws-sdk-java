@@ -21,7 +21,7 @@
  * service overview, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What is AWS Lambda</a>, and
  * for information about how the service works, see <a
  * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS Lambda: How it Works</a> in the
- * <i>AWS Lambda Developer Guide</i>.
+ * <b>AWS Lambda Developer Guide</b>.
  * </p>
  */
 package com.amazonaws.services.lambda;

@@ -45,6 +45,8 @@ public class RemoteAccessSessionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stopped").build();
     private static final MarshallingInfo<StructuredPojo> DEVICE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("device").build();
+    private static final MarshallingInfo<String> INSTANCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceArn").build();
     private static final MarshallingInfo<Boolean> REMOTEDEBUGENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("remoteDebugEnabled").build();
     private static final MarshallingInfo<Boolean> REMOTERECORDENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -65,6 +67,8 @@ public class RemoteAccessSessionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deviceUdid").build();
     private static final MarshallingInfo<String> INTERACTIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("interactionMode").build();
+    private static final MarshallingInfo<Boolean> SKIPAPPRESIGN_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("skipAppResign").build();
 
     private static final RemoteAccessSessionMarshaller instance = new RemoteAccessSessionMarshaller();
 
@@ -91,6 +95,7 @@ public class RemoteAccessSessionMarshaller {
             protocolMarshaller.marshall(remoteAccessSession.getStarted(), STARTED_BINDING);
             protocolMarshaller.marshall(remoteAccessSession.getStopped(), STOPPED_BINDING);
             protocolMarshaller.marshall(remoteAccessSession.getDevice(), DEVICE_BINDING);
+            protocolMarshaller.marshall(remoteAccessSession.getInstanceArn(), INSTANCEARN_BINDING);
             protocolMarshaller.marshall(remoteAccessSession.getRemoteDebugEnabled(), REMOTEDEBUGENABLED_BINDING);
             protocolMarshaller.marshall(remoteAccessSession.getRemoteRecordEnabled(), REMOTERECORDENABLED_BINDING);
             protocolMarshaller.marshall(remoteAccessSession.getRemoteRecordAppArn(), REMOTERECORDAPPARN_BINDING);
@@ -101,6 +106,7 @@ public class RemoteAccessSessionMarshaller {
             protocolMarshaller.marshall(remoteAccessSession.getEndpoint(), ENDPOINT_BINDING);
             protocolMarshaller.marshall(remoteAccessSession.getDeviceUdid(), DEVICEUDID_BINDING);
             protocolMarshaller.marshall(remoteAccessSession.getInteractionMode(), INTERACTIONMODE_BINDING);
+            protocolMarshaller.marshall(remoteAccessSession.getSkipAppResign(), SKIPAPPRESIGN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

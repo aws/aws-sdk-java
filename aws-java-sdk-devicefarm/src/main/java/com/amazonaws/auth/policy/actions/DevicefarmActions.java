@@ -27,6 +27,8 @@ public enum DevicefarmActions implements Action {
 
     /** Action for the CreateDevicePool operation. */
     CreateDevicePool("devicefarm:CreateDevicePool"),
+    /** Action for the CreateInstanceProfile operation. */
+    CreateInstanceProfile("devicefarm:CreateInstanceProfile"),
     /** Action for the CreateNetworkProfile operation. */
     CreateNetworkProfile("devicefarm:CreateNetworkProfile"),
     /** Action for the CreateProject operation. */
@@ -37,6 +39,8 @@ public enum DevicefarmActions implements Action {
     CreateUpload("devicefarm:CreateUpload"),
     /** Action for the DeleteDevicePool operation. */
     DeleteDevicePool("devicefarm:DeleteDevicePool"),
+    /** Action for the DeleteInstanceProfile operation. */
+    DeleteInstanceProfile("devicefarm:DeleteInstanceProfile"),
     /** Action for the DeleteNetworkProfile operation. */
     DeleteNetworkProfile("devicefarm:DeleteNetworkProfile"),
     /** Action for the DeleteProject operation. */
@@ -51,10 +55,14 @@ public enum DevicefarmActions implements Action {
     GetAccountSettings("devicefarm:GetAccountSettings"),
     /** Action for the GetDevice operation. */
     GetDevice("devicefarm:GetDevice"),
+    /** Action for the GetDeviceInstance operation. */
+    GetDeviceInstance("devicefarm:GetDeviceInstance"),
     /** Action for the GetDevicePool operation. */
     GetDevicePool("devicefarm:GetDevicePool"),
     /** Action for the GetDevicePoolCompatibility operation. */
     GetDevicePoolCompatibility("devicefarm:GetDevicePoolCompatibility"),
+    /** Action for the GetInstanceProfile operation. */
+    GetInstanceProfile("devicefarm:GetInstanceProfile"),
     /** Action for the GetJob operation. */
     GetJob("devicefarm:GetJob"),
     /** Action for the GetNetworkProfile operation. */
@@ -77,10 +85,14 @@ public enum DevicefarmActions implements Action {
     InstallToRemoteAccessSession("devicefarm:InstallToRemoteAccessSession"),
     /** Action for the ListArtifacts operation. */
     ListArtifacts("devicefarm:ListArtifacts"),
+    /** Action for the ListDeviceInstances operation. */
+    ListDeviceInstances("devicefarm:ListDeviceInstances"),
     /** Action for the ListDevicePools operation. */
     ListDevicePools("devicefarm:ListDevicePools"),
     /** Action for the ListDevices operation. */
     ListDevices("devicefarm:ListDevices"),
+    /** Action for the ListInstanceProfiles operation. */
+    ListInstanceProfiles("devicefarm:ListInstanceProfiles"),
     /** Action for the ListJobs operation. */
     ListJobs("devicefarm:ListJobs"),
     /** Action for the ListNetworkProfiles operation. */
@@ -117,8 +129,12 @@ public enum DevicefarmActions implements Action {
     StopRemoteAccessSession("devicefarm:StopRemoteAccessSession"),
     /** Action for the StopRun operation. */
     StopRun("devicefarm:StopRun"),
+    /** Action for the UpdateDeviceInstance operation. */
+    UpdateDeviceInstance("devicefarm:UpdateDeviceInstance"),
     /** Action for the UpdateDevicePool operation. */
     UpdateDevicePool("devicefarm:UpdateDevicePool"),
+    /** Action for the UpdateInstanceProfile operation. */
+    UpdateInstanceProfile("devicefarm:UpdateInstanceProfile"),
     /** Action for the UpdateNetworkProfile operation. */
     UpdateNetworkProfile("devicefarm:UpdateNetworkProfile"),
     /** Action for the UpdateProject operation. */

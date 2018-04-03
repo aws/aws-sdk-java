@@ -114,6 +114,7 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
+     * For more information, see <a>dlq</a>.
      * </p>
      */
     private DeadLetterConfig deadLetterConfig;
@@ -738,11 +739,12 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
+     * For more information, see <a>dlq</a>.
      * </p>
      * 
      * @param deadLetterConfig
      *        The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS
-     *        topic.
+     *        topic. For more information, see <a>dlq</a>.
      */
 
     public void setDeadLetterConfig(DeadLetterConfig deadLetterConfig) {
@@ -752,10 +754,11 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
+     * For more information, see <a>dlq</a>.
      * </p>
      * 
      * @return The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon
-     *         SNS topic.
+     *         SNS topic. For more information, see <a>dlq</a>.
      */
 
     public DeadLetterConfig getDeadLetterConfig() {
@@ -765,11 +768,12 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
+     * For more information, see <a>dlq</a>.
      * </p>
      * 
      * @param deadLetterConfig
      *        The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS
-     *        topic.
+     *        topic. For more information, see <a>dlq</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

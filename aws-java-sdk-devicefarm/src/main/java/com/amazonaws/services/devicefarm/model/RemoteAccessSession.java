@@ -168,6 +168,12 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
     private Device device;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the instance.
+     * </p>
+     */
+    private String instanceArn;
+    /**
+     * <p>
      * This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.
      * </p>
      */
@@ -252,6 +258,17 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * </ul>
      */
     private String interactionMode;
+    /**
+     * <p>
+     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
+     * Device Farm always signs your apps again and this parameter has no effect.
+     * </p>
+     * <p>
+     * For more information about how Device Farm re-signs your app(s), see <a
+     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * </p>
+     */
+    private Boolean skipAppResign;
 
     /**
      * <p>
@@ -1511,6 +1528,46 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the instance.
+     * </p>
+     * 
+     * @param instanceArn
+     *        The Amazon Resource Name (ARN) of the instance.
+     */
+
+    public void setInstanceArn(String instanceArn) {
+        this.instanceArn = instanceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the instance.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the instance.
+     */
+
+    public String getInstanceArn() {
+        return this.instanceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the instance.
+     * </p>
+     * 
+     * @param instanceArn
+     *        The Amazon Resource Name (ARN) of the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RemoteAccessSession withInstanceArn(String instanceArn) {
+        setInstanceArn(instanceArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * This flag is set to <code>true</code> if remote debugging is enabled for the remote access session.
      * </p>
      * 
@@ -2244,6 +2301,98 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
+     * Device Farm always signs your apps again and this parameter has no effect.
+     * </p>
+     * <p>
+     * For more information about how Device Farm re-signs your app(s), see <a
+     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * </p>
+     * 
+     * @param skipAppResign
+     *        When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
+     *        devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     *        <p>
+     *        For more information about how Device Farm re-signs your app(s), see <a
+     *        href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *        FAQs</i>.
+     */
+
+    public void setSkipAppResign(Boolean skipAppResign) {
+        this.skipAppResign = skipAppResign;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
+     * Device Farm always signs your apps again and this parameter has no effect.
+     * </p>
+     * <p>
+     * For more information about how Device Farm re-signs your app(s), see <a
+     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * </p>
+     * 
+     * @return When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
+     *         devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     *         <p>
+     *         For more information about how Device Farm re-signs your app(s), see <a
+     *         href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *         FAQs</i>.
+     */
+
+    public Boolean getSkipAppResign() {
+        return this.skipAppResign;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
+     * Device Farm always signs your apps again and this parameter has no effect.
+     * </p>
+     * <p>
+     * For more information about how Device Farm re-signs your app(s), see <a
+     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * </p>
+     * 
+     * @param skipAppResign
+     *        When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
+     *        devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     *        <p>
+     *        For more information about how Device Farm re-signs your app(s), see <a
+     *        href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *        FAQs</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RemoteAccessSession withSkipAppResign(Boolean skipAppResign) {
+        setSkipAppResign(skipAppResign);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
+     * Device Farm always signs your apps again and this parameter has no effect.
+     * </p>
+     * <p>
+     * For more information about how Device Farm re-signs your app(s), see <a
+     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * </p>
+     * 
+     * @return When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
+     *         devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     *         <p>
+     *         For more information about how Device Farm re-signs your app(s), see <a
+     *         href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *         FAQs</i>.
+     */
+
+    public Boolean isSkipAppResign() {
+        return this.skipAppResign;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -2272,6 +2421,8 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
             sb.append("Stopped: ").append(getStopped()).append(",");
         if (getDevice() != null)
             sb.append("Device: ").append(getDevice()).append(",");
+        if (getInstanceArn() != null)
+            sb.append("InstanceArn: ").append(getInstanceArn()).append(",");
         if (getRemoteDebugEnabled() != null)
             sb.append("RemoteDebugEnabled: ").append(getRemoteDebugEnabled()).append(",");
         if (getRemoteRecordEnabled() != null)
@@ -2291,7 +2442,9 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
         if (getDeviceUdid() != null)
             sb.append("DeviceUdid: ").append(getDeviceUdid()).append(",");
         if (getInteractionMode() != null)
-            sb.append("InteractionMode: ").append(getInteractionMode());
+            sb.append("InteractionMode: ").append(getInteractionMode()).append(",");
+        if (getSkipAppResign() != null)
+            sb.append("SkipAppResign: ").append(getSkipAppResign());
         sb.append("}");
         return sb.toString();
     }
@@ -2342,6 +2495,10 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getDevice() != null && other.getDevice().equals(this.getDevice()) == false)
             return false;
+        if (other.getInstanceArn() == null ^ this.getInstanceArn() == null)
+            return false;
+        if (other.getInstanceArn() != null && other.getInstanceArn().equals(this.getInstanceArn()) == false)
+            return false;
         if (other.getRemoteDebugEnabled() == null ^ this.getRemoteDebugEnabled() == null)
             return false;
         if (other.getRemoteDebugEnabled() != null && other.getRemoteDebugEnabled().equals(this.getRemoteDebugEnabled()) == false)
@@ -2382,6 +2539,10 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getInteractionMode() != null && other.getInteractionMode().equals(this.getInteractionMode()) == false)
             return false;
+        if (other.getSkipAppResign() == null ^ this.getSkipAppResign() == null)
+            return false;
+        if (other.getSkipAppResign() != null && other.getSkipAppResign().equals(this.getSkipAppResign()) == false)
+            return false;
         return true;
     }
 
@@ -2399,6 +2560,7 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getStarted() == null) ? 0 : getStarted().hashCode());
         hashCode = prime * hashCode + ((getStopped() == null) ? 0 : getStopped().hashCode());
         hashCode = prime * hashCode + ((getDevice() == null) ? 0 : getDevice().hashCode());
+        hashCode = prime * hashCode + ((getInstanceArn() == null) ? 0 : getInstanceArn().hashCode());
         hashCode = prime * hashCode + ((getRemoteDebugEnabled() == null) ? 0 : getRemoteDebugEnabled().hashCode());
         hashCode = prime * hashCode + ((getRemoteRecordEnabled() == null) ? 0 : getRemoteRecordEnabled().hashCode());
         hashCode = prime * hashCode + ((getRemoteRecordAppArn() == null) ? 0 : getRemoteRecordAppArn().hashCode());
@@ -2409,6 +2571,7 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode());
         hashCode = prime * hashCode + ((getDeviceUdid() == null) ? 0 : getDeviceUdid().hashCode());
         hashCode = prime * hashCode + ((getInteractionMode() == null) ? 0 : getInteractionMode().hashCode());
+        hashCode = prime * hashCode + ((getSkipAppResign() == null) ? 0 : getSkipAppResign().hashCode());
         return hashCode;
     }
 

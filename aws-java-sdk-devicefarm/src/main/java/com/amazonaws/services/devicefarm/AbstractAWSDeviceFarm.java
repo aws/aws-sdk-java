@@ -43,6 +43,11 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
     }
 
     @Override
+    public CreateInstanceProfileResult createInstanceProfile(CreateInstanceProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateNetworkProfileResult createNetworkProfile(CreateNetworkProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -64,6 +69,11 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
 
     @Override
     public DeleteDevicePoolResult deleteDevicePool(DeleteDevicePoolRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteInstanceProfileResult deleteInstanceProfile(DeleteInstanceProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -103,12 +113,22 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
     }
 
     @Override
+    public GetDeviceInstanceResult getDeviceInstance(GetDeviceInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetDevicePoolResult getDevicePool(GetDevicePoolRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetDevicePoolCompatibilityResult getDevicePoolCompatibility(GetDevicePoolCompatibilityRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetInstanceProfileResult getInstanceProfile(GetInstanceProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -168,12 +188,22 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
     }
 
     @Override
+    public ListDeviceInstancesResult listDeviceInstances(ListDeviceInstancesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListDevicePoolsResult listDevicePools(ListDevicePoolsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ListDevicesResult listDevices(ListDevicesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListInstanceProfilesResult listInstanceProfiles(ListInstanceProfilesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -268,7 +298,17 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
     }
 
     @Override
+    public UpdateDeviceInstanceResult updateDeviceInstance(UpdateDeviceInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateDevicePoolResult updateDevicePool(UpdateDevicePoolRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateInstanceProfileResult updateInstanceProfile(UpdateInstanceProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

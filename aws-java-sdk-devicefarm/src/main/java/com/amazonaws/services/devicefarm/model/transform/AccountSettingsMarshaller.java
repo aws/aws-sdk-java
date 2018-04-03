@@ -43,6 +43,8 @@ public class AccountSettingsMarshaller {
             .marshallLocationName("maxSlots").build();
     private static final MarshallingInfo<Integer> DEFAULTJOBTIMEOUTMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultJobTimeoutMinutes").build();
+    private static final MarshallingInfo<Boolean> SKIPAPPRESIGN_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("skipAppResign").build();
 
     private static final AccountSettingsMarshaller instance = new AccountSettingsMarshaller();
 
@@ -67,6 +69,7 @@ public class AccountSettingsMarshaller {
             protocolMarshaller.marshall(accountSettings.getTrialMinutes(), TRIALMINUTES_BINDING);
             protocolMarshaller.marshall(accountSettings.getMaxSlots(), MAXSLOTS_BINDING);
             protocolMarshaller.marshall(accountSettings.getDefaultJobTimeoutMinutes(), DEFAULTJOBTIMEOUTMINUTES_BINDING);
+            protocolMarshaller.marshall(accountSettings.getSkipAppResign(), SKIPAPPRESIGN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

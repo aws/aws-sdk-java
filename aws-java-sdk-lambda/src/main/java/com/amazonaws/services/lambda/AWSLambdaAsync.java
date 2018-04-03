@@ -34,7 +34,7 @@ import com.amazonaws.services.lambda.model.*;
  * service overview, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What is AWS Lambda</a>, and
  * for information about how the service works, see <a
  * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS Lambda: How it Works</a> in the
- * <i>AWS Lambda Developer Guide</i>.
+ * <b>AWS Lambda Developer Guide</b>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -49,7 +49,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      * </p>
      * <p>
      * For information about the push model, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS Lambda: How it Works</a>.
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">Lambda Functions</a>.
      * </p>
      * <p>
      * If you are using versioning, the permissions you add are specific to the Lambda function version or alias you
@@ -78,7 +78,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      * </p>
      * <p>
      * For information about the push model, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS Lambda: How it Works</a>.
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">Lambda Functions</a>.
      * </p>
      * <p>
      * If you are using versioning, the permissions you add are specific to the Lambda function version or alias you
@@ -150,20 +150,13 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <p>
      * This association between a stream source and a Lambda function is called the event source mapping.
      * </p>
-     * <important>
-     * <p>
-     * This event source mapping is relevant only in the AWS Lambda pull model, where AWS Lambda invokes the function.
-     * For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-     * Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.
-     * </p>
-     * </important>
      * <p>
      * You provide mapping information (for example, which stream to read from and which Lambda function to invoke) in
      * the request body.
      * </p>
      * <p>
      * Each event source, such as an Amazon Kinesis or a DynamoDB stream, can be associated with multiple AWS Lambda
-     * function. A given Lambda function can be associated with multiple AWS event sources.
+     * functions. A given Lambda function can be associated with multiple AWS event sources.
      * </p>
      * <p>
      * If you are using versioning, you can specify a specific function version or an alias via the function name
@@ -191,20 +184,13 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <p>
      * This association between a stream source and a Lambda function is called the event source mapping.
      * </p>
-     * <important>
-     * <p>
-     * This event source mapping is relevant only in the AWS Lambda pull model, where AWS Lambda invokes the function.
-     * For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-     * Lambda: How it Works</a> in the <i>AWS Lambda Developer Guide</i>.
-     * </p>
-     * </important>
      * <p>
      * You provide mapping information (for example, which stream to read from and which Lambda function to invoke) in
      * the request body.
      * </p>
      * <p>
      * Each event source, such as an Amazon Kinesis or a DynamoDB stream, can be associated with multiple AWS Lambda
-     * function. A given Lambda function can be associated with multiple AWS event sources.
+     * functions. A given Lambda function can be associated with multiple AWS event sources.
      * </p>
      * <p>
      * If you are using versioning, you can specify a specific function version or an alias via the function name
@@ -1047,7 +1033,9 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
-     * Returns a list of tags assigned to a function when supplied the function ARN (Amazon Resource Name).
+     * Returns a list of tags assigned to a function when supplied the function ARN (Amazon Resource Name). For more
+     * information on Tagging, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
+     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.
      * </p>
      * 
      * @param listTagsRequest
@@ -1060,7 +1048,9 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
-     * Returns a list of tags assigned to a function when supplied the function ARN (Amazon Resource Name).
+     * Returns a list of tags assigned to a function when supplied the function ARN (Amazon Resource Name). For more
+     * information on Tagging, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
+     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.
      * </p>
      * 
      * @param listTagsRequest
@@ -1250,7 +1240,8 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <p>
      * Creates a list of tags (key-value pairs) on the Lambda function. Requires the Lambda function ARN (Amazon
      * Resource Name). If a key is specified without a value, Lambda creates a tag with the specified key and a value of
-     * null.
+     * null. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
+     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.
      * </p>
      * 
      * @param tagResourceRequest
@@ -1265,7 +1256,8 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <p>
      * Creates a list of tags (key-value pairs) on the Lambda function. Requires the Lambda function ARN (Amazon
      * Resource Name). If a key is specified without a value, Lambda creates a tag with the specified key and a value of
-     * null.
+     * null. For more information, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
+     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.
      * </p>
      * 
      * @param tagResourceRequest
@@ -1283,7 +1275,9 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
-     * Removes tags from a Lambda function. Requires the function ARN (Amazon Resource Name).
+     * Removes tags from a Lambda function. Requires the function ARN (Amazon Resource Name). For more information, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a> in the <b>AWS
+     * Lambda Developer Guide</b>.
      * </p>
      * 
      * @param untagResourceRequest
@@ -1296,7 +1290,9 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
-     * Removes tags from a Lambda function. Requires the function ARN (Amazon Resource Name).
+     * Removes tags from a Lambda function. Requires the function ARN (Amazon Resource Name). For more information, see
+     * <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a> in the <b>AWS
+     * Lambda Developer Guide</b>.
      * </p>
      * 
      * @param untagResourceRequest

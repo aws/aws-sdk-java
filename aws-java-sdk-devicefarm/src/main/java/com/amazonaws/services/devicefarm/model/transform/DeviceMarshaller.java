@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.devicefarm.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -65,6 +66,8 @@ public class DeviceMarshaller {
             .marshallLocationName("fleetType").build();
     private static final MarshallingInfo<String> FLEETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("fleetName").build();
+    private static final MarshallingInfo<List> INSTANCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("instances").build();
 
     private static final DeviceMarshaller instance = new DeviceMarshaller();
 
@@ -101,6 +104,7 @@ public class DeviceMarshaller {
             protocolMarshaller.marshall(device.getRemoteDebugEnabled(), REMOTEDEBUGENABLED_BINDING);
             protocolMarshaller.marshall(device.getFleetType(), FLEETTYPE_BINDING);
             protocolMarshaller.marshall(device.getFleetName(), FLEETNAME_BINDING);
+            protocolMarshaller.marshall(device.getInstances(), INSTANCES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

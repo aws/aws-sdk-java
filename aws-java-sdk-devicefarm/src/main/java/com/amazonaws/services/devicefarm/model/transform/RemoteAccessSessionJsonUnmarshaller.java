@@ -84,6 +84,10 @@ public class RemoteAccessSessionJsonUnmarshaller implements Unmarshaller<RemoteA
                     context.nextToken();
                     remoteAccessSession.setDevice(DeviceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("instanceArn", targetDepth)) {
+                    context.nextToken();
+                    remoteAccessSession.setInstanceArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("remoteDebugEnabled", targetDepth)) {
                     context.nextToken();
                     remoteAccessSession.setRemoteDebugEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
@@ -123,6 +127,10 @@ public class RemoteAccessSessionJsonUnmarshaller implements Unmarshaller<RemoteA
                 if (context.testExpression("interactionMode", targetDepth)) {
                     context.nextToken();
                     remoteAccessSession.setInteractionMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("skipAppResign", targetDepth)) {
+                    context.nextToken();
+                    remoteAccessSession.setSkipAppResign(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

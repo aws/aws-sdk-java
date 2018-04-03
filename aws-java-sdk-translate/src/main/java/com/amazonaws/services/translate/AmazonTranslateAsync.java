@@ -69,6 +69,11 @@ public interface AmazonTranslateAsync extends AmazonTranslate {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the
+     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call Amazon
+     * Comprehend to determine the source language.
+     * </p>
      * 
      * @param translateTextRequest
      * @return A Java Future containing the result of the TranslateText operation returned by the service.
@@ -115,6 +120,11 @@ public interface AmazonTranslateAsync extends AmazonTranslate {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the
+     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call Amazon
+     * Comprehend to determine the source language.
+     * </p>
      * 
      * @param translateTextRequest
      * @param asyncHandler

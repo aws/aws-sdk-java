@@ -89,6 +89,9 @@ public class AmazonTranslateClient extends AmazonWebServiceClient implements Ama
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withModeledClass(
                                     com.amazonaws.services.translate.model.ServiceUnavailableException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DetectedLanguageLowConfidenceException").withModeledClass(
+                                    com.amazonaws.services.translate.model.DetectedLanguageLowConfidenceException.class))
                     .withBaseServiceExceptionClass(com.amazonaws.services.translate.model.AmazonTranslateException.class));
 
     public static AmazonTranslateClientBuilder builder() {
@@ -159,6 +162,11 @@ public class AmazonTranslateClient extends AmazonWebServiceClient implements Ama
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the
+     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call Amazon
+     * Comprehend to determine the source language.
+     * </p>
      * 
      * @param translateTextRequest
      * @return Result of the TranslateText operation returned by the service.
@@ -172,6 +180,12 @@ public class AmazonTranslateClient extends AmazonWebServiceClient implements Ama
      * @throws UnsupportedLanguagePairException
      *         Amazon Translate cannot translate input text in the source language into this target language. For more
      *         information, see <a>how-to-error-msg</a>.
+     * @throws DetectedLanguageLowConfidenceException
+     *         The confidence that Amazon Comprehend accurately detected the source language is low. If a low confidence
+     *         level is acceptable for your application, you can use the language in the exception to call Amazon
+     *         Translate again. For more information, see the <a
+     *         href="https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectDominantLanguage.html"
+     *         >DetectDominantLanguage</a> operation in the <i>Amazon Comprehend Developer Guide</i>.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @throws ServiceUnavailableException

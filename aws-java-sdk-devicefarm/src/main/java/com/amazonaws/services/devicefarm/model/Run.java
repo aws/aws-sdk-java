@@ -377,11 +377,21 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
     private CustomerArtifactPaths customerArtifactPaths;
     /**
      * <p>
-     * A pre-signed Amazon S3 URL that can be used with a corresponding GET request to download the symbol file for the
-     * run.
+     * The Device Farm console URL for the recording of the run.
      * </p>
      */
     private String webUrl;
+    /**
+     * <p>
+     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
+     * Device Farm always signs your apps again and this parameter has no effect.
+     * </p>
+     * <p>
+     * For more information about how Device Farm re-signs your app(s), see <a
+     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * </p>
+     */
+    private Boolean skipAppResign;
 
     /**
      * <p>
@@ -3486,13 +3496,11 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A pre-signed Amazon S3 URL that can be used with a corresponding GET request to download the symbol file for the
-     * run.
+     * The Device Farm console URL for the recording of the run.
      * </p>
      * 
      * @param webUrl
-     *        A pre-signed Amazon S3 URL that can be used with a corresponding GET request to download the symbol file
-     *        for the run.
+     *        The Device Farm console URL for the recording of the run.
      */
 
     public void setWebUrl(String webUrl) {
@@ -3501,12 +3509,10 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A pre-signed Amazon S3 URL that can be used with a corresponding GET request to download the symbol file for the
-     * run.
+     * The Device Farm console URL for the recording of the run.
      * </p>
      * 
-     * @return A pre-signed Amazon S3 URL that can be used with a corresponding GET request to download the symbol file
-     *         for the run.
+     * @return The Device Farm console URL for the recording of the run.
      */
 
     public String getWebUrl() {
@@ -3515,19 +3521,109 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A pre-signed Amazon S3 URL that can be used with a corresponding GET request to download the symbol file for the
-     * run.
+     * The Device Farm console URL for the recording of the run.
      * </p>
      * 
      * @param webUrl
-     *        A pre-signed Amazon S3 URL that can be used with a corresponding GET request to download the symbol file
-     *        for the run.
+     *        The Device Farm console URL for the recording of the run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Run withWebUrl(String webUrl) {
         setWebUrl(webUrl);
         return this;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
+     * Device Farm always signs your apps again and this parameter has no effect.
+     * </p>
+     * <p>
+     * For more information about how Device Farm re-signs your app(s), see <a
+     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * </p>
+     * 
+     * @param skipAppResign
+     *        When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
+     *        devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     *        <p>
+     *        For more information about how Device Farm re-signs your app(s), see <a
+     *        href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *        FAQs</i>.
+     */
+
+    public void setSkipAppResign(Boolean skipAppResign) {
+        this.skipAppResign = skipAppResign;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
+     * Device Farm always signs your apps again and this parameter has no effect.
+     * </p>
+     * <p>
+     * For more information about how Device Farm re-signs your app(s), see <a
+     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * </p>
+     * 
+     * @return When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
+     *         devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     *         <p>
+     *         For more information about how Device Farm re-signs your app(s), see <a
+     *         href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *         FAQs</i>.
+     */
+
+    public Boolean getSkipAppResign() {
+        return this.skipAppResign;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
+     * Device Farm always signs your apps again and this parameter has no effect.
+     * </p>
+     * <p>
+     * For more information about how Device Farm re-signs your app(s), see <a
+     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * </p>
+     * 
+     * @param skipAppResign
+     *        When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
+     *        devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     *        <p>
+     *        For more information about how Device Farm re-signs your app(s), see <a
+     *        href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *        FAQs</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Run withSkipAppResign(Boolean skipAppResign) {
+        setSkipAppResign(skipAppResign);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public devices,
+     * Device Farm always signs your apps again and this parameter has no effect.
+     * </p>
+     * <p>
+     * For more information about how Device Farm re-signs your app(s), see <a
+     * href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.
+     * </p>
+     * 
+     * @return When set to <code>true</code>, for private devices, Device Farm will not sign your app again. For public
+     *         devices, Device Farm always signs your apps again and this parameter has no effect.</p>
+     *         <p>
+     *         For more information about how Device Farm re-signs your app(s), see <a
+     *         href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in the <i>AWS Device Farm
+     *         FAQs</i>.
+     */
+
+    public Boolean isSkipAppResign() {
+        return this.skipAppResign;
     }
 
     /**
@@ -3596,7 +3692,9 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
         if (getCustomerArtifactPaths() != null)
             sb.append("CustomerArtifactPaths: ").append(getCustomerArtifactPaths()).append(",");
         if (getWebUrl() != null)
-            sb.append("WebUrl: ").append(getWebUrl());
+            sb.append("WebUrl: ").append(getWebUrl()).append(",");
+        if (getSkipAppResign() != null)
+            sb.append("SkipAppResign: ").append(getSkipAppResign());
         sb.append("}");
         return sb.toString();
     }
@@ -3723,6 +3821,10 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getWebUrl() != null && other.getWebUrl().equals(this.getWebUrl()) == false)
             return false;
+        if (other.getSkipAppResign() == null ^ this.getSkipAppResign() == null)
+            return false;
+        if (other.getSkipAppResign() != null && other.getSkipAppResign().equals(this.getSkipAppResign()) == false)
+            return false;
         return true;
     }
 
@@ -3759,6 +3861,7 @@ public class Run implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         hashCode = prime * hashCode + ((getCustomerArtifactPaths() == null) ? 0 : getCustomerArtifactPaths().hashCode());
         hashCode = prime * hashCode + ((getWebUrl() == null) ? 0 : getWebUrl().hashCode());
+        hashCode = prime * hashCode + ((getSkipAppResign() == null) ? 0 : getSkipAppResign().hashCode());
         return hashCode;
     }
 

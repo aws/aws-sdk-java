@@ -31,7 +31,9 @@ public class GetFunctionResult extends com.amazonaws.AmazonWebServiceResult<com.
     private FunctionCodeLocation code;
     /**
      * <p>
-     * Returns the list of tags associated with the function.
+     * Returns the list of tags associated with the function. For more information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a> in the <b>AWS Lambda
+     * Developer Guide</b>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> tags;
@@ -96,10 +98,14 @@ public class GetFunctionResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Returns the list of tags associated with the function.
+     * Returns the list of tags associated with the function. For more information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a> in the <b>AWS Lambda
+     * Developer Guide</b>.
      * </p>
      * 
-     * @return Returns the list of tags associated with the function.
+     * @return Returns the list of tags associated with the function. For more information, see <a
+     *         href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a> in the
+     *         <b>AWS Lambda Developer Guide</b>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -111,11 +117,15 @@ public class GetFunctionResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Returns the list of tags associated with the function.
+     * Returns the list of tags associated with the function. For more information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a> in the <b>AWS Lambda
+     * Developer Guide</b>.
      * </p>
      * 
      * @param tags
-     *        Returns the list of tags associated with the function.
+     *        Returns the list of tags associated with the function. For more information, see <a
+     *        href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a> in the <b>AWS
+     *        Lambda Developer Guide</b>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -124,11 +134,15 @@ public class GetFunctionResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Returns the list of tags associated with the function.
+     * Returns the list of tags associated with the function. For more information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a> in the <b>AWS Lambda
+     * Developer Guide</b>.
      * </p>
      * 
      * @param tags
-     *        Returns the list of tags associated with the function.
+     *        Returns the list of tags associated with the function. For more information, see <a
+     *        href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a> in the <b>AWS
+     *        Lambda Developer Guide</b>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

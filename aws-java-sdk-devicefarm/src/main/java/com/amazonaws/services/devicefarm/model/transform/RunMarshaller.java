@@ -83,6 +83,8 @@ public class RunMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customerArtifactPaths").build();
     private static final MarshallingInfo<String> WEBURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("webUrl").build();
+    private static final MarshallingInfo<Boolean> SKIPAPPRESIGN_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("skipAppResign").build();
 
     private static final RunMarshaller instance = new RunMarshaller();
 
@@ -128,6 +130,7 @@ public class RunMarshaller {
             protocolMarshaller.marshall(run.getLocation(), LOCATION_BINDING);
             protocolMarshaller.marshall(run.getCustomerArtifactPaths(), CUSTOMERARTIFACTPATHS_BINDING);
             protocolMarshaller.marshall(run.getWebUrl(), WEBURL_BINDING);
+            protocolMarshaller.marshall(run.getSkipAppResign(), SKIPAPPRESIGN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

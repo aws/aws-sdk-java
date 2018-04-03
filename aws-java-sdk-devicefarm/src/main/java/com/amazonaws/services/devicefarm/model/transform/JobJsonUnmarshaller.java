@@ -92,6 +92,10 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                     context.nextToken();
                     job.setDevice(DeviceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("instanceArn", targetDepth)) {
+                    context.nextToken();
+                    job.setInstanceArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("deviceMinutes", targetDepth)) {
                     context.nextToken();
                     job.setDeviceMinutes(DeviceMinutesJsonUnmarshaller.getInstance().unmarshall(context));

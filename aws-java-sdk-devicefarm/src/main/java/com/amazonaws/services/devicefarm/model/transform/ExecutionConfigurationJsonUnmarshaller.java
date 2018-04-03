@@ -60,6 +60,10 @@ public class ExecutionConfigurationJsonUnmarshaller implements Unmarshaller<Exec
                     context.nextToken();
                     executionConfiguration.setAppPackagesCleanup(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("skipAppResign", targetDepth)) {
+                    context.nextToken();
+                    executionConfiguration.setSkipAppResign(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

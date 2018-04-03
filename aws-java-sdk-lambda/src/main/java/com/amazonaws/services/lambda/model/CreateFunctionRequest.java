@@ -42,7 +42,8 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the value to
      * "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js runtime v4.3,
-     * set the value to "nodejs4.3".
+     * set the value to "nodejs4.3". To use the .NET Core runtime v1.0, set the value to "dotnetcore1.0". To use the
+     * .NET Core runtime v2.0, set the value to "dotnetcore2.0".
      * </p>
      * <note>
      * <p>
@@ -119,6 +120,7 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
+     * For more information, see <a>dlq</a>.
      * </p>
      */
     private DeadLetterConfig deadLetterConfig;
@@ -139,7 +141,9 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     private TracingConfig tracingConfig;
     /**
      * <p>
-     * The list of tags (key-value pairs) assigned to the new function.
+     * The list of tags (key-value pairs) assigned to the new function. For more information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a> in the <b>AWS Lambda
+     * Developer Guide</b>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> tags;
@@ -209,7 +213,8 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the value to
      * "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js runtime v4.3,
-     * set the value to "nodejs4.3".
+     * set the value to "nodejs4.3". To use the .NET Core runtime v1.0, set the value to "dotnetcore1.0". To use the
+     * .NET Core runtime v2.0, set the value to "dotnetcore2.0".
      * </p>
      * <note>
      * <p>
@@ -225,7 +230,8 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the
      *        value to "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js
-     *        runtime v4.3, set the value to "nodejs4.3".
+     *        runtime v4.3, set the value to "nodejs4.3". To use the .NET Core runtime v1.0, set the value to
+     *        "dotnetcore1.0". To use the .NET Core runtime v2.0, set the value to "dotnetcore2.0".
      *        </p>
      *        <note>
      *        <p>
@@ -248,7 +254,8 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the value to
      * "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js runtime v4.3,
-     * set the value to "nodejs4.3".
+     * set the value to "nodejs4.3". To use the .NET Core runtime v1.0, set the value to "dotnetcore1.0". To use the
+     * .NET Core runtime v2.0, set the value to "dotnetcore2.0".
      * </p>
      * <note>
      * <p>
@@ -263,7 +270,8 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <p>
      *         To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the
      *         value to "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js
-     *         runtime v4.3, set the value to "nodejs4.3".
+     *         runtime v4.3, set the value to "nodejs4.3". To use the .NET Core runtime v1.0, set the value to
+     *         "dotnetcore1.0". To use the .NET Core runtime v2.0, set the value to "dotnetcore2.0".
      *         </p>
      *         <note>
      *         <p>
@@ -286,7 +294,8 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the value to
      * "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js runtime v4.3,
-     * set the value to "nodejs4.3".
+     * set the value to "nodejs4.3". To use the .NET Core runtime v1.0, set the value to "dotnetcore1.0". To use the
+     * .NET Core runtime v2.0, set the value to "dotnetcore2.0".
      * </p>
      * <note>
      * <p>
@@ -302,7 +311,8 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the
      *        value to "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js
-     *        runtime v4.3, set the value to "nodejs4.3".
+     *        runtime v4.3, set the value to "nodejs4.3". To use the .NET Core runtime v1.0, set the value to
+     *        "dotnetcore1.0". To use the .NET Core runtime v2.0, set the value to "dotnetcore2.0".
      *        </p>
      *        <note>
      *        <p>
@@ -327,7 +337,8 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the value to
      * "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js runtime v4.3,
-     * set the value to "nodejs4.3".
+     * set the value to "nodejs4.3". To use the .NET Core runtime v1.0, set the value to "dotnetcore1.0". To use the
+     * .NET Core runtime v2.0, set the value to "dotnetcore2.0".
      * </p>
      * <note>
      * <p>
@@ -343,7 +354,8 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the
      *        value to "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js
-     *        runtime v4.3, set the value to "nodejs4.3".
+     *        runtime v4.3, set the value to "nodejs4.3". To use the .NET Core runtime v1.0, set the value to
+     *        "dotnetcore1.0". To use the .NET Core runtime v2.0, set the value to "dotnetcore2.0".
      *        </p>
      *        <note>
      *        <p>
@@ -366,7 +378,8 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the value to
      * "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js runtime v4.3,
-     * set the value to "nodejs4.3".
+     * set the value to "nodejs4.3". To use the .NET Core runtime v1.0, set the value to "dotnetcore1.0". To use the
+     * .NET Core runtime v2.0, set the value to "dotnetcore2.0".
      * </p>
      * <note>
      * <p>
@@ -382,7 +395,8 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        To use the Python runtime v3.6, set the value to "python3.6". To use the Python runtime v2.7, set the
      *        value to "python2.7". To use the Node.js runtime v6.10, set the value to "nodejs6.10". To use the Node.js
-     *        runtime v4.3, set the value to "nodejs4.3".
+     *        runtime v4.3, set the value to "nodejs4.3". To use the .NET Core runtime v1.0, set the value to
+     *        "dotnetcore1.0". To use the .NET Core runtime v2.0, set the value to "dotnetcore2.0".
      *        </p>
      *        <note>
      *        <p>
@@ -824,11 +838,12 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
+     * For more information, see <a>dlq</a>.
      * </p>
      * 
      * @param deadLetterConfig
      *        The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS
-     *        topic.
+     *        topic. For more information, see <a>dlq</a>.
      */
 
     public void setDeadLetterConfig(DeadLetterConfig deadLetterConfig) {
@@ -838,10 +853,11 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
+     * For more information, see <a>dlq</a>.
      * </p>
      * 
      * @return The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon
-     *         SNS topic.
+     *         SNS topic. For more information, see <a>dlq</a>.
      */
 
     public DeadLetterConfig getDeadLetterConfig() {
@@ -851,11 +867,12 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS topic.
+     * For more information, see <a>dlq</a>.
      * </p>
      * 
      * @param deadLetterConfig
      *        The parent object that contains the target ARN (Amazon Resource Name) of an Amazon SQS queue or Amazon SNS
-     *        topic.
+     *        topic. For more information, see <a>dlq</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -978,10 +995,14 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The list of tags (key-value pairs) assigned to the new function.
+     * The list of tags (key-value pairs) assigned to the new function. For more information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a> in the <b>AWS Lambda
+     * Developer Guide</b>.
      * </p>
      * 
-     * @return The list of tags (key-value pairs) assigned to the new function.
+     * @return The list of tags (key-value pairs) assigned to the new function. For more information, see <a
+     *         href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a> in the
+     *         <b>AWS Lambda Developer Guide</b>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -993,11 +1014,15 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The list of tags (key-value pairs) assigned to the new function.
+     * The list of tags (key-value pairs) assigned to the new function. For more information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a> in the <b>AWS Lambda
+     * Developer Guide</b>.
      * </p>
      * 
      * @param tags
-     *        The list of tags (key-value pairs) assigned to the new function.
+     *        The list of tags (key-value pairs) assigned to the new function. For more information, see <a
+     *        href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a> in the <b>AWS
+     *        Lambda Developer Guide</b>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -1006,11 +1031,15 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The list of tags (key-value pairs) assigned to the new function.
+     * The list of tags (key-value pairs) assigned to the new function. For more information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a> in the <b>AWS Lambda
+     * Developer Guide</b>.
      * </p>
      * 
      * @param tags
-     *        The list of tags (key-value pairs) assigned to the new function.
+     *        The list of tags (key-value pairs) assigned to the new function. For more information, see <a
+     *        href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a> in the <b>AWS
+     *        Lambda Developer Guide</b>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

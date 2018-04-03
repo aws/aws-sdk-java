@@ -1,3 +1,16 @@
+# __1.11.308__ __2018-04-03__
+## __AWS Device Farm__
+  - ### Features
+    - Added Private Device Management feature. Customers can now manage their private devices efficiently - view their status, set labels and apply profiles on them. Customers can also schedule automated tests and remote access sessions on individual instances in their private device fleet.
+
+## __AWS Lambda__
+  - ### Features
+    - added nodejs8.10 as a valid runtime
+
+## __Amazon Translate__
+  - ### Features
+    - This release increases the maximum size of input text to 5,000 bytes. Amazon Translate now supports automatic language detection of the input text. The translation models have been improved to increase accuracy. See the documentation for more information.
+
 # __1.11.307__ __2018-04-02__
 ## __Amazon API Gateway__
   - ### Features

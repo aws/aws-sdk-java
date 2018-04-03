@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Creates the configuration settings for a remote access session, including the device model and type.
+ * Configuration settings for a remote access session, including billing method.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateRemoteAccessSessionConfiguration"
@@ -30,18 +30,18 @@ public class CreateRemoteAccessSessionConfiguration implements Serializable, Clo
 
     /**
      * <p>
-     * Returns the billing method for purposes of configuring a remote access session.
+     * The billing method for the remote access session.
      * </p>
      */
     private String billingMethod;
 
     /**
      * <p>
-     * Returns the billing method for purposes of configuring a remote access session.
+     * The billing method for the remote access session.
      * </p>
      * 
      * @param billingMethod
-     *        Returns the billing method for purposes of configuring a remote access session.
+     *        The billing method for the remote access session.
      * @see BillingMethod
      */
 
@@ -51,10 +51,10 @@ public class CreateRemoteAccessSessionConfiguration implements Serializable, Clo
 
     /**
      * <p>
-     * Returns the billing method for purposes of configuring a remote access session.
+     * The billing method for the remote access session.
      * </p>
      * 
-     * @return Returns the billing method for purposes of configuring a remote access session.
+     * @return The billing method for the remote access session.
      * @see BillingMethod
      */
 
@@ -64,11 +64,11 @@ public class CreateRemoteAccessSessionConfiguration implements Serializable, Clo
 
     /**
      * <p>
-     * Returns the billing method for purposes of configuring a remote access session.
+     * The billing method for the remote access session.
      * </p>
      * 
      * @param billingMethod
-     *        Returns the billing method for purposes of configuring a remote access session.
+     *        The billing method for the remote access session.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BillingMethod
      */
@@ -80,11 +80,11 @@ public class CreateRemoteAccessSessionConfiguration implements Serializable, Clo
 
     /**
      * <p>
-     * Returns the billing method for purposes of configuring a remote access session.
+     * The billing method for the remote access session.
      * </p>
      * 
      * @param billingMethod
-     *        Returns the billing method for purposes of configuring a remote access session.
+     *        The billing method for the remote access session.
      * @see BillingMethod
      */
 
@@ -94,11 +94,11 @@ public class CreateRemoteAccessSessionConfiguration implements Serializable, Clo
 
     /**
      * <p>
-     * Returns the billing method for purposes of configuring a remote access session.
+     * The billing method for the remote access session.
      * </p>
      * 
      * @param billingMethod
-     *        Returns the billing method for purposes of configuring a remote access session.
+     *        The billing method for the remote access session.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BillingMethod
      */

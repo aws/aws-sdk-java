@@ -34,7 +34,7 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
      * contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the SDKs or CLI
      * will do the encoding for you. For more information about creating a .zip file, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
-     * >Execution Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
+     * >Execution Permissions</a> in the <b>AWS Lambda Developer Guide</b>.
      * </p>
      */
     private java.nio.ByteBuffer zipFile;
@@ -64,7 +64,7 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
      * contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the SDKs or CLI
      * will do the encoding for you. For more information about creating a .zip file, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
-     * >Execution Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
+     * >Execution Permissions</a> in the <b>AWS Lambda Developer Guide</b>.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -82,7 +82,7 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
      *        the contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the
      *        SDKs or CLI will do the encoding for you. For more information about creating a .zip file, see <a href=
      *        "http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
-     *        >Execution Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
+     *        >Execution Permissions</a> in the <b>AWS Lambda Developer Guide</b>.
      */
 
     public void setZipFile(java.nio.ByteBuffer zipFile) {
@@ -95,7 +95,7 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
      * contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the SDKs or CLI
      * will do the encoding for you. For more information about creating a .zip file, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
-     * >Execution Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
+     * >Execution Permissions</a> in the <b>AWS Lambda Developer Guide</b>.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -109,7 +109,7 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
      *         the contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the
      *         SDKs or CLI will do the encoding for you. For more information about creating a .zip file, see <a href=
      *         "http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
-     *         >Execution Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
+     *         >Execution Permissions</a> in the <b>AWS Lambda Developer Guide</b>.
      */
 
     public java.nio.ByteBuffer getZipFile() {
@@ -122,7 +122,7 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
      * contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the SDKs or CLI
      * will do the encoding for you. For more information about creating a .zip file, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
-     * >Execution Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
+     * >Execution Permissions</a> in the <b>AWS Lambda Developer Guide</b>.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -140,7 +140,7 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
      *        the contents of the zip file must be base64-encoded. If you are using the AWS SDKs or the AWS CLI, the
      *        SDKs or CLI will do the encoding for you. For more information about creating a .zip file, see <a href=
      *        "http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html"
-     *        >Execution Permissions</a> in the <i>AWS Lambda Developer Guide</i>.
+     *        >Execution Permissions</a> in the <b>AWS Lambda Developer Guide</b>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

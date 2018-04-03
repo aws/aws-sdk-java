@@ -172,6 +172,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String fleetName;
+    /**
+     * <p>
+     * The instances belonging to this device.
+     * </p>
+     */
+    private java.util.List<DeviceInstance> instances;
 
     /**
      * <p>
@@ -1314,6 +1320,76 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The instances belonging to this device.
+     * </p>
+     * 
+     * @return The instances belonging to this device.
+     */
+
+    public java.util.List<DeviceInstance> getInstances() {
+        return instances;
+    }
+
+    /**
+     * <p>
+     * The instances belonging to this device.
+     * </p>
+     * 
+     * @param instances
+     *        The instances belonging to this device.
+     */
+
+    public void setInstances(java.util.Collection<DeviceInstance> instances) {
+        if (instances == null) {
+            this.instances = null;
+            return;
+        }
+
+        this.instances = new java.util.ArrayList<DeviceInstance>(instances);
+    }
+
+    /**
+     * <p>
+     * The instances belonging to this device.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInstances(java.util.Collection)} or {@link #withInstances(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param instances
+     *        The instances belonging to this device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Device withInstances(DeviceInstance... instances) {
+        if (this.instances == null) {
+            setInstances(new java.util.ArrayList<DeviceInstance>(instances.length));
+        }
+        for (DeviceInstance ele : instances) {
+            this.instances.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instances belonging to this device.
+     * </p>
+     * 
+     * @param instances
+     *        The instances belonging to this device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Device withInstances(java.util.Collection<DeviceInstance> instances) {
+        setInstances(instances);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1361,7 +1437,9 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
         if (getFleetType() != null)
             sb.append("FleetType: ").append(getFleetType()).append(",");
         if (getFleetName() != null)
-            sb.append("FleetName: ").append(getFleetName());
+            sb.append("FleetName: ").append(getFleetName()).append(",");
+        if (getInstances() != null)
+            sb.append("Instances: ").append(getInstances());
         sb.append("}");
         return sb.toString();
     }
@@ -1452,6 +1530,10 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFleetName() != null && other.getFleetName().equals(this.getFleetName()) == false)
             return false;
+        if (other.getInstances() == null ^ this.getInstances() == null)
+            return false;
+        if (other.getInstances() != null && other.getInstances().equals(this.getInstances()) == false)
+            return false;
         return true;
     }
 
@@ -1479,6 +1561,7 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRemoteDebugEnabled() == null) ? 0 : getRemoteDebugEnabled().hashCode());
         hashCode = prime * hashCode + ((getFleetType() == null) ? 0 : getFleetType().hashCode());
         hashCode = prime * hashCode + ((getFleetName() == null) ? 0 : getFleetName().hashCode());
+        hashCode = prime * hashCode + ((getInstances() == null) ? 0 : getInstances().hashCode());
         return hashCode;
     }
 
