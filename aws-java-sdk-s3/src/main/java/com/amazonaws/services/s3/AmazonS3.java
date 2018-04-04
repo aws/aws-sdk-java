@@ -124,6 +124,8 @@ import com.amazonaws.services.s3.model.Region;
 import com.amazonaws.services.s3.model.RestoreObjectRequest;
 import com.amazonaws.services.s3.model.RestoreObjectResult;
 import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.services.s3.model.SelectObjectContentRequest;
+import com.amazonaws.services.s3.model.SelectObjectContentResult;
 import com.amazonaws.services.s3.model.SetBucketAccelerateConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketAclRequest;
 import com.amazonaws.services.s3.model.SetBucketAnalyticsConfigurationRequest;
@@ -5220,6 +5222,22 @@ public interface AmazonS3 extends S3DirectSpi {
      */
     SetBucketEncryptionResult setBucketEncryption(SetBucketEncryptionRequest setBucketEncryptionRequest)
         throws AmazonServiceException, SdkClientException;
+
+    /**
+     * This operation filters the contents of an Amazon S3 object based on a simple Structured Query Language (SQL) statement.
+     * In the request, along with the SQL expression, you must also specify a data serialization format (JSON or CSV) of the
+     * object. Amazon S3 uses this to parse object data into records, and returns only records that match the specified SQL
+     * expression. You must also specify the data serialization format for the response.
+     *
+     * @param selectRequest The request object for selecting object content.
+
+     * @return A {@link SelectObjectContentResult}.
+     * @throws AmazonServiceException
+     * @throws SdkClientException
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SelectObjectContent">AWS API Documentation</a>
+     */
+    SelectObjectContentResult selectObjectContent(SelectObjectContentRequest selectRequest)
+            throws AmazonServiceException, SdkClientException;
 
     /**
      * Shuts down this client object, releasing any resources that might be held

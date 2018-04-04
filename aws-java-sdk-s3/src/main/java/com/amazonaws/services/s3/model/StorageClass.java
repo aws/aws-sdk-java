@@ -61,6 +61,11 @@ public enum StorageClass {
      */
     StandardInfrequentAccess("STANDARD_IA"),
 
+    /**
+     * One Zone Infrequent Access storage class stores object data in only one Availability Zone at a lower price than
+     * STANDARD_IA.
+     */
+    OneZoneInfrequentAccess("ONEZONE_IA")
     ;
 
     /**

@@ -113,7 +113,9 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
     private String notebookInstanceLifecycleConfigName;
     /**
      * <p>
-     * Describes whether the notebook instance has internet access.
+     * Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to
+     * <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker training
+     * and endpoint services</i>.
      * </p>
      * <p>
      * For more information, see <a>appendix-notebook-and-internet-access</a>.
@@ -772,14 +774,18 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Describes whether the notebook instance has internet access.
+     * Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to
+     * <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker training
+     * and endpoint services</i>.
      * </p>
      * <p>
      * For more information, see <a>appendix-notebook-and-internet-access</a>.
      * </p>
      * 
      * @param directInternetAccess
-     *        Describes whether the notebook instance has internet access.</p>
+     *        Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set
+     *        to <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker
+     *        training and endpoint services</i>.</p>
      *        <p>
      *        For more information, see <a>appendix-notebook-and-internet-access</a>.
      * @see DirectInternetAccess
@@ -791,13 +797,17 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Describes whether the notebook instance has internet access.
+     * Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to
+     * <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker training
+     * and endpoint services</i>.
      * </p>
      * <p>
      * For more information, see <a>appendix-notebook-and-internet-access</a>.
      * </p>
      * 
-     * @return Describes whether the notebook instance has internet access.</p>
+     * @return Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is
+     *         set to <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon
+     *         SageMaker training and endpoint services</i>.</p>
      *         <p>
      *         For more information, see <a>appendix-notebook-and-internet-access</a>.
      * @see DirectInternetAccess
@@ -809,14 +819,18 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Describes whether the notebook instance has internet access.
+     * Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to
+     * <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker training
+     * and endpoint services</i>.
      * </p>
      * <p>
      * For more information, see <a>appendix-notebook-and-internet-access</a>.
      * </p>
      * 
      * @param directInternetAccess
-     *        Describes whether the notebook instance has internet access.</p>
+     *        Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set
+     *        to <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker
+     *        training and endpoint services</i>.</p>
      *        <p>
      *        For more information, see <a>appendix-notebook-and-internet-access</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -830,14 +844,18 @@ public class DescribeNotebookInstanceResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Describes whether the notebook instance has internet access.
+     * Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to
+     * <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker training
+     * and endpoint services</i>.
      * </p>
      * <p>
      * For more information, see <a>appendix-notebook-and-internet-access</a>.
      * </p>
      * 
      * @param directInternetAccess
-     *        Describes whether the notebook instance has internet access.</p>
+     *        Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set
+     *        to <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker
+     *        training and endpoint services</i>.</p>
      *        <p>
      *        For more information, see <a>appendix-notebook-and-internet-access</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

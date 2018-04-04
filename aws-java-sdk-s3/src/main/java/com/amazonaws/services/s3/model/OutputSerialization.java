@@ -27,6 +27,8 @@ public class OutputSerialization implements Serializable, Cloneable {
      */
     private CSVOutput csv;
 
+    private JSONOutput json;
+
     /**
      * @return the serialization of CSV-encoded Select results.
      */
@@ -54,6 +56,28 @@ public class OutputSerialization implements Serializable, Cloneable {
         return this;
     }
 
+    /**
+     * Specifies JSON as request's output serialization format.
+     */
+    public JSONOutput getJson() {
+        return json;
+    }
+
+    /**
+     * Specifies JSON as request's output serialization format.
+     */
+    public void setJson(JSONOutput json) {
+        this.json = json;
+    }
+
+    /**
+     * Specifies JSON as request's output serialization format.
+     */
+    public OutputSerialization withJson(JSONOutput json) {
+        setJson(json);
+        return this;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -69,6 +93,10 @@ public class OutputSerialization implements Serializable, Cloneable {
             return false;
         if (other.getCsv() != null && !other.getCsv().equals(this.getCsv()))
             return false;
+        if (other.getJson() == null ^ this.getJson() == null)
+            return false;
+        if (other.getJson() != null && !other.getJson().equals(this.getJson()))
+            return false;
         return true;
     }
 
@@ -78,6 +106,7 @@ public class OutputSerialization implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCsv() == null) ? 0 : getCsv().hashCode());
+        hashCode = prime * hashCode + ((getJson() == null) ? 0 : getJson().hashCode());
         return hashCode;
     }
 
@@ -87,6 +116,8 @@ public class OutputSerialization implements Serializable, Cloneable {
         sb.append("{");
         if (getCsv() != null)
             sb.append("CSV: ").append(getCsv());
+        if (getJson() != null)
+            sb.append("JSON: ").append(getJson());
         sb.append("}");
         return sb.toString();
     }

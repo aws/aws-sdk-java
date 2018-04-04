@@ -36,8 +36,8 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </p>
  * <p>
  * You can use ACM to manage SSL/TLS certificates for your AWS-based websites and applications. For general information
- * about using ACM, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/"> <i>AWS Certificate Manager User
- * Guide</i> </a>.
+ * about using ACM, see the <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/"> <i>AWS
+ * Certificate Manager User Guide</i> </a>.
  * </p>
  */
 @ThreadSafe
@@ -334,6 +334,39 @@ public class AWSCertificateManagerAsyncClient extends AWSCertificateManagerClien
 
                 try {
                     result = executeDescribeCertificate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportCertificateResult> exportCertificateAsync(ExportCertificateRequest request) {
+
+        return exportCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportCertificateResult> exportCertificateAsync(final ExportCertificateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ExportCertificateRequest, ExportCertificateResult> asyncHandler) {
+        final ExportCertificateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ExportCertificateResult>() {
+            @Override
+            public ExportCertificateResult call() throws Exception {
+                ExportCertificateResult result = null;
+
+                try {
+                    result = executeExportCertificate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

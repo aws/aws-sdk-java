@@ -35,7 +35,7 @@ public class DescribeConfigRuleEvaluationStatusRequest extends com.amazonaws.Ama
     private com.amazonaws.internal.SdkInternalList<String> configRuleNames;
     /**
      * <p>
-     * The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
      * paginated response.
      * </p>
      */
@@ -48,7 +48,7 @@ public class DescribeConfigRuleEvaluationStatusRequest extends com.amazonaws.Ama
      * This parameter is required if the rule limit for your account is more than the default of 50 rules.
      * </p>
      * <p>
-     * For more information about requesting a rule limit increase, see <a
+     * For information about requesting a rule limit increase, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS Config Limits</a>
      * in the <i>AWS General Reference Guide</i>.
      * </p>
@@ -138,12 +138,12 @@ public class DescribeConfigRuleEvaluationStatusRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
      * paginated response.
      * </p>
      * 
      * @param nextToken
-     *        The <code>NextToken</code> string returned on a previous page that you use to get the next page of results
+     *        The <code>nextToken</code> string returned on a previous page that you use to get the next page of results
      *        in a paginated response.
      */
 
@@ -153,11 +153,11 @@ public class DescribeConfigRuleEvaluationStatusRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
      * paginated response.
      * </p>
      * 
-     * @return The <code>NextToken</code> string returned on a previous page that you use to get the next page of
+     * @return The <code>nextToken</code> string returned on a previous page that you use to get the next page of
      *         results in a paginated response.
      */
 
@@ -167,12 +167,12 @@ public class DescribeConfigRuleEvaluationStatusRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
      * paginated response.
      * </p>
      * 
      * @param nextToken
-     *        The <code>NextToken</code> string returned on a previous page that you use to get the next page of results
+     *        The <code>nextToken</code> string returned on a previous page that you use to get the next page of results
      *        in a paginated response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -190,7 +190,7 @@ public class DescribeConfigRuleEvaluationStatusRequest extends com.amazonaws.Ama
      * This parameter is required if the rule limit for your account is more than the default of 50 rules.
      * </p>
      * <p>
-     * For more information about requesting a rule limit increase, see <a
+     * For information about requesting a rule limit increase, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS Config Limits</a>
      * in the <i>AWS General Reference Guide</i>.
      * </p>
@@ -201,7 +201,7 @@ public class DescribeConfigRuleEvaluationStatusRequest extends com.amazonaws.Ama
      *        This parameter is required if the rule limit for your account is more than the default of 50 rules.
      *        </p>
      *        <p>
-     *        For more information about requesting a rule limit increase, see <a
+     *        For information about requesting a rule limit increase, see <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS Config
      *        Limits</a> in the <i>AWS General Reference Guide</i>.
      */
@@ -218,7 +218,7 @@ public class DescribeConfigRuleEvaluationStatusRequest extends com.amazonaws.Ama
      * This parameter is required if the rule limit for your account is more than the default of 50 rules.
      * </p>
      * <p>
-     * For more information about requesting a rule limit increase, see <a
+     * For information about requesting a rule limit increase, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS Config Limits</a>
      * in the <i>AWS General Reference Guide</i>.
      * </p>
@@ -228,7 +228,7 @@ public class DescribeConfigRuleEvaluationStatusRequest extends com.amazonaws.Ama
      *         This parameter is required if the rule limit for your account is more than the default of 50 rules.
      *         </p>
      *         <p>
-     *         For more information about requesting a rule limit increase, see <a
+     *         For information about requesting a rule limit increase, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS Config
      *         Limits</a> in the <i>AWS General Reference Guide</i>.
      */
@@ -245,7 +245,7 @@ public class DescribeConfigRuleEvaluationStatusRequest extends com.amazonaws.Ama
      * This parameter is required if the rule limit for your account is more than the default of 50 rules.
      * </p>
      * <p>
-     * For more information about requesting a rule limit increase, see <a
+     * For information about requesting a rule limit increase, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS Config Limits</a>
      * in the <i>AWS General Reference Guide</i>.
      * </p>
@@ -256,7 +256,7 @@ public class DescribeConfigRuleEvaluationStatusRequest extends com.amazonaws.Ama
      *        This parameter is required if the rule limit for your account is more than the default of 50 rules.
      *        </p>
      *        <p>
-     *        For more information about requesting a rule limit increase, see <a
+     *        For information about requesting a rule limit increase, see <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS Config
      *        Limits</a> in the <i>AWS General Reference Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

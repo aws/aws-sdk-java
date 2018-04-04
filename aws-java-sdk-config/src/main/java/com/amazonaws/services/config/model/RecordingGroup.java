@@ -49,7 +49,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * For a list of supported resource types, see <a
  * href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
- * >Supported resource types</a>.
+ * >Supported Resource Types</a>.
  * </p>
  * <p>
  * For more information, see <a
@@ -69,7 +69,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If you set this option to <code>true</code>, when AWS Config adds support for a new type of regional resource, it
-     * automatically starts recording resources of that type.
+     * starts recording resources of that type automatically.
      * </p>
      * <p>
      * If you set this option to <code>true</code>, you cannot enumerate a list of <code>resourceTypes</code>.
@@ -87,7 +87,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If you set this option to <code>true</code>, when AWS Config adds support for a new type of global resource, it
-     * automatically starts recording resources of that type.
+     * starts recording resources of that type automatically.
      * </p>
      * <p>
      * The configuration details for any global resource are the same in all regions. To prevent duplicate configuration
@@ -122,7 +122,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If you set this option to <code>true</code>, when AWS Config adds support for a new type of regional resource, it
-     * automatically starts recording resources of that type.
+     * starts recording resources of that type automatically.
      * </p>
      * <p>
      * If you set this option to <code>true</code>, you cannot enumerate a list of <code>resourceTypes</code>.
@@ -133,7 +133,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      *        resource.</p>
      *        <p>
      *        If you set this option to <code>true</code>, when AWS Config adds support for a new type of regional
-     *        resource, it automatically starts recording resources of that type.
+     *        resource, it starts recording resources of that type automatically.
      *        </p>
      *        <p>
      *        If you set this option to <code>true</code>, you cannot enumerate a list of <code>resourceTypes</code>.
@@ -149,7 +149,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If you set this option to <code>true</code>, when AWS Config adds support for a new type of regional resource, it
-     * automatically starts recording resources of that type.
+     * starts recording resources of that type automatically.
      * </p>
      * <p>
      * If you set this option to <code>true</code>, you cannot enumerate a list of <code>resourceTypes</code>.
@@ -159,7 +159,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      *         resource.</p>
      *         <p>
      *         If you set this option to <code>true</code>, when AWS Config adds support for a new type of regional
-     *         resource, it automatically starts recording resources of that type.
+     *         resource, it starts recording resources of that type automatically.
      *         </p>
      *         <p>
      *         If you set this option to <code>true</code>, you cannot enumerate a list of <code>resourceTypes</code>.
@@ -175,7 +175,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If you set this option to <code>true</code>, when AWS Config adds support for a new type of regional resource, it
-     * automatically starts recording resources of that type.
+     * starts recording resources of that type automatically.
      * </p>
      * <p>
      * If you set this option to <code>true</code>, you cannot enumerate a list of <code>resourceTypes</code>.
@@ -186,7 +186,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      *        resource.</p>
      *        <p>
      *        If you set this option to <code>true</code>, when AWS Config adds support for a new type of regional
-     *        resource, it automatically starts recording resources of that type.
+     *        resource, it starts recording resources of that type automatically.
      *        </p>
      *        <p>
      *        If you set this option to <code>true</code>, you cannot enumerate a list of <code>resourceTypes</code>.
@@ -204,7 +204,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If you set this option to <code>true</code>, when AWS Config adds support for a new type of regional resource, it
-     * automatically starts recording resources of that type.
+     * starts recording resources of that type automatically.
      * </p>
      * <p>
      * If you set this option to <code>true</code>, you cannot enumerate a list of <code>resourceTypes</code>.
@@ -214,7 +214,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      *         resource.</p>
      *         <p>
      *         If you set this option to <code>true</code>, when AWS Config adds support for a new type of regional
-     *         resource, it automatically starts recording resources of that type.
+     *         resource, it starts recording resources of that type automatically.
      *         </p>
      *         <p>
      *         If you set this option to <code>true</code>, you cannot enumerate a list of <code>resourceTypes</code>.
@@ -235,7 +235,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If you set this option to <code>true</code>, when AWS Config adds support for a new type of global resource, it
-     * automatically starts recording resources of that type.
+     * starts recording resources of that type automatically.
      * </p>
      * <p>
      * The configuration details for any global resource are the same in all regions. To prevent duplicate configuration
@@ -251,7 +251,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        If you set this option to <code>true</code>, when AWS Config adds support for a new type of global
-     *        resource, it automatically starts recording resources of that type.
+     *        resource, it starts recording resources of that type automatically.
      *        </p>
      *        <p>
      *        The configuration details for any global resource are the same in all regions. To prevent duplicate
@@ -274,7 +274,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If you set this option to <code>true</code>, when AWS Config adds support for a new type of global resource, it
-     * automatically starts recording resources of that type.
+     * starts recording resources of that type automatically.
      * </p>
      * <p>
      * The configuration details for any global resource are the same in all regions. To prevent duplicate configuration
@@ -289,7 +289,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <p>
      *         If you set this option to <code>true</code>, when AWS Config adds support for a new type of global
-     *         resource, it automatically starts recording resources of that type.
+     *         resource, it starts recording resources of that type automatically.
      *         </p>
      *         <p>
      *         The configuration details for any global resource are the same in all regions. To prevent duplicate
@@ -312,7 +312,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If you set this option to <code>true</code>, when AWS Config adds support for a new type of global resource, it
-     * automatically starts recording resources of that type.
+     * starts recording resources of that type automatically.
      * </p>
      * <p>
      * The configuration details for any global resource are the same in all regions. To prevent duplicate configuration
@@ -328,7 +328,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        If you set this option to <code>true</code>, when AWS Config adds support for a new type of global
-     *        resource, it automatically starts recording resources of that type.
+     *        resource, it starts recording resources of that type automatically.
      *        </p>
      *        <p>
      *        The configuration details for any global resource are the same in all regions. To prevent duplicate
@@ -353,7 +353,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If you set this option to <code>true</code>, when AWS Config adds support for a new type of global resource, it
-     * automatically starts recording resources of that type.
+     * starts recording resources of that type automatically.
      * </p>
      * <p>
      * The configuration details for any global resource are the same in all regions. To prevent duplicate configuration
@@ -368,7 +368,7 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <p>
      *         If you set this option to <code>true</code>, when AWS Config adds support for a new type of global
-     *         resource, it automatically starts recording resources of that type.
+     *         resource, it starts recording resources of that type automatically.
      *         </p>
      *         <p>
      *         The configuration details for any global resource are the same in all regions. To prevent duplicate

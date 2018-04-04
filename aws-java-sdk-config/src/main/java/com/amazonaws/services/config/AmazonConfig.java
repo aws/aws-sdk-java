@@ -31,30 +31,67 @@ import com.amazonaws.services.config.model.*;
  * AWS Config provides a way to keep track of the configurations of all the AWS resources associated with your AWS
  * account. You can use AWS Config to get the current and historical configurations of each AWS resource and also to get
  * information about the relationship between the resources. An AWS resource can be an Amazon Compute Cloud (Amazon EC2)
- * instance, an Elastic Block Store (EBS) volume, an Elastic network Interface (ENI), or a security group. For a
+ * instance, an Elastic Block Store (EBS) volume, an elastic network Interface (ENI), or a security group. For a
  * complete list of resources currently supported by AWS Config, see <a
  * href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources"
  * >Supported AWS Resources</a>.
  * </p>
  * <p>
  * You can access and manage AWS Config through the AWS Management Console, the AWS Command Line Interface (AWS CLI),
- * the AWS Config API, or the AWS SDKs for AWS Config
- * </p>
- * <p>
- * This reference guide contains documentation for the AWS Config API and the AWS CLI commands that you can use to
- * manage AWS Config.
- * </p>
- * <p>
- * The AWS Config API uses the Signature Version 4 protocol for signing requests. For more information about how to sign
- * a request with this protocol, see <a
+ * the AWS Config API, or the AWS SDKs for AWS Config. This reference guide contains documentation for the AWS Config
+ * API and the AWS CLI commands that you can use to manage AWS Config. The AWS Config API uses the Signature Version 4
+ * protocol for signing requests. For more information about how to sign a request with this protocol, see <a
  * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.
- * </p>
- * <p>
  * For detailed information about AWS Config features and their associated actions or commands, as well as how to work
  * with AWS Management Console, see <a
- * href="http://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html">What Is AWS Config?</a> in the
- * <i>AWS Config Developer Guide</i>.
+ * href="http://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html">What Is AWS Config</a> in the <i>AWS
+ * Config Developer Guide</i>.
  * </p>
+ * <ul>
+ * <li/>
+ * <li/>
+ * <li/>
+ * <li/>
+ * <li/>
+ * <li/>
+ * <li/>
+ * <li/>
+ * <li/>
+ * <li/>
+ * <li/>
+ * <li/>
+ * <li/>
+ * <li/>
+ * </ul>
+ * <ul>
+ * <li/>
+ * <li/>
+ * <li/>
+ * <li/>
+ * <li/>
+ * <li/>
+ * <li/>
+ * <li/>
+ * <li/>
+ * <li/>
+ * <li/>
+ * <li/>
+ * <li/>
+ * </ul>
+ * <ul>
+ * <li></li>
+ * <li/>
+ * <li/>
+ * <li/>
+ * <li/>
+ * <li/>
+ * <li/>
+ * <li/>
+ * <li/>
+ * <li/>
+ * <li/>
+ * <li/>
+ * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonConfig {
@@ -154,6 +191,21 @@ public interface AmazonConfig {
 
     /**
      * <p>
+     * Deletes the authorization granted to the specified configuration aggregator account in a specified region.
+     * </p>
+     * 
+     * @param deleteAggregationAuthorizationRequest
+     * @return Result of the DeleteAggregationAuthorization operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
+     * @sample AmazonConfig.DeleteAggregationAuthorization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteAggregationAuthorization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteAggregationAuthorizationResult deleteAggregationAuthorization(DeleteAggregationAuthorizationRequest deleteAggregationAuthorizationRequest);
+
+    /**
+     * <p>
      * Deletes the specified AWS Config rule and all of its evaluation results.
      * </p>
      * <p>
@@ -178,6 +230,21 @@ public interface AmazonConfig {
      *      Documentation</a>
      */
     DeleteConfigRuleResult deleteConfigRule(DeleteConfigRuleRequest deleteConfigRuleRequest);
+
+    /**
+     * <p>
+     * Deletes the specified configuration aggregator and the aggregated data associated with the aggregator.
+     * </p>
+     * 
+     * @param deleteConfigurationAggregatorRequest
+     * @return Result of the DeleteConfigurationAggregator operation returned by the service.
+     * @throws NoSuchConfigurationAggregatorException
+     *         You have specified a configuration aggregator that does not exist.
+     * @sample AmazonConfig.DeleteConfigurationAggregator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConfigurationAggregator"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteConfigurationAggregatorResult deleteConfigurationAggregator(DeleteConfigurationAggregatorRequest deleteConfigurationAggregatorRequest);
 
     /**
      * <p>
@@ -215,7 +282,7 @@ public interface AmazonConfig {
      * </p>
      * 
      * @param deleteDeliveryChannelRequest
-     *        The input for the <a>DeleteDeliveryChannel</a> action. The action accepts the following data in JSON
+     *        The input for the <a>DeleteDeliveryChannel</a> action. The action accepts the following data, in JSON
      *        format.
      * @return Result of the DeleteDeliveryChannel operation returned by the service.
      * @throws NoSuchDeliveryChannelException
@@ -230,9 +297,9 @@ public interface AmazonConfig {
 
     /**
      * <p>
-     * Deletes the evaluation results for the specified Config rule. You can specify one Config rule per request. After
-     * you delete the evaluation results, you can call the <a>StartConfigRulesEvaluation</a> API to start evaluating
-     * your AWS resources against the rule.
+     * Deletes the evaluation results for the specified AWS Config rule. You can specify one AWS Config rule per
+     * request. After you delete the evaluation results, you can call the <a>StartConfigRulesEvaluation</a> API to start
+     * evaluating your AWS resources against the rule.
      * </p>
      * 
      * @param deleteEvaluationResultsRequest
@@ -251,24 +318,39 @@ public interface AmazonConfig {
 
     /**
      * <p>
+     * Deletes pending authorization requests for a specified aggregator account in a specified region.
+     * </p>
+     * 
+     * @param deletePendingAggregationRequestRequest
+     * @return Result of the DeletePendingAggregationRequest operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
+     * @sample AmazonConfig.DeletePendingAggregationRequest
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeletePendingAggregationRequest"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeletePendingAggregationRequestResult deletePendingAggregationRequest(DeletePendingAggregationRequestRequest deletePendingAggregationRequestRequest);
+
+    /**
+     * <p>
      * Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the specified delivery channel. After
-     * the delivery has started, AWS Config sends following notifications using an Amazon SNS topic that you have
+     * the delivery has started, AWS Config sends the following notifications using an Amazon SNS topic that you have
      * specified.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Notification of starting the delivery.
+     * Notification of the start of the delivery.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Notification of delivery completed, if the delivery was successfully completed.
+     * Notification of the completion of the delivery, if the delivery was successfully completed.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Notification of delivery failure, if the delivery failed to complete.
+     * Notification of delivery failure, if the delivery failed.
      * </p>
      * </li>
      * </ul>
@@ -291,11 +373,61 @@ public interface AmazonConfig {
 
     /**
      * <p>
+     * Returns a list of compliant and noncompliant rules with the number of resources for compliant and noncompliant
+     * rules.
+     * </p>
+     * <note>
+     * <p>
+     * The results can return an empty result page, but if you have a nextToken, the results are displayed on the next
+     * page.
+     * </p>
+     * </note>
+     * 
+     * @param describeAggregateComplianceByConfigRulesRequest
+     * @return Result of the DescribeAggregateComplianceByConfigRules operation returned by the service.
+     * @throws ValidationException
+     *         The requested action is not valid.
+     * @throws InvalidLimitException
+     *         The specified limit is outside the allowable range.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
+     * @throws NoSuchConfigurationAggregatorException
+     *         You have specified a configuration aggregator that does not exist.
+     * @sample AmazonConfig.DescribeAggregateComplianceByConfigRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConfigRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeAggregateComplianceByConfigRulesResult describeAggregateComplianceByConfigRules(
+            DescribeAggregateComplianceByConfigRulesRequest describeAggregateComplianceByConfigRulesRequest);
+
+    /**
+     * <p>
+     * Returns a list of authorizations granted to various aggregator accounts and regions.
+     * </p>
+     * 
+     * @param describeAggregationAuthorizationsRequest
+     * @return Result of the DescribeAggregationAuthorizations operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
+     * @throws InvalidLimitException
+     *         The specified limit is outside the allowable range.
+     * @sample AmazonConfig.DescribeAggregationAuthorizations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregationAuthorizations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeAggregationAuthorizationsResult describeAggregationAuthorizations(DescribeAggregationAuthorizationsRequest describeAggregationAuthorizationsRequest);
+
+    /**
+     * <p>
      * Indicates whether the specified AWS Config rules are compliant. If a rule is noncompliant, this action returns
      * the number of AWS resources that do not comply with the rule.
      * </p>
      * <p>
-     * A rule is compliant if all of the evaluated resources comply with it, and it is noncompliant if any of these
+     * A rule is compliant if all of the evaluated resources comply with it. It is noncompliant if any of these
      * resources do not comply.
      * </p>
      * <p>
@@ -312,7 +444,7 @@ public interface AmazonConfig {
      * </li>
      * <li>
      * <p>
-     * The rule's AWS Lambda function is failing to send evaluation results to AWS Config. Verify that the role that you
+     * The rule's AWS Lambda function is failing to send evaluation results to AWS Config. Verify that the role you
      * assigned to your configuration recorder includes the <code>config:PutEvaluations</code> permission. If the rule
      * is a custom rule, verify that the AWS Lambda execution role includes the <code>config:PutEvaluations</code>
      * permission.
@@ -334,7 +466,7 @@ public interface AmazonConfig {
      *         One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try
      *         again.
      * @throws InvalidNextTokenException
-     *         The specified next token is invalid. Specify the <code>NextToken</code> string that was returned in the
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
      *         previous response to get the next page of results.
      * @sample AmazonConfig.DescribeComplianceByConfigRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByConfigRule"
@@ -391,7 +523,7 @@ public interface AmazonConfig {
      * @throws InvalidParameterValueException
      *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @throws InvalidNextTokenException
-     *         The specified next token is invalid. Specify the <code>NextToken</code> string that was returned in the
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
      *         previous response to get the next page of results.
      * @sample AmazonConfig.DescribeComplianceByResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeComplianceByResource"
@@ -421,7 +553,7 @@ public interface AmazonConfig {
      * @throws InvalidParameterValueException
      *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @throws InvalidNextTokenException
-     *         The specified next token is invalid. Specify the <code>NextToken</code> string that was returned in the
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
      *         previous response to get the next page of results.
      * @sample AmazonConfig.DescribeConfigRuleEvaluationStatus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRuleEvaluationStatus"
@@ -448,7 +580,7 @@ public interface AmazonConfig {
      *         One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try
      *         again.
      * @throws InvalidNextTokenException
-     *         The specified next token is invalid. Specify the <code>NextToken</code> string that was returned in the
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
      *         previous response to get the next page of results.
      * @sample AmazonConfig.DescribeConfigRules
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigRules" target="_top">AWS API
@@ -465,8 +597,57 @@ public interface AmazonConfig {
 
     /**
      * <p>
+     * Returns status information for sources within an aggregator. The status includes information about the last time
+     * AWS Config aggregated data from source accounts or AWS Config failed to aggregate data from source accounts with
+     * the related error code or message.
+     * </p>
+     * 
+     * @param describeConfigurationAggregatorSourcesStatusRequest
+     * @return Result of the DescribeConfigurationAggregatorSourcesStatus operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
+     * @throws NoSuchConfigurationAggregatorException
+     *         You have specified a configuration aggregator that does not exist.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
+     * @throws InvalidLimitException
+     *         The specified limit is outside the allowable range.
+     * @sample AmazonConfig.DescribeConfigurationAggregatorSourcesStatus
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationAggregatorSourcesStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeConfigurationAggregatorSourcesStatusResult describeConfigurationAggregatorSourcesStatus(
+            DescribeConfigurationAggregatorSourcesStatusRequest describeConfigurationAggregatorSourcesStatusRequest);
+
+    /**
+     * <p>
+     * Returns the details of one or more configuration aggregators. If the configuration aggregator is not specified,
+     * this action returns the details for all the configuration aggregators associated with the account.
+     * </p>
+     * 
+     * @param describeConfigurationAggregatorsRequest
+     * @return Result of the DescribeConfigurationAggregators operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
+     * @throws NoSuchConfigurationAggregatorException
+     *         You have specified a configuration aggregator that does not exist.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
+     * @throws InvalidLimitException
+     *         The specified limit is outside the allowable range.
+     * @sample AmazonConfig.DescribeConfigurationAggregators
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationAggregators"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeConfigurationAggregatorsResult describeConfigurationAggregators(DescribeConfigurationAggregatorsRequest describeConfigurationAggregatorsRequest);
+
+    /**
+     * <p>
      * Returns the current status of the specified configuration recorder. If a configuration recorder is not specified,
-     * this action returns the status of all configuration recorder associated with the account.
+     * this action returns the status of all configuration recorders associated with the account.
      * </p>
      * <note>
      * <p>
@@ -582,6 +763,87 @@ public interface AmazonConfig {
 
     /**
      * <p>
+     * Returns a list of all pending aggregation requests.
+     * </p>
+     * 
+     * @param describePendingAggregationRequestsRequest
+     * @return Result of the DescribePendingAggregationRequests operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
+     * @throws InvalidLimitException
+     *         The specified limit is outside the allowable range.
+     * @sample AmazonConfig.DescribePendingAggregationRequests
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribePendingAggregationRequests"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribePendingAggregationRequestsResult describePendingAggregationRequests(
+            DescribePendingAggregationRequestsRequest describePendingAggregationRequestsRequest);
+
+    /**
+     * <p>
+     * Returns the evaluation results for the specified AWS Config rule for a specific resource in a rule. The results
+     * indicate which AWS resources were evaluated by the rule, when each resource was last evaluated, and whether each
+     * resource complies with the rule.
+     * </p>
+     * <note>
+     * <p>
+     * The results can return an empty result page. But if you have a nextToken, the results are displayed on the next
+     * page.
+     * </p>
+     * </note>
+     * 
+     * @param getAggregateComplianceDetailsByConfigRuleRequest
+     * @return Result of the GetAggregateComplianceDetailsByConfigRule operation returned by the service.
+     * @throws ValidationException
+     *         The requested action is not valid.
+     * @throws InvalidLimitException
+     *         The specified limit is outside the allowable range.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
+     * @throws NoSuchConfigurationAggregatorException
+     *         You have specified a configuration aggregator that does not exist.
+     * @sample AmazonConfig.GetAggregateComplianceDetailsByConfigRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateComplianceDetailsByConfigRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetAggregateComplianceDetailsByConfigRuleResult getAggregateComplianceDetailsByConfigRule(
+            GetAggregateComplianceDetailsByConfigRuleRequest getAggregateComplianceDetailsByConfigRuleRequest);
+
+    /**
+     * <p>
+     * Returns the number of compliant and noncompliant rules for one or more accounts and regions in an aggregator.
+     * </p>
+     * <note>
+     * <p>
+     * The results can return an empty result page, but if you have a nextToken, the results are displayed on the next
+     * page.
+     * </p>
+     * </note>
+     * 
+     * @param getAggregateConfigRuleComplianceSummaryRequest
+     * @return Result of the GetAggregateConfigRuleComplianceSummary operation returned by the service.
+     * @throws ValidationException
+     *         The requested action is not valid.
+     * @throws InvalidLimitException
+     *         The specified limit is outside the allowable range.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
+     * @throws NoSuchConfigurationAggregatorException
+     *         You have specified a configuration aggregator that does not exist.
+     * @sample AmazonConfig.GetAggregateConfigRuleComplianceSummary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConfigRuleComplianceSummary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetAggregateConfigRuleComplianceSummaryResult getAggregateConfigRuleComplianceSummary(
+            GetAggregateConfigRuleComplianceSummaryRequest getAggregateConfigRuleComplianceSummaryRequest);
+
+    /**
+     * <p>
      * Returns the evaluation results for the specified AWS Config rule. The results indicate which AWS resources were
      * evaluated by the rule, when each resource was last evaluated, and whether each resource complies with the rule.
      * </p>
@@ -591,7 +853,7 @@ public interface AmazonConfig {
      * @throws InvalidParameterValueException
      *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @throws InvalidNextTokenException
-     *         The specified next token is invalid. Specify the <code>NextToken</code> string that was returned in the
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
      *         previous response to get the next page of results.
      * @throws NoSuchConfigRuleException
      *         One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try
@@ -690,17 +952,17 @@ public interface AmazonConfig {
      * <ul>
      * <li>
      * <p>
-     * The resource types (EC2 instances, IAM users, and S3 buckets)
+     * The resource types (EC2 instances, IAM users, and S3 buckets).
      * </p>
      * </li>
      * <li>
      * <p>
-     * The number of each resource type (25, 20, and 15)
+     * The number of each resource type (25, 20, and 15).
      * </p>
      * </li>
      * <li>
      * <p>
-     * The total number of all resources (60)
+     * The total number of all resources (60).
      * </p>
      * </li>
      * </ul>
@@ -714,23 +976,23 @@ public interface AmazonConfig {
      * </p>
      * <note>
      * <p>
-     * If you make a call to the <a>GetDiscoveredResourceCounts</a> action, you may not immediately receive resource
+     * If you make a call to the <a>GetDiscoveredResourceCounts</a> action, you might not immediately receive resource
      * counts in the following situations:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * You are a new AWS Config customer
+     * You are a new AWS Config customer.
      * </p>
      * </li>
      * <li>
      * <p>
-     * You just enabled resource recording
+     * You just enabled resource recording.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * It may take a few minutes for AWS Config to record and count your resources. Wait a few minutes and then retry
+     * It might take a few minutes for AWS Config to record and count your resources. Wait a few minutes and then retry
      * the <a>GetDiscoveredResourceCounts</a> action.
      * </p>
      * </note>
@@ -742,7 +1004,7 @@ public interface AmazonConfig {
      * @throws InvalidLimitException
      *         The specified limit is outside the allowable range.
      * @throws InvalidNextTokenException
-     *         The specified next token is invalid. Specify the <code>NextToken</code> string that was returned in the
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
      *         previous response to get the next page of results.
      * @sample AmazonConfig.GetDiscoveredResourceCounts
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetDiscoveredResourceCounts"
@@ -779,7 +1041,7 @@ public interface AmazonConfig {
      * @throws InvalidLimitException
      *         The specified limit is outside the allowable range.
      * @throws InvalidNextTokenException
-     *         The specified next token is invalid. Specify the <code>NextToken</code> string that was returned in the
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
      *         previous response to get the next page of results.
      * @throws NoAvailableConfigurationRecorderException
      *         There are no configuration recorders available to provide the role needed to describe your resources.
@@ -801,7 +1063,7 @@ public interface AmazonConfig {
      * </p>
      * <note>
      * <p>
-     * You can specify either resource IDs or a resource name but not both in the same request.
+     * You can specify either resource IDs or a resource name, but not both, in the same request.
      * </p>
      * </note>
      * <p>
@@ -817,7 +1079,7 @@ public interface AmazonConfig {
      * @throws InvalidLimitException
      *         The specified limit is outside the allowable range.
      * @throws InvalidNextTokenException
-     *         The specified next token is invalid. Specify the <code>NextToken</code> string that was returned in the
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
      *         previous response to get the next page of results.
      * @throws NoAvailableConfigurationRecorderException
      *         There are no configuration recorders available to provide the role needed to describe your resources.
@@ -830,19 +1092,35 @@ public interface AmazonConfig {
 
     /**
      * <p>
+     * Authorizes the aggregator account and region to collect data from the source account and region.
+     * </p>
+     * 
+     * @param putAggregationAuthorizationRequest
+     * @return Result of the PutAggregationAuthorization operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
+     * @sample AmazonConfig.PutAggregationAuthorization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutAggregationAuthorization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutAggregationAuthorizationResult putAggregationAuthorization(PutAggregationAuthorizationRequest putAggregationAuthorizationRequest);
+
+    /**
+     * <p>
      * Adds or updates an AWS Config rule for evaluating whether your AWS resources comply with your desired
      * configurations.
      * </p>
      * <p>
-     * You can use this action for custom Config rules and AWS managed Config rules. A custom Config rule is a rule that
-     * you develop and maintain. An AWS managed Config rule is a customizable, predefined rule that AWS Config provides.
+     * You can use this action for custom AWS Config rules and AWS managed Config rules. A custom AWS Config rule is a
+     * rule that you develop and maintain. An AWS managed Config rule is a customizable, predefined rule that AWS Config
+     * provides.
      * </p>
      * <p>
-     * If you are adding a new custom Config rule, you must first create the AWS Lambda function that the rule invokes
-     * to evaluate your resources. When you use the <code>PutConfigRule</code> action to add the rule to AWS Config, you
-     * must specify the Amazon Resource Name (ARN) that AWS Lambda assigns to the function. Specify the ARN for the
-     * <code>SourceIdentifier</code> key. This key is part of the <code>Source</code> object, which is part of the
-     * <code>ConfigRule</code> object.
+     * If you are adding a new custom AWS Config rule, you must first create the AWS Lambda function that the rule
+     * invokes to evaluate your resources. When you use the <code>PutConfigRule</code> action to add the rule to AWS
+     * Config, you must specify the Amazon Resource Name (ARN) that AWS Lambda assigns to the function. Specify the ARN
+     * for the <code>SourceIdentifier</code> key. This key is part of the <code>Source</code> object, which is part of
+     * the <code>ConfigRule</code> object.
      * </p>
      * <p>
      * If you are adding an AWS managed Config rule, specify the rule's identifier for the <code>SourceIdentifier</code>
@@ -864,7 +1142,7 @@ public interface AmazonConfig {
      * The maximum number of rules that AWS Config supports is 50.
      * </p>
      * <p>
-     * For more information about requesting a rule limit increase, see <a
+     * For information about requesting a rule limit increase, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS Config Limits</a>
      * in the <i>AWS General Reference Guide</i>.
      * </p>
@@ -880,7 +1158,7 @@ public interface AmazonConfig {
      *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @throws MaxNumberOfConfigRulesExceededException
      *         Failed to add the AWS Config rule because the account already contains the maximum number of 50 rules.
-     *         Consider deleting any deactivated rules before adding new rules.
+     *         Consider deleting any deactivated rules before you add new rules.
      * @throws ResourceInUseException
      *         The rule is currently being deleted or the rule is deleting your evaluation results. Try your request
      *         again later.
@@ -909,11 +1187,42 @@ public interface AmazonConfig {
 
     /**
      * <p>
+     * Creates and updates the configuration aggregator with the selected source accounts and regions.
+     * </p>
+     * <note>
+     * <p>
+     * AWS Config should be enabled in accounts and regions you want to aggreagate.
+     * </p>
+     * </note>
+     * 
+     * @param putConfigurationAggregatorRequest
+     * @return Result of the PutConfigurationAggregator operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
+     * @throws LimitExceededException
+     *         This exception is thrown if an evaluation is in progress or if you call the
+     *         <a>StartConfigRulesEvaluation</a> API more than once per minute.
+     * @throws InvalidRoleException
+     *         You have provided a null or empty role ARN.
+     * @throws OrganizationAccessDeniedException
+     *         No permission to call the EnableAWSServiceAccess API.
+     * @throws NoAvailableOrganizationException
+     *         Organization does is no longer available.
+     * @throws OrganizationAllFeaturesNotEnabledException
+     *         The configuration aggregator cannot be created because organization does not have all features enabled.
+     * @sample AmazonConfig.PutConfigurationAggregator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationAggregator"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutConfigurationAggregatorResult putConfigurationAggregator(PutConfigurationAggregatorRequest putConfigurationAggregatorRequest);
+
+    /**
+     * <p>
      * Creates a new configuration recorder to record the selected resource configurations.
      * </p>
      * <p>
-     * You can use this action to change the role <code>roleARN</code> and/or the <code>recordingGroup</code> of an
-     * existing recorder. To change the role, call the action on the existing configuration recorder and specify a role.
+     * You can use this action to change the role <code>roleARN</code> or the <code>recordingGroup</code> of an existing
+     * recorder. To change the role, call the action on the existing configuration recorder and specify a role.
      * </p>
      * <note>
      * <p>
@@ -929,14 +1238,14 @@ public interface AmazonConfig {
      *        The input for the <a>PutConfigurationRecorder</a> action.
      * @return Result of the PutConfigurationRecorder operation returned by the service.
      * @throws MaxNumberOfConfigurationRecordersExceededException
-     *         You have reached the limit on the number of recorders you can create.
+     *         You have reached the limit of the number of recorders you can create.
      * @throws InvalidConfigurationRecorderNameException
      *         You have provided a configuration recorder name that is not valid.
      * @throws InvalidRoleException
      *         You have provided a null or empty role ARN.
      * @throws InvalidRecordingGroupException
      *         AWS Config throws an exception if the recording group does not contain a valid list of resource types.
-     *         Invalid values could also be incorrectly formatted.
+     *         Invalid values might also be incorrectly formatted.
      * @sample AmazonConfig.PutConfigurationRecorder
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder"
      *      target="_top">AWS API Documentation</a>
@@ -967,7 +1276,7 @@ public interface AmazonConfig {
      *        The input for the <a>PutDeliveryChannel</a> action.
      * @return Result of the PutDeliveryChannel operation returned by the service.
      * @throws MaxNumberOfDeliveryChannelsExceededException
-     *         You have reached the limit on the number of delivery channels you can create.
+     *         You have reached the limit of the number of delivery channels you can create.
      * @throws NoAvailableConfigurationRecorderException
      *         There are no configuration recorders available to provide the role needed to describe your resources.
      *         Create a configuration recorder.
@@ -1010,23 +1319,23 @@ public interface AmazonConfig {
 
     /**
      * <p>
-     * Runs an on-demand evaluation for the specified Config rules against the last known configuration state of the
-     * resources. Use <code>StartConfigRulesEvaluation</code> when you want to test a rule that you updated is working
+     * Runs an on-demand evaluation for the specified AWS Config rules against the last known configuration state of the
+     * resources. Use <code>StartConfigRulesEvaluation</code> when you want to test that a rule you updated is working
      * as expected. <code>StartConfigRulesEvaluation</code> does not re-record the latest configuration state for your
-     * resources; it re-runs an evaluation against the last known state of your resources.
+     * resources. It re-runs an evaluation against the last known state of your resources.
      * </p>
      * <p>
-     * You can specify up to 25 Config rules per request.
+     * You can specify up to 25 AWS Config rules per request.
      * </p>
      * <p>
-     * An existing <code>StartConfigRulesEvaluation</code> call must complete for the specified rules before you can
+     * An existing <code>StartConfigRulesEvaluation</code> call for the specified rules must complete before you can
      * call the API again. If you chose to have AWS Config stream to an Amazon SNS topic, you will receive a
      * <code>ConfigRuleEvaluationStarted</code> notification when the evaluation starts.
      * </p>
      * <note>
      * <p>
      * You don't need to call the <code>StartConfigRulesEvaluation</code> API to run an evaluation for a new rule. When
-     * you create a new rule, AWS Config automatically evaluates your resources against the rule.
+     * you create a rule, AWS Config evaluates your resources against the rule automatically.
      * </p>
      * </note>
      * <p>

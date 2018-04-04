@@ -33,6 +33,12 @@ public class ListTranscriptionJobsRequest extends com.amazonaws.AmazonWebService
     private String status;
     /**
      * <p>
+     * When specified, the jobs returned in the list are limited to jobs whose name contains the specified string.
+     * </p>
+     */
+    private String jobNameContains;
+    /**
+     * <p>
      * If the result of the previous request to <code>ListTranscriptionJobs</code> was truncated, include the
      * <code>NextToken</code> to fetch the next set of jobs.
      * </p>
@@ -40,7 +46,8 @@ public class ListTranscriptionJobsRequest extends com.amazonaws.AmazonWebService
     private String nextToken;
     /**
      * <p>
-     * The maximum number of jobs to return in the response.
+     * The maximum number of jobs to return in the response. If there are fewer results in the list, this response
+     * contains only the actual results.
      * </p>
      */
     private Integer maxResults;
@@ -106,6 +113,49 @@ public class ListTranscriptionJobsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
+     * When specified, the jobs returned in the list are limited to jobs whose name contains the specified string.
+     * </p>
+     * 
+     * @param jobNameContains
+     *        When specified, the jobs returned in the list are limited to jobs whose name contains the specified
+     *        string.
+     */
+
+    public void setJobNameContains(String jobNameContains) {
+        this.jobNameContains = jobNameContains;
+    }
+
+    /**
+     * <p>
+     * When specified, the jobs returned in the list are limited to jobs whose name contains the specified string.
+     * </p>
+     * 
+     * @return When specified, the jobs returned in the list are limited to jobs whose name contains the specified
+     *         string.
+     */
+
+    public String getJobNameContains() {
+        return this.jobNameContains;
+    }
+
+    /**
+     * <p>
+     * When specified, the jobs returned in the list are limited to jobs whose name contains the specified string.
+     * </p>
+     * 
+     * @param jobNameContains
+     *        When specified, the jobs returned in the list are limited to jobs whose name contains the specified
+     *        string.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListTranscriptionJobsRequest withJobNameContains(String jobNameContains) {
+        setJobNameContains(jobNameContains);
+        return this;
+    }
+
+    /**
+     * <p>
      * If the result of the previous request to <code>ListTranscriptionJobs</code> was truncated, include the
      * <code>NextToken</code> to fetch the next set of jobs.
      * </p>
@@ -152,11 +202,13 @@ public class ListTranscriptionJobsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The maximum number of jobs to return in the response.
+     * The maximum number of jobs to return in the response. If there are fewer results in the list, this response
+     * contains only the actual results.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of jobs to return in the response.
+     *        The maximum number of jobs to return in the response. If there are fewer results in the list, this
+     *        response contains only the actual results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -165,10 +217,12 @@ public class ListTranscriptionJobsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The maximum number of jobs to return in the response.
+     * The maximum number of jobs to return in the response. If there are fewer results in the list, this response
+     * contains only the actual results.
      * </p>
      * 
-     * @return The maximum number of jobs to return in the response.
+     * @return The maximum number of jobs to return in the response. If there are fewer results in the list, this
+     *         response contains only the actual results.
      */
 
     public Integer getMaxResults() {
@@ -177,11 +231,13 @@ public class ListTranscriptionJobsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The maximum number of jobs to return in the response.
+     * The maximum number of jobs to return in the response. If there are fewer results in the list, this response
+     * contains only the actual results.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of jobs to return in the response.
+     *        The maximum number of jobs to return in the response. If there are fewer results in the list, this
+     *        response contains only the actual results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,6 +259,8 @@ public class ListTranscriptionJobsRequest extends com.amazonaws.AmazonWebService
         sb.append("{");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getJobNameContains() != null)
+            sb.append("JobNameContains: ").append(getJobNameContains()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
@@ -225,6 +283,10 @@ public class ListTranscriptionJobsRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getJobNameContains() == null ^ this.getJobNameContains() == null)
+            return false;
+        if (other.getJobNameContains() != null && other.getJobNameContains().equals(this.getJobNameContains()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
@@ -242,6 +304,7 @@ public class ListTranscriptionJobsRequest extends com.amazonaws.AmazonWebService
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getJobNameContains() == null) ? 0 : getJobNameContains().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;

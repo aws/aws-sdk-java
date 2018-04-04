@@ -141,7 +141,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a
-     * <code>StorageResolution</code> of 1. If you specify a Period of 10 or 30 for a metric that does not have
+     * <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have
      * sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In this case,
      * it does not receive data for the attempts that do not correspond to a one-minute data resolution, and the alarm
      * may often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution
@@ -169,15 +169,22 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
     private String unit;
     /**
      * <p>
-     * The number of periods over which data is compared to the specified threshold. An alarm's total current evaluation
-     * period can be no longer than one day, so this number multiplied by <code>Period</code> cannot be more than 86,400
-     * seconds.
+     * The number of periods over which data is compared to the specified threshold. If you are setting an alarm which
+     * requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies that
+     * number. If you are setting an "M out of N" alarm, this value is the N.
+     * </p>
+     * <p>
+     * An alarm's total current evaluation period can be no longer than one day, so this number multiplied by
+     * <code>Period</code> cannot be more than 86,400 seconds.
      * </p>
      */
     private Integer evaluationPeriods;
     /**
      * <p>
-     * The number of datapoints that must be breaching to trigger the alarm.
+     * The number of datapoints that must be breaching to trigger the alarm. This is used only if you are setting an
+     * "M out of N" alarm. In that case, this value is the M. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation"
+     * >Evaluating an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.
      * </p>
      */
     private Integer datapointsToAlarm;
@@ -1189,7 +1196,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a
-     * <code>StorageResolution</code> of 1. If you specify a Period of 10 or 30 for a metric that does not have
+     * <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have
      * sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In this case,
      * it does not receive data for the attempts that do not correspond to a one-minute data resolution, and the alarm
      * may often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution
@@ -1206,7 +1213,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        multiple of 60.</p>
      *        <p>
      *        Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a
-     *        <code>StorageResolution</code> of 1. If you specify a Period of 10 or 30 for a metric that does not have
+     *        <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have
      *        sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In
      *        this case, it does not receive data for the attempts that do not correspond to a one-minute data
      *        resolution, and the alarm may often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this
@@ -1229,7 +1236,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a
-     * <code>StorageResolution</code> of 1. If you specify a Period of 10 or 30 for a metric that does not have
+     * <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have
      * sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In this case,
      * it does not receive data for the attempts that do not correspond to a one-minute data resolution, and the alarm
      * may often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution
@@ -1245,7 +1252,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *         multiple of 60.</p>
      *         <p>
      *         Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a
-     *         <code>StorageResolution</code> of 1. If you specify a Period of 10 or 30 for a metric that does not have
+     *         <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have
      *         sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In
      *         this case, it does not receive data for the attempts that do not correspond to a one-minute data
      *         resolution, and the alarm may often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets
@@ -1268,7 +1275,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a
-     * <code>StorageResolution</code> of 1. If you specify a Period of 10 or 30 for a metric that does not have
+     * <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have
      * sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In this case,
      * it does not receive data for the attempts that do not correspond to a one-minute data resolution, and the alarm
      * may often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution
@@ -1285,7 +1292,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        multiple of 60.</p>
      *        <p>
      *        Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a
-     *        <code>StorageResolution</code> of 1. If you specify a Period of 10 or 30 for a metric that does not have
+     *        <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have
      *        sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In
      *        this case, it does not receive data for the attempts that do not correspond to a one-minute data
      *        resolution, and the alarm may often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this
@@ -1444,15 +1451,22 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The number of periods over which data is compared to the specified threshold. An alarm's total current evaluation
-     * period can be no longer than one day, so this number multiplied by <code>Period</code> cannot be more than 86,400
-     * seconds.
+     * The number of periods over which data is compared to the specified threshold. If you are setting an alarm which
+     * requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies that
+     * number. If you are setting an "M out of N" alarm, this value is the N.
+     * </p>
+     * <p>
+     * An alarm's total current evaluation period can be no longer than one day, so this number multiplied by
+     * <code>Period</code> cannot be more than 86,400 seconds.
      * </p>
      * 
      * @param evaluationPeriods
-     *        The number of periods over which data is compared to the specified threshold. An alarm's total current
-     *        evaluation period can be no longer than one day, so this number multiplied by <code>Period</code> cannot
-     *        be more than 86,400 seconds.
+     *        The number of periods over which data is compared to the specified threshold. If you are setting an alarm
+     *        which requires that a number of consecutive data points be breaching to trigger the alarm, this value
+     *        specifies that number. If you are setting an "M out of N" alarm, this value is the N.</p>
+     *        <p>
+     *        An alarm's total current evaluation period can be no longer than one day, so this number multiplied by
+     *        <code>Period</code> cannot be more than 86,400 seconds.
      */
 
     public void setEvaluationPeriods(Integer evaluationPeriods) {
@@ -1461,14 +1475,21 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The number of periods over which data is compared to the specified threshold. An alarm's total current evaluation
-     * period can be no longer than one day, so this number multiplied by <code>Period</code> cannot be more than 86,400
-     * seconds.
+     * The number of periods over which data is compared to the specified threshold. If you are setting an alarm which
+     * requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies that
+     * number. If you are setting an "M out of N" alarm, this value is the N.
+     * </p>
+     * <p>
+     * An alarm's total current evaluation period can be no longer than one day, so this number multiplied by
+     * <code>Period</code> cannot be more than 86,400 seconds.
      * </p>
      * 
-     * @return The number of periods over which data is compared to the specified threshold. An alarm's total current
-     *         evaluation period can be no longer than one day, so this number multiplied by <code>Period</code> cannot
-     *         be more than 86,400 seconds.
+     * @return The number of periods over which data is compared to the specified threshold. If you are setting an alarm
+     *         which requires that a number of consecutive data points be breaching to trigger the alarm, this value
+     *         specifies that number. If you are setting an "M out of N" alarm, this value is the N.</p>
+     *         <p>
+     *         An alarm's total current evaluation period can be no longer than one day, so this number multiplied by
+     *         <code>Period</code> cannot be more than 86,400 seconds.
      */
 
     public Integer getEvaluationPeriods() {
@@ -1477,15 +1498,22 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The number of periods over which data is compared to the specified threshold. An alarm's total current evaluation
-     * period can be no longer than one day, so this number multiplied by <code>Period</code> cannot be more than 86,400
-     * seconds.
+     * The number of periods over which data is compared to the specified threshold. If you are setting an alarm which
+     * requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies that
+     * number. If you are setting an "M out of N" alarm, this value is the N.
+     * </p>
+     * <p>
+     * An alarm's total current evaluation period can be no longer than one day, so this number multiplied by
+     * <code>Period</code> cannot be more than 86,400 seconds.
      * </p>
      * 
      * @param evaluationPeriods
-     *        The number of periods over which data is compared to the specified threshold. An alarm's total current
-     *        evaluation period can be no longer than one day, so this number multiplied by <code>Period</code> cannot
-     *        be more than 86,400 seconds.
+     *        The number of periods over which data is compared to the specified threshold. If you are setting an alarm
+     *        which requires that a number of consecutive data points be breaching to trigger the alarm, this value
+     *        specifies that number. If you are setting an "M out of N" alarm, this value is the N.</p>
+     *        <p>
+     *        An alarm's total current evaluation period can be no longer than one day, so this number multiplied by
+     *        <code>Period</code> cannot be more than 86,400 seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1496,11 +1524,17 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The number of datapoints that must be breaching to trigger the alarm.
+     * The number of datapoints that must be breaching to trigger the alarm. This is used only if you are setting an
+     * "M out of N" alarm. In that case, this value is the M. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation"
+     * >Evaluating an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.
      * </p>
      * 
      * @param datapointsToAlarm
-     *        The number of datapoints that must be breaching to trigger the alarm.
+     *        The number of datapoints that must be breaching to trigger the alarm. This is used only if you are setting
+     *        an "M out of N" alarm. In that case, this value is the M. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation"
+     *        >Evaluating an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.
      */
 
     public void setDatapointsToAlarm(Integer datapointsToAlarm) {
@@ -1509,10 +1543,16 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The number of datapoints that must be breaching to trigger the alarm.
+     * The number of datapoints that must be breaching to trigger the alarm. This is used only if you are setting an
+     * "M out of N" alarm. In that case, this value is the M. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation"
+     * >Evaluating an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.
      * </p>
      * 
-     * @return The number of datapoints that must be breaching to trigger the alarm.
+     * @return The number of datapoints that must be breaching to trigger the alarm. This is used only if you are
+     *         setting an "M out of N" alarm. In that case, this value is the M. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation"
+     *         >Evaluating an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.
      */
 
     public Integer getDatapointsToAlarm() {
@@ -1521,11 +1561,17 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The number of datapoints that must be breaching to trigger the alarm.
+     * The number of datapoints that must be breaching to trigger the alarm. This is used only if you are setting an
+     * "M out of N" alarm. In that case, this value is the M. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation"
+     * >Evaluating an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.
      * </p>
      * 
      * @param datapointsToAlarm
-     *        The number of datapoints that must be breaching to trigger the alarm.
+     *        The number of datapoints that must be breaching to trigger the alarm. This is used only if you are setting
+     *        an "M out of N" alarm. In that case, this value is the M. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation"
+     *        >Evaluating an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

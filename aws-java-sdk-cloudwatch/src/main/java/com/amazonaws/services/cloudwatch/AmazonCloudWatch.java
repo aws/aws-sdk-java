@@ -256,6 +256,32 @@ public interface AmazonCloudWatch {
 
     /**
      * <p>
+     * You can use the <code>GetMetricData</code> API to retrieve as many as 100 different metrics in a single request,
+     * with a total of as many as 100,800 datapoints. You can also optionally perform math expressions on the values of
+     * the returned statistics, to create new time series that represent new insights into your data. For example, using
+     * Lambda metrics, you could divide the Errors metric by the Invocations metric to get an error rate time series.
+     * For more information about metric math expressions, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax"
+     * >Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.
+     * </p>
+     * <p>
+     * Calls to the <code>GetMetricData</code> API have a different pricing structure than calls to
+     * <code>GetMetricStatistics</code>. For more information about pricing, see <a
+     * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
+     * </p>
+     * 
+     * @param getMetricDataRequest
+     * @return Result of the GetMetricData operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The next token specified is invalid.
+     * @sample AmazonCloudWatch.GetMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricData" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetMetricDataResult getMetricData(GetMetricDataRequest getMetricDataRequest);
+
+    /**
+     * <p>
      * Gets statistics for the specified metric.
      * </p>
      * <p>

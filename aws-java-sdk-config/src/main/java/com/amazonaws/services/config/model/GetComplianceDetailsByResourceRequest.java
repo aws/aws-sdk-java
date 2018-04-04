@@ -49,7 +49,7 @@ public class GetComplianceDetailsByResourceRequest extends com.amazonaws.AmazonW
     private com.amazonaws.internal.SdkInternalList<String> complianceTypes;
     /**
      * <p>
-     * The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
      * paginated response.
      * </p>
      */
@@ -264,12 +264,12 @@ public class GetComplianceDetailsByResourceRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
      * paginated response.
      * </p>
      * 
      * @param nextToken
-     *        The <code>NextToken</code> string returned on a previous page that you use to get the next page of results
+     *        The <code>nextToken</code> string returned on a previous page that you use to get the next page of results
      *        in a paginated response.
      */
 
@@ -279,11 +279,11 @@ public class GetComplianceDetailsByResourceRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
      * paginated response.
      * </p>
      * 
-     * @return The <code>NextToken</code> string returned on a previous page that you use to get the next page of
+     * @return The <code>nextToken</code> string returned on a previous page that you use to get the next page of
      *         results in a paginated response.
      */
 
@@ -293,12 +293,12 @@ public class GetComplianceDetailsByResourceRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
      * paginated response.
      * </p>
      * 
      * @param nextToken
-     *        The <code>NextToken</code> string returned on a previous page that you use to get the next page of results
+     *        The <code>nextToken</code> string returned on a previous page that you use to get the next page of results
      *        in a paginated response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

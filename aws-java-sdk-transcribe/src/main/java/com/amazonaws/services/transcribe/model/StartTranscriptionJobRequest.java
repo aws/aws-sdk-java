@@ -55,6 +55,12 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private Media media;
+    /**
+     * <p>
+     * A <code>Settings</code> object that provides optional settings for a transcription job.
+     * </p>
+     */
+    private Settings settings;
 
     /**
      * <p>
@@ -295,6 +301,46 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * A <code>Settings</code> object that provides optional settings for a transcription job.
+     * </p>
+     * 
+     * @param settings
+     *        A <code>Settings</code> object that provides optional settings for a transcription job.
+     */
+
+    public void setSettings(Settings settings) {
+        this.settings = settings;
+    }
+
+    /**
+     * <p>
+     * A <code>Settings</code> object that provides optional settings for a transcription job.
+     * </p>
+     * 
+     * @return A <code>Settings</code> object that provides optional settings for a transcription job.
+     */
+
+    public Settings getSettings() {
+        return this.settings;
+    }
+
+    /**
+     * <p>
+     * A <code>Settings</code> object that provides optional settings for a transcription job.
+     * </p>
+     * 
+     * @param settings
+     *        A <code>Settings</code> object that provides optional settings for a transcription job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTranscriptionJobRequest withSettings(Settings settings) {
+        setSettings(settings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -314,7 +360,9 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
         if (getMediaFormat() != null)
             sb.append("MediaFormat: ").append(getMediaFormat()).append(",");
         if (getMedia() != null)
-            sb.append("Media: ").append(getMedia());
+            sb.append("Media: ").append(getMedia()).append(",");
+        if (getSettings() != null)
+            sb.append("Settings: ").append(getSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -349,6 +397,10 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getMedia() != null && other.getMedia().equals(this.getMedia()) == false)
             return false;
+        if (other.getSettings() == null ^ this.getSettings() == null)
+            return false;
+        if (other.getSettings() != null && other.getSettings().equals(this.getSettings()) == false)
+            return false;
         return true;
     }
 
@@ -362,6 +414,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getMediaSampleRateHertz() == null) ? 0 : getMediaSampleRateHertz().hashCode());
         hashCode = prime * hashCode + ((getMediaFormat() == null) ? 0 : getMediaFormat().hashCode());
         hashCode = prime * hashCode + ((getMedia() == null) ? 0 : getMedia().hashCode());
+        hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
         return hashCode;
     }
 

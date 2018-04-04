@@ -41,7 +41,7 @@ public class GetDiscoveredResourceCountsResult extends com.amazonaws.AmazonWebSe
      * <li>
      * <p>
      * You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify the resource type,
-     * <code>"AWS::EC2::Instances"</code> in the request.
+     * <code>"AWS::EC2::Instances"</code>, in the request.
      * </p>
      * </li>
      * <li>
@@ -84,7 +84,7 @@ public class GetDiscoveredResourceCountsResult extends com.amazonaws.AmazonWebSe
      * <li>
      * <p>
      * You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify the resource type,
-     * <code>"AWS::EC2::Instances"</code> in the request.
+     * <code>"AWS::EC2::Instances"</code>, in the request.
      * </p>
      * </li>
      * <li>
@@ -111,7 +111,7 @@ public class GetDiscoveredResourceCountsResult extends com.amazonaws.AmazonWebSe
      *        <li>
      *        <p>
      *        You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify the resource type,
-     *        <code>"AWS::EC2::Instances"</code> in the request.
+     *        <code>"AWS::EC2::Instances"</code>, in the request.
      *        </p>
      *        </li>
      *        <li>
@@ -143,7 +143,7 @@ public class GetDiscoveredResourceCountsResult extends com.amazonaws.AmazonWebSe
      * <li>
      * <p>
      * You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify the resource type,
-     * <code>"AWS::EC2::Instances"</code> in the request.
+     * <code>"AWS::EC2::Instances"</code>, in the request.
      * </p>
      * </li>
      * <li>
@@ -169,7 +169,7 @@ public class GetDiscoveredResourceCountsResult extends com.amazonaws.AmazonWebSe
      *         <li>
      *         <p>
      *         You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify the resource type,
-     *         <code>"AWS::EC2::Instances"</code> in the request.
+     *         <code>"AWS::EC2::Instances"</code>, in the request.
      *         </p>
      *         </li>
      *         <li>
@@ -201,7 +201,7 @@ public class GetDiscoveredResourceCountsResult extends com.amazonaws.AmazonWebSe
      * <li>
      * <p>
      * You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify the resource type,
-     * <code>"AWS::EC2::Instances"</code> in the request.
+     * <code>"AWS::EC2::Instances"</code>, in the request.
      * </p>
      * </li>
      * <li>
@@ -228,7 +228,7 @@ public class GetDiscoveredResourceCountsResult extends com.amazonaws.AmazonWebSe
      *        <li>
      *        <p>
      *        You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify the resource type,
-     *        <code>"AWS::EC2::Instances"</code> in the request.
+     *        <code>"AWS::EC2::Instances"</code>, in the request.
      *        </p>
      *        </li>
      *        <li>

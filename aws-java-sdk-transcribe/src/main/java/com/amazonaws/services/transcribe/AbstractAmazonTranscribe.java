@@ -28,7 +28,22 @@ public class AbstractAmazonTranscribe implements AmazonTranscribe {
     }
 
     @Override
+    public CreateVocabularyResult createVocabulary(CreateVocabularyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteVocabularyResult deleteVocabulary(DeleteVocabularyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetTranscriptionJobResult getTranscriptionJob(GetTranscriptionJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetVocabularyResult getVocabulary(GetVocabularyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -38,7 +53,17 @@ public class AbstractAmazonTranscribe implements AmazonTranscribe {
     }
 
     @Override
+    public ListVocabulariesResult listVocabularies(ListVocabulariesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartTranscriptionJobResult startTranscriptionJob(StartTranscriptionJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateVocabularyResult updateVocabulary(UpdateVocabularyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

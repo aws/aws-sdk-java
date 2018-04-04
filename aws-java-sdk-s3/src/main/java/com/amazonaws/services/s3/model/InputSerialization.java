@@ -30,6 +30,13 @@ public class InputSerialization implements Serializable, Cloneable {
     private CSVInput csv;
 
     /**
+     * Specifies JSON as object's input serialization format.
+     */
+    private JSONInput json;
+
+    private String compressionType;
+
+    /**
      * @return the serialization of a CSV-encoded object.
      */
     public CSVInput getCsv() {
@@ -56,6 +63,65 @@ public class InputSerialization implements Serializable, Cloneable {
         return this;
     }
 
+    /**
+     * Specifies JSON as object's input serialization format.
+     */
+    public JSONInput getJson() {
+        return json;
+    }
+
+    /**
+     * Specifies JSON as object's input serialization format.
+     */
+    public void setJson(JSONInput json) {
+        this.json = json;
+    }
+
+    /**
+     * Specifies JSON as object's input serialization format.
+     */
+    public InputSerialization withJson(JSONInput json) {
+        setJson(json);
+        return this;
+    }
+
+    /**
+     * Specifies object's compression format. Valid values: NONE, GZIP. Default Value: NONE.
+     */
+    public String getCompressionType() {
+        return compressionType;
+    }
+
+    /**
+     * Specifies object's compression format. Valid values: NONE, GZIP. Default Value: NONE.
+     */
+    public void setCompressionType(String compressionType) {
+        this.compressionType = compressionType;
+    }
+
+    /**
+     * Specifies object's compression format. Valid values: NONE, GZIP. Default Value: NONE.
+     */
+    public void setCompressionType(CompressionType compressionType) {
+        setCompressionType(compressionType == null ? null : compressionType.toString());
+    }
+
+    /**
+     * Specifies object's compression format. Valid values: NONE, GZIP. Default Value: NONE.
+     */
+    public InputSerialization withCompressionType(String compressionType) {
+        setCompressionType(compressionType);
+        return this;
+    }
+
+    /**
+     * Specifies object's compression format. Valid values: NONE, GZIP. Default Value: NONE.
+     */
+    public InputSerialization withCompressionType(CompressionType compressionType) {
+        setCompressionType(compressionType);
+        return this;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -71,6 +137,14 @@ public class InputSerialization implements Serializable, Cloneable {
             return false;
         if (other.getCsv() != null && !other.getCsv().equals(this.getCsv()))
             return false;
+        if (other.getJson() == null ^ this.getJson() == null)
+            return false;
+        if (other.getJson() != null && !other.getJson().equals(this.getJson()))
+            return false;
+        if (other.getCompressionType() == null ^ this.getCompressionType() == null)
+            return false;
+        if (other.getCompressionType() != null && !other.getCompressionType().equals(this.getCompressionType()))
+            return false;
         return true;
     }
 
@@ -80,6 +154,8 @@ public class InputSerialization implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCsv() == null) ? 0 : getCsv().hashCode());
+        hashCode = prime * hashCode + ((getJson() == null) ? 0 : getJson().hashCode());
+        hashCode = prime * hashCode + ((getCompressionType() == null) ? 0 : getCompressionType().hashCode());
         return hashCode;
     }
 
@@ -89,6 +165,10 @@ public class InputSerialization implements Serializable, Cloneable {
         sb.append("{");
         if (getCsv() != null)
             sb.append("Csv: ").append(getCsv());
+        if (getJson() != null)
+            sb.append("Json: ").append(getJson());
+        if (getCompressionType() != null)
+            sb.append("CompressionType: ").append(getCompressionType());
         sb.append("}");
         return sb.toString();
     }

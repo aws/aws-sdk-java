@@ -36,7 +36,7 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
     private String transcriptionJobName;
     /**
      * <p>
-     * The identifier assigned to the job when it was created.
+     * The status of the transcription job.
      * </p>
      */
     private String transcriptionJobStatus;
@@ -89,6 +89,12 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String failureReason;
+    /**
+     * <p>
+     * Optional settings for the transcription job.
+     * </p>
+     */
+    private Settings settings;
 
     /**
      * <p>
@@ -132,11 +138,11 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The identifier assigned to the job when it was created.
+     * The status of the transcription job.
      * </p>
      * 
      * @param transcriptionJobStatus
-     *        The identifier assigned to the job when it was created.
+     *        The status of the transcription job.
      * @see TranscriptionJobStatus
      */
 
@@ -146,10 +152,10 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The identifier assigned to the job when it was created.
+     * The status of the transcription job.
      * </p>
      * 
-     * @return The identifier assigned to the job when it was created.
+     * @return The status of the transcription job.
      * @see TranscriptionJobStatus
      */
 
@@ -159,11 +165,11 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The identifier assigned to the job when it was created.
+     * The status of the transcription job.
      * </p>
      * 
      * @param transcriptionJobStatus
-     *        The identifier assigned to the job when it was created.
+     *        The status of the transcription job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TranscriptionJobStatus
      */
@@ -175,11 +181,11 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The identifier assigned to the job when it was created.
+     * The status of the transcription job.
      * </p>
      * 
      * @param transcriptionJobStatus
-     *        The identifier assigned to the job when it was created.
+     *        The status of the transcription job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TranscriptionJobStatus
      */
@@ -554,6 +560,46 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Optional settings for the transcription job.
+     * </p>
+     * 
+     * @param settings
+     *        Optional settings for the transcription job.
+     */
+
+    public void setSettings(Settings settings) {
+        this.settings = settings;
+    }
+
+    /**
+     * <p>
+     * Optional settings for the transcription job.
+     * </p>
+     * 
+     * @return Optional settings for the transcription job.
+     */
+
+    public Settings getSettings() {
+        return this.settings;
+    }
+
+    /**
+     * <p>
+     * Optional settings for the transcription job.
+     * </p>
+     * 
+     * @param settings
+     *        Optional settings for the transcription job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TranscriptionJob withSettings(Settings settings) {
+        setSettings(settings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -583,7 +629,9 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
         if (getCompletionTime() != null)
             sb.append("CompletionTime: ").append(getCompletionTime()).append(",");
         if (getFailureReason() != null)
-            sb.append("FailureReason: ").append(getFailureReason());
+            sb.append("FailureReason: ").append(getFailureReason()).append(",");
+        if (getSettings() != null)
+            sb.append("Settings: ").append(getSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -638,6 +686,10 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getFailureReason() != null && other.getFailureReason().equals(this.getFailureReason()) == false)
             return false;
+        if (other.getSettings() == null ^ this.getSettings() == null)
+            return false;
+        if (other.getSettings() != null && other.getSettings().equals(this.getSettings()) == false)
+            return false;
         return true;
     }
 
@@ -656,6 +708,7 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getCompletionTime() == null) ? 0 : getCompletionTime().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
+        hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
         return hashCode;
     }
 

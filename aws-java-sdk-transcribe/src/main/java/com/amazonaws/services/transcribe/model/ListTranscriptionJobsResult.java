@@ -31,9 +31,9 @@ public class ListTranscriptionJobsResult extends com.amazonaws.AmazonWebServiceR
     private String status;
     /**
      * <p>
-     * The <code>ListTranscriptionJobs</code> operation returns a page of jobs at a time. The size of the page is set by
-     * the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size, Amazon Transcribe
-     * returns the <code>NextPage</code> token. Include the token in the next request to the
+     * The <code>ListTranscriptionJobs</code> operation returns a page of jobs at a time. The maximum size of the page
+     * is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size, Amazon
+     * Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the
      * <code>ListTranscriptionJobs</code> operation to return in the next page of jobs.
      * </p>
      */
@@ -106,17 +106,17 @@ public class ListTranscriptionJobsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The <code>ListTranscriptionJobs</code> operation returns a page of jobs at a time. The size of the page is set by
-     * the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size, Amazon Transcribe
-     * returns the <code>NextPage</code> token. Include the token in the next request to the
+     * The <code>ListTranscriptionJobs</code> operation returns a page of jobs at a time. The maximum size of the page
+     * is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size, Amazon
+     * Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the
      * <code>ListTranscriptionJobs</code> operation to return in the next page of jobs.
      * </p>
      * 
      * @param nextToken
-     *        The <code>ListTranscriptionJobs</code> operation returns a page of jobs at a time. The size of the page is
-     *        set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size,
-     *        Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the
-     *        <code>ListTranscriptionJobs</code> operation to return in the next page of jobs.
+     *        The <code>ListTranscriptionJobs</code> operation returns a page of jobs at a time. The maximum size of the
+     *        page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page
+     *        size, Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next request to
+     *        the <code>ListTranscriptionJobs</code> operation to return in the next page of jobs.
      */
 
     public void setNextToken(String nextToken) {
@@ -125,16 +125,16 @@ public class ListTranscriptionJobsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The <code>ListTranscriptionJobs</code> operation returns a page of jobs at a time. The size of the page is set by
-     * the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size, Amazon Transcribe
-     * returns the <code>NextPage</code> token. Include the token in the next request to the
+     * The <code>ListTranscriptionJobs</code> operation returns a page of jobs at a time. The maximum size of the page
+     * is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size, Amazon
+     * Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the
      * <code>ListTranscriptionJobs</code> operation to return in the next page of jobs.
      * </p>
      * 
-     * @return The <code>ListTranscriptionJobs</code> operation returns a page of jobs at a time. The size of the page
-     *         is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size,
-     *         Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the
-     *         <code>ListTranscriptionJobs</code> operation to return in the next page of jobs.
+     * @return The <code>ListTranscriptionJobs</code> operation returns a page of jobs at a time. The maximum size of
+     *         the page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the
+     *         page size, Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next
+     *         request to the <code>ListTranscriptionJobs</code> operation to return in the next page of jobs.
      */
 
     public String getNextToken() {
@@ -143,17 +143,17 @@ public class ListTranscriptionJobsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The <code>ListTranscriptionJobs</code> operation returns a page of jobs at a time. The size of the page is set by
-     * the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size, Amazon Transcribe
-     * returns the <code>NextPage</code> token. Include the token in the next request to the
+     * The <code>ListTranscriptionJobs</code> operation returns a page of jobs at a time. The maximum size of the page
+     * is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size, Amazon
+     * Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the
      * <code>ListTranscriptionJobs</code> operation to return in the next page of jobs.
      * </p>
      * 
      * @param nextToken
-     *        The <code>ListTranscriptionJobs</code> operation returns a page of jobs at a time. The size of the page is
-     *        set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size,
-     *        Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the
-     *        <code>ListTranscriptionJobs</code> operation to return in the next page of jobs.
+     *        The <code>ListTranscriptionJobs</code> operation returns a page of jobs at a time. The maximum size of the
+     *        page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page
+     *        size, Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next request to
+     *        the <code>ListTranscriptionJobs</code> operation to return in the next page of jobs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

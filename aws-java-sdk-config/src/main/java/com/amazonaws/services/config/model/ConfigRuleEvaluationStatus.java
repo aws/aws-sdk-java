@@ -23,7 +23,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * ran, the last time it failed, and the related error for the last failure.
  * </p>
  * <p>
- * This action does not return status information about custom Config rules.
+ * This action does not return status information about custom AWS Config rules.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConfigRuleEvaluationStatus" target="_top">AWS

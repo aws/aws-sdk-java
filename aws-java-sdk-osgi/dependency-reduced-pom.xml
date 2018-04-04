@@ -3,7 +3,7 @@
   <parent>
     <artifactId>aws-java-sdk-pom</artifactId>
     <groupId>com.amazonaws</groupId>
-    <version>1.11.308</version>
+    <version>1.11.309</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
@@ -114,10 +114,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.308</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.309</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.308</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.309</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -131,6 +131,18 @@
                     </taglet>
                   </taglets>
                   <groups>
+                    <group>
+                      <title>AWS Certificate Manager Private Certificate Authority</title>
+                      <packages>com.amazonaws.services.acmpca*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Secrets Manager</title>
+                      <packages>com.amazonaws.services.secretsmanager*</packages>
+                    </group>
+                    <group>
+                      <title>Firewall Management</title>
+                      <packages>com.amazonaws.services.fms*</packages>
+                    </group>
                     <group>
                       <title>Amazon Connect</title>
                       <packages>com.amazonaws.services.connect*</packages>
@@ -747,10 +759,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.308</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.309</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.308</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.309</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -764,6 +776,18 @@
                     </taglet>
                   </taglets>
                   <groups>
+                    <group>
+                      <title>AWS Certificate Manager Private Certificate Authority</title>
+                      <packages>com.amazonaws.services.acmpca*</packages>
+                    </group>
+                    <group>
+                      <title>AWS Secrets Manager</title>
+                      <packages>com.amazonaws.services.secretsmanager*</packages>
+                    </group>
+                    <group>
+                      <title>Firewall Management</title>
+                      <packages>com.amazonaws.services.fms*</packages>
+                    </group>
                     <group>
                       <title>Amazon Connect</title>
                       <packages>com.amazonaws.services.connect*</packages>
@@ -1376,10 +1400,10 @@
               <use>false</use>
               <notree>true</notree>
               <nodeprecatedlist>true</nodeprecatedlist>
-              <windowtitle>AWS SDK for Java - 1.11.308</windowtitle>
+              <windowtitle>AWS SDK for Java - 1.11.309</windowtitle>
               <encoding>UTF-8</encoding>
               <docencoding>UTF-8</docencoding>
-              <doctitle>AWS SDK for Java API Reference - 1.11.308</doctitle>
+              <doctitle>AWS SDK for Java API Reference - 1.11.309</doctitle>
               <packagesheader>AWS SDK for Java</packagesheader>
               <docfilessubdirs>true</docfilessubdirs>
               <taglets>
@@ -1393,6 +1417,18 @@
                 </taglet>
               </taglets>
               <groups>
+                <group>
+                  <title>AWS Certificate Manager Private Certificate Authority</title>
+                  <packages>com.amazonaws.services.acmpca*</packages>
+                </group>
+                <group>
+                  <title>AWS Secrets Manager</title>
+                  <packages>com.amazonaws.services.secretsmanager*</packages>
+                </group>
+                <group>
+                  <title>Firewall Management</title>
+                  <packages>com.amazonaws.services.fms*</packages>
+                </group>
                 <group>
                   <title>Amazon Connect</title>
                   <packages>com.amazonaws.services.connect*</packages>
@@ -2218,7 +2254,7 @@
                   <goal>exec</goal>
                 </goals>
                 <configuration>
-                  <workingDirectory>target/aws-java-sdk-osgi-1.11.308-sdk-zip-archive-assembly/</workingDirectory>
+                  <workingDirectory>target/aws-java-sdk-osgi-1.11.309-sdk-zip-archive-assembly/</workingDirectory>
                   <executable>zip</executable>
                   <commandlineArgs>-r ../aws-java-sdk.zip .</commandlineArgs>
                 </configuration>

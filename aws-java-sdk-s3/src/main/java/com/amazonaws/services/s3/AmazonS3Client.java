@@ -60,6 +60,7 @@ import com.amazonaws.internal.DefaultServiceEndpointBuilder;
 import com.amazonaws.internal.IdentityEndpointBuilder;
 import com.amazonaws.internal.ReleasableInputStream;
 import com.amazonaws.internal.ResettableInputStream;
+import com.amazonaws.internal.SdkFilterInputStream;
 import com.amazonaws.internal.ServiceEndpointBuilder;
 import com.amazonaws.internal.StaticCredentialsProvider;
 import com.amazonaws.internal.auth.SignerProvider;
@@ -225,6 +226,9 @@ import com.amazonaws.services.s3.model.SSEAwsKeyManagementParams;
 import com.amazonaws.services.s3.model.SSEAwsKeyManagementParamsProvider;
 import com.amazonaws.services.s3.model.SSECustomerKey;
 import com.amazonaws.services.s3.model.SSECustomerKeyProvider;
+import com.amazonaws.services.s3.model.SelectObjectContentEventStream;
+import com.amazonaws.services.s3.model.SelectObjectContentRequest;
+import com.amazonaws.services.s3.model.SelectObjectContentResult;
 import com.amazonaws.services.s3.model.ServerSideEncryptionConfiguration;
 import com.amazonaws.services.s3.model.SetBucketAccelerateConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketAclRequest;
@@ -318,6 +322,7 @@ import java.util.regex.Matcher;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.http.client.methods.HttpRequestBase;
+import org.apache.http.entity.ContentType;
 
 /**
  * <p>
@@ -2900,6 +2905,32 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     @Override
+    public SelectObjectContentResult selectObjectContent(SelectObjectContentRequest selectRequest) throws AmazonServiceException, SdkClientException {
+        selectRequest = beforeClientExecution(selectRequest);
+        rejectNull(selectRequest, "The request parameter must be specified");
+
+        rejectNull(selectRequest.getBucketName(), "The bucket name parameter must be specified when selecting object content.");
+        rejectNull(selectRequest.getKey(), "The key parameter must be specified when selecting object content.");
+
+        Request<SelectObjectContentRequest> request = createRequest(selectRequest.getBucketName(), selectRequest.getKey(), selectRequest, HttpMethodName.POST);
+        request.addParameter("select", null);
+        request.addParameter("select-type", "2");
+
+        populateSSE_C(request, selectRequest.getSSECustomerKey());
+
+        setContent(request, RequestXmlFactory.convertToXmlByteArray(selectRequest), ContentType.APPLICATION_XML.toString(), true);
+
+        S3Object result = invoke(request, new S3ObjectResponseHandler(), selectRequest.getBucketName(), selectRequest.getKey());
+
+        // Hold a reference to this client while the InputStream is still
+        // around - otherwise a finalizer in the HttpClient may reset the
+        // underlying TCP connection out from under us.
+        SdkFilterInputStream resultStream = new ServiceClientHolderInputStream(result.getObjectContent(), this);
+
+        return new SelectObjectContentResult().withPayload(new SelectObjectContentEventStream(resultStream));
+    }
+
+    @Override
     public URL generatePresignedUrl(String bucketName, String key, Date expiration)
             throws SdkClientException {
         return generatePresignedUrl(bucketName, key, expiration, HttpMethod.GET);
@@ -3582,7 +3613,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                      resolveRequestEndpoint(request, bucketName, key, RuntimeHttpUtils.toUri(RegionUtils.getRegion(region).getServiceEndpoint(S3_SERVICE_NAME), clientConfiguration));
                      return updateSigV4SignerWithRegion((AWSS3V4Signer) signer, region);
                 } else if (request.getOriginalRequest() instanceof GeneratePresignedUrlRequest) {
-                    return createSigV2Signer(request, bucketName, key);
+                    String signerRegion = getSignerRegion();
+                    if (signerRegion == null) {
+                        return createSigV2Signer(request, bucketName, key);
+                    }
+                    return updateSigV4SignerWithRegion((AWSS3V4Signer) signer, signerRegion);
                 } else if (isAdditionalHeadRequestToFindRegion) {
                     return updateSigV4SignerWithRegion((AWSS3V4Signer) signer, "us-east-1");
                 }

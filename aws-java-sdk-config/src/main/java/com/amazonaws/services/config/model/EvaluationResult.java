@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * The details of an AWS Config evaluation. Provides the AWS resource that was evaluated, the compliance of the
- * resource, related timestamps, and supplementary information.
+ * resource, related time stamps, and supplementary information.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/EvaluationResult" target="_top">AWS API

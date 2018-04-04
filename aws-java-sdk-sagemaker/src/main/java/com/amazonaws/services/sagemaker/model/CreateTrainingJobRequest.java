@@ -49,8 +49,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata,
      * including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about providing
-     * your own algorithms, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html">Bring
-     * Your Own Algorithms </a>.
+     * your own algorithms, see <a>your-algorithms</a>.
      * </p>
      */
     private AlgorithmSpecification algorithmSpecification;
@@ -273,17 +272,14 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata,
      * including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about providing
-     * your own algorithms, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html">Bring
-     * Your Own Algorithms </a>.
+     * your own algorithms, see <a>your-algorithms</a>.
      * </p>
      * 
      * @param algorithmSpecification
      *        The registry path of the Docker image that contains the training algorithm and algorithm-specific
      *        metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker,
      *        see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information
-     *        about providing your own algorithms, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html">Bring Your Own Algorithms
-     *        </a>.
+     *        about providing your own algorithms, see <a>your-algorithms</a>.
      */
 
     public void setAlgorithmSpecification(AlgorithmSpecification algorithmSpecification) {
@@ -295,16 +291,13 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata,
      * including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about providing
-     * your own algorithms, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html">Bring
-     * Your Own Algorithms </a>.
+     * your own algorithms, see <a>your-algorithms</a>.
      * </p>
      * 
      * @return The registry path of the Docker image that contains the training algorithm and algorithm-specific
      *         metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker,
      *         see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information
-     *         about providing your own algorithms, see <a
-     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html">Bring Your Own Algorithms
-     *         </a>.
+     *         about providing your own algorithms, see <a>your-algorithms</a>.
      */
 
     public AlgorithmSpecification getAlgorithmSpecification() {
@@ -316,17 +309,14 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata,
      * including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about providing
-     * your own algorithms, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html">Bring
-     * Your Own Algorithms </a>.
+     * your own algorithms, see <a>your-algorithms</a>.
      * </p>
      * 
      * @param algorithmSpecification
      *        The registry path of the Docker image that contains the training algorithm and algorithm-specific
      *        metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker,
      *        see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information
-     *        about providing your own algorithms, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html">Bring Your Own Algorithms
-     *        </a>.
+     *        about providing your own algorithms, see <a>your-algorithms</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

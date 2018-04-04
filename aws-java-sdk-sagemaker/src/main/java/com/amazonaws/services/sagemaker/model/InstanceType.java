@@ -21,9 +21,20 @@ import javax.annotation.Generated;
 public enum InstanceType {
 
     MlT2Medium("ml.t2.medium"),
+    MlT2Large("ml.t2.large"),
+    MlT2Xlarge("ml.t2.xlarge"),
+    MlT22xlarge("ml.t2.2xlarge"),
     MlM4Xlarge("ml.m4.xlarge"),
+    MlM42xlarge("ml.m4.2xlarge"),
+    MlM44xlarge("ml.m4.4xlarge"),
+    MlM410xlarge("ml.m4.10xlarge"),
+    MlM416xlarge("ml.m4.16xlarge"),
     MlP2Xlarge("ml.p2.xlarge"),
-    MlP32xlarge("ml.p3.2xlarge");
+    MlP28xlarge("ml.p2.8xlarge"),
+    MlP216xlarge("ml.p2.16xlarge"),
+    MlP32xlarge("ml.p3.2xlarge"),
+    MlP38xlarge("ml.p3.8xlarge"),
+    MlP316xlarge("ml.p3.16xlarge");
 
     private String value;
 

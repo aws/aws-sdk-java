@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * Failed to add the AWS Config rule because the account already contains the maximum number of 50 rules. Consider
- * deleting any deactivated rules before adding new rules.
+ * deleting any deactivated rules before you add new rules.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

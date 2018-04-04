@@ -43,28 +43,102 @@ public interface AmazonTranscribe {
 
     /**
      * <p>
-     * Returns information about a transcription job. To see the status of the job, check the <code>Status</code> field.
-     * If the status is <code>COMPLETE</code>, the job is finished and you can find the results at the location
-     * specified in the <code>TranscriptionFileUri</code> field.
+     * Creates a new custom vocabulary that you can use to change the way Amazon Transcribe handles transcription of an
+     * audio file.
+     * </p>
+     * 
+     * @param createVocabularyRequest
+     * @return Result of the CreateVocabulary operation returned by the service.
+     * @throws BadRequestException
+     *         Your request didn't pass one or more validation tests. For example, a name already exists when createing
+     *         a resource or a name may not exist when getting a transcription job or custom vocabulary. See the
+     *         exception <code>Message</code> field for more information.
+     * @throws LimitExceededException
+     *         Either you have sent too many requests or your input file is too long. Wait before you resend your
+     *         request, or use a smaller file and resend the request.
+     * @throws InternalFailureException
+     *         There was an internal error. Check the error message and try your request again.
+     * @throws ConflictException
+     *         The <code>JobName</code> field is a duplicate of a previously entered job name. Resend your request with
+     *         a different name.
+     * @sample AmazonTranscribe.CreateVocabulary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateVocabulary" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateVocabularyResult createVocabulary(CreateVocabularyRequest createVocabularyRequest);
+
+    /**
+     * <p>
+     * Deletes a vocabulary from Amazon Transcribe.
+     * </p>
+     * 
+     * @param deleteVocabularyRequest
+     * @return Result of the DeleteVocabulary operation returned by the service.
+     * @throws NotFoundException
+     *         We can't find the requested transcription job or custom vocabulary. Check the name and try your request
+     *         again.
+     * @throws LimitExceededException
+     *         Either you have sent too many requests or your input file is too long. Wait before you resend your
+     *         request, or use a smaller file and resend the request.
+     * @throws InternalFailureException
+     *         There was an internal error. Check the error message and try your request again.
+     * @sample AmazonTranscribe.DeleteVocabulary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteVocabulary" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteVocabularyResult deleteVocabulary(DeleteVocabularyRequest deleteVocabularyRequest);
+
+    /**
+     * <p>
+     * Returns information about a transcription job. To see the status of the job, check the
+     * <code>TranscriptionJobStatus</code> field. If the status is <code>COMPLETED</code>, the job is finished and you
+     * can find the results at the location specified in the <code>TranscriptionFileUri</code> field.
      * </p>
      * 
      * @param getTranscriptionJobRequest
      * @return Result of the GetTranscriptionJob operation returned by the service.
      * @throws BadRequestException
-     *         There is a problem with one of the input fields. Check the S3 bucket name, make sure that the job name is
-     *         not a duplicate, and confirm that you are using the correct file format. Then resend your request.
+     *         Your request didn't pass one or more validation tests. For example, a name already exists when createing
+     *         a resource or a name may not exist when getting a transcription job or custom vocabulary. See the
+     *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException
-     *         Either you have sent too many requests or your input file is longer than 2 hours. Wait before you resend
-     *         your request, or use a smaller file and resend the request.
+     *         Either you have sent too many requests or your input file is too long. Wait before you resend your
+     *         request, or use a smaller file and resend the request.
      * @throws InternalFailureException
      *         There was an internal error. Check the error message and try your request again.
      * @throws NotFoundException
-     *         We can't find the requested job. Check the job name and try your request again.
+     *         We can't find the requested transcription job or custom vocabulary. Check the name and try your request
+     *         again.
      * @sample AmazonTranscribe.GetTranscriptionJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetTranscriptionJob" target="_top">AWS
      *      API Documentation</a>
      */
     GetTranscriptionJobResult getTranscriptionJob(GetTranscriptionJobRequest getTranscriptionJobRequest);
+
+    /**
+     * <p>
+     * Gets information about a vocabulary.
+     * </p>
+     * 
+     * @param getVocabularyRequest
+     * @return Result of the GetVocabulary operation returned by the service.
+     * @throws NotFoundException
+     *         We can't find the requested transcription job or custom vocabulary. Check the name and try your request
+     *         again.
+     * @throws LimitExceededException
+     *         Either you have sent too many requests or your input file is too long. Wait before you resend your
+     *         request, or use a smaller file and resend the request.
+     * @throws InternalFailureException
+     *         There was an internal error. Check the error message and try your request again.
+     * @throws BadRequestException
+     *         Your request didn't pass one or more validation tests. For example, a name already exists when createing
+     *         a resource or a name may not exist when getting a transcription job or custom vocabulary. See the
+     *         exception <code>Message</code> field for more information.
+     * @sample AmazonTranscribe.GetVocabulary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetVocabulary" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetVocabularyResult getVocabulary(GetVocabularyRequest getVocabularyRequest);
 
     /**
      * <p>
@@ -74,11 +148,12 @@ public interface AmazonTranscribe {
      * @param listTranscriptionJobsRequest
      * @return Result of the ListTranscriptionJobs operation returned by the service.
      * @throws BadRequestException
-     *         There is a problem with one of the input fields. Check the S3 bucket name, make sure that the job name is
-     *         not a duplicate, and confirm that you are using the correct file format. Then resend your request.
+     *         Your request didn't pass one or more validation tests. For example, a name already exists when createing
+     *         a resource or a name may not exist when getting a transcription job or custom vocabulary. See the
+     *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException
-     *         Either you have sent too many requests or your input file is longer than 2 hours. Wait before you resend
-     *         your request, or use a smaller file and resend the request.
+     *         Either you have sent too many requests or your input file is too long. Wait before you resend your
+     *         request, or use a smaller file and resend the request.
      * @throws InternalFailureException
      *         There was an internal error. Check the error message and try your request again.
      * @sample AmazonTranscribe.ListTranscriptionJobs
@@ -89,17 +164,41 @@ public interface AmazonTranscribe {
 
     /**
      * <p>
+     * Returns a list of vocabularies that match the specified criteria. If no criteria are specified, returns the
+     * entire list of vocabularies.
+     * </p>
+     * 
+     * @param listVocabulariesRequest
+     * @return Result of the ListVocabularies operation returned by the service.
+     * @throws BadRequestException
+     *         Your request didn't pass one or more validation tests. For example, a name already exists when createing
+     *         a resource or a name may not exist when getting a transcription job or custom vocabulary. See the
+     *         exception <code>Message</code> field for more information.
+     * @throws LimitExceededException
+     *         Either you have sent too many requests or your input file is too long. Wait before you resend your
+     *         request, or use a smaller file and resend the request.
+     * @throws InternalFailureException
+     *         There was an internal error. Check the error message and try your request again.
+     * @sample AmazonTranscribe.ListVocabularies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListVocabularies" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListVocabulariesResult listVocabularies(ListVocabulariesRequest listVocabulariesRequest);
+
+    /**
+     * <p>
      * Starts an asynchronous job to transcribe speech to text.
      * </p>
      * 
      * @param startTranscriptionJobRequest
      * @return Result of the StartTranscriptionJob operation returned by the service.
      * @throws BadRequestException
-     *         There is a problem with one of the input fields. Check the S3 bucket name, make sure that the job name is
-     *         not a duplicate, and confirm that you are using the correct file format. Then resend your request.
+     *         Your request didn't pass one or more validation tests. For example, a name already exists when createing
+     *         a resource or a name may not exist when getting a transcription job or custom vocabulary. See the
+     *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException
-     *         Either you have sent too many requests or your input file is longer than 2 hours. Wait before you resend
-     *         your request, or use a smaller file and resend the request.
+     *         Either you have sent too many requests or your input file is too long. Wait before you resend your
+     *         request, or use a smaller file and resend the request.
      * @throws InternalFailureException
      *         There was an internal error. Check the error message and try your request again.
      * @throws ConflictException
@@ -110,6 +209,31 @@ public interface AmazonTranscribe {
      *      target="_top">AWS API Documentation</a>
      */
     StartTranscriptionJobResult startTranscriptionJob(StartTranscriptionJobRequest startTranscriptionJobRequest);
+
+    /**
+     * <p>
+     * Updates an existing vocabulary with new values.
+     * </p>
+     * 
+     * @param updateVocabularyRequest
+     * @return Result of the UpdateVocabulary operation returned by the service.
+     * @throws BadRequestException
+     *         Your request didn't pass one or more validation tests. For example, a name already exists when createing
+     *         a resource or a name may not exist when getting a transcription job or custom vocabulary. See the
+     *         exception <code>Message</code> field for more information.
+     * @throws LimitExceededException
+     *         Either you have sent too many requests or your input file is too long. Wait before you resend your
+     *         request, or use a smaller file and resend the request.
+     * @throws InternalFailureException
+     *         There was an internal error. Check the error message and try your request again.
+     * @throws NotFoundException
+     *         We can't find the requested transcription job or custom vocabulary. Check the name and try your request
+     *         again.
+     * @sample AmazonTranscribe.UpdateVocabulary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateVocabulary" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateVocabularyResult updateVocabulary(UpdateVocabularyRequest updateVocabularyRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

@@ -28,18 +28,18 @@ public class DeleteEvaluationResultsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the Config rule for which you want to delete the evaluation results.
+     * The name of the AWS Config rule for which you want to delete the evaluation results.
      * </p>
      */
     private String configRuleName;
 
     /**
      * <p>
-     * The name of the Config rule for which you want to delete the evaluation results.
+     * The name of the AWS Config rule for which you want to delete the evaluation results.
      * </p>
      * 
      * @param configRuleName
-     *        The name of the Config rule for which you want to delete the evaluation results.
+     *        The name of the AWS Config rule for which you want to delete the evaluation results.
      */
 
     public void setConfigRuleName(String configRuleName) {
@@ -48,10 +48,10 @@ public class DeleteEvaluationResultsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the Config rule for which you want to delete the evaluation results.
+     * The name of the AWS Config rule for which you want to delete the evaluation results.
      * </p>
      * 
-     * @return The name of the Config rule for which you want to delete the evaluation results.
+     * @return The name of the AWS Config rule for which you want to delete the evaluation results.
      */
 
     public String getConfigRuleName() {
@@ -60,11 +60,11 @@ public class DeleteEvaluationResultsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the Config rule for which you want to delete the evaluation results.
+     * The name of the AWS Config rule for which you want to delete the evaluation results.
      * </p>
      * 
      * @param configRuleName
-     *        The name of the Config rule for which you want to delete the evaluation results.
+     *        The name of the AWS Config rule for which you want to delete the evaluation results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

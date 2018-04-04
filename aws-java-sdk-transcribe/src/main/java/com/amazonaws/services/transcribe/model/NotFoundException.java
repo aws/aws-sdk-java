@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * We can't find the requested job. Check the job name and try your request again.
+ * We can't find the requested transcription job or custom vocabulary. Check the name and try your request again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

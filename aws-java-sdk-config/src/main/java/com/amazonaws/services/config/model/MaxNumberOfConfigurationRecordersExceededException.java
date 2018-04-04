@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You have reached the limit on the number of recorders you can create.
+ * You have reached the limit of the number of recorders you can create.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

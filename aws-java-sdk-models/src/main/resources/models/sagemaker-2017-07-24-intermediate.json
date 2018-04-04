@@ -239,7 +239,7 @@
       "asyncReturnType" : "CreateNotebookInstanceLifecycleConfigResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Creates a lifecycle configuration that you can associate with a notebook instance. A <i>lifecycle configuration</i> is a collection of shell scripts that run when you create or start a notebook instance.</p> <p>For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.</p>",
+      "documentation" : "<p>Creates a lifecycle configuration that you can associate with a notebook instance. A <i>lifecycle configuration</i> is a collection of shell scripts that run when you create or start a notebook instance.</p> <p>Each lifecycle configuration script has a limit of 16384 characters.</p> <p>The value of the <code>$PATH</code> environment variable that is available to both scripts is <code>/sbin:bin:/usr/sbin:/usr/bin</code>.</p> <p>View CloudWatch Logs for notebook instance lifecycle configurations in log group <code>/aws/sagemaker/NotebookInstances</code> in log stream <code>[notebook-instance-name]/[LifecycleConfigHook]</code>.</p> <p>Lifecycle configuration scripts cannot run for longer than 5 minutes. If a script runs for longer than 5 minutes, it fails and the notebook instance is not created or started.</p> <p>For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.</p>",
       "exceptions" : [ {
         "exceptionName" : "ResourceLimitExceededException",
         "documentation" : "<p> You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs created. </p>",
@@ -1843,7 +1843,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Specifies the training algorithm to use in a <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateTrainingJob.html\">CreateTrainingJob</a> request. </p> <p>For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about using your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html\">Bring Your Own Algorithms </a>. </p>",
+      "documentation" : "<p>Specifies the training algorithm to use in a <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateTrainingJob.html\">CreateTrainingJob</a> request. </p> <p>For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about using your own algorithms, see <a>your-algorithms</a>. </p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -1855,11 +1855,11 @@
         "c2jName" : "TrainingImage",
         "c2jShape" : "AlgorithmImage",
         "deprecated" : false,
-        "documentation" : "<p>The registry path of the Docker image that contains the training algorithm. For information about using your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html\">Docker Registry Paths for Algorithms Provided by Amazon SageMaker </a>. </p>",
+        "documentation" : "<p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The registry path of the Docker image that contains the training algorithm. For information about using your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html\">Docker Registry Paths for Algorithms Provided by Amazon SageMaker </a>. </p>\n@param trainingImage The registry path of the Docker image that contains the training algorithm. For information about using your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html\">Docker Registry Paths for Algorithms Provided by Amazon SageMaker </a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.</p>\n@param trainingImage The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withTrainingImage",
-        "getterDocumentation" : "/**<p>The registry path of the Docker image that contains the training algorithm. For information about using your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html\">Docker Registry Paths for Algorithms Provided by Amazon SageMaker </a>. </p>\n@return The registry path of the Docker image that contains the training algorithm. For information about using your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html\">Docker Registry Paths for Algorithms Provided by Amazon SageMaker </a>.*/",
+        "getterDocumentation" : "/**<p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.</p>\n@return The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.*/",
         "getterMethodName" : "getTrainingImage",
         "getterModel" : {
           "returnType" : "String",
@@ -1891,7 +1891,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TrainingImage",
-        "setterDocumentation" : "/**<p>The registry path of the Docker image that contains the training algorithm. For information about using your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html\">Docker Registry Paths for Algorithms Provided by Amazon SageMaker </a>. </p>\n@param trainingImage The registry path of the Docker image that contains the training algorithm. For information about using your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html\">Docker Registry Paths for Algorithms Provided by Amazon SageMaker </a>.*/",
+        "setterDocumentation" : "/**<p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.</p>\n@param trainingImage The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.*/",
         "setterMethodName" : "setTrainingImage",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -1904,12 +1904,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The registry path of the Docker image that contains the training algorithm. For information about using your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html\">Docker Registry Paths for Algorithms Provided by Amazon SageMaker </a>. </p>\n@param trainingImage The registry path of the Docker image that contains the training algorithm. For information about using your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html\">Docker Registry Paths for Algorithms Provided by Amazon SageMaker </a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.</p>\n@param trainingImage The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "trainingImage",
           "variableType" : "String",
-          "documentation" : "<p>The registry path of the Docker image that contains the training algorithm. For information about using your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html\">Docker Registry Paths for Algorithms Provided by Amazon SageMaker </a>. </p>",
+          "documentation" : "<p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1983,11 +1983,11 @@
           "c2jName" : "TrainingImage",
           "c2jShape" : "AlgorithmImage",
           "deprecated" : false,
-          "documentation" : "<p>The registry path of the Docker image that contains the training algorithm. For information about using your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html\">Docker Registry Paths for Algorithms Provided by Amazon SageMaker </a>. </p>",
+          "documentation" : "<p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The registry path of the Docker image that contains the training algorithm. For information about using your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html\">Docker Registry Paths for Algorithms Provided by Amazon SageMaker </a>. </p>\n@param trainingImage The registry path of the Docker image that contains the training algorithm. For information about using your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html\">Docker Registry Paths for Algorithms Provided by Amazon SageMaker </a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.</p>\n@param trainingImage The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withTrainingImage",
-          "getterDocumentation" : "/**<p>The registry path of the Docker image that contains the training algorithm. For information about using your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html\">Docker Registry Paths for Algorithms Provided by Amazon SageMaker </a>. </p>\n@return The registry path of the Docker image that contains the training algorithm. For information about using your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html\">Docker Registry Paths for Algorithms Provided by Amazon SageMaker </a>.*/",
+          "getterDocumentation" : "/**<p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.</p>\n@return The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.*/",
           "getterMethodName" : "getTrainingImage",
           "getterModel" : {
             "returnType" : "String",
@@ -2019,7 +2019,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TrainingImage",
-          "setterDocumentation" : "/**<p>The registry path of the Docker image that contains the training algorithm. For information about using your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html\">Docker Registry Paths for Algorithms Provided by Amazon SageMaker </a>. </p>\n@param trainingImage The registry path of the Docker image that contains the training algorithm. For information about using your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html\">Docker Registry Paths for Algorithms Provided by Amazon SageMaker </a>.*/",
+          "setterDocumentation" : "/**<p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.</p>\n@param trainingImage The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.*/",
           "setterMethodName" : "setTrainingImage",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -2032,12 +2032,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The registry path of the Docker image that contains the training algorithm. For information about using your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html\">Docker Registry Paths for Algorithms Provided by Amazon SageMaker </a>. </p>\n@param trainingImage The registry path of the Docker image that contains the training algorithm. For information about using your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html\">Docker Registry Paths for Algorithms Provided by Amazon SageMaker </a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.</p>\n@param trainingImage The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "trainingImage",
             "variableType" : "String",
-            "documentation" : "<p>The registry path of the Docker image that contains the training algorithm. For information about using your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html\">Docker Registry Paths for Algorithms Provided by Amazon SageMaker </a>. </p>",
+            "documentation" : "<p>The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -9473,11 +9473,11 @@
         "c2jName" : "AlgorithmSpecification",
         "c2jShape" : "AlgorithmSpecification",
         "deprecated" : false,
-        "documentation" : "<p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html\">Bring Your Own Algorithms </a>. </p>",
+        "documentation" : "<p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a>your-algorithms</a>. </p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html\">Bring Your Own Algorithms </a>. </p>\n@param algorithmSpecification The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html\">Bring Your Own Algorithms </a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a>your-algorithms</a>. </p>\n@param algorithmSpecification The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a>your-algorithms</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withAlgorithmSpecification",
-        "getterDocumentation" : "/**<p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html\">Bring Your Own Algorithms </a>. </p>\n@return The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html\">Bring Your Own Algorithms </a>.*/",
+        "getterDocumentation" : "/**<p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a>your-algorithms</a>. </p>\n@return The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a>your-algorithms</a>.*/",
         "getterMethodName" : "getAlgorithmSpecification",
         "getterModel" : {
           "returnType" : "AlgorithmSpecification",
@@ -9509,7 +9509,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "AlgorithmSpecification",
-        "setterDocumentation" : "/**<p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html\">Bring Your Own Algorithms </a>. </p>\n@param algorithmSpecification The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html\">Bring Your Own Algorithms </a>.*/",
+        "setterDocumentation" : "/**<p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a>your-algorithms</a>. </p>\n@param algorithmSpecification The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a>your-algorithms</a>.*/",
         "setterMethodName" : "setAlgorithmSpecification",
         "setterModel" : {
           "variableDeclarationType" : "AlgorithmSpecification",
@@ -9522,12 +9522,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html\">Bring Your Own Algorithms </a>. </p>\n@param algorithmSpecification The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html\">Bring Your Own Algorithms </a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a>your-algorithms</a>. </p>\n@param algorithmSpecification The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a>your-algorithms</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "AlgorithmSpecification",
           "variableName" : "algorithmSpecification",
           "variableType" : "AlgorithmSpecification",
-          "documentation" : "<p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html\">Bring Your Own Algorithms </a>. </p>",
+          "documentation" : "<p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a>your-algorithms</a>. </p>",
           "simpleType" : "AlgorithmSpecification",
           "variableSetterType" : "AlgorithmSpecification"
         },
@@ -10072,11 +10072,11 @@
           "c2jName" : "AlgorithmSpecification",
           "c2jShape" : "AlgorithmSpecification",
           "deprecated" : false,
-          "documentation" : "<p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html\">Bring Your Own Algorithms </a>. </p>",
+          "documentation" : "<p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a>your-algorithms</a>. </p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html\">Bring Your Own Algorithms </a>. </p>\n@param algorithmSpecification The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html\">Bring Your Own Algorithms </a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a>your-algorithms</a>. </p>\n@param algorithmSpecification The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a>your-algorithms</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withAlgorithmSpecification",
-          "getterDocumentation" : "/**<p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html\">Bring Your Own Algorithms </a>. </p>\n@return The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html\">Bring Your Own Algorithms </a>.*/",
+          "getterDocumentation" : "/**<p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a>your-algorithms</a>. </p>\n@return The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a>your-algorithms</a>.*/",
           "getterMethodName" : "getAlgorithmSpecification",
           "getterModel" : {
             "returnType" : "AlgorithmSpecification",
@@ -10108,7 +10108,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "AlgorithmSpecification",
-          "setterDocumentation" : "/**<p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html\">Bring Your Own Algorithms </a>. </p>\n@param algorithmSpecification The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html\">Bring Your Own Algorithms </a>.*/",
+          "setterDocumentation" : "/**<p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a>your-algorithms</a>. </p>\n@param algorithmSpecification The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a>your-algorithms</a>.*/",
           "setterMethodName" : "setAlgorithmSpecification",
           "setterModel" : {
             "variableDeclarationType" : "AlgorithmSpecification",
@@ -10121,12 +10121,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html\">Bring Your Own Algorithms </a>. </p>\n@param algorithmSpecification The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html\">Bring Your Own Algorithms </a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a>your-algorithms</a>. </p>\n@param algorithmSpecification The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a>your-algorithms</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "AlgorithmSpecification",
             "variableName" : "algorithmSpecification",
             "variableType" : "AlgorithmSpecification",
-            "documentation" : "<p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html\">Bring Your Own Algorithms </a>. </p>",
+            "documentation" : "<p>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a href=\"http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html\">Algorithms</a>. For information about providing your own algorithms, see <a>your-algorithms</a>. </p>",
             "simpleType" : "AlgorithmSpecification",
             "variableSetterType" : "AlgorithmSpecification"
           },
@@ -18441,11 +18441,11 @@
         "c2jName" : "DirectInternetAccess",
         "c2jShape" : "DirectInternetAccess",
         "deprecated" : false,
-        "documentation" : "<p>Describes whether the notebook instance has internet access.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.</p>",
+        "documentation" : "<p>Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker training and endpoint services</i>.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.</p>",
         "enumType" : "DirectInternetAccess",
-        "fluentSetterDocumentation" : "/**<p>Describes whether the notebook instance has internet access.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.</p>\n@param directInternetAccess Describes whether the notebook instance has internet access.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DirectInternetAccess*/",
+        "fluentSetterDocumentation" : "/**<p>Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker training and endpoint services</i>.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.</p>\n@param directInternetAccess Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker training and endpoint services</i>.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DirectInternetAccess*/",
         "fluentSetterMethodName" : "withDirectInternetAccess",
-        "getterDocumentation" : "/**<p>Describes whether the notebook instance has internet access.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.</p>\n@return Describes whether the notebook instance has internet access.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.\n@see DirectInternetAccess*/",
+        "getterDocumentation" : "/**<p>Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker training and endpoint services</i>.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.</p>\n@return Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker training and endpoint services</i>.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.\n@see DirectInternetAccess*/",
         "getterMethodName" : "getDirectInternetAccess",
         "getterModel" : {
           "returnType" : "String",
@@ -18477,7 +18477,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "DirectInternetAccess",
-        "setterDocumentation" : "/**<p>Describes whether the notebook instance has internet access.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.</p>\n@param directInternetAccess Describes whether the notebook instance has internet access.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.\n@see DirectInternetAccess*/",
+        "setterDocumentation" : "/**<p>Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker training and endpoint services</i>.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.</p>\n@param directInternetAccess Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker training and endpoint services</i>.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.\n@see DirectInternetAccess*/",
         "setterMethodName" : "setDirectInternetAccess",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -18490,12 +18490,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Describes whether the notebook instance has internet access.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.</p>\n@param directInternetAccess Describes whether the notebook instance has internet access.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DirectInternetAccess*/",
+        "varargSetterDocumentation" : "/**<p>Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker training and endpoint services</i>.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.</p>\n@param directInternetAccess Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker training and endpoint services</i>.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DirectInternetAccess*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "directInternetAccess",
           "variableType" : "String",
-          "documentation" : "<p>Describes whether the notebook instance has internet access.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.</p>",
+          "documentation" : "<p>Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker training and endpoint services</i>.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -18570,11 +18570,11 @@
           "c2jName" : "DirectInternetAccess",
           "c2jShape" : "DirectInternetAccess",
           "deprecated" : false,
-          "documentation" : "<p>Describes whether the notebook instance has internet access.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.</p>",
+          "documentation" : "<p>Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker training and endpoint services</i>.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.</p>",
           "enumType" : "DirectInternetAccess",
-          "fluentSetterDocumentation" : "/**<p>Describes whether the notebook instance has internet access.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.</p>\n@param directInternetAccess Describes whether the notebook instance has internet access.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DirectInternetAccess*/",
+          "fluentSetterDocumentation" : "/**<p>Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker training and endpoint services</i>.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.</p>\n@param directInternetAccess Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker training and endpoint services</i>.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DirectInternetAccess*/",
           "fluentSetterMethodName" : "withDirectInternetAccess",
-          "getterDocumentation" : "/**<p>Describes whether the notebook instance has internet access.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.</p>\n@return Describes whether the notebook instance has internet access.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.\n@see DirectInternetAccess*/",
+          "getterDocumentation" : "/**<p>Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker training and endpoint services</i>.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.</p>\n@return Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker training and endpoint services</i>.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.\n@see DirectInternetAccess*/",
           "getterMethodName" : "getDirectInternetAccess",
           "getterModel" : {
             "returnType" : "String",
@@ -18606,7 +18606,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "DirectInternetAccess",
-          "setterDocumentation" : "/**<p>Describes whether the notebook instance has internet access.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.</p>\n@param directInternetAccess Describes whether the notebook instance has internet access.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.\n@see DirectInternetAccess*/",
+          "setterDocumentation" : "/**<p>Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker training and endpoint services</i>.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.</p>\n@param directInternetAccess Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker training and endpoint services</i>.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.\n@see DirectInternetAccess*/",
           "setterMethodName" : "setDirectInternetAccess",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -18619,12 +18619,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Describes whether the notebook instance has internet access.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.</p>\n@param directInternetAccess Describes whether the notebook instance has internet access.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DirectInternetAccess*/",
+          "varargSetterDocumentation" : "/**<p>Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker training and endpoint services</i>.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.</p>\n@param directInternetAccess Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker training and endpoint services</i>.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DirectInternetAccess*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "directInternetAccess",
             "variableType" : "String",
-            "documentation" : "<p>Describes whether the notebook instance has internet access.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.</p>",
+            "documentation" : "<p>Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to <i>Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker training and endpoint services</i>.</p> <p>For more information, see <a>appendix-notebook-and-internet-access</a>.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -23972,14 +23972,47 @@
         "name" : "MlT2Medium",
         "value" : "ml.t2.medium"
       }, {
+        "name" : "MlT2Large",
+        "value" : "ml.t2.large"
+      }, {
+        "name" : "MlT2Xlarge",
+        "value" : "ml.t2.xlarge"
+      }, {
+        "name" : "MlT22xlarge",
+        "value" : "ml.t2.2xlarge"
+      }, {
         "name" : "MlM4Xlarge",
         "value" : "ml.m4.xlarge"
+      }, {
+        "name" : "MlM42xlarge",
+        "value" : "ml.m4.2xlarge"
+      }, {
+        "name" : "MlM44xlarge",
+        "value" : "ml.m4.4xlarge"
+      }, {
+        "name" : "MlM410xlarge",
+        "value" : "ml.m4.10xlarge"
+      }, {
+        "name" : "MlM416xlarge",
+        "value" : "ml.m4.16xlarge"
       }, {
         "name" : "MlP2Xlarge",
         "value" : "ml.p2.xlarge"
       }, {
+        "name" : "MlP28xlarge",
+        "value" : "ml.p2.8xlarge"
+      }, {
+        "name" : "MlP216xlarge",
+        "value" : "ml.p2.16xlarge"
+      }, {
         "name" : "MlP32xlarge",
         "value" : "ml.p3.2xlarge"
+      }, {
+        "name" : "MlP38xlarge",
+        "value" : "ml.p3.8xlarge"
+      }, {
+        "name" : "MlP316xlarge",
+        "value" : "ml.p3.16xlarge"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -35989,7 +36022,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Contains the notebook instance lifecycle configuration script.</p> <p>This script runs in the path <code>/sbin:bin:/usr/sbin:/usr/bin</code>.</p> <p>For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.</p>",
+      "documentation" : "<p>Contains the notebook instance lifecycle configuration script.</p> <p>Each lifecycle configuration script has a limit of 16384 characters.</p> <p>The value of the <code>$PATH</code> environment variable that is available to both scripts is <code>/sbin:bin:/usr/sbin:/usr/bin</code>.</p> <p>View CloudWatch Logs for notebook instance lifecycle configurations in log group <code>/aws/sagemaker/NotebookInstances</code> in log stream <code>[notebook-instance-name]/[LifecycleConfigHook]</code>.</p> <p>Lifecycle configuration scripts cannot run for longer than 5 minutes. If a script runs for longer than 5 minutes, it fails and the notebook instance is not created or started.</p> <p>For information about notebook instance lifestyle configurations, see <a>notebook-lifecycle-config</a>.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -38378,35 +38411,101 @@
       "deprecated" : false,
       "documentation" : "",
       "enums" : [ {
-        "name" : "MlC42xlarge",
-        "value" : "ml.c4.2xlarge"
+        "name" : "MlT2Medium",
+        "value" : "ml.t2.medium"
       }, {
-        "name" : "MlC48xlarge",
-        "value" : "ml.c4.8xlarge"
+        "name" : "MlT2Large",
+        "value" : "ml.t2.large"
       }, {
-        "name" : "MlC4Xlarge",
-        "value" : "ml.c4.xlarge"
+        "name" : "MlT2Xlarge",
+        "value" : "ml.t2.xlarge"
       }, {
-        "name" : "MlC52xlarge",
-        "value" : "ml.c5.2xlarge"
-      }, {
-        "name" : "MlC59xlarge",
-        "value" : "ml.c5.9xlarge"
-      }, {
-        "name" : "MlC5Xlarge",
-        "value" : "ml.c5.xlarge"
+        "name" : "MlT22xlarge",
+        "value" : "ml.t2.2xlarge"
       }, {
         "name" : "MlM4Xlarge",
         "value" : "ml.m4.xlarge"
       }, {
+        "name" : "MlM42xlarge",
+        "value" : "ml.m4.2xlarge"
+      }, {
+        "name" : "MlM44xlarge",
+        "value" : "ml.m4.4xlarge"
+      }, {
+        "name" : "MlM410xlarge",
+        "value" : "ml.m4.10xlarge"
+      }, {
+        "name" : "MlM416xlarge",
+        "value" : "ml.m4.16xlarge"
+      }, {
+        "name" : "MlM5Large",
+        "value" : "ml.m5.large"
+      }, {
+        "name" : "MlM5Xlarge",
+        "value" : "ml.m5.xlarge"
+      }, {
+        "name" : "MlM52xlarge",
+        "value" : "ml.m5.2xlarge"
+      }, {
+        "name" : "MlM54xlarge",
+        "value" : "ml.m5.4xlarge"
+      }, {
+        "name" : "MlM512xlarge",
+        "value" : "ml.m5.12xlarge"
+      }, {
+        "name" : "MlM524xlarge",
+        "value" : "ml.m5.24xlarge"
+      }, {
+        "name" : "MlC4Large",
+        "value" : "ml.c4.large"
+      }, {
+        "name" : "MlC4Xlarge",
+        "value" : "ml.c4.xlarge"
+      }, {
+        "name" : "MlC42xlarge",
+        "value" : "ml.c4.2xlarge"
+      }, {
+        "name" : "MlC44xlarge",
+        "value" : "ml.c4.4xlarge"
+      }, {
+        "name" : "MlC48xlarge",
+        "value" : "ml.c4.8xlarge"
+      }, {
         "name" : "MlP2Xlarge",
         "value" : "ml.p2.xlarge"
+      }, {
+        "name" : "MlP28xlarge",
+        "value" : "ml.p2.8xlarge"
+      }, {
+        "name" : "MlP216xlarge",
+        "value" : "ml.p2.16xlarge"
       }, {
         "name" : "MlP32xlarge",
         "value" : "ml.p3.2xlarge"
       }, {
-        "name" : "MlT2Medium",
-        "value" : "ml.t2.medium"
+        "name" : "MlP38xlarge",
+        "value" : "ml.p3.8xlarge"
+      }, {
+        "name" : "MlP316xlarge",
+        "value" : "ml.p3.16xlarge"
+      }, {
+        "name" : "MlC5Large",
+        "value" : "ml.c5.large"
+      }, {
+        "name" : "MlC5Xlarge",
+        "value" : "ml.c5.xlarge"
+      }, {
+        "name" : "MlC52xlarge",
+        "value" : "ml.c5.2xlarge"
+      }, {
+        "name" : "MlC54xlarge",
+        "value" : "ml.c5.4xlarge"
+      }, {
+        "name" : "MlC59xlarge",
+        "value" : "ml.c5.9xlarge"
+      }, {
+        "name" : "MlC518xlarge",
+        "value" : "ml.c5.18xlarge"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -41632,17 +41731,44 @@
         "name" : "MlM4Xlarge",
         "value" : "ml.m4.xlarge"
       }, {
+        "name" : "MlM42xlarge",
+        "value" : "ml.m4.2xlarge"
+      }, {
         "name" : "MlM44xlarge",
         "value" : "ml.m4.4xlarge"
       }, {
         "name" : "MlM410xlarge",
         "value" : "ml.m4.10xlarge"
       }, {
+        "name" : "MlM416xlarge",
+        "value" : "ml.m4.16xlarge"
+      }, {
+        "name" : "MlM5Large",
+        "value" : "ml.m5.large"
+      }, {
+        "name" : "MlM5Xlarge",
+        "value" : "ml.m5.xlarge"
+      }, {
+        "name" : "MlM52xlarge",
+        "value" : "ml.m5.2xlarge"
+      }, {
+        "name" : "MlM54xlarge",
+        "value" : "ml.m5.4xlarge"
+      }, {
+        "name" : "MlM512xlarge",
+        "value" : "ml.m5.12xlarge"
+      }, {
+        "name" : "MlM524xlarge",
+        "value" : "ml.m5.24xlarge"
+      }, {
         "name" : "MlC4Xlarge",
         "value" : "ml.c4.xlarge"
       }, {
         "name" : "MlC42xlarge",
         "value" : "ml.c4.2xlarge"
+      }, {
+        "name" : "MlC44xlarge",
+        "value" : "ml.c4.4xlarge"
       }, {
         "name" : "MlC48xlarge",
         "value" : "ml.c4.8xlarge"

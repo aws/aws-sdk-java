@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum CertificateType {
 
     IMPORTED("IMPORTED"),
-    AMAZON_ISSUED("AMAZON_ISSUED");
+    AMAZON_ISSUED("AMAZON_ISSUED"),
+    PRIVATE("PRIVATE");
 
     private String value;
 

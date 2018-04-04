@@ -31,28 +31,48 @@ public class CSVInput implements Serializable, Cloneable {
 
     /**
      * Single character used to indicate a row should be ignored when present at the start of a row.
+     *
+     * This was originally a Character, so the getter ({@link #getComments()}) returns the first character of the string.
+     * The full string is retrieved with {@link #getCommentsAsString()}. To prevent issues in the string-to-character
+     * conversion, the empty string is prohibited by {@link #setComments(String)}.
      */
-    private Character comments;
+    private String comments;
 
     /**
      * Single character used for escaping the quote character inside an already escaped value.
+     *
+     * This was originally a Character, so the getter ({@link #getQuoteEscapeCharacter()}) returns the first character of the string.
+     * The full string is retrieved with {@link #getQuoteEscapeCharacterAsString()}. To prevent issues in the string-to-character
+     * conversion, the empty string is prohibited by {@link #setQuoteEscapeCharacter(String)}.
      */
-    private Character quoteEscapeCharacter;
+    private String quoteEscapeCharacter;
 
     /**
      * Value used to separate individual records.
+     *
+     * This was originally a Character, so the getter ({@link #getRecordDelimiter()}) returns the first character of the string.
+     * The full string is retrieved with {@link #getRecordDelimiterAsString()}. To prevent issues in the string-to-character
+     * conversion, the empty string is prohibited by {@link #setRecordDelimiter(String)}.
      */
-    private Character recordDelimiter;
+    private String recordDelimiter;
 
     /**
      * Value used to separate individual fields in a record.
+     *
+     * This was originally a Character, so the getter ({@link #getFieldDelimiter()}) returns the first character of the string.
+     * The full string is retrieved with {@link #getFieldDelimiterAsString()}. To prevent issues in the string-to-character
+     * conversion, the empty string is prohibited by {@link #setFieldDelimiter(String)}.
      */
-    private Character fieldDelimiter;
+    private String fieldDelimiter;
 
     /**
      * Value used for escaping where the field delimiter is part of the value.
+     *
+     * This was originally a Character, so the getter ({@link #getQuoteCharacter()}) returns the first character of the string.
+     * The full string is retrieved with {@link #getQuoteCharacterAsString()}. To prevent issues in the string-to-character
+     * conversion, the empty string is prohibited by {@link #setQuoteCharacter(String)}.
      */
-    private Character quoteCharacter;
+    private String quoteCharacter;
 
     /**
      * @return the first line of input. Valid values: None, Ignore, Use.
@@ -82,30 +102,69 @@ public class CSVInput implements Serializable, Cloneable {
     }
 
     /**
+     * Sets the first line of input. Valid values: None, Ignore, Use.
+     *
+     * @param fileHeaderInfo New file header info value
+     */
+    public void setFileHeaderInfo(FileHeaderInfo fileHeaderInfo) {
+        setFileHeaderInfo(fileHeaderInfo == null ? null : fileHeaderInfo.toString());
+    }
+
+    /**
      * Sets the fileHeaderInfo
      *
      * @param fileHeaderInfo The new fileHeaderInfo value.
      * @return This object for method chaining.
      */
     public CSVInput withFileHeaderInfo(FileHeaderInfo fileHeaderInfo) {
-        setFileHeaderInfo(fileHeaderInfo == null? null : fileHeaderInfo.toString());
+        setFileHeaderInfo(fileHeaderInfo);
         return this;
     }
 
     /**
-     * @return Single character used to indicate a row should be ignored when present at the start of a row.
+     * @return Character used to indicate a row should be ignored when present at the start of a row.  If it was set with
+     * {@link #setComments(String)}, this will return the first character in the string.
+     * @see #getCommentsAsString() to retrieve the full value.
      */
     public Character getComments() {
+        return stringToChar(comments);
+    }
+
+    /**
+     * @return Character used to indicate a row should be ignored when present at the start of a row.
+     */
+    public String getCommentsAsString() {
         return comments;
     }
 
     /**
-     * Sets the Single character used to indicate a row should be ignored when present at the start of a row.
+     * Sets the character used to indicate a row should be ignored when present at the start of a row.
+     *
+     * @param comments New comments value
+     */
+    public void setComments(String comments) {
+        validateNotEmpty(comments, "comments");
+        this.comments = comments;
+    }
+
+    /**
+     * Sets the character used to indicate a row should be ignored when present at the start of a row.
+     *
+     * @param comments The new comments value.
+     * @return This object for method chaining.
+     */
+    public CSVInput withComments(String comments) {
+        setComments(comments);
+        return this;
+    }
+
+    /**
+     * Sets the character used to indicate a row should be ignored when present at the start of a row.
      *
      * @param comments New comments value
      */
     public void setComments(Character comments) {
-        this.comments = comments;
+        setComments(charToString(comments));
     }
 
     /**
@@ -120,23 +179,53 @@ public class CSVInput implements Serializable, Cloneable {
     }
 
     /**
-     * @return Single character used for escaping the quote character inside an already escaped value.
+     * @return Character used for escaping the quote character inside an already escaped value.  If it was set with
+     * {@link #setQuoteEscapeCharacter(String)}, this will return the first character in the string.
+     * @see #getQuoteEscapeCharacterAsString() to retrieve the full value.
      */
     public Character getQuoteEscapeCharacter() {
+        return stringToChar(quoteEscapeCharacter);
+    }
+
+    /**
+     * @return Character used for escaping the quote character inside an already escaped value.
+     */
+    public String getQuoteEscapeCharacterAsString() {
         return quoteEscapeCharacter;
     }
 
     /**
-     * Sets the single character used for escaping the quote character inside an already escaped value.
+     * Sets the character used for escaping the quote character inside an already escaped value.
      *
      * @param quoteEscapeCharacter New quoteEscapeCharacter value
      */
-    public void setQuoteEscapeCharacter(Character quoteEscapeCharacter) {
+    public void setQuoteEscapeCharacter(String quoteEscapeCharacter) {
+        validateNotEmpty(quoteEscapeCharacter, "quoteEscapeCharacter");
         this.quoteEscapeCharacter = quoteEscapeCharacter;
     }
 
     /**
-     * Sets the single character used for escaping the quote character inside an already escaped value.
+     * Sets the character used for escaping the quote character inside an already escaped value.
+     *
+     * @param quoteEscapeCharacter The new quoteEscapeCharacter value.
+     * @return This object for method chaining.
+     */
+    public CSVInput withQuoteEscapeCharacter(String quoteEscapeCharacter) {
+        setQuoteEscapeCharacter(quoteEscapeCharacter);
+        return this;
+    }
+
+    /**
+     * Sets the character used for escaping the quote character inside an already escaped value.
+     *
+     * @param quoteEscapeCharacter New quoteEscapeCharacter value
+     */
+    public void setQuoteEscapeCharacter(Character quoteEscapeCharacter) {
+        setQuoteEscapeCharacter(charToString(quoteEscapeCharacter));
+    }
+
+    /**
+     * Sets the character used for escaping the quote character inside an already escaped value.
      *
      * @param quoteEscapeCharacter The new quoteEscapeCharacter value.
      * @return This object for method chaining.
@@ -147,9 +236,18 @@ public class CSVInput implements Serializable, Cloneable {
     }
 
     /**
-     * @return The value used to separate individual records.
+     * @return The value used to separate individual records as a character. If it was set with {@link #setRecordDelimiter(String)},
+     * this will return the first character in the string.
+     * @see #getRecordDelimiterAsString() to retrieve the value.
      */
     public Character getRecordDelimiter() {
+        return stringToChar(recordDelimiter);
+    }
+
+    /**
+     * @return The value used to separate individual records.
+     */
+    public String getRecordDelimiterAsString() {
         return recordDelimiter;
     }
 
@@ -158,8 +256,29 @@ public class CSVInput implements Serializable, Cloneable {
      *
      * @param recordDelimiter New recordDelimiter value
      */
-    public void setRecordDelimiter(Character recordDelimiter) {
+    public void setRecordDelimiter(String recordDelimiter) {
+        validateNotEmpty(recordDelimiter, "recordDelimiter");
         this.recordDelimiter = recordDelimiter;
+    }
+
+    /**
+     * Sets the value used to separate individual records.
+     *
+     * @param recordDelimiter The new recordDelimiter value.
+     * @return This object for method chaining.
+     */
+    public CSVInput withRecordDelimiter(String recordDelimiter) {
+        setRecordDelimiter(recordDelimiter);
+        return this;
+    }
+
+    /**
+     * Sets the value used to separate individual records.
+     *
+     * @param recordDelimiter New recordDelimiter value
+     */
+    public void setRecordDelimiter(Character recordDelimiter) {
+        setRecordDelimiter(charToString(recordDelimiter));
     }
 
     /**
@@ -174,9 +293,18 @@ public class CSVInput implements Serializable, Cloneable {
     }
 
     /**
-     * @return The value used to separate individual fields in a record.
+     * @return The value used to separate individual fields in a record. If it was set with {@link #setFieldDelimiter(String)},
+     * this will return the first character in the string.
+     * @see #getFieldDelimiterAsString() to retrieve the value.
      */
     public Character getFieldDelimiter() {
+        return stringToChar(fieldDelimiter);
+    }
+
+    /**
+     * @return The value used to separate individual fields in a record.
+     */
+    public String getFieldDelimiterAsString() {
         return fieldDelimiter;
     }
 
@@ -185,8 +313,29 @@ public class CSVInput implements Serializable, Cloneable {
      *
      * @param fieldDelimiter New fieldDelimiter value
      */
-    public void setFieldDelimiter(Character fieldDelimiter) {
+    public void setFieldDelimiter(String fieldDelimiter) {
+        validateNotEmpty(fieldDelimiter, "fieldDelimiter");
         this.fieldDelimiter = fieldDelimiter;
+    }
+
+    /**
+     * Sets the value used to separate individual fields in a record.
+     *
+     * @param fieldDelimiter The new fieldDelimiter value.
+     * @return This object for method chaining.
+     */
+    public CSVInput withFieldDelimiter(String fieldDelimiter) {
+        setFieldDelimiter(fieldDelimiter);
+        return this;
+    }
+
+    /**
+     * Sets the value used to separate individual fields in a record.
+     *
+     * @param fieldDelimiter New fieldDelimiter value
+     */
+    public void setFieldDelimiter(Character fieldDelimiter) {
+        setFieldDelimiter(charToString(fieldDelimiter));
     }
 
     /**
@@ -201,9 +350,18 @@ public class CSVInput implements Serializable, Cloneable {
     }
 
     /**
-     * @return The value used for escaping where the field delimiter is part of the value.
+     * @return The value used for escaping where the field delimiter is part of the value. If it was set with
+     * {@link #setQuoteCharacter(String)}, this will return the first character in the string.
+     * @see #getQuoteCharacterAsString() to retrieve the value.
      */
     public Character getQuoteCharacter() {
+        return stringToChar(quoteCharacter);
+    }
+
+    /**
+     * @return The value used for escaping where the field delimiter is part of the value.
+     */
+    public String getQuoteCharacterAsString() {
         return quoteCharacter;
     }
 
@@ -212,8 +370,29 @@ public class CSVInput implements Serializable, Cloneable {
      *
      * @param quoteCharacter New quoteCharacter value
      */
-    public void setQuoteCharacter(Character quoteCharacter) {
+    public void setQuoteCharacter(String quoteCharacter) {
+        validateNotEmpty(quoteCharacter, "quoteCharacter");
         this.quoteCharacter = quoteCharacter;
+    }
+
+    /**
+     * Sets the value used for escaping where the field delimiter is part of the value.
+     *
+     * @param quoteCharacter The new quoteCharacter value.
+     * @return This object for method chaining.
+     */
+    public CSVInput withQuoteCharacter(String quoteCharacter) {
+        setQuoteCharacter(quoteCharacter);
+        return this;
+    }
+
+    /**
+     * Sets the value used for escaping where the field delimiter is part of the value.
+     *
+     * @param quoteCharacter New quoteCharacter value
+     */
+    public void setQuoteCharacter(Character quoteCharacter) {
+        setQuoteCharacter(charToString(quoteCharacter));
     }
 
     /**
@@ -225,6 +404,23 @@ public class CSVInput implements Serializable, Cloneable {
     public CSVInput withQuoteCharacter(Character quoteCharacter) {
         setQuoteCharacter(quoteCharacter);
         return this;
+    }
+
+    private String charToString(Character character) {
+        return character == null ? null : character.toString();
+    }
+
+    private Character stringToChar(String string) {
+        // Should not be empty string (setters should call validateNotEmpty)
+        return string == null ? null : string.charAt(0);
+    }
+
+    private void validateNotEmpty(String value, String valueName) {
+        if ("".equals(value)) {
+            // Prevent the empty string from being used. We convert the recordDelimiter to a Character in getRecordDelimiter,
+            // and the empty string doesn't have a valid Character representation. It's never a valid input anyway.
+            throw new IllegalArgumentException(valueName + " must not be empty-string.");
+        }
     }
 
     @Override
@@ -242,25 +438,25 @@ public class CSVInput implements Serializable, Cloneable {
             return false;
         if (other.getFileHeaderInfo() != null && !other.getFileHeaderInfo().equals(this.getFileHeaderInfo()))
             return false;
-        if (other.getQuoteEscapeCharacter() == null ^ this.getQuoteEscapeCharacter() == null)
+        if (other.getQuoteEscapeCharacterAsString() == null ^ this.getQuoteEscapeCharacterAsString() == null)
             return false;
-        if (other.getQuoteEscapeCharacter() != null && !other.getQuoteEscapeCharacter().equals(this.getQuoteEscapeCharacter()))
+        if (other.getQuoteEscapeCharacterAsString() != null && !other.getQuoteEscapeCharacterAsString().equals(this.getQuoteEscapeCharacterAsString()))
             return false;
-        if (other.getComments() == null ^ this.getComments() == null)
+        if (other.getCommentsAsString() == null ^ this.getCommentsAsString() == null)
             return false;
-        if (other.getComments() != null && !other.getComments().equals(this.getComments()))
+        if (other.getCommentsAsString() != null && !other.getCommentsAsString().equals(this.getCommentsAsString()))
             return false;
-        if (other.getRecordDelimiter() == null ^ this.getRecordDelimiter() == null)
+        if (other.getRecordDelimiterAsString() == null ^ this.getRecordDelimiterAsString() == null)
             return false;
-        if (other.getRecordDelimiter() != null && !other.getRecordDelimiter().equals(this.getRecordDelimiter()))
+        if (other.getRecordDelimiterAsString() != null && !other.getRecordDelimiterAsString().equals(this.getRecordDelimiterAsString()))
             return false;
-        if (other.getFieldDelimiter() == null ^ this.getFieldDelimiter() == null)
+        if (other.getFieldDelimiterAsString() == null ^ this.getFieldDelimiterAsString() == null)
             return false;
-        if (other.getFieldDelimiter() != null && !other.getFieldDelimiter().equals(this.getFieldDelimiter()))
+        if (other.getFieldDelimiterAsString() != null && !other.getFieldDelimiterAsString().equals(this.getFieldDelimiterAsString()))
             return false;
-        if (other.getQuoteCharacter() == null ^ this.getQuoteCharacter() == null)
+        if (other.getQuoteCharacterAsString() == null ^ this.getQuoteCharacterAsString() == null)
             return false;
-        if (other.getQuoteCharacter() != null && !other.getQuoteCharacter().equals(this.getQuoteCharacter()))
+        if (other.getQuoteCharacterAsString() != null && !other.getQuoteCharacterAsString().equals(this.getQuoteCharacterAsString()))
             return false;
         return true;
     }
@@ -271,11 +467,11 @@ public class CSVInput implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getFileHeaderInfo() == null) ? 0 : getFileHeaderInfo().hashCode());
-        hashCode = prime * hashCode + ((getComments() == null) ? 0 : getComments().hashCode());
-        hashCode = prime * hashCode + ((getQuoteEscapeCharacter() == null) ? 0 : getQuoteEscapeCharacter().hashCode());
-        hashCode = prime * hashCode + ((getRecordDelimiter() == null) ? 0 : getRecordDelimiter().hashCode());
-        hashCode = prime * hashCode + ((getFieldDelimiter() == null) ? 0 : getFieldDelimiter().hashCode());
-        hashCode = prime * hashCode + (getQuoteCharacter() != null ? getQuoteCharacter().hashCode() : 0);
+        hashCode = prime * hashCode + ((getCommentsAsString() == null) ? 0 : getCommentsAsString().hashCode());
+        hashCode = prime * hashCode + ((getQuoteEscapeCharacterAsString() == null) ? 0 : getQuoteEscapeCharacterAsString().hashCode());
+        hashCode = prime * hashCode + ((getRecordDelimiterAsString() == null) ? 0 : getRecordDelimiterAsString().hashCode());
+        hashCode = prime * hashCode + ((getFieldDelimiterAsString() == null) ? 0 : getFieldDelimiterAsString().hashCode());
+        hashCode = prime * hashCode + (getQuoteCharacterAsString() != null ? getQuoteCharacterAsString().hashCode() : 0);
         return hashCode;
     }
 
@@ -285,16 +481,16 @@ public class CSVInput implements Serializable, Cloneable {
         sb.append("{");
         if (getFileHeaderInfo() != null)
             sb.append("FileHeaderInfo: ").append(getFileHeaderInfo()).append(",");
-        if (getComments() != null)
-            sb.append("Comments: ").append(getComments()).append(",");
-        if (getQuoteEscapeCharacter() != null)
-            sb.append("QuoteEscapeCharacter: ").append(getQuoteEscapeCharacter()).append(",");
-        if (getRecordDelimiter() != null)
-            sb.append("RecordDelimiter: ").append(getRecordDelimiter()).append(",");
-        if (getFieldDelimiter() != null)
-            sb.append("FieldDelimiter: ").append(getFieldDelimiter()).append(",");
-        if (getQuoteCharacter() != null)
-            sb.append("QuoteCharacter: ").append(getQuoteCharacter());
+        if (getCommentsAsString() != null)
+            sb.append("Comments: ").append(getCommentsAsString()).append(",");
+        if (getQuoteEscapeCharacterAsString() != null)
+            sb.append("QuoteEscapeCharacter: ").append(getQuoteEscapeCharacterAsString()).append(",");
+        if (getRecordDelimiterAsString() != null)
+            sb.append("RecordDelimiter: ").append(getRecordDelimiterAsString()).append(",");
+        if (getFieldDelimiterAsString() != null)
+            sb.append("FieldDelimiter: ").append(getFieldDelimiterAsString()).append(",");
+        if (getQuoteCharacterAsString() != null)
+            sb.append("QuoteCharacter: ").append(getQuoteCharacterAsString());
         sb.append("}");
         return sb.toString();
     }

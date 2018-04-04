@@ -20,16 +20,38 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ProductionVariantInstanceType {
 
-    MlC42xlarge("ml.c4.2xlarge"),
-    MlC48xlarge("ml.c4.8xlarge"),
-    MlC4Xlarge("ml.c4.xlarge"),
-    MlC52xlarge("ml.c5.2xlarge"),
-    MlC59xlarge("ml.c5.9xlarge"),
-    MlC5Xlarge("ml.c5.xlarge"),
+    MlT2Medium("ml.t2.medium"),
+    MlT2Large("ml.t2.large"),
+    MlT2Xlarge("ml.t2.xlarge"),
+    MlT22xlarge("ml.t2.2xlarge"),
     MlM4Xlarge("ml.m4.xlarge"),
+    MlM42xlarge("ml.m4.2xlarge"),
+    MlM44xlarge("ml.m4.4xlarge"),
+    MlM410xlarge("ml.m4.10xlarge"),
+    MlM416xlarge("ml.m4.16xlarge"),
+    MlM5Large("ml.m5.large"),
+    MlM5Xlarge("ml.m5.xlarge"),
+    MlM52xlarge("ml.m5.2xlarge"),
+    MlM54xlarge("ml.m5.4xlarge"),
+    MlM512xlarge("ml.m5.12xlarge"),
+    MlM524xlarge("ml.m5.24xlarge"),
+    MlC4Large("ml.c4.large"),
+    MlC4Xlarge("ml.c4.xlarge"),
+    MlC42xlarge("ml.c4.2xlarge"),
+    MlC44xlarge("ml.c4.4xlarge"),
+    MlC48xlarge("ml.c4.8xlarge"),
     MlP2Xlarge("ml.p2.xlarge"),
+    MlP28xlarge("ml.p2.8xlarge"),
+    MlP216xlarge("ml.p2.16xlarge"),
     MlP32xlarge("ml.p3.2xlarge"),
-    MlT2Medium("ml.t2.medium");
+    MlP38xlarge("ml.p3.8xlarge"),
+    MlP316xlarge("ml.p3.16xlarge"),
+    MlC5Large("ml.c5.large"),
+    MlC5Xlarge("ml.c5.xlarge"),
+    MlC52xlarge("ml.c5.2xlarge"),
+    MlC54xlarge("ml.c5.4xlarge"),
+    MlC59xlarge("ml.c5.9xlarge"),
+    MlC518xlarge("ml.c5.18xlarge");
 
     private String value;
 

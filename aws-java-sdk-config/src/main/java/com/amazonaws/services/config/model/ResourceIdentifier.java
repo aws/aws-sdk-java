@@ -37,7 +37,7 @@ public class ResourceIdentifier implements Serializable, Cloneable, StructuredPo
     private String resourceType;
     /**
      * <p>
-     * The ID of the resource (for example., <code>sg-xxxxxx</code>).
+     * The ID of the resource (for example, <code>sg-xxxxxx</code>).
      * </p>
      */
     private String resourceId;
@@ -129,11 +129,11 @@ public class ResourceIdentifier implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ID of the resource (for example., <code>sg-xxxxxx</code>).
+     * The ID of the resource (for example, <code>sg-xxxxxx</code>).
      * </p>
      * 
      * @param resourceId
-     *        The ID of the resource (for example., <code>sg-xxxxxx</code>).
+     *        The ID of the resource (for example, <code>sg-xxxxxx</code>).
      */
 
     public void setResourceId(String resourceId) {
@@ -142,10 +142,10 @@ public class ResourceIdentifier implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ID of the resource (for example., <code>sg-xxxxxx</code>).
+     * The ID of the resource (for example, <code>sg-xxxxxx</code>).
      * </p>
      * 
-     * @return The ID of the resource (for example., <code>sg-xxxxxx</code>).
+     * @return The ID of the resource (for example, <code>sg-xxxxxx</code>).
      */
 
     public String getResourceId() {
@@ -154,11 +154,11 @@ public class ResourceIdentifier implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ID of the resource (for example., <code>sg-xxxxxx</code>).
+     * The ID of the resource (for example, <code>sg-xxxxxx</code>).
      * </p>
      * 
      * @param resourceId
-     *        The ID of the resource (for example., <code>sg-xxxxxx</code>).
+     *        The ID of the resource (for example, <code>sg-xxxxxx</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

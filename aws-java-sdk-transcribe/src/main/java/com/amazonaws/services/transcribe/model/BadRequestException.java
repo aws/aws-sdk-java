@@ -16,8 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * There is a problem with one of the input fields. Check the S3 bucket name, make sure that the job name is not a
- * duplicate, and confirm that you are using the correct file format. Then resend your request.
+ * Your request didn't pass one or more validation tests. For example, a name already exists when createing a resource
+ * or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code>
+ * field for more information.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

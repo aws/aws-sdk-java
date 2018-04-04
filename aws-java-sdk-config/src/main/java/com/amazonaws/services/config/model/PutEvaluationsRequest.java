@@ -36,7 +36,7 @@ public class PutEvaluationsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * An encrypted token that associates an evaluation with an AWS Config rule. Identifies the rule and the event that
-     * triggered the evaluation
+     * triggered the evaluation.
      * </p>
      */
     private String resultToken;
@@ -139,12 +139,12 @@ public class PutEvaluationsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * An encrypted token that associates an evaluation with an AWS Config rule. Identifies the rule and the event that
-     * triggered the evaluation
+     * triggered the evaluation.
      * </p>
      * 
      * @param resultToken
      *        An encrypted token that associates an evaluation with an AWS Config rule. Identifies the rule and the
-     *        event that triggered the evaluation
+     *        event that triggered the evaluation.
      */
 
     public void setResultToken(String resultToken) {
@@ -154,11 +154,11 @@ public class PutEvaluationsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * An encrypted token that associates an evaluation with an AWS Config rule. Identifies the rule and the event that
-     * triggered the evaluation
+     * triggered the evaluation.
      * </p>
      * 
      * @return An encrypted token that associates an evaluation with an AWS Config rule. Identifies the rule and the
-     *         event that triggered the evaluation
+     *         event that triggered the evaluation.
      */
 
     public String getResultToken() {
@@ -168,12 +168,12 @@ public class PutEvaluationsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * An encrypted token that associates an evaluation with an AWS Config rule. Identifies the rule and the event that
-     * triggered the evaluation
+     * triggered the evaluation.
      * </p>
      * 
      * @param resultToken
      *        An encrypted token that associates an evaluation with an AWS Config rule. Identifies the rule and the
-     *        event that triggered the evaluation
+     *        event that triggered the evaluation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

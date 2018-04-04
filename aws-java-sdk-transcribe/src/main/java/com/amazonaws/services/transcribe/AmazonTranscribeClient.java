@@ -121,23 +121,144 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Returns information about a transcription job. To see the status of the job, check the <code>Status</code> field.
-     * If the status is <code>COMPLETE</code>, the job is finished and you can find the results at the location
-     * specified in the <code>TranscriptionFileUri</code> field.
+     * Creates a new custom vocabulary that you can use to change the way Amazon Transcribe handles transcription of an
+     * audio file.
+     * </p>
+     * 
+     * @param createVocabularyRequest
+     * @return Result of the CreateVocabulary operation returned by the service.
+     * @throws BadRequestException
+     *         Your request didn't pass one or more validation tests. For example, a name already exists when createing
+     *         a resource or a name may not exist when getting a transcription job or custom vocabulary. See the
+     *         exception <code>Message</code> field for more information.
+     * @throws LimitExceededException
+     *         Either you have sent too many requests or your input file is too long. Wait before you resend your
+     *         request, or use a smaller file and resend the request.
+     * @throws InternalFailureException
+     *         There was an internal error. Check the error message and try your request again.
+     * @throws ConflictException
+     *         The <code>JobName</code> field is a duplicate of a previously entered job name. Resend your request with
+     *         a different name.
+     * @sample AmazonTranscribe.CreateVocabulary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateVocabulary" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateVocabularyResult createVocabulary(CreateVocabularyRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateVocabulary(request);
+    }
+
+    @SdkInternalApi
+    final CreateVocabularyResult executeCreateVocabulary(CreateVocabularyRequest createVocabularyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createVocabularyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateVocabularyRequest> request = null;
+        Response<CreateVocabularyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateVocabularyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createVocabularyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateVocabularyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateVocabularyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a vocabulary from Amazon Transcribe.
+     * </p>
+     * 
+     * @param deleteVocabularyRequest
+     * @return Result of the DeleteVocabulary operation returned by the service.
+     * @throws NotFoundException
+     *         We can't find the requested transcription job or custom vocabulary. Check the name and try your request
+     *         again.
+     * @throws LimitExceededException
+     *         Either you have sent too many requests or your input file is too long. Wait before you resend your
+     *         request, or use a smaller file and resend the request.
+     * @throws InternalFailureException
+     *         There was an internal error. Check the error message and try your request again.
+     * @sample AmazonTranscribe.DeleteVocabulary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteVocabulary" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteVocabularyResult deleteVocabulary(DeleteVocabularyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteVocabulary(request);
+    }
+
+    @SdkInternalApi
+    final DeleteVocabularyResult executeDeleteVocabulary(DeleteVocabularyRequest deleteVocabularyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteVocabularyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteVocabularyRequest> request = null;
+        Response<DeleteVocabularyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteVocabularyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteVocabularyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteVocabularyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteVocabularyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about a transcription job. To see the status of the job, check the
+     * <code>TranscriptionJobStatus</code> field. If the status is <code>COMPLETED</code>, the job is finished and you
+     * can find the results at the location specified in the <code>TranscriptionFileUri</code> field.
      * </p>
      * 
      * @param getTranscriptionJobRequest
      * @return Result of the GetTranscriptionJob operation returned by the service.
      * @throws BadRequestException
-     *         There is a problem with one of the input fields. Check the S3 bucket name, make sure that the job name is
-     *         not a duplicate, and confirm that you are using the correct file format. Then resend your request.
+     *         Your request didn't pass one or more validation tests. For example, a name already exists when createing
+     *         a resource or a name may not exist when getting a transcription job or custom vocabulary. See the
+     *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException
-     *         Either you have sent too many requests or your input file is longer than 2 hours. Wait before you resend
-     *         your request, or use a smaller file and resend the request.
+     *         Either you have sent too many requests or your input file is too long. Wait before you resend your
+     *         request, or use a smaller file and resend the request.
      * @throws InternalFailureException
      *         There was an internal error. Check the error message and try your request again.
      * @throws NotFoundException
-     *         We can't find the requested job. Check the job name and try your request again.
+     *         We can't find the requested transcription job or custom vocabulary. Check the name and try your request
+     *         again.
      * @sample AmazonTranscribe.GetTranscriptionJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetTranscriptionJob" target="_top">AWS
      *      API Documentation</a>
@@ -182,17 +303,79 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Gets information about a vocabulary.
+     * </p>
+     * 
+     * @param getVocabularyRequest
+     * @return Result of the GetVocabulary operation returned by the service.
+     * @throws NotFoundException
+     *         We can't find the requested transcription job or custom vocabulary. Check the name and try your request
+     *         again.
+     * @throws LimitExceededException
+     *         Either you have sent too many requests or your input file is too long. Wait before you resend your
+     *         request, or use a smaller file and resend the request.
+     * @throws InternalFailureException
+     *         There was an internal error. Check the error message and try your request again.
+     * @throws BadRequestException
+     *         Your request didn't pass one or more validation tests. For example, a name already exists when createing
+     *         a resource or a name may not exist when getting a transcription job or custom vocabulary. See the
+     *         exception <code>Message</code> field for more information.
+     * @sample AmazonTranscribe.GetVocabulary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetVocabulary" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetVocabularyResult getVocabulary(GetVocabularyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetVocabulary(request);
+    }
+
+    @SdkInternalApi
+    final GetVocabularyResult executeGetVocabulary(GetVocabularyRequest getVocabularyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getVocabularyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetVocabularyRequest> request = null;
+        Response<GetVocabularyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetVocabularyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getVocabularyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetVocabularyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetVocabularyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists transcription jobs with the specified status.
      * </p>
      * 
      * @param listTranscriptionJobsRequest
      * @return Result of the ListTranscriptionJobs operation returned by the service.
      * @throws BadRequestException
-     *         There is a problem with one of the input fields. Check the S3 bucket name, make sure that the job name is
-     *         not a duplicate, and confirm that you are using the correct file format. Then resend your request.
+     *         Your request didn't pass one or more validation tests. For example, a name already exists when createing
+     *         a resource or a name may not exist when getting a transcription job or custom vocabulary. See the
+     *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException
-     *         Either you have sent too many requests or your input file is longer than 2 hours. Wait before you resend
-     *         your request, or use a smaller file and resend the request.
+     *         Either you have sent too many requests or your input file is too long. Wait before you resend your
+     *         request, or use a smaller file and resend the request.
      * @throws InternalFailureException
      *         There was an internal error. Check the error message and try your request again.
      * @sample AmazonTranscribe.ListTranscriptionJobs
@@ -240,17 +423,77 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Returns a list of vocabularies that match the specified criteria. If no criteria are specified, returns the
+     * entire list of vocabularies.
+     * </p>
+     * 
+     * @param listVocabulariesRequest
+     * @return Result of the ListVocabularies operation returned by the service.
+     * @throws BadRequestException
+     *         Your request didn't pass one or more validation tests. For example, a name already exists when createing
+     *         a resource or a name may not exist when getting a transcription job or custom vocabulary. See the
+     *         exception <code>Message</code> field for more information.
+     * @throws LimitExceededException
+     *         Either you have sent too many requests or your input file is too long. Wait before you resend your
+     *         request, or use a smaller file and resend the request.
+     * @throws InternalFailureException
+     *         There was an internal error. Check the error message and try your request again.
+     * @sample AmazonTranscribe.ListVocabularies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListVocabularies" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListVocabulariesResult listVocabularies(ListVocabulariesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListVocabularies(request);
+    }
+
+    @SdkInternalApi
+    final ListVocabulariesResult executeListVocabularies(ListVocabulariesRequest listVocabulariesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listVocabulariesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListVocabulariesRequest> request = null;
+        Response<ListVocabulariesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListVocabulariesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVocabulariesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListVocabulariesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListVocabulariesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Starts an asynchronous job to transcribe speech to text.
      * </p>
      * 
      * @param startTranscriptionJobRequest
      * @return Result of the StartTranscriptionJob operation returned by the service.
      * @throws BadRequestException
-     *         There is a problem with one of the input fields. Check the S3 bucket name, make sure that the job name is
-     *         not a duplicate, and confirm that you are using the correct file format. Then resend your request.
+     *         Your request didn't pass one or more validation tests. For example, a name already exists when createing
+     *         a resource or a name may not exist when getting a transcription job or custom vocabulary. See the
+     *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException
-     *         Either you have sent too many requests or your input file is longer than 2 hours. Wait before you resend
-     *         your request, or use a smaller file and resend the request.
+     *         Either you have sent too many requests or your input file is too long. Wait before you resend your
+     *         request, or use a smaller file and resend the request.
      * @throws InternalFailureException
      *         There was an internal error. Check the error message and try your request again.
      * @throws ConflictException
@@ -289,6 +532,67 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
             HttpResponseHandler<AmazonWebServiceResponse<StartTranscriptionJobResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new StartTranscriptionJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an existing vocabulary with new values.
+     * </p>
+     * 
+     * @param updateVocabularyRequest
+     * @return Result of the UpdateVocabulary operation returned by the service.
+     * @throws BadRequestException
+     *         Your request didn't pass one or more validation tests. For example, a name already exists when createing
+     *         a resource or a name may not exist when getting a transcription job or custom vocabulary. See the
+     *         exception <code>Message</code> field for more information.
+     * @throws LimitExceededException
+     *         Either you have sent too many requests or your input file is too long. Wait before you resend your
+     *         request, or use a smaller file and resend the request.
+     * @throws InternalFailureException
+     *         There was an internal error. Check the error message and try your request again.
+     * @throws NotFoundException
+     *         We can't find the requested transcription job or custom vocabulary. Check the name and try your request
+     *         again.
+     * @sample AmazonTranscribe.UpdateVocabulary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateVocabulary" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateVocabularyResult updateVocabulary(UpdateVocabularyRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateVocabulary(request);
+    }
+
+    @SdkInternalApi
+    final UpdateVocabularyResult executeUpdateVocabulary(UpdateVocabularyRequest updateVocabularyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateVocabularyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateVocabularyRequest> request = null;
+        Response<UpdateVocabularyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateVocabularyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateVocabularyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateVocabularyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateVocabularyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

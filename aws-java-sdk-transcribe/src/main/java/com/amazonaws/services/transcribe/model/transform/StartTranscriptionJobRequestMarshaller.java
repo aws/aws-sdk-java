@@ -37,6 +37,8 @@ public class StartTranscriptionJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MediaFormat").build();
     private static final MarshallingInfo<StructuredPojo> MEDIA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Media").build();
+    private static final MarshallingInfo<StructuredPojo> SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Settings").build();
 
     private static final StartTranscriptionJobRequestMarshaller instance = new StartTranscriptionJobRequestMarshaller();
 
@@ -59,6 +61,7 @@ public class StartTranscriptionJobRequestMarshaller {
             protocolMarshaller.marshall(startTranscriptionJobRequest.getMediaSampleRateHertz(), MEDIASAMPLERATEHERTZ_BINDING);
             protocolMarshaller.marshall(startTranscriptionJobRequest.getMediaFormat(), MEDIAFORMAT_BINDING);
             protocolMarshaller.marshall(startTranscriptionJobRequest.getMedia(), MEDIA_BINDING);
+            protocolMarshaller.marshall(startTranscriptionJobRequest.getSettings(), SETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

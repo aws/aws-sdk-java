@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.309-SNAPSHOT</version>
+    <version>1.11.309</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -15,6 +15,24 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-acmpca</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-secretsmanager</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-fms</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-connect</artifactId>
         <groupId>com.amazonaws</groupId>
@@ -920,6 +938,18 @@
                               </taglet>
                           </taglets>
                           <groups>
+                              <group>
+                                  <title>AWS Certificate Manager Private Certificate Authority</title>
+                                  <packages>com.amazonaws.services.acmpca*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Secrets Manager</title>
+                                  <packages>com.amazonaws.services.secretsmanager*</packages>
+                              </group>
+                              <group>
+                                  <title>Firewall Management</title>
+                                  <packages>com.amazonaws.services.fms*</packages>
+                              </group>
                               <group>
                                   <title>Amazon Connect</title>
                                   <packages>com.amazonaws.services.connect*</packages>

@@ -142,6 +142,14 @@ public class CertificateDetailJsonUnmarshaller implements Unmarshaller<Certifica
                     certificateDetail.setExtendedKeyUsages(new ListUnmarshaller<ExtendedKeyUsage>(ExtendedKeyUsageJsonUnmarshaller.getInstance())
                             .unmarshall(context));
                 }
+                if (context.testExpression("CertificateAuthorityArn", targetDepth)) {
+                    context.nextToken();
+                    certificateDetail.setCertificateAuthorityArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("RenewalEligibility", targetDepth)) {
+                    context.nextToken();
+                    certificateDetail.setRenewalEligibility(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Options", targetDepth)) {
                     context.nextToken();
                     certificateDetail.setOptions(CertificateOptionsJsonUnmarshaller.getInstance().unmarshall(context));

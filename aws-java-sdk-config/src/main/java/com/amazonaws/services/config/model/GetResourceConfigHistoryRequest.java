@@ -49,20 +49,20 @@ public class GetResourceConfigHistoryRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The time stamp that indicates an earlier time. If not specified, the action returns paginated results that
-     * contain configuration items that start from when the first configuration item was recorded.
+     * contain configuration items that start when the first configuration item was recorded.
      * </p>
      */
     private java.util.Date earlierTime;
     /**
      * <p>
-     * The chronological order for configuration items listed. By default the results are listed in reverse
+     * The chronological order for configuration items listed. By default, the results are listed in reverse
      * chronological order.
      * </p>
      */
     private String chronologicalOrder;
     /**
      * <p>
-     * The maximum number of configuration items returned on each page. The default is 10. You cannot specify a limit
+     * The maximum number of configuration items returned on each page. The default is 10. You cannot specify a number
      * greater than 100. If you specify 0, AWS Config uses the default.
      * </p>
      */
@@ -231,12 +231,12 @@ public class GetResourceConfigHistoryRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The time stamp that indicates an earlier time. If not specified, the action returns paginated results that
-     * contain configuration items that start from when the first configuration item was recorded.
+     * contain configuration items that start when the first configuration item was recorded.
      * </p>
      * 
      * @param earlierTime
      *        The time stamp that indicates an earlier time. If not specified, the action returns paginated results that
-     *        contain configuration items that start from when the first configuration item was recorded.
+     *        contain configuration items that start when the first configuration item was recorded.
      */
 
     public void setEarlierTime(java.util.Date earlierTime) {
@@ -246,11 +246,11 @@ public class GetResourceConfigHistoryRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The time stamp that indicates an earlier time. If not specified, the action returns paginated results that
-     * contain configuration items that start from when the first configuration item was recorded.
+     * contain configuration items that start when the first configuration item was recorded.
      * </p>
      * 
      * @return The time stamp that indicates an earlier time. If not specified, the action returns paginated results
-     *         that contain configuration items that start from when the first configuration item was recorded.
+     *         that contain configuration items that start when the first configuration item was recorded.
      */
 
     public java.util.Date getEarlierTime() {
@@ -260,12 +260,12 @@ public class GetResourceConfigHistoryRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The time stamp that indicates an earlier time. If not specified, the action returns paginated results that
-     * contain configuration items that start from when the first configuration item was recorded.
+     * contain configuration items that start when the first configuration item was recorded.
      * </p>
      * 
      * @param earlierTime
      *        The time stamp that indicates an earlier time. If not specified, the action returns paginated results that
-     *        contain configuration items that start from when the first configuration item was recorded.
+     *        contain configuration items that start when the first configuration item was recorded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -276,12 +276,12 @@ public class GetResourceConfigHistoryRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The chronological order for configuration items listed. By default the results are listed in reverse
+     * The chronological order for configuration items listed. By default, the results are listed in reverse
      * chronological order.
      * </p>
      * 
      * @param chronologicalOrder
-     *        The chronological order for configuration items listed. By default the results are listed in reverse
+     *        The chronological order for configuration items listed. By default, the results are listed in reverse
      *        chronological order.
      * @see ChronologicalOrder
      */
@@ -292,11 +292,11 @@ public class GetResourceConfigHistoryRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The chronological order for configuration items listed. By default the results are listed in reverse
+     * The chronological order for configuration items listed. By default, the results are listed in reverse
      * chronological order.
      * </p>
      * 
-     * @return The chronological order for configuration items listed. By default the results are listed in reverse
+     * @return The chronological order for configuration items listed. By default, the results are listed in reverse
      *         chronological order.
      * @see ChronologicalOrder
      */
@@ -307,12 +307,12 @@ public class GetResourceConfigHistoryRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The chronological order for configuration items listed. By default the results are listed in reverse
+     * The chronological order for configuration items listed. By default, the results are listed in reverse
      * chronological order.
      * </p>
      * 
      * @param chronologicalOrder
-     *        The chronological order for configuration items listed. By default the results are listed in reverse
+     *        The chronological order for configuration items listed. By default, the results are listed in reverse
      *        chronological order.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChronologicalOrder
@@ -325,12 +325,12 @@ public class GetResourceConfigHistoryRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The chronological order for configuration items listed. By default the results are listed in reverse
+     * The chronological order for configuration items listed. By default, the results are listed in reverse
      * chronological order.
      * </p>
      * 
      * @param chronologicalOrder
-     *        The chronological order for configuration items listed. By default the results are listed in reverse
+     *        The chronological order for configuration items listed. By default, the results are listed in reverse
      *        chronological order.
      * @see ChronologicalOrder
      */
@@ -341,12 +341,12 @@ public class GetResourceConfigHistoryRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The chronological order for configuration items listed. By default the results are listed in reverse
+     * The chronological order for configuration items listed. By default, the results are listed in reverse
      * chronological order.
      * </p>
      * 
      * @param chronologicalOrder
-     *        The chronological order for configuration items listed. By default the results are listed in reverse
+     *        The chronological order for configuration items listed. By default, the results are listed in reverse
      *        chronological order.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChronologicalOrder
@@ -359,13 +359,13 @@ public class GetResourceConfigHistoryRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The maximum number of configuration items returned on each page. The default is 10. You cannot specify a limit
+     * The maximum number of configuration items returned on each page. The default is 10. You cannot specify a number
      * greater than 100. If you specify 0, AWS Config uses the default.
      * </p>
      * 
      * @param limit
      *        The maximum number of configuration items returned on each page. The default is 10. You cannot specify a
-     *        limit greater than 100. If you specify 0, AWS Config uses the default.
+     *        number greater than 100. If you specify 0, AWS Config uses the default.
      */
 
     public void setLimit(Integer limit) {
@@ -374,12 +374,12 @@ public class GetResourceConfigHistoryRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The maximum number of configuration items returned on each page. The default is 10. You cannot specify a limit
+     * The maximum number of configuration items returned on each page. The default is 10. You cannot specify a number
      * greater than 100. If you specify 0, AWS Config uses the default.
      * </p>
      * 
      * @return The maximum number of configuration items returned on each page. The default is 10. You cannot specify a
-     *         limit greater than 100. If you specify 0, AWS Config uses the default.
+     *         number greater than 100. If you specify 0, AWS Config uses the default.
      */
 
     public Integer getLimit() {
@@ -388,13 +388,13 @@ public class GetResourceConfigHistoryRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The maximum number of configuration items returned on each page. The default is 10. You cannot specify a limit
+     * The maximum number of configuration items returned on each page. The default is 10. You cannot specify a number
      * greater than 100. If you specify 0, AWS Config uses the default.
      * </p>
      * 
      * @param limit
      *        The maximum number of configuration items returned on each page. The default is 10. You cannot specify a
-     *        limit greater than 100. If you specify 0, AWS Config uses the default.
+     *        number greater than 100. If you specify 0, AWS Config uses the default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

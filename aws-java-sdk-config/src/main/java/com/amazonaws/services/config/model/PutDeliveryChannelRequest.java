@@ -30,7 +30,7 @@ public class PutDeliveryChannelRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket, and
+     * The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and
      * to an Amazon SNS topic.
      * </p>
      */
@@ -38,13 +38,13 @@ public class PutDeliveryChannelRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket, and
+     * The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and
      * to an Amazon SNS topic.
      * </p>
      * 
      * @param deliveryChannel
      *        The configuration delivery channel object that delivers the configuration information to an Amazon S3
-     *        bucket, and to an Amazon SNS topic.
+     *        bucket and to an Amazon SNS topic.
      */
 
     public void setDeliveryChannel(DeliveryChannel deliveryChannel) {
@@ -53,12 +53,12 @@ public class PutDeliveryChannelRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket, and
+     * The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and
      * to an Amazon SNS topic.
      * </p>
      * 
      * @return The configuration delivery channel object that delivers the configuration information to an Amazon S3
-     *         bucket, and to an Amazon SNS topic.
+     *         bucket and to an Amazon SNS topic.
      */
 
     public DeliveryChannel getDeliveryChannel() {
@@ -67,13 +67,13 @@ public class PutDeliveryChannelRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket, and
+     * The configuration delivery channel object that delivers the configuration information to an Amazon S3 bucket and
      * to an Amazon SNS topic.
      * </p>
      * 
      * @param deliveryChannel
      *        The configuration delivery channel object that delivers the configuration information to an Amazon S3
-     *        bucket, and to an Amazon SNS topic.
+     *        bucket and to an Amazon SNS topic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

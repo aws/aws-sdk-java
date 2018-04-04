@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * The input for the <a>DeleteDeliveryChannel</a> action. The action accepts the following data in JSON format.
+ * The input for the <a>DeleteDeliveryChannel</a> action. The action accepts the following data, in JSON format.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteDeliveryChannel" target="_top">AWS API

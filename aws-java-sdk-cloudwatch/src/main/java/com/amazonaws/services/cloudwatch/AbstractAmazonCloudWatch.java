@@ -89,6 +89,11 @@ public class AbstractAmazonCloudWatch implements AmazonCloudWatch {
     }
 
     @Override
+    public GetMetricDataResult getMetricData(GetMetricDataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetMetricStatisticsResult getMetricStatistics(GetMetricStatisticsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

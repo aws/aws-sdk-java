@@ -30,53 +30,21 @@ public class Transcript implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 location where the transcription result is stored. The general form of this Uri is:
-     * </p>
-     * <p>
-     * <code> https://&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
-     * </p>
-     * <p>
-     * For example:
-     * </p>
-     * <p>
-     * <code>https://s3-us-west-2.amazonaws.com/examplebucket/example.json</code>
-     * </p>
-     * <p>
-     * <code>https://s3-us-west-2.amazonaws.com/examplebucket/mediadocs/example.json</code>
+     * The S3 location where the transcription result is stored. Use this URI to access the results of the transcription
+     * job.
      * </p>
      */
     private String transcriptFileUri;
 
     /**
      * <p>
-     * The S3 location where the transcription result is stored. The general form of this Uri is:
-     * </p>
-     * <p>
-     * <code> https://&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
-     * </p>
-     * <p>
-     * For example:
-     * </p>
-     * <p>
-     * <code>https://s3-us-west-2.amazonaws.com/examplebucket/example.json</code>
-     * </p>
-     * <p>
-     * <code>https://s3-us-west-2.amazonaws.com/examplebucket/mediadocs/example.json</code>
+     * The S3 location where the transcription result is stored. Use this URI to access the results of the transcription
+     * job.
      * </p>
      * 
      * @param transcriptFileUri
-     *        The S3 location where the transcription result is stored. The general form of this Uri is:</p>
-     *        <p>
-     *        <code> https://&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
-     *        </p>
-     *        <p>
-     *        For example:
-     *        </p>
-     *        <p>
-     *        <code>https://s3-us-west-2.amazonaws.com/examplebucket/example.json</code>
-     *        </p>
-     *        <p>
-     *        <code>https://s3-us-west-2.amazonaws.com/examplebucket/mediadocs/example.json</code>
+     *        The S3 location where the transcription result is stored. Use this URI to access the results of the
+     *        transcription job.
      */
 
     public void setTranscriptFileUri(String transcriptFileUri) {
@@ -85,33 +53,12 @@ public class Transcript implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 location where the transcription result is stored. The general form of this Uri is:
-     * </p>
-     * <p>
-     * <code> https://&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
-     * </p>
-     * <p>
-     * For example:
-     * </p>
-     * <p>
-     * <code>https://s3-us-west-2.amazonaws.com/examplebucket/example.json</code>
-     * </p>
-     * <p>
-     * <code>https://s3-us-west-2.amazonaws.com/examplebucket/mediadocs/example.json</code>
+     * The S3 location where the transcription result is stored. Use this URI to access the results of the transcription
+     * job.
      * </p>
      * 
-     * @return The S3 location where the transcription result is stored. The general form of this Uri is:</p>
-     *         <p>
-     *         <code> https://&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
-     *         </p>
-     *         <p>
-     *         For example:
-     *         </p>
-     *         <p>
-     *         <code>https://s3-us-west-2.amazonaws.com/examplebucket/example.json</code>
-     *         </p>
-     *         <p>
-     *         <code>https://s3-us-west-2.amazonaws.com/examplebucket/mediadocs/example.json</code>
+     * @return The S3 location where the transcription result is stored. Use this URI to access the results of the
+     *         transcription job.
      */
 
     public String getTranscriptFileUri() {
@@ -120,34 +67,13 @@ public class Transcript implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 location where the transcription result is stored. The general form of this Uri is:
-     * </p>
-     * <p>
-     * <code> https://&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
-     * </p>
-     * <p>
-     * For example:
-     * </p>
-     * <p>
-     * <code>https://s3-us-west-2.amazonaws.com/examplebucket/example.json</code>
-     * </p>
-     * <p>
-     * <code>https://s3-us-west-2.amazonaws.com/examplebucket/mediadocs/example.json</code>
+     * The S3 location where the transcription result is stored. Use this URI to access the results of the transcription
+     * job.
      * </p>
      * 
      * @param transcriptFileUri
-     *        The S3 location where the transcription result is stored. The general form of this Uri is:</p>
-     *        <p>
-     *        <code> https://&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code>
-     *        </p>
-     *        <p>
-     *        For example:
-     *        </p>
-     *        <p>
-     *        <code>https://s3-us-west-2.amazonaws.com/examplebucket/example.json</code>
-     *        </p>
-     *        <p>
-     *        <code>https://s3-us-west-2.amazonaws.com/examplebucket/mediadocs/example.json</code>
+     *        The S3 location where the transcription result is stored. Use this URI to access the results of the
+     *        transcription job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

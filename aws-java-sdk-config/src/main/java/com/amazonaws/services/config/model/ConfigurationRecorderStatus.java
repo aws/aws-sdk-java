@@ -48,7 +48,7 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable, Str
     private java.util.Date lastStopTime;
     /**
      * <p>
-     * Specifies whether the recorder is currently recording or not.
+     * Specifies whether or not the recorder is currently recording.
      * </p>
      */
     private Boolean recording;
@@ -199,11 +199,11 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specifies whether the recorder is currently recording or not.
+     * Specifies whether or not the recorder is currently recording.
      * </p>
      * 
      * @param recording
-     *        Specifies whether the recorder is currently recording or not.
+     *        Specifies whether or not the recorder is currently recording.
      */
 
     public void setRecording(Boolean recording) {
@@ -212,10 +212,10 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specifies whether the recorder is currently recording or not.
+     * Specifies whether or not the recorder is currently recording.
      * </p>
      * 
-     * @return Specifies whether the recorder is currently recording or not.
+     * @return Specifies whether or not the recorder is currently recording.
      */
 
     public Boolean getRecording() {
@@ -224,11 +224,11 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specifies whether the recorder is currently recording or not.
+     * Specifies whether or not the recorder is currently recording.
      * </p>
      * 
      * @param recording
-     *        Specifies whether the recorder is currently recording or not.
+     *        Specifies whether or not the recorder is currently recording.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -239,10 +239,10 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specifies whether the recorder is currently recording or not.
+     * Specifies whether or not the recorder is currently recording.
      * </p>
      * 
-     * @return Specifies whether the recorder is currently recording or not.
+     * @return Specifies whether or not the recorder is currently recording.
      */
 
     public Boolean isRecording() {

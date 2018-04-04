@@ -25,8 +25,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * For more information about algorithms provided by Amazon SageMaker, see <a
  * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. For information about using your own
- * algorithms, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/adv-topics-own-algo.html">Bring Your Own
- * Algorithms </a>.
+ * algorithms, see <a>your-algorithms</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AlgorithmSpecification" target="_top">AWS
@@ -37,9 +36,8 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The registry path of the Docker image that contains the training algorithm. For information about using your own
-     * algorithms, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html">Docker
-     * Registry Paths for Algorithms Provided by Amazon SageMaker </a>.
+     * The registry path of the Docker image that contains the training algorithm. For information about docker registry
+     * paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.
      * </p>
      */
     private String trainingImage;
@@ -67,16 +65,13 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The registry path of the Docker image that contains the training algorithm. For information about using your own
-     * algorithms, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html">Docker
-     * Registry Paths for Algorithms Provided by Amazon SageMaker </a>.
+     * The registry path of the Docker image that contains the training algorithm. For information about docker registry
+     * paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.
      * </p>
      * 
      * @param trainingImage
-     *        The registry path of the Docker image that contains the training algorithm. For information about using
-     *        your own algorithms, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html">Docker Registry
-     *        Paths for Algorithms Provided by Amazon SageMaker </a>.
+     *        The registry path of the Docker image that contains the training algorithm. For information about docker
+     *        registry paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.
      */
 
     public void setTrainingImage(String trainingImage) {
@@ -85,15 +80,12 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The registry path of the Docker image that contains the training algorithm. For information about using your own
-     * algorithms, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html">Docker
-     * Registry Paths for Algorithms Provided by Amazon SageMaker </a>.
+     * The registry path of the Docker image that contains the training algorithm. For information about docker registry
+     * paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.
      * </p>
      * 
-     * @return The registry path of the Docker image that contains the training algorithm. For information about using
-     *         your own algorithms, see <a
-     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html">Docker Registry
-     *         Paths for Algorithms Provided by Amazon SageMaker </a>.
+     * @return The registry path of the Docker image that contains the training algorithm. For information about docker
+     *         registry paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.
      */
 
     public String getTrainingImage() {
@@ -102,16 +94,13 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The registry path of the Docker image that contains the training algorithm. For information about using your own
-     * algorithms, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html">Docker
-     * Registry Paths for Algorithms Provided by Amazon SageMaker </a>.
+     * The registry path of the Docker image that contains the training algorithm. For information about docker registry
+     * paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.
      * </p>
      * 
      * @param trainingImage
-     *        The registry path of the Docker image that contains the training algorithm. For information about using
-     *        your own algorithms, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos-docker-registry-paths.html">Docker Registry
-     *        Paths for Algorithms Provided by Amazon SageMaker </a>.
+     *        The registry path of the Docker image that contains the training algorithm. For information about docker
+     *        registry paths for built-in algorithms, see <a>sagemaker-algo-docker-registry-paths</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

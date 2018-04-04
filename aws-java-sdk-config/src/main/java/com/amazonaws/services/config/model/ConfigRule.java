@@ -84,7 +84,7 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
     private Source source;
     /**
      * <p>
-     * A string in JSON format that is passed to the AWS Config rule Lambda function.
+     * A string, in JSON format, that is passed to the AWS Config rule Lambda function.
      * </p>
      */
     private String inputParameters;
@@ -117,18 +117,18 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Indicates whether the AWS Config rule is active or is currently being deleted by AWS Config. It can also indicate
-     * the evaluation status for the Config rule.
+     * the evaluation status for the AWS Config rule.
      * </p>
      * <p>
      * AWS Config sets the state of the rule to <code>EVALUATING</code> temporarily after you use the
-     * <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the Config rule.
+     * <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the AWS Config rule.
      * </p>
      * <p>
      * AWS Config sets the state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
-     * <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the Config rule.
+     * <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the AWS Config rule.
      * </p>
      * <p>
-     * AWS Config sets the state of a rule to <code>DELETING</code> temporarily after you use the
+     * AWS Config temporarily sets the state of a rule to <code>DELETING</code> after you use the
      * <code>DeleteConfigRule</code> request to delete the rule. After AWS Config deletes the rule, the rule and all of
      * its evaluations are erased and are no longer available.
      * </p>
@@ -401,11 +401,11 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string in JSON format that is passed to the AWS Config rule Lambda function.
+     * A string, in JSON format, that is passed to the AWS Config rule Lambda function.
      * </p>
      * 
      * @param inputParameters
-     *        A string in JSON format that is passed to the AWS Config rule Lambda function.
+     *        A string, in JSON format, that is passed to the AWS Config rule Lambda function.
      */
 
     public void setInputParameters(String inputParameters) {
@@ -414,10 +414,10 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string in JSON format that is passed to the AWS Config rule Lambda function.
+     * A string, in JSON format, that is passed to the AWS Config rule Lambda function.
      * </p>
      * 
-     * @return A string in JSON format that is passed to the AWS Config rule Lambda function.
+     * @return A string, in JSON format, that is passed to the AWS Config rule Lambda function.
      */
 
     public String getInputParameters() {
@@ -426,11 +426,11 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string in JSON format that is passed to the AWS Config rule Lambda function.
+     * A string, in JSON format, that is passed to the AWS Config rule Lambda function.
      * </p>
      * 
      * @param inputParameters
-     *        A string in JSON format that is passed to the AWS Config rule Lambda function.
+     *        A string, in JSON format, that is passed to the AWS Config rule Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -710,35 +710,36 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Indicates whether the AWS Config rule is active or is currently being deleted by AWS Config. It can also indicate
-     * the evaluation status for the Config rule.
+     * the evaluation status for the AWS Config rule.
      * </p>
      * <p>
      * AWS Config sets the state of the rule to <code>EVALUATING</code> temporarily after you use the
-     * <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the Config rule.
+     * <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the AWS Config rule.
      * </p>
      * <p>
      * AWS Config sets the state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
-     * <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the Config rule.
+     * <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the AWS Config rule.
      * </p>
      * <p>
-     * AWS Config sets the state of a rule to <code>DELETING</code> temporarily after you use the
+     * AWS Config temporarily sets the state of a rule to <code>DELETING</code> after you use the
      * <code>DeleteConfigRule</code> request to delete the rule. After AWS Config deletes the rule, the rule and all of
      * its evaluations are erased and are no longer available.
      * </p>
      * 
      * @param configRuleState
      *        Indicates whether the AWS Config rule is active or is currently being deleted by AWS Config. It can also
-     *        indicate the evaluation status for the Config rule.</p>
+     *        indicate the evaluation status for the AWS Config rule.</p>
      *        <p>
      *        AWS Config sets the state of the rule to <code>EVALUATING</code> temporarily after you use the
-     *        <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the Config rule.
+     *        <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the AWS Config rule.
      *        </p>
      *        <p>
      *        AWS Config sets the state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
-     *        <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the Config rule.
+     *        <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the AWS Config
+     *        rule.
      *        </p>
      *        <p>
-     *        AWS Config sets the state of a rule to <code>DELETING</code> temporarily after you use the
+     *        AWS Config temporarily sets the state of a rule to <code>DELETING</code> after you use the
      *        <code>DeleteConfigRule</code> request to delete the rule. After AWS Config deletes the rule, the rule and
      *        all of its evaluations are erased and are no longer available.
      * @see ConfigRuleState
@@ -751,35 +752,35 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Indicates whether the AWS Config rule is active or is currently being deleted by AWS Config. It can also indicate
-     * the evaluation status for the Config rule.
+     * the evaluation status for the AWS Config rule.
      * </p>
      * <p>
      * AWS Config sets the state of the rule to <code>EVALUATING</code> temporarily after you use the
-     * <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the Config rule.
+     * <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the AWS Config rule.
      * </p>
      * <p>
      * AWS Config sets the state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
-     * <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the Config rule.
+     * <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the AWS Config rule.
      * </p>
      * <p>
-     * AWS Config sets the state of a rule to <code>DELETING</code> temporarily after you use the
+     * AWS Config temporarily sets the state of a rule to <code>DELETING</code> after you use the
      * <code>DeleteConfigRule</code> request to delete the rule. After AWS Config deletes the rule, the rule and all of
      * its evaluations are erased and are no longer available.
      * </p>
      * 
      * @return Indicates whether the AWS Config rule is active or is currently being deleted by AWS Config. It can also
-     *         indicate the evaluation status for the Config rule.</p>
+     *         indicate the evaluation status for the AWS Config rule.</p>
      *         <p>
      *         AWS Config sets the state of the rule to <code>EVALUATING</code> temporarily after you use the
-     *         <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the Config rule.
+     *         <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the AWS Config rule.
      *         </p>
      *         <p>
      *         AWS Config sets the state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
-     *         <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the Config
+     *         <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the AWS Config
      *         rule.
      *         </p>
      *         <p>
-     *         AWS Config sets the state of a rule to <code>DELETING</code> temporarily after you use the
+     *         AWS Config temporarily sets the state of a rule to <code>DELETING</code> after you use the
      *         <code>DeleteConfigRule</code> request to delete the rule. After AWS Config deletes the rule, the rule and
      *         all of its evaluations are erased and are no longer available.
      * @see ConfigRuleState
@@ -792,35 +793,36 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Indicates whether the AWS Config rule is active or is currently being deleted by AWS Config. It can also indicate
-     * the evaluation status for the Config rule.
+     * the evaluation status for the AWS Config rule.
      * </p>
      * <p>
      * AWS Config sets the state of the rule to <code>EVALUATING</code> temporarily after you use the
-     * <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the Config rule.
+     * <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the AWS Config rule.
      * </p>
      * <p>
      * AWS Config sets the state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
-     * <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the Config rule.
+     * <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the AWS Config rule.
      * </p>
      * <p>
-     * AWS Config sets the state of a rule to <code>DELETING</code> temporarily after you use the
+     * AWS Config temporarily sets the state of a rule to <code>DELETING</code> after you use the
      * <code>DeleteConfigRule</code> request to delete the rule. After AWS Config deletes the rule, the rule and all of
      * its evaluations are erased and are no longer available.
      * </p>
      * 
      * @param configRuleState
      *        Indicates whether the AWS Config rule is active or is currently being deleted by AWS Config. It can also
-     *        indicate the evaluation status for the Config rule.</p>
+     *        indicate the evaluation status for the AWS Config rule.</p>
      *        <p>
      *        AWS Config sets the state of the rule to <code>EVALUATING</code> temporarily after you use the
-     *        <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the Config rule.
+     *        <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the AWS Config rule.
      *        </p>
      *        <p>
      *        AWS Config sets the state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
-     *        <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the Config rule.
+     *        <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the AWS Config
+     *        rule.
      *        </p>
      *        <p>
-     *        AWS Config sets the state of a rule to <code>DELETING</code> temporarily after you use the
+     *        AWS Config temporarily sets the state of a rule to <code>DELETING</code> after you use the
      *        <code>DeleteConfigRule</code> request to delete the rule. After AWS Config deletes the rule, the rule and
      *        all of its evaluations are erased and are no longer available.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -835,35 +837,36 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Indicates whether the AWS Config rule is active or is currently being deleted by AWS Config. It can also indicate
-     * the evaluation status for the Config rule.
+     * the evaluation status for the AWS Config rule.
      * </p>
      * <p>
      * AWS Config sets the state of the rule to <code>EVALUATING</code> temporarily after you use the
-     * <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the Config rule.
+     * <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the AWS Config rule.
      * </p>
      * <p>
      * AWS Config sets the state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
-     * <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the Config rule.
+     * <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the AWS Config rule.
      * </p>
      * <p>
-     * AWS Config sets the state of a rule to <code>DELETING</code> temporarily after you use the
+     * AWS Config temporarily sets the state of a rule to <code>DELETING</code> after you use the
      * <code>DeleteConfigRule</code> request to delete the rule. After AWS Config deletes the rule, the rule and all of
      * its evaluations are erased and are no longer available.
      * </p>
      * 
      * @param configRuleState
      *        Indicates whether the AWS Config rule is active or is currently being deleted by AWS Config. It can also
-     *        indicate the evaluation status for the Config rule.</p>
+     *        indicate the evaluation status for the AWS Config rule.</p>
      *        <p>
      *        AWS Config sets the state of the rule to <code>EVALUATING</code> temporarily after you use the
-     *        <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the Config rule.
+     *        <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the AWS Config rule.
      *        </p>
      *        <p>
      *        AWS Config sets the state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
-     *        <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the Config rule.
+     *        <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the AWS Config
+     *        rule.
      *        </p>
      *        <p>
-     *        AWS Config sets the state of a rule to <code>DELETING</code> temporarily after you use the
+     *        AWS Config temporarily sets the state of a rule to <code>DELETING</code> after you use the
      *        <code>DeleteConfigRule</code> request to delete the rule. After AWS Config deletes the rule, the rule and
      *        all of its evaluations are erased and are no longer available.
      * @see ConfigRuleState
@@ -876,35 +879,36 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Indicates whether the AWS Config rule is active or is currently being deleted by AWS Config. It can also indicate
-     * the evaluation status for the Config rule.
+     * the evaluation status for the AWS Config rule.
      * </p>
      * <p>
      * AWS Config sets the state of the rule to <code>EVALUATING</code> temporarily after you use the
-     * <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the Config rule.
+     * <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the AWS Config rule.
      * </p>
      * <p>
      * AWS Config sets the state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
-     * <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the Config rule.
+     * <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the AWS Config rule.
      * </p>
      * <p>
-     * AWS Config sets the state of a rule to <code>DELETING</code> temporarily after you use the
+     * AWS Config temporarily sets the state of a rule to <code>DELETING</code> after you use the
      * <code>DeleteConfigRule</code> request to delete the rule. After AWS Config deletes the rule, the rule and all of
      * its evaluations are erased and are no longer available.
      * </p>
      * 
      * @param configRuleState
      *        Indicates whether the AWS Config rule is active or is currently being deleted by AWS Config. It can also
-     *        indicate the evaluation status for the Config rule.</p>
+     *        indicate the evaluation status for the AWS Config rule.</p>
      *        <p>
      *        AWS Config sets the state of the rule to <code>EVALUATING</code> temporarily after you use the
-     *        <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the Config rule.
+     *        <code>StartConfigRulesEvaluation</code> request to evaluate your resources against the AWS Config rule.
      *        </p>
      *        <p>
      *        AWS Config sets the state of the rule to <code>DELETING_RESULTS</code> temporarily after you use the
-     *        <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the Config rule.
+     *        <code>DeleteEvaluationResults</code> request to delete the current evaluation results for the AWS Config
+     *        rule.
      *        </p>
      *        <p>
-     *        AWS Config sets the state of a rule to <code>DELETING</code> temporarily after you use the
+     *        AWS Config temporarily sets the state of a rule to <code>DELETING</code> after you use the
      *        <code>DeleteConfigRule</code> request to delete the rule. After AWS Config deletes the rule, the rule and
      *        all of its evaluations are erased and are no longer available.
      * @return Returns a reference to this object so that method calls can be chained together.

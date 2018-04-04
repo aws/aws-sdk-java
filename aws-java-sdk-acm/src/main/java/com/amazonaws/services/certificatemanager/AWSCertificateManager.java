@@ -32,8 +32,8 @@ import com.amazonaws.services.certificatemanager.model.*;
  * </p>
  * <p>
  * You can use ACM to manage SSL/TLS certificates for your AWS-based websites and applications. For general information
- * about using ACM, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/"> <i>AWS Certificate Manager User
- * Guide</i> </a>.
+ * about using ACM, see the <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/"> <i>AWS
+ * Certificate Manager User Guide</i> </a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -110,7 +110,8 @@ public interface AWSCertificateManager {
      * relationship among those certificates. Similarly, you can apply the same tag to multiple resources if you want to
      * specify a relationship among those resources. For example, you can add the same tag to an ACM certificate and an
      * Elastic Load Balancing load balancer to indicate that they are both used by the same website. For more
-     * information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/tags.html">Tagging ACM
+     * information, see <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/tags.html">Tagging ACM
      * certificates</a>.
      * </p>
      * <p>
@@ -185,6 +186,32 @@ public interface AWSCertificateManager {
 
     /**
      * <p>
+     * Exports a certificate for use anywhere. You can export the certificate, the certificate chain, and the encrypted
+     * private key associated with the public key embedded in the certificate. You must store the private key securely.
+     * The private key is a 2048 bit RSA key. You must provide a passphrase for the private key when exporting it. You
+     * can use the following OpenSSL command to decrypt it later. Provide the passphrase when prompted.
+     * </p>
+     * <p>
+     * <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code>
+     * </p>
+     * 
+     * @param exportCertificateRequest
+     * @return Result of the ExportCertificate operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified certificate cannot be found in the caller's account or the caller's account cannot be
+     *         found.
+     * @throws RequestInProgressException
+     *         The certificate request is in process and the certificate in your account has not yet been issued.
+     * @throws InvalidArnException
+     *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
+     * @sample AWSCertificateManager.ExportCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ExportCertificate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ExportCertificateResult exportCertificate(ExportCertificateRequest exportCertificateRequest);
+
+    /**
+     * <p>
      * Retrieves a certificate specified by an ARN and its certificate chain . The chain is an ordered list of
      * certificates that contains the end entity certificate, intermediate certificates of subordinate CAs, and the root
      * certificate in that order. The certificate and certificate chain are base64 encoded. If you want to decode the
@@ -209,16 +236,18 @@ public interface AWSCertificateManager {
     /**
      * <p>
      * Imports a certificate into AWS Certificate Manager (ACM) to use with services that are integrated with ACM. Note
-     * that <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">integrated services</a> allow
-     * only certificate types and keys they support to be associated with their resources. Further, their support
-     * differs depending on whether the certificate is imported into IAM or into ACM. For more information, see the
-     * documentation for each service. For more information about importing certificates into ACM, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a> in the
-     * <i>AWS Certificate Manager User Guide</i>.
+     * that <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-services.html">integrated
+     * services</a> allow only certificate types and keys they support to be associated with their resources. Further,
+     * their support differs depending on whether the certificate is imported into IAM or into ACM. For more
+     * information, see the documentation for each service. For more information about importing certificates into ACM,
+     * see <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/import-certificate.html">
+     * Importing Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.
      * </p>
      * <note>
      * <p>
-     * ACM does not provide <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * ACM does not provide <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
      * renewal</a> for certificates that you import.
      * </p>
      * </note>
@@ -371,16 +400,18 @@ public interface AWSCertificateManager {
      * </p>
      * <p>
      * Each domain name that you specify must be validated to verify that you own or control the domain. You can use <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">DNS validation</a> or <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">email validation</a>. We
-     * recommend that you use DNS validation.
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-dns.html">DNS
+     * validation</a> or <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-email.html">email
+     * validation</a>. We recommend that you use DNS validation.
      * </p>
      * <p>
      * If you choose email validation, email is sent to the domain owner to request approval to issue the certificate.
      * Email is sent to three registered contact addresses in the WHOIS database and to five common system
      * administration addresses formed from the <code>DomainName</code> you enter or the optional
      * <code>ValidationDomain</code> parameter. For more information, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">Validate with Email</a>.
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-email.html"
+     * >Validate with Email</a>.
      * </p>
      * <p>
      * After receiving approval from the domain owner, the ACM certificate is issued.
@@ -392,6 +423,8 @@ public interface AWSCertificateManager {
      *         An ACM limit has been exceeded.
      * @throws InvalidDomainValidationOptionsException
      *         One or more values in the <a>DomainValidationOption</a> structure is incorrect.
+     * @throws InvalidArnException
+     *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
      * @sample AWSCertificateManager.RequestCertificate
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate" target="_top">AWS API
      *      Documentation</a>
@@ -407,7 +440,8 @@ public interface AWSCertificateManager {
      * request that the mail be resent within 72 hours of requesting the ACM certificate. If more than 72 hours have
      * elapsed since your original request or since your last attempt to resend validation mail, you must request a new
      * certificate. For more information about setting up your contact email addresses, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/setup-email.html">Configure Email for your Domain</a>.
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/setup-email.html">Configure Email
+     * for your Domain</a>.
      * </p>
      * 
      * @param resendValidationEmailRequest
@@ -430,9 +464,9 @@ public interface AWSCertificateManager {
     /**
      * <p>
      * Updates a certificate. Currently, you can use this function to specify whether to opt in to or out of recording
-     * your certificate in a certificate transparency log. For more information, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency"> Opting
-     * Out of Certificate Transparency Logging</a>.
+     * your certificate in a certificate transparency log. For more information, see <a href=
+     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-bestpractices.html#best-practices-transparency"
+     * > Opting Out of Certificate Transparency Logging</a>.
      * </p>
      * 
      * @param updateCertificateOptionsRequest
@@ -440,8 +474,6 @@ public interface AWSCertificateManager {
      * @throws ResourceNotFoundException
      *         The specified certificate cannot be found in the caller's account or the caller's account cannot be
      *         found.
-     * @throws InvalidArnException
-     *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
      * @throws LimitExceededException
      *         An ACM limit has been exceeded.
      * @throws InvalidStateException

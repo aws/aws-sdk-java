@@ -47,6 +47,8 @@ public class TranscriptionJobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CompletionTime").build();
     private static final MarshallingInfo<String> FAILUREREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FailureReason").build();
+    private static final MarshallingInfo<StructuredPojo> SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Settings").build();
 
     private static final TranscriptionJobMarshaller instance = new TranscriptionJobMarshaller();
 
@@ -74,6 +76,7 @@ public class TranscriptionJobMarshaller {
             protocolMarshaller.marshall(transcriptionJob.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(transcriptionJob.getCompletionTime(), COMPLETIONTIME_BINDING);
             protocolMarshaller.marshall(transcriptionJob.getFailureReason(), FAILUREREASON_BINDING);
+            protocolMarshaller.marshall(transcriptionJob.getSettings(), SETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

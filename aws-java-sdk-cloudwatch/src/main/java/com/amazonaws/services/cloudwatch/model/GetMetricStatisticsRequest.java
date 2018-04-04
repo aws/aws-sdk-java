@@ -151,7 +151,7 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The unit for a given metric. Metrics may be reported in multiple units. Not supplying a unit results in all units
-     * being returned. If the metric only ever reports one unit, specifying a unit has no effect.
+     * being returned. If you specify only a unit that the metric does not report, the results of the call are null.
      * </p>
      */
     private String unit;
@@ -1080,12 +1080,13 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The unit for a given metric. Metrics may be reported in multiple units. Not supplying a unit results in all units
-     * being returned. If the metric only ever reports one unit, specifying a unit has no effect.
+     * being returned. If you specify only a unit that the metric does not report, the results of the call are null.
      * </p>
      * 
      * @param unit
      *        The unit for a given metric. Metrics may be reported in multiple units. Not supplying a unit results in
-     *        all units being returned. If the metric only ever reports one unit, specifying a unit has no effect.
+     *        all units being returned. If you specify only a unit that the metric does not report, the results of the
+     *        call are null.
      * @see StandardUnit
      */
 
@@ -1096,11 +1097,12 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The unit for a given metric. Metrics may be reported in multiple units. Not supplying a unit results in all units
-     * being returned. If the metric only ever reports one unit, specifying a unit has no effect.
+     * being returned. If you specify only a unit that the metric does not report, the results of the call are null.
      * </p>
      * 
      * @return The unit for a given metric. Metrics may be reported in multiple units. Not supplying a unit results in
-     *         all units being returned. If the metric only ever reports one unit, specifying a unit has no effect.
+     *         all units being returned. If you specify only a unit that the metric does not report, the results of the
+     *         call are null.
      * @see StandardUnit
      */
 
@@ -1111,12 +1113,13 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The unit for a given metric. Metrics may be reported in multiple units. Not supplying a unit results in all units
-     * being returned. If the metric only ever reports one unit, specifying a unit has no effect.
+     * being returned. If you specify only a unit that the metric does not report, the results of the call are null.
      * </p>
      * 
      * @param unit
      *        The unit for a given metric. Metrics may be reported in multiple units. Not supplying a unit results in
-     *        all units being returned. If the metric only ever reports one unit, specifying a unit has no effect.
+     *        all units being returned. If you specify only a unit that the metric does not report, the results of the
+     *        call are null.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StandardUnit
      */
@@ -1129,12 +1132,13 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The unit for a given metric. Metrics may be reported in multiple units. Not supplying a unit results in all units
-     * being returned. If the metric only ever reports one unit, specifying a unit has no effect.
+     * being returned. If you specify only a unit that the metric does not report, the results of the call are null.
      * </p>
      * 
      * @param unit
      *        The unit for a given metric. Metrics may be reported in multiple units. Not supplying a unit results in
-     *        all units being returned. If the metric only ever reports one unit, specifying a unit has no effect.
+     *        all units being returned. If you specify only a unit that the metric does not report, the results of the
+     *        call are null.
      * @see StandardUnit
      */
 
@@ -1145,12 +1149,13 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The unit for a given metric. Metrics may be reported in multiple units. Not supplying a unit results in all units
-     * being returned. If the metric only ever reports one unit, specifying a unit has no effect.
+     * being returned. If you specify only a unit that the metric does not report, the results of the call are null.
      * </p>
      * 
      * @param unit
      *        The unit for a given metric. Metrics may be reported in multiple units. Not supplying a unit results in
-     *        all units being returned. If the metric only ever reports one unit, specifying a unit has no effect.
+     *        all units being returned. If you specify only a unit that the metric does not report, the results of the
+     *        call are null.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StandardUnit
      */

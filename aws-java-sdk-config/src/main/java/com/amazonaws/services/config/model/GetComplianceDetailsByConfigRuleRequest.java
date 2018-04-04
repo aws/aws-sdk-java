@@ -43,14 +43,14 @@ public class GetComplianceDetailsByConfigRuleRequest extends com.amazonaws.Amazo
     private com.amazonaws.internal.SdkInternalList<String> complianceTypes;
     /**
      * <p>
-     * The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a limit
+     * The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number
      * greater than 100. If you specify 0, AWS Config uses the default.
      * </p>
      */
     private Integer limit;
     /**
      * <p>
-     * The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
      * paginated response.
      * </p>
      */
@@ -225,13 +225,13 @@ public class GetComplianceDetailsByConfigRuleRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a limit
+     * The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number
      * greater than 100. If you specify 0, AWS Config uses the default.
      * </p>
      * 
      * @param limit
      *        The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a
-     *        limit greater than 100. If you specify 0, AWS Config uses the default.
+     *        number greater than 100. If you specify 0, AWS Config uses the default.
      */
 
     public void setLimit(Integer limit) {
@@ -240,12 +240,12 @@ public class GetComplianceDetailsByConfigRuleRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a limit
+     * The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number
      * greater than 100. If you specify 0, AWS Config uses the default.
      * </p>
      * 
      * @return The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a
-     *         limit greater than 100. If you specify 0, AWS Config uses the default.
+     *         number greater than 100. If you specify 0, AWS Config uses the default.
      */
 
     public Integer getLimit() {
@@ -254,13 +254,13 @@ public class GetComplianceDetailsByConfigRuleRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a limit
+     * The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number
      * greater than 100. If you specify 0, AWS Config uses the default.
      * </p>
      * 
      * @param limit
      *        The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a
-     *        limit greater than 100. If you specify 0, AWS Config uses the default.
+     *        number greater than 100. If you specify 0, AWS Config uses the default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -271,12 +271,12 @@ public class GetComplianceDetailsByConfigRuleRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
      * paginated response.
      * </p>
      * 
      * @param nextToken
-     *        The <code>NextToken</code> string returned on a previous page that you use to get the next page of results
+     *        The <code>nextToken</code> string returned on a previous page that you use to get the next page of results
      *        in a paginated response.
      */
 
@@ -286,11 +286,11 @@ public class GetComplianceDetailsByConfigRuleRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
      * paginated response.
      * </p>
      * 
-     * @return The <code>NextToken</code> string returned on a previous page that you use to get the next page of
+     * @return The <code>nextToken</code> string returned on a previous page that you use to get the next page of
      *         results in a paginated response.
      */
 
@@ -300,12 +300,12 @@ public class GetComplianceDetailsByConfigRuleRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The <code>NextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
      * paginated response.
      * </p>
      * 
      * @param nextToken
-     *        The <code>NextToken</code> string returned on a previous page that you use to get the next page of results
+     *        The <code>nextToken</code> string returned on a previous page that you use to get the next page of results
      *        in a paginated response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

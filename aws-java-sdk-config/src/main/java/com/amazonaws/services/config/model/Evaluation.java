@@ -51,8 +51,8 @@ public class Evaluation implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Similarly, AWS Config does not accept <code>INSUFFICIENT_DATA</code> as the value for <code>ComplianceType</code>
-     * from a <code>PutEvaluations</code> request. For example, an AWS Lambda function for a custom Config rule cannot
-     * pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
+     * from a <code>PutEvaluations</code> request. For example, an AWS Lambda function for a custom AWS Config rule
+     * cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
      * </p>
      */
     private String complianceType;
@@ -163,8 +163,8 @@ public class Evaluation implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Similarly, AWS Config does not accept <code>INSUFFICIENT_DATA</code> as the value for <code>ComplianceType</code>
-     * from a <code>PutEvaluations</code> request. For example, an AWS Lambda function for a custom Config rule cannot
-     * pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
+     * from a <code>PutEvaluations</code> request. For example, an AWS Lambda function for a custom AWS Config rule
+     * cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
      * </p>
      * 
      * @param complianceType
@@ -177,7 +177,7 @@ public class Evaluation implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        Similarly, AWS Config does not accept <code>INSUFFICIENT_DATA</code> as the value for
      *        <code>ComplianceType</code> from a <code>PutEvaluations</code> request. For example, an AWS Lambda
-     *        function for a custom Config rule cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
+     *        function for a custom AWS Config rule cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
      * @see ComplianceType
      */
 
@@ -196,8 +196,8 @@ public class Evaluation implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Similarly, AWS Config does not accept <code>INSUFFICIENT_DATA</code> as the value for <code>ComplianceType</code>
-     * from a <code>PutEvaluations</code> request. For example, an AWS Lambda function for a custom Config rule cannot
-     * pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
+     * from a <code>PutEvaluations</code> request. For example, an AWS Lambda function for a custom AWS Config rule
+     * cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
      * </p>
      * 
      * @return Indicates whether the AWS resource complies with the AWS Config rule that it was evaluated against.</p>
@@ -209,7 +209,7 @@ public class Evaluation implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         Similarly, AWS Config does not accept <code>INSUFFICIENT_DATA</code> as the value for
      *         <code>ComplianceType</code> from a <code>PutEvaluations</code> request. For example, an AWS Lambda
-     *         function for a custom Config rule cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
+     *         function for a custom AWS Config rule cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
      * @see ComplianceType
      */
 
@@ -228,8 +228,8 @@ public class Evaluation implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Similarly, AWS Config does not accept <code>INSUFFICIENT_DATA</code> as the value for <code>ComplianceType</code>
-     * from a <code>PutEvaluations</code> request. For example, an AWS Lambda function for a custom Config rule cannot
-     * pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
+     * from a <code>PutEvaluations</code> request. For example, an AWS Lambda function for a custom AWS Config rule
+     * cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
      * </p>
      * 
      * @param complianceType
@@ -242,7 +242,7 @@ public class Evaluation implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        Similarly, AWS Config does not accept <code>INSUFFICIENT_DATA</code> as the value for
      *        <code>ComplianceType</code> from a <code>PutEvaluations</code> request. For example, an AWS Lambda
-     *        function for a custom Config rule cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
+     *        function for a custom AWS Config rule cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceType
      */
@@ -263,8 +263,8 @@ public class Evaluation implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Similarly, AWS Config does not accept <code>INSUFFICIENT_DATA</code> as the value for <code>ComplianceType</code>
-     * from a <code>PutEvaluations</code> request. For example, an AWS Lambda function for a custom Config rule cannot
-     * pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
+     * from a <code>PutEvaluations</code> request. For example, an AWS Lambda function for a custom AWS Config rule
+     * cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
      * </p>
      * 
      * @param complianceType
@@ -277,7 +277,7 @@ public class Evaluation implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        Similarly, AWS Config does not accept <code>INSUFFICIENT_DATA</code> as the value for
      *        <code>ComplianceType</code> from a <code>PutEvaluations</code> request. For example, an AWS Lambda
-     *        function for a custom Config rule cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
+     *        function for a custom AWS Config rule cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
      * @see ComplianceType
      */
 
@@ -296,8 +296,8 @@ public class Evaluation implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Similarly, AWS Config does not accept <code>INSUFFICIENT_DATA</code> as the value for <code>ComplianceType</code>
-     * from a <code>PutEvaluations</code> request. For example, an AWS Lambda function for a custom Config rule cannot
-     * pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
+     * from a <code>PutEvaluations</code> request. For example, an AWS Lambda function for a custom AWS Config rule
+     * cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
      * </p>
      * 
      * @param complianceType
@@ -310,7 +310,7 @@ public class Evaluation implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        Similarly, AWS Config does not accept <code>INSUFFICIENT_DATA</code> as the value for
      *        <code>ComplianceType</code> from a <code>PutEvaluations</code> request. For example, an AWS Lambda
-     *        function for a custom Config rule cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
+     *        function for a custom AWS Config rule cannot pass an <code>INSUFFICIENT_DATA</code> value to AWS Config.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceType
      */

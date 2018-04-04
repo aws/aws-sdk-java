@@ -30,7 +30,7 @@ public class ResourceCount implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource type, for example <code>"AWS::EC2::Instance"</code>.
+     * The resource type (for example, <code>"AWS::EC2::Instance"</code>).
      * </p>
      */
     private String resourceType;
@@ -43,11 +43,11 @@ public class ResourceCount implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource type, for example <code>"AWS::EC2::Instance"</code>.
+     * The resource type (for example, <code>"AWS::EC2::Instance"</code>).
      * </p>
      * 
      * @param resourceType
-     *        The resource type, for example <code>"AWS::EC2::Instance"</code>.
+     *        The resource type (for example, <code>"AWS::EC2::Instance"</code>).
      * @see ResourceType
      */
 
@@ -57,10 +57,10 @@ public class ResourceCount implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource type, for example <code>"AWS::EC2::Instance"</code>.
+     * The resource type (for example, <code>"AWS::EC2::Instance"</code>).
      * </p>
      * 
-     * @return The resource type, for example <code>"AWS::EC2::Instance"</code>.
+     * @return The resource type (for example, <code>"AWS::EC2::Instance"</code>).
      * @see ResourceType
      */
 
@@ -70,11 +70,11 @@ public class ResourceCount implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource type, for example <code>"AWS::EC2::Instance"</code>.
+     * The resource type (for example, <code>"AWS::EC2::Instance"</code>).
      * </p>
      * 
      * @param resourceType
-     *        The resource type, for example <code>"AWS::EC2::Instance"</code>.
+     *        The resource type (for example, <code>"AWS::EC2::Instance"</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -86,11 +86,11 @@ public class ResourceCount implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource type, for example <code>"AWS::EC2::Instance"</code>.
+     * The resource type (for example, <code>"AWS::EC2::Instance"</code>).
      * </p>
      * 
      * @param resourceType
-     *        The resource type, for example <code>"AWS::EC2::Instance"</code>.
+     *        The resource type (for example, <code>"AWS::EC2::Instance"</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */

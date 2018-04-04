@@ -22,13 +22,18 @@ import com.amazonaws.services.s3.model.CSVOutput;
 import com.amazonaws.services.s3.model.Encryption;
 import com.amazonaws.services.s3.model.GlacierJobParameters;
 import com.amazonaws.services.s3.model.Grant;
+import com.amazonaws.services.s3.model.InputSerialization;
+import com.amazonaws.services.s3.model.JSONInput;
+import com.amazonaws.services.s3.model.JSONOutput;
 import com.amazonaws.services.s3.model.MetadataEntry;
 import com.amazonaws.services.s3.model.ObjectTagging;
 import com.amazonaws.services.s3.model.OutputLocation;
+import com.amazonaws.services.s3.model.OutputSerialization;
 import com.amazonaws.services.s3.model.PartETag;
+import com.amazonaws.services.s3.model.RequestProgress;
 import com.amazonaws.services.s3.model.RestoreObjectRequest;
-
 import com.amazonaws.services.s3.model.S3Location;
+import com.amazonaws.services.s3.model.SelectObjectContentRequest;
 import com.amazonaws.services.s3.model.SelectParameters;
 import com.amazonaws.services.s3.model.Tag;
 import java.util.ArrayList;
@@ -112,6 +117,35 @@ public class RequestXmlFactory {
         return xml.getBytes();
     }
 
+    /**
+     * Converts the SelectObjectContentRequest to an XML fragment that can be sent to
+     * the SelectObjectContent operation of Amazon S3.
+     */
+    public static byte[] convertToXmlByteArray(SelectObjectContentRequest selectRequest) {
+        XmlWriter xml = new XmlWriter();
+        xml.start("SelectObjectContentRequest");
+
+        addIfNotNull(xml, "Expression", selectRequest.getExpression());
+        addIfNotNull(xml, "ExpressionType", selectRequest.getExpressionType());
+        addRequestProgressIfNotNull(xml, selectRequest.getRequestProgress());
+        addInputSerializationIfNotNull(xml, selectRequest.getInputSerialization());
+        addOutputSerializationIfNotNull(xml, selectRequest.getOutputSerialization());
+
+        xml.end();
+        return xml.getBytes();
+    }
+
+    private static void addRequestProgressIfNotNull(XmlWriter xml, RequestProgress requestProgress) {
+        if (requestProgress == null) {
+            return;
+        }
+
+        xml.start("RequestProgress");
+
+        addIfNotNull(xml, "Enabled", requestProgress.getEnabled());
+
+        xml.end();
+    }
 
     private static void addSelectParametersIfNotNull(XmlWriter xml, SelectParameters selectParameters) {
         if (selectParameters == null) {
@@ -120,41 +154,69 @@ public class RequestXmlFactory {
 
         xml.start("SelectParameters");
 
-        if (selectParameters.getInputSerialization() != null) {
-            xml.start("InputSerialization");
-            if (selectParameters.getInputSerialization().getCsv() != null) {
-                xml.start("CSV");
-                CSVInput csvInput = selectParameters.getInputSerialization().getCsv();
-                addIfNotNull(xml, "FileHeaderInfo", csvInput.getFileHeaderInfo());
-                addIfNotNull(xml, "Comments", csvInput.getComments());
-                addIfNotNull(xml, "QuoteEscapeCharacter", csvInput.getQuoteEscapeCharacter());
-                addIfNotNull(xml, "RecordDelimiter", csvInput.getRecordDelimiter());
-                addIfNotNull(xml, "FieldDelimiter", csvInput.getFieldDelimiter());
-                addIfNotNull(xml, "QuoteCharacter", csvInput.getQuoteCharacter());
-                xml.end();
-            }
-            xml.end();
-        }
+        addInputSerializationIfNotNull(xml, selectParameters.getInputSerialization());
 
         addIfNotNull(xml, "ExpressionType", selectParameters.getExpressionType());
         addIfNotNull(xml, "Expression", selectParameters.getExpression());
 
-        if (selectParameters.getOutputSerialization() != null) {
-            xml.start("OutputSerialization");
+        addOutputSerializationIfNotNull(xml, selectParameters.getOutputSerialization());
 
-            if (selectParameters.getOutputSerialization().getCsv() != null) {
+        xml.end();
+    }
+
+    private static void addInputSerializationIfNotNull(XmlWriter xml, InputSerialization inputSerialization) {
+        if (inputSerialization != null) {
+            xml.start("InputSerialization");
+
+            if (inputSerialization.getCsv() != null) {
                 xml.start("CSV");
-                CSVOutput csvOutput = selectParameters.getOutputSerialization().getCsv();
-                addIfNotNull(xml, "QuoteFields", csvOutput.getQuoteFields());
-                addIfNotNull(xml, "QuoteEscapeCharacter", csvOutput.getQuoteEscapeCharacter());
-                addIfNotNull(xml, "RecordDelimiter", csvOutput.getRecordDelimiter());
-                addIfNotNull(xml, "FieldDelimiter", csvOutput.getFieldDelimiter());
-                addIfNotNull(xml, "QuoteCharacter", csvOutput.getQuoteCharacter());
+                CSVInput csvInput = inputSerialization.getCsv();
+                addIfNotNull(xml, "FileHeaderInfo", csvInput.getFileHeaderInfo());
+                addIfNotNull(xml, "Comments", csvInput.getCommentsAsString());
+                addIfNotNull(xml, "QuoteEscapeCharacter", csvInput.getQuoteEscapeCharacterAsString());
+                addIfNotNull(xml, "RecordDelimiter", csvInput.getRecordDelimiterAsString());
+                addIfNotNull(xml, "FieldDelimiter", csvInput.getFieldDelimiterAsString());
+                addIfNotNull(xml, "QuoteCharacter", csvInput.getQuoteCharacterAsString());
                 xml.end();
             }
+
+            if (inputSerialization.getJson() != null) {
+                xml.start("JSON");
+                JSONInput jsonInput = inputSerialization.getJson();
+                addIfNotNull(xml, "Type", jsonInput.getType());
+                xml.end();
+            }
+
+            addIfNotNull(xml, "CompressionType", inputSerialization.getCompressionType());
+
             xml.end();
         }
-        xml.end();
+    }
+
+    private static void addOutputSerializationIfNotNull(XmlWriter xml, OutputSerialization outputSerialization) {
+        if (outputSerialization != null) {
+            xml.start("OutputSerialization");
+
+            if (outputSerialization.getCsv() != null) {
+                xml.start("CSV");
+                CSVOutput csvOutput = outputSerialization.getCsv();
+                addIfNotNull(xml, "QuoteFields", csvOutput.getQuoteFields());
+                addIfNotNull(xml, "QuoteEscapeCharacter", csvOutput.getQuoteEscapeCharacterAsString());
+                addIfNotNull(xml, "RecordDelimiter", csvOutput.getRecordDelimiterAsString());
+                addIfNotNull(xml, "FieldDelimiter", csvOutput.getFieldDelimiterAsString());
+                addIfNotNull(xml, "QuoteCharacter", csvOutput.getQuoteCharacterAsString());
+                xml.end();
+            }
+
+            if (outputSerialization.getJson() != null) {
+                xml.start("JSON");
+                JSONOutput jsonOutput = outputSerialization.getJson();
+                addIfNotNull(xml, "RecordDelimiter", jsonOutput.getRecordDelimiterAsString());
+                xml.end();
+            }
+
+            xml.end();
+        }
     }
 
     private static void addTaggingIfNotNull(XmlWriter xml, ObjectTagging tagSet) {

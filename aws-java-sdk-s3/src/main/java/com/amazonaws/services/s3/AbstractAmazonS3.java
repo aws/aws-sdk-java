@@ -1122,6 +1122,11 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
     }
 
     @Override
+    public SelectObjectContentResult selectObjectContent(SelectObjectContentRequest selectRequest) throws AmazonServiceException, SdkClientException {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
     public void shutdown() {
         throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
     }
