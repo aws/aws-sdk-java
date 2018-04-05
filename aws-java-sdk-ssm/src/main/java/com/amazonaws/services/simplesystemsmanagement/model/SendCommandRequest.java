@@ -76,7 +76,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String documentHashType;
     /**
      * <p>
-     * If this time is reached and the command has not already started executing, it will not execute.
+     * If this time is reached and the command has not already started executing, it will not run.
      * </p>
      */
     private Integer timeoutSeconds;
@@ -579,11 +579,11 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * If this time is reached and the command has not already started executing, it will not execute.
+     * If this time is reached and the command has not already started executing, it will not run.
      * </p>
      * 
      * @param timeoutSeconds
-     *        If this time is reached and the command has not already started executing, it will not execute.
+     *        If this time is reached and the command has not already started executing, it will not run.
      */
 
     public void setTimeoutSeconds(Integer timeoutSeconds) {
@@ -592,10 +592,10 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * If this time is reached and the command has not already started executing, it will not execute.
+     * If this time is reached and the command has not already started executing, it will not run.
      * </p>
      * 
-     * @return If this time is reached and the command has not already started executing, it will not execute.
+     * @return If this time is reached and the command has not already started executing, it will not run.
      */
 
     public Integer getTimeoutSeconds() {
@@ -604,11 +604,11 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * If this time is reached and the command has not already started executing, it will not execute.
+     * If this time is reached and the command has not already started executing, it will not run.
      * </p>
      * 
      * @param timeoutSeconds
-     *        If this time is reached and the command has not already started executing, it will not execute.
+     *        If this time is reached and the command has not already started executing, it will not run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,3 +1,8 @@
+# __1.11.310__ __2018-04-05__
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Documentation updates for ec2
+
 # __1.11.309__ __2018-04-04__
 ## __AWS Certificate Manager__
   - ### Features

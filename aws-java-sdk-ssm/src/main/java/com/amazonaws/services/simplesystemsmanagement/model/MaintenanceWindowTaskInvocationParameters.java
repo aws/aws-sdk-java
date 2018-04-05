@@ -36,7 +36,7 @@ public class MaintenanceWindowTaskInvocationParameters implements Serializable, 
     private MaintenanceWindowRunCommandParameters runCommand;
     /**
      * <p>
-     * The parameters for a AUTOMATION task type.
+     * The parameters for an AUTOMATION task type.
      * </p>
      */
     private MaintenanceWindowAutomationParameters automation;
@@ -95,11 +95,11 @@ public class MaintenanceWindowTaskInvocationParameters implements Serializable, 
 
     /**
      * <p>
-     * The parameters for a AUTOMATION task type.
+     * The parameters for an AUTOMATION task type.
      * </p>
      * 
      * @param automation
-     *        The parameters for a AUTOMATION task type.
+     *        The parameters for an AUTOMATION task type.
      */
 
     public void setAutomation(MaintenanceWindowAutomationParameters automation) {
@@ -108,10 +108,10 @@ public class MaintenanceWindowTaskInvocationParameters implements Serializable, 
 
     /**
      * <p>
-     * The parameters for a AUTOMATION task type.
+     * The parameters for an AUTOMATION task type.
      * </p>
      * 
-     * @return The parameters for a AUTOMATION task type.
+     * @return The parameters for an AUTOMATION task type.
      */
 
     public MaintenanceWindowAutomationParameters getAutomation() {
@@ -120,11 +120,11 @@ public class MaintenanceWindowTaskInvocationParameters implements Serializable, 
 
     /**
      * <p>
-     * The parameters for a AUTOMATION task type.
+     * The parameters for an AUTOMATION task type.
      * </p>
      * 
      * @param automation
-     *        The parameters for a AUTOMATION task type.
+     *        The parameters for an AUTOMATION task type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
