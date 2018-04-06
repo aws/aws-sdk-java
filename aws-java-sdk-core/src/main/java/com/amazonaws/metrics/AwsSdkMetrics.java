@@ -132,9 +132,8 @@ public enum AwsSdkMetrics {
      * Example:
      *  -Dcom.amazonaws.sdk.enableDefaultMetrics=credentialFile=/path/aws.properties
      * </pre>
-     * @deprecated in favor of {@link AWS_CREDENTIAL_PROPERTIES_FILE}
      */
-    public static final String AWS_CREDENTAIL_PROPERTIES_FILE= "credentialFile";
+    public static final String AWS_CREDENTIAL_PROPERTIES_FILE= "credentialFile";
 
     /**
      * Used to specify an AWS credential property file.
@@ -144,8 +143,9 @@ public enum AwsSdkMetrics {
      * Example:
      *  -Dcom.amazonaws.sdk.enableDefaultMetrics=credentialFile=/path/aws.properties
      * </pre>
+     * @deprecated in favor of {@link AWS_CREDENTIAL_PROPERTIES_FILE}
      */
-    public static final String AWS_CREDENTIAL_PROPERTIES_FILE= "credentialFile";
+    public static final String AWS_CREDENTAIL_PROPERTIES_FILE = AWS_CREDENTIAL_PROPERTIES_FILE;
 
     /**
      * Used to specify the Amazon CloudWatch region for metrics uploading purposes.
