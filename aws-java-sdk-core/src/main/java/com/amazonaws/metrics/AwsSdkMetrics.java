@@ -755,8 +755,17 @@ public enum AwsSdkMetrics {
 
     /**
      * Returns the last set AWS credential file, or null if there is none.
+     * @deprecated use {@link AwsSdkMetrics#getCredentialFile()}
      */
+    @Deprecated
     public static String getCredentailFile() {
+        return credentialFile;
+    }
+
+    /**
+     * Returns the last set AWS credential file, or null if there is none.
+     */
+    public static String getCredentialFile() {
         return credentialFile;
     }
 
