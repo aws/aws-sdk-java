@@ -311,8 +311,7 @@ public enum AwsSdkMetrics {
                         String key = pair[0].trim();
                         String value  = pair[1].trim();
                         try {
-                            if (AWS_CREDENTAIL_PROPERTIES_FILE.equals(key)
-                                    || AWS_CREDENTIAL_PROPERTIES_FILE.equals(key)) {
+                            if (AWS_CREDENTIAL_PROPERTIES_FILE.equals(key)) {
                                 setCredentialFile0(value);
                             } else if (CLOUDWATCH_REGION.equals(key)) {
                                 region = RegionUtils.getRegion(value);
