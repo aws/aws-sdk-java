@@ -81,6 +81,10 @@ public class JobDefinitionJsonUnmarshaller implements Unmarshaller<JobDefinition
                     context.nextToken();
                     jobDefinition.setContainerProperties(ContainerPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("timeout", targetDepth)) {
+                    context.nextToken();
+                    jobDefinition.setTimeout(JobTimeoutJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

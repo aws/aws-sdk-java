@@ -90,6 +90,17 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private RetryStrategy retryStrategy;
+    /**
+     * <p>
+     * The timeout configuration for this <a>SubmitJob</a> operation. You can specify a timeout duration after which AWS
+     * Batch terminates your jobs if they have not finished. If a job is terminated due to a timeout, it is not retried.
+     * The minimum value for the timeout is 60 seconds. This configuration overrides any timeout configuration specified
+     * in the job definition. For array jobs, child jobs have the same timeout configuration as the parent job. For more
+     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     */
+    private JobTimeout timeout;
 
     /**
      * <p>
@@ -573,6 +584,79 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * The timeout configuration for this <a>SubmitJob</a> operation. You can specify a timeout duration after which AWS
+     * Batch terminates your jobs if they have not finished. If a job is terminated due to a timeout, it is not retried.
+     * The minimum value for the timeout is 60 seconds. This configuration overrides any timeout configuration specified
+     * in the job definition. For array jobs, child jobs have the same timeout configuration as the parent job. For more
+     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param timeout
+     *        The timeout configuration for this <a>SubmitJob</a> operation. You can specify a timeout duration after
+     *        which AWS Batch terminates your jobs if they have not finished. If a job is terminated due to a timeout,
+     *        it is not retried. The minimum value for the timeout is 60 seconds. This configuration overrides any
+     *        timeout configuration specified in the job definition. For array jobs, child jobs have the same timeout
+     *        configuration as the parent job. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in
+     *        the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public void setTimeout(JobTimeout timeout) {
+        this.timeout = timeout;
+    }
+
+    /**
+     * <p>
+     * The timeout configuration for this <a>SubmitJob</a> operation. You can specify a timeout duration after which AWS
+     * Batch terminates your jobs if they have not finished. If a job is terminated due to a timeout, it is not retried.
+     * The minimum value for the timeout is 60 seconds. This configuration overrides any timeout configuration specified
+     * in the job definition. For array jobs, child jobs have the same timeout configuration as the parent job. For more
+     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return The timeout configuration for this <a>SubmitJob</a> operation. You can specify a timeout duration after
+     *         which AWS Batch terminates your jobs if they have not finished. If a job is terminated due to a timeout,
+     *         it is not retried. The minimum value for the timeout is 60 seconds. This configuration overrides any
+     *         timeout configuration specified in the job definition. For array jobs, child jobs have the same timeout
+     *         configuration as the parent job. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in
+     *         the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public JobTimeout getTimeout() {
+        return this.timeout;
+    }
+
+    /**
+     * <p>
+     * The timeout configuration for this <a>SubmitJob</a> operation. You can specify a timeout duration after which AWS
+     * Batch terminates your jobs if they have not finished. If a job is terminated due to a timeout, it is not retried.
+     * The minimum value for the timeout is 60 seconds. This configuration overrides any timeout configuration specified
+     * in the job definition. For array jobs, child jobs have the same timeout configuration as the parent job. For more
+     * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
+     * Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param timeout
+     *        The timeout configuration for this <a>SubmitJob</a> operation. You can specify a timeout duration after
+     *        which AWS Batch terminates your jobs if they have not finished. If a job is terminated due to a timeout,
+     *        it is not retried. The minimum value for the timeout is 60 seconds. This configuration overrides any
+     *        timeout configuration specified in the job definition. For array jobs, child jobs have the same timeout
+     *        configuration as the parent job. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in
+     *        the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SubmitJobRequest withTimeout(JobTimeout timeout) {
+        setTimeout(timeout);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -598,7 +682,9 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getContainerOverrides() != null)
             sb.append("ContainerOverrides: ").append(getContainerOverrides()).append(",");
         if (getRetryStrategy() != null)
-            sb.append("RetryStrategy: ").append(getRetryStrategy());
+            sb.append("RetryStrategy: ").append(getRetryStrategy()).append(",");
+        if (getTimeout() != null)
+            sb.append("Timeout: ").append(getTimeout());
         sb.append("}");
         return sb.toString();
     }
@@ -645,6 +731,10 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getRetryStrategy() != null && other.getRetryStrategy().equals(this.getRetryStrategy()) == false)
             return false;
+        if (other.getTimeout() == null ^ this.getTimeout() == null)
+            return false;
+        if (other.getTimeout() != null && other.getTimeout().equals(this.getTimeout()) == false)
+            return false;
         return true;
     }
 
@@ -661,6 +751,7 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getContainerOverrides() == null) ? 0 : getContainerOverrides().hashCode());
         hashCode = prime * hashCode + ((getRetryStrategy() == null) ? 0 : getRetryStrategy().hashCode());
+        hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         return hashCode;
     }
 

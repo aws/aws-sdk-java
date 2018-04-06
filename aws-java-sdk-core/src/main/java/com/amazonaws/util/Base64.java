@@ -42,7 +42,7 @@ public enum Base64 {
 
         try {
             String className = JAXBContext.newInstance().getClass().getName();
-            if (inconsistentJaxbImpls.containsKey(className)) {
+            if (inconsistentJaxbImpls.values().contains(className)) {
                 LOG.warn("A JAXB implementation known to produce base64 encodings that are " +
                         "inconsistent with the reference implementation has been detected. The " +
                         "results of the encodeAsString() method may be incorrect. Implementation: " +

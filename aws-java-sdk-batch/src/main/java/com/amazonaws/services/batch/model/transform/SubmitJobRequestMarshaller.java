@@ -45,6 +45,8 @@ public class SubmitJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containerOverrides").build();
     private static final MarshallingInfo<StructuredPojo> RETRYSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("retryStrategy").build();
+    private static final MarshallingInfo<StructuredPojo> TIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeout").build();
 
     private static final SubmitJobRequestMarshaller instance = new SubmitJobRequestMarshaller();
 
@@ -70,6 +72,7 @@ public class SubmitJobRequestMarshaller {
             protocolMarshaller.marshall(submitJobRequest.getParameters(), PARAMETERS_BINDING);
             protocolMarshaller.marshall(submitJobRequest.getContainerOverrides(), CONTAINEROVERRIDES_BINDING);
             protocolMarshaller.marshall(submitJobRequest.getRetryStrategy(), RETRYSTRATEGY_BINDING);
+            protocolMarshaller.marshall(submitJobRequest.getTimeout(), TIMEOUT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

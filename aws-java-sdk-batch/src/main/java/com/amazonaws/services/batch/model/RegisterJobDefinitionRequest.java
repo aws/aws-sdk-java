@@ -56,10 +56,22 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy that is
-     * specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here.
+     * specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here. If a job is terminated
+     * due to a timeout, it is not retried.
      * </p>
      */
     private RetryStrategy retryStrategy;
+    /**
+     * <p>
+     * The timeout configuration for jobs that are submitted with this job definition, after which AWS Batch terminates
+     * your jobs if they have not finished. If a job is terminated due to a timeout, it is not retried. The minimum
+     * value for the timeout is 60 seconds. Any timeout configuration that is specified during a <a>SubmitJob</a>
+     * operation overrides the timeout configuration defined here. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in the
+     * <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     */
+    private JobTimeout timeout;
 
     /**
      * <p>
@@ -302,12 +314,14 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy that is
-     * specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here.
+     * specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here. If a job is terminated
+     * due to a timeout, it is not retried.
      * </p>
      * 
      * @param retryStrategy
      *        The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy
-     *        that is specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here.
+     *        that is specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here. If a job
+     *        is terminated due to a timeout, it is not retried.
      */
 
     public void setRetryStrategy(RetryStrategy retryStrategy) {
@@ -317,11 +331,13 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy that is
-     * specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here.
+     * specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here. If a job is terminated
+     * due to a timeout, it is not retried.
      * </p>
      * 
      * @return The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy
-     *         that is specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here.
+     *         that is specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here. If a job
+     *         is terminated due to a timeout, it is not retried.
      */
 
     public RetryStrategy getRetryStrategy() {
@@ -331,17 +347,92 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy that is
-     * specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here.
+     * specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here. If a job is terminated
+     * due to a timeout, it is not retried.
      * </p>
      * 
      * @param retryStrategy
      *        The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy
-     *        that is specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here.
+     *        that is specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here. If a job
+     *        is terminated due to a timeout, it is not retried.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RegisterJobDefinitionRequest withRetryStrategy(RetryStrategy retryStrategy) {
         setRetryStrategy(retryStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The timeout configuration for jobs that are submitted with this job definition, after which AWS Batch terminates
+     * your jobs if they have not finished. If a job is terminated due to a timeout, it is not retried. The minimum
+     * value for the timeout is 60 seconds. Any timeout configuration that is specified during a <a>SubmitJob</a>
+     * operation overrides the timeout configuration defined here. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in the
+     * <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param timeout
+     *        The timeout configuration for jobs that are submitted with this job definition, after which AWS Batch
+     *        terminates your jobs if they have not finished. If a job is terminated due to a timeout, it is not
+     *        retried. The minimum value for the timeout is 60 seconds. Any timeout configuration that is specified
+     *        during a <a>SubmitJob</a> operation overrides the timeout configuration defined here. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in
+     *        the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public void setTimeout(JobTimeout timeout) {
+        this.timeout = timeout;
+    }
+
+    /**
+     * <p>
+     * The timeout configuration for jobs that are submitted with this job definition, after which AWS Batch terminates
+     * your jobs if they have not finished. If a job is terminated due to a timeout, it is not retried. The minimum
+     * value for the timeout is 60 seconds. Any timeout configuration that is specified during a <a>SubmitJob</a>
+     * operation overrides the timeout configuration defined here. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in the
+     * <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return The timeout configuration for jobs that are submitted with this job definition, after which AWS Batch
+     *         terminates your jobs if they have not finished. If a job is terminated due to a timeout, it is not
+     *         retried. The minimum value for the timeout is 60 seconds. Any timeout configuration that is specified
+     *         during a <a>SubmitJob</a> operation overrides the timeout configuration defined here. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in
+     *         the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public JobTimeout getTimeout() {
+        return this.timeout;
+    }
+
+    /**
+     * <p>
+     * The timeout configuration for jobs that are submitted with this job definition, after which AWS Batch terminates
+     * your jobs if they have not finished. If a job is terminated due to a timeout, it is not retried. The minimum
+     * value for the timeout is 60 seconds. Any timeout configuration that is specified during a <a>SubmitJob</a>
+     * operation overrides the timeout configuration defined here. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in the
+     * <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param timeout
+     *        The timeout configuration for jobs that are submitted with this job definition, after which AWS Batch
+     *        terminates your jobs if they have not finished. If a job is terminated due to a timeout, it is not
+     *        retried. The minimum value for the timeout is 60 seconds. Any timeout configuration that is specified
+     *        during a <a>SubmitJob</a> operation overrides the timeout configuration defined here. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job Timeouts</a> in
+     *        the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterJobDefinitionRequest withTimeout(JobTimeout timeout) {
+        setTimeout(timeout);
         return this;
     }
 
@@ -365,7 +456,9 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
         if (getContainerProperties() != null)
             sb.append("ContainerProperties: ").append(getContainerProperties()).append(",");
         if (getRetryStrategy() != null)
-            sb.append("RetryStrategy: ").append(getRetryStrategy());
+            sb.append("RetryStrategy: ").append(getRetryStrategy()).append(",");
+        if (getTimeout() != null)
+            sb.append("Timeout: ").append(getTimeout());
         sb.append("}");
         return sb.toString();
     }
@@ -400,6 +493,10 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getRetryStrategy() != null && other.getRetryStrategy().equals(this.getRetryStrategy()) == false)
             return false;
+        if (other.getTimeout() == null ^ this.getTimeout() == null)
+            return false;
+        if (other.getTimeout() != null && other.getTimeout().equals(this.getTimeout()) == false)
+            return false;
         return true;
     }
 
@@ -413,6 +510,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getContainerProperties() == null) ? 0 : getContainerProperties().hashCode());
         hashCode = prime * hashCode + ((getRetryStrategy() == null) ? 0 : getRetryStrategy().hashCode());
+        hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         return hashCode;
     }
 

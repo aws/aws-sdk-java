@@ -89,6 +89,14 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
      * specify at least 4 MiB of memory for a job.
      * </p>
+     * <note>
+     * <p>
+     * If you are trying to maximize your resource utilization by providing your jobs as much memory as possible for a
+     * particular instance type, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory Management</a> in the
+     * <i>AWS Batch User Guide</i>.
+     * </p>
+     * </note>
      */
     private Integer memory;
     /**
@@ -513,6 +521,14 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
      * specify at least 4 MiB of memory for a job.
      * </p>
+     * <note>
+     * <p>
+     * If you are trying to maximize your resource utilization by providing your jobs as much memory as possible for a
+     * particular instance type, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory Management</a> in the
+     * <i>AWS Batch User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param memory
      *        The hard limit (in MiB) of memory to present to the container. If your container attempts to exceed the
@@ -521,7 +537,13 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
      *        <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
-     *        You must specify at least 4 MiB of memory for a job.
+     *        You must specify at least 4 MiB of memory for a job.</p> <note>
+     *        <p>
+     *        If you are trying to maximize your resource utilization by providing your jobs as much memory as possible
+     *        for a particular instance type, see <a
+     *        href="http://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory Management</a> in
+     *        the <i>AWS Batch User Guide</i>.
+     *        </p>
      */
 
     public void setMemory(Integer memory) {
@@ -538,6 +560,14 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
      * specify at least 4 MiB of memory for a job.
      * </p>
+     * <note>
+     * <p>
+     * If you are trying to maximize your resource utilization by providing your jobs as much memory as possible for a
+     * particular instance type, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory Management</a> in the
+     * <i>AWS Batch User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @return The hard limit (in MiB) of memory to present to the container. If your container attempts to exceed the
      *         memory specified here, the container is killed. This parameter maps to <code>Memory</code> in the <a
@@ -545,7 +575,13 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *         container</a> section of the <a
      *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and
      *         the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *         run</a>. You must specify at least 4 MiB of memory for a job.
+     *         run</a>. You must specify at least 4 MiB of memory for a job.</p> <note>
+     *         <p>
+     *         If you are trying to maximize your resource utilization by providing your jobs as much memory as possible
+     *         for a particular instance type, see <a
+     *         href="http://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory Management</a> in
+     *         the <i>AWS Batch User Guide</i>.
+     *         </p>
      */
 
     public Integer getMemory() {
@@ -562,6 +598,14 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      * <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
      * specify at least 4 MiB of memory for a job.
      * </p>
+     * <note>
+     * <p>
+     * If you are trying to maximize your resource utilization by providing your jobs as much memory as possible for a
+     * particular instance type, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory Management</a> in the
+     * <i>AWS Batch User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param memory
      *        The hard limit (in MiB) of memory to present to the container. If your container attempts to exceed the
@@ -570,7 +614,13 @@ public class ContainerProperties implements Serializable, Cloneable, StructuredP
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker Remote API</a> and the
      *        <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
-     *        You must specify at least 4 MiB of memory for a job.
+     *        You must specify at least 4 MiB of memory for a job.</p> <note>
+     *        <p>
+     *        If you are trying to maximize your resource utilization by providing your jobs as much memory as possible
+     *        for a particular instance type, see <a
+     *        href="http://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory Management</a> in
+     *        the <i>AWS Batch User Guide</i>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

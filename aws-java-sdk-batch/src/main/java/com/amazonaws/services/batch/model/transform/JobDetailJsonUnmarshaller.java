@@ -109,6 +109,10 @@ public class JobDetailJsonUnmarshaller implements Unmarshaller<JobDetail, JsonUn
                     context.nextToken();
                     jobDetail.setArrayProperties(ArrayPropertiesDetailJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("timeout", targetDepth)) {
+                    context.nextToken();
+                    jobDetail.setTimeout(JobTimeoutJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

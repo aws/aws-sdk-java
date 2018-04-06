@@ -78,6 +78,13 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ContainerProperties containerProperties;
+    /**
+     * <p>
+     * The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
+     * duration after which AWS Batch terminates your jobs if they have not finished.
+     * </p>
+     */
+    private JobTimeout timeout;
 
     /**
      * <p>
@@ -433,6 +440,52 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
+     * duration after which AWS Batch terminates your jobs if they have not finished.
+     * </p>
+     * 
+     * @param timeout
+     *        The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
+     *        duration after which AWS Batch terminates your jobs if they have not finished.
+     */
+
+    public void setTimeout(JobTimeout timeout) {
+        this.timeout = timeout;
+    }
+
+    /**
+     * <p>
+     * The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
+     * duration after which AWS Batch terminates your jobs if they have not finished.
+     * </p>
+     * 
+     * @return The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
+     *         duration after which AWS Batch terminates your jobs if they have not finished.
+     */
+
+    public JobTimeout getTimeout() {
+        return this.timeout;
+    }
+
+    /**
+     * <p>
+     * The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
+     * duration after which AWS Batch terminates your jobs if they have not finished.
+     * </p>
+     * 
+     * @param timeout
+     *        The timeout configuration for jobs that are submitted with this job definition. You can specify a timeout
+     *        duration after which AWS Batch terminates your jobs if they have not finished.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDefinition withTimeout(JobTimeout timeout) {
+        setTimeout(timeout);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -458,7 +511,9 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
         if (getRetryStrategy() != null)
             sb.append("RetryStrategy: ").append(getRetryStrategy()).append(",");
         if (getContainerProperties() != null)
-            sb.append("ContainerProperties: ").append(getContainerProperties());
+            sb.append("ContainerProperties: ").append(getContainerProperties()).append(",");
+        if (getTimeout() != null)
+            sb.append("Timeout: ").append(getTimeout());
         sb.append("}");
         return sb.toString();
     }
@@ -505,6 +560,10 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getContainerProperties() != null && other.getContainerProperties().equals(this.getContainerProperties()) == false)
             return false;
+        if (other.getTimeout() == null ^ this.getTimeout() == null)
+            return false;
+        if (other.getTimeout() != null && other.getTimeout().equals(this.getTimeout()) == false)
+            return false;
         return true;
     }
 
@@ -521,6 +580,7 @@ public class JobDefinition implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getRetryStrategy() == null) ? 0 : getRetryStrategy().hashCode());
         hashCode = prime * hashCode + ((getContainerProperties() == null) ? 0 : getContainerProperties().hashCode());
+        hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         return hashCode;
     }
 

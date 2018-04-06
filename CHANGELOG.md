@@ -1,3 +1,8 @@
+# __1.11.311__ __2018-04-06__
+## __AWS Batch__
+  - ### Features
+    - Support for Timeout in SubmitJob and RegisterJobDefinition
+
 # __1.11.310__ __2018-04-05__
 ## __Amazon Simple Systems Manager (SSM)__
   - ### Features

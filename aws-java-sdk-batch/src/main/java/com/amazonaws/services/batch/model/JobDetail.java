@@ -66,9 +66,10 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     private String statusReason;
     /**
      * <p>
-     * The Unix time stamp for when the job was created. For non-array jobs and parent array jobs, this is when the job
-     * entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For array child jobs, this is
-     * when the child job was spawned by its parent and entered the <code>PENDING</code> state.
+     * The Unix time stamp (in seconds and milliseconds) for when the job was created. For non-array jobs and parent
+     * array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was
+     * called). For array child jobs, this is when the child job was spawned by its parent and entered the
+     * <code>PENDING</code> state.
      * </p>
      */
     private Long createdAt;
@@ -80,15 +81,15 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     private RetryStrategy retryStrategy;
     /**
      * <p>
-     * The Unix time stamp for when the job was started (when the job transitioned from the <code>STARTING</code> state
-     * to the <code>RUNNING</code> state).
+     * The Unix time stamp (in seconds and milliseconds) for when the job was started (when the job transitioned from
+     * the <code>STARTING</code> state to the <code>RUNNING</code> state).
      * </p>
      */
     private Long startedAt;
     /**
      * <p>
-     * The Unix time stamp for when the job was stopped (when the job transitioned from the <code>RUNNING</code> state
-     * to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
+     * The Unix time stamp (in seconds and milliseconds) for when the job was stopped (when the job transitioned from
+     * the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
      * </p>
      */
     private Long stoppedAt;
@@ -123,6 +124,12 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ArrayPropertiesDetail arrayProperties;
+    /**
+     * <p>
+     * The timeout configuration for the job.
+     * </p>
+     */
+    private JobTimeout timeout;
 
     /**
      * <p>
@@ -429,16 +436,17 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the job was created. For non-array jobs and parent array jobs, this is when the job
-     * entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For array child jobs, this is
-     * when the child job was spawned by its parent and entered the <code>PENDING</code> state.
+     * The Unix time stamp (in seconds and milliseconds) for when the job was created. For non-array jobs and parent
+     * array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was
+     * called). For array child jobs, this is when the child job was spawned by its parent and entered the
+     * <code>PENDING</code> state.
      * </p>
      * 
      * @param createdAt
-     *        The Unix time stamp for when the job was created. For non-array jobs and parent array jobs, this is when
-     *        the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For array
-     *        child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code>
-     *        state.
+     *        The Unix time stamp (in seconds and milliseconds) for when the job was created. For non-array jobs and
+     *        parent array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time
+     *        <a>SubmitJob</a> was called). For array child jobs, this is when the child job was spawned by its parent
+     *        and entered the <code>PENDING</code> state.
      */
 
     public void setCreatedAt(Long createdAt) {
@@ -447,15 +455,16 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the job was created. For non-array jobs and parent array jobs, this is when the job
-     * entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For array child jobs, this is
-     * when the child job was spawned by its parent and entered the <code>PENDING</code> state.
+     * The Unix time stamp (in seconds and milliseconds) for when the job was created. For non-array jobs and parent
+     * array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was
+     * called). For array child jobs, this is when the child job was spawned by its parent and entered the
+     * <code>PENDING</code> state.
      * </p>
      * 
-     * @return The Unix time stamp for when the job was created. For non-array jobs and parent array jobs, this is when
-     *         the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For array
-     *         child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code>
-     *         state.
+     * @return The Unix time stamp (in seconds and milliseconds) for when the job was created. For non-array jobs and
+     *         parent array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time
+     *         <a>SubmitJob</a> was called). For array child jobs, this is when the child job was spawned by its parent
+     *         and entered the <code>PENDING</code> state.
      */
 
     public Long getCreatedAt() {
@@ -464,16 +473,17 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the job was created. For non-array jobs and parent array jobs, this is when the job
-     * entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For array child jobs, this is
-     * when the child job was spawned by its parent and entered the <code>PENDING</code> state.
+     * The Unix time stamp (in seconds and milliseconds) for when the job was created. For non-array jobs and parent
+     * array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was
+     * called). For array child jobs, this is when the child job was spawned by its parent and entered the
+     * <code>PENDING</code> state.
      * </p>
      * 
      * @param createdAt
-     *        The Unix time stamp for when the job was created. For non-array jobs and parent array jobs, this is when
-     *        the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For array
-     *        child jobs, this is when the child job was spawned by its parent and entered the <code>PENDING</code>
-     *        state.
+     *        The Unix time stamp (in seconds and milliseconds) for when the job was created. For non-array jobs and
+     *        parent array jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time
+     *        <a>SubmitJob</a> was called). For array child jobs, this is when the child job was spawned by its parent
+     *        and entered the <code>PENDING</code> state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -524,13 +534,13 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the job was started (when the job transitioned from the <code>STARTING</code> state
-     * to the <code>RUNNING</code> state).
+     * The Unix time stamp (in seconds and milliseconds) for when the job was started (when the job transitioned from
+     * the <code>STARTING</code> state to the <code>RUNNING</code> state).
      * </p>
      * 
      * @param startedAt
-     *        The Unix time stamp for when the job was started (when the job transitioned from the <code>STARTING</code>
-     *        state to the <code>RUNNING</code> state).
+     *        The Unix time stamp (in seconds and milliseconds) for when the job was started (when the job transitioned
+     *        from the <code>STARTING</code> state to the <code>RUNNING</code> state).
      */
 
     public void setStartedAt(Long startedAt) {
@@ -539,12 +549,12 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the job was started (when the job transitioned from the <code>STARTING</code> state
-     * to the <code>RUNNING</code> state).
+     * The Unix time stamp (in seconds and milliseconds) for when the job was started (when the job transitioned from
+     * the <code>STARTING</code> state to the <code>RUNNING</code> state).
      * </p>
      * 
-     * @return The Unix time stamp for when the job was started (when the job transitioned from the
-     *         <code>STARTING</code> state to the <code>RUNNING</code> state).
+     * @return The Unix time stamp (in seconds and milliseconds) for when the job was started (when the job transitioned
+     *         from the <code>STARTING</code> state to the <code>RUNNING</code> state).
      */
 
     public Long getStartedAt() {
@@ -553,13 +563,13 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the job was started (when the job transitioned from the <code>STARTING</code> state
-     * to the <code>RUNNING</code> state).
+     * The Unix time stamp (in seconds and milliseconds) for when the job was started (when the job transitioned from
+     * the <code>STARTING</code> state to the <code>RUNNING</code> state).
      * </p>
      * 
      * @param startedAt
-     *        The Unix time stamp for when the job was started (when the job transitioned from the <code>STARTING</code>
-     *        state to the <code>RUNNING</code> state).
+     *        The Unix time stamp (in seconds and milliseconds) for when the job was started (when the job transitioned
+     *        from the <code>STARTING</code> state to the <code>RUNNING</code> state).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -570,13 +580,14 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the job was stopped (when the job transitioned from the <code>RUNNING</code> state
-     * to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
+     * The Unix time stamp (in seconds and milliseconds) for when the job was stopped (when the job transitioned from
+     * the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
      * </p>
      * 
      * @param stoppedAt
-     *        The Unix time stamp for when the job was stopped (when the job transitioned from the <code>RUNNING</code>
-     *        state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
+     *        The Unix time stamp (in seconds and milliseconds) for when the job was stopped (when the job transitioned
+     *        from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or
+     *        <code>FAILED</code>).
      */
 
     public void setStoppedAt(Long stoppedAt) {
@@ -585,12 +596,13 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the job was stopped (when the job transitioned from the <code>RUNNING</code> state
-     * to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
+     * The Unix time stamp (in seconds and milliseconds) for when the job was stopped (when the job transitioned from
+     * the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
      * </p>
      * 
-     * @return The Unix time stamp for when the job was stopped (when the job transitioned from the <code>RUNNING</code>
-     *         state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
+     * @return The Unix time stamp (in seconds and milliseconds) for when the job was stopped (when the job transitioned
+     *         from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or
+     *         <code>FAILED</code>).
      */
 
     public Long getStoppedAt() {
@@ -599,13 +611,14 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix time stamp for when the job was stopped (when the job transitioned from the <code>RUNNING</code> state
-     * to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
+     * The Unix time stamp (in seconds and milliseconds) for when the job was stopped (when the job transitioned from
+     * the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
      * </p>
      * 
      * @param stoppedAt
-     *        The Unix time stamp for when the job was stopped (when the job transitioned from the <code>RUNNING</code>
-     *        state to a terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).
+     *        The Unix time stamp (in seconds and milliseconds) for when the job was stopped (when the job transitioned
+     *        from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or
+     *        <code>FAILED</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -872,6 +885,46 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The timeout configuration for the job.
+     * </p>
+     * 
+     * @param timeout
+     *        The timeout configuration for the job.
+     */
+
+    public void setTimeout(JobTimeout timeout) {
+        this.timeout = timeout;
+    }
+
+    /**
+     * <p>
+     * The timeout configuration for the job.
+     * </p>
+     * 
+     * @return The timeout configuration for the job.
+     */
+
+    public JobTimeout getTimeout() {
+        return this.timeout;
+    }
+
+    /**
+     * <p>
+     * The timeout configuration for the job.
+     * </p>
+     * 
+     * @param timeout
+     *        The timeout configuration for the job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobDetail withTimeout(JobTimeout timeout) {
+        setTimeout(timeout);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -911,7 +964,9 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
         if (getContainer() != null)
             sb.append("Container: ").append(getContainer()).append(",");
         if (getArrayProperties() != null)
-            sb.append("ArrayProperties: ").append(getArrayProperties());
+            sb.append("ArrayProperties: ").append(getArrayProperties()).append(",");
+        if (getTimeout() != null)
+            sb.append("Timeout: ").append(getTimeout());
         sb.append("}");
         return sb.toString();
     }
@@ -986,6 +1041,10 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getArrayProperties() != null && other.getArrayProperties().equals(this.getArrayProperties()) == false)
             return false;
+        if (other.getTimeout() == null ^ this.getTimeout() == null)
+            return false;
+        if (other.getTimeout() != null && other.getTimeout().equals(this.getTimeout()) == false)
+            return false;
         return true;
     }
 
@@ -1009,6 +1068,7 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getContainer() == null) ? 0 : getContainer().hashCode());
         hashCode = prime * hashCode + ((getArrayProperties() == null) ? 0 : getArrayProperties().hashCode());
+        hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         return hashCode;
     }
 
