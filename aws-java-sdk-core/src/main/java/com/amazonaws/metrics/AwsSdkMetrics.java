@@ -145,6 +145,7 @@ public enum AwsSdkMetrics {
      * </pre>
      * @deprecated in favor of {@link AWS_CREDENTIAL_PROPERTIES_FILE}
      */
+    @Deprecated
     public static final String AWS_CREDENTAIL_PROPERTIES_FILE = AWS_CREDENTIAL_PROPERTIES_FILE;
 
     /**
