@@ -22,11 +22,17 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
+import com.amazonaws.SdkClientException;
 import com.amazonaws.internal.StaticCredentialsProvider;
 
 public class AWSCredentialsProviderChainTest {
+
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
 
     /**
      * Tests that, by default, the chain remembers which provider was able to
@@ -81,20 +87,43 @@ public class AWSCredentialsProviderChainTest {
         assertEquals(2, provider2.getCredentialsCallCount);
     }
 
+    /**
+     * Tests that getCredentials throws an thrown if all providers in the
+     * chain fail to provide credentials.
+     */
+    @Test
+    public void testGetCredentialsException() {
+        MockCredentialsProvider provider1 = new MockCredentialsProvider("Failed!");
+        MockCredentialsProvider provider2 = new MockCredentialsProvider("Bad!");
+        AWSCredentialsProviderChain chain = new AWSCredentialsProviderChain(provider1, provider2);
+
+        thrown.expect(SdkClientException.class);
+        thrown.expectMessage(provider1.exceptionMessage);
+        thrown.expectMessage(provider2.exceptionMessage);
+
+        chain.getCredentials();
+    }
 
     private static final class MockCredentialsProvider extends StaticCredentialsProvider {
         public int getCredentialsCallCount = 0;
         public boolean throwException = false;
+        public String exceptionMessage = "No credentials";
 
         public MockCredentialsProvider() {
             super(new BasicAWSCredentials("accessKey", "secretKey"));
+        }
+
+        public MockCredentialsProvider(String exceptionMessage) {
+            this();
+            this.exceptionMessage = exceptionMessage;
+            this.throwException = true;
         }
 
         @Override
         public AWSCredentials getCredentials() {
             getCredentialsCallCount++;
 
-            if (throwException) throw new RuntimeException("No credentials");
+            if (throwException) throw new RuntimeException(exceptionMessage);
             else return super.getCredentials();
         }
     }
