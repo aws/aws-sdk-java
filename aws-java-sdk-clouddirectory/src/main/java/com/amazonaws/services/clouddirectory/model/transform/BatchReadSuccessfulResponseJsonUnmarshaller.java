@@ -60,6 +60,10 @@ public class BatchReadSuccessfulResponseJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     batchReadSuccessfulResponse.setGetObjectInformation(BatchGetObjectInformationResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("GetObjectAttributes", targetDepth)) {
+                    context.nextToken();
+                    batchReadSuccessfulResponse.setGetObjectAttributes(BatchGetObjectAttributesResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ListAttachedIndices", targetDepth)) {
                     context.nextToken();
                     batchReadSuccessfulResponse.setListAttachedIndices(BatchListAttachedIndicesResponseJsonUnmarshaller.getInstance().unmarshall(context));

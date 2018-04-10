@@ -178,6 +178,11 @@ public class AbstractAmazonCloudDirectory implements AmazonCloudDirectory {
     }
 
     @Override
+    public GetObjectAttributesResult getObjectAttributes(GetObjectAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetObjectInformationResult getObjectInformation(GetObjectInformationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

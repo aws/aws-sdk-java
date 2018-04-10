@@ -1176,6 +1176,39 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     }
 
     @Override
+    public java.util.concurrent.Future<GetObjectAttributesResult> getObjectAttributesAsync(GetObjectAttributesRequest request) {
+
+        return getObjectAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetObjectAttributesResult> getObjectAttributesAsync(final GetObjectAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetObjectAttributesRequest, GetObjectAttributesResult> asyncHandler) {
+        final GetObjectAttributesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetObjectAttributesResult>() {
+            @Override
+            public GetObjectAttributesResult call() throws Exception {
+                GetObjectAttributesResult result = null;
+
+                try {
+                    result = executeGetObjectAttributes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetObjectInformationResult> getObjectInformationAsync(GetObjectInformationRequest request) {
 
         return getObjectInformationAsync(request, null);

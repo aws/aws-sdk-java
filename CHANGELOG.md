@@ -1,3 +1,8 @@
+# __1.11.312__ __2018-04-09__
+## __Amazon CloudDirectory__
+  - ### Features
+    - Cloud Directory customers can fetch attributes within a facet on an object with the new GetObjectAttributes API and can fetch attributes from multiple facets or objects with the BatchGetObjectAttributes operation.
+
 # __1.11.311__ __2018-04-06__
 ## __AWS Batch__
   - ### Features

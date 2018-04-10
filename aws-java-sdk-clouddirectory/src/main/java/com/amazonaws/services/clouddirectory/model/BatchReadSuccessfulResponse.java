@@ -48,6 +48,12 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
     private BatchGetObjectInformationResponse getObjectInformation;
     /**
      * <p>
+     * Retrieves attributes within a facet that are associated with an object.
+     * </p>
+     */
+    private BatchGetObjectAttributesResponse getObjectAttributes;
+    /**
+     * <p>
      * Lists indices attached to an object.
      * </p>
      */
@@ -226,6 +232,46 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
 
     public BatchReadSuccessfulResponse withGetObjectInformation(BatchGetObjectInformationResponse getObjectInformation) {
         setGetObjectInformation(getObjectInformation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Retrieves attributes within a facet that are associated with an object.
+     * </p>
+     * 
+     * @param getObjectAttributes
+     *        Retrieves attributes within a facet that are associated with an object.
+     */
+
+    public void setGetObjectAttributes(BatchGetObjectAttributesResponse getObjectAttributes) {
+        this.getObjectAttributes = getObjectAttributes;
+    }
+
+    /**
+     * <p>
+     * Retrieves attributes within a facet that are associated with an object.
+     * </p>
+     * 
+     * @return Retrieves attributes within a facet that are associated with an object.
+     */
+
+    public BatchGetObjectAttributesResponse getGetObjectAttributes() {
+        return this.getObjectAttributes;
+    }
+
+    /**
+     * <p>
+     * Retrieves attributes within a facet that are associated with an object.
+     * </p>
+     * 
+     * @param getObjectAttributes
+     *        Retrieves attributes within a facet that are associated with an object.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchReadSuccessfulResponse withGetObjectAttributes(BatchGetObjectAttributesResponse getObjectAttributes) {
+        setGetObjectAttributes(getObjectAttributes);
         return this;
     }
 
@@ -653,6 +699,8 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
             sb.append("ListObjectChildren: ").append(getListObjectChildren()).append(",");
         if (getGetObjectInformation() != null)
             sb.append("GetObjectInformation: ").append(getGetObjectInformation()).append(",");
+        if (getGetObjectAttributes() != null)
+            sb.append("GetObjectAttributes: ").append(getGetObjectAttributes()).append(",");
         if (getListAttachedIndices() != null)
             sb.append("ListAttachedIndices: ").append(getListAttachedIndices()).append(",");
         if (getListObjectParentPaths() != null)
@@ -694,6 +742,10 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
         if (other.getGetObjectInformation() == null ^ this.getGetObjectInformation() == null)
             return false;
         if (other.getGetObjectInformation() != null && other.getGetObjectInformation().equals(this.getGetObjectInformation()) == false)
+            return false;
+        if (other.getGetObjectAttributes() == null ^ this.getGetObjectAttributes() == null)
+            return false;
+        if (other.getGetObjectAttributes() != null && other.getGetObjectAttributes().equals(this.getGetObjectAttributes()) == false)
             return false;
         if (other.getListAttachedIndices() == null ^ this.getListAttachedIndices() == null)
             return false;
@@ -738,6 +790,7 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
         hashCode = prime * hashCode + ((getListObjectAttributes() == null) ? 0 : getListObjectAttributes().hashCode());
         hashCode = prime * hashCode + ((getListObjectChildren() == null) ? 0 : getListObjectChildren().hashCode());
         hashCode = prime * hashCode + ((getGetObjectInformation() == null) ? 0 : getGetObjectInformation().hashCode());
+        hashCode = prime * hashCode + ((getGetObjectAttributes() == null) ? 0 : getGetObjectAttributes().hashCode());
         hashCode = prime * hashCode + ((getListAttachedIndices() == null) ? 0 : getListAttachedIndices().hashCode());
         hashCode = prime * hashCode + ((getListObjectParentPaths() == null) ? 0 : getListObjectParentPaths().hashCode());
         hashCode = prime * hashCode + ((getListObjectPolicies() == null) ? 0 : getListObjectPolicies().hashCode());

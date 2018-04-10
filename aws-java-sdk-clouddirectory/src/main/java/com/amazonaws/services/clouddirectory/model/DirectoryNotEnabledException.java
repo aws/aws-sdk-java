@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An operation can only operate on a directory that is not enabled.
+ * Operations are only permitted on enabled directories.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

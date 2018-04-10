@@ -40,7 +40,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Adds a new <a>Facet</a> to an object.
+     * Adds a new <a>Facet</a> to an object. An object can have more than one facet applied on it.
      * </p>
      * 
      * @param addFacetToObjectRequest
@@ -53,7 +53,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Adds a new <a>Facet</a> to an object.
+     * Adds a new <a>Facet</a> to an object. An object can have more than one facet applied on it.
      * </p>
      * 
      * @param addFacetToObjectRequest
@@ -1010,6 +1010,37 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
+     * Retrieves attributes within a facet that are associated with an object.
+     * </p>
+     * 
+     * @param getObjectAttributesRequest
+     * @return A Java Future containing the result of the GetObjectAttributes operation returned by the service.
+     * @sample AmazonCloudDirectoryAsync.GetObjectAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetObjectAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetObjectAttributesResult> getObjectAttributesAsync(GetObjectAttributesRequest getObjectAttributesRequest);
+
+    /**
+     * <p>
+     * Retrieves attributes within a facet that are associated with an object.
+     * </p>
+     * 
+     * @param getObjectAttributesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetObjectAttributes operation returned by the service.
+     * @sample AmazonCloudDirectoryAsyncHandler.GetObjectAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetObjectAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetObjectAttributesResult> getObjectAttributesAsync(GetObjectAttributesRequest getObjectAttributesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetObjectAttributesRequest, GetObjectAttributesResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves metadata about an object.
      * </p>
      * 
@@ -1342,7 +1373,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Lists objects and indexed values attached to the index.
+     * Lists objects attached to the specified index.
      * </p>
      * 
      * @param listIndexRequest
@@ -1355,7 +1386,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Lists objects and indexed values attached to the index.
+     * Lists objects attached to the specified index.
      * </p>
      * 
      * @param listIndexRequest
@@ -1616,8 +1647,8 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Lists schema major versions for a published schema. If <code>SchemaArn</code> is provided, lists the minor
-     * version.
+     * Lists the major version families of each published schema. If a major version ARN is provided as
+     * <code>SchemaArn</code>, the minor version revisions in that family are listed instead.
      * </p>
      * 
      * @param listPublishedSchemaArnsRequest
@@ -1630,8 +1661,8 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
-     * Lists schema major versions for a published schema. If <code>SchemaArn</code> is provided, lists the minor
-     * version.
+     * Lists the major version families of each published schema. If a major version ARN is provided as
+     * <code>SchemaArn</code>, the minor version revisions in that family are listed instead.
      * </p>
      * 
      * @param listPublishedSchemaArnsRequest

@@ -63,6 +63,12 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
     private BatchGetObjectInformation getObjectInformation;
     /**
      * <p>
+     * Retrieves attributes within a facet that are associated with an object.
+     * </p>
+     */
+    private BatchGetObjectAttributes getObjectAttributes;
+    /**
+     * <p>
      * Returns policies attached to an object in pagination fashion.
      * </p>
      */
@@ -324,6 +330,46 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
 
     public BatchReadOperation withGetObjectInformation(BatchGetObjectInformation getObjectInformation) {
         setGetObjectInformation(getObjectInformation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Retrieves attributes within a facet that are associated with an object.
+     * </p>
+     * 
+     * @param getObjectAttributes
+     *        Retrieves attributes within a facet that are associated with an object.
+     */
+
+    public void setGetObjectAttributes(BatchGetObjectAttributes getObjectAttributes) {
+        this.getObjectAttributes = getObjectAttributes;
+    }
+
+    /**
+     * <p>
+     * Retrieves attributes within a facet that are associated with an object.
+     * </p>
+     * 
+     * @return Retrieves attributes within a facet that are associated with an object.
+     */
+
+    public BatchGetObjectAttributes getGetObjectAttributes() {
+        return this.getObjectAttributes;
+    }
+
+    /**
+     * <p>
+     * Retrieves attributes within a facet that are associated with an object.
+     * </p>
+     * 
+     * @param getObjectAttributes
+     *        Retrieves attributes within a facet that are associated with an object.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchReadOperation withGetObjectAttributes(BatchGetObjectAttributes getObjectAttributes) {
+        setGetObjectAttributes(getObjectAttributes);
         return this;
     }
 
@@ -657,6 +703,8 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
             sb.append("ListObjectParentPaths: ").append(getListObjectParentPaths()).append(",");
         if (getGetObjectInformation() != null)
             sb.append("GetObjectInformation: ").append(getGetObjectInformation()).append(",");
+        if (getGetObjectAttributes() != null)
+            sb.append("GetObjectAttributes: ").append(getGetObjectAttributes()).append(",");
         if (getListObjectPolicies() != null)
             sb.append("ListObjectPolicies: ").append(getListObjectPolicies()).append(",");
         if (getListPolicyAttachments() != null)
@@ -703,6 +751,10 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getGetObjectInformation() != null && other.getGetObjectInformation().equals(this.getGetObjectInformation()) == false)
             return false;
+        if (other.getGetObjectAttributes() == null ^ this.getGetObjectAttributes() == null)
+            return false;
+        if (other.getGetObjectAttributes() != null && other.getGetObjectAttributes().equals(this.getGetObjectAttributes()) == false)
+            return false;
         if (other.getListObjectPolicies() == null ^ this.getListObjectPolicies() == null)
             return false;
         if (other.getListObjectPolicies() != null && other.getListObjectPolicies().equals(this.getListObjectPolicies()) == false)
@@ -740,6 +792,7 @@ public class BatchReadOperation implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getListAttachedIndices() == null) ? 0 : getListAttachedIndices().hashCode());
         hashCode = prime * hashCode + ((getListObjectParentPaths() == null) ? 0 : getListObjectParentPaths().hashCode());
         hashCode = prime * hashCode + ((getGetObjectInformation() == null) ? 0 : getGetObjectInformation().hashCode());
+        hashCode = prime * hashCode + ((getGetObjectAttributes() == null) ? 0 : getGetObjectAttributes().hashCode());
         hashCode = prime * hashCode + ((getListObjectPolicies() == null) ? 0 : getListObjectPolicies().hashCode());
         hashCode = prime * hashCode + ((getListPolicyAttachments() == null) ? 0 : getListPolicyAttachments().hashCode());
         hashCode = prime * hashCode + ((getLookupPolicy() == null) ? 0 : getLookupPolicy().hashCode());

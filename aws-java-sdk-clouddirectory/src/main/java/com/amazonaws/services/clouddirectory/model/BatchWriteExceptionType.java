@@ -31,6 +31,7 @@ public enum BatchWriteExceptionType {
     AccessDeniedException("AccessDeniedException"),
     InvalidAttachmentException("InvalidAttachmentException"),
     NotIndexException("NotIndexException"),
+    NotNodeException("NotNodeException"),
     IndexedAttributeMissingException("IndexedAttributeMissingException"),
     ObjectAlreadyDetachedException("ObjectAlreadyDetachedException"),
     NotPolicyException("NotPolicyException"),

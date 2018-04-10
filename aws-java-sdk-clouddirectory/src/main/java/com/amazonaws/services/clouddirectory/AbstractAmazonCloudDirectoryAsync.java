@@ -392,6 +392,19 @@ public class AbstractAmazonCloudDirectoryAsync extends AbstractAmazonCloudDirect
     }
 
     @Override
+    public java.util.concurrent.Future<GetObjectAttributesResult> getObjectAttributesAsync(GetObjectAttributesRequest request) {
+
+        return getObjectAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetObjectAttributesResult> getObjectAttributesAsync(GetObjectAttributesRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetObjectAttributesRequest, GetObjectAttributesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetObjectInformationResult> getObjectInformationAsync(GetObjectInformationRequest request) {
 
         return getObjectInformationAsync(request, null);

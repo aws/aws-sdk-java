@@ -37,6 +37,8 @@ public class BatchReadOperationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ListObjectParentPaths").build();
     private static final MarshallingInfo<StructuredPojo> GETOBJECTINFORMATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GetObjectInformation").build();
+    private static final MarshallingInfo<StructuredPojo> GETOBJECTATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GetObjectAttributes").build();
     private static final MarshallingInfo<StructuredPojo> LISTOBJECTPOLICIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ListObjectPolicies").build();
     private static final MarshallingInfo<StructuredPojo> LISTPOLICYATTACHMENTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -71,6 +73,7 @@ public class BatchReadOperationMarshaller {
             protocolMarshaller.marshall(batchReadOperation.getListAttachedIndices(), LISTATTACHEDINDICES_BINDING);
             protocolMarshaller.marshall(batchReadOperation.getListObjectParentPaths(), LISTOBJECTPARENTPATHS_BINDING);
             protocolMarshaller.marshall(batchReadOperation.getGetObjectInformation(), GETOBJECTINFORMATION_BINDING);
+            protocolMarshaller.marshall(batchReadOperation.getGetObjectAttributes(), GETOBJECTATTRIBUTES_BINDING);
             protocolMarshaller.marshall(batchReadOperation.getListObjectPolicies(), LISTOBJECTPOLICIES_BINDING);
             protocolMarshaller.marshall(batchReadOperation.getListPolicyAttachments(), LISTPOLICYATTACHMENTS_BINDING);
             protocolMarshaller.marshall(batchReadOperation.getLookupPolicy(), LOOKUPPOLICY_BINDING);
