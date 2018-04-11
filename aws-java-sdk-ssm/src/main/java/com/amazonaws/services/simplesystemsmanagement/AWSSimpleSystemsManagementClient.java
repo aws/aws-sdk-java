@@ -578,6 +578,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         An error occurred on the server side.
      * @throws TooManyTagsErrorException
      *         The Targets parameter includes too many tags. Remove one or more tags and try the command again.
+     * @throws TooManyUpdatesException
+     *         There are concurrent updates for a resource that supports one update at a time.
      * @sample AWSSimpleSystemsManagement.AddTagsToResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AddTagsToResource" target="_top">AWS API
      *      Documentation</a>
@@ -3530,9 +3532,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * Retrieves the default patch baseline. Note that Systems Manager supports creating multiple default patch
      * baselines. For example, you can create a default patch baseline for each operating system.
      * </p>
-     * <p>
-     * If you do not specify an operating system value, the default patch baseline for Windows is returned.
-     * </p>
      * 
      * @param getDefaultPatchBaselineRequest
      * @return Result of the GetDefaultPatchBaseline operation returned by the service.
@@ -5888,6 +5887,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         The resource ID is not valid. Verify that you entered the correct ID and try again.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
+     * @throws TooManyUpdatesException
+     *         There are concurrent updates for a resource that supports one update at a time.
      * @sample AWSSimpleSystemsManagement.RemoveTagsFromResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RemoveTagsFromResource" target="_top">AWS API
      *      Documentation</a>
@@ -6631,42 +6632,28 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * Modifies a task assigned to a Maintenance Window. You can't change the task type, but you can change the
      * following values:
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * TaskARN. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to AWS-RunShellScript.
+     * Task ARN. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to AWS-RunShellScript.
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * ServiceRoleArn
+     * Service role ARN.
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * TaskInvocationParameters
+     * Task parameters.
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * Priority
+     * Task priority.
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * MaxConcurrency
+     * Task MaxConcurrency and MaxErrors.
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * MaxErrors
+     * Log location.
      * </p>
-     * </li>
-     * </ul>
      * <p>
      * If a parameter is null, then the corresponding field is not modified. Also, if you set Replace to true, then all
-     * fields required by the <a>RegisterTaskWithMaintenanceWindow</a> action are required for this request. Optional
-     * fields that aren't specified are set to null.
+     * fields required by the RegisterTaskWithMaintenanceWindow action are required for this request. Optional fields
+     * that aren't specified are set to null.
      * </p>
      * 
      * @param updateMaintenanceWindowTaskRequest

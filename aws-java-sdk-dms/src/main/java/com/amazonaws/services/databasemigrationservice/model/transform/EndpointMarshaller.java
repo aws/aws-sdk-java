@@ -33,6 +33,8 @@ public class EndpointMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointType").build();
     private static final MarshallingInfo<String> ENGINENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EngineName").build();
+    private static final MarshallingInfo<String> ENGINEDISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EngineDisplayName").build();
     private static final MarshallingInfo<String> USERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Username").build();
     private static final MarshallingInfo<String> SERVERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -53,6 +55,10 @@ public class EndpointMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CertificateArn").build();
     private static final MarshallingInfo<String> SSLMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SslMode").build();
+    private static final MarshallingInfo<String> SERVICEACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceAccessRoleArn").build();
+    private static final MarshallingInfo<String> EXTERNALTABLEDEFINITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExternalTableDefinition").build();
     private static final MarshallingInfo<String> EXTERNALID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExternalId").build();
     private static final MarshallingInfo<StructuredPojo> DYNAMODBSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -81,6 +87,7 @@ public class EndpointMarshaller {
             protocolMarshaller.marshall(endpoint.getEndpointIdentifier(), ENDPOINTIDENTIFIER_BINDING);
             protocolMarshaller.marshall(endpoint.getEndpointType(), ENDPOINTTYPE_BINDING);
             protocolMarshaller.marshall(endpoint.getEngineName(), ENGINENAME_BINDING);
+            protocolMarshaller.marshall(endpoint.getEngineDisplayName(), ENGINEDISPLAYNAME_BINDING);
             protocolMarshaller.marshall(endpoint.getUsername(), USERNAME_BINDING);
             protocolMarshaller.marshall(endpoint.getServerName(), SERVERNAME_BINDING);
             protocolMarshaller.marshall(endpoint.getPort(), PORT_BINDING);
@@ -91,6 +98,8 @@ public class EndpointMarshaller {
             protocolMarshaller.marshall(endpoint.getEndpointArn(), ENDPOINTARN_BINDING);
             protocolMarshaller.marshall(endpoint.getCertificateArn(), CERTIFICATEARN_BINDING);
             protocolMarshaller.marshall(endpoint.getSslMode(), SSLMODE_BINDING);
+            protocolMarshaller.marshall(endpoint.getServiceAccessRoleArn(), SERVICEACCESSROLEARN_BINDING);
+            protocolMarshaller.marshall(endpoint.getExternalTableDefinition(), EXTERNALTABLEDEFINITION_BINDING);
             protocolMarshaller.marshall(endpoint.getExternalId(), EXTERNALID_BINDING);
             protocolMarshaller.marshall(endpoint.getDynamoDbSettings(), DYNAMODBSETTINGS_BINDING);
             protocolMarshaller.marshall(endpoint.getS3Settings(), S3SETTINGS_BINDING);

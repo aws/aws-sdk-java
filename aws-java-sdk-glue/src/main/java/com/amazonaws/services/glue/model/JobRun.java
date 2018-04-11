@@ -53,7 +53,7 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
     private String triggerName;
     /**
      * <p>
-     * The name of the job being run.
+     * The name of the job definition being used in this run.
      * </p>
      */
     private String jobName;
@@ -96,8 +96,8 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
+     * Used by AWS Glue</a> topic in the developer guide.
      * </p>
      */
     private java.util.Map<String, String> arguments;
@@ -122,6 +122,18 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Integer allocatedCapacity;
+    /**
+     * <p>
+     * The amount of time (in seconds) that the job run consumed resources.
+     * </p>
+     */
+    private Integer executionTime;
+    /**
+     * <p>
+     * The job run timeout in minutes.
+     * </p>
+     */
+    private Integer timeout;
 
     /**
      * <p>
@@ -285,11 +297,11 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the job being run.
+     * The name of the job definition being used in this run.
      * </p>
      * 
      * @param jobName
-     *        The name of the job being run.
+     *        The name of the job definition being used in this run.
      */
 
     public void setJobName(String jobName) {
@@ -298,10 +310,10 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the job being run.
+     * The name of the job definition being used in this run.
      * </p>
      * 
-     * @return The name of the job being run.
+     * @return The name of the job definition being used in this run.
      */
 
     public String getJobName() {
@@ -310,11 +322,11 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the job being run.
+     * The name of the job definition being used in this run.
      * </p>
      * 
      * @param jobName
-     *        The name of the job being run.
+     *        The name of the job definition being used in this run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -517,8 +529,8 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
+     * Used by AWS Glue</a> topic in the developer guide.
      * </p>
      * 
      * @return The job arguments associated with this run. These override equivalent default arguments set for the
@@ -534,7 +546,7 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <p>
      *         For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     *         href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     *         href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      *         Parameters Used by AWS Glue</a> topic in the developer guide.
      */
 
@@ -557,8 +569,8 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
+     * Used by AWS Glue</a> topic in the developer guide.
      * </p>
      * 
      * @param arguments
@@ -575,7 +587,7 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     *        href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      *        Parameters Used by AWS Glue</a> topic in the developer guide.
      */
 
@@ -598,8 +610,8 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
+     * Used by AWS Glue</a> topic in the developer guide.
      * </p>
      * 
      * @param arguments
@@ -616,7 +628,7 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     *        href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      *        Parameters Used by AWS Glue</a> topic in the developer guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -816,6 +828,86 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The amount of time (in seconds) that the job run consumed resources.
+     * </p>
+     * 
+     * @param executionTime
+     *        The amount of time (in seconds) that the job run consumed resources.
+     */
+
+    public void setExecutionTime(Integer executionTime) {
+        this.executionTime = executionTime;
+    }
+
+    /**
+     * <p>
+     * The amount of time (in seconds) that the job run consumed resources.
+     * </p>
+     * 
+     * @return The amount of time (in seconds) that the job run consumed resources.
+     */
+
+    public Integer getExecutionTime() {
+        return this.executionTime;
+    }
+
+    /**
+     * <p>
+     * The amount of time (in seconds) that the job run consumed resources.
+     * </p>
+     * 
+     * @param executionTime
+     *        The amount of time (in seconds) that the job run consumed resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobRun withExecutionTime(Integer executionTime) {
+        setExecutionTime(executionTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The job run timeout in minutes.
+     * </p>
+     * 
+     * @param timeout
+     *        The job run timeout in minutes.
+     */
+
+    public void setTimeout(Integer timeout) {
+        this.timeout = timeout;
+    }
+
+    /**
+     * <p>
+     * The job run timeout in minutes.
+     * </p>
+     * 
+     * @return The job run timeout in minutes.
+     */
+
+    public Integer getTimeout() {
+        return this.timeout;
+    }
+
+    /**
+     * <p>
+     * The job run timeout in minutes.
+     * </p>
+     * 
+     * @param timeout
+     *        The job run timeout in minutes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobRun withTimeout(Integer timeout) {
+        setTimeout(timeout);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -851,7 +943,11 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
         if (getPredecessorRuns() != null)
             sb.append("PredecessorRuns: ").append(getPredecessorRuns()).append(",");
         if (getAllocatedCapacity() != null)
-            sb.append("AllocatedCapacity: ").append(getAllocatedCapacity());
+            sb.append("AllocatedCapacity: ").append(getAllocatedCapacity()).append(",");
+        if (getExecutionTime() != null)
+            sb.append("ExecutionTime: ").append(getExecutionTime()).append(",");
+        if (getTimeout() != null)
+            sb.append("Timeout: ").append(getTimeout());
         sb.append("}");
         return sb.toString();
     }
@@ -918,6 +1014,14 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAllocatedCapacity() != null && other.getAllocatedCapacity().equals(this.getAllocatedCapacity()) == false)
             return false;
+        if (other.getExecutionTime() == null ^ this.getExecutionTime() == null)
+            return false;
+        if (other.getExecutionTime() != null && other.getExecutionTime().equals(this.getExecutionTime()) == false)
+            return false;
+        if (other.getTimeout() == null ^ this.getTimeout() == null)
+            return false;
+        if (other.getTimeout() != null && other.getTimeout().equals(this.getTimeout()) == false)
+            return false;
         return true;
     }
 
@@ -939,6 +1043,8 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getErrorMessage() == null) ? 0 : getErrorMessage().hashCode());
         hashCode = prime * hashCode + ((getPredecessorRuns() == null) ? 0 : getPredecessorRuns().hashCode());
         hashCode = prime * hashCode + ((getAllocatedCapacity() == null) ? 0 : getAllocatedCapacity().hashCode());
+        hashCode = prime * hashCode + ((getExecutionTime() == null) ? 0 : getExecutionTime().hashCode());
+        hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         return hashCode;
     }
 

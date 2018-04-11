@@ -56,6 +56,10 @@ public class DescribeOriginEndpointResultJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     describeOriginEndpointResult.setChannelId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("cmafPackage", targetDepth)) {
+                    context.nextToken();
+                    describeOriginEndpointResult.setCmafPackage(CmafPackageJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("dashPackage", targetDepth)) {
                     context.nextToken();
                     describeOriginEndpointResult.setDashPackage(DashPackageJsonUnmarshaller.getInstance().unmarshall(context));

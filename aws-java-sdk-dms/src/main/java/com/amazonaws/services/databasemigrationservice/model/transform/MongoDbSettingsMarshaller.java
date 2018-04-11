@@ -49,6 +49,8 @@ public class MongoDbSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocsToInvestigate").build();
     private static final MarshallingInfo<String> AUTHSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AuthSource").build();
+    private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KmsKeyId").build();
 
     private static final MongoDbSettingsMarshaller instance = new MongoDbSettingsMarshaller();
 
@@ -77,6 +79,7 @@ public class MongoDbSettingsMarshaller {
             protocolMarshaller.marshall(mongoDbSettings.getExtractDocId(), EXTRACTDOCID_BINDING);
             protocolMarshaller.marshall(mongoDbSettings.getDocsToInvestigate(), DOCSTOINVESTIGATE_BINDING);
             protocolMarshaller.marshall(mongoDbSettings.getAuthSource(), AUTHSOURCE_BINDING);
+            protocolMarshaller.marshall(mongoDbSettings.getKmsKeyId(), KMSKEYID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

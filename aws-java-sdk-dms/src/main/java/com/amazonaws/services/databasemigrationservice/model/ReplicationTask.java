@@ -120,6 +120,46 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
     private java.util.Date replicationTaskStartDate;
     /**
      * <p>
+     * Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or
+     * CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.
+     * </p>
+     * <p>
+     * The value can be in date, checkpoint, or LSN/SCN format.
+     * </p>
+     * <p>
+     * Date Example: --cdc-start-position “2018-03-08T12:12:12”
+     * </p>
+     * <p>
+     * Checkpoint Example: --cdc-start-position
+     * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"
+     * </p>
+     * <p>
+     * LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+     * </p>
+     */
+    private String cdcStartPosition;
+    /**
+     * <p>
+     * Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or
+     * commit time.
+     * </p>
+     * <p>
+     * Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     * </p>
+     * <p>
+     * Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * </p>
+     */
+    private String cdcStopPosition;
+    /**
+     * <p>
+     * Indicates the last checkpoint that occurred during a change data capture (CDC) operation. You can provide this
+     * value to the <code>CdcStartPosition</code> parameter to start a CDC operation that begins at that checkpoint.
+     * </p>
+     */
+    private String recoveryCheckpoint;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the replication task.
      * </p>
      */
@@ -763,6 +803,258 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or
+     * CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.
+     * </p>
+     * <p>
+     * The value can be in date, checkpoint, or LSN/SCN format.
+     * </p>
+     * <p>
+     * Date Example: --cdc-start-position “2018-03-08T12:12:12”
+     * </p>
+     * <p>
+     * Checkpoint Example: --cdc-start-position
+     * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"
+     * </p>
+     * <p>
+     * LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+     * </p>
+     * 
+     * @param cdcStartPosition
+     *        Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or
+     *        CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an
+     *        error.</p>
+     *        <p>
+     *        The value can be in date, checkpoint, or LSN/SCN format.
+     *        </p>
+     *        <p>
+     *        Date Example: --cdc-start-position “2018-03-08T12:12:12”
+     *        </p>
+     *        <p>
+     *        Checkpoint Example: --cdc-start-position
+     *        "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"
+     *        </p>
+     *        <p>
+     *        LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+     */
+
+    public void setCdcStartPosition(String cdcStartPosition) {
+        this.cdcStartPosition = cdcStartPosition;
+    }
+
+    /**
+     * <p>
+     * Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or
+     * CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.
+     * </p>
+     * <p>
+     * The value can be in date, checkpoint, or LSN/SCN format.
+     * </p>
+     * <p>
+     * Date Example: --cdc-start-position “2018-03-08T12:12:12”
+     * </p>
+     * <p>
+     * Checkpoint Example: --cdc-start-position
+     * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"
+     * </p>
+     * <p>
+     * LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+     * </p>
+     * 
+     * @return Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or
+     *         CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an
+     *         error.</p>
+     *         <p>
+     *         The value can be in date, checkpoint, or LSN/SCN format.
+     *         </p>
+     *         <p>
+     *         Date Example: --cdc-start-position “2018-03-08T12:12:12”
+     *         </p>
+     *         <p>
+     *         Checkpoint Example: --cdc-start-position
+     *         "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"
+     *         </p>
+     *         <p>
+     *         LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+     */
+
+    public String getCdcStartPosition() {
+        return this.cdcStartPosition;
+    }
+
+    /**
+     * <p>
+     * Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or
+     * CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.
+     * </p>
+     * <p>
+     * The value can be in date, checkpoint, or LSN/SCN format.
+     * </p>
+     * <p>
+     * Date Example: --cdc-start-position “2018-03-08T12:12:12”
+     * </p>
+     * <p>
+     * Checkpoint Example: --cdc-start-position
+     * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"
+     * </p>
+     * <p>
+     * LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+     * </p>
+     * 
+     * @param cdcStartPosition
+     *        Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or
+     *        CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an
+     *        error.</p>
+     *        <p>
+     *        The value can be in date, checkpoint, or LSN/SCN format.
+     *        </p>
+     *        <p>
+     *        Date Example: --cdc-start-position “2018-03-08T12:12:12”
+     *        </p>
+     *        <p>
+     *        Checkpoint Example: --cdc-start-position
+     *        "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"
+     *        </p>
+     *        <p>
+     *        LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationTask withCdcStartPosition(String cdcStartPosition) {
+        setCdcStartPosition(cdcStartPosition);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or
+     * commit time.
+     * </p>
+     * <p>
+     * Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     * </p>
+     * <p>
+     * Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * </p>
+     * 
+     * @param cdcStopPosition
+     *        Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time
+     *        or commit time.</p>
+     *        <p>
+     *        Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     *        </p>
+     *        <p>
+     *        Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     */
+
+    public void setCdcStopPosition(String cdcStopPosition) {
+        this.cdcStopPosition = cdcStopPosition;
+    }
+
+    /**
+     * <p>
+     * Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or
+     * commit time.
+     * </p>
+     * <p>
+     * Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     * </p>
+     * <p>
+     * Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * </p>
+     * 
+     * @return Indicates when you want a change data capture (CDC) operation to stop. The value can be either server
+     *         time or commit time.</p>
+     *         <p>
+     *         Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     *         </p>
+     *         <p>
+     *         Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     */
+
+    public String getCdcStopPosition() {
+        return this.cdcStopPosition;
+    }
+
+    /**
+     * <p>
+     * Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or
+     * commit time.
+     * </p>
+     * <p>
+     * Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     * </p>
+     * <p>
+     * Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * </p>
+     * 
+     * @param cdcStopPosition
+     *        Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time
+     *        or commit time.</p>
+     *        <p>
+     *        Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     *        </p>
+     *        <p>
+     *        Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationTask withCdcStopPosition(String cdcStopPosition) {
+        setCdcStopPosition(cdcStopPosition);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the last checkpoint that occurred during a change data capture (CDC) operation. You can provide this
+     * value to the <code>CdcStartPosition</code> parameter to start a CDC operation that begins at that checkpoint.
+     * </p>
+     * 
+     * @param recoveryCheckpoint
+     *        Indicates the last checkpoint that occurred during a change data capture (CDC) operation. You can provide
+     *        this value to the <code>CdcStartPosition</code> parameter to start a CDC operation that begins at that
+     *        checkpoint.
+     */
+
+    public void setRecoveryCheckpoint(String recoveryCheckpoint) {
+        this.recoveryCheckpoint = recoveryCheckpoint;
+    }
+
+    /**
+     * <p>
+     * Indicates the last checkpoint that occurred during a change data capture (CDC) operation. You can provide this
+     * value to the <code>CdcStartPosition</code> parameter to start a CDC operation that begins at that checkpoint.
+     * </p>
+     * 
+     * @return Indicates the last checkpoint that occurred during a change data capture (CDC) operation. You can provide
+     *         this value to the <code>CdcStartPosition</code> parameter to start a CDC operation that begins at that
+     *         checkpoint.
+     */
+
+    public String getRecoveryCheckpoint() {
+        return this.recoveryCheckpoint;
+    }
+
+    /**
+     * <p>
+     * Indicates the last checkpoint that occurred during a change data capture (CDC) operation. You can provide this
+     * value to the <code>CdcStartPosition</code> parameter to start a CDC operation that begins at that checkpoint.
+     * </p>
+     * 
+     * @param recoveryCheckpoint
+     *        Indicates the last checkpoint that occurred during a change data capture (CDC) operation. You can provide
+     *        this value to the <code>CdcStartPosition</code> parameter to start a CDC operation that begins at that
+     *        checkpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationTask withRecoveryCheckpoint(String recoveryCheckpoint) {
+        setRecoveryCheckpoint(recoveryCheckpoint);
+        return this;
+    }
+
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the replication task.
      * </p>
      * 
@@ -876,6 +1168,12 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
             sb.append("ReplicationTaskCreationDate: ").append(getReplicationTaskCreationDate()).append(",");
         if (getReplicationTaskStartDate() != null)
             sb.append("ReplicationTaskStartDate: ").append(getReplicationTaskStartDate()).append(",");
+        if (getCdcStartPosition() != null)
+            sb.append("CdcStartPosition: ").append(getCdcStartPosition()).append(",");
+        if (getCdcStopPosition() != null)
+            sb.append("CdcStopPosition: ").append(getCdcStopPosition()).append(",");
+        if (getRecoveryCheckpoint() != null)
+            sb.append("RecoveryCheckpoint: ").append(getRecoveryCheckpoint()).append(",");
         if (getReplicationTaskArn() != null)
             sb.append("ReplicationTaskArn: ").append(getReplicationTaskArn()).append(",");
         if (getReplicationTaskStats() != null)
@@ -942,6 +1240,18 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getReplicationTaskStartDate() != null && other.getReplicationTaskStartDate().equals(this.getReplicationTaskStartDate()) == false)
             return false;
+        if (other.getCdcStartPosition() == null ^ this.getCdcStartPosition() == null)
+            return false;
+        if (other.getCdcStartPosition() != null && other.getCdcStartPosition().equals(this.getCdcStartPosition()) == false)
+            return false;
+        if (other.getCdcStopPosition() == null ^ this.getCdcStopPosition() == null)
+            return false;
+        if (other.getCdcStopPosition() != null && other.getCdcStopPosition().equals(this.getCdcStopPosition()) == false)
+            return false;
+        if (other.getRecoveryCheckpoint() == null ^ this.getRecoveryCheckpoint() == null)
+            return false;
+        if (other.getRecoveryCheckpoint() != null && other.getRecoveryCheckpoint().equals(this.getRecoveryCheckpoint()) == false)
+            return false;
         if (other.getReplicationTaskArn() == null ^ this.getReplicationTaskArn() == null)
             return false;
         if (other.getReplicationTaskArn() != null && other.getReplicationTaskArn().equals(this.getReplicationTaskArn()) == false)
@@ -970,6 +1280,9 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getStopReason() == null) ? 0 : getStopReason().hashCode());
         hashCode = prime * hashCode + ((getReplicationTaskCreationDate() == null) ? 0 : getReplicationTaskCreationDate().hashCode());
         hashCode = prime * hashCode + ((getReplicationTaskStartDate() == null) ? 0 : getReplicationTaskStartDate().hashCode());
+        hashCode = prime * hashCode + ((getCdcStartPosition() == null) ? 0 : getCdcStartPosition().hashCode());
+        hashCode = prime * hashCode + ((getCdcStopPosition() == null) ? 0 : getCdcStopPosition().hashCode());
+        hashCode = prime * hashCode + ((getRecoveryCheckpoint() == null) ? 0 : getRecoveryCheckpoint().hashCode());
         hashCode = prime * hashCode + ((getReplicationTaskArn() == null) ? 0 : getReplicationTaskArn().hashCode());
         hashCode = prime * hashCode + ((getReplicationTaskStats() == null) ? 0 : getReplicationTaskStats().hashCode());
         return hashCode;

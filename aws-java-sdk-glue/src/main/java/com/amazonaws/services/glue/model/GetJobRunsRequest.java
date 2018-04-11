@@ -27,7 +27,7 @@ public class GetJobRunsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the job for which to retrieve all job runs.
+     * The name of the job definition for which to retrieve all job runs.
      * </p>
      */
     private String jobName;
@@ -46,11 +46,11 @@ public class GetJobRunsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the job for which to retrieve all job runs.
+     * The name of the job definition for which to retrieve all job runs.
      * </p>
      * 
      * @param jobName
-     *        The name of the job for which to retrieve all job runs.
+     *        The name of the job definition for which to retrieve all job runs.
      */
 
     public void setJobName(String jobName) {
@@ -59,10 +59,10 @@ public class GetJobRunsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the job for which to retrieve all job runs.
+     * The name of the job definition for which to retrieve all job runs.
      * </p>
      * 
-     * @return The name of the job for which to retrieve all job runs.
+     * @return The name of the job definition for which to retrieve all job runs.
      */
 
     public String getJobName() {
@@ -71,11 +71,11 @@ public class GetJobRunsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name of the job for which to retrieve all job runs.
+     * The name of the job definition for which to retrieve all job runs.
      * </p>
      * 
      * @param jobName
-     *        The name of the job for which to retrieve all job runs.
+     *        The name of the job definition for which to retrieve all job runs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

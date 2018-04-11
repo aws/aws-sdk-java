@@ -97,7 +97,7 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
     private String executionEndDateTime;
     /**
      * <p>
-     * The status of this invocation plugin. This status can be different than StatusDetails.
+     * The status of the parent command for this invocation. This status can be different than StatusDetails.
      * </p>
      */
     private String status;
@@ -667,11 +667,11 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The status of this invocation plugin. This status can be different than StatusDetails.
+     * The status of the parent command for this invocation. This status can be different than StatusDetails.
      * </p>
      * 
      * @param status
-     *        The status of this invocation plugin. This status can be different than StatusDetails.
+     *        The status of the parent command for this invocation. This status can be different than StatusDetails.
      * @see CommandInvocationStatus
      */
 
@@ -681,10 +681,10 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The status of this invocation plugin. This status can be different than StatusDetails.
+     * The status of the parent command for this invocation. This status can be different than StatusDetails.
      * </p>
      * 
-     * @return The status of this invocation plugin. This status can be different than StatusDetails.
+     * @return The status of the parent command for this invocation. This status can be different than StatusDetails.
      * @see CommandInvocationStatus
      */
 
@@ -694,11 +694,11 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The status of this invocation plugin. This status can be different than StatusDetails.
+     * The status of the parent command for this invocation. This status can be different than StatusDetails.
      * </p>
      * 
      * @param status
-     *        The status of this invocation plugin. This status can be different than StatusDetails.
+     *        The status of the parent command for this invocation. This status can be different than StatusDetails.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CommandInvocationStatus
      */
@@ -710,11 +710,11 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The status of this invocation plugin. This status can be different than StatusDetails.
+     * The status of the parent command for this invocation. This status can be different than StatusDetails.
      * </p>
      * 
      * @param status
-     *        The status of this invocation plugin. This status can be different than StatusDetails.
+     *        The status of the parent command for this invocation. This status can be different than StatusDetails.
      * @see CommandInvocationStatus
      */
 
@@ -724,11 +724,11 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The status of this invocation plugin. This status can be different than StatusDetails.
+     * The status of the parent command for this invocation. This status can be different than StatusDetails.
      * </p>
      * 
      * @param status
-     *        The status of this invocation plugin. This status can be different than StatusDetails.
+     *        The status of the parent command for this invocation. This status can be different than StatusDetails.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CommandInvocationStatus
      */

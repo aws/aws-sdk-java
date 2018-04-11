@@ -37,6 +37,8 @@ public class StartJobRunRequestMarshaller {
             .marshallLocationName("Arguments").build();
     private static final MarshallingInfo<Integer> ALLOCATEDCAPACITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllocatedCapacity").build();
+    private static final MarshallingInfo<Integer> TIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Timeout").build();
 
     private static final StartJobRunRequestMarshaller instance = new StartJobRunRequestMarshaller();
 
@@ -58,6 +60,7 @@ public class StartJobRunRequestMarshaller {
             protocolMarshaller.marshall(startJobRunRequest.getJobRunId(), JOBRUNID_BINDING);
             protocolMarshaller.marshall(startJobRunRequest.getArguments(), ARGUMENTS_BINDING);
             protocolMarshaller.marshall(startJobRunRequest.getAllocatedCapacity(), ALLOCATEDCAPACITY_BINDING);
+            protocolMarshaller.marshall(startJobRunRequest.getTimeout(), TIMEOUT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -71,14 +71,14 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnprocessableEntityException").withModeledClass(
+                                    com.amazonaws.services.mediapackage.model.UnprocessableEntityException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withModeledClass(
                                     com.amazonaws.services.mediapackage.model.NotFoundException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withModeledClass(
                                     com.amazonaws.services.mediapackage.model.ServiceUnavailableException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnprocessableEntityException").withModeledClass(
-                                    com.amazonaws.services.mediapackage.model.UnprocessableEntityException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ForbiddenException").withModeledClass(
                                     com.amazonaws.services.mediapackage.model.ForbiddenException.class))

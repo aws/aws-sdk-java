@@ -42,7 +42,7 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
     private String jobName;
     /**
      * <p>
-     * The condition state. Currently, the values supported are SUCCEEDED, STOPPED and FAILED.
+     * The condition state. Currently, the values supported are SUCCEEDED, STOPPED, TIMEOUT and FAILED.
      * </p>
      */
     private String state;
@@ -148,11 +148,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The condition state. Currently, the values supported are SUCCEEDED, STOPPED and FAILED.
+     * The condition state. Currently, the values supported are SUCCEEDED, STOPPED, TIMEOUT and FAILED.
      * </p>
      * 
      * @param state
-     *        The condition state. Currently, the values supported are SUCCEEDED, STOPPED and FAILED.
+     *        The condition state. Currently, the values supported are SUCCEEDED, STOPPED, TIMEOUT and FAILED.
      * @see JobRunState
      */
 
@@ -162,10 +162,10 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The condition state. Currently, the values supported are SUCCEEDED, STOPPED and FAILED.
+     * The condition state. Currently, the values supported are SUCCEEDED, STOPPED, TIMEOUT and FAILED.
      * </p>
      * 
-     * @return The condition state. Currently, the values supported are SUCCEEDED, STOPPED and FAILED.
+     * @return The condition state. Currently, the values supported are SUCCEEDED, STOPPED, TIMEOUT and FAILED.
      * @see JobRunState
      */
 
@@ -175,11 +175,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The condition state. Currently, the values supported are SUCCEEDED, STOPPED and FAILED.
+     * The condition state. Currently, the values supported are SUCCEEDED, STOPPED, TIMEOUT and FAILED.
      * </p>
      * 
      * @param state
-     *        The condition state. Currently, the values supported are SUCCEEDED, STOPPED and FAILED.
+     *        The condition state. Currently, the values supported are SUCCEEDED, STOPPED, TIMEOUT and FAILED.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobRunState
      */
@@ -191,11 +191,11 @@ public class Condition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The condition state. Currently, the values supported are SUCCEEDED, STOPPED and FAILED.
+     * The condition state. Currently, the values supported are SUCCEEDED, STOPPED, TIMEOUT and FAILED.
      * </p>
      * 
      * @param state
-     *        The condition state. Currently, the values supported are SUCCEEDED, STOPPED and FAILED.
+     *        The condition state. Currently, the values supported are SUCCEEDED, STOPPED, TIMEOUT and FAILED.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobRunState
      */

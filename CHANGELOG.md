@@ -1,3 +1,24 @@
+# __1.11.313__ __2018-04-10__
+## __AWS Database Migration Service__
+  - ### Features
+    - Native Change Data Capture start point and task recovery support in Database Migration Service.  
+
+## __AWS Elemental MediaPackage__
+  - ### Features
+    - Adds a new OriginEndpoint package type CmafPackage in MediaPackage. Origin endpoints can now be configured to use the Common Media Application Format (CMAF) media streaming format. This version of CmafPackage only supports HTTP Live Streaming (HLS) manifests with fragmented MP4.
+
+## __AWS Glue__
+  - ### Features
+    - "AWS Glue now supports timeout values for ETL jobs. With this release, all new ETL jobs have a default timeout value of 48 hours. AWS Glue also now supports the ability to start a schedule or job events trigger when it is created."
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Added TooManyUpdates exception for AddTagsToResource and RemoveTagsFromResource API
+
+## __Amazon WorkMail__
+  - ### Features
+    - Amazon WorkMail adds the ability to grant users and groups with "Full Access", "Send As" and "Send on Behalf" permissions on a given mailbox.
+
 # __1.11.312__ __2018-04-09__
 ## __Amazon CloudDirectory__
   - ### Features

@@ -314,9 +314,9 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
 
     /**
      * <p>
-     * Adds metadata tags to a DMS resource, including replication instance, endpoint, security group, and migration
-     * task. These tags can also be used with cost allocation reporting to track cost associated with DMS resources, or
-     * used in a Condition statement in an IAM policy for DMS.
+     * Adds metadata tags to an AWS DMS resource, including replication instance, endpoint, security group, and
+     * migration task. These tags can also be used with cost allocation reporting to track cost associated with DMS
+     * resources, or used in a Condition statement in an IAM policy for DMS.
      * </p>
      * 
      * @param addTagsToResourceRequest
@@ -2607,6 +2607,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *         The resource could not be found.
      * @throws InvalidResourceStateException
      *         The resource is in a state that prevents it from being used for database migration.
+     * @throws AccessDeniedException
+     *         AWS DMS was denied access to the endpoint.
      * @sample AWSDatabaseMigrationService.StartReplicationTask
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTask" target="_top">AWS API
      *      Documentation</a>

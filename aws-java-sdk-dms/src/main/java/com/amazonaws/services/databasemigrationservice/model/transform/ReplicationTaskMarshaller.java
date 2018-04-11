@@ -51,6 +51,12 @@ public class ReplicationTaskMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicationTaskCreationDate").build();
     private static final MarshallingInfo<java.util.Date> REPLICATIONTASKSTARTDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicationTaskStartDate").build();
+    private static final MarshallingInfo<String> CDCSTARTPOSITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CdcStartPosition").build();
+    private static final MarshallingInfo<String> CDCSTOPPOSITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CdcStopPosition").build();
+    private static final MarshallingInfo<String> RECOVERYCHECKPOINT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecoveryCheckpoint").build();
     private static final MarshallingInfo<String> REPLICATIONTASKARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicationTaskArn").build();
     private static final MarshallingInfo<StructuredPojo> REPLICATIONTASKSTATS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -84,6 +90,9 @@ public class ReplicationTaskMarshaller {
             protocolMarshaller.marshall(replicationTask.getStopReason(), STOPREASON_BINDING);
             protocolMarshaller.marshall(replicationTask.getReplicationTaskCreationDate(), REPLICATIONTASKCREATIONDATE_BINDING);
             protocolMarshaller.marshall(replicationTask.getReplicationTaskStartDate(), REPLICATIONTASKSTARTDATE_BINDING);
+            protocolMarshaller.marshall(replicationTask.getCdcStartPosition(), CDCSTARTPOSITION_BINDING);
+            protocolMarshaller.marshall(replicationTask.getCdcStopPosition(), CDCSTOPPOSITION_BINDING);
+            protocolMarshaller.marshall(replicationTask.getRecoveryCheckpoint(), RECOVERYCHECKPOINT_BINDING);
             protocolMarshaller.marshall(replicationTask.getReplicationTaskArn(), REPLICATIONTASKARN_BINDING);
             protocolMarshaller.marshall(replicationTask.getReplicationTaskStats(), REPLICATIONTASKSTATS_BINDING);
         } catch (Exception e) {

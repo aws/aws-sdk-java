@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies information used to update an existing job. Note that the previous job definition will be completely
- * overwritten by this information.
+ * Specifies information used to update an existing job definition. Note that the previous job definition will be
+ * completely overwritten by this information.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/JobUpdate" target="_top">AWS API
@@ -31,7 +31,7 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Description of the job.
+     * Description of the job being defined.
      * </p>
      */
     private String description;
@@ -43,7 +43,7 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
     private String logUri;
     /**
      * <p>
-     * The name of the IAM role associated with this job (required).
+     * The name or ARN of the IAM role associated with this job (required).
      * </p>
      */
     private String role;
@@ -74,8 +74,8 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
+     * Used by AWS Glue</a> topic in the developer guide.
      * </p>
      */
     private java.util.Map<String, String> defaultArguments;
@@ -100,14 +100,20 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Integer allocatedCapacity;
+    /**
+     * <p>
+     * The job timeout in minutes. The default is 2880 minutes (48 hours).
+     * </p>
+     */
+    private Integer timeout;
 
     /**
      * <p>
-     * Description of the job.
+     * Description of the job being defined.
      * </p>
      * 
      * @param description
-     *        Description of the job.
+     *        Description of the job being defined.
      */
 
     public void setDescription(String description) {
@@ -116,10 +122,10 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Description of the job.
+     * Description of the job being defined.
      * </p>
      * 
-     * @return Description of the job.
+     * @return Description of the job being defined.
      */
 
     public String getDescription() {
@@ -128,11 +134,11 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Description of the job.
+     * Description of the job being defined.
      * </p>
      * 
      * @param description
-     *        Description of the job.
+     *        Description of the job being defined.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,11 +189,11 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the IAM role associated with this job (required).
+     * The name or ARN of the IAM role associated with this job (required).
      * </p>
      * 
      * @param role
-     *        The name of the IAM role associated with this job (required).
+     *        The name or ARN of the IAM role associated with this job (required).
      */
 
     public void setRole(String role) {
@@ -196,10 +202,10 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the IAM role associated with this job (required).
+     * The name or ARN of the IAM role associated with this job (required).
      * </p>
      * 
-     * @return The name of the IAM role associated with this job (required).
+     * @return The name or ARN of the IAM role associated with this job (required).
      */
 
     public String getRole() {
@@ -208,11 +214,11 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the IAM role associated with this job (required).
+     * The name or ARN of the IAM role associated with this job (required).
      * </p>
      * 
      * @param role
-     *        The name of the IAM role associated with this job (required).
+     *        The name or ARN of the IAM role associated with this job (required).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -316,8 +322,8 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
+     * Used by AWS Glue</a> topic in the developer guide.
      * </p>
      * 
      * @return The default arguments for this job.</p>
@@ -332,7 +338,7 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <p>
      *         For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     *         href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     *         href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      *         Parameters Used by AWS Glue</a> topic in the developer guide.
      */
 
@@ -355,8 +361,8 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
+     * Used by AWS Glue</a> topic in the developer guide.
      * </p>
      * 
      * @param defaultArguments
@@ -372,7 +378,7 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     *        href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      *        Parameters Used by AWS Glue</a> topic in the developer guide.
      */
 
@@ -395,8 +401,8 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
+     * Used by AWS Glue</a> topic in the developer guide.
      * </p>
      * 
      * @param defaultArguments
@@ -412,7 +418,7 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     *        href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      *        Parameters Used by AWS Glue</a> topic in the developer guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -582,6 +588,46 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The job timeout in minutes. The default is 2880 minutes (48 hours).
+     * </p>
+     * 
+     * @param timeout
+     *        The job timeout in minutes. The default is 2880 minutes (48 hours).
+     */
+
+    public void setTimeout(Integer timeout) {
+        this.timeout = timeout;
+    }
+
+    /**
+     * <p>
+     * The job timeout in minutes. The default is 2880 minutes (48 hours).
+     * </p>
+     * 
+     * @return The job timeout in minutes. The default is 2880 minutes (48 hours).
+     */
+
+    public Integer getTimeout() {
+        return this.timeout;
+    }
+
+    /**
+     * <p>
+     * The job timeout in minutes. The default is 2880 minutes (48 hours).
+     * </p>
+     * 
+     * @param timeout
+     *        The job timeout in minutes. The default is 2880 minutes (48 hours).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobUpdate withTimeout(Integer timeout) {
+        setTimeout(timeout);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -609,7 +655,9 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
         if (getMaxRetries() != null)
             sb.append("MaxRetries: ").append(getMaxRetries()).append(",");
         if (getAllocatedCapacity() != null)
-            sb.append("AllocatedCapacity: ").append(getAllocatedCapacity());
+            sb.append("AllocatedCapacity: ").append(getAllocatedCapacity()).append(",");
+        if (getTimeout() != null)
+            sb.append("Timeout: ").append(getTimeout());
         sb.append("}");
         return sb.toString();
     }
@@ -660,6 +708,10 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAllocatedCapacity() != null && other.getAllocatedCapacity().equals(this.getAllocatedCapacity()) == false)
             return false;
+        if (other.getTimeout() == null ^ this.getTimeout() == null)
+            return false;
+        if (other.getTimeout() != null && other.getTimeout().equals(this.getTimeout()) == false)
+            return false;
         return true;
     }
 
@@ -677,6 +729,7 @@ public class JobUpdate implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getConnections() == null) ? 0 : getConnections().hashCode());
         hashCode = prime * hashCode + ((getMaxRetries() == null) ? 0 : getMaxRetries().hashCode());
         hashCode = prime * hashCode + ((getAllocatedCapacity() == null) ? 0 : getAllocatedCapacity().hashCode());
+        hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         return hashCode;
     }
 

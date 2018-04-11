@@ -320,6 +320,31 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
+     * Deletes permissions granted to a user or group.
+     * </p>
+     * 
+     * @param deleteMailboxPermissionsRequest
+     * @return Result of the DeleteMailboxPermissions operation returned by the service.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the entity is valid, but it does not exist in your organization.
+     * @throws EntityStateException
+     *         You are performing an operation on an entity that isn't in the expected state, such as trying to update a
+     *         deleted user.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
+     *         organization or its entities.
+     * @sample AmazonWorkMail.DeleteMailboxPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteMailboxPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteMailboxPermissionsResult deleteMailboxPermissions(DeleteMailboxPermissionsRequest deleteMailboxPermissionsRequest);
+
+    /**
+     * <p>
      * Deletes the specified resource.
      * </p>
      * 
@@ -611,6 +636,28 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
+     * Lists the mailbox permissions associated with a mailbox.
+     * </p>
+     * 
+     * @param listMailboxPermissionsRequest
+     * @return Result of the ListMailboxPermissions operation returned by the service.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the entity is valid, but it does not exist in your organization.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
+     *         organization or its entities.
+     * @sample AmazonWorkMail.ListMailboxPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailboxPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListMailboxPermissionsResult listMailboxPermissions(ListMailboxPermissionsRequest listMailboxPermissionsRequest);
+
+    /**
+     * <p>
      * Returns summaries of the customer's non-deleted organizations.
      * </p>
      * 
@@ -689,6 +736,31 @@ public interface AmazonWorkMail {
      *      Documentation</a>
      */
     ListUsersResult listUsers(ListUsersRequest listUsersRequest);
+
+    /**
+     * <p>
+     * Sets permissions for a user or group. This replaces any pre-existing permissions set for the entity.
+     * </p>
+     * 
+     * @param putMailboxPermissionsRequest
+     * @return Result of the PutMailboxPermissions operation returned by the service.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the entity is valid, but it does not exist in your organization.
+     * @throws EntityStateException
+     *         You are performing an operation on an entity that isn't in the expected state, such as trying to update a
+     *         deleted user.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
+     *         organization or its entities.
+     * @sample AmazonWorkMail.PutMailboxPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutMailboxPermissions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    PutMailboxPermissionsResult putMailboxPermissions(PutMailboxPermissionsRequest putMailboxPermissionsRequest);
 
     /**
      * <p>

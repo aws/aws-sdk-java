@@ -33,6 +33,8 @@ public class ActionMarshaller {
             .marshallLocationName("JobName").build();
     private static final MarshallingInfo<Map> ARGUMENTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Arguments").build();
+    private static final MarshallingInfo<Integer> TIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Timeout").build();
 
     private static final ActionMarshaller instance = new ActionMarshaller();
 
@@ -52,6 +54,7 @@ public class ActionMarshaller {
         try {
             protocolMarshaller.marshall(action.getJobName(), JOBNAME_BINDING);
             protocolMarshaller.marshall(action.getArguments(), ARGUMENTS_BINDING);
+            protocolMarshaller.marshall(action.getTimeout(), TIMEOUT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

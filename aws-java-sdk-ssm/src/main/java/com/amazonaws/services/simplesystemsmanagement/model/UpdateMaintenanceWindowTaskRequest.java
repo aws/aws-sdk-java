@@ -58,18 +58,7 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
     private String serviceRoleArn;
     /**
      * <p>
-     * The parameters to modify.
-     * </p>
-     * <note>
-     * <p>
-     * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead
-     * use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-     * about how Systems Manager handles these options for the supported Maintenance Window task types, see
-     * <a>MaintenanceWindowTaskInvocationParameters</a>.
-     * </p>
-     * </note>
-     * <p>
-     * The map has the following format:
+     * The parameters to modify. The map has the following format:
      * </p>
      * <p>
      * Key: string, between 1 and 255 characters
@@ -111,14 +100,6 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * <p>
      * The new logging location in Amazon S3 to specify.
      * </p>
-     * <note>
-     * <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
-     * for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
-     * </p>
-     * </note>
      */
     private LoggingInfo loggingInfo;
     /**
@@ -384,18 +365,7 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The parameters to modify.
-     * </p>
-     * <note>
-     * <p>
-     * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead
-     * use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-     * about how Systems Manager handles these options for the supported Maintenance Window task types, see
-     * <a>MaintenanceWindowTaskInvocationParameters</a>.
-     * </p>
-     * </note>
-     * <p>
-     * The map has the following format:
+     * The parameters to modify. The map has the following format:
      * </p>
      * <p>
      * Key: string, between 1 and 255 characters
@@ -404,17 +374,7 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * Value: an array of strings, each string is between 1 and 255 characters
      * </p>
      * 
-     * @return The parameters to modify.</p> <note>
-     *         <p>
-     *         <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
-     *         instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure.
-     *         For information about how Systems Manager handles these options for the supported Maintenance Window task
-     *         types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
-     *         </p>
-     *         </note>
-     *         <p>
-     *         The map has the following format:
-     *         </p>
+     * @return The parameters to modify. The map has the following format:</p>
      *         <p>
      *         Key: string, between 1 and 255 characters
      *         </p>
@@ -428,18 +388,7 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The parameters to modify.
-     * </p>
-     * <note>
-     * <p>
-     * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead
-     * use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-     * about how Systems Manager handles these options for the supported Maintenance Window task types, see
-     * <a>MaintenanceWindowTaskInvocationParameters</a>.
-     * </p>
-     * </note>
-     * <p>
-     * The map has the following format:
+     * The parameters to modify. The map has the following format:
      * </p>
      * <p>
      * Key: string, between 1 and 255 characters
@@ -449,17 +398,7 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param taskParameters
-     *        The parameters to modify.</p> <note>
-     *        <p>
-     *        <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
-     *        instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For
-     *        information about how Systems Manager handles these options for the supported Maintenance Window task
-     *        types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
-     *        </p>
-     *        </note>
-     *        <p>
-     *        The map has the following format:
-     *        </p>
+     *        The parameters to modify. The map has the following format:</p>
      *        <p>
      *        Key: string, between 1 and 255 characters
      *        </p>
@@ -473,18 +412,7 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The parameters to modify.
-     * </p>
-     * <note>
-     * <p>
-     * <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead
-     * use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
-     * about how Systems Manager handles these options for the supported Maintenance Window task types, see
-     * <a>MaintenanceWindowTaskInvocationParameters</a>.
-     * </p>
-     * </note>
-     * <p>
-     * The map has the following format:
+     * The parameters to modify. The map has the following format:
      * </p>
      * <p>
      * Key: string, between 1 and 255 characters
@@ -494,17 +422,7 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param taskParameters
-     *        The parameters to modify.</p> <note>
-     *        <p>
-     *        <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
-     *        instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For
-     *        information about how Systems Manager handles these options for the supported Maintenance Window task
-     *        types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
-     *        </p>
-     *        </note>
-     *        <p>
-     *        The map has the following format:
-     *        </p>
+     *        The parameters to modify. The map has the following format:</p>
      *        <p>
      *        Key: string, between 1 and 255 characters
      *        </p>
@@ -727,24 +645,9 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * <p>
      * The new logging location in Amazon S3 to specify.
      * </p>
-     * <note>
-     * <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
-     * for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
-     * </p>
-     * </note>
      * 
      * @param loggingInfo
-     *        The new logging location in Amazon S3 to specify.</p> <note>
-     *        <p>
-     *        <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     *        <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     *        <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these
-     *        options for the supported Maintenance Window task types, see
-     *        <a>MaintenanceWindowTaskInvocationParameters</a>.
-     *        </p>
+     *        The new logging location in Amazon S3 to specify.
      */
 
     public void setLoggingInfo(LoggingInfo loggingInfo) {
@@ -755,23 +658,8 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * <p>
      * The new logging location in Amazon S3 to specify.
      * </p>
-     * <note>
-     * <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
-     * for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
-     * </p>
-     * </note>
      * 
-     * @return The new logging location in Amazon S3 to specify.</p> <note>
-     *         <p>
-     *         <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     *         <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     *         <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these
-     *         options for the supported Maintenance Window task types, see
-     *         <a>MaintenanceWindowTaskInvocationParameters</a>.
-     *         </p>
+     * @return The new logging location in Amazon S3 to specify.
      */
 
     public LoggingInfo getLoggingInfo() {
@@ -782,24 +670,9 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * <p>
      * The new logging location in Amazon S3 to specify.
      * </p>
-     * <note>
-     * <p>
-     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     * <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options
-     * for the supported Maintenance Window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
-     * </p>
-     * </note>
      * 
      * @param loggingInfo
-     *        The new logging location in Amazon S3 to specify.</p> <note>
-     *        <p>
-     *        <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
-     *        <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the
-     *        <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these
-     *        options for the supported Maintenance Window task types, see
-     *        <a>MaintenanceWindowTaskInvocationParameters</a>.
-     *        </p>
+     *        The new logging location in Amazon S3 to specify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

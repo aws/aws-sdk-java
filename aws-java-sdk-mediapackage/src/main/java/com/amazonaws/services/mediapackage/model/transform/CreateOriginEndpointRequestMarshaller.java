@@ -30,6 +30,8 @@ public class CreateOriginEndpointRequestMarshaller {
 
     private static final MarshallingInfo<String> CHANNELID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("channelId").build();
+    private static final MarshallingInfo<StructuredPojo> CMAFPACKAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cmafPackage").build();
     private static final MarshallingInfo<StructuredPojo> DASHPACKAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dashPackage").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -66,6 +68,7 @@ public class CreateOriginEndpointRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createOriginEndpointRequest.getChannelId(), CHANNELID_BINDING);
+            protocolMarshaller.marshall(createOriginEndpointRequest.getCmafPackage(), CMAFPACKAGE_BINDING);
             protocolMarshaller.marshall(createOriginEndpointRequest.getDashPackage(), DASHPACKAGE_BINDING);
             protocolMarshaller.marshall(createOriginEndpointRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createOriginEndpointRequest.getHlsPackage(), HLSPACKAGE_BINDING);

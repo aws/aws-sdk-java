@@ -30,7 +30,7 @@ public class ExecutionProperty implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The maximum number of concurrent runs allowed for a job. The default is 1. An error is returned when this
+     * The maximum number of concurrent runs allowed for the job. The default is 1. An error is returned when this
      * threshold is reached. The maximum value you can specify is controlled by a service limit.
      * </p>
      */
@@ -38,13 +38,13 @@ public class ExecutionProperty implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The maximum number of concurrent runs allowed for a job. The default is 1. An error is returned when this
+     * The maximum number of concurrent runs allowed for the job. The default is 1. An error is returned when this
      * threshold is reached. The maximum value you can specify is controlled by a service limit.
      * </p>
      * 
      * @param maxConcurrentRuns
-     *        The maximum number of concurrent runs allowed for a job. The default is 1. An error is returned when this
-     *        threshold is reached. The maximum value you can specify is controlled by a service limit.
+     *        The maximum number of concurrent runs allowed for the job. The default is 1. An error is returned when
+     *        this threshold is reached. The maximum value you can specify is controlled by a service limit.
      */
 
     public void setMaxConcurrentRuns(Integer maxConcurrentRuns) {
@@ -53,12 +53,12 @@ public class ExecutionProperty implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The maximum number of concurrent runs allowed for a job. The default is 1. An error is returned when this
+     * The maximum number of concurrent runs allowed for the job. The default is 1. An error is returned when this
      * threshold is reached. The maximum value you can specify is controlled by a service limit.
      * </p>
      * 
-     * @return The maximum number of concurrent runs allowed for a job. The default is 1. An error is returned when this
-     *         threshold is reached. The maximum value you can specify is controlled by a service limit.
+     * @return The maximum number of concurrent runs allowed for the job. The default is 1. An error is returned when
+     *         this threshold is reached. The maximum value you can specify is controlled by a service limit.
      */
 
     public Integer getMaxConcurrentRuns() {
@@ -67,13 +67,13 @@ public class ExecutionProperty implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The maximum number of concurrent runs allowed for a job. The default is 1. An error is returned when this
+     * The maximum number of concurrent runs allowed for the job. The default is 1. An error is returned when this
      * threshold is reached. The maximum value you can specify is controlled by a service limit.
      * </p>
      * 
      * @param maxConcurrentRuns
-     *        The maximum number of concurrent runs allowed for a job. The default is 1. An error is returned when this
-     *        threshold is reached. The maximum value you can specify is controlled by a service limit.
+     *        The maximum number of concurrent runs allowed for the job. The default is 1. An error is returned when
+     *        this threshold is reached. The maximum value you can specify is controlled by a service limit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

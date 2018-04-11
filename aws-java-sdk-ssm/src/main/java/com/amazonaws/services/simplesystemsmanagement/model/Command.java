@@ -47,8 +47,8 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
     private String comment;
     /**
      * <p>
-     * If this time is reached and the command has not already started executing, it will not run. Calculated based on
-     * the ExpiresAfter user input provided as part of the SendCommand API.
+     * If this time is reached and the command has not already started executing, it will not execute. Calculated based
+     * on the ExpiresAfter user input provided as part of the SendCommand API.
      * </p>
      */
     private java.util.Date expiresAfter;
@@ -341,12 +341,12 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If this time is reached and the command has not already started executing, it will not run. Calculated based on
-     * the ExpiresAfter user input provided as part of the SendCommand API.
+     * If this time is reached and the command has not already started executing, it will not execute. Calculated based
+     * on the ExpiresAfter user input provided as part of the SendCommand API.
      * </p>
      * 
      * @param expiresAfter
-     *        If this time is reached and the command has not already started executing, it will not run. Calculated
+     *        If this time is reached and the command has not already started executing, it will not execute. Calculated
      *        based on the ExpiresAfter user input provided as part of the SendCommand API.
      */
 
@@ -356,12 +356,12 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If this time is reached and the command has not already started executing, it will not run. Calculated based on
-     * the ExpiresAfter user input provided as part of the SendCommand API.
+     * If this time is reached and the command has not already started executing, it will not execute. Calculated based
+     * on the ExpiresAfter user input provided as part of the SendCommand API.
      * </p>
      * 
-     * @return If this time is reached and the command has not already started executing, it will not run. Calculated
-     *         based on the ExpiresAfter user input provided as part of the SendCommand API.
+     * @return If this time is reached and the command has not already started executing, it will not execute.
+     *         Calculated based on the ExpiresAfter user input provided as part of the SendCommand API.
      */
 
     public java.util.Date getExpiresAfter() {
@@ -370,12 +370,12 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If this time is reached and the command has not already started executing, it will not run. Calculated based on
-     * the ExpiresAfter user input provided as part of the SendCommand API.
+     * If this time is reached and the command has not already started executing, it will not execute. Calculated based
+     * on the ExpiresAfter user input provided as part of the SendCommand API.
      * </p>
      * 
      * @param expiresAfter
-     *        If this time is reached and the command has not already started executing, it will not run. Calculated
+     *        If this time is reached and the command has not already started executing, it will not execute. Calculated
      *        based on the ExpiresAfter user input provided as part of the SendCommand API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -27,18 +27,18 @@ public class DeleteJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the job to delete.
+     * The name of the job definition to delete.
      * </p>
      */
     private String jobName;
 
     /**
      * <p>
-     * The name of the job to delete.
+     * The name of the job definition to delete.
      * </p>
      * 
      * @param jobName
-     *        The name of the job to delete.
+     *        The name of the job definition to delete.
      */
 
     public void setJobName(String jobName) {
@@ -47,10 +47,10 @@ public class DeleteJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the job to delete.
+     * The name of the job definition to delete.
      * </p>
      * 
-     * @return The name of the job to delete.
+     * @return The name of the job definition to delete.
      */
 
     public String getJobName() {
@@ -59,11 +59,11 @@ public class DeleteJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the job to delete.
+     * The name of the job definition to delete.
      * </p>
      * 
      * @param jobName
-     *        The name of the job to delete.
+     *        The name of the job definition to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

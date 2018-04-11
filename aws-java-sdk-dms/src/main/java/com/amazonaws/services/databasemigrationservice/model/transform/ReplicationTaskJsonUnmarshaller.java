@@ -96,6 +96,18 @@ public class ReplicationTaskJsonUnmarshaller implements Unmarshaller<Replication
                     context.nextToken();
                     replicationTask.setReplicationTaskStartDate(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
+                if (context.testExpression("CdcStartPosition", targetDepth)) {
+                    context.nextToken();
+                    replicationTask.setCdcStartPosition(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CdcStopPosition", targetDepth)) {
+                    context.nextToken();
+                    replicationTask.setCdcStopPosition(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("RecoveryCheckpoint", targetDepth)) {
+                    context.nextToken();
+                    replicationTask.setRecoveryCheckpoint(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ReplicationTaskArn", targetDepth)) {
                     context.nextToken();
                     replicationTask.setReplicationTaskArn(context.getUnmarshaller(String.class).unmarshall(context));

@@ -41,10 +41,17 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The database engine name. Valid values, depending on the EndPointType, include mysql, oracle, postgres, mariadb,
-     * aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
+     * aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.
      * </p>
      */
     private String engineName;
+    /**
+     * <p>
+     * The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora," this
+     * value would be "Amazon Aurora MySQL."
+     * </p>
+     */
+    private String engineDisplayName;
     /**
      * <p>
      * The user name used to connect to the endpoint.
@@ -113,6 +120,18 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String sslMode;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) used by the service access IAM role.
+     * </p>
+     */
+    private String serviceAccessRoleArn;
+    /**
+     * <p>
+     * The external table definition.
+     * </p>
+     */
+    private String externalTableDefinition;
     /**
      * <p>
      * Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a subsequent
@@ -263,12 +282,13 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The database engine name. Valid values, depending on the EndPointType, include mysql, oracle, postgres, mariadb,
-     * aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
+     * aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.
      * </p>
      * 
      * @param engineName
      *        The database engine name. Valid values, depending on the EndPointType, include mysql, oracle, postgres,
-     *        mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
+     *        mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and
+     *        sqlserver.
      */
 
     public void setEngineName(String engineName) {
@@ -278,11 +298,12 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The database engine name. Valid values, depending on the EndPointType, include mysql, oracle, postgres, mariadb,
-     * aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
+     * aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.
      * </p>
      * 
      * @return The database engine name. Valid values, depending on the EndPointType, include mysql, oracle, postgres,
-     *         mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
+     *         mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and
+     *         sqlserver.
      */
 
     public String getEngineName() {
@@ -292,17 +313,64 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The database engine name. Valid values, depending on the EndPointType, include mysql, oracle, postgres, mariadb,
-     * aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
+     * aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.
      * </p>
      * 
      * @param engineName
      *        The database engine name. Valid values, depending on the EndPointType, include mysql, oracle, postgres,
-     *        mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
+     *        mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and
+     *        sqlserver.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Endpoint withEngineName(String engineName) {
         setEngineName(engineName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora," this
+     * value would be "Amazon Aurora MySQL."
+     * </p>
+     * 
+     * @param engineDisplayName
+     *        The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora,"
+     *        this value would be "Amazon Aurora MySQL."
+     */
+
+    public void setEngineDisplayName(String engineDisplayName) {
+        this.engineDisplayName = engineDisplayName;
+    }
+
+    /**
+     * <p>
+     * The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora," this
+     * value would be "Amazon Aurora MySQL."
+     * </p>
+     * 
+     * @return The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora,"
+     *         this value would be "Amazon Aurora MySQL."
+     */
+
+    public String getEngineDisplayName() {
+        return this.engineDisplayName;
+    }
+
+    /**
+     * <p>
+     * The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora," this
+     * value would be "Amazon Aurora MySQL."
+     * </p>
+     * 
+     * @param engineDisplayName
+     *        The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora,"
+     *        this value would be "Amazon Aurora MySQL."
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withEngineDisplayName(String engineDisplayName) {
+        setEngineDisplayName(engineDisplayName);
         return this;
     }
 
@@ -811,6 +879,86 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) used by the service access IAM role.
+     * </p>
+     * 
+     * @param serviceAccessRoleArn
+     *        The Amazon Resource Name (ARN) used by the service access IAM role.
+     */
+
+    public void setServiceAccessRoleArn(String serviceAccessRoleArn) {
+        this.serviceAccessRoleArn = serviceAccessRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) used by the service access IAM role.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) used by the service access IAM role.
+     */
+
+    public String getServiceAccessRoleArn() {
+        return this.serviceAccessRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) used by the service access IAM role.
+     * </p>
+     * 
+     * @param serviceAccessRoleArn
+     *        The Amazon Resource Name (ARN) used by the service access IAM role.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withServiceAccessRoleArn(String serviceAccessRoleArn) {
+        setServiceAccessRoleArn(serviceAccessRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The external table definition.
+     * </p>
+     * 
+     * @param externalTableDefinition
+     *        The external table definition.
+     */
+
+    public void setExternalTableDefinition(String externalTableDefinition) {
+        this.externalTableDefinition = externalTableDefinition;
+    }
+
+    /**
+     * <p>
+     * The external table definition.
+     * </p>
+     * 
+     * @return The external table definition.
+     */
+
+    public String getExternalTableDefinition() {
+        return this.externalTableDefinition;
+    }
+
+    /**
+     * <p>
+     * The external table definition.
+     * </p>
+     * 
+     * @param externalTableDefinition
+     *        The external table definition.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withExternalTableDefinition(String externalTableDefinition) {
+        setExternalTableDefinition(externalTableDefinition);
+        return this;
+    }
+
+    /**
+     * <p>
      * Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a subsequent
      * call to CreateEndpoint to create the endpoint with a cross-account.
      * </p>
@@ -1004,6 +1152,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
             sb.append("EndpointType: ").append(getEndpointType()).append(",");
         if (getEngineName() != null)
             sb.append("EngineName: ").append(getEngineName()).append(",");
+        if (getEngineDisplayName() != null)
+            sb.append("EngineDisplayName: ").append(getEngineDisplayName()).append(",");
         if (getUsername() != null)
             sb.append("Username: ").append(getUsername()).append(",");
         if (getServerName() != null)
@@ -1024,6 +1174,10 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
             sb.append("CertificateArn: ").append(getCertificateArn()).append(",");
         if (getSslMode() != null)
             sb.append("SslMode: ").append(getSslMode()).append(",");
+        if (getServiceAccessRoleArn() != null)
+            sb.append("ServiceAccessRoleArn: ").append(getServiceAccessRoleArn()).append(",");
+        if (getExternalTableDefinition() != null)
+            sb.append("ExternalTableDefinition: ").append(getExternalTableDefinition()).append(",");
         if (getExternalId() != null)
             sb.append("ExternalId: ").append(getExternalId()).append(",");
         if (getDynamoDbSettings() != null)
@@ -1057,6 +1211,10 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
         if (other.getEngineName() == null ^ this.getEngineName() == null)
             return false;
         if (other.getEngineName() != null && other.getEngineName().equals(this.getEngineName()) == false)
+            return false;
+        if (other.getEngineDisplayName() == null ^ this.getEngineDisplayName() == null)
+            return false;
+        if (other.getEngineDisplayName() != null && other.getEngineDisplayName().equals(this.getEngineDisplayName()) == false)
             return false;
         if (other.getUsername() == null ^ this.getUsername() == null)
             return false;
@@ -1098,6 +1256,14 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSslMode() != null && other.getSslMode().equals(this.getSslMode()) == false)
             return false;
+        if (other.getServiceAccessRoleArn() == null ^ this.getServiceAccessRoleArn() == null)
+            return false;
+        if (other.getServiceAccessRoleArn() != null && other.getServiceAccessRoleArn().equals(this.getServiceAccessRoleArn()) == false)
+            return false;
+        if (other.getExternalTableDefinition() == null ^ this.getExternalTableDefinition() == null)
+            return false;
+        if (other.getExternalTableDefinition() != null && other.getExternalTableDefinition().equals(this.getExternalTableDefinition()) == false)
+            return false;
         if (other.getExternalId() == null ^ this.getExternalId() == null)
             return false;
         if (other.getExternalId() != null && other.getExternalId().equals(this.getExternalId()) == false)
@@ -1125,6 +1291,7 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEndpointIdentifier() == null) ? 0 : getEndpointIdentifier().hashCode());
         hashCode = prime * hashCode + ((getEndpointType() == null) ? 0 : getEndpointType().hashCode());
         hashCode = prime * hashCode + ((getEngineName() == null) ? 0 : getEngineName().hashCode());
+        hashCode = prime * hashCode + ((getEngineDisplayName() == null) ? 0 : getEngineDisplayName().hashCode());
         hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
         hashCode = prime * hashCode + ((getServerName() == null) ? 0 : getServerName().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
@@ -1135,6 +1302,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEndpointArn() == null) ? 0 : getEndpointArn().hashCode());
         hashCode = prime * hashCode + ((getCertificateArn() == null) ? 0 : getCertificateArn().hashCode());
         hashCode = prime * hashCode + ((getSslMode() == null) ? 0 : getSslMode().hashCode());
+        hashCode = prime * hashCode + ((getServiceAccessRoleArn() == null) ? 0 : getServiceAccessRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getExternalTableDefinition() == null) ? 0 : getExternalTableDefinition().hashCode());
         hashCode = prime * hashCode + ((getExternalId() == null) ? 0 : getExternalId().hashCode());
         hashCode = prime * hashCode + ((getDynamoDbSettings() == null) ? 0 : getDynamoDbSettings().hashCode());
         hashCode = prime * hashCode + ((getS3Settings() == null) ? 0 : getS3Settings().hashCode());

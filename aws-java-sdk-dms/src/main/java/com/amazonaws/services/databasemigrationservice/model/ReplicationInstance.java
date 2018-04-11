@@ -186,6 +186,12 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String secondaryAvailabilityZone;
+    /**
+     * <p>
+     * The expiration date of the free replication instance that is part of the Free DMS program.
+     * </p>
+     */
+    private java.util.Date freeUntil;
 
     /**
      * <p>
@@ -1351,6 +1357,46 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The expiration date of the free replication instance that is part of the Free DMS program.
+     * </p>
+     * 
+     * @param freeUntil
+     *        The expiration date of the free replication instance that is part of the Free DMS program.
+     */
+
+    public void setFreeUntil(java.util.Date freeUntil) {
+        this.freeUntil = freeUntil;
+    }
+
+    /**
+     * <p>
+     * The expiration date of the free replication instance that is part of the Free DMS program.
+     * </p>
+     * 
+     * @return The expiration date of the free replication instance that is part of the Free DMS program.
+     */
+
+    public java.util.Date getFreeUntil() {
+        return this.freeUntil;
+    }
+
+    /**
+     * <p>
+     * The expiration date of the free replication instance that is part of the Free DMS program.
+     * </p>
+     * 
+     * @param freeUntil
+     *        The expiration date of the free replication instance that is part of the Free DMS program.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationInstance withFreeUntil(java.util.Date freeUntil) {
+        setFreeUntil(freeUntil);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1402,7 +1448,9 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
         if (getPubliclyAccessible() != null)
             sb.append("PubliclyAccessible: ").append(getPubliclyAccessible()).append(",");
         if (getSecondaryAvailabilityZone() != null)
-            sb.append("SecondaryAvailabilityZone: ").append(getSecondaryAvailabilityZone());
+            sb.append("SecondaryAvailabilityZone: ").append(getSecondaryAvailabilityZone()).append(",");
+        if (getFreeUntil() != null)
+            sb.append("FreeUntil: ").append(getFreeUntil());
         sb.append("}");
         return sb.toString();
     }
@@ -1506,6 +1554,10 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getSecondaryAvailabilityZone() != null && other.getSecondaryAvailabilityZone().equals(this.getSecondaryAvailabilityZone()) == false)
             return false;
+        if (other.getFreeUntil() == null ^ this.getFreeUntil() == null)
+            return false;
+        if (other.getFreeUntil() != null && other.getFreeUntil().equals(this.getFreeUntil()) == false)
+            return false;
         return true;
     }
 
@@ -1535,6 +1587,7 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getReplicationInstancePrivateIpAddresses() == null) ? 0 : getReplicationInstancePrivateIpAddresses().hashCode());
         hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());
         hashCode = prime * hashCode + ((getSecondaryAvailabilityZone() == null) ? 0 : getSecondaryAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getFreeUntil() == null) ? 0 : getFreeUntil().hashCode());
         return hashCode;
     }
 

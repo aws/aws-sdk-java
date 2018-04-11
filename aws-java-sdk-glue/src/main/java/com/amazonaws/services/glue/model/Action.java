@@ -48,11 +48,17 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
+     * Used by AWS Glue</a> topic in the developer guide.
      * </p>
      */
     private java.util.Map<String, String> arguments;
+    /**
+     * <p>
+     * The job run timeout in minutes. It overrides the timeout value of the job.
+     * </p>
+     */
+    private Integer timeout;
 
     /**
      * <p>
@@ -109,8 +115,8 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
+     * Used by AWS Glue</a> topic in the developer guide.
      * </p>
      * 
      * @return Arguments to be passed to the job.</p>
@@ -125,7 +131,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <p>
      *         For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     *         href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     *         href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      *         Parameters Used by AWS Glue</a> topic in the developer guide.
      */
 
@@ -148,8 +154,8 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
+     * Used by AWS Glue</a> topic in the developer guide.
      * </p>
      * 
      * @param arguments
@@ -165,7 +171,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     *        href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      *        Parameters Used by AWS Glue</a> topic in the developer guide.
      */
 
@@ -188,8 +194,8 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
+     * Used by AWS Glue</a> topic in the developer guide.
      * </p>
      * 
      * @param arguments
@@ -205,7 +211,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     *        href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      *        Parameters Used by AWS Glue</a> topic in the developer guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -237,6 +243,46 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The job run timeout in minutes. It overrides the timeout value of the job.
+     * </p>
+     * 
+     * @param timeout
+     *        The job run timeout in minutes. It overrides the timeout value of the job.
+     */
+
+    public void setTimeout(Integer timeout) {
+        this.timeout = timeout;
+    }
+
+    /**
+     * <p>
+     * The job run timeout in minutes. It overrides the timeout value of the job.
+     * </p>
+     * 
+     * @return The job run timeout in minutes. It overrides the timeout value of the job.
+     */
+
+    public Integer getTimeout() {
+        return this.timeout;
+    }
+
+    /**
+     * <p>
+     * The job run timeout in minutes. It overrides the timeout value of the job.
+     * </p>
+     * 
+     * @param timeout
+     *        The job run timeout in minutes. It overrides the timeout value of the job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Action withTimeout(Integer timeout) {
+        setTimeout(timeout);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -250,7 +296,9 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
         if (getJobName() != null)
             sb.append("JobName: ").append(getJobName()).append(",");
         if (getArguments() != null)
-            sb.append("Arguments: ").append(getArguments());
+            sb.append("Arguments: ").append(getArguments()).append(",");
+        if (getTimeout() != null)
+            sb.append("Timeout: ").append(getTimeout());
         sb.append("}");
         return sb.toString();
     }
@@ -273,6 +321,10 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getArguments() != null && other.getArguments().equals(this.getArguments()) == false)
             return false;
+        if (other.getTimeout() == null ^ this.getTimeout() == null)
+            return false;
+        if (other.getTimeout() != null && other.getTimeout().equals(this.getTimeout()) == false)
+            return false;
         return true;
     }
 
@@ -283,6 +335,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getJobName() == null) ? 0 : getJobName().hashCode());
         hashCode = prime * hashCode + ((getArguments() == null) ? 0 : getArguments().hashCode());
+        hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         return hashCode;
     }
 

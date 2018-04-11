@@ -85,10 +85,44 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
     private String replicationTaskSettings;
     /**
      * <p>
-     * The start time for the Change Data Capture (CDC) operation.
+     * Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition
+     * to specify when you want a CDC operation to start. Specifying both values results in an error.
      * </p>
      */
     private java.util.Date cdcStartTime;
+    /**
+     * <p>
+     * Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or
+     * CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.
+     * </p>
+     * <p>
+     * The value can be in date, checkpoint, or LSN/SCN format.
+     * </p>
+     * <p>
+     * Date Example: --cdc-start-position “2018-03-08T12:12:12”
+     * </p>
+     * <p>
+     * Checkpoint Example: --cdc-start-position
+     * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"
+     * </p>
+     * <p>
+     * LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+     * </p>
+     */
+    private String cdcStartPosition;
+    /**
+     * <p>
+     * Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or
+     * commit time.
+     * </p>
+     * <p>
+     * Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     * </p>
+     * <p>
+     * Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * </p>
+     */
+    private String cdcStopPosition;
 
     /**
      * <p>
@@ -491,11 +525,14 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The start time for the Change Data Capture (CDC) operation.
+     * Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition
+     * to specify when you want a CDC operation to start. Specifying both values results in an error.
      * </p>
      * 
      * @param cdcStartTime
-     *        The start time for the Change Data Capture (CDC) operation.
+     *        Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or
+     *        CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an
+     *        error.
      */
 
     public void setCdcStartTime(java.util.Date cdcStartTime) {
@@ -504,10 +541,13 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The start time for the Change Data Capture (CDC) operation.
+     * Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition
+     * to specify when you want a CDC operation to start. Specifying both values results in an error.
      * </p>
      * 
-     * @return The start time for the Change Data Capture (CDC) operation.
+     * @return Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or
+     *         CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an
+     *         error.
      */
 
     public java.util.Date getCdcStartTime() {
@@ -516,16 +556,222 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The start time for the Change Data Capture (CDC) operation.
+     * Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition
+     * to specify when you want a CDC operation to start. Specifying both values results in an error.
      * </p>
      * 
      * @param cdcStartTime
-     *        The start time for the Change Data Capture (CDC) operation.
+     *        Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or
+     *        CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an
+     *        error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ModifyReplicationTaskRequest withCdcStartTime(java.util.Date cdcStartTime) {
         setCdcStartTime(cdcStartTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or
+     * CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.
+     * </p>
+     * <p>
+     * The value can be in date, checkpoint, or LSN/SCN format.
+     * </p>
+     * <p>
+     * Date Example: --cdc-start-position “2018-03-08T12:12:12”
+     * </p>
+     * <p>
+     * Checkpoint Example: --cdc-start-position
+     * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"
+     * </p>
+     * <p>
+     * LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+     * </p>
+     * 
+     * @param cdcStartPosition
+     *        Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or
+     *        CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an
+     *        error.</p>
+     *        <p>
+     *        The value can be in date, checkpoint, or LSN/SCN format.
+     *        </p>
+     *        <p>
+     *        Date Example: --cdc-start-position “2018-03-08T12:12:12”
+     *        </p>
+     *        <p>
+     *        Checkpoint Example: --cdc-start-position
+     *        "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"
+     *        </p>
+     *        <p>
+     *        LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+     */
+
+    public void setCdcStartPosition(String cdcStartPosition) {
+        this.cdcStartPosition = cdcStartPosition;
+    }
+
+    /**
+     * <p>
+     * Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or
+     * CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.
+     * </p>
+     * <p>
+     * The value can be in date, checkpoint, or LSN/SCN format.
+     * </p>
+     * <p>
+     * Date Example: --cdc-start-position “2018-03-08T12:12:12”
+     * </p>
+     * <p>
+     * Checkpoint Example: --cdc-start-position
+     * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"
+     * </p>
+     * <p>
+     * LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+     * </p>
+     * 
+     * @return Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or
+     *         CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an
+     *         error.</p>
+     *         <p>
+     *         The value can be in date, checkpoint, or LSN/SCN format.
+     *         </p>
+     *         <p>
+     *         Date Example: --cdc-start-position “2018-03-08T12:12:12”
+     *         </p>
+     *         <p>
+     *         Checkpoint Example: --cdc-start-position
+     *         "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"
+     *         </p>
+     *         <p>
+     *         LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+     */
+
+    public String getCdcStartPosition() {
+        return this.cdcStartPosition;
+    }
+
+    /**
+     * <p>
+     * Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or
+     * CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.
+     * </p>
+     * <p>
+     * The value can be in date, checkpoint, or LSN/SCN format.
+     * </p>
+     * <p>
+     * Date Example: --cdc-start-position “2018-03-08T12:12:12”
+     * </p>
+     * <p>
+     * Checkpoint Example: --cdc-start-position
+     * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"
+     * </p>
+     * <p>
+     * LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+     * </p>
+     * 
+     * @param cdcStartPosition
+     *        Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or
+     *        CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an
+     *        error.</p>
+     *        <p>
+     *        The value can be in date, checkpoint, or LSN/SCN format.
+     *        </p>
+     *        <p>
+     *        Date Example: --cdc-start-position “2018-03-08T12:12:12”
+     *        </p>
+     *        <p>
+     *        Checkpoint Example: --cdc-start-position
+     *        "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"
+     *        </p>
+     *        <p>
+     *        LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyReplicationTaskRequest withCdcStartPosition(String cdcStartPosition) {
+        setCdcStartPosition(cdcStartPosition);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or
+     * commit time.
+     * </p>
+     * <p>
+     * Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     * </p>
+     * <p>
+     * Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * </p>
+     * 
+     * @param cdcStopPosition
+     *        Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time
+     *        or commit time.</p>
+     *        <p>
+     *        Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     *        </p>
+     *        <p>
+     *        Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     */
+
+    public void setCdcStopPosition(String cdcStopPosition) {
+        this.cdcStopPosition = cdcStopPosition;
+    }
+
+    /**
+     * <p>
+     * Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or
+     * commit time.
+     * </p>
+     * <p>
+     * Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     * </p>
+     * <p>
+     * Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * </p>
+     * 
+     * @return Indicates when you want a change data capture (CDC) operation to stop. The value can be either server
+     *         time or commit time.</p>
+     *         <p>
+     *         Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     *         </p>
+     *         <p>
+     *         Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     */
+
+    public String getCdcStopPosition() {
+        return this.cdcStopPosition;
+    }
+
+    /**
+     * <p>
+     * Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or
+     * commit time.
+     * </p>
+     * <p>
+     * Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     * </p>
+     * <p>
+     * Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * </p>
+     * 
+     * @param cdcStopPosition
+     *        Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time
+     *        or commit time.</p>
+     *        <p>
+     *        Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     *        </p>
+     *        <p>
+     *        Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyReplicationTaskRequest withCdcStopPosition(String cdcStopPosition) {
+        setCdcStopPosition(cdcStopPosition);
         return this;
     }
 
@@ -551,7 +797,11 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
         if (getReplicationTaskSettings() != null)
             sb.append("ReplicationTaskSettings: ").append(getReplicationTaskSettings()).append(",");
         if (getCdcStartTime() != null)
-            sb.append("CdcStartTime: ").append(getCdcStartTime());
+            sb.append("CdcStartTime: ").append(getCdcStartTime()).append(",");
+        if (getCdcStartPosition() != null)
+            sb.append("CdcStartPosition: ").append(getCdcStartPosition()).append(",");
+        if (getCdcStopPosition() != null)
+            sb.append("CdcStopPosition: ").append(getCdcStopPosition());
         sb.append("}");
         return sb.toString();
     }
@@ -590,6 +840,14 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getCdcStartTime() != null && other.getCdcStartTime().equals(this.getCdcStartTime()) == false)
             return false;
+        if (other.getCdcStartPosition() == null ^ this.getCdcStartPosition() == null)
+            return false;
+        if (other.getCdcStartPosition() != null && other.getCdcStartPosition().equals(this.getCdcStartPosition()) == false)
+            return false;
+        if (other.getCdcStopPosition() == null ^ this.getCdcStopPosition() == null)
+            return false;
+        if (other.getCdcStopPosition() != null && other.getCdcStopPosition().equals(this.getCdcStopPosition()) == false)
+            return false;
         return true;
     }
 
@@ -604,6 +862,8 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getTableMappings() == null) ? 0 : getTableMappings().hashCode());
         hashCode = prime * hashCode + ((getReplicationTaskSettings() == null) ? 0 : getReplicationTaskSettings().hashCode());
         hashCode = prime * hashCode + ((getCdcStartTime() == null) ? 0 : getCdcStartTime().hashCode());
+        hashCode = prime * hashCode + ((getCdcStartPosition() == null) ? 0 : getCdcStartPosition().hashCode());
+        hashCode = prime * hashCode + ((getCdcStopPosition() == null) ? 0 : getCdcStopPosition().hashCode());
         return hashCode;
     }
 

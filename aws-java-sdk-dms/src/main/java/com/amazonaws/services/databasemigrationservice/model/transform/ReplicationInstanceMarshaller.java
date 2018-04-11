@@ -70,6 +70,8 @@ public class ReplicationInstanceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PubliclyAccessible").build();
     private static final MarshallingInfo<String> SECONDARYAVAILABILITYZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecondaryAvailabilityZone").build();
+    private static final MarshallingInfo<java.util.Date> FREEUNTIL_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FreeUntil").build();
 
     private static final ReplicationInstanceMarshaller instance = new ReplicationInstanceMarshaller();
 
@@ -108,6 +110,7 @@ public class ReplicationInstanceMarshaller {
             protocolMarshaller.marshall(replicationInstance.getReplicationInstancePrivateIpAddresses(), REPLICATIONINSTANCEPRIVATEIPADDRESSES_BINDING);
             protocolMarshaller.marshall(replicationInstance.getPubliclyAccessible(), PUBLICLYACCESSIBLE_BINDING);
             protocolMarshaller.marshall(replicationInstance.getSecondaryAvailabilityZone(), SECONDARYAVAILABILITYZONE_BINDING);
+            protocolMarshaller.marshall(replicationInstance.getFreeUntil(), FREEUNTIL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

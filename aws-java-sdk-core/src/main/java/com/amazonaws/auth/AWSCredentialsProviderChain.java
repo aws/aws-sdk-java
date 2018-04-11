@@ -133,9 +133,8 @@ public class AWSCredentialsProviderChain implements AWSCredentialsProvider {
                 exceptionMessages.add(message);
             }
         }
-
         throw new SdkClientException("Unable to load AWS credentials from any provider in the chain: "
-                + exceptionMessages);
+                                     + exceptionMessages);
     }
 
     @Override

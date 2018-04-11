@@ -27,7 +27,7 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the job to start.
+     * The name of the job definition to use.
      * </p>
      */
     private String jobName;
@@ -39,8 +39,8 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String jobRunId;
     /**
      * <p>
-     * The job arguments specifically for this run. They override the equivalent default arguments set for the job
-     * itself.
+     * The job arguments specifically for this run. They override the equivalent default arguments set for in the job
+     * definition itself.
      * </p>
      * <p>
      * You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS Glue
@@ -53,8 +53,8 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
+     * Used by AWS Glue</a> topic in the developer guide.
      * </p>
      */
     private java.util.Map<String, String> arguments;
@@ -67,14 +67,20 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private Integer allocatedCapacity;
+    /**
+     * <p>
+     * The job run timeout in minutes. It overrides the timeout value of the job.
+     * </p>
+     */
+    private Integer timeout;
 
     /**
      * <p>
-     * The name of the job to start.
+     * The name of the job definition to use.
      * </p>
      * 
      * @param jobName
-     *        The name of the job to start.
+     *        The name of the job definition to use.
      */
 
     public void setJobName(String jobName) {
@@ -83,10 +89,10 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the job to start.
+     * The name of the job definition to use.
      * </p>
      * 
-     * @return The name of the job to start.
+     * @return The name of the job definition to use.
      */
 
     public String getJobName() {
@@ -95,11 +101,11 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the job to start.
+     * The name of the job definition to use.
      * </p>
      * 
      * @param jobName
-     *        The name of the job to start.
+     *        The name of the job definition to use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,8 +156,8 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The job arguments specifically for this run. They override the equivalent default arguments set for the job
-     * itself.
+     * The job arguments specifically for this run. They override the equivalent default arguments set for in the job
+     * definition itself.
      * </p>
      * <p>
      * You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS Glue
@@ -164,12 +170,12 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
+     * Used by AWS Glue</a> topic in the developer guide.
      * </p>
      * 
-     * @return The job arguments specifically for this run. They override the equivalent default arguments set for the
-     *         job itself.</p>
+     * @return The job arguments specifically for this run. They override the equivalent default arguments set for in
+     *         the job definition itself.</p>
      *         <p>
      *         You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS
      *         Glue itself consumes.
@@ -181,7 +187,7 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </p>
      *         <p>
      *         For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     *         href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     *         href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      *         Parameters Used by AWS Glue</a> topic in the developer guide.
      */
 
@@ -191,8 +197,8 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The job arguments specifically for this run. They override the equivalent default arguments set for the job
-     * itself.
+     * The job arguments specifically for this run. They override the equivalent default arguments set for in the job
+     * definition itself.
      * </p>
      * <p>
      * You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS Glue
@@ -205,13 +211,13 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
+     * Used by AWS Glue</a> topic in the developer guide.
      * </p>
      * 
      * @param arguments
-     *        The job arguments specifically for this run. They override the equivalent default arguments set for the
-     *        job itself.</p>
+     *        The job arguments specifically for this run. They override the equivalent default arguments set for in the
+     *        job definition itself.</p>
      *        <p>
      *        You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS
      *        Glue itself consumes.
@@ -223,7 +229,7 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        <p>
      *        For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     *        href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      *        Parameters Used by AWS Glue</a> topic in the developer guide.
      */
 
@@ -233,8 +239,8 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The job arguments specifically for this run. They override the equivalent default arguments set for the job
-     * itself.
+     * The job arguments specifically for this run. They override the equivalent default arguments set for in the job
+     * definition itself.
      * </p>
      * <p>
      * You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS Glue
@@ -247,13 +253,13 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
+     * Used by AWS Glue</a> topic in the developer guide.
      * </p>
      * 
      * @param arguments
-     *        The job arguments specifically for this run. They override the equivalent default arguments set for the
-     *        job itself.</p>
+     *        The job arguments specifically for this run. They override the equivalent default arguments set for in the
+     *        job definition itself.</p>
      *        <p>
      *        You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS
      *        Glue itself consumes.
@@ -265,7 +271,7 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        <p>
      *        For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     *        href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      *        Parameters Used by AWS Glue</a> topic in the developer guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -355,6 +361,46 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The job run timeout in minutes. It overrides the timeout value of the job.
+     * </p>
+     * 
+     * @param timeout
+     *        The job run timeout in minutes. It overrides the timeout value of the job.
+     */
+
+    public void setTimeout(Integer timeout) {
+        this.timeout = timeout;
+    }
+
+    /**
+     * <p>
+     * The job run timeout in minutes. It overrides the timeout value of the job.
+     * </p>
+     * 
+     * @return The job run timeout in minutes. It overrides the timeout value of the job.
+     */
+
+    public Integer getTimeout() {
+        return this.timeout;
+    }
+
+    /**
+     * <p>
+     * The job run timeout in minutes. It overrides the timeout value of the job.
+     * </p>
+     * 
+     * @param timeout
+     *        The job run timeout in minutes. It overrides the timeout value of the job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartJobRunRequest withTimeout(Integer timeout) {
+        setTimeout(timeout);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -372,7 +418,9 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getArguments() != null)
             sb.append("Arguments: ").append(getArguments()).append(",");
         if (getAllocatedCapacity() != null)
-            sb.append("AllocatedCapacity: ").append(getAllocatedCapacity());
+            sb.append("AllocatedCapacity: ").append(getAllocatedCapacity()).append(",");
+        if (getTimeout() != null)
+            sb.append("Timeout: ").append(getTimeout());
         sb.append("}");
         return sb.toString();
     }
@@ -403,6 +451,10 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getAllocatedCapacity() != null && other.getAllocatedCapacity().equals(this.getAllocatedCapacity()) == false)
             return false;
+        if (other.getTimeout() == null ^ this.getTimeout() == null)
+            return false;
+        if (other.getTimeout() != null && other.getTimeout().equals(this.getTimeout()) == false)
+            return false;
         return true;
     }
 
@@ -415,6 +467,7 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getJobRunId() == null) ? 0 : getJobRunId().hashCode());
         hashCode = prime * hashCode + ((getArguments() == null) ? 0 : getArguments().hashCode());
         hashCode = prime * hashCode + ((getAllocatedCapacity() == null) ? 0 : getAllocatedCapacity().hashCode());
+        hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         return hashCode;
     }
 

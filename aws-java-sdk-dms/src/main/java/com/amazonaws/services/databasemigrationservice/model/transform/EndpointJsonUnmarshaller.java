@@ -60,6 +60,10 @@ public class EndpointJsonUnmarshaller implements Unmarshaller<Endpoint, JsonUnma
                     context.nextToken();
                     endpoint.setEngineName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("EngineDisplayName", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setEngineDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Username", targetDepth)) {
                     context.nextToken();
                     endpoint.setUsername(context.getUnmarshaller(String.class).unmarshall(context));
@@ -99,6 +103,14 @@ public class EndpointJsonUnmarshaller implements Unmarshaller<Endpoint, JsonUnma
                 if (context.testExpression("SslMode", targetDepth)) {
                     context.nextToken();
                     endpoint.setSslMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ServiceAccessRoleArn", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setServiceAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ExternalTableDefinition", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setExternalTableDefinition(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ExternalId", targetDepth)) {
                     context.nextToken();

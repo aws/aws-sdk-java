@@ -25,7 +25,8 @@ public enum JobRunState {
     STOPPING("STOPPING"),
     STOPPED("STOPPED"),
     SUCCEEDED("SUCCEEDED"),
-    FAILED("FAILED");
+    FAILED("FAILED"),
+    TIMEOUT("TIMEOUT");
 
     private String value;
 

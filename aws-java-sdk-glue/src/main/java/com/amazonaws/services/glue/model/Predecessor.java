@@ -30,7 +30,7 @@ public class Predecessor implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the predecessor job.
+     * The name of the job definition used by the predecessor job run.
      * </p>
      */
     private String jobName;
@@ -43,11 +43,11 @@ public class Predecessor implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the predecessor job.
+     * The name of the job definition used by the predecessor job run.
      * </p>
      * 
      * @param jobName
-     *        The name of the predecessor job.
+     *        The name of the job definition used by the predecessor job run.
      */
 
     public void setJobName(String jobName) {
@@ -56,10 +56,10 @@ public class Predecessor implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the predecessor job.
+     * The name of the job definition used by the predecessor job run.
      * </p>
      * 
-     * @return The name of the predecessor job.
+     * @return The name of the job definition used by the predecessor job run.
      */
 
     public String getJobName() {
@@ -68,11 +68,11 @@ public class Predecessor implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the predecessor job.
+     * The name of the job definition used by the predecessor job run.
      * </p>
      * 
      * @param jobName
-     *        The name of the predecessor job.
+     *        The name of the job definition used by the predecessor job run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -26,6 +26,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateOriginEndpointRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    private CmafPackageCreateOrUpdateParameters cmafPackage;
+
     private DashPackage dashPackage;
     /** A short text description of the OriginEndpoint. */
     private String description;
@@ -49,6 +51,32 @@ public class UpdateOriginEndpointRequest extends com.amazonaws.AmazonWebServiceR
     private Integer timeDelaySeconds;
     /** A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint. */
     private java.util.List<String> whitelist;
+
+    /**
+     * @param cmafPackage
+     */
+
+    public void setCmafPackage(CmafPackageCreateOrUpdateParameters cmafPackage) {
+        this.cmafPackage = cmafPackage;
+    }
+
+    /**
+     * @return
+     */
+
+    public CmafPackageCreateOrUpdateParameters getCmafPackage() {
+        return this.cmafPackage;
+    }
+
+    /**
+     * @param cmafPackage
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateOriginEndpointRequest withCmafPackage(CmafPackageCreateOrUpdateParameters cmafPackage) {
+        setCmafPackage(cmafPackage);
+        return this;
+    }
 
     /**
      * @param dashPackage
@@ -383,6 +411,8 @@ public class UpdateOriginEndpointRequest extends com.amazonaws.AmazonWebServiceR
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCmafPackage() != null)
+            sb.append("CmafPackage: ").append(getCmafPackage()).append(",");
         if (getDashPackage() != null)
             sb.append("DashPackage: ").append(getDashPackage()).append(",");
         if (getDescription() != null)
@@ -415,6 +445,10 @@ public class UpdateOriginEndpointRequest extends com.amazonaws.AmazonWebServiceR
         if (obj instanceof UpdateOriginEndpointRequest == false)
             return false;
         UpdateOriginEndpointRequest other = (UpdateOriginEndpointRequest) obj;
+        if (other.getCmafPackage() == null ^ this.getCmafPackage() == null)
+            return false;
+        if (other.getCmafPackage() != null && other.getCmafPackage().equals(this.getCmafPackage()) == false)
+            return false;
         if (other.getDashPackage() == null ^ this.getDashPackage() == null)
             return false;
         if (other.getDashPackage() != null && other.getDashPackage().equals(this.getDashPackage()) == false)
@@ -459,6 +493,7 @@ public class UpdateOriginEndpointRequest extends com.amazonaws.AmazonWebServiceR
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCmafPackage() == null) ? 0 : getCmafPackage().hashCode());
         hashCode = prime * hashCode + ((getDashPackage() == null) ? 0 : getDashPackage().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getHlsPackage() == null) ? 0 : getHlsPackage().hashCode());

@@ -31,6 +31,8 @@ public class OriginEndpoint implements Serializable, Cloneable, StructuredPojo {
     /** The ID of the Channel the OriginEndpoint is associated with. */
     private String channelId;
 
+    private CmafPackage cmafPackage;
+
     private DashPackage dashPackage;
     /** A short text description of the OriginEndpoint. */
     private String description;
@@ -122,6 +124,32 @@ public class OriginEndpoint implements Serializable, Cloneable, StructuredPojo {
 
     public OriginEndpoint withChannelId(String channelId) {
         setChannelId(channelId);
+        return this;
+    }
+
+    /**
+     * @param cmafPackage
+     */
+
+    public void setCmafPackage(CmafPackage cmafPackage) {
+        this.cmafPackage = cmafPackage;
+    }
+
+    /**
+     * @return
+     */
+
+    public CmafPackage getCmafPackage() {
+        return this.cmafPackage;
+    }
+
+    /**
+     * @param cmafPackage
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OriginEndpoint withCmafPackage(CmafPackage cmafPackage) {
+        setCmafPackage(cmafPackage);
         return this;
     }
 
@@ -496,6 +524,8 @@ public class OriginEndpoint implements Serializable, Cloneable, StructuredPojo {
             sb.append("Arn: ").append(getArn()).append(",");
         if (getChannelId() != null)
             sb.append("ChannelId: ").append(getChannelId()).append(",");
+        if (getCmafPackage() != null)
+            sb.append("CmafPackage: ").append(getCmafPackage()).append(",");
         if (getDashPackage() != null)
             sb.append("DashPackage: ").append(getDashPackage()).append(",");
         if (getDescription() != null)
@@ -537,6 +567,10 @@ public class OriginEndpoint implements Serializable, Cloneable, StructuredPojo {
         if (other.getChannelId() == null ^ this.getChannelId() == null)
             return false;
         if (other.getChannelId() != null && other.getChannelId().equals(this.getChannelId()) == false)
+            return false;
+        if (other.getCmafPackage() == null ^ this.getCmafPackage() == null)
+            return false;
+        if (other.getCmafPackage() != null && other.getCmafPackage().equals(this.getCmafPackage()) == false)
             return false;
         if (other.getDashPackage() == null ^ this.getDashPackage() == null)
             return false;
@@ -588,6 +622,7 @@ public class OriginEndpoint implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getChannelId() == null) ? 0 : getChannelId().hashCode());
+        hashCode = prime * hashCode + ((getCmafPackage() == null) ? 0 : getCmafPackage().hashCode());
         hashCode = prime * hashCode + ((getDashPackage() == null) ? 0 : getDashPackage().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getHlsPackage() == null) ? 0 : getHlsPackage().hashCode());

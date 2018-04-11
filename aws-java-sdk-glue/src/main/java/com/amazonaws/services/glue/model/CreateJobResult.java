@@ -25,18 +25,18 @@ public class CreateJobResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The unique name that was provided.
+     * The unique name that was provided for this job definition.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * The unique name that was provided.
+     * The unique name that was provided for this job definition.
      * </p>
      * 
      * @param name
-     *        The unique name that was provided.
+     *        The unique name that was provided for this job definition.
      */
 
     public void setName(String name) {
@@ -45,10 +45,10 @@ public class CreateJobResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The unique name that was provided.
+     * The unique name that was provided for this job definition.
      * </p>
      * 
-     * @return The unique name that was provided.
+     * @return The unique name that was provided for this job definition.
      */
 
     public String getName() {
@@ -57,11 +57,11 @@ public class CreateJobResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The unique name that was provided.
+     * The unique name that was provided for this job definition.
      * </p>
      * 
      * @param name
-     *        The unique name that was provided.
+     *        The unique name that was provided for this job definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

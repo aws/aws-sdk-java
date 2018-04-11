@@ -44,6 +44,10 @@ public class CreateReplicationTaskRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicationTaskSettings").build();
     private static final MarshallingInfo<java.util.Date> CDCSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CdcStartTime").build();
+    private static final MarshallingInfo<String> CDCSTARTPOSITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CdcStartPosition").build();
+    private static final MarshallingInfo<String> CDCSTOPPOSITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CdcStopPosition").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
 
@@ -71,6 +75,8 @@ public class CreateReplicationTaskRequestMarshaller {
             protocolMarshaller.marshall(createReplicationTaskRequest.getTableMappings(), TABLEMAPPINGS_BINDING);
             protocolMarshaller.marshall(createReplicationTaskRequest.getReplicationTaskSettings(), REPLICATIONTASKSETTINGS_BINDING);
             protocolMarshaller.marshall(createReplicationTaskRequest.getCdcStartTime(), CDCSTARTTIME_BINDING);
+            protocolMarshaller.marshall(createReplicationTaskRequest.getCdcStartPosition(), CDCSTARTPOSITION_BINDING);
+            protocolMarshaller.marshall(createReplicationTaskRequest.getCdcStopPosition(), CDCSTOPPOSITION_BINDING);
             protocolMarshaller.marshall(createReplicationTaskRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateOriginEndpointRequestMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> CMAFPACKAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cmafPackage").build();
     private static final MarshallingInfo<StructuredPojo> DASHPACKAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dashPackage").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -63,6 +65,7 @@ public class UpdateOriginEndpointRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(updateOriginEndpointRequest.getCmafPackage(), CMAFPACKAGE_BINDING);
             protocolMarshaller.marshall(updateOriginEndpointRequest.getDashPackage(), DASHPACKAGE_BINDING);
             protocolMarshaller.marshall(updateOriginEndpointRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateOriginEndpointRequest.getHlsPackage(), HLSPACKAGE_BINDING);

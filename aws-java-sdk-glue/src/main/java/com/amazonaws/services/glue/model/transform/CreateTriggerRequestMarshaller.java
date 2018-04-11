@@ -40,6 +40,8 @@ public class CreateTriggerRequestMarshaller {
             .marshallLocationName("Actions").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<Boolean> STARTONCREATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartOnCreation").build();
 
     private static final CreateTriggerRequestMarshaller instance = new CreateTriggerRequestMarshaller();
 
@@ -63,6 +65,7 @@ public class CreateTriggerRequestMarshaller {
             protocolMarshaller.marshall(createTriggerRequest.getPredicate(), PREDICATE_BINDING);
             protocolMarshaller.marshall(createTriggerRequest.getActions(), ACTIONS_BINDING);
             protocolMarshaller.marshall(createTriggerRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createTriggerRequest.getStartOnCreation(), STARTONCREATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

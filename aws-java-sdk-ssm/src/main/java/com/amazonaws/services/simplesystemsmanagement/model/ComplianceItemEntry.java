@@ -38,7 +38,8 @@ public class ComplianceItemEntry implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The title of the compliance item. For example, if the compliance item is a Windows patch, the title could be the
-     * title of the KB article for the patch; for example: Security Update for Active Directory Federation Services.
+     * title of the KB article for the patch. Here's an example: Security Update for Active Directory Federation
+     * Services.
      * </p>
      */
     private String title;
@@ -111,13 +112,14 @@ public class ComplianceItemEntry implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The title of the compliance item. For example, if the compliance item is a Windows patch, the title could be the
-     * title of the KB article for the patch; for example: Security Update for Active Directory Federation Services.
+     * title of the KB article for the patch. Here's an example: Security Update for Active Directory Federation
+     * Services.
      * </p>
      * 
      * @param title
      *        The title of the compliance item. For example, if the compliance item is a Windows patch, the title could
-     *        be the title of the KB article for the patch; for example: Security Update for Active Directory Federation
-     *        Services.
+     *        be the title of the KB article for the patch. Here's an example: Security Update for Active Directory
+     *        Federation Services.
      */
 
     public void setTitle(String title) {
@@ -127,11 +129,12 @@ public class ComplianceItemEntry implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The title of the compliance item. For example, if the compliance item is a Windows patch, the title could be the
-     * title of the KB article for the patch; for example: Security Update for Active Directory Federation Services.
+     * title of the KB article for the patch. Here's an example: Security Update for Active Directory Federation
+     * Services.
      * </p>
      * 
      * @return The title of the compliance item. For example, if the compliance item is a Windows patch, the title could
-     *         be the title of the KB article for the patch; for example: Security Update for Active Directory
+     *         be the title of the KB article for the patch. Here's an example: Security Update for Active Directory
      *         Federation Services.
      */
 
@@ -142,13 +145,14 @@ public class ComplianceItemEntry implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The title of the compliance item. For example, if the compliance item is a Windows patch, the title could be the
-     * title of the KB article for the patch; for example: Security Update for Active Directory Federation Services.
+     * title of the KB article for the patch. Here's an example: Security Update for Active Directory Federation
+     * Services.
      * </p>
      * 
      * @param title
      *        The title of the compliance item. For example, if the compliance item is a Windows patch, the title could
-     *        be the title of the KB article for the patch; for example: Security Update for Active Directory Federation
-     *        Services.
+     *        be the title of the KB article for the patch. Here's an example: Security Update for Active Directory
+     *        Federation Services.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

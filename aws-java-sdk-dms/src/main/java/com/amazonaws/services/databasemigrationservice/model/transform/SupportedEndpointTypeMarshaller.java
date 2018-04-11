@@ -33,6 +33,8 @@ public class SupportedEndpointTypeMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SupportsCDC").build();
     private static final MarshallingInfo<String> ENDPOINTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointType").build();
+    private static final MarshallingInfo<String> ENGINEDISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EngineDisplayName").build();
 
     private static final SupportedEndpointTypeMarshaller instance = new SupportedEndpointTypeMarshaller();
 
@@ -53,6 +55,7 @@ public class SupportedEndpointTypeMarshaller {
             protocolMarshaller.marshall(supportedEndpointType.getEngineName(), ENGINENAME_BINDING);
             protocolMarshaller.marshall(supportedEndpointType.getSupportsCDC(), SUPPORTSCDC_BINDING);
             protocolMarshaller.marshall(supportedEndpointType.getEndpointType(), ENDPOINTTYPE_BINDING);
+            protocolMarshaller.marshall(supportedEndpointType.getEngineDisplayName(), ENGINEDISPLAYNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

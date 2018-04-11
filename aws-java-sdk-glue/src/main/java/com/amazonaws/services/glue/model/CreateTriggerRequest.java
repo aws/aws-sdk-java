@@ -70,6 +70,12 @@ public class CreateTriggerRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * Set to true to start SCHEDULED and CONDITIONAL triggers when created. True not supported for ON_DEMAND triggers.
+     * </p>
+     */
+    private Boolean startOnCreation;
 
     /**
      * <p>
@@ -409,6 +415,62 @@ public class CreateTriggerRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * Set to true to start SCHEDULED and CONDITIONAL triggers when created. True not supported for ON_DEMAND triggers.
+     * </p>
+     * 
+     * @param startOnCreation
+     *        Set to true to start SCHEDULED and CONDITIONAL triggers when created. True not supported for ON_DEMAND
+     *        triggers.
+     */
+
+    public void setStartOnCreation(Boolean startOnCreation) {
+        this.startOnCreation = startOnCreation;
+    }
+
+    /**
+     * <p>
+     * Set to true to start SCHEDULED and CONDITIONAL triggers when created. True not supported for ON_DEMAND triggers.
+     * </p>
+     * 
+     * @return Set to true to start SCHEDULED and CONDITIONAL triggers when created. True not supported for ON_DEMAND
+     *         triggers.
+     */
+
+    public Boolean getStartOnCreation() {
+        return this.startOnCreation;
+    }
+
+    /**
+     * <p>
+     * Set to true to start SCHEDULED and CONDITIONAL triggers when created. True not supported for ON_DEMAND triggers.
+     * </p>
+     * 
+     * @param startOnCreation
+     *        Set to true to start SCHEDULED and CONDITIONAL triggers when created. True not supported for ON_DEMAND
+     *        triggers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTriggerRequest withStartOnCreation(Boolean startOnCreation) {
+        setStartOnCreation(startOnCreation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to true to start SCHEDULED and CONDITIONAL triggers when created. True not supported for ON_DEMAND triggers.
+     * </p>
+     * 
+     * @return Set to true to start SCHEDULED and CONDITIONAL triggers when created. True not supported for ON_DEMAND
+     *         triggers.
+     */
+
+    public Boolean isStartOnCreation() {
+        return this.startOnCreation;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -430,7 +492,9 @@ public class CreateTriggerRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getActions() != null)
             sb.append("Actions: ").append(getActions()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getStartOnCreation() != null)
+            sb.append("StartOnCreation: ").append(getStartOnCreation());
         sb.append("}");
         return sb.toString();
     }
@@ -469,6 +533,10 @@ public class CreateTriggerRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getStartOnCreation() == null ^ this.getStartOnCreation() == null)
+            return false;
+        if (other.getStartOnCreation() != null && other.getStartOnCreation().equals(this.getStartOnCreation()) == false)
+            return false;
         return true;
     }
 
@@ -483,6 +551,7 @@ public class CreateTriggerRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getPredicate() == null) ? 0 : getPredicate().hashCode());
         hashCode = prime * hashCode + ((getActions() == null) ? 0 : getActions().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getStartOnCreation() == null) ? 0 : getStartOnCreation().hashCode());
         return hashCode;
     }
 

@@ -48,7 +48,8 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
-     * postgres, mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
+     * postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and
+     * sqlserver.
      * </p>
      */
     private String engineName;
@@ -107,6 +108,18 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String sslMode;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the service access role you want to use to modify the endpoint.
+     * </p>
+     */
+    private String serviceAccessRoleArn;
+    /**
+     * <p>
+     * The external table definition.
+     * </p>
+     */
+    private String externalTableDefinition;
     /**
      * <p>
      * Settings in JSON format for the target Amazon DynamoDB endpoint. For more information about the available
@@ -297,12 +310,14 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
-     * postgres, mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
+     * postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and
+     * sqlserver.
      * </p>
      * 
      * @param engineName
      *        The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
-     *        postgres, mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
+     *        postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb,
+     *        mongodb, and sqlserver.
      */
 
     public void setEngineName(String engineName) {
@@ -312,11 +327,13 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
-     * postgres, mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
+     * postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and
+     * sqlserver.
      * </p>
      * 
      * @return The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
-     *         postgres, mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
+     *         postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb,
+     *         mongodb, and sqlserver.
      */
 
     public String getEngineName() {
@@ -326,12 +343,14 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
-     * postgres, mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
+     * postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and
+     * sqlserver.
      * </p>
      * 
      * @param engineName
      *        The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle,
-     *        postgres, mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
+     *        postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb,
+     *        mongodb, and sqlserver.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -756,6 +775,86 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) for the service access role you want to use to modify the endpoint.
+     * </p>
+     * 
+     * @param serviceAccessRoleArn
+     *        The Amazon Resource Name (ARN) for the service access role you want to use to modify the endpoint.
+     */
+
+    public void setServiceAccessRoleArn(String serviceAccessRoleArn) {
+        this.serviceAccessRoleArn = serviceAccessRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the service access role you want to use to modify the endpoint.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the service access role you want to use to modify the endpoint.
+     */
+
+    public String getServiceAccessRoleArn() {
+        return this.serviceAccessRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the service access role you want to use to modify the endpoint.
+     * </p>
+     * 
+     * @param serviceAccessRoleArn
+     *        The Amazon Resource Name (ARN) for the service access role you want to use to modify the endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyEndpointRequest withServiceAccessRoleArn(String serviceAccessRoleArn) {
+        setServiceAccessRoleArn(serviceAccessRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The external table definition.
+     * </p>
+     * 
+     * @param externalTableDefinition
+     *        The external table definition.
+     */
+
+    public void setExternalTableDefinition(String externalTableDefinition) {
+        this.externalTableDefinition = externalTableDefinition;
+    }
+
+    /**
+     * <p>
+     * The external table definition.
+     * </p>
+     * 
+     * @return The external table definition.
+     */
+
+    public String getExternalTableDefinition() {
+        return this.externalTableDefinition;
+    }
+
+    /**
+     * <p>
+     * The external table definition.
+     * </p>
+     * 
+     * @param externalTableDefinition
+     *        The external table definition.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyEndpointRequest withExternalTableDefinition(String externalTableDefinition) {
+        setExternalTableDefinition(externalTableDefinition);
+        return this;
+    }
+
+    /**
+     * <p>
      * Settings in JSON format for the target Amazon DynamoDB endpoint. For more information about the available
      * settings, see the <b>Using Object Mapping to Migrate Data to DynamoDB</b> section at <a
      * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html"> Using an Amazon DynamoDB
@@ -964,6 +1063,10 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("CertificateArn: ").append(getCertificateArn()).append(",");
         if (getSslMode() != null)
             sb.append("SslMode: ").append(getSslMode()).append(",");
+        if (getServiceAccessRoleArn() != null)
+            sb.append("ServiceAccessRoleArn: ").append(getServiceAccessRoleArn()).append(",");
+        if (getExternalTableDefinition() != null)
+            sb.append("ExternalTableDefinition: ").append(getExternalTableDefinition()).append(",");
         if (getDynamoDbSettings() != null)
             sb.append("DynamoDbSettings: ").append(getDynamoDbSettings()).append(",");
         if (getS3Settings() != null)
@@ -1032,6 +1135,14 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getSslMode() != null && other.getSslMode().equals(this.getSslMode()) == false)
             return false;
+        if (other.getServiceAccessRoleArn() == null ^ this.getServiceAccessRoleArn() == null)
+            return false;
+        if (other.getServiceAccessRoleArn() != null && other.getServiceAccessRoleArn().equals(this.getServiceAccessRoleArn()) == false)
+            return false;
+        if (other.getExternalTableDefinition() == null ^ this.getExternalTableDefinition() == null)
+            return false;
+        if (other.getExternalTableDefinition() != null && other.getExternalTableDefinition().equals(this.getExternalTableDefinition()) == false)
+            return false;
         if (other.getDynamoDbSettings() == null ^ this.getDynamoDbSettings() == null)
             return false;
         if (other.getDynamoDbSettings() != null && other.getDynamoDbSettings().equals(this.getDynamoDbSettings()) == false)
@@ -1064,6 +1175,8 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getExtraConnectionAttributes() == null) ? 0 : getExtraConnectionAttributes().hashCode());
         hashCode = prime * hashCode + ((getCertificateArn() == null) ? 0 : getCertificateArn().hashCode());
         hashCode = prime * hashCode + ((getSslMode() == null) ? 0 : getSslMode().hashCode());
+        hashCode = prime * hashCode + ((getServiceAccessRoleArn() == null) ? 0 : getServiceAccessRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getExternalTableDefinition() == null) ? 0 : getExternalTableDefinition().hashCode());
         hashCode = prime * hashCode + ((getDynamoDbSettings() == null) ? 0 : getDynamoDbSettings().hashCode());
         hashCode = prime * hashCode + ((getS3Settings() == null) ? 0 : getS3Settings().hashCode());
         hashCode = prime * hashCode + ((getMongoDbSettings() == null) ? 0 : getMongoDbSettings().hashCode());

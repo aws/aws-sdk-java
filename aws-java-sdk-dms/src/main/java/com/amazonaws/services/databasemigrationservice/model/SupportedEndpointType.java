@@ -29,7 +29,7 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The database engine name. Valid values, depending on the EndPointType, include mysql, oracle, postgres, mariadb,
-     * aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
+     * aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.
      * </p>
      */
     private String engineName;
@@ -45,16 +45,24 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
      * </p>
      */
     private String endpointType;
+    /**
+     * <p>
+     * The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora," this
+     * value would be "Amazon Aurora MySQL."
+     * </p>
+     */
+    private String engineDisplayName;
 
     /**
      * <p>
      * The database engine name. Valid values, depending on the EndPointType, include mysql, oracle, postgres, mariadb,
-     * aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
+     * aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.
      * </p>
      * 
      * @param engineName
      *        The database engine name. Valid values, depending on the EndPointType, include mysql, oracle, postgres,
-     *        mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
+     *        mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and
+     *        sqlserver.
      */
 
     public void setEngineName(String engineName) {
@@ -64,11 +72,12 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The database engine name. Valid values, depending on the EndPointType, include mysql, oracle, postgres, mariadb,
-     * aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
+     * aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.
      * </p>
      * 
      * @return The database engine name. Valid values, depending on the EndPointType, include mysql, oracle, postgres,
-     *         mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
+     *         mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and
+     *         sqlserver.
      */
 
     public String getEngineName() {
@@ -78,12 +87,13 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The database engine name. Valid values, depending on the EndPointType, include mysql, oracle, postgres, mariadb,
-     * aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
+     * aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.
      * </p>
      * 
      * @param engineName
      *        The database engine name. Valid values, depending on the EndPointType, include mysql, oracle, postgres,
-     *        mariadb, aurora, redshift, S3, sybase, dynamodb, mongodb, and sqlserver.
+     *        mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and
+     *        sqlserver.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -218,6 +228,52 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora," this
+     * value would be "Amazon Aurora MySQL."
+     * </p>
+     * 
+     * @param engineDisplayName
+     *        The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora,"
+     *        this value would be "Amazon Aurora MySQL."
+     */
+
+    public void setEngineDisplayName(String engineDisplayName) {
+        this.engineDisplayName = engineDisplayName;
+    }
+
+    /**
+     * <p>
+     * The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora," this
+     * value would be "Amazon Aurora MySQL."
+     * </p>
+     * 
+     * @return The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora,"
+     *         this value would be "Amazon Aurora MySQL."
+     */
+
+    public String getEngineDisplayName() {
+        return this.engineDisplayName;
+    }
+
+    /**
+     * <p>
+     * The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora," this
+     * value would be "Amazon Aurora MySQL."
+     * </p>
+     * 
+     * @param engineDisplayName
+     *        The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora,"
+     *        this value would be "Amazon Aurora MySQL."
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SupportedEndpointType withEngineDisplayName(String engineDisplayName) {
+        setEngineDisplayName(engineDisplayName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -233,7 +289,9 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
         if (getSupportsCDC() != null)
             sb.append("SupportsCDC: ").append(getSupportsCDC()).append(",");
         if (getEndpointType() != null)
-            sb.append("EndpointType: ").append(getEndpointType());
+            sb.append("EndpointType: ").append(getEndpointType()).append(",");
+        if (getEngineDisplayName() != null)
+            sb.append("EngineDisplayName: ").append(getEngineDisplayName());
         sb.append("}");
         return sb.toString();
     }
@@ -260,6 +318,10 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
             return false;
         if (other.getEndpointType() != null && other.getEndpointType().equals(this.getEndpointType()) == false)
             return false;
+        if (other.getEngineDisplayName() == null ^ this.getEngineDisplayName() == null)
+            return false;
+        if (other.getEngineDisplayName() != null && other.getEngineDisplayName().equals(this.getEngineDisplayName()) == false)
+            return false;
         return true;
     }
 
@@ -271,6 +333,7 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getEngineName() == null) ? 0 : getEngineName().hashCode());
         hashCode = prime * hashCode + ((getSupportsCDC() == null) ? 0 : getSupportsCDC().hashCode());
         hashCode = prime * hashCode + ((getEndpointType() == null) ? 0 : getEndpointType().hashCode());
+        hashCode = prime * hashCode + ((getEngineDisplayName() == null) ? 0 : getEngineDisplayName().hashCode());
         return hashCode;
     }
 

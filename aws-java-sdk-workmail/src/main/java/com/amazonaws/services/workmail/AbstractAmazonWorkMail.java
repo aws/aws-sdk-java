@@ -68,6 +68,11 @@ public class AbstractAmazonWorkMail implements AmazonWorkMail {
     }
 
     @Override
+    public DeleteMailboxPermissionsResult deleteMailboxPermissions(DeleteMailboxPermissionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteResourceResult deleteResource(DeleteResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -128,6 +133,11 @@ public class AbstractAmazonWorkMail implements AmazonWorkMail {
     }
 
     @Override
+    public ListMailboxPermissionsResult listMailboxPermissions(ListMailboxPermissionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListOrganizationsResult listOrganizations(ListOrganizationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -144,6 +154,11 @@ public class AbstractAmazonWorkMail implements AmazonWorkMail {
 
     @Override
     public ListUsersResult listUsers(ListUsersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutMailboxPermissionsResult putMailboxPermissions(PutMailboxPermissionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

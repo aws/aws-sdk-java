@@ -54,6 +54,10 @@ public class CreateEndpointRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CertificateArn").build();
     private static final MarshallingInfo<String> SSLMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SslMode").build();
+    private static final MarshallingInfo<String> SERVICEACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceAccessRoleArn").build();
+    private static final MarshallingInfo<String> EXTERNALTABLEDEFINITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExternalTableDefinition").build();
     private static final MarshallingInfo<StructuredPojo> DYNAMODBSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DynamoDbSettings").build();
     private static final MarshallingInfo<StructuredPojo> S3SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -90,6 +94,8 @@ public class CreateEndpointRequestMarshaller {
             protocolMarshaller.marshall(createEndpointRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createEndpointRequest.getCertificateArn(), CERTIFICATEARN_BINDING);
             protocolMarshaller.marshall(createEndpointRequest.getSslMode(), SSLMODE_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getServiceAccessRoleArn(), SERVICEACCESSROLEARN_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getExternalTableDefinition(), EXTERNALTABLEDEFINITION_BINDING);
             protocolMarshaller.marshall(createEndpointRequest.getDynamoDbSettings(), DYNAMODBSETTINGS_BINDING);
             protocolMarshaller.marshall(createEndpointRequest.getS3Settings(), S3SETTINGS_BINDING);
             protocolMarshaller.marshall(createEndpointRequest.getMongoDbSettings(), MONGODBSETTINGS_BINDING);

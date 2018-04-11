@@ -1772,9 +1772,6 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * Retrieves the default patch baseline. Note that Systems Manager supports creating multiple default patch
      * baselines. For example, you can create a default patch baseline for each operating system.
      * </p>
-     * <p>
-     * If you do not specify an operating system value, the default patch baseline for Windows is returned.
-     * </p>
      * 
      * @param getDefaultPatchBaselineRequest
      * @return A Java Future containing the result of the GetDefaultPatchBaseline operation returned by the service.
@@ -1788,9 +1785,6 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Retrieves the default patch baseline. Note that Systems Manager supports creating multiple default patch
      * baselines. For example, you can create a default patch baseline for each operating system.
-     * </p>
-     * <p>
-     * If you do not specify an operating system value, the default patch baseline for Windows is returned.
      * </p>
      * 
      * @param getDefaultPatchBaselineRequest
@@ -3586,42 +3580,28 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * Modifies a task assigned to a Maintenance Window. You can't change the task type, but you can change the
      * following values:
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * TaskARN. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to AWS-RunShellScript.
+     * Task ARN. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to AWS-RunShellScript.
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * ServiceRoleArn
+     * Service role ARN.
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * TaskInvocationParameters
+     * Task parameters.
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * Priority
+     * Task priority.
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * MaxConcurrency
+     * Task MaxConcurrency and MaxErrors.
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * MaxErrors
+     * Log location.
      * </p>
-     * </li>
-     * </ul>
      * <p>
      * If a parameter is null, then the corresponding field is not modified. Also, if you set Replace to true, then all
-     * fields required by the <a>RegisterTaskWithMaintenanceWindow</a> action are required for this request. Optional
-     * fields that aren't specified are set to null.
+     * fields required by the RegisterTaskWithMaintenanceWindow action are required for this request. Optional fields
+     * that aren't specified are set to null.
      * </p>
      * 
      * @param updateMaintenanceWindowTaskRequest
@@ -3638,42 +3618,28 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * Modifies a task assigned to a Maintenance Window. You can't change the task type, but you can change the
      * following values:
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * TaskARN. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to AWS-RunShellScript.
+     * Task ARN. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to AWS-RunShellScript.
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * ServiceRoleArn
+     * Service role ARN.
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * TaskInvocationParameters
+     * Task parameters.
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * Priority
+     * Task priority.
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * MaxConcurrency
+     * Task MaxConcurrency and MaxErrors.
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * MaxErrors
+     * Log location.
      * </p>
-     * </li>
-     * </ul>
      * <p>
      * If a parameter is null, then the corresponding field is not modified. Also, if you set Replace to true, then all
-     * fields required by the <a>RegisterTaskWithMaintenanceWindow</a> action are required for this request. Optional
-     * fields that aren't specified are set to null.
+     * fields required by the RegisterTaskWithMaintenanceWindow action are required for this request. Optional fields
+     * that aren't specified are set to null.
      * </p>
      * 
      * @param updateMaintenanceWindowTaskRequest

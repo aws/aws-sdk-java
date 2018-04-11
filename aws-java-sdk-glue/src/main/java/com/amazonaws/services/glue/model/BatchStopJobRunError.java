@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Records an error that occurred when attempting to stop a specified JobRun.
+ * Records an error that occurred when attempting to stop a specified job run.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchStopJobRunError" target="_top">AWS API
@@ -30,13 +30,13 @@ public class BatchStopJobRunError implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the Job in question.
+     * The name of the job definition used in the job run in question.
      * </p>
      */
     private String jobName;
     /**
      * <p>
-     * The JobRunId of the JobRun in question.
+     * The JobRunId of the job run in question.
      * </p>
      */
     private String jobRunId;
@@ -49,11 +49,11 @@ public class BatchStopJobRunError implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the Job in question.
+     * The name of the job definition used in the job run in question.
      * </p>
      * 
      * @param jobName
-     *        The name of the Job in question.
+     *        The name of the job definition used in the job run in question.
      */
 
     public void setJobName(String jobName) {
@@ -62,10 +62,10 @@ public class BatchStopJobRunError implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the Job in question.
+     * The name of the job definition used in the job run in question.
      * </p>
      * 
-     * @return The name of the Job in question.
+     * @return The name of the job definition used in the job run in question.
      */
 
     public String getJobName() {
@@ -74,11 +74,11 @@ public class BatchStopJobRunError implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the Job in question.
+     * The name of the job definition used in the job run in question.
      * </p>
      * 
      * @param jobName
-     *        The name of the Job in question.
+     *        The name of the job definition used in the job run in question.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class BatchStopJobRunError implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The JobRunId of the JobRun in question.
+     * The JobRunId of the job run in question.
      * </p>
      * 
      * @param jobRunId
-     *        The JobRunId of the JobRun in question.
+     *        The JobRunId of the job run in question.
      */
 
     public void setJobRunId(String jobRunId) {
@@ -102,10 +102,10 @@ public class BatchStopJobRunError implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The JobRunId of the JobRun in question.
+     * The JobRunId of the job run in question.
      * </p>
      * 
-     * @return The JobRunId of the JobRun in question.
+     * @return The JobRunId of the job run in question.
      */
 
     public String getJobRunId() {
@@ -114,11 +114,11 @@ public class BatchStopJobRunError implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The JobRunId of the JobRun in question.
+     * The JobRunId of the job run in question.
      * </p>
      * 
      * @param jobRunId
-     *        The JobRunId of the JobRun in question.
+     *        The JobRunId of the job run in question.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

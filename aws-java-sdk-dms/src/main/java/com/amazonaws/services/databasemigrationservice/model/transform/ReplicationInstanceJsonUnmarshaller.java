@@ -135,6 +135,10 @@ public class ReplicationInstanceJsonUnmarshaller implements Unmarshaller<Replica
                     context.nextToken();
                     replicationInstance.setSecondaryAvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("FreeUntil", targetDepth)) {
+                    context.nextToken();
+                    replicationInstance.setFreeUntil(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

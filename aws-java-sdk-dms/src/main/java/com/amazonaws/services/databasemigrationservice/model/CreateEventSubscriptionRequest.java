@@ -28,7 +28,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the DMS event notification subscription.
+     * The name of the AWS DMS event notification subscription.
      * </p>
      * <p>
      * Constraints: The name must be less than 255 characters.
@@ -86,14 +86,14 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the DMS event notification subscription.
+     * The name of the AWS DMS event notification subscription.
      * </p>
      * <p>
      * Constraints: The name must be less than 255 characters.
      * </p>
      * 
      * @param subscriptionName
-     *        The name of the DMS event notification subscription. </p>
+     *        The name of the AWS DMS event notification subscription. </p>
      *        <p>
      *        Constraints: The name must be less than 255 characters.
      */
@@ -104,13 +104,13 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the DMS event notification subscription.
+     * The name of the AWS DMS event notification subscription.
      * </p>
      * <p>
      * Constraints: The name must be less than 255 characters.
      * </p>
      * 
-     * @return The name of the DMS event notification subscription. </p>
+     * @return The name of the AWS DMS event notification subscription. </p>
      *         <p>
      *         Constraints: The name must be less than 255 characters.
      */
@@ -121,14 +121,14 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the DMS event notification subscription.
+     * The name of the AWS DMS event notification subscription.
      * </p>
      * <p>
      * Constraints: The name must be less than 255 characters.
      * </p>
      * 
      * @param subscriptionName
-     *        The name of the DMS event notification subscription. </p>
+     *        The name of the AWS DMS event notification subscription. </p>
      *        <p>
      *        Constraints: The name must be less than 255 characters.
      * @return Returns a reference to this object so that method calls can be chained together.

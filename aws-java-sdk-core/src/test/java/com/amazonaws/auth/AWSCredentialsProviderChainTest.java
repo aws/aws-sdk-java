@@ -20,14 +20,14 @@ package com.amazonaws.auth;
 
 import static org.junit.Assert.assertEquals;
 
+import com.amazonaws.SdkClientException;
 import java.util.Arrays;
 
 import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
-import com.amazonaws.SdkClientException;
 import com.amazonaws.internal.StaticCredentialsProvider;
+import org.junit.rules.ExpectedException;
 
 public class AWSCredentialsProviderChainTest {
 
@@ -123,7 +123,9 @@ public class AWSCredentialsProviderChainTest {
         public AWSCredentials getCredentials() {
             getCredentialsCallCount++;
 
-            if (throwException) throw new RuntimeException(exceptionMessage);
+            if (throwException) {
+                throw new RuntimeException(exceptionMessage);
+            }
             else return super.getCredentials();
         }
     }

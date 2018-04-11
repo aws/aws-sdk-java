@@ -170,7 +170,7 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Stops one or more job runs for a specified Job.
+     * Stops one or more job runs for a specified job definition.
      * </p>
      * 
      * @param batchStopJobRunRequest
@@ -305,7 +305,7 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Creates a new job.
+     * Creates a new job definition.
      * </p>
      * 
      * @param createJobRequest
@@ -550,7 +550,7 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Deletes a specified job. If the job is not found, no exception is thrown.
+     * Deletes a specified job definition. If the job definition is not found, no exception is thrown.
      * </p>
      * 
      * @param deleteJobRequest
@@ -947,7 +947,7 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Retrieves metadata for all runs of a given job.
+     * Retrieves metadata for all runs of a given job definition.
      * </p>
      * 
      * @param getJobRunsRequest
@@ -968,7 +968,7 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Retrieves all current jobs.
+     * Retrieves all current job definitions.
      * </p>
      * 
      * @param getJobsRequest
@@ -1321,7 +1321,7 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Runs a job.
+     * Starts a job run using a job definition.
      * </p>
      * 
      * @param startJobRunRequest

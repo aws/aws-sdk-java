@@ -722,6 +722,69 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Deletes permissions granted to a user or group.
+     * </p>
+     * 
+     * @param deleteMailboxPermissionsRequest
+     * @return Result of the DeleteMailboxPermissions operation returned by the service.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the entity is valid, but it does not exist in your organization.
+     * @throws EntityStateException
+     *         You are performing an operation on an entity that isn't in the expected state, such as trying to update a
+     *         deleted user.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
+     *         organization or its entities.
+     * @sample AmazonWorkMail.DeleteMailboxPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteMailboxPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteMailboxPermissionsResult deleteMailboxPermissions(DeleteMailboxPermissionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteMailboxPermissions(request);
+    }
+
+    @SdkInternalApi
+    final DeleteMailboxPermissionsResult executeDeleteMailboxPermissions(DeleteMailboxPermissionsRequest deleteMailboxPermissionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteMailboxPermissionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteMailboxPermissionsRequest> request = null;
+        Response<DeleteMailboxPermissionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteMailboxPermissionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteMailboxPermissionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteMailboxPermissionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteMailboxPermissionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified resource.
      * </p>
      * 
@@ -1451,6 +1514,65 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Lists the mailbox permissions associated with a mailbox.
+     * </p>
+     * 
+     * @param listMailboxPermissionsRequest
+     * @return Result of the ListMailboxPermissions operation returned by the service.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the entity is valid, but it does not exist in your organization.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
+     *         organization or its entities.
+     * @sample AmazonWorkMail.ListMailboxPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailboxPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListMailboxPermissionsResult listMailboxPermissions(ListMailboxPermissionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListMailboxPermissions(request);
+    }
+
+    @SdkInternalApi
+    final ListMailboxPermissionsResult executeListMailboxPermissions(ListMailboxPermissionsRequest listMailboxPermissionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listMailboxPermissionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListMailboxPermissionsRequest> request = null;
+        Response<ListMailboxPermissionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListMailboxPermissionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMailboxPermissionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListMailboxPermissionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListMailboxPermissionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns summaries of the customer's non-deleted organizations.
      * </p>
      * 
@@ -1665,6 +1787,68 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<ListUsersResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListUsersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Sets permissions for a user or group. This replaces any pre-existing permissions set for the entity.
+     * </p>
+     * 
+     * @param putMailboxPermissionsRequest
+     * @return Result of the PutMailboxPermissions operation returned by the service.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the entity is valid, but it does not exist in your organization.
+     * @throws EntityStateException
+     *         You are performing an operation on an entity that isn't in the expected state, such as trying to update a
+     *         deleted user.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
+     *         organization or its entities.
+     * @sample AmazonWorkMail.PutMailboxPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutMailboxPermissions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public PutMailboxPermissionsResult putMailboxPermissions(PutMailboxPermissionsRequest request) {
+        request = beforeClientExecution(request);
+        return executePutMailboxPermissions(request);
+    }
+
+    @SdkInternalApi
+    final PutMailboxPermissionsResult executePutMailboxPermissions(PutMailboxPermissionsRequest putMailboxPermissionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putMailboxPermissionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutMailboxPermissionsRequest> request = null;
+        Response<PutMailboxPermissionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutMailboxPermissionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putMailboxPermissionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutMailboxPermissionsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new PutMailboxPermissionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

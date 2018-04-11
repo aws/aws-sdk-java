@@ -27,7 +27,7 @@ public class GetJobRunRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Name of the job being run.
+     * Name of the job definition being run.
      * </p>
      */
     private String jobName;
@@ -46,11 +46,11 @@ public class GetJobRunRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Name of the job being run.
+     * Name of the job definition being run.
      * </p>
      * 
      * @param jobName
-     *        Name of the job being run.
+     *        Name of the job definition being run.
      */
 
     public void setJobName(String jobName) {
@@ -59,10 +59,10 @@ public class GetJobRunRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Name of the job being run.
+     * Name of the job definition being run.
      * </p>
      * 
-     * @return Name of the job being run.
+     * @return Name of the job definition being run.
      */
 
     public String getJobName() {
@@ -71,11 +71,11 @@ public class GetJobRunRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Name of the job being run.
+     * Name of the job definition being run.
      * </p>
      * 
      * @param jobName
-     *        Name of the job being run.
+     *        Name of the job definition being run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

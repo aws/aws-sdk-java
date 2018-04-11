@@ -24,23 +24,23 @@ public class GetJobsResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * A list of jobs.
+     * A list of job definitions.
      * </p>
      */
     private java.util.List<Job> jobs;
     /**
      * <p>
-     * A continuation token, if not all jobs have yet been returned.
+     * A continuation token, if not all job definitions have yet been returned.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A list of jobs.
+     * A list of job definitions.
      * </p>
      * 
-     * @return A list of jobs.
+     * @return A list of job definitions.
      */
 
     public java.util.List<Job> getJobs() {
@@ -49,11 +49,11 @@ public class GetJobsResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * A list of jobs.
+     * A list of job definitions.
      * </p>
      * 
      * @param jobs
-     *        A list of jobs.
+     *        A list of job definitions.
      */
 
     public void setJobs(java.util.Collection<Job> jobs) {
@@ -67,7 +67,7 @@ public class GetJobsResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * A list of jobs.
+     * A list of job definitions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -76,7 +76,7 @@ public class GetJobsResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * </p>
      * 
      * @param jobs
-     *        A list of jobs.
+     *        A list of job definitions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class GetJobsResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * A list of jobs.
+     * A list of job definitions.
      * </p>
      * 
      * @param jobs
-     *        A list of jobs.
+     *        A list of job definitions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,11 +107,11 @@ public class GetJobsResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * A continuation token, if not all jobs have yet been returned.
+     * A continuation token, if not all job definitions have yet been returned.
      * </p>
      * 
      * @param nextToken
-     *        A continuation token, if not all jobs have yet been returned.
+     *        A continuation token, if not all job definitions have yet been returned.
      */
 
     public void setNextToken(String nextToken) {
@@ -120,10 +120,10 @@ public class GetJobsResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * A continuation token, if not all jobs have yet been returned.
+     * A continuation token, if not all job definitions have yet been returned.
      * </p>
      * 
-     * @return A continuation token, if not all jobs have yet been returned.
+     * @return A continuation token, if not all job definitions have yet been returned.
      */
 
     public String getNextToken() {
@@ -132,11 +132,11 @@ public class GetJobsResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * A continuation token, if not all jobs have yet been returned.
+     * A continuation token, if not all job definitions have yet been returned.
      * </p>
      * 
      * @param nextToken
-     *        A continuation token, if not all jobs have yet been returned.
+     *        A continuation token, if not all job definitions have yet been returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

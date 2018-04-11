@@ -34,6 +34,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     private String serviceAccessRoleArn;
     /**
      * <p>
+     * The external table definition.
      * </p>
      */
     private String externalTableDefinition;
@@ -113,9 +114,11 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The external table definition.
      * </p>
      * 
      * @param externalTableDefinition
+     *        The external table definition.
      */
 
     public void setExternalTableDefinition(String externalTableDefinition) {
@@ -124,9 +127,10 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The external table definition.
      * </p>
      * 
-     * @return
+     * @return The external table definition.
      */
 
     public String getExternalTableDefinition() {
@@ -135,9 +139,11 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The external table definition.
      * </p>
      * 
      * @param externalTableDefinition
+     *        The external table definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

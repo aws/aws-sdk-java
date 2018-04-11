@@ -25,18 +25,18 @@ public class UpdateJobResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Returns the name of the updated job.
+     * Returns the name of the updated job definition.
      * </p>
      */
     private String jobName;
 
     /**
      * <p>
-     * Returns the name of the updated job.
+     * Returns the name of the updated job definition.
      * </p>
      * 
      * @param jobName
-     *        Returns the name of the updated job.
+     *        Returns the name of the updated job definition.
      */
 
     public void setJobName(String jobName) {
@@ -45,10 +45,10 @@ public class UpdateJobResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Returns the name of the updated job.
+     * Returns the name of the updated job definition.
      * </p>
      * 
-     * @return Returns the name of the updated job.
+     * @return Returns the name of the updated job definition.
      */
 
     public String getJobName() {
@@ -57,11 +57,11 @@ public class UpdateJobResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Returns the name of the updated job.
+     * Returns the name of the updated job definition.
      * </p>
      * 
      * @param jobName
-     *        Returns the name of the updated job.
+     *        Returns the name of the updated job definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

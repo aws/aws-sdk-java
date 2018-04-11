@@ -121,6 +121,14 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String authSource;
+    /**
+     * <p>
+     * The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a value for
+     * the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the default encryption
+     * key for your AWS account. Your AWS account has a different default encryption key for each AWS region.
+     * </p>
+     */
+    private String kmsKeyId;
 
     /**
      * <p>
@@ -888,6 +896,61 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a value for
+     * the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the default encryption
+     * key for your AWS account. Your AWS account has a different default encryption key for each AWS region.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a
+     *        value for the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the
+     *        default encryption key for your AWS account. Your AWS account has a different default encryption key for
+     *        each AWS region.
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a value for
+     * the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the default encryption
+     * key for your AWS account. Your AWS account has a different default encryption key for each AWS region.
+     * </p>
+     * 
+     * @return The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a
+     *         value for the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the
+     *         default encryption key for your AWS account. Your AWS account has a different default encryption key for
+     *         each AWS region.
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a value for
+     * the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the default encryption
+     * key for your AWS account. Your AWS account has a different default encryption key for each AWS region.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a
+     *        value for the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the
+     *        default encryption key for your AWS account. Your AWS account has a different default encryption key for
+     *        each AWS region.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MongoDbSettings withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -919,7 +982,9 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
         if (getDocsToInvestigate() != null)
             sb.append("DocsToInvestigate: ").append(getDocsToInvestigate()).append(",");
         if (getAuthSource() != null)
-            sb.append("AuthSource: ").append(getAuthSource());
+            sb.append("AuthSource: ").append(getAuthSource()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -978,6 +1043,10 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getAuthSource() != null && other.getAuthSource().equals(this.getAuthSource()) == false)
             return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
         return true;
     }
 
@@ -997,6 +1066,7 @@ public class MongoDbSettings implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getExtractDocId() == null) ? 0 : getExtractDocId().hashCode());
         hashCode = prime * hashCode + ((getDocsToInvestigate() == null) ? 0 : getDocsToInvestigate().hashCode());
         hashCode = prime * hashCode + ((getAuthSource() == null) ? 0 : getAuthSource().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         return hashCode;
     }
 

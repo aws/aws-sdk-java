@@ -30,24 +30,24 @@ public class BatchStopJobRunSuccessfulSubmission implements Serializable, Clonea
 
     /**
      * <p>
-     * The Name of the Job in question.
+     * The name of the job definition used in the job run that was stopped.
      * </p>
      */
     private String jobName;
     /**
      * <p>
-     * The JobRunId of the JobRun in question.
+     * The JobRunId of the job run that was stopped.
      * </p>
      */
     private String jobRunId;
 
     /**
      * <p>
-     * The Name of the Job in question.
+     * The name of the job definition used in the job run that was stopped.
      * </p>
      * 
      * @param jobName
-     *        The Name of the Job in question.
+     *        The name of the job definition used in the job run that was stopped.
      */
 
     public void setJobName(String jobName) {
@@ -56,10 +56,10 @@ public class BatchStopJobRunSuccessfulSubmission implements Serializable, Clonea
 
     /**
      * <p>
-     * The Name of the Job in question.
+     * The name of the job definition used in the job run that was stopped.
      * </p>
      * 
-     * @return The Name of the Job in question.
+     * @return The name of the job definition used in the job run that was stopped.
      */
 
     public String getJobName() {
@@ -68,11 +68,11 @@ public class BatchStopJobRunSuccessfulSubmission implements Serializable, Clonea
 
     /**
      * <p>
-     * The Name of the Job in question.
+     * The name of the job definition used in the job run that was stopped.
      * </p>
      * 
      * @param jobName
-     *        The Name of the Job in question.
+     *        The name of the job definition used in the job run that was stopped.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class BatchStopJobRunSuccessfulSubmission implements Serializable, Clonea
 
     /**
      * <p>
-     * The JobRunId of the JobRun in question.
+     * The JobRunId of the job run that was stopped.
      * </p>
      * 
      * @param jobRunId
-     *        The JobRunId of the JobRun in question.
+     *        The JobRunId of the job run that was stopped.
      */
 
     public void setJobRunId(String jobRunId) {
@@ -96,10 +96,10 @@ public class BatchStopJobRunSuccessfulSubmission implements Serializable, Clonea
 
     /**
      * <p>
-     * The JobRunId of the JobRun in question.
+     * The JobRunId of the job run that was stopped.
      * </p>
      * 
-     * @return The JobRunId of the JobRun in question.
+     * @return The JobRunId of the job run that was stopped.
      */
 
     public String getJobRunId() {
@@ -108,11 +108,11 @@ public class BatchStopJobRunSuccessfulSubmission implements Serializable, Clonea
 
     /**
      * <p>
-     * The JobRunId of the JobRun in question.
+     * The JobRunId of the job run that was stopped.
      * </p>
      * 
      * @param jobRunId
-     *        The JobRunId of the JobRun in question.
+     *        The JobRunId of the job run that was stopped.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

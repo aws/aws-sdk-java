@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies a job.
+ * Specifies a job definition.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Job" target="_top">AWS API Documentation</a>
@@ -29,13 +29,13 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name you assign to this job.
+     * The name you assign to this job definition.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Description of this job.
+     * Description of the job being defined.
      * </p>
      */
     private String description;
@@ -47,19 +47,19 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     private String logUri;
     /**
      * <p>
-     * The name of the IAM role associated with this job.
+     * The name or ARN of the IAM role associated with this job.
      * </p>
      */
     private String role;
     /**
      * <p>
-     * The time and date that this job specification was created.
+     * The time and date that this job definition was created.
      * </p>
      */
     private java.util.Date createdOn;
     /**
      * <p>
-     * The last point in time when this job specification was modified.
+     * The last point in time when this job definition was modified.
      * </p>
      */
     private java.util.Date lastModifiedOn;
@@ -90,8 +90,8 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
+     * Used by AWS Glue</a> topic in the developer guide.
      * </p>
      */
     private java.util.Map<String, String> defaultArguments;
@@ -103,27 +103,33 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     private ConnectionsList connections;
     /**
      * <p>
-     * The maximum number of times to retry this job if it fails.
+     * The maximum number of times to retry this job after a JobRun fails.
      * </p>
      */
     private Integer maxRetries;
     /**
      * <p>
-     * The number of AWS Glue data processing units (DPUs) allocated to this Job. From 2 to 100 DPUs can be allocated;
-     * the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity
-     * and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue
-     * pricing page</a>.
+     * The number of AWS Glue data processing units (DPUs) allocated to runs of this job. From 2 to 100 DPUs can be
+     * allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute
+     * capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS
+     * Glue pricing page</a>.
      * </p>
      */
     private Integer allocatedCapacity;
+    /**
+     * <p>
+     * The job timeout in minutes.
+     * </p>
+     */
+    private Integer timeout;
 
     /**
      * <p>
-     * The name you assign to this job.
+     * The name you assign to this job definition.
      * </p>
      * 
      * @param name
-     *        The name you assign to this job.
+     *        The name you assign to this job definition.
      */
 
     public void setName(String name) {
@@ -132,10 +138,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name you assign to this job.
+     * The name you assign to this job definition.
      * </p>
      * 
-     * @return The name you assign to this job.
+     * @return The name you assign to this job definition.
      */
 
     public String getName() {
@@ -144,11 +150,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name you assign to this job.
+     * The name you assign to this job definition.
      * </p>
      * 
      * @param name
-     *        The name you assign to this job.
+     *        The name you assign to this job definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,11 +165,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Description of this job.
+     * Description of the job being defined.
      * </p>
      * 
      * @param description
-     *        Description of this job.
+     *        Description of the job being defined.
      */
 
     public void setDescription(String description) {
@@ -172,10 +178,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Description of this job.
+     * Description of the job being defined.
      * </p>
      * 
-     * @return Description of this job.
+     * @return Description of the job being defined.
      */
 
     public String getDescription() {
@@ -184,11 +190,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Description of this job.
+     * Description of the job being defined.
      * </p>
      * 
      * @param description
-     *        Description of this job.
+     *        Description of the job being defined.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -239,11 +245,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the IAM role associated with this job.
+     * The name or ARN of the IAM role associated with this job.
      * </p>
      * 
      * @param role
-     *        The name of the IAM role associated with this job.
+     *        The name or ARN of the IAM role associated with this job.
      */
 
     public void setRole(String role) {
@@ -252,10 +258,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the IAM role associated with this job.
+     * The name or ARN of the IAM role associated with this job.
      * </p>
      * 
-     * @return The name of the IAM role associated with this job.
+     * @return The name or ARN of the IAM role associated with this job.
      */
 
     public String getRole() {
@@ -264,11 +270,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the IAM role associated with this job.
+     * The name or ARN of the IAM role associated with this job.
      * </p>
      * 
      * @param role
-     *        The name of the IAM role associated with this job.
+     *        The name or ARN of the IAM role associated with this job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,11 +285,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time and date that this job specification was created.
+     * The time and date that this job definition was created.
      * </p>
      * 
      * @param createdOn
-     *        The time and date that this job specification was created.
+     *        The time and date that this job definition was created.
      */
 
     public void setCreatedOn(java.util.Date createdOn) {
@@ -292,10 +298,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time and date that this job specification was created.
+     * The time and date that this job definition was created.
      * </p>
      * 
-     * @return The time and date that this job specification was created.
+     * @return The time and date that this job definition was created.
      */
 
     public java.util.Date getCreatedOn() {
@@ -304,11 +310,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time and date that this job specification was created.
+     * The time and date that this job definition was created.
      * </p>
      * 
      * @param createdOn
-     *        The time and date that this job specification was created.
+     *        The time and date that this job definition was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -319,11 +325,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last point in time when this job specification was modified.
+     * The last point in time when this job definition was modified.
      * </p>
      * 
      * @param lastModifiedOn
-     *        The last point in time when this job specification was modified.
+     *        The last point in time when this job definition was modified.
      */
 
     public void setLastModifiedOn(java.util.Date lastModifiedOn) {
@@ -332,10 +338,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last point in time when this job specification was modified.
+     * The last point in time when this job definition was modified.
      * </p>
      * 
-     * @return The last point in time when this job specification was modified.
+     * @return The last point in time when this job definition was modified.
      */
 
     public java.util.Date getLastModifiedOn() {
@@ -344,11 +350,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last point in time when this job specification was modified.
+     * The last point in time when this job definition was modified.
      * </p>
      * 
      * @param lastModifiedOn
-     *        The last point in time when this job specification was modified.
+     *        The last point in time when this job definition was modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -452,8 +458,8 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
+     * Used by AWS Glue</a> topic in the developer guide.
      * </p>
      * 
      * @return The default arguments for this job, specified as name-value pairs.</p>
@@ -468,7 +474,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <p>
      *         For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     *         href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     *         href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      *         Parameters Used by AWS Glue</a> topic in the developer guide.
      */
 
@@ -491,8 +497,8 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
+     * Used by AWS Glue</a> topic in the developer guide.
      * </p>
      * 
      * @param defaultArguments
@@ -508,7 +514,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     *        href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      *        Parameters Used by AWS Glue</a> topic in the developer guide.
      */
 
@@ -531,8 +537,8 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
-     * Parameters Used by AWS Glue</a> topic in the developer guide.
+     * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters
+     * Used by AWS Glue</a> topic in the developer guide.
      * </p>
      * 
      * @param defaultArguments
@@ -548,7 +554,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        For information about the key-value pairs that AWS Glue consumes to set up your job, see the <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-glue-arguments.html">Special
+     *        href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
      *        Parameters Used by AWS Glue</a> topic in the developer guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -621,11 +627,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of times to retry this job if it fails.
+     * The maximum number of times to retry this job after a JobRun fails.
      * </p>
      * 
      * @param maxRetries
-     *        The maximum number of times to retry this job if it fails.
+     *        The maximum number of times to retry this job after a JobRun fails.
      */
 
     public void setMaxRetries(Integer maxRetries) {
@@ -634,10 +640,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of times to retry this job if it fails.
+     * The maximum number of times to retry this job after a JobRun fails.
      * </p>
      * 
-     * @return The maximum number of times to retry this job if it fails.
+     * @return The maximum number of times to retry this job after a JobRun fails.
      */
 
     public Integer getMaxRetries() {
@@ -646,11 +652,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of times to retry this job if it fails.
+     * The maximum number of times to retry this job after a JobRun fails.
      * </p>
      * 
      * @param maxRetries
-     *        The maximum number of times to retry this job if it fails.
+     *        The maximum number of times to retry this job after a JobRun fails.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -661,16 +667,16 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of AWS Glue data processing units (DPUs) allocated to this Job. From 2 to 100 DPUs can be allocated;
-     * the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity
-     * and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue
-     * pricing page</a>.
+     * The number of AWS Glue data processing units (DPUs) allocated to runs of this job. From 2 to 100 DPUs can be
+     * allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute
+     * capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS
+     * Glue pricing page</a>.
      * </p>
      * 
      * @param allocatedCapacity
-     *        The number of AWS Glue data processing units (DPUs) allocated to this Job. From 2 to 100 DPUs can be
-     *        allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of
-     *        compute capacity and 16 GB of memory. For more information, see the <a
+     *        The number of AWS Glue data processing units (DPUs) allocated to runs of this job. From 2 to 100 DPUs can
+     *        be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs
+     *        of compute capacity and 16 GB of memory. For more information, see the <a
      *        href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
      */
 
@@ -680,15 +686,15 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of AWS Glue data processing units (DPUs) allocated to this Job. From 2 to 100 DPUs can be allocated;
-     * the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity
-     * and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue
-     * pricing page</a>.
+     * The number of AWS Glue data processing units (DPUs) allocated to runs of this job. From 2 to 100 DPUs can be
+     * allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute
+     * capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS
+     * Glue pricing page</a>.
      * </p>
      * 
-     * @return The number of AWS Glue data processing units (DPUs) allocated to this Job. From 2 to 100 DPUs can be
-     *         allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of
-     *         compute capacity and 16 GB of memory. For more information, see the <a
+     * @return The number of AWS Glue data processing units (DPUs) allocated to runs of this job. From 2 to 100 DPUs can
+     *         be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs
+     *         of compute capacity and 16 GB of memory. For more information, see the <a
      *         href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
      */
 
@@ -698,22 +704,62 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of AWS Glue data processing units (DPUs) allocated to this Job. From 2 to 100 DPUs can be allocated;
-     * the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity
-     * and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue
-     * pricing page</a>.
+     * The number of AWS Glue data processing units (DPUs) allocated to runs of this job. From 2 to 100 DPUs can be
+     * allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute
+     * capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS
+     * Glue pricing page</a>.
      * </p>
      * 
      * @param allocatedCapacity
-     *        The number of AWS Glue data processing units (DPUs) allocated to this Job. From 2 to 100 DPUs can be
-     *        allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of
-     *        compute capacity and 16 GB of memory. For more information, see the <a
+     *        The number of AWS Glue data processing units (DPUs) allocated to runs of this job. From 2 to 100 DPUs can
+     *        be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs
+     *        of compute capacity and 16 GB of memory. For more information, see the <a
      *        href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Job withAllocatedCapacity(Integer allocatedCapacity) {
         setAllocatedCapacity(allocatedCapacity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The job timeout in minutes.
+     * </p>
+     * 
+     * @param timeout
+     *        The job timeout in minutes.
+     */
+
+    public void setTimeout(Integer timeout) {
+        this.timeout = timeout;
+    }
+
+    /**
+     * <p>
+     * The job timeout in minutes.
+     * </p>
+     * 
+     * @return The job timeout in minutes.
+     */
+
+    public Integer getTimeout() {
+        return this.timeout;
+    }
+
+    /**
+     * <p>
+     * The job timeout in minutes.
+     * </p>
+     * 
+     * @param timeout
+     *        The job timeout in minutes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withTimeout(Integer timeout) {
+        setTimeout(timeout);
         return this;
     }
 
@@ -751,7 +797,9 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         if (getMaxRetries() != null)
             sb.append("MaxRetries: ").append(getMaxRetries()).append(",");
         if (getAllocatedCapacity() != null)
-            sb.append("AllocatedCapacity: ").append(getAllocatedCapacity());
+            sb.append("AllocatedCapacity: ").append(getAllocatedCapacity()).append(",");
+        if (getTimeout() != null)
+            sb.append("Timeout: ").append(getTimeout());
         sb.append("}");
         return sb.toString();
     }
@@ -814,6 +862,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAllocatedCapacity() != null && other.getAllocatedCapacity().equals(this.getAllocatedCapacity()) == false)
             return false;
+        if (other.getTimeout() == null ^ this.getTimeout() == null)
+            return false;
+        if (other.getTimeout() != null && other.getTimeout().equals(this.getTimeout()) == false)
+            return false;
         return true;
     }
 
@@ -834,6 +886,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getConnections() == null) ? 0 : getConnections().hashCode());
         hashCode = prime * hashCode + ((getMaxRetries() == null) ? 0 : getMaxRetries().hashCode());
         hashCode = prime * hashCode + ((getAllocatedCapacity() == null) ? 0 : getAllocatedCapacity().hashCode());
+        hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         return hashCode;
     }
 
