@@ -132,9 +132,8 @@ public enum AwsSdkMetrics {
      * Example:
      *  -Dcom.amazonaws.sdk.enableDefaultMetrics=credentialFile=/path/aws.properties
      * </pre>
-     * @deprecated in favor of {@link AWS_CREDENTIAL_PROPERTIES_FILE}
      */
-    public static final String AWS_CREDENTAIL_PROPERTIES_FILE= "credentialFile";
+    public static final String AWS_CREDENTIAL_PROPERTIES_FILE= "credentialFile";
 
     /**
      * Used to specify an AWS credential property file.
@@ -144,8 +143,10 @@ public enum AwsSdkMetrics {
      * Example:
      *  -Dcom.amazonaws.sdk.enableDefaultMetrics=credentialFile=/path/aws.properties
      * </pre>
+     * @deprecated in favor of {@link AWS_CREDENTIAL_PROPERTIES_FILE}
      */
-    public static final String AWS_CREDENTIAL_PROPERTIES_FILE= "credentialFile";
+    @Deprecated
+    public static final String AWS_CREDENTAIL_PROPERTIES_FILE = AWS_CREDENTIAL_PROPERTIES_FILE;
 
     /**
      * Used to specify the Amazon CloudWatch region for metrics uploading purposes.
@@ -310,8 +311,7 @@ public enum AwsSdkMetrics {
                         String key = pair[0].trim();
                         String value  = pair[1].trim();
                         try {
-                            if (AWS_CREDENTAIL_PROPERTIES_FILE.equals(key)
-                                    || AWS_CREDENTIAL_PROPERTIES_FILE.equals(key)) {
+                            if (AWS_CREDENTIAL_PROPERTIES_FILE.equals(key)) {
                                 setCredentialFile0(value);
                             } else if (CLOUDWATCH_REGION.equals(key)) {
                                 region = RegionUtils.getRegion(value);
@@ -755,8 +755,17 @@ public enum AwsSdkMetrics {
 
     /**
      * Returns the last set AWS credential file, or null if there is none.
+     * @deprecated use {@link AwsSdkMetrics#getCredentialFile()}
      */
+    @Deprecated
     public static String getCredentailFile() {
+        return credentialFile;
+    }
+
+    /**
+     * Returns the last set AWS credential file, or null if there is none.
+     */
+    public static String getCredentialFile() {
         return credentialFile;
     }
 

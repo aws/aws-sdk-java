@@ -123,7 +123,7 @@ public class MetricAdmin implements MetricAdminMBean {
     }
     @Override
     public String getCredentialFile() {
-        return AwsSdkMetrics.getCredentailFile();
+        return AwsSdkMetrics.getCredentialFile();
     }
 
     @Override

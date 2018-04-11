@@ -53,7 +53,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * aws_session_token=testSessionToken
  * </pre>
  *
- * <p> These credential profiles allow you to share multiple sets of AWS security credentails
+ * <p> These credential profiles allow you to share multiple sets of AWS security credentials
  * between different tools such as the AWS SDK for Java and the AWS CLI.
  *
  * <p> For more information on setting up AWS credential profiles, see:
