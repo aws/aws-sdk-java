@@ -39,8 +39,8 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter empty. The
      * CLI or SDK generates a random UUID for you and includes that in the request for this parameter. If you don't use
-     * the SDK and instead generate a raw HTTP request to the AWS Secrets Manager service endpoint, then you must
-     * generate a <code>ClientRequestToken</code> yourself for new versions and include that value in the request.
+     * the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> yourself for new versions and include that value in the request.
      * </p>
      * <p>
      * You only need to specify your own value if you are implementing your own retry logic and want to ensure that a
@@ -145,8 +145,8 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter empty. The
      * CLI or SDK generates a random UUID for you and includes that in the request for this parameter. If you don't use
-     * the SDK and instead generate a raw HTTP request to the AWS Secrets Manager service endpoint, then you must
-     * generate a <code>ClientRequestToken</code> yourself for new versions and include that value in the request.
+     * the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> yourself for new versions and include that value in the request.
      * </p>
      * <p>
      * You only need to specify your own value if you are implementing your own retry logic and want to ensure that a
@@ -190,9 +190,9 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter
      *        empty. The CLI or SDK generates a random UUID for you and includes that in the request for this parameter.
-     *        If you don't use the SDK and instead generate a raw HTTP request to the AWS Secrets Manager service
-     *        endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new versions and include
-     *        that value in the request.
+     *        If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint,
+     *        then you must generate a <code>ClientRequestToken</code> yourself for new versions and include that value
+     *        in the request.
      *        </p>
      *        <p>
      *        You only need to specify your own value if you are implementing your own retry logic and want to ensure
@@ -241,8 +241,8 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter empty. The
      * CLI or SDK generates a random UUID for you and includes that in the request for this parameter. If you don't use
-     * the SDK and instead generate a raw HTTP request to the AWS Secrets Manager service endpoint, then you must
-     * generate a <code>ClientRequestToken</code> yourself for new versions and include that value in the request.
+     * the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> yourself for new versions and include that value in the request.
      * </p>
      * <p>
      * You only need to specify your own value if you are implementing your own retry logic and want to ensure that a
@@ -285,7 +285,7 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <p>
      *         If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter
      *         empty. The CLI or SDK generates a random UUID for you and includes that in the request for this
-     *         parameter. If you don't use the SDK and instead generate a raw HTTP request to the AWS Secrets Manager
+     *         parameter. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager
      *         service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new versions and
      *         include that value in the request.
      *         </p>
@@ -336,8 +336,8 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter empty. The
      * CLI or SDK generates a random UUID for you and includes that in the request for this parameter. If you don't use
-     * the SDK and instead generate a raw HTTP request to the AWS Secrets Manager service endpoint, then you must
-     * generate a <code>ClientRequestToken</code> yourself for new versions and include that value in the request.
+     * the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> yourself for new versions and include that value in the request.
      * </p>
      * <p>
      * You only need to specify your own value if you are implementing your own retry logic and want to ensure that a
@@ -381,9 +381,9 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter
      *        empty. The CLI or SDK generates a random UUID for you and includes that in the request for this parameter.
-     *        If you don't use the SDK and instead generate a raw HTTP request to the AWS Secrets Manager service
-     *        endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new versions and include
-     *        that value in the request.
+     *        If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint,
+     *        then you must generate a <code>ClientRequestToken</code> yourself for new versions and include that value
+     *        in the request.
      *        </p>
      *        <p>
      *        You only need to specify your own value if you are implementing your own retry logic and want to ensure

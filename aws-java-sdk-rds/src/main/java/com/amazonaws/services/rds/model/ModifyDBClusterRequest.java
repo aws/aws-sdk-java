@@ -227,6 +227,17 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private Boolean enableIAMDatabaseAuthentication;
+    /**
+     * <p>
+     * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
+     * outage. The change is applied during the next maintenance window unless the ApplyImmediately parameter is set to
+     * true.
+     * </p>
+     * <p>
+     * For a list of valid engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.
+     * </p>
+     */
+    private String engineVersion;
 
     /**
      * <p>
@@ -1545,6 +1556,74 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
+     * outage. The change is applied during the next maintenance window unless the ApplyImmediately parameter is set to
+     * true.
+     * </p>
+     * <p>
+     * For a list of valid engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.
+     * </p>
+     * 
+     * @param engineVersion
+     *        The version number of the database engine to which you want to upgrade. Changing this parameter results in
+     *        an outage. The change is applied during the next maintenance window unless the ApplyImmediately parameter
+     *        is set to true.</p>
+     *        <p>
+     *        For a list of valid engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.
+     */
+
+    public void setEngineVersion(String engineVersion) {
+        this.engineVersion = engineVersion;
+    }
+
+    /**
+     * <p>
+     * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
+     * outage. The change is applied during the next maintenance window unless the ApplyImmediately parameter is set to
+     * true.
+     * </p>
+     * <p>
+     * For a list of valid engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.
+     * </p>
+     * 
+     * @return The version number of the database engine to which you want to upgrade. Changing this parameter results
+     *         in an outage. The change is applied during the next maintenance window unless the ApplyImmediately
+     *         parameter is set to true.</p>
+     *         <p>
+     *         For a list of valid engine versions, see <a>CreateDBInstance</a>, or call
+     *         <a>DescribeDBEngineVersions</a>.
+     */
+
+    public String getEngineVersion() {
+        return this.engineVersion;
+    }
+
+    /**
+     * <p>
+     * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
+     * outage. The change is applied during the next maintenance window unless the ApplyImmediately parameter is set to
+     * true.
+     * </p>
+     * <p>
+     * For a list of valid engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.
+     * </p>
+     * 
+     * @param engineVersion
+     *        The version number of the database engine to which you want to upgrade. Changing this parameter results in
+     *        an outage. The change is applied during the next maintenance window unless the ApplyImmediately parameter
+     *        is set to true.</p>
+     *        <p>
+     *        For a list of valid engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyDBClusterRequest withEngineVersion(String engineVersion) {
+        setEngineVersion(engineVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1578,7 +1657,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         if (getPreferredMaintenanceWindow() != null)
             sb.append("PreferredMaintenanceWindow: ").append(getPreferredMaintenanceWindow()).append(",");
         if (getEnableIAMDatabaseAuthentication() != null)
-            sb.append("EnableIAMDatabaseAuthentication: ").append(getEnableIAMDatabaseAuthentication());
+            sb.append("EnableIAMDatabaseAuthentication: ").append(getEnableIAMDatabaseAuthentication()).append(",");
+        if (getEngineVersion() != null)
+            sb.append("EngineVersion: ").append(getEngineVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -1642,6 +1723,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         if (other.getEnableIAMDatabaseAuthentication() != null
                 && other.getEnableIAMDatabaseAuthentication().equals(this.getEnableIAMDatabaseAuthentication()) == false)
             return false;
+        if (other.getEngineVersion() == null ^ this.getEngineVersion() == null)
+            return false;
+        if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false)
+            return false;
         return true;
     }
 
@@ -1662,6 +1747,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getPreferredBackupWindow() == null) ? 0 : getPreferredBackupWindow().hashCode());
         hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode());
         hashCode = prime * hashCode + ((getEnableIAMDatabaseAuthentication() == null) ? 0 : getEnableIAMDatabaseAuthentication().hashCode());
+        hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
         return hashCode;
     }
 

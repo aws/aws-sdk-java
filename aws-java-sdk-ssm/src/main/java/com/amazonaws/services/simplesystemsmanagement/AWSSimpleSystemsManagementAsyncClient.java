@@ -661,6 +661,39 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteInventoryResult> deleteInventoryAsync(DeleteInventoryRequest request) {
+
+        return deleteInventoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteInventoryResult> deleteInventoryAsync(final DeleteInventoryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteInventoryRequest, DeleteInventoryResult> asyncHandler) {
+        final DeleteInventoryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteInventoryResult>() {
+            @Override
+            public DeleteInventoryResult call() throws Exception {
+                DeleteInventoryResult result = null;
+
+                try {
+                    result = executeDeleteInventory(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteMaintenanceWindowResult> deleteMaintenanceWindowAsync(DeleteMaintenanceWindowRequest request) {
 
         return deleteMaintenanceWindowAsync(request, null);
@@ -1420,6 +1453,39 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
 
                 try {
                     result = executeDescribeInstancePatches(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInventoryDeletionsResult> describeInventoryDeletionsAsync(DescribeInventoryDeletionsRequest request) {
+
+        return describeInventoryDeletionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInventoryDeletionsResult> describeInventoryDeletionsAsync(final DescribeInventoryDeletionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeInventoryDeletionsRequest, DescribeInventoryDeletionsResult> asyncHandler) {
+        final DescribeInventoryDeletionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeInventoryDeletionsResult>() {
+            @Override
+            public DescribeInventoryDeletionsResult call() throws Exception {
+                DescribeInventoryDeletionsResult result = null;
+
+                try {
+                    result = executeDescribeInventoryDeletions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

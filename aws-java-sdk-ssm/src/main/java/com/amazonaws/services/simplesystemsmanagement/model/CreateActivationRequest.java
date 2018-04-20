@@ -29,6 +29,11 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * A userdefined description of the resource that you want to register with Amazon EC2.
      * </p>
+     * <important>
+     * <p>
+     * Do not enter personally identifiable information in this field.
+     * </p>
+     * </important>
      */
     private String description;
     /**
@@ -36,6 +41,11 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
      * The name of the registered, managed instance as it will appear in the Amazon EC2 console or when you use the AWS
      * command line tools to list EC2 resources.
      * </p>
+     * <important>
+     * <p>
+     * Do not enter personally identifiable information in this field.
+     * </p>
+     * </important>
      */
     private String defaultInstanceName;
     /**
@@ -61,9 +71,17 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * A userdefined description of the resource that you want to register with Amazon EC2.
      * </p>
+     * <important>
+     * <p>
+     * Do not enter personally identifiable information in this field.
+     * </p>
+     * </important>
      * 
      * @param description
-     *        A userdefined description of the resource that you want to register with Amazon EC2.
+     *        A userdefined description of the resource that you want to register with Amazon EC2. </p> <important>
+     *        <p>
+     *        Do not enter personally identifiable information in this field.
+     *        </p>
      */
 
     public void setDescription(String description) {
@@ -74,8 +92,16 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * A userdefined description of the resource that you want to register with Amazon EC2.
      * </p>
+     * <important>
+     * <p>
+     * Do not enter personally identifiable information in this field.
+     * </p>
+     * </important>
      * 
-     * @return A userdefined description of the resource that you want to register with Amazon EC2.
+     * @return A userdefined description of the resource that you want to register with Amazon EC2. </p> <important>
+     *         <p>
+     *         Do not enter personally identifiable information in this field.
+     *         </p>
      */
 
     public String getDescription() {
@@ -86,9 +112,17 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * A userdefined description of the resource that you want to register with Amazon EC2.
      * </p>
+     * <important>
+     * <p>
+     * Do not enter personally identifiable information in this field.
+     * </p>
+     * </important>
      * 
      * @param description
-     *        A userdefined description of the resource that you want to register with Amazon EC2.
+     *        A userdefined description of the resource that you want to register with Amazon EC2. </p> <important>
+     *        <p>
+     *        Do not enter personally identifiable information in this field.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,10 +136,18 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
      * The name of the registered, managed instance as it will appear in the Amazon EC2 console or when you use the AWS
      * command line tools to list EC2 resources.
      * </p>
+     * <important>
+     * <p>
+     * Do not enter personally identifiable information in this field.
+     * </p>
+     * </important>
      * 
      * @param defaultInstanceName
      *        The name of the registered, managed instance as it will appear in the Amazon EC2 console or when you use
-     *        the AWS command line tools to list EC2 resources.
+     *        the AWS command line tools to list EC2 resources.</p> <important>
+     *        <p>
+     *        Do not enter personally identifiable information in this field.
+     *        </p>
      */
 
     public void setDefaultInstanceName(String defaultInstanceName) {
@@ -117,9 +159,17 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
      * The name of the registered, managed instance as it will appear in the Amazon EC2 console or when you use the AWS
      * command line tools to list EC2 resources.
      * </p>
+     * <important>
+     * <p>
+     * Do not enter personally identifiable information in this field.
+     * </p>
+     * </important>
      * 
      * @return The name of the registered, managed instance as it will appear in the Amazon EC2 console or when you use
-     *         the AWS command line tools to list EC2 resources.
+     *         the AWS command line tools to list EC2 resources.</p> <important>
+     *         <p>
+     *         Do not enter personally identifiable information in this field.
+     *         </p>
      */
 
     public String getDefaultInstanceName() {
@@ -131,10 +181,18 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
      * The name of the registered, managed instance as it will appear in the Amazon EC2 console or when you use the AWS
      * command line tools to list EC2 resources.
      * </p>
+     * <important>
+     * <p>
+     * Do not enter personally identifiable information in this field.
+     * </p>
+     * </important>
      * 
      * @param defaultInstanceName
      *        The name of the registered, managed instance as it will appear in the Amazon EC2 console or when you use
-     *        the AWS command line tools to list EC2 resources.
+     *        the AWS command line tools to list EC2 resources.</p> <important>
+     *        <p>
+     *        Do not enter personally identifiable information in this field.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

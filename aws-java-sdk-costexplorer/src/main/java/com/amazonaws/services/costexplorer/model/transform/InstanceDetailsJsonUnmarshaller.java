@@ -52,6 +52,10 @@ public class InstanceDetailsJsonUnmarshaller implements Unmarshaller<InstanceDet
                     context.nextToken();
                     instanceDetails.setEC2InstanceDetails(EC2InstanceDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("RDSInstanceDetails", targetDepth)) {
+                    context.nextToken();
+                    instanceDetails.setRDSInstanceDetails(RDSInstanceDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

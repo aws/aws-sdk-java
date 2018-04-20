@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * AWS Secrets Manager can't decrypt the protected secret text using the provided KMS key.
+ * Secrets Manager can't decrypt the protected secret text using the provided KMS key.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

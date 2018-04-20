@@ -64,7 +64,8 @@ public class GetReservationPurchaseRecommendationRequest extends com.amazonaws.A
     private String paymentOption;
     /**
      * <p>
-     * The specific service, such as EC2, that you want recommendations for.
+     * The hardware specifications for the service instances that you want recommendations for, such as standard or
+     * convertible EC2 instances.
      * </p>
      */
     private ServiceSpecification serviceSpecification;
@@ -408,11 +409,13 @@ public class GetReservationPurchaseRecommendationRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The specific service, such as EC2, that you want recommendations for.
+     * The hardware specifications for the service instances that you want recommendations for, such as standard or
+     * convertible EC2 instances.
      * </p>
      * 
      * @param serviceSpecification
-     *        The specific service, such as EC2, that you want recommendations for.
+     *        The hardware specifications for the service instances that you want recommendations for, such as standard
+     *        or convertible EC2 instances.
      */
 
     public void setServiceSpecification(ServiceSpecification serviceSpecification) {
@@ -421,10 +424,12 @@ public class GetReservationPurchaseRecommendationRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The specific service, such as EC2, that you want recommendations for.
+     * The hardware specifications for the service instances that you want recommendations for, such as standard or
+     * convertible EC2 instances.
      * </p>
      * 
-     * @return The specific service, such as EC2, that you want recommendations for.
+     * @return The hardware specifications for the service instances that you want recommendations for, such as standard
+     *         or convertible EC2 instances.
      */
 
     public ServiceSpecification getServiceSpecification() {
@@ -433,11 +438,13 @@ public class GetReservationPurchaseRecommendationRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The specific service, such as EC2, that you want recommendations for.
+     * The hardware specifications for the service instances that you want recommendations for, such as standard or
+     * convertible EC2 instances.
      * </p>
      * 
      * @param serviceSpecification
-     *        The specific service, such as EC2, that you want recommendations for.
+     *        The hardware specifications for the service instances that you want recommendations for, such as standard
+     *        or convertible EC2 instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

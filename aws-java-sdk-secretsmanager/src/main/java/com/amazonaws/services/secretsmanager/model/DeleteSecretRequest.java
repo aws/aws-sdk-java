@@ -34,7 +34,7 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String secretId;
     /**
      * <p>
-     * (Optional) Specifies the number of days that AWS Secrets Manager waits before it can delete the secret.
+     * (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret.
      * </p>
      * <p>
      * This value can range from 7 to 30 days. The default value is 30.
@@ -90,15 +90,14 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) Specifies the number of days that AWS Secrets Manager waits before it can delete the secret.
+     * (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret.
      * </p>
      * <p>
      * This value can range from 7 to 30 days. The default value is 30.
      * </p>
      * 
      * @param recoveryWindowInDays
-     *        (Optional) Specifies the number of days that AWS Secrets Manager waits before it can delete the
-     *        secret.</p>
+     *        (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret.</p>
      *        <p>
      *        This value can range from 7 to 30 days. The default value is 30.
      */
@@ -109,14 +108,13 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) Specifies the number of days that AWS Secrets Manager waits before it can delete the secret.
+     * (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret.
      * </p>
      * <p>
      * This value can range from 7 to 30 days. The default value is 30.
      * </p>
      * 
-     * @return (Optional) Specifies the number of days that AWS Secrets Manager waits before it can delete the
-     *         secret.</p>
+     * @return (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret.</p>
      *         <p>
      *         This value can range from 7 to 30 days. The default value is 30.
      */
@@ -127,15 +125,14 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) Specifies the number of days that AWS Secrets Manager waits before it can delete the secret.
+     * (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret.
      * </p>
      * <p>
      * This value can range from 7 to 30 days. The default value is 30.
      * </p>
      * 
      * @param recoveryWindowInDays
-     *        (Optional) Specifies the number of days that AWS Secrets Manager waits before it can delete the
-     *        secret.</p>
+     *        (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret.</p>
      *        <p>
      *        This value can range from 7 to 30 days. The default value is 30.
      * @return Returns a reference to this object so that method calls can be chained together.

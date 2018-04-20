@@ -44,7 +44,7 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The ARN or alias of the AWS KMS customer master key (CMK) that's used to encrypt the <code>SecretString</code>
-     * and <code>SecretBinary</code> fields in each version of the secret. If you don't provide a key, then AWS Secrets
+     * and <code>SecretBinary</code> fields in each version of the secret. If you don't provide a key, then Secrets
      * Manager defaults to encrypting the secret fields with the default KMS CMK (the one named
      * <code>awssecretsmanager</code>) for this account.
      * </p>
@@ -62,8 +62,8 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
     private Boolean rotationEnabled;
     /**
      * <p>
-     * The ARN of a Lambda function that's invoked by AWS Secrets Manager to rotate the secret either automatically per
-     * the schedule or manually by a call to <code>RotateSecret</code>.
+     * The ARN of a Lambda function that's invoked by Secrets Manager to rotate the secret either automatically per the
+     * schedule or manually by a call to <code>RotateSecret</code>.
      * </p>
      */
     private String rotationLambdaARN;
@@ -248,7 +248,7 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The ARN or alias of the AWS KMS customer master key (CMK) that's used to encrypt the <code>SecretString</code>
-     * and <code>SecretBinary</code> fields in each version of the secret. If you don't provide a key, then AWS Secrets
+     * and <code>SecretBinary</code> fields in each version of the secret. If you don't provide a key, then Secrets
      * Manager defaults to encrypting the secret fields with the default KMS CMK (the one named
      * <code>awssecretsmanager</code>) for this account.
      * </p>
@@ -256,8 +256,8 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
      * @param kmsKeyId
      *        The ARN or alias of the AWS KMS customer master key (CMK) that's used to encrypt the
      *        <code>SecretString</code> and <code>SecretBinary</code> fields in each version of the secret. If you don't
-     *        provide a key, then AWS Secrets Manager defaults to encrypting the secret fields with the default KMS CMK
-     *        (the one named <code>awssecretsmanager</code>) for this account.
+     *        provide a key, then Secrets Manager defaults to encrypting the secret fields with the default KMS CMK (the
+     *        one named <code>awssecretsmanager</code>) for this account.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -267,15 +267,15 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The ARN or alias of the AWS KMS customer master key (CMK) that's used to encrypt the <code>SecretString</code>
-     * and <code>SecretBinary</code> fields in each version of the secret. If you don't provide a key, then AWS Secrets
+     * and <code>SecretBinary</code> fields in each version of the secret. If you don't provide a key, then Secrets
      * Manager defaults to encrypting the secret fields with the default KMS CMK (the one named
      * <code>awssecretsmanager</code>) for this account.
      * </p>
      * 
      * @return The ARN or alias of the AWS KMS customer master key (CMK) that's used to encrypt the
      *         <code>SecretString</code> and <code>SecretBinary</code> fields in each version of the secret. If you
-     *         don't provide a key, then AWS Secrets Manager defaults to encrypting the secret fields with the default
-     *         KMS CMK (the one named <code>awssecretsmanager</code>) for this account.
+     *         don't provide a key, then Secrets Manager defaults to encrypting the secret fields with the default KMS
+     *         CMK (the one named <code>awssecretsmanager</code>) for this account.
      */
 
     public String getKmsKeyId() {
@@ -285,7 +285,7 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The ARN or alias of the AWS KMS customer master key (CMK) that's used to encrypt the <code>SecretString</code>
-     * and <code>SecretBinary</code> fields in each version of the secret. If you don't provide a key, then AWS Secrets
+     * and <code>SecretBinary</code> fields in each version of the secret. If you don't provide a key, then Secrets
      * Manager defaults to encrypting the secret fields with the default KMS CMK (the one named
      * <code>awssecretsmanager</code>) for this account.
      * </p>
@@ -293,8 +293,8 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
      * @param kmsKeyId
      *        The ARN or alias of the AWS KMS customer master key (CMK) that's used to encrypt the
      *        <code>SecretString</code> and <code>SecretBinary</code> fields in each version of the secret. If you don't
-     *        provide a key, then AWS Secrets Manager defaults to encrypting the secret fields with the default KMS CMK
-     *        (the one named <code>awssecretsmanager</code>) for this account.
+     *        provide a key, then Secrets Manager defaults to encrypting the secret fields with the default KMS CMK (the
+     *        one named <code>awssecretsmanager</code>) for this account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -385,13 +385,13 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The ARN of a Lambda function that's invoked by AWS Secrets Manager to rotate the secret either automatically per
-     * the schedule or manually by a call to <code>RotateSecret</code>.
+     * The ARN of a Lambda function that's invoked by Secrets Manager to rotate the secret either automatically per the
+     * schedule or manually by a call to <code>RotateSecret</code>.
      * </p>
      * 
      * @param rotationLambdaARN
-     *        The ARN of a Lambda function that's invoked by AWS Secrets Manager to rotate the secret either
-     *        automatically per the schedule or manually by a call to <code>RotateSecret</code>.
+     *        The ARN of a Lambda function that's invoked by Secrets Manager to rotate the secret either automatically
+     *        per the schedule or manually by a call to <code>RotateSecret</code>.
      */
 
     public void setRotationLambdaARN(String rotationLambdaARN) {
@@ -400,12 +400,12 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The ARN of a Lambda function that's invoked by AWS Secrets Manager to rotate the secret either automatically per
-     * the schedule or manually by a call to <code>RotateSecret</code>.
+     * The ARN of a Lambda function that's invoked by Secrets Manager to rotate the secret either automatically per the
+     * schedule or manually by a call to <code>RotateSecret</code>.
      * </p>
      * 
-     * @return The ARN of a Lambda function that's invoked by AWS Secrets Manager to rotate the secret either
-     *         automatically per the schedule or manually by a call to <code>RotateSecret</code>.
+     * @return The ARN of a Lambda function that's invoked by Secrets Manager to rotate the secret either automatically
+     *         per the schedule or manually by a call to <code>RotateSecret</code>.
      */
 
     public String getRotationLambdaARN() {
@@ -414,13 +414,13 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The ARN of a Lambda function that's invoked by AWS Secrets Manager to rotate the secret either automatically per
-     * the schedule or manually by a call to <code>RotateSecret</code>.
+     * The ARN of a Lambda function that's invoked by Secrets Manager to rotate the secret either automatically per the
+     * schedule or manually by a call to <code>RotateSecret</code>.
      * </p>
      * 
      * @param rotationLambdaARN
-     *        The ARN of a Lambda function that's invoked by AWS Secrets Manager to rotate the secret either
-     *        automatically per the schedule or manually by a call to <code>RotateSecret</code>.
+     *        The ARN of a Lambda function that's invoked by Secrets Manager to rotate the secret either automatically
+     *        per the schedule or manually by a call to <code>RotateSecret</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -540,6 +540,31 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Delete a custom inventory type, or the data associated with a custom Inventory type. Deleting a custom inventory
+     * type is also referred to as deleting a custom inventory schema.
+     * </p>
+     * 
+     * @param deleteInventoryRequest
+     * @return Result of the DeleteInventory operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidTypeNameException
+     *         The parameter type name is not valid.
+     * @throws InvalidOptionException
+     *         The delete inventory option specified is not valid. Verify the option and try again.
+     * @throws InvalidDeleteInventoryParametersException
+     *         One or more of the parameters specified for the delete operation is not valid. Verify all parameters and
+     *         try again.
+     * @throws InvalidInventoryRequestException
+     *         The request is not valid.
+     * @sample AWSSimpleSystemsManagement.DeleteInventory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteInventory" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteInventoryResult deleteInventory(DeleteInventoryRequest deleteInventoryRequest);
+
+    /**
+     * <p>
      * Deletes a Maintenance Window.
      * </p>
      * 
@@ -1091,6 +1116,25 @@ public interface AWSSimpleSystemsManagement {
      *      API Documentation</a>
      */
     DescribeInstancePatchesResult describeInstancePatches(DescribeInstancePatchesRequest describeInstancePatchesRequest);
+
+    /**
+     * <p>
+     * Describes a specific delete inventory operation.
+     * </p>
+     * 
+     * @param describeInventoryDeletionsRequest
+     * @return Result of the DescribeInventoryDeletions operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidDeletionIdException
+     *         The ID specified for the delete operation does not exist or is not valide. Verify the ID and try again.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.DescribeInventoryDeletions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInventoryDeletions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeInventoryDeletionsResult describeInventoryDeletions(DescribeInventoryDeletionsRequest describeInventoryDeletionsRequest);
 
     /**
      * <p>
@@ -2715,28 +2759,42 @@ public interface AWSSimpleSystemsManagement {
      * Modifies a task assigned to a Maintenance Window. You can't change the task type, but you can change the
      * following values:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Task ARN. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to AWS-RunShellScript.
+     * TaskARN. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to AWS-RunShellScript.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Service role ARN.
+     * ServiceRoleArn
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Task parameters.
+     * TaskInvocationParameters
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Task priority.
+     * Priority
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Task MaxConcurrency and MaxErrors.
+     * MaxConcurrency
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Log location.
+     * MaxErrors
      * </p>
+     * </li>
+     * </ul>
      * <p>
      * If a parameter is null, then the corresponding field is not modified. Also, if you set Replace to true, then all
-     * fields required by the RegisterTaskWithMaintenanceWindow action are required for this request. Optional fields
-     * that aren't specified are set to null.
+     * fields required by the <a>RegisterTaskWithMaintenanceWindow</a> action are required for this request. Optional
+     * fields that aren't specified are set to null.
      * </p>
      * 
      * @param updateMaintenanceWindowTaskRequest

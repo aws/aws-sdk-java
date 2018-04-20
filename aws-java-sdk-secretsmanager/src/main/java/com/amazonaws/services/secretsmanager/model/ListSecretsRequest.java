@@ -31,7 +31,7 @@ public class ListSecretsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * parameter, it defaults to a value that's specific to the operation. If additional items exist beyond the maximum
      * you specify, the <code>NextToken</code> response element is present and has a value (isn't null). Include that
      * value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of
-     * the results. Note that AWS Secrets Manager might return fewer results than the maximum even when there are more
+     * the results. Note that Secrets Manager might return fewer results than the maximum even when there are more
      * results available. You should check <code>NextToken</code> after every operation to ensure that you receive all
      * of the results.
      * </p>
@@ -52,7 +52,7 @@ public class ListSecretsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * parameter, it defaults to a value that's specific to the operation. If additional items exist beyond the maximum
      * you specify, the <code>NextToken</code> response element is present and has a value (isn't null). Include that
      * value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of
-     * the results. Note that AWS Secrets Manager might return fewer results than the maximum even when there are more
+     * the results. Note that Secrets Manager might return fewer results than the maximum even when there are more
      * results available. You should check <code>NextToken</code> after every operation to ensure that you receive all
      * of the results.
      * </p>
@@ -62,8 +62,8 @@ public class ListSecretsRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        this parameter, it defaults to a value that's specific to the operation. If additional items exist beyond
      *        the maximum you specify, the <code>NextToken</code> response element is present and has a value (isn't
      *        null). Include that value as the <code>NextToken</code> request parameter in the next call to the
-     *        operation to get the next part of the results. Note that AWS Secrets Manager might return fewer results
-     *        than the maximum even when there are more results available. You should check <code>NextToken</code> after
+     *        operation to get the next part of the results. Note that Secrets Manager might return fewer results than
+     *        the maximum even when there are more results available. You should check <code>NextToken</code> after
      *        every operation to ensure that you receive all of the results.
      */
 
@@ -77,7 +77,7 @@ public class ListSecretsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * parameter, it defaults to a value that's specific to the operation. If additional items exist beyond the maximum
      * you specify, the <code>NextToken</code> response element is present and has a value (isn't null). Include that
      * value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of
-     * the results. Note that AWS Secrets Manager might return fewer results than the maximum even when there are more
+     * the results. Note that Secrets Manager might return fewer results than the maximum even when there are more
      * results available. You should check <code>NextToken</code> after every operation to ensure that you receive all
      * of the results.
      * </p>
@@ -86,9 +86,9 @@ public class ListSecretsRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         this parameter, it defaults to a value that's specific to the operation. If additional items exist beyond
      *         the maximum you specify, the <code>NextToken</code> response element is present and has a value (isn't
      *         null). Include that value as the <code>NextToken</code> request parameter in the next call to the
-     *         operation to get the next part of the results. Note that AWS Secrets Manager might return fewer results
-     *         than the maximum even when there are more results available. You should check <code>NextToken</code>
-     *         after every operation to ensure that you receive all of the results.
+     *         operation to get the next part of the results. Note that Secrets Manager might return fewer results than
+     *         the maximum even when there are more results available. You should check <code>NextToken</code> after
+     *         every operation to ensure that you receive all of the results.
      */
 
     public Integer getMaxResults() {
@@ -101,7 +101,7 @@ public class ListSecretsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * parameter, it defaults to a value that's specific to the operation. If additional items exist beyond the maximum
      * you specify, the <code>NextToken</code> response element is present and has a value (isn't null). Include that
      * value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of
-     * the results. Note that AWS Secrets Manager might return fewer results than the maximum even when there are more
+     * the results. Note that Secrets Manager might return fewer results than the maximum even when there are more
      * results available. You should check <code>NextToken</code> after every operation to ensure that you receive all
      * of the results.
      * </p>
@@ -111,8 +111,8 @@ public class ListSecretsRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        this parameter, it defaults to a value that's specific to the operation. If additional items exist beyond
      *        the maximum you specify, the <code>NextToken</code> response element is present and has a value (isn't
      *        null). Include that value as the <code>NextToken</code> request parameter in the next call to the
-     *        operation to get the next part of the results. Note that AWS Secrets Manager might return fewer results
-     *        than the maximum even when there are more results available. You should check <code>NextToken</code> after
+     *        operation to get the next part of the results. Note that Secrets Manager might return fewer results than
+     *        the maximum even when there are more results available. You should check <code>NextToken</code> after
      *        every operation to ensure that you receive all of the results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

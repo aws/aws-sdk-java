@@ -30,10 +30,6 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * Specifies the secret to which you want to add a new version. You can specify either the Amazon Resource Name
      * (ARN) or the friendly name of the secret. The secret must already exist.
      * </p>
-     * <p>
-     * The secret name can consist of uppercase letters, lowercase letters, digits, and any of the following characters:
-     * /_+=.@-    Spaces are not permitted.
-     * </p>
      */
     private String secretId;
     /**
@@ -44,7 +40,7 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter empty. The
      * CLI or SDK generates a random UUID for you and includes that in the request. If you don't use the SDK and instead
-     * generate a raw HTTP request to the AWS Secrets Manager service endpoint, then you must generate a
+     * generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
      * <code>ClientRequestToken</code> yourself for new versions and include that value in the request.
      * </p>
      * </note>
@@ -123,8 +119,8 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * other version and attached to this version.
      * </p>
      * <p>
-     * If you do not specify a value for <code>VersionStages</code> then AWS Secrets Manager automatically moves the
-     * staging label <code>AWSCURRENT</code> to this new version.
+     * If you do not specify a value for <code>VersionStages</code> then Secrets Manager automatically moves the staging
+     * label <code>AWSCURRENT</code> to this new version.
      * </p>
      */
     private java.util.List<String> versionStages;
@@ -134,17 +130,10 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * Specifies the secret to which you want to add a new version. You can specify either the Amazon Resource Name
      * (ARN) or the friendly name of the secret. The secret must already exist.
      * </p>
-     * <p>
-     * The secret name can consist of uppercase letters, lowercase letters, digits, and any of the following characters:
-     * /_+=.@-    Spaces are not permitted.
-     * </p>
      * 
      * @param secretId
      *        Specifies the secret to which you want to add a new version. You can specify either the Amazon Resource
-     *        Name (ARN) or the friendly name of the secret. The secret must already exist.</p>
-     *        <p>
-     *        The secret name can consist of uppercase letters, lowercase letters, digits, and any of the following
-     *        characters: /_+=.@-    Spaces are not permitted.
+     *        Name (ARN) or the friendly name of the secret. The secret must already exist.
      */
 
     public void setSecretId(String secretId) {
@@ -156,16 +145,9 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * Specifies the secret to which you want to add a new version. You can specify either the Amazon Resource Name
      * (ARN) or the friendly name of the secret. The secret must already exist.
      * </p>
-     * <p>
-     * The secret name can consist of uppercase letters, lowercase letters, digits, and any of the following characters:
-     * /_+=.@-    Spaces are not permitted.
-     * </p>
      * 
      * @return Specifies the secret to which you want to add a new version. You can specify either the Amazon Resource
-     *         Name (ARN) or the friendly name of the secret. The secret must already exist.</p>
-     *         <p>
-     *         The secret name can consist of uppercase letters, lowercase letters, digits, and any of the following
-     *         characters: /_+=.@-    Spaces are not permitted.
+     *         Name (ARN) or the friendly name of the secret. The secret must already exist.
      */
 
     public String getSecretId() {
@@ -177,17 +159,10 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * Specifies the secret to which you want to add a new version. You can specify either the Amazon Resource Name
      * (ARN) or the friendly name of the secret. The secret must already exist.
      * </p>
-     * <p>
-     * The secret name can consist of uppercase letters, lowercase letters, digits, and any of the following characters:
-     * /_+=.@-    Spaces are not permitted.
-     * </p>
      * 
      * @param secretId
      *        Specifies the secret to which you want to add a new version. You can specify either the Amazon Resource
-     *        Name (ARN) or the friendly name of the secret. The secret must already exist.</p>
-     *        <p>
-     *        The secret name can consist of uppercase letters, lowercase letters, digits, and any of the following
-     *        characters: /_+=.@-    Spaces are not permitted.
+     *        Name (ARN) or the friendly name of the secret. The secret must already exist.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,7 +179,7 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter empty. The
      * CLI or SDK generates a random UUID for you and includes that in the request. If you don't use the SDK and instead
-     * generate a raw HTTP request to the AWS Secrets Manager service endpoint, then you must generate a
+     * generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
      * <code>ClientRequestToken</code> yourself for new versions and include that value in the request.
      * </p>
      * </note>
@@ -245,7 +220,7 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter
      *        empty. The CLI or SDK generates a random UUID for you and includes that in the request. If you don't use
-     *        the SDK and instead generate a raw HTTP request to the AWS Secrets Manager service endpoint, then you must
+     *        the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must
      *        generate a <code>ClientRequestToken</code> yourself for new versions and include that value in the
      *        request.
      *        </p>
@@ -295,7 +270,7 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter empty. The
      * CLI or SDK generates a random UUID for you and includes that in the request. If you don't use the SDK and instead
-     * generate a raw HTTP request to the AWS Secrets Manager service endpoint, then you must generate a
+     * generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
      * <code>ClientRequestToken</code> yourself for new versions and include that value in the request.
      * </p>
      * </note>
@@ -335,8 +310,8 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <p>
      *         If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter
      *         empty. The CLI or SDK generates a random UUID for you and includes that in the request. If you don't use
-     *         the SDK and instead generate a raw HTTP request to the AWS Secrets Manager service endpoint, then you
-     *         must generate a <code>ClientRequestToken</code> yourself for new versions and include that value in the
+     *         the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must
+     *         generate a <code>ClientRequestToken</code> yourself for new versions and include that value in the
      *         request.
      *         </p>
      *         </note>
@@ -386,7 +361,7 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter empty. The
      * CLI or SDK generates a random UUID for you and includes that in the request. If you don't use the SDK and instead
-     * generate a raw HTTP request to the AWS Secrets Manager service endpoint, then you must generate a
+     * generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
      * <code>ClientRequestToken</code> yourself for new versions and include that value in the request.
      * </p>
      * </note>
@@ -427,7 +402,7 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter
      *        empty. The CLI or SDK generates a random UUID for you and includes that in the request. If you don't use
-     *        the SDK and instead generate a raw HTTP request to the AWS Secrets Manager service endpoint, then you must
+     *        the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must
      *        generate a <code>ClientRequestToken</code> yourself for new versions and include that value in the
      *        request.
      *        </p>
@@ -706,8 +681,8 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * other version and attached to this version.
      * </p>
      * <p>
-     * If you do not specify a value for <code>VersionStages</code> then AWS Secrets Manager automatically moves the
-     * staging label <code>AWSCURRENT</code> to this new version.
+     * If you do not specify a value for <code>VersionStages</code> then Secrets Manager automatically moves the staging
+     * label <code>AWSCURRENT</code> to this new version.
      * </p>
      * 
      * @return (Optional) Specifies a list of staging labels that are attached to this version of the secret. These
@@ -719,8 +694,8 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      *         removed from the other version and attached to this version.
      *         </p>
      *         <p>
-     *         If you do not specify a value for <code>VersionStages</code> then AWS Secrets Manager automatically moves
-     *         the staging label <code>AWSCURRENT</code> to this new version.
+     *         If you do not specify a value for <code>VersionStages</code> then Secrets Manager automatically moves the
+     *         staging label <code>AWSCURRENT</code> to this new version.
      */
 
     public java.util.List<String> getVersionStages() {
@@ -738,8 +713,8 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * other version and attached to this version.
      * </p>
      * <p>
-     * If you do not specify a value for <code>VersionStages</code> then AWS Secrets Manager automatically moves the
-     * staging label <code>AWSCURRENT</code> to this new version.
+     * If you do not specify a value for <code>VersionStages</code> then Secrets Manager automatically moves the staging
+     * label <code>AWSCURRENT</code> to this new version.
      * </p>
      * 
      * @param versionStages
@@ -752,8 +727,8 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        removed from the other version and attached to this version.
      *        </p>
      *        <p>
-     *        If you do not specify a value for <code>VersionStages</code> then AWS Secrets Manager automatically moves
-     *        the staging label <code>AWSCURRENT</code> to this new version.
+     *        If you do not specify a value for <code>VersionStages</code> then Secrets Manager automatically moves the
+     *        staging label <code>AWSCURRENT</code> to this new version.
      */
 
     public void setVersionStages(java.util.Collection<String> versionStages) {
@@ -776,8 +751,8 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * other version and attached to this version.
      * </p>
      * <p>
-     * If you do not specify a value for <code>VersionStages</code> then AWS Secrets Manager automatically moves the
-     * staging label <code>AWSCURRENT</code> to this new version.
+     * If you do not specify a value for <code>VersionStages</code> then Secrets Manager automatically moves the staging
+     * label <code>AWSCURRENT</code> to this new version.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -795,8 +770,8 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        removed from the other version and attached to this version.
      *        </p>
      *        <p>
-     *        If you do not specify a value for <code>VersionStages</code> then AWS Secrets Manager automatically moves
-     *        the staging label <code>AWSCURRENT</code> to this new version.
+     *        If you do not specify a value for <code>VersionStages</code> then Secrets Manager automatically moves the
+     *        staging label <code>AWSCURRENT</code> to this new version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -821,8 +796,8 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * other version and attached to this version.
      * </p>
      * <p>
-     * If you do not specify a value for <code>VersionStages</code> then AWS Secrets Manager automatically moves the
-     * staging label <code>AWSCURRENT</code> to this new version.
+     * If you do not specify a value for <code>VersionStages</code> then Secrets Manager automatically moves the staging
+     * label <code>AWSCURRENT</code> to this new version.
      * </p>
      * 
      * @param versionStages
@@ -835,8 +810,8 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        removed from the other version and attached to this version.
      *        </p>
      *        <p>
-     *        If you do not specify a value for <code>VersionStages</code> then AWS Secrets Manager automatically moves
-     *        the staging label <code>AWSCURRENT</code> to this new version.
+     *        If you do not specify a value for <code>VersionStages</code> then Secrets Manager automatically moves the
+     *        staging label <code>AWSCURRENT</code> to this new version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

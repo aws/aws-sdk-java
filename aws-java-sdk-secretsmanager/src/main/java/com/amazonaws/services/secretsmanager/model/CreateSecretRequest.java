@@ -27,8 +27,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies the friendly name of the new secret. The secret name can consist of uppercase letters, lowercase
-     * letters, digits, and any of the following characters: /_+=.@-    Spaces are not permitted.
+     * Specifies the friendly name of the new secret.
      * </p>
      */
     private String name;
@@ -41,9 +40,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter empty. The
      * CLI or SDK generates a random UUID for you and includes as the value for this parameter in the request. If you
-     * don't use the SDK and instead generate a raw HTTP request to the AWS Secrets Manager service endpoint, then you
-     * must generate a <code>ClientRequestToken</code> yourself for the new version and include that value in the
-     * request.
+     * don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must
+     * generate a <code>ClientRequestToken</code> yourself for the new version and include that value in the request.
      * </p>
      * </note>
      * <p>
@@ -92,7 +90,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * If you don't specify this value, then Secrets Manager defaults to using the AWS account's default CMK (the one
-     * named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't yet exist, then AWS Secrets Manager
+     * named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't yet exist, then Secrets Manager
      * creates it for you automatically the first time it needs to encrypt a version's <code>SecretString</code> or
      * <code>SecretBinary</code> fields.
      * </p>
@@ -167,8 +165,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * AWS Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag from one with
-     * key "abc".
+     * Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag from one with key
+     * "abc".
      * </p>
      * </li>
      * <li>
@@ -237,13 +235,11 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies the friendly name of the new secret. The secret name can consist of uppercase letters, lowercase
-     * letters, digits, and any of the following characters: /_+=.@-    Spaces are not permitted.
+     * Specifies the friendly name of the new secret.
      * </p>
      * 
      * @param name
-     *        Specifies the friendly name of the new secret. The secret name can consist of uppercase letters, lowercase
-     *        letters, digits, and any of the following characters: /_+=.@-    Spaces are not permitted.
+     *        Specifies the friendly name of the new secret.
      */
 
     public void setName(String name) {
@@ -252,12 +248,10 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies the friendly name of the new secret. The secret name can consist of uppercase letters, lowercase
-     * letters, digits, and any of the following characters: /_+=.@-    Spaces are not permitted.
+     * Specifies the friendly name of the new secret.
      * </p>
      * 
-     * @return Specifies the friendly name of the new secret. The secret name can consist of uppercase letters,
-     *         lowercase letters, digits, and any of the following characters: /_+=.@-    Spaces are not permitted.
+     * @return Specifies the friendly name of the new secret.
      */
 
     public String getName() {
@@ -266,13 +260,11 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies the friendly name of the new secret. The secret name can consist of uppercase letters, lowercase
-     * letters, digits, and any of the following characters: /_+=.@-    Spaces are not permitted.
+     * Specifies the friendly name of the new secret.
      * </p>
      * 
      * @param name
-     *        Specifies the friendly name of the new secret. The secret name can consist of uppercase letters, lowercase
-     *        letters, digits, and any of the following characters: /_+=.@-    Spaces are not permitted.
+     *        Specifies the friendly name of the new secret.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -290,9 +282,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter empty. The
      * CLI or SDK generates a random UUID for you and includes as the value for this parameter in the request. If you
-     * don't use the SDK and instead generate a raw HTTP request to the AWS Secrets Manager service endpoint, then you
-     * must generate a <code>ClientRequestToken</code> yourself for the new version and include that value in the
-     * request.
+     * don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must
+     * generate a <code>ClientRequestToken</code> yourself for the new version and include that value in the request.
      * </p>
      * </note>
      * <p>
@@ -334,9 +325,9 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter
      *        empty. The CLI or SDK generates a random UUID for you and includes as the value for this parameter in the
-     *        request. If you don't use the SDK and instead generate a raw HTTP request to the AWS Secrets Manager
-     *        service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for the new version
-     *        and include that value in the request.
+     *        request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service
+     *        endpoint, then you must generate a <code>ClientRequestToken</code> yourself for the new version and
+     *        include that value in the request.
      *        </p>
      *        </note>
      *        <p>
@@ -384,9 +375,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter empty. The
      * CLI or SDK generates a random UUID for you and includes as the value for this parameter in the request. If you
-     * don't use the SDK and instead generate a raw HTTP request to the AWS Secrets Manager service endpoint, then you
-     * must generate a <code>ClientRequestToken</code> yourself for the new version and include that value in the
-     * request.
+     * don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must
+     * generate a <code>ClientRequestToken</code> yourself for the new version and include that value in the request.
      * </p>
      * </note>
      * <p>
@@ -427,9 +417,9 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <p>
      *         If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter
      *         empty. The CLI or SDK generates a random UUID for you and includes as the value for this parameter in the
-     *         request. If you don't use the SDK and instead generate a raw HTTP request to the AWS Secrets Manager
-     *         service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for the new version
-     *         and include that value in the request.
+     *         request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service
+     *         endpoint, then you must generate a <code>ClientRequestToken</code> yourself for the new version and
+     *         include that value in the request.
      *         </p>
      *         </note>
      *         <p>
@@ -477,9 +467,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter empty. The
      * CLI or SDK generates a random UUID for you and includes as the value for this parameter in the request. If you
-     * don't use the SDK and instead generate a raw HTTP request to the AWS Secrets Manager service endpoint, then you
-     * must generate a <code>ClientRequestToken</code> yourself for the new version and include that value in the
-     * request.
+     * don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must
+     * generate a <code>ClientRequestToken</code> yourself for the new version and include that value in the request.
      * </p>
      * </note>
      * <p>
@@ -521,9 +510,9 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter
      *        empty. The CLI or SDK generates a random UUID for you and includes as the value for this parameter in the
-     *        request. If you don't use the SDK and instead generate a raw HTTP request to the AWS Secrets Manager
-     *        service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for the new version
-     *        and include that value in the request.
+     *        request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager service
+     *        endpoint, then you must generate a <code>ClientRequestToken</code> yourself for the new version and
+     *        include that value in the request.
      *        </p>
      *        </note>
      *        <p>
@@ -611,7 +600,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * If you don't specify this value, then Secrets Manager defaults to using the AWS account's default CMK (the one
-     * named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't yet exist, then AWS Secrets Manager
+     * named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't yet exist, then Secrets Manager
      * creates it for you automatically the first time it needs to encrypt a version's <code>SecretString</code> or
      * <code>SecretBinary</code> fields.
      * </p>
@@ -628,8 +617,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <code>SecretString</code> and <code>SecretBinary</code> values in the versions stored in this secret.</p>
      *        <p>
      *        If you don't specify this value, then Secrets Manager defaults to using the AWS account's default CMK (the
-     *        one named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't yet exist, then AWS
-     *        Secrets Manager creates it for you automatically the first time it needs to encrypt a version's
+     *        one named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't yet exist, then Secrets
+     *        Manager creates it for you automatically the first time it needs to encrypt a version's
      *        <code>SecretString</code> or <code>SecretBinary</code> fields.
      *        </p>
      *        <important>
@@ -651,7 +640,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * If you don't specify this value, then Secrets Manager defaults to using the AWS account's default CMK (the one
-     * named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't yet exist, then AWS Secrets Manager
+     * named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't yet exist, then Secrets Manager
      * creates it for you automatically the first time it needs to encrypt a version's <code>SecretString</code> or
      * <code>SecretBinary</code> fields.
      * </p>
@@ -667,7 +656,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <code>SecretString</code> and <code>SecretBinary</code> values in the versions stored in this secret.</p>
      *         <p>
      *         If you don't specify this value, then Secrets Manager defaults to using the AWS account's default CMK
-     *         (the one named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't yet exist, then AWS
+     *         (the one named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't yet exist, then
      *         Secrets Manager creates it for you automatically the first time it needs to encrypt a version's
      *         <code>SecretString</code> or <code>SecretBinary</code> fields.
      *         </p>
@@ -690,7 +679,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * If you don't specify this value, then Secrets Manager defaults to using the AWS account's default CMK (the one
-     * named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't yet exist, then AWS Secrets Manager
+     * named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't yet exist, then Secrets Manager
      * creates it for you automatically the first time it needs to encrypt a version's <code>SecretString</code> or
      * <code>SecretBinary</code> fields.
      * </p>
@@ -707,8 +696,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <code>SecretString</code> and <code>SecretBinary</code> values in the versions stored in this secret.</p>
      *        <p>
      *        If you don't specify this value, then Secrets Manager defaults to using the AWS account's default CMK (the
-     *        one named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't yet exist, then AWS
-     *        Secrets Manager creates it for you automatically the first time it needs to encrypt a version's
+     *        one named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't yet exist, then Secrets
+     *        Manager creates it for you automatically the first time it needs to encrypt a version's
      *        <code>SecretString</code> or <code>SecretBinary</code> fields.
      *        </p>
      *        <important>
@@ -1079,8 +1068,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * AWS Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag from one with
-     * key "abc".
+     * Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag from one with key
+     * "abc".
      * </p>
      * </li>
      * <li>
@@ -1151,8 +1140,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <ul>
      *         <li>
      *         <p>
-     *         AWS Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag from
-     *         one with key "abc".
+     *         Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag from one
+     *         with key "abc".
      *         </p>
      *         </li>
      *         <li>
@@ -1232,8 +1221,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * AWS Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag from one with
-     * key "abc".
+     * Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag from one with key
+     * "abc".
      * </p>
      * </li>
      * <li>
@@ -1305,7 +1294,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
-     *        AWS Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag from one
+     *        Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag from one
      *        with key "abc".
      *        </p>
      *        </li>
@@ -1391,8 +1380,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * AWS Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag from one with
-     * key "abc".
+     * Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag from one with key
+     * "abc".
      * </p>
      * </li>
      * <li>
@@ -1469,7 +1458,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
-     *        AWS Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag from one
+     *        Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag from one
      *        with key "abc".
      *        </p>
      *        </li>
@@ -1557,8 +1546,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * AWS Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag from one with
-     * key "abc".
+     * Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag from one with key
+     * "abc".
      * </p>
      * </li>
      * <li>
@@ -1630,7 +1619,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
-     *        AWS Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag from one
+     *        Secrets Manager tag key names are case sensitive. A tag with the key "ABC" is a different tag from one
      *        with key "abc".
      *        </p>
      *        </li>

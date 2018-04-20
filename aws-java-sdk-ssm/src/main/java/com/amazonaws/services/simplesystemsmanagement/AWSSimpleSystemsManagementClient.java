@@ -158,6 +158,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                             new JsonErrorShapeMetadata().withErrorCode("InvalidDocumentVersion").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentVersionException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidOptionException").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidOptionException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidDocumentOperation").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentOperationException.class))
                     .addErrorMetadata(
@@ -242,6 +245,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                             new JsonErrorShapeMetadata().withErrorCode("IdempotentParameterMismatch").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.IdempotentParameterMismatchException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidInventoryRequestException").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidInventoryRequestException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidResultAttributeException").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.InvalidResultAttributeException.class))
                     .addErrorMetadata(
@@ -256,6 +262,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidAllowedPatternException").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.InvalidAllowedPatternException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidDeleteInventoryParametersException").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidDeleteInventoryParametersException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidPermissionType").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.InvalidPermissionTypeException.class))
@@ -322,6 +331,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidRole").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.InvalidRoleException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidDeletionIdException").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidDeletionIdException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AssociatedInstances").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.AssociatedInstancesException.class))
@@ -1395,6 +1407,67 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteDocumentResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteDocumentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Delete a custom inventory type, or the data associated with a custom Inventory type. Deleting a custom inventory
+     * type is also referred to as deleting a custom inventory schema.
+     * </p>
+     * 
+     * @param deleteInventoryRequest
+     * @return Result of the DeleteInventory operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidTypeNameException
+     *         The parameter type name is not valid.
+     * @throws InvalidOptionException
+     *         The delete inventory option specified is not valid. Verify the option and try again.
+     * @throws InvalidDeleteInventoryParametersException
+     *         One or more of the parameters specified for the delete operation is not valid. Verify all parameters and
+     *         try again.
+     * @throws InvalidInventoryRequestException
+     *         The request is not valid.
+     * @sample AWSSimpleSystemsManagement.DeleteInventory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteInventory" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteInventoryResult deleteInventory(DeleteInventoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteInventory(request);
+    }
+
+    @SdkInternalApi
+    final DeleteInventoryResult executeDeleteInventory(DeleteInventoryRequest deleteInventoryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteInventoryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteInventoryRequest> request = null;
+        Response<DeleteInventoryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteInventoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteInventoryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteInventoryResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteInventoryResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2811,6 +2884,63 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             HttpResponseHandler<AmazonWebServiceResponse<DescribeInstancePatchesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeInstancePatchesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes a specific delete inventory operation.
+     * </p>
+     * 
+     * @param describeInventoryDeletionsRequest
+     * @return Result of the DescribeInventoryDeletions operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidDeletionIdException
+     *         The ID specified for the delete operation does not exist or is not valide. Verify the ID and try again.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.DescribeInventoryDeletions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInventoryDeletions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeInventoryDeletionsResult describeInventoryDeletions(DescribeInventoryDeletionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInventoryDeletions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInventoryDeletionsResult executeDescribeInventoryDeletions(DescribeInventoryDeletionsRequest describeInventoryDeletionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeInventoryDeletionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeInventoryDeletionsRequest> request = null;
+        Response<DescribeInventoryDeletionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeInventoryDeletionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeInventoryDeletionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeInventoryDeletionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeInventoryDeletionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6632,28 +6762,42 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * Modifies a task assigned to a Maintenance Window. You can't change the task type, but you can change the
      * following values:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Task ARN. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to AWS-RunShellScript.
+     * TaskARN. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to AWS-RunShellScript.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Service role ARN.
+     * ServiceRoleArn
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Task parameters.
+     * TaskInvocationParameters
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Task priority.
+     * Priority
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Task MaxConcurrency and MaxErrors.
+     * MaxConcurrency
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Log location.
+     * MaxErrors
      * </p>
+     * </li>
+     * </ul>
      * <p>
      * If a parameter is null, then the corresponding field is not modified. Also, if you set Replace to true, then all
-     * fields required by the RegisterTaskWithMaintenanceWindow action are required for this request. Optional fields
-     * that aren't specified are set to null.
+     * fields required by the <a>RegisterTaskWithMaintenanceWindow</a> action are required for this request. Optional
+     * fields that aren't specified are set to null.
      * </p>
      * 
      * @param updateMaintenanceWindowTaskRequest

@@ -16,6 +16,7 @@
 package com.amazonaws.services.s3.model;
 
 import com.amazonaws.annotation.NotThreadSafe;
+import com.amazonaws.internal.ReleasableInputStream;
 import com.amazonaws.internal.SdkFilterInputStream;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.internal.eventstreaming.Message;
@@ -146,8 +147,13 @@ public class SelectObjectContentEventStream implements Closeable {
      */
     public SelectRecordsInputStream getRecordsInputStream(SelectObjectContentEventVisitor listener)
             throws SelectObjectContentEventException {
-        return new SelectRecordsInputStream(new SequenceInputStream(new EventStreamEnumeration(getEventsIterator(), listener)),
-                                            inputStream);
+        InputStream recordInputStream = new SequenceInputStream(new EventStreamEnumeration(getEventsIterator(), listener));
+
+        // Ignore close() calls to the record stream. The sequence input stream would read the whole stream to close all of the
+        // streams in the enum, and the streams in the enum aren't needed because they're byte array input streams.
+        recordInputStream = ReleasableInputStream.wrap(recordInputStream).disableClose();
+
+        return new SelectRecordsInputStream(recordInputStream, inputStream);
     }
 
     /**

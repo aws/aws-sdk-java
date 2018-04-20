@@ -56,7 +56,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * <li>
      * <p>
      * <code>attachment.status</code> - The attachment state (<code>attaching</code> | <code>attached</code> |
-     * <code>detaching</code> | <code>detached</code>).
+     * <code>detaching</code>).
      * </p>
      * </li>
      * <li>
@@ -202,7 +202,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * <li>
      * <p>
      * <code>attachment.status</code> - The attachment state (<code>attaching</code> | <code>attached</code> |
-     * <code>detaching</code> | <code>detached</code>).
+     * <code>detaching</code>).
      * </p>
      * </li>
      * <li>
@@ -298,7 +298,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *         <li>
      *         <p>
      *         <code>attachment.status</code> - The attachment state (<code>attaching</code> | <code>attached</code> |
-     *         <code>detaching</code> | <code>detached</code>).
+     *         <code>detaching</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -405,7 +405,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * <li>
      * <p>
      * <code>attachment.status</code> - The attachment state (<code>attaching</code> | <code>attached</code> |
-     * <code>detaching</code> | <code>detached</code>).
+     * <code>detaching</code>).
      * </p>
      * </li>
      * <li>
@@ -502,7 +502,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *        <li>
      *        <p>
      *        <code>attachment.status</code> - The attachment state (<code>attaching</code> | <code>attached</code> |
-     *        <code>detaching</code> | <code>detached</code>).
+     *        <code>detaching</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -611,7 +611,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * <li>
      * <p>
      * <code>attachment.status</code> - The attachment state (<code>attaching</code> | <code>attached</code> |
-     * <code>detaching</code> | <code>detached</code>).
+     * <code>detaching</code>).
      * </p>
      * </li>
      * <li>
@@ -713,7 +713,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *        <li>
      *        <p>
      *        <code>attachment.status</code> - The attachment state (<code>attaching</code> | <code>attached</code> |
-     *        <code>detaching</code> | <code>detached</code>).
+     *        <code>detaching</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -824,7 +824,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * <li>
      * <p>
      * <code>attachment.status</code> - The attachment state (<code>attaching</code> | <code>attached</code> |
-     * <code>detaching</code> | <code>detached</code>).
+     * <code>detaching</code>).
      * </p>
      * </li>
      * <li>
@@ -921,7 +921,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *        <li>
      *        <p>
      *        <code>attachment.status</code> - The attachment state (<code>attaching</code> | <code>attached</code> |
-     *        <code>detaching</code> | <code>detached</code>).
+     *        <code>detaching</code>).
      *        </p>
      *        </li>
      *        <li>

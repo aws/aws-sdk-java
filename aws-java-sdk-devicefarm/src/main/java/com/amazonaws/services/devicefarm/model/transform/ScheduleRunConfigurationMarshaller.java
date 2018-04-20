@@ -36,6 +36,8 @@ public class ScheduleRunConfigurationMarshaller {
             .marshallLocationName("locale").build();
     private static final MarshallingInfo<StructuredPojo> LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("location").build();
+    private static final MarshallingInfo<List> VPCECONFIGURATIONARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vpceConfigurationArns").build();
     private static final MarshallingInfo<StructuredPojo> CUSTOMERARTIFACTPATHS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customerArtifactPaths").build();
     private static final MarshallingInfo<StructuredPojo> RADIOS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -65,6 +67,7 @@ public class ScheduleRunConfigurationMarshaller {
             protocolMarshaller.marshall(scheduleRunConfiguration.getNetworkProfileArn(), NETWORKPROFILEARN_BINDING);
             protocolMarshaller.marshall(scheduleRunConfiguration.getLocale(), LOCALE_BINDING);
             protocolMarshaller.marshall(scheduleRunConfiguration.getLocation(), LOCATION_BINDING);
+            protocolMarshaller.marshall(scheduleRunConfiguration.getVpceConfigurationArns(), VPCECONFIGURATIONARNS_BINDING);
             protocolMarshaller.marshall(scheduleRunConfiguration.getCustomerArtifactPaths(), CUSTOMERARTIFACTPATHS_BINDING);
             protocolMarshaller.marshall(scheduleRunConfiguration.getRadios(), RADIOS_BINDING);
             protocolMarshaller.marshall(scheduleRunConfiguration.getAuxiliaryApps(), AUXILIARYAPPS_BINDING);

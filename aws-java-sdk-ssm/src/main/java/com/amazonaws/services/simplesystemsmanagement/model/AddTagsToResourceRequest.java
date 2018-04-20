@@ -49,6 +49,11 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * One or more tags. The value parameter is required, but if you don't want the tag to have a value, specify the
      * parameter with no value, and we set the value to an empty string.
      * </p>
+     * <important>
+     * <p>
+     * Do not enter personally identifiable information in this field.
+     * </p>
+     * </important>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
@@ -209,9 +214,17 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * One or more tags. The value parameter is required, but if you don't want the tag to have a value, specify the
      * parameter with no value, and we set the value to an empty string.
      * </p>
+     * <important>
+     * <p>
+     * Do not enter personally identifiable information in this field.
+     * </p>
+     * </important>
      * 
      * @return One or more tags. The value parameter is required, but if you don't want the tag to have a value, specify
-     *         the parameter with no value, and we set the value to an empty string.
+     *         the parameter with no value, and we set the value to an empty string. </p> <important>
+     *         <p>
+     *         Do not enter personally identifiable information in this field.
+     *         </p>
      */
 
     public java.util.List<Tag> getTags() {
@@ -226,10 +239,18 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * One or more tags. The value parameter is required, but if you don't want the tag to have a value, specify the
      * parameter with no value, and we set the value to an empty string.
      * </p>
+     * <important>
+     * <p>
+     * Do not enter personally identifiable information in this field.
+     * </p>
+     * </important>
      * 
      * @param tags
      *        One or more tags. The value parameter is required, but if you don't want the tag to have a value, specify
-     *        the parameter with no value, and we set the value to an empty string.
+     *        the parameter with no value, and we set the value to an empty string. </p> <important>
+     *        <p>
+     *        Do not enter personally identifiable information in this field.
+     *        </p>
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -246,6 +267,11 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * One or more tags. The value parameter is required, but if you don't want the tag to have a value, specify the
      * parameter with no value, and we set the value to an empty string.
      * </p>
+     * <important>
+     * <p>
+     * Do not enter personally identifiable information in this field.
+     * </p>
+     * </important>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
@@ -254,7 +280,10 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @param tags
      *        One or more tags. The value parameter is required, but if you don't want the tag to have a value, specify
-     *        the parameter with no value, and we set the value to an empty string.
+     *        the parameter with no value, and we set the value to an empty string. </p> <important>
+     *        <p>
+     *        Do not enter personally identifiable information in this field.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -273,10 +302,18 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * One or more tags. The value parameter is required, but if you don't want the tag to have a value, specify the
      * parameter with no value, and we set the value to an empty string.
      * </p>
+     * <important>
+     * <p>
+     * Do not enter personally identifiable information in this field.
+     * </p>
+     * </important>
      * 
      * @param tags
      *        One or more tags. The value parameter is required, but if you don't want the tag to have a value, specify
-     *        the parameter with no value, and we set the value to an empty string.
+     *        the parameter with no value, and we set the value to an empty string. </p> <important>
+     *        <p>
+     *        Do not enter personally identifiable information in this field.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

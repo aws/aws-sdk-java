@@ -55,6 +55,12 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
     private Location location;
     /**
      * <p>
+     * An array of Amazon Resource Names (ARNs) for your VPC endpoint configurations.
+     * </p>
+     */
+    private java.util.List<String> vpceConfigurationArns;
+    /**
+     * <p>
      * Input <code>CustomerArtifactPaths</code> object for the scheduled run configuration.
      * </p>
      */
@@ -242,6 +248,76 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
 
     public ScheduleRunConfiguration withLocation(Location location) {
         setLocation(location);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of Amazon Resource Names (ARNs) for your VPC endpoint configurations.
+     * </p>
+     * 
+     * @return An array of Amazon Resource Names (ARNs) for your VPC endpoint configurations.
+     */
+
+    public java.util.List<String> getVpceConfigurationArns() {
+        return vpceConfigurationArns;
+    }
+
+    /**
+     * <p>
+     * An array of Amazon Resource Names (ARNs) for your VPC endpoint configurations.
+     * </p>
+     * 
+     * @param vpceConfigurationArns
+     *        An array of Amazon Resource Names (ARNs) for your VPC endpoint configurations.
+     */
+
+    public void setVpceConfigurationArns(java.util.Collection<String> vpceConfigurationArns) {
+        if (vpceConfigurationArns == null) {
+            this.vpceConfigurationArns = null;
+            return;
+        }
+
+        this.vpceConfigurationArns = new java.util.ArrayList<String>(vpceConfigurationArns);
+    }
+
+    /**
+     * <p>
+     * An array of Amazon Resource Names (ARNs) for your VPC endpoint configurations.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVpceConfigurationArns(java.util.Collection)} or
+     * {@link #withVpceConfigurationArns(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param vpceConfigurationArns
+     *        An array of Amazon Resource Names (ARNs) for your VPC endpoint configurations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduleRunConfiguration withVpceConfigurationArns(String... vpceConfigurationArns) {
+        if (this.vpceConfigurationArns == null) {
+            setVpceConfigurationArns(new java.util.ArrayList<String>(vpceConfigurationArns.length));
+        }
+        for (String ele : vpceConfigurationArns) {
+            this.vpceConfigurationArns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of Amazon Resource Names (ARNs) for your VPC endpoint configurations.
+     * </p>
+     * 
+     * @param vpceConfigurationArns
+     *        An array of Amazon Resource Names (ARNs) for your VPC endpoint configurations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduleRunConfiguration withVpceConfigurationArns(java.util.Collection<String> vpceConfigurationArns) {
+        setVpceConfigurationArns(vpceConfigurationArns);
         return this;
     }
 
@@ -497,6 +573,8 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
             sb.append("Locale: ").append(getLocale()).append(",");
         if (getLocation() != null)
             sb.append("Location: ").append(getLocation()).append(",");
+        if (getVpceConfigurationArns() != null)
+            sb.append("VpceConfigurationArns: ").append(getVpceConfigurationArns()).append(",");
         if (getCustomerArtifactPaths() != null)
             sb.append("CustomerArtifactPaths: ").append(getCustomerArtifactPaths()).append(",");
         if (getRadios() != null)
@@ -535,6 +613,10 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
             return false;
         if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
             return false;
+        if (other.getVpceConfigurationArns() == null ^ this.getVpceConfigurationArns() == null)
+            return false;
+        if (other.getVpceConfigurationArns() != null && other.getVpceConfigurationArns().equals(this.getVpceConfigurationArns()) == false)
+            return false;
         if (other.getCustomerArtifactPaths() == null ^ this.getCustomerArtifactPaths() == null)
             return false;
         if (other.getCustomerArtifactPaths() != null && other.getCustomerArtifactPaths().equals(this.getCustomerArtifactPaths()) == false)
@@ -563,6 +645,7 @@ public class ScheduleRunConfiguration implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getNetworkProfileArn() == null) ? 0 : getNetworkProfileArn().hashCode());
         hashCode = prime * hashCode + ((getLocale() == null) ? 0 : getLocale().hashCode());
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
+        hashCode = prime * hashCode + ((getVpceConfigurationArns() == null) ? 0 : getVpceConfigurationArns().hashCode());
         hashCode = prime * hashCode + ((getCustomerArtifactPaths() == null) ? 0 : getCustomerArtifactPaths().hashCode());
         hashCode = prime * hashCode + ((getRadios() == null) ? 0 : getRadios().hashCode());
         hashCode = prime * hashCode + ((getAuxiliaryApps() == null) ? 0 : getAuxiliaryApps().hashCode());

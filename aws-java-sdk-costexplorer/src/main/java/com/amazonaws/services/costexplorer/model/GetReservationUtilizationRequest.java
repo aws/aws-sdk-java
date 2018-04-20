@@ -27,7 +27,7 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Sets the start and end dates for retrieving reserve instance (RI) utilization. The start date is inclusive, but
+     * Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The start date is inclusive, but
      * the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
      * <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
      * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
@@ -43,18 +43,83 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the
-     * response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.
-     * If both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code>
+     * response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. If
+     * both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code>
      * defaults to <code>DAILY</code>.
      * </p>
      */
     private String granularity;
     /**
      * <p>
-     * Filters utilization data by using different dimensions. <code>GetReservationUtilization</code> uses the same
+     * Filters utilization data by dimensions. You can filter by the following dimensions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AZ
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CACHE_ENGINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DATABASE_ENGINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEPLOYMENT_OPTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTANCE_TYPE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * LINKED_ACCOUNT
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OPERATING_SYSTEM
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PLATFORM
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REGION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SERVICE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SCOPE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TENANCY
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <code>GetReservationUtilization</code> uses the same
      * <code> <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> </code>
      * object as the other operations, but only <code>AND</code> is supported among each dimension, and nesting is
-     * supported to only one level deep. If there are multiple values for a dimension, they are OR'd together.
+     * supported up to only one level deep. If there are multiple values for a dimension, they are OR'd together.
      * </p>
      */
     private Expression filter;
@@ -68,14 +133,14 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Sets the start and end dates for retrieving reserve instance (RI) utilization. The start date is inclusive, but
+     * Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The start date is inclusive, but
      * the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
      * <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
      * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
      * </p>
      * 
      * @param timePeriod
-     *        Sets the start and end dates for retrieving reserve instance (RI) utilization. The start date is
+     *        Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The start date is
      *        inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code>
      *        and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from
      *        <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including
@@ -88,13 +153,13 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Sets the start and end dates for retrieving reserve instance (RI) utilization. The start date is inclusive, but
+     * Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The start date is inclusive, but
      * the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
      * <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
      * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
      * </p>
      * 
-     * @return Sets the start and end dates for retrieving reserve instance (RI) utilization. The start date is
+     * @return Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The start date is
      *         inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code>
      *         and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from
      *         <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including
@@ -107,14 +172,14 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Sets the start and end dates for retrieving reserve instance (RI) utilization. The start date is inclusive, but
+     * Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The start date is inclusive, but
      * the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
      * <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and
      * including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
      * </p>
      * 
      * @param timePeriod
-     *        Sets the start and end dates for retrieving reserve instance (RI) utilization. The start date is
+     *        Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The start date is
      *        inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code>
      *        and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from
      *        <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including
@@ -200,14 +265,14 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the
-     * response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.
-     * If both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code>
+     * response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. If
+     * both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code>
      * defaults to <code>DAILY</code>.
      * </p>
      * 
      * @param granularity
      *        If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
-     *        set, the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or
+     *        set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or
      *        <code>DAILY</code>. If both <code>GroupBy</code> and <code>Granularity</code> aren't set,
      *        <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.
      * @see Granularity
@@ -220,13 +285,13 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the
-     * response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.
-     * If both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code>
+     * response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. If
+     * both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code>
      * defaults to <code>DAILY</code>.
      * </p>
      * 
      * @return If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
-     *         set, the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or
+     *         set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or
      *         <code>DAILY</code>. If both <code>GroupBy</code> and <code>Granularity</code> aren't set,
      *         <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.
      * @see Granularity
@@ -239,14 +304,14 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the
-     * response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.
-     * If both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code>
+     * response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. If
+     * both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code>
      * defaults to <code>DAILY</code>.
      * </p>
      * 
      * @param granularity
      *        If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
-     *        set, the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or
+     *        set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or
      *        <code>DAILY</code>. If both <code>GroupBy</code> and <code>Granularity</code> aren't set,
      *        <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -261,14 +326,14 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the
-     * response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.
-     * If both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code>
+     * response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>. If
+     * both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code>
      * defaults to <code>DAILY</code>.
      * </p>
      * 
      * @param granularity
      *        If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
-     *        set, the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or
+     *        set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or
      *        <code>DAILY</code>. If both <code>GroupBy</code> and <code>Granularity</code> aren't set,
      *        <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -282,18 +347,147 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Filters utilization data by using different dimensions. <code>GetReservationUtilization</code> uses the same
+     * Filters utilization data by dimensions. You can filter by the following dimensions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AZ
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CACHE_ENGINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DATABASE_ENGINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEPLOYMENT_OPTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTANCE_TYPE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * LINKED_ACCOUNT
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OPERATING_SYSTEM
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PLATFORM
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REGION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SERVICE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SCOPE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TENANCY
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <code>GetReservationUtilization</code> uses the same
      * <code> <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> </code>
      * object as the other operations, but only <code>AND</code> is supported among each dimension, and nesting is
-     * supported to only one level deep. If there are multiple values for a dimension, they are OR'd together.
+     * supported up to only one level deep. If there are multiple values for a dimension, they are OR'd together.
      * </p>
      * 
      * @param filter
-     *        Filters utilization data by using different dimensions. <code>GetReservationUtilization</code> uses the
-     *        same
+     *        Filters utilization data by dimensions. You can filter by the following dimensions:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        AZ
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CACHE_ENGINE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DATABASE_ENGINE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DEPLOYMENT_OPTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INSTANCE_TYPE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        LINKED_ACCOUNT
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OPERATING_SYSTEM
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PLATFORM
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REGION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SERVICE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SCOPE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TENANCY
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <code>GetReservationUtilization</code> uses the same
      *        <code> <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> </code>
      *        object as the other operations, but only <code>AND</code> is supported among each dimension, and nesting
-     *        is supported to only one level deep. If there are multiple values for a dimension, they are OR'd together.
+     *        is supported up to only one level deep. If there are multiple values for a dimension, they are OR'd
+     *        together.
      */
 
     public void setFilter(Expression filter) {
@@ -302,17 +496,145 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Filters utilization data by using different dimensions. <code>GetReservationUtilization</code> uses the same
+     * Filters utilization data by dimensions. You can filter by the following dimensions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AZ
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CACHE_ENGINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DATABASE_ENGINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEPLOYMENT_OPTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTANCE_TYPE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * LINKED_ACCOUNT
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OPERATING_SYSTEM
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PLATFORM
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REGION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SERVICE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SCOPE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TENANCY
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <code>GetReservationUtilization</code> uses the same
      * <code> <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> </code>
      * object as the other operations, but only <code>AND</code> is supported among each dimension, and nesting is
-     * supported to only one level deep. If there are multiple values for a dimension, they are OR'd together.
+     * supported up to only one level deep. If there are multiple values for a dimension, they are OR'd together.
      * </p>
      * 
-     * @return Filters utilization data by using different dimensions. <code>GetReservationUtilization</code> uses the
-     *         same
+     * @return Filters utilization data by dimensions. You can filter by the following dimensions:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         AZ
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CACHE_ENGINE
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DATABASE_ENGINE
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DEPLOYMENT_OPTION
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INSTANCE_TYPE
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         LINKED_ACCOUNT
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OPERATING_SYSTEM
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         PLATFORM
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         REGION
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SERVICE
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SCOPE
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TENANCY
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <code>GetReservationUtilization</code> uses the same
      *         <code> <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> </code>
      *         object as the other operations, but only <code>AND</code> is supported among each dimension, and nesting
-     *         is supported to only one level deep. If there are multiple values for a dimension, they are OR'd
+     *         is supported up to only one level deep. If there are multiple values for a dimension, they are OR'd
      *         together.
      */
 
@@ -322,18 +644,147 @@ public class GetReservationUtilizationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Filters utilization data by using different dimensions. <code>GetReservationUtilization</code> uses the same
+     * Filters utilization data by dimensions. You can filter by the following dimensions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AZ
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CACHE_ENGINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DATABASE_ENGINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEPLOYMENT_OPTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INSTANCE_TYPE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * LINKED_ACCOUNT
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OPERATING_SYSTEM
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PLATFORM
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * REGION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SERVICE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SCOPE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TENANCY
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <code>GetReservationUtilization</code> uses the same
      * <code> <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> </code>
      * object as the other operations, but only <code>AND</code> is supported among each dimension, and nesting is
-     * supported to only one level deep. If there are multiple values for a dimension, they are OR'd together.
+     * supported up to only one level deep. If there are multiple values for a dimension, they are OR'd together.
      * </p>
      * 
      * @param filter
-     *        Filters utilization data by using different dimensions. <code>GetReservationUtilization</code> uses the
-     *        same
+     *        Filters utilization data by dimensions. You can filter by the following dimensions:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        AZ
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CACHE_ENGINE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DATABASE_ENGINE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DEPLOYMENT_OPTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        INSTANCE_TYPE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        LINKED_ACCOUNT
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OPERATING_SYSTEM
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PLATFORM
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REGION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SERVICE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SCOPE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TENANCY
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <code>GetReservationUtilization</code> uses the same
      *        <code> <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> </code>
      *        object as the other operations, but only <code>AND</code> is supported among each dimension, and nesting
-     *        is supported to only one level deep. If there are multiple values for a dimension, they are OR'd together.
+     *        is supported up to only one level deep. If there are multiple values for a dimension, they are OR'd
+     *        together.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

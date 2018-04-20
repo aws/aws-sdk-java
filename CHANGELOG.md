@@ -1,3 +1,36 @@
+# __1.11.314__ __2018-04-19__
+## __AWS CodePipeline__
+  - ### Features
+    - Added new SourceRevision structure to Execution Summary with accompanying definitions as needed in the AWS CodePipeline API Guide.
+
+## __AWS Cost Explorer Service__
+  - ### Features
+    - Starting today, you can identify opportunities for Amazon RDS cost savings using AWS Cost Explorer's API to access your Amazon RDS Reserved Instance Purchase Recommendations
+
+## __AWS Device Farm__
+  - ### Features
+    - Adding support for VPCEndpoint feature. Allows customers to be able to access their private endpoints/services running in their VPC during test automation.
+
+## __AWS Secrets Manager__
+  - ### Features
+    - Documentation updates
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Added support for customers to see the time at which a Dedicated Host was allocated or released.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - The ModifyDBCluster operation now includes an EngineVersion parameter. You can use this to upgrade the engine for a clustered database.
+
+## __Amazon S3__
+  - ### Bugfixes
+    - Updated SelectRecordsInputStream for the new S3 select feature to not read to the end of the stream when it is closed.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Added new APIs DeleteInventory and DescribeInventoryDeletions, for customers to delete their custom inventory data.
+
 # __1.11.313__ __2018-04-10__
 ## __AWS Database Migration Service__
   - ### Features

@@ -37,8 +37,8 @@ public class DeleteSecretResult extends com.amazonaws.AmazonWebServiceResult<com
     private String name;
     /**
      * <p>
-     * The date and time after which this secret will be deleted by AWS Secrets Manager and is no longer recoverable.
-     * This value is the date and time of the delete request plus the number of days specified in
+     * The date and time after which this secret can be deleted by Secrets Manager and can no longer be restored. This
+     * value is the date and time of the delete request plus the number of days specified in
      * <code>RecoveryWindowInDays</code>.
      * </p>
      */
@@ -126,14 +126,14 @@ public class DeleteSecretResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The date and time after which this secret will be deleted by AWS Secrets Manager and is no longer recoverable.
-     * This value is the date and time of the delete request plus the number of days specified in
+     * The date and time after which this secret can be deleted by Secrets Manager and can no longer be restored. This
+     * value is the date and time of the delete request plus the number of days specified in
      * <code>RecoveryWindowInDays</code>.
      * </p>
      * 
      * @param deletionDate
-     *        The date and time after which this secret will be deleted by AWS Secrets Manager and is no longer
-     *        recoverable. This value is the date and time of the delete request plus the number of days specified in
+     *        The date and time after which this secret can be deleted by Secrets Manager and can no longer be restored.
+     *        This value is the date and time of the delete request plus the number of days specified in
      *        <code>RecoveryWindowInDays</code>.
      */
 
@@ -143,13 +143,13 @@ public class DeleteSecretResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The date and time after which this secret will be deleted by AWS Secrets Manager and is no longer recoverable.
-     * This value is the date and time of the delete request plus the number of days specified in
+     * The date and time after which this secret can be deleted by Secrets Manager and can no longer be restored. This
+     * value is the date and time of the delete request plus the number of days specified in
      * <code>RecoveryWindowInDays</code>.
      * </p>
      * 
-     * @return The date and time after which this secret will be deleted by AWS Secrets Manager and is no longer
-     *         recoverable. This value is the date and time of the delete request plus the number of days specified in
+     * @return The date and time after which this secret can be deleted by Secrets Manager and can no longer be
+     *         restored. This value is the date and time of the delete request plus the number of days specified in
      *         <code>RecoveryWindowInDays</code>.
      */
 
@@ -159,14 +159,14 @@ public class DeleteSecretResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The date and time after which this secret will be deleted by AWS Secrets Manager and is no longer recoverable.
-     * This value is the date and time of the delete request plus the number of days specified in
+     * The date and time after which this secret can be deleted by Secrets Manager and can no longer be restored. This
+     * value is the date and time of the delete request plus the number of days specified in
      * <code>RecoveryWindowInDays</code>.
      * </p>
      * 
      * @param deletionDate
-     *        The date and time after which this secret will be deleted by AWS Secrets Manager and is no longer
-     *        recoverable. This value is the date and time of the delete request plus the number of days specified in
+     *        The date and time after which this secret can be deleted by Secrets Manager and can no longer be restored.
+     *        This value is the date and time of the delete request plus the number of days specified in
      *        <code>RecoveryWindowInDays</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

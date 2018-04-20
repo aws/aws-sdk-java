@@ -51,6 +51,21 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * CACHE_ENGINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DATABASE_ENGINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEPLOYMENT_OPTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * INSTANCE_TYPE
      * </p>
      * </li>
@@ -61,12 +76,22 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * OPERATING_SYSTEM
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * PLATFORM
      * </p>
      * </li>
      * <li>
      * <p>
      * REGION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TAG
      * </p>
      * </li>
      * <li>
@@ -84,7 +109,7 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the
-     * response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.
+     * response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.
      * </p>
      */
     private String granularity;
@@ -100,6 +125,21 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * CACHE_ENGINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DATABASE_ENGINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEPLOYMENT_OPTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * INSTANCE_TYPE
      * </p>
      * </li>
@@ -110,12 +150,27 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * OPERATING_SYSTEM
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * PLATFORM
      * </p>
      * </li>
      * <li>
      * <p>
      * REGION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SERVICE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TAG
      * </p>
      * </li>
      * <li>
@@ -219,6 +274,21 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * CACHE_ENGINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DATABASE_ENGINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEPLOYMENT_OPTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * INSTANCE_TYPE
      * </p>
      * </li>
@@ -229,12 +299,22 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * OPERATING_SYSTEM
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * PLATFORM
      * </p>
      * </li>
      * <li>
      * <p>
      * REGION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TAG
      * </p>
      * </li>
      * <li>
@@ -253,6 +333,21 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      *         </li>
      *         <li>
      *         <p>
+     *         CACHE_ENGINE
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DATABASE_ENGINE
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DEPLOYMENT_OPTION
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INSTANCE_TYPE
      *         </p>
      *         </li>
@@ -263,12 +358,22 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      *         </li>
      *         <li>
      *         <p>
+     *         OPERATING_SYSTEM
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         PLATFORM
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         REGION
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TAG
      *         </p>
      *         </li>
      *         <li>
@@ -294,6 +399,21 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * CACHE_ENGINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DATABASE_ENGINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEPLOYMENT_OPTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * INSTANCE_TYPE
      * </p>
      * </li>
@@ -304,12 +424,22 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * OPERATING_SYSTEM
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * PLATFORM
      * </p>
      * </li>
      * <li>
      * <p>
      * REGION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TAG
      * </p>
      * </li>
      * <li>
@@ -329,6 +459,21 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
+     *        CACHE_ENGINE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DATABASE_ENGINE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DEPLOYMENT_OPTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        INSTANCE_TYPE
      *        </p>
      *        </li>
@@ -339,12 +484,22 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
+     *        OPERATING_SYSTEM
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        PLATFORM
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        REGION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TAG
      *        </p>
      *        </li>
      *        <li>
@@ -375,6 +530,21 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * CACHE_ENGINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DATABASE_ENGINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEPLOYMENT_OPTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * INSTANCE_TYPE
      * </p>
      * </li>
@@ -385,12 +555,22 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * OPERATING_SYSTEM
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * PLATFORM
      * </p>
      * </li>
      * <li>
      * <p>
      * REGION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TAG
      * </p>
      * </li>
      * <li>
@@ -415,6 +595,21 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
+     *        CACHE_ENGINE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DATABASE_ENGINE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DEPLOYMENT_OPTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        INSTANCE_TYPE
      *        </p>
      *        </li>
@@ -425,12 +620,22 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
+     *        OPERATING_SYSTEM
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        PLATFORM
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        REGION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TAG
      *        </p>
      *        </li>
      *        <li>
@@ -463,6 +668,21 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * CACHE_ENGINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DATABASE_ENGINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEPLOYMENT_OPTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * INSTANCE_TYPE
      * </p>
      * </li>
@@ -473,12 +693,22 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * OPERATING_SYSTEM
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * PLATFORM
      * </p>
      * </li>
      * <li>
      * <p>
      * REGION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TAG
      * </p>
      * </li>
      * <li>
@@ -498,6 +728,21 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
+     *        CACHE_ENGINE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DATABASE_ENGINE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DEPLOYMENT_OPTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        INSTANCE_TYPE
      *        </p>
      *        </li>
@@ -508,12 +753,22 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
+     *        OPERATING_SYSTEM
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        PLATFORM
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        REGION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TAG
      *        </p>
      *        </li>
      *        <li>
@@ -536,7 +791,7 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the
-     * response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.
+     * response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.
      * </p>
      * 
      * @param granularity
@@ -544,7 +799,7 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      *        <code>DAILY</code>.</p>
      *        <p>
      *        If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
-     *        set, the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or
+     *        set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or
      *        <code>DAILY</code>.
      * @see Granularity
      */
@@ -560,14 +815,14 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the
-     * response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.
+     * response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.
      * </p>
      * 
      * @return The granularity of the AWS cost data for the reservation. Valid values are <code>MONTHLY</code> and
      *         <code>DAILY</code>.</p>
      *         <p>
      *         If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
-     *         set, the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or
+     *         set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or
      *         <code>DAILY</code>.
      * @see Granularity
      */
@@ -583,7 +838,7 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the
-     * response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.
+     * response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.
      * </p>
      * 
      * @param granularity
@@ -591,7 +846,7 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      *        <code>DAILY</code>.</p>
      *        <p>
      *        If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
-     *        set, the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or
+     *        set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or
      *        <code>DAILY</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Granularity
@@ -609,7 +864,7 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the
-     * response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.
+     * response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.
      * </p>
      * 
      * @param granularity
@@ -617,7 +872,7 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      *        <code>DAILY</code>.</p>
      *        <p>
      *        If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't
-     *        set, the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or
+     *        set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or
      *        <code>DAILY</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Granularity
@@ -640,6 +895,21 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * CACHE_ENGINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DATABASE_ENGINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEPLOYMENT_OPTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * INSTANCE_TYPE
      * </p>
      * </li>
@@ -650,12 +920,27 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * OPERATING_SYSTEM
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * PLATFORM
      * </p>
      * </li>
      * <li>
      * <p>
      * REGION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SERVICE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TAG
      * </p>
      * </li>
      * <li>
@@ -681,6 +966,21 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
+     *        CACHE_ENGINE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DATABASE_ENGINE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DEPLOYMENT_OPTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        INSTANCE_TYPE
      *        </p>
      *        </li>
@@ -691,12 +991,27 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
+     *        OPERATING_SYSTEM
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        PLATFORM
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        REGION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SERVICE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TAG
      *        </p>
      *        </li>
      *        <li>
@@ -728,6 +1043,21 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * CACHE_ENGINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DATABASE_ENGINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEPLOYMENT_OPTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * INSTANCE_TYPE
      * </p>
      * </li>
@@ -738,12 +1068,27 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * OPERATING_SYSTEM
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * PLATFORM
      * </p>
      * </li>
      * <li>
      * <p>
      * REGION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SERVICE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TAG
      * </p>
      * </li>
      * <li>
@@ -768,6 +1113,21 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      *         </li>
      *         <li>
      *         <p>
+     *         CACHE_ENGINE
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DATABASE_ENGINE
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DEPLOYMENT_OPTION
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INSTANCE_TYPE
      *         </p>
      *         </li>
@@ -778,12 +1138,27 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      *         </li>
      *         <li>
      *         <p>
+     *         OPERATING_SYSTEM
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         PLATFORM
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         REGION
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SERVICE
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TAG
      *         </p>
      *         </li>
      *         <li>
@@ -815,6 +1190,21 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * CACHE_ENGINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DATABASE_ENGINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEPLOYMENT_OPTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * INSTANCE_TYPE
      * </p>
      * </li>
@@ -825,12 +1215,27 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * OPERATING_SYSTEM
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * PLATFORM
      * </p>
      * </li>
      * <li>
      * <p>
      * REGION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SERVICE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TAG
      * </p>
      * </li>
      * <li>
@@ -856,6 +1261,21 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
+     *        CACHE_ENGINE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DATABASE_ENGINE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DEPLOYMENT_OPTION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        INSTANCE_TYPE
      *        </p>
      *        </li>
@@ -866,12 +1286,27 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
+     *        OPERATING_SYSTEM
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        PLATFORM
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        REGION
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SERVICE
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TAG
      *        </p>
      *        </li>
      *        <li>

@@ -316,12 +316,12 @@ public enum AwsSdkMetrics {
                             } else if (CLOUDWATCH_REGION.equals(key)) {
                                 region = RegionUtils.getRegion(value);
                             } else if (METRIC_QUEUE_SIZE.equals(key)) {
-                            	Integer i = Integer.valueOf(value);
+                                Integer i = Integer.valueOf(value);
                                 if (i.intValue() < 1)
                                     throw new IllegalArgumentException(METRIC_QUEUE_SIZE + " must be at least 1");
                                 metricQueueSize = i;
                             } else if (QUEUE_POLL_TIMEOUT_MILLI.equals(key)) {
-                            	Long i = Long.valueOf(value);
+                                Long i = Long.valueOf(value);
                                 if (i.intValue() < 1000)
                                     throw new IllegalArgumentException(QUEUE_POLL_TIMEOUT_MILLI + " must be at least 1000");
                                 queuePollTimeoutMilli = i;
@@ -369,7 +369,7 @@ public enum AwsSdkMetrics {
     public static boolean isMetricAdminMBeanRegistered() {
         SdkMBeanRegistry registry = SdkMBeanRegistry.Factory.getMBeanRegistry();
         return registeredAdminMbeanName != null
-                && registry.isMBeanRegistered(registeredAdminMbeanName);
+               && registry.isMBeanRegistered(registeredAdminMbeanName);
     }
 
     /**
@@ -625,7 +625,7 @@ public enum AwsSdkMetrics {
                 }
             } catch (Exception e) {
                 LogFactory.getLog(AwsSdkMetrics.class)
-                    .warn("Failed to enable the default metrics", e);
+                          .warn("Failed to enable the default metrics", e);
             } finally {
                 dirtyEnabling = false;
             }
@@ -660,8 +660,8 @@ public enum AwsSdkMetrics {
      */
     public static <T extends MetricType> boolean addAll(Collection<T> types) {
         return types == null || types.size() == 0
-             ? false
-             : registry.addMetricTypes(types);
+               ? false
+               : registry.addMetricTypes(types);
     }
     /**
      * Sets the given metric types to replace the registry of predefined metrics
@@ -712,7 +712,7 @@ public enum AwsSdkMetrics {
      * file property.
      */
     public static synchronized void setCredentialProvider(
-            AWSCredentialsProvider provider) {
+        AWSCredentialsProvider provider) {
         credentialProvider = provider;
     }
 
@@ -775,7 +775,7 @@ public enum AwsSdkMetrics {
      * provider to make use of the given credential file.
      */
     public static void setCredentialFile(String filepath)
-            throws FileNotFoundException, IOException {
+        throws FileNotFoundException, IOException {
         setCredentialFile0(filepath);
     }
 
@@ -783,7 +783,7 @@ public enum AwsSdkMetrics {
      * Internal method to implement the {@link #setCredentialFile(String)}.
      */
     private static void setCredentialFile0(String filepath)
-            throws FileNotFoundException, IOException {
+        throws FileNotFoundException, IOException {
         final PropertiesCredentials cred =
             new PropertiesCredentials(new File(filepath));
         synchronized(AwsSdkMetrics.class) {
@@ -907,8 +907,8 @@ public enum AwsSdkMetrics {
             metricTypes.add(Field.HttpClientRetryCount);
             metricTypes.add(Field.HttpRequestTime);
             metricTypes.add(Field.RequestCount);
-//            metricTypes.add(Field.RequestSigningTime);
-//            metricTypes.add(Field.ResponseProcessingTime);
+            //            metricTypes.add(Field.RequestSigningTime);
+            //            metricTypes.add(Field.ResponseProcessingTime);
             metricTypes.add(Field.RetryCount);
             metricTypes.add(Field.RetryCapacityConsumed);
             metricTypes.add(Field.ThrottledRetryCount);

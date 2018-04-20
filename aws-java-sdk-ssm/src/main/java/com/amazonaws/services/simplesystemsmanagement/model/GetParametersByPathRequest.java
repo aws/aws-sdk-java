@@ -37,12 +37,24 @@ public class GetParametersByPathRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Retrieve all parameters within a hierarchy.
      * </p>
+     * <important>
+     * <p>
+     * If a user has access to a path, then the user can access all levels of that path. For example, if a user has
+     * permission to access path /a, then the user can also access /a/b. Even if a user has explicitly been denied
+     * access in IAM for parameter /a, they can still call the GetParametersByPath API action recursively and view /a/b.
+     * </p>
+     * </important>
      */
     private Boolean recursive;
     /**
      * <p>
      * Filters to limit the request results.
      * </p>
+     * <note>
+     * <p>
+     * You can't filter using the parameter name.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<ParameterStringFilter> parameterFilters;
     /**
@@ -121,9 +133,22 @@ public class GetParametersByPathRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Retrieve all parameters within a hierarchy.
      * </p>
+     * <important>
+     * <p>
+     * If a user has access to a path, then the user can access all levels of that path. For example, if a user has
+     * permission to access path /a, then the user can also access /a/b. Even if a user has explicitly been denied
+     * access in IAM for parameter /a, they can still call the GetParametersByPath API action recursively and view /a/b.
+     * </p>
+     * </important>
      * 
      * @param recursive
-     *        Retrieve all parameters within a hierarchy.
+     *        Retrieve all parameters within a hierarchy.</p> <important>
+     *        <p>
+     *        If a user has access to a path, then the user can access all levels of that path. For example, if a user
+     *        has permission to access path /a, then the user can also access /a/b. Even if a user has explicitly been
+     *        denied access in IAM for parameter /a, they can still call the GetParametersByPath API action recursively
+     *        and view /a/b.
+     *        </p>
      */
 
     public void setRecursive(Boolean recursive) {
@@ -134,8 +159,21 @@ public class GetParametersByPathRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Retrieve all parameters within a hierarchy.
      * </p>
+     * <important>
+     * <p>
+     * If a user has access to a path, then the user can access all levels of that path. For example, if a user has
+     * permission to access path /a, then the user can also access /a/b. Even if a user has explicitly been denied
+     * access in IAM for parameter /a, they can still call the GetParametersByPath API action recursively and view /a/b.
+     * </p>
+     * </important>
      * 
-     * @return Retrieve all parameters within a hierarchy.
+     * @return Retrieve all parameters within a hierarchy.</p> <important>
+     *         <p>
+     *         If a user has access to a path, then the user can access all levels of that path. For example, if a user
+     *         has permission to access path /a, then the user can also access /a/b. Even if a user has explicitly been
+     *         denied access in IAM for parameter /a, they can still call the GetParametersByPath API action recursively
+     *         and view /a/b.
+     *         </p>
      */
 
     public Boolean getRecursive() {
@@ -146,9 +184,22 @@ public class GetParametersByPathRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Retrieve all parameters within a hierarchy.
      * </p>
+     * <important>
+     * <p>
+     * If a user has access to a path, then the user can access all levels of that path. For example, if a user has
+     * permission to access path /a, then the user can also access /a/b. Even if a user has explicitly been denied
+     * access in IAM for parameter /a, they can still call the GetParametersByPath API action recursively and view /a/b.
+     * </p>
+     * </important>
      * 
      * @param recursive
-     *        Retrieve all parameters within a hierarchy.
+     *        Retrieve all parameters within a hierarchy.</p> <important>
+     *        <p>
+     *        If a user has access to a path, then the user can access all levels of that path. For example, if a user
+     *        has permission to access path /a, then the user can also access /a/b. Even if a user has explicitly been
+     *        denied access in IAM for parameter /a, they can still call the GetParametersByPath API action recursively
+     *        and view /a/b.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,8 +212,21 @@ public class GetParametersByPathRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Retrieve all parameters within a hierarchy.
      * </p>
+     * <important>
+     * <p>
+     * If a user has access to a path, then the user can access all levels of that path. For example, if a user has
+     * permission to access path /a, then the user can also access /a/b. Even if a user has explicitly been denied
+     * access in IAM for parameter /a, they can still call the GetParametersByPath API action recursively and view /a/b.
+     * </p>
+     * </important>
      * 
-     * @return Retrieve all parameters within a hierarchy.
+     * @return Retrieve all parameters within a hierarchy.</p> <important>
+     *         <p>
+     *         If a user has access to a path, then the user can access all levels of that path. For example, if a user
+     *         has permission to access path /a, then the user can also access /a/b. Even if a user has explicitly been
+     *         denied access in IAM for parameter /a, they can still call the GetParametersByPath API action recursively
+     *         and view /a/b.
+     *         </p>
      */
 
     public Boolean isRecursive() {
@@ -173,8 +237,16 @@ public class GetParametersByPathRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Filters to limit the request results.
      * </p>
+     * <note>
+     * <p>
+     * You can't filter using the parameter name.
+     * </p>
+     * </note>
      * 
-     * @return Filters to limit the request results.
+     * @return Filters to limit the request results.</p> <note>
+     *         <p>
+     *         You can't filter using the parameter name.
+     *         </p>
      */
 
     public java.util.List<ParameterStringFilter> getParameterFilters() {
@@ -188,9 +260,17 @@ public class GetParametersByPathRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Filters to limit the request results.
      * </p>
+     * <note>
+     * <p>
+     * You can't filter using the parameter name.
+     * </p>
+     * </note>
      * 
      * @param parameterFilters
-     *        Filters to limit the request results.
+     *        Filters to limit the request results.</p> <note>
+     *        <p>
+     *        You can't filter using the parameter name.
+     *        </p>
      */
 
     public void setParameterFilters(java.util.Collection<ParameterStringFilter> parameterFilters) {
@@ -206,6 +286,11 @@ public class GetParametersByPathRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Filters to limit the request results.
      * </p>
+     * <note>
+     * <p>
+     * You can't filter using the parameter name.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setParameterFilters(java.util.Collection)} or {@link #withParameterFilters(java.util.Collection)} if you
@@ -213,7 +298,10 @@ public class GetParametersByPathRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param parameterFilters
-     *        Filters to limit the request results.
+     *        Filters to limit the request results.</p> <note>
+     *        <p>
+     *        You can't filter using the parameter name.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -231,9 +319,17 @@ public class GetParametersByPathRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Filters to limit the request results.
      * </p>
+     * <note>
+     * <p>
+     * You can't filter using the parameter name.
+     * </p>
+     * </note>
      * 
      * @param parameterFilters
-     *        Filters to limit the request results.
+     *        Filters to limit the request results.</p> <note>
+     *        <p>
+     *        You can't filter using the parameter name.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

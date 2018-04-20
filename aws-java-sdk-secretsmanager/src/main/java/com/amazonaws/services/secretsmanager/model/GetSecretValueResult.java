@@ -67,7 +67,7 @@ public class GetSecretValueResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * <p>
      * If you store custom information in the secret by using the <a>CreateSecret</a>, <a>UpdateSecret</a>, or
-     * <a>PutSecretValue</a> API operations instead of the AWS Secrets Manager console, or by using the <b>Other secret
+     * <a>PutSecretValue</a> API operations instead of the Secrets Manager console, or by using the <b>Other secret
      * type</b> in the console, then you must code your Lambda rotation function to parse and interpret those values.
      * </p>
      */
@@ -337,7 +337,7 @@ public class GetSecretValueResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * <p>
      * If you store custom information in the secret by using the <a>CreateSecret</a>, <a>UpdateSecret</a>, or
-     * <a>PutSecretValue</a> API operations instead of the AWS Secrets Manager console, or by using the <b>Other secret
+     * <a>PutSecretValue</a> API operations instead of the Secrets Manager console, or by using the <b>Other secret
      * type</b> in the console, then you must code your Lambda rotation function to parse and interpret those values.
      * </p>
      * 
@@ -350,7 +350,7 @@ public class GetSecretValueResult extends com.amazonaws.AmazonWebServiceResult<c
      *        </p>
      *        <p>
      *        If you store custom information in the secret by using the <a>CreateSecret</a>, <a>UpdateSecret</a>, or
-     *        <a>PutSecretValue</a> API operations instead of the AWS Secrets Manager console, or by using the <b>Other
+     *        <a>PutSecretValue</a> API operations instead of the Secrets Manager console, or by using the <b>Other
      *        secret type</b> in the console, then you must code your Lambda rotation function to parse and interpret
      *        those values.
      */
@@ -370,7 +370,7 @@ public class GetSecretValueResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * <p>
      * If you store custom information in the secret by using the <a>CreateSecret</a>, <a>UpdateSecret</a>, or
-     * <a>PutSecretValue</a> API operations instead of the AWS Secrets Manager console, or by using the <b>Other secret
+     * <a>PutSecretValue</a> API operations instead of the Secrets Manager console, or by using the <b>Other secret
      * type</b> in the console, then you must code your Lambda rotation function to parse and interpret those values.
      * </p>
      * 
@@ -382,7 +382,7 @@ public class GetSecretValueResult extends com.amazonaws.AmazonWebServiceResult<c
      *         </p>
      *         <p>
      *         If you store custom information in the secret by using the <a>CreateSecret</a>, <a>UpdateSecret</a>, or
-     *         <a>PutSecretValue</a> API operations instead of the AWS Secrets Manager console, or by using the <b>Other
+     *         <a>PutSecretValue</a> API operations instead of the Secrets Manager console, or by using the <b>Other
      *         secret type</b> in the console, then you must code your Lambda rotation function to parse and interpret
      *         those values.
      */
@@ -402,7 +402,7 @@ public class GetSecretValueResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * <p>
      * If you store custom information in the secret by using the <a>CreateSecret</a>, <a>UpdateSecret</a>, or
-     * <a>PutSecretValue</a> API operations instead of the AWS Secrets Manager console, or by using the <b>Other secret
+     * <a>PutSecretValue</a> API operations instead of the Secrets Manager console, or by using the <b>Other secret
      * type</b> in the console, then you must code your Lambda rotation function to parse and interpret those values.
      * </p>
      * 
@@ -415,7 +415,7 @@ public class GetSecretValueResult extends com.amazonaws.AmazonWebServiceResult<c
      *        </p>
      *        <p>
      *        If you store custom information in the secret by using the <a>CreateSecret</a>, <a>UpdateSecret</a>, or
-     *        <a>PutSecretValue</a> API operations instead of the AWS Secrets Manager console, or by using the <b>Other
+     *        <a>PutSecretValue</a> API operations instead of the Secrets Manager console, or by using the <b>Other
      *        secret type</b> in the console, then you must code your Lambda rotation function to parse and interpret
      *        those values.
      * @return Returns a reference to this object so that method calls can be chained together.

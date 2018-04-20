@@ -64,6 +64,10 @@ public class ScheduleRunConfigurationJsonUnmarshaller implements Unmarshaller<Sc
                     context.nextToken();
                     scheduleRunConfiguration.setLocation(LocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("vpceConfigurationArns", targetDepth)) {
+                    context.nextToken();
+                    scheduleRunConfiguration.setVpceConfigurationArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("customerArtifactPaths", targetDepth)) {
                     context.nextToken();
                     scheduleRunConfiguration.setCustomerArtifactPaths(CustomerArtifactPathsJsonUnmarshaller.getInstance().unmarshall(context));

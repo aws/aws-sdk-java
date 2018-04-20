@@ -40,7 +40,7 @@ public class UpdateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter empty. The
      * CLI or SDK generates a random UUID for you and includes that in the request. If you don't use the SDK and instead
-     * generate a raw HTTP request to the AWS Secrets Manager service endpoint, then you must generate a
+     * generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
      * <code>ClientRequestToken</code> yourself for new versions and include that value in the request.
      * </p>
      * <p>
@@ -93,8 +93,8 @@ public class UpdateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * If you don't specify this value, then Secrets Manager defaults to using the default CMK in the account (the one
-     * named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't exist, then AWS Secrets Manager
-     * creates it for you automatically the first time it needs to encrypt a version's <code>Plaintext</code> or
+     * named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't exist, then Secrets Manager creates
+     * it for you automatically the first time it needs to encrypt a version's <code>Plaintext</code> or
      * <code>PlaintextString</code> fields.
      * </p>
      * <important>
@@ -191,7 +191,7 @@ public class UpdateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter empty. The
      * CLI or SDK generates a random UUID for you and includes that in the request. If you don't use the SDK and instead
-     * generate a raw HTTP request to the AWS Secrets Manager service endpoint, then you must generate a
+     * generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
      * <code>ClientRequestToken</code> yourself for new versions and include that value in the request.
      * </p>
      * <p>
@@ -236,7 +236,7 @@ public class UpdateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter
      *        empty. The CLI or SDK generates a random UUID for you and includes that in the request. If you don't use
-     *        the SDK and instead generate a raw HTTP request to the AWS Secrets Manager service endpoint, then you must
+     *        the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must
      *        generate a <code>ClientRequestToken</code> yourself for new versions and include that value in the
      *        request.
      *        </p>
@@ -288,7 +288,7 @@ public class UpdateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter empty. The
      * CLI or SDK generates a random UUID for you and includes that in the request. If you don't use the SDK and instead
-     * generate a raw HTTP request to the AWS Secrets Manager service endpoint, then you must generate a
+     * generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
      * <code>ClientRequestToken</code> yourself for new versions and include that value in the request.
      * </p>
      * <p>
@@ -332,8 +332,8 @@ public class UpdateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <p>
      *         If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter
      *         empty. The CLI or SDK generates a random UUID for you and includes that in the request. If you don't use
-     *         the SDK and instead generate a raw HTTP request to the AWS Secrets Manager service endpoint, then you
-     *         must generate a <code>ClientRequestToken</code> yourself for new versions and include that value in the
+     *         the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must
+     *         generate a <code>ClientRequestToken</code> yourself for new versions and include that value in the
      *         request.
      *         </p>
      *         <p>
@@ -384,7 +384,7 @@ public class UpdateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter empty. The
      * CLI or SDK generates a random UUID for you and includes that in the request. If you don't use the SDK and instead
-     * generate a raw HTTP request to the AWS Secrets Manager service endpoint, then you must generate a
+     * generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
      * <code>ClientRequestToken</code> yourself for new versions and include that value in the request.
      * </p>
      * <p>
@@ -429,7 +429,7 @@ public class UpdateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        If you use the AWS CLI or one of the AWS SDK to call this operation, then you can leave this parameter
      *        empty. The CLI or SDK generates a random UUID for you and includes that in the request. If you don't use
-     *        the SDK and instead generate a raw HTTP request to the AWS Secrets Manager service endpoint, then you must
+     *        the SDK and instead generate a raw HTTP request to the Secrets Manager service endpoint, then you must
      *        generate a <code>ClientRequestToken</code> yourself for new versions and include that value in the
      *        request.
      *        </p>
@@ -522,8 +522,8 @@ public class UpdateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * If you don't specify this value, then Secrets Manager defaults to using the default CMK in the account (the one
-     * named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't exist, then AWS Secrets Manager
-     * creates it for you automatically the first time it needs to encrypt a version's <code>Plaintext</code> or
+     * named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't exist, then Secrets Manager creates
+     * it for you automatically the first time it needs to encrypt a version's <code>Plaintext</code> or
      * <code>PlaintextString</code> fields.
      * </p>
      * <important>
@@ -539,8 +539,8 @@ public class UpdateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        protected text in the versions of this secret.</p>
      *        <p>
      *        If you don't specify this value, then Secrets Manager defaults to using the default CMK in the account
-     *        (the one named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't exist, then AWS
-     *        Secrets Manager creates it for you automatically the first time it needs to encrypt a version's
+     *        (the one named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't exist, then Secrets
+     *        Manager creates it for you automatically the first time it needs to encrypt a version's
      *        <code>Plaintext</code> or <code>PlaintextString</code> fields.
      *        </p>
      *        <important>
@@ -562,8 +562,8 @@ public class UpdateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * If you don't specify this value, then Secrets Manager defaults to using the default CMK in the account (the one
-     * named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't exist, then AWS Secrets Manager
-     * creates it for you automatically the first time it needs to encrypt a version's <code>Plaintext</code> or
+     * named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't exist, then Secrets Manager creates
+     * it for you automatically the first time it needs to encrypt a version's <code>Plaintext</code> or
      * <code>PlaintextString</code> fields.
      * </p>
      * <important>
@@ -578,8 +578,8 @@ public class UpdateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         protected text in the versions of this secret.</p>
      *         <p>
      *         If you don't specify this value, then Secrets Manager defaults to using the default CMK in the account
-     *         (the one named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't exist, then AWS
-     *         Secrets Manager creates it for you automatically the first time it needs to encrypt a version's
+     *         (the one named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't exist, then Secrets
+     *         Manager creates it for you automatically the first time it needs to encrypt a version's
      *         <code>Plaintext</code> or <code>PlaintextString</code> fields.
      *         </p>
      *         <important>
@@ -601,8 +601,8 @@ public class UpdateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * If you don't specify this value, then Secrets Manager defaults to using the default CMK in the account (the one
-     * named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't exist, then AWS Secrets Manager
-     * creates it for you automatically the first time it needs to encrypt a version's <code>Plaintext</code> or
+     * named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't exist, then Secrets Manager creates
+     * it for you automatically the first time it needs to encrypt a version's <code>Plaintext</code> or
      * <code>PlaintextString</code> fields.
      * </p>
      * <important>
@@ -618,8 +618,8 @@ public class UpdateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        protected text in the versions of this secret.</p>
      *        <p>
      *        If you don't specify this value, then Secrets Manager defaults to using the default CMK in the account
-     *        (the one named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't exist, then AWS
-     *        Secrets Manager creates it for you automatically the first time it needs to encrypt a version's
+     *        (the one named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't exist, then Secrets
+     *        Manager creates it for you automatically the first time it needs to encrypt a version's
      *        <code>Plaintext</code> or <code>PlaintextString</code> fields.
      *        </p>
      *        <important>

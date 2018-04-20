@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The request failed because it would exceed one of the AWS Secrets Manager internal limits.
+ * The request failed because it would exceed one of the Secrets Manager internal limits.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -68,6 +68,11 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
     }
 
     @Override
+    public CreateVPCEConfigurationResult createVPCEConfiguration(CreateVPCEConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteDevicePoolResult deleteDevicePool(DeleteDevicePoolRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -99,6 +104,11 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
 
     @Override
     public DeleteUploadResult deleteUpload(DeleteUploadRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteVPCEConfigurationResult deleteVPCEConfiguration(DeleteVPCEConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -174,6 +184,11 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
 
     @Override
     public GetUploadResult getUpload(GetUploadRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetVPCEConfigurationResult getVPCEConfiguration(GetVPCEConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -273,6 +288,11 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
     }
 
     @Override
+    public ListVPCEConfigurationsResult listVPCEConfigurations(ListVPCEConfigurationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PurchaseOfferingResult purchaseOffering(PurchaseOfferingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -319,6 +339,11 @@ public class AbstractAWSDeviceFarm implements AWSDeviceFarm {
 
     @Override
     public UpdateProjectResult updateProject(UpdateProjectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateVPCEConfigurationResult updateVPCEConfiguration(UpdateVPCEConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

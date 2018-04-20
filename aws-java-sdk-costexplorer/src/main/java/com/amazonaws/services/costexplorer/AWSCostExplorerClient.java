@@ -51,7 +51,7 @@ import com.amazonaws.services.costexplorer.model.transform.*;
  * <p>
  * The Cost Explorer API allows you to programmatically query your cost and usage data. You can query for aggregated
  * data such as total monthly costs or total daily usage. You can also query for granular data, such as the number of
- * daily write operations for DynamoDB database tables in your production environment.
+ * daily write operations for Amazon DynamoDB database tables in your production environment.
  * </p>
  * <p>
  * Service Endpoint
@@ -66,6 +66,10 @@ import com.amazonaws.services.costexplorer.model.transform.*;
  * </p>
  * </li>
  * </ul>
+ * <p>
+ * For information about costs associated with the Cost Explorer API, see <a
+ * href="https://aws.amazon.com/aws-cost-management/pricing/">AWS Cost Management Pricing</a>.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -86,6 +90,9 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                     .withProtocolVersion("1.1")
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("RequestChangedException").withModeledClass(
+                                    com.amazonaws.services.costexplorer.model.RequestChangedException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DataUnavailableException").withModeledClass(
                                     com.amazonaws.services.costexplorer.model.DataUnavailableException.class))
@@ -151,6 +158,9 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
      *         The requested data is unavailable.
      * @throws InvalidNextTokenException
      *         The pagination token is invalid. Try again without a pagination token.
+     * @throws RequestChangedException
+     *         Your request parameters changed between pages. Try again with the old parameters or without a pagination
+     *         token.
      * @sample AWSCostExplorer.GetCostAndUsage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsage" target="_top">AWS API
      *      Documentation</a>
@@ -195,7 +205,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Retrieves all available filter values for a specific filter over a period of time. You can search the dimension
+     * Retrieves all available filter values for a specified filter over a period of time. You can search the dimension
      * values for an arbitrary string.
      * </p>
      * 
@@ -205,8 +215,13 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
      *         You made too many calls in a short period of time. Try again later.
      * @throws BillExpirationException
      *         The requested report expired. Update the date interval and try again.
+     * @throws DataUnavailableException
+     *         The requested data is unavailable.
      * @throws InvalidNextTokenException
      *         The pagination token is invalid. Try again without a pagination token.
+     * @throws RequestChangedException
+     *         Your request parameters changed between pages. Try again with the old parameters or without a pagination
+     *         token.
      * @sample AWSCostExplorer.GetDimensionValues
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetDimensionValues" target="_top">AWS API
      *      Documentation</a>
@@ -264,6 +279,21 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
      * </li>
      * <li>
      * <p>
+     * CACHE_ENGINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DATABASE_ENGINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEPLOYMENT_OPTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * INSTANCE_TYPE
      * </p>
      * </li>
@@ -274,12 +304,27 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
      * </li>
      * <li>
      * <p>
+     * OPERATING_SYSTEM
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * PLATFORM
      * </p>
      * </li>
      * <li>
      * <p>
      * REGION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SERVICE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TAG
      * </p>
      * </li>
      * <li>
@@ -420,10 +465,9 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * You can retrieve the reservation utilization for your account. Master accounts in an organization in AWS
-     * Organizations have access to their associated member accounts. You can filter data by dimensions in a time
-     * period. You can use <code>GetDimensionValues</code> to determine the possible dimension values. Currently, you
-     * can group only by <code>SUBSCRIPTION_ID</code>.
+     * Retrieves the reservation utilization for your account. Master accounts in an organization have access to member
+     * accounts. You can filter data by dimensions in a time period. You can use <code>GetDimensionValues</code> to
+     * determine the possible dimension values. Currently, you can group only by <code>SUBSCRIPTION_ID</code>.
      * </p>
      * 
      * @param getReservationUtilizationRequest
@@ -480,7 +524,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * You can query for available tag keys and tag values for a specified period. You can search the tag values for an
+     * Queries for available tag keys and tag values for a specified period. You can search the tag values for an
      * arbitrary string.
      * </p>
      * 
@@ -490,8 +534,13 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
      *         You made too many calls in a short period of time. Try again later.
      * @throws BillExpirationException
      *         The requested report expired. Update the date interval and try again.
+     * @throws DataUnavailableException
+     *         The requested data is unavailable.
      * @throws InvalidNextTokenException
      *         The pagination token is invalid. Try again without a pagination token.
+     * @throws RequestChangedException
+     *         Your request parameters changed between pages. Try again with the old parameters or without a pagination
+     *         token.
      * @sample AWSCostExplorer.GetTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetTags" target="_top">AWS API
      *      Documentation</a>

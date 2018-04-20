@@ -128,6 +128,12 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private ScheduleRunTest test;
+    /**
+     * <p>
+     * An object containing information about the settings for a run.
+     * </p>
+     */
+    private ScheduleRunConfiguration configuration;
 
     /**
      * <p>
@@ -1078,6 +1084,46 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * An object containing information about the settings for a run.
+     * </p>
+     * 
+     * @param configuration
+     *        An object containing information about the settings for a run.
+     */
+
+    public void setConfiguration(ScheduleRunConfiguration configuration) {
+        this.configuration = configuration;
+    }
+
+    /**
+     * <p>
+     * An object containing information about the settings for a run.
+     * </p>
+     * 
+     * @return An object containing information about the settings for a run.
+     */
+
+    public ScheduleRunConfiguration getConfiguration() {
+        return this.configuration;
+    }
+
+    /**
+     * <p>
+     * An object containing information about the settings for a run.
+     * </p>
+     * 
+     * @param configuration
+     *        An object containing information about the settings for a run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDevicePoolCompatibilityRequest withConfiguration(ScheduleRunConfiguration configuration) {
+        setConfiguration(configuration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1095,7 +1141,9 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
         if (getTestType() != null)
             sb.append("TestType: ").append(getTestType()).append(",");
         if (getTest() != null)
-            sb.append("Test: ").append(getTest());
+            sb.append("Test: ").append(getTest()).append(",");
+        if (getConfiguration() != null)
+            sb.append("Configuration: ").append(getConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1126,6 +1174,10 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getTest() != null && other.getTest().equals(this.getTest()) == false)
             return false;
+        if (other.getConfiguration() == null ^ this.getConfiguration() == null)
+            return false;
+        if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1138,6 +1190,7 @@ public class GetDevicePoolCompatibilityRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getAppArn() == null) ? 0 : getAppArn().hashCode());
         hashCode = prime * hashCode + ((getTestType() == null) ? 0 : getTestType().hashCode());
         hashCode = prime * hashCode + ((getTest() == null) ? 0 : getTest().hashCode());
+        hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
         return hashCode;
     }
 

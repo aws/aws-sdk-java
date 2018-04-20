@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ExecutionResultCode {
 
-    PARSING_FAILED("PARSING_FAILED");
+    PARSING_FAILED("PARSING_FAILED"),
+    VPC_ENDPOINT_SETUP_FAILED("VPC_ENDPOINT_SETUP_FAILED");
 
     private String value;
 

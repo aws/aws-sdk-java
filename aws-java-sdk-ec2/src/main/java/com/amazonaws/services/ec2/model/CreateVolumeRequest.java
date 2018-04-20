@@ -47,11 +47,12 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     private Boolean encrypted;
     /**
      * <p>
-     * Only valid for Provisioned IOPS SSD volumes. The number of I/O operations per second (IOPS) to provision for the
-     * volume, with a maximum ratio of 50 IOPS/GiB.
+     * The number of I/O operations per second (IOPS) to provision for the volume, with a maximum ratio of 50 IOPS/GiB.
+     * Range is 100 to 32000 IOPS for volumes in most regions. For exceptions, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>.
      * </p>
      * <p>
-     * Constraint: Range is 100 to 20000 for Provisioned IOPS SSD volumes
+     * This parameter is valid only for Provisioned IOPS SSD (io1) volumes.
      * </p>
      */
     private Integer iops;
@@ -125,7 +126,9 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Magnetic volumes.
      * </p>
      * <p>
-     * Default: <code>standard</code>
+     * Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
+     * eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1, ap-southeast-2,
+     * ap-south-1, us-gov-west-1, and cn-north-1. In all other regions, EBS defaults to <code>gp2</code>.
      * </p>
      */
     private String volumeType;
@@ -325,18 +328,21 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Only valid for Provisioned IOPS SSD volumes. The number of I/O operations per second (IOPS) to provision for the
-     * volume, with a maximum ratio of 50 IOPS/GiB.
+     * The number of I/O operations per second (IOPS) to provision for the volume, with a maximum ratio of 50 IOPS/GiB.
+     * Range is 100 to 32000 IOPS for volumes in most regions. For exceptions, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>.
      * </p>
      * <p>
-     * Constraint: Range is 100 to 20000 for Provisioned IOPS SSD volumes
+     * This parameter is valid only for Provisioned IOPS SSD (io1) volumes.
      * </p>
      * 
      * @param iops
-     *        Only valid for Provisioned IOPS SSD volumes. The number of I/O operations per second (IOPS) to provision
-     *        for the volume, with a maximum ratio of 50 IOPS/GiB.</p>
+     *        The number of I/O operations per second (IOPS) to provision for the volume, with a maximum ratio of 50
+     *        IOPS/GiB. Range is 100 to 32000 IOPS for volumes in most regions. For exceptions, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
+     *        Types</a>.</p>
      *        <p>
-     *        Constraint: Range is 100 to 20000 for Provisioned IOPS SSD volumes
+     *        This parameter is valid only for Provisioned IOPS SSD (io1) volumes.
      */
 
     public void setIops(Integer iops) {
@@ -345,17 +351,20 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Only valid for Provisioned IOPS SSD volumes. The number of I/O operations per second (IOPS) to provision for the
-     * volume, with a maximum ratio of 50 IOPS/GiB.
+     * The number of I/O operations per second (IOPS) to provision for the volume, with a maximum ratio of 50 IOPS/GiB.
+     * Range is 100 to 32000 IOPS for volumes in most regions. For exceptions, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>.
      * </p>
      * <p>
-     * Constraint: Range is 100 to 20000 for Provisioned IOPS SSD volumes
+     * This parameter is valid only for Provisioned IOPS SSD (io1) volumes.
      * </p>
      * 
-     * @return Only valid for Provisioned IOPS SSD volumes. The number of I/O operations per second (IOPS) to provision
-     *         for the volume, with a maximum ratio of 50 IOPS/GiB.</p>
+     * @return The number of I/O operations per second (IOPS) to provision for the volume, with a maximum ratio of 50
+     *         IOPS/GiB. Range is 100 to 32000 IOPS for volumes in most regions. For exceptions, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
+     *         Types</a>.</p>
      *         <p>
-     *         Constraint: Range is 100 to 20000 for Provisioned IOPS SSD volumes
+     *         This parameter is valid only for Provisioned IOPS SSD (io1) volumes.
      */
 
     public Integer getIops() {
@@ -364,18 +373,21 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Only valid for Provisioned IOPS SSD volumes. The number of I/O operations per second (IOPS) to provision for the
-     * volume, with a maximum ratio of 50 IOPS/GiB.
+     * The number of I/O operations per second (IOPS) to provision for the volume, with a maximum ratio of 50 IOPS/GiB.
+     * Range is 100 to 32000 IOPS for volumes in most regions. For exceptions, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>.
      * </p>
      * <p>
-     * Constraint: Range is 100 to 20000 for Provisioned IOPS SSD volumes
+     * This parameter is valid only for Provisioned IOPS SSD (io1) volumes.
      * </p>
      * 
      * @param iops
-     *        Only valid for Provisioned IOPS SSD volumes. The number of I/O operations per second (IOPS) to provision
-     *        for the volume, with a maximum ratio of 50 IOPS/GiB.</p>
+     *        The number of I/O operations per second (IOPS) to provision for the volume, with a maximum ratio of 50
+     *        IOPS/GiB. Range is 100 to 32000 IOPS for volumes in most regions. For exceptions, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
+     *        Types</a>.</p>
      *        <p>
-     *        Constraint: Range is 100 to 20000 for Provisioned IOPS SSD volumes
+     *        This parameter is valid only for Provisioned IOPS SSD (io1) volumes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -776,7 +788,9 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Magnetic volumes.
      * </p>
      * <p>
-     * Default: <code>standard</code>
+     * Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
+     * eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1, ap-southeast-2,
+     * ap-south-1, us-gov-west-1, and cn-north-1. In all other regions, EBS defaults to <code>gp2</code>.
      * </p>
      * 
      * @param volumeType
@@ -784,7 +798,10 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
      *        <code>standard</code> for Magnetic volumes.</p>
      *        <p>
-     *        Default: <code>standard</code>
+     *        Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
+     *        eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1,
+     *        ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other regions, EBS defaults to
+     *        <code>gp2</code>.
      * @see VolumeType
      */
 
@@ -799,14 +816,19 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Magnetic volumes.
      * </p>
      * <p>
-     * Default: <code>standard</code>
+     * Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
+     * eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1, ap-southeast-2,
+     * ap-south-1, us-gov-west-1, and cn-north-1. In all other regions, EBS defaults to <code>gp2</code>.
      * </p>
      * 
      * @return The volume type. This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> for Provisioned
      *         IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
      *         <code>standard</code> for Magnetic volumes.</p>
      *         <p>
-     *         Default: <code>standard</code>
+     *         Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
+     *         eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1,
+     *         ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other regions, EBS defaults to
+     *         <code>gp2</code>.
      * @see VolumeType
      */
 
@@ -821,7 +843,9 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Magnetic volumes.
      * </p>
      * <p>
-     * Default: <code>standard</code>
+     * Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
+     * eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1, ap-southeast-2,
+     * ap-south-1, us-gov-west-1, and cn-north-1. In all other regions, EBS defaults to <code>gp2</code>.
      * </p>
      * 
      * @param volumeType
@@ -829,7 +853,10 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
      *        <code>standard</code> for Magnetic volumes.</p>
      *        <p>
-     *        Default: <code>standard</code>
+     *        Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
+     *        eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1,
+     *        ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other regions, EBS defaults to
+     *        <code>gp2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VolumeType
      */
@@ -846,7 +873,9 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Magnetic volumes.
      * </p>
      * <p>
-     * Default: <code>standard</code>
+     * Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
+     * eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1, ap-southeast-2,
+     * ap-south-1, us-gov-west-1, and cn-north-1. In all other regions, EBS defaults to <code>gp2</code>.
      * </p>
      * 
      * @param volumeType
@@ -854,7 +883,10 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
      *        <code>standard</code> for Magnetic volumes.</p>
      *        <p>
-     *        Default: <code>standard</code>
+     *        Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
+     *        eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1,
+     *        ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other regions, EBS defaults to
+     *        <code>gp2</code>.
      * @see VolumeType
      */
 
@@ -869,7 +901,9 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Magnetic volumes.
      * </p>
      * <p>
-     * Default: <code>standard</code>
+     * Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
+     * eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1, ap-southeast-2,
+     * ap-south-1, us-gov-west-1, and cn-north-1. In all other regions, EBS defaults to <code>gp2</code>.
      * </p>
      * 
      * @param volumeType
@@ -877,7 +911,10 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for Cold HDD, or
      *        <code>standard</code> for Magnetic volumes.</p>
      *        <p>
-     *        Default: <code>standard</code>
+     *        Defaults: If no volume type is specified, the default is <code>standard</code> in us-east-1, eu-west-1,
+     *        eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1,
+     *        ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other regions, EBS defaults to
+     *        <code>gp2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VolumeType
      */

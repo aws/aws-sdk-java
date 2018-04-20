@@ -47,6 +47,11 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Information about the parameter that you want to add to the system.
      * </p>
+     * <important>
+     * <p>
+     * Do not enter personally identifiable information in this field.
+     * </p>
+     * </important>
      */
     private String description;
     /**
@@ -198,9 +203,17 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Information about the parameter that you want to add to the system.
      * </p>
+     * <important>
+     * <p>
+     * Do not enter personally identifiable information in this field.
+     * </p>
+     * </important>
      * 
      * @param description
-     *        Information about the parameter that you want to add to the system.
+     *        Information about the parameter that you want to add to the system.</p> <important>
+     *        <p>
+     *        Do not enter personally identifiable information in this field.
+     *        </p>
      */
 
     public void setDescription(String description) {
@@ -211,8 +224,16 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Information about the parameter that you want to add to the system.
      * </p>
+     * <important>
+     * <p>
+     * Do not enter personally identifiable information in this field.
+     * </p>
+     * </important>
      * 
-     * @return Information about the parameter that you want to add to the system.
+     * @return Information about the parameter that you want to add to the system.</p> <important>
+     *         <p>
+     *         Do not enter personally identifiable information in this field.
+     *         </p>
      */
 
     public String getDescription() {
@@ -223,9 +244,17 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Information about the parameter that you want to add to the system.
      * </p>
+     * <important>
+     * <p>
+     * Do not enter personally identifiable information in this field.
+     * </p>
+     * </important>
      * 
      * @param description
-     *        Information about the parameter that you want to add to the system.
+     *        Information about the parameter that you want to add to the system.</p> <important>
+     *        <p>
+     *        Do not enter personally identifiable information in this field.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

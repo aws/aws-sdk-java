@@ -64,6 +64,11 @@ public class PipelineExecutionSummaryJsonUnmarshaller implements Unmarshaller<Pi
                     context.nextToken();
                     pipelineExecutionSummary.setLastUpdateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
+                if (context.testExpression("sourceRevisions", targetDepth)) {
+                    context.nextToken();
+                    pipelineExecutionSummary.setSourceRevisions(new ListUnmarshaller<SourceRevision>(SourceRevisionJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

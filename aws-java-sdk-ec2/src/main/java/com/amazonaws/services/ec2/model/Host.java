@@ -82,6 +82,18 @@ public class Host implements Serializable, Cloneable {
      * </p>
      */
     private String state;
+    /**
+     * <p>
+     * The time that the Dedicated Host was allocated.
+     * </p>
+     */
+    private java.util.Date allocationTime;
+    /**
+     * <p>
+     * The time that the Dedicated Host was released.
+     * </p>
+     */
+    private java.util.Date releaseTime;
 
     /**
      * <p>
@@ -561,6 +573,86 @@ public class Host implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The time that the Dedicated Host was allocated.
+     * </p>
+     * 
+     * @param allocationTime
+     *        The time that the Dedicated Host was allocated.
+     */
+
+    public void setAllocationTime(java.util.Date allocationTime) {
+        this.allocationTime = allocationTime;
+    }
+
+    /**
+     * <p>
+     * The time that the Dedicated Host was allocated.
+     * </p>
+     * 
+     * @return The time that the Dedicated Host was allocated.
+     */
+
+    public java.util.Date getAllocationTime() {
+        return this.allocationTime;
+    }
+
+    /**
+     * <p>
+     * The time that the Dedicated Host was allocated.
+     * </p>
+     * 
+     * @param allocationTime
+     *        The time that the Dedicated Host was allocated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Host withAllocationTime(java.util.Date allocationTime) {
+        setAllocationTime(allocationTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time that the Dedicated Host was released.
+     * </p>
+     * 
+     * @param releaseTime
+     *        The time that the Dedicated Host was released.
+     */
+
+    public void setReleaseTime(java.util.Date releaseTime) {
+        this.releaseTime = releaseTime;
+    }
+
+    /**
+     * <p>
+     * The time that the Dedicated Host was released.
+     * </p>
+     * 
+     * @return The time that the Dedicated Host was released.
+     */
+
+    public java.util.Date getReleaseTime() {
+        return this.releaseTime;
+    }
+
+    /**
+     * <p>
+     * The time that the Dedicated Host was released.
+     * </p>
+     * 
+     * @param releaseTime
+     *        The time that the Dedicated Host was released.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Host withReleaseTime(java.util.Date releaseTime) {
+        setReleaseTime(releaseTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -588,7 +680,11 @@ public class Host implements Serializable, Cloneable {
         if (getInstances() != null)
             sb.append("Instances: ").append(getInstances()).append(",");
         if (getState() != null)
-            sb.append("State: ").append(getState());
+            sb.append("State: ").append(getState()).append(",");
+        if (getAllocationTime() != null)
+            sb.append("AllocationTime: ").append(getAllocationTime()).append(",");
+        if (getReleaseTime() != null)
+            sb.append("ReleaseTime: ").append(getReleaseTime());
         sb.append("}");
         return sb.toString();
     }
@@ -639,6 +735,14 @@ public class Host implements Serializable, Cloneable {
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
+        if (other.getAllocationTime() == null ^ this.getAllocationTime() == null)
+            return false;
+        if (other.getAllocationTime() != null && other.getAllocationTime().equals(this.getAllocationTime()) == false)
+            return false;
+        if (other.getReleaseTime() == null ^ this.getReleaseTime() == null)
+            return false;
+        if (other.getReleaseTime() != null && other.getReleaseTime().equals(this.getReleaseTime()) == false)
+            return false;
         return true;
     }
 
@@ -656,6 +760,8 @@ public class Host implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getHostReservationId() == null) ? 0 : getHostReservationId().hashCode());
         hashCode = prime * hashCode + ((getInstances() == null) ? 0 : getInstances().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getAllocationTime() == null) ? 0 : getAllocationTime().hashCode());
+        hashCode = prime * hashCode + ((getReleaseTime() == null) ? 0 : getReleaseTime().hashCode());
         return hashCode;
     }
 

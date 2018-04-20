@@ -37,6 +37,8 @@ public enum DevicefarmActions implements Action {
     CreateRemoteAccessSession("devicefarm:CreateRemoteAccessSession"),
     /** Action for the CreateUpload operation. */
     CreateUpload("devicefarm:CreateUpload"),
+    /** Action for the CreateVPCEConfiguration operation. */
+    CreateVPCEConfiguration("devicefarm:CreateVPCEConfiguration"),
     /** Action for the DeleteDevicePool operation. */
     DeleteDevicePool("devicefarm:DeleteDevicePool"),
     /** Action for the DeleteInstanceProfile operation. */
@@ -51,6 +53,8 @@ public enum DevicefarmActions implements Action {
     DeleteRun("devicefarm:DeleteRun"),
     /** Action for the DeleteUpload operation. */
     DeleteUpload("devicefarm:DeleteUpload"),
+    /** Action for the DeleteVPCEConfiguration operation. */
+    DeleteVPCEConfiguration("devicefarm:DeleteVPCEConfiguration"),
     /** Action for the GetAccountSettings operation. */
     GetAccountSettings("devicefarm:GetAccountSettings"),
     /** Action for the GetDevice operation. */
@@ -81,6 +85,8 @@ public enum DevicefarmActions implements Action {
     GetTest("devicefarm:GetTest"),
     /** Action for the GetUpload operation. */
     GetUpload("devicefarm:GetUpload"),
+    /** Action for the GetVPCEConfiguration operation. */
+    GetVPCEConfiguration("devicefarm:GetVPCEConfiguration"),
     /** Action for the InstallToRemoteAccessSession operation. */
     InstallToRemoteAccessSession("devicefarm:InstallToRemoteAccessSession"),
     /** Action for the ListArtifacts operation. */
@@ -119,6 +125,8 @@ public enum DevicefarmActions implements Action {
     ListUniqueProblems("devicefarm:ListUniqueProblems"),
     /** Action for the ListUploads operation. */
     ListUploads("devicefarm:ListUploads"),
+    /** Action for the ListVPCEConfigurations operation. */
+    ListVPCEConfigurations("devicefarm:ListVPCEConfigurations"),
     /** Action for the PurchaseOffering operation. */
     PurchaseOffering("devicefarm:PurchaseOffering"),
     /** Action for the RenewOffering operation. */
@@ -139,6 +147,8 @@ public enum DevicefarmActions implements Action {
     UpdateNetworkProfile("devicefarm:UpdateNetworkProfile"),
     /** Action for the UpdateProject operation. */
     UpdateProject("devicefarm:UpdateProject"),
+    /** Action for the UpdateVPCEConfiguration operation. */
+    UpdateVPCEConfiguration("devicefarm:UpdateVPCEConfiguration"),
 
     ;
 

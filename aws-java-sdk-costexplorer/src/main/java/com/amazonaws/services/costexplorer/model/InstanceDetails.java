@@ -34,6 +34,12 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private EC2InstanceDetails eC2InstanceDetails;
+    /**
+     * <p>
+     * The RDS instances that AWS recommends that you purchase.
+     * </p>
+     */
+    private RDSInstanceDetails rDSInstanceDetails;
 
     /**
      * <p>
@@ -76,6 +82,46 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The RDS instances that AWS recommends that you purchase.
+     * </p>
+     * 
+     * @param rDSInstanceDetails
+     *        The RDS instances that AWS recommends that you purchase.
+     */
+
+    public void setRDSInstanceDetails(RDSInstanceDetails rDSInstanceDetails) {
+        this.rDSInstanceDetails = rDSInstanceDetails;
+    }
+
+    /**
+     * <p>
+     * The RDS instances that AWS recommends that you purchase.
+     * </p>
+     * 
+     * @return The RDS instances that AWS recommends that you purchase.
+     */
+
+    public RDSInstanceDetails getRDSInstanceDetails() {
+        return this.rDSInstanceDetails;
+    }
+
+    /**
+     * <p>
+     * The RDS instances that AWS recommends that you purchase.
+     * </p>
+     * 
+     * @param rDSInstanceDetails
+     *        The RDS instances that AWS recommends that you purchase.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceDetails withRDSInstanceDetails(RDSInstanceDetails rDSInstanceDetails) {
+        setRDSInstanceDetails(rDSInstanceDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -87,7 +133,9 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEC2InstanceDetails() != null)
-            sb.append("EC2InstanceDetails: ").append(getEC2InstanceDetails());
+            sb.append("EC2InstanceDetails: ").append(getEC2InstanceDetails()).append(",");
+        if (getRDSInstanceDetails() != null)
+            sb.append("RDSInstanceDetails: ").append(getRDSInstanceDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -106,6 +154,10 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getEC2InstanceDetails() != null && other.getEC2InstanceDetails().equals(this.getEC2InstanceDetails()) == false)
             return false;
+        if (other.getRDSInstanceDetails() == null ^ this.getRDSInstanceDetails() == null)
+            return false;
+        if (other.getRDSInstanceDetails() != null && other.getRDSInstanceDetails().equals(this.getRDSInstanceDetails()) == false)
+            return false;
         return true;
     }
 
@@ -115,6 +167,7 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getEC2InstanceDetails() == null) ? 0 : getEC2InstanceDetails().hashCode());
+        hashCode = prime * hashCode + ((getRDSInstanceDetails() == null) ? 0 : getRDSInstanceDetails().hashCode());
         return hashCode;
     }
 

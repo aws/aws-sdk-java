@@ -34,12 +34,17 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements Ser
      * <ul>
      * <li>
      * <p>
-     * <code>instance-type</code> - The instance type size that the Dedicated Host is configured to support.
+     * <code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code> | <code>off</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code> | <code>off</code>).
+     * <code>availability-zone</code> - The Availability Zone of the host.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>client-token</code> - The idempotency token you provided when you allocated the host.
      * </p>
      * </li>
      * <li>
@@ -49,19 +54,14 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements Ser
      * </li>
      * <li>
      * <p>
-     * <code>client-token</code> - The idempotency token you provided when you launched the instance
+     * <code>instance-type</code> - The instance type size that the Dedicated Host is configured to support.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>state</code>- The allocation state of the Dedicated Host (<code>available</code> |
+     * <code>state</code> - The allocation state of the Dedicated Host (<code>available</code> |
      * <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code> |
      * <code>released-permanent-failure</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>availability-zone</code> - The Availability Zone of the host.
      * </p>
      * </li>
      * </ul>
@@ -96,12 +96,17 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements Ser
      * <ul>
      * <li>
      * <p>
-     * <code>instance-type</code> - The instance type size that the Dedicated Host is configured to support.
+     * <code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code> | <code>off</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code> | <code>off</code>).
+     * <code>availability-zone</code> - The Availability Zone of the host.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>client-token</code> - The idempotency token you provided when you allocated the host.
      * </p>
      * </li>
      * <li>
@@ -111,19 +116,14 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements Ser
      * </li>
      * <li>
      * <p>
-     * <code>client-token</code> - The idempotency token you provided when you launched the instance
+     * <code>instance-type</code> - The instance type size that the Dedicated Host is configured to support.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>state</code>- The allocation state of the Dedicated Host (<code>available</code> |
+     * <code>state</code> - The allocation state of the Dedicated Host (<code>available</code> |
      * <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code> |
      * <code>released-permanent-failure</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>availability-zone</code> - The Availability Zone of the host.
      * </p>
      * </li>
      * </ul>
@@ -132,13 +132,18 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements Ser
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>instance-type</code> - The instance type size that the Dedicated Host is configured to support.
+     *         <code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code> |
+     *         <code>off</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code> |
-     *         <code>off</code>).
+     *         <code>availability-zone</code> - The Availability Zone of the host.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>client-token</code> - The idempotency token you provided when you allocated the host.
      *         </p>
      *         </li>
      *         <li>
@@ -148,19 +153,14 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements Ser
      *         </li>
      *         <li>
      *         <p>
-     *         <code>client-token</code> - The idempotency token you provided when you launched the instance
+     *         <code>instance-type</code> - The instance type size that the Dedicated Host is configured to support.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>state</code>- The allocation state of the Dedicated Host (<code>available</code> |
+     *         <code>state</code> - The allocation state of the Dedicated Host (<code>available</code> |
      *         <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code> |
      *         <code>released-permanent-failure</code>).
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>availability-zone</code> - The Availability Zone of the host.
      *         </p>
      *         </li>
      */
@@ -179,12 +179,17 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements Ser
      * <ul>
      * <li>
      * <p>
-     * <code>instance-type</code> - The instance type size that the Dedicated Host is configured to support.
+     * <code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code> | <code>off</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code> | <code>off</code>).
+     * <code>availability-zone</code> - The Availability Zone of the host.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>client-token</code> - The idempotency token you provided when you allocated the host.
      * </p>
      * </li>
      * <li>
@@ -194,19 +199,14 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements Ser
      * </li>
      * <li>
      * <p>
-     * <code>client-token</code> - The idempotency token you provided when you launched the instance
+     * <code>instance-type</code> - The instance type size that the Dedicated Host is configured to support.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>state</code>- The allocation state of the Dedicated Host (<code>available</code> |
+     * <code>state</code> - The allocation state of the Dedicated Host (<code>available</code> |
      * <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code> |
      * <code>released-permanent-failure</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>availability-zone</code> - The Availability Zone of the host.
      * </p>
      * </li>
      * </ul>
@@ -216,13 +216,18 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements Ser
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>instance-type</code> - The instance type size that the Dedicated Host is configured to support.
+     *        <code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code> |
+     *        <code>off</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code> |
-     *        <code>off</code>).
+     *        <code>availability-zone</code> - The Availability Zone of the host.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>client-token</code> - The idempotency token you provided when you allocated the host.
      *        </p>
      *        </li>
      *        <li>
@@ -232,19 +237,14 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements Ser
      *        </li>
      *        <li>
      *        <p>
-     *        <code>client-token</code> - The idempotency token you provided when you launched the instance
+     *        <code>instance-type</code> - The instance type size that the Dedicated Host is configured to support.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state</code>- The allocation state of the Dedicated Host (<code>available</code> |
+     *        <code>state</code> - The allocation state of the Dedicated Host (<code>available</code> |
      *        <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code> |
      *        <code>released-permanent-failure</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>availability-zone</code> - The Availability Zone of the host.
      *        </p>
      *        </li>
      */
@@ -265,12 +265,17 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements Ser
      * <ul>
      * <li>
      * <p>
-     * <code>instance-type</code> - The instance type size that the Dedicated Host is configured to support.
+     * <code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code> | <code>off</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code> | <code>off</code>).
+     * <code>availability-zone</code> - The Availability Zone of the host.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>client-token</code> - The idempotency token you provided when you allocated the host.
      * </p>
      * </li>
      * <li>
@@ -280,19 +285,14 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements Ser
      * </li>
      * <li>
      * <p>
-     * <code>client-token</code> - The idempotency token you provided when you launched the instance
+     * <code>instance-type</code> - The instance type size that the Dedicated Host is configured to support.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>state</code>- The allocation state of the Dedicated Host (<code>available</code> |
+     * <code>state</code> - The allocation state of the Dedicated Host (<code>available</code> |
      * <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code> |
      * <code>released-permanent-failure</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>availability-zone</code> - The Availability Zone of the host.
      * </p>
      * </li>
      * </ul>
@@ -307,13 +307,18 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements Ser
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>instance-type</code> - The instance type size that the Dedicated Host is configured to support.
+     *        <code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code> |
+     *        <code>off</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code> |
-     *        <code>off</code>).
+     *        <code>availability-zone</code> - The Availability Zone of the host.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>client-token</code> - The idempotency token you provided when you allocated the host.
      *        </p>
      *        </li>
      *        <li>
@@ -323,19 +328,14 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements Ser
      *        </li>
      *        <li>
      *        <p>
-     *        <code>client-token</code> - The idempotency token you provided when you launched the instance
+     *        <code>instance-type</code> - The instance type size that the Dedicated Host is configured to support.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state</code>- The allocation state of the Dedicated Host (<code>available</code> |
+     *        <code>state</code> - The allocation state of the Dedicated Host (<code>available</code> |
      *        <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code> |
      *        <code>released-permanent-failure</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>availability-zone</code> - The Availability Zone of the host.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -358,12 +358,17 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements Ser
      * <ul>
      * <li>
      * <p>
-     * <code>instance-type</code> - The instance type size that the Dedicated Host is configured to support.
+     * <code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code> | <code>off</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code> | <code>off</code>).
+     * <code>availability-zone</code> - The Availability Zone of the host.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>client-token</code> - The idempotency token you provided when you allocated the host.
      * </p>
      * </li>
      * <li>
@@ -373,19 +378,14 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements Ser
      * </li>
      * <li>
      * <p>
-     * <code>client-token</code> - The idempotency token you provided when you launched the instance
+     * <code>instance-type</code> - The instance type size that the Dedicated Host is configured to support.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>state</code>- The allocation state of the Dedicated Host (<code>available</code> |
+     * <code>state</code> - The allocation state of the Dedicated Host (<code>available</code> |
      * <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code> |
      * <code>released-permanent-failure</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>availability-zone</code> - The Availability Zone of the host.
      * </p>
      * </li>
      * </ul>
@@ -395,13 +395,18 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements Ser
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>instance-type</code> - The instance type size that the Dedicated Host is configured to support.
+     *        <code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code> |
+     *        <code>off</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>auto-placement</code> - Whether auto-placement is enabled or disabled (<code>on</code> |
-     *        <code>off</code>).
+     *        <code>availability-zone</code> - The Availability Zone of the host.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>client-token</code> - The idempotency token you provided when you allocated the host.
      *        </p>
      *        </li>
      *        <li>
@@ -411,19 +416,14 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements Ser
      *        </li>
      *        <li>
      *        <p>
-     *        <code>client-token</code> - The idempotency token you provided when you launched the instance
+     *        <code>instance-type</code> - The instance type size that the Dedicated Host is configured to support.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state</code>- The allocation state of the Dedicated Host (<code>available</code> |
+     *        <code>state</code> - The allocation state of the Dedicated Host (<code>available</code> |
      *        <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code> |
      *        <code>released-permanent-failure</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>availability-zone</code> - The Availability Zone of the host.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

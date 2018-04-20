@@ -17,9 +17,62 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A filter name and value pair that is used to return a more specific list of results. Filters can be used to match a
- * set of resources by various criteria, such as tags, attributes, or IDs.
+ * A filter name and value pair that is used to return a more specific list of results from a describe operation.
+ * Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs. The filters
+ * supported by a describe operation are documented with the describe operation. For example:
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>DescribeAvailabilityZones</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeImages</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeInstances</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeKeyPairs</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeSecurityGroups</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeSnapshots</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeSubnets</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeTags</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeVolumes</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeVpcs</a>
+ * </p>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/Filter" target="_top">AWS API Documentation</a>
  */

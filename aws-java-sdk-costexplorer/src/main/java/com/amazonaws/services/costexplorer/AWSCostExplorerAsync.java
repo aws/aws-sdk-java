@@ -28,7 +28,7 @@ import com.amazonaws.services.costexplorer.model.*;
  * <p>
  * The Cost Explorer API allows you to programmatically query your cost and usage data. You can query for aggregated
  * data such as total monthly costs or total daily usage. You can also query for granular data, such as the number of
- * daily write operations for DynamoDB database tables in your production environment.
+ * daily write operations for Amazon DynamoDB database tables in your production environment.
  * </p>
  * <p>
  * Service Endpoint
@@ -43,6 +43,10 @@ import com.amazonaws.services.costexplorer.model.*;
  * </p>
  * </li>
  * </ul>
+ * <p>
+ * For information about costs associated with the Cost Explorer API, see <a
+ * href="https://aws.amazon.com/aws-cost-management/pricing/">AWS Cost Management Pricing</a>.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSCostExplorerAsync extends AWSCostExplorer {
@@ -90,7 +94,7 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
-     * Retrieves all available filter values for a specific filter over a period of time. You can search the dimension
+     * Retrieves all available filter values for a specified filter over a period of time. You can search the dimension
      * values for an arbitrary string.
      * </p>
      * 
@@ -104,7 +108,7 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
-     * Retrieves all available filter values for a specific filter over a period of time. You can search the dimension
+     * Retrieves all available filter values for a specified filter over a period of time. You can search the dimension
      * values for an arbitrary string.
      * </p>
      * 
@@ -136,6 +140,21 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
      * </li>
      * <li>
      * <p>
+     * CACHE_ENGINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DATABASE_ENGINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEPLOYMENT_OPTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * INSTANCE_TYPE
      * </p>
      * </li>
@@ -146,12 +165,27 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
      * </li>
      * <li>
      * <p>
+     * OPERATING_SYSTEM
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * PLATFORM
      * </p>
      * </li>
      * <li>
      * <p>
      * REGION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SERVICE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TAG
      * </p>
      * </li>
      * <li>
@@ -189,6 +223,21 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
      * </li>
      * <li>
      * <p>
+     * CACHE_ENGINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DATABASE_ENGINE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DEPLOYMENT_OPTION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * INSTANCE_TYPE
      * </p>
      * </li>
@@ -199,12 +248,27 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
      * </li>
      * <li>
      * <p>
+     * OPERATING_SYSTEM
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * PLATFORM
      * </p>
      * </li>
      * <li>
      * <p>
      * REGION
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SERVICE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TAG
      * </p>
      * </li>
      * <li>
@@ -299,10 +363,9 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
-     * You can retrieve the reservation utilization for your account. Master accounts in an organization in AWS
-     * Organizations have access to their associated member accounts. You can filter data by dimensions in a time
-     * period. You can use <code>GetDimensionValues</code> to determine the possible dimension values. Currently, you
-     * can group only by <code>SUBSCRIPTION_ID</code>.
+     * Retrieves the reservation utilization for your account. Master accounts in an organization have access to member
+     * accounts. You can filter data by dimensions in a time period. You can use <code>GetDimensionValues</code> to
+     * determine the possible dimension values. Currently, you can group only by <code>SUBSCRIPTION_ID</code>.
      * </p>
      * 
      * @param getReservationUtilizationRequest
@@ -316,10 +379,9 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
-     * You can retrieve the reservation utilization for your account. Master accounts in an organization in AWS
-     * Organizations have access to their associated member accounts. You can filter data by dimensions in a time
-     * period. You can use <code>GetDimensionValues</code> to determine the possible dimension values. Currently, you
-     * can group only by <code>SUBSCRIPTION_ID</code>.
+     * Retrieves the reservation utilization for your account. Master accounts in an organization have access to member
+     * accounts. You can filter data by dimensions in a time period. You can use <code>GetDimensionValues</code> to
+     * determine the possible dimension values. Currently, you can group only by <code>SUBSCRIPTION_ID</code>.
      * </p>
      * 
      * @param getReservationUtilizationRequest
@@ -338,7 +400,7 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
-     * You can query for available tag keys and tag values for a specified period. You can search the tag values for an
+     * Queries for available tag keys and tag values for a specified period. You can search the tag values for an
      * arbitrary string.
      * </p>
      * 
@@ -352,7 +414,7 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
-     * You can query for available tag keys and tag values for a specified period. You can search the tag values for an
+     * Queries for available tag keys and tag values for a specified period. You can search the tag values for an
      * arbitrary string.
      * </p>
      * 

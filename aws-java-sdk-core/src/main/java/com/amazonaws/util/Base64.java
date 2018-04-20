@@ -53,49 +53,57 @@ public enum Base64 {
                 String className = JAXBContext.newInstance().getClass().getName();
                 if (inconsistentJaxbImpls.containsKey(className)) {
                     LOG.warn("A JAXB implementation known to produce base64 encodings that are " +
-                            "inconsistent with the reference implementation has been detected. The " +
-                            "results of the encodeAsString() method may be incorrect. Implementation: " +
-                            inconsistentJaxbImpls.get(className));
+                             "inconsistent with the reference implementation has been detected. The " +
+                             "results of the encodeAsString() method may be incorrect. Implementation: " +
+                             inconsistentJaxbImpls.get(className));
                 }
             } catch (Exception ignored) {
             }
         } else {
-            LOG.warn("JAXB is unavailable");
+            LOG.warn("JAXB is unavailable. Will fallback to SDK implementation which may be less performant");
         }
     }
 
     /**
      * Returns a base 64 encoded string of the given bytes.
      */
-    public static String encodeAsString(byte ... bytes) {
-        if (bytes == null)
+    public static String encodeAsString(byte... bytes) {
+        if (bytes == null) {
             return null;
-        if (isJaxbAvailable) try {
-            return DatatypeConverter.printBase64Binary(bytes);
-        } catch (NullPointerException ex) {
-            // https://netbeans.org/bugzilla/show_bug.cgi?id=224923
-            // https://issues.apache.org/jira/browse/CAMEL-4893
-
-            // Note the converter should eventually be initialized and printBase64Binary should start working again
-            LOG.debug("Recovering from JAXB bug: https://netbeans.org/bugzilla/show_bug.cgi?id=224923", ex);
         }
+        if (isJaxbAvailable) {
+            try {
+                return DatatypeConverter.printBase64Binary(bytes);
+            } catch (NullPointerException ex) {
+                // https://netbeans.org/bugzilla/show_bug.cgi?id=224923
+                // https://issues.apache.org/jira/browse/CAMEL-4893
+
+                // Note the converter should eventually be initialized and printBase64Binary should start working again
+                LOG.debug("Recovering from JAXB bug: https://netbeans.org/bugzilla/show_bug.cgi?id=224923", ex);
+            }
+        }
+
         return bytes.length == 0 ? "" : CodecUtils.toStringDirect(codec.encode(bytes));
     }
 
     /**
      * Returns a 64 encoded byte array of the given bytes.
      */
-    public static byte[] encode(byte[] bytes) { return bytes == null || bytes.length == 0 ? bytes : codec.encode(bytes); }
+    public static byte[] encode(byte[] bytes) {
+        return bytes == null || bytes.length == 0 ? bytes : codec.encode(bytes);
+    }
 
     /**
      * Decodes the given base 64 encoded string,
      * skipping carriage returns, line feeds and spaces as needed.
      */
     public static byte[] decode(String b64) {
-        if (b64 == null)
+        if (b64 == null) {
             return null;
-        if (b64.length() == 0)
+        }
+        if (b64.length() == 0) {
             return new byte[0];
+        }
         byte[] buf = new byte[b64.length()];
         int len = CodecUtils.sanitize(b64, buf);
         return codec.decode(buf, len);
@@ -104,5 +112,8 @@ public enum Base64 {
     /**
      * Decodes the given base 64 encoded bytes.
      */
-    public static byte[] decode(byte[] b64) { return b64 == null || b64.length == 0 ? b64 :  codec.decode(b64, b64.length); }
+    public static byte[] decode(byte[] b64) {
+        return b64 == null || b64.length == 0 ? b64 : codec.decode(b64, b64.length);
+    }
 }
+

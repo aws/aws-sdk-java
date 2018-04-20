@@ -76,14 +76,17 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                             new JsonErrorShapeMetadata().withErrorCode("NotEligibleException").withModeledClass(
                                     com.amazonaws.services.devicefarm.model.NotEligibleException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidOperationException").withModeledClass(
+                                    com.amazonaws.services.devicefarm.model.InvalidOperationException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ArgumentException").withModeledClass(
                                     com.amazonaws.services.devicefarm.model.ArgumentException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withModeledClass(
-                                    com.amazonaws.services.devicefarm.model.NotFoundException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
                                     com.amazonaws.services.devicefarm.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withModeledClass(
+                                    com.amazonaws.services.devicefarm.model.NotFoundException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceAccountException").withModeledClass(
                                     com.amazonaws.services.devicefarm.model.ServiceAccountException.class))
@@ -625,6 +628,63 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
 
     /**
      * <p>
+     * Creates a configuration record in Device Farm for your Amazon Virtual Private Cloud (VPC) endpoint.
+     * </p>
+     * 
+     * @param createVPCEConfigurationRequest
+     * @return Result of the CreateVPCEConfiguration operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.CreateVPCEConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateVPCEConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateVPCEConfigurationResult createVPCEConfiguration(CreateVPCEConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateVPCEConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final CreateVPCEConfigurationResult executeCreateVPCEConfiguration(CreateVPCEConfigurationRequest createVPCEConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createVPCEConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateVPCEConfigurationRequest> request = null;
+        Response<CreateVPCEConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateVPCEConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createVPCEConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateVPCEConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateVPCEConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a device pool given the pool ARN. Does not allow deletion of curated pools owned by the system.
      * </p>
      * 
@@ -1026,6 +1086,66 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteUploadResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteUploadResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a configuration for your Amazon Virtual Private Cloud (VPC) endpoint.
+     * </p>
+     * 
+     * @param deleteVPCEConfigurationRequest
+     * @return Result of the DeleteVPCEConfiguration operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @throws InvalidOperationException
+     *         There was an error with the update request, or you do not have sufficient permissions to update this VPC
+     *         endpoint configuration.
+     * @sample AWSDeviceFarm.DeleteVPCEConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteVPCEConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteVPCEConfigurationResult deleteVPCEConfiguration(DeleteVPCEConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteVPCEConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteVPCEConfigurationResult executeDeleteVPCEConfiguration(DeleteVPCEConfigurationRequest deleteVPCEConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteVPCEConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteVPCEConfigurationRequest> request = null;
+        Response<DeleteVPCEConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteVPCEConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteVPCEConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteVPCEConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteVPCEConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1902,6 +2022,61 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
 
             HttpResponseHandler<AmazonWebServiceResponse<GetUploadResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetUploadResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about the configuration settings for your Amazon Virtual Private Cloud (VPC) endpoint.
+     * </p>
+     * 
+     * @param getVPCEConfigurationRequest
+     * @return Result of the GetVPCEConfiguration operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.GetVPCEConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetVPCEConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetVPCEConfigurationResult getVPCEConfiguration(GetVPCEConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetVPCEConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetVPCEConfigurationResult executeGetVPCEConfiguration(GetVPCEConfigurationRequest getVPCEConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getVPCEConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetVPCEConfigurationRequest> request = null;
+        Response<GetVPCEConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetVPCEConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getVPCEConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetVPCEConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetVPCEConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3038,6 +3213,60 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
 
     /**
      * <p>
+     * Returns information about all Amazon Virtual Private Cloud (VPC) endpoint configurations in the AWS account.
+     * </p>
+     * 
+     * @param listVPCEConfigurationsRequest
+     * @return Result of the ListVPCEConfigurations operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @sample AWSDeviceFarm.ListVPCEConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListVPCEConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListVPCEConfigurationsResult listVPCEConfigurations(ListVPCEConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListVPCEConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final ListVPCEConfigurationsResult executeListVPCEConfigurations(ListVPCEConfigurationsRequest listVPCEConfigurationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listVPCEConfigurationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListVPCEConfigurationsRequest> request = null;
+        Response<ListVPCEConfigurationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListVPCEConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVPCEConfigurationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListVPCEConfigurationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListVPCEConfigurationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Immediately purchases offerings for an AWS account. Offerings renew with the latest total purchased quantity for
      * an offering, unless the renewal was overridden. The API returns a <code>NotEligible</code> error if the user is
      * not permitted to invoke the operation. Please contact <a
@@ -3624,6 +3853,66 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateProjectResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateProjectResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates information about an existing Amazon Virtual Private Cloud (VPC) endpoint configuration.
+     * </p>
+     * 
+     * @param updateVPCEConfigurationRequest
+     * @return Result of the UpdateVPCEConfiguration operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws NotFoundException
+     *         The specified entity was not found.
+     * @throws ServiceAccountException
+     *         There was a problem with the service account.
+     * @throws InvalidOperationException
+     *         There was an error with the update request, or you do not have sufficient permissions to update this VPC
+     *         endpoint configuration.
+     * @sample AWSDeviceFarm.UpdateVPCEConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateVPCEConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateVPCEConfigurationResult updateVPCEConfiguration(UpdateVPCEConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateVPCEConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final UpdateVPCEConfigurationResult executeUpdateVPCEConfiguration(UpdateVPCEConfigurationRequest updateVPCEConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateVPCEConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateVPCEConfigurationRequest> request = null;
+        Response<UpdateVPCEConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateVPCEConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateVPCEConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateVPCEConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateVPCEConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -231,6 +231,37 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
+     * Creates a configuration record in Device Farm for your Amazon Virtual Private Cloud (VPC) endpoint.
+     * </p>
+     * 
+     * @param createVPCEConfigurationRequest
+     * @return A Java Future containing the result of the CreateVPCEConfiguration operation returned by the service.
+     * @sample AWSDeviceFarmAsync.CreateVPCEConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateVPCEConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVPCEConfigurationResult> createVPCEConfigurationAsync(CreateVPCEConfigurationRequest createVPCEConfigurationRequest);
+
+    /**
+     * <p>
+     * Creates a configuration record in Device Farm for your Amazon Virtual Private Cloud (VPC) endpoint.
+     * </p>
+     * 
+     * @param createVPCEConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateVPCEConfiguration operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.CreateVPCEConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateVPCEConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVPCEConfigurationResult> createVPCEConfigurationAsync(CreateVPCEConfigurationRequest createVPCEConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateVPCEConfigurationRequest, CreateVPCEConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a device pool given the pool ARN. Does not allow deletion of curated pools owned by the system.
      * </p>
      * 
@@ -469,6 +500,37 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      */
     java.util.concurrent.Future<DeleteUploadResult> deleteUploadAsync(DeleteUploadRequest deleteUploadRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteUploadRequest, DeleteUploadResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a configuration for your Amazon Virtual Private Cloud (VPC) endpoint.
+     * </p>
+     * 
+     * @param deleteVPCEConfigurationRequest
+     * @return A Java Future containing the result of the DeleteVPCEConfiguration operation returned by the service.
+     * @sample AWSDeviceFarmAsync.DeleteVPCEConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteVPCEConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVPCEConfigurationResult> deleteVPCEConfigurationAsync(DeleteVPCEConfigurationRequest deleteVPCEConfigurationRequest);
+
+    /**
+     * <p>
+     * Deletes a configuration for your Amazon Virtual Private Cloud (VPC) endpoint.
+     * </p>
+     * 
+     * @param deleteVPCEConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteVPCEConfiguration operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.DeleteVPCEConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteVPCEConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVPCEConfigurationResult> deleteVPCEConfigurationAsync(DeleteVPCEConfigurationRequest deleteVPCEConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteVPCEConfigurationRequest, DeleteVPCEConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -968,6 +1030,37 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      */
     java.util.concurrent.Future<GetUploadResult> getUploadAsync(GetUploadRequest getUploadRequest,
             com.amazonaws.handlers.AsyncHandler<GetUploadRequest, GetUploadResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about the configuration settings for your Amazon Virtual Private Cloud (VPC) endpoint.
+     * </p>
+     * 
+     * @param getVPCEConfigurationRequest
+     * @return A Java Future containing the result of the GetVPCEConfiguration operation returned by the service.
+     * @sample AWSDeviceFarmAsync.GetVPCEConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetVPCEConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetVPCEConfigurationResult> getVPCEConfigurationAsync(GetVPCEConfigurationRequest getVPCEConfigurationRequest);
+
+    /**
+     * <p>
+     * Returns information about the configuration settings for your Amazon Virtual Private Cloud (VPC) endpoint.
+     * </p>
+     * 
+     * @param getVPCEConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetVPCEConfiguration operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.GetVPCEConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetVPCEConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetVPCEConfigurationResult> getVPCEConfigurationAsync(GetVPCEConfigurationRequest getVPCEConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetVPCEConfigurationRequest, GetVPCEConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -1620,6 +1713,37 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
 
     /**
      * <p>
+     * Returns information about all Amazon Virtual Private Cloud (VPC) endpoint configurations in the AWS account.
+     * </p>
+     * 
+     * @param listVPCEConfigurationsRequest
+     * @return A Java Future containing the result of the ListVPCEConfigurations operation returned by the service.
+     * @sample AWSDeviceFarmAsync.ListVPCEConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListVPCEConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListVPCEConfigurationsResult> listVPCEConfigurationsAsync(ListVPCEConfigurationsRequest listVPCEConfigurationsRequest);
+
+    /**
+     * <p>
+     * Returns information about all Amazon Virtual Private Cloud (VPC) endpoint configurations in the AWS account.
+     * </p>
+     * 
+     * @param listVPCEConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListVPCEConfigurations operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.ListVPCEConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListVPCEConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListVPCEConfigurationsResult> listVPCEConfigurationsAsync(ListVPCEConfigurationsRequest listVPCEConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListVPCEConfigurationsRequest, ListVPCEConfigurationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Immediately purchases offerings for an AWS account. Offerings renew with the latest total purchased quantity for
      * an offering, unless the renewal was overridden. The API returns a <code>NotEligible</code> error if the user is
      * not permitted to invoke the operation. Please contact <a
@@ -1965,5 +2089,36 @@ public interface AWSDeviceFarmAsync extends AWSDeviceFarm {
      */
     java.util.concurrent.Future<UpdateProjectResult> updateProjectAsync(UpdateProjectRequest updateProjectRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateProjectRequest, UpdateProjectResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates information about an existing Amazon Virtual Private Cloud (VPC) endpoint configuration.
+     * </p>
+     * 
+     * @param updateVPCEConfigurationRequest
+     * @return A Java Future containing the result of the UpdateVPCEConfiguration operation returned by the service.
+     * @sample AWSDeviceFarmAsync.UpdateVPCEConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateVPCEConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateVPCEConfigurationResult> updateVPCEConfigurationAsync(UpdateVPCEConfigurationRequest updateVPCEConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates information about an existing Amazon Virtual Private Cloud (VPC) endpoint configuration.
+     * </p>
+     * 
+     * @param updateVPCEConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateVPCEConfiguration operation returned by the service.
+     * @sample AWSDeviceFarmAsyncHandler.UpdateVPCEConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateVPCEConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateVPCEConfigurationResult> updateVPCEConfigurationAsync(UpdateVPCEConfigurationRequest updateVPCEConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateVPCEConfigurationRequest, UpdateVPCEConfigurationResult> asyncHandler);
 
 }

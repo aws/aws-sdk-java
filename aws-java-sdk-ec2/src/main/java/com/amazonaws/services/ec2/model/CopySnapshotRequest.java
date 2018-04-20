@@ -103,8 +103,8 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
     private String kmsKeyId;
     /**
      * <p>
-     * The pre-signed URL parameter is required when copying an encrypted snapshot with the Amazon EC2 Query API; it is
-     * available as an optional parameter in all other cases. For more information, see <a
+     * When you copy an encrypted source snapshot using the Amazon EC2 Query API, you must supply a pre-signed URL. This
+     * parameter is optional for unencrypted snapshots. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query Requests</a>.
      * </p>
      * <p>
@@ -608,8 +608,8 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The pre-signed URL parameter is required when copying an encrypted snapshot with the Amazon EC2 Query API; it is
-     * available as an optional parameter in all other cases. For more information, see <a
+     * When you copy an encrypted source snapshot using the Amazon EC2 Query API, you must supply a pre-signed URL. This
+     * parameter is optional for unencrypted snapshots. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query Requests</a>.
      * </p>
      * <p>
@@ -624,8 +624,8 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param presignedUrl
-     *        The pre-signed URL parameter is required when copying an encrypted snapshot with the Amazon EC2 Query API;
-     *        it is available as an optional parameter in all other cases. For more information, see <a
+     *        When you copy an encrypted source snapshot using the Amazon EC2 Query API, you must supply a pre-signed
+     *        URL. This parameter is optional for unencrypted snapshots. For more information, see <a
      *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query Requests</a>.</p>
      *        <p>
      *        The <code>PresignedUrl</code> should use the snapshot source endpoint, the <code>CopySnapshot</code>
@@ -645,8 +645,8 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The pre-signed URL parameter is required when copying an encrypted snapshot with the Amazon EC2 Query API; it is
-     * available as an optional parameter in all other cases. For more information, see <a
+     * When you copy an encrypted source snapshot using the Amazon EC2 Query API, you must supply a pre-signed URL. This
+     * parameter is optional for unencrypted snapshots. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query Requests</a>.
      * </p>
      * <p>
@@ -660,8 +660,8 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * and the snapshot will move to an <code>error</code> state.
      * </p>
      * 
-     * @return The pre-signed URL parameter is required when copying an encrypted snapshot with the Amazon EC2 Query
-     *         API; it is available as an optional parameter in all other cases. For more information, see <a
+     * @return When you copy an encrypted source snapshot using the Amazon EC2 Query API, you must supply a pre-signed
+     *         URL. This parameter is optional for unencrypted snapshots. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query Requests</a>.</p>
      *         <p>
      *         The <code>PresignedUrl</code> should use the snapshot source endpoint, the <code>CopySnapshot</code>
@@ -681,8 +681,8 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The pre-signed URL parameter is required when copying an encrypted snapshot with the Amazon EC2 Query API; it is
-     * available as an optional parameter in all other cases. For more information, see <a
+     * When you copy an encrypted source snapshot using the Amazon EC2 Query API, you must supply a pre-signed URL. This
+     * parameter is optional for unencrypted snapshots. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query Requests</a>.
      * </p>
      * <p>
@@ -697,8 +697,8 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param presignedUrl
-     *        The pre-signed URL parameter is required when copying an encrypted snapshot with the Amazon EC2 Query API;
-     *        it is available as an optional parameter in all other cases. For more information, see <a
+     *        When you copy an encrypted source snapshot using the Amazon EC2 Query API, you must supply a pre-signed
+     *        URL. This parameter is optional for unencrypted snapshots. For more information, see <a
      *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html">Query Requests</a>.</p>
      *        <p>
      *        The <code>PresignedUrl</code> should use the snapshot source endpoint, the <code>CopySnapshot</code>

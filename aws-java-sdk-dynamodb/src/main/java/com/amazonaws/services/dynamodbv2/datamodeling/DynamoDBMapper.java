@@ -173,7 +173,7 @@ import static com.amazonaws.services.dynamodbv2.model.KeyType.RANGE;
  * DynamoDB-specific subclasses such as {@link ConditionalCheckFailedException}
  * will be used when possible.
  * <p>
- * This class is thread-safe and can be shared between threads. 
+ * This class is thread-safe and can be shared between threads.
  *
  * @see DynamoDBTable
  * @see DynamoDBHashKey
