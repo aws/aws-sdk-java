@@ -37,6 +37,8 @@ public class CaptionDestinationSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("embeddedDestinationSettings").build();
     private static final MarshallingInfo<StructuredPojo> EMBEDDEDPLUSSCTE20DESTINATIONSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("embeddedPlusScte20DestinationSettings").build();
+    private static final MarshallingInfo<StructuredPojo> RTMPCAPTIONINFODESTINATIONSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rtmpCaptionInfoDestinationSettings").build();
     private static final MarshallingInfo<StructuredPojo> SCTE20PLUSEMBEDDEDDESTINATIONSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scte20PlusEmbeddedDestinationSettings").build();
     private static final MarshallingInfo<StructuredPojo> SCTE27DESTINATIONSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -71,6 +73,7 @@ public class CaptionDestinationSettingsMarshaller {
             protocolMarshaller.marshall(captionDestinationSettings.getDvbSubDestinationSettings(), DVBSUBDESTINATIONSETTINGS_BINDING);
             protocolMarshaller.marshall(captionDestinationSettings.getEmbeddedDestinationSettings(), EMBEDDEDDESTINATIONSETTINGS_BINDING);
             protocolMarshaller.marshall(captionDestinationSettings.getEmbeddedPlusScte20DestinationSettings(), EMBEDDEDPLUSSCTE20DESTINATIONSETTINGS_BINDING);
+            protocolMarshaller.marshall(captionDestinationSettings.getRtmpCaptionInfoDestinationSettings(), RTMPCAPTIONINFODESTINATIONSETTINGS_BINDING);
             protocolMarshaller.marshall(captionDestinationSettings.getScte20PlusEmbeddedDestinationSettings(), SCTE20PLUSEMBEDDEDDESTINATIONSETTINGS_BINDING);
             protocolMarshaller.marshall(captionDestinationSettings.getScte27DestinationSettings(), SCTE27DESTINATIONSETTINGS_BINDING);
             protocolMarshaller.marshall(captionDestinationSettings.getSmpteTtDestinationSettings(), SMPTETTDESTINATIONSETTINGS_BINDING);

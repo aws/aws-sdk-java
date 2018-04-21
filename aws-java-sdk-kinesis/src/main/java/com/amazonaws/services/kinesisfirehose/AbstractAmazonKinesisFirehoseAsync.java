@@ -80,6 +80,19 @@ public class AbstractAmazonKinesisFirehoseAsync extends AbstractAmazonKinesisFir
     }
 
     @Override
+    public java.util.concurrent.Future<ListTagsForDeliveryStreamResult> listTagsForDeliveryStreamAsync(ListTagsForDeliveryStreamRequest request) {
+
+        return listTagsForDeliveryStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForDeliveryStreamResult> listTagsForDeliveryStreamAsync(ListTagsForDeliveryStreamRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForDeliveryStreamRequest, ListTagsForDeliveryStreamResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<PutRecordResult> putRecordAsync(PutRecordRequest request) {
 
         return putRecordAsync(request, null);
@@ -101,6 +114,32 @@ public class AbstractAmazonKinesisFirehoseAsync extends AbstractAmazonKinesisFir
     @Override
     public java.util.concurrent.Future<PutRecordBatchResult> putRecordBatchAsync(PutRecordBatchRequest request,
             com.amazonaws.handlers.AsyncHandler<PutRecordBatchRequest, PutRecordBatchResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagDeliveryStreamResult> tagDeliveryStreamAsync(TagDeliveryStreamRequest request) {
+
+        return tagDeliveryStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagDeliveryStreamResult> tagDeliveryStreamAsync(TagDeliveryStreamRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagDeliveryStreamRequest, TagDeliveryStreamResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagDeliveryStreamResult> untagDeliveryStreamAsync(UntagDeliveryStreamRequest request) {
+
+        return untagDeliveryStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagDeliveryStreamResult> untagDeliveryStreamAsync(UntagDeliveryStreamRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagDeliveryStreamRequest, UntagDeliveryStreamResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

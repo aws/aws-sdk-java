@@ -53,6 +53,8 @@ public class M3u8SettingsMarshaller {
             .marshallLocationName("scte35Pid").build();
     private static final MarshallingInfo<String> TIMEDMETADATABEHAVIOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timedMetadataBehavior").build();
+    private static final MarshallingInfo<String> TIMEDMETADATAPID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timedMetadataPid").build();
     private static final MarshallingInfo<Integer> TRANSPORTSTREAMID_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("transportStreamId").build();
     private static final MarshallingInfo<String> VIDEOPID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -87,6 +89,7 @@ public class M3u8SettingsMarshaller {
             protocolMarshaller.marshall(m3u8Settings.getScte35Behavior(), SCTE35BEHAVIOR_BINDING);
             protocolMarshaller.marshall(m3u8Settings.getScte35Pid(), SCTE35PID_BINDING);
             protocolMarshaller.marshall(m3u8Settings.getTimedMetadataBehavior(), TIMEDMETADATABEHAVIOR_BINDING);
+            protocolMarshaller.marshall(m3u8Settings.getTimedMetadataPid(), TIMEDMETADATAPID_BINDING);
             protocolMarshaller.marshall(m3u8Settings.getTransportStreamId(), TRANSPORTSTREAMID_BINDING);
             protocolMarshaller.marshall(m3u8Settings.getVideoPid(), VIDEOPID_BINDING);
         } catch (Exception e) {

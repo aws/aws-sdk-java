@@ -30,7 +30,7 @@ public class RedshiftDestinationConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The ARN of the AWS credentials.
+     * The Amazon Resource Name (ARN) of the AWS credentials.
      * </p>
      */
     private String roleARN;
@@ -60,8 +60,8 @@ public class RedshiftDestinationConfiguration implements Serializable, Cloneable
     private String password;
     /**
      * <p>
-     * The retry behavior in case Kinesis Firehose is unable to deliver documents to Amazon Redshift. Default value is
-     * 3600 (60 minutes).
+     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value
+     * is 3600 (60 minutes).
      * </p>
      */
     private RedshiftRetryOptions retryOptions;
@@ -72,8 +72,8 @@ public class RedshiftDestinationConfiguration implements Serializable, Cloneable
      * </p>
      * <p>
      * The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified in
-     * <b>RedshiftDestinationConfiguration.S3Configuration</b> because the Amazon Redshift <code>COPY</code> operation
-     * that reads from the S3 bucket doesn't support these compression formats.
+     * <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon Redshift <code>COPY</code>
+     * operation that reads from the S3 bucket doesn't support these compression formats.
      * </p>
      */
     private S3DestinationConfiguration s3Configuration;
@@ -104,11 +104,11 @@ public class RedshiftDestinationConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The ARN of the AWS credentials.
+     * The Amazon Resource Name (ARN) of the AWS credentials.
      * </p>
      * 
      * @param roleARN
-     *        The ARN of the AWS credentials.
+     *        The Amazon Resource Name (ARN) of the AWS credentials.
      */
 
     public void setRoleARN(String roleARN) {
@@ -117,10 +117,10 @@ public class RedshiftDestinationConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The ARN of the AWS credentials.
+     * The Amazon Resource Name (ARN) of the AWS credentials.
      * </p>
      * 
-     * @return The ARN of the AWS credentials.
+     * @return The Amazon Resource Name (ARN) of the AWS credentials.
      */
 
     public String getRoleARN() {
@@ -129,11 +129,11 @@ public class RedshiftDestinationConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The ARN of the AWS credentials.
+     * The Amazon Resource Name (ARN) of the AWS credentials.
      * </p>
      * 
      * @param roleARN
-     *        The ARN of the AWS credentials.
+     *        The Amazon Resource Name (ARN) of the AWS credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -304,13 +304,13 @@ public class RedshiftDestinationConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Firehose is unable to deliver documents to Amazon Redshift. Default value is
-     * 3600 (60 minutes).
+     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value
+     * is 3600 (60 minutes).
      * </p>
      * 
      * @param retryOptions
-     *        The retry behavior in case Kinesis Firehose is unable to deliver documents to Amazon Redshift. Default
-     *        value is 3600 (60 minutes).
+     *        The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift.
+     *        Default value is 3600 (60 minutes).
      */
 
     public void setRetryOptions(RedshiftRetryOptions retryOptions) {
@@ -319,12 +319,12 @@ public class RedshiftDestinationConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Firehose is unable to deliver documents to Amazon Redshift. Default value is
-     * 3600 (60 minutes).
+     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value
+     * is 3600 (60 minutes).
      * </p>
      * 
-     * @return The retry behavior in case Kinesis Firehose is unable to deliver documents to Amazon Redshift. Default
-     *         value is 3600 (60 minutes).
+     * @return The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift.
+     *         Default value is 3600 (60 minutes).
      */
 
     public RedshiftRetryOptions getRetryOptions() {
@@ -333,13 +333,13 @@ public class RedshiftDestinationConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Firehose is unable to deliver documents to Amazon Redshift. Default value is
-     * 3600 (60 minutes).
+     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value
+     * is 3600 (60 minutes).
      * </p>
      * 
      * @param retryOptions
-     *        The retry behavior in case Kinesis Firehose is unable to deliver documents to Amazon Redshift. Default
-     *        value is 3600 (60 minutes).
+     *        The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift.
+     *        Default value is 3600 (60 minutes).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,8 +355,8 @@ public class RedshiftDestinationConfiguration implements Serializable, Cloneable
      * </p>
      * <p>
      * The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified in
-     * <b>RedshiftDestinationConfiguration.S3Configuration</b> because the Amazon Redshift <code>COPY</code> operation
-     * that reads from the S3 bucket doesn't support these compression formats.
+     * <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon Redshift <code>COPY</code>
+     * operation that reads from the S3 bucket doesn't support these compression formats.
      * </p>
      * 
      * @param s3Configuration
@@ -364,8 +364,8 @@ public class RedshiftDestinationConfiguration implements Serializable, Cloneable
      *        Restrictions are described in the topic for <a>CreateDeliveryStream</a>.</p>
      *        <p>
      *        The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified in
-     *        <b>RedshiftDestinationConfiguration.S3Configuration</b> because the Amazon Redshift <code>COPY</code>
-     *        operation that reads from the S3 bucket doesn't support these compression formats.
+     *        <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon Redshift
+     *        <code>COPY</code> operation that reads from the S3 bucket doesn't support these compression formats.
      */
 
     public void setS3Configuration(S3DestinationConfiguration s3Configuration) {
@@ -379,16 +379,16 @@ public class RedshiftDestinationConfiguration implements Serializable, Cloneable
      * </p>
      * <p>
      * The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified in
-     * <b>RedshiftDestinationConfiguration.S3Configuration</b> because the Amazon Redshift <code>COPY</code> operation
-     * that reads from the S3 bucket doesn't support these compression formats.
+     * <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon Redshift <code>COPY</code>
+     * operation that reads from the S3 bucket doesn't support these compression formats.
      * </p>
      * 
      * @return The configuration for the intermediate Amazon S3 location from which Amazon Redshift obtains data.
      *         Restrictions are described in the topic for <a>CreateDeliveryStream</a>.</p>
      *         <p>
      *         The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified in
-     *         <b>RedshiftDestinationConfiguration.S3Configuration</b> because the Amazon Redshift <code>COPY</code>
-     *         operation that reads from the S3 bucket doesn't support these compression formats.
+     *         <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon Redshift
+     *         <code>COPY</code> operation that reads from the S3 bucket doesn't support these compression formats.
      */
 
     public S3DestinationConfiguration getS3Configuration() {
@@ -402,8 +402,8 @@ public class RedshiftDestinationConfiguration implements Serializable, Cloneable
      * </p>
      * <p>
      * The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified in
-     * <b>RedshiftDestinationConfiguration.S3Configuration</b> because the Amazon Redshift <code>COPY</code> operation
-     * that reads from the S3 bucket doesn't support these compression formats.
+     * <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon Redshift <code>COPY</code>
+     * operation that reads from the S3 bucket doesn't support these compression formats.
      * </p>
      * 
      * @param s3Configuration
@@ -411,8 +411,8 @@ public class RedshiftDestinationConfiguration implements Serializable, Cloneable
      *        Restrictions are described in the topic for <a>CreateDeliveryStream</a>.</p>
      *        <p>
      *        The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified in
-     *        <b>RedshiftDestinationConfiguration.S3Configuration</b> because the Amazon Redshift <code>COPY</code>
-     *        operation that reads from the S3 bucket doesn't support these compression formats.
+     *        <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon Redshift
+     *        <code>COPY</code> operation that reads from the S3 bucket doesn't support these compression formats.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

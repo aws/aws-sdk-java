@@ -100,6 +100,10 @@ public class M3u8SettingsJsonUnmarshaller implements Unmarshaller<M3u8Settings, 
                     context.nextToken();
                     m3u8Settings.setTimedMetadataBehavior(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("timedMetadataPid", targetDepth)) {
+                    context.nextToken();
+                    m3u8Settings.setTimedMetadataPid(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("transportStreamId", targetDepth)) {
                     context.nextToken();
                     m3u8Settings.setTransportStreamId(context.getUnmarshaller(Integer.class).unmarshall(context));

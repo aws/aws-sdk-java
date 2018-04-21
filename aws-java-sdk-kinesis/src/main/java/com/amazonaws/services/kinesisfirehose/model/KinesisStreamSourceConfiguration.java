@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The stream and role ARNs for a Kinesis stream used as the source for a delivery stream.
+ * The stream and role Amazon Resource Names (ARNs) for a Kinesis data stream used as the source for a delivery stream.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/KinesisStreamSourceConfiguration"
@@ -30,24 +30,24 @@ public class KinesisStreamSourceConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The ARN of the source Kinesis stream.
+     * The ARN of the source Kinesis data stream.
      * </p>
      */
     private String kinesisStreamARN;
     /**
      * <p>
-     * The ARN of the role that provides access to the source Kinesis stream.
+     * The ARN of the role that provides access to the source Kinesis data stream.
      * </p>
      */
     private String roleARN;
 
     /**
      * <p>
-     * The ARN of the source Kinesis stream.
+     * The ARN of the source Kinesis data stream.
      * </p>
      * 
      * @param kinesisStreamARN
-     *        The ARN of the source Kinesis stream.
+     *        The ARN of the source Kinesis data stream.
      */
 
     public void setKinesisStreamARN(String kinesisStreamARN) {
@@ -56,10 +56,10 @@ public class KinesisStreamSourceConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The ARN of the source Kinesis stream.
+     * The ARN of the source Kinesis data stream.
      * </p>
      * 
-     * @return The ARN of the source Kinesis stream.
+     * @return The ARN of the source Kinesis data stream.
      */
 
     public String getKinesisStreamARN() {
@@ -68,11 +68,11 @@ public class KinesisStreamSourceConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The ARN of the source Kinesis stream.
+     * The ARN of the source Kinesis data stream.
      * </p>
      * 
      * @param kinesisStreamARN
-     *        The ARN of the source Kinesis stream.
+     *        The ARN of the source Kinesis data stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class KinesisStreamSourceConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The ARN of the role that provides access to the source Kinesis stream.
+     * The ARN of the role that provides access to the source Kinesis data stream.
      * </p>
      * 
      * @param roleARN
-     *        The ARN of the role that provides access to the source Kinesis stream.
+     *        The ARN of the role that provides access to the source Kinesis data stream.
      */
 
     public void setRoleARN(String roleARN) {
@@ -96,10 +96,10 @@ public class KinesisStreamSourceConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The ARN of the role that provides access to the source Kinesis stream.
+     * The ARN of the role that provides access to the source Kinesis data stream.
      * </p>
      * 
-     * @return The ARN of the role that provides access to the source Kinesis stream.
+     * @return The ARN of the role that provides access to the source Kinesis data stream.
      */
 
     public String getRoleARN() {
@@ -108,11 +108,11 @@ public class KinesisStreamSourceConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The ARN of the role that provides access to the source Kinesis stream.
+     * The ARN of the role that provides access to the source Kinesis data stream.
      * </p>
      * 
      * @param roleARN
-     *        The ARN of the role that provides access to the source Kinesis stream.
+     *        The ARN of the role that provides access to the source Kinesis data stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

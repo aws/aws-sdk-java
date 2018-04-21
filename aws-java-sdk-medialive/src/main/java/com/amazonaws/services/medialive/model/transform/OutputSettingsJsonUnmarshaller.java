@@ -60,6 +60,10 @@ public class OutputSettingsJsonUnmarshaller implements Unmarshaller<OutputSettin
                     context.nextToken();
                     outputSettings.setMsSmoothOutputSettings(MsSmoothOutputSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("rtmpOutputSettings", targetDepth)) {
+                    context.nextToken();
+                    outputSettings.setRtmpOutputSettings(RtmpOutputSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("udpOutputSettings", targetDepth)) {
                     context.nextToken();
                     outputSettings.setUdpOutputSettings(UdpOutputSettingsJsonUnmarshaller.getInstance().unmarshall(context));

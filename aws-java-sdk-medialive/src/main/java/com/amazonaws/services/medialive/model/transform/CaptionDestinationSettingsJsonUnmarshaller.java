@@ -69,6 +69,11 @@ public class CaptionDestinationSettingsJsonUnmarshaller implements Unmarshaller<
                     captionDestinationSettings.setEmbeddedPlusScte20DestinationSettings(EmbeddedPlusScte20DestinationSettingsJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
+                if (context.testExpression("rtmpCaptionInfoDestinationSettings", targetDepth)) {
+                    context.nextToken();
+                    captionDestinationSettings.setRtmpCaptionInfoDestinationSettings(RtmpCaptionInfoDestinationSettingsJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
                 if (context.testExpression("scte20PlusEmbeddedDestinationSettings", targetDepth)) {
                     context.nextToken();
                     captionDestinationSettings.setScte20PlusEmbeddedDestinationSettings(Scte20PlusEmbeddedDestinationSettingsJsonUnmarshaller.getInstance()

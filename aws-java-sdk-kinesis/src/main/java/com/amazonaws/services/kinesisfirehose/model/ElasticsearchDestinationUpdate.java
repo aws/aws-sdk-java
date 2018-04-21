@@ -30,10 +30,10 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The ARN of the IAM role to be assumed by Kinesis Firehose for calling the Amazon ES Configuration API and for
-     * indexing documents. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon S3 Bucket
-     * Access</a>.
+     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon ES
+     * Configuration API and for indexing documents. For more information, see <a
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data
+     * Firehose Access to an Amazon S3 Destination</a>.
      * </p>
      */
     private String roleARN;
@@ -41,7 +41,7 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
      * <p>
      * The ARN of the Amazon ES domain. The IAM role must have permissions for <code>DescribeElasticsearchDomain</code>,
      * <code>DescribeElasticsearchDomains</code>, and <code>DescribeElasticsearchDomainConfig</code> after assuming the
-     * IAM role specified in <b>RoleARN</b>.
+     * IAM role specified in <code>RoleARN</code>.
      * </p>
      */
     private String domainARN;
@@ -61,22 +61,22 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
      * <p>
      * The Elasticsearch index rotation period. Index rotation appends a time stamp to IndexName to facilitate the
      * expiration of old data. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for
-     * Amazon Elasticsearch Service Destination</a>. Default value is <code>OneDay</code>.
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for the
+     * Amazon ES Destination</a>. Default value is <code>OneDay</code>.
      * </p>
      */
     private String indexRotationPeriod;
     /**
      * <p>
-     * The buffering options. If no value is specified, <b>ElasticsearchBufferingHints</b> object default values are
-     * used.
+     * The buffering options. If no value is specified, <code>ElasticsearchBufferingHints</code> object default values
+     * are used.
      * </p>
      */
     private ElasticsearchBufferingHints bufferingHints;
     /**
      * <p>
-     * The retry behavior in case Kinesis Firehose is unable to deliver documents to Amazon ES. The default value is 300
-     * (5 minutes).
+     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. The default value
+     * is 300 (5 minutes).
      * </p>
      */
     private ElasticsearchRetryOptions retryOptions;
@@ -101,17 +101,17 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The ARN of the IAM role to be assumed by Kinesis Firehose for calling the Amazon ES Configuration API and for
-     * indexing documents. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon S3 Bucket
-     * Access</a>.
+     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon ES
+     * Configuration API and for indexing documents. For more information, see <a
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data
+     * Firehose Access to an Amazon S3 Destination</a>.
      * </p>
      * 
      * @param roleARN
-     *        The ARN of the IAM role to be assumed by Kinesis Firehose for calling the Amazon ES Configuration API and
-     *        for indexing documents. For more information, see <a
-     *        href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon S3
-     *        Bucket Access</a>.
+     *        The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the
+     *        Amazon ES Configuration API and for indexing documents. For more information, see <a
+     *        href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis
+     *        Data Firehose Access to an Amazon S3 Destination</a>.
      */
 
     public void setRoleARN(String roleARN) {
@@ -120,16 +120,16 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The ARN of the IAM role to be assumed by Kinesis Firehose for calling the Amazon ES Configuration API and for
-     * indexing documents. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon S3 Bucket
-     * Access</a>.
+     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon ES
+     * Configuration API and for indexing documents. For more information, see <a
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data
+     * Firehose Access to an Amazon S3 Destination</a>.
      * </p>
      * 
-     * @return The ARN of the IAM role to be assumed by Kinesis Firehose for calling the Amazon ES Configuration API and
-     *         for indexing documents. For more information, see <a
-     *         href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon S3
-     *         Bucket Access</a>.
+     * @return The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the
+     *         Amazon ES Configuration API and for indexing documents. For more information, see <a
+     *         href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis
+     *         Data Firehose Access to an Amazon S3 Destination</a>.
      */
 
     public String getRoleARN() {
@@ -138,17 +138,17 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The ARN of the IAM role to be assumed by Kinesis Firehose for calling the Amazon ES Configuration API and for
-     * indexing documents. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon S3 Bucket
-     * Access</a>.
+     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon ES
+     * Configuration API and for indexing documents. For more information, see <a
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis Data
+     * Firehose Access to an Amazon S3 Destination</a>.
      * </p>
      * 
      * @param roleARN
-     *        The ARN of the IAM role to be assumed by Kinesis Firehose for calling the Amazon ES Configuration API and
-     *        for indexing documents. For more information, see <a
-     *        href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Amazon S3
-     *        Bucket Access</a>.
+     *        The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the
+     *        Amazon ES Configuration API and for indexing documents. For more information, see <a
+     *        href="http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html#using-iam-s3">Grant Kinesis
+     *        Data Firehose Access to an Amazon S3 Destination</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,13 +161,14 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
      * <p>
      * The ARN of the Amazon ES domain. The IAM role must have permissions for <code>DescribeElasticsearchDomain</code>,
      * <code>DescribeElasticsearchDomains</code>, and <code>DescribeElasticsearchDomainConfig</code> after assuming the
-     * IAM role specified in <b>RoleARN</b>.
+     * IAM role specified in <code>RoleARN</code>.
      * </p>
      * 
      * @param domainARN
      *        The ARN of the Amazon ES domain. The IAM role must have permissions for 
      *        <code>DescribeElasticsearchDomain</code>, <code>DescribeElasticsearchDomains</code>, and
-     *        <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role specified in <b>RoleARN</b>.
+     *        <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role specified in
+     *        <code>RoleARN</code>.
      */
 
     public void setDomainARN(String domainARN) {
@@ -178,12 +179,13 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
      * <p>
      * The ARN of the Amazon ES domain. The IAM role must have permissions for <code>DescribeElasticsearchDomain</code>,
      * <code>DescribeElasticsearchDomains</code>, and <code>DescribeElasticsearchDomainConfig</code> after assuming the
-     * IAM role specified in <b>RoleARN</b>.
+     * IAM role specified in <code>RoleARN</code>.
      * </p>
      * 
      * @return The ARN of the Amazon ES domain. The IAM role must have permissions for 
      *         <code>DescribeElasticsearchDomain</code>, <code>DescribeElasticsearchDomains</code>, and
-     *         <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role specified in <b>RoleARN</b>.
+     *         <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role specified in
+     *         <code>RoleARN</code>.
      */
 
     public String getDomainARN() {
@@ -194,13 +196,14 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
      * <p>
      * The ARN of the Amazon ES domain. The IAM role must have permissions for <code>DescribeElasticsearchDomain</code>,
      * <code>DescribeElasticsearchDomains</code>, and <code>DescribeElasticsearchDomainConfig</code> after assuming the
-     * IAM role specified in <b>RoleARN</b>.
+     * IAM role specified in <code>RoleARN</code>.
      * </p>
      * 
      * @param domainARN
      *        The ARN of the Amazon ES domain. The IAM role must have permissions for 
      *        <code>DescribeElasticsearchDomain</code>, <code>DescribeElasticsearchDomains</code>, and
-     *        <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role specified in <b>RoleARN</b>.
+     *        <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role specified in
+     *        <code>RoleARN</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -293,15 +296,15 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
      * <p>
      * The Elasticsearch index rotation period. Index rotation appends a time stamp to IndexName to facilitate the
      * expiration of old data. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for
-     * Amazon Elasticsearch Service Destination</a>. Default value is <code>OneDay</code>.
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for the
+     * Amazon ES Destination</a>. Default value is <code>OneDay</code>.
      * </p>
      * 
      * @param indexRotationPeriod
      *        The Elasticsearch index rotation period. Index rotation appends a time stamp to IndexName to facilitate
      *        the expiration of old data. For more information, see <a
      *        href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation
-     *        for Amazon Elasticsearch Service Destination</a>. Default value is <code>OneDay</code>.
+     *        for the Amazon ES Destination</a>. Default value is <code>OneDay</code>.
      * @see ElasticsearchIndexRotationPeriod
      */
 
@@ -313,14 +316,14 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
      * <p>
      * The Elasticsearch index rotation period. Index rotation appends a time stamp to IndexName to facilitate the
      * expiration of old data. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for
-     * Amazon Elasticsearch Service Destination</a>. Default value is <code>OneDay</code>.
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for the
+     * Amazon ES Destination</a>. Default value is <code>OneDay</code>.
      * </p>
      * 
      * @return The Elasticsearch index rotation period. Index rotation appends a time stamp to IndexName to facilitate
      *         the expiration of old data. For more information, see <a
      *         href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation
-     *         for Amazon Elasticsearch Service Destination</a>. Default value is <code>OneDay</code>.
+     *         for the Amazon ES Destination</a>. Default value is <code>OneDay</code>.
      * @see ElasticsearchIndexRotationPeriod
      */
 
@@ -332,15 +335,15 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
      * <p>
      * The Elasticsearch index rotation period. Index rotation appends a time stamp to IndexName to facilitate the
      * expiration of old data. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for
-     * Amazon Elasticsearch Service Destination</a>. Default value is <code>OneDay</code>.
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for the
+     * Amazon ES Destination</a>. Default value is <code>OneDay</code>.
      * </p>
      * 
      * @param indexRotationPeriod
      *        The Elasticsearch index rotation period. Index rotation appends a time stamp to IndexName to facilitate
      *        the expiration of old data. For more information, see <a
      *        href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation
-     *        for Amazon Elasticsearch Service Destination</a>. Default value is <code>OneDay</code>.
+     *        for the Amazon ES Destination</a>. Default value is <code>OneDay</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ElasticsearchIndexRotationPeriod
      */
@@ -354,15 +357,15 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
      * <p>
      * The Elasticsearch index rotation period. Index rotation appends a time stamp to IndexName to facilitate the
      * expiration of old data. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for
-     * Amazon Elasticsearch Service Destination</a>. Default value is <code>OneDay</code>.
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for the
+     * Amazon ES Destination</a>. Default value is <code>OneDay</code>.
      * </p>
      * 
      * @param indexRotationPeriod
      *        The Elasticsearch index rotation period. Index rotation appends a time stamp to IndexName to facilitate
      *        the expiration of old data. For more information, see <a
      *        href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation
-     *        for Amazon Elasticsearch Service Destination</a>. Default value is <code>OneDay</code>.
+     *        for the Amazon ES Destination</a>. Default value is <code>OneDay</code>.
      * @see ElasticsearchIndexRotationPeriod
      */
 
@@ -374,15 +377,15 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
      * <p>
      * The Elasticsearch index rotation period. Index rotation appends a time stamp to IndexName to facilitate the
      * expiration of old data. For more information, see <a
-     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for
-     * Amazon Elasticsearch Service Destination</a>. Default value is <code>OneDay</code>.
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for the
+     * Amazon ES Destination</a>. Default value is <code>OneDay</code>.
      * </p>
      * 
      * @param indexRotationPeriod
      *        The Elasticsearch index rotation period. Index rotation appends a time stamp to IndexName to facilitate
      *        the expiration of old data. For more information, see <a
      *        href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation
-     *        for Amazon Elasticsearch Service Destination</a>. Default value is <code>OneDay</code>.
+     *        for the Amazon ES Destination</a>. Default value is <code>OneDay</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ElasticsearchIndexRotationPeriod
      */
@@ -394,13 +397,13 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The buffering options. If no value is specified, <b>ElasticsearchBufferingHints</b> object default values are
-     * used.
+     * The buffering options. If no value is specified, <code>ElasticsearchBufferingHints</code> object default values
+     * are used.
      * </p>
      * 
      * @param bufferingHints
-     *        The buffering options. If no value is specified, <b>ElasticsearchBufferingHints</b> object default values
-     *        are used.
+     *        The buffering options. If no value is specified, <code>ElasticsearchBufferingHints</code> object default
+     *        values are used.
      */
 
     public void setBufferingHints(ElasticsearchBufferingHints bufferingHints) {
@@ -409,12 +412,12 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The buffering options. If no value is specified, <b>ElasticsearchBufferingHints</b> object default values are
-     * used.
+     * The buffering options. If no value is specified, <code>ElasticsearchBufferingHints</code> object default values
+     * are used.
      * </p>
      * 
-     * @return The buffering options. If no value is specified, <b>ElasticsearchBufferingHints</b> object default values
-     *         are used.
+     * @return The buffering options. If no value is specified, <code>ElasticsearchBufferingHints</code> object default
+     *         values are used.
      */
 
     public ElasticsearchBufferingHints getBufferingHints() {
@@ -423,13 +426,13 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The buffering options. If no value is specified, <b>ElasticsearchBufferingHints</b> object default values are
-     * used.
+     * The buffering options. If no value is specified, <code>ElasticsearchBufferingHints</code> object default values
+     * are used.
      * </p>
      * 
      * @param bufferingHints
-     *        The buffering options. If no value is specified, <b>ElasticsearchBufferingHints</b> object default values
-     *        are used.
+     *        The buffering options. If no value is specified, <code>ElasticsearchBufferingHints</code> object default
+     *        values are used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -440,13 +443,13 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Firehose is unable to deliver documents to Amazon ES. The default value is 300
-     * (5 minutes).
+     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. The default value
+     * is 300 (5 minutes).
      * </p>
      * 
      * @param retryOptions
-     *        The retry behavior in case Kinesis Firehose is unable to deliver documents to Amazon ES. The default value
-     *        is 300 (5 minutes).
+     *        The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. The default
+     *        value is 300 (5 minutes).
      */
 
     public void setRetryOptions(ElasticsearchRetryOptions retryOptions) {
@@ -455,11 +458,11 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Firehose is unable to deliver documents to Amazon ES. The default value is 300
-     * (5 minutes).
+     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. The default value
+     * is 300 (5 minutes).
      * </p>
      * 
-     * @return The retry behavior in case Kinesis Firehose is unable to deliver documents to Amazon ES. The default
+     * @return The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. The default
      *         value is 300 (5 minutes).
      */
 
@@ -469,13 +472,13 @@ public class ElasticsearchDestinationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Firehose is unable to deliver documents to Amazon ES. The default value is 300
-     * (5 minutes).
+     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. The default value
+     * is 300 (5 minutes).
      * </p>
      * 
      * @param retryOptions
-     *        The retry behavior in case Kinesis Firehose is unable to deliver documents to Amazon ES. The default value
-     *        is 300 (5 minutes).
+     *        The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon ES. The default
+     *        value is 300 (5 minutes).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

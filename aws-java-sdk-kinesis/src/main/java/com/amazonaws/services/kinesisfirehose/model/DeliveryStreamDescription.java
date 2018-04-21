@@ -58,7 +58,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
      * </li>
      * <li>
      * <p>
-     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.
      * </p>
      * </li>
      * </ul>
@@ -87,7 +87,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
     /**
      * <p>
      * If the <code>DeliveryStreamType</code> parameter is <code>KinesisStreamAsSource</code>, a
-     * <a>SourceDescription</a> object describing the source Kinesis stream.
+     * <a>SourceDescription</a> object describing the source Kinesis data stream.
      * </p>
      */
     private SourceDescription source;
@@ -269,7 +269,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
      * </li>
      * <li>
      * <p>
-     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.
      * </p>
      * </li>
      * </ul>
@@ -284,7 +284,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     *        <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.
      *        </p>
      *        </li>
      * @see DeliveryStreamType
@@ -306,7 +306,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
      * </li>
      * <li>
      * <p>
-     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.
      * </p>
      * </li>
      * </ul>
@@ -320,7 +320,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
      *         </li>
      *         <li>
      *         <p>
-     *         <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     *         <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.
      *         </p>
      *         </li>
      * @see DeliveryStreamType
@@ -342,7 +342,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
      * </li>
      * <li>
      * <p>
-     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.
      * </p>
      * </li>
      * </ul>
@@ -357,7 +357,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     *        <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -381,7 +381,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
      * </li>
      * <li>
      * <p>
-     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.
      * </p>
      * </li>
      * </ul>
@@ -396,7 +396,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     *        <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.
      *        </p>
      *        </li>
      * @see DeliveryStreamType
@@ -418,7 +418,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
      * </li>
      * <li>
      * <p>
-     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.
      * </p>
      * </li>
      * </ul>
@@ -433,7 +433,7 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     *        <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -580,12 +580,12 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
     /**
      * <p>
      * If the <code>DeliveryStreamType</code> parameter is <code>KinesisStreamAsSource</code>, a
-     * <a>SourceDescription</a> object describing the source Kinesis stream.
+     * <a>SourceDescription</a> object describing the source Kinesis data stream.
      * </p>
      * 
      * @param source
      *        If the <code>DeliveryStreamType</code> parameter is <code>KinesisStreamAsSource</code>, a
-     *        <a>SourceDescription</a> object describing the source Kinesis stream.
+     *        <a>SourceDescription</a> object describing the source Kinesis data stream.
      */
 
     public void setSource(SourceDescription source) {
@@ -595,11 +595,11 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
     /**
      * <p>
      * If the <code>DeliveryStreamType</code> parameter is <code>KinesisStreamAsSource</code>, a
-     * <a>SourceDescription</a> object describing the source Kinesis stream.
+     * <a>SourceDescription</a> object describing the source Kinesis data stream.
      * </p>
      * 
      * @return If the <code>DeliveryStreamType</code> parameter is <code>KinesisStreamAsSource</code>, a
-     *         <a>SourceDescription</a> object describing the source Kinesis stream.
+     *         <a>SourceDescription</a> object describing the source Kinesis data stream.
      */
 
     public SourceDescription getSource() {
@@ -609,12 +609,12 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
     /**
      * <p>
      * If the <code>DeliveryStreamType</code> parameter is <code>KinesisStreamAsSource</code>, a
-     * <a>SourceDescription</a> object describing the source Kinesis stream.
+     * <a>SourceDescription</a> object describing the source Kinesis data stream.
      * </p>
      * 
      * @param source
      *        If the <code>DeliveryStreamType</code> parameter is <code>KinesisStreamAsSource</code>, a
-     *        <a>SourceDescription</a> object describing the source Kinesis stream.
+     *        <a>SourceDescription</a> object describing the source Kinesis data stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

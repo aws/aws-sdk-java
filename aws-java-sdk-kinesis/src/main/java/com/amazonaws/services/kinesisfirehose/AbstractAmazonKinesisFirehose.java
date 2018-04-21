@@ -58,12 +58,27 @@ public class AbstractAmazonKinesisFirehose implements AmazonKinesisFirehose {
     }
 
     @Override
+    public ListTagsForDeliveryStreamResult listTagsForDeliveryStream(ListTagsForDeliveryStreamRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutRecordResult putRecord(PutRecordRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public PutRecordBatchResult putRecordBatch(PutRecordBatchRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagDeliveryStreamResult tagDeliveryStream(TagDeliveryStreamRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagDeliveryStreamResult untagDeliveryStream(UntagDeliveryStreamRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

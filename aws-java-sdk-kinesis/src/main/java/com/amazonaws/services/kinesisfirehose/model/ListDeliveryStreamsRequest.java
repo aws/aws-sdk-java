@@ -43,7 +43,7 @@ public class ListDeliveryStreamsRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.
      * </p>
      * </li>
      * </ul>
@@ -111,7 +111,7 @@ public class ListDeliveryStreamsRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.
      * </p>
      * </li>
      * </ul>
@@ -129,7 +129,7 @@ public class ListDeliveryStreamsRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     *        <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.
      *        </p>
      *        </li>
      *        </ul>
@@ -154,7 +154,7 @@ public class ListDeliveryStreamsRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.
      * </p>
      * </li>
      * </ul>
@@ -171,7 +171,7 @@ public class ListDeliveryStreamsRequest extends com.amazonaws.AmazonWebServiceRe
      *         </li>
      *         <li>
      *         <p>
-     *         <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     *         <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.
      *         </p>
      *         </li>
      *         </ul>
@@ -196,7 +196,7 @@ public class ListDeliveryStreamsRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.
      * </p>
      * </li>
      * </ul>
@@ -214,7 +214,7 @@ public class ListDeliveryStreamsRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     *        <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.
      *        </p>
      *        </li>
      *        </ul>
@@ -241,7 +241,7 @@ public class ListDeliveryStreamsRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.
      * </p>
      * </li>
      * </ul>
@@ -259,7 +259,7 @@ public class ListDeliveryStreamsRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     *        <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.
      *        </p>
      *        </li>
      *        </ul>

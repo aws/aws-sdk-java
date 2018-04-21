@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details about a Kinesis stream used as the source for a Kinesis Firehose delivery stream.
+ * Details about a Kinesis data stream used as the source for a Kinesis Data Firehose delivery stream.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/KinesisStreamSourceDescription"
@@ -30,30 +30,30 @@ public class KinesisStreamSourceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The ARN of the source Kinesis stream.
+     * The Amazon Resource Name (ARN) of the source Kinesis data stream.
      * </p>
      */
     private String kinesisStreamARN;
     /**
      * <p>
-     * The ARN of the role used by the source Kinesis stream.
+     * The ARN of the role used by the source Kinesis data stream.
      * </p>
      */
     private String roleARN;
     /**
      * <p>
-     * Kinesis Firehose starts retrieving records from the Kinesis stream starting with this time stamp.
+     * Kinesis Data Firehose starts retrieving records from the Kinesis data stream starting with this time stamp.
      * </p>
      */
     private java.util.Date deliveryStartTimestamp;
 
     /**
      * <p>
-     * The ARN of the source Kinesis stream.
+     * The Amazon Resource Name (ARN) of the source Kinesis data stream.
      * </p>
      * 
      * @param kinesisStreamARN
-     *        The ARN of the source Kinesis stream.
+     *        The Amazon Resource Name (ARN) of the source Kinesis data stream.
      */
 
     public void setKinesisStreamARN(String kinesisStreamARN) {
@@ -62,10 +62,10 @@ public class KinesisStreamSourceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The ARN of the source Kinesis stream.
+     * The Amazon Resource Name (ARN) of the source Kinesis data stream.
      * </p>
      * 
-     * @return The ARN of the source Kinesis stream.
+     * @return The Amazon Resource Name (ARN) of the source Kinesis data stream.
      */
 
     public String getKinesisStreamARN() {
@@ -74,11 +74,11 @@ public class KinesisStreamSourceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The ARN of the source Kinesis stream.
+     * The Amazon Resource Name (ARN) of the source Kinesis data stream.
      * </p>
      * 
      * @param kinesisStreamARN
-     *        The ARN of the source Kinesis stream.
+     *        The Amazon Resource Name (ARN) of the source Kinesis data stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class KinesisStreamSourceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The ARN of the role used by the source Kinesis stream.
+     * The ARN of the role used by the source Kinesis data stream.
      * </p>
      * 
      * @param roleARN
-     *        The ARN of the role used by the source Kinesis stream.
+     *        The ARN of the role used by the source Kinesis data stream.
      */
 
     public void setRoleARN(String roleARN) {
@@ -102,10 +102,10 @@ public class KinesisStreamSourceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The ARN of the role used by the source Kinesis stream.
+     * The ARN of the role used by the source Kinesis data stream.
      * </p>
      * 
-     * @return The ARN of the role used by the source Kinesis stream.
+     * @return The ARN of the role used by the source Kinesis data stream.
      */
 
     public String getRoleARN() {
@@ -114,11 +114,11 @@ public class KinesisStreamSourceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The ARN of the role used by the source Kinesis stream.
+     * The ARN of the role used by the source Kinesis data stream.
      * </p>
      * 
      * @param roleARN
-     *        The ARN of the role used by the source Kinesis stream.
+     *        The ARN of the role used by the source Kinesis data stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,12 @@ public class KinesisStreamSourceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Kinesis Firehose starts retrieving records from the Kinesis stream starting with this time stamp.
+     * Kinesis Data Firehose starts retrieving records from the Kinesis data stream starting with this time stamp.
      * </p>
      * 
      * @param deliveryStartTimestamp
-     *        Kinesis Firehose starts retrieving records from the Kinesis stream starting with this time stamp.
+     *        Kinesis Data Firehose starts retrieving records from the Kinesis data stream starting with this time
+     *        stamp.
      */
 
     public void setDeliveryStartTimestamp(java.util.Date deliveryStartTimestamp) {
@@ -142,10 +143,11 @@ public class KinesisStreamSourceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Kinesis Firehose starts retrieving records from the Kinesis stream starting with this time stamp.
+     * Kinesis Data Firehose starts retrieving records from the Kinesis data stream starting with this time stamp.
      * </p>
      * 
-     * @return Kinesis Firehose starts retrieving records from the Kinesis stream starting with this time stamp.
+     * @return Kinesis Data Firehose starts retrieving records from the Kinesis data stream starting with this time
+     *         stamp.
      */
 
     public java.util.Date getDeliveryStartTimestamp() {
@@ -154,11 +156,12 @@ public class KinesisStreamSourceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Kinesis Firehose starts retrieving records from the Kinesis stream starting with this time stamp.
+     * Kinesis Data Firehose starts retrieving records from the Kinesis data stream starting with this time stamp.
      * </p>
      * 
      * @param deliveryStartTimestamp
-     *        Kinesis Firehose starts retrieving records from the Kinesis stream starting with this time stamp.
+     *        Kinesis Data Firehose starts retrieving records from the Kinesis data stream starting with this time
+     *        stamp.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

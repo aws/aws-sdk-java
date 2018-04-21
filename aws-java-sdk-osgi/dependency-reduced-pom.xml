@@ -3,7 +3,7 @@
   <parent>
     <artifactId>aws-java-sdk-pom</artifactId>
     <groupId>com.amazonaws</groupId>
-    <version>1.11.314</version>
+    <version>1.11.315</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
@@ -104,7 +104,7 @@
                 </goals>
                 <configuration>
                   <minmemory>128m</minmemory>
-                  <maxmemory>2g</maxmemory>
+                  <maxmemory>4g</maxmemory>
                   <includeDependencySources>true</includeDependencySources>
                   <show>public</show>
                   <defaultexcludes>yes</defaultexcludes>
@@ -114,10 +114,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.314</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.315</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.314</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.315</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -749,7 +749,7 @@
                 </goals>
                 <configuration>
                   <minmemory>128m</minmemory>
-                  <maxmemory>2g</maxmemory>
+                  <maxmemory>4g</maxmemory>
                   <includeDependencySources>true</includeDependencySources>
                   <show>public</show>
                   <defaultexcludes>yes</defaultexcludes>
@@ -759,10 +759,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.314</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.315</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.314</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.315</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -1390,7 +1390,7 @@
             <inherited>true</inherited>
             <configuration>
               <minmemory>128m</minmemory>
-              <maxmemory>2g</maxmemory>
+              <maxmemory>4g</maxmemory>
               <includeDependencySources>true</includeDependencySources>
               <show>public</show>
               <defaultexcludes>yes</defaultexcludes>
@@ -1400,10 +1400,10 @@
               <use>false</use>
               <notree>true</notree>
               <nodeprecatedlist>true</nodeprecatedlist>
-              <windowtitle>AWS SDK for Java - 1.11.314</windowtitle>
+              <windowtitle>AWS SDK for Java - 1.11.315</windowtitle>
               <encoding>UTF-8</encoding>
               <docencoding>UTF-8</docencoding>
-              <doctitle>AWS SDK for Java API Reference - 1.11.314</doctitle>
+              <doctitle>AWS SDK for Java API Reference - 1.11.315</doctitle>
               <packagesheader>AWS SDK for Java</packagesheader>
               <docfilessubdirs>true</docfilessubdirs>
               <taglets>
@@ -2254,7 +2254,7 @@
                   <goal>exec</goal>
                 </goals>
                 <configuration>
-                  <workingDirectory>target/aws-java-sdk-osgi-1.11.314-sdk-zip-archive-assembly/</workingDirectory>
+                  <workingDirectory>target/aws-java-sdk-osgi-1.11.315-sdk-zip-archive-assembly/</workingDirectory>
                   <executable>zip</executable>
                   <commandlineArgs>-r ../aws-java-sdk.zip .</commandlineArgs>
                 </configuration>

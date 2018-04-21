@@ -27,8 +27,8 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the delivery stream. This name must be unique per AWS account in the same region. If the delivery
-     * streams are in different accounts or different regions, you can have multiple delivery streams with the same
+     * The name of the delivery stream. This name must be unique per AWS account in the same Region. If the delivery
+     * streams are in different accounts or different Regions, you can have multiple delivery streams with the same
      * name.
      * </p>
      */
@@ -45,7 +45,7 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.
      * </p>
      * </li>
      * </ul>
@@ -53,8 +53,9 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
     private String deliveryStreamType;
     /**
      * <p>
-     * When a Kinesis stream is used as the source for the delivery stream, a <a>KinesisStreamSourceConfiguration</a>
-     * containing the Kinesis stream ARN and the role ARN for the source stream.
+     * When a Kinesis data stream is used as the source for the delivery stream, a
+     * <a>KinesisStreamSourceConfiguration</a> containing the Kinesis data stream Amazon Resource Name (ARN) and the
+     * role ARN for the source stream.
      * </p>
      */
     private KinesisStreamSourceConfiguration kinesisStreamSourceConfiguration;
@@ -92,14 +93,14 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the delivery stream. This name must be unique per AWS account in the same region. If the delivery
-     * streams are in different accounts or different regions, you can have multiple delivery streams with the same
+     * The name of the delivery stream. This name must be unique per AWS account in the same Region. If the delivery
+     * streams are in different accounts or different Regions, you can have multiple delivery streams with the same
      * name.
      * </p>
      * 
      * @param deliveryStreamName
-     *        The name of the delivery stream. This name must be unique per AWS account in the same region. If the
-     *        delivery streams are in different accounts or different regions, you can have multiple delivery streams
+     *        The name of the delivery stream. This name must be unique per AWS account in the same Region. If the
+     *        delivery streams are in different accounts or different Regions, you can have multiple delivery streams
      *        with the same name.
      */
 
@@ -109,13 +110,13 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the delivery stream. This name must be unique per AWS account in the same region. If the delivery
-     * streams are in different accounts or different regions, you can have multiple delivery streams with the same
+     * The name of the delivery stream. This name must be unique per AWS account in the same Region. If the delivery
+     * streams are in different accounts or different Regions, you can have multiple delivery streams with the same
      * name.
      * </p>
      * 
-     * @return The name of the delivery stream. This name must be unique per AWS account in the same region. If the
-     *         delivery streams are in different accounts or different regions, you can have multiple delivery streams
+     * @return The name of the delivery stream. This name must be unique per AWS account in the same Region. If the
+     *         delivery streams are in different accounts or different Regions, you can have multiple delivery streams
      *         with the same name.
      */
 
@@ -125,14 +126,14 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the delivery stream. This name must be unique per AWS account in the same region. If the delivery
-     * streams are in different accounts or different regions, you can have multiple delivery streams with the same
+     * The name of the delivery stream. This name must be unique per AWS account in the same Region. If the delivery
+     * streams are in different accounts or different Regions, you can have multiple delivery streams with the same
      * name.
      * </p>
      * 
      * @param deliveryStreamName
-     *        The name of the delivery stream. This name must be unique per AWS account in the same region. If the
-     *        delivery streams are in different accounts or different regions, you can have multiple delivery streams
+     *        The name of the delivery stream. This name must be unique per AWS account in the same Region. If the
+     *        delivery streams are in different accounts or different Regions, you can have multiple delivery streams
      *        with the same name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -154,7 +155,7 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.
      * </p>
      * </li>
      * </ul>
@@ -169,7 +170,7 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     *        <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.
      *        </p>
      *        </li>
      * @see DeliveryStreamType
@@ -191,7 +192,7 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.
      * </p>
      * </li>
      * </ul>
@@ -205,7 +206,7 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
      *         </li>
      *         <li>
      *         <p>
-     *         <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     *         <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.
      *         </p>
      *         </li>
      * @see DeliveryStreamType
@@ -227,7 +228,7 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.
      * </p>
      * </li>
      * </ul>
@@ -242,7 +243,7 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     *        <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -266,7 +267,7 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.
      * </p>
      * </li>
      * </ul>
@@ -281,7 +282,7 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis stream as a source.
+     *        <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream as a source.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -295,14 +296,15 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * When a Kinesis stream is used as the source for the delivery stream, a <a>KinesisStreamSourceConfiguration</a>
-     * containing the Kinesis stream ARN and the role ARN for the source stream.
+     * When a Kinesis data stream is used as the source for the delivery stream, a
+     * <a>KinesisStreamSourceConfiguration</a> containing the Kinesis data stream Amazon Resource Name (ARN) and the
+     * role ARN for the source stream.
      * </p>
      * 
      * @param kinesisStreamSourceConfiguration
-     *        When a Kinesis stream is used as the source for the delivery stream, a
-     *        <a>KinesisStreamSourceConfiguration</a> containing the Kinesis stream ARN and the role ARN for the source
-     *        stream.
+     *        When a Kinesis data stream is used as the source for the delivery stream, a
+     *        <a>KinesisStreamSourceConfiguration</a> containing the Kinesis data stream Amazon Resource Name (ARN) and
+     *        the role ARN for the source stream.
      */
 
     public void setKinesisStreamSourceConfiguration(KinesisStreamSourceConfiguration kinesisStreamSourceConfiguration) {
@@ -311,13 +313,14 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * When a Kinesis stream is used as the source for the delivery stream, a <a>KinesisStreamSourceConfiguration</a>
-     * containing the Kinesis stream ARN and the role ARN for the source stream.
+     * When a Kinesis data stream is used as the source for the delivery stream, a
+     * <a>KinesisStreamSourceConfiguration</a> containing the Kinesis data stream Amazon Resource Name (ARN) and the
+     * role ARN for the source stream.
      * </p>
      * 
-     * @return When a Kinesis stream is used as the source for the delivery stream, a
-     *         <a>KinesisStreamSourceConfiguration</a> containing the Kinesis stream ARN and the role ARN for the source
-     *         stream.
+     * @return When a Kinesis data stream is used as the source for the delivery stream, a
+     *         <a>KinesisStreamSourceConfiguration</a> containing the Kinesis data stream Amazon Resource Name (ARN) and
+     *         the role ARN for the source stream.
      */
 
     public KinesisStreamSourceConfiguration getKinesisStreamSourceConfiguration() {
@@ -326,14 +329,15 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * When a Kinesis stream is used as the source for the delivery stream, a <a>KinesisStreamSourceConfiguration</a>
-     * containing the Kinesis stream ARN and the role ARN for the source stream.
+     * When a Kinesis data stream is used as the source for the delivery stream, a
+     * <a>KinesisStreamSourceConfiguration</a> containing the Kinesis data stream Amazon Resource Name (ARN) and the
+     * role ARN for the source stream.
      * </p>
      * 
      * @param kinesisStreamSourceConfiguration
-     *        When a Kinesis stream is used as the source for the delivery stream, a
-     *        <a>KinesisStreamSourceConfiguration</a> containing the Kinesis stream ARN and the role ARN for the source
-     *        stream.
+     *        When a Kinesis data stream is used as the source for the delivery stream, a
+     *        <a>KinesisStreamSourceConfiguration</a> containing the Kinesis data stream Amazon Resource Name (ARN) and
+     *        the role ARN for the source stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

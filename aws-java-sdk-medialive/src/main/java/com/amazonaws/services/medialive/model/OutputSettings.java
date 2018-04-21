@@ -32,6 +32,8 @@ public class OutputSettings implements Serializable, Cloneable, StructuredPojo {
 
     private MsSmoothOutputSettings msSmoothOutputSettings;
 
+    private RtmpOutputSettings rtmpOutputSettings;
+
     private UdpOutputSettings udpOutputSettings;
 
     /**
@@ -113,6 +115,32 @@ public class OutputSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param rtmpOutputSettings
+     */
+
+    public void setRtmpOutputSettings(RtmpOutputSettings rtmpOutputSettings) {
+        this.rtmpOutputSettings = rtmpOutputSettings;
+    }
+
+    /**
+     * @return
+     */
+
+    public RtmpOutputSettings getRtmpOutputSettings() {
+        return this.rtmpOutputSettings;
+    }
+
+    /**
+     * @param rtmpOutputSettings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OutputSettings withRtmpOutputSettings(RtmpOutputSettings rtmpOutputSettings) {
+        setRtmpOutputSettings(rtmpOutputSettings);
+        return this;
+    }
+
+    /**
      * @param udpOutputSettings
      */
 
@@ -155,6 +183,8 @@ public class OutputSettings implements Serializable, Cloneable, StructuredPojo {
             sb.append("HlsOutputSettings: ").append(getHlsOutputSettings()).append(",");
         if (getMsSmoothOutputSettings() != null)
             sb.append("MsSmoothOutputSettings: ").append(getMsSmoothOutputSettings()).append(",");
+        if (getRtmpOutputSettings() != null)
+            sb.append("RtmpOutputSettings: ").append(getRtmpOutputSettings()).append(",");
         if (getUdpOutputSettings() != null)
             sb.append("UdpOutputSettings: ").append(getUdpOutputSettings());
         sb.append("}");
@@ -183,6 +213,10 @@ public class OutputSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMsSmoothOutputSettings() != null && other.getMsSmoothOutputSettings().equals(this.getMsSmoothOutputSettings()) == false)
             return false;
+        if (other.getRtmpOutputSettings() == null ^ this.getRtmpOutputSettings() == null)
+            return false;
+        if (other.getRtmpOutputSettings() != null && other.getRtmpOutputSettings().equals(this.getRtmpOutputSettings()) == false)
+            return false;
         if (other.getUdpOutputSettings() == null ^ this.getUdpOutputSettings() == null)
             return false;
         if (other.getUdpOutputSettings() != null && other.getUdpOutputSettings().equals(this.getUdpOutputSettings()) == false)
@@ -198,6 +232,7 @@ public class OutputSettings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getArchiveOutputSettings() == null) ? 0 : getArchiveOutputSettings().hashCode());
         hashCode = prime * hashCode + ((getHlsOutputSettings() == null) ? 0 : getHlsOutputSettings().hashCode());
         hashCode = prime * hashCode + ((getMsSmoothOutputSettings() == null) ? 0 : getMsSmoothOutputSettings().hashCode());
+        hashCode = prime * hashCode + ((getRtmpOutputSettings() == null) ? 0 : getRtmpOutputSettings().hashCode());
         hashCode = prime * hashCode + ((getUdpOutputSettings() == null) ? 0 : getUdpOutputSettings().hashCode());
         return hashCode;
     }

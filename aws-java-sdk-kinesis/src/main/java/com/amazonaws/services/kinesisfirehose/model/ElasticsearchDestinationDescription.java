@@ -30,7 +30,7 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The ARN of the AWS credentials.
+     * The Amazon Resource Name (ARN) of the AWS credentials.
      * </p>
      */
     private String roleARN;
@@ -97,11 +97,11 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The ARN of the AWS credentials.
+     * The Amazon Resource Name (ARN) of the AWS credentials.
      * </p>
      * 
      * @param roleARN
-     *        The ARN of the AWS credentials.
+     *        The Amazon Resource Name (ARN) of the AWS credentials.
      */
 
     public void setRoleARN(String roleARN) {
@@ -110,10 +110,10 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The ARN of the AWS credentials.
+     * The Amazon Resource Name (ARN) of the AWS credentials.
      * </p>
      * 
-     * @return The ARN of the AWS credentials.
+     * @return The Amazon Resource Name (ARN) of the AWS credentials.
      */
 
     public String getRoleARN() {
@@ -122,11 +122,11 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The ARN of the AWS credentials.
+     * The Amazon Resource Name (ARN) of the AWS credentials.
      * </p>
      * 
      * @param roleARN
-     *        The ARN of the AWS credentials.
+     *        The Amazon Resource Name (ARN) of the AWS credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

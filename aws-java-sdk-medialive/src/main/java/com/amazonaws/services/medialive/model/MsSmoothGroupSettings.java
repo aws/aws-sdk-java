@@ -38,8 +38,7 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     private String audioOnlyTimecodeControl;
     /**
      * If set to verifyAuthenticity, verify the https certificate chain to a trusted Certificate Authority (CA). This
-     * will cause https outputs to self-signed certificates to fail unless those certificates are manually added to the
-     * OS trusted keystore.
+     * will cause https outputs to self-signed certificates to fail.
      */
     private String certificateMode;
     /**
@@ -208,13 +207,11 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
 
     /**
      * If set to verifyAuthenticity, verify the https certificate chain to a trusted Certificate Authority (CA). This
-     * will cause https outputs to self-signed certificates to fail unless those certificates are manually added to the
-     * OS trusted keystore.
+     * will cause https outputs to self-signed certificates to fail.
      * 
      * @param certificateMode
      *        If set to verifyAuthenticity, verify the https certificate chain to a trusted Certificate Authority (CA).
-     *        This will cause https outputs to self-signed certificates to fail unless those certificates are manually
-     *        added to the OS trusted keystore.
+     *        This will cause https outputs to self-signed certificates to fail.
      * @see SmoothGroupCertificateMode
      */
 
@@ -224,12 +221,10 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
 
     /**
      * If set to verifyAuthenticity, verify the https certificate chain to a trusted Certificate Authority (CA). This
-     * will cause https outputs to self-signed certificates to fail unless those certificates are manually added to the
-     * OS trusted keystore.
+     * will cause https outputs to self-signed certificates to fail.
      * 
      * @return If set to verifyAuthenticity, verify the https certificate chain to a trusted Certificate Authority (CA).
-     *         This will cause https outputs to self-signed certificates to fail unless those certificates are manually
-     *         added to the OS trusted keystore.
+     *         This will cause https outputs to self-signed certificates to fail.
      * @see SmoothGroupCertificateMode
      */
 
@@ -239,13 +234,11 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
 
     /**
      * If set to verifyAuthenticity, verify the https certificate chain to a trusted Certificate Authority (CA). This
-     * will cause https outputs to self-signed certificates to fail unless those certificates are manually added to the
-     * OS trusted keystore.
+     * will cause https outputs to self-signed certificates to fail.
      * 
      * @param certificateMode
      *        If set to verifyAuthenticity, verify the https certificate chain to a trusted Certificate Authority (CA).
-     *        This will cause https outputs to self-signed certificates to fail unless those certificates are manually
-     *        added to the OS trusted keystore.
+     *        This will cause https outputs to self-signed certificates to fail.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SmoothGroupCertificateMode
      */
@@ -257,13 +250,11 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
 
     /**
      * If set to verifyAuthenticity, verify the https certificate chain to a trusted Certificate Authority (CA). This
-     * will cause https outputs to self-signed certificates to fail unless those certificates are manually added to the
-     * OS trusted keystore.
+     * will cause https outputs to self-signed certificates to fail.
      * 
      * @param certificateMode
      *        If set to verifyAuthenticity, verify the https certificate chain to a trusted Certificate Authority (CA).
-     *        This will cause https outputs to self-signed certificates to fail unless those certificates are manually
-     *        added to the OS trusted keystore.
+     *        This will cause https outputs to self-signed certificates to fail.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SmoothGroupCertificateMode
      */

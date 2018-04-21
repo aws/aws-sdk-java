@@ -28,6 +28,8 @@ public class OutputDestinationSettings implements Serializable, Cloneable, Struc
 
     /** key used to extract the password from EC2 Parameter store */
     private String passwordParam;
+    /** Stream name for RTMP destinations (URLs of type rtmp://) */
+    private String streamName;
     /** A URL specifying a destination */
     private String url;
     /** username for destination */
@@ -64,6 +66,40 @@ public class OutputDestinationSettings implements Serializable, Cloneable, Struc
 
     public OutputDestinationSettings withPasswordParam(String passwordParam) {
         setPasswordParam(passwordParam);
+        return this;
+    }
+
+    /**
+     * Stream name for RTMP destinations (URLs of type rtmp://)
+     * 
+     * @param streamName
+     *        Stream name for RTMP destinations (URLs of type rtmp://)
+     */
+
+    public void setStreamName(String streamName) {
+        this.streamName = streamName;
+    }
+
+    /**
+     * Stream name for RTMP destinations (URLs of type rtmp://)
+     * 
+     * @return Stream name for RTMP destinations (URLs of type rtmp://)
+     */
+
+    public String getStreamName() {
+        return this.streamName;
+    }
+
+    /**
+     * Stream name for RTMP destinations (URLs of type rtmp://)
+     * 
+     * @param streamName
+     *        Stream name for RTMP destinations (URLs of type rtmp://)
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OutputDestinationSettings withStreamName(String streamName) {
+        setStreamName(streamName);
         return this;
     }
 
@@ -148,6 +184,8 @@ public class OutputDestinationSettings implements Serializable, Cloneable, Struc
         sb.append("{");
         if (getPasswordParam() != null)
             sb.append("PasswordParam: ").append(getPasswordParam()).append(",");
+        if (getStreamName() != null)
+            sb.append("StreamName: ").append(getStreamName()).append(",");
         if (getUrl() != null)
             sb.append("Url: ").append(getUrl()).append(",");
         if (getUsername() != null)
@@ -170,6 +208,10 @@ public class OutputDestinationSettings implements Serializable, Cloneable, Struc
             return false;
         if (other.getPasswordParam() != null && other.getPasswordParam().equals(this.getPasswordParam()) == false)
             return false;
+        if (other.getStreamName() == null ^ this.getStreamName() == null)
+            return false;
+        if (other.getStreamName() != null && other.getStreamName().equals(this.getStreamName()) == false)
+            return false;
         if (other.getUrl() == null ^ this.getUrl() == null)
             return false;
         if (other.getUrl() != null && other.getUrl().equals(this.getUrl()) == false)
@@ -187,6 +229,7 @@ public class OutputDestinationSettings implements Serializable, Cloneable, Struc
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getPasswordParam() == null) ? 0 : getPasswordParam().hashCode());
+        hashCode = prime * hashCode + ((getStreamName() == null) ? 0 : getStreamName().hashCode());
         hashCode = prime * hashCode + ((getUrl() == null) ? 0 : getUrl().hashCode());
         hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
         return hashCode;

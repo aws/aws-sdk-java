@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details about a Kinesis stream used as the source for a Kinesis Firehose delivery stream.
+ * Details about a Kinesis data stream used as the source for a Kinesis Data Firehose delivery stream.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/SourceDescription" target="_top">AWS API
@@ -30,18 +30,18 @@ public class SourceDescription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The <a>KinesisStreamSourceDescription</a> value for the source Kinesis stream.
+     * The <a>KinesisStreamSourceDescription</a> value for the source Kinesis data stream.
      * </p>
      */
     private KinesisStreamSourceDescription kinesisStreamSourceDescription;
 
     /**
      * <p>
-     * The <a>KinesisStreamSourceDescription</a> value for the source Kinesis stream.
+     * The <a>KinesisStreamSourceDescription</a> value for the source Kinesis data stream.
      * </p>
      * 
      * @param kinesisStreamSourceDescription
-     *        The <a>KinesisStreamSourceDescription</a> value for the source Kinesis stream.
+     *        The <a>KinesisStreamSourceDescription</a> value for the source Kinesis data stream.
      */
 
     public void setKinesisStreamSourceDescription(KinesisStreamSourceDescription kinesisStreamSourceDescription) {
@@ -50,10 +50,10 @@ public class SourceDescription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The <a>KinesisStreamSourceDescription</a> value for the source Kinesis stream.
+     * The <a>KinesisStreamSourceDescription</a> value for the source Kinesis data stream.
      * </p>
      * 
-     * @return The <a>KinesisStreamSourceDescription</a> value for the source Kinesis stream.
+     * @return The <a>KinesisStreamSourceDescription</a> value for the source Kinesis data stream.
      */
 
     public KinesisStreamSourceDescription getKinesisStreamSourceDescription() {
@@ -62,11 +62,11 @@ public class SourceDescription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The <a>KinesisStreamSourceDescription</a> value for the source Kinesis stream.
+     * The <a>KinesisStreamSourceDescription</a> value for the source Kinesis data stream.
      * </p>
      * 
      * @param kinesisStreamSourceDescription
-     *        The <a>KinesisStreamSourceDescription</a> value for the source Kinesis stream.
+     *        The <a>KinesisStreamSourceDescription</a> value for the source Kinesis data stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

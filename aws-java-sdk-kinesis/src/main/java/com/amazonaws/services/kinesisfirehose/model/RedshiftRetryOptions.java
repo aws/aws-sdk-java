@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Configures retry behavior in case Kinesis Firehose is unable to deliver documents to Amazon Redshift.
+ * Configures retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/RedshiftRetryOptions" target="_top">AWS API
@@ -30,9 +30,9 @@ public class RedshiftRetryOptions implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The length of time during which Kinesis Firehose retries delivery after a failure, starting from the initial
-     * request and including the first attempt. The default value is 3600 seconds (60 minutes). Kinesis Firehose does
-     * not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes
+     * The length of time during which Kinesis Data Firehose retries delivery after a failure, starting from the initial
+     * request and including the first attempt. The default value is 3600 seconds (60 minutes). Kinesis Data Firehose
+     * does not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes
      * longer than the current value.
      * </p>
      */
@@ -40,16 +40,16 @@ public class RedshiftRetryOptions implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The length of time during which Kinesis Firehose retries delivery after a failure, starting from the initial
-     * request and including the first attempt. The default value is 3600 seconds (60 minutes). Kinesis Firehose does
-     * not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes
+     * The length of time during which Kinesis Data Firehose retries delivery after a failure, starting from the initial
+     * request and including the first attempt. The default value is 3600 seconds (60 minutes). Kinesis Data Firehose
+     * does not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes
      * longer than the current value.
      * </p>
      * 
      * @param durationInSeconds
-     *        The length of time during which Kinesis Firehose retries delivery after a failure, starting from the
+     *        The length of time during which Kinesis Data Firehose retries delivery after a failure, starting from the
      *        initial request and including the first attempt. The default value is 3600 seconds (60 minutes). Kinesis
-     *        Firehose does not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first
+     *        Data Firehose does not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first
      *        delivery attempt takes longer than the current value.
      */
 
@@ -59,15 +59,15 @@ public class RedshiftRetryOptions implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The length of time during which Kinesis Firehose retries delivery after a failure, starting from the initial
-     * request and including the first attempt. The default value is 3600 seconds (60 minutes). Kinesis Firehose does
-     * not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes
+     * The length of time during which Kinesis Data Firehose retries delivery after a failure, starting from the initial
+     * request and including the first attempt. The default value is 3600 seconds (60 minutes). Kinesis Data Firehose
+     * does not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes
      * longer than the current value.
      * </p>
      * 
-     * @return The length of time during which Kinesis Firehose retries delivery after a failure, starting from the
+     * @return The length of time during which Kinesis Data Firehose retries delivery after a failure, starting from the
      *         initial request and including the first attempt. The default value is 3600 seconds (60 minutes). Kinesis
-     *         Firehose does not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first
+     *         Data Firehose does not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first
      *         delivery attempt takes longer than the current value.
      */
 
@@ -77,16 +77,16 @@ public class RedshiftRetryOptions implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The length of time during which Kinesis Firehose retries delivery after a failure, starting from the initial
-     * request and including the first attempt. The default value is 3600 seconds (60 minutes). Kinesis Firehose does
-     * not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes
+     * The length of time during which Kinesis Data Firehose retries delivery after a failure, starting from the initial
+     * request and including the first attempt. The default value is 3600 seconds (60 minutes). Kinesis Data Firehose
+     * does not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first delivery attempt takes
      * longer than the current value.
      * </p>
      * 
      * @param durationInSeconds
-     *        The length of time during which Kinesis Firehose retries delivery after a failure, starting from the
+     *        The length of time during which Kinesis Data Firehose retries delivery after a failure, starting from the
      *        initial request and including the first attempt. The default value is 3600 seconds (60 minutes). Kinesis
-     *        Firehose does not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first
+     *        Data Firehose does not retry if the value of <code>DurationInSeconds</code> is 0 (zero) or if the first
      *        delivery attempt takes longer than the current value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -30,33 +30,33 @@ public class SplunkDestinationConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The HTTP Event Collector (HEC) endpoint to which Kinesis Firehose sends your data.
+     * The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends your data.
      * </p>
      */
     private String hECEndpoint;
     /**
      * <p>
-     * This type can be either "Raw" or "Event".
+     * This type can be either "Raw" or "Event."
      * </p>
      */
     private String hECEndpointType;
     /**
      * <p>
-     * This is a GUID you obtain from your Splunk cluster when you create a new HEC endpoint.
+     * This is a GUID that you obtain from your Splunk cluster when you create a new HEC endpoint.
      * </p>
      */
     private String hECToken;
     /**
      * <p>
-     * The amount of time that Kinesis Firehose waits to receive an acknowledgment from Splunk after it sends it data.
-     * At the end of the timeout period Kinesis Firehose either tries to send the data again or considers it an error,
-     * based on your retry settings.
+     * The amount of time that Kinesis Data Firehose waits to receive an acknowledgment from Splunk after it sends it
+     * data. At the end of the timeout period, Kinesis Data Firehose either tries to send the data again or considers it
+     * an error, based on your retry settings.
      * </p>
      */
     private Integer hECAcknowledgmentTimeoutInSeconds;
     /**
      * <p>
-     * The retry behavior in case Kinesis Firehose is unable to deliver data to Splunk or if it doesn't receive an
+     * The retry behavior in case Kinesis Data Firehose is unable to deliver data to Splunk, or if it doesn't receive an
      * acknowledgment of receipt from Splunk.
      * </p>
      */
@@ -64,9 +64,9 @@ public class SplunkDestinationConfiguration implements Serializable, Cloneable, 
     /**
      * <p>
      * Defines how documents should be delivered to Amazon S3. When set to <code>FailedDocumentsOnly</code>, Kinesis
-     * Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to
-     * <code>AllDocuments</code>, Kinesis Firehose delivers all incoming records to Amazon S3, and also writes failed
-     * documents to Amazon S3. Default value is <code>FailedDocumentsOnly</code>.
+     * Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to
+     * <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes
+     * failed documents to Amazon S3. Default value is <code>FailedDocumentsOnly</code>.
      * </p>
      */
     private String s3BackupMode;
@@ -91,11 +91,11 @@ public class SplunkDestinationConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The HTTP Event Collector (HEC) endpoint to which Kinesis Firehose sends your data.
+     * The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends your data.
      * </p>
      * 
      * @param hECEndpoint
-     *        The HTTP Event Collector (HEC) endpoint to which Kinesis Firehose sends your data.
+     *        The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends your data.
      */
 
     public void setHECEndpoint(String hECEndpoint) {
@@ -104,10 +104,10 @@ public class SplunkDestinationConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The HTTP Event Collector (HEC) endpoint to which Kinesis Firehose sends your data.
+     * The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends your data.
      * </p>
      * 
-     * @return The HTTP Event Collector (HEC) endpoint to which Kinesis Firehose sends your data.
+     * @return The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends your data.
      */
 
     public String getHECEndpoint() {
@@ -116,11 +116,11 @@ public class SplunkDestinationConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The HTTP Event Collector (HEC) endpoint to which Kinesis Firehose sends your data.
+     * The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends your data.
      * </p>
      * 
      * @param hECEndpoint
-     *        The HTTP Event Collector (HEC) endpoint to which Kinesis Firehose sends your data.
+     *        The HTTP Event Collector (HEC) endpoint to which Kinesis Data Firehose sends your data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,11 +131,11 @@ public class SplunkDestinationConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * This type can be either "Raw" or "Event".
+     * This type can be either "Raw" or "Event."
      * </p>
      * 
      * @param hECEndpointType
-     *        This type can be either "Raw" or "Event".
+     *        This type can be either "Raw" or "Event."
      * @see HECEndpointType
      */
 
@@ -145,10 +145,10 @@ public class SplunkDestinationConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * This type can be either "Raw" or "Event".
+     * This type can be either "Raw" or "Event."
      * </p>
      * 
-     * @return This type can be either "Raw" or "Event".
+     * @return This type can be either "Raw" or "Event."
      * @see HECEndpointType
      */
 
@@ -158,11 +158,11 @@ public class SplunkDestinationConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * This type can be either "Raw" or "Event".
+     * This type can be either "Raw" or "Event."
      * </p>
      * 
      * @param hECEndpointType
-     *        This type can be either "Raw" or "Event".
+     *        This type can be either "Raw" or "Event."
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HECEndpointType
      */
@@ -174,11 +174,11 @@ public class SplunkDestinationConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * This type can be either "Raw" or "Event".
+     * This type can be either "Raw" or "Event."
      * </p>
      * 
      * @param hECEndpointType
-     *        This type can be either "Raw" or "Event".
+     *        This type can be either "Raw" or "Event."
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HECEndpointType
      */
@@ -190,11 +190,11 @@ public class SplunkDestinationConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * This is a GUID you obtain from your Splunk cluster when you create a new HEC endpoint.
+     * This is a GUID that you obtain from your Splunk cluster when you create a new HEC endpoint.
      * </p>
      * 
      * @param hECToken
-     *        This is a GUID you obtain from your Splunk cluster when you create a new HEC endpoint.
+     *        This is a GUID that you obtain from your Splunk cluster when you create a new HEC endpoint.
      */
 
     public void setHECToken(String hECToken) {
@@ -203,10 +203,10 @@ public class SplunkDestinationConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * This is a GUID you obtain from your Splunk cluster when you create a new HEC endpoint.
+     * This is a GUID that you obtain from your Splunk cluster when you create a new HEC endpoint.
      * </p>
      * 
-     * @return This is a GUID you obtain from your Splunk cluster when you create a new HEC endpoint.
+     * @return This is a GUID that you obtain from your Splunk cluster when you create a new HEC endpoint.
      */
 
     public String getHECToken() {
@@ -215,11 +215,11 @@ public class SplunkDestinationConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * This is a GUID you obtain from your Splunk cluster when you create a new HEC endpoint.
+     * This is a GUID that you obtain from your Splunk cluster when you create a new HEC endpoint.
      * </p>
      * 
      * @param hECToken
-     *        This is a GUID you obtain from your Splunk cluster when you create a new HEC endpoint.
+     *        This is a GUID that you obtain from your Splunk cluster when you create a new HEC endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -230,15 +230,15 @@ public class SplunkDestinationConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The amount of time that Kinesis Firehose waits to receive an acknowledgment from Splunk after it sends it data.
-     * At the end of the timeout period Kinesis Firehose either tries to send the data again or considers it an error,
-     * based on your retry settings.
+     * The amount of time that Kinesis Data Firehose waits to receive an acknowledgment from Splunk after it sends it
+     * data. At the end of the timeout period, Kinesis Data Firehose either tries to send the data again or considers it
+     * an error, based on your retry settings.
      * </p>
      * 
      * @param hECAcknowledgmentTimeoutInSeconds
-     *        The amount of time that Kinesis Firehose waits to receive an acknowledgment from Splunk after it sends it
-     *        data. At the end of the timeout period Kinesis Firehose either tries to send the data again or considers
-     *        it an error, based on your retry settings.
+     *        The amount of time that Kinesis Data Firehose waits to receive an acknowledgment from Splunk after it
+     *        sends it data. At the end of the timeout period, Kinesis Data Firehose either tries to send the data again
+     *        or considers it an error, based on your retry settings.
      */
 
     public void setHECAcknowledgmentTimeoutInSeconds(Integer hECAcknowledgmentTimeoutInSeconds) {
@@ -247,14 +247,14 @@ public class SplunkDestinationConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The amount of time that Kinesis Firehose waits to receive an acknowledgment from Splunk after it sends it data.
-     * At the end of the timeout period Kinesis Firehose either tries to send the data again or considers it an error,
-     * based on your retry settings.
+     * The amount of time that Kinesis Data Firehose waits to receive an acknowledgment from Splunk after it sends it
+     * data. At the end of the timeout period, Kinesis Data Firehose either tries to send the data again or considers it
+     * an error, based on your retry settings.
      * </p>
      * 
-     * @return The amount of time that Kinesis Firehose waits to receive an acknowledgment from Splunk after it sends it
-     *         data. At the end of the timeout period Kinesis Firehose either tries to send the data again or considers
-     *         it an error, based on your retry settings.
+     * @return The amount of time that Kinesis Data Firehose waits to receive an acknowledgment from Splunk after it
+     *         sends it data. At the end of the timeout period, Kinesis Data Firehose either tries to send the data
+     *         again or considers it an error, based on your retry settings.
      */
 
     public Integer getHECAcknowledgmentTimeoutInSeconds() {
@@ -263,15 +263,15 @@ public class SplunkDestinationConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The amount of time that Kinesis Firehose waits to receive an acknowledgment from Splunk after it sends it data.
-     * At the end of the timeout period Kinesis Firehose either tries to send the data again or considers it an error,
-     * based on your retry settings.
+     * The amount of time that Kinesis Data Firehose waits to receive an acknowledgment from Splunk after it sends it
+     * data. At the end of the timeout period, Kinesis Data Firehose either tries to send the data again or considers it
+     * an error, based on your retry settings.
      * </p>
      * 
      * @param hECAcknowledgmentTimeoutInSeconds
-     *        The amount of time that Kinesis Firehose waits to receive an acknowledgment from Splunk after it sends it
-     *        data. At the end of the timeout period Kinesis Firehose either tries to send the data again or considers
-     *        it an error, based on your retry settings.
+     *        The amount of time that Kinesis Data Firehose waits to receive an acknowledgment from Splunk after it
+     *        sends it data. At the end of the timeout period, Kinesis Data Firehose either tries to send the data again
+     *        or considers it an error, based on your retry settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -282,13 +282,13 @@ public class SplunkDestinationConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Firehose is unable to deliver data to Splunk or if it doesn't receive an
+     * The retry behavior in case Kinesis Data Firehose is unable to deliver data to Splunk, or if it doesn't receive an
      * acknowledgment of receipt from Splunk.
      * </p>
      * 
      * @param retryOptions
-     *        The retry behavior in case Kinesis Firehose is unable to deliver data to Splunk or if it doesn't receive
-     *        an acknowledgment of receipt from Splunk.
+     *        The retry behavior in case Kinesis Data Firehose is unable to deliver data to Splunk, or if it doesn't
+     *        receive an acknowledgment of receipt from Splunk.
      */
 
     public void setRetryOptions(SplunkRetryOptions retryOptions) {
@@ -297,12 +297,12 @@ public class SplunkDestinationConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Firehose is unable to deliver data to Splunk or if it doesn't receive an
+     * The retry behavior in case Kinesis Data Firehose is unable to deliver data to Splunk, or if it doesn't receive an
      * acknowledgment of receipt from Splunk.
      * </p>
      * 
-     * @return The retry behavior in case Kinesis Firehose is unable to deliver data to Splunk or if it doesn't receive
-     *         an acknowledgment of receipt from Splunk.
+     * @return The retry behavior in case Kinesis Data Firehose is unable to deliver data to Splunk, or if it doesn't
+     *         receive an acknowledgment of receipt from Splunk.
      */
 
     public SplunkRetryOptions getRetryOptions() {
@@ -311,13 +311,13 @@ public class SplunkDestinationConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Firehose is unable to deliver data to Splunk or if it doesn't receive an
+     * The retry behavior in case Kinesis Data Firehose is unable to deliver data to Splunk, or if it doesn't receive an
      * acknowledgment of receipt from Splunk.
      * </p>
      * 
      * @param retryOptions
-     *        The retry behavior in case Kinesis Firehose is unable to deliver data to Splunk or if it doesn't receive
-     *        an acknowledgment of receipt from Splunk.
+     *        The retry behavior in case Kinesis Data Firehose is unable to deliver data to Splunk, or if it doesn't
+     *        receive an acknowledgment of receipt from Splunk.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -329,16 +329,16 @@ public class SplunkDestinationConfiguration implements Serializable, Cloneable, 
     /**
      * <p>
      * Defines how documents should be delivered to Amazon S3. When set to <code>FailedDocumentsOnly</code>, Kinesis
-     * Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to
-     * <code>AllDocuments</code>, Kinesis Firehose delivers all incoming records to Amazon S3, and also writes failed
-     * documents to Amazon S3. Default value is <code>FailedDocumentsOnly</code>.
+     * Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to
+     * <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes
+     * failed documents to Amazon S3. Default value is <code>FailedDocumentsOnly</code>.
      * </p>
      * 
      * @param s3BackupMode
      *        Defines how documents should be delivered to Amazon S3. When set to <code>FailedDocumentsOnly</code>,
-     *        Kinesis Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When
-     *        set to <code>AllDocuments</code>, Kinesis Firehose delivers all incoming records to Amazon S3, and also
-     *        writes failed documents to Amazon S3. Default value is <code>FailedDocumentsOnly</code>.
+     *        Kinesis Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination.
+     *        When set to <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3,
+     *        and also writes failed documents to Amazon S3. Default value is <code>FailedDocumentsOnly</code>.
      * @see SplunkS3BackupMode
      */
 
@@ -349,15 +349,15 @@ public class SplunkDestinationConfiguration implements Serializable, Cloneable, 
     /**
      * <p>
      * Defines how documents should be delivered to Amazon S3. When set to <code>FailedDocumentsOnly</code>, Kinesis
-     * Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to
-     * <code>AllDocuments</code>, Kinesis Firehose delivers all incoming records to Amazon S3, and also writes failed
-     * documents to Amazon S3. Default value is <code>FailedDocumentsOnly</code>.
+     * Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to
+     * <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes
+     * failed documents to Amazon S3. Default value is <code>FailedDocumentsOnly</code>.
      * </p>
      * 
      * @return Defines how documents should be delivered to Amazon S3. When set to <code>FailedDocumentsOnly</code>,
-     *         Kinesis Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When
-     *         set to <code>AllDocuments</code>, Kinesis Firehose delivers all incoming records to Amazon S3, and also
-     *         writes failed documents to Amazon S3. Default value is <code>FailedDocumentsOnly</code>.
+     *         Kinesis Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination.
+     *         When set to <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3,
+     *         and also writes failed documents to Amazon S3. Default value is <code>FailedDocumentsOnly</code>.
      * @see SplunkS3BackupMode
      */
 
@@ -368,16 +368,16 @@ public class SplunkDestinationConfiguration implements Serializable, Cloneable, 
     /**
      * <p>
      * Defines how documents should be delivered to Amazon S3. When set to <code>FailedDocumentsOnly</code>, Kinesis
-     * Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to
-     * <code>AllDocuments</code>, Kinesis Firehose delivers all incoming records to Amazon S3, and also writes failed
-     * documents to Amazon S3. Default value is <code>FailedDocumentsOnly</code>.
+     * Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to
+     * <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes
+     * failed documents to Amazon S3. Default value is <code>FailedDocumentsOnly</code>.
      * </p>
      * 
      * @param s3BackupMode
      *        Defines how documents should be delivered to Amazon S3. When set to <code>FailedDocumentsOnly</code>,
-     *        Kinesis Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When
-     *        set to <code>AllDocuments</code>, Kinesis Firehose delivers all incoming records to Amazon S3, and also
-     *        writes failed documents to Amazon S3. Default value is <code>FailedDocumentsOnly</code>.
+     *        Kinesis Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination.
+     *        When set to <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3,
+     *        and also writes failed documents to Amazon S3. Default value is <code>FailedDocumentsOnly</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SplunkS3BackupMode
      */
@@ -390,16 +390,16 @@ public class SplunkDestinationConfiguration implements Serializable, Cloneable, 
     /**
      * <p>
      * Defines how documents should be delivered to Amazon S3. When set to <code>FailedDocumentsOnly</code>, Kinesis
-     * Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to
-     * <code>AllDocuments</code>, Kinesis Firehose delivers all incoming records to Amazon S3, and also writes failed
-     * documents to Amazon S3. Default value is <code>FailedDocumentsOnly</code>.
+     * Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to
+     * <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes
+     * failed documents to Amazon S3. Default value is <code>FailedDocumentsOnly</code>.
      * </p>
      * 
      * @param s3BackupMode
      *        Defines how documents should be delivered to Amazon S3. When set to <code>FailedDocumentsOnly</code>,
-     *        Kinesis Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When
-     *        set to <code>AllDocuments</code>, Kinesis Firehose delivers all incoming records to Amazon S3, and also
-     *        writes failed documents to Amazon S3. Default value is <code>FailedDocumentsOnly</code>.
+     *        Kinesis Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination.
+     *        When set to <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3,
+     *        and also writes failed documents to Amazon S3. Default value is <code>FailedDocumentsOnly</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SplunkS3BackupMode
      */

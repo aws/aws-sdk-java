@@ -33,6 +33,8 @@ public class OutputSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hlsOutputSettings").build();
     private static final MarshallingInfo<StructuredPojo> MSSMOOTHOUTPUTSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("msSmoothOutputSettings").build();
+    private static final MarshallingInfo<StructuredPojo> RTMPOUTPUTSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rtmpOutputSettings").build();
     private static final MarshallingInfo<StructuredPojo> UDPOUTPUTSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("udpOutputSettings").build();
 
@@ -55,6 +57,7 @@ public class OutputSettingsMarshaller {
             protocolMarshaller.marshall(outputSettings.getArchiveOutputSettings(), ARCHIVEOUTPUTSETTINGS_BINDING);
             protocolMarshaller.marshall(outputSettings.getHlsOutputSettings(), HLSOUTPUTSETTINGS_BINDING);
             protocolMarshaller.marshall(outputSettings.getMsSmoothOutputSettings(), MSSMOOTHOUTPUTSETTINGS_BINDING);
+            protocolMarshaller.marshall(outputSettings.getRtmpOutputSettings(), RTMPOUTPUTSETTINGS_BINDING);
             protocolMarshaller.marshall(outputSettings.getUdpOutputSettings(), UDPOUTPUTSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

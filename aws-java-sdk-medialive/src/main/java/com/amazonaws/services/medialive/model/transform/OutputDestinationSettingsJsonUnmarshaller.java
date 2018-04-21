@@ -52,6 +52,10 @@ public class OutputDestinationSettingsJsonUnmarshaller implements Unmarshaller<O
                     context.nextToken();
                     outputDestinationSettings.setPasswordParam(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("streamName", targetDepth)) {
+                    context.nextToken();
+                    outputDestinationSettings.setStreamName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("url", targetDepth)) {
                     context.nextToken();
                     outputDestinationSettings.setUrl(context.getUnmarshaller(String.class).unmarshall(context));

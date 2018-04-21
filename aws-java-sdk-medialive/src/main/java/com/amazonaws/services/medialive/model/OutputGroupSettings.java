@@ -32,6 +32,8 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
 
     private MsSmoothGroupSettings msSmoothGroupSettings;
 
+    private RtmpGroupSettings rtmpGroupSettings;
+
     private UdpGroupSettings udpGroupSettings;
 
     /**
@@ -113,6 +115,32 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * @param rtmpGroupSettings
+     */
+
+    public void setRtmpGroupSettings(RtmpGroupSettings rtmpGroupSettings) {
+        this.rtmpGroupSettings = rtmpGroupSettings;
+    }
+
+    /**
+     * @return
+     */
+
+    public RtmpGroupSettings getRtmpGroupSettings() {
+        return this.rtmpGroupSettings;
+    }
+
+    /**
+     * @param rtmpGroupSettings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OutputGroupSettings withRtmpGroupSettings(RtmpGroupSettings rtmpGroupSettings) {
+        setRtmpGroupSettings(rtmpGroupSettings);
+        return this;
+    }
+
+    /**
      * @param udpGroupSettings
      */
 
@@ -155,6 +183,8 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
             sb.append("HlsGroupSettings: ").append(getHlsGroupSettings()).append(",");
         if (getMsSmoothGroupSettings() != null)
             sb.append("MsSmoothGroupSettings: ").append(getMsSmoothGroupSettings()).append(",");
+        if (getRtmpGroupSettings() != null)
+            sb.append("RtmpGroupSettings: ").append(getRtmpGroupSettings()).append(",");
         if (getUdpGroupSettings() != null)
             sb.append("UdpGroupSettings: ").append(getUdpGroupSettings());
         sb.append("}");
@@ -183,6 +213,10 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getMsSmoothGroupSettings() != null && other.getMsSmoothGroupSettings().equals(this.getMsSmoothGroupSettings()) == false)
             return false;
+        if (other.getRtmpGroupSettings() == null ^ this.getRtmpGroupSettings() == null)
+            return false;
+        if (other.getRtmpGroupSettings() != null && other.getRtmpGroupSettings().equals(this.getRtmpGroupSettings()) == false)
+            return false;
         if (other.getUdpGroupSettings() == null ^ this.getUdpGroupSettings() == null)
             return false;
         if (other.getUdpGroupSettings() != null && other.getUdpGroupSettings().equals(this.getUdpGroupSettings()) == false)
@@ -198,6 +232,7 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getArchiveGroupSettings() == null) ? 0 : getArchiveGroupSettings().hashCode());
         hashCode = prime * hashCode + ((getHlsGroupSettings() == null) ? 0 : getHlsGroupSettings().hashCode());
         hashCode = prime * hashCode + ((getMsSmoothGroupSettings() == null) ? 0 : getMsSmoothGroupSettings().hashCode());
+        hashCode = prime * hashCode + ((getRtmpGroupSettings() == null) ? 0 : getRtmpGroupSettings().hashCode());
         hashCode = prime * hashCode + ((getUdpGroupSettings() == null) ? 0 : getUdpGroupSettings().hashCode());
         return hashCode;
     }

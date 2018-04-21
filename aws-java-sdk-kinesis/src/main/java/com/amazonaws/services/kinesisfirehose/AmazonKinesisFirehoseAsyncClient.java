@@ -30,10 +30,10 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive notification when
  * an asynchronous operation completes.
  * <p>
- * <fullname>Amazon Kinesis Firehose API Reference</fullname>
+ * <fullname>Amazon Kinesis Data Firehose API Reference</fullname>
  * <p>
- * Amazon Kinesis Firehose is a fully managed service that delivers real-time streaming data to destinations such as
- * Amazon Simple Storage Service (Amazon S3), Amazon Elasticsearch Service (Amazon ES), and Amazon Redshift.
+ * Amazon Kinesis Data Firehose is a fully managed service that delivers real-time streaming data to destinations such
+ * as Amazon Simple Storage Service (Amazon S3), Amazon Elasticsearch Service (Amazon ES), Amazon Redshift, and Splunk.
  * </p>
  */
 @ThreadSafe
@@ -379,6 +379,39 @@ public class AmazonKinesisFirehoseAsyncClient extends AmazonKinesisFirehoseClien
     }
 
     @Override
+    public java.util.concurrent.Future<ListTagsForDeliveryStreamResult> listTagsForDeliveryStreamAsync(ListTagsForDeliveryStreamRequest request) {
+
+        return listTagsForDeliveryStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForDeliveryStreamResult> listTagsForDeliveryStreamAsync(final ListTagsForDeliveryStreamRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTagsForDeliveryStreamRequest, ListTagsForDeliveryStreamResult> asyncHandler) {
+        final ListTagsForDeliveryStreamRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTagsForDeliveryStreamResult>() {
+            @Override
+            public ListTagsForDeliveryStreamResult call() throws Exception {
+                ListTagsForDeliveryStreamResult result = null;
+
+                try {
+                    result = executeListTagsForDeliveryStream(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PutRecordResult> putRecordAsync(PutRecordRequest request) {
 
         return putRecordAsync(request, null);
@@ -429,6 +462,72 @@ public class AmazonKinesisFirehoseAsyncClient extends AmazonKinesisFirehoseClien
 
                 try {
                     result = executePutRecordBatch(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagDeliveryStreamResult> tagDeliveryStreamAsync(TagDeliveryStreamRequest request) {
+
+        return tagDeliveryStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagDeliveryStreamResult> tagDeliveryStreamAsync(final TagDeliveryStreamRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagDeliveryStreamRequest, TagDeliveryStreamResult> asyncHandler) {
+        final TagDeliveryStreamRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TagDeliveryStreamResult>() {
+            @Override
+            public TagDeliveryStreamResult call() throws Exception {
+                TagDeliveryStreamResult result = null;
+
+                try {
+                    result = executeTagDeliveryStream(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagDeliveryStreamResult> untagDeliveryStreamAsync(UntagDeliveryStreamRequest request) {
+
+        return untagDeliveryStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagDeliveryStreamResult> untagDeliveryStreamAsync(final UntagDeliveryStreamRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagDeliveryStreamRequest, UntagDeliveryStreamResult> asyncHandler) {
+        final UntagDeliveryStreamRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UntagDeliveryStreamResult>() {
+            @Override
+            public UntagDeliveryStreamResult call() throws Exception {
+                UntagDeliveryStreamResult result = null;
+
+                try {
+                    result = executeUntagDeliveryStream(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
