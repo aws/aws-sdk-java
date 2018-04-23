@@ -53,11 +53,23 @@ public class GetPolicyVersionResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private Boolean isDefaultVersion;
-
+    /**
+     * <p>
+     * The date the policy version was created.
+     * </p>
+     */
     private java.util.Date creationDate;
-
+    /**
+     * <p>
+     * The date the policy version was last modified.
+     * </p>
+     */
     private java.util.Date lastModifiedDate;
-
+    /**
+     * <p>
+     * The generation ID of the policy version.
+     * </p>
+     */
     private String generationId;
 
     /**
@@ -273,7 +285,12 @@ public class GetPolicyVersionResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The date the policy version was created.
+     * </p>
+     * 
      * @param creationDate
+     *        The date the policy version was created.
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -281,7 +298,11 @@ public class GetPolicyVersionResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * @return
+     * <p>
+     * The date the policy version was created.
+     * </p>
+     * 
+     * @return The date the policy version was created.
      */
 
     public java.util.Date getCreationDate() {
@@ -289,7 +310,12 @@ public class GetPolicyVersionResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The date the policy version was created.
+     * </p>
+     * 
      * @param creationDate
+     *        The date the policy version was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -299,7 +325,12 @@ public class GetPolicyVersionResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The date the policy version was last modified.
+     * </p>
+     * 
      * @param lastModifiedDate
+     *        The date the policy version was last modified.
      */
 
     public void setLastModifiedDate(java.util.Date lastModifiedDate) {
@@ -307,7 +338,11 @@ public class GetPolicyVersionResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * @return
+     * <p>
+     * The date the policy version was last modified.
+     * </p>
+     * 
+     * @return The date the policy version was last modified.
      */
 
     public java.util.Date getLastModifiedDate() {
@@ -315,7 +350,12 @@ public class GetPolicyVersionResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The date the policy version was last modified.
+     * </p>
+     * 
      * @param lastModifiedDate
+     *        The date the policy version was last modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -325,7 +365,12 @@ public class GetPolicyVersionResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The generation ID of the policy version.
+     * </p>
+     * 
      * @param generationId
+     *        The generation ID of the policy version.
      */
 
     public void setGenerationId(String generationId) {
@@ -333,7 +378,11 @@ public class GetPolicyVersionResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
-     * @return
+     * <p>
+     * The generation ID of the policy version.
+     * </p>
+     * 
+     * @return The generation ID of the policy version.
      */
 
     public String getGenerationId() {
@@ -341,7 +390,12 @@ public class GetPolicyVersionResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The generation ID of the policy version.
+     * </p>
+     * 
      * @param generationId
+     *        The generation ID of the policy version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

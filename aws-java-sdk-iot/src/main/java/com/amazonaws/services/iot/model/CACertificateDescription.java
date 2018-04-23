@@ -68,11 +68,23 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
      * </p>
      */
     private String autoRegistrationStatus;
-
+    /**
+     * <p>
+     * The date the CA certificate was last modified.
+     * </p>
+     */
     private java.util.Date lastModifiedDate;
-
+    /**
+     * <p>
+     * The customer version of the CA certificate.
+     * </p>
+     */
     private Integer customerVersion;
-
+    /**
+     * <p>
+     * The generation ID of the CA certificate.
+     * </p>
+     */
     private String generationId;
 
     /**
@@ -432,7 +444,12 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The date the CA certificate was last modified.
+     * </p>
+     * 
      * @param lastModifiedDate
+     *        The date the CA certificate was last modified.
      */
 
     public void setLastModifiedDate(java.util.Date lastModifiedDate) {
@@ -440,7 +457,11 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
     }
 
     /**
-     * @return
+     * <p>
+     * The date the CA certificate was last modified.
+     * </p>
+     * 
+     * @return The date the CA certificate was last modified.
      */
 
     public java.util.Date getLastModifiedDate() {
@@ -448,7 +469,12 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The date the CA certificate was last modified.
+     * </p>
+     * 
      * @param lastModifiedDate
+     *        The date the CA certificate was last modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -458,7 +484,12 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The customer version of the CA certificate.
+     * </p>
+     * 
      * @param customerVersion
+     *        The customer version of the CA certificate.
      */
 
     public void setCustomerVersion(Integer customerVersion) {
@@ -466,7 +497,11 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
     }
 
     /**
-     * @return
+     * <p>
+     * The customer version of the CA certificate.
+     * </p>
+     * 
+     * @return The customer version of the CA certificate.
      */
 
     public Integer getCustomerVersion() {
@@ -474,7 +509,12 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The customer version of the CA certificate.
+     * </p>
+     * 
      * @param customerVersion
+     *        The customer version of the CA certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -484,7 +524,12 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The generation ID of the CA certificate.
+     * </p>
+     * 
      * @param generationId
+     *        The generation ID of the CA certificate.
      */
 
     public void setGenerationId(String generationId) {
@@ -492,7 +537,11 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
     }
 
     /**
-     * @return
+     * <p>
+     * The generation ID of the CA certificate.
+     * </p>
+     * 
+     * @return The generation ID of the CA certificate.
      */
 
     public String getGenerationId() {
@@ -500,7 +549,12 @@ public class CACertificateDescription implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The generation ID of the CA certificate.
+     * </p>
+     * 
      * @param generationId
+     *        The generation ID of the CA certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

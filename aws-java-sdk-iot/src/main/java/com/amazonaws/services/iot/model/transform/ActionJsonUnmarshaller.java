@@ -100,6 +100,10 @@ public class ActionJsonUnmarshaller implements Unmarshaller<Action, JsonUnmarsha
                     context.nextToken();
                     action.setSalesforce(SalesforceActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("iotAnalytics", targetDepth)) {
+                    context.nextToken();
+                    action.setIotAnalytics(IotAnalyticsActionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

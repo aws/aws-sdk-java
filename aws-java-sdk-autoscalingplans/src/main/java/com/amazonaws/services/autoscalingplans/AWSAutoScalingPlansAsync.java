@@ -25,6 +25,7 @@ import com.amazonaws.services.autoscalingplans.model.*;
  * {@link com.amazonaws.services.autoscalingplans.AbstractAWSAutoScalingPlansAsync} instead.
  * </p>
  * <p>
+ * <fullname>AWS Auto Scaling</fullname>
  * <p>
  * Use AWS Auto Scaling to quickly discover all the scalable AWS resources for your application and configure dynamic
  * scaling for your scalable resources.
@@ -176,5 +177,42 @@ public interface AWSAutoScalingPlansAsync extends AWSAutoScalingPlans {
      */
     java.util.concurrent.Future<DescribeScalingPlansResult> describeScalingPlansAsync(DescribeScalingPlansRequest describeScalingPlansRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeScalingPlansRequest, DescribeScalingPlansResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the scaling plan for the specified scaling plan.
+     * </p>
+     * <p>
+     * You cannot update a scaling plan if it is in the process of being created, updated, or deleted.
+     * </p>
+     * 
+     * @param updateScalingPlanRequest
+     * @return A Java Future containing the result of the UpdateScalingPlan operation returned by the service.
+     * @sample AWSAutoScalingPlansAsync.UpdateScalingPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/UpdateScalingPlan"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateScalingPlanResult> updateScalingPlanAsync(UpdateScalingPlanRequest updateScalingPlanRequest);
+
+    /**
+     * <p>
+     * Updates the scaling plan for the specified scaling plan.
+     * </p>
+     * <p>
+     * You cannot update a scaling plan if it is in the process of being created, updated, or deleted.
+     * </p>
+     * 
+     * @param updateScalingPlanRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateScalingPlan operation returned by the service.
+     * @sample AWSAutoScalingPlansAsyncHandler.UpdateScalingPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/UpdateScalingPlan"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateScalingPlanResult> updateScalingPlanAsync(UpdateScalingPlanRequest updateScalingPlanRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateScalingPlanRequest, UpdateScalingPlanResult> asyncHandler);
 
 }

@@ -34,6 +34,12 @@ public class ApplicationSource implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String cloudFormationStackARN;
+    /**
+     * <p>
+     * A set of tags (up to 50).
+     * </p>
+     */
+    private java.util.List<TagFilter> tagFilters;
 
     /**
      * <p>
@@ -76,6 +82,76 @@ public class ApplicationSource implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * A set of tags (up to 50).
+     * </p>
+     * 
+     * @return A set of tags (up to 50).
+     */
+
+    public java.util.List<TagFilter> getTagFilters() {
+        return tagFilters;
+    }
+
+    /**
+     * <p>
+     * A set of tags (up to 50).
+     * </p>
+     * 
+     * @param tagFilters
+     *        A set of tags (up to 50).
+     */
+
+    public void setTagFilters(java.util.Collection<TagFilter> tagFilters) {
+        if (tagFilters == null) {
+            this.tagFilters = null;
+            return;
+        }
+
+        this.tagFilters = new java.util.ArrayList<TagFilter>(tagFilters);
+    }
+
+    /**
+     * <p>
+     * A set of tags (up to 50).
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagFilters(java.util.Collection)} or {@link #withTagFilters(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param tagFilters
+     *        A set of tags (up to 50).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationSource withTagFilters(TagFilter... tagFilters) {
+        if (this.tagFilters == null) {
+            setTagFilters(new java.util.ArrayList<TagFilter>(tagFilters.length));
+        }
+        for (TagFilter ele : tagFilters) {
+            this.tagFilters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A set of tags (up to 50).
+     * </p>
+     * 
+     * @param tagFilters
+     *        A set of tags (up to 50).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationSource withTagFilters(java.util.Collection<TagFilter> tagFilters) {
+        setTagFilters(tagFilters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -87,7 +163,9 @@ public class ApplicationSource implements Serializable, Cloneable, StructuredPoj
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCloudFormationStackARN() != null)
-            sb.append("CloudFormationStackARN: ").append(getCloudFormationStackARN());
+            sb.append("CloudFormationStackARN: ").append(getCloudFormationStackARN()).append(",");
+        if (getTagFilters() != null)
+            sb.append("TagFilters: ").append(getTagFilters());
         sb.append("}");
         return sb.toString();
     }
@@ -106,6 +184,10 @@ public class ApplicationSource implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getCloudFormationStackARN() != null && other.getCloudFormationStackARN().equals(this.getCloudFormationStackARN()) == false)
             return false;
+        if (other.getTagFilters() == null ^ this.getTagFilters() == null)
+            return false;
+        if (other.getTagFilters() != null && other.getTagFilters().equals(this.getTagFilters()) == false)
+            return false;
         return true;
     }
 
@@ -115,6 +197,7 @@ public class ApplicationSource implements Serializable, Cloneable, StructuredPoj
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCloudFormationStackARN() == null) ? 0 : getCloudFormationStackARN().hashCode());
+        hashCode = prime * hashCode + ((getTagFilters() == null) ? 0 : getTagFilters().hashCode());
         return hashCode;
     }
 

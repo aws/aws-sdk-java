@@ -104,6 +104,12 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private SalesforceAction salesforce;
+    /**
+     * <p>
+     * Sends message data to an AWS IoT Analytics channel.
+     * </p>
+     */
+    private IotAnalyticsAction iotAnalytics;
 
     /**
      * <p>
@@ -632,6 +638,46 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Sends message data to an AWS IoT Analytics channel.
+     * </p>
+     * 
+     * @param iotAnalytics
+     *        Sends message data to an AWS IoT Analytics channel.
+     */
+
+    public void setIotAnalytics(IotAnalyticsAction iotAnalytics) {
+        this.iotAnalytics = iotAnalytics;
+    }
+
+    /**
+     * <p>
+     * Sends message data to an AWS IoT Analytics channel.
+     * </p>
+     * 
+     * @return Sends message data to an AWS IoT Analytics channel.
+     */
+
+    public IotAnalyticsAction getIotAnalytics() {
+        return this.iotAnalytics;
+    }
+
+    /**
+     * <p>
+     * Sends message data to an AWS IoT Analytics channel.
+     * </p>
+     * 
+     * @param iotAnalytics
+     *        Sends message data to an AWS IoT Analytics channel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Action withIotAnalytics(IotAnalyticsAction iotAnalytics) {
+        setIotAnalytics(iotAnalytics);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -667,7 +713,9 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
         if (getElasticsearch() != null)
             sb.append("Elasticsearch: ").append(getElasticsearch()).append(",");
         if (getSalesforce() != null)
-            sb.append("Salesforce: ").append(getSalesforce());
+            sb.append("Salesforce: ").append(getSalesforce()).append(",");
+        if (getIotAnalytics() != null)
+            sb.append("IotAnalytics: ").append(getIotAnalytics());
         sb.append("}");
         return sb.toString();
     }
@@ -734,6 +782,10 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSalesforce() != null && other.getSalesforce().equals(this.getSalesforce()) == false)
             return false;
+        if (other.getIotAnalytics() == null ^ this.getIotAnalytics() == null)
+            return false;
+        if (other.getIotAnalytics() != null && other.getIotAnalytics().equals(this.getIotAnalytics()) == false)
+            return false;
         return true;
     }
 
@@ -755,6 +807,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCloudwatchAlarm() == null) ? 0 : getCloudwatchAlarm().hashCode());
         hashCode = prime * hashCode + ((getElasticsearch() == null) ? 0 : getElasticsearch().hashCode());
         hashCode = prime * hashCode + ((getSalesforce() == null) ? 0 : getSalesforce().hashCode());
+        hashCode = prime * hashCode + ((getIotAnalytics() == null) ? 0 : getIotAnalytics().hashCode());
         return hashCode;
     }
 

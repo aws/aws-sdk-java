@@ -26,6 +26,7 @@ import com.amazonaws.services.autoscalingplans.model.*;
  * {@link com.amazonaws.services.autoscalingplans.AbstractAWSAutoScalingPlans} instead.
  * </p>
  * <p>
+ * <fullname>AWS Auto Scaling</fullname>
  * <p>
  * Use AWS Auto Scaling to quickly discover all the scalable AWS resources for your application and configure dynamic
  * scaling for your scalable resources.
@@ -140,6 +141,31 @@ public interface AWSAutoScalingPlans {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeScalingPlansResult describeScalingPlans(DescribeScalingPlansRequest describeScalingPlansRequest);
+
+    /**
+     * <p>
+     * Updates the scaling plan for the specified scaling plan.
+     * </p>
+     * <p>
+     * You cannot update a scaling plan if it is in the process of being created, updated, or deleted.
+     * </p>
+     * 
+     * @param updateScalingPlanRequest
+     * @return Result of the UpdateScalingPlan operation returned by the service.
+     * @throws ValidationException
+     *         An exception was thrown for a validation issue. Review the parameters provided.
+     * @throws ConcurrentUpdateException
+     *         Concurrent updates caused an exception, for example, if you request an update to a scaling plan that
+     *         already has a pending update.
+     * @throws InternalServiceException
+     *         The service encountered an internal error.
+     * @throws ObjectNotFoundException
+     *         The specified object could not be found.
+     * @sample AWSAutoScalingPlans.UpdateScalingPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/UpdateScalingPlan"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateScalingPlanResult updateScalingPlan(UpdateScalingPlanRequest updateScalingPlanRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

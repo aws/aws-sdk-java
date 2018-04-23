@@ -31,7 +31,11 @@ public class RoleAliasDescription implements Serializable, Cloneable, Structured
      * </p>
      */
     private String roleAlias;
-
+    /**
+     * <p>
+     * The ARN of the role alias.
+     * </p>
+     */
     private String roleAliasArn;
     /**
      * <p>
@@ -105,7 +109,12 @@ public class RoleAliasDescription implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The ARN of the role alias.
+     * </p>
+     * 
      * @param roleAliasArn
+     *        The ARN of the role alias.
      */
 
     public void setRoleAliasArn(String roleAliasArn) {
@@ -113,7 +122,11 @@ public class RoleAliasDescription implements Serializable, Cloneable, Structured
     }
 
     /**
-     * @return
+     * <p>
+     * The ARN of the role alias.
+     * </p>
+     * 
+     * @return The ARN of the role alias.
      */
 
     public String getRoleAliasArn() {
@@ -121,7 +134,12 @@ public class RoleAliasDescription implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The ARN of the role alias.
+     * </p>
+     * 
      * @param roleAliasArn
+     *        The ARN of the role alias.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

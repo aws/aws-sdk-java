@@ -28,7 +28,7 @@ public class ListOTAUpdatesRequest extends com.amazonaws.AmazonWebServiceRequest
     private Integer maxResults;
     /**
      * <p>
-     * A token used to retreive the next set of results.
+     * A token used to retrieve the next set of results.
      * </p>
      */
     private String nextToken;
@@ -81,11 +81,11 @@ public class ListOTAUpdatesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A token used to retreive the next set of results.
+     * A token used to retrieve the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        A token used to retreive the next set of results.
+     *        A token used to retrieve the next set of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -94,10 +94,10 @@ public class ListOTAUpdatesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A token used to retreive the next set of results.
+     * A token used to retrieve the next set of results.
      * </p>
      * 
-     * @return A token used to retreive the next set of results.
+     * @return A token used to retrieve the next set of results.
      */
 
     public String getNextToken() {
@@ -106,11 +106,11 @@ public class ListOTAUpdatesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A token used to retreive the next set of results.
+     * A token used to retrieve the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        A token used to retreive the next set of results.
+     *        A token used to retrieve the next set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

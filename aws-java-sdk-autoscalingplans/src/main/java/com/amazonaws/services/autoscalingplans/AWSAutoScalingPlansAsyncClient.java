@@ -25,6 +25,7 @@ import java.util.concurrent.ExecutorService;
  * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
+ * <fullname>AWS Auto Scaling</fullname>
  * <p>
  * Use AWS Auto Scaling to quickly discover all the scalable AWS resources for your application and configure dynamic
  * scaling for your scalable resources.
@@ -186,6 +187,39 @@ public class AWSAutoScalingPlansAsyncClient extends AWSAutoScalingPlansClient im
 
                 try {
                     result = executeDescribeScalingPlans(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateScalingPlanResult> updateScalingPlanAsync(UpdateScalingPlanRequest request) {
+
+        return updateScalingPlanAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateScalingPlanResult> updateScalingPlanAsync(final UpdateScalingPlanRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateScalingPlanRequest, UpdateScalingPlanResult> asyncHandler) {
+        final UpdateScalingPlanRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateScalingPlanResult>() {
+            @Override
+            public UpdateScalingPlanResult call() throws Exception {
+                UpdateScalingPlanResult result = null;
+
+                try {
+                    result = executeUpdateScalingPlan(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

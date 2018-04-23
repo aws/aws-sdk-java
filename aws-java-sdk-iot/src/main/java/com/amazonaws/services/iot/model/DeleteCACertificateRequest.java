@@ -27,18 +27,18 @@ public class DeleteCACertificateRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the certificate to delete.
+     * The ID of the certificate to delete. (The last part of the certificate ARN contains the certificate ID.)
      * </p>
      */
     private String certificateId;
 
     /**
      * <p>
-     * The ID of the certificate to delete.
+     * The ID of the certificate to delete. (The last part of the certificate ARN contains the certificate ID.)
      * </p>
      * 
      * @param certificateId
-     *        The ID of the certificate to delete.
+     *        The ID of the certificate to delete. (The last part of the certificate ARN contains the certificate ID.)
      */
 
     public void setCertificateId(String certificateId) {
@@ -47,10 +47,10 @@ public class DeleteCACertificateRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the certificate to delete.
+     * The ID of the certificate to delete. (The last part of the certificate ARN contains the certificate ID.)
      * </p>
      * 
-     * @return The ID of the certificate to delete.
+     * @return The ID of the certificate to delete. (The last part of the certificate ARN contains the certificate ID.)
      */
 
     public String getCertificateId() {
@@ -59,11 +59,11 @@ public class DeleteCACertificateRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the certificate to delete.
+     * The ID of the certificate to delete. (The last part of the certificate ARN contains the certificate ID.)
      * </p>
      * 
      * @param certificateId
-     *        The ID of the certificate to delete.
+     *        The ID of the certificate to delete. (The last part of the certificate ARN contains the certificate ID.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -48,6 +48,7 @@ import com.amazonaws.services.autoscalingplans.model.transform.*;
  * Client for accessing AWS Auto Scaling Plans. All service calls made using this client are blocking, and will not
  * return until the service call completes.
  * <p>
+ * <fullname>AWS Auto Scaling</fullname>
  * <p>
  * Use AWS Auto Scaling to quickly discover all the scalable AWS resources for your application and configure dynamic
  * scaling for your scalable resources.
@@ -358,6 +359,67 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeScalingPlansResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeScalingPlansResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the scaling plan for the specified scaling plan.
+     * </p>
+     * <p>
+     * You cannot update a scaling plan if it is in the process of being created, updated, or deleted.
+     * </p>
+     * 
+     * @param updateScalingPlanRequest
+     * @return Result of the UpdateScalingPlan operation returned by the service.
+     * @throws ValidationException
+     *         An exception was thrown for a validation issue. Review the parameters provided.
+     * @throws ConcurrentUpdateException
+     *         Concurrent updates caused an exception, for example, if you request an update to a scaling plan that
+     *         already has a pending update.
+     * @throws InternalServiceException
+     *         The service encountered an internal error.
+     * @throws ObjectNotFoundException
+     *         The specified object could not be found.
+     * @sample AWSAutoScalingPlans.UpdateScalingPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/UpdateScalingPlan"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateScalingPlanResult updateScalingPlan(UpdateScalingPlanRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateScalingPlan(request);
+    }
+
+    @SdkInternalApi
+    final UpdateScalingPlanResult executeUpdateScalingPlan(UpdateScalingPlanRequest updateScalingPlanRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateScalingPlanRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateScalingPlanRequest> request = null;
+        Response<UpdateScalingPlanResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateScalingPlanRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateScalingPlanRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateScalingPlanResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateScalingPlanResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

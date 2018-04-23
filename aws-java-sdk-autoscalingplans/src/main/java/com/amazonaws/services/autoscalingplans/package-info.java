@@ -12,6 +12,7 @@
  */
 
 /**
+ * <fullname>AWS Auto Scaling</fullname>
  * <p>
  * Use AWS Auto Scaling to quickly discover all the scalable AWS resources for your application and configure dynamic
  * scaling for your scalable resources.

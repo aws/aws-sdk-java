@@ -1,3 +1,16 @@
+# __1.11.316__ __2018-04-23__
+## __AWS Auto Scaling Plans__
+  - ### Features
+    - The release adds the operation UpdateScalingPlan for updating a scaling plan and the support for tag filters as an application source.
+
+## __AWS IoT__
+  - ### Features
+    - Add IotAnalyticsAction which sends message data to an AWS IoT Analytics channel
+
+## __AWS IoT Analytics__
+  - ### Features
+    - Introducing AWS IoT Analytics SDK. AWS IoT Analytics provides advanced data analysis for AWS IoT. It allows you to collect large amounts of device data, process messages, store them, and then query the data and run sophisticated analytics to make accurate decisions in your IoT applications and machine learning use cases. AWS IoT Analytics enables advanced data exploration through integration with Jupyter Notebooks and data visualization through integration with Amazon QuickSight.
+
 # __1.11.315__ __2018-04-20__
 ## __AWS Elemental MediaLive__
   - ### Features

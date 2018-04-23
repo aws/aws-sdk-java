@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.autoscalingplans.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,8 @@ public class ApplicationSourceMarshaller {
 
     private static final MarshallingInfo<String> CLOUDFORMATIONSTACKARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CloudFormationStackARN").build();
+    private static final MarshallingInfo<List> TAGFILTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TagFilters").build();
 
     private static final ApplicationSourceMarshaller instance = new ApplicationSourceMarshaller();
 
@@ -47,6 +50,7 @@ public class ApplicationSourceMarshaller {
 
         try {
             protocolMarshaller.marshall(applicationSource.getCloudFormationStackARN(), CLOUDFORMATIONSTACKARN_BINDING);
+            protocolMarshaller.marshall(applicationSource.getTagFilters(), TAGFILTERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

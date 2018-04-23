@@ -79,7 +79,11 @@ public class CertificateDescription implements Serializable, Cloneable, Structur
      * </p>
      */
     private java.util.Date lastModifiedDate;
-
+    /**
+     * <p>
+     * The customer version of the certificate.
+     * </p>
+     */
     private Integer customerVersion;
     /**
      * <p>
@@ -87,7 +91,11 @@ public class CertificateDescription implements Serializable, Cloneable, Structur
      * </p>
      */
     private TransferData transferData;
-
+    /**
+     * <p>
+     * The generation ID of the certificate.
+     * </p>
+     */
     private String generationId;
 
     /**
@@ -484,7 +492,12 @@ public class CertificateDescription implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The customer version of the certificate.
+     * </p>
+     * 
      * @param customerVersion
+     *        The customer version of the certificate.
      */
 
     public void setCustomerVersion(Integer customerVersion) {
@@ -492,7 +505,11 @@ public class CertificateDescription implements Serializable, Cloneable, Structur
     }
 
     /**
-     * @return
+     * <p>
+     * The customer version of the certificate.
+     * </p>
+     * 
+     * @return The customer version of the certificate.
      */
 
     public Integer getCustomerVersion() {
@@ -500,7 +517,12 @@ public class CertificateDescription implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The customer version of the certificate.
+     * </p>
+     * 
      * @param customerVersion
+     *        The customer version of the certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -550,7 +572,12 @@ public class CertificateDescription implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The generation ID of the certificate.
+     * </p>
+     * 
      * @param generationId
+     *        The generation ID of the certificate.
      */
 
     public void setGenerationId(String generationId) {
@@ -558,7 +585,11 @@ public class CertificateDescription implements Serializable, Cloneable, Structur
     }
 
     /**
-     * @return
+     * <p>
+     * The generation ID of the certificate.
+     * </p>
+     * 
+     * @return The generation ID of the certificate.
      */
 
     public String getGenerationId() {
@@ -566,7 +597,12 @@ public class CertificateDescription implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The generation ID of the certificate.
+     * </p>
+     * 
      * @param generationId
+     *        The generation ID of the certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

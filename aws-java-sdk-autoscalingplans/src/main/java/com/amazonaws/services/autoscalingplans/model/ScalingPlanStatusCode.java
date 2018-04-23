@@ -25,7 +25,9 @@ public enum ScalingPlanStatusCode {
     CreationInProgress("CreationInProgress"),
     CreationFailed("CreationFailed"),
     DeletionInProgress("DeletionInProgress"),
-    DeletionFailed("DeletionFailed");
+    DeletionFailed("DeletionFailed"),
+    UpdateInProgress("UpdateInProgress"),
+    UpdateFailed("UpdateFailed");
 
     private String value;
 

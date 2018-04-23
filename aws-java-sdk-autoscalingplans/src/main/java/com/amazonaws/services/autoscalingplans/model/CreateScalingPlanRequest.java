@@ -27,13 +27,13 @@ public class CreateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the scaling plan.
+     * The name of the scaling plan. Names cannot contain vertical bars, colons, or forward slashes.
      * </p>
      */
     private String scalingPlanName;
     /**
      * <p>
-     * The source for the application.
+     * A CloudFormation stack or set of tags. You can create one scaling plan per application source.
      * </p>
      */
     private ApplicationSource applicationSource;
@@ -46,11 +46,11 @@ public class CreateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the scaling plan.
+     * The name of the scaling plan. Names cannot contain vertical bars, colons, or forward slashes.
      * </p>
      * 
      * @param scalingPlanName
-     *        The name of the scaling plan.
+     *        The name of the scaling plan. Names cannot contain vertical bars, colons, or forward slashes.
      */
 
     public void setScalingPlanName(String scalingPlanName) {
@@ -59,10 +59,10 @@ public class CreateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the scaling plan.
+     * The name of the scaling plan. Names cannot contain vertical bars, colons, or forward slashes.
      * </p>
      * 
-     * @return The name of the scaling plan.
+     * @return The name of the scaling plan. Names cannot contain vertical bars, colons, or forward slashes.
      */
 
     public String getScalingPlanName() {
@@ -71,11 +71,11 @@ public class CreateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the scaling plan.
+     * The name of the scaling plan. Names cannot contain vertical bars, colons, or forward slashes.
      * </p>
      * 
      * @param scalingPlanName
-     *        The name of the scaling plan.
+     *        The name of the scaling plan. Names cannot contain vertical bars, colons, or forward slashes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +86,11 @@ public class CreateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The source for the application.
+     * A CloudFormation stack or set of tags. You can create one scaling plan per application source.
      * </p>
      * 
      * @param applicationSource
-     *        The source for the application.
+     *        A CloudFormation stack or set of tags. You can create one scaling plan per application source.
      */
 
     public void setApplicationSource(ApplicationSource applicationSource) {
@@ -99,10 +99,10 @@ public class CreateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The source for the application.
+     * A CloudFormation stack or set of tags. You can create one scaling plan per application source.
      * </p>
      * 
-     * @return The source for the application.
+     * @return A CloudFormation stack or set of tags. You can create one scaling plan per application source.
      */
 
     public ApplicationSource getApplicationSource() {
@@ -111,11 +111,11 @@ public class CreateScalingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The source for the application.
+     * A CloudFormation stack or set of tags. You can create one scaling plan per application source.
      * </p>
      * 
      * @param applicationSource
-     *        The source for the application.
+     *        A CloudFormation stack or set of tags. You can create one scaling plan per application source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

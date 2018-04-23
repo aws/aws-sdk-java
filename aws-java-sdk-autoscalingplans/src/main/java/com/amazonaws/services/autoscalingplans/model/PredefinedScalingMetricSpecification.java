@@ -39,8 +39,8 @@ public class PredefinedScalingMetricSpecification implements Serializable, Clone
     /**
      * <p>
      * Identifies the resource associated with the metric type. You can't specify a resource label unless the metric
-     * type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Auto Scaling group,
-     * Spot Fleet request, or ECS service.
+     * type is <code>ALBRequestCountPerTarget</code> and there is a target group for an Application Load Balancer
+     * attached to the Auto Scaling group, Spot Fleet request, or ECS service.
      * </p>
      * <p>
      * The format is
@@ -132,8 +132,8 @@ public class PredefinedScalingMetricSpecification implements Serializable, Clone
     /**
      * <p>
      * Identifies the resource associated with the metric type. You can't specify a resource label unless the metric
-     * type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Auto Scaling group,
-     * Spot Fleet request, or ECS service.
+     * type is <code>ALBRequestCountPerTarget</code> and there is a target group for an Application Load Balancer
+     * attached to the Auto Scaling group, Spot Fleet request, or ECS service.
      * </p>
      * <p>
      * The format is
@@ -155,8 +155,8 @@ public class PredefinedScalingMetricSpecification implements Serializable, Clone
      * 
      * @param resourceLabel
      *        Identifies the resource associated with the metric type. You can't specify a resource label unless the
-     *        metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Auto
-     *        Scaling group, Spot Fleet request, or ECS service.</p>
+     *        metric type is <code>ALBRequestCountPerTarget</code> and there is a target group for an Application Load
+     *        Balancer attached to the Auto Scaling group, Spot Fleet request, or ECS service.</p>
      *        <p>
      *        The format is
      *        app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;
@@ -183,8 +183,8 @@ public class PredefinedScalingMetricSpecification implements Serializable, Clone
     /**
      * <p>
      * Identifies the resource associated with the metric type. You can't specify a resource label unless the metric
-     * type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Auto Scaling group,
-     * Spot Fleet request, or ECS service.
+     * type is <code>ALBRequestCountPerTarget</code> and there is a target group for an Application Load Balancer
+     * attached to the Auto Scaling group, Spot Fleet request, or ECS service.
      * </p>
      * <p>
      * The format is
@@ -205,8 +205,8 @@ public class PredefinedScalingMetricSpecification implements Serializable, Clone
      * </ul>
      * 
      * @return Identifies the resource associated with the metric type. You can't specify a resource label unless the
-     *         metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Auto
-     *         Scaling group, Spot Fleet request, or ECS service.</p>
+     *         metric type is <code>ALBRequestCountPerTarget</code> and there is a target group for an Application Load
+     *         Balancer attached to the Auto Scaling group, Spot Fleet request, or ECS service.</p>
      *         <p>
      *         The format is
      *         app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt
@@ -233,8 +233,8 @@ public class PredefinedScalingMetricSpecification implements Serializable, Clone
     /**
      * <p>
      * Identifies the resource associated with the metric type. You can't specify a resource label unless the metric
-     * type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Auto Scaling group,
-     * Spot Fleet request, or ECS service.
+     * type is <code>ALBRequestCountPerTarget</code> and there is a target group for an Application Load Balancer
+     * attached to the Auto Scaling group, Spot Fleet request, or ECS service.
      * </p>
      * <p>
      * The format is
@@ -256,8 +256,8 @@ public class PredefinedScalingMetricSpecification implements Serializable, Clone
      * 
      * @param resourceLabel
      *        Identifies the resource associated with the metric type. You can't specify a resource label unless the
-     *        metric type is <code>ALBRequestCountPerTarget</code> and there is a target group attached to the Auto
-     *        Scaling group, Spot Fleet request, or ECS service.</p>
+     *        metric type is <code>ALBRequestCountPerTarget</code> and there is a target group for an Application Load
+     *        Balancer attached to the Auto Scaling group, Spot Fleet request, or ECS service.</p>
      *        <p>
      *        The format is
      *        app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;

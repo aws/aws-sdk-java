@@ -57,7 +57,7 @@ public class ThingDocument implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, String> attributes;
     /**
      * <p>
-     * The thing shadow.
+     * The shadow.
      * </p>
      */
     private String shadow;
@@ -315,11 +315,11 @@ public class ThingDocument implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The thing shadow.
+     * The shadow.
      * </p>
      * 
      * @param shadow
-     *        The thing shadow.
+     *        The shadow.
      */
 
     public void setShadow(String shadow) {
@@ -328,10 +328,10 @@ public class ThingDocument implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The thing shadow.
+     * The shadow.
      * </p>
      * 
-     * @return The thing shadow.
+     * @return The shadow.
      */
 
     public String getShadow() {
@@ -340,11 +340,11 @@ public class ThingDocument implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The thing shadow.
+     * The shadow.
      * </p>
      * 
      * @param shadow
-     *        The thing shadow.
+     *        The shadow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

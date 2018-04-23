@@ -99,6 +99,12 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
     private String statusMessage;
     /**
      * <p>
+     * The Unix timestamp when the scaling plan entered the current status.
+     * </p>
+     */
+    private java.util.Date statusStartTime;
+    /**
+     * <p>
      * The Unix timestamp when the scaling plan was created.
      * </p>
      */
@@ -655,6 +661,46 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The Unix timestamp when the scaling plan entered the current status.
+     * </p>
+     * 
+     * @param statusStartTime
+     *        The Unix timestamp when the scaling plan entered the current status.
+     */
+
+    public void setStatusStartTime(java.util.Date statusStartTime) {
+        this.statusStartTime = statusStartTime;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp when the scaling plan entered the current status.
+     * </p>
+     * 
+     * @return The Unix timestamp when the scaling plan entered the current status.
+     */
+
+    public java.util.Date getStatusStartTime() {
+        return this.statusStartTime;
+    }
+
+    /**
+     * <p>
+     * The Unix timestamp when the scaling plan entered the current status.
+     * </p>
+     * 
+     * @param statusStartTime
+     *        The Unix timestamp when the scaling plan entered the current status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScalingPlan withStatusStartTime(java.util.Date statusStartTime) {
+        setStatusStartTime(statusStartTime);
+        return this;
+    }
+
+    /**
+     * <p>
      * The Unix timestamp when the scaling plan was created.
      * </p>
      * 
@@ -716,6 +762,8 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
             sb.append("StatusCode: ").append(getStatusCode()).append(",");
         if (getStatusMessage() != null)
             sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
+        if (getStatusStartTime() != null)
+            sb.append("StatusStartTime: ").append(getStatusStartTime()).append(",");
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime());
         sb.append("}");
@@ -756,6 +804,10 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
             return false;
+        if (other.getStatusStartTime() == null ^ this.getStatusStartTime() == null)
+            return false;
+        if (other.getStatusStartTime() != null && other.getStatusStartTime().equals(this.getStatusStartTime()) == false)
+            return false;
         if (other.getCreationTime() == null ^ this.getCreationTime() == null)
             return false;
         if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
@@ -774,6 +826,7 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getScalingInstructions() == null) ? 0 : getScalingInstructions().hashCode());
         hashCode = prime * hashCode + ((getStatusCode() == null) ? 0 : getStatusCode().hashCode());
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
+        hashCode = prime * hashCode + ((getStatusStartTime() == null) ? 0 : getStatusStartTime().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         return hashCode;
     }

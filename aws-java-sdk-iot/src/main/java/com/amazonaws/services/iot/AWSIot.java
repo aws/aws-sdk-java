@@ -28,11 +28,11 @@ import com.amazonaws.services.iot.model.*;
  * <p>
  * <fullname>AWS IoT</fullname>
  * <p>
- * AWS IoT provides secure, bi-directional communication between Internet-connected things (such as sensors, actuators,
+ * AWS IoT provides secure, bi-directional communication between Internet-connected devices (such as sensors, actuators,
  * embedded devices, or smart appliances) and the AWS cloud. You can discover your custom IoT-Data endpoint to
  * communicate with, configure rules for data processing and integration with other services, organize resources
- * associated with each thing (Thing Registry), configure logging, and create and manage policies and credentials to
- * authenticate things.
+ * associated with each device (Registry), configure logging, and create and manage policies and credentials to
+ * authenticate devices.
  * </p>
  * <p>
  * For more information about how AWS IoT works, see the <a
@@ -633,7 +633,7 @@ public interface AWSIot {
 
     /**
      * <p>
-     * Creates a thing record in the thing registry.
+     * Creates a thing record in the registry.
      * </p>
      * 
      * @param createThingRequest

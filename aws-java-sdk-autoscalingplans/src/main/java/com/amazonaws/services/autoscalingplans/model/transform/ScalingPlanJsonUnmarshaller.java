@@ -73,6 +73,10 @@ public class ScalingPlanJsonUnmarshaller implements Unmarshaller<ScalingPlan, Js
                     context.nextToken();
                     scalingPlan.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("StatusStartTime", targetDepth)) {
+                    context.nextToken();
+                    scalingPlan.setStatusStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
                     scalingPlan.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));

@@ -40,6 +40,8 @@ public class ScalingPlanMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusCode").build();
     private static final MarshallingInfo<String> STATUSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusMessage").build();
+    private static final MarshallingInfo<java.util.Date> STATUSSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusStartTime").build();
     private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTime").build();
 
@@ -65,6 +67,7 @@ public class ScalingPlanMarshaller {
             protocolMarshaller.marshall(scalingPlan.getScalingInstructions(), SCALINGINSTRUCTIONS_BINDING);
             protocolMarshaller.marshall(scalingPlan.getStatusCode(), STATUSCODE_BINDING);
             protocolMarshaller.marshall(scalingPlan.getStatusMessage(), STATUSMESSAGE_BINDING);
+            protocolMarshaller.marshall(scalingPlan.getStatusStartTime(), STATUSSTARTTIME_BINDING);
             protocolMarshaller.marshall(scalingPlan.getCreationTime(), CREATIONTIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
