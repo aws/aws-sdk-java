@@ -31,6 +31,7 @@ import com.amazonaws.retry.internal.CredentialsEndpointRetryParameters;
 import com.amazonaws.retry.internal.CredentialsEndpointRetryPolicy;
 import com.amazonaws.util.IOUtils;
 import com.amazonaws.util.json.Jackson;
+import com.amazonaws.util.VersionInfoUtils;
 import com.fasterxml.jackson.databind.JsonNode;
 
 @SdkInternalApi
@@ -41,6 +42,8 @@ public final class EC2CredentialsUtils {
     private static EC2CredentialsUtils instance;
 
     private final ConnectionUtils connectionUtils;
+
+    private static final String USER_AGENT = String.format("aws-sdk-java/%s", VersionInfoUtils.getVersion());
 
     private EC2CredentialsUtils() {
         this(ConnectionUtils.getInstance());
@@ -76,6 +79,11 @@ public final class EC2CredentialsUtils {
      *             If the requested service is not found.
      */
     public String readResource(URI endpoint) throws IOException {
+        Map<String, String> headers = new HashMap<String, String>();
+        headers.put("User-Agent", USER_AGENT);
+        headers.put("Accept", "*/*");
+        headers.put("Connection", "keep-alive");
+
         return readResource(endpoint, CredentialsEndpointRetryPolicy.NO_RETRY, new HashMap<String, String>());
     }
 
