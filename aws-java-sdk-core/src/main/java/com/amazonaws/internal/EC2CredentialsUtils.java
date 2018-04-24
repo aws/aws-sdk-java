@@ -84,7 +84,7 @@ public final class EC2CredentialsUtils {
         headers.put("Accept", "*/*");
         headers.put("Connection", "keep-alive");
 
-        return readResource(endpoint, CredentialsEndpointRetryPolicy.NO_RETRY, new HashMap<String, String>());
+        return readResource(endpoint, CredentialsEndpointRetryPolicy.NO_RETRY, headers);
     }
 
     /**
