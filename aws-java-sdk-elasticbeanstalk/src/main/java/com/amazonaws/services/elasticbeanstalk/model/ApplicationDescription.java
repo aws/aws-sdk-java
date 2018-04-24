@@ -28,6 +28,12 @@ public class ApplicationDescription implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the application.
+     * </p>
+     */
+    private String applicationArn;
+    /**
+     * <p>
      * The name of the application.
      * </p>
      */
@@ -68,6 +74,46 @@ public class ApplicationDescription implements Serializable, Cloneable {
      * </p>
      */
     private ApplicationResourceLifecycleConfig resourceLifecycleConfig;
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the application.
+     * </p>
+     * 
+     * @param applicationArn
+     *        The Amazon Resource Name (ARN) of the application.
+     */
+
+    public void setApplicationArn(String applicationArn) {
+        this.applicationArn = applicationArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the application.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the application.
+     */
+
+    public String getApplicationArn() {
+        return this.applicationArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the application.
+     * </p>
+     * 
+     * @param applicationArn
+     *        The Amazon Resource Name (ARN) of the application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationDescription withApplicationArn(String applicationArn) {
+        setApplicationArn(applicationArn);
+        return this;
+    }
 
     /**
      * <p>
@@ -426,6 +472,8 @@ public class ApplicationDescription implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getApplicationArn() != null)
+            sb.append("ApplicationArn: ").append(getApplicationArn()).append(",");
         if (getApplicationName() != null)
             sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getDescription() != null)
@@ -454,6 +502,10 @@ public class ApplicationDescription implements Serializable, Cloneable {
         if (obj instanceof ApplicationDescription == false)
             return false;
         ApplicationDescription other = (ApplicationDescription) obj;
+        if (other.getApplicationArn() == null ^ this.getApplicationArn() == null)
+            return false;
+        if (other.getApplicationArn() != null && other.getApplicationArn().equals(this.getApplicationArn()) == false)
+            return false;
         if (other.getApplicationName() == null ^ this.getApplicationName() == null)
             return false;
         if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false)
@@ -490,6 +542,7 @@ public class ApplicationDescription implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getApplicationArn() == null) ? 0 : getApplicationArn().hashCode());
         hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getDateCreated() == null) ? 0 : getDateCreated().hashCode());

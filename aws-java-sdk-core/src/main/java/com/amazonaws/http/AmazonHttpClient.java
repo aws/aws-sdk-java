@@ -808,6 +808,8 @@ public class AmazonHttpClient {
          */
         private RuntimeException handleAbortedException(final AbortedException ae) {
             if (executionContext.getClientExecutionTrackerTask().hasTimeoutExpired()) {
+                // Clear the interrupt status
+                Thread.interrupted();
                 return new ClientExecutionTimeoutException();
             } else {
                 Thread.currentThread().interrupt();

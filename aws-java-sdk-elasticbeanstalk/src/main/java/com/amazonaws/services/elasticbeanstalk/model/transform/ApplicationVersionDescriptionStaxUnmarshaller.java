@@ -43,6 +43,11 @@ public class ApplicationVersionDescriptionStaxUnmarshaller implements Unmarshall
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("ApplicationVersionArn", targetDepth)) {
+                    applicationVersionDescription.setApplicationVersionArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("ApplicationName", targetDepth)) {
                     applicationVersionDescription.setApplicationName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

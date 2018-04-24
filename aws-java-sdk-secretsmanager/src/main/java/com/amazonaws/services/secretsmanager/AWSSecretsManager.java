@@ -55,8 +55,8 @@ import com.amazonaws.services.secretsmanager.model.*;
  * We recommend that you use the AWS SDKs to make programmatic API calls to Secrets Manager. However, you also can use
  * the Secrets Manager HTTP Query API to make direct calls to the Secrets Manager web service. To learn more about the
  * Secrets Manager HTTP Query API, see <a
- * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/orgs_query-requests.html">Making Query Requests</a>
- * in the <i>AWS Secrets Manager User Guide</i>.
+ * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/query-requests.html">Making Query Requests</a> in
+ * the <i>AWS Secrets Manager User Guide</i>.
  * </p>
  * <p>
  * Secrets Manager supports GET and POST requests for all actions. That is, the API doesn't require you to use GET for
@@ -217,8 +217,8 @@ public interface AWSSecretsManager {
      * list.
      * </p>
      * <p>
-     * You provide the secret data to be encrypted by putting text in the <code>SecretString</code> parameter or binary
-     * data in the <code>SecretBinary</code> parameter. If you include <code>SecretString</code> or
+     * You provide the secret data to be encrypted by putting text in either the <code>SecretString</code> parameter or
+     * binary data in the <code>SecretBinary</code> parameter, but not both. If you include <code>SecretString</code> or
      * <code>SecretBinary</code> then Secrets Manager also creates an initial secret version and, if you don't supply a
      * staging label, automatically maps the new version's ID to the staging label <code>AWSCURRENT</code>.
      * </p>
@@ -226,7 +226,7 @@ public interface AWSSecretsManager {
      * <ul>
      * <li>
      * <p>
-     * If you call an operation that needs to encrypt or decrypt the <code>SecretString</code> and
+     * If you call an operation that needs to encrypt or decrypt the <code>SecretString</code> or
      * <code>SecretBinary</code> for a secret in the same account as the calling user and that secret doesn't specify a
      * KMS encryption key, Secrets Manager uses the account's default AWS managed customer master key (CMK) with the
      * alias <code>aws/secretsmanager</code>. If this key doesn't already exist in your account then Secrets Manager
@@ -517,8 +517,8 @@ public interface AWSSecretsManager {
 
     /**
      * <p>
-     * Retrieves the contents of the encrypted fields <code>SecretString</code> and <code>SecretBinary</code> from the
-     * specified version of a secret.
+     * Retrieves the contents of the encrypted fields <code>SecretString</code> or <code>SecretBinary</code> from the
+     * specified version of a secret, whichever contains content.
      * </p>
      * <p>
      * <b>Minimum permissions</b>
@@ -725,7 +725,7 @@ public interface AWSSecretsManager {
      * <ul>
      * <li>
      * <p>
-     * If you call an operation that needs to encrypt or decrypt the <code>SecretString</code> and
+     * If you call an operation that needs to encrypt or decrypt the <code>SecretString</code> or
      * <code>SecretBinary</code> for a secret in the same account as the calling user and that secret doesn't specify a
      * KMS encryption key, Secrets Manager uses the account's default AWS managed customer master key (CMK) with the
      * alias <code>aws/secretsmanager</code>. If this key doesn't already exist in your account then Secrets Manager
@@ -1162,7 +1162,7 @@ public interface AWSSecretsManager {
      * <ul>
      * <li>
      * <p>
-     * If you call an operation that needs to encrypt or decrypt the <code>SecretString</code> and
+     * If you call an operation that needs to encrypt or decrypt the <code>SecretString</code> or
      * <code>SecretBinary</code> for a secret in the same account as the calling user and that secret doesn't specify a
      * KMS encryption key, Secrets Manager uses the account's default AWS managed customer master key (CMK) with the
      * alias <code>aws/secretsmanager</code>. If this key doesn't already exist in your account then Secrets Manager

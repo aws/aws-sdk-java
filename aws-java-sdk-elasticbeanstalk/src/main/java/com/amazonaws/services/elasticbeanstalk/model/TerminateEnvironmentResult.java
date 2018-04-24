@@ -210,7 +210,7 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
     private com.amazonaws.internal.SdkInternalList<EnvironmentLink> environmentLinks;
     /**
      * <p>
-     * The environment's Amazon Resource Name (ARN), which can be used in other API reuqests that require an ARN.
+     * The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.
      * </p>
      */
     private String environmentArn;
@@ -1774,11 +1774,11 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The environment's Amazon Resource Name (ARN), which can be used in other API reuqests that require an ARN.
+     * The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.
      * </p>
      * 
      * @param environmentArn
-     *        The environment's Amazon Resource Name (ARN), which can be used in other API reuqests that require an ARN.
+     *        The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.
      */
 
     public void setEnvironmentArn(String environmentArn) {
@@ -1787,10 +1787,10 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The environment's Amazon Resource Name (ARN), which can be used in other API reuqests that require an ARN.
+     * The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.
      * </p>
      * 
-     * @return The environment's Amazon Resource Name (ARN), which can be used in other API reuqests that require an
+     * @return The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an
      *         ARN.
      */
 
@@ -1800,11 +1800,11 @@ public class TerminateEnvironmentResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The environment's Amazon Resource Name (ARN), which can be used in other API reuqests that require an ARN.
+     * The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.
      * </p>
      * 
      * @param environmentArn
-     *        The environment's Amazon Resource Name (ARN), which can be used in other API reuqests that require an ARN.
+     *        The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

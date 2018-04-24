@@ -82,7 +82,8 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * (Optional) Specifies binary data that you want to encrypt and store in the new version of the secret. To use this
      * parameter in the command-line tools, we recommend that you store your binary data in a file and then use the
      * appropriate technique for your tool to pass the contents of the file as a parameter. Either
-     * <code>SecretBinary</code> or <code>SecretString</code> must have a value. They cannot both be empty.
+     * <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both. They cannot both be
+     * empty.
      * </p>
      * <p>
      * This parameter is not accessible if the secret using the Secrets Manager console.
@@ -93,7 +94,8 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * (Optional) Specifies text data that you want to encrypt and store in this new version of the secret. Either
-     * <code>SecretString</code> or <code>SecretBinary</code> must have a value. They cannot both be empty.
+     * <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They cannot both be
+     * empty.
      * </p>
      * <p>
      * If you create this secret by using the Secrets Manager console then Secrets Manager puts the protected secret
@@ -451,7 +453,8 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * (Optional) Specifies binary data that you want to encrypt and store in the new version of the secret. To use this
      * parameter in the command-line tools, we recommend that you store your binary data in a file and then use the
      * appropriate technique for your tool to pass the contents of the file as a parameter. Either
-     * <code>SecretBinary</code> or <code>SecretString</code> must have a value. They cannot both be empty.
+     * <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both. They cannot both be
+     * empty.
      * </p>
      * <p>
      * This parameter is not accessible if the secret using the Secrets Manager console.
@@ -472,7 +475,8 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        (Optional) Specifies binary data that you want to encrypt and store in the new version of the secret. To
      *        use this parameter in the command-line tools, we recommend that you store your binary data in a file and
      *        then use the appropriate technique for your tool to pass the contents of the file as a parameter. Either
-     *        <code>SecretBinary</code> or <code>SecretString</code> must have a value. They cannot both be empty.</p>
+     *        <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both. They cannot both
+     *        be empty.</p>
      *        <p>
      *        This parameter is not accessible if the secret using the Secrets Manager console.
      *        </p>
@@ -487,7 +491,8 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * (Optional) Specifies binary data that you want to encrypt and store in the new version of the secret. To use this
      * parameter in the command-line tools, we recommend that you store your binary data in a file and then use the
      * appropriate technique for your tool to pass the contents of the file as a parameter. Either
-     * <code>SecretBinary</code> or <code>SecretString</code> must have a value. They cannot both be empty.
+     * <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both. They cannot both be
+     * empty.
      * </p>
      * <p>
      * This parameter is not accessible if the secret using the Secrets Manager console.
@@ -504,7 +509,8 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * @return (Optional) Specifies binary data that you want to encrypt and store in the new version of the secret. To
      *         use this parameter in the command-line tools, we recommend that you store your binary data in a file and
      *         then use the appropriate technique for your tool to pass the contents of the file as a parameter. Either
-     *         <code>SecretBinary</code> or <code>SecretString</code> must have a value. They cannot both be empty.</p>
+     *         <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both. They cannot both
+     *         be empty.</p>
      *         <p>
      *         This parameter is not accessible if the secret using the Secrets Manager console.
      *         </p>
@@ -519,7 +525,8 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * (Optional) Specifies binary data that you want to encrypt and store in the new version of the secret. To use this
      * parameter in the command-line tools, we recommend that you store your binary data in a file and then use the
      * appropriate technique for your tool to pass the contents of the file as a parameter. Either
-     * <code>SecretBinary</code> or <code>SecretString</code> must have a value. They cannot both be empty.
+     * <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both. They cannot both be
+     * empty.
      * </p>
      * <p>
      * This parameter is not accessible if the secret using the Secrets Manager console.
@@ -540,7 +547,8 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        (Optional) Specifies binary data that you want to encrypt and store in the new version of the secret. To
      *        use this parameter in the command-line tools, we recommend that you store your binary data in a file and
      *        then use the appropriate technique for your tool to pass the contents of the file as a parameter. Either
-     *        <code>SecretBinary</code> or <code>SecretString</code> must have a value. They cannot both be empty.</p>
+     *        <code>SecretBinary</code> or <code>SecretString</code> must have a value, but not both. They cannot both
+     *        be empty.</p>
      *        <p>
      *        This parameter is not accessible if the secret using the Secrets Manager console.
      *        </p>
@@ -555,7 +563,8 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * (Optional) Specifies text data that you want to encrypt and store in this new version of the secret. Either
-     * <code>SecretString</code> or <code>SecretBinary</code> must have a value. They cannot both be empty.
+     * <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They cannot both be
+     * empty.
      * </p>
      * <p>
      * If you create this secret by using the Secrets Manager console then Secrets Manager puts the protected secret
@@ -571,8 +580,8 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param secretString
      *        (Optional) Specifies text data that you want to encrypt and store in this new version of the secret.
-     *        Either <code>SecretString</code> or <code>SecretBinary</code> must have a value. They cannot both be
-     *        empty.</p>
+     *        Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They cannot
+     *        both be empty.</p>
      *        <p>
      *        If you create this secret by using the Secrets Manager console then Secrets Manager puts the protected
      *        secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the
@@ -594,7 +603,8 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * (Optional) Specifies text data that you want to encrypt and store in this new version of the secret. Either
-     * <code>SecretString</code> or <code>SecretBinary</code> must have a value. They cannot both be empty.
+     * <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They cannot both be
+     * empty.
      * </p>
      * <p>
      * If you create this secret by using the Secrets Manager console then Secrets Manager puts the protected secret
@@ -609,8 +619,8 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @return (Optional) Specifies text data that you want to encrypt and store in this new version of the secret.
-     *         Either <code>SecretString</code> or <code>SecretBinary</code> must have a value. They cannot both be
-     *         empty.</p>
+     *         Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They
+     *         cannot both be empty.</p>
      *         <p>
      *         If you create this secret by using the Secrets Manager console then Secrets Manager puts the protected
      *         secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the
@@ -632,7 +642,8 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * (Optional) Specifies text data that you want to encrypt and store in this new version of the secret. Either
-     * <code>SecretString</code> or <code>SecretBinary</code> must have a value. They cannot both be empty.
+     * <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They cannot both be
+     * empty.
      * </p>
      * <p>
      * If you create this secret by using the Secrets Manager console then Secrets Manager puts the protected secret
@@ -648,8 +659,8 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param secretString
      *        (Optional) Specifies text data that you want to encrypt and store in this new version of the secret.
-     *        Either <code>SecretString</code> or <code>SecretBinary</code> must have a value. They cannot both be
-     *        empty.</p>
+     *        Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They cannot
+     *        both be empty.</p>
      *        <p>
      *        If you create this secret by using the Secrets Manager console then Secrets Manager puts the protected
      *        secret text in only the <code>SecretString</code> parameter. The Secrets Manager console stores the

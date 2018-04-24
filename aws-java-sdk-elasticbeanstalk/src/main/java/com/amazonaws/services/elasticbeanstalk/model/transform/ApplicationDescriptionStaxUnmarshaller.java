@@ -45,6 +45,11 @@ public class ApplicationDescriptionStaxUnmarshaller implements Unmarshaller<Appl
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("ApplicationArn", targetDepth)) {
+                    applicationDescription.setApplicationArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("ApplicationName", targetDepth)) {
                     applicationDescription.setApplicationName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

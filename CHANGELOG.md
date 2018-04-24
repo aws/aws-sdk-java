@@ -1,3 +1,12 @@
+# __1.11.317__ __2018-04-24__
+## __AWS Elastic Beanstalk__
+  - ### Features
+    - Support tracking Elastic Beanstalk resources in AWS Config.
+
+## __AWS Secrets Manager__
+  - ### Features
+    - Documentation updates for secretsmanager
+
 # __1.11.316__ __2018-04-23__
 ## __AWS Auto Scaling Plans__
   - ### Features

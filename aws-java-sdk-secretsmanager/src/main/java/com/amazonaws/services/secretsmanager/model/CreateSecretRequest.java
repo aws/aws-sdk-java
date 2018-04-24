@@ -86,7 +86,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * (Optional) Specifies the ARN or alias of the AWS KMS customer master key (CMK) to be used to encrypt the
-     * <code>SecretString</code> and <code>SecretBinary</code> values in the versions stored in this secret.
+     * <code>SecretString</code> or <code>SecretBinary</code> values in the versions stored in this secret.
      * </p>
      * <p>
      * If you don't specify this value, then Secrets Manager defaults to using the AWS account's default CMK (the one
@@ -110,12 +110,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * appropriate technique for your tool to pass the contents of the file as a parameter.
      * </p>
      * <p>
-     * Either <code>SecretString</code>, <code>SecretBinary</code>, or both must have a value. They cannot both be
-     * empty.
-     * </p>
-     * <p>
-     * This <code>SecretBinary</code> value is stored separately from the <code>SecretString</code>, but the two
-     * parameters jointly share a maximum size limit.
+     * Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They cannot both
+     * be empty.
      * </p>
      * <p>
      * This parameter is not available using the Secrets Manager console. It can be accessed only by using the AWS CLI
@@ -128,12 +124,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * (Optional) Specifies text data that you want to encrypt and store in this new version of the secret.
      * </p>
      * <p>
-     * Either <code>SecretString</code>, <code>SecretBinary</code>, or both must have a value. They cannot both be
-     * empty.
-     * </p>
-     * <p>
-     * This string value is stored separately from the <code>SecretBinary</code>, but the two parameters jointly share a
-     * maximum size limit.
+     * Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They cannot both
+     * be empty.
      * </p>
      * <p>
      * If you create a secret by using the Secrets Manager console then Secrets Manager puts the protected secret text
@@ -596,7 +588,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * (Optional) Specifies the ARN or alias of the AWS KMS customer master key (CMK) to be used to encrypt the
-     * <code>SecretString</code> and <code>SecretBinary</code> values in the versions stored in this secret.
+     * <code>SecretString</code> or <code>SecretBinary</code> values in the versions stored in this secret.
      * </p>
      * <p>
      * If you don't specify this value, then Secrets Manager defaults to using the AWS account's default CMK (the one
@@ -614,7 +606,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param kmsKeyId
      *        (Optional) Specifies the ARN or alias of the AWS KMS customer master key (CMK) to be used to encrypt the
-     *        <code>SecretString</code> and <code>SecretBinary</code> values in the versions stored in this secret.</p>
+     *        <code>SecretString</code> or <code>SecretBinary</code> values in the versions stored in this secret.</p>
      *        <p>
      *        If you don't specify this value, then Secrets Manager defaults to using the AWS account's default CMK (the
      *        one named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't yet exist, then Secrets
@@ -636,7 +628,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * (Optional) Specifies the ARN or alias of the AWS KMS customer master key (CMK) to be used to encrypt the
-     * <code>SecretString</code> and <code>SecretBinary</code> values in the versions stored in this secret.
+     * <code>SecretString</code> or <code>SecretBinary</code> values in the versions stored in this secret.
      * </p>
      * <p>
      * If you don't specify this value, then Secrets Manager defaults to using the AWS account's default CMK (the one
@@ -653,7 +645,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </important>
      * 
      * @return (Optional) Specifies the ARN or alias of the AWS KMS customer master key (CMK) to be used to encrypt the
-     *         <code>SecretString</code> and <code>SecretBinary</code> values in the versions stored in this secret.</p>
+     *         <code>SecretString</code> or <code>SecretBinary</code> values in the versions stored in this secret.</p>
      *         <p>
      *         If you don't specify this value, then Secrets Manager defaults to using the AWS account's default CMK
      *         (the one named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't yet exist, then
@@ -675,7 +667,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * (Optional) Specifies the ARN or alias of the AWS KMS customer master key (CMK) to be used to encrypt the
-     * <code>SecretString</code> and <code>SecretBinary</code> values in the versions stored in this secret.
+     * <code>SecretString</code> or <code>SecretBinary</code> values in the versions stored in this secret.
      * </p>
      * <p>
      * If you don't specify this value, then Secrets Manager defaults to using the AWS account's default CMK (the one
@@ -693,7 +685,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param kmsKeyId
      *        (Optional) Specifies the ARN or alias of the AWS KMS customer master key (CMK) to be used to encrypt the
-     *        <code>SecretString</code> and <code>SecretBinary</code> values in the versions stored in this secret.</p>
+     *        <code>SecretString</code> or <code>SecretBinary</code> values in the versions stored in this secret.</p>
      *        <p>
      *        If you don't specify this value, then Secrets Manager defaults to using the AWS account's default CMK (the
      *        one named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't yet exist, then Secrets
@@ -721,12 +713,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * appropriate technique for your tool to pass the contents of the file as a parameter.
      * </p>
      * <p>
-     * Either <code>SecretString</code>, <code>SecretBinary</code>, or both must have a value. They cannot both be
-     * empty.
-     * </p>
-     * <p>
-     * This <code>SecretBinary</code> value is stored separately from the <code>SecretString</code>, but the two
-     * parameters jointly share a maximum size limit.
+     * Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They cannot both
+     * be empty.
      * </p>
      * <p>
      * This parameter is not available using the Secrets Manager console. It can be accessed only by using the AWS CLI
@@ -748,12 +736,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        use this parameter in the command-line tools, we recommend that you store your binary data in a file and
      *        then use the appropriate technique for your tool to pass the contents of the file as a parameter.</p>
      *        <p>
-     *        Either <code>SecretString</code>, <code>SecretBinary</code>, or both must have a value. They cannot both
-     *        be empty.
-     *        </p>
-     *        <p>
-     *        This <code>SecretBinary</code> value is stored separately from the <code>SecretString</code>, but the two
-     *        parameters jointly share a maximum size limit.
+     *        Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They cannot
+     *        both be empty.
      *        </p>
      *        <p>
      *        This parameter is not available using the Secrets Manager console. It can be accessed only by using the
@@ -771,12 +755,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * appropriate technique for your tool to pass the contents of the file as a parameter.
      * </p>
      * <p>
-     * Either <code>SecretString</code>, <code>SecretBinary</code>, or both must have a value. They cannot both be
-     * empty.
-     * </p>
-     * <p>
-     * This <code>SecretBinary</code> value is stored separately from the <code>SecretString</code>, but the two
-     * parameters jointly share a maximum size limit.
+     * Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They cannot both
+     * be empty.
      * </p>
      * <p>
      * This parameter is not available using the Secrets Manager console. It can be accessed only by using the AWS CLI
@@ -794,12 +774,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         use this parameter in the command-line tools, we recommend that you store your binary data in a file and
      *         then use the appropriate technique for your tool to pass the contents of the file as a parameter.</p>
      *         <p>
-     *         Either <code>SecretString</code>, <code>SecretBinary</code>, or both must have a value. They cannot both
-     *         be empty.
-     *         </p>
-     *         <p>
-     *         This <code>SecretBinary</code> value is stored separately from the <code>SecretString</code>, but the two
-     *         parameters jointly share a maximum size limit.
+     *         Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They
+     *         cannot both be empty.
      *         </p>
      *         <p>
      *         This parameter is not available using the Secrets Manager console. It can be accessed only by using the
@@ -817,12 +793,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * appropriate technique for your tool to pass the contents of the file as a parameter.
      * </p>
      * <p>
-     * Either <code>SecretString</code>, <code>SecretBinary</code>, or both must have a value. They cannot both be
-     * empty.
-     * </p>
-     * <p>
-     * This <code>SecretBinary</code> value is stored separately from the <code>SecretString</code>, but the two
-     * parameters jointly share a maximum size limit.
+     * Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They cannot both
+     * be empty.
      * </p>
      * <p>
      * This parameter is not available using the Secrets Manager console. It can be accessed only by using the AWS CLI
@@ -844,12 +816,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        use this parameter in the command-line tools, we recommend that you store your binary data in a file and
      *        then use the appropriate technique for your tool to pass the contents of the file as a parameter.</p>
      *        <p>
-     *        Either <code>SecretString</code>, <code>SecretBinary</code>, or both must have a value. They cannot both
-     *        be empty.
-     *        </p>
-     *        <p>
-     *        This <code>SecretBinary</code> value is stored separately from the <code>SecretString</code>, but the two
-     *        parameters jointly share a maximum size limit.
+     *        Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They cannot
+     *        both be empty.
      *        </p>
      *        <p>
      *        This parameter is not available using the Secrets Manager console. It can be accessed only by using the
@@ -867,12 +835,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * (Optional) Specifies text data that you want to encrypt and store in this new version of the secret.
      * </p>
      * <p>
-     * Either <code>SecretString</code>, <code>SecretBinary</code>, or both must have a value. They cannot both be
-     * empty.
-     * </p>
-     * <p>
-     * This string value is stored separately from the <code>SecretBinary</code>, but the two parameters jointly share a
-     * maximum size limit.
+     * Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They cannot both
+     * be empty.
      * </p>
      * <p>
      * If you create a secret by using the Secrets Manager console then Secrets Manager puts the protected secret text
@@ -896,12 +860,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param secretString
      *        (Optional) Specifies text data that you want to encrypt and store in this new version of the secret.</p>
      *        <p>
-     *        Either <code>SecretString</code>, <code>SecretBinary</code>, or both must have a value. They cannot both
-     *        be empty.
-     *        </p>
-     *        <p>
-     *        This string value is stored separately from the <code>SecretBinary</code>, but the two parameters jointly
-     *        share a maximum size limit.
+     *        Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They cannot
+     *        both be empty.
      *        </p>
      *        <p>
      *        If you create a secret by using the Secrets Manager console then Secrets Manager puts the protected secret
@@ -932,12 +892,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * (Optional) Specifies text data that you want to encrypt and store in this new version of the secret.
      * </p>
      * <p>
-     * Either <code>SecretString</code>, <code>SecretBinary</code>, or both must have a value. They cannot both be
-     * empty.
-     * </p>
-     * <p>
-     * This string value is stored separately from the <code>SecretBinary</code>, but the two parameters jointly share a
-     * maximum size limit.
+     * Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They cannot both
+     * be empty.
      * </p>
      * <p>
      * If you create a secret by using the Secrets Manager console then Secrets Manager puts the protected secret text
@@ -960,12 +916,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @return (Optional) Specifies text data that you want to encrypt and store in this new version of the secret.</p>
      *         <p>
-     *         Either <code>SecretString</code>, <code>SecretBinary</code>, or both must have a value. They cannot both
-     *         be empty.
-     *         </p>
-     *         <p>
-     *         This string value is stored separately from the <code>SecretBinary</code>, but the two parameters jointly
-     *         share a maximum size limit.
+     *         Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They
+     *         cannot both be empty.
      *         </p>
      *         <p>
      *         If you create a secret by using the Secrets Manager console then Secrets Manager puts the protected
@@ -996,12 +948,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * (Optional) Specifies text data that you want to encrypt and store in this new version of the secret.
      * </p>
      * <p>
-     * Either <code>SecretString</code>, <code>SecretBinary</code>, or both must have a value. They cannot both be
-     * empty.
-     * </p>
-     * <p>
-     * This string value is stored separately from the <code>SecretBinary</code>, but the two parameters jointly share a
-     * maximum size limit.
+     * Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They cannot both
+     * be empty.
      * </p>
      * <p>
      * If you create a secret by using the Secrets Manager console then Secrets Manager puts the protected secret text
@@ -1025,12 +973,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param secretString
      *        (Optional) Specifies text data that you want to encrypt and store in this new version of the secret.</p>
      *        <p>
-     *        Either <code>SecretString</code>, <code>SecretBinary</code>, or both must have a value. They cannot both
-     *        be empty.
-     *        </p>
-     *        <p>
-     *        This string value is stored separately from the <code>SecretBinary</code>, but the two parameters jointly
-     *        share a maximum size limit.
+     *        Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They cannot
+     *        both be empty.
      *        </p>
      *        <p>
      *        If you create a secret by using the Secrets Manager console then Secrets Manager puts the protected secret

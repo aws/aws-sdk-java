@@ -28,6 +28,12 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the application version.
+     * </p>
+     */
+    private String applicationVersionArn;
+    /**
+     * <p>
      * The name of the application to which the application version belongs.
      * </p>
      */
@@ -81,6 +87,46 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
      * </p>
      */
     private String status;
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the application version.
+     * </p>
+     * 
+     * @param applicationVersionArn
+     *        The Amazon Resource Name (ARN) of the application version.
+     */
+
+    public void setApplicationVersionArn(String applicationVersionArn) {
+        this.applicationVersionArn = applicationVersionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the application version.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the application version.
+     */
+
+    public String getApplicationVersionArn() {
+        return this.applicationVersionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the application version.
+     * </p>
+     * 
+     * @param applicationVersionArn
+     *        The Amazon Resource Name (ARN) of the application version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationVersionDescription withApplicationVersionArn(String applicationVersionArn) {
+        setApplicationVersionArn(applicationVersionArn);
+        return this;
+    }
 
     /**
      * <p>
@@ -492,6 +538,8 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getApplicationVersionArn() != null)
+            sb.append("ApplicationVersionArn: ").append(getApplicationVersionArn()).append(",");
         if (getApplicationName() != null)
             sb.append("ApplicationName: ").append(getApplicationName()).append(",");
         if (getDescription() != null)
@@ -524,6 +572,10 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
         if (obj instanceof ApplicationVersionDescription == false)
             return false;
         ApplicationVersionDescription other = (ApplicationVersionDescription) obj;
+        if (other.getApplicationVersionArn() == null ^ this.getApplicationVersionArn() == null)
+            return false;
+        if (other.getApplicationVersionArn() != null && other.getApplicationVersionArn().equals(this.getApplicationVersionArn()) == false)
+            return false;
         if (other.getApplicationName() == null ^ this.getApplicationName() == null)
             return false;
         if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false)
@@ -568,6 +620,7 @@ public class ApplicationVersionDescription implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getApplicationVersionArn() == null) ? 0 : getApplicationVersionArn().hashCode());
         hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getVersionLabel() == null) ? 0 : getVersionLabel().hashCode());
