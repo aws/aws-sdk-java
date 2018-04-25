@@ -226,7 +226,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitExceededException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ResourceInUseException",
@@ -757,7 +757,7 @@
       "asyncReturnType" : "GetCelebrityRecognitionResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Gets the celebrity recognition results for a Rekognition Video analysis started by .</p> <p>Celebrity recognition in a video is an asynchronous operation. Analysis is started by a call to which returns a job identifier (<code>JobId</code>). When the celebrity recognition operation finishes, Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic registered in the initial call to <code>StartCelebrityRecognition</code>. To get the results of the celebrity recognition analysis, first check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetCelebrityDetection</code> and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartCelebrityDetection</code>. For more information, see <a>video</a>.</p> <p> <code>GetCelebrityRecognition</code> returns detected celebrities and the time(s) they are detected in an array (<code>Celebrities</code>) of objects. Each <code>CelebrityRecognition</code> contains information about the celebrity in a object and the time, <code>Timestamp</code>, the celebrity was detected. </p> <p>By default, the <code>Celebrities</code> array is sorted by time (milliseconds from the start of the video). You can also sort the array by celebrity by specifying the value <code>ID</code> in the <code>SortBy</code> input parameter.</p> <p>The <code>CelebrityDetail</code> object includes the celebrity identifer and additional information urls. If you don't store the additional information urls, you can get them later by calling with the celebrity identifer.</p> <p>No information is returned for faces not recognized as celebrities.</p> <p>Use MaxResults parameter to limit the number of labels returned. If there are more results than specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination token for getting the next set of results. To get the next page of results, call <code>GetCelebrityDetection</code> and populate the <code>NextToken</code> request parameter with the token value returned from the previous call to <code>GetCelebrityRecognition</code>.</p>",
+      "documentation" : "<p>Gets the celebrity recognition results for a Rekognition Video analysis started by .</p> <p>Celebrity recognition in a video is an asynchronous operation. Analysis is started by a call to which returns a job identifier (<code>JobId</code>). When the celebrity recognition operation finishes, Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic registered in the initial call to <code>StartCelebrityRecognition</code>. To get the results of the celebrity recognition analysis, first check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetCelebrityDetection</code> and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartCelebrityDetection</code>. For more information, see <a>video</a>.</p> <p> <code>GetCelebrityRecognition</code> returns detected celebrities and the time(s) they are detected in an array (<code>Celebrities</code>) of objects. Each <code>CelebrityRecognition</code> contains information about the celebrity in a object and the time, <code>Timestamp</code>, the celebrity was detected. </p> <note> <p> <code>GetCelebrityRecognition</code> only returns the default facial attributes (<code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>). The other facial attributes listed in the <code>Face</code> object of the following response syntax are not returned. For more information, see . </p> </note> <p>By default, the <code>Celebrities</code> array is sorted by time (milliseconds from the start of the video). You can also sort the array by celebrity by specifying the value <code>ID</code> in the <code>SortBy</code> input parameter.</p> <p>The <code>CelebrityDetail</code> object includes the celebrity identifer and additional information urls. If you don't store the additional information urls, you can get them later by calling with the celebrity identifer.</p> <p>No information is returned for faces not recognized as celebrities.</p> <p>Use MaxResults parameter to limit the number of labels returned. If there are more results than specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination token for getting the next set of results. To get the next page of results, call <code>GetCelebrityDetection</code> and populate the <code>NextToken</code> request parameter with the token value returned from the previous call to <code>GetCelebrityRecognition</code>.</p>",
       "exceptions" : [ {
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>You are not authorized to perform the action.</p>",
@@ -922,7 +922,7 @@
       "asyncReturnType" : "GetFaceSearchResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Gets the face search results for Rekognition Video face search started by . The search returns faces in a collection that match the faces of persons detected in a video. It also includes the time(s) that faces are matched in the video.</p> <p>Face search in a video is an asynchronous operation. You start face search by calling to which returns a job identifier (<code>JobId</code>). When the search operation finishes, Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic registered in the initial call to <code>StartFaceSearch</code>. To get the search results, first check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetFaceSearch</code> and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartFaceSearch</code>. For more information, see <a>collections</a>.</p> <p>The search results are retured in an array, <code>Persons</code>, of objects. Each<code>PersonMatch</code> element contains details about the matching faces in the input collection, person information for the matched person, and the time the person was matched in the video.</p> <p>By default, the <code>Persons</code> array is sorted by the time, in milliseconds from the start of the video, persons are matched. You can also sort by persons by specifying <code>INDEX</code> for the <code>SORTBY</code> input parameter.</p>",
+      "documentation" : "<p>Gets the face search results for Rekognition Video face search started by . The search returns faces in a collection that match the faces of persons detected in a video. It also includes the time(s) that faces are matched in the video.</p> <p>Face search in a video is an asynchronous operation. You start face search by calling to which returns a job identifier (<code>JobId</code>). When the search operation finishes, Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic registered in the initial call to <code>StartFaceSearch</code>. To get the search results, first check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetFaceSearch</code> and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartFaceSearch</code>. For more information, see <a>collections</a>.</p> <p>The search results are retured in an array, <code>Persons</code>, of objects. Each<code>PersonMatch</code> element contains details about the matching faces in the input collection, person information (facial attributes, bounding boxes, and person identifer) for the matched person, and the time the person was matched in the video.</p> <note> <p> <code>GetFaceSearch</code> only returns the default facial attributes (<code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>). The other facial attributes listed in the <code>Face</code> object of the following response syntax are not returned. For more information, see . </p> </note> <p>By default, the <code>Persons</code> array is sorted by the time, in milliseconds from the start of the video, persons are matched. You can also sort by persons by specifying <code>INDEX</code> for the <code>SORTBY</code> input parameter.</p>",
       "exceptions" : [ {
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>You are not authorized to perform the action.</p>",
@@ -1032,7 +1032,7 @@
       "asyncReturnType" : "GetPersonTrackingResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Gets the person tracking results of a Rekognition Video analysis started by .</p> <p>The person detection operation is started by a call to <code>StartPersonTracking</code> which returns a job identifier (<code>JobId</code>). When the person detection operation finishes, Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic registered in the initial call to <code>StartPersonTracking</code>.</p> <p>To get the results of the person tracking operation, first check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartPersonTracking</code>.</p> <p> <code>GetPersonTracking</code> returns an array, <code>Persons</code>, of tracked persons and the time(s) they were tracked in the video. </p> <p>By default, the array is sorted by the time(s) a person is tracked in the video. You can sort by tracked persons by specifying <code>INDEX</code> for the <code>SortBy</code> input parameter.</p> <p>Use the <code>MaxResults</code> parameter to limit the number of items returned. If there are more results than specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination token for getting the next set of results. To get the next page of results, call <code>GetPersonTracking</code> and populate the <code>NextToken</code> request parameter with the token value returned from the previous call to <code>GetPersonTracking</code>.</p>",
+      "documentation" : "<p>Gets the person tracking results of a Rekognition Video analysis started by .</p> <p>The person detection operation is started by a call to <code>StartPersonTracking</code> which returns a job identifier (<code>JobId</code>). When the person detection operation finishes, Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic registered in the initial call to <code>StartPersonTracking</code>.</p> <p>To get the results of the person tracking operation, first check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartPersonTracking</code>.</p> <p> <code>GetPersonTracking</code> returns an array, <code>Persons</code>, of tracked persons and the time(s) they were tracked in the video. </p> <note> <p> <code>GetPersonTracking</code> only returns the default facial attributes (<code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>). The other facial attributes listed in the <code>Face</code> object of the following response syntax are not returned. For more information, see . </p> </note> <p>By default, the array is sorted by the time(s) a person is tracked in the video. You can sort by tracked persons by specifying <code>INDEX</code> for the <code>SortBy</code> input parameter.</p> <p>Use the <code>MaxResults</code> parameter to limit the number of items returned. If there are more results than specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination token for getting the next set of results. To get the next page of results, call <code>GetPersonTracking</code> and populate the <code>NextToken</code> request parameter with the token value returned from the previous call to <code>GetPersonTracking</code>.</p>",
       "exceptions" : [ {
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>You are not authorized to perform the action.</p>",
@@ -1519,7 +1519,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitExceededException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ThrottlingException",
@@ -1582,7 +1582,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitExceededException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ThrottlingException",
@@ -1645,7 +1645,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitExceededException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ThrottlingException",
@@ -1708,7 +1708,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitExceededException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ResourceNotFoundException",
@@ -1775,7 +1775,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitExceededException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ThrottlingException",
@@ -1838,7 +1838,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitExceededException",
-        "documentation" : "<p/>",
+        "documentation" : "<p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ThrottlingException",
@@ -17302,7 +17302,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Structure containing attributes of the face that the algorithm detected.</p>",
+      "documentation" : "<p>Structure containing attributes of the face that the algorithm detected.</p> <p>A <code>FaceDetail</code> object contains either the default facial attributes or all facial attributes. The default attributes are <code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>.</p> <p> is the only Rekognition Video stored video operation that can return a <code>FaceDetail</code> object with all attributes. To specify which attributes to return, use the <code>FaceAttributes</code> input parameter for . The following Rekognition Video operations return only the default attributes. The corresponding Start operations don't have a <code>FaceAttributes</code> input parameter.</p> <ul> <li> <p>GetCelebrityRecognition</p> </li> <li> <p>GetPersonTracking</p> </li> <li> <p>GetFaceSearch</p> </li> </ul> <p>The Rekognition Image and operations can return all facial attributes. To specify which attributes to return, use the <code>Attributes</code> input parameter for <code>DetectFaces</code>. For <code>IndexFaces</code>, use the <code>DetectAttributes</code> input parameter.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -17314,11 +17314,11 @@
         "c2jName" : "BoundingBox",
         "c2jShape" : "BoundingBox",
         "deprecated" : false,
-        "documentation" : "<p>Bounding box of the face.</p>",
+        "documentation" : "<p>Bounding box of the face. Default attribute.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Bounding box of the face.</p>\n@param boundingBox Bounding box of the face.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Bounding box of the face. Default attribute.</p>\n@param boundingBox Bounding box of the face. Default attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withBoundingBox",
-        "getterDocumentation" : "/**<p>Bounding box of the face.</p>\n@return Bounding box of the face.*/",
+        "getterDocumentation" : "/**<p>Bounding box of the face. Default attribute.</p>\n@return Bounding box of the face. Default attribute.*/",
         "getterMethodName" : "getBoundingBox",
         "getterModel" : {
           "returnType" : "BoundingBox",
@@ -17350,7 +17350,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "BoundingBox",
-        "setterDocumentation" : "/**<p>Bounding box of the face.</p>\n@param boundingBox Bounding box of the face.*/",
+        "setterDocumentation" : "/**<p>Bounding box of the face. Default attribute.</p>\n@param boundingBox Bounding box of the face. Default attribute.*/",
         "setterMethodName" : "setBoundingBox",
         "setterModel" : {
           "variableDeclarationType" : "BoundingBox",
@@ -17363,12 +17363,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Bounding box of the face.</p>\n@param boundingBox Bounding box of the face.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Bounding box of the face. Default attribute.</p>\n@param boundingBox Bounding box of the face. Default attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "BoundingBox",
           "variableName" : "boundingBox",
           "variableType" : "BoundingBox",
-          "documentation" : "<p>Bounding box of the face.</p>",
+          "documentation" : "<p>Bounding box of the face. Default attribute.</p>",
           "simpleType" : "BoundingBox",
           "variableSetterType" : "BoundingBox"
         },
@@ -18085,11 +18085,11 @@
         "c2jName" : "Landmarks",
         "c2jShape" : "Landmarks",
         "deprecated" : false,
-        "documentation" : "<p>Indicates the location of landmarks on the face.</p>",
+        "documentation" : "<p>Indicates the location of landmarks on the face. Default attribute.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Indicates the location of landmarks on the face.</p>\n@param landmarks Indicates the location of landmarks on the face.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Indicates the location of landmarks on the face. Default attribute.</p>\n@param landmarks Indicates the location of landmarks on the face. Default attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withLandmarks",
-        "getterDocumentation" : "/**<p>Indicates the location of landmarks on the face.</p>\n@return Indicates the location of landmarks on the face.*/",
+        "getterDocumentation" : "/**<p>Indicates the location of landmarks on the face. Default attribute.</p>\n@return Indicates the location of landmarks on the face. Default attribute.*/",
         "getterMethodName" : "getLandmarks",
         "getterModel" : {
           "returnType" : "java.util.List<Landmark>",
@@ -18199,7 +18199,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Landmarks",
-        "setterDocumentation" : "/**<p>Indicates the location of landmarks on the face.</p>\n@param landmarks Indicates the location of landmarks on the face.*/",
+        "setterDocumentation" : "/**<p>Indicates the location of landmarks on the face. Default attribute.</p>\n@param landmarks Indicates the location of landmarks on the face. Default attribute.*/",
         "setterMethodName" : "setLandmarks",
         "setterModel" : {
           "variableDeclarationType" : "java.util.List<Landmark>",
@@ -18212,12 +18212,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Indicates the location of landmarks on the face.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLandmarks(java.util.Collection)} or {@link #withLandmarks(java.util.Collection)} if you want to override the existing values.</p>\n@param landmarks Indicates the location of landmarks on the face.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Indicates the location of landmarks on the face. Default attribute.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLandmarks(java.util.Collection)} or {@link #withLandmarks(java.util.Collection)} if you want to override the existing values.</p>\n@param landmarks Indicates the location of landmarks on the face. Default attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.List<Landmark>",
           "variableName" : "landmarks",
           "variableType" : "java.util.List<Landmark>",
-          "documentation" : "<p>Indicates the location of landmarks on the face.</p>",
+          "documentation" : "<p>Indicates the location of landmarks on the face. Default attribute.</p>",
           "simpleType" : "List<Landmark>",
           "variableSetterType" : "java.util.Collection<Landmark>"
         },
@@ -18226,11 +18226,11 @@
         "c2jName" : "Pose",
         "c2jShape" : "Pose",
         "deprecated" : false,
-        "documentation" : "<p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>",
+        "documentation" : "<p>Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>\n@param pose Indicates the pose of the face as determined by its pitch, roll, and yaw.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.</p>\n@param pose Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withPose",
-        "getterDocumentation" : "/**<p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>\n@return Indicates the pose of the face as determined by its pitch, roll, and yaw.*/",
+        "getterDocumentation" : "/**<p>Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.</p>\n@return Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.*/",
         "getterMethodName" : "getPose",
         "getterModel" : {
           "returnType" : "Pose",
@@ -18262,7 +18262,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Pose",
-        "setterDocumentation" : "/**<p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>\n@param pose Indicates the pose of the face as determined by its pitch, roll, and yaw.*/",
+        "setterDocumentation" : "/**<p>Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.</p>\n@param pose Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.*/",
         "setterMethodName" : "setPose",
         "setterModel" : {
           "variableDeclarationType" : "Pose",
@@ -18275,12 +18275,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>\n@param pose Indicates the pose of the face as determined by its pitch, roll, and yaw.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.</p>\n@param pose Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Pose",
           "variableName" : "pose",
           "variableType" : "Pose",
-          "documentation" : "<p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>",
+          "documentation" : "<p>Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.</p>",
           "simpleType" : "Pose",
           "variableSetterType" : "Pose"
         },
@@ -18289,11 +18289,11 @@
         "c2jName" : "Quality",
         "c2jShape" : "ImageQuality",
         "deprecated" : false,
-        "documentation" : "<p>Identifies image brightness and sharpness.</p>",
+        "documentation" : "<p>Identifies image brightness and sharpness. Default attribute.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Identifies image brightness and sharpness.</p>\n@param quality Identifies image brightness and sharpness.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Identifies image brightness and sharpness. Default attribute.</p>\n@param quality Identifies image brightness and sharpness. Default attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withQuality",
-        "getterDocumentation" : "/**<p>Identifies image brightness and sharpness.</p>\n@return Identifies image brightness and sharpness.*/",
+        "getterDocumentation" : "/**<p>Identifies image brightness and sharpness. Default attribute.</p>\n@return Identifies image brightness and sharpness. Default attribute.*/",
         "getterMethodName" : "getQuality",
         "getterModel" : {
           "returnType" : "ImageQuality",
@@ -18325,7 +18325,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Quality",
-        "setterDocumentation" : "/**<p>Identifies image brightness and sharpness.</p>\n@param quality Identifies image brightness and sharpness.*/",
+        "setterDocumentation" : "/**<p>Identifies image brightness and sharpness. Default attribute.</p>\n@param quality Identifies image brightness and sharpness. Default attribute.*/",
         "setterMethodName" : "setQuality",
         "setterModel" : {
           "variableDeclarationType" : "ImageQuality",
@@ -18338,12 +18338,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Identifies image brightness and sharpness.</p>\n@param quality Identifies image brightness and sharpness.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Identifies image brightness and sharpness. Default attribute.</p>\n@param quality Identifies image brightness and sharpness. Default attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "ImageQuality",
           "variableName" : "quality",
           "variableType" : "ImageQuality",
-          "documentation" : "<p>Identifies image brightness and sharpness.</p>",
+          "documentation" : "<p>Identifies image brightness and sharpness. Default attribute.</p>",
           "simpleType" : "ImageQuality",
           "variableSetterType" : "ImageQuality"
         },
@@ -18352,11 +18352,11 @@
         "c2jName" : "Confidence",
         "c2jShape" : "Percent",
         "deprecated" : false,
-        "documentation" : "<p>Confidence level that the bounding box contains a face (and not a different object such as a tree).</p>",
+        "documentation" : "<p>Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Confidence level that the bounding box contains a face (and not a different object such as a tree).</p>\n@param confidence Confidence level that the bounding box contains a face (and not a different object such as a tree).\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.</p>\n@param confidence Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withConfidence",
-        "getterDocumentation" : "/**<p>Confidence level that the bounding box contains a face (and not a different object such as a tree).</p>\n@return Confidence level that the bounding box contains a face (and not a different object such as a tree).*/",
+        "getterDocumentation" : "/**<p>Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.</p>\n@return Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.*/",
         "getterMethodName" : "getConfidence",
         "getterModel" : {
           "returnType" : "Float",
@@ -18388,7 +18388,7 @@
         "marshallingTargetClass" : "Float",
         "marshallingType" : "FLOAT",
         "name" : "Confidence",
-        "setterDocumentation" : "/**<p>Confidence level that the bounding box contains a face (and not a different object such as a tree).</p>\n@param confidence Confidence level that the bounding box contains a face (and not a different object such as a tree).*/",
+        "setterDocumentation" : "/**<p>Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.</p>\n@param confidence Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.*/",
         "setterMethodName" : "setConfidence",
         "setterModel" : {
           "variableDeclarationType" : "Float",
@@ -18401,12 +18401,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Confidence level that the bounding box contains a face (and not a different object such as a tree).</p>\n@param confidence Confidence level that the bounding box contains a face (and not a different object such as a tree).\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.</p>\n@param confidence Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Float",
           "variableName" : "confidence",
           "variableType" : "Float",
-          "documentation" : "<p>Confidence level that the bounding box contains a face (and not a different object such as a tree).</p>",
+          "documentation" : "<p>Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.</p>",
           "simpleType" : "Float",
           "variableSetterType" : "Float"
         },
@@ -18545,11 +18545,11 @@
           "c2jName" : "BoundingBox",
           "c2jShape" : "BoundingBox",
           "deprecated" : false,
-          "documentation" : "<p>Bounding box of the face.</p>",
+          "documentation" : "<p>Bounding box of the face. Default attribute.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Bounding box of the face.</p>\n@param boundingBox Bounding box of the face.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Bounding box of the face. Default attribute.</p>\n@param boundingBox Bounding box of the face. Default attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withBoundingBox",
-          "getterDocumentation" : "/**<p>Bounding box of the face.</p>\n@return Bounding box of the face.*/",
+          "getterDocumentation" : "/**<p>Bounding box of the face. Default attribute.</p>\n@return Bounding box of the face. Default attribute.*/",
           "getterMethodName" : "getBoundingBox",
           "getterModel" : {
             "returnType" : "BoundingBox",
@@ -18581,7 +18581,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "BoundingBox",
-          "setterDocumentation" : "/**<p>Bounding box of the face.</p>\n@param boundingBox Bounding box of the face.*/",
+          "setterDocumentation" : "/**<p>Bounding box of the face. Default attribute.</p>\n@param boundingBox Bounding box of the face. Default attribute.*/",
           "setterMethodName" : "setBoundingBox",
           "setterModel" : {
             "variableDeclarationType" : "BoundingBox",
@@ -18594,12 +18594,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Bounding box of the face.</p>\n@param boundingBox Bounding box of the face.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Bounding box of the face. Default attribute.</p>\n@param boundingBox Bounding box of the face. Default attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "BoundingBox",
             "variableName" : "boundingBox",
             "variableType" : "BoundingBox",
-            "documentation" : "<p>Bounding box of the face.</p>",
+            "documentation" : "<p>Bounding box of the face. Default attribute.</p>",
             "simpleType" : "BoundingBox",
             "variableSetterType" : "BoundingBox"
           },
@@ -18609,11 +18609,11 @@
           "c2jName" : "Confidence",
           "c2jShape" : "Percent",
           "deprecated" : false,
-          "documentation" : "<p>Confidence level that the bounding box contains a face (and not a different object such as a tree).</p>",
+          "documentation" : "<p>Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Confidence level that the bounding box contains a face (and not a different object such as a tree).</p>\n@param confidence Confidence level that the bounding box contains a face (and not a different object such as a tree).\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.</p>\n@param confidence Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withConfidence",
-          "getterDocumentation" : "/**<p>Confidence level that the bounding box contains a face (and not a different object such as a tree).</p>\n@return Confidence level that the bounding box contains a face (and not a different object such as a tree).*/",
+          "getterDocumentation" : "/**<p>Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.</p>\n@return Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.*/",
           "getterMethodName" : "getConfidence",
           "getterModel" : {
             "returnType" : "Float",
@@ -18645,7 +18645,7 @@
           "marshallingTargetClass" : "Float",
           "marshallingType" : "FLOAT",
           "name" : "Confidence",
-          "setterDocumentation" : "/**<p>Confidence level that the bounding box contains a face (and not a different object such as a tree).</p>\n@param confidence Confidence level that the bounding box contains a face (and not a different object such as a tree).*/",
+          "setterDocumentation" : "/**<p>Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.</p>\n@param confidence Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.*/",
           "setterMethodName" : "setConfidence",
           "setterModel" : {
             "variableDeclarationType" : "Float",
@@ -18658,12 +18658,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Confidence level that the bounding box contains a face (and not a different object such as a tree).</p>\n@param confidence Confidence level that the bounding box contains a face (and not a different object such as a tree).\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.</p>\n@param confidence Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Float",
             "variableName" : "confidence",
             "variableType" : "Float",
-            "documentation" : "<p>Confidence level that the bounding box contains a face (and not a different object such as a tree).</p>",
+            "documentation" : "<p>Confidence level that the bounding box contains a face (and not a different object such as a tree). Default attribute.</p>",
             "simpleType" : "Float",
             "variableSetterType" : "Float"
           },
@@ -19007,11 +19007,11 @@
           "c2jName" : "Landmarks",
           "c2jShape" : "Landmarks",
           "deprecated" : false,
-          "documentation" : "<p>Indicates the location of landmarks on the face.</p>",
+          "documentation" : "<p>Indicates the location of landmarks on the face. Default attribute.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Indicates the location of landmarks on the face.</p>\n@param landmarks Indicates the location of landmarks on the face.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Indicates the location of landmarks on the face. Default attribute.</p>\n@param landmarks Indicates the location of landmarks on the face. Default attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withLandmarks",
-          "getterDocumentation" : "/**<p>Indicates the location of landmarks on the face.</p>\n@return Indicates the location of landmarks on the face.*/",
+          "getterDocumentation" : "/**<p>Indicates the location of landmarks on the face. Default attribute.</p>\n@return Indicates the location of landmarks on the face. Default attribute.*/",
           "getterMethodName" : "getLandmarks",
           "getterModel" : {
             "returnType" : "java.util.List<Landmark>",
@@ -19121,7 +19121,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Landmarks",
-          "setterDocumentation" : "/**<p>Indicates the location of landmarks on the face.</p>\n@param landmarks Indicates the location of landmarks on the face.*/",
+          "setterDocumentation" : "/**<p>Indicates the location of landmarks on the face. Default attribute.</p>\n@param landmarks Indicates the location of landmarks on the face. Default attribute.*/",
           "setterMethodName" : "setLandmarks",
           "setterModel" : {
             "variableDeclarationType" : "java.util.List<Landmark>",
@@ -19134,12 +19134,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Indicates the location of landmarks on the face.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLandmarks(java.util.Collection)} or {@link #withLandmarks(java.util.Collection)} if you want to override the existing values.</p>\n@param landmarks Indicates the location of landmarks on the face.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Indicates the location of landmarks on the face. Default attribute.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setLandmarks(java.util.Collection)} or {@link #withLandmarks(java.util.Collection)} if you want to override the existing values.</p>\n@param landmarks Indicates the location of landmarks on the face. Default attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.List<Landmark>",
             "variableName" : "landmarks",
             "variableType" : "java.util.List<Landmark>",
-            "documentation" : "<p>Indicates the location of landmarks on the face.</p>",
+            "documentation" : "<p>Indicates the location of landmarks on the face. Default attribute.</p>",
             "simpleType" : "List<Landmark>",
             "variableSetterType" : "java.util.Collection<Landmark>"
           },
@@ -19277,11 +19277,11 @@
           "c2jName" : "Pose",
           "c2jShape" : "Pose",
           "deprecated" : false,
-          "documentation" : "<p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>",
+          "documentation" : "<p>Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>\n@param pose Indicates the pose of the face as determined by its pitch, roll, and yaw.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.</p>\n@param pose Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withPose",
-          "getterDocumentation" : "/**<p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>\n@return Indicates the pose of the face as determined by its pitch, roll, and yaw.*/",
+          "getterDocumentation" : "/**<p>Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.</p>\n@return Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.*/",
           "getterMethodName" : "getPose",
           "getterModel" : {
             "returnType" : "Pose",
@@ -19313,7 +19313,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Pose",
-          "setterDocumentation" : "/**<p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>\n@param pose Indicates the pose of the face as determined by its pitch, roll, and yaw.*/",
+          "setterDocumentation" : "/**<p>Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.</p>\n@param pose Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.*/",
           "setterMethodName" : "setPose",
           "setterModel" : {
             "variableDeclarationType" : "Pose",
@@ -19326,12 +19326,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>\n@param pose Indicates the pose of the face as determined by its pitch, roll, and yaw.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.</p>\n@param pose Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Pose",
             "variableName" : "pose",
             "variableType" : "Pose",
-            "documentation" : "<p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>",
+            "documentation" : "<p>Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.</p>",
             "simpleType" : "Pose",
             "variableSetterType" : "Pose"
           },
@@ -19341,11 +19341,11 @@
           "c2jName" : "Quality",
           "c2jShape" : "ImageQuality",
           "deprecated" : false,
-          "documentation" : "<p>Identifies image brightness and sharpness.</p>",
+          "documentation" : "<p>Identifies image brightness and sharpness. Default attribute.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Identifies image brightness and sharpness.</p>\n@param quality Identifies image brightness and sharpness.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Identifies image brightness and sharpness. Default attribute.</p>\n@param quality Identifies image brightness and sharpness. Default attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withQuality",
-          "getterDocumentation" : "/**<p>Identifies image brightness and sharpness.</p>\n@return Identifies image brightness and sharpness.*/",
+          "getterDocumentation" : "/**<p>Identifies image brightness and sharpness. Default attribute.</p>\n@return Identifies image brightness and sharpness. Default attribute.*/",
           "getterMethodName" : "getQuality",
           "getterModel" : {
             "returnType" : "ImageQuality",
@@ -19377,7 +19377,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Quality",
-          "setterDocumentation" : "/**<p>Identifies image brightness and sharpness.</p>\n@param quality Identifies image brightness and sharpness.*/",
+          "setterDocumentation" : "/**<p>Identifies image brightness and sharpness. Default attribute.</p>\n@param quality Identifies image brightness and sharpness. Default attribute.*/",
           "setterMethodName" : "setQuality",
           "setterModel" : {
             "variableDeclarationType" : "ImageQuality",
@@ -19390,12 +19390,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Identifies image brightness and sharpness.</p>\n@param quality Identifies image brightness and sharpness.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Identifies image brightness and sharpness. Default attribute.</p>\n@param quality Identifies image brightness and sharpness. Default attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "ImageQuality",
             "variableName" : "quality",
             "variableType" : "ImageQuality",
-            "documentation" : "<p>Identifies image brightness and sharpness.</p>",
+            "documentation" : "<p>Identifies image brightness and sharpness. Default attribute.</p>",
             "simpleType" : "ImageQuality",
             "variableSetterType" : "ImageQuality"
           },
@@ -22272,11 +22272,11 @@
         "c2jName" : "MaxResults",
         "c2jShape" : "MaxResults",
         "deprecated" : false,
-        "documentation" : "<p>Maximum number of celebrities you want Rekognition Video to return in the response. The default is 1000.</p>",
+        "documentation" : "<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Maximum number of celebrities you want Rekognition Video to return in the response. The default is 1000.</p>\n@param maxResults Maximum number of celebrities you want Rekognition Video to return in the response. The default is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withMaxResults",
-        "getterDocumentation" : "/**<p>Maximum number of celebrities you want Rekognition Video to return in the response. The default is 1000.</p>\n@return Maximum number of celebrities you want Rekognition Video to return in the response. The default is 1000.*/",
+        "getterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@return Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.*/",
         "getterMethodName" : "getMaxResults",
         "getterModel" : {
           "returnType" : "Integer",
@@ -22308,7 +22308,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
-        "setterDocumentation" : "/**<p>Maximum number of celebrities you want Rekognition Video to return in the response. The default is 1000.</p>\n@param maxResults Maximum number of celebrities you want Rekognition Video to return in the response. The default is 1000.*/",
+        "setterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
           "variableDeclarationType" : "Integer",
@@ -22321,12 +22321,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Maximum number of celebrities you want Rekognition Video to return in the response. The default is 1000.</p>\n@param maxResults Maximum number of celebrities you want Rekognition Video to return in the response. The default is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
-          "documentation" : "<p>Maximum number of celebrities you want Rekognition Video to return in the response. The default is 1000.</p>",
+          "documentation" : "<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -22527,11 +22527,11 @@
           "c2jName" : "MaxResults",
           "c2jShape" : "MaxResults",
           "deprecated" : false,
-          "documentation" : "<p>Maximum number of celebrities you want Rekognition Video to return in the response. The default is 1000.</p>",
+          "documentation" : "<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Maximum number of celebrities you want Rekognition Video to return in the response. The default is 1000.</p>\n@param maxResults Maximum number of celebrities you want Rekognition Video to return in the response. The default is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withMaxResults",
-          "getterDocumentation" : "/**<p>Maximum number of celebrities you want Rekognition Video to return in the response. The default is 1000.</p>\n@return Maximum number of celebrities you want Rekognition Video to return in the response. The default is 1000.*/",
+          "getterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@return Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.*/",
           "getterMethodName" : "getMaxResults",
           "getterModel" : {
             "returnType" : "Integer",
@@ -22563,7 +22563,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
-          "setterDocumentation" : "/**<p>Maximum number of celebrities you want Rekognition Video to return in the response. The default is 1000.</p>\n@param maxResults Maximum number of celebrities you want Rekognition Video to return in the response. The default is 1000.*/",
+          "setterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
             "variableDeclarationType" : "Integer",
@@ -22576,12 +22576,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Maximum number of celebrities you want Rekognition Video to return in the response. The default is 1000.</p>\n@param maxResults Maximum number of celebrities you want Rekognition Video to return in the response. The default is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
-            "documentation" : "<p>Maximum number of celebrities you want Rekognition Video to return in the response. The default is 1000.</p>",
+            "documentation" : "<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -23655,11 +23655,11 @@
         "c2jName" : "MaxResults",
         "c2jShape" : "MaxResults",
         "deprecated" : false,
-        "documentation" : "<p>Maximum number of content moderation labels to return. The default is 1000.</p>",
+        "documentation" : "<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Maximum number of content moderation labels to return. The default is 1000.</p>\n@param maxResults Maximum number of content moderation labels to return. The default is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withMaxResults",
-        "getterDocumentation" : "/**<p>Maximum number of content moderation labels to return. The default is 1000.</p>\n@return Maximum number of content moderation labels to return. The default is 1000.*/",
+        "getterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@return Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.*/",
         "getterMethodName" : "getMaxResults",
         "getterModel" : {
           "returnType" : "Integer",
@@ -23691,7 +23691,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
-        "setterDocumentation" : "/**<p>Maximum number of content moderation labels to return. The default is 1000.</p>\n@param maxResults Maximum number of content moderation labels to return. The default is 1000.*/",
+        "setterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
           "variableDeclarationType" : "Integer",
@@ -23704,12 +23704,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Maximum number of content moderation labels to return. The default is 1000.</p>\n@param maxResults Maximum number of content moderation labels to return. The default is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
-          "documentation" : "<p>Maximum number of content moderation labels to return. The default is 1000.</p>",
+          "documentation" : "<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -23910,11 +23910,11 @@
           "c2jName" : "MaxResults",
           "c2jShape" : "MaxResults",
           "deprecated" : false,
-          "documentation" : "<p>Maximum number of content moderation labels to return. The default is 1000.</p>",
+          "documentation" : "<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Maximum number of content moderation labels to return. The default is 1000.</p>\n@param maxResults Maximum number of content moderation labels to return. The default is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withMaxResults",
-          "getterDocumentation" : "/**<p>Maximum number of content moderation labels to return. The default is 1000.</p>\n@return Maximum number of content moderation labels to return. The default is 1000.*/",
+          "getterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@return Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.*/",
           "getterMethodName" : "getMaxResults",
           "getterModel" : {
             "returnType" : "Integer",
@@ -23946,7 +23946,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
-          "setterDocumentation" : "/**<p>Maximum number of content moderation labels to return. The default is 1000.</p>\n@param maxResults Maximum number of content moderation labels to return. The default is 1000.*/",
+          "setterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
             "variableDeclarationType" : "Integer",
@@ -23959,12 +23959,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Maximum number of content moderation labels to return. The default is 1000.</p>\n@param maxResults Maximum number of content moderation labels to return. The default is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
-            "documentation" : "<p>Maximum number of content moderation labels to return. The default is 1000.</p>",
+            "documentation" : "<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -25038,11 +25038,11 @@
         "c2jName" : "MaxResults",
         "c2jShape" : "MaxResults",
         "deprecated" : false,
-        "documentation" : "<p>Maximum number of detected faces to return. The default is 1000.</p>",
+        "documentation" : "<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Maximum number of detected faces to return. The default is 1000.</p>\n@param maxResults Maximum number of detected faces to return. The default is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withMaxResults",
-        "getterDocumentation" : "/**<p>Maximum number of detected faces to return. The default is 1000.</p>\n@return Maximum number of detected faces to return. The default is 1000.*/",
+        "getterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@return Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.*/",
         "getterMethodName" : "getMaxResults",
         "getterModel" : {
           "returnType" : "Integer",
@@ -25074,7 +25074,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
-        "setterDocumentation" : "/**<p>Maximum number of detected faces to return. The default is 1000.</p>\n@param maxResults Maximum number of detected faces to return. The default is 1000.*/",
+        "setterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
           "variableDeclarationType" : "Integer",
@@ -25087,12 +25087,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Maximum number of detected faces to return. The default is 1000.</p>\n@param maxResults Maximum number of detected faces to return. The default is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
-          "documentation" : "<p>Maximum number of detected faces to return. The default is 1000.</p>",
+          "documentation" : "<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -25230,11 +25230,11 @@
           "c2jName" : "MaxResults",
           "c2jShape" : "MaxResults",
           "deprecated" : false,
-          "documentation" : "<p>Maximum number of detected faces to return. The default is 1000.</p>",
+          "documentation" : "<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Maximum number of detected faces to return. The default is 1000.</p>\n@param maxResults Maximum number of detected faces to return. The default is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withMaxResults",
-          "getterDocumentation" : "/**<p>Maximum number of detected faces to return. The default is 1000.</p>\n@return Maximum number of detected faces to return. The default is 1000.*/",
+          "getterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@return Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.*/",
           "getterMethodName" : "getMaxResults",
           "getterModel" : {
             "returnType" : "Integer",
@@ -25266,7 +25266,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
-          "setterDocumentation" : "/**<p>Maximum number of detected faces to return. The default is 1000.</p>\n@param maxResults Maximum number of detected faces to return. The default is 1000.*/",
+          "setterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
             "variableDeclarationType" : "Integer",
@@ -25279,12 +25279,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Maximum number of detected faces to return. The default is 1000.</p>\n@param maxResults Maximum number of detected faces to return. The default is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
-            "documentation" : "<p>Maximum number of detected faces to return. The default is 1000.</p>",
+            "documentation" : "<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -26294,11 +26294,11 @@
         "c2jName" : "MaxResults",
         "c2jShape" : "MaxResults",
         "deprecated" : false,
-        "documentation" : "<p>Maximum number of search results you want Rekognition Video to return in the response. The default is 1000.</p>",
+        "documentation" : "<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Maximum number of search results you want Rekognition Video to return in the response. The default is 1000.</p>\n@param maxResults Maximum number of search results you want Rekognition Video to return in the response. The default is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withMaxResults",
-        "getterDocumentation" : "/**<p>Maximum number of search results you want Rekognition Video to return in the response. The default is 1000.</p>\n@return Maximum number of search results you want Rekognition Video to return in the response. The default is 1000.*/",
+        "getterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@return Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.*/",
         "getterMethodName" : "getMaxResults",
         "getterModel" : {
           "returnType" : "Integer",
@@ -26330,7 +26330,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
-        "setterDocumentation" : "/**<p>Maximum number of search results you want Rekognition Video to return in the response. The default is 1000.</p>\n@param maxResults Maximum number of search results you want Rekognition Video to return in the response. The default is 1000.*/",
+        "setterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
           "variableDeclarationType" : "Integer",
@@ -26343,12 +26343,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Maximum number of search results you want Rekognition Video to return in the response. The default is 1000.</p>\n@param maxResults Maximum number of search results you want Rekognition Video to return in the response. The default is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
-          "documentation" : "<p>Maximum number of search results you want Rekognition Video to return in the response. The default is 1000.</p>",
+          "documentation" : "<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -26549,11 +26549,11 @@
           "c2jName" : "MaxResults",
           "c2jShape" : "MaxResults",
           "deprecated" : false,
-          "documentation" : "<p>Maximum number of search results you want Rekognition Video to return in the response. The default is 1000.</p>",
+          "documentation" : "<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Maximum number of search results you want Rekognition Video to return in the response. The default is 1000.</p>\n@param maxResults Maximum number of search results you want Rekognition Video to return in the response. The default is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withMaxResults",
-          "getterDocumentation" : "/**<p>Maximum number of search results you want Rekognition Video to return in the response. The default is 1000.</p>\n@return Maximum number of search results you want Rekognition Video to return in the response. The default is 1000.*/",
+          "getterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@return Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.*/",
           "getterMethodName" : "getMaxResults",
           "getterModel" : {
             "returnType" : "Integer",
@@ -26585,7 +26585,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
-          "setterDocumentation" : "/**<p>Maximum number of search results you want Rekognition Video to return in the response. The default is 1000.</p>\n@param maxResults Maximum number of search results you want Rekognition Video to return in the response. The default is 1000.*/",
+          "setterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
             "variableDeclarationType" : "Integer",
@@ -26598,12 +26598,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Maximum number of search results you want Rekognition Video to return in the response. The default is 1000.</p>\n@param maxResults Maximum number of search results you want Rekognition Video to return in the response. The default is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
-            "documentation" : "<p>Maximum number of search results you want Rekognition Video to return in the response. The default is 1000.</p>",
+            "documentation" : "<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -27677,11 +27677,11 @@
         "c2jName" : "MaxResults",
         "c2jShape" : "MaxResults",
         "deprecated" : false,
-        "documentation" : "<p>Maximum number of labels you want Amazon Rekognition to return in the response. The default is 1000.</p>",
+        "documentation" : "<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Maximum number of labels you want Amazon Rekognition to return in the response. The default is 1000.</p>\n@param maxResults Maximum number of labels you want Amazon Rekognition to return in the response. The default is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withMaxResults",
-        "getterDocumentation" : "/**<p>Maximum number of labels you want Amazon Rekognition to return in the response. The default is 1000.</p>\n@return Maximum number of labels you want Amazon Rekognition to return in the response. The default is 1000.*/",
+        "getterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@return Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.*/",
         "getterMethodName" : "getMaxResults",
         "getterModel" : {
           "returnType" : "Integer",
@@ -27713,7 +27713,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
-        "setterDocumentation" : "/**<p>Maximum number of labels you want Amazon Rekognition to return in the response. The default is 1000.</p>\n@param maxResults Maximum number of labels you want Amazon Rekognition to return in the response. The default is 1000.*/",
+        "setterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
           "variableDeclarationType" : "Integer",
@@ -27726,12 +27726,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Maximum number of labels you want Amazon Rekognition to return in the response. The default is 1000.</p>\n@param maxResults Maximum number of labels you want Amazon Rekognition to return in the response. The default is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
-          "documentation" : "<p>Maximum number of labels you want Amazon Rekognition to return in the response. The default is 1000.</p>",
+          "documentation" : "<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -27932,11 +27932,11 @@
           "c2jName" : "MaxResults",
           "c2jShape" : "MaxResults",
           "deprecated" : false,
-          "documentation" : "<p>Maximum number of labels you want Amazon Rekognition to return in the response. The default is 1000.</p>",
+          "documentation" : "<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Maximum number of labels you want Amazon Rekognition to return in the response. The default is 1000.</p>\n@param maxResults Maximum number of labels you want Amazon Rekognition to return in the response. The default is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withMaxResults",
-          "getterDocumentation" : "/**<p>Maximum number of labels you want Amazon Rekognition to return in the response. The default is 1000.</p>\n@return Maximum number of labels you want Amazon Rekognition to return in the response. The default is 1000.*/",
+          "getterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@return Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.*/",
           "getterMethodName" : "getMaxResults",
           "getterModel" : {
             "returnType" : "Integer",
@@ -27968,7 +27968,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
-          "setterDocumentation" : "/**<p>Maximum number of labels you want Amazon Rekognition to return in the response. The default is 1000.</p>\n@param maxResults Maximum number of labels you want Amazon Rekognition to return in the response. The default is 1000.*/",
+          "setterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
             "variableDeclarationType" : "Integer",
@@ -27981,12 +27981,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Maximum number of labels you want Amazon Rekognition to return in the response. The default is 1000.</p>\n@param maxResults Maximum number of labels you want Amazon Rekognition to return in the response. The default is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
-            "documentation" : "<p>Maximum number of labels you want Amazon Rekognition to return in the response. The default is 1000.</p>",
+            "documentation" : "<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -29060,11 +29060,11 @@
         "c2jName" : "MaxResults",
         "c2jShape" : "MaxResults",
         "deprecated" : false,
-        "documentation" : "<p>Maximum number of tracked persons to return. The default is 1000. </p>",
+        "documentation" : "<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Maximum number of tracked persons to return. The default is 1000. </p>\n@param maxResults Maximum number of tracked persons to return. The default is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withMaxResults",
-        "getterDocumentation" : "/**<p>Maximum number of tracked persons to return. The default is 1000. </p>\n@return Maximum number of tracked persons to return. The default is 1000.*/",
+        "getterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@return Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.*/",
         "getterMethodName" : "getMaxResults",
         "getterModel" : {
           "returnType" : "Integer",
@@ -29096,7 +29096,7 @@
         "marshallingTargetClass" : "Integer",
         "marshallingType" : "INTEGER",
         "name" : "MaxResults",
-        "setterDocumentation" : "/**<p>Maximum number of tracked persons to return. The default is 1000. </p>\n@param maxResults Maximum number of tracked persons to return. The default is 1000.*/",
+        "setterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.*/",
         "setterMethodName" : "setMaxResults",
         "setterModel" : {
           "variableDeclarationType" : "Integer",
@@ -29109,12 +29109,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Maximum number of tracked persons to return. The default is 1000. </p>\n@param maxResults Maximum number of tracked persons to return. The default is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Integer",
           "variableName" : "maxResults",
           "variableType" : "Integer",
-          "documentation" : "<p>Maximum number of tracked persons to return. The default is 1000. </p>",
+          "documentation" : "<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -29315,11 +29315,11 @@
           "c2jName" : "MaxResults",
           "c2jShape" : "MaxResults",
           "deprecated" : false,
-          "documentation" : "<p>Maximum number of tracked persons to return. The default is 1000. </p>",
+          "documentation" : "<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Maximum number of tracked persons to return. The default is 1000. </p>\n@param maxResults Maximum number of tracked persons to return. The default is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withMaxResults",
-          "getterDocumentation" : "/**<p>Maximum number of tracked persons to return. The default is 1000. </p>\n@return Maximum number of tracked persons to return. The default is 1000.*/",
+          "getterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@return Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.*/",
           "getterMethodName" : "getMaxResults",
           "getterModel" : {
             "returnType" : "Integer",
@@ -29351,7 +29351,7 @@
           "marshallingTargetClass" : "Integer",
           "marshallingType" : "INTEGER",
           "name" : "MaxResults",
-          "setterDocumentation" : "/**<p>Maximum number of tracked persons to return. The default is 1000. </p>\n@param maxResults Maximum number of tracked persons to return. The default is 1000.*/",
+          "setterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.*/",
           "setterMethodName" : "setMaxResults",
           "setterModel" : {
             "variableDeclarationType" : "Integer",
@@ -29364,12 +29364,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Maximum number of tracked persons to return. The default is 1000. </p>\n@param maxResults Maximum number of tracked persons to return. The default is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>\n@param maxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Integer",
             "variableName" : "maxResults",
             "variableType" : "Integer",
-            "documentation" : "<p>Maximum number of tracked persons to return. The default is 1000. </p>",
+            "documentation" : "<p>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</p>",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },
@@ -33988,7 +33988,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p/>",
+      "documentation" : "<p>An Amazon Rekognition service limit was exceeded. For example, if you start too many Rekognition Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs is below the Amazon Rekognition service limit. </p>",
       "enums" : null,
       "errorCode" : "LimitExceededException",
       "hasHeaderMember" : false,
@@ -38874,7 +38874,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Information about a person whose face matches a face(s) in a Amazon Rekognition collection. Includes information about the faces in the Amazon Rekognition collection (,information about the person (<a>PersonDetail</a>) and the timestamp for when the person was detected in a video. An array of <code>PersonMatch</code> objects is returned by . </p>",
+      "documentation" : "<p>Information about a person whose face matches a face(s) in a Amazon Rekognition collection. Includes information about the faces in the Amazon Rekognition collection (, information about the person (<a>PersonDetail</a>) and the timestamp for when the person was detected in a video. An array of <code>PersonMatch</code> objects is returned by . </p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,

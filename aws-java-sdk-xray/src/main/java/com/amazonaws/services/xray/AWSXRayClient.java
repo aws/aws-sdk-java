@@ -318,6 +318,59 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
 
     /**
      * <p>
+     * Retrieves the current encryption configuration for X-Ray data.
+     * </p>
+     * 
+     * @param getEncryptionConfigRequest
+     * @return Result of the GetEncryptionConfig operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.GetEncryptionConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetEncryptionConfig" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetEncryptionConfigResult getEncryptionConfig(GetEncryptionConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetEncryptionConfig(request);
+    }
+
+    @SdkInternalApi
+    final GetEncryptionConfigResult executeGetEncryptionConfig(GetEncryptionConfigRequest getEncryptionConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getEncryptionConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetEncryptionConfigRequest> request = null;
+        Response<GetEncryptionConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetEncryptionConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getEncryptionConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetEncryptionConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetEncryptionConfigResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves a document that describes services that process incoming requests, and downstream services that they
      * call as a result. Root services process incoming requests and make calls to downstream services. Root services
      * are applications that use the AWS X-Ray SDK. Downstream services can be other applications, AWS resources, HTTP
@@ -501,6 +554,59 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
 
     /**
      * <p>
+     * Updates the encryption configuration for X-Ray data.
+     * </p>
+     * 
+     * @param putEncryptionConfigRequest
+     * @return Result of the PutEncryptionConfig operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.PutEncryptionConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutEncryptionConfig" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PutEncryptionConfigResult putEncryptionConfig(PutEncryptionConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executePutEncryptionConfig(request);
+    }
+
+    @SdkInternalApi
+    final PutEncryptionConfigResult executePutEncryptionConfig(PutEncryptionConfigRequest putEncryptionConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putEncryptionConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutEncryptionConfigRequest> request = null;
+        Response<PutEncryptionConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutEncryptionConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putEncryptionConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutEncryptionConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutEncryptionConfigResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Used by the AWS X-Ray daemon to upload telemetry.
      * </p>
      * 
@@ -560,7 +666,7 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
      * </p>
      * <p>
      * Segments must include the following fields. For the full segment document schema, see <a
-     * href="http://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS X-Ray Segment
+     * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS X-Ray Segment
      * Documents</a> in the <i>AWS X-Ray Developer Guide</i>.
      * </p>
      * <p class="title">

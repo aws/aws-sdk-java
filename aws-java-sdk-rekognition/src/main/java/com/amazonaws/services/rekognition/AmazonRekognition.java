@@ -238,6 +238,10 @@ public interface AmazonRekognition {
      * @throws InvalidParameterException
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws LimitExceededException
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Rekognition Video
+     *         jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a
+     *         <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently
+     *         running jobs is below the Amazon Rekognition service limit.
      * @throws ResourceInUseException
      * @throws ProvisionedThroughputExceededException
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
@@ -646,6 +650,14 @@ public interface AmazonRekognition {
      * <code>Celebrities</code>) of objects. Each <code>CelebrityRecognition</code> contains information about the
      * celebrity in a object and the time, <code>Timestamp</code>, the celebrity was detected.
      * </p>
+     * <note>
+     * <p>
+     * <code>GetCelebrityRecognition</code> only returns the default facial attributes (<code>BoundingBox</code>,
+     * <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>). The other facial
+     * attributes listed in the <code>Face</code> object of the following response syntax are not returned. For more
+     * information, see .
+     * </p>
+     * </note>
      * <p>
      * By default, the <code>Celebrities</code> array is sorted by time (milliseconds from the start of the video). You
      * can also sort the array by celebrity by specifying the value <code>ID</code> in the <code>SortBy</code> input
@@ -804,9 +816,17 @@ public interface AmazonRekognition {
      * </p>
      * <p>
      * The search results are retured in an array, <code>Persons</code>, of objects. Each<code>PersonMatch</code>
-     * element contains details about the matching faces in the input collection, person information for the matched
-     * person, and the time the person was matched in the video.
+     * element contains details about the matching faces in the input collection, person information (facial attributes,
+     * bounding boxes, and person identifer) for the matched person, and the time the person was matched in the video.
      * </p>
+     * <note>
+     * <p>
+     * <code>GetFaceSearch</code> only returns the default facial attributes (<code>BoundingBox</code>,
+     * <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>). The other facial
+     * attributes listed in the <code>Face</code> object of the following response syntax are not returned. For more
+     * information, see .
+     * </p>
+     * </note>
      * <p>
      * By default, the <code>Persons</code> array is sorted by the time, in milliseconds from the start of the video,
      * persons are matched. You can also sort by persons by specifying <code>INDEX</code> for the <code>SORTBY</code>
@@ -903,6 +923,14 @@ public interface AmazonRekognition {
      * <code>GetPersonTracking</code> returns an array, <code>Persons</code>, of tracked persons and the time(s) they
      * were tracked in the video.
      * </p>
+     * <note>
+     * <p>
+     * <code>GetPersonTracking</code> only returns the default facial attributes (<code>BoundingBox</code>,
+     * <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>). The other facial
+     * attributes listed in the <code>Face</code> object of the following response syntax are not returned. For more
+     * information, see .
+     * </p>
+     * </note>
      * <p>
      * By default, the array is sorted by the time(s) a person is tracked in the video. You can sort by tracked persons
      * by specifying <code>INDEX</code> for the <code>SortBy</code> input parameter.
@@ -1284,6 +1312,10 @@ public interface AmazonRekognition {
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws LimitExceededException
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Rekognition Video
+     *         jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a
+     *         <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently
+     *         running jobs is below the Amazon Rekognition service limit.
      * @throws ThrottlingException
      *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
      * @sample AmazonRekognition.StartCelebrityRecognition
@@ -1327,6 +1359,10 @@ public interface AmazonRekognition {
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws LimitExceededException
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Rekognition Video
+     *         jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a
+     *         <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently
+     *         running jobs is below the Amazon Rekognition service limit.
      * @throws ThrottlingException
      *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
      * @sample AmazonRekognition.StartContentModeration
@@ -1368,6 +1404,10 @@ public interface AmazonRekognition {
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws LimitExceededException
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Rekognition Video
+     *         jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a
+     *         <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently
+     *         running jobs is below the Amazon Rekognition service limit.
      * @throws ThrottlingException
      *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
      * @sample AmazonRekognition.StartFaceDetection
@@ -1409,6 +1449,10 @@ public interface AmazonRekognition {
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws LimitExceededException
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Rekognition Video
+     *         jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a
+     *         <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently
+     *         running jobs is below the Amazon Rekognition service limit.
      * @throws ResourceNotFoundException
      *         The collection specified in the request cannot be found.
      * @throws ThrottlingException
@@ -1459,6 +1503,10 @@ public interface AmazonRekognition {
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws LimitExceededException
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Rekognition Video
+     *         jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a
+     *         <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently
+     *         running jobs is below the Amazon Rekognition service limit.
      * @throws ThrottlingException
      *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
      * @sample AmazonRekognition.StartLabelDetection
@@ -1502,6 +1550,10 @@ public interface AmazonRekognition {
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws LimitExceededException
+     *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Rekognition Video
+     *         jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a
+     *         <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently
+     *         running jobs is below the Amazon Rekognition service limit.
      * @throws ThrottlingException
      *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
      * @sample AmazonRekognition.StartPersonTracking

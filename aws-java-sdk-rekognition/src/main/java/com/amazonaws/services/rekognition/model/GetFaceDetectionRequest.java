@@ -29,7 +29,8 @@ public class GetFaceDetectionRequest extends com.amazonaws.AmazonWebServiceReque
     private String jobId;
     /**
      * <p>
-     * Maximum number of detected faces to return. The default is 1000.
+     * Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify
+     * a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.
      * </p>
      */
     private Integer maxResults;
@@ -89,11 +90,13 @@ public class GetFaceDetectionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Maximum number of detected faces to return. The default is 1000.
+     * Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify
+     * a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of detected faces to return. The default is 1000.
+     *        Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you
+     *        specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -102,10 +105,12 @@ public class GetFaceDetectionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Maximum number of detected faces to return. The default is 1000.
+     * Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify
+     * a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.
      * </p>
      * 
-     * @return Maximum number of detected faces to return. The default is 1000.
+     * @return Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you
+     *         specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.
      */
 
     public Integer getMaxResults() {
@@ -114,11 +119,13 @@ public class GetFaceDetectionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Maximum number of detected faces to return. The default is 1000.
+     * Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify
+     * a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of detected faces to return. The default is 1000.
+     *        Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you
+     *        specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

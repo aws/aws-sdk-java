@@ -1,3 +1,16 @@
+# __1.11.318__ __2018-04-25__
+## __AWS CodeDeploy__
+  - ### Features
+    - AWS CodeDeploy has a new exception that indicates when a GitHub token is not valid.
+
+## __AWS X-Ray__
+  - ### Features
+    - Added PutEncryptionConfig and GetEncryptionConfig APIs for managing data encryption settings. Use PutEncryptionConfig to configure X-Ray to use an AWS Key Management Service customer master key to encrypt trace data at rest.
+
+## __Amazon Rekognition__
+  - ### Features
+    - Documentation updates for Amazon Rekognition.
+
 # __1.11.317__ __2018-04-24__
 ## __AWS Elastic Beanstalk__
   - ### Features

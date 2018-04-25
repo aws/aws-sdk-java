@@ -42,9 +42,9 @@ public class DeploymentReadyOption implements Serializable, Cloneable, Structure
      * </li>
      * <li>
      * <p>
-     * STOP_DEPLOYMENT: Do not register new instances with load balancer unless traffic is rerouted manually. If traffic
-     * is not rerouted manually before the end of the specified wait period, the deployment status is changed to
-     * Stopped.
+     * STOP_DEPLOYMENT: Do not register new instances with a load balancer unless traffic rerouting is started using
+     * <a>ContinueDeployment</a>. If traffic rerouting is not started before the end of the specified wait period, the
+     * deployment status is changed to Stopped.
      * </p>
      * </li>
      * </ul>
@@ -72,9 +72,9 @@ public class DeploymentReadyOption implements Serializable, Cloneable, Structure
      * </li>
      * <li>
      * <p>
-     * STOP_DEPLOYMENT: Do not register new instances with load balancer unless traffic is rerouted manually. If traffic
-     * is not rerouted manually before the end of the specified wait period, the deployment status is changed to
-     * Stopped.
+     * STOP_DEPLOYMENT: Do not register new instances with a load balancer unless traffic rerouting is started using
+     * <a>ContinueDeployment</a>. If traffic rerouting is not started before the end of the specified wait period, the
+     * deployment status is changed to Stopped.
      * </p>
      * </li>
      * </ul>
@@ -91,9 +91,9 @@ public class DeploymentReadyOption implements Serializable, Cloneable, Structure
      *        </li>
      *        <li>
      *        <p>
-     *        STOP_DEPLOYMENT: Do not register new instances with load balancer unless traffic is rerouted manually. If
-     *        traffic is not rerouted manually before the end of the specified wait period, the deployment status is
-     *        changed to Stopped.
+     *        STOP_DEPLOYMENT: Do not register new instances with a load balancer unless traffic rerouting is started
+     *        using <a>ContinueDeployment</a>. If traffic rerouting is not started before the end of the specified wait
+     *        period, the deployment status is changed to Stopped.
      *        </p>
      *        </li>
      * @see DeploymentReadyAction
@@ -117,9 +117,9 @@ public class DeploymentReadyOption implements Serializable, Cloneable, Structure
      * </li>
      * <li>
      * <p>
-     * STOP_DEPLOYMENT: Do not register new instances with load balancer unless traffic is rerouted manually. If traffic
-     * is not rerouted manually before the end of the specified wait period, the deployment status is changed to
-     * Stopped.
+     * STOP_DEPLOYMENT: Do not register new instances with a load balancer unless traffic rerouting is started using
+     * <a>ContinueDeployment</a>. If traffic rerouting is not started before the end of the specified wait period, the
+     * deployment status is changed to Stopped.
      * </p>
      * </li>
      * </ul>
@@ -135,9 +135,9 @@ public class DeploymentReadyOption implements Serializable, Cloneable, Structure
      *         </li>
      *         <li>
      *         <p>
-     *         STOP_DEPLOYMENT: Do not register new instances with load balancer unless traffic is rerouted manually. If
-     *         traffic is not rerouted manually before the end of the specified wait period, the deployment status is
-     *         changed to Stopped.
+     *         STOP_DEPLOYMENT: Do not register new instances with a load balancer unless traffic rerouting is started
+     *         using <a>ContinueDeployment</a>. If traffic rerouting is not started before the end of the specified wait
+     *         period, the deployment status is changed to Stopped.
      *         </p>
      *         </li>
      * @see DeploymentReadyAction
@@ -161,9 +161,9 @@ public class DeploymentReadyOption implements Serializable, Cloneable, Structure
      * </li>
      * <li>
      * <p>
-     * STOP_DEPLOYMENT: Do not register new instances with load balancer unless traffic is rerouted manually. If traffic
-     * is not rerouted manually before the end of the specified wait period, the deployment status is changed to
-     * Stopped.
+     * STOP_DEPLOYMENT: Do not register new instances with a load balancer unless traffic rerouting is started using
+     * <a>ContinueDeployment</a>. If traffic rerouting is not started before the end of the specified wait period, the
+     * deployment status is changed to Stopped.
      * </p>
      * </li>
      * </ul>
@@ -180,9 +180,9 @@ public class DeploymentReadyOption implements Serializable, Cloneable, Structure
      *        </li>
      *        <li>
      *        <p>
-     *        STOP_DEPLOYMENT: Do not register new instances with load balancer unless traffic is rerouted manually. If
-     *        traffic is not rerouted manually before the end of the specified wait period, the deployment status is
-     *        changed to Stopped.
+     *        STOP_DEPLOYMENT: Do not register new instances with a load balancer unless traffic rerouting is started
+     *        using <a>ContinueDeployment</a>. If traffic rerouting is not started before the end of the specified wait
+     *        period, the deployment status is changed to Stopped.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -208,9 +208,9 @@ public class DeploymentReadyOption implements Serializable, Cloneable, Structure
      * </li>
      * <li>
      * <p>
-     * STOP_DEPLOYMENT: Do not register new instances with load balancer unless traffic is rerouted manually. If traffic
-     * is not rerouted manually before the end of the specified wait period, the deployment status is changed to
-     * Stopped.
+     * STOP_DEPLOYMENT: Do not register new instances with a load balancer unless traffic rerouting is started using
+     * <a>ContinueDeployment</a>. If traffic rerouting is not started before the end of the specified wait period, the
+     * deployment status is changed to Stopped.
      * </p>
      * </li>
      * </ul>
@@ -227,9 +227,9 @@ public class DeploymentReadyOption implements Serializable, Cloneable, Structure
      *        </li>
      *        <li>
      *        <p>
-     *        STOP_DEPLOYMENT: Do not register new instances with load balancer unless traffic is rerouted manually. If
-     *        traffic is not rerouted manually before the end of the specified wait period, the deployment status is
-     *        changed to Stopped.
+     *        STOP_DEPLOYMENT: Do not register new instances with a load balancer unless traffic rerouting is started
+     *        using <a>ContinueDeployment</a>. If traffic rerouting is not started before the end of the specified wait
+     *        period, the deployment status is changed to Stopped.
      *        </p>
      *        </li>
      * @see DeploymentReadyAction
@@ -253,9 +253,9 @@ public class DeploymentReadyOption implements Serializable, Cloneable, Structure
      * </li>
      * <li>
      * <p>
-     * STOP_DEPLOYMENT: Do not register new instances with load balancer unless traffic is rerouted manually. If traffic
-     * is not rerouted manually before the end of the specified wait period, the deployment status is changed to
-     * Stopped.
+     * STOP_DEPLOYMENT: Do not register new instances with a load balancer unless traffic rerouting is started using
+     * <a>ContinueDeployment</a>. If traffic rerouting is not started before the end of the specified wait period, the
+     * deployment status is changed to Stopped.
      * </p>
      * </li>
      * </ul>
@@ -272,9 +272,9 @@ public class DeploymentReadyOption implements Serializable, Cloneable, Structure
      *        </li>
      *        <li>
      *        <p>
-     *        STOP_DEPLOYMENT: Do not register new instances with load balancer unless traffic is rerouted manually. If
-     *        traffic is not rerouted manually before the end of the specified wait period, the deployment status is
-     *        changed to Stopped.
+     *        STOP_DEPLOYMENT: Do not register new instances with a load balancer unless traffic rerouting is started
+     *        using <a>ContinueDeployment</a>. If traffic rerouting is not started before the end of the specified wait
+     *        period, the deployment status is changed to Stopped.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

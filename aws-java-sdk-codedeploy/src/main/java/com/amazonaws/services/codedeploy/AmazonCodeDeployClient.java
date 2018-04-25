@@ -210,6 +210,9 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                             new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.InvalidNextTokenException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidGitHubAccountTokenException").withModeledClass(
+                                    com.amazonaws.services.codedeploy.model.InvalidGitHubAccountTokenException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TriggerTargetsLimitExceededException").withModeledClass(
                                     com.amazonaws.services.codedeploy.model.TriggerTargetsLimitExceededException.class))
                     .addErrorMetadata(
@@ -1275,6 +1278,8 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
      * @throws InvalidIgnoreApplicationStopFailuresValueException
      *         The IgnoreApplicationStopFailures value is invalid. For AWS Lambda deployments, <code>false</code> is
      *         expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.
+     * @throws InvalidGitHubAccountTokenException
+     *         The GitHub token is not valid.
      * @sample AmazonCodeDeploy.CreateDeployment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeployment" target="_top">AWS
      *      API Documentation</a>

@@ -500,6 +500,8 @@ public interface AmazonCodeDeploy {
      * @throws InvalidIgnoreApplicationStopFailuresValueException
      *         The IgnoreApplicationStopFailures value is invalid. For AWS Lambda deployments, <code>false</code> is
      *         expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.
+     * @throws InvalidGitHubAccountTokenException
+     *         The GitHub token is not valid.
      * @sample AmazonCodeDeploy.CreateDeployment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeployment" target="_top">AWS
      *      API Documentation</a>

@@ -15,7 +15,12 @@ package com.amazonaws.services.rekognition.model;
 import javax.annotation.Generated;
 
 /**
- * <p/>
+ * <p>
+ * An Amazon Rekognition service limit was exceeded. For example, if you start too many Rekognition Video jobs
+ * concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a
+ * <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs
+ * is below the Amazon Rekognition service limit.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LimitExceededException extends com.amazonaws.services.rekognition.model.AmazonRekognitionException {

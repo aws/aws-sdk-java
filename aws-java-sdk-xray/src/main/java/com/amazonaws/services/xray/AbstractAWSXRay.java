@@ -43,6 +43,11 @@ public class AbstractAWSXRay implements AWSXRay {
     }
 
     @Override
+    public GetEncryptionConfigResult getEncryptionConfig(GetEncryptionConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetServiceGraphResult getServiceGraph(GetServiceGraphRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -54,6 +59,11 @@ public class AbstractAWSXRay implements AWSXRay {
 
     @Override
     public GetTraceSummariesResult getTraceSummaries(GetTraceSummariesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutEncryptionConfigResult putEncryptionConfig(PutEncryptionConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

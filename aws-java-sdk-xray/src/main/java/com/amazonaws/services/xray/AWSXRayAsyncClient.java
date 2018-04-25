@@ -278,6 +278,39 @@ public class AWSXRayAsyncClient extends AWSXRayClient implements AWSXRayAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetEncryptionConfigResult> getEncryptionConfigAsync(GetEncryptionConfigRequest request) {
+
+        return getEncryptionConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEncryptionConfigResult> getEncryptionConfigAsync(final GetEncryptionConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetEncryptionConfigRequest, GetEncryptionConfigResult> asyncHandler) {
+        final GetEncryptionConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetEncryptionConfigResult>() {
+            @Override
+            public GetEncryptionConfigResult call() throws Exception {
+                GetEncryptionConfigResult result = null;
+
+                try {
+                    result = executeGetEncryptionConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetServiceGraphResult> getServiceGraphAsync(GetServiceGraphRequest request) {
 
         return getServiceGraphAsync(request, null);
@@ -361,6 +394,39 @@ public class AWSXRayAsyncClient extends AWSXRayClient implements AWSXRayAsync {
 
                 try {
                     result = executeGetTraceSummaries(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutEncryptionConfigResult> putEncryptionConfigAsync(PutEncryptionConfigRequest request) {
+
+        return putEncryptionConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutEncryptionConfigResult> putEncryptionConfigAsync(final PutEncryptionConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutEncryptionConfigRequest, PutEncryptionConfigResult> asyncHandler) {
+        final PutEncryptionConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutEncryptionConfigResult>() {
+            @Override
+            public PutEncryptionConfigResult call() throws Exception {
+                PutEncryptionConfigResult result = null;
+
+                try {
+                    result = executePutEncryptionConfig(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

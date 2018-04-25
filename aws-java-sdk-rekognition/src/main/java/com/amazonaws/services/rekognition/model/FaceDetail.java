@@ -21,13 +21,46 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Structure containing attributes of the face that the algorithm detected.
  * </p>
+ * <p>
+ * A <code>FaceDetail</code> object contains either the default facial attributes or all facial attributes. The default
+ * attributes are <code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and
+ * <code>Quality</code>.
+ * </p>
+ * <p>
+ * is the only Rekognition Video stored video operation that can return a <code>FaceDetail</code> object with all
+ * attributes. To specify which attributes to return, use the <code>FaceAttributes</code> input parameter for . The
+ * following Rekognition Video operations return only the default attributes. The corresponding Start operations don't
+ * have a <code>FaceAttributes</code> input parameter.
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * GetCelebrityRecognition
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * GetPersonTracking
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * GetFaceSearch
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * The Rekognition Image and operations can return all facial attributes. To specify which attributes to return, use the
+ * <code>Attributes</code> input parameter for <code>DetectFaces</code>. For <code>IndexFaces</code>, use the
+ * <code>DetectAttributes</code> input parameter.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Bounding box of the face.
+     * Bounding box of the face. Default attribute.
      * </p>
      */
     private BoundingBox boundingBox;
@@ -95,36 +128,37 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<Emotion> emotions;
     /**
      * <p>
-     * Indicates the location of landmarks on the face.
+     * Indicates the location of landmarks on the face. Default attribute.
      * </p>
      */
     private java.util.List<Landmark> landmarks;
     /**
      * <p>
-     * Indicates the pose of the face as determined by its pitch, roll, and yaw.
+     * Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.
      * </p>
      */
     private Pose pose;
     /**
      * <p>
-     * Identifies image brightness and sharpness.
+     * Identifies image brightness and sharpness. Default attribute.
      * </p>
      */
     private ImageQuality quality;
     /**
      * <p>
-     * Confidence level that the bounding box contains a face (and not a different object such as a tree).
+     * Confidence level that the bounding box contains a face (and not a different object such as a tree). Default
+     * attribute.
      * </p>
      */
     private Float confidence;
 
     /**
      * <p>
-     * Bounding box of the face.
+     * Bounding box of the face. Default attribute.
      * </p>
      * 
      * @param boundingBox
-     *        Bounding box of the face.
+     *        Bounding box of the face. Default attribute.
      */
 
     public void setBoundingBox(BoundingBox boundingBox) {
@@ -133,10 +167,10 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Bounding box of the face.
+     * Bounding box of the face. Default attribute.
      * </p>
      * 
-     * @return Bounding box of the face.
+     * @return Bounding box of the face. Default attribute.
      */
 
     public BoundingBox getBoundingBox() {
@@ -145,11 +179,11 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Bounding box of the face.
+     * Bounding box of the face. Default attribute.
      * </p>
      * 
      * @param boundingBox
-     *        Bounding box of the face.
+     *        Bounding box of the face. Default attribute.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -604,10 +638,10 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates the location of landmarks on the face.
+     * Indicates the location of landmarks on the face. Default attribute.
      * </p>
      * 
-     * @return Indicates the location of landmarks on the face.
+     * @return Indicates the location of landmarks on the face. Default attribute.
      */
 
     public java.util.List<Landmark> getLandmarks() {
@@ -616,11 +650,11 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates the location of landmarks on the face.
+     * Indicates the location of landmarks on the face. Default attribute.
      * </p>
      * 
      * @param landmarks
-     *        Indicates the location of landmarks on the face.
+     *        Indicates the location of landmarks on the face. Default attribute.
      */
 
     public void setLandmarks(java.util.Collection<Landmark> landmarks) {
@@ -634,7 +668,7 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates the location of landmarks on the face.
+     * Indicates the location of landmarks on the face. Default attribute.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -643,7 +677,7 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param landmarks
-     *        Indicates the location of landmarks on the face.
+     *        Indicates the location of landmarks on the face. Default attribute.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -659,11 +693,11 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates the location of landmarks on the face.
+     * Indicates the location of landmarks on the face. Default attribute.
      * </p>
      * 
      * @param landmarks
-     *        Indicates the location of landmarks on the face.
+     *        Indicates the location of landmarks on the face. Default attribute.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -674,11 +708,11 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates the pose of the face as determined by its pitch, roll, and yaw.
+     * Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.
      * </p>
      * 
      * @param pose
-     *        Indicates the pose of the face as determined by its pitch, roll, and yaw.
+     *        Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.
      */
 
     public void setPose(Pose pose) {
@@ -687,10 +721,10 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates the pose of the face as determined by its pitch, roll, and yaw.
+     * Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.
      * </p>
      * 
-     * @return Indicates the pose of the face as determined by its pitch, roll, and yaw.
+     * @return Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.
      */
 
     public Pose getPose() {
@@ -699,11 +733,11 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates the pose of the face as determined by its pitch, roll, and yaw.
+     * Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.
      * </p>
      * 
      * @param pose
-     *        Indicates the pose of the face as determined by its pitch, roll, and yaw.
+     *        Indicates the pose of the face as determined by its pitch, roll, and yaw. Default attribute.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -714,11 +748,11 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Identifies image brightness and sharpness.
+     * Identifies image brightness and sharpness. Default attribute.
      * </p>
      * 
      * @param quality
-     *        Identifies image brightness and sharpness.
+     *        Identifies image brightness and sharpness. Default attribute.
      */
 
     public void setQuality(ImageQuality quality) {
@@ -727,10 +761,10 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Identifies image brightness and sharpness.
+     * Identifies image brightness and sharpness. Default attribute.
      * </p>
      * 
-     * @return Identifies image brightness and sharpness.
+     * @return Identifies image brightness and sharpness. Default attribute.
      */
 
     public ImageQuality getQuality() {
@@ -739,11 +773,11 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Identifies image brightness and sharpness.
+     * Identifies image brightness and sharpness. Default attribute.
      * </p>
      * 
      * @param quality
-     *        Identifies image brightness and sharpness.
+     *        Identifies image brightness and sharpness. Default attribute.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -754,11 +788,13 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Confidence level that the bounding box contains a face (and not a different object such as a tree).
+     * Confidence level that the bounding box contains a face (and not a different object such as a tree). Default
+     * attribute.
      * </p>
      * 
      * @param confidence
      *        Confidence level that the bounding box contains a face (and not a different object such as a tree).
+     *        Default attribute.
      */
 
     public void setConfidence(Float confidence) {
@@ -767,10 +803,12 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Confidence level that the bounding box contains a face (and not a different object such as a tree).
+     * Confidence level that the bounding box contains a face (and not a different object such as a tree). Default
+     * attribute.
      * </p>
      * 
      * @return Confidence level that the bounding box contains a face (and not a different object such as a tree).
+     *         Default attribute.
      */
 
     public Float getConfidence() {
@@ -779,11 +817,13 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Confidence level that the bounding box contains a face (and not a different object such as a tree).
+     * Confidence level that the bounding box contains a face (and not a different object such as a tree). Default
+     * attribute.
      * </p>
      * 
      * @param confidence
      *        Confidence level that the bounding box contains a face (and not a different object such as a tree).
+     *        Default attribute.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -68,6 +68,37 @@ public interface AWSXRayAsync extends AWSXRay {
 
     /**
      * <p>
+     * Retrieves the current encryption configuration for X-Ray data.
+     * </p>
+     * 
+     * @param getEncryptionConfigRequest
+     * @return A Java Future containing the result of the GetEncryptionConfig operation returned by the service.
+     * @sample AWSXRayAsync.GetEncryptionConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetEncryptionConfig" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetEncryptionConfigResult> getEncryptionConfigAsync(GetEncryptionConfigRequest getEncryptionConfigRequest);
+
+    /**
+     * <p>
+     * Retrieves the current encryption configuration for X-Ray data.
+     * </p>
+     * 
+     * @param getEncryptionConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetEncryptionConfig operation returned by the service.
+     * @sample AWSXRayAsyncHandler.GetEncryptionConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetEncryptionConfig" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetEncryptionConfigResult> getEncryptionConfigAsync(GetEncryptionConfigRequest getEncryptionConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<GetEncryptionConfigRequest, GetEncryptionConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves a document that describes services that process incoming requests, and downstream services that they
      * call as a result. Root services process incoming requests and make calls to downstream services. Root services
      * are applications that use the AWS X-Ray SDK. Downstream services can be other applications, AWS resources, HTTP
@@ -209,6 +240,37 @@ public interface AWSXRayAsync extends AWSXRay {
 
     /**
      * <p>
+     * Updates the encryption configuration for X-Ray data.
+     * </p>
+     * 
+     * @param putEncryptionConfigRequest
+     * @return A Java Future containing the result of the PutEncryptionConfig operation returned by the service.
+     * @sample AWSXRayAsync.PutEncryptionConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutEncryptionConfig" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutEncryptionConfigResult> putEncryptionConfigAsync(PutEncryptionConfigRequest putEncryptionConfigRequest);
+
+    /**
+     * <p>
+     * Updates the encryption configuration for X-Ray data.
+     * </p>
+     * 
+     * @param putEncryptionConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutEncryptionConfig operation returned by the service.
+     * @sample AWSXRayAsyncHandler.PutEncryptionConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutEncryptionConfig" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutEncryptionConfigResult> putEncryptionConfigAsync(PutEncryptionConfigRequest putEncryptionConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<PutEncryptionConfigRequest, PutEncryptionConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * Used by the AWS X-Ray daemon to upload telemetry.
      * </p>
      * 
@@ -246,7 +308,7 @@ public interface AWSXRayAsync extends AWSXRay {
      * </p>
      * <p>
      * Segments must include the following fields. For the full segment document schema, see <a
-     * href="http://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS X-Ray Segment
+     * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS X-Ray Segment
      * Documents</a> in the <i>AWS X-Ray Developer Guide</i>.
      * </p>
      * <p class="title">
@@ -333,7 +395,7 @@ public interface AWSXRayAsync extends AWSXRay {
      * </p>
      * <p>
      * Segments must include the following fields. For the full segment document schema, see <a
-     * href="http://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS X-Ray Segment
+     * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS X-Ray Segment
      * Documents</a> in the <i>AWS X-Ray Developer Guide</i>.
      * </p>
      * <p class="title">
