@@ -242,7 +242,8 @@ public interface AWSSecretsManager {
      * CMK for the account using credentials from a different AWS account. Store the ARN of the CMK in the secret when
      * you create the secret or when you update it by including it in the <code>KMSKeyId</code>. If you call an API that
      * must encrypt or decrypt <code>SecretString</code> or <code>SecretBinary</code> using credentials from a different
-     * account then the KMS key policy must grant cross-account access to that other account's user or role.
+     * account then the KMS key policy must grant cross-account access to that other account's user or role for both the
+     * kms:GenerateDataKey and kms:Decrypt operations.
      * </p>
      * </li>
      * </ul>
@@ -269,7 +270,7 @@ public interface AWSSecretsManager {
      * </li>
      * <li>
      * <p>
-     * kms:Encrypt - needed only if you use a customer-created KMS key to encrypt the secret. You do not need this
+     * kms:Decrypt - needed only if you use a customer-created KMS key to encrypt the secret. You do not need this
      * permission to use the account's default AWS managed CMK for Secrets Manager.
      * </p>
      * </li>
@@ -741,7 +742,8 @@ public interface AWSSecretsManager {
      * CMK for the account using credentials from a different AWS account. Store the ARN of the CMK in the secret when
      * you create the secret or when you update it by including it in the <code>KMSKeyId</code>. If you call an API that
      * must encrypt or decrypt <code>SecretString</code> or <code>SecretBinary</code> using credentials from a different
-     * account then the KMS key policy must grant cross-account access to that other account's user or role.
+     * account then the KMS key policy must grant cross-account access to that other account's user or role for both the
+     * kms:GenerateDataKey and kms:Decrypt operations.
      * </p>
      * </li>
      * </ul>
@@ -1178,7 +1180,8 @@ public interface AWSSecretsManager {
      * CMK for the account using credentials from a different AWS account. Store the ARN of the CMK in the secret when
      * you create the secret or when you update it by including it in the <code>KMSKeyId</code>. If you call an API that
      * must encrypt or decrypt <code>SecretString</code> or <code>SecretBinary</code> using credentials from a different
-     * account then the KMS key policy must grant cross-account access to that other account's user or role.
+     * account then the KMS key policy must grant cross-account access to that other account's user or role for both the
+     * kms:GenerateDataKey and kms:Decrypt operations.
      * </p>
      * </li>
      * </ul>

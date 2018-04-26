@@ -1,3 +1,12 @@
+# __1.11.319__ __2018-04-26__
+## __AWS Secrets Manager__
+  - ### Features
+    - Documentation updates for secretsmanager
+
+## __Amazon Glacier__
+  - ### Features
+    - Documentation updates for Glacier to fix a broken link
+
 # __1.11.318__ __2018-04-25__
 ## __AWS CodeDeploy__
   - ### Features

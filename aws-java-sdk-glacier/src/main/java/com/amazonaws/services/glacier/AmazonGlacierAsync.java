@@ -750,8 +750,8 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access
      * Management (IAM) users don't have any permissions by default. You must grant them explicit permission to perform
      * specific actions. For more information, see <a
-     * href="http://docs.aws.amazon.com/latest/dev/using-iam-with-amazon-glacier.html">Access Control Using AWS Identity
-     * and Access Management (IAM)</a>.
+     * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access Control
+     * Using AWS Identity and Access Management (IAM)</a>.
      * </p>
      * <p>
      * For conceptual information and underlying REST API, see <a
@@ -778,8 +778,8 @@ public interface AmazonGlacierAsync extends AmazonGlacier {
      * An AWS account has full permission to perform all operations (actions). However, AWS Identity and Access
      * Management (IAM) users don't have any permissions by default. You must grant them explicit permission to perform
      * specific actions. For more information, see <a
-     * href="http://docs.aws.amazon.com/latest/dev/using-iam-with-amazon-glacier.html">Access Control Using AWS Identity
-     * and Access Management (IAM)</a>.
+     * href="http://docs.aws.amazon.com/amazonglacier/latest/dev/using-iam-with-amazon-glacier.html">Access Control
+     * Using AWS Identity and Access Management (IAM)</a>.
      * </p>
      * <p>
      * For conceptual information and underlying REST API, see <a
