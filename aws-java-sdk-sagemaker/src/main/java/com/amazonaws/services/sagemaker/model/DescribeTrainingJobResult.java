@@ -134,6 +134,12 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     private ResourceConfig resourceConfig;
     /**
      * <p>
+     * A object that specifies the VPC that this training job has access to. For more information, see <a>train-vpc</a>.
+     * </p>
+     */
+    private VpcConfig vpcConfig;
+    /**
+     * <p>
      * The condition under which to stop the training job.
      * </p>
      */
@@ -1028,6 +1034,49 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
+     * A object that specifies the VPC that this training job has access to. For more information, see <a>train-vpc</a>.
+     * </p>
+     * 
+     * @param vpcConfig
+     *        A object that specifies the VPC that this training job has access to. For more information, see
+     *        <a>train-vpc</a>.
+     */
+
+    public void setVpcConfig(VpcConfig vpcConfig) {
+        this.vpcConfig = vpcConfig;
+    }
+
+    /**
+     * <p>
+     * A object that specifies the VPC that this training job has access to. For more information, see <a>train-vpc</a>.
+     * </p>
+     * 
+     * @return A object that specifies the VPC that this training job has access to. For more information, see
+     *         <a>train-vpc</a>.
+     */
+
+    public VpcConfig getVpcConfig() {
+        return this.vpcConfig;
+    }
+
+    /**
+     * <p>
+     * A object that specifies the VPC that this training job has access to. For more information, see <a>train-vpc</a>.
+     * </p>
+     * 
+     * @param vpcConfig
+     *        A object that specifies the VPC that this training job has access to. For more information, see
+     *        <a>train-vpc</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withVpcConfig(VpcConfig vpcConfig) {
+        setVpcConfig(vpcConfig);
+        return this;
+    }
+
+    /**
+     * <p>
      * The condition under which to stop the training job.
      * </p>
      * 
@@ -1261,6 +1310,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
             sb.append("OutputDataConfig: ").append(getOutputDataConfig()).append(",");
         if (getResourceConfig() != null)
             sb.append("ResourceConfig: ").append(getResourceConfig()).append(",");
+        if (getVpcConfig() != null)
+            sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
         if (getStoppingCondition() != null)
             sb.append("StoppingCondition: ").append(getStoppingCondition()).append(",");
         if (getCreationTime() != null)
@@ -1333,6 +1384,10 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getResourceConfig() != null && other.getResourceConfig().equals(this.getResourceConfig()) == false)
             return false;
+        if (other.getVpcConfig() == null ^ this.getVpcConfig() == null)
+            return false;
+        if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
+            return false;
         if (other.getStoppingCondition() == null ^ this.getStoppingCondition() == null)
             return false;
         if (other.getStoppingCondition() != null && other.getStoppingCondition().equals(this.getStoppingCondition()) == false)
@@ -1373,6 +1428,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getInputDataConfig() == null) ? 0 : getInputDataConfig().hashCode());
         hashCode = prime * hashCode + ((getOutputDataConfig() == null) ? 0 : getOutputDataConfig().hashCode());
         hashCode = prime * hashCode + ((getResourceConfig() == null) ? 0 : getResourceConfig().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         hashCode = prime * hashCode + ((getStoppingCondition() == null) ? 0 : getStoppingCondition().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getTrainingStartTime() == null) ? 0 : getTrainingStartTime().hashCode());

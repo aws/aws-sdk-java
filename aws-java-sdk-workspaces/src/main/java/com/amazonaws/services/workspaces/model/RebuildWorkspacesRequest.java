@@ -27,17 +27,17 @@ public class RebuildWorkspacesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The WorkSpaces to rebuild.
+     * The WorkSpace to rebuild. You can specify a single WorkSpace.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<RebuildRequest> rebuildWorkspaceRequests;
 
     /**
      * <p>
-     * The WorkSpaces to rebuild.
+     * The WorkSpace to rebuild. You can specify a single WorkSpace.
      * </p>
      * 
-     * @return The WorkSpaces to rebuild.
+     * @return The WorkSpace to rebuild. You can specify a single WorkSpace.
      */
 
     public java.util.List<RebuildRequest> getRebuildWorkspaceRequests() {
@@ -49,11 +49,11 @@ public class RebuildWorkspacesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The WorkSpaces to rebuild.
+     * The WorkSpace to rebuild. You can specify a single WorkSpace.
      * </p>
      * 
      * @param rebuildWorkspaceRequests
-     *        The WorkSpaces to rebuild.
+     *        The WorkSpace to rebuild. You can specify a single WorkSpace.
      */
 
     public void setRebuildWorkspaceRequests(java.util.Collection<RebuildRequest> rebuildWorkspaceRequests) {
@@ -67,7 +67,7 @@ public class RebuildWorkspacesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The WorkSpaces to rebuild.
+     * The WorkSpace to rebuild. You can specify a single WorkSpace.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -76,7 +76,7 @@ public class RebuildWorkspacesRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param rebuildWorkspaceRequests
-     *        The WorkSpaces to rebuild.
+     *        The WorkSpace to rebuild. You can specify a single WorkSpace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class RebuildWorkspacesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The WorkSpaces to rebuild.
+     * The WorkSpace to rebuild. You can specify a single WorkSpace.
      * </p>
      * 
      * @param rebuildWorkspaceRequests
-     *        The WorkSpaces to rebuild.
+     *        The WorkSpace to rebuild. You can specify a single WorkSpace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

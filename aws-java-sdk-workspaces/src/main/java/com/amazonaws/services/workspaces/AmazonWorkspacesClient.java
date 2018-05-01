@@ -79,6 +79,9 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                             new JsonErrorShapeMetadata().withErrorCode("UnsupportedWorkspaceConfigurationException").withModeledClass(
                                     com.amazonaws.services.workspaces.model.UnsupportedWorkspaceConfigurationException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceAssociatedException").withModeledClass(
+                                    com.amazonaws.services.workspaces.model.ResourceAssociatedException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidResourceStateException").withModeledClass(
                                     com.amazonaws.services.workspaces.model.InvalidResourceStateException.class))
                     .addErrorMetadata(
@@ -93,6 +96,15 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceUnavailableException").withModeledClass(
                                     com.amazonaws.services.workspaces.model.ResourceUnavailableException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OperationNotSupportedException").withModeledClass(
+                                    com.amazonaws.services.workspaces.model.OperationNotSupportedException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withModeledClass(
+                                    com.amazonaws.services.workspaces.model.ResourceAlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceCreationFailedException").withModeledClass(
+                                    com.amazonaws.services.workspaces.model.ResourceCreationFailedException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceLimitExceededException").withModeledClass(
                                     com.amazonaws.services.workspaces.model.ResourceLimitExceededException.class))
@@ -283,7 +295,202 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Creates tags for the specified WorkSpace.
+     * Associates the specified IP access control group with the specified directory.
+     * </p>
+     * 
+     * @param associateIpGroupsRequest
+     * @return Result of the AssociateIpGroups operation returned by the service.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws InvalidResourceStateException
+     *         The state of the resource is not valid for this operation.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @throws OperationNotSupportedException
+     *         This operation is not supported.
+     * @sample AmazonWorkspaces.AssociateIpGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AssociateIpGroups" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public AssociateIpGroupsResult associateIpGroups(AssociateIpGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateIpGroups(request);
+    }
+
+    @SdkInternalApi
+    final AssociateIpGroupsResult executeAssociateIpGroups(AssociateIpGroupsRequest associateIpGroupsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateIpGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateIpGroupsRequest> request = null;
+        Response<AssociateIpGroupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateIpGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateIpGroupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateIpGroupsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AssociateIpGroupsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds one or more rules to the specified IP access control group.
+     * </p>
+     * <p>
+     * This action gives users permission to access their WorkSpaces from the CIDR address ranges specified in the
+     * rules.
+     * </p>
+     * 
+     * @param authorizeIpRulesRequest
+     * @return Result of the AuthorizeIpRules operation returned by the service.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws InvalidResourceStateException
+     *         The state of the resource is not valid for this operation.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @sample AmazonWorkspaces.AuthorizeIpRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AuthorizeIpRules" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public AuthorizeIpRulesResult authorizeIpRules(AuthorizeIpRulesRequest request) {
+        request = beforeClientExecution(request);
+        return executeAuthorizeIpRules(request);
+    }
+
+    @SdkInternalApi
+    final AuthorizeIpRulesResult executeAuthorizeIpRules(AuthorizeIpRulesRequest authorizeIpRulesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(authorizeIpRulesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AuthorizeIpRulesRequest> request = null;
+        Response<AuthorizeIpRulesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AuthorizeIpRulesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(authorizeIpRulesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AuthorizeIpRulesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AuthorizeIpRulesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an IP access control group.
+     * </p>
+     * <p>
+     * An IP access control group provides you with the ability to control the IP addresses from which users are allowed
+     * to access their WorkSpaces. To specify the CIDR address ranges, add rules to your IP access control group and
+     * then associate the group with your directory. You can add rules when you create the group or at any time using
+     * <a>AuthorizeIpRules</a>.
+     * </p>
+     * <p>
+     * There is a default IP access control group associated with your directory. If you don't associate an IP access
+     * control group with your directory, the default group is used. The default group includes a default rule that
+     * allows users to access their WorkSpaces from anywhere. You cannot modify the default IP access control group for
+     * your directory.
+     * </p>
+     * 
+     * @param createIpGroupRequest
+     * @return Result of the CreateIpGroup operation returned by the service.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws ResourceAlreadyExistsException
+     *         The specified resource already exists.
+     * @throws ResourceCreationFailedException
+     *         The resource could not be created.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @sample AmazonWorkspaces.CreateIpGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateIpGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateIpGroupResult createIpGroup(CreateIpGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateIpGroup(request);
+    }
+
+    @SdkInternalApi
+    final CreateIpGroupResult executeCreateIpGroup(CreateIpGroupRequest createIpGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createIpGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateIpGroupRequest> request = null;
+        Response<CreateIpGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateIpGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createIpGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateIpGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateIpGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates the specified tags for the specified WorkSpace.
      * </p>
      * 
      * @param createTagsRequest
@@ -394,7 +601,67 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Deletes the specified tags from a WorkSpace.
+     * Deletes the specified IP access control group.
+     * </p>
+     * <p>
+     * You cannot delete an IP access control group that is associated with a directory.
+     * </p>
+     * 
+     * @param deleteIpGroupRequest
+     * @return Result of the DeleteIpGroup operation returned by the service.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ResourceAssociatedException
+     *         The resource is associated with a directory.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @sample AmazonWorkspaces.DeleteIpGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteIpGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteIpGroupResult deleteIpGroup(DeleteIpGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteIpGroup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteIpGroupResult executeDeleteIpGroup(DeleteIpGroupRequest deleteIpGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteIpGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteIpGroupRequest> request = null;
+        Response<DeleteIpGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteIpGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteIpGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteIpGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteIpGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified tags from the specified WorkSpace.
      * </p>
      * 
      * @param deleteTagsRequest
@@ -447,7 +714,60 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Describes the tags for the specified WorkSpace.
+     * Describes one or more of your IP access control groups.
+     * </p>
+     * 
+     * @param describeIpGroupsRequest
+     * @return Result of the DescribeIpGroups operation returned by the service.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @sample AmazonWorkspaces.DescribeIpGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeIpGroups" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeIpGroupsResult describeIpGroups(DescribeIpGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeIpGroups(request);
+    }
+
+    @SdkInternalApi
+    final DescribeIpGroupsResult executeDescribeIpGroups(DescribeIpGroupsRequest describeIpGroupsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeIpGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeIpGroupsRequest> request = null;
+        Response<DescribeIpGroupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeIpGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeIpGroupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeIpGroupsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeIpGroupsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the specified tags for the specified WorkSpace.
      * </p>
      * 
      * @param describeTagsRequest
@@ -733,6 +1053,63 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Disassociates the specified IP access control group from the specified directory.
+     * </p>
+     * 
+     * @param disassociateIpGroupsRequest
+     * @return Result of the DisassociateIpGroups operation returned by the service.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The state of the resource is not valid for this operation.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @sample AmazonWorkspaces.DisassociateIpGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DisassociateIpGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateIpGroupsResult disassociateIpGroups(DisassociateIpGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateIpGroups(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateIpGroupsResult executeDisassociateIpGroups(DisassociateIpGroupsRequest disassociateIpGroupsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateIpGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateIpGroupsRequest> request = null;
+        Response<DisassociateIpGroupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateIpGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateIpGroupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateIpGroupsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DisassociateIpGroupsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Modifies the specified WorkSpace properties.
      * </p>
      * 
@@ -741,7 +1118,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      * @throws InvalidParameterValuesException
      *         One or more parameter values are not valid.
      * @throws InvalidResourceStateException
-     *         The state of the WorkSpace is not valid for this operation.
+     *         The state of the resource is not valid for this operation.
      * @throws OperationInProgressException
      *         The properties of this WorkSpace are currently being modified. Try again in a moment.
      * @throws UnsupportedWorkspaceConfigurationException
@@ -800,11 +1177,70 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Sets the state of the specified WorkSpace.
+     * </p>
+     * <p>
+     * To maintain a WorkSpace without being interrupted, set the WorkSpace state to <code>ADMIN_MAINTENANCE</code>.
+     * WorkSpaces in this state do not respond to requests to reboot, stop, start, or rebuild. An AutoStop WorkSpace in
+     * this state is not stopped. Users can log into a WorkSpace in the <code>ADMIN_MAINTENANCE</code> state.
+     * </p>
+     * 
+     * @param modifyWorkspaceStateRequest
+     * @return Result of the ModifyWorkspaceState operation returned by the service.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws InvalidResourceStateException
+     *         The state of the resource is not valid for this operation.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AmazonWorkspaces.ModifyWorkspaceState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceState"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ModifyWorkspaceStateResult modifyWorkspaceState(ModifyWorkspaceStateRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyWorkspaceState(request);
+    }
+
+    @SdkInternalApi
+    final ModifyWorkspaceStateResult executeModifyWorkspaceState(ModifyWorkspaceStateRequest modifyWorkspaceStateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyWorkspaceStateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyWorkspaceStateRequest> request = null;
+        Response<ModifyWorkspaceStateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyWorkspaceStateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(modifyWorkspaceStateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ModifyWorkspaceStateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ModifyWorkspaceStateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Reboots the specified WorkSpaces.
      * </p>
      * <p>
-     * You cannot reboot a WorkSpace unless its state is <code>AVAILABLE</code>, <code>IMPAIRED</code>, or
-     * <code>INOPERABLE</code>.
+     * You cannot reboot a WorkSpace unless its state is <code>AVAILABLE</code> or <code>UNHEALTHY</code>.
      * </p>
      * <p>
      * This operation is asynchronous and returns before the WorkSpaces have rebooted.
@@ -856,10 +1292,11 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Rebuilds the specified WorkSpaces.
+     * Rebuilds the specified WorkSpace.
      * </p>
      * <p>
-     * You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code> or <code>ERROR</code>.
+     * You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code>, <code>ERROR</code>, or
+     * <code>UNHEALTHY</code>.
      * </p>
      * <p>
      * Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. For more
@@ -904,6 +1341,63 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<RebuildWorkspacesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RebuildWorkspacesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes one or more rules from the specified IP access control group.
+     * </p>
+     * 
+     * @param revokeIpRulesRequest
+     * @return Result of the RevokeIpRules operation returned by the service.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The state of the resource is not valid for this operation.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @sample AmazonWorkspaces.RevokeIpRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RevokeIpRules" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public RevokeIpRulesResult revokeIpRules(RevokeIpRulesRequest request) {
+        request = beforeClientExecution(request);
+        return executeRevokeIpRules(request);
+    }
+
+    @SdkInternalApi
+    final RevokeIpRulesResult executeRevokeIpRules(RevokeIpRulesRequest revokeIpRulesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(revokeIpRulesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RevokeIpRulesRequest> request = null;
+        Response<RevokeIpRulesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RevokeIpRulesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(revokeIpRulesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RevokeIpRulesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RevokeIpRulesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1069,6 +1563,65 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<TerminateWorkspacesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TerminateWorkspacesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Replaces the current rules of the specified IP access control group with the specified rules.
+     * </p>
+     * 
+     * @param updateRulesOfIpGroupRequest
+     * @return Result of the UpdateRulesOfIpGroup operation returned by the service.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws InvalidResourceStateException
+     *         The state of the resource is not valid for this operation.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @sample AmazonWorkspaces.UpdateRulesOfIpGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateRulesOfIpGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateRulesOfIpGroupResult updateRulesOfIpGroup(UpdateRulesOfIpGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateRulesOfIpGroup(request);
+    }
+
+    @SdkInternalApi
+    final UpdateRulesOfIpGroupResult executeUpdateRulesOfIpGroup(UpdateRulesOfIpGroupRequest updateRulesOfIpGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateRulesOfIpGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateRulesOfIpGroupRequest> request = null;
+        Response<UpdateRulesOfIpGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateRulesOfIpGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRulesOfIpGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateRulesOfIpGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateRulesOfIpGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

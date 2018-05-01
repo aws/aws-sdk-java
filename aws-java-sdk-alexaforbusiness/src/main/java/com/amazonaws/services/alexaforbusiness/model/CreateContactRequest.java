@@ -27,7 +27,7 @@ public class CreateContactRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the contact to display on the AWS management console.
+     * The name of the contact to display on the console.
      * </p>
      */
     private String displayName;
@@ -45,7 +45,7 @@ public class CreateContactRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String lastName;
     /**
      * <p>
-     * The phone number of the contact in E164 format.
+     * The phone number of the contact in E.164 format.
      * </p>
      */
     private String phoneNumber;
@@ -58,11 +58,11 @@ public class CreateContactRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the contact to display on the AWS management console.
+     * The name of the contact to display on the console.
      * </p>
      * 
      * @param displayName
-     *        The name of the contact to display on the AWS management console.
+     *        The name of the contact to display on the console.
      */
 
     public void setDisplayName(String displayName) {
@@ -71,10 +71,10 @@ public class CreateContactRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the contact to display on the AWS management console.
+     * The name of the contact to display on the console.
      * </p>
      * 
-     * @return The name of the contact to display on the AWS management console.
+     * @return The name of the contact to display on the console.
      */
 
     public String getDisplayName() {
@@ -83,11 +83,11 @@ public class CreateContactRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the contact to display on the AWS management console.
+     * The name of the contact to display on the console.
      * </p>
      * 
      * @param displayName
-     *        The name of the contact to display on the AWS management console.
+     *        The name of the contact to display on the console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,11 +178,11 @@ public class CreateContactRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The phone number of the contact in E164 format.
+     * The phone number of the contact in E.164 format.
      * </p>
      * 
      * @param phoneNumber
-     *        The phone number of the contact in E164 format.
+     *        The phone number of the contact in E.164 format.
      */
 
     public void setPhoneNumber(String phoneNumber) {
@@ -191,10 +191,10 @@ public class CreateContactRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The phone number of the contact in E164 format.
+     * The phone number of the contact in E.164 format.
      * </p>
      * 
-     * @return The phone number of the contact in E164 format.
+     * @return The phone number of the contact in E.164 format.
      */
 
     public String getPhoneNumber() {
@@ -203,11 +203,11 @@ public class CreateContactRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The phone number of the contact in E164 format.
+     * The phone number of the contact in E.164 format.
      * </p>
      * 
      * @param phoneNumber
-     *        The phone number of the contact in E164 format.
+     *        The phone number of the contact in E.164 format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

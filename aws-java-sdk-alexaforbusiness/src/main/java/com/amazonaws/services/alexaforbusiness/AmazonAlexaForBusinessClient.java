@@ -50,9 +50,9 @@ import com.amazonaws.services.alexaforbusiness.model.transform.*;
  * <p>
  * <p>
  * Alexa for Business makes it easy for you to use Alexa in your organization. Alexa for Business gives you the tools
- * you need to manage Alexa devices, enroll your users, and assign skills, at scale. You can build your own
- * context-aware voice skills using the Alexa Skills Kit, and the Alexa for Business APIs, and you can make these
- * available as private skills for your organization. Alexa for Business also makes it easy to voice-enable your
+ * you need for managing Alexa devices, enroll your users, and assign skills, at scale. You can build your own
+ * context-aware voice skills using the Alexa Skills Kit and the Alexa for Business API operations. You can make also
+ * these available as private skills for your organization. Alexa for Business makes it easy to voice-enable your
  * products and services, providing context-aware voice experiences for your customers.
  * </p>
  */
@@ -128,11 +128,13 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Associates a contact to a given address book.
+     * Associates a contact with a given address book.
      * </p>
      * 
      * @param associateContactWithAddressBookRequest
      * @return Result of the AssociateContactWithAddressBook operation returned by the service.
+     * @throws LimitExceededException
+     *         You are performing an action that would put you beyond your account's limits. HTTP Status Code: 400
      * @sample AmazonAlexaForBusiness.AssociateContactWithAddressBook
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateContactWithAddressBook"
      *      target="_top">AWS API Documentation</a>
@@ -180,9 +182,9 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Associates a device to a given room. This applies all the settings from the room profile to the device, and all
-     * the skills in any skill groups added to that room. This operation requires the device to be online, or a manual
-     * sync is required.
+     * Associates a device with a given room. This applies all the settings from the room profile to the device, and all
+     * the skills in any skill groups added to that room. This operation requires the device to be online, or else a
+     * manual sync is required.
      * </p>
      * 
      * @param associateDeviceWithRoomRequest
@@ -235,8 +237,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Associates a skill group to a given room. This enables all skills in the associated skill group on all devices in
-     * the room.
+     * Associates a skill group with a given room. This enables all skills in the associated skill group on all devices
+     * in the room.
      * </p>
      * 
      * @param associateSkillGroupWithRoomRequest
@@ -1477,6 +1479,59 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Lists the Device Event history for up to 30 days. If EventType isn't specified in the request, this returns a
+     * list of all device events in reverse chronological order. If EventType is specified, this returns a list of
+     * device events for that EventType in reverse chronological order.
+     * </p>
+     * 
+     * @param listDeviceEventsRequest
+     * @return Result of the ListDeviceEvents operation returned by the service.
+     * @throws NotFoundException
+     *         The resource is not found. HTTP Status Code: 400
+     * @sample AmazonAlexaForBusiness.ListDeviceEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListDeviceEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListDeviceEventsResult listDeviceEvents(ListDeviceEventsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDeviceEvents(request);
+    }
+
+    @SdkInternalApi
+    final ListDeviceEventsResult executeListDeviceEvents(ListDeviceEventsRequest listDeviceEventsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDeviceEventsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDeviceEventsRequest> request = null;
+        Response<ListDeviceEventsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDeviceEventsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDeviceEventsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDeviceEventsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListDeviceEventsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists all enabled skills in a specific skill group.
      * </p>
      * 
@@ -2128,7 +2183,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Resets a device and its account to the known default settings by clearing all information and settings set by
+     * Resets a device and its account to the known default settings, by clearing all information and settings set by
      * previous users.
      * </p>
      * 

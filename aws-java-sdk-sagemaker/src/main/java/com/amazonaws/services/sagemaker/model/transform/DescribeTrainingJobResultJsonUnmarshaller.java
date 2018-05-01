@@ -97,6 +97,10 @@ public class DescribeTrainingJobResultJsonUnmarshaller implements Unmarshaller<D
                     context.nextToken();
                     describeTrainingJobResult.setResourceConfig(ResourceConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("VpcConfig", targetDepth)) {
+                    context.nextToken();
+                    describeTrainingJobResult.setVpcConfig(VpcConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("StoppingCondition", targetDepth)) {
                     context.nextToken();
                     describeTrainingJobResult.setStoppingCondition(StoppingConditionJsonUnmarshaller.getInstance().unmarshall(context));

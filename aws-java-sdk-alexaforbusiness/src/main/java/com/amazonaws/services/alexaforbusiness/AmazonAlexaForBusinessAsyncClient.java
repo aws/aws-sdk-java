@@ -27,9 +27,9 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * <p>
  * Alexa for Business makes it easy for you to use Alexa in your organization. Alexa for Business gives you the tools
- * you need to manage Alexa devices, enroll your users, and assign skills, at scale. You can build your own
- * context-aware voice skills using the Alexa Skills Kit, and the Alexa for Business APIs, and you can make these
- * available as private skills for your organization. Alexa for Business also makes it easy to voice-enable your
+ * you need for managing Alexa devices, enroll your users, and assign skills, at scale. You can build your own
+ * context-aware voice skills using the Alexa Skills Kit and the Alexa for Business API operations. You can make also
+ * these available as private skills for your organization. Alexa for Business makes it easy to voice-enable your
  * products and services, providing context-aware voice experiences for your customers.
  * </p>
  */
@@ -914,6 +914,39 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
 
                 try {
                     result = executeGetSkillGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDeviceEventsResult> listDeviceEventsAsync(ListDeviceEventsRequest request) {
+
+        return listDeviceEventsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDeviceEventsResult> listDeviceEventsAsync(final ListDeviceEventsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDeviceEventsRequest, ListDeviceEventsResult> asyncHandler) {
+        final ListDeviceEventsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListDeviceEventsResult>() {
+            @Override
+            public ListDeviceEventsResult call() throws Exception {
+                ListDeviceEventsResult result = null;
+
+                try {
+                    result = executeListDeviceEvents(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

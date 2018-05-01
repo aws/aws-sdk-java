@@ -30,7 +30,9 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
     private java.util.List<String> accountIds;
     /** The unique ID of the detector of the GuardDuty account with which you want to invite members. */
     private String detectorId;
-    /** The invitation message that you want to send to the accounts that you're inviting to GuardDuty as members. */
+
+    private Boolean disableEmailNotification;
+    /** The invitation message that you want to send to the accounts that you’re inviting to GuardDuty as members. */
     private String message;
 
     /**
@@ -130,10 +132,44 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * The invitation message that you want to send to the accounts that you're inviting to GuardDuty as members.
+     * @param disableEmailNotification
+     */
+
+    public void setDisableEmailNotification(Boolean disableEmailNotification) {
+        this.disableEmailNotification = disableEmailNotification;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean getDisableEmailNotification() {
+        return this.disableEmailNotification;
+    }
+
+    /**
+     * @param disableEmailNotification
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InviteMembersRequest withDisableEmailNotification(Boolean disableEmailNotification) {
+        setDisableEmailNotification(disableEmailNotification);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean isDisableEmailNotification() {
+        return this.disableEmailNotification;
+    }
+
+    /**
+     * The invitation message that you want to send to the accounts that you’re inviting to GuardDuty as members.
      * 
      * @param message
-     *        The invitation message that you want to send to the accounts that you're inviting to GuardDuty as members.
+     *        The invitation message that you want to send to the accounts that you’re inviting to GuardDuty as members.
      */
 
     public void setMessage(String message) {
@@ -141,9 +177,9 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * The invitation message that you want to send to the accounts that you're inviting to GuardDuty as members.
+     * The invitation message that you want to send to the accounts that you’re inviting to GuardDuty as members.
      * 
-     * @return The invitation message that you want to send to the accounts that you're inviting to GuardDuty as
+     * @return The invitation message that you want to send to the accounts that you’re inviting to GuardDuty as
      *         members.
      */
 
@@ -152,10 +188,10 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * The invitation message that you want to send to the accounts that you're inviting to GuardDuty as members.
+     * The invitation message that you want to send to the accounts that you’re inviting to GuardDuty as members.
      * 
      * @param message
-     *        The invitation message that you want to send to the accounts that you're inviting to GuardDuty as members.
+     *        The invitation message that you want to send to the accounts that you’re inviting to GuardDuty as members.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,6 +215,8 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("AccountIds: ").append(getAccountIds()).append(",");
         if (getDetectorId() != null)
             sb.append("DetectorId: ").append(getDetectorId()).append(",");
+        if (getDisableEmailNotification() != null)
+            sb.append("DisableEmailNotification: ").append(getDisableEmailNotification()).append(",");
         if (getMessage() != null)
             sb.append("Message: ").append(getMessage());
         sb.append("}");
@@ -203,6 +241,10 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getDetectorId() != null && other.getDetectorId().equals(this.getDetectorId()) == false)
             return false;
+        if (other.getDisableEmailNotification() == null ^ this.getDisableEmailNotification() == null)
+            return false;
+        if (other.getDisableEmailNotification() != null && other.getDisableEmailNotification().equals(this.getDisableEmailNotification()) == false)
+            return false;
         if (other.getMessage() == null ^ this.getMessage() == null)
             return false;
         if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
@@ -217,6 +259,7 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
         hashCode = prime * hashCode + ((getAccountIds() == null) ? 0 : getAccountIds().hashCode());
         hashCode = prime * hashCode + ((getDetectorId() == null) ? 0 : getDetectorId().hashCode());
+        hashCode = prime * hashCode + ((getDisableEmailNotification() == null) ? 0 : getDisableEmailNotification().hashCode());
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
         return hashCode;
     }

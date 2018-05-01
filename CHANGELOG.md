@@ -1,3 +1,28 @@
+# __1.11.320__ __2018-04-30__
+## __Alexa For Business__
+  - ### Features
+    - Adds ListDeviceEvents API to get a paginated list of device events (such as ConnectionStatus). This release also adds ConnectionStatus field to GetDevice and SearchDevices API.
+
+## __Amazon DynamoDB__
+  - ### Features
+    - Adds two new APIs UpdateGlobalTableSettings and DescribeGlobalTableSettings. This update introduces new constraints in the CreateGlobalTable and UpdateGlobalTable APIs . Tables must have the same write capacity units. If Global Secondary Indexes exist then they must have the same write capacity units and key schema.
+
+## __Amazon GuardDuty__
+  - ### Features
+    - You can disable the email notification when inviting GuardDuty members using the disableEmailNotification parameter in the InviteMembers operation.
+
+## __Amazon Route 53 Domains__
+  - ### Features
+    - This release adds a SubmittedSince attribute to the ListOperations API, so you can list operations that were submitted after a specified date and time.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - SageMaker has added support for VPC configuration for both Endpoints and Training Jobs. This allows you to connect from the instances running the Endpoint or Training Job to your VPC and any resources reachable in the VPC rather than being restricted to resources that were internet accessible.
+
+## __Amazon WorkSpaces__
+  - ### Features
+    - Added new IP Access Control APIs, an API to change the state of a Workspace, and the ADMIN_MAINTENANCE WorkSpace state. With the new IP Access Control APIs, you can now create/delete IP Access Control Groups, add/delete/update rules for IP Access Control Groups, Associate/Disassociate IP Access Control Groups to/from a WorkSpaces Directory, and Describe IP Based Access Control Groups.
+
 # __1.11.319__ __2018-04-26__
 ## __AWS Secrets Manager__
   - ### Features

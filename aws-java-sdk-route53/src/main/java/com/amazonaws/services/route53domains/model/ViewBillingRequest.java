@@ -30,15 +30,15 @@ public class ViewBillingRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The beginning date and time for the time period for which you want a list of billing records. Specify the date in
-     * Unix time format.
+     * The beginning date and time for the time period for which you want a list of billing records. Specify the date
+     * and time in Coordinated Universal time (UTC).
      * </p>
      */
     private java.util.Date start;
     /**
      * <p>
-     * The end date and time for the time period for which you want a list of billing records. Specify the date in Unix
-     * time format.
+     * The end date and time for the time period for which you want a list of billing records. Specify the date and time
+     * in Coordinated Universal time (UTC).
      * </p>
      */
     private java.util.Date end;
@@ -68,13 +68,13 @@ public class ViewBillingRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The beginning date and time for the time period for which you want a list of billing records. Specify the date in
-     * Unix time format.
+     * The beginning date and time for the time period for which you want a list of billing records. Specify the date
+     * and time in Coordinated Universal time (UTC).
      * </p>
      * 
      * @param start
      *        The beginning date and time for the time period for which you want a list of billing records. Specify the
-     *        date in Unix time format.
+     *        date and time in Coordinated Universal time (UTC).
      */
 
     public void setStart(java.util.Date start) {
@@ -83,12 +83,12 @@ public class ViewBillingRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The beginning date and time for the time period for which you want a list of billing records. Specify the date in
-     * Unix time format.
+     * The beginning date and time for the time period for which you want a list of billing records. Specify the date
+     * and time in Coordinated Universal time (UTC).
      * </p>
      * 
      * @return The beginning date and time for the time period for which you want a list of billing records. Specify the
-     *         date in Unix time format.
+     *         date and time in Coordinated Universal time (UTC).
      */
 
     public java.util.Date getStart() {
@@ -97,13 +97,13 @@ public class ViewBillingRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The beginning date and time for the time period for which you want a list of billing records. Specify the date in
-     * Unix time format.
+     * The beginning date and time for the time period for which you want a list of billing records. Specify the date
+     * and time in Coordinated Universal time (UTC).
      * </p>
      * 
      * @param start
      *        The beginning date and time for the time period for which you want a list of billing records. Specify the
-     *        date in Unix time format.
+     *        date and time in Coordinated Universal time (UTC).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,13 +114,13 @@ public class ViewBillingRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The end date and time for the time period for which you want a list of billing records. Specify the date in Unix
-     * time format.
+     * The end date and time for the time period for which you want a list of billing records. Specify the date and time
+     * in Coordinated Universal time (UTC).
      * </p>
      * 
      * @param end
      *        The end date and time for the time period for which you want a list of billing records. Specify the date
-     *        in Unix time format.
+     *        and time in Coordinated Universal time (UTC).
      */
 
     public void setEnd(java.util.Date end) {
@@ -129,12 +129,12 @@ public class ViewBillingRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The end date and time for the time period for which you want a list of billing records. Specify the date in Unix
-     * time format.
+     * The end date and time for the time period for which you want a list of billing records. Specify the date and time
+     * in Coordinated Universal time (UTC).
      * </p>
      * 
      * @return The end date and time for the time period for which you want a list of billing records. Specify the date
-     *         in Unix time format.
+     *         and time in Coordinated Universal time (UTC).
      */
 
     public java.util.Date getEnd() {
@@ -143,13 +143,13 @@ public class ViewBillingRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The end date and time for the time period for which you want a list of billing records. Specify the date in Unix
-     * time format.
+     * The end date and time for the time period for which you want a list of billing records. Specify the date and time
+     * in Coordinated Universal time (UTC).
      * </p>
      * 
      * @param end
      *        The end date and time for the time period for which you want a list of billing records. Specify the date
-     *        in Unix time format.
+     *        and time in Coordinated Universal time (UTC).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

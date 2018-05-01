@@ -35,7 +35,132 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Creates tags for the specified WorkSpace.
+     * Associates the specified IP access control group with the specified directory.
+     * </p>
+     * 
+     * @param associateIpGroupsRequest
+     * @return A Java Future containing the result of the AssociateIpGroups operation returned by the service.
+     * @sample AmazonWorkspacesAsync.AssociateIpGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AssociateIpGroups" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateIpGroupsResult> associateIpGroupsAsync(AssociateIpGroupsRequest associateIpGroupsRequest);
+
+    /**
+     * <p>
+     * Associates the specified IP access control group with the specified directory.
+     * </p>
+     * 
+     * @param associateIpGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateIpGroups operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.AssociateIpGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AssociateIpGroups" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateIpGroupsResult> associateIpGroupsAsync(AssociateIpGroupsRequest associateIpGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateIpGroupsRequest, AssociateIpGroupsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds one or more rules to the specified IP access control group.
+     * </p>
+     * <p>
+     * This action gives users permission to access their WorkSpaces from the CIDR address ranges specified in the
+     * rules.
+     * </p>
+     * 
+     * @param authorizeIpRulesRequest
+     * @return A Java Future containing the result of the AuthorizeIpRules operation returned by the service.
+     * @sample AmazonWorkspacesAsync.AuthorizeIpRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AuthorizeIpRules" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AuthorizeIpRulesResult> authorizeIpRulesAsync(AuthorizeIpRulesRequest authorizeIpRulesRequest);
+
+    /**
+     * <p>
+     * Adds one or more rules to the specified IP access control group.
+     * </p>
+     * <p>
+     * This action gives users permission to access their WorkSpaces from the CIDR address ranges specified in the
+     * rules.
+     * </p>
+     * 
+     * @param authorizeIpRulesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AuthorizeIpRules operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.AuthorizeIpRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AuthorizeIpRules" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AuthorizeIpRulesResult> authorizeIpRulesAsync(AuthorizeIpRulesRequest authorizeIpRulesRequest,
+            com.amazonaws.handlers.AsyncHandler<AuthorizeIpRulesRequest, AuthorizeIpRulesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an IP access control group.
+     * </p>
+     * <p>
+     * An IP access control group provides you with the ability to control the IP addresses from which users are allowed
+     * to access their WorkSpaces. To specify the CIDR address ranges, add rules to your IP access control group and
+     * then associate the group with your directory. You can add rules when you create the group or at any time using
+     * <a>AuthorizeIpRules</a>.
+     * </p>
+     * <p>
+     * There is a default IP access control group associated with your directory. If you don't associate an IP access
+     * control group with your directory, the default group is used. The default group includes a default rule that
+     * allows users to access their WorkSpaces from anywhere. You cannot modify the default IP access control group for
+     * your directory.
+     * </p>
+     * 
+     * @param createIpGroupRequest
+     * @return A Java Future containing the result of the CreateIpGroup operation returned by the service.
+     * @sample AmazonWorkspacesAsync.CreateIpGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateIpGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateIpGroupResult> createIpGroupAsync(CreateIpGroupRequest createIpGroupRequest);
+
+    /**
+     * <p>
+     * Creates an IP access control group.
+     * </p>
+     * <p>
+     * An IP access control group provides you with the ability to control the IP addresses from which users are allowed
+     * to access their WorkSpaces. To specify the CIDR address ranges, add rules to your IP access control group and
+     * then associate the group with your directory. You can add rules when you create the group or at any time using
+     * <a>AuthorizeIpRules</a>.
+     * </p>
+     * <p>
+     * There is a default IP access control group associated with your directory. If you don't associate an IP access
+     * control group with your directory, the default group is used. The default group includes a default rule that
+     * allows users to access their WorkSpaces from anywhere. You cannot modify the default IP access control group for
+     * your directory.
+     * </p>
+     * 
+     * @param createIpGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateIpGroup operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.CreateIpGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateIpGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateIpGroupResult> createIpGroupAsync(CreateIpGroupRequest createIpGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateIpGroupRequest, CreateIpGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates the specified tags for the specified WorkSpace.
      * </p>
      * 
      * @param createTagsRequest
@@ -48,7 +173,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Creates tags for the specified WorkSpace.
+     * Creates the specified tags for the specified WorkSpace.
      * </p>
      * 
      * @param createTagsRequest
@@ -103,7 +228,44 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Deletes the specified tags from a WorkSpace.
+     * Deletes the specified IP access control group.
+     * </p>
+     * <p>
+     * You cannot delete an IP access control group that is associated with a directory.
+     * </p>
+     * 
+     * @param deleteIpGroupRequest
+     * @return A Java Future containing the result of the DeleteIpGroup operation returned by the service.
+     * @sample AmazonWorkspacesAsync.DeleteIpGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteIpGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteIpGroupResult> deleteIpGroupAsync(DeleteIpGroupRequest deleteIpGroupRequest);
+
+    /**
+     * <p>
+     * Deletes the specified IP access control group.
+     * </p>
+     * <p>
+     * You cannot delete an IP access control group that is associated with a directory.
+     * </p>
+     * 
+     * @param deleteIpGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteIpGroup operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.DeleteIpGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteIpGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteIpGroupResult> deleteIpGroupAsync(DeleteIpGroupRequest deleteIpGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteIpGroupRequest, DeleteIpGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified tags from the specified WorkSpace.
      * </p>
      * 
      * @param deleteTagsRequest
@@ -116,7 +278,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Deletes the specified tags from a WorkSpace.
+     * Deletes the specified tags from the specified WorkSpace.
      * </p>
      * 
      * @param deleteTagsRequest
@@ -134,7 +296,38 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Describes the tags for the specified WorkSpace.
+     * Describes one or more of your IP access control groups.
+     * </p>
+     * 
+     * @param describeIpGroupsRequest
+     * @return A Java Future containing the result of the DescribeIpGroups operation returned by the service.
+     * @sample AmazonWorkspacesAsync.DescribeIpGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeIpGroups" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeIpGroupsResult> describeIpGroupsAsync(DescribeIpGroupsRequest describeIpGroupsRequest);
+
+    /**
+     * <p>
+     * Describes one or more of your IP access control groups.
+     * </p>
+     * 
+     * @param describeIpGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeIpGroups operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.DescribeIpGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeIpGroups" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeIpGroupsResult> describeIpGroupsAsync(DescribeIpGroupsRequest describeIpGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeIpGroupsRequest, DescribeIpGroupsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the specified tags for the specified WorkSpace.
      * </p>
      * 
      * @param describeTagsRequest
@@ -147,7 +340,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Describes the tags for the specified WorkSpace.
+     * Describes the specified tags for the specified WorkSpace.
      * </p>
      * 
      * @param describeTagsRequest
@@ -356,6 +549,37 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
+     * Disassociates the specified IP access control group from the specified directory.
+     * </p>
+     * 
+     * @param disassociateIpGroupsRequest
+     * @return A Java Future containing the result of the DisassociateIpGroups operation returned by the service.
+     * @sample AmazonWorkspacesAsync.DisassociateIpGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DisassociateIpGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateIpGroupsResult> disassociateIpGroupsAsync(DisassociateIpGroupsRequest disassociateIpGroupsRequest);
+
+    /**
+     * <p>
+     * Disassociates the specified IP access control group from the specified directory.
+     * </p>
+     * 
+     * @param disassociateIpGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateIpGroups operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.DisassociateIpGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DisassociateIpGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateIpGroupsResult> disassociateIpGroupsAsync(DisassociateIpGroupsRequest disassociateIpGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateIpGroupsRequest, DisassociateIpGroupsResult> asyncHandler);
+
+    /**
+     * <p>
      * Modifies the specified WorkSpace properties.
      * </p>
      * 
@@ -389,11 +613,51 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
+     * Sets the state of the specified WorkSpace.
+     * </p>
+     * <p>
+     * To maintain a WorkSpace without being interrupted, set the WorkSpace state to <code>ADMIN_MAINTENANCE</code>.
+     * WorkSpaces in this state do not respond to requests to reboot, stop, start, or rebuild. An AutoStop WorkSpace in
+     * this state is not stopped. Users can log into a WorkSpace in the <code>ADMIN_MAINTENANCE</code> state.
+     * </p>
+     * 
+     * @param modifyWorkspaceStateRequest
+     * @return A Java Future containing the result of the ModifyWorkspaceState operation returned by the service.
+     * @sample AmazonWorkspacesAsync.ModifyWorkspaceState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceState"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyWorkspaceStateResult> modifyWorkspaceStateAsync(ModifyWorkspaceStateRequest modifyWorkspaceStateRequest);
+
+    /**
+     * <p>
+     * Sets the state of the specified WorkSpace.
+     * </p>
+     * <p>
+     * To maintain a WorkSpace without being interrupted, set the WorkSpace state to <code>ADMIN_MAINTENANCE</code>.
+     * WorkSpaces in this state do not respond to requests to reboot, stop, start, or rebuild. An AutoStop WorkSpace in
+     * this state is not stopped. Users can log into a WorkSpace in the <code>ADMIN_MAINTENANCE</code> state.
+     * </p>
+     * 
+     * @param modifyWorkspaceStateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyWorkspaceState operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.ModifyWorkspaceState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceState"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyWorkspaceStateResult> modifyWorkspaceStateAsync(ModifyWorkspaceStateRequest modifyWorkspaceStateRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyWorkspaceStateRequest, ModifyWorkspaceStateResult> asyncHandler);
+
+    /**
+     * <p>
      * Reboots the specified WorkSpaces.
      * </p>
      * <p>
-     * You cannot reboot a WorkSpace unless its state is <code>AVAILABLE</code>, <code>IMPAIRED</code>, or
-     * <code>INOPERABLE</code>.
+     * You cannot reboot a WorkSpace unless its state is <code>AVAILABLE</code> or <code>UNHEALTHY</code>.
      * </p>
      * <p>
      * This operation is asynchronous and returns before the WorkSpaces have rebooted.
@@ -412,8 +676,7 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      * Reboots the specified WorkSpaces.
      * </p>
      * <p>
-     * You cannot reboot a WorkSpace unless its state is <code>AVAILABLE</code>, <code>IMPAIRED</code>, or
-     * <code>INOPERABLE</code>.
+     * You cannot reboot a WorkSpace unless its state is <code>AVAILABLE</code> or <code>UNHEALTHY</code>.
      * </p>
      * <p>
      * This operation is asynchronous and returns before the WorkSpaces have rebooted.
@@ -434,10 +697,11 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Rebuilds the specified WorkSpaces.
+     * Rebuilds the specified WorkSpace.
      * </p>
      * <p>
-     * You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code> or <code>ERROR</code>.
+     * You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code>, <code>ERROR</code>, or
+     * <code>UNHEALTHY</code>.
      * </p>
      * <p>
      * Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. For more
@@ -458,10 +722,11 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Rebuilds the specified WorkSpaces.
+     * Rebuilds the specified WorkSpace.
      * </p>
      * <p>
-     * You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code> or <code>ERROR</code>.
+     * You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code>, <code>ERROR</code>, or
+     * <code>UNHEALTHY</code>.
      * </p>
      * <p>
      * Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. For more
@@ -484,6 +749,37 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      */
     java.util.concurrent.Future<RebuildWorkspacesResult> rebuildWorkspacesAsync(RebuildWorkspacesRequest rebuildWorkspacesRequest,
             com.amazonaws.handlers.AsyncHandler<RebuildWorkspacesRequest, RebuildWorkspacesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes one or more rules from the specified IP access control group.
+     * </p>
+     * 
+     * @param revokeIpRulesRequest
+     * @return A Java Future containing the result of the RevokeIpRules operation returned by the service.
+     * @sample AmazonWorkspacesAsync.RevokeIpRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RevokeIpRules" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RevokeIpRulesResult> revokeIpRulesAsync(RevokeIpRulesRequest revokeIpRulesRequest);
+
+    /**
+     * <p>
+     * Removes one or more rules from the specified IP access control group.
+     * </p>
+     * 
+     * @param revokeIpRulesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RevokeIpRules operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.RevokeIpRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RevokeIpRules" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RevokeIpRulesResult> revokeIpRulesAsync(RevokeIpRulesRequest revokeIpRulesRequest,
+            com.amazonaws.handlers.AsyncHandler<RevokeIpRulesRequest, RevokeIpRulesResult> asyncHandler);
 
     /**
      * <p>
@@ -613,5 +909,36 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      */
     java.util.concurrent.Future<TerminateWorkspacesResult> terminateWorkspacesAsync(TerminateWorkspacesRequest terminateWorkspacesRequest,
             com.amazonaws.handlers.AsyncHandler<TerminateWorkspacesRequest, TerminateWorkspacesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Replaces the current rules of the specified IP access control group with the specified rules.
+     * </p>
+     * 
+     * @param updateRulesOfIpGroupRequest
+     * @return A Java Future containing the result of the UpdateRulesOfIpGroup operation returned by the service.
+     * @sample AmazonWorkspacesAsync.UpdateRulesOfIpGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateRulesOfIpGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRulesOfIpGroupResult> updateRulesOfIpGroupAsync(UpdateRulesOfIpGroupRequest updateRulesOfIpGroupRequest);
+
+    /**
+     * <p>
+     * Replaces the current rules of the specified IP access control group with the specified rules.
+     * </p>
+     * 
+     * @param updateRulesOfIpGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateRulesOfIpGroup operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.UpdateRulesOfIpGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateRulesOfIpGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRulesOfIpGroupResult> updateRulesOfIpGroupAsync(UpdateRulesOfIpGroupRequest updateRulesOfIpGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateRulesOfIpGroupRequest, UpdateRulesOfIpGroupResult> asyncHandler);
 
 }

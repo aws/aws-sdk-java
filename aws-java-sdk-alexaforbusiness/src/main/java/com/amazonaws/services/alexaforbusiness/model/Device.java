@@ -72,7 +72,7 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
     private String roomArn;
     /**
      * <p>
-     * The status of a device. If the status is not READY, check the DeviceStatusInfo for details.
+     * The status of a device. If the status is not READY, check the DeviceStatusInfo value for details.
      * </p>
      */
     private String deviceStatus;
@@ -365,11 +365,11 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of a device. If the status is not READY, check the DeviceStatusInfo for details.
+     * The status of a device. If the status is not READY, check the DeviceStatusInfo value for details.
      * </p>
      * 
      * @param deviceStatus
-     *        The status of a device. If the status is not READY, check the DeviceStatusInfo for details.
+     *        The status of a device. If the status is not READY, check the DeviceStatusInfo value for details.
      * @see DeviceStatus
      */
 
@@ -379,10 +379,10 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of a device. If the status is not READY, check the DeviceStatusInfo for details.
+     * The status of a device. If the status is not READY, check the DeviceStatusInfo value for details.
      * </p>
      * 
-     * @return The status of a device. If the status is not READY, check the DeviceStatusInfo for details.
+     * @return The status of a device. If the status is not READY, check the DeviceStatusInfo value for details.
      * @see DeviceStatus
      */
 
@@ -392,11 +392,11 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of a device. If the status is not READY, check the DeviceStatusInfo for details.
+     * The status of a device. If the status is not READY, check the DeviceStatusInfo value for details.
      * </p>
      * 
      * @param deviceStatus
-     *        The status of a device. If the status is not READY, check the DeviceStatusInfo for details.
+     *        The status of a device. If the status is not READY, check the DeviceStatusInfo value for details.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeviceStatus
      */
@@ -408,11 +408,11 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of a device. If the status is not READY, check the DeviceStatusInfo for details.
+     * The status of a device. If the status is not READY, check the DeviceStatusInfo value for details.
      * </p>
      * 
      * @param deviceStatus
-     *        The status of a device. If the status is not READY, check the DeviceStatusInfo for details.
+     *        The status of a device. If the status is not READY, check the DeviceStatusInfo value for details.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeviceStatus
      */

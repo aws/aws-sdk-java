@@ -44,14 +44,15 @@ public class SearchDevicesRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The filters to use to list a specified set of devices. Supported filter keys are DeviceName, DeviceStatus,
-     * DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, and UnassociatedOnly.
+     * DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, UnassociatedOnly, and ConnectionStatus (ONLINE
+     * and OFFLINE).
      * </p>
      */
     private java.util.List<Filter> filters;
     /**
      * <p>
      * The sort order to use in listing the specified set of devices. Supported sort keys are DeviceName, DeviceStatus,
-     * RoomName, DeviceType, and DeviceSerialNumber.
+     * RoomName, DeviceType, DeviceSerialNumber, and ConnectionStatus.
      * </p>
      */
     private java.util.List<Sort> sortCriteria;
@@ -163,11 +164,13 @@ public class SearchDevicesRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The filters to use to list a specified set of devices. Supported filter keys are DeviceName, DeviceStatus,
-     * DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, and UnassociatedOnly.
+     * DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, UnassociatedOnly, and ConnectionStatus (ONLINE
+     * and OFFLINE).
      * </p>
      * 
      * @return The filters to use to list a specified set of devices. Supported filter keys are DeviceName,
-     *         DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, and UnassociatedOnly.
+     *         DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, UnassociatedOnly, and
+     *         ConnectionStatus (ONLINE and OFFLINE).
      */
 
     public java.util.List<Filter> getFilters() {
@@ -177,12 +180,14 @@ public class SearchDevicesRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The filters to use to list a specified set of devices. Supported filter keys are DeviceName, DeviceStatus,
-     * DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, and UnassociatedOnly.
+     * DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, UnassociatedOnly, and ConnectionStatus (ONLINE
+     * and OFFLINE).
      * </p>
      * 
      * @param filters
      *        The filters to use to list a specified set of devices. Supported filter keys are DeviceName, DeviceStatus,
-     *        DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, and UnassociatedOnly.
+     *        DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, UnassociatedOnly, and ConnectionStatus
+     *        (ONLINE and OFFLINE).
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -197,7 +202,8 @@ public class SearchDevicesRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The filters to use to list a specified set of devices. Supported filter keys are DeviceName, DeviceStatus,
-     * DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, and UnassociatedOnly.
+     * DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, UnassociatedOnly, and ConnectionStatus (ONLINE
+     * and OFFLINE).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -207,7 +213,8 @@ public class SearchDevicesRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param filters
      *        The filters to use to list a specified set of devices. Supported filter keys are DeviceName, DeviceStatus,
-     *        DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, and UnassociatedOnly.
+     *        DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, UnassociatedOnly, and ConnectionStatus
+     *        (ONLINE and OFFLINE).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -224,12 +231,14 @@ public class SearchDevicesRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The filters to use to list a specified set of devices. Supported filter keys are DeviceName, DeviceStatus,
-     * DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, and UnassociatedOnly.
+     * DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, UnassociatedOnly, and ConnectionStatus (ONLINE
+     * and OFFLINE).
      * </p>
      * 
      * @param filters
      *        The filters to use to list a specified set of devices. Supported filter keys are DeviceName, DeviceStatus,
-     *        DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, and UnassociatedOnly.
+     *        DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, UnassociatedOnly, and ConnectionStatus
+     *        (ONLINE and OFFLINE).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -241,11 +250,11 @@ public class SearchDevicesRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The sort order to use in listing the specified set of devices. Supported sort keys are DeviceName, DeviceStatus,
-     * RoomName, DeviceType, and DeviceSerialNumber.
+     * RoomName, DeviceType, DeviceSerialNumber, and ConnectionStatus.
      * </p>
      * 
      * @return The sort order to use in listing the specified set of devices. Supported sort keys are DeviceName,
-     *         DeviceStatus, RoomName, DeviceType, and DeviceSerialNumber.
+     *         DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, and ConnectionStatus.
      */
 
     public java.util.List<Sort> getSortCriteria() {
@@ -255,12 +264,12 @@ public class SearchDevicesRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The sort order to use in listing the specified set of devices. Supported sort keys are DeviceName, DeviceStatus,
-     * RoomName, DeviceType, and DeviceSerialNumber.
+     * RoomName, DeviceType, DeviceSerialNumber, and ConnectionStatus.
      * </p>
      * 
      * @param sortCriteria
      *        The sort order to use in listing the specified set of devices. Supported sort keys are DeviceName,
-     *        DeviceStatus, RoomName, DeviceType, and DeviceSerialNumber.
+     *        DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, and ConnectionStatus.
      */
 
     public void setSortCriteria(java.util.Collection<Sort> sortCriteria) {
@@ -275,7 +284,7 @@ public class SearchDevicesRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The sort order to use in listing the specified set of devices. Supported sort keys are DeviceName, DeviceStatus,
-     * RoomName, DeviceType, and DeviceSerialNumber.
+     * RoomName, DeviceType, DeviceSerialNumber, and ConnectionStatus.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -285,7 +294,7 @@ public class SearchDevicesRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param sortCriteria
      *        The sort order to use in listing the specified set of devices. Supported sort keys are DeviceName,
-     *        DeviceStatus, RoomName, DeviceType, and DeviceSerialNumber.
+     *        DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, and ConnectionStatus.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -302,12 +311,12 @@ public class SearchDevicesRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The sort order to use in listing the specified set of devices. Supported sort keys are DeviceName, DeviceStatus,
-     * RoomName, DeviceType, and DeviceSerialNumber.
+     * RoomName, DeviceType, DeviceSerialNumber, and ConnectionStatus.
      * </p>
      * 
      * @param sortCriteria
      *        The sort order to use in listing the specified set of devices. Supported sort keys are DeviceName,
-     *        DeviceStatus, RoomName, DeviceType, and DeviceSerialNumber.
+     *        DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, and ConnectionStatus.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

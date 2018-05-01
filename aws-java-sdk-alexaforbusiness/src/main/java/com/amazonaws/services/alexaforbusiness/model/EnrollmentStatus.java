@@ -23,6 +23,7 @@ public enum EnrollmentStatus {
     INITIALIZED("INITIALIZED"),
     PENDING("PENDING"),
     REGISTERED("REGISTERED"),
+    DISASSOCIATING("DISASSOCIATING"),
     DEREGISTERING("DEREGISTERING");
 
     private String value;

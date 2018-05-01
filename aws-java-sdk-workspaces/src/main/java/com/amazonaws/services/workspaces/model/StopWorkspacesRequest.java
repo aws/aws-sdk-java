@@ -27,17 +27,17 @@ public class StopWorkspacesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The WorkSpaces to stop.
+     * The WorkSpaces to stop. You can specify up to 25 WorkSpaces.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<StopRequest> stopWorkspaceRequests;
 
     /**
      * <p>
-     * The WorkSpaces to stop.
+     * The WorkSpaces to stop. You can specify up to 25 WorkSpaces.
      * </p>
      * 
-     * @return The WorkSpaces to stop.
+     * @return The WorkSpaces to stop. You can specify up to 25 WorkSpaces.
      */
 
     public java.util.List<StopRequest> getStopWorkspaceRequests() {
@@ -49,11 +49,11 @@ public class StopWorkspacesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The WorkSpaces to stop.
+     * The WorkSpaces to stop. You can specify up to 25 WorkSpaces.
      * </p>
      * 
      * @param stopWorkspaceRequests
-     *        The WorkSpaces to stop.
+     *        The WorkSpaces to stop. You can specify up to 25 WorkSpaces.
      */
 
     public void setStopWorkspaceRequests(java.util.Collection<StopRequest> stopWorkspaceRequests) {
@@ -67,7 +67,7 @@ public class StopWorkspacesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The WorkSpaces to stop.
+     * The WorkSpaces to stop. You can specify up to 25 WorkSpaces.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -76,7 +76,7 @@ public class StopWorkspacesRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param stopWorkspaceRequests
-     *        The WorkSpaces to stop.
+     *        The WorkSpaces to stop. You can specify up to 25 WorkSpaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class StopWorkspacesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The WorkSpaces to stop.
+     * The WorkSpaces to stop. You can specify up to 25 WorkSpaces.
      * </p>
      * 
      * @param stopWorkspaceRequests
-     *        The WorkSpaces to stop.
+     *        The WorkSpaces to stop. You can specify up to 25 WorkSpaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

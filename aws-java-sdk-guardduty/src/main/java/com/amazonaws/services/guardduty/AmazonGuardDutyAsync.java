@@ -928,7 +928,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     /**
      * Disables GuardDuty from monitoring findings of the member accounts specified by the account IDs. After running
      * this command, a master GuardDuty account can run StartMonitoringMembers to re-enable GuardDuty to monitor these
-     * members' findings.
+     * members’ findings.
      * 
      * @param stopMonitoringMembersRequest
      *        StopMonitoringMembers request body.
@@ -942,7 +942,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     /**
      * Disables GuardDuty from monitoring findings of the member accounts specified by the account IDs. After running
      * this command, a master GuardDuty account can run StartMonitoringMembers to re-enable GuardDuty to monitor these
-     * members' findings.
+     * members’ findings.
      * 
      * @param stopMonitoringMembersRequest
      *        StopMonitoringMembers request body.

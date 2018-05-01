@@ -453,6 +453,31 @@ public interface AmazonDynamoDB {
      * The tables must have DynamoDB Streams enabled (NEW_AND_OLD_IMAGES).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The tables must have same provisioned and maximum write capacity units.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If global secondary indexes are specified, then the following conditions must also be met:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The global secondary indexes must have the same name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The global secondary indexes must have the same hash key and sort key (if present).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The global secondary indexes must have the same provisioned and maximum write capacity units.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param createGlobalTableRequest
@@ -735,7 +760,7 @@ public interface AmazonDynamoDB {
      * </p>
      * <p>
      * <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time. You can restore your table
-     * to any point in time during the last 35 days with a 1-minute granularity.
+     * to any point in time during the last 35 days.
      * </p>
      * <p>
      * You can call <code>DescribeContinuousBackups</code> at a maximum rate of 10 times per second.
@@ -770,6 +795,23 @@ public interface AmazonDynamoDB {
      *      API Documentation</a>
      */
     DescribeGlobalTableResult describeGlobalTable(DescribeGlobalTableRequest describeGlobalTableRequest);
+
+    /**
+     * <p>
+     * Describes region specific settings for a global table.
+     * </p>
+     * 
+     * @param describeGlobalTableSettingsRequest
+     * @return Result of the DescribeGlobalTableSettings operation returned by the service.
+     * @throws GlobalTableNotFoundException
+     *         The specified global table does not exist.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.DescribeGlobalTableSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTableSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeGlobalTableSettingsResult describeGlobalTableSettings(DescribeGlobalTableSettingsRequest describeGlobalTableSettingsRequest);
 
     /**
      * <p>
@@ -1372,10 +1414,42 @@ public interface AmazonDynamoDB {
     /**
      * <p>
      * Restores the specified table to the specified point in time within <code>EarliestRestorableDateTime</code> and
-     * <code>LatestRestorableDateTime</code>. You can restore your table to any point in time during the last 35 days
-     * with a 1-minute granularity. Any number of users can execute up to 4 concurrent restores (any type of restore) in
-     * a given account.
+     * <code>LatestRestorableDateTime</code>. You can restore your table to any point in time during the last 35 days.
+     * Any number of users can execute up to 4 concurrent restores (any type of restore) in a given account.
      * </p>
+     * <p>
+     * When you restore using point in time recovery, DynamoDB restores your table data to the state based on the
+     * selected date and time (day:hour:minute:second) to a new table.
+     * </p>
+     * <p>
+     * Along with data, the following are also included on the new restored table using point in time recovery:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Global secondary indexes (GSIs)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Local secondary indexes (LSIs)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned read and write capacity
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Encryption settings
+     * </p>
+     * <important>
+     * <p>
+     * All these settings come from the current settings of the source table at the time of restore.
+     * </p>
+     * </important></li>
+     * </ul>
      * <p>
      * You must manually set up the following on the restored table:
      * </p>
@@ -1627,7 +1701,7 @@ public interface AmazonDynamoDB {
      * </p>
      * <p>
      * <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time. You can restore your table
-     * to any point in time during the last 35 days with a 1-minute granularity.
+     * to any point in time during the last 35 days..
      * </p>
      * 
      * @param updateContinuousBackupsRequest
@@ -1649,7 +1723,8 @@ public interface AmazonDynamoDB {
      * <p>
      * Adds or removes replicas in the specified global table. The global table must already exist to be able to use
      * this operation. Any replica to be added must be empty, must have the same name as the global table, must have the
-     * same key schema, and must have DynamoDB Streams enabled.
+     * same key schema, and must have DynamoDB Streams enabled and must have same provisioned and maximum write capacity
+     * units.
      * </p>
      * <note>
      * <p>
@@ -1657,6 +1732,26 @@ public interface AmazonDynamoDB {
      * simplicity we recommend that you issue separate requests for adding or removing replicas.
      * </p>
      * </note>
+     * <p>
+     * If global secondary indexes are specified, then the following conditions must also be met:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The global secondary indexes must have the same name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The global secondary indexes must have the same hash key and sort key (if present).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The global secondary indexes must have the same provisioned and maximum write capacity units.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param updateGlobalTableRequest
      * @return Result of the UpdateGlobalTable operation returned by the service.
@@ -1676,6 +1771,45 @@ public interface AmazonDynamoDB {
      *      Documentation</a>
      */
     UpdateGlobalTableResult updateGlobalTable(UpdateGlobalTableRequest updateGlobalTableRequest);
+
+    /**
+     * <p>
+     * Updates settings for a global table.
+     * </p>
+     * 
+     * @param updateGlobalTableSettingsRequest
+     * @return Result of the UpdateGlobalTableSettings operation returned by the service.
+     * @throws GlobalTableNotFoundException
+     *         The specified global table does not exist.
+     * @throws ReplicaNotFoundException
+     *         The specified replica is no longer part of the global table.
+     * @throws IndexNotFoundException
+     *         The operation tried to access a nonexistent index.
+     * @throws LimitExceededException
+     *         Up to 50 <code>CreateBackup</code> operations are allowed per second, per account. There is no limit to
+     *         the number of daily on-demand backups that can be taken. </p>
+     *         <p>
+     *         Up to 10 simultaneous table operations are allowed per account. These operations include
+     *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
+     *         <code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and
+     *         <code>RestoreTableToPointInTime</code>.
+     *         </p>
+     *         <p>
+     *         For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code> state at
+     *         any point in time. Do not attempt to create more than one such table simultaneously.
+     *         </p>
+     *         <p>
+     *         The total limit of tables in the <code>ACTIVE</code> state is 250.
+     * @throws ResourceInUseException
+     *         The operation conflicts with the resource's availability. For example, you attempted to recreate an
+     *         existing table, or tried to delete a table currently in the <code>CREATING</code> state.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.UpdateGlobalTableSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTableSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateGlobalTableSettingsResult updateGlobalTableSettings(UpdateGlobalTableSettingsRequest updateGlobalTableSettingsRequest);
 
     /**
      * <p>

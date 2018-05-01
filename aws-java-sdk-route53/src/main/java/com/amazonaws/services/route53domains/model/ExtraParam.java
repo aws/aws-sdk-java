@@ -30,7 +30,65 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the additional parameter required by the top-level domain.
+     * Name of the additional parameter required by the top-level domain. Here are the top-level domains that require
+     * additional parameters and which parameters they require:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>.com.au and .net.au:</b> <code>AU_ID_NUMBER</code> and <code>AU_ID_TYPE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.ca:</b> <code>BRAND_NUMBER</code>, <code>CA_LEGAL_TYPE</code>, and <code>CA_BUSINESS_ENTITY_TYPE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.es:</b> <code>ES_IDENTIFICATION</code>, <code>ES_IDENTIFICATION_TYPE</code>, and <code>ES_LEGAL_FORM</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.fi:</b> <code>BIRTH_DATE_IN_YYYY_MM_DD</code>, <code>FI_BUSINESS_NUMBER</code>, <code>FI_ID_NUMBER</code>,
+     * <code>FI_NATIONALITY</code>, and <code>FI_ORGANIZATION_TYPE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.fr:</b> <code>BRAND_NUMBER</code>, <code>BIRTH_DEPARTMENT</code>, <code>BIRTH_DATE_IN_YYYY_MM_DD</code>,
+     * <code>BIRTH_COUNTRY</code>, and <code>BIRTH_CITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.it:</b> <code>BIRTH_COUNTRY</code>, <code>IT_PIN</code>, and <code>IT_REGISTRANT_ENTITY_TYPE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.ru:</b> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> and <code>RU_PASSPORT_DATA</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.se:</b> <code>BIRTH_COUNTRY</code> and <code>SE_ID_NUMBER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.sg:</b> <code>SG_ID_NUMBER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.co.uk, .me.uk, and .org.uk:</b> <code>UK_CONTACT_TYPE</code> and <code>UK_COMPANY_NUMBER</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * In addition, many TLDs require <code>VAT_NUMBER</code>.
      * </p>
      */
     private String name;
@@ -43,11 +101,128 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the additional parameter required by the top-level domain.
+     * Name of the additional parameter required by the top-level domain. Here are the top-level domains that require
+     * additional parameters and which parameters they require:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>.com.au and .net.au:</b> <code>AU_ID_NUMBER</code> and <code>AU_ID_TYPE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.ca:</b> <code>BRAND_NUMBER</code>, <code>CA_LEGAL_TYPE</code>, and <code>CA_BUSINESS_ENTITY_TYPE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.es:</b> <code>ES_IDENTIFICATION</code>, <code>ES_IDENTIFICATION_TYPE</code>, and <code>ES_LEGAL_FORM</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.fi:</b> <code>BIRTH_DATE_IN_YYYY_MM_DD</code>, <code>FI_BUSINESS_NUMBER</code>, <code>FI_ID_NUMBER</code>,
+     * <code>FI_NATIONALITY</code>, and <code>FI_ORGANIZATION_TYPE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.fr:</b> <code>BRAND_NUMBER</code>, <code>BIRTH_DEPARTMENT</code>, <code>BIRTH_DATE_IN_YYYY_MM_DD</code>,
+     * <code>BIRTH_COUNTRY</code>, and <code>BIRTH_CITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.it:</b> <code>BIRTH_COUNTRY</code>, <code>IT_PIN</code>, and <code>IT_REGISTRANT_ENTITY_TYPE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.ru:</b> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> and <code>RU_PASSPORT_DATA</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.se:</b> <code>BIRTH_COUNTRY</code> and <code>SE_ID_NUMBER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.sg:</b> <code>SG_ID_NUMBER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.co.uk, .me.uk, and .org.uk:</b> <code>UK_CONTACT_TYPE</code> and <code>UK_COMPANY_NUMBER</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * In addition, many TLDs require <code>VAT_NUMBER</code>.
      * </p>
      * 
      * @param name
-     *        Name of the additional parameter required by the top-level domain.
+     *        Name of the additional parameter required by the top-level domain. Here are the top-level domains that
+     *        require additional parameters and which parameters they require:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>.com.au and .net.au:</b> <code>AU_ID_NUMBER</code> and <code>AU_ID_TYPE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.ca:</b> <code>BRAND_NUMBER</code>, <code>CA_LEGAL_TYPE</code>, and
+     *        <code>CA_BUSINESS_ENTITY_TYPE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.es:</b> <code>ES_IDENTIFICATION</code>, <code>ES_IDENTIFICATION_TYPE</code>, and
+     *        <code>ES_LEGAL_FORM</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.fi:</b> <code>BIRTH_DATE_IN_YYYY_MM_DD</code>, <code>FI_BUSINESS_NUMBER</code>,
+     *        <code>FI_ID_NUMBER</code>, <code>FI_NATIONALITY</code>, and <code>FI_ORGANIZATION_TYPE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.fr:</b> <code>BRAND_NUMBER</code>, <code>BIRTH_DEPARTMENT</code>,
+     *        <code>BIRTH_DATE_IN_YYYY_MM_DD</code>, <code>BIRTH_COUNTRY</code>, and <code>BIRTH_CITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.it:</b> <code>BIRTH_COUNTRY</code>, <code>IT_PIN</code>, and <code>IT_REGISTRANT_ENTITY_TYPE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.ru:</b> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> and <code>RU_PASSPORT_DATA</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.se:</b> <code>BIRTH_COUNTRY</code> and <code>SE_ID_NUMBER</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.sg:</b> <code>SG_ID_NUMBER</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.co.uk, .me.uk, and .org.uk:</b> <code>UK_CONTACT_TYPE</code> and <code>UK_COMPANY_NUMBER</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        In addition, many TLDs require <code>VAT_NUMBER</code>.
      * @see ExtraParamName
      */
 
@@ -57,10 +232,127 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the additional parameter required by the top-level domain.
+     * Name of the additional parameter required by the top-level domain. Here are the top-level domains that require
+     * additional parameters and which parameters they require:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>.com.au and .net.au:</b> <code>AU_ID_NUMBER</code> and <code>AU_ID_TYPE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.ca:</b> <code>BRAND_NUMBER</code>, <code>CA_LEGAL_TYPE</code>, and <code>CA_BUSINESS_ENTITY_TYPE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.es:</b> <code>ES_IDENTIFICATION</code>, <code>ES_IDENTIFICATION_TYPE</code>, and <code>ES_LEGAL_FORM</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.fi:</b> <code>BIRTH_DATE_IN_YYYY_MM_DD</code>, <code>FI_BUSINESS_NUMBER</code>, <code>FI_ID_NUMBER</code>,
+     * <code>FI_NATIONALITY</code>, and <code>FI_ORGANIZATION_TYPE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.fr:</b> <code>BRAND_NUMBER</code>, <code>BIRTH_DEPARTMENT</code>, <code>BIRTH_DATE_IN_YYYY_MM_DD</code>,
+     * <code>BIRTH_COUNTRY</code>, and <code>BIRTH_CITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.it:</b> <code>BIRTH_COUNTRY</code>, <code>IT_PIN</code>, and <code>IT_REGISTRANT_ENTITY_TYPE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.ru:</b> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> and <code>RU_PASSPORT_DATA</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.se:</b> <code>BIRTH_COUNTRY</code> and <code>SE_ID_NUMBER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.sg:</b> <code>SG_ID_NUMBER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.co.uk, .me.uk, and .org.uk:</b> <code>UK_CONTACT_TYPE</code> and <code>UK_COMPANY_NUMBER</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * In addition, many TLDs require <code>VAT_NUMBER</code>.
      * </p>
      * 
-     * @return Name of the additional parameter required by the top-level domain.
+     * @return Name of the additional parameter required by the top-level domain. Here are the top-level domains that
+     *         require additional parameters and which parameters they require:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>.com.au and .net.au:</b> <code>AU_ID_NUMBER</code> and <code>AU_ID_TYPE</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>.ca:</b> <code>BRAND_NUMBER</code>, <code>CA_LEGAL_TYPE</code>, and
+     *         <code>CA_BUSINESS_ENTITY_TYPE</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>.es:</b> <code>ES_IDENTIFICATION</code>, <code>ES_IDENTIFICATION_TYPE</code>, and
+     *         <code>ES_LEGAL_FORM</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>.fi:</b> <code>BIRTH_DATE_IN_YYYY_MM_DD</code>, <code>FI_BUSINESS_NUMBER</code>,
+     *         <code>FI_ID_NUMBER</code>, <code>FI_NATIONALITY</code>, and <code>FI_ORGANIZATION_TYPE</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>.fr:</b> <code>BRAND_NUMBER</code>, <code>BIRTH_DEPARTMENT</code>,
+     *         <code>BIRTH_DATE_IN_YYYY_MM_DD</code>, <code>BIRTH_COUNTRY</code>, and <code>BIRTH_CITY</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>.it:</b> <code>BIRTH_COUNTRY</code>, <code>IT_PIN</code>, and <code>IT_REGISTRANT_ENTITY_TYPE</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>.ru:</b> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> and <code>RU_PASSPORT_DATA</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>.se:</b> <code>BIRTH_COUNTRY</code> and <code>SE_ID_NUMBER</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>.sg:</b> <code>SG_ID_NUMBER</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>.co.uk, .me.uk, and .org.uk:</b> <code>UK_CONTACT_TYPE</code> and <code>UK_COMPANY_NUMBER</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         In addition, many TLDs require <code>VAT_NUMBER</code>.
      * @see ExtraParamName
      */
 
@@ -70,11 +362,128 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the additional parameter required by the top-level domain.
+     * Name of the additional parameter required by the top-level domain. Here are the top-level domains that require
+     * additional parameters and which parameters they require:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>.com.au and .net.au:</b> <code>AU_ID_NUMBER</code> and <code>AU_ID_TYPE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.ca:</b> <code>BRAND_NUMBER</code>, <code>CA_LEGAL_TYPE</code>, and <code>CA_BUSINESS_ENTITY_TYPE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.es:</b> <code>ES_IDENTIFICATION</code>, <code>ES_IDENTIFICATION_TYPE</code>, and <code>ES_LEGAL_FORM</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.fi:</b> <code>BIRTH_DATE_IN_YYYY_MM_DD</code>, <code>FI_BUSINESS_NUMBER</code>, <code>FI_ID_NUMBER</code>,
+     * <code>FI_NATIONALITY</code>, and <code>FI_ORGANIZATION_TYPE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.fr:</b> <code>BRAND_NUMBER</code>, <code>BIRTH_DEPARTMENT</code>, <code>BIRTH_DATE_IN_YYYY_MM_DD</code>,
+     * <code>BIRTH_COUNTRY</code>, and <code>BIRTH_CITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.it:</b> <code>BIRTH_COUNTRY</code>, <code>IT_PIN</code>, and <code>IT_REGISTRANT_ENTITY_TYPE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.ru:</b> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> and <code>RU_PASSPORT_DATA</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.se:</b> <code>BIRTH_COUNTRY</code> and <code>SE_ID_NUMBER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.sg:</b> <code>SG_ID_NUMBER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.co.uk, .me.uk, and .org.uk:</b> <code>UK_CONTACT_TYPE</code> and <code>UK_COMPANY_NUMBER</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * In addition, many TLDs require <code>VAT_NUMBER</code>.
      * </p>
      * 
      * @param name
-     *        Name of the additional parameter required by the top-level domain.
+     *        Name of the additional parameter required by the top-level domain. Here are the top-level domains that
+     *        require additional parameters and which parameters they require:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>.com.au and .net.au:</b> <code>AU_ID_NUMBER</code> and <code>AU_ID_TYPE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.ca:</b> <code>BRAND_NUMBER</code>, <code>CA_LEGAL_TYPE</code>, and
+     *        <code>CA_BUSINESS_ENTITY_TYPE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.es:</b> <code>ES_IDENTIFICATION</code>, <code>ES_IDENTIFICATION_TYPE</code>, and
+     *        <code>ES_LEGAL_FORM</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.fi:</b> <code>BIRTH_DATE_IN_YYYY_MM_DD</code>, <code>FI_BUSINESS_NUMBER</code>,
+     *        <code>FI_ID_NUMBER</code>, <code>FI_NATIONALITY</code>, and <code>FI_ORGANIZATION_TYPE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.fr:</b> <code>BRAND_NUMBER</code>, <code>BIRTH_DEPARTMENT</code>,
+     *        <code>BIRTH_DATE_IN_YYYY_MM_DD</code>, <code>BIRTH_COUNTRY</code>, and <code>BIRTH_CITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.it:</b> <code>BIRTH_COUNTRY</code>, <code>IT_PIN</code>, and <code>IT_REGISTRANT_ENTITY_TYPE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.ru:</b> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> and <code>RU_PASSPORT_DATA</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.se:</b> <code>BIRTH_COUNTRY</code> and <code>SE_ID_NUMBER</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.sg:</b> <code>SG_ID_NUMBER</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.co.uk, .me.uk, and .org.uk:</b> <code>UK_CONTACT_TYPE</code> and <code>UK_COMPANY_NUMBER</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        In addition, many TLDs require <code>VAT_NUMBER</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExtraParamName
      */
@@ -86,11 +495,128 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the additional parameter required by the top-level domain.
+     * Name of the additional parameter required by the top-level domain. Here are the top-level domains that require
+     * additional parameters and which parameters they require:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>.com.au and .net.au:</b> <code>AU_ID_NUMBER</code> and <code>AU_ID_TYPE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.ca:</b> <code>BRAND_NUMBER</code>, <code>CA_LEGAL_TYPE</code>, and <code>CA_BUSINESS_ENTITY_TYPE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.es:</b> <code>ES_IDENTIFICATION</code>, <code>ES_IDENTIFICATION_TYPE</code>, and <code>ES_LEGAL_FORM</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.fi:</b> <code>BIRTH_DATE_IN_YYYY_MM_DD</code>, <code>FI_BUSINESS_NUMBER</code>, <code>FI_ID_NUMBER</code>,
+     * <code>FI_NATIONALITY</code>, and <code>FI_ORGANIZATION_TYPE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.fr:</b> <code>BRAND_NUMBER</code>, <code>BIRTH_DEPARTMENT</code>, <code>BIRTH_DATE_IN_YYYY_MM_DD</code>,
+     * <code>BIRTH_COUNTRY</code>, and <code>BIRTH_CITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.it:</b> <code>BIRTH_COUNTRY</code>, <code>IT_PIN</code>, and <code>IT_REGISTRANT_ENTITY_TYPE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.ru:</b> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> and <code>RU_PASSPORT_DATA</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.se:</b> <code>BIRTH_COUNTRY</code> and <code>SE_ID_NUMBER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.sg:</b> <code>SG_ID_NUMBER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.co.uk, .me.uk, and .org.uk:</b> <code>UK_CONTACT_TYPE</code> and <code>UK_COMPANY_NUMBER</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * In addition, many TLDs require <code>VAT_NUMBER</code>.
      * </p>
      * 
      * @param name
-     *        Name of the additional parameter required by the top-level domain.
+     *        Name of the additional parameter required by the top-level domain. Here are the top-level domains that
+     *        require additional parameters and which parameters they require:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>.com.au and .net.au:</b> <code>AU_ID_NUMBER</code> and <code>AU_ID_TYPE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.ca:</b> <code>BRAND_NUMBER</code>, <code>CA_LEGAL_TYPE</code>, and
+     *        <code>CA_BUSINESS_ENTITY_TYPE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.es:</b> <code>ES_IDENTIFICATION</code>, <code>ES_IDENTIFICATION_TYPE</code>, and
+     *        <code>ES_LEGAL_FORM</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.fi:</b> <code>BIRTH_DATE_IN_YYYY_MM_DD</code>, <code>FI_BUSINESS_NUMBER</code>,
+     *        <code>FI_ID_NUMBER</code>, <code>FI_NATIONALITY</code>, and <code>FI_ORGANIZATION_TYPE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.fr:</b> <code>BRAND_NUMBER</code>, <code>BIRTH_DEPARTMENT</code>,
+     *        <code>BIRTH_DATE_IN_YYYY_MM_DD</code>, <code>BIRTH_COUNTRY</code>, and <code>BIRTH_CITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.it:</b> <code>BIRTH_COUNTRY</code>, <code>IT_PIN</code>, and <code>IT_REGISTRANT_ENTITY_TYPE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.ru:</b> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> and <code>RU_PASSPORT_DATA</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.se:</b> <code>BIRTH_COUNTRY</code> and <code>SE_ID_NUMBER</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.sg:</b> <code>SG_ID_NUMBER</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.co.uk, .me.uk, and .org.uk:</b> <code>UK_CONTACT_TYPE</code> and <code>UK_COMPANY_NUMBER</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        In addition, many TLDs require <code>VAT_NUMBER</code>.
      * @see ExtraParamName
      */
 
@@ -100,11 +626,128 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the additional parameter required by the top-level domain.
+     * Name of the additional parameter required by the top-level domain. Here are the top-level domains that require
+     * additional parameters and which parameters they require:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>.com.au and .net.au:</b> <code>AU_ID_NUMBER</code> and <code>AU_ID_TYPE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.ca:</b> <code>BRAND_NUMBER</code>, <code>CA_LEGAL_TYPE</code>, and <code>CA_BUSINESS_ENTITY_TYPE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.es:</b> <code>ES_IDENTIFICATION</code>, <code>ES_IDENTIFICATION_TYPE</code>, and <code>ES_LEGAL_FORM</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.fi:</b> <code>BIRTH_DATE_IN_YYYY_MM_DD</code>, <code>FI_BUSINESS_NUMBER</code>, <code>FI_ID_NUMBER</code>,
+     * <code>FI_NATIONALITY</code>, and <code>FI_ORGANIZATION_TYPE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.fr:</b> <code>BRAND_NUMBER</code>, <code>BIRTH_DEPARTMENT</code>, <code>BIRTH_DATE_IN_YYYY_MM_DD</code>,
+     * <code>BIRTH_COUNTRY</code>, and <code>BIRTH_CITY</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.it:</b> <code>BIRTH_COUNTRY</code>, <code>IT_PIN</code>, and <code>IT_REGISTRANT_ENTITY_TYPE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.ru:</b> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> and <code>RU_PASSPORT_DATA</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.se:</b> <code>BIRTH_COUNTRY</code> and <code>SE_ID_NUMBER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.sg:</b> <code>SG_ID_NUMBER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>.co.uk, .me.uk, and .org.uk:</b> <code>UK_CONTACT_TYPE</code> and <code>UK_COMPANY_NUMBER</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * In addition, many TLDs require <code>VAT_NUMBER</code>.
      * </p>
      * 
      * @param name
-     *        Name of the additional parameter required by the top-level domain.
+     *        Name of the additional parameter required by the top-level domain. Here are the top-level domains that
+     *        require additional parameters and which parameters they require:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>.com.au and .net.au:</b> <code>AU_ID_NUMBER</code> and <code>AU_ID_TYPE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.ca:</b> <code>BRAND_NUMBER</code>, <code>CA_LEGAL_TYPE</code>, and
+     *        <code>CA_BUSINESS_ENTITY_TYPE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.es:</b> <code>ES_IDENTIFICATION</code>, <code>ES_IDENTIFICATION_TYPE</code>, and
+     *        <code>ES_LEGAL_FORM</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.fi:</b> <code>BIRTH_DATE_IN_YYYY_MM_DD</code>, <code>FI_BUSINESS_NUMBER</code>,
+     *        <code>FI_ID_NUMBER</code>, <code>FI_NATIONALITY</code>, and <code>FI_ORGANIZATION_TYPE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.fr:</b> <code>BRAND_NUMBER</code>, <code>BIRTH_DEPARTMENT</code>,
+     *        <code>BIRTH_DATE_IN_YYYY_MM_DD</code>, <code>BIRTH_COUNTRY</code>, and <code>BIRTH_CITY</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.it:</b> <code>BIRTH_COUNTRY</code>, <code>IT_PIN</code>, and <code>IT_REGISTRANT_ENTITY_TYPE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.ru:</b> <code>BIRTH_DATE_IN_YYYY_MM_DD</code> and <code>RU_PASSPORT_DATA</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.se:</b> <code>BIRTH_COUNTRY</code> and <code>SE_ID_NUMBER</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.sg:</b> <code>SG_ID_NUMBER</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>.co.uk, .me.uk, and .org.uk:</b> <code>UK_CONTACT_TYPE</code> and <code>UK_COMPANY_NUMBER</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        In addition, many TLDs require <code>VAT_NUMBER</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExtraParamName
      */

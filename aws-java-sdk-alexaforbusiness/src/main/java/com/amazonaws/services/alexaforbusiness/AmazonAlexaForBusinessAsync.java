@@ -27,9 +27,9 @@ import com.amazonaws.services.alexaforbusiness.model.*;
  * <p>
  * <p>
  * Alexa for Business makes it easy for you to use Alexa in your organization. Alexa for Business gives you the tools
- * you need to manage Alexa devices, enroll your users, and assign skills, at scale. You can build your own
- * context-aware voice skills using the Alexa Skills Kit, and the Alexa for Business APIs, and you can make these
- * available as private skills for your organization. Alexa for Business also makes it easy to voice-enable your
+ * you need for managing Alexa devices, enroll your users, and assign skills, at scale. You can build your own
+ * context-aware voice skills using the Alexa Skills Kit and the Alexa for Business API operations. You can make also
+ * these available as private skills for your organization. Alexa for Business makes it easy to voice-enable your
  * products and services, providing context-aware voice experiences for your customers.
  * </p>
  */
@@ -38,7 +38,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
-     * Associates a contact to a given address book.
+     * Associates a contact with a given address book.
      * </p>
      * 
      * @param associateContactWithAddressBookRequest
@@ -53,7 +53,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
-     * Associates a contact to a given address book.
+     * Associates a contact with a given address book.
      * </p>
      * 
      * @param associateContactWithAddressBookRequest
@@ -73,9 +73,9 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
-     * Associates a device to a given room. This applies all the settings from the room profile to the device, and all
-     * the skills in any skill groups added to that room. This operation requires the device to be online, or a manual
-     * sync is required.
+     * Associates a device with a given room. This applies all the settings from the room profile to the device, and all
+     * the skills in any skill groups added to that room. This operation requires the device to be online, or else a
+     * manual sync is required.
      * </p>
      * 
      * @param associateDeviceWithRoomRequest
@@ -88,9 +88,9 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
-     * Associates a device to a given room. This applies all the settings from the room profile to the device, and all
-     * the skills in any skill groups added to that room. This operation requires the device to be online, or a manual
-     * sync is required.
+     * Associates a device with a given room. This applies all the settings from the room profile to the device, and all
+     * the skills in any skill groups added to that room. This operation requires the device to be online, or else a
+     * manual sync is required.
      * </p>
      * 
      * @param associateDeviceWithRoomRequest
@@ -108,8 +108,8 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
-     * Associates a skill group to a given room. This enables all skills in the associated skill group on all devices in
-     * the room.
+     * Associates a skill group with a given room. This enables all skills in the associated skill group on all devices
+     * in the room.
      * </p>
      * 
      * @param associateSkillGroupWithRoomRequest
@@ -123,8 +123,8 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
-     * Associates a skill group to a given room. This enables all skills in the associated skill group on all devices in
-     * the room.
+     * Associates a skill group with a given room. This enables all skills in the associated skill group on all devices
+     * in the room.
      * </p>
      * 
      * @param associateSkillGroupWithRoomRequest
@@ -872,6 +872,41 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
+     * Lists the Device Event history for up to 30 days. If EventType isn't specified in the request, this returns a
+     * list of all device events in reverse chronological order. If EventType is specified, this returns a list of
+     * device events for that EventType in reverse chronological order.
+     * </p>
+     * 
+     * @param listDeviceEventsRequest
+     * @return A Java Future containing the result of the ListDeviceEvents operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.ListDeviceEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListDeviceEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDeviceEventsResult> listDeviceEventsAsync(ListDeviceEventsRequest listDeviceEventsRequest);
+
+    /**
+     * <p>
+     * Lists the Device Event history for up to 30 days. If EventType isn't specified in the request, this returns a
+     * list of all device events in reverse chronological order. If EventType is specified, this returns a list of
+     * device events for that EventType in reverse chronological order.
+     * </p>
+     * 
+     * @param listDeviceEventsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDeviceEvents operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.ListDeviceEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListDeviceEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDeviceEventsResult> listDeviceEventsAsync(ListDeviceEventsRequest listDeviceEventsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDeviceEventsRequest, ListDeviceEventsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists all enabled skills in a specific skill group.
      * </p>
      * 
@@ -1281,7 +1316,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
-     * Resets a device and its account to the known default settings by clearing all information and settings set by
+     * Resets a device and its account to the known default settings, by clearing all information and settings set by
      * previous users.
      * </p>
      * 
@@ -1295,7 +1330,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
 
     /**
      * <p>
-     * Resets a device and its account to the known default settings by clearing all information and settings set by
+     * Resets a device and its account to the known default settings, by clearing all information and settings set by
      * previous users.
      * </p>
      * 

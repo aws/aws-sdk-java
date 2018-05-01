@@ -95,7 +95,94 @@ public interface AmazonWorkspaces {
 
     /**
      * <p>
-     * Creates tags for the specified WorkSpace.
+     * Associates the specified IP access control group with the specified directory.
+     * </p>
+     * 
+     * @param associateIpGroupsRequest
+     * @return Result of the AssociateIpGroups operation returned by the service.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws InvalidResourceStateException
+     *         The state of the resource is not valid for this operation.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @throws OperationNotSupportedException
+     *         This operation is not supported.
+     * @sample AmazonWorkspaces.AssociateIpGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AssociateIpGroups" target="_top">AWS
+     *      API Documentation</a>
+     */
+    AssociateIpGroupsResult associateIpGroups(AssociateIpGroupsRequest associateIpGroupsRequest);
+
+    /**
+     * <p>
+     * Adds one or more rules to the specified IP access control group.
+     * </p>
+     * <p>
+     * This action gives users permission to access their WorkSpaces from the CIDR address ranges specified in the
+     * rules.
+     * </p>
+     * 
+     * @param authorizeIpRulesRequest
+     * @return Result of the AuthorizeIpRules operation returned by the service.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws InvalidResourceStateException
+     *         The state of the resource is not valid for this operation.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @sample AmazonWorkspaces.AuthorizeIpRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AuthorizeIpRules" target="_top">AWS
+     *      API Documentation</a>
+     */
+    AuthorizeIpRulesResult authorizeIpRules(AuthorizeIpRulesRequest authorizeIpRulesRequest);
+
+    /**
+     * <p>
+     * Creates an IP access control group.
+     * </p>
+     * <p>
+     * An IP access control group provides you with the ability to control the IP addresses from which users are allowed
+     * to access their WorkSpaces. To specify the CIDR address ranges, add rules to your IP access control group and
+     * then associate the group with your directory. You can add rules when you create the group or at any time using
+     * <a>AuthorizeIpRules</a>.
+     * </p>
+     * <p>
+     * There is a default IP access control group associated with your directory. If you don't associate an IP access
+     * control group with your directory, the default group is used. The default group includes a default rule that
+     * allows users to access their WorkSpaces from anywhere. You cannot modify the default IP access control group for
+     * your directory.
+     * </p>
+     * 
+     * @param createIpGroupRequest
+     * @return Result of the CreateIpGroup operation returned by the service.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws ResourceAlreadyExistsException
+     *         The specified resource already exists.
+     * @throws ResourceCreationFailedException
+     *         The resource could not be created.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @sample AmazonWorkspaces.CreateIpGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateIpGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateIpGroupResult createIpGroup(CreateIpGroupRequest createIpGroupRequest);
+
+    /**
+     * <p>
+     * Creates the specified tags for the specified WorkSpace.
      * </p>
      * 
      * @param createTagsRequest
@@ -134,7 +221,31 @@ public interface AmazonWorkspaces {
 
     /**
      * <p>
-     * Deletes the specified tags from a WorkSpace.
+     * Deletes the specified IP access control group.
+     * </p>
+     * <p>
+     * You cannot delete an IP access control group that is associated with a directory.
+     * </p>
+     * 
+     * @param deleteIpGroupRequest
+     * @return Result of the DeleteIpGroup operation returned by the service.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ResourceAssociatedException
+     *         The resource is associated with a directory.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @sample AmazonWorkspaces.DeleteIpGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteIpGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteIpGroupResult deleteIpGroup(DeleteIpGroupRequest deleteIpGroupRequest);
+
+    /**
+     * <p>
+     * Deletes the specified tags from the specified WorkSpace.
      * </p>
      * 
      * @param deleteTagsRequest
@@ -151,7 +262,24 @@ public interface AmazonWorkspaces {
 
     /**
      * <p>
-     * Describes the tags for the specified WorkSpace.
+     * Describes one or more of your IP access control groups.
+     * </p>
+     * 
+     * @param describeIpGroupsRequest
+     * @return Result of the DescribeIpGroups operation returned by the service.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @sample AmazonWorkspaces.DescribeIpGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeIpGroups" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeIpGroupsResult describeIpGroups(DescribeIpGroupsRequest describeIpGroupsRequest);
+
+    /**
+     * <p>
+     * Describes the specified tags for the specified WorkSpace.
      * </p>
      * 
      * @param describeTagsRequest
@@ -257,6 +385,27 @@ public interface AmazonWorkspaces {
 
     /**
      * <p>
+     * Disassociates the specified IP access control group from the specified directory.
+     * </p>
+     * 
+     * @param disassociateIpGroupsRequest
+     * @return Result of the DisassociateIpGroups operation returned by the service.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The state of the resource is not valid for this operation.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @sample AmazonWorkspaces.DisassociateIpGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DisassociateIpGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateIpGroupsResult disassociateIpGroups(DisassociateIpGroupsRequest disassociateIpGroupsRequest);
+
+    /**
+     * <p>
      * Modifies the specified WorkSpace properties.
      * </p>
      * 
@@ -265,7 +414,7 @@ public interface AmazonWorkspaces {
      * @throws InvalidParameterValuesException
      *         One or more parameter values are not valid.
      * @throws InvalidResourceStateException
-     *         The state of the WorkSpace is not valid for this operation.
+     *         The state of the resource is not valid for this operation.
      * @throws OperationInProgressException
      *         The properties of this WorkSpace are currently being modified. Try again in a moment.
      * @throws UnsupportedWorkspaceConfigurationException
@@ -286,11 +435,34 @@ public interface AmazonWorkspaces {
 
     /**
      * <p>
+     * Sets the state of the specified WorkSpace.
+     * </p>
+     * <p>
+     * To maintain a WorkSpace without being interrupted, set the WorkSpace state to <code>ADMIN_MAINTENANCE</code>.
+     * WorkSpaces in this state do not respond to requests to reboot, stop, start, or rebuild. An AutoStop WorkSpace in
+     * this state is not stopped. Users can log into a WorkSpace in the <code>ADMIN_MAINTENANCE</code> state.
+     * </p>
+     * 
+     * @param modifyWorkspaceStateRequest
+     * @return Result of the ModifyWorkspaceState operation returned by the service.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws InvalidResourceStateException
+     *         The state of the resource is not valid for this operation.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AmazonWorkspaces.ModifyWorkspaceState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceState"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ModifyWorkspaceStateResult modifyWorkspaceState(ModifyWorkspaceStateRequest modifyWorkspaceStateRequest);
+
+    /**
+     * <p>
      * Reboots the specified WorkSpaces.
      * </p>
      * <p>
-     * You cannot reboot a WorkSpace unless its state is <code>AVAILABLE</code>, <code>IMPAIRED</code>, or
-     * <code>INOPERABLE</code>.
+     * You cannot reboot a WorkSpace unless its state is <code>AVAILABLE</code> or <code>UNHEALTHY</code>.
      * </p>
      * <p>
      * This operation is asynchronous and returns before the WorkSpaces have rebooted.
@@ -306,10 +478,11 @@ public interface AmazonWorkspaces {
 
     /**
      * <p>
-     * Rebuilds the specified WorkSpaces.
+     * Rebuilds the specified WorkSpace.
      * </p>
      * <p>
-     * You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code> or <code>ERROR</code>.
+     * You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code>, <code>ERROR</code>, or
+     * <code>UNHEALTHY</code>.
      * </p>
      * <p>
      * Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. For more
@@ -327,6 +500,27 @@ public interface AmazonWorkspaces {
      *      API Documentation</a>
      */
     RebuildWorkspacesResult rebuildWorkspaces(RebuildWorkspacesRequest rebuildWorkspacesRequest);
+
+    /**
+     * <p>
+     * Removes one or more rules from the specified IP access control group.
+     * </p>
+     * 
+     * @param revokeIpRulesRequest
+     * @return Result of the RevokeIpRules operation returned by the service.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The state of the resource is not valid for this operation.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @sample AmazonWorkspaces.RevokeIpRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RevokeIpRules" target="_top">AWS API
+     *      Documentation</a>
+     */
+    RevokeIpRulesResult revokeIpRules(RevokeIpRulesRequest revokeIpRulesRequest);
 
     /**
      * <p>
@@ -384,6 +578,29 @@ public interface AmazonWorkspaces {
      *      API Documentation</a>
      */
     TerminateWorkspacesResult terminateWorkspaces(TerminateWorkspacesRequest terminateWorkspacesRequest);
+
+    /**
+     * <p>
+     * Replaces the current rules of the specified IP access control group with the specified rules.
+     * </p>
+     * 
+     * @param updateRulesOfIpGroupRequest
+     * @return Result of the UpdateRulesOfIpGroup operation returned by the service.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws InvalidResourceStateException
+     *         The state of the resource is not valid for this operation.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @sample AmazonWorkspaces.UpdateRulesOfIpGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateRulesOfIpGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateRulesOfIpGroupResult updateRulesOfIpGroup(UpdateRulesOfIpGroupRequest updateRulesOfIpGroupRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

@@ -27,17 +27,17 @@ public class CreateWorkspacesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Information about the WorkSpaces to create.
+     * The WorkSpaces to create. You can specify up to 25 WorkSpaces.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<WorkspaceRequest> workspaces;
 
     /**
      * <p>
-     * Information about the WorkSpaces to create.
+     * The WorkSpaces to create. You can specify up to 25 WorkSpaces.
      * </p>
      * 
-     * @return Information about the WorkSpaces to create.
+     * @return The WorkSpaces to create. You can specify up to 25 WorkSpaces.
      */
 
     public java.util.List<WorkspaceRequest> getWorkspaces() {
@@ -49,11 +49,11 @@ public class CreateWorkspacesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Information about the WorkSpaces to create.
+     * The WorkSpaces to create. You can specify up to 25 WorkSpaces.
      * </p>
      * 
      * @param workspaces
-     *        Information about the WorkSpaces to create.
+     *        The WorkSpaces to create. You can specify up to 25 WorkSpaces.
      */
 
     public void setWorkspaces(java.util.Collection<WorkspaceRequest> workspaces) {
@@ -67,7 +67,7 @@ public class CreateWorkspacesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Information about the WorkSpaces to create.
+     * The WorkSpaces to create. You can specify up to 25 WorkSpaces.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -76,7 +76,7 @@ public class CreateWorkspacesRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param workspaces
-     *        Information about the WorkSpaces to create.
+     *        The WorkSpaces to create. You can specify up to 25 WorkSpaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class CreateWorkspacesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Information about the WorkSpaces to create.
+     * The WorkSpaces to create. You can specify up to 25 WorkSpaces.
      * </p>
      * 
      * @param workspaces
-     *        Information about the WorkSpaces to create.
+     *        The WorkSpaces to create. You can specify up to 25 WorkSpaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

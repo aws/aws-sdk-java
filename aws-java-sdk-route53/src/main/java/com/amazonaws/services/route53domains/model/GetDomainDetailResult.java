@@ -64,32 +64,36 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
     private ContactDetail techContact;
     /**
      * <p>
-     * Specifies whether contact information for the admin contact is concealed from WHOIS queries. If the value is
-     * <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi,
-     * instead of the contact information that you enter.
+     * Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
+     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
+     * for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
+     * the information that you entered for the admin contact.
      * </p>
      */
     private Boolean adminPrivacy;
     /**
      * <p>
-     * Specifies whether contact information for the registrant contact is concealed from WHOIS queries. If the value is
-     * <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi,
-     * instead of the contact information that you enter.
+     * Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
+     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
+     * for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
+     * the information that you entered for the registrant contact (domain owner).
      * </p>
      */
     private Boolean registrantPrivacy;
     /**
      * <p>
-     * Specifies whether contact information for the tech contact is concealed from WHOIS queries. If the value is
-     * <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi,
-     * instead of the contact information that you enter.
+     * Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
+     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
+     * for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
+     * the information that you entered for the technical contact.
      * </p>
      */
     private Boolean techPrivacy;
     /**
      * <p>
-     * Name of the registrar of the domain as identified in the registry. Amazon Route 53 domains are registered by
-     * registrar Gandi. The value is <code>"GANDI SAS"</code>.
+     * Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD are
+     * registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi. The value for
+     * domains that are registered by Gandi is <code>"GANDI SAS"</code>.
      * </p>
      */
     private String registrarName;
@@ -126,19 +130,22 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
     private String registryDomainId;
     /**
      * <p>
-     * The date when the domain was created as found in the response to a WHOIS query. The date format is Unix time.
+     * The date when the domain was created as found in the response to a WHOIS query. The date and time is in
+     * Coordinated Universal time (UTC).
      * </p>
      */
     private java.util.Date creationDate;
     /**
      * <p>
-     * The last updated date of the domain as found in the response to a WHOIS query. The date format is Unix time.
+     * The last updated date of the domain as found in the response to a WHOIS query. The date and time is in
+     * Coordinated Universal time (UTC).
      * </p>
      */
     private java.util.Date updatedDate;
     /**
      * <p>
-     * The date when the registration for the domain is set to expire. The date format is Unix time.
+     * The date when the registration for the domain is set to expire. The date and time is in Coordinated Universal
+     * time (UTC).
      * </p>
      */
     private java.util.Date expirationDate;
@@ -460,15 +467,17 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Specifies whether contact information for the admin contact is concealed from WHOIS queries. If the value is
-     * <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi,
-     * instead of the contact information that you enter.
+     * Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
+     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
+     * for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
+     * the information that you entered for the admin contact.
      * </p>
      * 
      * @param adminPrivacy
-     *        Specifies whether contact information for the admin contact is concealed from WHOIS queries. If the value
-     *        is <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner,
-     *        Gandi, instead of the contact information that you enter.
+     *        Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>,
+     *        WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
+     *        domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>,
+     *        WHOIS queries return the information that you entered for the admin contact.
      */
 
     public void setAdminPrivacy(Boolean adminPrivacy) {
@@ -477,14 +486,16 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Specifies whether contact information for the admin contact is concealed from WHOIS queries. If the value is
-     * <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi,
-     * instead of the contact information that you enter.
+     * Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
+     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
+     * for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
+     * the information that you entered for the admin contact.
      * </p>
      * 
-     * @return Specifies whether contact information for the admin contact is concealed from WHOIS queries. If the value
-     *         is <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner,
-     *         Gandi, instead of the contact information that you enter.
+     * @return Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>,
+     *         WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
+     *         domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>,
+     *         WHOIS queries return the information that you entered for the admin contact.
      */
 
     public Boolean getAdminPrivacy() {
@@ -493,15 +504,17 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Specifies whether contact information for the admin contact is concealed from WHOIS queries. If the value is
-     * <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi,
-     * instead of the contact information that you enter.
+     * Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
+     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
+     * for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
+     * the information that you entered for the admin contact.
      * </p>
      * 
      * @param adminPrivacy
-     *        Specifies whether contact information for the admin contact is concealed from WHOIS queries. If the value
-     *        is <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner,
-     *        Gandi, instead of the contact information that you enter.
+     *        Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>,
+     *        WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
+     *        domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>,
+     *        WHOIS queries return the information that you entered for the admin contact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -512,14 +525,16 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Specifies whether contact information for the admin contact is concealed from WHOIS queries. If the value is
-     * <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi,
-     * instead of the contact information that you enter.
+     * Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
+     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
+     * for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
+     * the information that you entered for the admin contact.
      * </p>
      * 
-     * @return Specifies whether contact information for the admin contact is concealed from WHOIS queries. If the value
-     *         is <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner,
-     *         Gandi, instead of the contact information that you enter.
+     * @return Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>,
+     *         WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
+     *         domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>,
+     *         WHOIS queries return the information that you entered for the admin contact.
      */
 
     public Boolean isAdminPrivacy() {
@@ -528,15 +543,17 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Specifies whether contact information for the registrant contact is concealed from WHOIS queries. If the value is
-     * <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi,
-     * instead of the contact information that you enter.
+     * Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
+     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
+     * for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
+     * the information that you entered for the registrant contact (domain owner).
      * </p>
      * 
      * @param registrantPrivacy
-     *        Specifies whether contact information for the registrant contact is concealed from WHOIS queries. If the
-     *        value is <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar
-     *        partner, Gandi, instead of the contact information that you enter.
+     *        Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>,
+     *        WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
+     *        domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>,
+     *        WHOIS queries return the information that you entered for the registrant contact (domain owner).
      */
 
     public void setRegistrantPrivacy(Boolean registrantPrivacy) {
@@ -545,14 +562,16 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Specifies whether contact information for the registrant contact is concealed from WHOIS queries. If the value is
-     * <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi,
-     * instead of the contact information that you enter.
+     * Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
+     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
+     * for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
+     * the information that you entered for the registrant contact (domain owner).
      * </p>
      * 
-     * @return Specifies whether contact information for the registrant contact is concealed from WHOIS queries. If the
-     *         value is <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar
-     *         partner, Gandi, instead of the contact information that you enter.
+     * @return Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>,
+     *         WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
+     *         domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>,
+     *         WHOIS queries return the information that you entered for the registrant contact (domain owner).
      */
 
     public Boolean getRegistrantPrivacy() {
@@ -561,15 +580,17 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Specifies whether contact information for the registrant contact is concealed from WHOIS queries. If the value is
-     * <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi,
-     * instead of the contact information that you enter.
+     * Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
+     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
+     * for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
+     * the information that you entered for the registrant contact (domain owner).
      * </p>
      * 
      * @param registrantPrivacy
-     *        Specifies whether contact information for the registrant contact is concealed from WHOIS queries. If the
-     *        value is <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar
-     *        partner, Gandi, instead of the contact information that you enter.
+     *        Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>,
+     *        WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
+     *        domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>,
+     *        WHOIS queries return the information that you entered for the registrant contact (domain owner).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -580,14 +601,16 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Specifies whether contact information for the registrant contact is concealed from WHOIS queries. If the value is
-     * <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi,
-     * instead of the contact information that you enter.
+     * Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
+     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
+     * for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
+     * the information that you entered for the registrant contact (domain owner).
      * </p>
      * 
-     * @return Specifies whether contact information for the registrant contact is concealed from WHOIS queries. If the
-     *         value is <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar
-     *         partner, Gandi, instead of the contact information that you enter.
+     * @return Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>,
+     *         WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
+     *         domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>,
+     *         WHOIS queries return the information that you entered for the registrant contact (domain owner).
      */
 
     public Boolean isRegistrantPrivacy() {
@@ -596,15 +619,17 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Specifies whether contact information for the tech contact is concealed from WHOIS queries. If the value is
-     * <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi,
-     * instead of the contact information that you enter.
+     * Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
+     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
+     * for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
+     * the information that you entered for the technical contact.
      * </p>
      * 
      * @param techPrivacy
-     *        Specifies whether contact information for the tech contact is concealed from WHOIS queries. If the value
-     *        is <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner,
-     *        Gandi, instead of the contact information that you enter.
+     *        Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>,
+     *        WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
+     *        domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>,
+     *        WHOIS queries return the information that you entered for the technical contact.
      */
 
     public void setTechPrivacy(Boolean techPrivacy) {
@@ -613,14 +638,16 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Specifies whether contact information for the tech contact is concealed from WHOIS queries. If the value is
-     * <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi,
-     * instead of the contact information that you enter.
+     * Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
+     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
+     * for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
+     * the information that you entered for the technical contact.
      * </p>
      * 
-     * @return Specifies whether contact information for the tech contact is concealed from WHOIS queries. If the value
-     *         is <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner,
-     *         Gandi, instead of the contact information that you enter.
+     * @return Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>,
+     *         WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
+     *         domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>,
+     *         WHOIS queries return the information that you entered for the technical contact.
      */
 
     public Boolean getTechPrivacy() {
@@ -629,15 +656,17 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Specifies whether contact information for the tech contact is concealed from WHOIS queries. If the value is
-     * <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi,
-     * instead of the contact information that you enter.
+     * Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
+     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
+     * for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
+     * the information that you entered for the technical contact.
      * </p>
      * 
      * @param techPrivacy
-     *        Specifies whether contact information for the tech contact is concealed from WHOIS queries. If the value
-     *        is <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner,
-     *        Gandi, instead of the contact information that you enter.
+     *        Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>,
+     *        WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
+     *        domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>,
+     *        WHOIS queries return the information that you entered for the technical contact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -648,14 +677,16 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Specifies whether contact information for the tech contact is concealed from WHOIS queries. If the value is
-     * <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner, Gandi,
-     * instead of the contact information that you enter.
+     * Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>, WHOIS
+     * ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or
+     * for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
+     * the information that you entered for the technical contact.
      * </p>
      * 
-     * @return Specifies whether contact information for the tech contact is concealed from WHOIS queries. If the value
-     *         is <code>true</code>, WHOIS ("who is") queries will return contact information for our registrar partner,
-     *         Gandi, instead of the contact information that you enter.
+     * @return Specifies whether contact information is concealed from WHOIS queries. If the value is <code>true</code>,
+     *         WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org
+     *         domains) or for our registrar associate, Gandi (for all other TLDs). If the value is <code>false</code>,
+     *         WHOIS queries return the information that you entered for the technical contact.
      */
 
     public Boolean isTechPrivacy() {
@@ -664,13 +695,15 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Name of the registrar of the domain as identified in the registry. Amazon Route 53 domains are registered by
-     * registrar Gandi. The value is <code>"GANDI SAS"</code>.
+     * Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD are
+     * registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi. The value for
+     * domains that are registered by Gandi is <code>"GANDI SAS"</code>.
      * </p>
      * 
      * @param registrarName
-     *        Name of the registrar of the domain as identified in the registry. Amazon Route 53 domains are registered
-     *        by registrar Gandi. The value is <code>"GANDI SAS"</code>.
+     *        Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD
+     *        are registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi.
+     *        The value for domains that are registered by Gandi is <code>"GANDI SAS"</code>.
      */
 
     public void setRegistrarName(String registrarName) {
@@ -679,12 +712,14 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Name of the registrar of the domain as identified in the registry. Amazon Route 53 domains are registered by
-     * registrar Gandi. The value is <code>"GANDI SAS"</code>.
+     * Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD are
+     * registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi. The value for
+     * domains that are registered by Gandi is <code>"GANDI SAS"</code>.
      * </p>
      * 
-     * @return Name of the registrar of the domain as identified in the registry. Amazon Route 53 domains are registered
-     *         by registrar Gandi. The value is <code>"GANDI SAS"</code>.
+     * @return Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD
+     *         are registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi.
+     *         The value for domains that are registered by Gandi is <code>"GANDI SAS"</code>.
      */
 
     public String getRegistrarName() {
@@ -693,13 +728,15 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Name of the registrar of the domain as identified in the registry. Amazon Route 53 domains are registered by
-     * registrar Gandi. The value is <code>"GANDI SAS"</code>.
+     * Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD are
+     * registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi. The value for
+     * domains that are registered by Gandi is <code>"GANDI SAS"</code>.
      * </p>
      * 
      * @param registrarName
-     *        Name of the registrar of the domain as identified in the registry. Amazon Route 53 domains are registered
-     *        by registrar Gandi. The value is <code>"GANDI SAS"</code>.
+     *        Name of the registrar of the domain as identified in the registry. Domains with a .com, .net, or .org TLD
+     *        are registered by Amazon Registrar. All other domains are registered by our registrar associate, Gandi.
+     *        The value for domains that are registered by Gandi is <code>"GANDI SAS"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -919,12 +956,13 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The date when the domain was created as found in the response to a WHOIS query. The date format is Unix time.
+     * The date when the domain was created as found in the response to a WHOIS query. The date and time is in
+     * Coordinated Universal time (UTC).
      * </p>
      * 
      * @param creationDate
-     *        The date when the domain was created as found in the response to a WHOIS query. The date format is Unix
-     *        time.
+     *        The date when the domain was created as found in the response to a WHOIS query. The date and time is in
+     *        Coordinated Universal time (UTC).
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -933,11 +971,12 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The date when the domain was created as found in the response to a WHOIS query. The date format is Unix time.
+     * The date when the domain was created as found in the response to a WHOIS query. The date and time is in
+     * Coordinated Universal time (UTC).
      * </p>
      * 
-     * @return The date when the domain was created as found in the response to a WHOIS query. The date format is Unix
-     *         time.
+     * @return The date when the domain was created as found in the response to a WHOIS query. The date and time is in
+     *         Coordinated Universal time (UTC).
      */
 
     public java.util.Date getCreationDate() {
@@ -946,12 +985,13 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The date when the domain was created as found in the response to a WHOIS query. The date format is Unix time.
+     * The date when the domain was created as found in the response to a WHOIS query. The date and time is in
+     * Coordinated Universal time (UTC).
      * </p>
      * 
      * @param creationDate
-     *        The date when the domain was created as found in the response to a WHOIS query. The date format is Unix
-     *        time.
+     *        The date when the domain was created as found in the response to a WHOIS query. The date and time is in
+     *        Coordinated Universal time (UTC).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -962,12 +1002,13 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The last updated date of the domain as found in the response to a WHOIS query. The date format is Unix time.
+     * The last updated date of the domain as found in the response to a WHOIS query. The date and time is in
+     * Coordinated Universal time (UTC).
      * </p>
      * 
      * @param updatedDate
-     *        The last updated date of the domain as found in the response to a WHOIS query. The date format is Unix
-     *        time.
+     *        The last updated date of the domain as found in the response to a WHOIS query. The date and time is in
+     *        Coordinated Universal time (UTC).
      */
 
     public void setUpdatedDate(java.util.Date updatedDate) {
@@ -976,11 +1017,12 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The last updated date of the domain as found in the response to a WHOIS query. The date format is Unix time.
+     * The last updated date of the domain as found in the response to a WHOIS query. The date and time is in
+     * Coordinated Universal time (UTC).
      * </p>
      * 
-     * @return The last updated date of the domain as found in the response to a WHOIS query. The date format is Unix
-     *         time.
+     * @return The last updated date of the domain as found in the response to a WHOIS query. The date and time is in
+     *         Coordinated Universal time (UTC).
      */
 
     public java.util.Date getUpdatedDate() {
@@ -989,12 +1031,13 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The last updated date of the domain as found in the response to a WHOIS query. The date format is Unix time.
+     * The last updated date of the domain as found in the response to a WHOIS query. The date and time is in
+     * Coordinated Universal time (UTC).
      * </p>
      * 
      * @param updatedDate
-     *        The last updated date of the domain as found in the response to a WHOIS query. The date format is Unix
-     *        time.
+     *        The last updated date of the domain as found in the response to a WHOIS query. The date and time is in
+     *        Coordinated Universal time (UTC).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1005,11 +1048,13 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The date when the registration for the domain is set to expire. The date format is Unix time.
+     * The date when the registration for the domain is set to expire. The date and time is in Coordinated Universal
+     * time (UTC).
      * </p>
      * 
      * @param expirationDate
-     *        The date when the registration for the domain is set to expire. The date format is Unix time.
+     *        The date when the registration for the domain is set to expire. The date and time is in Coordinated
+     *        Universal time (UTC).
      */
 
     public void setExpirationDate(java.util.Date expirationDate) {
@@ -1018,10 +1063,12 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The date when the registration for the domain is set to expire. The date format is Unix time.
+     * The date when the registration for the domain is set to expire. The date and time is in Coordinated Universal
+     * time (UTC).
      * </p>
      * 
-     * @return The date when the registration for the domain is set to expire. The date format is Unix time.
+     * @return The date when the registration for the domain is set to expire. The date and time is in Coordinated
+     *         Universal time (UTC).
      */
 
     public java.util.Date getExpirationDate() {
@@ -1030,11 +1077,13 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The date when the registration for the domain is set to expire. The date format is Unix time.
+     * The date when the registration for the domain is set to expire. The date and time is in Coordinated Universal
+     * time (UTC).
      * </p>
      * 
      * @param expirationDate
-     *        The date when the registration for the domain is set to expire. The date format is Unix time.
+     *        The date when the registration for the domain is set to expire. The date and time is in Coordinated
+     *        Universal time (UTC).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -47,6 +47,8 @@ public enum DynamoDBv2Actions implements Action {
     DescribeContinuousBackups("dynamodb:DescribeContinuousBackups"),
     /** Action for the DescribeGlobalTable operation. */
     DescribeGlobalTable("dynamodb:DescribeGlobalTable"),
+    /** Action for the DescribeGlobalTableSettings operation. */
+    DescribeGlobalTableSettings("dynamodb:DescribeGlobalTableSettings"),
     /** Action for the DescribeLimits operation. */
     DescribeLimits("dynamodb:DescribeLimits"),
     /** Action for the DescribeTable operation. */
@@ -81,6 +83,8 @@ public enum DynamoDBv2Actions implements Action {
     UpdateContinuousBackups("dynamodb:UpdateContinuousBackups"),
     /** Action for the UpdateGlobalTable operation. */
     UpdateGlobalTable("dynamodb:UpdateGlobalTable"),
+    /** Action for the UpdateGlobalTableSettings operation. */
+    UpdateGlobalTableSettings("dynamodb:UpdateGlobalTableSettings"),
     /** Action for the UpdateItem operation. */
     UpdateItem("dynamodb:UpdateItem"),
     /** Action for the UpdateTable operation. */

@@ -104,6 +104,13 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     private ResourceConfig resourceConfig;
     /**
      * <p>
+     * A object that specifies the VPC that you want your training job to connect to. Control access to and from your
+     * training container by configuring the VPC. For more information, see <a>train-vpc</a>
+     * </p>
+     */
+    private VpcConfig vpcConfig;
+    /**
+     * <p>
      * Sets a duration for training. Use this parameter to cap model training costs. To stop a job, Amazon SageMaker
      * sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms
      * might use this 120-second window to save the model artifacts.
@@ -683,6 +690,52 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
+     * A object that specifies the VPC that you want your training job to connect to. Control access to and from your
+     * training container by configuring the VPC. For more information, see <a>train-vpc</a>
+     * </p>
+     * 
+     * @param vpcConfig
+     *        A object that specifies the VPC that you want your training job to connect to. Control access to and from
+     *        your training container by configuring the VPC. For more information, see <a>train-vpc</a>
+     */
+
+    public void setVpcConfig(VpcConfig vpcConfig) {
+        this.vpcConfig = vpcConfig;
+    }
+
+    /**
+     * <p>
+     * A object that specifies the VPC that you want your training job to connect to. Control access to and from your
+     * training container by configuring the VPC. For more information, see <a>train-vpc</a>
+     * </p>
+     * 
+     * @return A object that specifies the VPC that you want your training job to connect to. Control access to and from
+     *         your training container by configuring the VPC. For more information, see <a>train-vpc</a>
+     */
+
+    public VpcConfig getVpcConfig() {
+        return this.vpcConfig;
+    }
+
+    /**
+     * <p>
+     * A object that specifies the VPC that you want your training job to connect to. Control access to and from your
+     * training container by configuring the VPC. For more information, see <a>train-vpc</a>
+     * </p>
+     * 
+     * @param vpcConfig
+     *        A object that specifies the VPC that you want your training job to connect to. Control access to and from
+     *        your training container by configuring the VPC. For more information, see <a>train-vpc</a>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTrainingJobRequest withVpcConfig(VpcConfig vpcConfig) {
+        setVpcConfig(vpcConfig);
+        return this;
+    }
+
+    /**
+     * <p>
      * Sets a duration for training. Use this parameter to cap model training costs. To stop a job, Amazon SageMaker
      * sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms
      * might use this 120-second window to save the model artifacts.
@@ -871,6 +924,8 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("OutputDataConfig: ").append(getOutputDataConfig()).append(",");
         if (getResourceConfig() != null)
             sb.append("ResourceConfig: ").append(getResourceConfig()).append(",");
+        if (getVpcConfig() != null)
+            sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
         if (getStoppingCondition() != null)
             sb.append("StoppingCondition: ").append(getStoppingCondition()).append(",");
         if (getTags() != null)
@@ -917,6 +972,10 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getResourceConfig() != null && other.getResourceConfig().equals(this.getResourceConfig()) == false)
             return false;
+        if (other.getVpcConfig() == null ^ this.getVpcConfig() == null)
+            return false;
+        if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
+            return false;
         if (other.getStoppingCondition() == null ^ this.getStoppingCondition() == null)
             return false;
         if (other.getStoppingCondition() != null && other.getStoppingCondition().equals(this.getStoppingCondition()) == false)
@@ -940,6 +999,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getInputDataConfig() == null) ? 0 : getInputDataConfig().hashCode());
         hashCode = prime * hashCode + ((getOutputDataConfig() == null) ? 0 : getOutputDataConfig().hashCode());
         hashCode = prime * hashCode + ((getResourceConfig() == null) ? 0 : getResourceConfig().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         hashCode = prime * hashCode + ((getStoppingCondition() == null) ? 0 : getStoppingCondition().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;

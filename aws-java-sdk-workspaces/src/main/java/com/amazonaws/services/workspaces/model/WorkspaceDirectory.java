@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about an AWS Directory Service directory for use with Amazon WorkSpaces.
+ * Information about an AWS Directory Service directory for use with Amazon WorkSpaces.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/WorkspaceDirectory" target="_top">AWS API
@@ -102,6 +102,12 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private DefaultWorkspaceCreationProperties workspaceCreationProperties;
+    /**
+     * <p>
+     * The identifiers of the IP access control groups associated with the directory.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> ipGroupIds;
 
     /**
      * <p>
@@ -728,6 +734,79 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The identifiers of the IP access control groups associated with the directory.
+     * </p>
+     * 
+     * @return The identifiers of the IP access control groups associated with the directory.
+     */
+
+    public java.util.List<String> getIpGroupIds() {
+        if (ipGroupIds == null) {
+            ipGroupIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return ipGroupIds;
+    }
+
+    /**
+     * <p>
+     * The identifiers of the IP access control groups associated with the directory.
+     * </p>
+     * 
+     * @param ipGroupIds
+     *        The identifiers of the IP access control groups associated with the directory.
+     */
+
+    public void setIpGroupIds(java.util.Collection<String> ipGroupIds) {
+        if (ipGroupIds == null) {
+            this.ipGroupIds = null;
+            return;
+        }
+
+        this.ipGroupIds = new com.amazonaws.internal.SdkInternalList<String>(ipGroupIds);
+    }
+
+    /**
+     * <p>
+     * The identifiers of the IP access control groups associated with the directory.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIpGroupIds(java.util.Collection)} or {@link #withIpGroupIds(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param ipGroupIds
+     *        The identifiers of the IP access control groups associated with the directory.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkspaceDirectory withIpGroupIds(String... ipGroupIds) {
+        if (this.ipGroupIds == null) {
+            setIpGroupIds(new com.amazonaws.internal.SdkInternalList<String>(ipGroupIds.length));
+        }
+        for (String ele : ipGroupIds) {
+            this.ipGroupIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifiers of the IP access control groups associated with the directory.
+     * </p>
+     * 
+     * @param ipGroupIds
+     *        The identifiers of the IP access control groups associated with the directory.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkspaceDirectory withIpGroupIds(java.util.Collection<String> ipGroupIds) {
+        setIpGroupIds(ipGroupIds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -761,7 +840,9 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
         if (getWorkspaceCreationProperties() != null)
-            sb.append("WorkspaceCreationProperties: ").append(getWorkspaceCreationProperties());
+            sb.append("WorkspaceCreationProperties: ").append(getWorkspaceCreationProperties()).append(",");
+        if (getIpGroupIds() != null)
+            sb.append("IpGroupIds: ").append(getIpGroupIds());
         sb.append("}");
         return sb.toString();
     }
@@ -824,6 +905,10 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getWorkspaceCreationProperties() != null && other.getWorkspaceCreationProperties().equals(this.getWorkspaceCreationProperties()) == false)
             return false;
+        if (other.getIpGroupIds() == null ^ this.getIpGroupIds() == null)
+            return false;
+        if (other.getIpGroupIds() != null && other.getIpGroupIds().equals(this.getIpGroupIds()) == false)
+            return false;
         return true;
     }
 
@@ -844,6 +929,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getWorkspaceSecurityGroupId() == null) ? 0 : getWorkspaceSecurityGroupId().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getWorkspaceCreationProperties() == null) ? 0 : getWorkspaceCreationProperties().hashCode());
+        hashCode = prime * hashCode + ((getIpGroupIds() == null) ? 0 : getIpGroupIds().hashCode());
         return hashCode;
     }
 

@@ -38,6 +38,21 @@ public class AbstractAmazonWorkspaces implements AmazonWorkspaces {
     }
 
     @Override
+    public AssociateIpGroupsResult associateIpGroups(AssociateIpGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AuthorizeIpRulesResult authorizeIpRules(AuthorizeIpRulesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateIpGroupResult createIpGroup(CreateIpGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateTagsResult createTags(CreateTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -48,7 +63,17 @@ public class AbstractAmazonWorkspaces implements AmazonWorkspaces {
     }
 
     @Override
+    public DeleteIpGroupResult deleteIpGroup(DeleteIpGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteTagsResult deleteTags(DeleteTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeIpGroupsResult describeIpGroups(DescribeIpGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -93,7 +118,17 @@ public class AbstractAmazonWorkspaces implements AmazonWorkspaces {
     }
 
     @Override
+    public DisassociateIpGroupsResult disassociateIpGroups(DisassociateIpGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ModifyWorkspacePropertiesResult modifyWorkspaceProperties(ModifyWorkspacePropertiesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyWorkspaceStateResult modifyWorkspaceState(ModifyWorkspaceStateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -104,6 +139,11 @@ public class AbstractAmazonWorkspaces implements AmazonWorkspaces {
 
     @Override
     public RebuildWorkspacesResult rebuildWorkspaces(RebuildWorkspacesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RevokeIpRulesResult revokeIpRules(RevokeIpRulesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -119,6 +159,11 @@ public class AbstractAmazonWorkspaces implements AmazonWorkspaces {
 
     @Override
     public TerminateWorkspacesResult terminateWorkspaces(TerminateWorkspacesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateRulesOfIpGroupResult updateRulesOfIpGroup(UpdateRulesOfIpGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

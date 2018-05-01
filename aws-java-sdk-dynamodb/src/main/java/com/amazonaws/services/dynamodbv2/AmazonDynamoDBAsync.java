@@ -622,6 +622,31 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * The tables must have DynamoDB Streams enabled (NEW_AND_OLD_IMAGES).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The tables must have same provisioned and maximum write capacity units.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If global secondary indexes are specified, then the following conditions must also be met:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The global secondary indexes must have the same name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The global secondary indexes must have the same hash key and sort key (if present).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The global secondary indexes must have the same provisioned and maximum write capacity units.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param createGlobalTableRequest
@@ -659,6 +684,31 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * <li>
      * <p>
      * The tables must have DynamoDB Streams enabled (NEW_AND_OLD_IMAGES).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The tables must have same provisioned and maximum write capacity units.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If global secondary indexes are specified, then the following conditions must also be met:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The global secondary indexes must have the same name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The global secondary indexes must have the same hash key and sort key (if present).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The global secondary indexes must have the same provisioned and maximum write capacity units.
      * </p>
      * </li>
      * </ul>
@@ -1023,7 +1073,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * </p>
      * <p>
      * <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time. You can restore your table
-     * to any point in time during the last 35 days with a 1-minute granularity.
+     * to any point in time during the last 35 days.
      * </p>
      * <p>
      * You can call <code>DescribeContinuousBackups</code> at a maximum rate of 10 times per second.
@@ -1050,7 +1100,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * </p>
      * <p>
      * <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time. You can restore your table
-     * to any point in time during the last 35 days with a 1-minute granularity.
+     * to any point in time during the last 35 days.
      * </p>
      * <p>
      * You can call <code>DescribeContinuousBackups</code> at a maximum rate of 10 times per second.
@@ -1100,6 +1150,39 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      */
     java.util.concurrent.Future<DescribeGlobalTableResult> describeGlobalTableAsync(DescribeGlobalTableRequest describeGlobalTableRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeGlobalTableRequest, DescribeGlobalTableResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes region specific settings for a global table.
+     * </p>
+     * 
+     * @param describeGlobalTableSettingsRequest
+     * @return A Java Future containing the result of the DescribeGlobalTableSettings operation returned by the service.
+     * @sample AmazonDynamoDBAsync.DescribeGlobalTableSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTableSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeGlobalTableSettingsResult> describeGlobalTableSettingsAsync(
+            DescribeGlobalTableSettingsRequest describeGlobalTableSettingsRequest);
+
+    /**
+     * <p>
+     * Describes region specific settings for a global table.
+     * </p>
+     * 
+     * @param describeGlobalTableSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeGlobalTableSettings operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.DescribeGlobalTableSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTableSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeGlobalTableSettingsResult> describeGlobalTableSettingsAsync(
+            DescribeGlobalTableSettingsRequest describeGlobalTableSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeGlobalTableSettingsRequest, DescribeGlobalTableSettingsResult> asyncHandler);
 
     /**
      * <p>
@@ -2188,10 +2271,42 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
     /**
      * <p>
      * Restores the specified table to the specified point in time within <code>EarliestRestorableDateTime</code> and
-     * <code>LatestRestorableDateTime</code>. You can restore your table to any point in time during the last 35 days
-     * with a 1-minute granularity. Any number of users can execute up to 4 concurrent restores (any type of restore) in
-     * a given account.
+     * <code>LatestRestorableDateTime</code>. You can restore your table to any point in time during the last 35 days.
+     * Any number of users can execute up to 4 concurrent restores (any type of restore) in a given account.
      * </p>
+     * <p>
+     * When you restore using point in time recovery, DynamoDB restores your table data to the state based on the
+     * selected date and time (day:hour:minute:second) to a new table.
+     * </p>
+     * <p>
+     * Along with data, the following are also included on the new restored table using point in time recovery:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Global secondary indexes (GSIs)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Local secondary indexes (LSIs)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned read and write capacity
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Encryption settings
+     * </p>
+     * <important>
+     * <p>
+     * All these settings come from the current settings of the source table at the time of restore.
+     * </p>
+     * </important></li>
+     * </ul>
      * <p>
      * You must manually set up the following on the restored table:
      * </p>
@@ -2245,10 +2360,42 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
     /**
      * <p>
      * Restores the specified table to the specified point in time within <code>EarliestRestorableDateTime</code> and
-     * <code>LatestRestorableDateTime</code>. You can restore your table to any point in time during the last 35 days
-     * with a 1-minute granularity. Any number of users can execute up to 4 concurrent restores (any type of restore) in
-     * a given account.
+     * <code>LatestRestorableDateTime</code>. You can restore your table to any point in time during the last 35 days.
+     * Any number of users can execute up to 4 concurrent restores (any type of restore) in a given account.
      * </p>
+     * <p>
+     * When you restore using point in time recovery, DynamoDB restores your table data to the state based on the
+     * selected date and time (day:hour:minute:second) to a new table.
+     * </p>
+     * <p>
+     * Along with data, the following are also included on the new restored table using point in time recovery:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Global secondary indexes (GSIs)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Local secondary indexes (LSIs)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned read and write capacity
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Encryption settings
+     * </p>
+     * <important>
+     * <p>
+     * All these settings come from the current settings of the source table at the time of restore.
+     * </p>
+     * </important></li>
+     * </ul>
      * <p>
      * You must manually set up the following on the restored table:
      * </p>
@@ -2540,7 +2687,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * </p>
      * <p>
      * <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time. You can restore your table
-     * to any point in time during the last 35 days with a 1-minute granularity.
+     * to any point in time during the last 35 days..
      * </p>
      * 
      * @param updateContinuousBackupsRequest
@@ -2564,7 +2711,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * </p>
      * <p>
      * <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time. You can restore your table
-     * to any point in time during the last 35 days with a 1-minute granularity.
+     * to any point in time during the last 35 days..
      * </p>
      * 
      * @param updateContinuousBackupsRequest
@@ -2584,7 +2731,8 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * <p>
      * Adds or removes replicas in the specified global table. The global table must already exist to be able to use
      * this operation. Any replica to be added must be empty, must have the same name as the global table, must have the
-     * same key schema, and must have DynamoDB Streams enabled.
+     * same key schema, and must have DynamoDB Streams enabled and must have same provisioned and maximum write capacity
+     * units.
      * </p>
      * <note>
      * <p>
@@ -2592,6 +2740,26 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * simplicity we recommend that you issue separate requests for adding or removing replicas.
      * </p>
      * </note>
+     * <p>
+     * If global secondary indexes are specified, then the following conditions must also be met:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The global secondary indexes must have the same name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The global secondary indexes must have the same hash key and sort key (if present).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The global secondary indexes must have the same provisioned and maximum write capacity units.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param updateGlobalTableRequest
      * @return A Java Future containing the result of the UpdateGlobalTable operation returned by the service.
@@ -2605,7 +2773,8 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * <p>
      * Adds or removes replicas in the specified global table. The global table must already exist to be able to use
      * this operation. Any replica to be added must be empty, must have the same name as the global table, must have the
-     * same key schema, and must have DynamoDB Streams enabled.
+     * same key schema, and must have DynamoDB Streams enabled and must have same provisioned and maximum write capacity
+     * units.
      * </p>
      * <note>
      * <p>
@@ -2613,6 +2782,26 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * simplicity we recommend that you issue separate requests for adding or removing replicas.
      * </p>
      * </note>
+     * <p>
+     * If global secondary indexes are specified, then the following conditions must also be met:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The global secondary indexes must have the same name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The global secondary indexes must have the same hash key and sort key (if present).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The global secondary indexes must have the same provisioned and maximum write capacity units.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param updateGlobalTableRequest
      * @param asyncHandler
@@ -2626,6 +2815,39 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      */
     java.util.concurrent.Future<UpdateGlobalTableResult> updateGlobalTableAsync(UpdateGlobalTableRequest updateGlobalTableRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateGlobalTableRequest, UpdateGlobalTableResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates settings for a global table.
+     * </p>
+     * 
+     * @param updateGlobalTableSettingsRequest
+     * @return A Java Future containing the result of the UpdateGlobalTableSettings operation returned by the service.
+     * @sample AmazonDynamoDBAsync.UpdateGlobalTableSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTableSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateGlobalTableSettingsResult> updateGlobalTableSettingsAsync(
+            UpdateGlobalTableSettingsRequest updateGlobalTableSettingsRequest);
+
+    /**
+     * <p>
+     * Updates settings for a global table.
+     * </p>
+     * 
+     * @param updateGlobalTableSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateGlobalTableSettings operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.UpdateGlobalTableSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTableSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateGlobalTableSettingsResult> updateGlobalTableSettingsAsync(
+            UpdateGlobalTableSettingsRequest updateGlobalTableSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateGlobalTableSettingsRequest, UpdateGlobalTableSettingsResult> asyncHandler);
 
     /**
      * <p>

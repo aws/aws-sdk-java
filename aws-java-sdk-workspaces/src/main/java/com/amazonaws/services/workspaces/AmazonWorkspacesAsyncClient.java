@@ -246,6 +246,105 @@ public class AmazonWorkspacesAsyncClient extends AmazonWorkspacesClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateIpGroupsResult> associateIpGroupsAsync(AssociateIpGroupsRequest request) {
+
+        return associateIpGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateIpGroupsResult> associateIpGroupsAsync(final AssociateIpGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateIpGroupsRequest, AssociateIpGroupsResult> asyncHandler) {
+        final AssociateIpGroupsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateIpGroupsResult>() {
+            @Override
+            public AssociateIpGroupsResult call() throws Exception {
+                AssociateIpGroupsResult result = null;
+
+                try {
+                    result = executeAssociateIpGroups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AuthorizeIpRulesResult> authorizeIpRulesAsync(AuthorizeIpRulesRequest request) {
+
+        return authorizeIpRulesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AuthorizeIpRulesResult> authorizeIpRulesAsync(final AuthorizeIpRulesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AuthorizeIpRulesRequest, AuthorizeIpRulesResult> asyncHandler) {
+        final AuthorizeIpRulesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AuthorizeIpRulesResult>() {
+            @Override
+            public AuthorizeIpRulesResult call() throws Exception {
+                AuthorizeIpRulesResult result = null;
+
+                try {
+                    result = executeAuthorizeIpRules(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateIpGroupResult> createIpGroupAsync(CreateIpGroupRequest request) {
+
+        return createIpGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateIpGroupResult> createIpGroupAsync(final CreateIpGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateIpGroupRequest, CreateIpGroupResult> asyncHandler) {
+        final CreateIpGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateIpGroupResult>() {
+            @Override
+            public CreateIpGroupResult call() throws Exception {
+                CreateIpGroupResult result = null;
+
+                try {
+                    result = executeCreateIpGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTagsResult> createTagsAsync(CreateTagsRequest request) {
 
         return createTagsAsync(request, null);
@@ -312,6 +411,39 @@ public class AmazonWorkspacesAsyncClient extends AmazonWorkspacesClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteIpGroupResult> deleteIpGroupAsync(DeleteIpGroupRequest request) {
+
+        return deleteIpGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteIpGroupResult> deleteIpGroupAsync(final DeleteIpGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteIpGroupRequest, DeleteIpGroupResult> asyncHandler) {
+        final DeleteIpGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteIpGroupResult>() {
+            @Override
+            public DeleteIpGroupResult call() throws Exception {
+                DeleteIpGroupResult result = null;
+
+                try {
+                    result = executeDeleteIpGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(DeleteTagsRequest request) {
 
         return deleteTagsAsync(request, null);
@@ -329,6 +461,39 @@ public class AmazonWorkspacesAsyncClient extends AmazonWorkspacesClient implemen
 
                 try {
                     result = executeDeleteTags(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeIpGroupsResult> describeIpGroupsAsync(DescribeIpGroupsRequest request) {
+
+        return describeIpGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeIpGroupsResult> describeIpGroupsAsync(final DescribeIpGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeIpGroupsRequest, DescribeIpGroupsResult> asyncHandler) {
+        final DescribeIpGroupsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeIpGroupsResult>() {
+            @Override
+            public DescribeIpGroupsResult call() throws Exception {
+                DescribeIpGroupsResult result = null;
+
+                try {
+                    result = executeDescribeIpGroups(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -581,6 +746,39 @@ public class AmazonWorkspacesAsyncClient extends AmazonWorkspacesClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateIpGroupsResult> disassociateIpGroupsAsync(DisassociateIpGroupsRequest request) {
+
+        return disassociateIpGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateIpGroupsResult> disassociateIpGroupsAsync(final DisassociateIpGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateIpGroupsRequest, DisassociateIpGroupsResult> asyncHandler) {
+        final DisassociateIpGroupsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateIpGroupsResult>() {
+            @Override
+            public DisassociateIpGroupsResult call() throws Exception {
+                DisassociateIpGroupsResult result = null;
+
+                try {
+                    result = executeDisassociateIpGroups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ModifyWorkspacePropertiesResult> modifyWorkspacePropertiesAsync(ModifyWorkspacePropertiesRequest request) {
 
         return modifyWorkspacePropertiesAsync(request, null);
@@ -598,6 +796,39 @@ public class AmazonWorkspacesAsyncClient extends AmazonWorkspacesClient implemen
 
                 try {
                     result = executeModifyWorkspaceProperties(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyWorkspaceStateResult> modifyWorkspaceStateAsync(ModifyWorkspaceStateRequest request) {
+
+        return modifyWorkspaceStateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyWorkspaceStateResult> modifyWorkspaceStateAsync(final ModifyWorkspaceStateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyWorkspaceStateRequest, ModifyWorkspaceStateResult> asyncHandler) {
+        final ModifyWorkspaceStateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyWorkspaceStateResult>() {
+            @Override
+            public ModifyWorkspaceStateResult call() throws Exception {
+                ModifyWorkspaceStateResult result = null;
+
+                try {
+                    result = executeModifyWorkspaceState(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -664,6 +895,39 @@ public class AmazonWorkspacesAsyncClient extends AmazonWorkspacesClient implemen
 
                 try {
                     result = executeRebuildWorkspaces(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RevokeIpRulesResult> revokeIpRulesAsync(RevokeIpRulesRequest request) {
+
+        return revokeIpRulesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RevokeIpRulesResult> revokeIpRulesAsync(final RevokeIpRulesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RevokeIpRulesRequest, RevokeIpRulesResult> asyncHandler) {
+        final RevokeIpRulesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RevokeIpRulesResult>() {
+            @Override
+            public RevokeIpRulesResult call() throws Exception {
+                RevokeIpRulesResult result = null;
+
+                try {
+                    result = executeRevokeIpRules(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -763,6 +1027,39 @@ public class AmazonWorkspacesAsyncClient extends AmazonWorkspacesClient implemen
 
                 try {
                     result = executeTerminateWorkspaces(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRulesOfIpGroupResult> updateRulesOfIpGroupAsync(UpdateRulesOfIpGroupRequest request) {
+
+        return updateRulesOfIpGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRulesOfIpGroupResult> updateRulesOfIpGroupAsync(final UpdateRulesOfIpGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateRulesOfIpGroupRequest, UpdateRulesOfIpGroupResult> asyncHandler) {
+        final UpdateRulesOfIpGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateRulesOfIpGroupResult>() {
+            @Override
+            public UpdateRulesOfIpGroupResult call() throws Exception {
+                UpdateRulesOfIpGroupResult result = null;
+
+                try {
+                    result = executeUpdateRulesOfIpGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

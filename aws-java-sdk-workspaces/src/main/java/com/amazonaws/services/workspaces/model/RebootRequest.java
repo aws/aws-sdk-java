@@ -30,18 +30,18 @@ public class RebootRequest implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the WorkSpace.
+     * The ID of the WorkSpace.
      * </p>
      */
     private String workspaceId;
 
     /**
      * <p>
-     * The identifier of the WorkSpace.
+     * The ID of the WorkSpace.
      * </p>
      * 
      * @param workspaceId
-     *        The identifier of the WorkSpace.
+     *        The ID of the WorkSpace.
      */
 
     public void setWorkspaceId(String workspaceId) {
@@ -50,10 +50,10 @@ public class RebootRequest implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the WorkSpace.
+     * The ID of the WorkSpace.
      * </p>
      * 
-     * @return The identifier of the WorkSpace.
+     * @return The ID of the WorkSpace.
      */
 
     public String getWorkspaceId() {
@@ -62,11 +62,11 @@ public class RebootRequest implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the WorkSpace.
+     * The ID of the WorkSpace.
      * </p>
      * 
      * @param workspaceId
-     *        The identifier of the WorkSpace.
+     *        The ID of the WorkSpace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

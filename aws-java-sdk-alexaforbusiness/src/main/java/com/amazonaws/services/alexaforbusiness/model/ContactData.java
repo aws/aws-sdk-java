@@ -36,19 +36,19 @@ public class ContactData implements Serializable, Cloneable, StructuredPojo {
     private String contactArn;
     /**
      * <p>
-     * The name of the contact to display on the AWS management console.
+     * The name of the contact to display on the console.
      * </p>
      */
     private String displayName;
     /**
      * <p>
-     * The first name of the contact that is used to call the contact on the device.
+     * The first name of the contact, used to call the contact on the device.
      * </p>
      */
     private String firstName;
     /**
      * <p>
-     * The last name of the contact that is used to call the contact on the device.
+     * The last name of the contact, used to call the contact on the device.
      * </p>
      */
     private String lastName;
@@ -101,11 +101,11 @@ public class ContactData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the contact to display on the AWS management console.
+     * The name of the contact to display on the console.
      * </p>
      * 
      * @param displayName
-     *        The name of the contact to display on the AWS management console.
+     *        The name of the contact to display on the console.
      */
 
     public void setDisplayName(String displayName) {
@@ -114,10 +114,10 @@ public class ContactData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the contact to display on the AWS management console.
+     * The name of the contact to display on the console.
      * </p>
      * 
-     * @return The name of the contact to display on the AWS management console.
+     * @return The name of the contact to display on the console.
      */
 
     public String getDisplayName() {
@@ -126,11 +126,11 @@ public class ContactData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the contact to display on the AWS management console.
+     * The name of the contact to display on the console.
      * </p>
      * 
      * @param displayName
-     *        The name of the contact to display on the AWS management console.
+     *        The name of the contact to display on the console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +141,11 @@ public class ContactData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The first name of the contact that is used to call the contact on the device.
+     * The first name of the contact, used to call the contact on the device.
      * </p>
      * 
      * @param firstName
-     *        The first name of the contact that is used to call the contact on the device.
+     *        The first name of the contact, used to call the contact on the device.
      */
 
     public void setFirstName(String firstName) {
@@ -154,10 +154,10 @@ public class ContactData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The first name of the contact that is used to call the contact on the device.
+     * The first name of the contact, used to call the contact on the device.
      * </p>
      * 
-     * @return The first name of the contact that is used to call the contact on the device.
+     * @return The first name of the contact, used to call the contact on the device.
      */
 
     public String getFirstName() {
@@ -166,11 +166,11 @@ public class ContactData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The first name of the contact that is used to call the contact on the device.
+     * The first name of the contact, used to call the contact on the device.
      * </p>
      * 
      * @param firstName
-     *        The first name of the contact that is used to call the contact on the device.
+     *        The first name of the contact, used to call the contact on the device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,11 +181,11 @@ public class ContactData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last name of the contact that is used to call the contact on the device.
+     * The last name of the contact, used to call the contact on the device.
      * </p>
      * 
      * @param lastName
-     *        The last name of the contact that is used to call the contact on the device.
+     *        The last name of the contact, used to call the contact on the device.
      */
 
     public void setLastName(String lastName) {
@@ -194,10 +194,10 @@ public class ContactData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last name of the contact that is used to call the contact on the device.
+     * The last name of the contact, used to call the contact on the device.
      * </p>
      * 
-     * @return The last name of the contact that is used to call the contact on the device.
+     * @return The last name of the contact, used to call the contact on the device.
      */
 
     public String getLastName() {
@@ -206,11 +206,11 @@ public class ContactData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last name of the contact that is used to call the contact on the device.
+     * The last name of the contact, used to call the contact on the device.
      * </p>
      * 
      * @param lastName
-     *        The last name of the contact that is used to call the contact on the device.
+     *        The last name of the contact, used to call the contact on the device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

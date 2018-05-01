@@ -158,6 +158,11 @@ public class AbstractAmazonAlexaForBusiness implements AmazonAlexaForBusiness {
     }
 
     @Override
+    public ListDeviceEventsResult listDeviceEvents(ListDeviceEventsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListSkillsResult listSkills(ListSkillsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

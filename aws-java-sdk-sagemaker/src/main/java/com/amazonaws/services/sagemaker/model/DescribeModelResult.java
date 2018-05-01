@@ -44,6 +44,12 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
     private String executionRoleArn;
     /**
      * <p>
+     * A object that specifies the VPC that this model has access to. For more information, see <a>host-vpc</a>
+     * </p>
+     */
+    private VpcConfig vpcConfig;
+    /**
+     * <p>
      * A timestamp that shows when the model was created.
      * </p>
      */
@@ -183,6 +189,46 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
+     * A object that specifies the VPC that this model has access to. For more information, see <a>host-vpc</a>
+     * </p>
+     * 
+     * @param vpcConfig
+     *        A object that specifies the VPC that this model has access to. For more information, see <a>host-vpc</a>
+     */
+
+    public void setVpcConfig(VpcConfig vpcConfig) {
+        this.vpcConfig = vpcConfig;
+    }
+
+    /**
+     * <p>
+     * A object that specifies the VPC that this model has access to. For more information, see <a>host-vpc</a>
+     * </p>
+     * 
+     * @return A object that specifies the VPC that this model has access to. For more information, see <a>host-vpc</a>
+     */
+
+    public VpcConfig getVpcConfig() {
+        return this.vpcConfig;
+    }
+
+    /**
+     * <p>
+     * A object that specifies the VPC that this model has access to. For more information, see <a>host-vpc</a>
+     * </p>
+     * 
+     * @param vpcConfig
+     *        A object that specifies the VPC that this model has access to. For more information, see <a>host-vpc</a>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeModelResult withVpcConfig(VpcConfig vpcConfig) {
+        setVpcConfig(vpcConfig);
+        return this;
+    }
+
+    /**
+     * <p>
      * A timestamp that shows when the model was created.
      * </p>
      * 
@@ -278,6 +324,8 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
             sb.append("PrimaryContainer: ").append(getPrimaryContainer()).append(",");
         if (getExecutionRoleArn() != null)
             sb.append("ExecutionRoleArn: ").append(getExecutionRoleArn()).append(",");
+        if (getVpcConfig() != null)
+            sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getModelArn() != null)
@@ -308,6 +356,10 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getExecutionRoleArn() != null && other.getExecutionRoleArn().equals(this.getExecutionRoleArn()) == false)
             return false;
+        if (other.getVpcConfig() == null ^ this.getVpcConfig() == null)
+            return false;
+        if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
+            return false;
         if (other.getCreationTime() == null ^ this.getCreationTime() == null)
             return false;
         if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
@@ -327,6 +379,7 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
         hashCode = prime * hashCode + ((getModelName() == null) ? 0 : getModelName().hashCode());
         hashCode = prime * hashCode + ((getPrimaryContainer() == null) ? 0 : getPrimaryContainer().hashCode());
         hashCode = prime * hashCode + ((getExecutionRoleArn() == null) ? 0 : getExecutionRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getModelArn() == null) ? 0 : getModelArn().hashCode());
         return hashCode;

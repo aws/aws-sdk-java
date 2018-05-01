@@ -34,6 +34,12 @@ public class DeviceStatusInfo implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private java.util.List<DeviceStatusDetail> deviceStatusDetails;
+    /**
+     * <p>
+     * The latest available information about the connection status of a device.
+     * </p>
+     */
+    private String connectionStatus;
 
     /**
      * <p>
@@ -106,6 +112,65 @@ public class DeviceStatusInfo implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The latest available information about the connection status of a device.
+     * </p>
+     * 
+     * @param connectionStatus
+     *        The latest available information about the connection status of a device.
+     * @see ConnectionStatus
+     */
+
+    public void setConnectionStatus(String connectionStatus) {
+        this.connectionStatus = connectionStatus;
+    }
+
+    /**
+     * <p>
+     * The latest available information about the connection status of a device.
+     * </p>
+     * 
+     * @return The latest available information about the connection status of a device.
+     * @see ConnectionStatus
+     */
+
+    public String getConnectionStatus() {
+        return this.connectionStatus;
+    }
+
+    /**
+     * <p>
+     * The latest available information about the connection status of a device.
+     * </p>
+     * 
+     * @param connectionStatus
+     *        The latest available information about the connection status of a device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConnectionStatus
+     */
+
+    public DeviceStatusInfo withConnectionStatus(String connectionStatus) {
+        setConnectionStatus(connectionStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The latest available information about the connection status of a device.
+     * </p>
+     * 
+     * @param connectionStatus
+     *        The latest available information about the connection status of a device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConnectionStatus
+     */
+
+    public DeviceStatusInfo withConnectionStatus(ConnectionStatus connectionStatus) {
+        this.connectionStatus = connectionStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -117,7 +182,9 @@ public class DeviceStatusInfo implements Serializable, Cloneable, StructuredPojo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeviceStatusDetails() != null)
-            sb.append("DeviceStatusDetails: ").append(getDeviceStatusDetails());
+            sb.append("DeviceStatusDetails: ").append(getDeviceStatusDetails()).append(",");
+        if (getConnectionStatus() != null)
+            sb.append("ConnectionStatus: ").append(getConnectionStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -136,6 +203,10 @@ public class DeviceStatusInfo implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getDeviceStatusDetails() != null && other.getDeviceStatusDetails().equals(this.getDeviceStatusDetails()) == false)
             return false;
+        if (other.getConnectionStatus() == null ^ this.getConnectionStatus() == null)
+            return false;
+        if (other.getConnectionStatus() != null && other.getConnectionStatus().equals(this.getConnectionStatus()) == false)
+            return false;
         return true;
     }
 
@@ -145,6 +216,7 @@ public class DeviceStatusInfo implements Serializable, Cloneable, StructuredPojo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDeviceStatusDetails() == null) ? 0 : getDeviceStatusDetails().hashCode());
+        hashCode = prime * hashCode + ((getConnectionStatus() == null) ? 0 : getConnectionStatus().hashCode());
         return hashCode;
     }
 

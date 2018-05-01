@@ -115,6 +115,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                             new JsonErrorShapeMetadata().withErrorCode("BackupNotFoundException").withModeledClass(
                                     com.amazonaws.services.dynamodbv2.model.BackupNotFoundException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("IndexNotFoundException").withModeledClass(
+                                    com.amazonaws.services.dynamodbv2.model.IndexNotFoundException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
                                     com.amazonaws.services.dynamodbv2.model.LimitExceededException.class))
                     .addErrorMetadata(
@@ -781,6 +784,31 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * The tables must have DynamoDB Streams enabled (NEW_AND_OLD_IMAGES).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The tables must have same provisioned and maximum write capacity units.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If global secondary indexes are specified, then the following conditions must also be met:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The global secondary indexes must have the same name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The global secondary indexes must have the same hash key and sort key (if present).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The global secondary indexes must have the same provisioned and maximum write capacity units.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param createGlobalTableRequest
@@ -1272,7 +1300,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * </p>
      * <p>
      * <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time. You can restore your table
-     * to any point in time during the last 35 days with a 1-minute granularity.
+     * to any point in time during the last 35 days.
      * </p>
      * <p>
      * You can call <code>DescribeContinuousBackups</code> at a maximum rate of 10 times per second.
@@ -1372,6 +1400,61 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeGlobalTableResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeGlobalTableResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes region specific settings for a global table.
+     * </p>
+     * 
+     * @param describeGlobalTableSettingsRequest
+     * @return Result of the DescribeGlobalTableSettings operation returned by the service.
+     * @throws GlobalTableNotFoundException
+     *         The specified global table does not exist.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.DescribeGlobalTableSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTableSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeGlobalTableSettingsResult describeGlobalTableSettings(DescribeGlobalTableSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeGlobalTableSettings(request);
+    }
+
+    @SdkInternalApi
+    final DescribeGlobalTableSettingsResult executeDescribeGlobalTableSettings(DescribeGlobalTableSettingsRequest describeGlobalTableSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeGlobalTableSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeGlobalTableSettingsRequest> request = null;
+        Response<DescribeGlobalTableSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeGlobalTableSettingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeGlobalTableSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeGlobalTableSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeGlobalTableSettingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2362,10 +2445,42 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     /**
      * <p>
      * Restores the specified table to the specified point in time within <code>EarliestRestorableDateTime</code> and
-     * <code>LatestRestorableDateTime</code>. You can restore your table to any point in time during the last 35 days
-     * with a 1-minute granularity. Any number of users can execute up to 4 concurrent restores (any type of restore) in
-     * a given account.
+     * <code>LatestRestorableDateTime</code>. You can restore your table to any point in time during the last 35 days.
+     * Any number of users can execute up to 4 concurrent restores (any type of restore) in a given account.
      * </p>
+     * <p>
+     * When you restore using point in time recovery, DynamoDB restores your table data to the state based on the
+     * selected date and time (day:hour:minute:second) to a new table.
+     * </p>
+     * <p>
+     * Along with data, the following are also included on the new restored table using point in time recovery:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Global secondary indexes (GSIs)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Local secondary indexes (LSIs)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Provisioned read and write capacity
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Encryption settings
+     * </p>
+     * <important>
+     * <p>
+     * All these settings come from the current settings of the source table at the time of restore.
+     * </p>
+     * </important></li>
+     * </ul>
      * <p>
      * You must manually set up the following on the restored table:
      * </p>
@@ -2757,7 +2872,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * </p>
      * <p>
      * <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time. You can restore your table
-     * to any point in time during the last 35 days with a 1-minute granularity.
+     * to any point in time during the last 35 days..
      * </p>
      * 
      * @param updateContinuousBackupsRequest
@@ -2817,7 +2932,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * <p>
      * Adds or removes replicas in the specified global table. The global table must already exist to be able to use
      * this operation. Any replica to be added must be empty, must have the same name as the global table, must have the
-     * same key schema, and must have DynamoDB Streams enabled.
+     * same key schema, and must have DynamoDB Streams enabled and must have same provisioned and maximum write capacity
+     * units.
      * </p>
      * <note>
      * <p>
@@ -2825,6 +2941,26 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * simplicity we recommend that you issue separate requests for adding or removing replicas.
      * </p>
      * </note>
+     * <p>
+     * If global secondary indexes are specified, then the following conditions must also be met:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The global secondary indexes must have the same name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The global secondary indexes must have the same hash key and sort key (if present).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The global secondary indexes must have the same provisioned and maximum write capacity units.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param updateGlobalTableRequest
      * @return Result of the UpdateGlobalTable operation returned by the service.
@@ -2871,6 +3007,83 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateGlobalTableResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateGlobalTableResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates settings for a global table.
+     * </p>
+     * 
+     * @param updateGlobalTableSettingsRequest
+     * @return Result of the UpdateGlobalTableSettings operation returned by the service.
+     * @throws GlobalTableNotFoundException
+     *         The specified global table does not exist.
+     * @throws ReplicaNotFoundException
+     *         The specified replica is no longer part of the global table.
+     * @throws IndexNotFoundException
+     *         The operation tried to access a nonexistent index.
+     * @throws LimitExceededException
+     *         Up to 50 <code>CreateBackup</code> operations are allowed per second, per account. There is no limit to
+     *         the number of daily on-demand backups that can be taken. </p>
+     *         <p>
+     *         Up to 10 simultaneous table operations are allowed per account. These operations include
+     *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
+     *         <code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and
+     *         <code>RestoreTableToPointInTime</code>.
+     *         </p>
+     *         <p>
+     *         For tables with secondary indexes, only one of those tables can be in the <code>CREATING</code> state at
+     *         any point in time. Do not attempt to create more than one such table simultaneously.
+     *         </p>
+     *         <p>
+     *         The total limit of tables in the <code>ACTIVE</code> state is 250.
+     * @throws ResourceInUseException
+     *         The operation conflicts with the resource's availability. For example, you attempted to recreate an
+     *         existing table, or tried to delete a table currently in the <code>CREATING</code> state.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.UpdateGlobalTableSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTableSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateGlobalTableSettingsResult updateGlobalTableSettings(UpdateGlobalTableSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateGlobalTableSettings(request);
+    }
+
+    @SdkInternalApi
+    final UpdateGlobalTableSettingsResult executeUpdateGlobalTableSettings(UpdateGlobalTableSettingsRequest updateGlobalTableSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateGlobalTableSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateGlobalTableSettingsRequest> request = null;
+        Response<UpdateGlobalTableSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateGlobalTableSettingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateGlobalTableSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateGlobalTableSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateGlobalTableSettingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

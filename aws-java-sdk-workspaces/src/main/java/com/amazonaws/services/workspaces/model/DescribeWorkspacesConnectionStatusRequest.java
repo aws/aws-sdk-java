@@ -27,7 +27,7 @@ public class DescribeWorkspacesConnectionStatusRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The identifiers of the WorkSpaces.
+     * The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> workspaceIds;
@@ -40,10 +40,10 @@ public class DescribeWorkspacesConnectionStatusRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The identifiers of the WorkSpaces.
+     * The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.
      * </p>
      * 
-     * @return The identifiers of the WorkSpaces.
+     * @return The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.
      */
 
     public java.util.List<String> getWorkspaceIds() {
@@ -55,11 +55,11 @@ public class DescribeWorkspacesConnectionStatusRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The identifiers of the WorkSpaces.
+     * The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.
      * </p>
      * 
      * @param workspaceIds
-     *        The identifiers of the WorkSpaces.
+     *        The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.
      */
 
     public void setWorkspaceIds(java.util.Collection<String> workspaceIds) {
@@ -73,7 +73,7 @@ public class DescribeWorkspacesConnectionStatusRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The identifiers of the WorkSpaces.
+     * The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class DescribeWorkspacesConnectionStatusRequest extends com.amazonaws.Ama
      * </p>
      * 
      * @param workspaceIds
-     *        The identifiers of the WorkSpaces.
+     *        The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class DescribeWorkspacesConnectionStatusRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The identifiers of the WorkSpaces.
+     * The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.
      * </p>
      * 
      * @param workspaceIds
-     *        The identifiers of the WorkSpaces.
+     *        The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

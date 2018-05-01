@@ -60,6 +60,10 @@ public class DescribeModelResultJsonUnmarshaller implements Unmarshaller<Describ
                     context.nextToken();
                     describeModelResult.setExecutionRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("VpcConfig", targetDepth)) {
+                    context.nextToken();
+                    describeModelResult.setVpcConfig(VpcConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
                     describeModelResult.setCreationTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));

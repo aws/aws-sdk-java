@@ -53,15 +53,14 @@ public class PointInTimeRecoveryDescription implements Serializable, Cloneable, 
     private String pointInTimeRecoveryStatus;
     /**
      * <p>
-     * Specifies the earliest point in time you can restore your table to. It is equal to the maximum of point in time
-     * recovery enabled time and <code>CurrentTime</code> - <code>PointInTimeRecoveryPeriod</code>.
+     * Specifies the earliest point in time you can restore your table to. It You can restore your table to any point in
+     * time during the last 35 days.
      * </p>
      */
     private java.util.Date earliestRestorableDateTime;
     /**
      * <p>
-     * <code>LatestRestorableDateTime</code> is 5 minutes from now and there is a +/- 1 minute fuzziness on the restore
-     * times.
+     * <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time.
      * </p>
      */
     private java.util.Date latestRestorableDateTime;
@@ -259,13 +258,13 @@ public class PointInTimeRecoveryDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies the earliest point in time you can restore your table to. It is equal to the maximum of point in time
-     * recovery enabled time and <code>CurrentTime</code> - <code>PointInTimeRecoveryPeriod</code>.
+     * Specifies the earliest point in time you can restore your table to. It You can restore your table to any point in
+     * time during the last 35 days.
      * </p>
      * 
      * @param earliestRestorableDateTime
-     *        Specifies the earliest point in time you can restore your table to. It is equal to the maximum of point in
-     *        time recovery enabled time and <code>CurrentTime</code> - <code>PointInTimeRecoveryPeriod</code>.
+     *        Specifies the earliest point in time you can restore your table to. It You can restore your table to any
+     *        point in time during the last 35 days.
      */
 
     public void setEarliestRestorableDateTime(java.util.Date earliestRestorableDateTime) {
@@ -274,12 +273,12 @@ public class PointInTimeRecoveryDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies the earliest point in time you can restore your table to. It is equal to the maximum of point in time
-     * recovery enabled time and <code>CurrentTime</code> - <code>PointInTimeRecoveryPeriod</code>.
+     * Specifies the earliest point in time you can restore your table to. It You can restore your table to any point in
+     * time during the last 35 days.
      * </p>
      * 
-     * @return Specifies the earliest point in time you can restore your table to. It is equal to the maximum of point
-     *         in time recovery enabled time and <code>CurrentTime</code> - <code>PointInTimeRecoveryPeriod</code>.
+     * @return Specifies the earliest point in time you can restore your table to. It You can restore your table to any
+     *         point in time during the last 35 days.
      */
 
     public java.util.Date getEarliestRestorableDateTime() {
@@ -288,13 +287,13 @@ public class PointInTimeRecoveryDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies the earliest point in time you can restore your table to. It is equal to the maximum of point in time
-     * recovery enabled time and <code>CurrentTime</code> - <code>PointInTimeRecoveryPeriod</code>.
+     * Specifies the earliest point in time you can restore your table to. It You can restore your table to any point in
+     * time during the last 35 days.
      * </p>
      * 
      * @param earliestRestorableDateTime
-     *        Specifies the earliest point in time you can restore your table to. It is equal to the maximum of point in
-     *        time recovery enabled time and <code>CurrentTime</code> - <code>PointInTimeRecoveryPeriod</code>.
+     *        Specifies the earliest point in time you can restore your table to. It You can restore your table to any
+     *        point in time during the last 35 days.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -305,13 +304,11 @@ public class PointInTimeRecoveryDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * <code>LatestRestorableDateTime</code> is 5 minutes from now and there is a +/- 1 minute fuzziness on the restore
-     * times.
+     * <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time.
      * </p>
      * 
      * @param latestRestorableDateTime
-     *        <code>LatestRestorableDateTime</code> is 5 minutes from now and there is a +/- 1 minute fuzziness on the
-     *        restore times.
+     *        <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time.
      */
 
     public void setLatestRestorableDateTime(java.util.Date latestRestorableDateTime) {
@@ -320,12 +317,10 @@ public class PointInTimeRecoveryDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * <code>LatestRestorableDateTime</code> is 5 minutes from now and there is a +/- 1 minute fuzziness on the restore
-     * times.
+     * <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time.
      * </p>
      * 
-     * @return <code>LatestRestorableDateTime</code> is 5 minutes from now and there is a +/- 1 minute fuzziness on the
-     *         restore times.
+     * @return <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time.
      */
 
     public java.util.Date getLatestRestorableDateTime() {
@@ -334,13 +329,11 @@ public class PointInTimeRecoveryDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * <code>LatestRestorableDateTime</code> is 5 minutes from now and there is a +/- 1 minute fuzziness on the restore
-     * times.
+     * <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time.
      * </p>
      * 
      * @param latestRestorableDateTime
-     *        <code>LatestRestorableDateTime</code> is 5 minutes from now and there is a +/- 1 minute fuzziness on the
-     *        restore times.
+     *        <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -53,6 +53,10 @@ public class DeviceStatusInfoJsonUnmarshaller implements Unmarshaller<DeviceStat
                     deviceStatusInfo.setDeviceStatusDetails(new ListUnmarshaller<DeviceStatusDetail>(DeviceStatusDetailJsonUnmarshaller.getInstance())
                             .unmarshall(context));
                 }
+                if (context.testExpression("ConnectionStatus", targetDepth)) {
+                    context.nextToken();
+                    deviceStatusInfo.setConnectionStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

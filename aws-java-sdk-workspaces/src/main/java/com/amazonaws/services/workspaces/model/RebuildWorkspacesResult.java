@@ -25,17 +25,17 @@ public class RebuildWorkspacesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Information about the WorkSpaces that could not be rebuilt.
+     * Information about the WorkSpace if it could not be rebuilt.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<FailedWorkspaceChangeRequest> failedRequests;
 
     /**
      * <p>
-     * Information about the WorkSpaces that could not be rebuilt.
+     * Information about the WorkSpace if it could not be rebuilt.
      * </p>
      * 
-     * @return Information about the WorkSpaces that could not be rebuilt.
+     * @return Information about the WorkSpace if it could not be rebuilt.
      */
 
     public java.util.List<FailedWorkspaceChangeRequest> getFailedRequests() {
@@ -47,11 +47,11 @@ public class RebuildWorkspacesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Information about the WorkSpaces that could not be rebuilt.
+     * Information about the WorkSpace if it could not be rebuilt.
      * </p>
      * 
      * @param failedRequests
-     *        Information about the WorkSpaces that could not be rebuilt.
+     *        Information about the WorkSpace if it could not be rebuilt.
      */
 
     public void setFailedRequests(java.util.Collection<FailedWorkspaceChangeRequest> failedRequests) {
@@ -65,7 +65,7 @@ public class RebuildWorkspacesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Information about the WorkSpaces that could not be rebuilt.
+     * Information about the WorkSpace if it could not be rebuilt.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -74,7 +74,7 @@ public class RebuildWorkspacesResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * @param failedRequests
-     *        Information about the WorkSpaces that could not be rebuilt.
+     *        Information about the WorkSpace if it could not be rebuilt.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class RebuildWorkspacesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Information about the WorkSpaces that could not be rebuilt.
+     * Information about the WorkSpace if it could not be rebuilt.
      * </p>
      * 
      * @param failedRequests
-     *        Information about the WorkSpaces that could not be rebuilt.
+     *        Information about the WorkSpace if it could not be rebuilt.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
