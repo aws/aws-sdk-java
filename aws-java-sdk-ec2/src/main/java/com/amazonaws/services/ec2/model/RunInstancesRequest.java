@@ -272,7 +272,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The launch template to use to launch the instances. Any parameters that you specify in <a>RunInstances</a>
-     * override the same parameters in the launch template.
+     * override the same parameters in the launch template. You can specify either the name or ID of a launch template,
+     * but not both.
      * </p>
      */
     private LaunchTemplateSpecification launchTemplate;
@@ -2274,12 +2275,14 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The launch template to use to launch the instances. Any parameters that you specify in <a>RunInstances</a>
-     * override the same parameters in the launch template.
+     * override the same parameters in the launch template. You can specify either the name or ID of a launch template,
+     * but not both.
      * </p>
      * 
      * @param launchTemplate
      *        The launch template to use to launch the instances. Any parameters that you specify in <a>RunInstances</a>
-     *        override the same parameters in the launch template.
+     *        override the same parameters in the launch template. You can specify either the name or ID of a launch
+     *        template, but not both.
      */
 
     public void setLaunchTemplate(LaunchTemplateSpecification launchTemplate) {
@@ -2289,11 +2292,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The launch template to use to launch the instances. Any parameters that you specify in <a>RunInstances</a>
-     * override the same parameters in the launch template.
+     * override the same parameters in the launch template. You can specify either the name or ID of a launch template,
+     * but not both.
      * </p>
      * 
      * @return The launch template to use to launch the instances. Any parameters that you specify in
-     *         <a>RunInstances</a> override the same parameters in the launch template.
+     *         <a>RunInstances</a> override the same parameters in the launch template. You can specify either the name
+     *         or ID of a launch template, but not both.
      */
 
     public LaunchTemplateSpecification getLaunchTemplate() {
@@ -2303,12 +2308,14 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The launch template to use to launch the instances. Any parameters that you specify in <a>RunInstances</a>
-     * override the same parameters in the launch template.
+     * override the same parameters in the launch template. You can specify either the name or ID of a launch template,
+     * but not both.
      * </p>
      * 
      * @param launchTemplate
      *        The launch template to use to launch the instances. Any parameters that you specify in <a>RunInstances</a>
-     *        override the same parameters in the launch template.
+     *        override the same parameters in the launch template. You can specify either the name or ID of a launch
+     *        template, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

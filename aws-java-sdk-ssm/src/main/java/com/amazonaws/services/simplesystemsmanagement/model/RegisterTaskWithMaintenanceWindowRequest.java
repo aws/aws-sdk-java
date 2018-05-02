@@ -27,15 +27,25 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The id of the Maintenance Window the task should be added to.
+     * The ID of the Maintenance Window the task should be added to.
      * </p>
      */
     private String windowId;
     /**
      * <p>
-     * The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     * name&gt;,Values=&lt;tag value&gt;.
+     * The targets (either instances or Maintenance Window targets).
+     * </p>
+     * <p>
+     * Specify instances using the following format:
+     * </p>
+     * <p>
+     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     * </p>
+     * <p>
+     * Specify Maintenance Window targets using the following format:
+     * </p>
+     * <p>
+     * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Target> targets;
@@ -132,11 +142,11 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The id of the Maintenance Window the task should be added to.
+     * The ID of the Maintenance Window the task should be added to.
      * </p>
      * 
      * @param windowId
-     *        The id of the Maintenance Window the task should be added to.
+     *        The ID of the Maintenance Window the task should be added to.
      */
 
     public void setWindowId(String windowId) {
@@ -145,10 +155,10 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The id of the Maintenance Window the task should be added to.
+     * The ID of the Maintenance Window the task should be added to.
      * </p>
      * 
-     * @return The id of the Maintenance Window the task should be added to.
+     * @return The ID of the Maintenance Window the task should be added to.
      */
 
     public String getWindowId() {
@@ -157,11 +167,11 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The id of the Maintenance Window the task should be added to.
+     * The ID of the Maintenance Window the task should be added to.
      * </p>
      * 
      * @param windowId
-     *        The id of the Maintenance Window the task should be added to.
+     *        The ID of the Maintenance Window the task should be added to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,14 +182,33 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     * name&gt;,Values=&lt;tag value&gt;.
+     * The targets (either instances or Maintenance Window targets).
+     * </p>
+     * <p>
+     * Specify instances using the following format:
+     * </p>
+     * <p>
+     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     * </p>
+     * <p>
+     * Specify Maintenance Window targets using the following format:
+     * </p>
+     * <p>
+     * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      * </p>
      * 
-     * @return The targets (either instances or tags). Instances are specified using
-     *         Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     *         name&gt;,Values=&lt;tag value&gt;.
+     * @return The targets (either instances or Maintenance Window targets).</p>
+     *         <p>
+     *         Specify instances using the following format:
+     *         </p>
+     *         <p>
+     *         <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     *         </p>
+     *         <p>
+     *         Specify Maintenance Window targets using the following format:
+     *         </p>
+     *         <p>
+     *         <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      */
 
     public java.util.List<Target> getTargets() {
@@ -191,15 +220,34 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     * name&gt;,Values=&lt;tag value&gt;.
+     * The targets (either instances or Maintenance Window targets).
+     * </p>
+     * <p>
+     * Specify instances using the following format:
+     * </p>
+     * <p>
+     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     * </p>
+     * <p>
+     * Specify Maintenance Window targets using the following format:
+     * </p>
+     * <p>
+     * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      * </p>
      * 
      * @param targets
-     *        The targets (either instances or tags). Instances are specified using
-     *        Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     *        name&gt;,Values=&lt;tag value&gt;.
+     *        The targets (either instances or Maintenance Window targets).</p>
+     *        <p>
+     *        Specify instances using the following format:
+     *        </p>
+     *        <p>
+     *        <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     *        </p>
+     *        <p>
+     *        Specify Maintenance Window targets using the following format:
+     *        </p>
+     *        <p>
+     *        <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      */
 
     public void setTargets(java.util.Collection<Target> targets) {
@@ -213,9 +261,19 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     * name&gt;,Values=&lt;tag value&gt;.
+     * The targets (either instances or Maintenance Window targets).
+     * </p>
+     * <p>
+     * Specify instances using the following format:
+     * </p>
+     * <p>
+     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     * </p>
+     * <p>
+     * Specify Maintenance Window targets using the following format:
+     * </p>
+     * <p>
+     * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -224,9 +282,18 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
      * </p>
      * 
      * @param targets
-     *        The targets (either instances or tags). Instances are specified using
-     *        Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     *        name&gt;,Values=&lt;tag value&gt;.
+     *        The targets (either instances or Maintenance Window targets).</p>
+     *        <p>
+     *        Specify instances using the following format:
+     *        </p>
+     *        <p>
+     *        <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     *        </p>
+     *        <p>
+     *        Specify Maintenance Window targets using the following format:
+     *        </p>
+     *        <p>
+     *        <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -242,15 +309,34 @@ public class RegisterTaskWithMaintenanceWindowRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The targets (either instances or tags). Instances are specified using
-     * Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     * name&gt;,Values=&lt;tag value&gt;.
+     * The targets (either instances or Maintenance Window targets).
+     * </p>
+     * <p>
+     * Specify instances using the following format:
+     * </p>
+     * <p>
+     * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     * </p>
+     * <p>
+     * Specify Maintenance Window targets using the following format:
+     * </p>
+     * <p>
+     * <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      * </p>
      * 
      * @param targets
-     *        The targets (either instances or tags). Instances are specified using
-     *        Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;. Tags are specified using Key=&lt;tag
-     *        name&gt;,Values=&lt;tag value&gt;.
+     *        The targets (either instances or Maintenance Window targets).</p>
+     *        <p>
+     *        Specify instances using the following format:
+     *        </p>
+     *        <p>
+     *        <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;</code>
+     *        </p>
+     *        <p>
+     *        Specify Maintenance Window targets using the following format:
+     *        </p>
+     *        <p>
+     *        <code>Key=&lt;WindowTargetIds&gt;,Values=&lt;window-target-id-1&gt;,&lt;window-target-id-2&gt;</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

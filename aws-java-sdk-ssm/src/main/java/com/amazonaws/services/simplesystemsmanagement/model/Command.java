@@ -41,6 +41,12 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
     private String documentName;
     /**
      * <p>
+     * The SSM document version.
+     * </p>
+     */
+    private String documentVersion;
+    /**
+     * <p>
      * User-specified information about the command, such as a brief description of what the command should do.
      * </p>
      */
@@ -296,6 +302,46 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
     public Command withDocumentName(String documentName) {
         setDocumentName(documentName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The SSM document version.
+     * </p>
+     * 
+     * @param documentVersion
+     *        The SSM document version.
+     */
+
+    public void setDocumentVersion(String documentVersion) {
+        this.documentVersion = documentVersion;
+    }
+
+    /**
+     * <p>
+     * The SSM document version.
+     * </p>
+     * 
+     * @return The SSM document version.
+     */
+
+    public String getDocumentVersion() {
+        return this.documentVersion;
+    }
+
+    /**
+     * <p>
+     * The SSM document version.
+     * </p>
+     * 
+     * @param documentVersion
+     *        The SSM document version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Command withDocumentVersion(String documentVersion) {
+        setDocumentVersion(documentVersion);
         return this;
     }
 
@@ -1588,6 +1634,8 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
             sb.append("CommandId: ").append(getCommandId()).append(",");
         if (getDocumentName() != null)
             sb.append("DocumentName: ").append(getDocumentName()).append(",");
+        if (getDocumentVersion() != null)
+            sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
         if (getComment() != null)
             sb.append("Comment: ").append(getComment()).append(",");
         if (getExpiresAfter() != null)
@@ -1645,6 +1693,10 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
         if (other.getDocumentName() == null ^ this.getDocumentName() == null)
             return false;
         if (other.getDocumentName() != null && other.getDocumentName().equals(this.getDocumentName()) == false)
+            return false;
+        if (other.getDocumentVersion() == null ^ this.getDocumentVersion() == null)
+            return false;
+        if (other.getDocumentVersion() != null && other.getDocumentVersion().equals(this.getDocumentVersion()) == false)
             return false;
         if (other.getComment() == null ^ this.getComment() == null)
             return false;
@@ -1728,6 +1780,7 @@ public class Command implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getCommandId() == null) ? 0 : getCommandId().hashCode());
         hashCode = prime * hashCode + ((getDocumentName() == null) ? 0 : getDocumentName().hashCode());
+        hashCode = prime * hashCode + ((getDocumentVersion() == null) ? 0 : getDocumentVersion().hashCode());
         hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode());
         hashCode = prime * hashCode + ((getExpiresAfter() == null) ? 0 : getExpiresAfter().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());

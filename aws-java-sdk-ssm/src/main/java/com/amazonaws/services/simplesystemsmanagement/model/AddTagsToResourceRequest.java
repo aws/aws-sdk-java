@@ -29,6 +29,12 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Specifies the type of resource you are tagging.
      * </p>
+     * <note>
+     * <p>
+     * The ManagedInstance type for this API action is for on-premises managed instances. You must specify the the name
+     * of the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     * </p>
+     * </note>
      */
     private String resourceType;
     /**
@@ -36,12 +42,26 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * The resource ID you want to tag.
      * </p>
      * <p>
-     * For the ManagedInstance, MaintenanceWindow, and PatchBaseline values, use the ID of the resource, such as
-     * mw-01234361858c9b57b for a Maintenance Window.
+     * Use the ID of the resource. Here are some examples:
+     * </p>
+     * <p>
+     * ManagedInstance: mi-012345abcde
+     * </p>
+     * <p>
+     * MaintenanceWindow: mw-012345abcde
+     * </p>
+     * <p>
+     * PatchBaseline: pb-012345abcde
      * </p>
      * <p>
      * For the Document and Parameter values, use the name of the resource.
      * </p>
+     * <note>
+     * <p>
+     * The ManagedInstance type for this API action is only for on-premises managed instances. You must specify the the
+     * name of the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     * </p>
+     * </note>
      */
     private String resourceId;
     /**
@@ -61,9 +81,19 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Specifies the type of resource you are tagging.
      * </p>
+     * <note>
+     * <p>
+     * The ManagedInstance type for this API action is for on-premises managed instances. You must specify the the name
+     * of the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     * </p>
+     * </note>
      * 
      * @param resourceType
-     *        Specifies the type of resource you are tagging.
+     *        Specifies the type of resource you are tagging.</p> <note>
+     *        <p>
+     *        The ManagedInstance type for this API action is for on-premises managed instances. You must specify the
+     *        the name of the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     *        </p>
      * @see ResourceTypeForTagging
      */
 
@@ -75,8 +105,18 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Specifies the type of resource you are tagging.
      * </p>
+     * <note>
+     * <p>
+     * The ManagedInstance type for this API action is for on-premises managed instances. You must specify the the name
+     * of the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     * </p>
+     * </note>
      * 
-     * @return Specifies the type of resource you are tagging.
+     * @return Specifies the type of resource you are tagging.</p> <note>
+     *         <p>
+     *         The ManagedInstance type for this API action is for on-premises managed instances. You must specify the
+     *         the name of the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     *         </p>
      * @see ResourceTypeForTagging
      */
 
@@ -88,9 +128,19 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Specifies the type of resource you are tagging.
      * </p>
+     * <note>
+     * <p>
+     * The ManagedInstance type for this API action is for on-premises managed instances. You must specify the the name
+     * of the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     * </p>
+     * </note>
      * 
      * @param resourceType
-     *        Specifies the type of resource you are tagging.
+     *        Specifies the type of resource you are tagging.</p> <note>
+     *        <p>
+     *        The ManagedInstance type for this API action is for on-premises managed instances. You must specify the
+     *        the name of the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceTypeForTagging
      */
@@ -104,9 +154,19 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Specifies the type of resource you are tagging.
      * </p>
+     * <note>
+     * <p>
+     * The ManagedInstance type for this API action is for on-premises managed instances. You must specify the the name
+     * of the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     * </p>
+     * </note>
      * 
      * @param resourceType
-     *        Specifies the type of resource you are tagging.
+     *        Specifies the type of resource you are tagging.</p> <note>
+     *        <p>
+     *        The ManagedInstance type for this API action is for on-premises managed instances. You must specify the
+     *        the name of the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     *        </p>
      * @see ResourceTypeForTagging
      */
 
@@ -118,9 +178,19 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Specifies the type of resource you are tagging.
      * </p>
+     * <note>
+     * <p>
+     * The ManagedInstance type for this API action is for on-premises managed instances. You must specify the the name
+     * of the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     * </p>
+     * </note>
      * 
      * @param resourceType
-     *        Specifies the type of resource you are tagging.
+     *        Specifies the type of resource you are tagging.</p> <note>
+     *        <p>
+     *        The ManagedInstance type for this API action is for on-premises managed instances. You must specify the
+     *        the name of the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceTypeForTagging
      */
@@ -135,21 +205,49 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * The resource ID you want to tag.
      * </p>
      * <p>
-     * For the ManagedInstance, MaintenanceWindow, and PatchBaseline values, use the ID of the resource, such as
-     * mw-01234361858c9b57b for a Maintenance Window.
+     * Use the ID of the resource. Here are some examples:
+     * </p>
+     * <p>
+     * ManagedInstance: mi-012345abcde
+     * </p>
+     * <p>
+     * MaintenanceWindow: mw-012345abcde
+     * </p>
+     * <p>
+     * PatchBaseline: pb-012345abcde
      * </p>
      * <p>
      * For the Document and Parameter values, use the name of the resource.
      * </p>
+     * <note>
+     * <p>
+     * The ManagedInstance type for this API action is only for on-premises managed instances. You must specify the the
+     * name of the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     * </p>
+     * </note>
      * 
      * @param resourceId
      *        The resource ID you want to tag.</p>
      *        <p>
-     *        For the ManagedInstance, MaintenanceWindow, and PatchBaseline values, use the ID of the resource, such as
-     *        mw-01234361858c9b57b for a Maintenance Window.
+     *        Use the ID of the resource. Here are some examples:
+     *        </p>
+     *        <p>
+     *        ManagedInstance: mi-012345abcde
+     *        </p>
+     *        <p>
+     *        MaintenanceWindow: mw-012345abcde
+     *        </p>
+     *        <p>
+     *        PatchBaseline: pb-012345abcde
      *        </p>
      *        <p>
      *        For the Document and Parameter values, use the name of the resource.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The ManagedInstance type for this API action is only for on-premises managed instances. You must specify
+     *        the the name of the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     *        </p>
      */
 
     public void setResourceId(String resourceId) {
@@ -161,20 +259,48 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * The resource ID you want to tag.
      * </p>
      * <p>
-     * For the ManagedInstance, MaintenanceWindow, and PatchBaseline values, use the ID of the resource, such as
-     * mw-01234361858c9b57b for a Maintenance Window.
+     * Use the ID of the resource. Here are some examples:
+     * </p>
+     * <p>
+     * ManagedInstance: mi-012345abcde
+     * </p>
+     * <p>
+     * MaintenanceWindow: mw-012345abcde
+     * </p>
+     * <p>
+     * PatchBaseline: pb-012345abcde
      * </p>
      * <p>
      * For the Document and Parameter values, use the name of the resource.
      * </p>
+     * <note>
+     * <p>
+     * The ManagedInstance type for this API action is only for on-premises managed instances. You must specify the the
+     * name of the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     * </p>
+     * </note>
      * 
      * @return The resource ID you want to tag.</p>
      *         <p>
-     *         For the ManagedInstance, MaintenanceWindow, and PatchBaseline values, use the ID of the resource, such as
-     *         mw-01234361858c9b57b for a Maintenance Window.
+     *         Use the ID of the resource. Here are some examples:
+     *         </p>
+     *         <p>
+     *         ManagedInstance: mi-012345abcde
+     *         </p>
+     *         <p>
+     *         MaintenanceWindow: mw-012345abcde
+     *         </p>
+     *         <p>
+     *         PatchBaseline: pb-012345abcde
      *         </p>
      *         <p>
      *         For the Document and Parameter values, use the name of the resource.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         The ManagedInstance type for this API action is only for on-premises managed instances. You must specify
+     *         the the name of the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     *         </p>
      */
 
     public String getResourceId() {
@@ -186,21 +312,49 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * The resource ID you want to tag.
      * </p>
      * <p>
-     * For the ManagedInstance, MaintenanceWindow, and PatchBaseline values, use the ID of the resource, such as
-     * mw-01234361858c9b57b for a Maintenance Window.
+     * Use the ID of the resource. Here are some examples:
+     * </p>
+     * <p>
+     * ManagedInstance: mi-012345abcde
+     * </p>
+     * <p>
+     * MaintenanceWindow: mw-012345abcde
+     * </p>
+     * <p>
+     * PatchBaseline: pb-012345abcde
      * </p>
      * <p>
      * For the Document and Parameter values, use the name of the resource.
      * </p>
+     * <note>
+     * <p>
+     * The ManagedInstance type for this API action is only for on-premises managed instances. You must specify the the
+     * name of the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     * </p>
+     * </note>
      * 
      * @param resourceId
      *        The resource ID you want to tag.</p>
      *        <p>
-     *        For the ManagedInstance, MaintenanceWindow, and PatchBaseline values, use the ID of the resource, such as
-     *        mw-01234361858c9b57b for a Maintenance Window.
+     *        Use the ID of the resource. Here are some examples:
+     *        </p>
+     *        <p>
+     *        ManagedInstance: mi-012345abcde
+     *        </p>
+     *        <p>
+     *        MaintenanceWindow: mw-012345abcde
+     *        </p>
+     *        <p>
+     *        PatchBaseline: pb-012345abcde
      *        </p>
      *        <p>
      *        For the Document and Parameter values, use the name of the resource.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The ManagedInstance type for this API action is only for on-premises managed instances. You must specify
+     *        the the name of the managed instance in the following format: mi-ID_number. For example, mi-1a2b3c4d5e6f.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

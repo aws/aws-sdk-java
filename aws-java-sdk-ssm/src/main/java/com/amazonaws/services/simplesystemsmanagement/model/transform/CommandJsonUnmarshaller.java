@@ -56,6 +56,10 @@ public class CommandJsonUnmarshaller implements Unmarshaller<Command, JsonUnmars
                     context.nextToken();
                     command.setDocumentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DocumentVersion", targetDepth)) {
+                    context.nextToken();
+                    command.setDocumentVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Comment", targetDepth)) {
                     context.nextToken();
                     command.setComment(context.getUnmarshaller(String.class).unmarshall(context));

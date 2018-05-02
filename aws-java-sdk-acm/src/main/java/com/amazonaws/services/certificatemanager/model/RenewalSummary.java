@@ -20,8 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Contains information about the status of ACM's <a
- * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed renewal</a>
- * for the certificate. This structure exists only when the certificate type is <code>AMAZON_ISSUED</code>.
+ * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for the certificate. This
+ * structure exists only when the certificate type is <code>AMAZON_ISSUED</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RenewalSummary" target="_top">AWS API
@@ -32,8 +32,7 @@ public class RenewalSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of ACM's <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
+     * The status of ACM's <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
      * renewal</a> of the certificate.
      * </p>
      */
@@ -41,24 +40,21 @@ public class RenewalSummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains information about the validation of each domain name in the certificate, as it pertains to ACM's <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
-     * renewal</a>. This is different from the initial validation that occurs as a result of the
-     * <a>RequestCertificate</a> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>
-     * .
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a>. This is different
+     * from the initial validation that occurs as a result of the <a>RequestCertificate</a> request. This field exists
+     * only when the certificate type is <code>AMAZON_ISSUED</code>.
      * </p>
      */
     private java.util.List<DomainValidation> domainValidationOptions;
 
     /**
      * <p>
-     * The status of ACM's <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
+     * The status of ACM's <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
      * renewal</a> of the certificate.
      * </p>
      * 
      * @param renewalStatus
-     *        The status of ACM's <a
-     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
+     *        The status of ACM's <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
      *        renewal</a> of the certificate.
      * @see RenewalStatus
      */
@@ -69,13 +65,11 @@ public class RenewalSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of ACM's <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
+     * The status of ACM's <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
      * renewal</a> of the certificate.
      * </p>
      * 
-     * @return The status of ACM's <a
-     *         href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
+     * @return The status of ACM's <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
      *         renewal</a> of the certificate.
      * @see RenewalStatus
      */
@@ -86,14 +80,12 @@ public class RenewalSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of ACM's <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
+     * The status of ACM's <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
      * renewal</a> of the certificate.
      * </p>
      * 
      * @param renewalStatus
-     *        The status of ACM's <a
-     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
+     *        The status of ACM's <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
      *        renewal</a> of the certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RenewalStatus
@@ -106,14 +98,12 @@ public class RenewalSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of ACM's <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
+     * The status of ACM's <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
      * renewal</a> of the certificate.
      * </p>
      * 
      * @param renewalStatus
-     *        The status of ACM's <a
-     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
+     *        The status of ACM's <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
      *        renewal</a> of the certificate.
      * @see RenewalStatus
      */
@@ -124,14 +114,12 @@ public class RenewalSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of ACM's <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
+     * The status of ACM's <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
      * renewal</a> of the certificate.
      * </p>
      * 
      * @param renewalStatus
-     *        The status of ACM's <a
-     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
+     *        The status of ACM's <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
      *        renewal</a> of the certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RenewalStatus
@@ -145,17 +133,15 @@ public class RenewalSummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains information about the validation of each domain name in the certificate, as it pertains to ACM's <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
-     * renewal</a>. This is different from the initial validation that occurs as a result of the
-     * <a>RequestCertificate</a> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>
-     * .
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a>. This is different
+     * from the initial validation that occurs as a result of the <a>RequestCertificate</a> request. This field exists
+     * only when the certificate type is <code>AMAZON_ISSUED</code>.
      * </p>
      * 
      * @return Contains information about the validation of each domain name in the certificate, as it pertains to ACM's
-     *         <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">
-     *         managed renewal</a>. This is different from the initial validation that occurs as a result of the
-     *         <a>RequestCertificate</a> request. This field exists only when the certificate type is
-     *         <code>AMAZON_ISSUED</code>.
+     *         <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a>. This is
+     *         different from the initial validation that occurs as a result of the <a>RequestCertificate</a> request.
+     *         This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.
      */
 
     public java.util.List<DomainValidation> getDomainValidationOptions() {
@@ -165,19 +151,16 @@ public class RenewalSummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains information about the validation of each domain name in the certificate, as it pertains to ACM's <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
-     * renewal</a>. This is different from the initial validation that occurs as a result of the
-     * <a>RequestCertificate</a> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>
-     * .
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a>. This is different
+     * from the initial validation that occurs as a result of the <a>RequestCertificate</a> request. This field exists
+     * only when the certificate type is <code>AMAZON_ISSUED</code>.
      * </p>
      * 
      * @param domainValidationOptions
      *        Contains information about the validation of each domain name in the certificate, as it pertains to ACM's
-     *        <a
-     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
-     *        renewal</a>. This is different from the initial validation that occurs as a result of the
-     *        <a>RequestCertificate</a> request. This field exists only when the certificate type is
-     *        <code>AMAZON_ISSUED</code>.
+     *        <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a>. This is
+     *        different from the initial validation that occurs as a result of the <a>RequestCertificate</a> request.
+     *        This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.
      */
 
     public void setDomainValidationOptions(java.util.Collection<DomainValidation> domainValidationOptions) {
@@ -192,10 +175,9 @@ public class RenewalSummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains information about the validation of each domain name in the certificate, as it pertains to ACM's <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
-     * renewal</a>. This is different from the initial validation that occurs as a result of the
-     * <a>RequestCertificate</a> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>
-     * .
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a>. This is different
+     * from the initial validation that occurs as a result of the <a>RequestCertificate</a> request. This field exists
+     * only when the certificate type is <code>AMAZON_ISSUED</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -205,11 +187,9 @@ public class RenewalSummary implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param domainValidationOptions
      *        Contains information about the validation of each domain name in the certificate, as it pertains to ACM's
-     *        <a
-     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
-     *        renewal</a>. This is different from the initial validation that occurs as a result of the
-     *        <a>RequestCertificate</a> request. This field exists only when the certificate type is
-     *        <code>AMAZON_ISSUED</code>.
+     *        <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a>. This is
+     *        different from the initial validation that occurs as a result of the <a>RequestCertificate</a> request.
+     *        This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -226,19 +206,16 @@ public class RenewalSummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains information about the validation of each domain name in the certificate, as it pertains to ACM's <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
-     * renewal</a>. This is different from the initial validation that occurs as a result of the
-     * <a>RequestCertificate</a> request. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>
-     * .
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a>. This is different
+     * from the initial validation that occurs as a result of the <a>RequestCertificate</a> request. This field exists
+     * only when the certificate type is <code>AMAZON_ISSUED</code>.
      * </p>
      * 
      * @param domainValidationOptions
      *        Contains information about the validation of each domain name in the certificate, as it pertains to ACM's
-     *        <a
-     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
-     *        renewal</a>. This is different from the initial validation that occurs as a result of the
-     *        <a>RequestCertificate</a> request. This field exists only when the certificate type is
-     *        <code>AMAZON_ISSUED</code>.
+     *        <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a>. This is
+     *        different from the initial validation that occurs as a result of the <a>RequestCertificate</a> request.
+     *        This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

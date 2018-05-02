@@ -17,7 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The launch template to use. You must specify either the launch template ID or launch template name in the request.
+ * The launch template to use. You must specify either the launch template ID or launch template name in the request,
+ * but not both.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LaunchTemplateSpecification" target="_top">AWS

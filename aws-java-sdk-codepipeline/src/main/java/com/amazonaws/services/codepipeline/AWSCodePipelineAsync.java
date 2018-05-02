@@ -36,12 +36,11 @@ import com.amazonaws.services.codepipeline.model.*;
  * Guide</a>.
  * </p>
  * <p>
- * You can use the AWS CodePipeline API to work with pipelines, stages, actions, gates, and transitions, as described
- * below.
+ * You can use the AWS CodePipeline API to work with pipelines, stages, actions, and transitions, as described below.
  * </p>
  * <p>
- * <i>Pipelines</i> are models of automated release processes. Each pipeline is uniquely named, and consists of actions,
- * gates, and stages.
+ * <i>Pipelines</i> are models of automated release processes. Each pipeline is uniquely named, and consists of stages,
+ * actions, and transitions.
  * </p>
  * <p>
  * You can work with pipelines by calling:
@@ -95,13 +94,13 @@ import com.amazonaws.services.codepipeline.model.*;
  * </li>
  * </ul>
  * <p>
- * Pipelines include <i>stages</i>, which are logical groupings of gates and actions. Each stage contains one or more
- * actions that must complete before the next stage begins. A stage will result in success or failure. If a stage fails,
- * then the pipeline stops at that stage and will remain stopped until either a new version of an artifact appears in
- * the source location, or a user takes action to re-run the most recent artifact through the pipeline. You can call
- * <a>GetPipelineState</a>, which displays the status of a pipeline, including the status of stages in the pipeline, or
- * <a>GetPipeline</a>, which returns the entire structure of the pipeline, including the stages of that pipeline. For
- * more information about the structure of stages and actions, also refer to the <a
+ * Pipelines include <i>stages</i>. Each stage contains one or more actions that must complete before the next stage
+ * begins. A stage will result in success or failure. If a stage fails, then the pipeline stops at that stage and will
+ * remain stopped until either a new version of an artifact appears in the source location, or a user takes action to
+ * re-run the most recent artifact through the pipeline. You can call <a>GetPipelineState</a>, which displays the status
+ * of a pipeline, including the status of stages in the pipeline, or <a>GetPipeline</a>, which returns the entire
+ * structure of the pipeline, including the stages of that pipeline. For more information about the structure of stages
+ * and actions, also refer to the <a
  * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS CodePipeline Pipeline
  * Structure Reference</a>.
  * </p>
@@ -110,8 +109,40 @@ import com.amazonaws.services.codepipeline.model.*;
  * performed within a stage of a pipeline. For example, you can use a source action to import artifacts into a pipeline
  * from a source such as Amazon S3. Like stages, you do not work with actions directly in most cases, but you do define
  * and interact with actions when working with pipeline operations such as <a>CreatePipeline</a> and
- * <a>GetPipelineState</a>.
+ * <a>GetPipelineState</a>. Valid action categories are:
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Source
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Build
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Test
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Deploy
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Approval
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Invoke
+ * </p>
+ * </li>
+ * </ul>
  * <p>
  * Pipelines also include <i>transitions</i>, which allow the transition of artifacts from one stage to the next in a
  * pipeline after the actions in one stage complete.
@@ -354,8 +385,10 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * <important>
      * <p>
-     * You cannot recreate a custom action after it has been deleted unless you increase the version number of the
-     * action.
+     * To re-create a custom action after it has been deleted you must use a string in the version field that has never
+     * been used before. This string can be an incremented version number, for example. To restore a deleted custom
+     * action, use a JSON file that is identical to the deleted action, including the original string in the version
+     * field.
      * </p>
      * </important>
      * 
@@ -375,8 +408,10 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      * </p>
      * <important>
      * <p>
-     * You cannot recreate a custom action after it has been deleted unless you increase the version number of the
-     * action.
+     * To re-create a custom action after it has been deleted you must use a string in the version field that has never
+     * been used before. This string can be an incremented version number, for example. To restore a deleted custom
+     * action, use a JSON file that is identical to the deleted action, including the original string in the version
+     * field.
      * </p>
      * </important>
      * 
@@ -426,6 +461,80 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
      */
     java.util.concurrent.Future<DeletePipelineResult> deletePipelineAsync(DeletePipelineRequest deletePipelineRequest,
             com.amazonaws.handlers.AsyncHandler<DeletePipelineRequest, DeletePipelineResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a previously created webhook by name. Deleting the webhook stops AWS CodePipeline from starting a
+     * pipeline every time an external event occurs. The API will return successfully when trying to delete a webhook
+     * that is already deleted. If a deleted webhook is re-created by calling PutWebhook with the same name, it will
+     * have a different URL.
+     * </p>
+     * 
+     * @param deleteWebhookRequest
+     * @return A Java Future containing the result of the DeleteWebhook operation returned by the service.
+     * @sample AWSCodePipelineAsync.DeleteWebhook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteWebhook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteWebhookResult> deleteWebhookAsync(DeleteWebhookRequest deleteWebhookRequest);
+
+    /**
+     * <p>
+     * Deletes a previously created webhook by name. Deleting the webhook stops AWS CodePipeline from starting a
+     * pipeline every time an external event occurs. The API will return successfully when trying to delete a webhook
+     * that is already deleted. If a deleted webhook is re-created by calling PutWebhook with the same name, it will
+     * have a different URL.
+     * </p>
+     * 
+     * @param deleteWebhookRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteWebhook operation returned by the service.
+     * @sample AWSCodePipelineAsyncHandler.DeleteWebhook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeleteWebhook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteWebhookResult> deleteWebhookAsync(DeleteWebhookRequest deleteWebhookRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteWebhookRequest, DeleteWebhookResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes the connection between the webhook that was created by CodePipeline and the external tool with events to
+     * be detected. Currently only supported for webhooks that target an action type of GitHub.
+     * </p>
+     * 
+     * @param deregisterWebhookWithThirdPartyRequest
+     * @return A Java Future containing the result of the DeregisterWebhookWithThirdParty operation returned by the
+     *         service.
+     * @sample AWSCodePipelineAsync.DeregisterWebhookWithThirdParty
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeregisterWebhookWithThirdParty"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeregisterWebhookWithThirdPartyResult> deregisterWebhookWithThirdPartyAsync(
+            DeregisterWebhookWithThirdPartyRequest deregisterWebhookWithThirdPartyRequest);
+
+    /**
+     * <p>
+     * Removes the connection between the webhook that was created by CodePipeline and the external tool with events to
+     * be detected. Currently only supported for webhooks that target an action type of GitHub.
+     * </p>
+     * 
+     * @param deregisterWebhookWithThirdPartyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeregisterWebhookWithThirdParty operation returned by the
+     *         service.
+     * @sample AWSCodePipelineAsyncHandler.DeregisterWebhookWithThirdParty
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/DeregisterWebhookWithThirdParty"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeregisterWebhookWithThirdPartyResult> deregisterWebhookWithThirdPartyAsync(
+            DeregisterWebhookWithThirdPartyRequest deregisterWebhookWithThirdPartyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeregisterWebhookWithThirdPartyRequest, DeregisterWebhookWithThirdPartyResult> asyncHandler);
 
     /**
      * <p>
@@ -793,7 +902,42 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Returns information about any jobs for AWS CodePipeline to act upon.
+     * Gets a listing of all the webhooks in this region for this account. The output lists all webhooks and includes
+     * the webhook URL and ARN, as well the configuration for each webhook.
+     * </p>
+     * 
+     * @param listWebhooksRequest
+     * @return A Java Future containing the result of the ListWebhooks operation returned by the service.
+     * @sample AWSCodePipelineAsync.ListWebhooks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListWebhooks" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListWebhooksResult> listWebhooksAsync(ListWebhooksRequest listWebhooksRequest);
+
+    /**
+     * <p>
+     * Gets a listing of all the webhooks in this region for this account. The output lists all webhooks and includes
+     * the webhook URL and ARN, as well the configuration for each webhook.
+     * </p>
+     * 
+     * @param listWebhooksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListWebhooks operation returned by the service.
+     * @sample AWSCodePipelineAsyncHandler.ListWebhooks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ListWebhooks" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListWebhooksResult> listWebhooksAsync(ListWebhooksRequest listWebhooksRequest,
+            com.amazonaws.handlers.AsyncHandler<ListWebhooksRequest, ListWebhooksResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about any jobs for AWS CodePipeline to act upon. PollForJobs is only valid for action types
+     * with "Custom" in the owner field. If the action type contains "AWS" or "ThirdParty" in the owner field, the
+     * PollForJobs action returns an error.
      * </p>
      * <important>
      * <p>
@@ -814,7 +958,9 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
 
     /**
      * <p>
-     * Returns information about any jobs for AWS CodePipeline to act upon.
+     * Returns information about any jobs for AWS CodePipeline to act upon. PollForJobs is only valid for action types
+     * with "Custom" in the owner field. If the action type contains "AWS" or "ThirdParty" in the owner field, the
+     * PollForJobs action returns an error.
      * </p>
      * <important>
      * <p>
@@ -1094,6 +1240,82 @@ public interface AWSCodePipelineAsync extends AWSCodePipeline {
     java.util.concurrent.Future<PutThirdPartyJobSuccessResultResult> putThirdPartyJobSuccessResultAsync(
             PutThirdPartyJobSuccessResultRequest putThirdPartyJobSuccessResultRequest,
             com.amazonaws.handlers.AsyncHandler<PutThirdPartyJobSuccessResultRequest, PutThirdPartyJobSuccessResultResult> asyncHandler);
+
+    /**
+     * <p>
+     * Defines a webhook and returns a unique webhook URL generated by CodePipeline. This URL can be supplied to third
+     * party source hosting providers to call every time there's a code change. When CodePipeline receives a POST
+     * request on this URL, the pipeline defined in the webhook is started as long as the POST request satisfied the
+     * authentication and filtering requirements supplied when defining the webhook. RegisterWebhookWithThirdParty and
+     * DeregisterWebhookWithThirdParty APIs can be used to automatically configure supported third parties to call the
+     * generated webhook URL.
+     * </p>
+     * 
+     * @param putWebhookRequest
+     * @return A Java Future containing the result of the PutWebhook operation returned by the service.
+     * @sample AWSCodePipelineAsync.PutWebhook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutWebhook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutWebhookResult> putWebhookAsync(PutWebhookRequest putWebhookRequest);
+
+    /**
+     * <p>
+     * Defines a webhook and returns a unique webhook URL generated by CodePipeline. This URL can be supplied to third
+     * party source hosting providers to call every time there's a code change. When CodePipeline receives a POST
+     * request on this URL, the pipeline defined in the webhook is started as long as the POST request satisfied the
+     * authentication and filtering requirements supplied when defining the webhook. RegisterWebhookWithThirdParty and
+     * DeregisterWebhookWithThirdParty APIs can be used to automatically configure supported third parties to call the
+     * generated webhook URL.
+     * </p>
+     * 
+     * @param putWebhookRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutWebhook operation returned by the service.
+     * @sample AWSCodePipelineAsyncHandler.PutWebhook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PutWebhook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutWebhookResult> putWebhookAsync(PutWebhookRequest putWebhookRequest,
+            com.amazonaws.handlers.AsyncHandler<PutWebhookRequest, PutWebhookResult> asyncHandler);
+
+    /**
+     * <p>
+     * Configures a connection between the webhook that was created and the external tool with events to be detected.
+     * </p>
+     * 
+     * @param registerWebhookWithThirdPartyRequest
+     * @return A Java Future containing the result of the RegisterWebhookWithThirdParty operation returned by the
+     *         service.
+     * @sample AWSCodePipelineAsync.RegisterWebhookWithThirdParty
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/RegisterWebhookWithThirdParty"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RegisterWebhookWithThirdPartyResult> registerWebhookWithThirdPartyAsync(
+            RegisterWebhookWithThirdPartyRequest registerWebhookWithThirdPartyRequest);
+
+    /**
+     * <p>
+     * Configures a connection between the webhook that was created and the external tool with events to be detected.
+     * </p>
+     * 
+     * @param registerWebhookWithThirdPartyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RegisterWebhookWithThirdParty operation returned by the
+     *         service.
+     * @sample AWSCodePipelineAsyncHandler.RegisterWebhookWithThirdParty
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/RegisterWebhookWithThirdParty"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RegisterWebhookWithThirdPartyResult> registerWebhookWithThirdPartyAsync(
+            RegisterWebhookWithThirdPartyRequest registerWebhookWithThirdPartyRequest,
+            com.amazonaws.handlers.AsyncHandler<RegisterWebhookWithThirdPartyRequest, RegisterWebhookWithThirdPartyResult> asyncHandler);
 
     /**
      * <p>

@@ -27,7 +27,7 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A userdefined description of the resource that you want to register with Amazon EC2.
+     * A user-defined description of the resource that you want to register with Amazon EC2.
      * </p>
      * <important>
      * <p>
@@ -69,7 +69,7 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A userdefined description of the resource that you want to register with Amazon EC2.
+     * A user-defined description of the resource that you want to register with Amazon EC2.
      * </p>
      * <important>
      * <p>
@@ -78,7 +78,7 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
      * </important>
      * 
      * @param description
-     *        A userdefined description of the resource that you want to register with Amazon EC2. </p> <important>
+     *        A user-defined description of the resource that you want to register with Amazon EC2. </p> <important>
      *        <p>
      *        Do not enter personally identifiable information in this field.
      *        </p>
@@ -90,7 +90,7 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A userdefined description of the resource that you want to register with Amazon EC2.
+     * A user-defined description of the resource that you want to register with Amazon EC2.
      * </p>
      * <important>
      * <p>
@@ -98,7 +98,7 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </important>
      * 
-     * @return A userdefined description of the resource that you want to register with Amazon EC2. </p> <important>
+     * @return A user-defined description of the resource that you want to register with Amazon EC2. </p> <important>
      *         <p>
      *         Do not enter personally identifiable information in this field.
      *         </p>
@@ -110,7 +110,7 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A userdefined description of the resource that you want to register with Amazon EC2.
+     * A user-defined description of the resource that you want to register with Amazon EC2.
      * </p>
      * <important>
      * <p>
@@ -119,7 +119,7 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
      * </important>
      * 
      * @param description
-     *        A userdefined description of the resource that you want to register with Amazon EC2. </p> <important>
+     *        A user-defined description of the resource that you want to register with Amazon EC2. </p> <important>
      *        <p>
      *        Do not enter personally identifiable information in this field.
      *        </p>

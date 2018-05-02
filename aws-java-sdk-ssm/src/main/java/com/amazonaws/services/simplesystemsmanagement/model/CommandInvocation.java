@@ -64,6 +64,12 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
     private String documentName;
     /**
      * <p>
+     * The SSM document version.
+     * </p>
+     */
+    private String documentVersion;
+    /**
+     * <p>
      * The time and date the request was sent to this instance.
      * </p>
      */
@@ -382,6 +388,46 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
 
     public CommandInvocation withDocumentName(String documentName) {
         setDocumentName(documentName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The SSM document version.
+     * </p>
+     * 
+     * @param documentVersion
+     *        The SSM document version.
+     */
+
+    public void setDocumentVersion(String documentVersion) {
+        this.documentVersion = documentVersion;
+    }
+
+    /**
+     * <p>
+     * The SSM document version.
+     * </p>
+     * 
+     * @return The SSM document version.
+     */
+
+    public String getDocumentVersion() {
+        return this.documentVersion;
+    }
+
+    /**
+     * <p>
+     * The SSM document version.
+     * </p>
+     * 
+     * @param documentVersion
+     *        The SSM document version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CommandInvocation withDocumentVersion(String documentVersion) {
+        setDocumentVersion(documentVersion);
         return this;
     }
 
@@ -1210,6 +1256,8 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
             sb.append("Comment: ").append(getComment()).append(",");
         if (getDocumentName() != null)
             sb.append("DocumentName: ").append(getDocumentName()).append(",");
+        if (getDocumentVersion() != null)
+            sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
         if (getRequestedDateTime() != null)
             sb.append("RequestedDateTime: ").append(getRequestedDateTime()).append(",");
         if (getStatus() != null)
@@ -1262,6 +1310,10 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getDocumentName() != null && other.getDocumentName().equals(this.getDocumentName()) == false)
             return false;
+        if (other.getDocumentVersion() == null ^ this.getDocumentVersion() == null)
+            return false;
+        if (other.getDocumentVersion() != null && other.getDocumentVersion().equals(this.getDocumentVersion()) == false)
+            return false;
         if (other.getRequestedDateTime() == null ^ this.getRequestedDateTime() == null)
             return false;
         if (other.getRequestedDateTime() != null && other.getRequestedDateTime().equals(this.getRequestedDateTime()) == false)
@@ -1311,6 +1363,7 @@ public class CommandInvocation implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getInstanceName() == null) ? 0 : getInstanceName().hashCode());
         hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode());
         hashCode = prime * hashCode + ((getDocumentName() == null) ? 0 : getDocumentName().hashCode());
+        hashCode = prime * hashCode + ((getDocumentVersion() == null) ? 0 : getDocumentVersion().hashCode());
         hashCode = prime * hashCode + ((getRequestedDateTime() == null) ? 0 : getRequestedDateTime().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusDetails() == null) ? 0 : getStatusDetails().hashCode());

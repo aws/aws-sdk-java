@@ -27,7 +27,7 @@ public class DescribeSpotFleetInstancesResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The running instances. Note that this list is refreshed periodically and might be out of date.
+     * The running instances. This list is refreshed periodically and might be out of date.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ActiveInstance> activeInstances;
@@ -47,10 +47,10 @@ public class DescribeSpotFleetInstancesResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The running instances. Note that this list is refreshed periodically and might be out of date.
+     * The running instances. This list is refreshed periodically and might be out of date.
      * </p>
      * 
-     * @return The running instances. Note that this list is refreshed periodically and might be out of date.
+     * @return The running instances. This list is refreshed periodically and might be out of date.
      */
 
     public java.util.List<ActiveInstance> getActiveInstances() {
@@ -62,11 +62,11 @@ public class DescribeSpotFleetInstancesResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The running instances. Note that this list is refreshed periodically and might be out of date.
+     * The running instances. This list is refreshed periodically and might be out of date.
      * </p>
      * 
      * @param activeInstances
-     *        The running instances. Note that this list is refreshed periodically and might be out of date.
+     *        The running instances. This list is refreshed periodically and might be out of date.
      */
 
     public void setActiveInstances(java.util.Collection<ActiveInstance> activeInstances) {
@@ -80,7 +80,7 @@ public class DescribeSpotFleetInstancesResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The running instances. Note that this list is refreshed periodically and might be out of date.
+     * The running instances. This list is refreshed periodically and might be out of date.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -89,7 +89,7 @@ public class DescribeSpotFleetInstancesResult extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param activeInstances
-     *        The running instances. Note that this list is refreshed periodically and might be out of date.
+     *        The running instances. This list is refreshed periodically and might be out of date.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,11 +105,11 @@ public class DescribeSpotFleetInstancesResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The running instances. Note that this list is refreshed periodically and might be out of date.
+     * The running instances. This list is refreshed periodically and might be out of date.
      * </p>
      * 
      * @param activeInstances
-     *        The running instances. Note that this list is refreshed periodically and might be out of date.
+     *        The running instances. This list is refreshed periodically and might be out of date.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

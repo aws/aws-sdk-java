@@ -33,6 +33,8 @@ public class CommandMarshaller {
             .marshallLocationName("CommandId").build();
     private static final MarshallingInfo<String> DOCUMENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentName").build();
+    private static final MarshallingInfo<String> DOCUMENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentVersion").build();
     private static final MarshallingInfo<String> COMMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Comment").build();
     private static final MarshallingInfo<java.util.Date> EXPIRESAFTER_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -88,6 +90,7 @@ public class CommandMarshaller {
         try {
             protocolMarshaller.marshall(command.getCommandId(), COMMANDID_BINDING);
             protocolMarshaller.marshall(command.getDocumentName(), DOCUMENTNAME_BINDING);
+            protocolMarshaller.marshall(command.getDocumentVersion(), DOCUMENTVERSION_BINDING);
             protocolMarshaller.marshall(command.getComment(), COMMENT_BINDING);
             protocolMarshaller.marshall(command.getExpiresAfter(), EXPIRESAFTER_BINDING);
             protocolMarshaller.marshall(command.getParameters(), PARAMETERS_BINDING);

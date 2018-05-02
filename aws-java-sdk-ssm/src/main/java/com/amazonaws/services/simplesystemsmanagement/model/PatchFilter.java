@@ -520,10 +520,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * </ul>
  * <p>
- * <b>SUSE Linux Enterprise Server (SUSE) Operating Systems</b>
+ * <b>SUSE Linux Enterprise Server (SLES) Operating Systems</b>
  * </p>
  * <p>
- * The supported keys for SUSE operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and
+ * The supported keys for SLES operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and
  * <code>SEVERITY</code>. See the following lists for valid values for each of these keys.
  * </p>
  * <p>
@@ -642,6 +642,132 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <li>
  * <p>
  * <code>Moderate</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Low</code>
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <b>CentOS Operating Systems</b>
+ * </p>
+ * <p>
+ * The supported keys for CentOS operating systems are <code>PRODUCT</code>, <code>CLASSIFICATION</code>, and
+ * <code>SEVERITY</code>. See the following lists for valid values for each of these keys.
+ * </p>
+ * <p>
+ * <i>Supported key:</i> <code>PRODUCT</code>
+ * </p>
+ * <p>
+ * <i>Supported values:</i>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>CentOS6.5</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>CentOS6.6</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>CentOS6.7</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>CentOS6.8</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>CentOS6.9</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>CentOS7.0</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>CentOS7.1</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>CentOS7.2</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>CentOS7.3</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>CentOS7.4</code>
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <i>Supported key:</i> <code>CLASSIFICATION</code>
+ * </p>
+ * <p>
+ * <i>Supported values:</i>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>Security</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Bugfix</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Enhancement</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Recommended</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Newpackage</code>
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <i>Supported key:</i> <code>SEVERITY</code>
+ * </p>
+ * <p>
+ * <i>Supported values:</i>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>Critical</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Important</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Medium</code>
  * </p>
  * </li>
  * <li>

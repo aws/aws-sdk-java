@@ -1849,7 +1849,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Cancels one or more Spot Instance requests. Spot Instances are instances that Amazon EC2 starts on your behalf
      * when the maximum price that you specify exceeds the current Spot price. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot Instance Requests</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <important>
      * <p>
@@ -2465,6 +2465,63 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateEgressOnlyInternetGatewayResult> responseHandler = new StaxResponseHandler<CreateEgressOnlyInternetGatewayResult>(
                     new CreateEgressOnlyInternetGatewayResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Launches an EC2 Fleet.
+     * </p>
+     * <p>
+     * You can create a single EC2 Fleet that includes multiple launch specifications that vary by instance type, AMI,
+     * Availability Zone, or subnet.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-launch-ec2-fleet.html">Launching an EC2
+     * Fleet</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param createFleetRequest
+     * @return Result of the CreateFleet operation returned by the service.
+     * @sample AmazonEC2.CreateFleet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFleet" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateFleetResult createFleet(CreateFleetRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateFleet(request);
+    }
+
+    @SdkInternalApi
+    final CreateFleetResult executeCreateFleet(CreateFleetRequest createFleetRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createFleetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateFleetRequest> request = null;
+        Response<CreateFleetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateFleetRequestMarshaller().marshall(super.beforeMarshalling(createFleetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateFleetResult> responseHandler = new StaxResponseHandler<CreateFleetResult>(new CreateFleetResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3661,7 +3718,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Creates a data feed for Spot Instances, enabling you to view Spot Instance usage logs. You can create one data
      * feed per AWS account. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot Instance Data Feed</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param createSpotDatafeedSubscriptionRequest
@@ -4566,6 +4623,60 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DeleteEgressOnlyInternetGatewayResult> responseHandler = new StaxResponseHandler<DeleteEgressOnlyInternetGatewayResult>(
                     new DeleteEgressOnlyInternetGatewayResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified EC2 Fleet.
+     * </p>
+     * <p>
+     * After you delete an EC2 Fleet, the EC2 Fleet launches no new instances. You must specify whether the EC2 Fleet
+     * should also terminate its instances. If you terminate the instances, the EC2 Fleet enters the
+     * <code>deleted_terminating</code> state. Otherwise, the EC2 Fleet enters the <code>deleted_running</code> state,
+     * and the instances continue to run until they are interrupted or you terminate them manually.
+     * </p>
+     * 
+     * @param deleteFleetsRequest
+     * @return Result of the DeleteFleets operation returned by the service.
+     * @sample AmazonEC2.DeleteFleets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteFleets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteFleetsResult deleteFleets(DeleteFleetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFleets(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFleetsResult executeDeleteFleets(DeleteFleetsRequest deleteFleetsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteFleetsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteFleetsRequest> request = null;
+        Response<DeleteFleetsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteFleetsRequestMarshaller().marshall(super.beforeMarshalling(deleteFleetsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteFleetsResult> responseHandler = new StaxResponseHandler<DeleteFleetsResult>(new DeleteFleetsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6835,6 +6946,153 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     @Override
     public DescribeExportTasksResult describeExportTasks() {
         return describeExportTasks(new DescribeExportTasksRequest());
+    }
+
+    /**
+     * <p>
+     * Describes the events for the specified EC2 Fleet during the specified time.
+     * </p>
+     * 
+     * @param describeFleetHistoryRequest
+     * @return Result of the DescribeFleetHistory operation returned by the service.
+     * @sample AmazonEC2.DescribeFleetHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetHistory" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeFleetHistoryResult describeFleetHistory(DescribeFleetHistoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFleetHistory(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFleetHistoryResult executeDescribeFleetHistory(DescribeFleetHistoryRequest describeFleetHistoryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeFleetHistoryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeFleetHistoryRequest> request = null;
+        Response<DescribeFleetHistoryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeFleetHistoryRequestMarshaller().marshall(super.beforeMarshalling(describeFleetHistoryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeFleetHistoryResult> responseHandler = new StaxResponseHandler<DescribeFleetHistoryResult>(
+                    new DescribeFleetHistoryResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the running instances for the specified EC2 Fleet.
+     * </p>
+     * 
+     * @param describeFleetInstancesRequest
+     * @return Result of the DescribeFleetInstances operation returned by the service.
+     * @sample AmazonEC2.DescribeFleetInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetInstances" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeFleetInstancesResult describeFleetInstances(DescribeFleetInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFleetInstances(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFleetInstancesResult executeDescribeFleetInstances(DescribeFleetInstancesRequest describeFleetInstancesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeFleetInstancesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeFleetInstancesRequest> request = null;
+        Response<DescribeFleetInstancesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeFleetInstancesRequestMarshaller().marshall(super.beforeMarshalling(describeFleetInstancesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeFleetInstancesResult> responseHandler = new StaxResponseHandler<DescribeFleetInstancesResult>(
+                    new DescribeFleetInstancesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the specified EC2 Fleet.
+     * </p>
+     * 
+     * @param describeFleetsRequest
+     * @return Result of the DescribeFleets operation returned by the service.
+     * @sample AmazonEC2.DescribeFleets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeFleetsResult describeFleets(DescribeFleetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFleets(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFleetsResult executeDescribeFleets(DescribeFleetsRequest describeFleetsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeFleetsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeFleetsRequest> request = null;
+        Response<DescribeFleetsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeFleetsRequestMarshaller().marshall(super.beforeMarshalling(describeFleetsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeFleetsResult> responseHandler = new StaxResponseHandler<DescribeFleetsResult>(
+                    new DescribeFleetsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -9365,7 +9623,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * Describes the data feed for Spot Instances. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot Instance Data Feed</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param describeSpotDatafeedSubscriptionRequest
@@ -9587,7 +9845,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Describes the Spot Instance requests that belong to your account. Spot Instances are instances that Amazon EC2
      * launches when the Spot price that you specify exceeds the current Spot price. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot Instance Requests</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
      * You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance by examining the response.
@@ -9596,7 +9854,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * look for instances where the instance lifecycle is <code>spot</code>.
      * </p>
      * <p>
-     * Spot Instance requests are deleted 4 hours after they are canceled and their instances are terminated.
+     * Spot Instance requests are deleted four hours after they are canceled and their instances are terminated.
      * </p>
      * 
      * @param describeSpotInstanceRequestsRequest
@@ -9653,7 +9911,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * Describes the Spot price history. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot Instance Pricing
-     * History</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * History</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
      * When you specify a start and end time, this operation returns the prices of the instance types within the time
@@ -12402,6 +12660,57 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Modifies the specified EC2 Fleet.
+     * </p>
+     * <p>
+     * While the EC2 Fleet is being modified, it is in the <code>modifying</code> state.
+     * </p>
+     * 
+     * @param modifyFleetRequest
+     * @return Result of the ModifyFleet operation returned by the service.
+     * @sample AmazonEC2.ModifyFleet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyFleet" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ModifyFleetResult modifyFleet(ModifyFleetRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyFleet(request);
+    }
+
+    @SdkInternalApi
+    final ModifyFleetResult executeModifyFleet(ModifyFleetRequest modifyFleetRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyFleetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyFleetRequest> request = null;
+        Response<ModifyFleetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyFleetRequestMarshaller().marshall(super.beforeMarshalling(modifyFleetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyFleetResult> responseHandler = new StaxResponseHandler<ModifyFleetResult>(new ModifyFleetResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Modifies the specified attribute of the specified Amazon FPGA Image (AFI).
      * </p>
      * 
@@ -14792,6 +15101,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Creates a Spot Fleet request.
      * </p>
      * <p>
+     * The Spot Fleet request specifies the total target capacity and the On-Demand target capacity. Amazon EC2
+     * calculates the difference between the total capacity and On-Demand capacity, and launches the difference as Spot
+     * capacity.
+     * </p>
+     * <p>
      * You can submit a single request that includes multiple launch specifications that vary by instance type, AMI,
      * Availability Zone, or subnet.
      * </p>
@@ -14806,13 +15120,13 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * you can improve the availability of your fleet.
      * </p>
      * <p>
-     * You can specify tags for the Spot Instances. You cannot tag other resource types in a Spot Fleet request; only
-     * the <code>instance</code> resource type is supported.
+     * You can specify tags for the Spot Instances. You cannot tag other resource types in a Spot Fleet request because
+     * only the <code>instance</code> resource type is supported.
      * </p>
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot Fleet Requests</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param requestSpotFleetRequest
@@ -14865,7 +15179,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Creates a Spot Instance request. Spot Instances are instances that Amazon EC2 launches when the maximum price
      * that you specify exceeds the current Spot price. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot Instance Requests</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param requestSpotInstancesRequest

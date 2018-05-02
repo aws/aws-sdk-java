@@ -60,6 +60,11 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
                 request.addParameter("SpotFleetRequestConfig.FulfilledCapacity", StringUtils.fromDouble(spotFleetRequestConfig.getFulfilledCapacity()));
             }
 
+            if (spotFleetRequestConfig.getOnDemandFulfilledCapacity() != null) {
+                request.addParameter("SpotFleetRequestConfig.OnDemandFulfilledCapacity",
+                        StringUtils.fromDouble(spotFleetRequestConfig.getOnDemandFulfilledCapacity()));
+            }
+
             if (spotFleetRequestConfig.getIamFleetRole() != null) {
                 request.addParameter("SpotFleetRequestConfig.IamFleetRole", StringUtils.fromString(spotFleetRequestConfig.getIamFleetRole()));
             }
@@ -505,6 +510,11 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
 
             if (spotFleetRequestConfig.getTargetCapacity() != null) {
                 request.addParameter("SpotFleetRequestConfig.TargetCapacity", StringUtils.fromInteger(spotFleetRequestConfig.getTargetCapacity()));
+            }
+
+            if (spotFleetRequestConfig.getOnDemandTargetCapacity() != null) {
+                request.addParameter("SpotFleetRequestConfig.OnDemandTargetCapacity",
+                        StringUtils.fromInteger(spotFleetRequestConfig.getOnDemandTargetCapacity()));
             }
 
             if (spotFleetRequestConfig.getTerminateInstancesWithExpiration() != null) {

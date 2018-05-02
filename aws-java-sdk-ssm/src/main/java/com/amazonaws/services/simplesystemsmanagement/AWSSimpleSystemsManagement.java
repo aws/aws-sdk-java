@@ -1397,6 +1397,9 @@ public interface AWSSimpleSystemsManagement {
      * Retrieves the default patch baseline. Note that Systems Manager supports creating multiple default patch
      * baselines. For example, you can create a default patch baseline for each operating system.
      * </p>
+     * <p>
+     * If you do not specify an operating system value, the default patch baseline for Windows is returned.
+     * </p>
      * 
      * @param getDefaultPatchBaselineRequest
      * @return Result of the GetDefaultPatchBaseline operation returned by the service.
@@ -2242,7 +2245,7 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
-     * Add one or more parameters to the system.
+     * Add a parameter to the system.
      * </p>
      * 
      * @param putParameterRequest
@@ -2481,6 +2484,8 @@ public interface AWSSimpleSystemsManagement {
      *         are: Shutting-down and Terminated.
      * @throws InvalidDocumentException
      *         The specified document does not exist.
+     * @throws InvalidDocumentVersionException
+     *         The document version is not valid or does not exist.
      * @throws InvalidOutputFolderException
      *         The S3 bucket does not exist.
      * @throws InvalidParametersException

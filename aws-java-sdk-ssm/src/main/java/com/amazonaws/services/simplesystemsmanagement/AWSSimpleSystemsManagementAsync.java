@@ -1838,6 +1838,9 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * Retrieves the default patch baseline. Note that Systems Manager supports creating multiple default patch
      * baselines. For example, you can create a default patch baseline for each operating system.
      * </p>
+     * <p>
+     * If you do not specify an operating system value, the default patch baseline for Windows is returned.
+     * </p>
      * 
      * @param getDefaultPatchBaselineRequest
      * @return A Java Future containing the result of the GetDefaultPatchBaseline operation returned by the service.
@@ -1851,6 +1854,9 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Retrieves the default patch baseline. Note that Systems Manager supports creating multiple default patch
      * baselines. For example, you can create a default patch baseline for each operating system.
+     * </p>
+     * <p>
+     * If you do not specify an operating system value, the default patch baseline for Windows is returned.
      * </p>
      * 
      * @param getDefaultPatchBaselineRequest
@@ -3077,7 +3083,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Add one or more parameters to the system.
+     * Add a parameter to the system.
      * </p>
      * 
      * @param putParameterRequest
@@ -3090,7 +3096,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Add one or more parameters to the system.
+     * Add a parameter to the system.
      * </p>
      * 
      * @param putParameterRequest

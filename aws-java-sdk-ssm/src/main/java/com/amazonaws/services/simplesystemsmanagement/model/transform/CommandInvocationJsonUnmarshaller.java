@@ -68,6 +68,10 @@ public class CommandInvocationJsonUnmarshaller implements Unmarshaller<CommandIn
                     context.nextToken();
                     commandInvocation.setDocumentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DocumentVersion", targetDepth)) {
+                    context.nextToken();
+                    commandInvocation.setDocumentVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("RequestedDateTime", targetDepth)) {
                     context.nextToken();
                     commandInvocation.setRequestedDateTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));

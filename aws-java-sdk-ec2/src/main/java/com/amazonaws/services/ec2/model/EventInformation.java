@@ -83,8 +83,8 @@ public class EventInformation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>cancelled_running</code> - The Spot Fleet is canceled and will not launch additional Spot Instances, but
-     * its existing Spot Instances continue to run until they are interrupted or terminated.
+     * <code>cancelled_running</code> - The Spot Fleet is canceled and does not launch additional Spot Instances.
+     * Existing Spot Instances continue to run until they are interrupted or terminated.
      * </p>
      * </li>
      * <li>
@@ -253,8 +253,8 @@ public class EventInformation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>cancelled_running</code> - The Spot Fleet is canceled and will not launch additional Spot Instances, but
-     * its existing Spot Instances continue to run until they are interrupted or terminated.
+     * <code>cancelled_running</code> - The Spot Fleet is canceled and does not launch additional Spot Instances.
+     * Existing Spot Instances continue to run until they are interrupted or terminated.
      * </p>
      * </li>
      * <li>
@@ -373,8 +373,8 @@ public class EventInformation implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>cancelled_running</code> - The Spot Fleet is canceled and will not launch additional Spot Instances,
-     *        but its existing Spot Instances continue to run until they are interrupted or terminated.
+     *        <code>cancelled_running</code> - The Spot Fleet is canceled and does not launch additional Spot Instances.
+     *        Existing Spot Instances continue to run until they are interrupted or terminated.
      *        </p>
      *        </li>
      *        <li>
@@ -500,8 +500,8 @@ public class EventInformation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>cancelled_running</code> - The Spot Fleet is canceled and will not launch additional Spot Instances, but
-     * its existing Spot Instances continue to run until they are interrupted or terminated.
+     * <code>cancelled_running</code> - The Spot Fleet is canceled and does not launch additional Spot Instances.
+     * Existing Spot Instances continue to run until they are interrupted or terminated.
      * </p>
      * </li>
      * <li>
@@ -619,8 +619,8 @@ public class EventInformation implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>cancelled_running</code> - The Spot Fleet is canceled and will not launch additional Spot
-     *         Instances, but its existing Spot Instances continue to run until they are interrupted or terminated.
+     *         <code>cancelled_running</code> - The Spot Fleet is canceled and does not launch additional Spot
+     *         Instances. Existing Spot Instances continue to run until they are interrupted or terminated.
      *         </p>
      *         </li>
      *         <li>
@@ -747,8 +747,8 @@ public class EventInformation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>cancelled_running</code> - The Spot Fleet is canceled and will not launch additional Spot Instances, but
-     * its existing Spot Instances continue to run until they are interrupted or terminated.
+     * <code>cancelled_running</code> - The Spot Fleet is canceled and does not launch additional Spot Instances.
+     * Existing Spot Instances continue to run until they are interrupted or terminated.
      * </p>
      * </li>
      * <li>
@@ -867,8 +867,8 @@ public class EventInformation implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>cancelled_running</code> - The Spot Fleet is canceled and will not launch additional Spot Instances,
-     *        but its existing Spot Instances continue to run until they are interrupted or terminated.
+     *        <code>cancelled_running</code> - The Spot Fleet is canceled and does not launch additional Spot Instances.
+     *        Existing Spot Instances continue to run until they are interrupted or terminated.
      *        </p>
      *        </li>
      *        <li>

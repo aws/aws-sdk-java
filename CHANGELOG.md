@@ -1,3 +1,20 @@
+# __1.11.321__ __2018-05-02__
+## __AWS Certificate Manager__
+  - ### Features
+    - Documentation updates for acm
+
+## __AWS CodePipeline__
+  - ### Features
+    - Added support for webhooks with accompanying definitions as needed in the AWS CodePipeline API Guide.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Amazon EC2 Fleet is a new feature that simplifies the provisioning of Amazon EC2 capacity across different EC2 instance types, Availability Zones, and the On-Demand, Reserved Instance, and Spot Instance purchase models. With a single API call, you can now provision capacity to achieve desired scale, performance, and cost.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Added support for new parameter, DocumentVersion, for SendCommand API. Users can now specify version of SSM document to be executed on the target(s).
+
 # __1.11.320__ __2018-04-30__
 ## __Alexa For Business__
   - ### Features

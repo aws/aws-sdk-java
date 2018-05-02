@@ -35,6 +35,8 @@ public class SendCommandRequestMarshaller {
             .marshallLocationName("Targets").build();
     private static final MarshallingInfo<String> DOCUMENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentName").build();
+    private static final MarshallingInfo<String> DOCUMENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentVersion").build();
     private static final MarshallingInfo<String> DOCUMENTHASH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentHash").build();
     private static final MarshallingInfo<String> DOCUMENTHASHTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -79,6 +81,7 @@ public class SendCommandRequestMarshaller {
             protocolMarshaller.marshall(sendCommandRequest.getInstanceIds(), INSTANCEIDS_BINDING);
             protocolMarshaller.marshall(sendCommandRequest.getTargets(), TARGETS_BINDING);
             protocolMarshaller.marshall(sendCommandRequest.getDocumentName(), DOCUMENTNAME_BINDING);
+            protocolMarshaller.marshall(sendCommandRequest.getDocumentVersion(), DOCUMENTVERSION_BINDING);
             protocolMarshaller.marshall(sendCommandRequest.getDocumentHash(), DOCUMENTHASH_BINDING);
             protocolMarshaller.marshall(sendCommandRequest.getDocumentHashType(), DOCUMENTHASHTYPE_BINDING);
             protocolMarshaller.marshall(sendCommandRequest.getTimeoutSeconds(), TIMEOUTSECONDS_BINDING);

@@ -58,7 +58,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>timestamp</code> - The timestamp of the Spot price history, in UTC format (for example,
+     * <code>timestamp</code> - The time stamp of the Spot price history, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). You can use wildcards (* and ?). Greater than or
      * less than comparison is not supported.
      * </p>
@@ -142,7 +142,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>timestamp</code> - The timestamp of the Spot price history, in UTC format (for example,
+     * <code>timestamp</code> - The time stamp of the Spot price history, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). You can use wildcards (* and ?). Greater than or
      * less than comparison is not supported.
      * </p>
@@ -176,7 +176,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      *         </li>
      *         <li>
      *         <p>
-     *         <code>timestamp</code> - The timestamp of the Spot price history, in UTC format (for example,
+     *         <code>timestamp</code> - The time stamp of the Spot price history, in UTC format (for example,
      *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). You can use wildcards (* and ?). Greater
      *         than or less than comparison is not supported.
      *         </p>
@@ -220,7 +220,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>timestamp</code> - The timestamp of the Spot price history, in UTC format (for example,
+     * <code>timestamp</code> - The time stamp of the Spot price history, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). You can use wildcards (* and ?). Greater than or
      * less than comparison is not supported.
      * </p>
@@ -255,7 +255,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        <code>timestamp</code> - The timestamp of the Spot price history, in UTC format (for example,
+     *        <code>timestamp</code> - The time stamp of the Spot price history, in UTC format (for example,
      *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). You can use wildcards (* and ?). Greater
      *        than or less than comparison is not supported.
      *        </p>
@@ -301,7 +301,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>timestamp</code> - The timestamp of the Spot price history, in UTC format (for example,
+     * <code>timestamp</code> - The time stamp of the Spot price history, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). You can use wildcards (* and ?). Greater than or
      * less than comparison is not supported.
      * </p>
@@ -341,7 +341,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        <code>timestamp</code> - The timestamp of the Spot price history, in UTC format (for example,
+     *        <code>timestamp</code> - The time stamp of the Spot price history, in UTC format (for example,
      *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). You can use wildcards (* and ?). Greater
      *        than or less than comparison is not supported.
      *        </p>
@@ -389,7 +389,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * <code>timestamp</code> - The timestamp of the Spot price history, in UTC format (for example,
+     * <code>timestamp</code> - The time stamp of the Spot price history, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). You can use wildcards (* and ?). Greater than or
      * less than comparison is not supported.
      * </p>
@@ -424,7 +424,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        <code>timestamp</code> - The timestamp of the Spot price history, in UTC format (for example,
+     *        <code>timestamp</code> - The time stamp of the Spot price history, in UTC format (for example,
      *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). You can use wildcards (* and ?). Greater
      *        than or less than comparison is not supported.
      *        </p>

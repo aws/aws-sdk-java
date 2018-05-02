@@ -61,13 +61,6 @@ public class JsonUnmarshallerContextImpl extends JsonUnmarshallerContext {
     private final Stack<JsonFieldTokenPair> stack = new Stack<JsonFieldTokenPair>();
 
     /**
-     * Keeps track of nested arrays that are not pushed onto the stack because their field
-     * names are null. Incremented when a nested START_ARRAY is encountered and decremented when
-     * a nested END_ARRAY is encountered.
-     */
-    private int nestedArrayStack = 0;
-
-    /**
      * The name of the field that is currently being parsed. This value is
      * nulled out when the parser reaches into the object/array structure of the
      * corresponding value, and then it will be pushed into the stack after
@@ -262,31 +255,20 @@ public class JsonUnmarshallerContextImpl extends JsonUnmarshallerContext {
 
     private void updateContext() throws IOException {
         lastParsedParentElement = null;
-        if (currentToken == null) {
-            return;
-        }
+        if (currentToken == null) return;
 
         if (currentToken == START_OBJECT || currentToken == START_ARRAY) {
             if (currentField != null) {
                 stack.push(new JsonFieldTokenPair(currentField, currentToken));
                 currentField = null;
-            } else if (currentToken == START_ARRAY) {
-                // Current field is null so this is an array within an array.
-                nestedArrayStack++;
             }
         } else if (currentToken == END_OBJECT || currentToken == END_ARRAY) {
-            // If nestedArrayStack is not zero we are still within a nested container structure and this END_ARRAY
-            // does not have a matching START_ARRAY on the stack. We need to keep 'popping' END_ARRAYs off the
-            // nestedArrayStack count until it's zero then the next END_* will have a matching start on the stack.
-            if (!stack.isEmpty() && nestedArrayStack == 0) {
+            if (!stack.isEmpty()) {
                 boolean squareBracketsMatch = currentToken == END_ARRAY && stack.peek().getToken() == START_ARRAY;
                 boolean curlyBracketsMatch = currentToken == END_OBJECT && stack.peek().getToken() == START_OBJECT;
                 if (squareBracketsMatch || curlyBracketsMatch) {
                     lastParsedParentElement = stack.pop().getField();
                 }
-            } else if (currentToken == END_ARRAY && nestedArrayStack > 0) {
-                // Decrement the nestedArrayStack to indicate we are emerging from a nested list.
-                nestedArrayStack--;
             }
             currentField = null;
         } else if (currentToken == FIELD_NAME) {

@@ -56,7 +56,7 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
     private String snapshotId;
     /**
      * <p>
-     * Placeholder information, this field will always be empty in the current release of the service.
+     * Placeholder information. This field will always be empty in the current release of the service.
      * </p>
      */
     private String ownerInformation;
@@ -278,11 +278,11 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Placeholder information, this field will always be empty in the current release of the service.
+     * Placeholder information. This field will always be empty in the current release of the service.
      * </p>
      * 
      * @param ownerInformation
-     *        Placeholder information, this field will always be empty in the current release of the service.
+     *        Placeholder information. This field will always be empty in the current release of the service.
      */
 
     public void setOwnerInformation(String ownerInformation) {
@@ -291,10 +291,10 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Placeholder information, this field will always be empty in the current release of the service.
+     * Placeholder information. This field will always be empty in the current release of the service.
      * </p>
      * 
-     * @return Placeholder information, this field will always be empty in the current release of the service.
+     * @return Placeholder information. This field will always be empty in the current release of the service.
      */
 
     public String getOwnerInformation() {
@@ -303,11 +303,11 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Placeholder information, this field will always be empty in the current release of the service.
+     * Placeholder information. This field will always be empty in the current release of the service.
      * </p>
      * 
      * @param ownerInformation
-     *        Placeholder information, this field will always be empty in the current release of the service.
+     *        Placeholder information. This field will always be empty in the current release of the service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

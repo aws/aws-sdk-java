@@ -37,6 +37,10 @@ public enum CodepipelineActions implements Action {
     DeleteCustomActionType("codepipeline:DeleteCustomActionType"),
     /** Action for the DeletePipeline operation. */
     DeletePipeline("codepipeline:DeletePipeline"),
+    /** Action for the DeleteWebhook operation. */
+    DeleteWebhook("codepipeline:DeleteWebhook"),
+    /** Action for the DeregisterWebhookWithThirdParty operation. */
+    DeregisterWebhookWithThirdParty("codepipeline:DeregisterWebhookWithThirdParty"),
     /** Action for the DisableStageTransition operation. */
     DisableStageTransition("codepipeline:DisableStageTransition"),
     /** Action for the EnableStageTransition operation. */
@@ -57,6 +61,8 @@ public enum CodepipelineActions implements Action {
     ListPipelineExecutions("codepipeline:ListPipelineExecutions"),
     /** Action for the ListPipelines operation. */
     ListPipelines("codepipeline:ListPipelines"),
+    /** Action for the ListWebhooks operation. */
+    ListWebhooks("codepipeline:ListWebhooks"),
     /** Action for the PollForJobs operation. */
     PollForJobs("codepipeline:PollForJobs"),
     /** Action for the PollForThirdPartyJobs operation. */
@@ -73,6 +79,10 @@ public enum CodepipelineActions implements Action {
     PutThirdPartyJobFailureResult("codepipeline:PutThirdPartyJobFailureResult"),
     /** Action for the PutThirdPartyJobSuccessResult operation. */
     PutThirdPartyJobSuccessResult("codepipeline:PutThirdPartyJobSuccessResult"),
+    /** Action for the PutWebhook operation. */
+    PutWebhook("codepipeline:PutWebhook"),
+    /** Action for the RegisterWebhookWithThirdParty operation. */
+    RegisterWebhookWithThirdParty("codepipeline:RegisterWebhookWithThirdParty"),
     /** Action for the RetryStageExecution operation. */
     RetryStageExecution("codepipeline:RetryStageExecution"),
     /** Action for the StartPipelineExecution operation. */

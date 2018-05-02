@@ -65,6 +65,11 @@ public class SpotFleetRequestConfigDataStaxUnmarshaller implements Unmarshaller<
                     continue;
                 }
 
+                if (context.testExpression("onDemandFulfilledCapacity", targetDepth)) {
+                    spotFleetRequestConfigData.setOnDemandFulfilledCapacity(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("iamFleetRole", targetDepth)) {
                     spotFleetRequestConfigData.setIamFleetRole(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -97,6 +102,11 @@ public class SpotFleetRequestConfigDataStaxUnmarshaller implements Unmarshaller<
 
                 if (context.testExpression("targetCapacity", targetDepth)) {
                     spotFleetRequestConfigData.setTargetCapacity(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("onDemandTargetCapacity", targetDepth)) {
+                    spotFleetRequestConfigData.setOnDemandTargetCapacity(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

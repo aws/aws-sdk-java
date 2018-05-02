@@ -153,9 +153,9 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The reason the certificate request failed. This value exists only when the certificate status is
-     * <code>FAILED</code>. For more information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/troubleshooting.html#troubleshooting-failed"
-     * >Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
+     * <code>FAILED</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
+     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
      * </p>
      */
     private String failureReason;
@@ -163,20 +163,19 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>. For
      * certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not
-     * provide <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
-     * renewal</a> for imported certificates. For more information about the differences between certificates that you
-     * import and those that ACM provides, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/import-certificate.html">Importing
-     * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.
+     * provide <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for
+     * imported certificates. For more information about the differences between certificates that you import and those
+     * that ACM provides, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a> in the
+     * <i>AWS Certificate Manager User Guide</i>.
      * </p>
      */
     private String type;
     /**
      * <p>
      * Contains information about the status of ACM's <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
-     * renewal</a> for the certificate. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for the certificate.
+     * This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.
      * </p>
      */
     private RenewalSummary renewalSummary;
@@ -1226,15 +1225,15 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The reason the certificate request failed. This value exists only when the certificate status is
-     * <code>FAILED</code>. For more information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/troubleshooting.html#troubleshooting-failed"
-     * >Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
+     * <code>FAILED</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
+     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
      * </p>
      * 
      * @param failureReason
      *        The reason the certificate request failed. This value exists only when the certificate status is
-     *        <code>FAILED</code>. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/troubleshooting.html#troubleshooting-failed"
+     *        <code>FAILED</code>. For more information, see <a
+     *        href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed"
      *        >Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
      * @see FailureReason
      */
@@ -1246,14 +1245,14 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The reason the certificate request failed. This value exists only when the certificate status is
-     * <code>FAILED</code>. For more information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/troubleshooting.html#troubleshooting-failed"
-     * >Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
+     * <code>FAILED</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
+     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
      * </p>
      * 
      * @return The reason the certificate request failed. This value exists only when the certificate status is
-     *         <code>FAILED</code>. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/troubleshooting.html#troubleshooting-failed"
+     *         <code>FAILED</code>. For more information, see <a
+     *         href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed"
      *         >Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
      * @see FailureReason
      */
@@ -1265,15 +1264,15 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The reason the certificate request failed. This value exists only when the certificate status is
-     * <code>FAILED</code>. For more information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/troubleshooting.html#troubleshooting-failed"
-     * >Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
+     * <code>FAILED</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
+     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
      * </p>
      * 
      * @param failureReason
      *        The reason the certificate request failed. This value exists only when the certificate status is
-     *        <code>FAILED</code>. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/troubleshooting.html#troubleshooting-failed"
+     *        <code>FAILED</code>. For more information, see <a
+     *        href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed"
      *        >Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FailureReason
@@ -1287,15 +1286,15 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The reason the certificate request failed. This value exists only when the certificate status is
-     * <code>FAILED</code>. For more information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/troubleshooting.html#troubleshooting-failed"
-     * >Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
+     * <code>FAILED</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
+     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
      * </p>
      * 
      * @param failureReason
      *        The reason the certificate request failed. This value exists only when the certificate status is
-     *        <code>FAILED</code>. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/troubleshooting.html#troubleshooting-failed"
+     *        <code>FAILED</code>. For more information, see <a
+     *        href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed"
      *        >Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
      * @see FailureReason
      */
@@ -1307,15 +1306,15 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The reason the certificate request failed. This value exists only when the certificate status is
-     * <code>FAILED</code>. For more information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/troubleshooting.html#troubleshooting-failed"
-     * >Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
+     * <code>FAILED</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
+     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
      * </p>
      * 
      * @param failureReason
      *        The reason the certificate request failed. This value exists only when the certificate status is
-     *        <code>FAILED</code>. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/troubleshooting.html#troubleshooting-failed"
+     *        <code>FAILED</code>. For more information, see <a
+     *        href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed"
      *        >Certificate Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FailureReason
@@ -1330,23 +1329,21 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>. For
      * certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not
-     * provide <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
-     * renewal</a> for imported certificates. For more information about the differences between certificates that you
-     * import and those that ACM provides, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/import-certificate.html">Importing
-     * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.
+     * provide <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for
+     * imported certificates. For more information about the differences between certificates that you import and those
+     * that ACM provides, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a> in the
+     * <i>AWS Certificate Manager User Guide</i>.
      * </p>
      * 
      * @param type
      *        The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>.
      *        For certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM
-     *        does not provide <a
-     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
+     *        does not provide <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
      *        renewal</a> for imported certificates. For more information about the differences between certificates
      *        that you import and those that ACM provides, see <a
-     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/import-certificate.html"
-     *        >Importing Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.
+     *        href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a>
+     *        in the <i>AWS Certificate Manager User Guide</i>.
      * @see CertificateType
      */
 
@@ -1358,22 +1355,20 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>. For
      * certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not
-     * provide <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
-     * renewal</a> for imported certificates. For more information about the differences between certificates that you
-     * import and those that ACM provides, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/import-certificate.html">Importing
-     * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.
+     * provide <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for
+     * imported certificates. For more information about the differences between certificates that you import and those
+     * that ACM provides, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a> in the
+     * <i>AWS Certificate Manager User Guide</i>.
      * </p>
      * 
      * @return The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>
      *         . For certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>.
-     *         ACM does not provide <a
-     *         href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
+     *         ACM does not provide <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
      *         renewal</a> for imported certificates. For more information about the differences between certificates
      *         that you import and those that ACM provides, see <a
-     *         href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/import-certificate.html"
-     *         >Importing Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.
+     *         href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a>
+     *         in the <i>AWS Certificate Manager User Guide</i>.
      * @see CertificateType
      */
 
@@ -1385,23 +1380,21 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>. For
      * certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not
-     * provide <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
-     * renewal</a> for imported certificates. For more information about the differences between certificates that you
-     * import and those that ACM provides, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/import-certificate.html">Importing
-     * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.
+     * provide <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for
+     * imported certificates. For more information about the differences between certificates that you import and those
+     * that ACM provides, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a> in the
+     * <i>AWS Certificate Manager User Guide</i>.
      * </p>
      * 
      * @param type
      *        The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>.
      *        For certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM
-     *        does not provide <a
-     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
+     *        does not provide <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
      *        renewal</a> for imported certificates. For more information about the differences between certificates
      *        that you import and those that ACM provides, see <a
-     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/import-certificate.html"
-     *        >Importing Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.
+     *        href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a>
+     *        in the <i>AWS Certificate Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CertificateType
      */
@@ -1415,23 +1408,21 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>. For
      * certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not
-     * provide <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
-     * renewal</a> for imported certificates. For more information about the differences between certificates that you
-     * import and those that ACM provides, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/import-certificate.html">Importing
-     * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.
+     * provide <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for
+     * imported certificates. For more information about the differences between certificates that you import and those
+     * that ACM provides, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a> in the
+     * <i>AWS Certificate Manager User Guide</i>.
      * </p>
      * 
      * @param type
      *        The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>.
      *        For certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM
-     *        does not provide <a
-     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
+     *        does not provide <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
      *        renewal</a> for imported certificates. For more information about the differences between certificates
      *        that you import and those that ACM provides, see <a
-     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/import-certificate.html"
-     *        >Importing Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.
+     *        href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a>
+     *        in the <i>AWS Certificate Manager User Guide</i>.
      * @see CertificateType
      */
 
@@ -1443,23 +1434,21 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>. For
      * certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not
-     * provide <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
-     * renewal</a> for imported certificates. For more information about the differences between certificates that you
-     * import and those that ACM provides, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/import-certificate.html">Importing
-     * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.
+     * provide <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for
+     * imported certificates. For more information about the differences between certificates that you import and those
+     * that ACM provides, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a> in the
+     * <i>AWS Certificate Manager User Guide</i>.
      * </p>
      * 
      * @param type
      *        The source of the certificate. For certificates provided by ACM, this value is <code>AMAZON_ISSUED</code>.
      *        For certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM
-     *        does not provide <a
-     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
+     *        does not provide <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
      *        renewal</a> for imported certificates. For more information about the differences between certificates
      *        that you import and those that ACM provides, see <a
-     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/import-certificate.html"
-     *        >Importing Certificates</a> in the <i>AWS Certificate Manager User Guide</i>.
+     *        href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a>
+     *        in the <i>AWS Certificate Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CertificateType
      */
@@ -1472,15 +1461,14 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Contains information about the status of ACM's <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
-     * renewal</a> for the certificate. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for the certificate.
+     * This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.
      * </p>
      * 
      * @param renewalSummary
      *        Contains information about the status of ACM's <a
-     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
-     *        renewal</a> for the certificate. This field exists only when the certificate type is
-     *        <code>AMAZON_ISSUED</code>.
+     *        href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for the
+     *        certificate. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.
      */
 
     public void setRenewalSummary(RenewalSummary renewalSummary) {
@@ -1490,14 +1478,13 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Contains information about the status of ACM's <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
-     * renewal</a> for the certificate. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for the certificate.
+     * This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.
      * </p>
      * 
      * @return Contains information about the status of ACM's <a
-     *         href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
-     *         renewal</a> for the certificate. This field exists only when the certificate type is
-     *         <code>AMAZON_ISSUED</code>.
+     *         href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for the
+     *         certificate. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.
      */
 
     public RenewalSummary getRenewalSummary() {
@@ -1507,15 +1494,14 @@ public class CertificateDetail implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Contains information about the status of ACM's <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
-     * renewal</a> for the certificate. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for the certificate.
+     * This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.
      * </p>
      * 
      * @param renewalSummary
      *        Contains information about the status of ACM's <a
-     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-renewal.html">managed
-     *        renewal</a> for the certificate. This field exists only when the certificate type is
-     *        <code>AMAZON_ISSUED</code>.
+     *        href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for the
+     *        certificate. This field exists only when the certificate type is <code>AMAZON_ISSUED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

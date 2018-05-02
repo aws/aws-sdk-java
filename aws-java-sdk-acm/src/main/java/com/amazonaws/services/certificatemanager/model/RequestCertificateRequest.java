@@ -27,9 +27,9 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Fully qualified domain name (FQDN), such as www.example.com, of the site that you want to secure with an ACM
-     * Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain.
-     * For example, *.example.com protects www.example.com, site.example.com, and images.example.com.
+     * Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use
+     * an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example,
+     * *.example.com protects www.example.com, site.example.com, and images.example.com.
      * </p>
      * <p>
      * The first domain name you enter cannot exceed 63 octets, including periods. Each subsequent Subject Alternative
@@ -39,11 +39,10 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
     private String domainName;
     /**
      * <p>
-     * The method you want to use to validate that you own or control domain. You can <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-dns.html">validate
-     * with DNS</a> or <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-email.html"
-     * >validate with email</a>. We recommend that you use DNS validation.
+     * The method you want to use if you are requesting a public certificate to validate that you own or control domain.
+     * You can <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate with DNS</a>
+     * or <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate with email</a>.
+     * We recommend that you use DNS validation.
      * </p>
      */
     private String validationMethod;
@@ -54,7 +53,7 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * users can reach your site by using either name. The maximum number of domain names that you can add to an ACM
      * certificate is 100. However, the initial limit is 10 domain names. If you need more than 10 names, you must
      * request a limit increase. For more information, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-limits.html">Limits</a>.
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
      * </p>
      * <p>
      * The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple labels separated by periods.
@@ -103,18 +102,19 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * Currently, you can use this parameter to specify whether to add the certificate to a certificate transparency
      * log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or
      * maliciously issued. Certificates that have not been logged typically produce an error message in a browser. For
-     * more information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-bestpractices.html#best-practices-transparency"
-     * >Opting Out of Certificate Transparency Logging</a>.
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting
+     * Out of Certificate Transparency Logging</a>.
      * </p>
      */
     private CertificateOptions options;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the
-     * certificate. For more information about private CAs, see the <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm-pca/latest/userguide/PcaWelcome.html">AWS
-     * Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form:
+     * certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt
+     * to issue a public certificate. For more information about private CAs, see the <a
+     * href="http://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">AWS Certificate Manager Private
+     * Certificate Authority (PCA)</a> user guide. The ARN must have the following form:
      * </p>
      * <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
@@ -124,9 +124,9 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Fully qualified domain name (FQDN), such as www.example.com, of the site that you want to secure with an ACM
-     * Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain.
-     * For example, *.example.com protects www.example.com, site.example.com, and images.example.com.
+     * Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use
+     * an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example,
+     * *.example.com protects www.example.com, site.example.com, and images.example.com.
      * </p>
      * <p>
      * The first domain name you enter cannot exceed 63 octets, including periods. Each subsequent Subject Alternative
@@ -134,10 +134,10 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param domainName
-     *        Fully qualified domain name (FQDN), such as www.example.com, of the site that you want to secure with an
-     *        ACM Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the
-     *        same domain. For example, *.example.com protects www.example.com, site.example.com, and
-     *        images.example.com. </p>
+     *        Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM
+     *        certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same
+     *        domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.
+     *        </p>
      *        <p>
      *        The first domain name you enter cannot exceed 63 octets, including periods. Each subsequent Subject
      *        Alternative Name (SAN), however, can be up to 253 octets in length.
@@ -149,19 +149,19 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Fully qualified domain name (FQDN), such as www.example.com, of the site that you want to secure with an ACM
-     * Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain.
-     * For example, *.example.com protects www.example.com, site.example.com, and images.example.com.
+     * Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use
+     * an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example,
+     * *.example.com protects www.example.com, site.example.com, and images.example.com.
      * </p>
      * <p>
      * The first domain name you enter cannot exceed 63 octets, including periods. Each subsequent Subject Alternative
      * Name (SAN), however, can be up to 253 octets in length.
      * </p>
      * 
-     * @return Fully qualified domain name (FQDN), such as www.example.com, of the site that you want to secure with an
-     *         ACM Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the
-     *         same domain. For example, *.example.com protects www.example.com, site.example.com, and
-     *         images.example.com. </p>
+     * @return Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM
+     *         certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same
+     *         domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.
+     *         </p>
      *         <p>
      *         The first domain name you enter cannot exceed 63 octets, including periods. Each subsequent Subject
      *         Alternative Name (SAN), however, can be up to 253 octets in length.
@@ -173,9 +173,9 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Fully qualified domain name (FQDN), such as www.example.com, of the site that you want to secure with an ACM
-     * Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain.
-     * For example, *.example.com protects www.example.com, site.example.com, and images.example.com.
+     * Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use
+     * an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example,
+     * *.example.com protects www.example.com, site.example.com, and images.example.com.
      * </p>
      * <p>
      * The first domain name you enter cannot exceed 63 octets, including periods. Each subsequent Subject Alternative
@@ -183,10 +183,10 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param domainName
-     *        Fully qualified domain name (FQDN), such as www.example.com, of the site that you want to secure with an
-     *        ACM Certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the
-     *        same domain. For example, *.example.com protects www.example.com, site.example.com, and
-     *        images.example.com. </p>
+     *        Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM
+     *        certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same
+     *        domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.
+     *        </p>
      *        <p>
      *        The first domain name you enter cannot exceed 63 octets, including periods. Each subsequent Subject
      *        Alternative Name (SAN), however, can be up to 253 octets in length.
@@ -200,19 +200,18 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The method you want to use to validate that you own or control domain. You can <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-dns.html">validate
-     * with DNS</a> or <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-email.html"
-     * >validate with email</a>. We recommend that you use DNS validation.
+     * The method you want to use if you are requesting a public certificate to validate that you own or control domain.
+     * You can <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate with DNS</a>
+     * or <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate with email</a>.
+     * We recommend that you use DNS validation.
      * </p>
      * 
      * @param validationMethod
-     *        The method you want to use to validate that you own or control domain. You can <a
-     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-dns.html"
-     *        >validate with DNS</a> or <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-email.html"
-     *        >validate with email</a>. We recommend that you use DNS validation.
+     *        The method you want to use if you are requesting a public certificate to validate that you own or control
+     *        domain. You can <a
+     *        href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate with DNS</a> or
+     *        <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate with
+     *        email</a>. We recommend that you use DNS validation.
      * @see ValidationMethod
      */
 
@@ -222,18 +221,17 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The method you want to use to validate that you own or control domain. You can <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-dns.html">validate
-     * with DNS</a> or <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-email.html"
-     * >validate with email</a>. We recommend that you use DNS validation.
+     * The method you want to use if you are requesting a public certificate to validate that you own or control domain.
+     * You can <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate with DNS</a>
+     * or <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate with email</a>.
+     * We recommend that you use DNS validation.
      * </p>
      * 
-     * @return The method you want to use to validate that you own or control domain. You can <a
-     *         href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-dns.html"
-     *         >validate with DNS</a> or <a href=
-     *         "http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-email.html"
-     *         >validate with email</a>. We recommend that you use DNS validation.
+     * @return The method you want to use if you are requesting a public certificate to validate that you own or control
+     *         domain. You can <a
+     *         href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate with DNS</a> or
+     *         <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate with
+     *         email</a>. We recommend that you use DNS validation.
      * @see ValidationMethod
      */
 
@@ -243,19 +241,18 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The method you want to use to validate that you own or control domain. You can <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-dns.html">validate
-     * with DNS</a> or <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-email.html"
-     * >validate with email</a>. We recommend that you use DNS validation.
+     * The method you want to use if you are requesting a public certificate to validate that you own or control domain.
+     * You can <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate with DNS</a>
+     * or <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate with email</a>.
+     * We recommend that you use DNS validation.
      * </p>
      * 
      * @param validationMethod
-     *        The method you want to use to validate that you own or control domain. You can <a
-     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-dns.html"
-     *        >validate with DNS</a> or <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-email.html"
-     *        >validate with email</a>. We recommend that you use DNS validation.
+     *        The method you want to use if you are requesting a public certificate to validate that you own or control
+     *        domain. You can <a
+     *        href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate with DNS</a> or
+     *        <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate with
+     *        email</a>. We recommend that you use DNS validation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ValidationMethod
      */
@@ -267,19 +264,18 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The method you want to use to validate that you own or control domain. You can <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-dns.html">validate
-     * with DNS</a> or <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-email.html"
-     * >validate with email</a>. We recommend that you use DNS validation.
+     * The method you want to use if you are requesting a public certificate to validate that you own or control domain.
+     * You can <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate with DNS</a>
+     * or <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate with email</a>.
+     * We recommend that you use DNS validation.
      * </p>
      * 
      * @param validationMethod
-     *        The method you want to use to validate that you own or control domain. You can <a
-     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-dns.html"
-     *        >validate with DNS</a> or <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/gs-acm-validate-email.html"
-     *        >validate with email</a>. We recommend that you use DNS validation.
+     *        The method you want to use if you are requesting a public certificate to validate that you own or control
+     *        domain. You can <a
+     *        href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate with DNS</a> or
+     *        <a href="http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate with
+     *        email</a>. We recommend that you use DNS validation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ValidationMethod
      */
@@ -296,7 +292,7 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * users can reach your site by using either name. The maximum number of domain names that you can add to an ACM
      * certificate is 100. However, the initial limit is 10 domain names. If you need more than 10 names, you must
      * request a limit increase. For more information, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-limits.html">Limits</a>.
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
      * </p>
      * <p>
      * The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple labels separated by periods.
@@ -328,8 +324,7 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      *         www.example.com if users can reach your site by using either name. The maximum number of domain names
      *         that you can add to an ACM certificate is 100. However, the initial limit is 10 domain names. If you need
      *         more than 10 names, you must request a limit increase. For more information, see <a
-     *         href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-limits.html"
-     *         >Limits</a>.</p>
+     *         href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
      *         <p>
      *         The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple labels separated by
      *         periods. No label can be longer than 63 octets. Consider the following examples:
@@ -366,7 +361,7 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * users can reach your site by using either name. The maximum number of domain names that you can add to an ACM
      * certificate is 100. However, the initial limit is 10 domain names. If you need more than 10 names, you must
      * request a limit increase. For more information, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-limits.html">Limits</a>.
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
      * </p>
      * <p>
      * The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple labels separated by periods.
@@ -399,8 +394,7 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      *        www.example.com if users can reach your site by using either name. The maximum number of domain names that
      *        you can add to an ACM certificate is 100. However, the initial limit is 10 domain names. If you need more
      *        than 10 names, you must request a limit increase. For more information, see <a
-     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-limits.html"
-     *        >Limits</a>.</p>
+     *        href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
      *        <p>
      *        The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple labels separated by
      *        periods. No label can be longer than 63 octets. Consider the following examples:
@@ -442,7 +436,7 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * users can reach your site by using either name. The maximum number of domain names that you can add to an ACM
      * certificate is 100. However, the initial limit is 10 domain names. If you need more than 10 names, you must
      * request a limit increase. For more information, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-limits.html">Limits</a>.
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
      * </p>
      * <p>
      * The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple labels separated by periods.
@@ -480,8 +474,7 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      *        www.example.com if users can reach your site by using either name. The maximum number of domain names that
      *        you can add to an ACM certificate is 100. However, the initial limit is 10 domain names. If you need more
      *        than 10 names, you must request a limit increase. For more information, see <a
-     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-limits.html"
-     *        >Limits</a>.</p>
+     *        href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
      *        <p>
      *        The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple labels separated by
      *        periods. No label can be longer than 63 octets. Consider the following examples:
@@ -525,7 +518,7 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * users can reach your site by using either name. The maximum number of domain names that you can add to an ACM
      * certificate is 100. However, the initial limit is 10 domain names. If you need more than 10 names, you must
      * request a limit increase. For more information, see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-limits.html">Limits</a>.
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.
      * </p>
      * <p>
      * The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple labels separated by periods.
@@ -558,8 +551,7 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      *        www.example.com if users can reach your site by using either name. The maximum number of domain names that
      *        you can add to an ACM certificate is 100. However, the initial limit is 10 domain names. If you need more
      *        than 10 names, you must request a limit increase. For more information, see <a
-     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-limits.html"
-     *        >Limits</a>.</p>
+     *        href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
      *        <p>
      *        The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple labels separated by
      *        periods. No label can be longer than 63 octets. Consider the following examples:
@@ -730,9 +722,9 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * Currently, you can use this parameter to specify whether to add the certificate to a certificate transparency
      * log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or
      * maliciously issued. Certificates that have not been logged typically produce an error message in a browser. For
-     * more information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-bestpractices.html#best-practices-transparency"
-     * >Opting Out of Certificate Transparency Logging</a>.
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting
+     * Out of Certificate Transparency Logging</a>.
      * </p>
      * 
      * @param options
@@ -740,7 +732,7 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      *        transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been
      *        mistakenly or maliciously issued. Certificates that have not been logged typically produce an error
      *        message in a browser. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-bestpractices.html#best-practices-transparency"
+     *        "http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency"
      *        >Opting Out of Certificate Transparency Logging</a>.
      */
 
@@ -753,16 +745,16 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * Currently, you can use this parameter to specify whether to add the certificate to a certificate transparency
      * log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or
      * maliciously issued. Certificates that have not been logged typically produce an error message in a browser. For
-     * more information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-bestpractices.html#best-practices-transparency"
-     * >Opting Out of Certificate Transparency Logging</a>.
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting
+     * Out of Certificate Transparency Logging</a>.
      * </p>
      * 
      * @return Currently, you can use this parameter to specify whether to add the certificate to a certificate
      *         transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have
      *         been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error
      *         message in a browser. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-bestpractices.html#best-practices-transparency"
+     *         "http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency"
      *         >Opting Out of Certificate Transparency Logging</a>.
      */
 
@@ -775,9 +767,9 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * Currently, you can use this parameter to specify whether to add the certificate to a certificate transparency
      * log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or
      * maliciously issued. Certificates that have not been logged typically produce an error message in a browser. For
-     * more information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-bestpractices.html#best-practices-transparency"
-     * >Opting Out of Certificate Transparency Logging</a>.
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting
+     * Out of Certificate Transparency Logging</a>.
      * </p>
      * 
      * @param options
@@ -785,7 +777,7 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      *        transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been
      *        mistakenly or maliciously issued. Certificates that have not been logged typically produce an error
      *        message in a browser. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm/latest/userguide/acm-bestpractices.html#best-practices-transparency"
+     *        "http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency"
      *        >Opting Out of Certificate Transparency Logging</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -798,9 +790,10 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the
-     * certificate. For more information about private CAs, see the <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm-pca/latest/userguide/PcaWelcome.html">AWS
-     * Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form:
+     * certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt
+     * to issue a public certificate. For more information about private CAs, see the <a
+     * href="http://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">AWS Certificate Manager Private
+     * Certificate Authority (PCA)</a> user guide. The ARN must have the following form:
      * </p>
      * <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
@@ -808,10 +801,10 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param certificateAuthorityArn
      *        The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the
-     *        certificate. For more information about private CAs, see the <a
-     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm-pca/latest/userguide/PcaWelcome.html">AWS
-     *        Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following
-     *        form: </p>
+     *        certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will
+     *        attempt to issue a public certificate. For more information about private CAs, see the <a
+     *        href="http://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">AWS Certificate Manager Private
+     *        Certificate Authority (PCA)</a> user guide. The ARN must have the following form: </p>
      *        <p>
      *        <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      */
@@ -823,19 +816,20 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the
-     * certificate. For more information about private CAs, see the <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm-pca/latest/userguide/PcaWelcome.html">AWS
-     * Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form:
+     * certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt
+     * to issue a public certificate. For more information about private CAs, see the <a
+     * href="http://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">AWS Certificate Manager Private
+     * Certificate Authority (PCA)</a> user guide. The ARN must have the following form:
      * </p>
      * <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the
-     *         certificate. For more information about private CAs, see the <a
-     *         href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm-pca/latest/userguide/PcaWelcome.html">AWS
-     *         Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following
-     *         form: </p>
+     *         certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will
+     *         attempt to issue a public certificate. For more information about private CAs, see the <a
+     *         href="http://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">AWS Certificate Manager
+     *         Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form: </p>
      *         <p>
      *         <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      */
@@ -847,9 +841,10 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the
-     * certificate. For more information about private CAs, see the <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm-pca/latest/userguide/PcaWelcome.html">AWS
-     * Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form:
+     * certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt
+     * to issue a public certificate. For more information about private CAs, see the <a
+     * href="http://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">AWS Certificate Manager Private
+     * Certificate Authority (PCA)</a> user guide. The ARN must have the following form:
      * </p>
      * <p>
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
@@ -857,10 +852,10 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param certificateAuthorityArn
      *        The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the
-     *        certificate. For more information about private CAs, see the <a
-     *        href="http://docs.aws.amazon.com/http:/docs.aws.amazon.comacm-pca/latest/userguide/PcaWelcome.html">AWS
-     *        Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following
-     *        form: </p>
+     *        certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will
+     *        attempt to issue a public certificate. For more information about private CAs, see the <a
+     *        href="http://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">AWS Certificate Manager Private
+     *        Certificate Authority (PCA)</a> user guide. The ARN must have the following form: </p>
      *        <p>
      *        <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * @return Returns a reference to this object so that method calls can be chained together.

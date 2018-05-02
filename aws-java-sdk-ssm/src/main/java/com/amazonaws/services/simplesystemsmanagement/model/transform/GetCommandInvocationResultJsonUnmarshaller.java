@@ -64,6 +64,10 @@ public class GetCommandInvocationResultJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     getCommandInvocationResult.setDocumentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DocumentVersion", targetDepth)) {
+                    context.nextToken();
+                    getCommandInvocationResult.setDocumentVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("PluginName", targetDepth)) {
                     context.nextToken();
                     getCommandInvocationResult.setPluginName(context.getUnmarshaller(String.class).unmarshall(context));

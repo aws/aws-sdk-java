@@ -38,6 +38,8 @@ public class CommandInvocationMarshaller {
             .marshallLocationName("Comment").build();
     private static final MarshallingInfo<String> DOCUMENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentName").build();
+    private static final MarshallingInfo<String> DOCUMENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentVersion").build();
     private static final MarshallingInfo<java.util.Date> REQUESTEDDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequestedDateTime").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -78,6 +80,7 @@ public class CommandInvocationMarshaller {
             protocolMarshaller.marshall(commandInvocation.getInstanceName(), INSTANCENAME_BINDING);
             protocolMarshaller.marshall(commandInvocation.getComment(), COMMENT_BINDING);
             protocolMarshaller.marshall(commandInvocation.getDocumentName(), DOCUMENTNAME_BINDING);
+            protocolMarshaller.marshall(commandInvocation.getDocumentVersion(), DOCUMENTVERSION_BINDING);
             protocolMarshaller.marshall(commandInvocation.getRequestedDateTime(), REQUESTEDDATETIME_BINDING);
             protocolMarshaller.marshall(commandInvocation.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(commandInvocation.getStatusDetails(), STATUSDETAILS_BINDING);
