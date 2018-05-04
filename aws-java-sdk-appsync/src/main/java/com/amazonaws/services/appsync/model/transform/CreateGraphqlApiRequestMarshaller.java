@@ -29,10 +29,14 @@ public class CreateGraphqlApiRequestMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<StructuredPojo> LOGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logConfig").build();
     private static final MarshallingInfo<String> AUTHENTICATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authenticationType").build();
     private static final MarshallingInfo<StructuredPojo> USERPOOLCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("userPoolConfig").build();
+    private static final MarshallingInfo<StructuredPojo> OPENIDCONNECTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("openIDConnectConfig").build();
 
     private static final CreateGraphqlApiRequestMarshaller instance = new CreateGraphqlApiRequestMarshaller();
 
@@ -51,8 +55,10 @@ public class CreateGraphqlApiRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createGraphqlApiRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createGraphqlApiRequest.getLogConfig(), LOGCONFIG_BINDING);
             protocolMarshaller.marshall(createGraphqlApiRequest.getAuthenticationType(), AUTHENTICATIONTYPE_BINDING);
             protocolMarshaller.marshall(createGraphqlApiRequest.getUserPoolConfig(), USERPOOLCONFIG_BINDING);
+            protocolMarshaller.marshall(createGraphqlApiRequest.getOpenIDConnectConfig(), OPENIDCONNECTCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

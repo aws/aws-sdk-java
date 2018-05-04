@@ -69,7 +69,14 @@ public enum ResourceType {
     AWSWAFRegionalRule("AWS::WAFRegional::Rule"),
     AWSWAFRegionalWebACL("AWS::WAFRegional::WebACL"),
     AWSCloudFrontDistribution("AWS::CloudFront::Distribution"),
-    AWSCloudFrontStreamingDistribution("AWS::CloudFront::StreamingDistribution");
+    AWSCloudFrontStreamingDistribution("AWS::CloudFront::StreamingDistribution"),
+    AWSWAFRuleGroup("AWS::WAF::RuleGroup"),
+    AWSWAFRegionalRuleGroup("AWS::WAFRegional::RuleGroup"),
+    AWSLambdaFunction("AWS::Lambda::Function"),
+    AWSElasticBeanstalkApplication("AWS::ElasticBeanstalk::Application"),
+    AWSElasticBeanstalkApplicationVersion("AWS::ElasticBeanstalk::ApplicationVersion"),
+    AWSElasticBeanstalkEnvironment("AWS::ElasticBeanstalk::Environment"),
+    AWSElasticLoadBalancingLoadBalancer("AWS::ElasticLoadBalancing::LoadBalancer");
 
     private String value;
 

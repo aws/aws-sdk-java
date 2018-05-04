@@ -68,8 +68,9 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>NONE</b>: There is no data source. This type is used when the required information can be computed on the fly
-     * without connecting to a back-end data source.
+     * <b>NONE</b>: There is no data source. This type is used when when you wish to invoke a GraphQL operation without
+     * connecting to a data source, such as performing data transformation with resolvers or triggering a subscription
+     * to be invoked from a mutation.
      * </p>
      * </li>
      * </ul>
@@ -242,8 +243,9 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>NONE</b>: There is no data source. This type is used when the required information can be computed on the fly
-     * without connecting to a back-end data source.
+     * <b>NONE</b>: There is no data source. This type is used when when you wish to invoke a GraphQL operation without
+     * connecting to a data source, such as performing data transformation with resolvers or triggering a subscription
+     * to be invoked from a mutation.
      * </p>
      * </li>
      * </ul>
@@ -268,8 +270,9 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>NONE</b>: There is no data source. This type is used when the required information can be computed on
-     *        the fly without connecting to a back-end data source.
+     *        <b>NONE</b>: There is no data source. This type is used when when you wish to invoke a GraphQL operation
+     *        without connecting to a data source, such as performing data transformation with resolvers or triggering a
+     *        subscription to be invoked from a mutation.
      *        </p>
      *        </li>
      * @see DataSourceType
@@ -301,8 +304,9 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>NONE</b>: There is no data source. This type is used when the required information can be computed on the fly
-     * without connecting to a back-end data source.
+     * <b>NONE</b>: There is no data source. This type is used when when you wish to invoke a GraphQL operation without
+     * connecting to a data source, such as performing data transformation with resolvers or triggering a subscription
+     * to be invoked from a mutation.
      * </p>
      * </li>
      * </ul>
@@ -326,8 +330,9 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <b>NONE</b>: There is no data source. This type is used when the required information can be computed on
-     *         the fly without connecting to a back-end data source.
+     *         <b>NONE</b>: There is no data source. This type is used when when you wish to invoke a GraphQL operation
+     *         without connecting to a data source, such as performing data transformation with resolvers or triggering
+     *         a subscription to be invoked from a mutation.
      *         </p>
      *         </li>
      * @see DataSourceType
@@ -359,8 +364,9 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>NONE</b>: There is no data source. This type is used when the required information can be computed on the fly
-     * without connecting to a back-end data source.
+     * <b>NONE</b>: There is no data source. This type is used when when you wish to invoke a GraphQL operation without
+     * connecting to a data source, such as performing data transformation with resolvers or triggering a subscription
+     * to be invoked from a mutation.
      * </p>
      * </li>
      * </ul>
@@ -385,8 +391,9 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>NONE</b>: There is no data source. This type is used when the required information can be computed on
-     *        the fly without connecting to a back-end data source.
+     *        <b>NONE</b>: There is no data source. This type is used when when you wish to invoke a GraphQL operation
+     *        without connecting to a data source, such as performing data transformation with resolvers or triggering a
+     *        subscription to be invoked from a mutation.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -420,8 +427,9 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>NONE</b>: There is no data source. This type is used when the required information can be computed on the fly
-     * without connecting to a back-end data source.
+     * <b>NONE</b>: There is no data source. This type is used when when you wish to invoke a GraphQL operation without
+     * connecting to a data source, such as performing data transformation with resolvers or triggering a subscription
+     * to be invoked from a mutation.
      * </p>
      * </li>
      * </ul>
@@ -446,8 +454,9 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>NONE</b>: There is no data source. This type is used when the required information can be computed on
-     *        the fly without connecting to a back-end data source.
+     *        <b>NONE</b>: There is no data source. This type is used when when you wish to invoke a GraphQL operation
+     *        without connecting to a data source, such as performing data transformation with resolvers or triggering a
+     *        subscription to be invoked from a mutation.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

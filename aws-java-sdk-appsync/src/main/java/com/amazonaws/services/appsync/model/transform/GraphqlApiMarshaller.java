@@ -35,8 +35,12 @@ public class GraphqlApiMarshaller {
             .marshallLocationName("apiId").build();
     private static final MarshallingInfo<String> AUTHENTICATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authenticationType").build();
+    private static final MarshallingInfo<StructuredPojo> LOGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logConfig").build();
     private static final MarshallingInfo<StructuredPojo> USERPOOLCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("userPoolConfig").build();
+    private static final MarshallingInfo<StructuredPojo> OPENIDCONNECTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("openIDConnectConfig").build();
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
     private static final MarshallingInfo<Map> URIS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -61,7 +65,9 @@ public class GraphqlApiMarshaller {
             protocolMarshaller.marshall(graphqlApi.getName(), NAME_BINDING);
             protocolMarshaller.marshall(graphqlApi.getApiId(), APIID_BINDING);
             protocolMarshaller.marshall(graphqlApi.getAuthenticationType(), AUTHENTICATIONTYPE_BINDING);
+            protocolMarshaller.marshall(graphqlApi.getLogConfig(), LOGCONFIG_BINDING);
             protocolMarshaller.marshall(graphqlApi.getUserPoolConfig(), USERPOOLCONFIG_BINDING);
+            protocolMarshaller.marshall(graphqlApi.getOpenIDConnectConfig(), OPENIDCONNECTCONFIG_BINDING);
             protocolMarshaller.marshall(graphqlApi.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(graphqlApi.getUris(), URIS_BINDING);
         } catch (Exception e) {

@@ -39,8 +39,9 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String description;
     /**
      * <p>
-     * The time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the
-     * nearest hour. The default value for this parameter is 7 days from creation time.
+     * The time from creation time after which the API key expires. The date is represented as seconds since the epoch,
+     * rounded down to the nearest hour. The default value for this parameter is 7 days from creation time. For more
+     * information, see .
      * </p>
      */
     private Long expires;
@@ -127,13 +128,15 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the
-     * nearest hour. The default value for this parameter is 7 days from creation time.
+     * The time from creation time after which the API key expires. The date is represented as seconds since the epoch,
+     * rounded down to the nearest hour. The default value for this parameter is 7 days from creation time. For more
+     * information, see .
      * </p>
      * 
      * @param expires
-     *        The time after which the API key expires. The date is represented as seconds since the epoch, rounded down
-     *        to the nearest hour. The default value for this parameter is 7 days from creation time.
+     *        The time from creation time after which the API key expires. The date is represented as seconds since the
+     *        epoch, rounded down to the nearest hour. The default value for this parameter is 7 days from creation
+     *        time. For more information, see .
      */
 
     public void setExpires(Long expires) {
@@ -142,12 +145,14 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the
-     * nearest hour. The default value for this parameter is 7 days from creation time.
+     * The time from creation time after which the API key expires. The date is represented as seconds since the epoch,
+     * rounded down to the nearest hour. The default value for this parameter is 7 days from creation time. For more
+     * information, see .
      * </p>
      * 
-     * @return The time after which the API key expires. The date is represented as seconds since the epoch, rounded
-     *         down to the nearest hour. The default value for this parameter is 7 days from creation time.
+     * @return The time from creation time after which the API key expires. The date is represented as seconds since the
+     *         epoch, rounded down to the nearest hour. The default value for this parameter is 7 days from creation
+     *         time. For more information, see .
      */
 
     public Long getExpires() {
@@ -156,13 +161,15 @@ public class CreateApiKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the
-     * nearest hour. The default value for this parameter is 7 days from creation time.
+     * The time from creation time after which the API key expires. The date is represented as seconds since the epoch,
+     * rounded down to the nearest hour. The default value for this parameter is 7 days from creation time. For more
+     * information, see .
      * </p>
      * 
      * @param expires
-     *        The time after which the API key expires. The date is represented as seconds since the epoch, rounded down
-     *        to the nearest hour. The default value for this parameter is 7 days from creation time.
+     *        The time from creation time after which the API key expires. The date is represented as seconds since the
+     *        epoch, rounded down to the nearest hour. The default value for this parameter is 7 days from creation
+     *        time. For more information, see .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

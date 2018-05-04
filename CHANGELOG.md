@@ -1,3 +1,16 @@
+# __1.11.322__ __2018-05-04__
+## __AWS AppSync__
+  - ### Features
+    - This release adds support for authorizing your AWS AppSync endpoint with an OpenID Connect compliant service and also to configure your AWS AppSync endpoint to log requests to Amazon CloudWatch Logs.
+
+## __AWS Config__
+  - ### Features
+    - Update ResourceType enum with values for Lambda, ElasticBeanstalk, WAF and ElasticLoadBalancing resources
+
+## __AWS Secrets Manager__
+  - ### Features
+    - Documentation updates for secretsmanager
+
 # __1.11.321__ __2018-05-02__
 ## __AWS Certificate Manager__
   - ### Features

@@ -48,10 +48,22 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
     private String authenticationType;
     /**
      * <p>
+     * The Amazon CloudWatch Logs configuration.
+     * </p>
+     */
+    private LogConfig logConfig;
+    /**
+     * <p>
      * The Amazon Cognito User Pool configuration.
      * </p>
      */
     private UserPoolConfig userPoolConfig;
+    /**
+     * <p>
+     * The Open Id Connect configuration.
+     * </p>
+     */
+    private OpenIDConnectConfig openIDConnectConfig;
     /**
      * <p>
      * The ARN.
@@ -206,6 +218,46 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The Amazon CloudWatch Logs configuration.
+     * </p>
+     * 
+     * @param logConfig
+     *        The Amazon CloudWatch Logs configuration.
+     */
+
+    public void setLogConfig(LogConfig logConfig) {
+        this.logConfig = logConfig;
+    }
+
+    /**
+     * <p>
+     * The Amazon CloudWatch Logs configuration.
+     * </p>
+     * 
+     * @return The Amazon CloudWatch Logs configuration.
+     */
+
+    public LogConfig getLogConfig() {
+        return this.logConfig;
+    }
+
+    /**
+     * <p>
+     * The Amazon CloudWatch Logs configuration.
+     * </p>
+     * 
+     * @param logConfig
+     *        The Amazon CloudWatch Logs configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GraphqlApi withLogConfig(LogConfig logConfig) {
+        setLogConfig(logConfig);
+        return this;
+    }
+
+    /**
+     * <p>
      * The Amazon Cognito User Pool configuration.
      * </p>
      * 
@@ -241,6 +293,46 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
 
     public GraphqlApi withUserPoolConfig(UserPoolConfig userPoolConfig) {
         setUserPoolConfig(userPoolConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Open Id Connect configuration.
+     * </p>
+     * 
+     * @param openIDConnectConfig
+     *        The Open Id Connect configuration.
+     */
+
+    public void setOpenIDConnectConfig(OpenIDConnectConfig openIDConnectConfig) {
+        this.openIDConnectConfig = openIDConnectConfig;
+    }
+
+    /**
+     * <p>
+     * The Open Id Connect configuration.
+     * </p>
+     * 
+     * @return The Open Id Connect configuration.
+     */
+
+    public OpenIDConnectConfig getOpenIDConnectConfig() {
+        return this.openIDConnectConfig;
+    }
+
+    /**
+     * <p>
+     * The Open Id Connect configuration.
+     * </p>
+     * 
+     * @param openIDConnectConfig
+     *        The Open Id Connect configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GraphqlApi withOpenIDConnectConfig(OpenIDConnectConfig openIDConnectConfig) {
+        setOpenIDConnectConfig(openIDConnectConfig);
         return this;
     }
 
@@ -362,8 +454,12 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
             sb.append("ApiId: ").append(getApiId()).append(",");
         if (getAuthenticationType() != null)
             sb.append("AuthenticationType: ").append(getAuthenticationType()).append(",");
+        if (getLogConfig() != null)
+            sb.append("LogConfig: ").append(getLogConfig()).append(",");
         if (getUserPoolConfig() != null)
             sb.append("UserPoolConfig: ").append(getUserPoolConfig()).append(",");
+        if (getOpenIDConnectConfig() != null)
+            sb.append("OpenIDConnectConfig: ").append(getOpenIDConnectConfig()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getUris() != null)
@@ -394,9 +490,17 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAuthenticationType() != null && other.getAuthenticationType().equals(this.getAuthenticationType()) == false)
             return false;
+        if (other.getLogConfig() == null ^ this.getLogConfig() == null)
+            return false;
+        if (other.getLogConfig() != null && other.getLogConfig().equals(this.getLogConfig()) == false)
+            return false;
         if (other.getUserPoolConfig() == null ^ this.getUserPoolConfig() == null)
             return false;
         if (other.getUserPoolConfig() != null && other.getUserPoolConfig().equals(this.getUserPoolConfig()) == false)
+            return false;
+        if (other.getOpenIDConnectConfig() == null ^ this.getOpenIDConnectConfig() == null)
+            return false;
+        if (other.getOpenIDConnectConfig() != null && other.getOpenIDConnectConfig().equals(this.getOpenIDConnectConfig()) == false)
             return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
@@ -417,7 +521,9 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getApiId() == null) ? 0 : getApiId().hashCode());
         hashCode = prime * hashCode + ((getAuthenticationType() == null) ? 0 : getAuthenticationType().hashCode());
+        hashCode = prime * hashCode + ((getLogConfig() == null) ? 0 : getLogConfig().hashCode());
         hashCode = prime * hashCode + ((getUserPoolConfig() == null) ? 0 : getUserPoolConfig().hashCode());
+        hashCode = prime * hashCode + ((getOpenIDConnectConfig() == null) ? 0 : getOpenIDConnectConfig().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getUris() == null) ? 0 : getUris().hashCode());
         return hashCode;

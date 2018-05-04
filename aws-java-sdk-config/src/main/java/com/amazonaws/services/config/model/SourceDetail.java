@@ -69,8 +69,9 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * If you want your custom rule to be triggered by configuration changes, specify both
-     * <code>ConfigurationItemChangeNotification</code> and <code>OversizedConfigurationItemChangeNotification</code>.
+     * If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects, one for
+     * <code>ConfigurationItemChangeNotification</code> and one for
+     * <code>OversizedConfigurationItemChangeNotification</code>.
      * </p>
      */
     private String messageType;
@@ -200,8 +201,9 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * If you want your custom rule to be triggered by configuration changes, specify both
-     * <code>ConfigurationItemChangeNotification</code> and <code>OversizedConfigurationItemChangeNotification</code>.
+     * If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects, one for
+     * <code>ConfigurationItemChangeNotification</code> and one for
+     * <code>OversizedConfigurationItemChangeNotification</code>.
      * </p>
      * 
      * @param messageType
@@ -235,8 +237,8 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        If you want your custom rule to be triggered by configuration changes, specify both
-     *        <code>ConfigurationItemChangeNotification</code> and
+     *        If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects,
+     *        one for <code>ConfigurationItemChangeNotification</code> and one for
      *        <code>OversizedConfigurationItemChangeNotification</code>.
      * @see MessageType
      */
@@ -278,8 +280,9 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * If you want your custom rule to be triggered by configuration changes, specify both
-     * <code>ConfigurationItemChangeNotification</code> and <code>OversizedConfigurationItemChangeNotification</code>.
+     * If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects, one for
+     * <code>ConfigurationItemChangeNotification</code> and one for
+     * <code>OversizedConfigurationItemChangeNotification</code>.
      * </p>
      * 
      * @return The type of notification that triggers AWS Config to run an evaluation for a rule. You can specify the
@@ -312,8 +315,8 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         </ul>
      *         <p>
-     *         If you want your custom rule to be triggered by configuration changes, specify both
-     *         <code>ConfigurationItemChangeNotification</code> and
+     *         If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects,
+     *         one for <code>ConfigurationItemChangeNotification</code> and one for
      *         <code>OversizedConfigurationItemChangeNotification</code>.
      * @see MessageType
      */
@@ -355,8 +358,9 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * If you want your custom rule to be triggered by configuration changes, specify both
-     * <code>ConfigurationItemChangeNotification</code> and <code>OversizedConfigurationItemChangeNotification</code>.
+     * If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects, one for
+     * <code>ConfigurationItemChangeNotification</code> and one for
+     * <code>OversizedConfigurationItemChangeNotification</code>.
      * </p>
      * 
      * @param messageType
@@ -390,8 +394,8 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        If you want your custom rule to be triggered by configuration changes, specify both
-     *        <code>ConfigurationItemChangeNotification</code> and
+     *        If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects,
+     *        one for <code>ConfigurationItemChangeNotification</code> and one for
      *        <code>OversizedConfigurationItemChangeNotification</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MessageType
@@ -435,8 +439,9 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * If you want your custom rule to be triggered by configuration changes, specify both
-     * <code>ConfigurationItemChangeNotification</code> and <code>OversizedConfigurationItemChangeNotification</code>.
+     * If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects, one for
+     * <code>ConfigurationItemChangeNotification</code> and one for
+     * <code>OversizedConfigurationItemChangeNotification</code>.
      * </p>
      * 
      * @param messageType
@@ -470,8 +475,8 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        If you want your custom rule to be triggered by configuration changes, specify both
-     *        <code>ConfigurationItemChangeNotification</code> and
+     *        If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects,
+     *        one for <code>ConfigurationItemChangeNotification</code> and one for
      *        <code>OversizedConfigurationItemChangeNotification</code>.
      * @see MessageType
      */
@@ -513,8 +518,9 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * If you want your custom rule to be triggered by configuration changes, specify both
-     * <code>ConfigurationItemChangeNotification</code> and <code>OversizedConfigurationItemChangeNotification</code>.
+     * If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects, one for
+     * <code>ConfigurationItemChangeNotification</code> and one for
+     * <code>OversizedConfigurationItemChangeNotification</code>.
      * </p>
      * 
      * @param messageType
@@ -548,8 +554,8 @@ public class SourceDetail implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        If you want your custom rule to be triggered by configuration changes, specify both
-     *        <code>ConfigurationItemChangeNotification</code> and
+     *        If you want your custom rule to be triggered by configuration changes, specify two SourceDetail objects,
+     *        one for <code>ConfigurationItemChangeNotification</code> and one for
      *        <code>OversizedConfigurationItemChangeNotification</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MessageType

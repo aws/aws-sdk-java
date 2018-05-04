@@ -540,6 +540,13 @@ public interface AWSAppSyncAsync extends AWSAppSync {
      * <p>
      * Lists the API keys for a given API.
      * </p>
+     * <note>
+     * <p>
+     * API keys are deleted automatically sometime after they expire. However, they may still be included in the
+     * response until they have actually been deleted. You can safely call <code>DeleteApiKey</code> to manually delete
+     * a key before it's automatically deleted.
+     * </p>
+     * </note>
      * 
      * @param listApiKeysRequest
      * @return A Java Future containing the result of the ListApiKeys operation returned by the service.
@@ -553,6 +560,13 @@ public interface AWSAppSyncAsync extends AWSAppSync {
      * <p>
      * Lists the API keys for a given API.
      * </p>
+     * <note>
+     * <p>
+     * API keys are deleted automatically sometime after they expire. However, they may still be included in the
+     * response until they have actually been deleted. You can safely call <code>DeleteApiKey</code> to manually delete
+     * a key before it's automatically deleted.
+     * </p>
+     * </note>
      * 
      * @param listApiKeysRequest
      * @param asyncHandler

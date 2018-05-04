@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The API key expiration must be set to a value between 1 and 365 days.
+ * The API key expiration must be set to a value between 1 and 365 days from creation (for <code>CreateApiKey</code>) or
+ * from update (for <code>UpdateApiKey</code>).
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

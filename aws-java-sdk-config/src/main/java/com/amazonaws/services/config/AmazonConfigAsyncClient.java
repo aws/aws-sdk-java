@@ -51,51 +51,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * href="http://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html">What Is AWS Config</a> in the <i>AWS
  * Config Developer Guide</i>.
  * </p>
- * <ul>
- * <li/>
- * <li/>
- * <li/>
- * <li/>
- * <li/>
- * <li/>
- * <li/>
- * <li/>
- * <li/>
- * <li/>
- * <li/>
- * <li/>
- * <li/>
- * <li/>
- * </ul>
- * <ul>
- * <li/>
- * <li/>
- * <li/>
- * <li/>
- * <li/>
- * <li/>
- * <li/>
- * <li/>
- * <li/>
- * <li/>
- * <li/>
- * <li/>
- * <li/>
- * </ul>
- * <ul>
- * <li></li>
- * <li/>
- * <li/>
- * <li/>
- * <li/>
- * <li/>
- * <li/>
- * <li/>
- * <li/>
- * <li/>
- * <li/>
- * <li/>
- * </ul>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -33,6 +33,12 @@ public class CreateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
     private String name;
     /**
      * <p>
+     * The Amazon CloudWatch logs configuration.
+     * </p>
+     */
+    private LogConfig logConfig;
+    /**
+     * <p>
      * The authentication type: API key, IAM, or Amazon Cognito User Pools.
      * </p>
      */
@@ -43,6 +49,12 @@ public class CreateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private UserPoolConfig userPoolConfig;
+    /**
+     * <p>
+     * The Open Id Connect configuration configuration.
+     * </p>
+     */
+    private OpenIDConnectConfig openIDConnectConfig;
 
     /**
      * <p>
@@ -81,6 +93,46 @@ public class CreateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
 
     public CreateGraphqlApiRequest withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon CloudWatch logs configuration.
+     * </p>
+     * 
+     * @param logConfig
+     *        The Amazon CloudWatch logs configuration.
+     */
+
+    public void setLogConfig(LogConfig logConfig) {
+        this.logConfig = logConfig;
+    }
+
+    /**
+     * <p>
+     * The Amazon CloudWatch logs configuration.
+     * </p>
+     * 
+     * @return The Amazon CloudWatch logs configuration.
+     */
+
+    public LogConfig getLogConfig() {
+        return this.logConfig;
+    }
+
+    /**
+     * <p>
+     * The Amazon CloudWatch logs configuration.
+     * </p>
+     * 
+     * @param logConfig
+     *        The Amazon CloudWatch logs configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateGraphqlApiRequest withLogConfig(LogConfig logConfig) {
+        setLogConfig(logConfig);
         return this;
     }
 
@@ -184,6 +236,46 @@ public class CreateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The Open Id Connect configuration configuration.
+     * </p>
+     * 
+     * @param openIDConnectConfig
+     *        The Open Id Connect configuration configuration.
+     */
+
+    public void setOpenIDConnectConfig(OpenIDConnectConfig openIDConnectConfig) {
+        this.openIDConnectConfig = openIDConnectConfig;
+    }
+
+    /**
+     * <p>
+     * The Open Id Connect configuration configuration.
+     * </p>
+     * 
+     * @return The Open Id Connect configuration configuration.
+     */
+
+    public OpenIDConnectConfig getOpenIDConnectConfig() {
+        return this.openIDConnectConfig;
+    }
+
+    /**
+     * <p>
+     * The Open Id Connect configuration configuration.
+     * </p>
+     * 
+     * @param openIDConnectConfig
+     *        The Open Id Connect configuration configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateGraphqlApiRequest withOpenIDConnectConfig(OpenIDConnectConfig openIDConnectConfig) {
+        setOpenIDConnectConfig(openIDConnectConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -196,10 +288,14 @@ public class CreateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
         sb.append("{");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getLogConfig() != null)
+            sb.append("LogConfig: ").append(getLogConfig()).append(",");
         if (getAuthenticationType() != null)
             sb.append("AuthenticationType: ").append(getAuthenticationType()).append(",");
         if (getUserPoolConfig() != null)
-            sb.append("UserPoolConfig: ").append(getUserPoolConfig());
+            sb.append("UserPoolConfig: ").append(getUserPoolConfig()).append(",");
+        if (getOpenIDConnectConfig() != null)
+            sb.append("OpenIDConnectConfig: ").append(getOpenIDConnectConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -218,6 +314,10 @@ public class CreateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getLogConfig() == null ^ this.getLogConfig() == null)
+            return false;
+        if (other.getLogConfig() != null && other.getLogConfig().equals(this.getLogConfig()) == false)
+            return false;
         if (other.getAuthenticationType() == null ^ this.getAuthenticationType() == null)
             return false;
         if (other.getAuthenticationType() != null && other.getAuthenticationType().equals(this.getAuthenticationType()) == false)
@@ -225,6 +325,10 @@ public class CreateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
         if (other.getUserPoolConfig() == null ^ this.getUserPoolConfig() == null)
             return false;
         if (other.getUserPoolConfig() != null && other.getUserPoolConfig().equals(this.getUserPoolConfig()) == false)
+            return false;
+        if (other.getOpenIDConnectConfig() == null ^ this.getOpenIDConnectConfig() == null)
+            return false;
+        if (other.getOpenIDConnectConfig() != null && other.getOpenIDConnectConfig().equals(this.getOpenIDConnectConfig()) == false)
             return false;
         return true;
     }
@@ -235,8 +339,10 @@ public class CreateGraphqlApiRequest extends com.amazonaws.AmazonWebServiceReque
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getLogConfig() == null) ? 0 : getLogConfig().hashCode());
         hashCode = prime * hashCode + ((getAuthenticationType() == null) ? 0 : getAuthenticationType().hashCode());
         hashCode = prime * hashCode + ((getUserPoolConfig() == null) ? 0 : getUserPoolConfig().hashCode());
+        hashCode = prime * hashCode + ((getOpenIDConnectConfig() == null) ? 0 : getOpenIDConnectConfig().hashCode());
         return hashCode;
     }
 

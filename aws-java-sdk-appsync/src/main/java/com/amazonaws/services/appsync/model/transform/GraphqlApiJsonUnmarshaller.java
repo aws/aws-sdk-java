@@ -60,9 +60,17 @@ public class GraphqlApiJsonUnmarshaller implements Unmarshaller<GraphqlApi, Json
                     context.nextToken();
                     graphqlApi.setAuthenticationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("logConfig", targetDepth)) {
+                    context.nextToken();
+                    graphqlApi.setLogConfig(LogConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("userPoolConfig", targetDepth)) {
                     context.nextToken();
                     graphqlApi.setUserPoolConfig(UserPoolConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("openIDConnectConfig", targetDepth)) {
+                    context.nextToken();
+                    graphqlApi.setOpenIDConnectConfig(OpenIDConnectConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();

@@ -289,8 +289,8 @@ public interface AWSSecretsManagerAsync extends AWSSecretsManager {
      * <p>
      * You provide the secret data to be encrypted by putting text in either the <code>SecretString</code> parameter or
      * binary data in the <code>SecretBinary</code> parameter, but not both. If you include <code>SecretString</code> or
-     * <code>SecretBinary</code> then Secrets Manager also creates an initial secret version and, if you don't supply a
-     * staging label, automatically maps the new version's ID to the staging label <code>AWSCURRENT</code>.
+     * <code>SecretBinary</code> then Secrets Manager also creates an initial secret version and automatically attaches
+     * the staging label <code>AWSCURRENT</code> to the new version.
      * </p>
      * <note>
      * <ul>
@@ -407,8 +407,8 @@ public interface AWSSecretsManagerAsync extends AWSSecretsManager {
      * <p>
      * You provide the secret data to be encrypted by putting text in either the <code>SecretString</code> parameter or
      * binary data in the <code>SecretBinary</code> parameter, but not both. If you include <code>SecretString</code> or
-     * <code>SecretBinary</code> then Secrets Manager also creates an initial secret version and, if you don't supply a
-     * staging label, automatically maps the new version's ID to the staging label <code>AWSCURRENT</code>.
+     * <code>SecretBinary</code> then Secrets Manager also creates an initial secret version and automatically attaches
+     * the staging label <code>AWSCURRENT</code> to the new version.
      * </p>
      * <note>
      * <ul>
@@ -1134,7 +1134,8 @@ public interface AWSSecretsManagerAsync extends AWSSecretsManager {
      * <p>
      * Stores a new encrypted secret value in the specified secret. To do this, the operation creates a new version and
      * attaches it to the secret. The version can contain a new <code>SecretString</code> value or a new
-     * <code>SecretBinary</code> value.
+     * <code>SecretBinary</code> value. You can also specify the staging labels that are initially attached to the new
+     * version.
      * </p>
      * <note>
      * <p>
@@ -1152,7 +1153,14 @@ public interface AWSSecretsManagerAsync extends AWSSecretsManager {
      * <li>
      * <p>
      * If another version of this secret already exists, then this operation does not automatically move any staging
-     * labels other than those that you specify in the <code>VersionStages</code> parameter.
+     * labels other than those that you explicitly specify in the <code>VersionStages</code> parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If this operation moves the staging label <code>AWSCURRENT</code> from another version to this version (because
+     * you included it in the <code>StagingLabels</code> parameter) then Secrets Manager also automatically moves the
+     * staging label <code>AWSPREVIOUS</code> to the version that <code>AWSCURRENT</code> was removed from.
      * </p>
      * </li>
      * <li>
@@ -1161,13 +1169,6 @@ public interface AWSSecretsManagerAsync extends AWSSecretsManager {
      * <code>ClientRequestToken</code> parameter already exists and you specify the same secret data, the operation
      * succeeds but does nothing. However, if the secret data is different, then the operation fails because you cannot
      * modify an existing version; you can only create new ones.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If this operation moves the staging label <code>AWSCURRENT</code> to this version (because you included it in the
-     * <code>StagingLabels</code> parameter) then Secrets Manager also automatically moves the staging label
-     * <code>AWSPREVIOUS</code> to the version that <code>AWSCURRENT</code> was removed from.
      * </p>
      * </li>
      * </ul>
@@ -1260,7 +1261,8 @@ public interface AWSSecretsManagerAsync extends AWSSecretsManager {
      * <p>
      * Stores a new encrypted secret value in the specified secret. To do this, the operation creates a new version and
      * attaches it to the secret. The version can contain a new <code>SecretString</code> value or a new
-     * <code>SecretBinary</code> value.
+     * <code>SecretBinary</code> value. You can also specify the staging labels that are initially attached to the new
+     * version.
      * </p>
      * <note>
      * <p>
@@ -1278,7 +1280,14 @@ public interface AWSSecretsManagerAsync extends AWSSecretsManager {
      * <li>
      * <p>
      * If another version of this secret already exists, then this operation does not automatically move any staging
-     * labels other than those that you specify in the <code>VersionStages</code> parameter.
+     * labels other than those that you explicitly specify in the <code>VersionStages</code> parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If this operation moves the staging label <code>AWSCURRENT</code> from another version to this version (because
+     * you included it in the <code>StagingLabels</code> parameter) then Secrets Manager also automatically moves the
+     * staging label <code>AWSPREVIOUS</code> to the version that <code>AWSCURRENT</code> was removed from.
      * </p>
      * </li>
      * <li>
@@ -1287,13 +1296,6 @@ public interface AWSSecretsManagerAsync extends AWSSecretsManager {
      * <code>ClientRequestToken</code> parameter already exists and you specify the same secret data, the operation
      * succeeds but does nothing. However, if the secret data is different, then the operation fails because you cannot
      * modify an existing version; you can only create new ones.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If this operation moves the staging label <code>AWSCURRENT</code> to this version (because you included it in the
-     * <code>StagingLabels</code> parameter) then Secrets Manager also automatically moves the staging label
-     * <code>AWSPREVIOUS</code> to the version that <code>AWSCURRENT</code> was removed from.
      * </p>
      * </li>
      * </ul>
@@ -1965,17 +1967,15 @@ public interface AWSSecretsManagerAsync extends AWSSecretsManager {
      * <ul>
      * <li>
      * <p>
-     * If this update creates the first version of the secret or if you did not include the <code>VersionStages</code>
-     * parameter then Secrets Manager automatically attaches the staging label <code>AWSCURRENT</code> to the new
-     * version and removes it from any version that had it previously. The previous version (if any) is then given the
-     * staging label <code>AWSPREVIOUS</code>.
+     * If a version with a <code>SecretVersionId</code> with the same value as the <code>ClientRequestToken</code>
+     * parameter already exists, the operation generates an error. You cannot modify an existing version, you can only
+     * create new ones.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If a version with a <code>SecretVersionId</code> with the same value as the <code>ClientRequestToken</code>
-     * parameter already exists, the operation generates an error. You cannot modify an existing version, you can only
-     * create new ones.
+     * If you include <code>SecretString</code> or <code>SecretBinary</code> to create a new secret version, Secrets
+     * Manager automatically attaches the staging label <code>AWSCURRENT</code> to the new version.
      * </p>
      * </li>
      * </ul>
@@ -2082,17 +2082,15 @@ public interface AWSSecretsManagerAsync extends AWSSecretsManager {
      * <ul>
      * <li>
      * <p>
-     * If this update creates the first version of the secret or if you did not include the <code>VersionStages</code>
-     * parameter then Secrets Manager automatically attaches the staging label <code>AWSCURRENT</code> to the new
-     * version and removes it from any version that had it previously. The previous version (if any) is then given the
-     * staging label <code>AWSPREVIOUS</code>.
+     * If a version with a <code>SecretVersionId</code> with the same value as the <code>ClientRequestToken</code>
+     * parameter already exists, the operation generates an error. You cannot modify an existing version, you can only
+     * create new ones.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If a version with a <code>SecretVersionId</code> with the same value as the <code>ClientRequestToken</code>
-     * parameter already exists, the operation generates an error. You cannot modify an existing version, you can only
-     * create new ones.
+     * If you include <code>SecretString</code> or <code>SecretBinary</code> to create a new secret version, Secrets
+     * Manager automatically attaches the staging label <code>AWSCURRENT</code> to the new version.
      * </p>
      * </li>
      * </ul>
