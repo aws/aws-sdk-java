@@ -28,6 +28,8 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
 
     /** A list of EC2 instance IPv6 address information. */
     private java.util.List<String> ipv6Addresses;
+    /** The ID of the network interface */
+    private String networkInterfaceId;
     /** Private DNS name of the EC2 instance. */
     private String privateDnsName;
     /** Private IP address of the EC2 instance. */
@@ -104,6 +106,40 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
 
     public NetworkInterface withIpv6Addresses(java.util.Collection<String> ipv6Addresses) {
         setIpv6Addresses(ipv6Addresses);
+        return this;
+    }
+
+    /**
+     * The ID of the network interface
+     * 
+     * @param networkInterfaceId
+     *        The ID of the network interface
+     */
+
+    public void setNetworkInterfaceId(String networkInterfaceId) {
+        this.networkInterfaceId = networkInterfaceId;
+    }
+
+    /**
+     * The ID of the network interface
+     * 
+     * @return The ID of the network interface
+     */
+
+    public String getNetworkInterfaceId() {
+        return this.networkInterfaceId;
+    }
+
+    /**
+     * The ID of the network interface
+     * 
+     * @param networkInterfaceId
+     *        The ID of the network interface
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInterface withNetworkInterfaceId(String networkInterfaceId) {
+        setNetworkInterfaceId(networkInterfaceId);
         return this;
     }
 
@@ -448,6 +484,8 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
         sb.append("{");
         if (getIpv6Addresses() != null)
             sb.append("Ipv6Addresses: ").append(getIpv6Addresses()).append(",");
+        if (getNetworkInterfaceId() != null)
+            sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getPrivateDnsName() != null)
             sb.append("PrivateDnsName: ").append(getPrivateDnsName()).append(",");
         if (getPrivateIpAddress() != null)
@@ -481,6 +519,10 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
         if (other.getIpv6Addresses() == null ^ this.getIpv6Addresses() == null)
             return false;
         if (other.getIpv6Addresses() != null && other.getIpv6Addresses().equals(this.getIpv6Addresses()) == false)
+            return false;
+        if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
+            return false;
+        if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
             return false;
         if (other.getPrivateDnsName() == null ^ this.getPrivateDnsName() == null)
             return false;
@@ -523,6 +565,7 @@ public class NetworkInterface implements Serializable, Cloneable, StructuredPojo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getIpv6Addresses() == null) ? 0 : getIpv6Addresses().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
         hashCode = prime * hashCode + ((getPrivateDnsName() == null) ? 0 : getPrivateDnsName().hashCode());
         hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode());
         hashCode = prime * hashCode + ((getPrivateIpAddresses() == null) ? 0 : getPrivateIpAddresses().hashCode());

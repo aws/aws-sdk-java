@@ -43,6 +43,11 @@ public class AbstractAmazonGuardDuty implements AmazonGuardDuty {
     }
 
     @Override
+    public CreateFilterResult createFilter(CreateFilterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateIPSetResult createIPSet(CreateIPSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -69,6 +74,11 @@ public class AbstractAmazonGuardDuty implements AmazonGuardDuty {
 
     @Override
     public DeleteDetectorResult deleteDetector(DeleteDetectorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteFilterResult deleteFilter(DeleteFilterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -104,6 +114,11 @@ public class AbstractAmazonGuardDuty implements AmazonGuardDuty {
 
     @Override
     public GetDetectorResult getDetector(GetDetectorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetFilterResult getFilter(GetFilterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -153,6 +168,11 @@ public class AbstractAmazonGuardDuty implements AmazonGuardDuty {
     }
 
     @Override
+    public ListFiltersResult listFilters(ListFiltersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListFindingsResult listFindings(ListFindingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -194,6 +214,11 @@ public class AbstractAmazonGuardDuty implements AmazonGuardDuty {
 
     @Override
     public UpdateDetectorResult updateDetector(UpdateDetectorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateFilterResult updateFilter(UpdateFilterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

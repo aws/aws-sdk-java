@@ -30,6 +30,8 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
     private String availabilityZone;
 
     private IamInstanceProfile iamInstanceProfile;
+    /** The image description of the EC2 instance. */
+    private String imageDescription;
     /** The image ID of the EC2 instance. */
     private String imageId;
     /** The ID of the EC2 instance. */
@@ -106,6 +108,40 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
     public InstanceDetails withIamInstanceProfile(IamInstanceProfile iamInstanceProfile) {
         setIamInstanceProfile(iamInstanceProfile);
+        return this;
+    }
+
+    /**
+     * The image description of the EC2 instance.
+     * 
+     * @param imageDescription
+     *        The image description of the EC2 instance.
+     */
+
+    public void setImageDescription(String imageDescription) {
+        this.imageDescription = imageDescription;
+    }
+
+    /**
+     * The image description of the EC2 instance.
+     * 
+     * @return The image description of the EC2 instance.
+     */
+
+    public String getImageDescription() {
+        return this.imageDescription;
+    }
+
+    /**
+     * The image description of the EC2 instance.
+     * 
+     * @param imageDescription
+     *        The image description of the EC2 instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceDetails withImageDescription(String imageDescription) {
+        setImageDescription(imageDescription);
         return this;
     }
 
@@ -514,6 +550,8 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
             sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getIamInstanceProfile() != null)
             sb.append("IamInstanceProfile: ").append(getIamInstanceProfile()).append(",");
+        if (getImageDescription() != null)
+            sb.append("ImageDescription: ").append(getImageDescription()).append(",");
         if (getImageId() != null)
             sb.append("ImageId: ").append(getImageId()).append(",");
         if (getInstanceId() != null)
@@ -553,6 +591,10 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
         if (other.getIamInstanceProfile() == null ^ this.getIamInstanceProfile() == null)
             return false;
         if (other.getIamInstanceProfile() != null && other.getIamInstanceProfile().equals(this.getIamInstanceProfile()) == false)
+            return false;
+        if (other.getImageDescription() == null ^ this.getImageDescription() == null)
+            return false;
+        if (other.getImageDescription() != null && other.getImageDescription().equals(this.getImageDescription()) == false)
             return false;
         if (other.getImageId() == null ^ this.getImageId() == null)
             return false;
@@ -600,6 +642,7 @@ public class InstanceDetails implements Serializable, Cloneable, StructuredPojo 
 
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getIamInstanceProfile() == null) ? 0 : getIamInstanceProfile().hashCode());
+        hashCode = prime * hashCode + ((getImageDescription() == null) ? 0 : getImageDescription().hashCode());
         hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode());
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getInstanceState() == null) ? 0 : getInstanceState().hashCode());

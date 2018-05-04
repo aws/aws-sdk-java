@@ -89,6 +89,22 @@ public interface AmazonGuardDuty {
     CreateDetectorResult createDetector(CreateDetectorRequest createDetectorRequest);
 
     /**
+     * Creates a filter using the specified finding criteria.
+     * 
+     * @param createFilterRequest
+     *        CreateFilterRequest request body.
+     * @return Result of the CreateFilter operation returned by the service.
+     * @throws BadRequestException
+     *         400 response
+     * @throws InternalServerErrorException
+     *         500 response
+     * @sample AmazonGuardDuty.CreateFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateFilter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateFilterResult createFilter(CreateFilterRequest createFilterRequest);
+
+    /**
      * Creates a new IPSet - a list of trusted IP addresses that have been whitelisted for secure communication with AWS
      * infrastructure and applications.
      * 
@@ -186,6 +202,21 @@ public interface AmazonGuardDuty {
      *      Documentation</a>
      */
     DeleteDetectorResult deleteDetector(DeleteDetectorRequest deleteDetectorRequest);
+
+    /**
+     * Deletes the filter specified by the filter name.
+     * 
+     * @param deleteFilterRequest
+     * @return Result of the DeleteFilter operation returned by the service.
+     * @throws BadRequestException
+     *         400 response
+     * @throws InternalServerErrorException
+     *         500 response
+     * @sample AmazonGuardDuty.DeleteFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteFilter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteFilterResult deleteFilter(DeleteFilterRequest deleteFilterRequest);
 
     /**
      * Deletes the IPSet specified by the IPSet ID.
@@ -294,6 +325,21 @@ public interface AmazonGuardDuty {
      *      Documentation</a>
      */
     GetDetectorResult getDetector(GetDetectorRequest getDetectorRequest);
+
+    /**
+     * Returns the details of the filter specified by the filter name.
+     * 
+     * @param getFilterRequest
+     * @return Result of the GetFilter operation returned by the service.
+     * @throws BadRequestException
+     *         400 response
+     * @throws InternalServerErrorException
+     *         500 response
+     * @sample AmazonGuardDuty.GetFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFilter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetFilterResult getFilter(GetFilterRequest getFilterRequest);
 
     /**
      * Describes Amazon GuardDuty findings specified by finding IDs.
@@ -438,6 +484,21 @@ public interface AmazonGuardDuty {
     ListDetectorsResult listDetectors(ListDetectorsRequest listDetectorsRequest);
 
     /**
+     * Returns a paginated list of the current filters.
+     * 
+     * @param listFiltersRequest
+     * @return Result of the ListFilters operation returned by the service.
+     * @throws BadRequestException
+     *         400 response
+     * @throws InternalServerErrorException
+     *         500 response
+     * @sample AmazonGuardDuty.ListFilters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListFilters" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListFiltersResult listFilters(ListFiltersRequest listFiltersRequest);
+
+    /**
      * Lists Amazon GuardDuty findings for the specified detector ID.
      * 
      * @param listFindingsRequest
@@ -580,6 +641,22 @@ public interface AmazonGuardDuty {
      *      Documentation</a>
      */
     UpdateDetectorResult updateDetector(UpdateDetectorRequest updateDetectorRequest);
+
+    /**
+     * Updates the filter specified by the filter name.
+     * 
+     * @param updateFilterRequest
+     *        UpdateFilterRequest request body.
+     * @return Result of the UpdateFilter operation returned by the service.
+     * @throws BadRequestException
+     *         400 response
+     * @throws InternalServerErrorException
+     *         500 response
+     * @sample AmazonGuardDuty.UpdateFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateFilter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateFilterResult updateFilter(UpdateFilterRequest updateFilterRequest);
 
     /**
      * Marks specified Amazon GuardDuty findings as useful or not useful.

@@ -30,6 +30,8 @@ public class NetworkInterfaceMarshaller {
 
     private static final MarshallingInfo<List> IPV6ADDRESSES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ipv6Addresses").build();
+    private static final MarshallingInfo<String> NETWORKINTERFACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkInterfaceId").build();
     private static final MarshallingInfo<String> PRIVATEDNSNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("privateDnsName").build();
     private static final MarshallingInfo<String> PRIVATEIPADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -64,6 +66,7 @@ public class NetworkInterfaceMarshaller {
 
         try {
             protocolMarshaller.marshall(networkInterface.getIpv6Addresses(), IPV6ADDRESSES_BINDING);
+            protocolMarshaller.marshall(networkInterface.getNetworkInterfaceId(), NETWORKINTERFACEID_BINDING);
             protocolMarshaller.marshall(networkInterface.getPrivateDnsName(), PRIVATEDNSNAME_BINDING);
             protocolMarshaller.marshall(networkInterface.getPrivateIpAddress(), PRIVATEIPADDRESS_BINDING);
             protocolMarshaller.marshall(networkInterface.getPrivateIpAddresses(), PRIVATEIPADDRESSES_BINDING);

@@ -1,3 +1,8 @@
+# __1.11.323__ __2018-05-04__
+## __Amazon GuardDuty__
+  - ### Features
+    - Amazon GuardDuty is adding five new API operations for creating and managing filters. For each filter, you can specify a criteria and an action. The action you specify is applied to findings that match the specified criteria.
+
 # __1.11.322__ __2018-05-04__
 ## __AWS AppSync__
   - ### Features

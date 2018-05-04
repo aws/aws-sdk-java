@@ -56,6 +56,10 @@ public class InstanceDetailsJsonUnmarshaller implements Unmarshaller<InstanceDet
                     context.nextToken();
                     instanceDetails.setIamInstanceProfile(IamInstanceProfileJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("imageDescription", targetDepth)) {
+                    context.nextToken();
+                    instanceDetails.setImageDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("imageId", targetDepth)) {
                     context.nextToken();
                     instanceDetails.setImageId(context.getUnmarshaller(String.class).unmarshall(context));

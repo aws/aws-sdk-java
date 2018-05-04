@@ -120,6 +120,35 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
             com.amazonaws.handlers.AsyncHandler<CreateDetectorRequest, CreateDetectorResult> asyncHandler);
 
     /**
+     * Creates a filter using the specified finding criteria.
+     * 
+     * @param createFilterRequest
+     *        CreateFilterRequest request body.
+     * @return A Java Future containing the result of the CreateFilter operation returned by the service.
+     * @sample AmazonGuardDutyAsync.CreateFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateFilter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateFilterResult> createFilterAsync(CreateFilterRequest createFilterRequest);
+
+    /**
+     * Creates a filter using the specified finding criteria.
+     * 
+     * @param createFilterRequest
+     *        CreateFilterRequest request body.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateFilter operation returned by the service.
+     * @sample AmazonGuardDutyAsyncHandler.CreateFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateFilter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateFilterResult> createFilterAsync(CreateFilterRequest createFilterRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateFilterRequest, CreateFilterResult> asyncHandler);
+
+    /**
      * Creates a new IPSet - a list of trusted IP addresses that have been whitelisted for secure communication with AWS
      * infrastructure and applications.
      * 
@@ -298,6 +327,33 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
      */
     java.util.concurrent.Future<DeleteDetectorResult> deleteDetectorAsync(DeleteDetectorRequest deleteDetectorRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteDetectorRequest, DeleteDetectorResult> asyncHandler);
+
+    /**
+     * Deletes the filter specified by the filter name.
+     * 
+     * @param deleteFilterRequest
+     * @return A Java Future containing the result of the DeleteFilter operation returned by the service.
+     * @sample AmazonGuardDutyAsync.DeleteFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteFilter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFilterResult> deleteFilterAsync(DeleteFilterRequest deleteFilterRequest);
+
+    /**
+     * Deletes the filter specified by the filter name.
+     * 
+     * @param deleteFilterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteFilter operation returned by the service.
+     * @sample AmazonGuardDutyAsyncHandler.DeleteFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteFilter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFilterResult> deleteFilterAsync(DeleteFilterRequest deleteFilterRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteFilterRequest, DeleteFilterResult> asyncHandler);
 
     /**
      * Deletes the IPSet specified by the IPSet ID.
@@ -497,6 +553,33 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
      */
     java.util.concurrent.Future<GetDetectorResult> getDetectorAsync(GetDetectorRequest getDetectorRequest,
             com.amazonaws.handlers.AsyncHandler<GetDetectorRequest, GetDetectorResult> asyncHandler);
+
+    /**
+     * Returns the details of the filter specified by the filter name.
+     * 
+     * @param getFilterRequest
+     * @return A Java Future containing the result of the GetFilter operation returned by the service.
+     * @sample AmazonGuardDutyAsync.GetFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFilter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetFilterResult> getFilterAsync(GetFilterRequest getFilterRequest);
+
+    /**
+     * Returns the details of the filter specified by the filter name.
+     * 
+     * @param getFilterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetFilter operation returned by the service.
+     * @sample AmazonGuardDutyAsyncHandler.GetFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFilter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetFilterResult> getFilterAsync(GetFilterRequest getFilterRequest,
+            com.amazonaws.handlers.AsyncHandler<GetFilterRequest, GetFilterResult> asyncHandler);
 
     /**
      * Describes Amazon GuardDuty findings specified by finding IDs.
@@ -754,6 +837,33 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
      */
     java.util.concurrent.Future<ListDetectorsResult> listDetectorsAsync(ListDetectorsRequest listDetectorsRequest,
             com.amazonaws.handlers.AsyncHandler<ListDetectorsRequest, ListDetectorsResult> asyncHandler);
+
+    /**
+     * Returns a paginated list of the current filters.
+     * 
+     * @param listFiltersRequest
+     * @return A Java Future containing the result of the ListFilters operation returned by the service.
+     * @sample AmazonGuardDutyAsync.ListFilters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListFilters" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListFiltersResult> listFiltersAsync(ListFiltersRequest listFiltersRequest);
+
+    /**
+     * Returns a paginated list of the current filters.
+     * 
+     * @param listFiltersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListFilters operation returned by the service.
+     * @sample AmazonGuardDutyAsyncHandler.ListFilters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListFilters" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListFiltersResult> listFiltersAsync(ListFiltersRequest listFiltersRequest,
+            com.amazonaws.handlers.AsyncHandler<ListFiltersRequest, ListFiltersResult> asyncHandler);
 
     /**
      * Lists Amazon GuardDuty findings for the specified detector ID.
@@ -1015,6 +1125,35 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
      */
     java.util.concurrent.Future<UpdateDetectorResult> updateDetectorAsync(UpdateDetectorRequest updateDetectorRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateDetectorRequest, UpdateDetectorResult> asyncHandler);
+
+    /**
+     * Updates the filter specified by the filter name.
+     * 
+     * @param updateFilterRequest
+     *        UpdateFilterRequest request body.
+     * @return A Java Future containing the result of the UpdateFilter operation returned by the service.
+     * @sample AmazonGuardDutyAsync.UpdateFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateFilter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFilterResult> updateFilterAsync(UpdateFilterRequest updateFilterRequest);
+
+    /**
+     * Updates the filter specified by the filter name.
+     * 
+     * @param updateFilterRequest
+     *        UpdateFilterRequest request body.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateFilter operation returned by the service.
+     * @sample AmazonGuardDutyAsyncHandler.UpdateFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateFilter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFilterResult> updateFilterAsync(UpdateFilterRequest updateFilterRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateFilterRequest, UpdateFilterResult> asyncHandler);
 
     /**
      * Marks specified Amazon GuardDuty findings as useful or not useful.

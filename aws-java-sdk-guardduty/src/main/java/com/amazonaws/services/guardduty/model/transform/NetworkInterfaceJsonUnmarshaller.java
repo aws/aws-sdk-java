@@ -52,6 +52,10 @@ public class NetworkInterfaceJsonUnmarshaller implements Unmarshaller<NetworkInt
                     context.nextToken();
                     networkInterface.setIpv6Addresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("networkInterfaceId", targetDepth)) {
+                    context.nextToken();
+                    networkInterface.setNetworkInterfaceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("privateDnsName", targetDepth)) {
                     context.nextToken();
                     networkInterface.setPrivateDnsName(context.getUnmarshaller(String.class).unmarshall(context));
