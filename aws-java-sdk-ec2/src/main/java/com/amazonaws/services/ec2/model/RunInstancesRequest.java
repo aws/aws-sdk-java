@@ -295,6 +295,14 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      */
     private CreditSpecificationRequest creditSpecification;
+    /**
+     * <p>
+     * The CPU options for the instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU Options</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     */
+    private CpuOptionsRequest cpuOptions;
 
     /**
      * Default constructor for RunInstancesRequest object. Callers should use the setter or fluent setter (with...)
@@ -2441,6 +2449,58 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
+     * <p>
+     * The CPU options for the instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU Options</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param cpuOptions
+     *        The CPU options for the instance. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU
+     *        Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+
+    public void setCpuOptions(CpuOptionsRequest cpuOptions) {
+        this.cpuOptions = cpuOptions;
+    }
+
+    /**
+     * <p>
+     * The CPU options for the instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU Options</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @return The CPU options for the instance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU
+     *         Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+
+    public CpuOptionsRequest getCpuOptions() {
+        return this.cpuOptions;
+    }
+
+    /**
+     * <p>
+     * The CPU options for the instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU Options</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param cpuOptions
+     *        The CPU options for the instance. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU
+     *        Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunInstancesRequest withCpuOptions(CpuOptionsRequest cpuOptions) {
+        setCpuOptions(cpuOptions);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -2519,7 +2579,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         if (getInstanceMarketOptions() != null)
             sb.append("InstanceMarketOptions: ").append(getInstanceMarketOptions()).append(",");
         if (getCreditSpecification() != null)
-            sb.append("CreditSpecification: ").append(getCreditSpecification());
+            sb.append("CreditSpecification: ").append(getCreditSpecification()).append(",");
+        if (getCpuOptions() != null)
+            sb.append("CpuOptions: ").append(getCpuOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -2651,6 +2713,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
             return false;
         if (other.getCreditSpecification() != null && other.getCreditSpecification().equals(this.getCreditSpecification()) == false)
             return false;
+        if (other.getCpuOptions() == null ^ this.getCpuOptions() == null)
+            return false;
+        if (other.getCpuOptions() != null && other.getCpuOptions().equals(this.getCpuOptions()) == false)
+            return false;
         return true;
     }
 
@@ -2688,6 +2754,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         hashCode = prime * hashCode + ((getLaunchTemplate() == null) ? 0 : getLaunchTemplate().hashCode());
         hashCode = prime * hashCode + ((getInstanceMarketOptions() == null) ? 0 : getInstanceMarketOptions().hashCode());
         hashCode = prime * hashCode + ((getCreditSpecification() == null) ? 0 : getCreditSpecification().hashCode());
+        hashCode = prime * hashCode + ((getCpuOptions() == null) ? 0 : getCpuOptions().hashCode());
         return hashCode;
     }
 

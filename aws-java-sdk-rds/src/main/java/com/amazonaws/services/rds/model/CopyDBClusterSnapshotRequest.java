@@ -96,10 +96,6 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * KMS key identifier, or the KMS key alias for the KMS encryption key.
      * </p>
      * <p>
-     * If you copy an unencrypted DB cluster snapshot and specify a value for the <code>KmsKeyId</code> parameter,
-     * Amazon RDS encrypts the target DB cluster snapshot using the specified KMS encryption key.
-     * </p>
-     * <p>
      * If you copy an encrypted DB cluster snapshot from your AWS account, you can specify a value for
      * <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for
      * <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted with the same KMS key as the source
@@ -114,6 +110,10 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * ID you want to use to encrypt the copy of the DB cluster snapshot in the destination AWS Region. KMS encryption
      * keys are specific to the AWS Region that they are created in, and you can't use encryption keys from one AWS
      * Region in another AWS Region.
+     * </p>
+     * <p>
+     * If you copy an unencrypted DB cluster snapshot and specify a value for the <code>KmsKeyId</code> parameter, an
+     * error is returned.
      * </p>
      */
     private String kmsKeyId;
@@ -568,10 +568,6 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * KMS key identifier, or the KMS key alias for the KMS encryption key.
      * </p>
      * <p>
-     * If you copy an unencrypted DB cluster snapshot and specify a value for the <code>KmsKeyId</code> parameter,
-     * Amazon RDS encrypts the target DB cluster snapshot using the specified KMS encryption key.
-     * </p>
-     * <p>
      * If you copy an encrypted DB cluster snapshot from your AWS account, you can specify a value for
      * <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for
      * <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted with the same KMS key as the source
@@ -587,14 +583,14 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * keys are specific to the AWS Region that they are created in, and you can't use encryption keys from one AWS
      * Region in another AWS Region.
      * </p>
+     * <p>
+     * If you copy an unencrypted DB cluster snapshot and specify a value for the <code>KmsKeyId</code> parameter, an
+     * error is returned.
+     * </p>
      * 
      * @param kmsKeyId
      *        The AWS AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name
      *        (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key. </p>
-     *        <p>
-     *        If you copy an unencrypted DB cluster snapshot and specify a value for the <code>KmsKeyId</code>
-     *        parameter, Amazon RDS encrypts the target DB cluster snapshot using the specified KMS encryption key.
-     *        </p>
      *        <p>
      *        If you copy an encrypted DB cluster snapshot from your AWS account, you can specify a value for
      *        <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for
@@ -610,6 +606,10 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      *        KMS key ID you want to use to encrypt the copy of the DB cluster snapshot in the destination AWS Region.
      *        KMS encryption keys are specific to the AWS Region that they are created in, and you can't use encryption
      *        keys from one AWS Region in another AWS Region.
+     *        </p>
+     *        <p>
+     *        If you copy an unencrypted DB cluster snapshot and specify a value for the <code>KmsKeyId</code>
+     *        parameter, an error is returned.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -620,10 +620,6 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The AWS AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN),
      * KMS key identifier, or the KMS key alias for the KMS encryption key.
-     * </p>
-     * <p>
-     * If you copy an unencrypted DB cluster snapshot and specify a value for the <code>KmsKeyId</code> parameter,
-     * Amazon RDS encrypts the target DB cluster snapshot using the specified KMS encryption key.
      * </p>
      * <p>
      * If you copy an encrypted DB cluster snapshot from your AWS account, you can specify a value for
@@ -641,13 +637,13 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * keys are specific to the AWS Region that they are created in, and you can't use encryption keys from one AWS
      * Region in another AWS Region.
      * </p>
+     * <p>
+     * If you copy an unencrypted DB cluster snapshot and specify a value for the <code>KmsKeyId</code> parameter, an
+     * error is returned.
+     * </p>
      * 
      * @return The AWS AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name
      *         (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key. </p>
-     *         <p>
-     *         If you copy an unencrypted DB cluster snapshot and specify a value for the <code>KmsKeyId</code>
-     *         parameter, Amazon RDS encrypts the target DB cluster snapshot using the specified KMS encryption key.
-     *         </p>
      *         <p>
      *         If you copy an encrypted DB cluster snapshot from your AWS account, you can specify a value for
      *         <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for
@@ -663,6 +659,10 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      *         KMS key ID you want to use to encrypt the copy of the DB cluster snapshot in the destination AWS Region.
      *         KMS encryption keys are specific to the AWS Region that they are created in, and you can't use encryption
      *         keys from one AWS Region in another AWS Region.
+     *         </p>
+     *         <p>
+     *         If you copy an unencrypted DB cluster snapshot and specify a value for the <code>KmsKeyId</code>
+     *         parameter, an error is returned.
      */
 
     public String getKmsKeyId() {
@@ -673,10 +673,6 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The AWS AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN),
      * KMS key identifier, or the KMS key alias for the KMS encryption key.
-     * </p>
-     * <p>
-     * If you copy an unencrypted DB cluster snapshot and specify a value for the <code>KmsKeyId</code> parameter,
-     * Amazon RDS encrypts the target DB cluster snapshot using the specified KMS encryption key.
      * </p>
      * <p>
      * If you copy an encrypted DB cluster snapshot from your AWS account, you can specify a value for
@@ -694,14 +690,14 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * keys are specific to the AWS Region that they are created in, and you can't use encryption keys from one AWS
      * Region in another AWS Region.
      * </p>
+     * <p>
+     * If you copy an unencrypted DB cluster snapshot and specify a value for the <code>KmsKeyId</code> parameter, an
+     * error is returned.
+     * </p>
      * 
      * @param kmsKeyId
      *        The AWS AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name
      *        (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key. </p>
-     *        <p>
-     *        If you copy an unencrypted DB cluster snapshot and specify a value for the <code>KmsKeyId</code>
-     *        parameter, Amazon RDS encrypts the target DB cluster snapshot using the specified KMS encryption key.
-     *        </p>
      *        <p>
      *        If you copy an encrypted DB cluster snapshot from your AWS account, you can specify a value for
      *        <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for
@@ -717,6 +713,10 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      *        KMS key ID you want to use to encrypt the copy of the DB cluster snapshot in the destination AWS Region.
      *        KMS encryption keys are specific to the AWS Region that they are created in, and you can't use encryption
      *        keys from one AWS Region in another AWS Region.
+     *        </p>
+     *        <p>
+     *        If you copy an unencrypted DB cluster snapshot and specify a value for the <code>KmsKeyId</code>
+     *        parameter, an error is returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

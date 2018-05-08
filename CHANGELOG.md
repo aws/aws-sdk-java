@@ -1,3 +1,12 @@
+# __1.11.325__ __2018-05-08__
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Enable support for specifying CPU options during instance launch.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Correction to the documentation about copying unencrypted snapshots.
+
 # __1.11.324__ __2018-05-07__
 ## __AWS Budgets__
   - ### Features

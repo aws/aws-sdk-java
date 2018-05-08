@@ -274,6 +274,12 @@ public class Instance implements Serializable, Cloneable {
      * </p>
      */
     private String virtualizationType;
+    /**
+     * <p>
+     * The CPU options for the instance.
+     * </p>
+     */
+    private CpuOptions cpuOptions;
 
     /**
      * <p>
@@ -2409,6 +2415,46 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The CPU options for the instance.
+     * </p>
+     * 
+     * @param cpuOptions
+     *        The CPU options for the instance.
+     */
+
+    public void setCpuOptions(CpuOptions cpuOptions) {
+        this.cpuOptions = cpuOptions;
+    }
+
+    /**
+     * <p>
+     * The CPU options for the instance.
+     * </p>
+     * 
+     * @return The CPU options for the instance.
+     */
+
+    public CpuOptions getCpuOptions() {
+        return this.cpuOptions;
+    }
+
+    /**
+     * <p>
+     * The CPU options for the instance.
+     * </p>
+     * 
+     * @param cpuOptions
+     *        The CPU options for the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Instance withCpuOptions(CpuOptions cpuOptions) {
+        setCpuOptions(cpuOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -2496,7 +2542,9 @@ public class Instance implements Serializable, Cloneable {
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getVirtualizationType() != null)
-            sb.append("VirtualizationType: ").append(getVirtualizationType());
+            sb.append("VirtualizationType: ").append(getVirtualizationType()).append(",");
+        if (getCpuOptions() != null)
+            sb.append("CpuOptions: ").append(getCpuOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -2667,6 +2715,10 @@ public class Instance implements Serializable, Cloneable {
             return false;
         if (other.getVirtualizationType() != null && other.getVirtualizationType().equals(this.getVirtualizationType()) == false)
             return false;
+        if (other.getCpuOptions() == null ^ this.getCpuOptions() == null)
+            return false;
+        if (other.getCpuOptions() != null && other.getCpuOptions().equals(this.getCpuOptions()) == false)
+            return false;
         return true;
     }
 
@@ -2714,6 +2766,7 @@ public class Instance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getStateReason() == null) ? 0 : getStateReason().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getVirtualizationType() == null) ? 0 : getVirtualizationType().hashCode());
+        hashCode = prime * hashCode + ((getCpuOptions() == null) ? 0 : getCpuOptions().hashCode());
         return hashCode;
     }
 

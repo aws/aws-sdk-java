@@ -467,6 +467,18 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
             }
         }
 
+        CpuOptionsRequest cpuOptions = runInstancesRequest.getCpuOptions();
+        if (cpuOptions != null) {
+
+            if (cpuOptions.getCoreCount() != null) {
+                request.addParameter("CpuOptions.CoreCount", StringUtils.fromInteger(cpuOptions.getCoreCount()));
+            }
+
+            if (cpuOptions.getThreadsPerCore() != null) {
+                request.addParameter("CpuOptions.ThreadsPerCore", StringUtils.fromInteger(cpuOptions.getThreadsPerCore()));
+            }
+        }
+
         return request;
     }
 
