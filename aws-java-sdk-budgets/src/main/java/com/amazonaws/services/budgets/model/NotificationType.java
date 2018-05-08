@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The type of a notification. It should be ACTUAL or FORECASTED.
+ * The type of a notification. It must be ACTUAL or FORECASTED.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

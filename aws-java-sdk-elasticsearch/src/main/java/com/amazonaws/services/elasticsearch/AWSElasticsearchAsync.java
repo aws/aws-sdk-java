@@ -329,6 +329,72 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
 
     /**
      * <p>
+     * Lists available reserved Elasticsearch instance offerings.
+     * </p>
+     * 
+     * @param describeReservedElasticsearchInstanceOfferingsRequest
+     *        Container for parameters to <code>DescribeReservedElasticsearchInstanceOfferings</code>
+     * @return A Java Future containing the result of the DescribeReservedElasticsearchInstanceOfferings operation
+     *         returned by the service.
+     * @sample AWSElasticsearchAsync.DescribeReservedElasticsearchInstanceOfferings
+     */
+    java.util.concurrent.Future<DescribeReservedElasticsearchInstanceOfferingsResult> describeReservedElasticsearchInstanceOfferingsAsync(
+            DescribeReservedElasticsearchInstanceOfferingsRequest describeReservedElasticsearchInstanceOfferingsRequest);
+
+    /**
+     * <p>
+     * Lists available reserved Elasticsearch instance offerings.
+     * </p>
+     * 
+     * @param describeReservedElasticsearchInstanceOfferingsRequest
+     *        Container for parameters to <code>DescribeReservedElasticsearchInstanceOfferings</code>
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeReservedElasticsearchInstanceOfferings operation
+     *         returned by the service.
+     * @sample AWSElasticsearchAsyncHandler.DescribeReservedElasticsearchInstanceOfferings
+     */
+    java.util.concurrent.Future<DescribeReservedElasticsearchInstanceOfferingsResult> describeReservedElasticsearchInstanceOfferingsAsync(
+            DescribeReservedElasticsearchInstanceOfferingsRequest describeReservedElasticsearchInstanceOfferingsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeReservedElasticsearchInstanceOfferingsRequest, DescribeReservedElasticsearchInstanceOfferingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about reserved Elasticsearch instances for this account.
+     * </p>
+     * 
+     * @param describeReservedElasticsearchInstancesRequest
+     *        Container for parameters to <code>DescribeReservedElasticsearchInstances</code>
+     * @return A Java Future containing the result of the DescribeReservedElasticsearchInstances operation returned by
+     *         the service.
+     * @sample AWSElasticsearchAsync.DescribeReservedElasticsearchInstances
+     */
+    java.util.concurrent.Future<DescribeReservedElasticsearchInstancesResult> describeReservedElasticsearchInstancesAsync(
+            DescribeReservedElasticsearchInstancesRequest describeReservedElasticsearchInstancesRequest);
+
+    /**
+     * <p>
+     * Returns information about reserved Elasticsearch instances for this account.
+     * </p>
+     * 
+     * @param describeReservedElasticsearchInstancesRequest
+     *        Container for parameters to <code>DescribeReservedElasticsearchInstances</code>
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeReservedElasticsearchInstances operation returned by
+     *         the service.
+     * @sample AWSElasticsearchAsyncHandler.DescribeReservedElasticsearchInstances
+     */
+    java.util.concurrent.Future<DescribeReservedElasticsearchInstancesResult> describeReservedElasticsearchInstancesAsync(
+            DescribeReservedElasticsearchInstancesRequest describeReservedElasticsearchInstancesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeReservedElasticsearchInstancesRequest, DescribeReservedElasticsearchInstancesResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the name of all Elasticsearch domains owned by the current user's account.
      * </p>
      * 
@@ -464,6 +530,39 @@ public interface AWSElasticsearchAsync extends AWSElasticsearch {
      */
     java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest listTagsRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsRequest, ListTagsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Allows you to purchase reserved Elasticsearch instances.
+     * </p>
+     * 
+     * @param purchaseReservedElasticsearchInstanceOfferingRequest
+     *        Container for parameters to <code>PurchaseReservedElasticsearchInstanceOffering</code>
+     * @return A Java Future containing the result of the PurchaseReservedElasticsearchInstanceOffering operation
+     *         returned by the service.
+     * @sample AWSElasticsearchAsync.PurchaseReservedElasticsearchInstanceOffering
+     */
+    java.util.concurrent.Future<PurchaseReservedElasticsearchInstanceOfferingResult> purchaseReservedElasticsearchInstanceOfferingAsync(
+            PurchaseReservedElasticsearchInstanceOfferingRequest purchaseReservedElasticsearchInstanceOfferingRequest);
+
+    /**
+     * <p>
+     * Allows you to purchase reserved Elasticsearch instances.
+     * </p>
+     * 
+     * @param purchaseReservedElasticsearchInstanceOfferingRequest
+     *        Container for parameters to <code>PurchaseReservedElasticsearchInstanceOffering</code>
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PurchaseReservedElasticsearchInstanceOffering operation
+     *         returned by the service.
+     * @sample AWSElasticsearchAsyncHandler.PurchaseReservedElasticsearchInstanceOffering
+     */
+    java.util.concurrent.Future<PurchaseReservedElasticsearchInstanceOfferingResult> purchaseReservedElasticsearchInstanceOfferingAsync(
+            PurchaseReservedElasticsearchInstanceOfferingRequest purchaseReservedElasticsearchInstanceOfferingRequest,
+            com.amazonaws.handlers.AsyncHandler<PurchaseReservedElasticsearchInstanceOfferingRequest, PurchaseReservedElasticsearchInstanceOfferingResult> asyncHandler);
 
     /**
      * <p>

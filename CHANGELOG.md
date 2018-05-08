@@ -1,3 +1,16 @@
+# __1.11.324__ __2018-05-07__
+## __AWS Budgets__
+  - ### Features
+    - "With this release, customers can use AWS Budgets to monitor how much of their Amazon EC2, Amazon RDS, Amazon Redshift, and Amazon ElastiCache instance usage is covered by reservations, and receive alerts when their coverage falls below the threshold they define."
+
+## __Alexa For Business__
+  - ### Features
+    - This release adds the new Device status "DEREGISTERED". This release also adds DEVICE_STATUS as the new DeviceEventType.
+
+## __Amazon Elasticsearch Service__
+  - ### Features
+    - This change brings support for Reserved Instances to AWS Elasticsearch.
+
 # __1.11.323__ __2018-05-04__
 ## __Amazon GuardDuty__
   - ### Features

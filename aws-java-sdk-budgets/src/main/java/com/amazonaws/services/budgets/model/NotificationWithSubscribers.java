@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A notification with subscribers. A notification can have one SNS subscriber and up to ten email subscribers, for a
+ * A notification with subscribers. A notification can have one SNS subscriber and up to 10 email subscribers, for a
  * total of 11 subscribers.
  * </p>
  */
@@ -28,7 +28,7 @@ public class NotificationWithSubscribers implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The notification associated with a budget.
+     * The notification that is associated with a budget.
      * </p>
      */
     private Notification notification;
@@ -41,11 +41,11 @@ public class NotificationWithSubscribers implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The notification associated with a budget.
+     * The notification that is associated with a budget.
      * </p>
      * 
      * @param notification
-     *        The notification associated with a budget.
+     *        The notification that is associated with a budget.
      */
 
     public void setNotification(Notification notification) {
@@ -54,10 +54,10 @@ public class NotificationWithSubscribers implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The notification associated with a budget.
+     * The notification that is associated with a budget.
      * </p>
      * 
-     * @return The notification associated with a budget.
+     * @return The notification that is associated with a budget.
      */
 
     public Notification getNotification() {
@@ -66,11 +66,11 @@ public class NotificationWithSubscribers implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The notification associated with a budget.
+     * The notification that is associated with a budget.
      * </p>
      * 
      * @param notification
-     *        The notification associated with a budget.
+     *        The notification that is associated with a budget.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

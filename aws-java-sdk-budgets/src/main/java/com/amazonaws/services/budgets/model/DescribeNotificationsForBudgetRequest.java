@@ -39,13 +39,14 @@ public class DescribeNotificationsForBudgetRequest extends com.amazonaws.AmazonW
     private String budgetName;
     /**
      * <p>
-     * Optional integer. Specifies the maximum number of results to return in response.
+     * Optional integer. Specifies the maximum number of results to return in a response.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The pagination token that indicates the next set of results to retrieve.
+     * The pagination token that you include in your request to indicate the next set of results that you want to
+     * retrieve.
      * </p>
      */
     private String nextToken;
@@ -135,11 +136,11 @@ public class DescribeNotificationsForBudgetRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Optional integer. Specifies the maximum number of results to return in response.
+     * Optional integer. Specifies the maximum number of results to return in a response.
      * </p>
      * 
      * @param maxResults
-     *        Optional integer. Specifies the maximum number of results to return in response.
+     *        Optional integer. Specifies the maximum number of results to return in a response.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -148,10 +149,10 @@ public class DescribeNotificationsForBudgetRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Optional integer. Specifies the maximum number of results to return in response.
+     * Optional integer. Specifies the maximum number of results to return in a response.
      * </p>
      * 
-     * @return Optional integer. Specifies the maximum number of results to return in response.
+     * @return Optional integer. Specifies the maximum number of results to return in a response.
      */
 
     public Integer getMaxResults() {
@@ -160,11 +161,11 @@ public class DescribeNotificationsForBudgetRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Optional integer. Specifies the maximum number of results to return in response.
+     * Optional integer. Specifies the maximum number of results to return in a response.
      * </p>
      * 
      * @param maxResults
-     *        Optional integer. Specifies the maximum number of results to return in response.
+     *        Optional integer. Specifies the maximum number of results to return in a response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +176,13 @@ public class DescribeNotificationsForBudgetRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The pagination token that indicates the next set of results to retrieve.
+     * The pagination token that you include in your request to indicate the next set of results that you want to
+     * retrieve.
      * </p>
      * 
      * @param nextToken
-     *        The pagination token that indicates the next set of results to retrieve.
+     *        The pagination token that you include in your request to indicate the next set of results that you want to
+     *        retrieve.
      */
 
     public void setNextToken(String nextToken) {
@@ -188,10 +191,12 @@ public class DescribeNotificationsForBudgetRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The pagination token that indicates the next set of results to retrieve.
+     * The pagination token that you include in your request to indicate the next set of results that you want to
+     * retrieve.
      * </p>
      * 
-     * @return The pagination token that indicates the next set of results to retrieve.
+     * @return The pagination token that you include in your request to indicate the next set of results that you want
+     *         to retrieve.
      */
 
     public String getNextToken() {
@@ -200,11 +205,13 @@ public class DescribeNotificationsForBudgetRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The pagination token that indicates the next set of results to retrieve.
+     * The pagination token that you include in your request to indicate the next set of results that you want to
+     * retrieve.
      * </p>
      * 
      * @param nextToken
-     *        The pagination token that indicates the next set of results to retrieve.
+     *        The pagination token that you include in your request to indicate the next set of results that you want to
+     *        retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

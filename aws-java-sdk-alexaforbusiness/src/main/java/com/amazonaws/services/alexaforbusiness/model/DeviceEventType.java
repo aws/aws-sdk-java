@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DeviceEventType {
 
-    CONNECTION_STATUS("CONNECTION_STATUS");
+    CONNECTION_STATUS("CONNECTION_STATUS"),
+    DEVICE_STATUS("DEVICE_STATUS");
 
     private String value;
 

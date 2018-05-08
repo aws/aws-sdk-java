@@ -40,7 +40,7 @@ public class CreateBudgetRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A notification that you want to associate with a budget. A budget can have up to five notifications, and each
-     * notification can have one SNS subscriber and up to ten email subscribers. If you include notifications and
+     * notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and
      * subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for you.
      * </p>
      */
@@ -129,12 +129,12 @@ public class CreateBudgetRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A notification that you want to associate with a budget. A budget can have up to five notifications, and each
-     * notification can have one SNS subscriber and up to ten email subscribers. If you include notifications and
+     * notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and
      * subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for you.
      * </p>
      * 
      * @return A notification that you want to associate with a budget. A budget can have up to five notifications, and
-     *         each notification can have one SNS subscriber and up to ten email subscribers. If you include
+     *         each notification can have one SNS subscriber and up to 10 email subscribers. If you include
      *         notifications and subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and
      *         subscribers for you.
      */
@@ -146,15 +146,15 @@ public class CreateBudgetRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A notification that you want to associate with a budget. A budget can have up to five notifications, and each
-     * notification can have one SNS subscriber and up to ten email subscribers. If you include notifications and
+     * notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and
      * subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for you.
      * </p>
      * 
      * @param notificationsWithSubscribers
      *        A notification that you want to associate with a budget. A budget can have up to five notifications, and
-     *        each notification can have one SNS subscriber and up to ten email subscribers. If you include
-     *        notifications and subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and
-     *        subscribers for you.
+     *        each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications
+     *        and subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for
+     *        you.
      */
 
     public void setNotificationsWithSubscribers(java.util.Collection<NotificationWithSubscribers> notificationsWithSubscribers) {
@@ -169,7 +169,7 @@ public class CreateBudgetRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A notification that you want to associate with a budget. A budget can have up to five notifications, and each
-     * notification can have one SNS subscriber and up to ten email subscribers. If you include notifications and
+     * notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and
      * subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for you.
      * </p>
      * <p>
@@ -180,9 +180,9 @@ public class CreateBudgetRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param notificationsWithSubscribers
      *        A notification that you want to associate with a budget. A budget can have up to five notifications, and
-     *        each notification can have one SNS subscriber and up to ten email subscribers. If you include
-     *        notifications and subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and
-     *        subscribers for you.
+     *        each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications
+     *        and subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for
+     *        you.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,15 +199,15 @@ public class CreateBudgetRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A notification that you want to associate with a budget. A budget can have up to five notifications, and each
-     * notification can have one SNS subscriber and up to ten email subscribers. If you include notifications and
+     * notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications and
      * subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for you.
      * </p>
      * 
      * @param notificationsWithSubscribers
      *        A notification that you want to associate with a budget. A budget can have up to five notifications, and
-     *        each notification can have one SNS subscriber and up to ten email subscribers. If you include
-     *        notifications and subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and
-     *        subscribers for you.
+     *        each notification can have one SNS subscriber and up to 10 email subscribers. If you include notifications
+     *        and subscribers in your <code>CreateBudget</code> call, AWS creates the notifications and subscribers for
+     *        you.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

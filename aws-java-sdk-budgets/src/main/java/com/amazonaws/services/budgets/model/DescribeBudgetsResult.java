@@ -31,7 +31,7 @@ public class DescribeBudgetsResult extends com.amazonaws.AmazonWebServiceResult<
     private java.util.List<Budget> budgets;
     /**
      * <p>
-     * The pagination token that indicates the next set of results that you can retrieve.
+     * The pagination token in the service response that indicates the next set of results that you can retrieve.
      * </p>
      */
     private String nextToken;
@@ -108,11 +108,11 @@ public class DescribeBudgetsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The pagination token that indicates the next set of results that you can retrieve.
+     * The pagination token in the service response that indicates the next set of results that you can retrieve.
      * </p>
      * 
      * @param nextToken
-     *        The pagination token that indicates the next set of results that you can retrieve.
+     *        The pagination token in the service response that indicates the next set of results that you can retrieve.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,10 +121,11 @@ public class DescribeBudgetsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The pagination token that indicates the next set of results that you can retrieve.
+     * The pagination token in the service response that indicates the next set of results that you can retrieve.
      * </p>
      * 
-     * @return The pagination token that indicates the next set of results that you can retrieve.
+     * @return The pagination token in the service response that indicates the next set of results that you can
+     *         retrieve.
      */
 
     public String getNextToken() {
@@ -133,11 +134,11 @@ public class DescribeBudgetsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The pagination token that indicates the next set of results that you can retrieve.
+     * The pagination token in the service response that indicates the next set of results that you can retrieve.
      * </p>
      * 
      * @param nextToken
-     *        The pagination token that indicates the next set of results that you can retrieve.
+     *        The pagination token in the service response that indicates the next set of results that you can retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

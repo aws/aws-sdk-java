@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The time unit of the budget. e.g. MONTHLY, QUARTERLY, etc.
+ * The time unit of the budget, such as MONTHLY or QUARTERLY.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

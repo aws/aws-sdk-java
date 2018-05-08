@@ -19,10 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A notification associated with a budget. A budget can have up to five notifications.
+ * A notification that is associated with a budget. A budget can have up to five notifications.
  * </p>
  * <p>
- * Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to ten email
+ * Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email
  * subscribers, for a total of 11 subscribers.
  * </p>
  * <p>
@@ -32,12 +32,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <ul>
  * <li>
  * <p>
- * A notificationType of <code>ACTUAL</code>
+ * A <code>notificationType</code> of <code>ACTUAL</code>
  * </p>
  * </li>
  * <li>
  * <p>
- * A comparisonOperator of <code>GREATER_THAN</code>
+ * A <code>comparisonOperator</code> of <code>GREATER_THAN</code>
  * </p>
  * </li>
  * <li>
@@ -59,20 +59,20 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
     private String notificationType;
     /**
      * <p>
-     * The comparison used for this notification.
+     * The comparison that is used for this notification.
      * </p>
      */
     private String comparisonOperator;
     /**
      * <p>
-     * The threshold associated with a notification. Thresholds are always a percentage.
+     * The threshold that is associated with a notification. Thresholds are always a percentage.
      * </p>
      */
     private Double threshold;
     /**
      * <p>
      * The type of threshold for a notification. For <code>ACTUAL</code> thresholds, AWS notifies you when you go over
-     * the threshold, and for <code>FORECASTED</code> thresholds AWS notifies you when you are forecasted to go over the
+     * the threshold. For <code>FORECASTED</code> thresholds, AWS notifies you when you are forecasted to go over the
      * threshold.
      * </p>
      */
@@ -163,11 +163,11 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The comparison used for this notification.
+     * The comparison that is used for this notification.
      * </p>
      * 
      * @param comparisonOperator
-     *        The comparison used for this notification.
+     *        The comparison that is used for this notification.
      * @see ComparisonOperator
      */
 
@@ -177,10 +177,10 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The comparison used for this notification.
+     * The comparison that is used for this notification.
      * </p>
      * 
-     * @return The comparison used for this notification.
+     * @return The comparison that is used for this notification.
      * @see ComparisonOperator
      */
 
@@ -190,11 +190,11 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The comparison used for this notification.
+     * The comparison that is used for this notification.
      * </p>
      * 
      * @param comparisonOperator
-     *        The comparison used for this notification.
+     *        The comparison that is used for this notification.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComparisonOperator
      */
@@ -206,11 +206,11 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The comparison used for this notification.
+     * The comparison that is used for this notification.
      * </p>
      * 
      * @param comparisonOperator
-     *        The comparison used for this notification.
+     *        The comparison that is used for this notification.
      * @see ComparisonOperator
      */
 
@@ -220,11 +220,11 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The comparison used for this notification.
+     * The comparison that is used for this notification.
      * </p>
      * 
      * @param comparisonOperator
-     *        The comparison used for this notification.
+     *        The comparison that is used for this notification.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComparisonOperator
      */
@@ -236,11 +236,11 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The threshold associated with a notification. Thresholds are always a percentage.
+     * The threshold that is associated with a notification. Thresholds are always a percentage.
      * </p>
      * 
      * @param threshold
-     *        The threshold associated with a notification. Thresholds are always a percentage.
+     *        The threshold that is associated with a notification. Thresholds are always a percentage.
      */
 
     public void setThreshold(Double threshold) {
@@ -249,10 +249,10 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The threshold associated with a notification. Thresholds are always a percentage.
+     * The threshold that is associated with a notification. Thresholds are always a percentage.
      * </p>
      * 
-     * @return The threshold associated with a notification. Thresholds are always a percentage.
+     * @return The threshold that is associated with a notification. Thresholds are always a percentage.
      */
 
     public Double getThreshold() {
@@ -261,11 +261,11 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The threshold associated with a notification. Thresholds are always a percentage.
+     * The threshold that is associated with a notification. Thresholds are always a percentage.
      * </p>
      * 
      * @param threshold
-     *        The threshold associated with a notification. Thresholds are always a percentage.
+     *        The threshold that is associated with a notification. Thresholds are always a percentage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -277,14 +277,14 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The type of threshold for a notification. For <code>ACTUAL</code> thresholds, AWS notifies you when you go over
-     * the threshold, and for <code>FORECASTED</code> thresholds AWS notifies you when you are forecasted to go over the
+     * the threshold. For <code>FORECASTED</code> thresholds, AWS notifies you when you are forecasted to go over the
      * threshold.
      * </p>
      * 
      * @param thresholdType
      *        The type of threshold for a notification. For <code>ACTUAL</code> thresholds, AWS notifies you when you go
-     *        over the threshold, and for <code>FORECASTED</code> thresholds AWS notifies you when you are forecasted to
-     *        go over the threshold.
+     *        over the threshold. For <code>FORECASTED</code> thresholds, AWS notifies you when you are forecasted to go
+     *        over the threshold.
      * @see ThresholdType
      */
 
@@ -295,13 +295,13 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The type of threshold for a notification. For <code>ACTUAL</code> thresholds, AWS notifies you when you go over
-     * the threshold, and for <code>FORECASTED</code> thresholds AWS notifies you when you are forecasted to go over the
+     * the threshold. For <code>FORECASTED</code> thresholds, AWS notifies you when you are forecasted to go over the
      * threshold.
      * </p>
      * 
      * @return The type of threshold for a notification. For <code>ACTUAL</code> thresholds, AWS notifies you when you
-     *         go over the threshold, and for <code>FORECASTED</code> thresholds AWS notifies you when you are
-     *         forecasted to go over the threshold.
+     *         go over the threshold. For <code>FORECASTED</code> thresholds, AWS notifies you when you are forecasted
+     *         to go over the threshold.
      * @see ThresholdType
      */
 
@@ -312,14 +312,14 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The type of threshold for a notification. For <code>ACTUAL</code> thresholds, AWS notifies you when you go over
-     * the threshold, and for <code>FORECASTED</code> thresholds AWS notifies you when you are forecasted to go over the
+     * the threshold. For <code>FORECASTED</code> thresholds, AWS notifies you when you are forecasted to go over the
      * threshold.
      * </p>
      * 
      * @param thresholdType
      *        The type of threshold for a notification. For <code>ACTUAL</code> thresholds, AWS notifies you when you go
-     *        over the threshold, and for <code>FORECASTED</code> thresholds AWS notifies you when you are forecasted to
-     *        go over the threshold.
+     *        over the threshold. For <code>FORECASTED</code> thresholds, AWS notifies you when you are forecasted to go
+     *        over the threshold.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ThresholdType
      */
@@ -332,14 +332,14 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The type of threshold for a notification. For <code>ACTUAL</code> thresholds, AWS notifies you when you go over
-     * the threshold, and for <code>FORECASTED</code> thresholds AWS notifies you when you are forecasted to go over the
+     * the threshold. For <code>FORECASTED</code> thresholds, AWS notifies you when you are forecasted to go over the
      * threshold.
      * </p>
      * 
      * @param thresholdType
      *        The type of threshold for a notification. For <code>ACTUAL</code> thresholds, AWS notifies you when you go
-     *        over the threshold, and for <code>FORECASTED</code> thresholds AWS notifies you when you are forecasted to
-     *        go over the threshold.
+     *        over the threshold. For <code>FORECASTED</code> thresholds, AWS notifies you when you are forecasted to go
+     *        over the threshold.
      * @see ThresholdType
      */
 
@@ -350,14 +350,14 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The type of threshold for a notification. For <code>ACTUAL</code> thresholds, AWS notifies you when you go over
-     * the threshold, and for <code>FORECASTED</code> thresholds AWS notifies you when you are forecasted to go over the
+     * the threshold. For <code>FORECASTED</code> thresholds, AWS notifies you when you are forecasted to go over the
      * threshold.
      * </p>
      * 
      * @param thresholdType
      *        The type of threshold for a notification. For <code>ACTUAL</code> thresholds, AWS notifies you when you go
-     *        over the threshold, and for <code>FORECASTED</code> thresholds AWS notifies you when you are forecasted to
-     *        go over the threshold.
+     *        over the threshold. For <code>FORECASTED</code> thresholds, AWS notifies you when you are forecasted to go
+     *        over the threshold.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ThresholdType
      */

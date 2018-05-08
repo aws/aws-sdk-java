@@ -791,6 +791,129 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Lists available reserved Elasticsearch instance offerings.
+     * </p>
+     * 
+     * @param describeReservedElasticsearchInstanceOfferingsRequest
+     *        Container for parameters to <code>DescribeReservedElasticsearchInstanceOfferings</code>
+     * @return Result of the DescribeReservedElasticsearchInstanceOfferings operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @sample AWSElasticsearch.DescribeReservedElasticsearchInstanceOfferings
+     */
+    @Override
+    public DescribeReservedElasticsearchInstanceOfferingsResult describeReservedElasticsearchInstanceOfferings(
+            DescribeReservedElasticsearchInstanceOfferingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeReservedElasticsearchInstanceOfferings(request);
+    }
+
+    @SdkInternalApi
+    final DescribeReservedElasticsearchInstanceOfferingsResult executeDescribeReservedElasticsearchInstanceOfferings(
+            DescribeReservedElasticsearchInstanceOfferingsRequest describeReservedElasticsearchInstanceOfferingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeReservedElasticsearchInstanceOfferingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeReservedElasticsearchInstanceOfferingsRequest> request = null;
+        Response<DescribeReservedElasticsearchInstanceOfferingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeReservedElasticsearchInstanceOfferingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeReservedElasticsearchInstanceOfferingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeReservedElasticsearchInstanceOfferingsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeReservedElasticsearchInstanceOfferingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about reserved Elasticsearch instances for this account.
+     * </p>
+     * 
+     * @param describeReservedElasticsearchInstancesRequest
+     *        Container for parameters to <code>DescribeReservedElasticsearchInstances</code>
+     * @return Result of the DescribeReservedElasticsearchInstances operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @sample AWSElasticsearch.DescribeReservedElasticsearchInstances
+     */
+    @Override
+    public DescribeReservedElasticsearchInstancesResult describeReservedElasticsearchInstances(DescribeReservedElasticsearchInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeReservedElasticsearchInstances(request);
+    }
+
+    @SdkInternalApi
+    final DescribeReservedElasticsearchInstancesResult executeDescribeReservedElasticsearchInstances(
+            DescribeReservedElasticsearchInstancesRequest describeReservedElasticsearchInstancesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeReservedElasticsearchInstancesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeReservedElasticsearchInstancesRequest> request = null;
+        Response<DescribeReservedElasticsearchInstancesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeReservedElasticsearchInstancesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeReservedElasticsearchInstancesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeReservedElasticsearchInstancesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeReservedElasticsearchInstancesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns the name of all Elasticsearch domains owned by the current user's account.
      * </p>
      * 
@@ -1014,6 +1137,73 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Allows you to purchase reserved Elasticsearch instances.
+     * </p>
+     * 
+     * @param purchaseReservedElasticsearchInstanceOfferingRequest
+     *        Container for parameters to <code>PurchaseReservedElasticsearchInstanceOffering</code>
+     * @return Result of the PurchaseReservedElasticsearchInstanceOffering operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws ResourceAlreadyExistsException
+     *         An exception for creating a resource that already exists. Gives http status code of 400.
+     * @throws LimitExceededException
+     *         An exception for trying to create more than allowed resources or sub-resources. Gives http status code of
+     *         409.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @sample AWSElasticsearch.PurchaseReservedElasticsearchInstanceOffering
+     */
+    @Override
+    public PurchaseReservedElasticsearchInstanceOfferingResult purchaseReservedElasticsearchInstanceOffering(
+            PurchaseReservedElasticsearchInstanceOfferingRequest request) {
+        request = beforeClientExecution(request);
+        return executePurchaseReservedElasticsearchInstanceOffering(request);
+    }
+
+    @SdkInternalApi
+    final PurchaseReservedElasticsearchInstanceOfferingResult executePurchaseReservedElasticsearchInstanceOffering(
+            PurchaseReservedElasticsearchInstanceOfferingRequest purchaseReservedElasticsearchInstanceOfferingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(purchaseReservedElasticsearchInstanceOfferingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PurchaseReservedElasticsearchInstanceOfferingRequest> request = null;
+        Response<PurchaseReservedElasticsearchInstanceOfferingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PurchaseReservedElasticsearchInstanceOfferingRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(purchaseReservedElasticsearchInstanceOfferingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PurchaseReservedElasticsearchInstanceOfferingResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new PurchaseReservedElasticsearchInstanceOfferingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

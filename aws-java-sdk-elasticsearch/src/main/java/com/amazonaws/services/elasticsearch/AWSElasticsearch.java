@@ -299,6 +299,52 @@ public interface AWSElasticsearch {
 
     /**
      * <p>
+     * Lists available reserved Elasticsearch instance offerings.
+     * </p>
+     * 
+     * @param describeReservedElasticsearchInstanceOfferingsRequest
+     *        Container for parameters to <code>DescribeReservedElasticsearchInstanceOfferings</code>
+     * @return Result of the DescribeReservedElasticsearchInstanceOfferings operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @sample AWSElasticsearch.DescribeReservedElasticsearchInstanceOfferings
+     */
+    DescribeReservedElasticsearchInstanceOfferingsResult describeReservedElasticsearchInstanceOfferings(
+            DescribeReservedElasticsearchInstanceOfferingsRequest describeReservedElasticsearchInstanceOfferingsRequest);
+
+    /**
+     * <p>
+     * Returns information about reserved Elasticsearch instances for this account.
+     * </p>
+     * 
+     * @param describeReservedElasticsearchInstancesRequest
+     *        Container for parameters to <code>DescribeReservedElasticsearchInstances</code>
+     * @return Result of the DescribeReservedElasticsearchInstances operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @sample AWSElasticsearch.DescribeReservedElasticsearchInstances
+     */
+    DescribeReservedElasticsearchInstancesResult describeReservedElasticsearchInstances(
+            DescribeReservedElasticsearchInstancesRequest describeReservedElasticsearchInstancesRequest);
+
+    /**
+     * <p>
      * Returns the name of all Elasticsearch domains owned by the current user's account.
      * </p>
      * 
@@ -383,6 +429,34 @@ public interface AWSElasticsearch {
      * @sample AWSElasticsearch.ListTags
      */
     ListTagsResult listTags(ListTagsRequest listTagsRequest);
+
+    /**
+     * <p>
+     * Allows you to purchase reserved Elasticsearch instances.
+     * </p>
+     * 
+     * @param purchaseReservedElasticsearchInstanceOfferingRequest
+     *        Container for parameters to <code>PurchaseReservedElasticsearchInstanceOffering</code>
+     * @return Result of the PurchaseReservedElasticsearchInstanceOffering operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws ResourceAlreadyExistsException
+     *         An exception for creating a resource that already exists. Gives http status code of 400.
+     * @throws LimitExceededException
+     *         An exception for trying to create more than allowed resources or sub-resources. Gives http status code of
+     *         409.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @sample AWSElasticsearch.PurchaseReservedElasticsearchInstanceOffering
+     */
+    PurchaseReservedElasticsearchInstanceOfferingResult purchaseReservedElasticsearchInstanceOffering(
+            PurchaseReservedElasticsearchInstanceOfferingRequest purchaseReservedElasticsearchInstanceOfferingRequest);
 
     /**
      * <p>
