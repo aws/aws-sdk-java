@@ -62,6 +62,8 @@ public class FleetAttributesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceCreationLimitPolicy").build();
     private static final MarshallingInfo<List> METRICGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("MetricGroups").build();
+    private static final MarshallingInfo<List> STOPPEDACTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StoppedActions").build();
 
     private static final FleetAttributesMarshaller instance = new FleetAttributesMarshaller();
 
@@ -96,6 +98,7 @@ public class FleetAttributesMarshaller {
             protocolMarshaller.marshall(fleetAttributes.getOperatingSystem(), OPERATINGSYSTEM_BINDING);
             protocolMarshaller.marshall(fleetAttributes.getResourceCreationLimitPolicy(), RESOURCECREATIONLIMITPOLICY_BINDING);
             protocolMarshaller.marshall(fleetAttributes.getMetricGroups(), METRICGROUPS_BINDING);
+            protocolMarshaller.marshall(fleetAttributes.getStoppedActions(), STOPPEDACTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

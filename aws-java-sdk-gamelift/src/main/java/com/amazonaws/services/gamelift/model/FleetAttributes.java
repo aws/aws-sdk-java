@@ -37,12 +37,22 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * <li>
  * <p>
+ * <a>DeleteFleet</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * Describe fleets:
  * </p>
  * <ul>
  * <li>
  * <p>
  * <a>DescribeFleetAttributes</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeFleetCapacity</a>
  * </p>
  * </li>
  * <li>
@@ -58,6 +68,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <li>
  * <p>
  * <a>DescribeRuntimeConfiguration</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeEC2InstanceLimits</a>
  * </p>
  * </li>
  * <li>
@@ -96,45 +111,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * <li>
  * <p>
- * Manage fleet capacity:
+ * Manage fleet actions:
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a>DescribeFleetCapacity</a>
+ * <a>StartFleetActions</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>UpdateFleetCapacity</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>PutScalingPolicy</a> (automatic scaling)
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeScalingPolicies</a> (automatic scaling)
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DeleteScalingPolicy</a> (automatic scaling)
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeEC2InstanceLimits</a>
+ * <a>StopFleetActions</a>
  * </p>
  * </li>
  * </ul>
- * </li>
- * <li>
- * <p>
- * <a>DeleteFleet</a>
- * </p>
  * </li>
  * </ul>
  * 
@@ -312,6 +302,12 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.List<String> metricGroups;
+    /**
+     * <p>
+     * List of fleet actions that have been suspended using <a>StopFleetActions</a>. This includes auto-scaling.
+     * </p>
+     */
+    private java.util.List<String> stoppedActions;
 
     /**
      * <p>
@@ -1836,6 +1832,104 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * List of fleet actions that have been suspended using <a>StopFleetActions</a>. This includes auto-scaling.
+     * </p>
+     * 
+     * @return List of fleet actions that have been suspended using <a>StopFleetActions</a>. This includes auto-scaling.
+     * @see FleetAction
+     */
+
+    public java.util.List<String> getStoppedActions() {
+        return stoppedActions;
+    }
+
+    /**
+     * <p>
+     * List of fleet actions that have been suspended using <a>StopFleetActions</a>. This includes auto-scaling.
+     * </p>
+     * 
+     * @param stoppedActions
+     *        List of fleet actions that have been suspended using <a>StopFleetActions</a>. This includes auto-scaling.
+     * @see FleetAction
+     */
+
+    public void setStoppedActions(java.util.Collection<String> stoppedActions) {
+        if (stoppedActions == null) {
+            this.stoppedActions = null;
+            return;
+        }
+
+        this.stoppedActions = new java.util.ArrayList<String>(stoppedActions);
+    }
+
+    /**
+     * <p>
+     * List of fleet actions that have been suspended using <a>StopFleetActions</a>. This includes auto-scaling.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setStoppedActions(java.util.Collection)} or {@link #withStoppedActions(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param stoppedActions
+     *        List of fleet actions that have been suspended using <a>StopFleetActions</a>. This includes auto-scaling.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FleetAction
+     */
+
+    public FleetAttributes withStoppedActions(String... stoppedActions) {
+        if (this.stoppedActions == null) {
+            setStoppedActions(new java.util.ArrayList<String>(stoppedActions.length));
+        }
+        for (String ele : stoppedActions) {
+            this.stoppedActions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * List of fleet actions that have been suspended using <a>StopFleetActions</a>. This includes auto-scaling.
+     * </p>
+     * 
+     * @param stoppedActions
+     *        List of fleet actions that have been suspended using <a>StopFleetActions</a>. This includes auto-scaling.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FleetAction
+     */
+
+    public FleetAttributes withStoppedActions(java.util.Collection<String> stoppedActions) {
+        setStoppedActions(stoppedActions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * List of fleet actions that have been suspended using <a>StopFleetActions</a>. This includes auto-scaling.
+     * </p>
+     * 
+     * @param stoppedActions
+     *        List of fleet actions that have been suspended using <a>StopFleetActions</a>. This includes auto-scaling.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FleetAction
+     */
+
+    public FleetAttributes withStoppedActions(FleetAction... stoppedActions) {
+        java.util.ArrayList<String> stoppedActionsCopy = new java.util.ArrayList<String>(stoppedActions.length);
+        for (FleetAction value : stoppedActions) {
+            stoppedActionsCopy.add(value.toString());
+        }
+        if (getStoppedActions() == null) {
+            setStoppedActions(stoppedActionsCopy);
+        } else {
+            getStoppedActions().addAll(stoppedActionsCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1879,7 +1973,9 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
         if (getResourceCreationLimitPolicy() != null)
             sb.append("ResourceCreationLimitPolicy: ").append(getResourceCreationLimitPolicy()).append(",");
         if (getMetricGroups() != null)
-            sb.append("MetricGroups: ").append(getMetricGroups());
+            sb.append("MetricGroups: ").append(getMetricGroups()).append(",");
+        if (getStoppedActions() != null)
+            sb.append("StoppedActions: ").append(getStoppedActions());
         sb.append("}");
         return sb.toString();
     }
@@ -1963,6 +2059,10 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getMetricGroups() != null && other.getMetricGroups().equals(this.getMetricGroups()) == false)
             return false;
+        if (other.getStoppedActions() == null ^ this.getStoppedActions() == null)
+            return false;
+        if (other.getStoppedActions() != null && other.getStoppedActions().equals(this.getStoppedActions()) == false)
+            return false;
         return true;
     }
 
@@ -1988,6 +2088,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getOperatingSystem() == null) ? 0 : getOperatingSystem().hashCode());
         hashCode = prime * hashCode + ((getResourceCreationLimitPolicy() == null) ? 0 : getResourceCreationLimitPolicy().hashCode());
         hashCode = prime * hashCode + ((getMetricGroups() == null) ? 0 : getMetricGroups().hashCode());
+        hashCode = prime * hashCode + ((getStoppedActions() == null) ? 0 : getStoppedActions().hashCode());
         return hashCode;
     }
 

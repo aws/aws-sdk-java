@@ -190,9 +190,9 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
     private String gameSessionData;
     /**
      * <p>
-     * Information on the matchmaking process for this game. Data is in JSON syntax, formated as a string. It identifies
-     * the matchmaking configuration used to create the match, and contains data on all players assigned to the match,
-     * including player attributes and team assignments. For more details on matchmaker data, see <a
+     * Information on the matchmaking process for this game. Data is in JSON syntax, formatted as a string. It
+     * identifies the matchmaking configuration used to create the match, and contains data on all players assigned to
+     * the match, including player attributes and team assignments. For more details on matchmaker data, see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
      * Data</a>.
      * </p>
@@ -1339,15 +1339,15 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Information on the matchmaking process for this game. Data is in JSON syntax, formated as a string. It identifies
-     * the matchmaking configuration used to create the match, and contains data on all players assigned to the match,
-     * including player attributes and team assignments. For more details on matchmaker data, see <a
+     * Information on the matchmaking process for this game. Data is in JSON syntax, formatted as a string. It
+     * identifies the matchmaking configuration used to create the match, and contains data on all players assigned to
+     * the match, including player attributes and team assignments. For more details on matchmaker data, see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
      * Data</a>.
      * </p>
      * 
      * @param matchmakerData
-     *        Information on the matchmaking process for this game. Data is in JSON syntax, formated as a string. It
+     *        Information on the matchmaking process for this game. Data is in JSON syntax, formatted as a string. It
      *        identifies the matchmaking configuration used to create the match, and contains data on all players
      *        assigned to the match, including player attributes and team assignments. For more details on matchmaker
      *        data, see <a
@@ -1361,14 +1361,14 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Information on the matchmaking process for this game. Data is in JSON syntax, formated as a string. It identifies
-     * the matchmaking configuration used to create the match, and contains data on all players assigned to the match,
-     * including player attributes and team assignments. For more details on matchmaker data, see <a
+     * Information on the matchmaking process for this game. Data is in JSON syntax, formatted as a string. It
+     * identifies the matchmaking configuration used to create the match, and contains data on all players assigned to
+     * the match, including player attributes and team assignments. For more details on matchmaker data, see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
      * Data</a>.
      * </p>
      * 
-     * @return Information on the matchmaking process for this game. Data is in JSON syntax, formated as a string. It
+     * @return Information on the matchmaking process for this game. Data is in JSON syntax, formatted as a string. It
      *         identifies the matchmaking configuration used to create the match, and contains data on all players
      *         assigned to the match, including player attributes and team assignments. For more details on matchmaker
      *         data, see <a
@@ -1382,15 +1382,15 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Information on the matchmaking process for this game. Data is in JSON syntax, formated as a string. It identifies
-     * the matchmaking configuration used to create the match, and contains data on all players assigned to the match,
-     * including player attributes and team assignments. For more details on matchmaker data, see <a
+     * Information on the matchmaking process for this game. Data is in JSON syntax, formatted as a string. It
+     * identifies the matchmaking configuration used to create the match, and contains data on all players assigned to
+     * the match, including player attributes and team assignments. For more details on matchmaker data, see <a
      * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match
      * Data</a>.
      * </p>
      * 
      * @param matchmakerData
-     *        Information on the matchmaking process for this game. Data is in JSON syntax, formated as a string. It
+     *        Information on the matchmaking process for this game. Data is in JSON syntax, formatted as a string. It
      *        identifies the matchmaking configuration used to create the match, and contains data on all players
      *        assigned to the match, including player attributes and team assignments. For more details on matchmaker
      *        data, see <a

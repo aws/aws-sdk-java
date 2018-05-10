@@ -94,9 +94,9 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Game session protection policy to apply to all instances in this fleet. If this parameter is not set, instances
-     * in this fleet default to no protection. You can change a fleet's protection policy using UpdateFleetAttributes,
-     * but this change will only affect sessions created after the policy change. You can also set protection for
-     * individual instances using <a>UpdateGameSession</a>.
+     * in this fleet default to no protection. You can change a fleet's protection policy using
+     * <a>UpdateFleetAttributes</a>, but this change will only affect sessions created after the policy change. You can
+     * also set protection for individual instances using <a>UpdateGameSession</a>.
      * </p>
      * <ul>
      * <li>
@@ -703,9 +703,9 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Game session protection policy to apply to all instances in this fleet. If this parameter is not set, instances
-     * in this fleet default to no protection. You can change a fleet's protection policy using UpdateFleetAttributes,
-     * but this change will only affect sessions created after the policy change. You can also set protection for
-     * individual instances using <a>UpdateGameSession</a>.
+     * in this fleet default to no protection. You can change a fleet's protection policy using
+     * <a>UpdateFleetAttributes</a>, but this change will only affect sessions created after the policy change. You can
+     * also set protection for individual instances using <a>UpdateGameSession</a>.
      * </p>
      * <ul>
      * <li>
@@ -724,8 +724,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param newGameSessionProtectionPolicy
      *        Game session protection policy to apply to all instances in this fleet. If this parameter is not set,
      *        instances in this fleet default to no protection. You can change a fleet's protection policy using
-     *        UpdateFleetAttributes, but this change will only affect sessions created after the policy change. You can
-     *        also set protection for individual instances using <a>UpdateGameSession</a>.</p>
+     *        <a>UpdateFleetAttributes</a>, but this change will only affect sessions created after the policy change.
+     *        You can also set protection for individual instances using <a>UpdateGameSession</a>.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -748,9 +748,9 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Game session protection policy to apply to all instances in this fleet. If this parameter is not set, instances
-     * in this fleet default to no protection. You can change a fleet's protection policy using UpdateFleetAttributes,
-     * but this change will only affect sessions created after the policy change. You can also set protection for
-     * individual instances using <a>UpdateGameSession</a>.
+     * in this fleet default to no protection. You can change a fleet's protection policy using
+     * <a>UpdateFleetAttributes</a>, but this change will only affect sessions created after the policy change. You can
+     * also set protection for individual instances using <a>UpdateGameSession</a>.
      * </p>
      * <ul>
      * <li>
@@ -768,8 +768,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @return Game session protection policy to apply to all instances in this fleet. If this parameter is not set,
      *         instances in this fleet default to no protection. You can change a fleet's protection policy using
-     *         UpdateFleetAttributes, but this change will only affect sessions created after the policy change. You can
-     *         also set protection for individual instances using <a>UpdateGameSession</a>.</p>
+     *         <a>UpdateFleetAttributes</a>, but this change will only affect sessions created after the policy change.
+     *         You can also set protection for individual instances using <a>UpdateGameSession</a>.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -792,9 +792,9 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Game session protection policy to apply to all instances in this fleet. If this parameter is not set, instances
-     * in this fleet default to no protection. You can change a fleet's protection policy using UpdateFleetAttributes,
-     * but this change will only affect sessions created after the policy change. You can also set protection for
-     * individual instances using <a>UpdateGameSession</a>.
+     * in this fleet default to no protection. You can change a fleet's protection policy using
+     * <a>UpdateFleetAttributes</a>, but this change will only affect sessions created after the policy change. You can
+     * also set protection for individual instances using <a>UpdateGameSession</a>.
      * </p>
      * <ul>
      * <li>
@@ -813,8 +813,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param newGameSessionProtectionPolicy
      *        Game session protection policy to apply to all instances in this fleet. If this parameter is not set,
      *        instances in this fleet default to no protection. You can change a fleet's protection policy using
-     *        UpdateFleetAttributes, but this change will only affect sessions created after the policy change. You can
-     *        also set protection for individual instances using <a>UpdateGameSession</a>.</p>
+     *        <a>UpdateFleetAttributes</a>, but this change will only affect sessions created after the policy change.
+     *        You can also set protection for individual instances using <a>UpdateGameSession</a>.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -839,9 +839,9 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Game session protection policy to apply to all instances in this fleet. If this parameter is not set, instances
-     * in this fleet default to no protection. You can change a fleet's protection policy using UpdateFleetAttributes,
-     * but this change will only affect sessions created after the policy change. You can also set protection for
-     * individual instances using <a>UpdateGameSession</a>.
+     * in this fleet default to no protection. You can change a fleet's protection policy using
+     * <a>UpdateFleetAttributes</a>, but this change will only affect sessions created after the policy change. You can
+     * also set protection for individual instances using <a>UpdateGameSession</a>.
      * </p>
      * <ul>
      * <li>
@@ -860,8 +860,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param newGameSessionProtectionPolicy
      *        Game session protection policy to apply to all instances in this fleet. If this parameter is not set,
      *        instances in this fleet default to no protection. You can change a fleet's protection policy using
-     *        UpdateFleetAttributes, but this change will only affect sessions created after the policy change. You can
-     *        also set protection for individual instances using <a>UpdateGameSession</a>.</p>
+     *        <a>UpdateFleetAttributes</a>, but this change will only affect sessions created after the policy change.
+     *        You can also set protection for individual instances using <a>UpdateGameSession</a>.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -884,9 +884,9 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Game session protection policy to apply to all instances in this fleet. If this parameter is not set, instances
-     * in this fleet default to no protection. You can change a fleet's protection policy using UpdateFleetAttributes,
-     * but this change will only affect sessions created after the policy change. You can also set protection for
-     * individual instances using <a>UpdateGameSession</a>.
+     * in this fleet default to no protection. You can change a fleet's protection policy using
+     * <a>UpdateFleetAttributes</a>, but this change will only affect sessions created after the policy change. You can
+     * also set protection for individual instances using <a>UpdateGameSession</a>.
      * </p>
      * <ul>
      * <li>
@@ -905,8 +905,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param newGameSessionProtectionPolicy
      *        Game session protection policy to apply to all instances in this fleet. If this parameter is not set,
      *        instances in this fleet default to no protection. You can change a fleet's protection policy using
-     *        UpdateFleetAttributes, but this change will only affect sessions created after the policy change. You can
-     *        also set protection for individual instances using <a>UpdateGameSession</a>.</p>
+     *        <a>UpdateFleetAttributes</a>, but this change will only affect sessions created after the policy change.
+     *        You can also set protection for individual instances using <a>UpdateGameSession</a>.</p>
      *        <ul>
      *        <li>
      *        <p>

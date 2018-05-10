@@ -125,12 +125,16 @@ public enum GameliftActions implements Action {
     ResolveAlias("gamelift:ResolveAlias"),
     /** Action for the SearchGameSessions operation. */
     SearchGameSessions("gamelift:SearchGameSessions"),
+    /** Action for the StartFleetActions operation. */
+    StartFleetActions("gamelift:StartFleetActions"),
     /** Action for the StartGameSessionPlacement operation. */
     StartGameSessionPlacement("gamelift:StartGameSessionPlacement"),
     /** Action for the StartMatchBackfill operation. */
     StartMatchBackfill("gamelift:StartMatchBackfill"),
     /** Action for the StartMatchmaking operation. */
     StartMatchmaking("gamelift:StartMatchmaking"),
+    /** Action for the StopFleetActions operation. */
+    StopFleetActions("gamelift:StopFleetActions"),
     /** Action for the StopGameSessionPlacement operation. */
     StopGameSessionPlacement("gamelift:StopGameSessionPlacement"),
     /** Action for the StopMatchmaking operation. */

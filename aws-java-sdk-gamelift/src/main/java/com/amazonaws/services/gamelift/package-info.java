@@ -31,7 +31,7 @@
  * </li>
  * <li>
  * <p>
- * <b>Configure and manage game server resources</b> -- Manage builds, fleets, queues, and aliases; set autoscaling
+ * <b>Configure and manage game server resources</b> -- Manage builds, fleets, queues, and aliases; set auto-scaling
  * policies; retrieve logs and metrics.
  * </p>
  * </li>
@@ -368,22 +368,32 @@
  * </li>
  * <li>
  * <p>
- * Autoscale -- Manage autoscaling rules and apply them to a fleet.
+ * Autoscale -- Manage auto-scaling rules and apply them to a fleet.
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a>PutScalingPolicy</a> -- Create a new autoscaling policy, or update an existing one.
+ * <a>PutScalingPolicy</a> -- Create a new auto-scaling policy, or update an existing one.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeScalingPolicies</a> -- Retrieve an existing autoscaling policy.
+ * <a>DescribeScalingPolicies</a> -- Retrieve an existing auto-scaling policy.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DeleteScalingPolicy</a> -- Delete an autoscaling policy and stop it from affecting a fleet's capacity.
+ * <a>DeleteScalingPolicy</a> -- Delete an auto-scaling policy and stop it from affecting a fleet's capacity.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>StartFleetActions</a> -- Restart a fleet's auto-scaling policies.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>StopFleetActions</a> -- Suspend a fleet's auto-scaling policies.
  * </p>
  * </li>
  * </ul>

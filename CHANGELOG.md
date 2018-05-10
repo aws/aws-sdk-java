@@ -1,4 +1,9 @@
-# __1.11.326__ __2018-05-10__
+# __1.11.327__ __2018-05-10__
+## __Amazon GameLift__
+  - ### Features
+    - AutoScaling Target Tracking scaling simplification along with StartFleetActions and StopFleetActions APIs to suspend and resume automatic scaling at will.
+
+# __1.11.326__ __2018-05-09__
 ## __AWS Budgets__
   - ### Features
     - Updating the regex for the NumericValue fields.

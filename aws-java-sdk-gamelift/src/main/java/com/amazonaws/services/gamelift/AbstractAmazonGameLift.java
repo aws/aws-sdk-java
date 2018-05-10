@@ -288,6 +288,11 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
     }
 
     @Override
+    public StartFleetActionsResult startFleetActions(StartFleetActionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartGameSessionPlacementResult startGameSessionPlacement(StartGameSessionPlacementRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -299,6 +304,11 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
 
     @Override
     public StartMatchmakingResult startMatchmaking(StartMatchmakingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopFleetActionsResult stopFleetActions(StopFleetActionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

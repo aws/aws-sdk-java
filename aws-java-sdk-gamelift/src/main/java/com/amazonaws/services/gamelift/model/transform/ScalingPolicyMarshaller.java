@@ -45,6 +45,10 @@ public class ScalingPolicyMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EvaluationPeriods").build();
     private static final MarshallingInfo<String> METRICNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MetricName").build();
+    private static final MarshallingInfo<String> POLICYTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PolicyType").build();
+    private static final MarshallingInfo<StructuredPojo> TARGETCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetConfiguration").build();
 
     private static final ScalingPolicyMarshaller instance = new ScalingPolicyMarshaller();
 
@@ -71,6 +75,8 @@ public class ScalingPolicyMarshaller {
             protocolMarshaller.marshall(scalingPolicy.getThreshold(), THRESHOLD_BINDING);
             protocolMarshaller.marshall(scalingPolicy.getEvaluationPeriods(), EVALUATIONPERIODS_BINDING);
             protocolMarshaller.marshall(scalingPolicy.getMetricName(), METRICNAME_BINDING);
+            protocolMarshaller.marshall(scalingPolicy.getPolicyType(), POLICYTYPE_BINDING);
+            protocolMarshaller.marshall(scalingPolicy.getTargetConfiguration(), TARGETCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

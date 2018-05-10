@@ -23,81 +23,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * fleet ID.
  * </p>
  * <p>
- * Fleet-related operations include:
- * </p>
- * <ul>
- * <li>
- * <p>
- * <a>CreateFleet</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>ListFleets</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * Describe fleets:
- * </p>
- * <ul>
- * <li>
- * <p>
- * <a>DescribeFleetAttributes</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeFleetPortSettings</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeFleetUtilization</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeRuntimeConfiguration</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeFleetEvents</a>
- * </p>
- * </li>
- * </ul>
- * </li>
- * <li>
- * <p>
- * Update fleets:
- * </p>
- * <ul>
- * <li>
- * <p>
- * <a>UpdateFleetAttributes</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>UpdateFleetCapacity</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>UpdateFleetPortSettings</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>UpdateRuntimeConfiguration</a>
- * </p>
- * </li>
- * </ul>
- * </li>
- * <li>
- * <p>
- * Manage fleet capacity:
+ * Operations related to fleet capacity scaling include:
  * </p>
  * <ul>
  * <li>
@@ -112,30 +38,47 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * <li>
  * <p>
- * <a>PutScalingPolicy</a> (automatic scaling)
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeScalingPolicies</a> (automatic scaling)
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DeleteScalingPolicy</a> (automatic scaling)
- * </p>
- * </li>
- * <li>
- * <p>
  * <a>DescribeEC2InstanceLimits</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Manage scaling policies:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>PutScalingPolicy</a> (auto-scaling)
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeScalingPolicies</a> (auto-scaling)
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteScalingPolicy</a> (auto-scaling)
  * </p>
  * </li>
  * </ul>
  * </li>
  * <li>
  * <p>
- * <a>DeleteFleet</a>
+ * Manage fleet actions:
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>StartFleetActions</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>StopFleetActions</a>
+ * </p>
+ * </li>
+ * </ul>
  * </li>
  * </ul>
  * 
@@ -159,12 +102,14 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * Current status of the scaling policy. The scaling policy is only in force when in an <code>ACTIVE</code> status.
+     * Current status of the scaling policy. The scaling policy can be in force only when in an <code>ACTIVE</code>
+     * status. Scaling policies can be suspended for individual fleets (see <a>StopFleetActions</a>; if suspended for a
+     * fleet, the policy status does not change. View a fleet's stopped actions by calling <a>DescribeFleetCapacity</a>.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>ACTIVE</b> -- The scaling policy is currently in force.
+     * <b>ACTIVE</b> -- The scaling policy can be used for auto-scaling a fleet.
      * </p>
      * </li>
      * <li>
@@ -251,48 +196,92 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     private Integer evaluationPeriods;
     /**
      * <p>
-     * Name of the Amazon GameLift-defined metric that is used to trigger an adjustment.
+     * Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed
+     * descriptions of fleet metrics, see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon
+     * GameLift with Amazon CloudWatch</a>.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>ActivatingGameSessions</b> -- number of game sessions in the process of being created (game session status =
-     * <code>ACTIVATING</code>).
+     * <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ActiveGameSessions</b> -- number of game sessions currently running (game session status = <code>ACTIVE</code>
-     * ).
+     * <b>ActiveGameSessions</b> -- Game sessions that are currently running.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>CurrentPlayerSessions</b> -- number of active or reserved player sessions (player session status =
-     * <code>ACTIVE</code> or <code>RESERVED</code>).
+     * <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AvailablePlayerSessions</b> -- number of player session slots currently available in active game sessions
-     * across the fleet, calculated by subtracting a game session's current player session count from its maximum player
-     * session count. This number does include game sessions that are not currently accepting players (game session
-     * <code>PlayerSessionCreationPolicy</code> = <code>DENY_ALL</code>).
+     * <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current
+     * capacity.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ActiveInstances</b> -- number of instances currently running a game session.
+     * <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game
+     * sessions that are not currently accepting players. Reserved player slots are not included.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>IdleInstances</b> -- number of instances not currently running a game session.
+     * <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are
+     * reserved for a player.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could
+     * host simultaneously, given current capacity. Use this metric for a target-based scaling policy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game
+     * sessions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the
+     * top-priority destination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current
+     * fleet is the top-priority destination.
      * </p>
      * </li>
      * </ul>
      */
     private String metricName;
+    /**
+     * <p>
+     * Type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
+     * 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the
+     * following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>,
+     * <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.
+     * </p>
+     */
+    private String policyType;
+    /**
+     * <p>
+     * Object that contains settings for a target-based scaling policy.
+     * </p>
+     */
+    private TargetConfiguration targetConfiguration;
 
     /**
      * <p>
@@ -376,12 +365,14 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Current status of the scaling policy. The scaling policy is only in force when in an <code>ACTIVE</code> status.
+     * Current status of the scaling policy. The scaling policy can be in force only when in an <code>ACTIVE</code>
+     * status. Scaling policies can be suspended for individual fleets (see <a>StopFleetActions</a>; if suspended for a
+     * fleet, the policy status does not change. View a fleet's stopped actions by calling <a>DescribeFleetCapacity</a>.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>ACTIVE</b> -- The scaling policy is currently in force.
+     * <b>ACTIVE</b> -- The scaling policy can be used for auto-scaling a fleet.
      * </p>
      * </li>
      * <li>
@@ -417,12 +408,14 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param status
-     *        Current status of the scaling policy. The scaling policy is only in force when in an <code>ACTIVE</code>
-     *        status.</p>
+     *        Current status of the scaling policy. The scaling policy can be in force only when in an
+     *        <code>ACTIVE</code> status. Scaling policies can be suspended for individual fleets (see
+     *        <a>StopFleetActions</a>; if suspended for a fleet, the policy status does not change. View a fleet's
+     *        stopped actions by calling <a>DescribeFleetCapacity</a>.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>ACTIVE</b> -- The scaling policy is currently in force.
+     *        <b>ACTIVE</b> -- The scaling policy can be used for auto-scaling a fleet.
      *        </p>
      *        </li>
      *        <li>
@@ -464,12 +457,14 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Current status of the scaling policy. The scaling policy is only in force when in an <code>ACTIVE</code> status.
+     * Current status of the scaling policy. The scaling policy can be in force only when in an <code>ACTIVE</code>
+     * status. Scaling policies can be suspended for individual fleets (see <a>StopFleetActions</a>; if suspended for a
+     * fleet, the policy status does not change. View a fleet's stopped actions by calling <a>DescribeFleetCapacity</a>.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>ACTIVE</b> -- The scaling policy is currently in force.
+     * <b>ACTIVE</b> -- The scaling policy can be used for auto-scaling a fleet.
      * </p>
      * </li>
      * <li>
@@ -504,12 +499,14 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return Current status of the scaling policy. The scaling policy is only in force when in an <code>ACTIVE</code>
-     *         status.</p>
+     * @return Current status of the scaling policy. The scaling policy can be in force only when in an
+     *         <code>ACTIVE</code> status. Scaling policies can be suspended for individual fleets (see
+     *         <a>StopFleetActions</a>; if suspended for a fleet, the policy status does not change. View a fleet's
+     *         stopped actions by calling <a>DescribeFleetCapacity</a>.</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>ACTIVE</b> -- The scaling policy is currently in force.
+     *         <b>ACTIVE</b> -- The scaling policy can be used for auto-scaling a fleet.
      *         </p>
      *         </li>
      *         <li>
@@ -551,12 +548,14 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Current status of the scaling policy. The scaling policy is only in force when in an <code>ACTIVE</code> status.
+     * Current status of the scaling policy. The scaling policy can be in force only when in an <code>ACTIVE</code>
+     * status. Scaling policies can be suspended for individual fleets (see <a>StopFleetActions</a>; if suspended for a
+     * fleet, the policy status does not change. View a fleet's stopped actions by calling <a>DescribeFleetCapacity</a>.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>ACTIVE</b> -- The scaling policy is currently in force.
+     * <b>ACTIVE</b> -- The scaling policy can be used for auto-scaling a fleet.
      * </p>
      * </li>
      * <li>
@@ -592,12 +591,14 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param status
-     *        Current status of the scaling policy. The scaling policy is only in force when in an <code>ACTIVE</code>
-     *        status.</p>
+     *        Current status of the scaling policy. The scaling policy can be in force only when in an
+     *        <code>ACTIVE</code> status. Scaling policies can be suspended for individual fleets (see
+     *        <a>StopFleetActions</a>; if suspended for a fleet, the policy status does not change. View a fleet's
+     *        stopped actions by calling <a>DescribeFleetCapacity</a>.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>ACTIVE</b> -- The scaling policy is currently in force.
+     *        <b>ACTIVE</b> -- The scaling policy can be used for auto-scaling a fleet.
      *        </p>
      *        </li>
      *        <li>
@@ -641,12 +642,14 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Current status of the scaling policy. The scaling policy is only in force when in an <code>ACTIVE</code> status.
+     * Current status of the scaling policy. The scaling policy can be in force only when in an <code>ACTIVE</code>
+     * status. Scaling policies can be suspended for individual fleets (see <a>StopFleetActions</a>; if suspended for a
+     * fleet, the policy status does not change. View a fleet's stopped actions by calling <a>DescribeFleetCapacity</a>.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>ACTIVE</b> -- The scaling policy is currently in force.
+     * <b>ACTIVE</b> -- The scaling policy can be used for auto-scaling a fleet.
      * </p>
      * </li>
      * <li>
@@ -682,12 +685,14 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param status
-     *        Current status of the scaling policy. The scaling policy is only in force when in an <code>ACTIVE</code>
-     *        status.</p>
+     *        Current status of the scaling policy. The scaling policy can be in force only when in an
+     *        <code>ACTIVE</code> status. Scaling policies can be suspended for individual fleets (see
+     *        <a>StopFleetActions</a>; if suspended for a fleet, the policy status does not change. View a fleet's
+     *        stopped actions by calling <a>DescribeFleetCapacity</a>.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>ACTIVE</b> -- The scaling policy is currently in force.
+     *        <b>ACTIVE</b> -- The scaling policy can be used for auto-scaling a fleet.
      *        </p>
      *        </li>
      *        <li>
@@ -729,12 +734,14 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Current status of the scaling policy. The scaling policy is only in force when in an <code>ACTIVE</code> status.
+     * Current status of the scaling policy. The scaling policy can be in force only when in an <code>ACTIVE</code>
+     * status. Scaling policies can be suspended for individual fleets (see <a>StopFleetActions</a>; if suspended for a
+     * fleet, the policy status does not change. View a fleet's stopped actions by calling <a>DescribeFleetCapacity</a>.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>ACTIVE</b> -- The scaling policy is currently in force.
+     * <b>ACTIVE</b> -- The scaling policy can be used for auto-scaling a fleet.
      * </p>
      * </li>
      * <li>
@@ -770,12 +777,14 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param status
-     *        Current status of the scaling policy. The scaling policy is only in force when in an <code>ACTIVE</code>
-     *        status.</p>
+     *        Current status of the scaling policy. The scaling policy can be in force only when in an
+     *        <code>ACTIVE</code> status. Scaling policies can be suspended for individual fleets (see
+     *        <a>StopFleetActions</a>; if suspended for a fleet, the policy status does not change. View a fleet's
+     *        stopped actions by calling <a>DescribeFleetCapacity</a>.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>ACTIVE</b> -- The scaling policy is currently in force.
+     *        <b>ACTIVE</b> -- The scaling policy can be used for auto-scaling a fleet.
      *        </p>
      *        </li>
      *        <li>
@@ -1273,84 +1282,142 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the Amazon GameLift-defined metric that is used to trigger an adjustment.
+     * Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed
+     * descriptions of fleet metrics, see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon
+     * GameLift with Amazon CloudWatch</a>.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>ActivatingGameSessions</b> -- number of game sessions in the process of being created (game session status =
-     * <code>ACTIVATING</code>).
+     * <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ActiveGameSessions</b> -- number of game sessions currently running (game session status = <code>ACTIVE</code>
-     * ).
+     * <b>ActiveGameSessions</b> -- Game sessions that are currently running.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>CurrentPlayerSessions</b> -- number of active or reserved player sessions (player session status =
-     * <code>ACTIVE</code> or <code>RESERVED</code>).
+     * <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AvailablePlayerSessions</b> -- number of player session slots currently available in active game sessions
-     * across the fleet, calculated by subtracting a game session's current player session count from its maximum player
-     * session count. This number does include game sessions that are not currently accepting players (game session
-     * <code>PlayerSessionCreationPolicy</code> = <code>DENY_ALL</code>).
+     * <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current
+     * capacity.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ActiveInstances</b> -- number of instances currently running a game session.
+     * <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game
+     * sessions that are not currently accepting players. Reserved player slots are not included.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>IdleInstances</b> -- number of instances not currently running a game session.
+     * <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are
+     * reserved for a player.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could
+     * host simultaneously, given current capacity. Use this metric for a target-based scaling policy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game
+     * sessions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the
+     * top-priority destination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current
+     * fleet is the top-priority destination.
      * </p>
      * </li>
      * </ul>
      * 
      * @param metricName
-     *        Name of the Amazon GameLift-defined metric that is used to trigger an adjustment.</p>
+     *        Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed
+     *        descriptions of fleet metrics, see <a
+     *        href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon
+     *        GameLift with Amazon CloudWatch</a>. </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>ActivatingGameSessions</b> -- number of game sessions in the process of being created (game session
-     *        status = <code>ACTIVATING</code>).
+     *        <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ActiveGameSessions</b> -- number of game sessions currently running (game session status =
-     *        <code>ACTIVE</code>).
+     *        <b>ActiveGameSessions</b> -- Game sessions that are currently running.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>CurrentPlayerSessions</b> -- number of active or reserved player sessions (player session status =
-     *        <code>ACTIVE</code> or <code>RESERVED</code>).
+     *        <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AvailablePlayerSessions</b> -- number of player session slots currently available in active game
-     *        sessions across the fleet, calculated by subtracting a game session's current player session count from
-     *        its maximum player session count. This number does include game sessions that are not currently accepting
-     *        players (game session <code>PlayerSessionCreationPolicy</code> = <code>DENY_ALL</code>).
+     *        <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given
+     *        current capacity.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ActiveInstances</b> -- number of instances currently running a game session.
+     *        <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game
+     *        sessions that are not currently accepting players. Reserved player slots are not included.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>IdleInstances</b> -- number of instances not currently running a game session.
+     *        <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or
+     *        are reserved for a player.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet
+     *        could host simultaneously, given current capacity. Use this metric for a target-based scaling policy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero
+     *        game sessions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the
+     *        top-priority destination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the
+     *        current fleet is the top-priority destination.
      *        </p>
      *        </li>
      * @see MetricName
@@ -1362,83 +1429,142 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the Amazon GameLift-defined metric that is used to trigger an adjustment.
+     * Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed
+     * descriptions of fleet metrics, see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon
+     * GameLift with Amazon CloudWatch</a>.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>ActivatingGameSessions</b> -- number of game sessions in the process of being created (game session status =
-     * <code>ACTIVATING</code>).
+     * <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ActiveGameSessions</b> -- number of game sessions currently running (game session status = <code>ACTIVE</code>
-     * ).
+     * <b>ActiveGameSessions</b> -- Game sessions that are currently running.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>CurrentPlayerSessions</b> -- number of active or reserved player sessions (player session status =
-     * <code>ACTIVE</code> or <code>RESERVED</code>).
+     * <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AvailablePlayerSessions</b> -- number of player session slots currently available in active game sessions
-     * across the fleet, calculated by subtracting a game session's current player session count from its maximum player
-     * session count. This number does include game sessions that are not currently accepting players (game session
-     * <code>PlayerSessionCreationPolicy</code> = <code>DENY_ALL</code>).
+     * <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current
+     * capacity.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ActiveInstances</b> -- number of instances currently running a game session.
+     * <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game
+     * sessions that are not currently accepting players. Reserved player slots are not included.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>IdleInstances</b> -- number of instances not currently running a game session.
+     * <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are
+     * reserved for a player.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could
+     * host simultaneously, given current capacity. Use this metric for a target-based scaling policy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game
+     * sessions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the
+     * top-priority destination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current
+     * fleet is the top-priority destination.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return Name of the Amazon GameLift-defined metric that is used to trigger an adjustment.</p>
+     * @return Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed
+     *         descriptions of fleet metrics, see <a
+     *         href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
+     *         Amazon GameLift with Amazon CloudWatch</a>. </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>ActivatingGameSessions</b> -- number of game sessions in the process of being created (game session
-     *         status = <code>ACTIVATING</code>).
+     *         <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>ActiveGameSessions</b> -- number of game sessions currently running (game session status =
-     *         <code>ACTIVE</code>).
+     *         <b>ActiveGameSessions</b> -- Game sessions that are currently running.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>CurrentPlayerSessions</b> -- number of active or reserved player sessions (player session status =
-     *         <code>ACTIVE</code> or <code>RESERVED</code>).
+     *         <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>AvailablePlayerSessions</b> -- number of player session slots currently available in active game
-     *         sessions across the fleet, calculated by subtracting a game session's current player session count from
-     *         its maximum player session count. This number does include game sessions that are not currently accepting
-     *         players (game session <code>PlayerSessionCreationPolicy</code> = <code>DENY_ALL</code>).
+     *         <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given
+     *         current capacity.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>ActiveInstances</b> -- number of instances currently running a game session.
+     *         <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes
+     *         game sessions that are not currently accepting players. Reserved player slots are not included.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>IdleInstances</b> -- number of instances not currently running a game session.
+     *         <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or
+     *         are reserved for a player.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a
+     *         fleet could host simultaneously, given current capacity. Use this metric for a target-based scaling
+     *         policy.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero
+     *         game sessions.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is
+     *         the top-priority destination.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the
+     *         current fleet is the top-priority destination.
      *         </p>
      *         </li>
      * @see MetricName
@@ -1450,84 +1576,142 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the Amazon GameLift-defined metric that is used to trigger an adjustment.
+     * Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed
+     * descriptions of fleet metrics, see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon
+     * GameLift with Amazon CloudWatch</a>.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>ActivatingGameSessions</b> -- number of game sessions in the process of being created (game session status =
-     * <code>ACTIVATING</code>).
+     * <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ActiveGameSessions</b> -- number of game sessions currently running (game session status = <code>ACTIVE</code>
-     * ).
+     * <b>ActiveGameSessions</b> -- Game sessions that are currently running.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>CurrentPlayerSessions</b> -- number of active or reserved player sessions (player session status =
-     * <code>ACTIVE</code> or <code>RESERVED</code>).
+     * <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AvailablePlayerSessions</b> -- number of player session slots currently available in active game sessions
-     * across the fleet, calculated by subtracting a game session's current player session count from its maximum player
-     * session count. This number does include game sessions that are not currently accepting players (game session
-     * <code>PlayerSessionCreationPolicy</code> = <code>DENY_ALL</code>).
+     * <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current
+     * capacity.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ActiveInstances</b> -- number of instances currently running a game session.
+     * <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game
+     * sessions that are not currently accepting players. Reserved player slots are not included.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>IdleInstances</b> -- number of instances not currently running a game session.
+     * <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are
+     * reserved for a player.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could
+     * host simultaneously, given current capacity. Use this metric for a target-based scaling policy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game
+     * sessions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the
+     * top-priority destination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current
+     * fleet is the top-priority destination.
      * </p>
      * </li>
      * </ul>
      * 
      * @param metricName
-     *        Name of the Amazon GameLift-defined metric that is used to trigger an adjustment.</p>
+     *        Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed
+     *        descriptions of fleet metrics, see <a
+     *        href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon
+     *        GameLift with Amazon CloudWatch</a>. </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>ActivatingGameSessions</b> -- number of game sessions in the process of being created (game session
-     *        status = <code>ACTIVATING</code>).
+     *        <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ActiveGameSessions</b> -- number of game sessions currently running (game session status =
-     *        <code>ACTIVE</code>).
+     *        <b>ActiveGameSessions</b> -- Game sessions that are currently running.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>CurrentPlayerSessions</b> -- number of active or reserved player sessions (player session status =
-     *        <code>ACTIVE</code> or <code>RESERVED</code>).
+     *        <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AvailablePlayerSessions</b> -- number of player session slots currently available in active game
-     *        sessions across the fleet, calculated by subtracting a game session's current player session count from
-     *        its maximum player session count. This number does include game sessions that are not currently accepting
-     *        players (game session <code>PlayerSessionCreationPolicy</code> = <code>DENY_ALL</code>).
+     *        <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given
+     *        current capacity.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ActiveInstances</b> -- number of instances currently running a game session.
+     *        <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game
+     *        sessions that are not currently accepting players. Reserved player slots are not included.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>IdleInstances</b> -- number of instances not currently running a game session.
+     *        <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or
+     *        are reserved for a player.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet
+     *        could host simultaneously, given current capacity. Use this metric for a target-based scaling policy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero
+     *        game sessions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the
+     *        top-priority destination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the
+     *        current fleet is the top-priority destination.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1541,84 +1725,142 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the Amazon GameLift-defined metric that is used to trigger an adjustment.
+     * Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed
+     * descriptions of fleet metrics, see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon
+     * GameLift with Amazon CloudWatch</a>.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>ActivatingGameSessions</b> -- number of game sessions in the process of being created (game session status =
-     * <code>ACTIVATING</code>).
+     * <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ActiveGameSessions</b> -- number of game sessions currently running (game session status = <code>ACTIVE</code>
-     * ).
+     * <b>ActiveGameSessions</b> -- Game sessions that are currently running.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>CurrentPlayerSessions</b> -- number of active or reserved player sessions (player session status =
-     * <code>ACTIVE</code> or <code>RESERVED</code>).
+     * <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AvailablePlayerSessions</b> -- number of player session slots currently available in active game sessions
-     * across the fleet, calculated by subtracting a game session's current player session count from its maximum player
-     * session count. This number does include game sessions that are not currently accepting players (game session
-     * <code>PlayerSessionCreationPolicy</code> = <code>DENY_ALL</code>).
+     * <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current
+     * capacity.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ActiveInstances</b> -- number of instances currently running a game session.
+     * <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game
+     * sessions that are not currently accepting players. Reserved player slots are not included.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>IdleInstances</b> -- number of instances not currently running a game session.
+     * <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are
+     * reserved for a player.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could
+     * host simultaneously, given current capacity. Use this metric for a target-based scaling policy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game
+     * sessions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the
+     * top-priority destination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current
+     * fleet is the top-priority destination.
      * </p>
      * </li>
      * </ul>
      * 
      * @param metricName
-     *        Name of the Amazon GameLift-defined metric that is used to trigger an adjustment.</p>
+     *        Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed
+     *        descriptions of fleet metrics, see <a
+     *        href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon
+     *        GameLift with Amazon CloudWatch</a>. </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>ActivatingGameSessions</b> -- number of game sessions in the process of being created (game session
-     *        status = <code>ACTIVATING</code>).
+     *        <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ActiveGameSessions</b> -- number of game sessions currently running (game session status =
-     *        <code>ACTIVE</code>).
+     *        <b>ActiveGameSessions</b> -- Game sessions that are currently running.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>CurrentPlayerSessions</b> -- number of active or reserved player sessions (player session status =
-     *        <code>ACTIVE</code> or <code>RESERVED</code>).
+     *        <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AvailablePlayerSessions</b> -- number of player session slots currently available in active game
-     *        sessions across the fleet, calculated by subtracting a game session's current player session count from
-     *        its maximum player session count. This number does include game sessions that are not currently accepting
-     *        players (game session <code>PlayerSessionCreationPolicy</code> = <code>DENY_ALL</code>).
+     *        <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given
+     *        current capacity.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ActiveInstances</b> -- number of instances currently running a game session.
+     *        <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game
+     *        sessions that are not currently accepting players. Reserved player slots are not included.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>IdleInstances</b> -- number of instances not currently running a game session.
+     *        <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or
+     *        are reserved for a player.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet
+     *        could host simultaneously, given current capacity. Use this metric for a target-based scaling policy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero
+     *        game sessions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the
+     *        top-priority destination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the
+     *        current fleet is the top-priority destination.
      *        </p>
      *        </li>
      * @see MetricName
@@ -1630,84 +1872,142 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the Amazon GameLift-defined metric that is used to trigger an adjustment.
+     * Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed
+     * descriptions of fleet metrics, see <a
+     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon
+     * GameLift with Amazon CloudWatch</a>.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>ActivatingGameSessions</b> -- number of game sessions in the process of being created (game session status =
-     * <code>ACTIVATING</code>).
+     * <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ActiveGameSessions</b> -- number of game sessions currently running (game session status = <code>ACTIVE</code>
-     * ).
+     * <b>ActiveGameSessions</b> -- Game sessions that are currently running.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>CurrentPlayerSessions</b> -- number of active or reserved player sessions (player session status =
-     * <code>ACTIVE</code> or <code>RESERVED</code>).
+     * <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>AvailablePlayerSessions</b> -- number of player session slots currently available in active game sessions
-     * across the fleet, calculated by subtracting a game session's current player session count from its maximum player
-     * session count. This number does include game sessions that are not currently accepting players (game session
-     * <code>PlayerSessionCreationPolicy</code> = <code>DENY_ALL</code>).
+     * <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given current
+     * capacity.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>ActiveInstances</b> -- number of instances currently running a game session.
+     * <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game
+     * sessions that are not currently accepting players. Reserved player slots are not included.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>IdleInstances</b> -- number of instances not currently running a game session.
+     * <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or are
+     * reserved for a player.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet could
+     * host simultaneously, given current capacity. Use this metric for a target-based scaling policy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero game
+     * sessions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the
+     * top-priority destination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the current
+     * fleet is the top-priority destination.
      * </p>
      * </li>
      * </ul>
      * 
      * @param metricName
-     *        Name of the Amazon GameLift-defined metric that is used to trigger an adjustment.</p>
+     *        Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed
+     *        descriptions of fleet metrics, see <a
+     *        href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon
+     *        GameLift with Amazon CloudWatch</a>. </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>ActivatingGameSessions</b> -- number of game sessions in the process of being created (game session
-     *        status = <code>ACTIVATING</code>).
+     *        <b>ActivatingGameSessions</b> -- Game sessions in the process of being created.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ActiveGameSessions</b> -- number of game sessions currently running (game session status =
-     *        <code>ACTIVE</code>).
+     *        <b>ActiveGameSessions</b> -- Game sessions that are currently running.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>CurrentPlayerSessions</b> -- number of active or reserved player sessions (player session status =
-     *        <code>ACTIVE</code> or <code>RESERVED</code>).
+     *        <b>ActiveInstances</b> -- Fleet instances that are currently running at least one game session.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>AvailablePlayerSessions</b> -- number of player session slots currently available in active game
-     *        sessions across the fleet, calculated by subtracting a game session's current player session count from
-     *        its maximum player session count. This number does include game sessions that are not currently accepting
-     *        players (game session <code>PlayerSessionCreationPolicy</code> = <code>DENY_ALL</code>).
+     *        <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously, given
+     *        current capacity.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>ActiveInstances</b> -- number of instances currently running a game session.
+     *        <b>AvailablePlayerSessions</b> -- Empty player slots in currently active game sessions. This includes game
+     *        sessions that are not currently accepting players. Reserved player slots are not included.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>IdleInstances</b> -- number of instances not currently running a game session.
+     *        <b>CurrentPlayerSessions</b> -- Player slots in active game sessions that are being used by a player or
+     *        are reserved for a player.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>IdleInstances</b> -- Active instances that are currently hosting zero game sessions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>PercentAvailableGameSessions</b> -- Unused percentage of the total number of game sessions that a fleet
+     *        could host simultaneously, given current capacity. Use this metric for a target-based scaling policy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>PercentIdleInstances</b> -- Percentage of the total number of active instances that are hosting zero
+     *        game sessions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>QueueDepth</b> -- Pending game session placement requests, in any queue, where the current fleet is the
+     *        top-priority destination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>WaitTime</b> -- Current wait time for pending game session placement requests, in any queue, where the
+     *        current fleet is the top-priority destination.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1716,6 +2016,149 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     public ScalingPolicy withMetricName(MetricName metricName) {
         this.metricName = metricName.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
+     * 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the
+     * following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>,
+     * <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.
+     * </p>
+     * 
+     * @param policyType
+     *        Type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
+     *        'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the
+     *        following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>,
+     *        <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.
+     * @see PolicyType
+     */
+
+    public void setPolicyType(String policyType) {
+        this.policyType = policyType;
+    }
+
+    /**
+     * <p>
+     * Type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
+     * 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the
+     * following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>,
+     * <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.
+     * </p>
+     * 
+     * @return Type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
+     *         'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the
+     *         following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>,
+     *         <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.
+     * @see PolicyType
+     */
+
+    public String getPolicyType() {
+        return this.policyType;
+    }
+
+    /**
+     * <p>
+     * Type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
+     * 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the
+     * following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>,
+     * <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.
+     * </p>
+     * 
+     * @param policyType
+     *        Type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
+     *        'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the
+     *        following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>,
+     *        <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PolicyType
+     */
+
+    public ScalingPolicy withPolicyType(String policyType) {
+        setPolicyType(policyType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
+     * 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the
+     * following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>,
+     * <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.
+     * </p>
+     * 
+     * @param policyType
+     *        Type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
+     *        'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the
+     *        following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>,
+     *        <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.
+     * @see PolicyType
+     */
+
+    public void setPolicyType(PolicyType policyType) {
+        withPolicyType(policyType);
+    }
+
+    /**
+     * <p>
+     * Type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
+     * 'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the
+     * following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>, <i>EvaluationPeriods</i>,
+     * <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.
+     * </p>
+     * 
+     * @param policyType
+     *        Type of scaling policy to create. For a target-based policy, set the parameter <i>MetricName</i> to
+     *        'PercentAvailableGameSessions' and specify a <i>TargetConfiguration</i>. For a rule-based policy set the
+     *        following parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>,
+     *        <i>EvaluationPeriods</i>, <i>ScalingAdjustmentType</i>, and <i>ScalingAdjustment</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PolicyType
+     */
+
+    public ScalingPolicy withPolicyType(PolicyType policyType) {
+        this.policyType = policyType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Object that contains settings for a target-based scaling policy.
+     * </p>
+     * 
+     * @param targetConfiguration
+     *        Object that contains settings for a target-based scaling policy.
+     */
+
+    public void setTargetConfiguration(TargetConfiguration targetConfiguration) {
+        this.targetConfiguration = targetConfiguration;
+    }
+
+    /**
+     * <p>
+     * Object that contains settings for a target-based scaling policy.
+     * </p>
+     * 
+     * @return Object that contains settings for a target-based scaling policy.
+     */
+
+    public TargetConfiguration getTargetConfiguration() {
+        return this.targetConfiguration;
+    }
+
+    /**
+     * <p>
+     * Object that contains settings for a target-based scaling policy.
+     * </p>
+     * 
+     * @param targetConfiguration
+     *        Object that contains settings for a target-based scaling policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScalingPolicy withTargetConfiguration(TargetConfiguration targetConfiguration) {
+        setTargetConfiguration(targetConfiguration);
         return this;
     }
 
@@ -1747,7 +2190,11 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
         if (getEvaluationPeriods() != null)
             sb.append("EvaluationPeriods: ").append(getEvaluationPeriods()).append(",");
         if (getMetricName() != null)
-            sb.append("MetricName: ").append(getMetricName());
+            sb.append("MetricName: ").append(getMetricName()).append(",");
+        if (getPolicyType() != null)
+            sb.append("PolicyType: ").append(getPolicyType()).append(",");
+        if (getTargetConfiguration() != null)
+            sb.append("TargetConfiguration: ").append(getTargetConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1798,6 +2245,14 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMetricName() != null && other.getMetricName().equals(this.getMetricName()) == false)
             return false;
+        if (other.getPolicyType() == null ^ this.getPolicyType() == null)
+            return false;
+        if (other.getPolicyType() != null && other.getPolicyType().equals(this.getPolicyType()) == false)
+            return false;
+        if (other.getTargetConfiguration() == null ^ this.getTargetConfiguration() == null)
+            return false;
+        if (other.getTargetConfiguration() != null && other.getTargetConfiguration().equals(this.getTargetConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1815,6 +2270,8 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getThreshold() == null) ? 0 : getThreshold().hashCode());
         hashCode = prime * hashCode + ((getEvaluationPeriods() == null) ? 0 : getEvaluationPeriods().hashCode());
         hashCode = prime * hashCode + ((getMetricName() == null) ? 0 : getMetricName().hashCode());
+        hashCode = prime * hashCode + ((getPolicyType() == null) ? 0 : getPolicyType().hashCode());
+        hashCode = prime * hashCode + ((getTargetConfiguration() == null) ? 0 : getTargetConfiguration().hashCode());
         return hashCode;
     }
 
