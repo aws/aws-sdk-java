@@ -187,6 +187,25 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * </p>
      */
     private Boolean enableIAMDatabaseAuthentication;
+    /**
+     * <p>
+     * The target backtrack window, in seconds. To disable backtracking, set this value to 0.
+     * </p>
+     * <p>
+     * Default: 0
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If specified, this value must be set to a number from 0 to 259,200 (72 hours).
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private Long backtrackWindow;
 
     /**
      * <p>
@@ -1307,6 +1326,121 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * The target backtrack window, in seconds. To disable backtracking, set this value to 0.
+     * </p>
+     * <p>
+     * Default: 0
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If specified, this value must be set to a number from 0 to 259,200 (72 hours).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param backtrackWindow
+     *        The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p>
+     *        <p>
+     *        Default: 0
+     *        </p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If specified, this value must be set to a number from 0 to 259,200 (72 hours).
+     *        </p>
+     *        </li>
+     */
+
+    public void setBacktrackWindow(Long backtrackWindow) {
+        this.backtrackWindow = backtrackWindow;
+    }
+
+    /**
+     * <p>
+     * The target backtrack window, in seconds. To disable backtracking, set this value to 0.
+     * </p>
+     * <p>
+     * Default: 0
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If specified, this value must be set to a number from 0 to 259,200 (72 hours).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p>
+     *         <p>
+     *         Default: 0
+     *         </p>
+     *         <p>
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If specified, this value must be set to a number from 0 to 259,200 (72 hours).
+     *         </p>
+     *         </li>
+     */
+
+    public Long getBacktrackWindow() {
+        return this.backtrackWindow;
+    }
+
+    /**
+     * <p>
+     * The target backtrack window, in seconds. To disable backtracking, set this value to 0.
+     * </p>
+     * <p>
+     * Default: 0
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If specified, this value must be set to a number from 0 to 259,200 (72 hours).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param backtrackWindow
+     *        The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p>
+     *        <p>
+     *        Default: 0
+     *        </p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If specified, this value must be set to a number from 0 to 259,200 (72 hours).
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBClusterFromSnapshotRequest withBacktrackWindow(Long backtrackWindow) {
+        setBacktrackWindow(backtrackWindow);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1342,7 +1476,9 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getEnableIAMDatabaseAuthentication() != null)
-            sb.append("EnableIAMDatabaseAuthentication: ").append(getEnableIAMDatabaseAuthentication());
+            sb.append("EnableIAMDatabaseAuthentication: ").append(getEnableIAMDatabaseAuthentication()).append(",");
+        if (getBacktrackWindow() != null)
+            sb.append("BacktrackWindow: ").append(getBacktrackWindow());
         sb.append("}");
         return sb.toString();
     }
@@ -1410,6 +1546,10 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
         if (other.getEnableIAMDatabaseAuthentication() != null
                 && other.getEnableIAMDatabaseAuthentication().equals(this.getEnableIAMDatabaseAuthentication()) == false)
             return false;
+        if (other.getBacktrackWindow() == null ^ this.getBacktrackWindow() == null)
+            return false;
+        if (other.getBacktrackWindow() != null && other.getBacktrackWindow().equals(this.getBacktrackWindow()) == false)
+            return false;
         return true;
     }
 
@@ -1431,6 +1571,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getEnableIAMDatabaseAuthentication() == null) ? 0 : getEnableIAMDatabaseAuthentication().hashCode());
+        hashCode = prime * hashCode + ((getBacktrackWindow() == null) ? 0 : getBacktrackWindow().hashCode());
         return hashCode;
     }
 

@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The subscriber to a budget notification. The subscriber consists of a subscription type and either an Amazon SNS
- * topic or an email address.
+ * The subscriber to a budget notification. The subscriber consists of a subscription type and either an Amazon Simple
+ * Notification Service topic or an email address.
  * </p>
  * <p>
  * For example, an email subscriber would have the following parameters:

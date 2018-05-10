@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The DB cluster does not have enough capacity for the current operation.
+ * The DB cluster doesn't have enough capacity for the current operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

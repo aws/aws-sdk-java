@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The state of the DB security group does not allow deletion.
+ * The state of the DB security group doesn't allow deletion.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

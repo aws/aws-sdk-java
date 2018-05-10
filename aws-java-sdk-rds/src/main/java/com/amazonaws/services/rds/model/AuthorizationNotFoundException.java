@@ -16,10 +16,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Specified CIDRIP or EC2 security group is not authorized for the specified DB security group.
+ * The specified CIDRIP or Amazon EC2 security group isn't authorized for the specified DB security group.
  * </p>
  * <p>
- * RDS may not also be authorized via IAM to perform necessary actions on your behalf.
+ * RDS also may not be authorized by using IAM to perform necessary actions on your behalf.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

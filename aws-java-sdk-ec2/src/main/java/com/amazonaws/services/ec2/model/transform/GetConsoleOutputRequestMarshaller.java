@@ -44,6 +44,10 @@ public class GetConsoleOutputRequestMarshaller implements Marshaller<Request<Get
             request.addParameter("InstanceId", StringUtils.fromString(getConsoleOutputRequest.getInstanceId()));
         }
 
+        if (getConsoleOutputRequest.getLatest() != null) {
+            request.addParameter("Latest", StringUtils.fromBoolean(getConsoleOutputRequest.getLatest()));
+        }
+
         return request;
     }
 

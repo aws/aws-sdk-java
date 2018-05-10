@@ -34,7 +34,7 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
     private String dBParameterGroupFamily;
     /**
      * <p>
-     * Not currently supported.
+     * This parameter is not currently supported.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
@@ -121,10 +121,10 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Not currently supported.
+     * This parameter is not currently supported.
      * </p>
      * 
-     * @return Not currently supported.
+     * @return This parameter is not currently supported.
      */
 
     public java.util.List<Filter> getFilters() {
@@ -136,11 +136,11 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Not currently supported.
+     * This parameter is not currently supported.
      * </p>
      * 
      * @param filters
-     *        Not currently supported.
+     *        This parameter is not currently supported.
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -154,7 +154,7 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Not currently supported.
+     * This parameter is not currently supported.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -163,7 +163,7 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      * </p>
      * 
      * @param filters
-     *        Not currently supported.
+     *        This parameter is not currently supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,11 +179,11 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Not currently supported.
+     * This parameter is not currently supported.
      * </p>
      * 
      * @param filters
-     *        Not currently supported.
+     *        This parameter is not currently supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

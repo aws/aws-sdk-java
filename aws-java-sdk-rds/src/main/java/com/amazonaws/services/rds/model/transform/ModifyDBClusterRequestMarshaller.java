@@ -99,6 +99,10 @@ public class ModifyDBClusterRequestMarshaller implements Marshaller<Request<Modi
             request.addParameter("EnableIAMDatabaseAuthentication", StringUtils.fromBoolean(modifyDBClusterRequest.getEnableIAMDatabaseAuthentication()));
         }
 
+        if (modifyDBClusterRequest.getBacktrackWindow() != null) {
+            request.addParameter("BacktrackWindow", StringUtils.fromLong(modifyDBClusterRequest.getBacktrackWindow()));
+        }
+
         if (modifyDBClusterRequest.getEngineVersion() != null) {
             request.addParameter("EngineVersion", StringUtils.fromString(modifyDBClusterRequest.getEngineVersion()));
         }

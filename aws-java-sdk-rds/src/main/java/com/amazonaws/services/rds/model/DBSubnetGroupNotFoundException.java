@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+ * <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

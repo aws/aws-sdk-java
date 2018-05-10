@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Indicates that the DBSubnetGroup should not be specified while creating read replicas that lie in the same region as
- * the source instance.
+ * The DBSubnetGroup shouldn't be specified while creating read replicas that lie in the same region as the source
+ * instance.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

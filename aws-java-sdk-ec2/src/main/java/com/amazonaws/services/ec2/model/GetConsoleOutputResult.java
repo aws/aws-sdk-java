@@ -33,13 +33,13 @@ public class GetConsoleOutputResult extends com.amazonaws.AmazonWebServiceResult
     private String instanceId;
     /**
      * <p>
-     * The console output, Base64-encoded. If using a command line tool, the tool decodes the output for you.
+     * The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.
      * </p>
      */
     private String output;
     /**
      * <p>
-     * The time the output was last updated.
+     * The time at which the output was last updated.
      * </p>
      */
     private java.util.Date timestamp;
@@ -86,11 +86,12 @@ public class GetConsoleOutputResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The console output, Base64-encoded. If using a command line tool, the tool decodes the output for you.
+     * The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.
      * </p>
      * 
      * @param output
-     *        The console output, Base64-encoded. If using a command line tool, the tool decodes the output for you.
+     *        The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for
+     *        you.
      */
 
     public void setOutput(String output) {
@@ -99,10 +100,11 @@ public class GetConsoleOutputResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The console output, Base64-encoded. If using a command line tool, the tool decodes the output for you.
+     * The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.
      * </p>
      * 
-     * @return The console output, Base64-encoded. If using a command line tool, the tool decodes the output for you.
+     * @return The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for
+     *         you.
      */
 
     public String getOutput() {
@@ -111,11 +113,12 @@ public class GetConsoleOutputResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The console output, Base64-encoded. If using a command line tool, the tool decodes the output for you.
+     * The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for you.
      * </p>
      * 
      * @param output
-     *        The console output, Base64-encoded. If using a command line tool, the tool decodes the output for you.
+     *        The console output, base64-encoded. If you are using a command line tool, the tool decodes the output for
+     *        you.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +129,11 @@ public class GetConsoleOutputResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The time the output was last updated.
+     * The time at which the output was last updated.
      * </p>
      * 
      * @param timestamp
-     *        The time the output was last updated.
+     *        The time at which the output was last updated.
      */
 
     public void setTimestamp(java.util.Date timestamp) {
@@ -139,10 +142,10 @@ public class GetConsoleOutputResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The time the output was last updated.
+     * The time at which the output was last updated.
      * </p>
      * 
-     * @return The time the output was last updated.
+     * @return The time at which the output was last updated.
      */
 
     public java.util.Date getTimestamp() {
@@ -151,11 +154,11 @@ public class GetConsoleOutputResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The time the output was last updated.
+     * The time at which the output was last updated.
      * </p>
      * 
      * @param timestamp
-     *        The time the output was last updated.
+     *        The time at which the output was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

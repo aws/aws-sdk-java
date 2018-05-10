@@ -64,6 +64,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public BacktrackDBClusterResult backtrackDBCluster(BacktrackDBClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DBClusterParameterGroup copyDBClusterParameterGroup(CopyDBClusterParameterGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -211,6 +216,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
     @Override
     public DescribeCertificatesResult describeCertificates() {
         return describeCertificates(new DescribeCertificatesRequest());
+    }
+
+    @Override
+    public DescribeDBClusterBacktracksResult describeDBClusterBacktracks(DescribeDBClusterBacktracksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+ * <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

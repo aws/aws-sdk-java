@@ -19,7 +19,7 @@ import java.io.Serializable;
 
 public class Progress implements Serializable {
     private Long bytesScanned;
-
+    private Long bytesReturned;
     private Long bytesProcessed;
 
     /**
@@ -41,6 +41,28 @@ public class Progress implements Serializable {
      */
     public Progress withBytesScanned(Long readBytes) {
         setBytesScanned(readBytes);
+        return this;
+    }
+
+    /**
+     * Current number of bytes of records payload data returned.
+     */
+    public Long getBytesReturned() {
+        return bytesReturned;
+    }
+
+    /**
+     * Current number of bytes of records payload data returned.
+     */
+    public void setBytesReturned(Long bytesReturned) {
+        this.bytesReturned = bytesReturned;
+    }
+
+    /**
+     * Current number of bytes of records payload data returned.
+     */
+    public Progress withBytesReturned(Long bytesReturned) {
+        setBytesReturned(bytesReturned);
         return this;
     }
 

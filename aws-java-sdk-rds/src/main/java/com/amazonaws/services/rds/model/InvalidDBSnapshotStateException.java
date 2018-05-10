@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The state of the DB snapshot does not allow deletion.
+ * The state of the DB snapshot doesn't allow deletion.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

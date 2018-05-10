@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * <i>Domain</i> does not refer to an existing Active Directory Domain.
+ * <i>Domain</i> doesn't refer to an existing Active Directory domain.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

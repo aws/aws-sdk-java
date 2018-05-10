@@ -35,6 +35,8 @@ public enum RDSActions implements Action {
     ApplyPendingMaintenanceAction("rds:ApplyPendingMaintenanceAction"),
     /** Action for the AuthorizeDBSecurityGroupIngress operation. */
     AuthorizeDBSecurityGroupIngress("rds:AuthorizeDBSecurityGroupIngress"),
+    /** Action for the BacktrackDBCluster operation. */
+    BacktrackDBCluster("rds:BacktrackDBCluster"),
     /** Action for the CopyDBClusterParameterGroup operation. */
     CopyDBClusterParameterGroup("rds:CopyDBClusterParameterGroup"),
     /** Action for the CopyDBClusterSnapshot operation. */
@@ -91,6 +93,8 @@ public enum RDSActions implements Action {
     DescribeAccountAttributes("rds:DescribeAccountAttributes"),
     /** Action for the DescribeCertificates operation. */
     DescribeCertificates("rds:DescribeCertificates"),
+    /** Action for the DescribeDBClusterBacktracks operation. */
+    DescribeDBClusterBacktracks("rds:DescribeDBClusterBacktracks"),
     /** Action for the DescribeDBClusterParameterGroups operation. */
     DescribeDBClusterParameterGroups("rds:DescribeDBClusterParameterGroups"),
     /** Action for the DescribeDBClusterParameters operation. */

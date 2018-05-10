@@ -314,6 +314,47 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
+     * Backtracks a DB cluster to a specific time, without creating a new DB cluster.
+     * </p>
+     * <p>
+     * For more information on backtracking, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AuroraMySQL.Managing.Backtrack.html"> Backtracking an
+     * Aurora DB Cluster</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @param backtrackDBClusterRequest
+     * @return A Java Future containing the result of the BacktrackDBCluster operation returned by the service.
+     * @sample AmazonRDSAsync.BacktrackDBCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/BacktrackDBCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<BacktrackDBClusterResult> backtrackDBClusterAsync(BacktrackDBClusterRequest backtrackDBClusterRequest);
+
+    /**
+     * <p>
+     * Backtracks a DB cluster to a specific time, without creating a new DB cluster.
+     * </p>
+     * <p>
+     * For more information on backtracking, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AuroraMySQL.Managing.Backtrack.html"> Backtracking an
+     * Aurora DB Cluster</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @param backtrackDBClusterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BacktrackDBCluster operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.BacktrackDBCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/BacktrackDBCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<BacktrackDBClusterResult> backtrackDBClusterAsync(BacktrackDBClusterRequest backtrackDBClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<BacktrackDBClusterRequest, BacktrackDBClusterResult> asyncHandler);
+
+    /**
+     * <p>
      * Copies the specified DB cluster parameter group.
      * </p>
      * 
@@ -1756,6 +1797,49 @@ public interface AmazonRDSAsync extends AmazonRDS {
      */
     java.util.concurrent.Future<DescribeCertificatesResult> describeCertificatesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeCertificatesRequest, DescribeCertificatesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about backtracks for a DB cluster.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora on Amazon RDS</a> in the
+     * <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @param describeDBClusterBacktracksRequest
+     * @return A Java Future containing the result of the DescribeDBClusterBacktracks operation returned by the service.
+     * @sample AmazonRDSAsync.DescribeDBClusterBacktracks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterBacktracks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDBClusterBacktracksResult> describeDBClusterBacktracksAsync(
+            DescribeDBClusterBacktracksRequest describeDBClusterBacktracksRequest);
+
+    /**
+     * <p>
+     * Returns information about backtracks for a DB cluster.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora on Amazon RDS</a> in the
+     * <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @param describeDBClusterBacktracksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDBClusterBacktracks operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.DescribeDBClusterBacktracks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterBacktracks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDBClusterBacktracksResult> describeDBClusterBacktracksAsync(
+            DescribeDBClusterBacktracksRequest describeDBClusterBacktracksRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDBClusterBacktracksRequest, DescribeDBClusterBacktracksResult> asyncHandler);
 
     /**
      * <p>

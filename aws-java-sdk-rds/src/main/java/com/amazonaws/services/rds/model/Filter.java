@@ -17,8 +17,40 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This type is not currently supported.
+ * A filter name and value pair that is used to return a more specific list of results from a describe operation.
+ * Filters can be used to match a set of resources by specific criteria, such as IDs. The filters supported by a
+ * describe operation are documented with the describe operation.
  * </p>
+ * <note>
+ * <p>
+ * Currently, wildcards are not supported in filters.
+ * </p>
+ * </note>
+ * <p>
+ * The following actions can be filtered:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>DescribeDBClusterBacktracks</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeDBClusters</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeDBInstances</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribePendingMaintenanceActions</a>
+ * </p>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Filter" target="_top">AWS API Documentation</a>
  */
@@ -27,24 +59,24 @@ public class Filter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This parameter is not currently supported.
+     * The name of the filter. Filter names are case-sensitive.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * This parameter is not currently supported.
+     * One or more filter values. Filter values are case-sensitive.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> values;
 
     /**
      * <p>
-     * This parameter is not currently supported.
+     * The name of the filter. Filter names are case-sensitive.
      * </p>
      * 
      * @param name
-     *        This parameter is not currently supported.
+     *        The name of the filter. Filter names are case-sensitive.
      */
 
     public void setName(String name) {
@@ -53,10 +85,10 @@ public class Filter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This parameter is not currently supported.
+     * The name of the filter. Filter names are case-sensitive.
      * </p>
      * 
-     * @return This parameter is not currently supported.
+     * @return The name of the filter. Filter names are case-sensitive.
      */
 
     public String getName() {
@@ -65,11 +97,11 @@ public class Filter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This parameter is not currently supported.
+     * The name of the filter. Filter names are case-sensitive.
      * </p>
      * 
      * @param name
-     *        This parameter is not currently supported.
+     *        The name of the filter. Filter names are case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +112,10 @@ public class Filter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This parameter is not currently supported.
+     * One or more filter values. Filter values are case-sensitive.
      * </p>
      * 
-     * @return This parameter is not currently supported.
+     * @return One or more filter values. Filter values are case-sensitive.
      */
 
     public java.util.List<String> getValues() {
@@ -95,11 +127,11 @@ public class Filter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This parameter is not currently supported.
+     * One or more filter values. Filter values are case-sensitive.
      * </p>
      * 
      * @param values
-     *        This parameter is not currently supported.
+     *        One or more filter values. Filter values are case-sensitive.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -113,7 +145,7 @@ public class Filter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This parameter is not currently supported.
+     * One or more filter values. Filter values are case-sensitive.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +154,7 @@ public class Filter implements Serializable, Cloneable {
      * </p>
      * 
      * @param values
-     *        This parameter is not currently supported.
+     *        One or more filter values. Filter values are case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +170,11 @@ public class Filter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This parameter is not currently supported.
+     * One or more filter values. Filter values are case-sensitive.
      * </p>
      * 
      * @param values
-     *        This parameter is not currently supported.
+     *        One or more filter values. Filter values are case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

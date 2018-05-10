@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
+ * <i>DBSecurityGroupName</i> doesn't refer to an existing DB security group.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

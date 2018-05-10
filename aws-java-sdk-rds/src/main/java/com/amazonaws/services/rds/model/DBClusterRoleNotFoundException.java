@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified IAM role Amazon Resource Name (ARN) is not associated with the specified DB cluster.
+ * The specified IAM role Amazon Resource Name (ARN) isn't associated with the specified DB cluster.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

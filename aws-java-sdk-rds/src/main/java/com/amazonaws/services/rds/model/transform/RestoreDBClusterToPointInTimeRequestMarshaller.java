@@ -116,6 +116,10 @@ public class RestoreDBClusterToPointInTimeRequestMarshaller implements
                     StringUtils.fromBoolean(restoreDBClusterToPointInTimeRequest.getEnableIAMDatabaseAuthentication()));
         }
 
+        if (restoreDBClusterToPointInTimeRequest.getBacktrackWindow() != null) {
+            request.addParameter("BacktrackWindow", StringUtils.fromLong(restoreDBClusterToPointInTimeRequest.getBacktrackWindow()));
+        }
+
         return request;
     }
 

@@ -26,23 +26,23 @@ public class DescribeNotificationsForBudgetResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A list of notifications that are associated with a budget.
+     * A list of notifications associated with a budget.
      * </p>
      */
     private java.util.List<Notification> notifications;
     /**
      * <p>
-     * The pagination token in the service response that indicates the next set of results that you can retrieve.
+     * The pagination token that indicates the next set of results that you can retrieve.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A list of notifications that are associated with a budget.
+     * A list of notifications associated with a budget.
      * </p>
      * 
-     * @return A list of notifications that are associated with a budget.
+     * @return A list of notifications associated with a budget.
      */
 
     public java.util.List<Notification> getNotifications() {
@@ -51,11 +51,11 @@ public class DescribeNotificationsForBudgetResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A list of notifications that are associated with a budget.
+     * A list of notifications associated with a budget.
      * </p>
      * 
      * @param notifications
-     *        A list of notifications that are associated with a budget.
+     *        A list of notifications associated with a budget.
      */
 
     public void setNotifications(java.util.Collection<Notification> notifications) {
@@ -69,7 +69,7 @@ public class DescribeNotificationsForBudgetResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A list of notifications that are associated with a budget.
+     * A list of notifications associated with a budget.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class DescribeNotificationsForBudgetResult extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param notifications
-     *        A list of notifications that are associated with a budget.
+     *        A list of notifications associated with a budget.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class DescribeNotificationsForBudgetResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A list of notifications that are associated with a budget.
+     * A list of notifications associated with a budget.
      * </p>
      * 
      * @param notifications
-     *        A list of notifications that are associated with a budget.
+     *        A list of notifications associated with a budget.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,11 +109,11 @@ public class DescribeNotificationsForBudgetResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The pagination token in the service response that indicates the next set of results that you can retrieve.
+     * The pagination token that indicates the next set of results that you can retrieve.
      * </p>
      * 
      * @param nextToken
-     *        The pagination token in the service response that indicates the next set of results that you can retrieve.
+     *        The pagination token that indicates the next set of results that you can retrieve.
      */
 
     public void setNextToken(String nextToken) {
@@ -122,11 +122,10 @@ public class DescribeNotificationsForBudgetResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The pagination token in the service response that indicates the next set of results that you can retrieve.
+     * The pagination token that indicates the next set of results that you can retrieve.
      * </p>
      * 
-     * @return The pagination token in the service response that indicates the next set of results that you can
-     *         retrieve.
+     * @return The pagination token that indicates the next set of results that you can retrieve.
      */
 
     public String getNextToken() {
@@ -135,11 +134,11 @@ public class DescribeNotificationsForBudgetResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The pagination token in the service response that indicates the next set of results that you can retrieve.
+     * The pagination token that indicates the next set of results that you can retrieve.
      * </p>
      * 
      * @param nextToken
-     *        The pagination token in the service response that indicates the next set of results that you can retrieve.
+     *        The pagination token that indicates the next set of results that you can retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

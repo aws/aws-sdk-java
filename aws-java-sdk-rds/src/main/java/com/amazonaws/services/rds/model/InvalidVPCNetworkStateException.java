@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * DB subnet group does not cover all Availability Zones after it is created because users' change.
+ * The DB subnet group doesn't cover all Availability Zones after it's created because of users' change.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

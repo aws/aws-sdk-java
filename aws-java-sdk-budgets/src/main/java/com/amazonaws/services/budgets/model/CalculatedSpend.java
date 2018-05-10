@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The spend objects that are associated with this budget. The <code>actualSpend</code> tracks how much you've used,
- * cost, usage, or RI units, and the <code>forecastedSpend</code> tracks how much you are predicted to spend if your
- * current usage remains steady.
+ * The spend objects associated with this budget. The <code>actualSpend</code> tracks how much you've used, cost, usage,
+ * or RI units, and the <code>forecastedSpend</code> tracks how much you are predicted to spend if your current usage
+ * remains steady.
  * </p>
  * <p>
  * For example, if it is the 20th of the month and you have spent <code>50</code> dollars on Amazon EC2, your

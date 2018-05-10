@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Request would result in user exceeding the allowed number of DB snapshots.
+ * The request would result in the user exceeding the allowed number of DB snapshots.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -27,7 +27,7 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.
+     * The <code>accountId</code> associated with the budget that you want to create a subscriber for.
      * </p>
      */
     private String accountId;
@@ -52,11 +52,11 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.
+     * The <code>accountId</code> associated with the budget that you want to create a subscriber for.
      * </p>
      * 
      * @param accountId
-     *        The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.
+     *        The <code>accountId</code> associated with the budget that you want to create a subscriber for.
      */
 
     public void setAccountId(String accountId) {
@@ -65,10 +65,10 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.
+     * The <code>accountId</code> associated with the budget that you want to create a subscriber for.
      * </p>
      * 
-     * @return The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.
+     * @return The <code>accountId</code> associated with the budget that you want to create a subscriber for.
      */
 
     public String getAccountId() {
@@ -77,11 +77,11 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.
+     * The <code>accountId</code> associated with the budget that you want to create a subscriber for.
      * </p>
      * 
      * @param accountId
-     *        The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.
+     *        The <code>accountId</code> associated with the budget that you want to create a subscriber for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

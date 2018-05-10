@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The DB subnet is not in the <i>available</i> state.
+ * The DB subnet isn't in the <i>available</i> state.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * <i>DBClusterParameterGroupName</i> does not refer to an existing DB Cluster parameter group.
+ * <i>DBClusterParameterGroupName</i> doesn't refer to an existing DB cluster parameter group.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -175,6 +175,10 @@ public class RestoreDBClusterFromS3RequestMarshaller implements Marshaller<Reque
             request.addParameter("S3IngestionRoleArn", StringUtils.fromString(restoreDBClusterFromS3Request.getS3IngestionRoleArn()));
         }
 
+        if (restoreDBClusterFromS3Request.getBacktrackWindow() != null) {
+            request.addParameter("BacktrackWindow", StringUtils.fromLong(restoreDBClusterFromS3Request.getBacktrackWindow()));
+        }
+
         return request;
     }
 

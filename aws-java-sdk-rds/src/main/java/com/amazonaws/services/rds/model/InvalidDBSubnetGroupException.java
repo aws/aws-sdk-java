@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Indicates the DBSubnetGroup does not belong to the same VPC as that of an existing cross region read replica of the
- * same source instance.
+ * The DBSubnetGroup doesn't belong to the same VPC as that of an existing cross-region read replica of the same source
+ * instance.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

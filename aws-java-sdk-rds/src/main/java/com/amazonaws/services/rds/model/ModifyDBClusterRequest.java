@@ -229,6 +229,25 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private Boolean enableIAMDatabaseAuthentication;
     /**
      * <p>
+     * The target backtrack window, in seconds. To disable backtracking, set this value to 0.
+     * </p>
+     * <p>
+     * Default: 0
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If specified, this value must be set to a number from 0 to 259,200 (72 hours).
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private Long backtrackWindow;
+    /**
+     * <p>
      * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
      * outage. The change is applied during the next maintenance window unless the ApplyImmediately parameter is set to
      * true.
@@ -1557,6 +1576,121 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
+     * The target backtrack window, in seconds. To disable backtracking, set this value to 0.
+     * </p>
+     * <p>
+     * Default: 0
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If specified, this value must be set to a number from 0 to 259,200 (72 hours).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param backtrackWindow
+     *        The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p>
+     *        <p>
+     *        Default: 0
+     *        </p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If specified, this value must be set to a number from 0 to 259,200 (72 hours).
+     *        </p>
+     *        </li>
+     */
+
+    public void setBacktrackWindow(Long backtrackWindow) {
+        this.backtrackWindow = backtrackWindow;
+    }
+
+    /**
+     * <p>
+     * The target backtrack window, in seconds. To disable backtracking, set this value to 0.
+     * </p>
+     * <p>
+     * Default: 0
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If specified, this value must be set to a number from 0 to 259,200 (72 hours).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p>
+     *         <p>
+     *         Default: 0
+     *         </p>
+     *         <p>
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If specified, this value must be set to a number from 0 to 259,200 (72 hours).
+     *         </p>
+     *         </li>
+     */
+
+    public Long getBacktrackWindow() {
+        return this.backtrackWindow;
+    }
+
+    /**
+     * <p>
+     * The target backtrack window, in seconds. To disable backtracking, set this value to 0.
+     * </p>
+     * <p>
+     * Default: 0
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If specified, this value must be set to a number from 0 to 259,200 (72 hours).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param backtrackWindow
+     *        The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p>
+     *        <p>
+     *        Default: 0
+     *        </p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If specified, this value must be set to a number from 0 to 259,200 (72 hours).
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyDBClusterRequest withBacktrackWindow(Long backtrackWindow) {
+        setBacktrackWindow(backtrackWindow);
+        return this;
+    }
+
+    /**
+     * <p>
      * The version number of the database engine to which you want to upgrade. Changing this parameter results in an
      * outage. The change is applied during the next maintenance window unless the ApplyImmediately parameter is set to
      * true.
@@ -1658,6 +1792,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("PreferredMaintenanceWindow: ").append(getPreferredMaintenanceWindow()).append(",");
         if (getEnableIAMDatabaseAuthentication() != null)
             sb.append("EnableIAMDatabaseAuthentication: ").append(getEnableIAMDatabaseAuthentication()).append(",");
+        if (getBacktrackWindow() != null)
+            sb.append("BacktrackWindow: ").append(getBacktrackWindow()).append(",");
         if (getEngineVersion() != null)
             sb.append("EngineVersion: ").append(getEngineVersion());
         sb.append("}");
@@ -1723,6 +1859,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         if (other.getEnableIAMDatabaseAuthentication() != null
                 && other.getEnableIAMDatabaseAuthentication().equals(this.getEnableIAMDatabaseAuthentication()) == false)
             return false;
+        if (other.getBacktrackWindow() == null ^ this.getBacktrackWindow() == null)
+            return false;
+        if (other.getBacktrackWindow() != null && other.getBacktrackWindow().equals(this.getBacktrackWindow()) == false)
+            return false;
         if (other.getEngineVersion() == null ^ this.getEngineVersion() == null)
             return false;
         if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false)
@@ -1747,6 +1887,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getPreferredBackupWindow() == null) ? 0 : getPreferredBackupWindow().hashCode());
         hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode());
         hashCode = prime * hashCode + ((getEnableIAMDatabaseAuthentication() == null) ? 0 : getEnableIAMDatabaseAuthentication().hashCode());
+        hashCode = prime * hashCode + ((getBacktrackWindow() == null) ? 0 : getBacktrackWindow().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
         return hashCode;
     }

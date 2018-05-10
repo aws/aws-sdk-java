@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Cannot restore from vpc backup to non-vpc DB instance.
+ * Cannot restore from VPC backup to non-VPC DB instance.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

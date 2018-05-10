@@ -1,3 +1,16 @@
+# __1.11.326__ __2018-05-10__
+## __AWS Budgets__
+  - ### Features
+    - Updating the regex for the NumericValue fields.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Enable support for latest flag with Get Console Output
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Changes to support the Aurora MySQL Backtrack feature.
+
 # __1.11.325__ __2018-05-08__
 ## __Amazon Elastic Compute Cloud__
   - ### Features

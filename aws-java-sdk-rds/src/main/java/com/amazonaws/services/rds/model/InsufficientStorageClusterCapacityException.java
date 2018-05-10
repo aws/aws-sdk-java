@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * There is insufficient storage available for the current action. You may be able to resolve this error by updating
+ * There is insufficient storage available for the current action. You might be able to resolve this error by updating
  * your subnet group to use different Availability Zones that have more storage available.
  * </p>
  */

@@ -39,6 +39,7 @@ class ProgressStaxUnmarshaller
         // This is currently the same as the statistics. Inline the statistics if they diverge.
         Stats queryStats = StatsStaxUnmarshaller.getInstance().unmarshall(context);
         return new Progress().withBytesProcessed(queryStats.getBytesProcessed())
+                             .withBytesReturned(queryStats.getBytesReturned())
                              .withBytesScanned(queryStats.getBytesScanned());
     }
 

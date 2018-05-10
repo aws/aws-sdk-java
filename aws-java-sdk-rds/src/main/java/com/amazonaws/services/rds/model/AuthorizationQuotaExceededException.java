@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * DB security group authorization quota has been reached.
+ * The DB security group authorization quota has been reached.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

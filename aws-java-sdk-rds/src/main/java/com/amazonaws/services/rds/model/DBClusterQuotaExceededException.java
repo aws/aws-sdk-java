@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * User attempted to create a new DB cluster and the user has already reached the maximum allowed DB cluster quota.
+ * The user attempted to create a new DB cluster and the user has already reached the maximum allowed DB cluster quota.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

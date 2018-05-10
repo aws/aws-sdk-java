@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The option group is not in the <i>available</i> state.
+ * The option group isn't in the <i>available</i> state.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

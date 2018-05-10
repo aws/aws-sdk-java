@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * <i>StorageType</i> specified cannot be associated with the DB Instance.
+ * Storage of the <i>StorageType</i> specified can't be associated with the DB instance.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

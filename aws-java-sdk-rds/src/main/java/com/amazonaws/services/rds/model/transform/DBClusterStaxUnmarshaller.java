@@ -249,6 +249,21 @@ public class DBClusterStaxUnmarshaller implements Unmarshaller<DBCluster, StaxUn
                     dBCluster.setClusterCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("EarliestBacktrackTime", targetDepth)) {
+                    dBCluster.setEarliestBacktrackTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("BacktrackWindow", targetDepth)) {
+                    dBCluster.setBacktrackWindow(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("BacktrackConsumedChangeRecords", targetDepth)) {
+                    dBCluster.setBacktrackConsumedChangeRecords(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dBCluster;

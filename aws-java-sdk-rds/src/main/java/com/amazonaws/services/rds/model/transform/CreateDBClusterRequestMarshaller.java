@@ -162,6 +162,10 @@ public class CreateDBClusterRequestMarshaller implements Marshaller<Request<Crea
             request.addParameter("EnableIAMDatabaseAuthentication", StringUtils.fromBoolean(createDBClusterRequest.getEnableIAMDatabaseAuthentication()));
         }
 
+        if (createDBClusterRequest.getBacktrackWindow() != null) {
+            request.addParameter("BacktrackWindow", StringUtils.fromLong(createDBClusterRequest.getBacktrackWindow()));
+        }
+
         if (createDBClusterRequest.getSourceRegion() != null) {
             request.addParameter("SourceRegion", StringUtils.fromString(createDBClusterRequest.getSourceRegion()));
         }

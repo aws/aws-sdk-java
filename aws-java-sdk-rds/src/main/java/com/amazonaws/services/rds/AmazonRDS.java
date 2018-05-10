@@ -171,11 +171,11 @@ public interface AmazonRDS {
      * @param addRoleToDBClusterRequest
      * @return Result of the AddRoleToDBCluster operation returned by the service.
      * @throws DBClusterNotFoundException
-     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @throws DBClusterRoleAlreadyExistsException
      *         The specified IAM role Amazon Resource Name (ARN) is already associated with the specified DB cluster.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster is not in a valid state.
+     *         The DB cluster isn't in a valid state.
      * @throws DBClusterRoleQuotaExceededException
      *         You have exceeded the maximum number of IAM roles that can be associated with the specified DB cluster.
      * @sample AmazonRDS.AddRoleToDBCluster
@@ -215,11 +215,11 @@ public interface AmazonRDS {
      * @param addTagsToResourceRequest
      * @return Result of the AddTagsToResource operation returned by the service.
      * @throws DBInstanceNotFoundException
-     *         <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+     *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
      * @throws DBSnapshotNotFoundException
-     *         <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
+     *         <i>DBSnapshotIdentifier</i> doesn't refer to an existing DB snapshot.
      * @throws DBClusterNotFoundException
-     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @sample AmazonRDS.AddTagsToResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddTagsToResource" target="_top">AWS API
      *      Documentation</a>
@@ -263,18 +263,41 @@ public interface AmazonRDS {
      * @param authorizeDBSecurityGroupIngressRequest
      * @return Result of the AuthorizeDBSecurityGroupIngress operation returned by the service.
      * @throws DBSecurityGroupNotFoundException
-     *         <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
+     *         <i>DBSecurityGroupName</i> doesn't refer to an existing DB security group.
      * @throws InvalidDBSecurityGroupStateException
-     *         The state of the DB security group does not allow deletion.
+     *         The state of the DB security group doesn't allow deletion.
      * @throws AuthorizationAlreadyExistsException
-     *         The specified CIDRIP or EC2 security group is already authorized for the specified DB security group.
+     *         The specified CIDRIP or Amazon EC2 security group is already authorized for the specified DB security
+     *         group.
      * @throws AuthorizationQuotaExceededException
-     *         DB security group authorization quota has been reached.
+     *         The DB security group authorization quota has been reached.
      * @sample AmazonRDS.AuthorizeDBSecurityGroupIngress
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AuthorizeDBSecurityGroupIngress"
      *      target="_top">AWS API Documentation</a>
      */
     DBSecurityGroup authorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest authorizeDBSecurityGroupIngressRequest);
+
+    /**
+     * <p>
+     * Backtracks a DB cluster to a specific time, without creating a new DB cluster.
+     * </p>
+     * <p>
+     * For more information on backtracking, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AuroraMySQL.Managing.Backtrack.html"> Backtracking an
+     * Aurora DB Cluster</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @param backtrackDBClusterRequest
+     * @return Result of the BacktrackDBCluster operation returned by the service.
+     * @throws DBClusterNotFoundException
+     *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+     * @throws InvalidDBClusterStateException
+     *         The DB cluster isn't in a valid state.
+     * @sample AmazonRDS.BacktrackDBCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/BacktrackDBCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    BacktrackDBClusterResult backtrackDBCluster(BacktrackDBClusterRequest backtrackDBClusterRequest);
 
     /**
      * <p>
@@ -284,9 +307,9 @@ public interface AmazonRDS {
      * @param copyDBClusterParameterGroupRequest
      * @return Result of the CopyDBClusterParameterGroup operation returned by the service.
      * @throws DBParameterGroupNotFoundException
-     *         <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+     *         <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
      * @throws DBParameterGroupQuotaExceededException
-     *         Request would result in user exceeding the allowed number of DB parameter groups.
+     *         The request would result in the user exceeding the allowed number of DB parameter groups.
      * @throws DBParameterGroupAlreadyExistsException
      *         A DB parameter group with the same name exists.
      * @sample AmazonRDS.CopyDBClusterParameterGroup
@@ -391,17 +414,17 @@ public interface AmazonRDS {
      * @param copyDBClusterSnapshotRequest
      * @return Result of the CopyDBClusterSnapshot operation returned by the service.
      * @throws DBClusterSnapshotAlreadyExistsException
-     *         User already has a DB cluster snapshot with the given identifier.
+     *         The user already has a DB cluster snapshot with the given identifier.
      * @throws DBClusterSnapshotNotFoundException
-     *         <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.
+     *         <i>DBClusterSnapshotIdentifier</i> doesn't refer to an existing DB cluster snapshot.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster is not in a valid state.
+     *         The DB cluster isn't in a valid state.
      * @throws InvalidDBClusterSnapshotStateException
-     *         The supplied value is not a valid DB cluster snapshot state.
+     *         The supplied value isn't a valid DB cluster snapshot state.
      * @throws SnapshotQuotaExceededException
-     *         Request would result in user exceeding the allowed number of DB snapshots.
+     *         The request would result in the user exceeding the allowed number of DB snapshots.
      * @throws KMSKeyNotAccessibleException
-     *         Error accessing KMS key.
+     *         An error occurred accessing an AWS KMS key.
      * @sample AmazonRDS.CopyDBClusterSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBClusterSnapshot" target="_top">AWS API
      *      Documentation</a>
@@ -416,11 +439,11 @@ public interface AmazonRDS {
      * @param copyDBParameterGroupRequest
      * @return Result of the CopyDBParameterGroup operation returned by the service.
      * @throws DBParameterGroupNotFoundException
-     *         <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+     *         <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
      * @throws DBParameterGroupAlreadyExistsException
      *         A DB parameter group with the same name exists.
      * @throws DBParameterGroupQuotaExceededException
-     *         Request would result in user exceeding the allowed number of DB parameter groups.
+     *         The request would result in the user exceeding the allowed number of DB parameter groups.
      * @sample AmazonRDS.CopyDBParameterGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBParameterGroup" target="_top">AWS API
      *      Documentation</a>
@@ -446,13 +469,13 @@ public interface AmazonRDS {
      * @throws DBSnapshotAlreadyExistsException
      *         <i>DBSnapshotIdentifier</i> is already used by an existing snapshot.
      * @throws DBSnapshotNotFoundException
-     *         <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
+     *         <i>DBSnapshotIdentifier</i> doesn't refer to an existing DB snapshot.
      * @throws InvalidDBSnapshotStateException
-     *         The state of the DB snapshot does not allow deletion.
+     *         The state of the DB snapshot doesn't allow deletion.
      * @throws SnapshotQuotaExceededException
-     *         Request would result in user exceeding the allowed number of DB snapshots.
+     *         The request would result in the user exceeding the allowed number of DB snapshots.
      * @throws KMSKeyNotAccessibleException
-     *         Error accessing KMS key.
+     *         An error occurred accessing an AWS KMS key.
      * @sample AmazonRDS.CopyDBSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBSnapshot" target="_top">AWS API
      *      Documentation</a>
@@ -497,35 +520,36 @@ public interface AmazonRDS {
      * @param createDBClusterRequest
      * @return Result of the CreateDBCluster operation returned by the service.
      * @throws DBClusterAlreadyExistsException
-     *         User already has a DB cluster with the given identifier.
+     *         The user already has a DB cluster with the given identifier.
      * @throws InsufficientStorageClusterCapacityException
-     *         There is insufficient storage available for the current action. You may be able to resolve this error by
-     *         updating your subnet group to use different Availability Zones that have more storage available.
+     *         There is insufficient storage available for the current action. You might be able to resolve this error
+     *         by updating your subnet group to use different Availability Zones that have more storage available.
      * @throws DBClusterQuotaExceededException
-     *         User attempted to create a new DB cluster and the user has already reached the maximum allowed DB cluster
-     *         quota.
+     *         The user attempted to create a new DB cluster and the user has already reached the maximum allowed DB
+     *         cluster quota.
      * @throws StorageQuotaExceededException
-     *         Request would result in user exceeding the allowed amount of storage available across all DB instances.
+     *         The request would result in the user exceeding the allowed amount of storage available across all DB
+     *         instances.
      * @throws DBSubnetGroupNotFoundException
-     *         <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+     *         <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
      * @throws InvalidVPCNetworkStateException
-     *         DB subnet group does not cover all Availability Zones after it is created because users' change.
+     *         The DB subnet group doesn't cover all Availability Zones after it's created because of users' change.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster is not in a valid state.
+     *         The DB cluster isn't in a valid state.
      * @throws InvalidDBSubnetGroupStateException
-     *         The DB subnet group cannot be deleted because it is in use.
+     *         The DB subnet group cannot be deleted because it's in use.
      * @throws InvalidSubnetException
      *         The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance is not in the <i>available</i> state.
+     *         The specified DB instance isn't in the <i>available</i> state.
      * @throws DBClusterParameterGroupNotFoundException
-     *         <i>DBClusterParameterGroupName</i> does not refer to an existing DB Cluster parameter group.
+     *         <i>DBClusterParameterGroupName</i> doesn't refer to an existing DB cluster parameter group.
      * @throws KMSKeyNotAccessibleException
-     *         Error accessing KMS key.
+     *         An error occurred accessing an AWS KMS key.
      * @throws DBClusterNotFoundException
-     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @throws DBInstanceNotFoundException
-     *         <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+     *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
      * @throws DBSubnetGroupDoesNotCoverEnoughAZsException
      *         Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one
      *         Availability Zone.
@@ -571,7 +595,7 @@ public interface AmazonRDS {
      * @param createDBClusterParameterGroupRequest
      * @return Result of the CreateDBClusterParameterGroup operation returned by the service.
      * @throws DBParameterGroupQuotaExceededException
-     *         Request would result in user exceeding the allowed number of DB parameter groups.
+     *         The request would result in the user exceeding the allowed number of DB parameter groups.
      * @throws DBParameterGroupAlreadyExistsException
      *         A DB parameter group with the same name exists.
      * @sample AmazonRDS.CreateDBClusterParameterGroup
@@ -590,15 +614,15 @@ public interface AmazonRDS {
      * @param createDBClusterSnapshotRequest
      * @return Result of the CreateDBClusterSnapshot operation returned by the service.
      * @throws DBClusterSnapshotAlreadyExistsException
-     *         User already has a DB cluster snapshot with the given identifier.
+     *         The user already has a DB cluster snapshot with the given identifier.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster is not in a valid state.
+     *         The DB cluster isn't in a valid state.
      * @throws DBClusterNotFoundException
-     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @throws SnapshotQuotaExceededException
-     *         Request would result in user exceeding the allowed number of DB snapshots.
+     *         The request would result in the user exceeding the allowed number of DB snapshots.
      * @throws InvalidDBClusterSnapshotStateException
-     *         The supplied value is not a valid DB cluster snapshot state.
+     *         The supplied value isn't a valid DB cluster snapshot state.
      * @sample AmazonRDS.CreateDBClusterSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBClusterSnapshot" target="_top">AWS
      *      API Documentation</a>
@@ -613,44 +637,46 @@ public interface AmazonRDS {
      * @param createDBInstanceRequest
      * @return Result of the CreateDBInstance operation returned by the service.
      * @throws DBInstanceAlreadyExistsException
-     *         User already has a DB instance with the given identifier.
+     *         The user already has a DB instance with the given identifier.
      * @throws InsufficientDBInstanceCapacityException
-     *         Specified DB instance class is not available in the specified Availability Zone.
+     *         The specified DB instance class isn't available in the specified Availability Zone.
      * @throws DBParameterGroupNotFoundException
-     *         <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+     *         <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
      * @throws DBSecurityGroupNotFoundException
-     *         <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
+     *         <i>DBSecurityGroupName</i> doesn't refer to an existing DB security group.
      * @throws InstanceQuotaExceededException
-     *         Request would result in user exceeding the allowed number of DB instances.
+     *         The request would result in the user exceeding the allowed number of DB instances.
      * @throws StorageQuotaExceededException
-     *         Request would result in user exceeding the allowed amount of storage available across all DB instances.
+     *         The request would result in the user exceeding the allowed amount of storage available across all DB
+     *         instances.
      * @throws DBSubnetGroupNotFoundException
-     *         <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+     *         <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
      * @throws DBSubnetGroupDoesNotCoverEnoughAZsException
      *         Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one
      *         Availability Zone.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster is not in a valid state.
+     *         The DB cluster isn't in a valid state.
      * @throws InvalidSubnetException
      *         The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.
      * @throws InvalidVPCNetworkStateException
-     *         DB subnet group does not cover all Availability Zones after it is created because users' change.
+     *         The DB subnet group doesn't cover all Availability Zones after it's created because of users' change.
      * @throws ProvisionedIopsNotAvailableInAZException
      *         Provisioned IOPS not available in the specified Availability Zone.
      * @throws OptionGroupNotFoundException
      *         The specified option group could not be found.
      * @throws DBClusterNotFoundException
-     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @throws StorageTypeNotSupportedException
-     *         <i>StorageType</i> specified cannot be associated with the DB Instance.
+     *         Storage of the <i>StorageType</i> specified can't be associated with the DB instance.
      * @throws AuthorizationNotFoundException
-     *         Specified CIDRIP or EC2 security group is not authorized for the specified DB security group.</p>
+     *         The specified CIDRIP or Amazon EC2 security group isn't authorized for the specified DB security
+     *         group.</p>
      *         <p>
-     *         RDS may not also be authorized via IAM to perform necessary actions on your behalf.
+     *         RDS also may not be authorized by using IAM to perform necessary actions on your behalf.
      * @throws KMSKeyNotAccessibleException
-     *         Error accessing KMS key.
+     *         An error occurred accessing an AWS KMS key.
      * @throws DomainNotFoundException
-     *         <i>Domain</i> does not refer to an existing Active Directory Domain.
+     *         <i>Domain</i> doesn't refer to an existing Active Directory domain.
      * @sample AmazonRDS.CreateDBInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstance" target="_top">AWS API
      *      Documentation</a>
@@ -682,44 +708,45 @@ public interface AmazonRDS {
      * @param createDBInstanceReadReplicaRequest
      * @return Result of the CreateDBInstanceReadReplica operation returned by the service.
      * @throws DBInstanceAlreadyExistsException
-     *         User already has a DB instance with the given identifier.
+     *         The user already has a DB instance with the given identifier.
      * @throws InsufficientDBInstanceCapacityException
-     *         Specified DB instance class is not available in the specified Availability Zone.
+     *         The specified DB instance class isn't available in the specified Availability Zone.
      * @throws DBParameterGroupNotFoundException
-     *         <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+     *         <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
      * @throws DBSecurityGroupNotFoundException
-     *         <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
+     *         <i>DBSecurityGroupName</i> doesn't refer to an existing DB security group.
      * @throws InstanceQuotaExceededException
-     *         Request would result in user exceeding the allowed number of DB instances.
+     *         The request would result in the user exceeding the allowed number of DB instances.
      * @throws StorageQuotaExceededException
-     *         Request would result in user exceeding the allowed amount of storage available across all DB instances.
+     *         The request would result in the user exceeding the allowed amount of storage available across all DB
+     *         instances.
      * @throws DBInstanceNotFoundException
-     *         <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+     *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance is not in the <i>available</i> state.
+     *         The specified DB instance isn't in the <i>available</i> state.
      * @throws DBSubnetGroupNotFoundException
-     *         <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+     *         <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
      * @throws DBSubnetGroupDoesNotCoverEnoughAZsException
      *         Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one
      *         Availability Zone.
      * @throws InvalidSubnetException
      *         The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.
      * @throws InvalidVPCNetworkStateException
-     *         DB subnet group does not cover all Availability Zones after it is created because users' change.
+     *         The DB subnet group doesn't cover all Availability Zones after it's created because of users' change.
      * @throws ProvisionedIopsNotAvailableInAZException
      *         Provisioned IOPS not available in the specified Availability Zone.
      * @throws OptionGroupNotFoundException
      *         The specified option group could not be found.
      * @throws DBSubnetGroupNotAllowedException
-     *         Indicates that the DBSubnetGroup should not be specified while creating read replicas that lie in the
-     *         same region as the source instance.
+     *         The DBSubnetGroup shouldn't be specified while creating read replicas that lie in the same region as the
+     *         source instance.
      * @throws InvalidDBSubnetGroupException
-     *         Indicates the DBSubnetGroup does not belong to the same VPC as that of an existing cross region read
-     *         replica of the same source instance.
+     *         The DBSubnetGroup doesn't belong to the same VPC as that of an existing cross-region read replica of the
+     *         same source instance.
      * @throws StorageTypeNotSupportedException
-     *         <i>StorageType</i> specified cannot be associated with the DB Instance.
+     *         Storage of the <i>StorageType</i> specified can't be associated with the DB instance.
      * @throws KMSKeyNotAccessibleException
-     *         Error accessing KMS key.
+     *         An error occurred accessing an AWS KMS key.
      * @sample AmazonRDS.CreateDBInstanceReadReplica
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceReadReplica"
      *      target="_top">AWS API Documentation</a>
@@ -753,7 +780,7 @@ public interface AmazonRDS {
      * @param createDBParameterGroupRequest
      * @return Result of the CreateDBParameterGroup operation returned by the service.
      * @throws DBParameterGroupQuotaExceededException
-     *         Request would result in user exceeding the allowed number of DB parameter groups.
+     *         The request would result in the user exceeding the allowed number of DB parameter groups.
      * @throws DBParameterGroupAlreadyExistsException
      *         A DB parameter group with the same name exists.
      * @sample AmazonRDS.CreateDBParameterGroup
@@ -772,9 +799,9 @@ public interface AmazonRDS {
      * @throws DBSecurityGroupAlreadyExistsException
      *         A DB security group with the name specified in <i>DBSecurityGroupName</i> already exists.
      * @throws DBSecurityGroupQuotaExceededException
-     *         Request would result in user exceeding the allowed number of DB security groups.
+     *         The request would result in the user exceeding the allowed number of DB security groups.
      * @throws DBSecurityGroupNotSupportedException
-     *         A DB security group is not allowed for this action.
+     *         A DB security group isn't allowed for this action.
      * @sample AmazonRDS.CreateDBSecurityGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSecurityGroup" target="_top">AWS API
      *      Documentation</a>
@@ -791,11 +818,11 @@ public interface AmazonRDS {
      * @throws DBSnapshotAlreadyExistsException
      *         <i>DBSnapshotIdentifier</i> is already used by an existing snapshot.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance is not in the <i>available</i> state.
+     *         The specified DB instance isn't in the <i>available</i> state.
      * @throws DBInstanceNotFoundException
-     *         <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+     *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
      * @throws SnapshotQuotaExceededException
-     *         Request would result in user exceeding the allowed number of DB snapshots.
+     *         The request would result in the user exceeding the allowed number of DB snapshots.
      * @sample AmazonRDS.CreateDBSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBSnapshot" target="_top">AWS API
      *      Documentation</a>
@@ -813,9 +840,9 @@ public interface AmazonRDS {
      * @throws DBSubnetGroupAlreadyExistsException
      *         <i>DBSubnetGroupName</i> is already used by an existing DB subnet group.
      * @throws DBSubnetGroupQuotaExceededException
-     *         Request would result in user exceeding the allowed number of DB subnet groups.
+     *         The request would result in the user exceeding the allowed number of DB subnet groups.
      * @throws DBSubnetQuotaExceededException
-     *         Request would result in user exceeding the allowed number of subnets in a DB subnet groups.
+     *         The request would result in the user exceeding the allowed number of subnets in a DB subnet groups.
      * @throws DBSubnetGroupDoesNotCoverEnoughAZsException
      *         Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one
      *         Availability Zone.
@@ -902,15 +929,15 @@ public interface AmazonRDS {
      * @param deleteDBClusterRequest
      * @return Result of the DeleteDBCluster operation returned by the service.
      * @throws DBClusterNotFoundException
-     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster is not in a valid state.
+     *         The DB cluster isn't in a valid state.
      * @throws DBClusterSnapshotAlreadyExistsException
-     *         User already has a DB cluster snapshot with the given identifier.
+     *         The user already has a DB cluster snapshot with the given identifier.
      * @throws SnapshotQuotaExceededException
-     *         Request would result in user exceeding the allowed number of DB snapshots.
+     *         The request would result in the user exceeding the allowed number of DB snapshots.
      * @throws InvalidDBClusterSnapshotStateException
-     *         The supplied value is not a valid DB cluster snapshot state.
+     *         The supplied value isn't a valid DB cluster snapshot state.
      * @sample AmazonRDS.DeleteDBCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBCluster" target="_top">AWS API
      *      Documentation</a>
@@ -932,9 +959,9 @@ public interface AmazonRDS {
      * @return Result of the DeleteDBClusterParameterGroup operation returned by the service.
      * @throws InvalidDBParameterGroupStateException
      *         The DB parameter group is in use or is in an invalid state. If you are attempting to delete the parameter
-     *         group, you cannot delete it when the parameter group is in this state.
+     *         group, you can't delete it when the parameter group is in this state.
      * @throws DBParameterGroupNotFoundException
-     *         <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+     *         <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
      * @sample AmazonRDS.DeleteDBClusterParameterGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterParameterGroup"
      *      target="_top">AWS API Documentation</a>
@@ -959,9 +986,9 @@ public interface AmazonRDS {
      * @param deleteDBClusterSnapshotRequest
      * @return Result of the DeleteDBClusterSnapshot operation returned by the service.
      * @throws InvalidDBClusterSnapshotStateException
-     *         The supplied value is not a valid DB cluster snapshot state.
+     *         The supplied value isn't a valid DB cluster snapshot state.
      * @throws DBClusterSnapshotNotFoundException
-     *         <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.
+     *         <i>DBClusterSnapshotIdentifier</i> doesn't refer to an existing DB cluster snapshot.
      * @sample AmazonRDS.DeleteDBClusterSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterSnapshot" target="_top">AWS
      *      API Documentation</a>
@@ -1009,15 +1036,15 @@ public interface AmazonRDS {
      * @param deleteDBInstanceRequest
      * @return Result of the DeleteDBInstance operation returned by the service.
      * @throws DBInstanceNotFoundException
-     *         <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+     *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance is not in the <i>available</i> state.
+     *         The specified DB instance isn't in the <i>available</i> state.
      * @throws DBSnapshotAlreadyExistsException
      *         <i>DBSnapshotIdentifier</i> is already used by an existing snapshot.
      * @throws SnapshotQuotaExceededException
-     *         Request would result in user exceeding the allowed number of DB snapshots.
+     *         The request would result in the user exceeding the allowed number of DB snapshots.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster is not in a valid state.
+     *         The DB cluster isn't in a valid state.
      * @sample AmazonRDS.DeleteDBInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstance" target="_top">AWS API
      *      Documentation</a>
@@ -1034,9 +1061,9 @@ public interface AmazonRDS {
      * @return Result of the DeleteDBParameterGroup operation returned by the service.
      * @throws InvalidDBParameterGroupStateException
      *         The DB parameter group is in use or is in an invalid state. If you are attempting to delete the parameter
-     *         group, you cannot delete it when the parameter group is in this state.
+     *         group, you can't delete it when the parameter group is in this state.
      * @throws DBParameterGroupNotFoundException
-     *         <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+     *         <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
      * @sample AmazonRDS.DeleteDBParameterGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBParameterGroup" target="_top">AWS API
      *      Documentation</a>
@@ -1056,9 +1083,9 @@ public interface AmazonRDS {
      * @param deleteDBSecurityGroupRequest
      * @return Result of the DeleteDBSecurityGroup operation returned by the service.
      * @throws InvalidDBSecurityGroupStateException
-     *         The state of the DB security group does not allow deletion.
+     *         The state of the DB security group doesn't allow deletion.
      * @throws DBSecurityGroupNotFoundException
-     *         <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
+     *         <i>DBSecurityGroupName</i> doesn't refer to an existing DB security group.
      * @sample AmazonRDS.DeleteDBSecurityGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSecurityGroup" target="_top">AWS API
      *      Documentation</a>
@@ -1078,9 +1105,9 @@ public interface AmazonRDS {
      * @param deleteDBSnapshotRequest
      * @return Result of the DeleteDBSnapshot operation returned by the service.
      * @throws InvalidDBSnapshotStateException
-     *         The state of the DB snapshot does not allow deletion.
+     *         The state of the DB snapshot doesn't allow deletion.
      * @throws DBSnapshotNotFoundException
-     *         <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
+     *         <i>DBSnapshotIdentifier</i> doesn't refer to an existing DB snapshot.
      * @sample AmazonRDS.DeleteDBSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSnapshot" target="_top">AWS API
      *      Documentation</a>
@@ -1100,11 +1127,11 @@ public interface AmazonRDS {
      * @param deleteDBSubnetGroupRequest
      * @return Result of the DeleteDBSubnetGroup operation returned by the service.
      * @throws InvalidDBSubnetGroupStateException
-     *         The DB subnet group cannot be deleted because it is in use.
+     *         The DB subnet group cannot be deleted because it's in use.
      * @throws InvalidDBSubnetStateException
-     *         The DB subnet is not in the <i>available</i> state.
+     *         The DB subnet isn't in the <i>available</i> state.
      * @throws DBSubnetGroupNotFoundException
-     *         <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+     *         <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
      * @sample AmazonRDS.DeleteDBSubnetGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSubnetGroup" target="_top">AWS API
      *      Documentation</a>
@@ -1138,7 +1165,7 @@ public interface AmazonRDS {
      * @throws OptionGroupNotFoundException
      *         The specified option group could not be found.
      * @throws InvalidOptionGroupStateException
-     *         The option group is not in the <i>available</i> state.
+     *         The option group isn't in the <i>available</i> state.
      * @sample AmazonRDS.DeleteOptionGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteOptionGroup" target="_top">AWS API
      *      Documentation</a>
@@ -1178,7 +1205,7 @@ public interface AmazonRDS {
      * @param describeCertificatesRequest
      * @return Result of the DescribeCertificates operation returned by the service.
      * @throws CertificateNotFoundException
-     *         <i>CertificateIdentifier</i> does not refer to an existing certificate.
+     *         <i>CertificateIdentifier</i> doesn't refer to an existing certificate.
      * @sample AmazonRDS.DescribeCertificates
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeCertificates" target="_top">AWS API
      *      Documentation</a>
@@ -1191,6 +1218,28 @@ public interface AmazonRDS {
      * @see #describeCertificates(DescribeCertificatesRequest)
      */
     DescribeCertificatesResult describeCertificates();
+
+    /**
+     * <p>
+     * Returns information about backtracks for a DB cluster.
+     * </p>
+     * <p>
+     * For more information on Amazon Aurora, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Aurora.html">Aurora on Amazon RDS</a> in the
+     * <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @param describeDBClusterBacktracksRequest
+     * @return Result of the DescribeDBClusterBacktracks operation returned by the service.
+     * @throws DBClusterNotFoundException
+     *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
+     * @throws DBClusterBacktrackNotFoundException
+     *         <i>BacktrackIdentifier</i> doesn't refer to an existing backtrack.
+     * @sample AmazonRDS.DescribeDBClusterBacktracks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterBacktracks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeDBClusterBacktracksResult describeDBClusterBacktracks(DescribeDBClusterBacktracksRequest describeDBClusterBacktracksRequest);
 
     /**
      * <p>
@@ -1207,7 +1256,7 @@ public interface AmazonRDS {
      * @param describeDBClusterParameterGroupsRequest
      * @return Result of the DescribeDBClusterParameterGroups operation returned by the service.
      * @throws DBParameterGroupNotFoundException
-     *         <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+     *         <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
      * @sample AmazonRDS.DescribeDBClusterParameterGroups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameterGroups"
      *      target="_top">AWS API Documentation</a>
@@ -1234,7 +1283,7 @@ public interface AmazonRDS {
      * @param describeDBClusterParametersRequest
      * @return Result of the DescribeDBClusterParameters operation returned by the service.
      * @throws DBParameterGroupNotFoundException
-     *         <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+     *         <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
      * @sample AmazonRDS.DescribeDBClusterParameters
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterParameters"
      *      target="_top">AWS API Documentation</a>
@@ -1259,7 +1308,7 @@ public interface AmazonRDS {
      * @param describeDBClusterSnapshotAttributesRequest
      * @return Result of the DescribeDBClusterSnapshotAttributes operation returned by the service.
      * @throws DBClusterSnapshotNotFoundException
-     *         <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.
+     *         <i>DBClusterSnapshotIdentifier</i> doesn't refer to an existing DB cluster snapshot.
      * @sample AmazonRDS.DescribeDBClusterSnapshotAttributes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterSnapshotAttributes"
      *      target="_top">AWS API Documentation</a>
@@ -1279,7 +1328,7 @@ public interface AmazonRDS {
      * @param describeDBClusterSnapshotsRequest
      * @return Result of the DescribeDBClusterSnapshots operation returned by the service.
      * @throws DBClusterSnapshotNotFoundException
-     *         <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.
+     *         <i>DBClusterSnapshotIdentifier</i> doesn't refer to an existing DB cluster snapshot.
      * @sample AmazonRDS.DescribeDBClusterSnapshots
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterSnapshots" target="_top">AWS
      *      API Documentation</a>
@@ -1306,7 +1355,7 @@ public interface AmazonRDS {
      * @param describeDBClustersRequest
      * @return Result of the DescribeDBClusters operation returned by the service.
      * @throws DBClusterNotFoundException
-     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @sample AmazonRDS.DescribeDBClusters
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusters" target="_top">AWS API
      *      Documentation</a>
@@ -1348,7 +1397,7 @@ public interface AmazonRDS {
      * @param describeDBInstancesRequest
      * @return Result of the DescribeDBInstances operation returned by the service.
      * @throws DBInstanceNotFoundException
-     *         <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+     *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
      * @sample AmazonRDS.DescribeDBInstances
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBInstances" target="_top">AWS API
      *      Documentation</a>
@@ -1370,7 +1419,7 @@ public interface AmazonRDS {
      * @param describeDBLogFilesRequest
      * @return Result of the DescribeDBLogFiles operation returned by the service.
      * @throws DBInstanceNotFoundException
-     *         <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+     *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
      * @sample AmazonRDS.DescribeDBLogFiles
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBLogFiles" target="_top">AWS API
      *      Documentation</a>
@@ -1386,7 +1435,7 @@ public interface AmazonRDS {
      * @param describeDBParameterGroupsRequest
      * @return Result of the DescribeDBParameterGroups operation returned by the service.
      * @throws DBParameterGroupNotFoundException
-     *         <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+     *         <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
      * @sample AmazonRDS.DescribeDBParameterGroups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBParameterGroups" target="_top">AWS
      *      API Documentation</a>
@@ -1408,7 +1457,7 @@ public interface AmazonRDS {
      * @param describeDBParametersRequest
      * @return Result of the DescribeDBParameters operation returned by the service.
      * @throws DBParameterGroupNotFoundException
-     *         <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+     *         <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
      * @sample AmazonRDS.DescribeDBParameters
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBParameters" target="_top">AWS API
      *      Documentation</a>
@@ -1424,7 +1473,7 @@ public interface AmazonRDS {
      * @param describeDBSecurityGroupsRequest
      * @return Result of the DescribeDBSecurityGroups operation returned by the service.
      * @throws DBSecurityGroupNotFoundException
-     *         <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
+     *         <i>DBSecurityGroupName</i> doesn't refer to an existing DB security group.
      * @sample AmazonRDS.DescribeDBSecurityGroups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSecurityGroups" target="_top">AWS
      *      API Documentation</a>
@@ -1456,7 +1505,7 @@ public interface AmazonRDS {
      * @param describeDBSnapshotAttributesRequest
      * @return Result of the DescribeDBSnapshotAttributes operation returned by the service.
      * @throws DBSnapshotNotFoundException
-     *         <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
+     *         <i>DBSnapshotIdentifier</i> doesn't refer to an existing DB snapshot.
      * @sample AmazonRDS.DescribeDBSnapshotAttributes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshotAttributes"
      *      target="_top">AWS API Documentation</a>
@@ -1478,7 +1527,7 @@ public interface AmazonRDS {
      * @param describeDBSnapshotsRequest
      * @return Result of the DescribeDBSnapshots operation returned by the service.
      * @throws DBSnapshotNotFoundException
-     *         <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
+     *         <i>DBSnapshotIdentifier</i> doesn't refer to an existing DB snapshot.
      * @sample AmazonRDS.DescribeDBSnapshots
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshots" target="_top">AWS API
      *      Documentation</a>
@@ -1505,7 +1554,7 @@ public interface AmazonRDS {
      * @param describeDBSubnetGroupsRequest
      * @return Result of the DescribeDBSubnetGroups operation returned by the service.
      * @throws DBSubnetGroupNotFoundException
-     *         <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+     *         <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
      * @sample AmazonRDS.DescribeDBSubnetGroups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSubnetGroups" target="_top">AWS API
      *      Documentation</a>
@@ -1760,9 +1809,9 @@ public interface AmazonRDS {
      * @param describeValidDBInstanceModificationsRequest
      * @return Result of the DescribeValidDBInstanceModifications operation returned by the service.
      * @throws DBInstanceNotFoundException
-     *         <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+     *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance is not in the <i>available</i> state.
+     *         The specified DB instance isn't in the <i>available</i> state.
      * @sample AmazonRDS.DescribeValidDBInstanceModifications
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeValidDBInstanceModifications"
      *      target="_top">AWS API Documentation</a>
@@ -1778,9 +1827,9 @@ public interface AmazonRDS {
      * @param downloadDBLogFilePortionRequest
      * @return Result of the DownloadDBLogFilePortion operation returned by the service.
      * @throws DBInstanceNotFoundException
-     *         <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+     *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
      * @throws DBLogFileNotFoundException
-     *         <i>LogFileName</i> does not refer to an existing DB log file.
+     *         <i>LogFileName</i> doesn't refer to an existing DB log file.
      * @sample AmazonRDS.DownloadDBLogFilePortion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DownloadDBLogFilePortion" target="_top">AWS
      *      API Documentation</a>
@@ -1810,11 +1859,11 @@ public interface AmazonRDS {
      * @param failoverDBClusterRequest
      * @return Result of the FailoverDBCluster operation returned by the service.
      * @throws DBClusterNotFoundException
-     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster is not in a valid state.
+     *         The DB cluster isn't in a valid state.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance is not in the <i>available</i> state.
+     *         The specified DB instance isn't in the <i>available</i> state.
      * @sample AmazonRDS.FailoverDBCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverDBCluster" target="_top">AWS API
      *      Documentation</a>
@@ -1841,11 +1890,11 @@ public interface AmazonRDS {
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
      * @throws DBInstanceNotFoundException
-     *         <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+     *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
      * @throws DBSnapshotNotFoundException
-     *         <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
+     *         <i>DBSnapshotIdentifier</i> doesn't refer to an existing DB snapshot.
      * @throws DBClusterNotFoundException
-     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @sample AmazonRDS.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ListTagsForResource" target="_top">AWS API
      *      Documentation</a>
@@ -1863,27 +1912,28 @@ public interface AmazonRDS {
      * @param modifyDBClusterRequest
      * @return Result of the ModifyDBCluster operation returned by the service.
      * @throws DBClusterNotFoundException
-     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster is not in a valid state.
+     *         The DB cluster isn't in a valid state.
      * @throws StorageQuotaExceededException
-     *         Request would result in user exceeding the allowed amount of storage available across all DB instances.
+     *         The request would result in the user exceeding the allowed amount of storage available across all DB
+     *         instances.
      * @throws DBSubnetGroupNotFoundException
-     *         <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+     *         <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
      * @throws InvalidVPCNetworkStateException
-     *         DB subnet group does not cover all Availability Zones after it is created because users' change.
+     *         The DB subnet group doesn't cover all Availability Zones after it's created because of users' change.
      * @throws InvalidDBSubnetGroupStateException
-     *         The DB subnet group cannot be deleted because it is in use.
+     *         The DB subnet group cannot be deleted because it's in use.
      * @throws InvalidSubnetException
      *         The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.
      * @throws DBClusterParameterGroupNotFoundException
-     *         <i>DBClusterParameterGroupName</i> does not refer to an existing DB Cluster parameter group.
+     *         <i>DBClusterParameterGroupName</i> doesn't refer to an existing DB cluster parameter group.
      * @throws InvalidDBSecurityGroupStateException
-     *         The state of the DB security group does not allow deletion.
+     *         The state of the DB security group doesn't allow deletion.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance is not in the <i>available</i> state.
+     *         The specified DB instance isn't in the <i>available</i> state.
      * @throws DBClusterAlreadyExistsException
-     *         User already has a DB cluster with the given identifier.
+     *         The user already has a DB cluster with the given identifier.
      * @sample AmazonRDS.ModifyDBCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBCluster" target="_top">AWS API
      *      Documentation</a>
@@ -1922,10 +1972,10 @@ public interface AmazonRDS {
      * @param modifyDBClusterParameterGroupRequest
      * @return Result of the ModifyDBClusterParameterGroup operation returned by the service.
      * @throws DBParameterGroupNotFoundException
-     *         <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+     *         <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
      * @throws InvalidDBParameterGroupStateException
      *         The DB parameter group is in use or is in an invalid state. If you are attempting to delete the parameter
-     *         group, you cannot delete it when the parameter group is in this state.
+     *         group, you can't delete it when the parameter group is in this state.
      * @sample AmazonRDS.ModifyDBClusterParameterGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBClusterParameterGroup"
      *      target="_top">AWS API Documentation</a>
@@ -1954,9 +2004,9 @@ public interface AmazonRDS {
      * @param modifyDBClusterSnapshotAttributeRequest
      * @return Result of the ModifyDBClusterSnapshotAttribute operation returned by the service.
      * @throws DBClusterSnapshotNotFoundException
-     *         <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.
+     *         <i>DBClusterSnapshotIdentifier</i> doesn't refer to an existing DB cluster snapshot.
      * @throws InvalidDBClusterSnapshotStateException
-     *         The supplied value is not a valid DB cluster snapshot state.
+     *         The supplied value isn't a valid DB cluster snapshot state.
      * @throws SharedSnapshotQuotaExceededException
      *         You have exceeded the maximum number of accounts that you can share a manual DB snapshot with.
      * @sample AmazonRDS.ModifyDBClusterSnapshotAttribute
@@ -1975,39 +2025,41 @@ public interface AmazonRDS {
      * @param modifyDBInstanceRequest
      * @return Result of the ModifyDBInstance operation returned by the service.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance is not in the <i>available</i> state.
+     *         The specified DB instance isn't in the <i>available</i> state.
      * @throws InvalidDBSecurityGroupStateException
-     *         The state of the DB security group does not allow deletion.
+     *         The state of the DB security group doesn't allow deletion.
      * @throws DBInstanceAlreadyExistsException
-     *         User already has a DB instance with the given identifier.
+     *         The user already has a DB instance with the given identifier.
      * @throws DBInstanceNotFoundException
-     *         <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+     *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
      * @throws DBSecurityGroupNotFoundException
-     *         <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
+     *         <i>DBSecurityGroupName</i> doesn't refer to an existing DB security group.
      * @throws DBParameterGroupNotFoundException
-     *         <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+     *         <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
      * @throws InsufficientDBInstanceCapacityException
-     *         Specified DB instance class is not available in the specified Availability Zone.
+     *         The specified DB instance class isn't available in the specified Availability Zone.
      * @throws StorageQuotaExceededException
-     *         Request would result in user exceeding the allowed amount of storage available across all DB instances.
+     *         The request would result in the user exceeding the allowed amount of storage available across all DB
+     *         instances.
      * @throws InvalidVPCNetworkStateException
-     *         DB subnet group does not cover all Availability Zones after it is created because users' change.
+     *         The DB subnet group doesn't cover all Availability Zones after it's created because of users' change.
      * @throws ProvisionedIopsNotAvailableInAZException
      *         Provisioned IOPS not available in the specified Availability Zone.
      * @throws OptionGroupNotFoundException
      *         The specified option group could not be found.
      * @throws DBUpgradeDependencyFailureException
-     *         The DB upgrade failed because a resource the DB depends on could not be modified.
+     *         The DB upgrade failed because a resource the DB depends on can't be modified.
      * @throws StorageTypeNotSupportedException
-     *         <i>StorageType</i> specified cannot be associated with the DB Instance.
+     *         Storage of the <i>StorageType</i> specified can't be associated with the DB instance.
      * @throws AuthorizationNotFoundException
-     *         Specified CIDRIP or EC2 security group is not authorized for the specified DB security group.</p>
+     *         The specified CIDRIP or Amazon EC2 security group isn't authorized for the specified DB security
+     *         group.</p>
      *         <p>
-     *         RDS may not also be authorized via IAM to perform necessary actions on your behalf.
+     *         RDS also may not be authorized by using IAM to perform necessary actions on your behalf.
      * @throws CertificateNotFoundException
-     *         <i>CertificateIdentifier</i> does not refer to an existing certificate.
+     *         <i>CertificateIdentifier</i> doesn't refer to an existing certificate.
      * @throws DomainNotFoundException
-     *         <i>Domain</i> does not refer to an existing Active Directory Domain.
+     *         <i>Domain</i> doesn't refer to an existing Active Directory domain.
      * @sample AmazonRDS.ModifyDBInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBInstance" target="_top">AWS API
      *      Documentation</a>
@@ -2040,10 +2092,10 @@ public interface AmazonRDS {
      * @param modifyDBParameterGroupRequest
      * @return Result of the ModifyDBParameterGroup operation returned by the service.
      * @throws DBParameterGroupNotFoundException
-     *         <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+     *         <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
      * @throws InvalidDBParameterGroupStateException
      *         The DB parameter group is in use or is in an invalid state. If you are attempting to delete the parameter
-     *         group, you cannot delete it when the parameter group is in this state.
+     *         group, you can't delete it when the parameter group is in this state.
      * @sample AmazonRDS.ModifyDBParameterGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBParameterGroup" target="_top">AWS API
      *      Documentation</a>
@@ -2061,7 +2113,7 @@ public interface AmazonRDS {
      * @param modifyDBSnapshotRequest
      * @return Result of the ModifyDBSnapshot operation returned by the service.
      * @throws DBSnapshotNotFoundException
-     *         <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
+     *         <i>DBSnapshotIdentifier</i> doesn't refer to an existing DB snapshot.
      * @sample AmazonRDS.ModifyDBSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshot" target="_top">AWS API
      *      Documentation</a>
@@ -2090,9 +2142,9 @@ public interface AmazonRDS {
      * @param modifyDBSnapshotAttributeRequest
      * @return Result of the ModifyDBSnapshotAttribute operation returned by the service.
      * @throws DBSnapshotNotFoundException
-     *         <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
+     *         <i>DBSnapshotIdentifier</i> doesn't refer to an existing DB snapshot.
      * @throws InvalidDBSnapshotStateException
-     *         The state of the DB snapshot does not allow deletion.
+     *         The state of the DB snapshot doesn't allow deletion.
      * @throws SharedSnapshotQuotaExceededException
      *         You have exceeded the maximum number of accounts that you can share a manual DB snapshot with.
      * @sample AmazonRDS.ModifyDBSnapshotAttribute
@@ -2110,9 +2162,9 @@ public interface AmazonRDS {
      * @param modifyDBSubnetGroupRequest
      * @return Result of the ModifyDBSubnetGroup operation returned by the service.
      * @throws DBSubnetGroupNotFoundException
-     *         <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+     *         <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
      * @throws DBSubnetQuotaExceededException
-     *         Request would result in user exceeding the allowed number of subnets in a DB subnet groups.
+     *         The request would result in the user exceeding the allowed number of subnets in a DB subnet groups.
      * @throws SubnetAlreadyInUseException
      *         The DB subnet is already in use in the Availability Zone.
      * @throws DBSubnetGroupDoesNotCoverEnoughAZsException
@@ -2166,7 +2218,7 @@ public interface AmazonRDS {
      * @param modifyOptionGroupRequest
      * @return Result of the ModifyOptionGroup operation returned by the service.
      * @throws InvalidOptionGroupStateException
-     *         The option group is not in the <i>available</i> state.
+     *         The option group isn't in the <i>available</i> state.
      * @throws OptionGroupNotFoundException
      *         The specified option group could not be found.
      * @sample AmazonRDS.ModifyOptionGroup
@@ -2201,9 +2253,9 @@ public interface AmazonRDS {
      * @param promoteReadReplicaRequest
      * @return Result of the PromoteReadReplica operation returned by the service.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance is not in the <i>available</i> state.
+     *         The specified DB instance isn't in the <i>available</i> state.
      * @throws DBInstanceNotFoundException
-     *         <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+     *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
      * @sample AmazonRDS.PromoteReadReplica
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplica" target="_top">AWS API
      *      Documentation</a>
@@ -2218,9 +2270,9 @@ public interface AmazonRDS {
      * @param promoteReadReplicaDBClusterRequest
      * @return Result of the PromoteReadReplicaDBCluster operation returned by the service.
      * @throws DBClusterNotFoundException
-     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster is not in a valid state.
+     *         The DB cluster isn't in a valid state.
      * @sample AmazonRDS.PromoteReadReplicaDBCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplicaDBCluster"
      *      target="_top">AWS API Documentation</a>
@@ -2265,9 +2317,9 @@ public interface AmazonRDS {
      * @param rebootDBInstanceRequest
      * @return Result of the RebootDBInstance operation returned by the service.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance is not in the <i>available</i> state.
+     *         The specified DB instance isn't in the <i>available</i> state.
      * @throws DBInstanceNotFoundException
-     *         <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+     *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
      * @sample AmazonRDS.RebootDBInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RebootDBInstance" target="_top">AWS API
      *      Documentation</a>
@@ -2284,11 +2336,11 @@ public interface AmazonRDS {
      * @param removeRoleFromDBClusterRequest
      * @return Result of the RemoveRoleFromDBCluster operation returned by the service.
      * @throws DBClusterNotFoundException
-     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @throws DBClusterRoleNotFoundException
-     *         The specified IAM role Amazon Resource Name (ARN) is not associated with the specified DB cluster.
+     *         The specified IAM role Amazon Resource Name (ARN) isn't associated with the specified DB cluster.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster is not in a valid state.
+     *         The DB cluster isn't in a valid state.
      * @sample AmazonRDS.RemoveRoleFromDBCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveRoleFromDBCluster" target="_top">AWS
      *      API Documentation</a>
@@ -2325,11 +2377,11 @@ public interface AmazonRDS {
      * @param removeTagsFromResourceRequest
      * @return Result of the RemoveTagsFromResource operation returned by the service.
      * @throws DBInstanceNotFoundException
-     *         <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+     *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
      * @throws DBSnapshotNotFoundException
-     *         <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
+     *         <i>DBSnapshotIdentifier</i> doesn't refer to an existing DB snapshot.
      * @throws DBClusterNotFoundException
-     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @sample AmazonRDS.RemoveTagsFromResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveTagsFromResource" target="_top">AWS API
      *      Documentation</a>
@@ -2359,9 +2411,9 @@ public interface AmazonRDS {
      * @return Result of the ResetDBClusterParameterGroup operation returned by the service.
      * @throws InvalidDBParameterGroupStateException
      *         The DB parameter group is in use or is in an invalid state. If you are attempting to delete the parameter
-     *         group, you cannot delete it when the parameter group is in this state.
+     *         group, you can't delete it when the parameter group is in this state.
      * @throws DBParameterGroupNotFoundException
-     *         <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+     *         <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
      * @sample AmazonRDS.ResetDBClusterParameterGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ResetDBClusterParameterGroup"
      *      target="_top">AWS API Documentation</a>
@@ -2382,9 +2434,9 @@ public interface AmazonRDS {
      * @return Result of the ResetDBParameterGroup operation returned by the service.
      * @throws InvalidDBParameterGroupStateException
      *         The DB parameter group is in use or is in an invalid state. If you are attempting to delete the parameter
-     *         group, you cannot delete it when the parameter group is in this state.
+     *         group, you can't delete it when the parameter group is in this state.
      * @throws DBParameterGroupNotFoundException
-     *         <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+     *         <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
      * @sample AmazonRDS.ResetDBParameterGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ResetDBParameterGroup" target="_top">AWS API
      *      Documentation</a>
@@ -2402,35 +2454,36 @@ public interface AmazonRDS {
      * @param restoreDBClusterFromS3Request
      * @return Result of the RestoreDBClusterFromS3 operation returned by the service.
      * @throws DBClusterAlreadyExistsException
-     *         User already has a DB cluster with the given identifier.
+     *         The user already has a DB cluster with the given identifier.
      * @throws DBClusterQuotaExceededException
-     *         User attempted to create a new DB cluster and the user has already reached the maximum allowed DB cluster
-     *         quota.
+     *         The user attempted to create a new DB cluster and the user has already reached the maximum allowed DB
+     *         cluster quota.
      * @throws StorageQuotaExceededException
-     *         Request would result in user exceeding the allowed amount of storage available across all DB instances.
+     *         The request would result in the user exceeding the allowed amount of storage available across all DB
+     *         instances.
      * @throws DBSubnetGroupNotFoundException
-     *         <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+     *         <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
      * @throws InvalidVPCNetworkStateException
-     *         DB subnet group does not cover all Availability Zones after it is created because users' change.
+     *         The DB subnet group doesn't cover all Availability Zones after it's created because of users' change.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster is not in a valid state.
+     *         The DB cluster isn't in a valid state.
      * @throws InvalidDBSubnetGroupStateException
-     *         The DB subnet group cannot be deleted because it is in use.
+     *         The DB subnet group cannot be deleted because it's in use.
      * @throws InvalidSubnetException
      *         The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.
      * @throws InvalidS3BucketException
-     *         The specified Amazon S3 bucket name could not be found or Amazon RDS is not authorized to access the
-     *         specified Amazon S3 bucket. Verify the <b>SourceS3BucketName</b> and <b>S3IngestionRoleArn</b> values and
-     *         try again.
+     *         The specified Amazon S3 bucket name can't be found or Amazon RDS isn't authorized to access the specified
+     *         Amazon S3 bucket. Verify the <b>SourceS3BucketName</b> and <b>S3IngestionRoleArn</b> values and try
+     *         again.
      * @throws DBClusterParameterGroupNotFoundException
-     *         <i>DBClusterParameterGroupName</i> does not refer to an existing DB Cluster parameter group.
+     *         <i>DBClusterParameterGroupName</i> doesn't refer to an existing DB cluster parameter group.
      * @throws KMSKeyNotAccessibleException
-     *         Error accessing KMS key.
+     *         An error occurred accessing an AWS KMS key.
      * @throws DBClusterNotFoundException
-     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @throws InsufficientStorageClusterCapacityException
-     *         There is insufficient storage available for the current action. You may be able to resolve this error by
-     *         updating your subnet group to use different Availability Zones that have more storage available.
+     *         There is insufficient storage available for the current action. You might be able to resolve this error
+     *         by updating your subnet group to use different Availability Zones that have more storage available.
      * @sample AmazonRDS.RestoreDBClusterFromS3
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromS3" target="_top">AWS API
      *      Documentation</a>
@@ -2459,41 +2512,43 @@ public interface AmazonRDS {
      * @param restoreDBClusterFromSnapshotRequest
      * @return Result of the RestoreDBClusterFromSnapshot operation returned by the service.
      * @throws DBClusterAlreadyExistsException
-     *         User already has a DB cluster with the given identifier.
+     *         The user already has a DB cluster with the given identifier.
      * @throws DBClusterQuotaExceededException
-     *         User attempted to create a new DB cluster and the user has already reached the maximum allowed DB cluster
-     *         quota.
+     *         The user attempted to create a new DB cluster and the user has already reached the maximum allowed DB
+     *         cluster quota.
      * @throws StorageQuotaExceededException
-     *         Request would result in user exceeding the allowed amount of storage available across all DB instances.
+     *         The request would result in the user exceeding the allowed amount of storage available across all DB
+     *         instances.
      * @throws DBSubnetGroupNotFoundException
-     *         <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+     *         <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
      * @throws DBSnapshotNotFoundException
-     *         <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
+     *         <i>DBSnapshotIdentifier</i> doesn't refer to an existing DB snapshot.
      * @throws DBClusterSnapshotNotFoundException
-     *         <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.
+     *         <i>DBClusterSnapshotIdentifier</i> doesn't refer to an existing DB cluster snapshot.
      * @throws InsufficientDBClusterCapacityException
-     *         The DB cluster does not have enough capacity for the current operation.
+     *         The DB cluster doesn't have enough capacity for the current operation.
      * @throws InsufficientStorageClusterCapacityException
-     *         There is insufficient storage available for the current action. You may be able to resolve this error by
-     *         updating your subnet group to use different Availability Zones that have more storage available.
+     *         There is insufficient storage available for the current action. You might be able to resolve this error
+     *         by updating your subnet group to use different Availability Zones that have more storage available.
      * @throws InvalidDBSnapshotStateException
-     *         The state of the DB snapshot does not allow deletion.
+     *         The state of the DB snapshot doesn't allow deletion.
      * @throws InvalidDBClusterSnapshotStateException
-     *         The supplied value is not a valid DB cluster snapshot state.
+     *         The supplied value isn't a valid DB cluster snapshot state.
      * @throws StorageQuotaExceededException
-     *         Request would result in user exceeding the allowed amount of storage available across all DB instances.
+     *         The request would result in the user exceeding the allowed amount of storage available across all DB
+     *         instances.
      * @throws InvalidVPCNetworkStateException
-     *         DB subnet group does not cover all Availability Zones after it is created because users' change.
+     *         The DB subnet group doesn't cover all Availability Zones after it's created because of users' change.
      * @throws InvalidRestoreException
-     *         Cannot restore from vpc backup to non-vpc DB instance.
+     *         Cannot restore from VPC backup to non-VPC DB instance.
      * @throws DBSubnetGroupNotFoundException
-     *         <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+     *         <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
      * @throws InvalidSubnetException
      *         The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.
      * @throws OptionGroupNotFoundException
      *         The specified option group could not be found.
      * @throws KMSKeyNotAccessibleException
-     *         Error accessing KMS key.
+     *         An error occurred accessing an AWS KMS key.
      * @sample AmazonRDS.RestoreDBClusterFromSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromSnapshot"
      *      target="_top">AWS API Documentation</a>
@@ -2524,39 +2579,40 @@ public interface AmazonRDS {
      * @param restoreDBClusterToPointInTimeRequest
      * @return Result of the RestoreDBClusterToPointInTime operation returned by the service.
      * @throws DBClusterAlreadyExistsException
-     *         User already has a DB cluster with the given identifier.
+     *         The user already has a DB cluster with the given identifier.
      * @throws DBClusterNotFoundException
-     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @throws DBClusterQuotaExceededException
-     *         User attempted to create a new DB cluster and the user has already reached the maximum allowed DB cluster
-     *         quota.
+     *         The user attempted to create a new DB cluster and the user has already reached the maximum allowed DB
+     *         cluster quota.
      * @throws DBClusterSnapshotNotFoundException
-     *         <i>DBClusterSnapshotIdentifier</i> does not refer to an existing DB cluster snapshot.
+     *         <i>DBClusterSnapshotIdentifier</i> doesn't refer to an existing DB cluster snapshot.
      * @throws DBSubnetGroupNotFoundException
-     *         <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+     *         <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
      * @throws InsufficientDBClusterCapacityException
-     *         The DB cluster does not have enough capacity for the current operation.
+     *         The DB cluster doesn't have enough capacity for the current operation.
      * @throws InsufficientStorageClusterCapacityException
-     *         There is insufficient storage available for the current action. You may be able to resolve this error by
-     *         updating your subnet group to use different Availability Zones that have more storage available.
+     *         There is insufficient storage available for the current action. You might be able to resolve this error
+     *         by updating your subnet group to use different Availability Zones that have more storage available.
      * @throws InvalidDBClusterSnapshotStateException
-     *         The supplied value is not a valid DB cluster snapshot state.
+     *         The supplied value isn't a valid DB cluster snapshot state.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster is not in a valid state.
+     *         The DB cluster isn't in a valid state.
      * @throws InvalidDBSnapshotStateException
-     *         The state of the DB snapshot does not allow deletion.
+     *         The state of the DB snapshot doesn't allow deletion.
      * @throws InvalidRestoreException
-     *         Cannot restore from vpc backup to non-vpc DB instance.
+     *         Cannot restore from VPC backup to non-VPC DB instance.
      * @throws InvalidSubnetException
      *         The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.
      * @throws InvalidVPCNetworkStateException
-     *         DB subnet group does not cover all Availability Zones after it is created because users' change.
+     *         The DB subnet group doesn't cover all Availability Zones after it's created because of users' change.
      * @throws KMSKeyNotAccessibleException
-     *         Error accessing KMS key.
+     *         An error occurred accessing an AWS KMS key.
      * @throws OptionGroupNotFoundException
      *         The specified option group could not be found.
      * @throws StorageQuotaExceededException
-     *         Request would result in user exceeding the allowed amount of storage available across all DB instances.
+     *         The request would result in the user exceeding the allowed amount of storage available across all DB
+     *         instances.
      * @sample AmazonRDS.RestoreDBClusterToPointInTime
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterToPointInTime"
      *      target="_top">AWS API Documentation</a>
@@ -2593,23 +2649,24 @@ public interface AmazonRDS {
      * @param restoreDBInstanceFromDBSnapshotRequest
      * @return Result of the RestoreDBInstanceFromDBSnapshot operation returned by the service.
      * @throws DBInstanceAlreadyExistsException
-     *         User already has a DB instance with the given identifier.
+     *         The user already has a DB instance with the given identifier.
      * @throws DBSnapshotNotFoundException
-     *         <i>DBSnapshotIdentifier</i> does not refer to an existing DB snapshot.
+     *         <i>DBSnapshotIdentifier</i> doesn't refer to an existing DB snapshot.
      * @throws InstanceQuotaExceededException
-     *         Request would result in user exceeding the allowed number of DB instances.
+     *         The request would result in the user exceeding the allowed number of DB instances.
      * @throws InsufficientDBInstanceCapacityException
-     *         Specified DB instance class is not available in the specified Availability Zone.
+     *         The specified DB instance class isn't available in the specified Availability Zone.
      * @throws InvalidDBSnapshotStateException
-     *         The state of the DB snapshot does not allow deletion.
+     *         The state of the DB snapshot doesn't allow deletion.
      * @throws StorageQuotaExceededException
-     *         Request would result in user exceeding the allowed amount of storage available across all DB instances.
+     *         The request would result in the user exceeding the allowed amount of storage available across all DB
+     *         instances.
      * @throws InvalidVPCNetworkStateException
-     *         DB subnet group does not cover all Availability Zones after it is created because users' change.
+     *         The DB subnet group doesn't cover all Availability Zones after it's created because of users' change.
      * @throws InvalidRestoreException
-     *         Cannot restore from vpc backup to non-vpc DB instance.
+     *         Cannot restore from VPC backup to non-VPC DB instance.
      * @throws DBSubnetGroupNotFoundException
-     *         <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+     *         <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
      * @throws DBSubnetGroupDoesNotCoverEnoughAZsException
      *         Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one
      *         Availability Zone.
@@ -2620,17 +2677,18 @@ public interface AmazonRDS {
      * @throws OptionGroupNotFoundException
      *         The specified option group could not be found.
      * @throws StorageTypeNotSupportedException
-     *         <i>StorageType</i> specified cannot be associated with the DB Instance.
+     *         Storage of the <i>StorageType</i> specified can't be associated with the DB instance.
      * @throws AuthorizationNotFoundException
-     *         Specified CIDRIP or EC2 security group is not authorized for the specified DB security group.</p>
+     *         The specified CIDRIP or Amazon EC2 security group isn't authorized for the specified DB security
+     *         group.</p>
      *         <p>
-     *         RDS may not also be authorized via IAM to perform necessary actions on your behalf.
+     *         RDS also may not be authorized by using IAM to perform necessary actions on your behalf.
      * @throws KMSKeyNotAccessibleException
-     *         Error accessing KMS key.
+     *         An error occurred accessing an AWS KMS key.
      * @throws DBSecurityGroupNotFoundException
-     *         <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
+     *         <i>DBSecurityGroupName</i> doesn't refer to an existing DB security group.
      * @throws DomainNotFoundException
-     *         <i>Domain</i> does not refer to an existing Active Directory Domain.
+     *         <i>Domain</i> doesn't refer to an existing Active Directory domain.
      * @sample AmazonRDS.RestoreDBInstanceFromDBSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot"
      *      target="_top">AWS API Documentation</a>
@@ -2649,42 +2707,44 @@ public interface AmazonRDS {
      * @param restoreDBInstanceFromS3Request
      * @return Result of the RestoreDBInstanceFromS3 operation returned by the service.
      * @throws DBInstanceAlreadyExistsException
-     *         User already has a DB instance with the given identifier.
+     *         The user already has a DB instance with the given identifier.
      * @throws InsufficientDBInstanceCapacityException
-     *         Specified DB instance class is not available in the specified Availability Zone.
+     *         The specified DB instance class isn't available in the specified Availability Zone.
      * @throws DBParameterGroupNotFoundException
-     *         <i>DBParameterGroupName</i> does not refer to an existing DB parameter group.
+     *         <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
      * @throws DBSecurityGroupNotFoundException
-     *         <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
+     *         <i>DBSecurityGroupName</i> doesn't refer to an existing DB security group.
      * @throws InstanceQuotaExceededException
-     *         Request would result in user exceeding the allowed number of DB instances.
+     *         The request would result in the user exceeding the allowed number of DB instances.
      * @throws StorageQuotaExceededException
-     *         Request would result in user exceeding the allowed amount of storage available across all DB instances.
+     *         The request would result in the user exceeding the allowed amount of storage available across all DB
+     *         instances.
      * @throws DBSubnetGroupNotFoundException
-     *         <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+     *         <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
      * @throws DBSubnetGroupDoesNotCoverEnoughAZsException
      *         Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one
      *         Availability Zone.
      * @throws InvalidSubnetException
      *         The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.
      * @throws InvalidVPCNetworkStateException
-     *         DB subnet group does not cover all Availability Zones after it is created because users' change.
+     *         The DB subnet group doesn't cover all Availability Zones after it's created because of users' change.
      * @throws InvalidS3BucketException
-     *         The specified Amazon S3 bucket name could not be found or Amazon RDS is not authorized to access the
-     *         specified Amazon S3 bucket. Verify the <b>SourceS3BucketName</b> and <b>S3IngestionRoleArn</b> values and
-     *         try again.
+     *         The specified Amazon S3 bucket name can't be found or Amazon RDS isn't authorized to access the specified
+     *         Amazon S3 bucket. Verify the <b>SourceS3BucketName</b> and <b>S3IngestionRoleArn</b> values and try
+     *         again.
      * @throws ProvisionedIopsNotAvailableInAZException
      *         Provisioned IOPS not available in the specified Availability Zone.
      * @throws OptionGroupNotFoundException
      *         The specified option group could not be found.
      * @throws StorageTypeNotSupportedException
-     *         <i>StorageType</i> specified cannot be associated with the DB Instance.
+     *         Storage of the <i>StorageType</i> specified can't be associated with the DB instance.
      * @throws AuthorizationNotFoundException
-     *         Specified CIDRIP or EC2 security group is not authorized for the specified DB security group.</p>
+     *         The specified CIDRIP or Amazon EC2 security group isn't authorized for the specified DB security
+     *         group.</p>
      *         <p>
-     *         RDS may not also be authorized via IAM to perform necessary actions on your behalf.
+     *         RDS also may not be authorized by using IAM to perform necessary actions on your behalf.
      * @throws KMSKeyNotAccessibleException
-     *         Error accessing KMS key.
+     *         An error occurred accessing an AWS KMS key.
      * @sample AmazonRDS.RestoreDBInstanceFromS3
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromS3" target="_top">AWS
      *      API Documentation</a>
@@ -2714,25 +2774,26 @@ public interface AmazonRDS {
      * @param restoreDBInstanceToPointInTimeRequest
      * @return Result of the RestoreDBInstanceToPointInTime operation returned by the service.
      * @throws DBInstanceAlreadyExistsException
-     *         User already has a DB instance with the given identifier.
+     *         The user already has a DB instance with the given identifier.
      * @throws DBInstanceNotFoundException
-     *         <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+     *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
      * @throws InstanceQuotaExceededException
-     *         Request would result in user exceeding the allowed number of DB instances.
+     *         The request would result in the user exceeding the allowed number of DB instances.
      * @throws InsufficientDBInstanceCapacityException
-     *         Specified DB instance class is not available in the specified Availability Zone.
+     *         The specified DB instance class isn't available in the specified Availability Zone.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance is not in the <i>available</i> state.
+     *         The specified DB instance isn't in the <i>available</i> state.
      * @throws PointInTimeRestoreNotEnabledException
      *         <i>SourceDBInstanceIdentifier</i> refers to a DB instance with <i>BackupRetentionPeriod</i> equal to 0.
      * @throws StorageQuotaExceededException
-     *         Request would result in user exceeding the allowed amount of storage available across all DB instances.
+     *         The request would result in the user exceeding the allowed amount of storage available across all DB
+     *         instances.
      * @throws InvalidVPCNetworkStateException
-     *         DB subnet group does not cover all Availability Zones after it is created because users' change.
+     *         The DB subnet group doesn't cover all Availability Zones after it's created because of users' change.
      * @throws InvalidRestoreException
-     *         Cannot restore from vpc backup to non-vpc DB instance.
+     *         Cannot restore from VPC backup to non-VPC DB instance.
      * @throws DBSubnetGroupNotFoundException
-     *         <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+     *         <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
      * @throws DBSubnetGroupDoesNotCoverEnoughAZsException
      *         Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one
      *         Availability Zone.
@@ -2743,17 +2804,18 @@ public interface AmazonRDS {
      * @throws OptionGroupNotFoundException
      *         The specified option group could not be found.
      * @throws StorageTypeNotSupportedException
-     *         <i>StorageType</i> specified cannot be associated with the DB Instance.
+     *         Storage of the <i>StorageType</i> specified can't be associated with the DB instance.
      * @throws AuthorizationNotFoundException
-     *         Specified CIDRIP or EC2 security group is not authorized for the specified DB security group.</p>
+     *         The specified CIDRIP or Amazon EC2 security group isn't authorized for the specified DB security
+     *         group.</p>
      *         <p>
-     *         RDS may not also be authorized via IAM to perform necessary actions on your behalf.
+     *         RDS also may not be authorized by using IAM to perform necessary actions on your behalf.
      * @throws KMSKeyNotAccessibleException
-     *         Error accessing KMS key.
+     *         An error occurred accessing an AWS KMS key.
      * @throws DBSecurityGroupNotFoundException
-     *         <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
+     *         <i>DBSecurityGroupName</i> doesn't refer to an existing DB security group.
      * @throws DomainNotFoundException
-     *         <i>Domain</i> does not refer to an existing Active Directory Domain.
+     *         <i>Domain</i> doesn't refer to an existing Active Directory domain.
      * @sample AmazonRDS.RestoreDBInstanceToPointInTime
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceToPointInTime"
      *      target="_top">AWS API Documentation</a>
@@ -2770,13 +2832,14 @@ public interface AmazonRDS {
      * @param revokeDBSecurityGroupIngressRequest
      * @return Result of the RevokeDBSecurityGroupIngress operation returned by the service.
      * @throws DBSecurityGroupNotFoundException
-     *         <i>DBSecurityGroupName</i> does not refer to an existing DB security group.
+     *         <i>DBSecurityGroupName</i> doesn't refer to an existing DB security group.
      * @throws AuthorizationNotFoundException
-     *         Specified CIDRIP or EC2 security group is not authorized for the specified DB security group.</p>
+     *         The specified CIDRIP or Amazon EC2 security group isn't authorized for the specified DB security
+     *         group.</p>
      *         <p>
-     *         RDS may not also be authorized via IAM to perform necessary actions on your behalf.
+     *         RDS also may not be authorized by using IAM to perform necessary actions on your behalf.
      * @throws InvalidDBSecurityGroupStateException
-     *         The state of the DB security group does not allow deletion.
+     *         The state of the DB security group doesn't allow deletion.
      * @sample AmazonRDS.RevokeDBSecurityGroupIngress
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RevokeDBSecurityGroupIngress"
      *      target="_top">AWS API Documentation</a>
@@ -2797,30 +2860,31 @@ public interface AmazonRDS {
      * @param startDBInstanceRequest
      * @return Result of the StartDBInstance operation returned by the service.
      * @throws DBInstanceNotFoundException
-     *         <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+     *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance is not in the <i>available</i> state.
+     *         The specified DB instance isn't in the <i>available</i> state.
      * @throws InsufficientDBInstanceCapacityException
-     *         Specified DB instance class is not available in the specified Availability Zone.
+     *         The specified DB instance class isn't available in the specified Availability Zone.
      * @throws DBSubnetGroupNotFoundException
-     *         <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
+     *         <i>DBSubnetGroupName</i> doesn't refer to an existing DB subnet group.
      * @throws DBSubnetGroupDoesNotCoverEnoughAZsException
      *         Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one
      *         Availability Zone.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster is not in a valid state.
+     *         The DB cluster isn't in a valid state.
      * @throws InvalidSubnetException
      *         The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.
      * @throws InvalidVPCNetworkStateException
-     *         DB subnet group does not cover all Availability Zones after it is created because users' change.
+     *         The DB subnet group doesn't cover all Availability Zones after it's created because of users' change.
      * @throws DBClusterNotFoundException
-     *         <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
+     *         <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.
      * @throws AuthorizationNotFoundException
-     *         Specified CIDRIP or EC2 security group is not authorized for the specified DB security group.</p>
+     *         The specified CIDRIP or Amazon EC2 security group isn't authorized for the specified DB security
+     *         group.</p>
      *         <p>
-     *         RDS may not also be authorized via IAM to perform necessary actions on your behalf.
+     *         RDS also may not be authorized by using IAM to perform necessary actions on your behalf.
      * @throws KMSKeyNotAccessibleException
-     *         Error accessing KMS key.
+     *         An error occurred accessing an AWS KMS key.
      * @sample AmazonRDS.StartDBInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstance" target="_top">AWS API
      *      Documentation</a>
@@ -2843,15 +2907,15 @@ public interface AmazonRDS {
      * @param stopDBInstanceRequest
      * @return Result of the StopDBInstance operation returned by the service.
      * @throws DBInstanceNotFoundException
-     *         <i>DBInstanceIdentifier</i> does not refer to an existing DB instance.
+     *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
      * @throws InvalidDBInstanceStateException
-     *         The specified DB instance is not in the <i>available</i> state.
+     *         The specified DB instance isn't in the <i>available</i> state.
      * @throws DBSnapshotAlreadyExistsException
      *         <i>DBSnapshotIdentifier</i> is already used by an existing snapshot.
      * @throws SnapshotQuotaExceededException
-     *         Request would result in user exceeding the allowed number of DB snapshots.
+     *         The request would result in the user exceeding the allowed number of DB snapshots.
      * @throws InvalidDBClusterStateException
-     *         The DB cluster is not in a valid state.
+     *         The DB cluster isn't in a valid state.
      * @sample AmazonRDS.StopDBInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBInstance" target="_top">AWS API
      *      Documentation</a>

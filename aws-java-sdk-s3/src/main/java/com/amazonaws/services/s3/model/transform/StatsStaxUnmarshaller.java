@@ -56,6 +56,9 @@ class StatsStaxUnmarshaller
                 if (context.testExpression("BytesScanned", targetDepth)) {
                     result.setBytesScanned(LongStaxUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("BytesReturned", targetDepth)) {
+                    result.setBytesReturned(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("BytesProcessed", targetDepth)) {
                     result.setBytesProcessed(LongStaxUnmarshaller.getInstance().unmarshall(context));
                 }

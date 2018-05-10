@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified Amazon S3 bucket name could not be found or Amazon RDS is not authorized to access the specified Amazon
- * S3 bucket. Verify the <b>SourceS3BucketName</b> and <b>S3IngestionRoleArn</b> values and try again.
+ * The specified Amazon S3 bucket name can't be found or Amazon RDS isn't authorized to access the specified Amazon S3
+ * bucket. Verify the <b>SourceS3BucketName</b> and <b>S3IngestionRoleArn</b> values and try again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

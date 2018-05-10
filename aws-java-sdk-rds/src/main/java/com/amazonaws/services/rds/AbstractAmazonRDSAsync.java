@@ -92,6 +92,19 @@ public class AbstractAmazonRDSAsync extends AbstractAmazonRDS implements AmazonR
     }
 
     @Override
+    public java.util.concurrent.Future<BacktrackDBClusterResult> backtrackDBClusterAsync(BacktrackDBClusterRequest request) {
+
+        return backtrackDBClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BacktrackDBClusterResult> backtrackDBClusterAsync(BacktrackDBClusterRequest request,
+            com.amazonaws.handlers.AsyncHandler<BacktrackDBClusterRequest, BacktrackDBClusterResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DBClusterParameterGroup> copyDBClusterParameterGroupAsync(CopyDBClusterParameterGroupRequest request) {
 
         return copyDBClusterParameterGroupAsync(request, null);
@@ -499,6 +512,19 @@ public class AbstractAmazonRDSAsync extends AbstractAmazonRDS implements AmazonR
             com.amazonaws.handlers.AsyncHandler<DescribeCertificatesRequest, DescribeCertificatesResult> asyncHandler) {
 
         return describeCertificatesAsync(new DescribeCertificatesRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDBClusterBacktracksResult> describeDBClusterBacktracksAsync(DescribeDBClusterBacktracksRequest request) {
+
+        return describeDBClusterBacktracksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDBClusterBacktracksResult> describeDBClusterBacktracksAsync(DescribeDBClusterBacktracksRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeDBClusterBacktracksRequest, DescribeDBClusterBacktracksResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

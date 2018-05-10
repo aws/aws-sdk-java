@@ -67,11 +67,11 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
     private PortRange portRange;
     /**
      * <p>
-     * The protocol. A value of <code>-1</code> or <code>all</code> means all protocols. If you specify <code>all</code>, <code>-1</code>, or a protocol number other than <code>tcp</code>, <code>udp</code>, or <code>icmp</code>,
-     * traffic on all ports is allowed, regardless of any ports or ICMP types or codes you specify. If you specify
-     * protocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP types and codes allowed,
-     * regardless of any that you specify. If you specify protocol <code>58</code> (ICMPv6) and specify an IPv6 CIDR
-     * block, you must specify an ICMP type and code.
+     * The protocol. A value of <code>-1</code> or <code>all</code> means all protocols. If you specify <code>all</code>, <code>-1</code>, or a protocol number other than <code>6</code> (tcp), <code>17</code> (udp), or <code>1</code>
+     * (icmp), traffic on all ports is allowed, regardless of any ports or ICMP types or codes you specify. If you
+     * specify protocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP types and codes
+     * allowed, regardless of any that you specify. If you specify protocol <code>58</code> (ICMPv6) and specify an IPv6
+     * CIDR block, you must specify an ICMP type and code.
      * </p>
      */
     private String protocol;
@@ -354,20 +354,20 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The protocol. A value of <code>-1</code> or <code>all</code> means all protocols. If you specify <code>all</code>, <code>-1</code>, or a protocol number other than <code>tcp</code>, <code>udp</code>, or <code>icmp</code>,
-     * traffic on all ports is allowed, regardless of any ports or ICMP types or codes you specify. If you specify
-     * protocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP types and codes allowed,
-     * regardless of any that you specify. If you specify protocol <code>58</code> (ICMPv6) and specify an IPv6 CIDR
-     * block, you must specify an ICMP type and code.
+     * The protocol. A value of <code>-1</code> or <code>all</code> means all protocols. If you specify <code>all</code>, <code>-1</code>, or a protocol number other than <code>6</code> (tcp), <code>17</code> (udp), or <code>1</code>
+     * (icmp), traffic on all ports is allowed, regardless of any ports or ICMP types or codes you specify. If you
+     * specify protocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP types and codes
+     * allowed, regardless of any that you specify. If you specify protocol <code>58</code> (ICMPv6) and specify an IPv6
+     * CIDR block, you must specify an ICMP type and code.
      * </p>
      * 
      * @param protocol
      *        The protocol. A value of <code>-1</code> or <code>all</code> means all protocols. If you specify
-     *        <code>all</code>, <code>-1</code>, or a protocol number other than <code>tcp</code>, <code>udp</code>, or
-     *        <code>icmp</code>, traffic on all ports is allowed, regardless of any ports or ICMP types or codes you
-     *        specify. If you specify protocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block, traffic for all
-     *        ICMP types and codes allowed, regardless of any that you specify. If you specify protocol <code>58</code>
-     *        (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP type and code.
+     *        <code>all</code>, <code>-1</code>, or a protocol number other than <code>6</code> (tcp), <code>17</code>
+     *        (udp), or <code>1</code> (icmp), traffic on all ports is allowed, regardless of any ports or ICMP types or
+     *        codes you specify. If you specify protocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block,
+     *        traffic for all ICMP types and codes allowed, regardless of any that you specify. If you specify protocol
+     *        <code>58</code> (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP type and code.
      */
 
     public void setProtocol(String protocol) {
@@ -376,19 +376,19 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The protocol. A value of <code>-1</code> or <code>all</code> means all protocols. If you specify <code>all</code>, <code>-1</code>, or a protocol number other than <code>tcp</code>, <code>udp</code>, or <code>icmp</code>,
-     * traffic on all ports is allowed, regardless of any ports or ICMP types or codes you specify. If you specify
-     * protocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP types and codes allowed,
-     * regardless of any that you specify. If you specify protocol <code>58</code> (ICMPv6) and specify an IPv6 CIDR
-     * block, you must specify an ICMP type and code.
+     * The protocol. A value of <code>-1</code> or <code>all</code> means all protocols. If you specify <code>all</code>, <code>-1</code>, or a protocol number other than <code>6</code> (tcp), <code>17</code> (udp), or <code>1</code>
+     * (icmp), traffic on all ports is allowed, regardless of any ports or ICMP types or codes you specify. If you
+     * specify protocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP types and codes
+     * allowed, regardless of any that you specify. If you specify protocol <code>58</code> (ICMPv6) and specify an IPv6
+     * CIDR block, you must specify an ICMP type and code.
      * </p>
      * 
      * @return The protocol. A value of <code>-1</code> or <code>all</code> means all protocols. If you specify
-     *         <code>all</code>, <code>-1</code>, or a protocol number other than <code>tcp</code>, <code>udp</code>, or
-     *         <code>icmp</code>, traffic on all ports is allowed, regardless of any ports or ICMP types or codes you
-     *         specify. If you specify protocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block, traffic for all
-     *         ICMP types and codes allowed, regardless of any that you specify. If you specify protocol <code>58</code>
-     *         (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP type and code.
+     *         <code>all</code>, <code>-1</code>, or a protocol number other than <code>6</code> (tcp), <code>17</code>
+     *         (udp), or <code>1</code> (icmp), traffic on all ports is allowed, regardless of any ports or ICMP types
+     *         or codes you specify. If you specify protocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block,
+     *         traffic for all ICMP types and codes allowed, regardless of any that you specify. If you specify protocol
+     *         <code>58</code> (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP type and code.
      */
 
     public String getProtocol() {
@@ -397,20 +397,20 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The protocol. A value of <code>-1</code> or <code>all</code> means all protocols. If you specify <code>all</code>, <code>-1</code>, or a protocol number other than <code>tcp</code>, <code>udp</code>, or <code>icmp</code>,
-     * traffic on all ports is allowed, regardless of any ports or ICMP types or codes you specify. If you specify
-     * protocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP types and codes allowed,
-     * regardless of any that you specify. If you specify protocol <code>58</code> (ICMPv6) and specify an IPv6 CIDR
-     * block, you must specify an ICMP type and code.
+     * The protocol. A value of <code>-1</code> or <code>all</code> means all protocols. If you specify <code>all</code>, <code>-1</code>, or a protocol number other than <code>6</code> (tcp), <code>17</code> (udp), or <code>1</code>
+     * (icmp), traffic on all ports is allowed, regardless of any ports or ICMP types or codes you specify. If you
+     * specify protocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block, traffic for all ICMP types and codes
+     * allowed, regardless of any that you specify. If you specify protocol <code>58</code> (ICMPv6) and specify an IPv6
+     * CIDR block, you must specify an ICMP type and code.
      * </p>
      * 
      * @param protocol
      *        The protocol. A value of <code>-1</code> or <code>all</code> means all protocols. If you specify
-     *        <code>all</code>, <code>-1</code>, or a protocol number other than <code>tcp</code>, <code>udp</code>, or
-     *        <code>icmp</code>, traffic on all ports is allowed, regardless of any ports or ICMP types or codes you
-     *        specify. If you specify protocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block, traffic for all
-     *        ICMP types and codes allowed, regardless of any that you specify. If you specify protocol <code>58</code>
-     *        (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP type and code.
+     *        <code>all</code>, <code>-1</code>, or a protocol number other than <code>6</code> (tcp), <code>17</code>
+     *        (udp), or <code>1</code> (icmp), traffic on all ports is allowed, regardless of any ports or ICMP types or
+     *        codes you specify. If you specify protocol <code>58</code> (ICMPv6) and specify an IPv4 CIDR block,
+     *        traffic for all ICMP types and codes allowed, regardless of any that you specify. If you specify protocol
+     *        <code>58</code> (ICMPv6) and specify an IPv6 CIDR block, you must specify an ICMP type and code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

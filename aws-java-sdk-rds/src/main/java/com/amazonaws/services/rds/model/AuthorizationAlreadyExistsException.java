@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified CIDRIP or EC2 security group is already authorized for the specified DB security group.
+ * The specified CIDRIP or Amazon EC2 security group is already authorized for the specified DB security group.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

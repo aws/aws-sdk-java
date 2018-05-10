@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A DB security group is not allowed for this action.
+ * A DB security group isn't allowed for this action.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

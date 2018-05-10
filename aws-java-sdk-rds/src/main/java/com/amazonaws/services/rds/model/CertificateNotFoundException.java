@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * <i>CertificateIdentifier</i> does not refer to an existing certificate.
+ * <i>CertificateIdentifier</i> doesn't refer to an existing certificate.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

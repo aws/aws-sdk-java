@@ -479,6 +479,39 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements AmazonRDSAs
     }
 
     @Override
+    public java.util.concurrent.Future<BacktrackDBClusterResult> backtrackDBClusterAsync(BacktrackDBClusterRequest request) {
+
+        return backtrackDBClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BacktrackDBClusterResult> backtrackDBClusterAsync(final BacktrackDBClusterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BacktrackDBClusterRequest, BacktrackDBClusterResult> asyncHandler) {
+        final BacktrackDBClusterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BacktrackDBClusterResult>() {
+            @Override
+            public BacktrackDBClusterResult call() throws Exception {
+                BacktrackDBClusterResult result = null;
+
+                try {
+                    result = executeBacktrackDBCluster(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DBClusterParameterGroup> copyDBClusterParameterGroupAsync(CopyDBClusterParameterGroupRequest request) {
 
         return copyDBClusterParameterGroupAsync(request, null);
@@ -1447,6 +1480,39 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements AmazonRDSAs
             com.amazonaws.handlers.AsyncHandler<DescribeCertificatesRequest, DescribeCertificatesResult> asyncHandler) {
 
         return describeCertificatesAsync(new DescribeCertificatesRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDBClusterBacktracksResult> describeDBClusterBacktracksAsync(DescribeDBClusterBacktracksRequest request) {
+
+        return describeDBClusterBacktracksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDBClusterBacktracksResult> describeDBClusterBacktracksAsync(final DescribeDBClusterBacktracksRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeDBClusterBacktracksRequest, DescribeDBClusterBacktracksResult> asyncHandler) {
+        final DescribeDBClusterBacktracksRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeDBClusterBacktracksResult>() {
+            @Override
+            public DescribeDBClusterBacktracksResult call() throws Exception {
+                DescribeDBClusterBacktracksResult result = null;
+
+                try {
+                    result = executeDescribeDBClusterBacktracks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override

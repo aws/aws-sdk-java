@@ -19,8 +19,8 @@ import java.io.Serializable;
 
 public class Stats implements Serializable {
     private Long bytesScanned;
-
     private Long bytesProcessed;
+    private Long bytesReturned;
 
     /**
      * Total number of object bytes scanned.
@@ -41,6 +41,28 @@ public class Stats implements Serializable {
      */
     public Stats withBytesScanned(Long readBytes) {
         setBytesScanned(readBytes);
+        return this;
+    }
+
+    /**
+     * Total number of bytes of records payload data returned.
+     */
+    public Long getBytesReturned() {
+        return bytesReturned;
+    }
+
+    /**
+     * Total number of bytes of records payload data returned.
+     */
+    public void setBytesReturned(Long bytesReturned) {
+        this.bytesReturned = bytesReturned;
+    }
+
+    /**
+     * Total number of bytes of records payload data returned.
+     */
+    public Stats withBytesReturned(Long bytesReturned) {
+        setBytesReturned(bytesReturned);
         return this;
     }
 

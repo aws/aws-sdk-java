@@ -255,12 +255,18 @@ public class JsonUnmarshallerContextImpl extends JsonUnmarshallerContext {
 
     private void updateContext() throws IOException {
         lastParsedParentElement = null;
-        if (currentToken == null) return;
+        if (currentToken == null) {
+            return;
+        }
 
         if (currentToken == START_OBJECT || currentToken == START_ARRAY) {
             if (currentField != null) {
                 stack.push(new JsonFieldTokenPair(currentField, currentToken));
                 currentField = null;
+            } else if (currentToken == START_ARRAY) {
+                // Current field is null so this is an array within an array. Push an extra array field onto the stack to be
+                // popped when we reach the end of the array.
+                stack.push(new JsonFieldTokenPair("ARRAY", currentToken));
             }
         } else if (currentToken == END_OBJECT || currentToken == END_ARRAY) {
             if (!stack.isEmpty()) {

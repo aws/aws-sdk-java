@@ -95,7 +95,7 @@ public class DBCluster implements Serializable, Cloneable {
     private String percentProgress;
     /**
      * <p>
-     * Specifies the earliest time to which a database can be restored with point-in-time restore.
+     * The earliest time to which a database can be restored with point-in-time restore.
      * </p>
      */
     private java.util.Date earliestRestorableTime;
@@ -256,6 +256,25 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date clusterCreateTime;
+    /**
+     * <p>
+     * The earliest time to which a DB cluster can be backtracked.
+     * </p>
+     */
+    private java.util.Date earliestBacktrackTime;
+    /**
+     * <p>
+     * The target backtrack window, in seconds. If this value is set to 0, backtracking is disabled for the DB cluster.
+     * Otherwise, backtracking is enabled.
+     * </p>
+     */
+    private Long backtrackWindow;
+    /**
+     * <p>
+     * The number of change records stored for Backtrack.
+     * </p>
+     */
+    private Long backtrackConsumedChangeRecords;
 
     /**
      * <p>
@@ -719,11 +738,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the earliest time to which a database can be restored with point-in-time restore.
+     * The earliest time to which a database can be restored with point-in-time restore.
      * </p>
      * 
      * @param earliestRestorableTime
-     *        Specifies the earliest time to which a database can be restored with point-in-time restore.
+     *        The earliest time to which a database can be restored with point-in-time restore.
      */
 
     public void setEarliestRestorableTime(java.util.Date earliestRestorableTime) {
@@ -732,10 +751,10 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the earliest time to which a database can be restored with point-in-time restore.
+     * The earliest time to which a database can be restored with point-in-time restore.
      * </p>
      * 
-     * @return Specifies the earliest time to which a database can be restored with point-in-time restore.
+     * @return The earliest time to which a database can be restored with point-in-time restore.
      */
 
     public java.util.Date getEarliestRestorableTime() {
@@ -744,11 +763,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the earliest time to which a database can be restored with point-in-time restore.
+     * The earliest time to which a database can be restored with point-in-time restore.
      * </p>
      * 
      * @param earliestRestorableTime
-     *        Specifies the earliest time to which a database can be restored with point-in-time restore.
+     *        The earliest time to which a database can be restored with point-in-time restore.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2006,6 +2025,132 @@ public class DBCluster implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The earliest time to which a DB cluster can be backtracked.
+     * </p>
+     * 
+     * @param earliestBacktrackTime
+     *        The earliest time to which a DB cluster can be backtracked.
+     */
+
+    public void setEarliestBacktrackTime(java.util.Date earliestBacktrackTime) {
+        this.earliestBacktrackTime = earliestBacktrackTime;
+    }
+
+    /**
+     * <p>
+     * The earliest time to which a DB cluster can be backtracked.
+     * </p>
+     * 
+     * @return The earliest time to which a DB cluster can be backtracked.
+     */
+
+    public java.util.Date getEarliestBacktrackTime() {
+        return this.earliestBacktrackTime;
+    }
+
+    /**
+     * <p>
+     * The earliest time to which a DB cluster can be backtracked.
+     * </p>
+     * 
+     * @param earliestBacktrackTime
+     *        The earliest time to which a DB cluster can be backtracked.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withEarliestBacktrackTime(java.util.Date earliestBacktrackTime) {
+        setEarliestBacktrackTime(earliestBacktrackTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The target backtrack window, in seconds. If this value is set to 0, backtracking is disabled for the DB cluster.
+     * Otherwise, backtracking is enabled.
+     * </p>
+     * 
+     * @param backtrackWindow
+     *        The target backtrack window, in seconds. If this value is set to 0, backtracking is disabled for the DB
+     *        cluster. Otherwise, backtracking is enabled.
+     */
+
+    public void setBacktrackWindow(Long backtrackWindow) {
+        this.backtrackWindow = backtrackWindow;
+    }
+
+    /**
+     * <p>
+     * The target backtrack window, in seconds. If this value is set to 0, backtracking is disabled for the DB cluster.
+     * Otherwise, backtracking is enabled.
+     * </p>
+     * 
+     * @return The target backtrack window, in seconds. If this value is set to 0, backtracking is disabled for the DB
+     *         cluster. Otherwise, backtracking is enabled.
+     */
+
+    public Long getBacktrackWindow() {
+        return this.backtrackWindow;
+    }
+
+    /**
+     * <p>
+     * The target backtrack window, in seconds. If this value is set to 0, backtracking is disabled for the DB cluster.
+     * Otherwise, backtracking is enabled.
+     * </p>
+     * 
+     * @param backtrackWindow
+     *        The target backtrack window, in seconds. If this value is set to 0, backtracking is disabled for the DB
+     *        cluster. Otherwise, backtracking is enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withBacktrackWindow(Long backtrackWindow) {
+        setBacktrackWindow(backtrackWindow);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of change records stored for Backtrack.
+     * </p>
+     * 
+     * @param backtrackConsumedChangeRecords
+     *        The number of change records stored for Backtrack.
+     */
+
+    public void setBacktrackConsumedChangeRecords(Long backtrackConsumedChangeRecords) {
+        this.backtrackConsumedChangeRecords = backtrackConsumedChangeRecords;
+    }
+
+    /**
+     * <p>
+     * The number of change records stored for Backtrack.
+     * </p>
+     * 
+     * @return The number of change records stored for Backtrack.
+     */
+
+    public Long getBacktrackConsumedChangeRecords() {
+        return this.backtrackConsumedChangeRecords;
+    }
+
+    /**
+     * <p>
+     * The number of change records stored for Backtrack.
+     * </p>
+     * 
+     * @param backtrackConsumedChangeRecords
+     *        The number of change records stored for Backtrack.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withBacktrackConsumedChangeRecords(Long backtrackConsumedChangeRecords) {
+        setBacktrackConsumedChangeRecords(backtrackConsumedChangeRecords);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -2085,7 +2230,13 @@ public class DBCluster implements Serializable, Cloneable {
         if (getCloneGroupId() != null)
             sb.append("CloneGroupId: ").append(getCloneGroupId()).append(",");
         if (getClusterCreateTime() != null)
-            sb.append("ClusterCreateTime: ").append(getClusterCreateTime());
+            sb.append("ClusterCreateTime: ").append(getClusterCreateTime()).append(",");
+        if (getEarliestBacktrackTime() != null)
+            sb.append("EarliestBacktrackTime: ").append(getEarliestBacktrackTime()).append(",");
+        if (getBacktrackWindow() != null)
+            sb.append("BacktrackWindow: ").append(getBacktrackWindow()).append(",");
+        if (getBacktrackConsumedChangeRecords() != null)
+            sb.append("BacktrackConsumedChangeRecords: ").append(getBacktrackConsumedChangeRecords());
         sb.append("}");
         return sb.toString();
     }
@@ -2242,6 +2393,19 @@ public class DBCluster implements Serializable, Cloneable {
             return false;
         if (other.getClusterCreateTime() != null && other.getClusterCreateTime().equals(this.getClusterCreateTime()) == false)
             return false;
+        if (other.getEarliestBacktrackTime() == null ^ this.getEarliestBacktrackTime() == null)
+            return false;
+        if (other.getEarliestBacktrackTime() != null && other.getEarliestBacktrackTime().equals(this.getEarliestBacktrackTime()) == false)
+            return false;
+        if (other.getBacktrackWindow() == null ^ this.getBacktrackWindow() == null)
+            return false;
+        if (other.getBacktrackWindow() != null && other.getBacktrackWindow().equals(this.getBacktrackWindow()) == false)
+            return false;
+        if (other.getBacktrackConsumedChangeRecords() == null ^ this.getBacktrackConsumedChangeRecords() == null)
+            return false;
+        if (other.getBacktrackConsumedChangeRecords() != null
+                && other.getBacktrackConsumedChangeRecords().equals(this.getBacktrackConsumedChangeRecords()) == false)
+            return false;
         return true;
     }
 
@@ -2285,6 +2449,9 @@ public class DBCluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getIAMDatabaseAuthenticationEnabled() == null) ? 0 : getIAMDatabaseAuthenticationEnabled().hashCode());
         hashCode = prime * hashCode + ((getCloneGroupId() == null) ? 0 : getCloneGroupId().hashCode());
         hashCode = prime * hashCode + ((getClusterCreateTime() == null) ? 0 : getClusterCreateTime().hashCode());
+        hashCode = prime * hashCode + ((getEarliestBacktrackTime() == null) ? 0 : getEarliestBacktrackTime().hashCode());
+        hashCode = prime * hashCode + ((getBacktrackWindow() == null) ? 0 : getBacktrackWindow().hashCode());
+        hashCode = prime * hashCode + ((getBacktrackConsumedChangeRecords() == null) ? 0 : getBacktrackConsumedChangeRecords().hashCode());
         return hashCode;
     }
 
