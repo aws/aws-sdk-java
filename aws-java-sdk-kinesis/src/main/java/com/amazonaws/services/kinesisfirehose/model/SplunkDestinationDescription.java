@@ -42,7 +42,7 @@ public class SplunkDestinationDescription implements Serializable, Cloneable, St
     private String hECEndpointType;
     /**
      * <p>
-     * This is a GUID you obtain from your Splunk cluster when you create a new HEC endpoint.
+     * A GUID you obtain from your Splunk cluster when you create a new HEC endpoint.
      * </p>
      */
     private String hECToken;
@@ -84,7 +84,7 @@ public class SplunkDestinationDescription implements Serializable, Cloneable, St
     private ProcessingConfiguration processingConfiguration;
     /**
      * <p>
-     * The CloudWatch logging options for your delivery stream.
+     * The Amazon CloudWatch logging options for your delivery stream.
      * </p>
      */
     private CloudWatchLoggingOptions cloudWatchLoggingOptions;
@@ -190,11 +190,11 @@ public class SplunkDestinationDescription implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * This is a GUID you obtain from your Splunk cluster when you create a new HEC endpoint.
+     * A GUID you obtain from your Splunk cluster when you create a new HEC endpoint.
      * </p>
      * 
      * @param hECToken
-     *        This is a GUID you obtain from your Splunk cluster when you create a new HEC endpoint.
+     *        A GUID you obtain from your Splunk cluster when you create a new HEC endpoint.
      */
 
     public void setHECToken(String hECToken) {
@@ -203,10 +203,10 @@ public class SplunkDestinationDescription implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * This is a GUID you obtain from your Splunk cluster when you create a new HEC endpoint.
+     * A GUID you obtain from your Splunk cluster when you create a new HEC endpoint.
      * </p>
      * 
-     * @return This is a GUID you obtain from your Splunk cluster when you create a new HEC endpoint.
+     * @return A GUID you obtain from your Splunk cluster when you create a new HEC endpoint.
      */
 
     public String getHECToken() {
@@ -215,11 +215,11 @@ public class SplunkDestinationDescription implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * This is a GUID you obtain from your Splunk cluster when you create a new HEC endpoint.
+     * A GUID you obtain from your Splunk cluster when you create a new HEC endpoint.
      * </p>
      * 
      * @param hECToken
-     *        This is a GUID you obtain from your Splunk cluster when you create a new HEC endpoint.
+     *        A GUID you obtain from your Splunk cluster when you create a new HEC endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -491,11 +491,11 @@ public class SplunkDestinationDescription implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The CloudWatch logging options for your delivery stream.
+     * The Amazon CloudWatch logging options for your delivery stream.
      * </p>
      * 
      * @param cloudWatchLoggingOptions
-     *        The CloudWatch logging options for your delivery stream.
+     *        The Amazon CloudWatch logging options for your delivery stream.
      */
 
     public void setCloudWatchLoggingOptions(CloudWatchLoggingOptions cloudWatchLoggingOptions) {
@@ -504,10 +504,10 @@ public class SplunkDestinationDescription implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The CloudWatch logging options for your delivery stream.
+     * The Amazon CloudWatch logging options for your delivery stream.
      * </p>
      * 
-     * @return The CloudWatch logging options for your delivery stream.
+     * @return The Amazon CloudWatch logging options for your delivery stream.
      */
 
     public CloudWatchLoggingOptions getCloudWatchLoggingOptions() {
@@ -516,11 +516,11 @@ public class SplunkDestinationDescription implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The CloudWatch logging options for your delivery stream.
+     * The Amazon CloudWatch logging options for your delivery stream.
      * </p>
      * 
      * @param cloudWatchLoggingOptions
-     *        The CloudWatch logging options for your delivery stream.
+     *        The Amazon CloudWatch logging options for your delivery stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

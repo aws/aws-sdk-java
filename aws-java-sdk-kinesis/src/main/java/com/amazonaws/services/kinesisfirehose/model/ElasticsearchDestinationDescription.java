@@ -30,13 +30,17 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS credentials.
+     * The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      */
     private String roleARN;
     /**
      * <p>
-     * The ARN of the Amazon ES domain.
+     * The ARN of the Amazon ES domain. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      */
     private String domainARN;
@@ -90,18 +94,22 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
     private ProcessingConfiguration processingConfiguration;
     /**
      * <p>
-     * The CloudWatch logging options.
+     * The Amazon CloudWatch logging options.
      * </p>
      */
     private CloudWatchLoggingOptions cloudWatchLoggingOptions;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS credentials.
+     * The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
      * @param roleARN
-     *        The Amazon Resource Name (ARN) of the AWS credentials.
+     *        The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs) and AWS Service Namespaces</a>.
      */
 
     public void setRoleARN(String roleARN) {
@@ -110,10 +118,14 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS credentials.
+     * The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS credentials.
+     * @return The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *         (ARNs) and AWS Service Namespaces</a>.
      */
 
     public String getRoleARN() {
@@ -122,11 +134,15 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS credentials.
+     * The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
      * @param roleARN
-     *        The Amazon Resource Name (ARN) of the AWS credentials.
+     *        The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs) and AWS Service Namespaces</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,11 +153,15 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The ARN of the Amazon ES domain.
+     * The ARN of the Amazon ES domain. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
      * @param domainARN
-     *        The ARN of the Amazon ES domain.
+     *        The ARN of the Amazon ES domain. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs) and AWS Service Namespaces</a>.
      */
 
     public void setDomainARN(String domainARN) {
@@ -150,10 +170,14 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The ARN of the Amazon ES domain.
+     * The ARN of the Amazon ES domain. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
-     * @return The ARN of the Amazon ES domain.
+     * @return The ARN of the Amazon ES domain. For more information, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *         (ARNs) and AWS Service Namespaces</a>.
      */
 
     public String getDomainARN() {
@@ -162,11 +186,15 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The ARN of the Amazon ES domain.
+     * The ARN of the Amazon ES domain. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
      * @param domainARN
-     *        The ARN of the Amazon ES domain.
+     *        The ARN of the Amazon ES domain. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs) and AWS Service Namespaces</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -563,11 +591,11 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The CloudWatch logging options.
+     * The Amazon CloudWatch logging options.
      * </p>
      * 
      * @param cloudWatchLoggingOptions
-     *        The CloudWatch logging options.
+     *        The Amazon CloudWatch logging options.
      */
 
     public void setCloudWatchLoggingOptions(CloudWatchLoggingOptions cloudWatchLoggingOptions) {
@@ -576,10 +604,10 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The CloudWatch logging options.
+     * The Amazon CloudWatch logging options.
      * </p>
      * 
-     * @return The CloudWatch logging options.
+     * @return The Amazon CloudWatch logging options.
      */
 
     public CloudWatchLoggingOptions getCloudWatchLoggingOptions() {
@@ -588,11 +616,11 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The CloudWatch logging options.
+     * The Amazon CloudWatch logging options.
      * </p>
      * 
      * @param cloudWatchLoggingOptions
-     *        The CloudWatch logging options.
+     *        The Amazon CloudWatch logging options.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

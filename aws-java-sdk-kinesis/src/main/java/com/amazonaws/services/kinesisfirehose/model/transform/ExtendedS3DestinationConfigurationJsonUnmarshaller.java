@@ -88,6 +88,11 @@ public class ExtendedS3DestinationConfigurationJsonUnmarshaller implements Unmar
                     context.nextToken();
                     extendedS3DestinationConfiguration.setS3BackupConfiguration(S3DestinationConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("DataFormatConversionConfiguration", targetDepth)) {
+                    context.nextToken();
+                    extendedS3DestinationConfiguration.setDataFormatConversionConfiguration(DataFormatConversionConfigurationJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

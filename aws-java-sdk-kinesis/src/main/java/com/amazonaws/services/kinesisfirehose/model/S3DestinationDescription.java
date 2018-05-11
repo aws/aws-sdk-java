@@ -30,13 +30,17 @@ public class S3DestinationDescription implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS credentials.
+     * The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      */
     private String roleARN;
     /**
      * <p>
-     * The ARN of the S3 bucket.
+     * The ARN of the S3 bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      */
     private String bucketARN;
@@ -70,18 +74,22 @@ public class S3DestinationDescription implements Serializable, Cloneable, Struct
     private EncryptionConfiguration encryptionConfiguration;
     /**
      * <p>
-     * The CloudWatch logging options for your delivery stream.
+     * The Amazon CloudWatch logging options for your delivery stream.
      * </p>
      */
     private CloudWatchLoggingOptions cloudWatchLoggingOptions;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS credentials.
+     * The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
      * @param roleARN
-     *        The Amazon Resource Name (ARN) of the AWS credentials.
+     *        The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs) and AWS Service Namespaces</a>.
      */
 
     public void setRoleARN(String roleARN) {
@@ -90,10 +98,14 @@ public class S3DestinationDescription implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS credentials.
+     * The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS credentials.
+     * @return The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *         (ARNs) and AWS Service Namespaces</a>.
      */
 
     public String getRoleARN() {
@@ -102,11 +114,15 @@ public class S3DestinationDescription implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS credentials.
+     * The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
      * @param roleARN
-     *        The Amazon Resource Name (ARN) of the AWS credentials.
+     *        The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs) and AWS Service Namespaces</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,11 +133,15 @@ public class S3DestinationDescription implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The ARN of the S3 bucket.
+     * The ARN of the S3 bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
      * @param bucketARN
-     *        The ARN of the S3 bucket.
+     *        The ARN of the S3 bucket. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs) and AWS Service Namespaces</a>.
      */
 
     public void setBucketARN(String bucketARN) {
@@ -130,10 +150,14 @@ public class S3DestinationDescription implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The ARN of the S3 bucket.
+     * The ARN of the S3 bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
-     * @return The ARN of the S3 bucket.
+     * @return The ARN of the S3 bucket. For more information, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *         (ARNs) and AWS Service Namespaces</a>.
      */
 
     public String getBucketARN() {
@@ -142,11 +166,15 @@ public class S3DestinationDescription implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The ARN of the S3 bucket.
+     * The ARN of the S3 bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
      * @param bucketARN
-     *        The ARN of the S3 bucket.
+     *        The ARN of the S3 bucket. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs) and AWS Service Namespaces</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -377,11 +405,11 @@ public class S3DestinationDescription implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The CloudWatch logging options for your delivery stream.
+     * The Amazon CloudWatch logging options for your delivery stream.
      * </p>
      * 
      * @param cloudWatchLoggingOptions
-     *        The CloudWatch logging options for your delivery stream.
+     *        The Amazon CloudWatch logging options for your delivery stream.
      */
 
     public void setCloudWatchLoggingOptions(CloudWatchLoggingOptions cloudWatchLoggingOptions) {
@@ -390,10 +418,10 @@ public class S3DestinationDescription implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The CloudWatch logging options for your delivery stream.
+     * The Amazon CloudWatch logging options for your delivery stream.
      * </p>
      * 
-     * @return The CloudWatch logging options for your delivery stream.
+     * @return The Amazon CloudWatch logging options for your delivery stream.
      */
 
     public CloudWatchLoggingOptions getCloudWatchLoggingOptions() {
@@ -402,11 +430,11 @@ public class S3DestinationDescription implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The CloudWatch logging options for your delivery stream.
+     * The Amazon CloudWatch logging options for your delivery stream.
      * </p>
      * 
      * @param cloudWatchLoggingOptions
-     *        The CloudWatch logging options for your delivery stream.
+     *        The Amazon CloudWatch logging options for your delivery stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

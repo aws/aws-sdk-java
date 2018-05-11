@@ -36,7 +36,9 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
     private String deliveryStreamName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the delivery stream.
+     * The Amazon Resource Name (ARN) of the delivery stream. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      */
     private String deliveryStreamARN;
@@ -146,11 +148,15 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the delivery stream.
+     * The Amazon Resource Name (ARN) of the delivery stream. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
      * @param deliveryStreamARN
-     *        The Amazon Resource Name (ARN) of the delivery stream.
+     *        The Amazon Resource Name (ARN) of the delivery stream. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs) and AWS Service Namespaces</a>.
      */
 
     public void setDeliveryStreamARN(String deliveryStreamARN) {
@@ -159,10 +165,14 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the delivery stream.
+     * The Amazon Resource Name (ARN) of the delivery stream. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the delivery stream.
+     * @return The Amazon Resource Name (ARN) of the delivery stream. For more information, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *         (ARNs) and AWS Service Namespaces</a>.
      */
 
     public String getDeliveryStreamARN() {
@@ -171,11 +181,15 @@ public class DeliveryStreamDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the delivery stream.
+     * The Amazon Resource Name (ARN) of the delivery stream. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
      * @param deliveryStreamARN
-     *        The Amazon Resource Name (ARN) of the delivery stream.
+     *        The Amazon Resource Name (ARN) of the delivery stream. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs) and AWS Service Namespaces</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

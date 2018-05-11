@@ -30,13 +30,17 @@ public class KinesisStreamSourceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source Kinesis data stream.
+     * The Amazon Resource Name (ARN) of the source Kinesis data stream. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams"
+     * >Amazon Kinesis Data Streams ARN Format</a>.
      * </p>
      */
     private String kinesisStreamARN;
     /**
      * <p>
-     * The ARN of the role used by the source Kinesis data stream.
+     * The ARN of the role used by the source Kinesis data stream. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and
+     * Access Management (IAM) ARN Format</a>.
      * </p>
      */
     private String roleARN;
@@ -49,11 +53,15 @@ public class KinesisStreamSourceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source Kinesis data stream.
+     * The Amazon Resource Name (ARN) of the source Kinesis data stream. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams"
+     * >Amazon Kinesis Data Streams ARN Format</a>.
      * </p>
      * 
      * @param kinesisStreamARN
-     *        The Amazon Resource Name (ARN) of the source Kinesis data stream.
+     *        The Amazon Resource Name (ARN) of the source Kinesis data stream. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams"
+     *        >Amazon Kinesis Data Streams ARN Format</a>.
      */
 
     public void setKinesisStreamARN(String kinesisStreamARN) {
@@ -62,10 +70,14 @@ public class KinesisStreamSourceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source Kinesis data stream.
+     * The Amazon Resource Name (ARN) of the source Kinesis data stream. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams"
+     * >Amazon Kinesis Data Streams ARN Format</a>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the source Kinesis data stream.
+     * @return The Amazon Resource Name (ARN) of the source Kinesis data stream. For more information, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams"
+     *         >Amazon Kinesis Data Streams ARN Format</a>.
      */
 
     public String getKinesisStreamARN() {
@@ -74,11 +86,15 @@ public class KinesisStreamSourceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source Kinesis data stream.
+     * The Amazon Resource Name (ARN) of the source Kinesis data stream. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams"
+     * >Amazon Kinesis Data Streams ARN Format</a>.
      * </p>
      * 
      * @param kinesisStreamARN
-     *        The Amazon Resource Name (ARN) of the source Kinesis data stream.
+     *        The Amazon Resource Name (ARN) of the source Kinesis data stream. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams"
+     *        >Amazon Kinesis Data Streams ARN Format</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +105,15 @@ public class KinesisStreamSourceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The ARN of the role used by the source Kinesis data stream.
+     * The ARN of the role used by the source Kinesis data stream. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and
+     * Access Management (IAM) ARN Format</a>.
      * </p>
      * 
      * @param roleARN
-     *        The ARN of the role used by the source Kinesis data stream.
+     *        The ARN of the role used by the source Kinesis data stream. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     *        Identity and Access Management (IAM) ARN Format</a>.
      */
 
     public void setRoleARN(String roleARN) {
@@ -102,10 +122,14 @@ public class KinesisStreamSourceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The ARN of the role used by the source Kinesis data stream.
+     * The ARN of the role used by the source Kinesis data stream. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and
+     * Access Management (IAM) ARN Format</a>.
      * </p>
      * 
-     * @return The ARN of the role used by the source Kinesis data stream.
+     * @return The ARN of the role used by the source Kinesis data stream. For more information, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     *         Identity and Access Management (IAM) ARN Format</a>.
      */
 
     public String getRoleARN() {
@@ -114,11 +138,15 @@ public class KinesisStreamSourceDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The ARN of the role used by the source Kinesis data stream.
+     * The ARN of the role used by the source Kinesis data stream. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and
+     * Access Management (IAM) ARN Format</a>.
      * </p>
      * 
      * @param roleARN
-     *        The ARN of the role used by the source Kinesis data stream.
+     *        The ARN of the role used by the source Kinesis data stream. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
+     *        Identity and Access Management (IAM) ARN Format</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

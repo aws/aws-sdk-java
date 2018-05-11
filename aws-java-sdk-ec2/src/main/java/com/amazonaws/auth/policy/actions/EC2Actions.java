@@ -74,6 +74,9 @@ public enum EC2Actions implements Action {
   /** Action for the ConfirmProductInstance operation. */
   ConfirmProductInstance("ec2:ConfirmProductInstance"),
 
+  /** Action for the CopyImage operation. */
+  CopyImage("ec2:CopyImage"),
+
   /** Action for the CopySnapshot operation. */
   CopySnapshot("ec2:CopySnapshot"),
 

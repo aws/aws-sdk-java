@@ -30,13 +30,17 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS credentials.
+     * The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      */
     private String roleARN;
     /**
      * <p>
-     * The ARN of the S3 bucket.
+     * The ARN of the S3 bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      */
     private String bucketARN;
@@ -70,7 +74,7 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
     private EncryptionConfiguration encryptionConfiguration;
     /**
      * <p>
-     * The CloudWatch logging options for your delivery stream.
+     * The Amazon CloudWatch logging options for your delivery stream.
      * </p>
      */
     private CloudWatchLoggingOptions cloudWatchLoggingOptions;
@@ -92,14 +96,25 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
      * </p>
      */
     private S3DestinationUpdate s3BackupUpdate;
+    /**
+     * <p>
+     * The serializer, deserializer, and schema for converting data from the JSON format to the Parquet or ORC format
+     * before writing it to Amazon S3.
+     * </p>
+     */
+    private DataFormatConversionConfiguration dataFormatConversionConfiguration;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS credentials.
+     * The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
      * @param roleARN
-     *        The Amazon Resource Name (ARN) of the AWS credentials.
+     *        The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs) and AWS Service Namespaces</a>.
      */
 
     public void setRoleARN(String roleARN) {
@@ -108,10 +123,14 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS credentials.
+     * The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS credentials.
+     * @return The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *         (ARNs) and AWS Service Namespaces</a>.
      */
 
     public String getRoleARN() {
@@ -120,11 +139,15 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS credentials.
+     * The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
      * @param roleARN
-     *        The Amazon Resource Name (ARN) of the AWS credentials.
+     *        The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs) and AWS Service Namespaces</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +158,15 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The ARN of the S3 bucket.
+     * The ARN of the S3 bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
      * @param bucketARN
-     *        The ARN of the S3 bucket.
+     *        The ARN of the S3 bucket. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs) and AWS Service Namespaces</a>.
      */
 
     public void setBucketARN(String bucketARN) {
@@ -148,10 +175,14 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The ARN of the S3 bucket.
+     * The ARN of the S3 bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
-     * @return The ARN of the S3 bucket.
+     * @return The ARN of the S3 bucket. For more information, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *         (ARNs) and AWS Service Namespaces</a>.
      */
 
     public String getBucketARN() {
@@ -160,11 +191,15 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The ARN of the S3 bucket.
+     * The ARN of the S3 bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * and AWS Service Namespaces</a>.
      * </p>
      * 
      * @param bucketARN
-     *        The ARN of the S3 bucket.
+     *        The ARN of the S3 bucket. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs) and AWS Service Namespaces</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -392,11 +427,11 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The CloudWatch logging options for your delivery stream.
+     * The Amazon CloudWatch logging options for your delivery stream.
      * </p>
      * 
      * @param cloudWatchLoggingOptions
-     *        The CloudWatch logging options for your delivery stream.
+     *        The Amazon CloudWatch logging options for your delivery stream.
      */
 
     public void setCloudWatchLoggingOptions(CloudWatchLoggingOptions cloudWatchLoggingOptions) {
@@ -405,10 +440,10 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The CloudWatch logging options for your delivery stream.
+     * The Amazon CloudWatch logging options for your delivery stream.
      * </p>
      * 
-     * @return The CloudWatch logging options for your delivery stream.
+     * @return The Amazon CloudWatch logging options for your delivery stream.
      */
 
     public CloudWatchLoggingOptions getCloudWatchLoggingOptions() {
@@ -417,11 +452,11 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The CloudWatch logging options for your delivery stream.
+     * The Amazon CloudWatch logging options for your delivery stream.
      * </p>
      * 
      * @param cloudWatchLoggingOptions
-     *        The CloudWatch logging options for your delivery stream.
+     *        The Amazon CloudWatch logging options for your delivery stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -584,6 +619,52 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * The serializer, deserializer, and schema for converting data from the JSON format to the Parquet or ORC format
+     * before writing it to Amazon S3.
+     * </p>
+     * 
+     * @param dataFormatConversionConfiguration
+     *        The serializer, deserializer, and schema for converting data from the JSON format to the Parquet or ORC
+     *        format before writing it to Amazon S3.
+     */
+
+    public void setDataFormatConversionConfiguration(DataFormatConversionConfiguration dataFormatConversionConfiguration) {
+        this.dataFormatConversionConfiguration = dataFormatConversionConfiguration;
+    }
+
+    /**
+     * <p>
+     * The serializer, deserializer, and schema for converting data from the JSON format to the Parquet or ORC format
+     * before writing it to Amazon S3.
+     * </p>
+     * 
+     * @return The serializer, deserializer, and schema for converting data from the JSON format to the Parquet or ORC
+     *         format before writing it to Amazon S3.
+     */
+
+    public DataFormatConversionConfiguration getDataFormatConversionConfiguration() {
+        return this.dataFormatConversionConfiguration;
+    }
+
+    /**
+     * <p>
+     * The serializer, deserializer, and schema for converting data from the JSON format to the Parquet or ORC format
+     * before writing it to Amazon S3.
+     * </p>
+     * 
+     * @param dataFormatConversionConfiguration
+     *        The serializer, deserializer, and schema for converting data from the JSON format to the Parquet or ORC
+     *        format before writing it to Amazon S3.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExtendedS3DestinationUpdate withDataFormatConversionConfiguration(DataFormatConversionConfiguration dataFormatConversionConfiguration) {
+        setDataFormatConversionConfiguration(dataFormatConversionConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -613,7 +694,9 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
         if (getS3BackupMode() != null)
             sb.append("S3BackupMode: ").append(getS3BackupMode()).append(",");
         if (getS3BackupUpdate() != null)
-            sb.append("S3BackupUpdate: ").append(getS3BackupUpdate());
+            sb.append("S3BackupUpdate: ").append(getS3BackupUpdate()).append(",");
+        if (getDataFormatConversionConfiguration() != null)
+            sb.append("DataFormatConversionConfiguration: ").append(getDataFormatConversionConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -668,6 +751,11 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
             return false;
         if (other.getS3BackupUpdate() != null && other.getS3BackupUpdate().equals(this.getS3BackupUpdate()) == false)
             return false;
+        if (other.getDataFormatConversionConfiguration() == null ^ this.getDataFormatConversionConfiguration() == null)
+            return false;
+        if (other.getDataFormatConversionConfiguration() != null
+                && other.getDataFormatConversionConfiguration().equals(this.getDataFormatConversionConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -686,6 +774,7 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
         hashCode = prime * hashCode + ((getProcessingConfiguration() == null) ? 0 : getProcessingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getS3BackupMode() == null) ? 0 : getS3BackupMode().hashCode());
         hashCode = prime * hashCode + ((getS3BackupUpdate() == null) ? 0 : getS3BackupUpdate().hashCode());
+        hashCode = prime * hashCode + ((getDataFormatConversionConfiguration() == null) ? 0 : getDataFormatConversionConfiguration().hashCode());
         return hashCode;
     }
 

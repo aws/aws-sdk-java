@@ -27,7 +27,7 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the delivery stream. This name must be unique per AWS account in the same Region. If the delivery
+     * The name of the delivery stream. This name must be unique per AWS account in the same AWS Region. If the delivery
      * streams are in different accounts or different Regions, you can have multiple delivery streams with the same
      * name.
      * </p>
@@ -93,13 +93,13 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the delivery stream. This name must be unique per AWS account in the same Region. If the delivery
+     * The name of the delivery stream. This name must be unique per AWS account in the same AWS Region. If the delivery
      * streams are in different accounts or different Regions, you can have multiple delivery streams with the same
      * name.
      * </p>
      * 
      * @param deliveryStreamName
-     *        The name of the delivery stream. This name must be unique per AWS account in the same Region. If the
+     *        The name of the delivery stream. This name must be unique per AWS account in the same AWS Region. If the
      *        delivery streams are in different accounts or different Regions, you can have multiple delivery streams
      *        with the same name.
      */
@@ -110,12 +110,12 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the delivery stream. This name must be unique per AWS account in the same Region. If the delivery
+     * The name of the delivery stream. This name must be unique per AWS account in the same AWS Region. If the delivery
      * streams are in different accounts or different Regions, you can have multiple delivery streams with the same
      * name.
      * </p>
      * 
-     * @return The name of the delivery stream. This name must be unique per AWS account in the same Region. If the
+     * @return The name of the delivery stream. This name must be unique per AWS account in the same AWS Region. If the
      *         delivery streams are in different accounts or different Regions, you can have multiple delivery streams
      *         with the same name.
      */
@@ -126,13 +126,13 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the delivery stream. This name must be unique per AWS account in the same Region. If the delivery
+     * The name of the delivery stream. This name must be unique per AWS account in the same AWS Region. If the delivery
      * streams are in different accounts or different Regions, you can have multiple delivery streams with the same
      * name.
      * </p>
      * 
      * @param deliveryStreamName
-     *        The name of the delivery stream. This name must be unique per AWS account in the same Region. If the
+     *        The name of the delivery stream. This name must be unique per AWS account in the same AWS Region. If the
      *        delivery streams are in different accounts or different Regions, you can have multiple delivery streams
      *        with the same name.
      * @return Returns a reference to this object so that method calls can be chained together.

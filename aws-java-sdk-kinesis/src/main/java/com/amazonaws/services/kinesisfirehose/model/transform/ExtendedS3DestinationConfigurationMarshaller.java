@@ -47,6 +47,8 @@ public class ExtendedS3DestinationConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3BackupMode").build();
     private static final MarshallingInfo<StructuredPojo> S3BACKUPCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3BackupConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> DATAFORMATCONVERSIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataFormatConversionConfiguration").build();
 
     private static final ExtendedS3DestinationConfigurationMarshaller instance = new ExtendedS3DestinationConfigurationMarshaller();
 
@@ -74,6 +76,7 @@ public class ExtendedS3DestinationConfigurationMarshaller {
             protocolMarshaller.marshall(extendedS3DestinationConfiguration.getProcessingConfiguration(), PROCESSINGCONFIGURATION_BINDING);
             protocolMarshaller.marshall(extendedS3DestinationConfiguration.getS3BackupMode(), S3BACKUPMODE_BINDING);
             protocolMarshaller.marshall(extendedS3DestinationConfiguration.getS3BackupConfiguration(), S3BACKUPCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(extendedS3DestinationConfiguration.getDataFormatConversionConfiguration(), DATAFORMATCONVERSIONCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -33,14 +33,14 @@ public class DescribeDeliveryStreamRequest extends com.amazonaws.AmazonWebServic
     private String deliveryStreamName;
     /**
      * <p>
-     * The limit on the number of destinations to return. Currently, you can have one destination per delivery stream.
+     * The limit on the number of destinations to return. You can have one destination per delivery stream.
      * </p>
      */
     private Integer limit;
     /**
      * <p>
-     * The ID of the destination to start returning the destination information. Currently, Kinesis Data Firehose
-     * supports one destination per delivery stream.
+     * The ID of the destination to start returning the destination information. Kinesis Data Firehose supports one
+     * destination per delivery stream.
      * </p>
      */
     private String exclusiveStartDestinationId;
@@ -87,12 +87,11 @@ public class DescribeDeliveryStreamRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The limit on the number of destinations to return. Currently, you can have one destination per delivery stream.
+     * The limit on the number of destinations to return. You can have one destination per delivery stream.
      * </p>
      * 
      * @param limit
-     *        The limit on the number of destinations to return. Currently, you can have one destination per delivery
-     *        stream.
+     *        The limit on the number of destinations to return. You can have one destination per delivery stream.
      */
 
     public void setLimit(Integer limit) {
@@ -101,11 +100,10 @@ public class DescribeDeliveryStreamRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The limit on the number of destinations to return. Currently, you can have one destination per delivery stream.
+     * The limit on the number of destinations to return. You can have one destination per delivery stream.
      * </p>
      * 
-     * @return The limit on the number of destinations to return. Currently, you can have one destination per delivery
-     *         stream.
+     * @return The limit on the number of destinations to return. You can have one destination per delivery stream.
      */
 
     public Integer getLimit() {
@@ -114,12 +112,11 @@ public class DescribeDeliveryStreamRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The limit on the number of destinations to return. Currently, you can have one destination per delivery stream.
+     * The limit on the number of destinations to return. You can have one destination per delivery stream.
      * </p>
      * 
      * @param limit
-     *        The limit on the number of destinations to return. Currently, you can have one destination per delivery
-     *        stream.
+     *        The limit on the number of destinations to return. You can have one destination per delivery stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,13 +127,13 @@ public class DescribeDeliveryStreamRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the destination to start returning the destination information. Currently, Kinesis Data Firehose
-     * supports one destination per delivery stream.
+     * The ID of the destination to start returning the destination information. Kinesis Data Firehose supports one
+     * destination per delivery stream.
      * </p>
      * 
      * @param exclusiveStartDestinationId
-     *        The ID of the destination to start returning the destination information. Currently, Kinesis Data Firehose
-     *        supports one destination per delivery stream.
+     *        The ID of the destination to start returning the destination information. Kinesis Data Firehose supports
+     *        one destination per delivery stream.
      */
 
     public void setExclusiveStartDestinationId(String exclusiveStartDestinationId) {
@@ -145,12 +142,12 @@ public class DescribeDeliveryStreamRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the destination to start returning the destination information. Currently, Kinesis Data Firehose
-     * supports one destination per delivery stream.
+     * The ID of the destination to start returning the destination information. Kinesis Data Firehose supports one
+     * destination per delivery stream.
      * </p>
      * 
-     * @return The ID of the destination to start returning the destination information. Currently, Kinesis Data
-     *         Firehose supports one destination per delivery stream.
+     * @return The ID of the destination to start returning the destination information. Kinesis Data Firehose supports
+     *         one destination per delivery stream.
      */
 
     public String getExclusiveStartDestinationId() {
@@ -159,13 +156,13 @@ public class DescribeDeliveryStreamRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the destination to start returning the destination information. Currently, Kinesis Data Firehose
-     * supports one destination per delivery stream.
+     * The ID of the destination to start returning the destination information. Kinesis Data Firehose supports one
+     * destination per delivery stream.
      * </p>
      * 
      * @param exclusiveStartDestinationId
-     *        The ID of the destination to start returning the destination information. Currently, Kinesis Data Firehose
-     *        supports one destination per delivery stream.
+     *        The ID of the destination to start returning the destination information. Kinesis Data Firehose supports
+     *        one destination per delivery stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
