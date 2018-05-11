@@ -199,6 +199,8 @@ public class ClientConfiguration {
      * timing out. A value of 0 means infinity. Consider setting this if a harder guarantee is
      * required on the maximum amount of time a request will take for non-streaming operations, and
      * are willing to spin up a background thread to enforce it.
+     * Note that this is the total time for the whole request -including all retries if any and 
+     * not only a single retry- before timeing out.
      */
     private int requestTimeout = DEFAULT_REQUEST_TIMEOUT;
 
