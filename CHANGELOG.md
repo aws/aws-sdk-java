@@ -1,3 +1,8 @@
+# __1.11.330__ __2018-05-15__
+## __AWS Config__
+  - ### Features
+    - Update ResourceType enum with values for XRay resource
+
 # __1.11.329__ __2018-05-14__
 ## __AWS CodeBuild__
   - ### Features

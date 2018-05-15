@@ -55676,6 +55676,9 @@
       }, {
         "name" : "AWSElasticLoadBalancingLoadBalancer",
         "value" : "AWS::ElasticLoadBalancing::LoadBalancer"
+      }, {
+        "name" : "AWSXRayEncryptionConfig",
+        "value" : "AWS::XRay::EncryptionConfig"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,

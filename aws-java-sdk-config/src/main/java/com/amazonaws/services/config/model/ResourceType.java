@@ -76,7 +76,8 @@ public enum ResourceType {
     AWSElasticBeanstalkApplication("AWS::ElasticBeanstalk::Application"),
     AWSElasticBeanstalkApplicationVersion("AWS::ElasticBeanstalk::ApplicationVersion"),
     AWSElasticBeanstalkEnvironment("AWS::ElasticBeanstalk::Environment"),
-    AWSElasticLoadBalancingLoadBalancer("AWS::ElasticLoadBalancing::LoadBalancer");
+    AWSElasticLoadBalancingLoadBalancer("AWS::ElasticLoadBalancing::LoadBalancer"),
+    AWSXRayEncryptionConfig("AWS::XRay::EncryptionConfig");
 
     private String value;
 
