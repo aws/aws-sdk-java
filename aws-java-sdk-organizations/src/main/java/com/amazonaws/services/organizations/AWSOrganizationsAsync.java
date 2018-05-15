@@ -152,9 +152,9 @@ import com.amazonaws.services.organizations.model.*;
  * files to an Amazon S3 bucket. By using information collected by AWS CloudTrail, you can determine which requests were
  * successfully made to Organizations, who made the request, when it was made, and so on. For more about AWS
  * Organizations and its support for AWS CloudTrail, see <a
- * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_cloudtrail-integration.html">Logging AWS
- * Organizations Events with AWS CloudTrail</a> in the <i>AWS Organizations User Guide</i>. To learn more about
- * CloudTrail, including how to turn it on and find your log files, see the <a
+ * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html#orgs_cloudtrail-integration"
+ * >Logging AWS Organizations Events with AWS CloudTrail</a> in the <i>AWS Organizations User Guide</i>. To learn more
+ * about CloudTrail, including how to turn it on and find your log files, see the <a
  * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">AWS CloudTrail
  * User Guide</a>.
  * </p>
@@ -267,8 +267,8 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
 
     /**
      * <p>
-     * Attaches a policy to a root, an organizational unit, or an individual account. How the policy affects accounts
-     * depends on the type of policy:
+     * Attaches a policy to a root, an organizational unit (OU), or an individual account. How the policy affects
+     * accounts depends on the type of policy:
      * </p>
      * <ul>
      * <li>
@@ -330,8 +330,8 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
 
     /**
      * <p>
-     * Attaches a policy to a root, an organizational unit, or an individual account. How the policy affects accounts
-     * depends on the type of policy:
+     * Attaches a policy to a root, an organizational unit (OU), or an individual account. How the policy affects
+     * accounts depends on the type of policy:
      * </p>
      * <ul>
      * <li>
@@ -476,6 +476,8 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Account in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * <important>
+     * <ul>
+     * <li>
      * <p>
      * When you create an account in an organization using the AWS Organizations console, API, or CLI commands, the
      * information required for the account to operate as a standalone account, such as a payment method and signing the
@@ -485,6 +487,23 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * > To leave an organization when all required account information has not yet been provided</a> in the <i>AWS
      * Organizations User Guide</i>.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you get an exception that indicates that you exceeded your account limits for the organization or that the
+     * operation failed because your organization is still initializing, wait one hour and then try again. If the error
+     * persists after an hour, then contact <a href="https://console.aws.amazon.com/support/home#/">AWS Customer
+     * Support</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Because <code>CreateAccount</code> operates asynchronously, it can return a successful completion message even
+     * though account initialization might still be in progress. You might need to wait a few minutes before you can
+     * successfully access the account.
+     * </p>
+     * </li>
+     * </ul>
      * </important> <note>
      * <p>
      * When you create a member account with this operation, you can choose whether to create the account with the
@@ -495,16 +514,6 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Billing Information and Tools</a>.
      * </p>
      * </note>
-     * <p>
-     * This operation can be called only from the organization's master account.
-     * </p>
-     * <important>
-     * <p>
-     * If you get an exception that indicates that you exceeded your account limits for the organization or that you
-     * can"t add an account because your organization is still initializing, please contact <a href="
-     * https://console.aws.amazon.com/support/home#/"> AWS Customer Support</a>.
-     * </p>
-     * </important>
      * 
      * @param createAccountRequest
      * @return A Java Future containing the result of the CreateAccount operation returned by the service.
@@ -545,6 +554,8 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Account in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * <important>
+     * <ul>
+     * <li>
      * <p>
      * When you create an account in an organization using the AWS Organizations console, API, or CLI commands, the
      * information required for the account to operate as a standalone account, such as a payment method and signing the
@@ -554,6 +565,23 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * > To leave an organization when all required account information has not yet been provided</a> in the <i>AWS
      * Organizations User Guide</i>.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you get an exception that indicates that you exceeded your account limits for the organization or that the
+     * operation failed because your organization is still initializing, wait one hour and then try again. If the error
+     * persists after an hour, then contact <a href="https://console.aws.amazon.com/support/home#/">AWS Customer
+     * Support</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Because <code>CreateAccount</code> operates asynchronously, it can return a successful completion message even
+     * though account initialization might still be in progress. You might need to wait a few minutes before you can
+     * successfully access the account.
+     * </p>
+     * </li>
+     * </ul>
      * </important> <note>
      * <p>
      * When you create a member account with this operation, you can choose whether to create the account with the
@@ -564,16 +592,6 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Billing Information and Tools</a>.
      * </p>
      * </note>
-     * <p>
-     * This operation can be called only from the organization's master account.
-     * </p>
-     * <important>
-     * <p>
-     * If you get an exception that indicates that you exceeded your account limits for the organization or that you
-     * can"t add an account because your organization is still initializing, please contact <a href="
-     * https://console.aws.amazon.com/support/home#/"> AWS Customer Support</a>.
-     * </p>
-     * </important>
      * 
      * @param createAccountRequest
      * @param asyncHandler
@@ -803,7 +821,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
     /**
      * <p>
      * Deletes the organization. You can delete an organization only by using credentials from the master account. The
-     * organization must be empty of member accounts, OUs, and policies.
+     * organization must be empty of member accounts, organizational units (OUs), and policies.
      * </p>
      * 
      * @param deleteOrganizationRequest
@@ -817,7 +835,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
     /**
      * <p>
      * Deletes the organization. You can delete an organization only by using credentials from the master account. The
-     * organization must be empty of member accounts, OUs, and policies.
+     * organization must be empty of member accounts, organizational units (OUs), and policies.
      * </p>
      * 
      * @param deleteOrganizationRequest
@@ -835,8 +853,8 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
 
     /**
      * <p>
-     * Deletes an organizational unit from a root or another OU. You must first remove all accounts and child OUs from
-     * the OU that you want to delete.
+     * Deletes an organizational unit (OU) from a root or another OU. You must first remove all accounts and child OUs
+     * from the OU that you want to delete.
      * </p>
      * <p>
      * This operation can be called only from the organization's master account.
@@ -852,8 +870,8 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
 
     /**
      * <p>
-     * Deletes an organizational unit from a root or another OU. You must first remove all accounts and child OUs from
-     * the OU that you want to delete.
+     * Deletes an organizational unit (OU) from a root or another OU. You must first remove all accounts and child OUs
+     * from the OU that you want to delete.
      * </p>
      * <p>
      * This operation can be called only from the organization's master account.
@@ -875,7 +893,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
     /**
      * <p>
      * Deletes the specified policy from your organization. Before you perform this operation, you must first detach the
-     * policy from all OUs, roots, and accounts.
+     * policy from all organizational units (OUs), roots, and accounts.
      * </p>
      * <p>
      * This operation can be called only from the organization's master account.
@@ -892,7 +910,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
     /**
      * <p>
      * Deletes the specified policy from your organization. Before you perform this operation, you must first detach the
-     * policy from all OUs, roots, and accounts.
+     * policy from all organizational units (OUs), roots, and accounts.
      * </p>
      * <p>
      * This operation can be called only from the organization's master account.
@@ -1161,8 +1179,9 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
 
     /**
      * <p>
-     * Detaches a policy from a target root, organizational unit, or account. If the policy being detached is a service
-     * control policy (SCP), the changes to permissions for IAM users and roles in affected accounts are immediate.
+     * Detaches a policy from a target root, organizational unit (OU), or account. If the policy being detached is a
+     * service control policy (SCP), the changes to permissions for IAM users and roles in affected accounts are
+     * immediate.
      * </p>
      * <p>
      * <b>Note:</b> Every root, OU, and account must have at least one SCP attached. If you want to replace the default
@@ -1191,8 +1210,9 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
 
     /**
      * <p>
-     * Detaches a policy from a target root, organizational unit, or account. If the policy being detached is a service
-     * control policy (SCP), the changes to permissions for IAM users and roles in affected accounts are immediate.
+     * Detaches a policy from a target root, organizational unit (OU), or account. If the policy being detached is a
+     * service control policy (SCP), the changes to permissions for IAM users and roles in affected accounts are
+     * immediate.
      * </p>
      * <p>
      * <b>Note:</b> Every root, OU, and account must have at least one SCP attached. If you want to replace the default
@@ -1317,8 +1337,8 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <p>
      * Disables an organizational control policy type in a root. A policy of a certain type can be attached to entities
      * in a root only if that type is enabled in the root. After you perform this operation, you no longer can attach
-     * policies of the specified type to that root or to any OU or account in that root. You can undo this by using the
-     * <a>EnablePolicyType</a> operation.
+     * policies of the specified type to that root or to any organizational unit (OU) or account in that root. You can
+     * undo this by using the <a>EnablePolicyType</a> operation.
      * </p>
      * <p>
      * This operation can be called only from the organization's master account.
@@ -1343,8 +1363,8 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <p>
      * Disables an organizational control policy type in a root. A policy of a certain type can be attached to entities
      * in a root only if that type is enabled in the root. After you perform this operation, you no longer can attach
-     * policies of the specified type to that root or to any OU or account in that root. You can undo this by using the
-     * <a>EnablePolicyType</a> operation.
+     * policies of the specified type to that root or to any organizational unit (OU) or account in that root. You can
+     * undo this by using the <a>EnablePolicyType</a> operation.
      * </p>
      * <p>
      * This operation can be called only from the organization's master account.
@@ -1461,10 +1481,9 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <important>
      * <p>
      * This operation is required only for organizations that were created explicitly with only the consolidated billing
-     * features enabled, or that were migrated from a Consolidated Billing account family to Organizations. Calling this
-     * operation sends a handshake to every invited account in the organization. The feature set change can be finalized
-     * and the additional features enabled only after all administrators in the invited accounts approve the change by
-     * accepting the handshake.
+     * features enabled. Calling this operation sends a handshake to every invited account in the organization. The
+     * feature set change can be finalized and the additional features enabled only after all administrators in the
+     * invited accounts approve the change by accepting the handshake.
      * </p>
      * </important>
      * <p>
@@ -1506,10 +1525,9 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <important>
      * <p>
      * This operation is required only for organizations that were created explicitly with only the consolidated billing
-     * features enabled, or that were migrated from a Consolidated Billing account family to Organizations. Calling this
-     * operation sends a handshake to every invited account in the organization. The feature set change can be finalized
-     * and the additional features enabled only after all administrators in the invited accounts approve the change by
-     * accepting the handshake.
+     * features enabled. Calling this operation sends a handshake to every invited account in the organization. The
+     * feature set change can be finalized and the additional features enabled only after all administrators in the
+     * invited accounts approve the change by accepting the handshake.
      * </p>
      * </important>
      * <p>
@@ -1547,7 +1565,8 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
     /**
      * <p>
      * Enables a policy type in a root. After you enable a policy type in a root, you can attach policies of that type
-     * to the root, any OU, or account in that root. You can undo this by using the <a>DisablePolicyType</a> operation.
+     * to the root, any organizational unit (OU), or account in that root. You can undo this by using the
+     * <a>DisablePolicyType</a> operation.
      * </p>
      * <p>
      * This operation can be called only from the organization's master account.
@@ -1571,7 +1590,8 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
     /**
      * <p>
      * Enables a policy type in a root. After you enable a policy type in a root, you can attach policies of that type
-     * to the root, any OU, or account in that root. You can undo this by using the <a>DisablePolicyType</a> operation.
+     * to the root, any organizational unit (OU), or account in that root. You can undo this by using the
+     * <a>DisablePolicyType</a> operation.
      * </p>
      * <p>
      * This operation can be called only from the organization's master account.
@@ -1604,6 +1624,8 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * implemented as a <a>Handshake</a> whose details are in the response.
      * </p>
      * <important>
+     * <ul>
+     * <li>
      * <p>
      * You can invite AWS accounts only from the same seller as the master account. For example, if your organization's
      * master account was created by Amazon Internet Services Pvt. Ltd (AISPL), an AWS seller in India, then you can
@@ -1612,17 +1634,20 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html"
      * >Consolidated Billing in India</a>.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you receive an exception that indicates that you exceeded your account limits for the organization or that the
+     * operation failed because your organization is still initializing, wait one hour and then try again. If the error
+     * persists after an hour, then contact <a href="https://console.aws.amazon.com/support/home#/">AWS Customer
+     * Support</a>.
+     * </p>
+     * </li>
+     * </ul>
      * </important>
      * <p>
      * This operation can be called only from the organization's master account.
      * </p>
-     * <important>
-     * <p>
-     * If you get an exception that indicates that you exceeded your account limits for the organization or that you
-     * can"t add an account because your organization is still initializing, please contact <a href="
-     * https://console.aws.amazon.com/support/home#/"> AWS Customer Support</a>.
-     * </p>
-     * </important>
      * 
      * @param inviteAccountToOrganizationRequest
      * @return A Java Future containing the result of the InviteAccountToOrganization operation returned by the service.
@@ -1640,6 +1665,8 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * implemented as a <a>Handshake</a> whose details are in the response.
      * </p>
      * <important>
+     * <ul>
+     * <li>
      * <p>
      * You can invite AWS accounts only from the same seller as the master account. For example, if your organization's
      * master account was created by Amazon Internet Services Pvt. Ltd (AISPL), an AWS seller in India, then you can
@@ -1648,17 +1675,20 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html"
      * >Consolidated Billing in India</a>.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you receive an exception that indicates that you exceeded your account limits for the organization or that the
+     * operation failed because your organization is still initializing, wait one hour and then try again. If the error
+     * persists after an hour, then contact <a href="https://console.aws.amazon.com/support/home#/">AWS Customer
+     * Support</a>.
+     * </p>
+     * </li>
+     * </ul>
      * </important>
      * <p>
      * This operation can be called only from the organization's master account.
      * </p>
-     * <important>
-     * <p>
-     * If you get an exception that indicates that you exceeded your account limits for the organization or that you
-     * can"t add an account because your organization is still initializing, please contact <a href="
-     * https://console.aws.amazon.com/support/home#/"> AWS Customer Support</a>.
-     * </p>
-     * </important>
      * 
      * @param inviteAccountToOrganizationRequest
      * @param asyncHandler
@@ -1844,8 +1874,8 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
 
     /**
      * <p>
-     * Lists all the accounts in the organization. To request only the accounts in a specified root or OU, use the
-     * <a>ListAccountsForParent</a> operation instead.
+     * Lists all the accounts in the organization. To request only the accounts in a specified root or organizational
+     * unit (OU), use the <a>ListAccountsForParent</a> operation instead.
      * </p>
      * <note>
      * <p>
@@ -1869,8 +1899,8 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
 
     /**
      * <p>
-     * Lists all the accounts in the organization. To request only the accounts in a specified root or OU, use the
-     * <a>ListAccountsForParent</a> operation instead.
+     * Lists all the accounts in the organization. To request only the accounts in a specified root or organizational
+     * unit (OU), use the <a>ListAccountsForParent</a> operation instead.
      * </p>
      * <note>
      * <p>
@@ -1958,8 +1988,8 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
 
     /**
      * <p>
-     * Lists all of the OUs or accounts that are contained in the specified parent OU or root. This operation, along
-     * with <a>ListParents</a> enables you to traverse the tree structure that makes up this root.
+     * Lists all of the organizational units (OUs) or accounts that are contained in the specified parent OU or root.
+     * This operation, along with <a>ListParents</a> enables you to traverse the tree structure that makes up this root.
      * </p>
      * <note>
      * <p>
@@ -1983,8 +2013,8 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
 
     /**
      * <p>
-     * Lists all of the OUs or accounts that are contained in the specified parent OU or root. This operation, along
-     * with <a>ListParents</a> enables you to traverse the tree structure that makes up this root.
+     * Lists all of the organizational units (OUs) or accounts that are contained in the specified parent OU or root.
+     * This operation, along with <a>ListParents</a> enables you to traverse the tree structure that makes up this root.
      * </p>
      * <note>
      * <p>
@@ -2499,7 +2529,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
 
     /**
      * <p>
-     * Lists all the roots, OUs, and accounts to which the specified policy is attached.
+     * Lists all the roots, organizaitonal units (OUs), and accounts to which the specified policy is attached.
      * </p>
      * <note>
      * <p>
@@ -2523,7 +2553,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
 
     /**
      * <p>
-     * Lists all the roots, OUs, and accounts to which the specified policy is attached.
+     * Lists all the roots, organizaitonal units (OUs), and accounts to which the specified policy is attached.
      * </p>
      * <note>
      * <p>
@@ -2552,7 +2582,8 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
 
     /**
      * <p>
-     * Moves an account from its current source parent root or OU to the specified destination parent root or OU.
+     * Moves an account from its current source parent root or organizational unit (OU) to the specified destination
+     * parent root or OU.
      * </p>
      * <p>
      * This operation can be called only from the organization's master account.
@@ -2568,7 +2599,8 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
 
     /**
      * <p>
-     * Moves an account from its current source parent root or OU to the specified destination parent root or OU.
+     * Moves an account from its current source parent root or organizational unit (OU) to the specified destination
+     * parent root or OU.
      * </p>
      * <p>
      * This operation can be called only from the organization's master account.
@@ -2601,8 +2633,6 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * with <a>LeaveOrganization</a> instead.
      * </p>
      * <important>
-     * <ul>
-     * <li>
      * <p>
      * You can remove an account from your organization only if the account is configured with the information required
      * to operate as a standalone account. When you create an account in an organization using the AWS Organizations
@@ -2616,17 +2646,6 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * > To leave an organization when all required account information has not yet been provided</a> in the <i>AWS
      * Organizations User Guide</i>.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * You can remove a member account only after you enable IAM user access to billing in the member account. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
-     * >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>.
-     * </p>
-     * </li>
-     * </ul>
      * </important>
      * 
      * @param removeAccountFromOrganizationRequest
@@ -2653,8 +2672,6 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * with <a>LeaveOrganization</a> instead.
      * </p>
      * <important>
-     * <ul>
-     * <li>
      * <p>
      * You can remove an account from your organization only if the account is configured with the information required
      * to operate as a standalone account. When you create an account in an organization using the AWS Organizations
@@ -2668,17 +2685,6 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * > To leave an organization when all required account information has not yet been provided</a> in the <i>AWS
      * Organizations User Guide</i>.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * You can remove a member account only after you enable IAM user access to billing in the member account. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
-     * >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>.
-     * </p>
-     * </li>
-     * </ul>
      * </important>
      * 
      * @param removeAccountFromOrganizationRequest

@@ -100,6 +100,10 @@ public class BuildJsonUnmarshaller implements Unmarshaller<Build, JsonUnmarshall
                     context.nextToken();
                     build.setEnvironment(ProjectEnvironmentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("serviceRole", targetDepth)) {
+                    context.nextToken();
+                    build.setServiceRole(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("logs", targetDepth)) {
                     context.nextToken();
                     build.setLogs(LogsLocationJsonUnmarshaller.getInstance().unmarshall(context));

@@ -1,3 +1,20 @@
+# __1.11.329__ __2018-05-14__
+## __AWS CodeBuild__
+  - ### Features
+    - Adding support for more override fields for StartBuild API, add support for idempotency token field  for StartBuild API in AWS CodeBuild.
+
+## __AWS IoT 1-Click Devices Service__
+  - ### Features
+    - AWS IoT 1-Click makes it easy for customers to incorporate simple ready-to-use IoT devices into their workflows. These devices can trigger AWS Lambda functions that implement business logic. In order to build applications using AWS IoT 1-Click devices, programmers can use the AWS IoT 1-Click Devices API and the AWS IoT 1-Click Projects API. Learn more at https://aws.amazon.com/documentation/iot-1-click/
+
+## __AWS IoT 1-Click Projects Service__
+  - ### Features
+    - AWS IoT 1-Click makes it easy for customers to incorporate simple ready-to-use IoT devices into their workflows. These devices can trigger AWS Lambda functions that implement business logic. In order to build applications using AWS IoT 1-Click devices, programmers can use the AWS IoT 1-Click Devices API and the AWS IoT 1-Click Projects API. Learn more at https://aws.amazon.com/documentation/iot-1-click/.
+
+## __AWS Organizations__
+  - ### Features
+    - Documentation updates for organizations
+
 # __1.11.328__ __2018-05-10__
 ## __Amazon Kinesis Firehose__
   - ### Features

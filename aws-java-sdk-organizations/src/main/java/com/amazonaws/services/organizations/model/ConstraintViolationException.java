@@ -21,11 +21,9 @@ import javax.annotation.Generated;
  * account, OU, or root. This exception includes a reason that contains additional information about the violated limit:
  * </p>
  * <p/>
- * <note>
  * <p>
  * Some of the reasons in the following list might not be applicable to this specific API or operation:
  * </p>
- * </note>
  * <ul>
  * <li>
  * <p>
@@ -41,9 +39,9 @@ import javax.annotation.Generated;
  * </p>
  * <important>
  * <p>
- * If you get an exception that indicates that you exceeded your account limits for the organization or that you
- * can"t add an account because your organization is still initializing, please contact <a href="
- * https://console.aws.amazon.com/support/home#/"> AWS Customer Support</a>.
+ * If you get receive this exception when running a command immediately after creating the organization, wait one hour
+ * and try again. If after an hour it continues to fail with this error, contact <a
+ * href="https://console.aws.amazon.com/support/home#/">AWS Customer Support</a>.
  * </p>
  * </important></li>
  * <li>
@@ -59,6 +57,13 @@ import javax.annotation.Generated;
  * <li>
  * <p>
  * OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an organizational unit tree that is too many levels deep.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the organization to be
+ * configured to support all features. An organization that supports consolidated billing features only cannot perform
+ * this operation.
  * </p>
  * </li>
  * <li>

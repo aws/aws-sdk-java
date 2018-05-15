@@ -172,15 +172,36 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>S3</code>, this is the name of the output artifact object.
+     * If <code>type</code> is set to <code>S3</code>, this is the name of the output artifact object. If you set the
+     * name to be a forward slash ("/"), then the artifact is stored in the root of the output bucket.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
+     * For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output artifact
      * would be stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>path</code> is empty, <code>namespaceType</code> is set to <code>NONE</code>, and <code>name</code> is
+     * set to "<code>/</code>", then the output artifact would be stored in the root of the output bucket.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
+     * <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", then the output artifact would be stored
+     * in <code>MyArtifacts/<i>build-ID</i> </code>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String name;
     /**
@@ -1272,15 +1293,36 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>S3</code>, this is the name of the output artifact object.
+     * If <code>type</code> is set to <code>S3</code>, this is the name of the output artifact object. If you set the
+     * name to be a forward slash ("/"), then the artifact is stored in the root of the output bucket.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
+     * For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output artifact
      * would be stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>path</code> is empty, <code>namespaceType</code> is set to <code>NONE</code>, and <code>name</code> is
+     * set to "<code>/</code>", then the output artifact would be stored in the root of the output bucket.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
+     * <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", then the output artifact would be stored
+     * in <code>MyArtifacts/<i>build-ID</i> </code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param name
      *        Along with <code>path</code> and <code>namespaceType</code>, the pattern that AWS CodeBuild will use to
@@ -1300,14 +1342,36 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *        </li>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>S3</code>, this is the name of the output artifact object.
+     *        If <code>type</code> is set to <code>S3</code>, this is the name of the output artifact object. If you set
+     *        the name to be a forward slash ("/"), then the artifact is stored in the root of the output bucket.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
+     *        For example:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      *        <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output
      *        artifact would be stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>path</code> is empty, <code>namespaceType</code> is set to <code>NONE</code>, and
+     *        <code>name</code> is set to "<code>/</code>", then the output artifact would be stored in the root of the
+     *        output bucket.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
+     *        <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", then the output artifact would be
+     *        stored in <code>MyArtifacts/<i>build-ID</i> </code>.
+     *        </p>
+     *        </li>
      */
 
     public void setName(String name) {
@@ -1334,15 +1398,36 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>S3</code>, this is the name of the output artifact object.
+     * If <code>type</code> is set to <code>S3</code>, this is the name of the output artifact object. If you set the
+     * name to be a forward slash ("/"), then the artifact is stored in the root of the output bucket.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
+     * For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output artifact
      * would be stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>path</code> is empty, <code>namespaceType</code> is set to <code>NONE</code>, and <code>name</code> is
+     * set to "<code>/</code>", then the output artifact would be stored in the root of the output bucket.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
+     * <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", then the output artifact would be stored
+     * in <code>MyArtifacts/<i>build-ID</i> </code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return Along with <code>path</code> and <code>namespaceType</code>, the pattern that AWS CodeBuild will use to
      *         name and store the output artifact, as follows:</p>
@@ -1361,14 +1446,36 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *         </li>
      *         <li>
      *         <p>
-     *         If <code>type</code> is set to <code>S3</code>, this is the name of the output artifact object.
+     *         If <code>type</code> is set to <code>S3</code>, this is the name of the output artifact object. If you
+     *         set the name to be a forward slash ("/"), then the artifact is stored in the root of the output bucket.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set
-     *         to <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output
+     *         For example:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
+     *         <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output
      *         artifact would be stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If <code>path</code> is empty, <code>namespaceType</code> is set to <code>NONE</code>, and
+     *         <code>name</code> is set to "<code>/</code>", then the output artifact would be stored in the root of the
+     *         output bucket.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
+     *         <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", then the output artifact would
+     *         be stored in <code>MyArtifacts/<i>build-ID</i> </code>.
+     *         </p>
+     *         </li>
      */
 
     public String getName() {
@@ -1395,15 +1502,36 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * If <code>type</code> is set to <code>S3</code>, this is the name of the output artifact object.
+     * If <code>type</code> is set to <code>S3</code>, this is the name of the output artifact object. If you set the
+     * name to be a forward slash ("/"), then the artifact is stored in the root of the output bucket.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
+     * For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output artifact
      * would be stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>path</code> is empty, <code>namespaceType</code> is set to <code>NONE</code>, and <code>name</code> is
+     * set to "<code>/</code>", then the output artifact would be stored in the root of the output bucket.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
+     * <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", then the output artifact would be stored
+     * in <code>MyArtifacts/<i>build-ID</i> </code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param name
      *        Along with <code>path</code> and <code>namespaceType</code>, the pattern that AWS CodeBuild will use to
@@ -1423,14 +1551,36 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *        </li>
      *        <li>
      *        <p>
-     *        If <code>type</code> is set to <code>S3</code>, this is the name of the output artifact object.
+     *        If <code>type</code> is set to <code>S3</code>, this is the name of the output artifact object. If you set
+     *        the name to be a forward slash ("/"), then the artifact is stored in the root of the output bucket.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
+     *        For example:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      *        <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output
      *        artifact would be stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>path</code> is empty, <code>namespaceType</code> is set to <code>NONE</code>, and
+     *        <code>name</code> is set to "<code>/</code>", then the output artifact would be stored in the root of the
+     *        output bucket.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
+     *        <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", then the output artifact would be
+     *        stored in <code>MyArtifacts/<i>build-ID</i> </code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -141,6 +141,12 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
     private ProjectEnvironment environment;
     /**
      * <p>
+     * The name of a service role used for this build.
+     * </p>
+     */
+    private String serviceRole;
+    /**
+     * <p>
      * Information about the build's logs in Amazon CloudWatch Logs.
      * </p>
      */
@@ -1106,6 +1112,46 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The name of a service role used for this build.
+     * </p>
+     * 
+     * @param serviceRole
+     *        The name of a service role used for this build.
+     */
+
+    public void setServiceRole(String serviceRole) {
+        this.serviceRole = serviceRole;
+    }
+
+    /**
+     * <p>
+     * The name of a service role used for this build.
+     * </p>
+     * 
+     * @return The name of a service role used for this build.
+     */
+
+    public String getServiceRole() {
+        return this.serviceRole;
+    }
+
+    /**
+     * <p>
+     * The name of a service role used for this build.
+     * </p>
+     * 
+     * @param serviceRole
+     *        The name of a service role used for this build.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Build withServiceRole(String serviceRole) {
+        setServiceRole(serviceRole);
+        return this;
+    }
+
+    /**
+     * <p>
      * Information about the build's logs in Amazon CloudWatch Logs.
      * </p>
      * 
@@ -1525,6 +1571,8 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
             sb.append("Cache: ").append(getCache()).append(",");
         if (getEnvironment() != null)
             sb.append("Environment: ").append(getEnvironment()).append(",");
+        if (getServiceRole() != null)
+            sb.append("ServiceRole: ").append(getServiceRole()).append(",");
         if (getLogs() != null)
             sb.append("Logs: ").append(getLogs()).append(",");
         if (getTimeoutInMinutes() != null)
@@ -1603,6 +1651,10 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEnvironment() != null && other.getEnvironment().equals(this.getEnvironment()) == false)
             return false;
+        if (other.getServiceRole() == null ^ this.getServiceRole() == null)
+            return false;
+        if (other.getServiceRole() != null && other.getServiceRole().equals(this.getServiceRole()) == false)
+            return false;
         if (other.getLogs() == null ^ this.getLogs() == null)
             return false;
         if (other.getLogs() != null && other.getLogs().equals(this.getLogs()) == false)
@@ -1648,6 +1700,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getArtifacts() == null) ? 0 : getArtifacts().hashCode());
         hashCode = prime * hashCode + ((getCache() == null) ? 0 : getCache().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
+        hashCode = prime * hashCode + ((getServiceRole() == null) ? 0 : getServiceRole().hashCode());
         hashCode = prime * hashCode + ((getLogs() == null) ? 0 : getLogs().hashCode());
         hashCode = prime * hashCode + ((getTimeoutInMinutes() == null) ? 0 : getTimeoutInMinutes().hashCode());
         hashCode = prime * hashCode + ((getBuildComplete() == null) ? 0 : getBuildComplete().hashCode());

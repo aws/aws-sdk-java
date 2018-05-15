@@ -264,7 +264,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
      * then two identical builds will be created for each commit. One build is triggered through webhooks, and one
      * through AWS CodePipeline. Because billing is on a per-build basis, you will be billed for both builds. Therefore,
      * if you are using AWS CodePipeline, we recommend that you disable webhooks in CodeBuild. In the AWS CodeBuild
-     * console, clear the Webhook box. For more information, see step 9 in <a
+     * console, clear the Webhook box. For more information, see step 5 in <a
      * href="http://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change a
      * Build Project's Settings</a>.
      * </p>
@@ -289,7 +289,7 @@ public interface AWSCodeBuildAsync extends AWSCodeBuild {
      * then two identical builds will be created for each commit. One build is triggered through webhooks, and one
      * through AWS CodePipeline. Because billing is on a per-build basis, you will be billed for both builds. Therefore,
      * if you are using AWS CodePipeline, we recommend that you disable webhooks in CodeBuild. In the AWS CodeBuild
-     * console, clear the Webhook box. For more information, see step 9 in <a
+     * console, clear the Webhook box. For more information, see step 5 in <a
      * href="http://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change a
      * Build Project's Settings</a>.
      * </p>
