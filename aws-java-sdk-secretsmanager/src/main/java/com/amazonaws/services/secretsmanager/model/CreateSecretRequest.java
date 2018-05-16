@@ -139,7 +139,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Parameters</a> in the <i>AWS CLI User Guide</i>. For example:
      * </p>
      * <p>
-     * <code>[{"Key":"username","Value":"bob"},{"Key":"password","Value":"abc123xyz456"}]</code>
+     * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
      * </p>
      * <p>
      * If your command-line tool or SDK requires quotation marks around the parameter, you should use single quotes to
@@ -850,7 +850,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Parameters</a> in the <i>AWS CLI User Guide</i>. For example:
      * </p>
      * <p>
-     * <code>[{"Key":"username","Value":"bob"},{"Key":"password","Value":"abc123xyz456"}]</code>
+     * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
      * </p>
      * <p>
      * If your command-line tool or SDK requires quotation marks around the parameter, you should use single quotes to
@@ -876,7 +876,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:
      *        </p>
      *        <p>
-     *        <code>[{"Key":"username","Value":"bob"},{"Key":"password","Value":"abc123xyz456"}]</code>
+     *        <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
      *        </p>
      *        <p>
      *        If your command-line tool or SDK requires quotation marks around the parameter, you should use single
@@ -907,7 +907,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Parameters</a> in the <i>AWS CLI User Guide</i>. For example:
      * </p>
      * <p>
-     * <code>[{"Key":"username","Value":"bob"},{"Key":"password","Value":"abc123xyz456"}]</code>
+     * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
      * </p>
      * <p>
      * If your command-line tool or SDK requires quotation marks around the parameter, you should use single quotes to
@@ -932,7 +932,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:
      *         </p>
      *         <p>
-     *         <code>[{"Key":"username","Value":"bob"},{"Key":"password","Value":"abc123xyz456"}]</code>
+     *         <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
      *         </p>
      *         <p>
      *         If your command-line tool or SDK requires quotation marks around the parameter, you should use single
@@ -963,7 +963,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Parameters</a> in the <i>AWS CLI User Guide</i>. For example:
      * </p>
      * <p>
-     * <code>[{"Key":"username","Value":"bob"},{"Key":"password","Value":"abc123xyz456"}]</code>
+     * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
      * </p>
      * <p>
      * If your command-line tool or SDK requires quotation marks around the parameter, you should use single quotes to
@@ -989,7 +989,7 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For example:
      *        </p>
      *        <p>
-     *        <code>[{"Key":"username","Value":"bob"},{"Key":"password","Value":"abc123xyz456"}]</code>
+     *        <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
      *        </p>
      *        <p>
      *        If your command-line tool or SDK requires quotation marks around the parameter, you should use single

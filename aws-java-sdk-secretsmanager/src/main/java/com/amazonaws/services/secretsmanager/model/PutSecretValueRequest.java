@@ -108,6 +108,16 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>.
      * </p>
+     * <p>
+     * For example:
+     * </p>
+     * <p>
+     * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
+     * </p>
+     * <p>
+     * If your command-line tool or SDK requires quotation marks around the parameter, you should use single quotes to
+     * avoid confusion with the double quotes required in the JSON text.
+     * </p>
      */
     private String secretString;
     /**
@@ -577,6 +587,16 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>.
      * </p>
+     * <p>
+     * For example:
+     * </p>
+     * <p>
+     * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
+     * </p>
+     * <p>
+     * If your command-line tool or SDK requires quotation marks around the parameter, you should use single quotes to
+     * avoid confusion with the double quotes required in the JSON text.
+     * </p>
      * 
      * @param secretString
      *        (Optional) Specifies text data that you want to encrypt and store in this new version of the secret.
@@ -594,6 +614,16 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        see <a
      *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *        JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.
+     *        </p>
+     *        <p>
+     *        For example:
+     *        </p>
+     *        <p>
+     *        <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
+     *        </p>
+     *        <p>
+     *        If your command-line tool or SDK requires quotation marks around the parameter, you should use single
+     *        quotes to avoid confusion with the double quotes required in the JSON text.
      */
 
     public void setSecretString(String secretString) {
@@ -617,6 +647,16 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>.
      * </p>
+     * <p>
+     * For example:
+     * </p>
+     * <p>
+     * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
+     * </p>
+     * <p>
+     * If your command-line tool or SDK requires quotation marks around the parameter, you should use single quotes to
+     * avoid confusion with the double quotes required in the JSON text.
+     * </p>
      * 
      * @return (Optional) Specifies text data that you want to encrypt and store in this new version of the secret.
      *         Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not both. They
@@ -633,6 +673,16 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      *         see <a
      *         href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *         JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.
+     *         </p>
+     *         <p>
+     *         For example:
+     *         </p>
+     *         <p>
+     *         <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
+     *         </p>
+     *         <p>
+     *         If your command-line tool or SDK requires quotation marks around the parameter, you should use single
+     *         quotes to avoid confusion with the double quotes required in the JSON text.
      */
 
     public String getSecretString() {
@@ -656,6 +706,16 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>.
      * </p>
+     * <p>
+     * For example:
+     * </p>
+     * <p>
+     * <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
+     * </p>
+     * <p>
+     * If your command-line tool or SDK requires quotation marks around the parameter, you should use single quotes to
+     * avoid confusion with the double quotes required in the JSON text.
+     * </p>
      * 
      * @param secretString
      *        (Optional) Specifies text data that you want to encrypt and store in this new version of the secret.
@@ -673,6 +733,16 @@ public class PutSecretValueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        see <a
      *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *        JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.
+     *        </p>
+     *        <p>
+     *        For example:
+     *        </p>
+     *        <p>
+     *        <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
+     *        </p>
+     *        <p>
+     *        If your command-line tool or SDK requires quotation marks around the parameter, you should use single
+     *        quotes to avoid confusion with the double quotes required in the JSON text.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

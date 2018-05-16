@@ -60,6 +60,24 @@ public class ListAcceptedPortfolioSharesRequest extends com.amazonaws.AmazonWebS
      * </p>
      */
     private Integer pageSize;
+    /**
+     * <p>
+     * The type of shared portfolios to list. The default is to list imported portfolios.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS_SERVICECATALOG</code> - List default portfolios
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IMPORTED</code> - List imported portfolios
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String portfolioShareType;
 
     /**
      * <p>
@@ -281,6 +299,157 @@ public class ListAcceptedPortfolioSharesRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * The type of shared portfolios to list. The default is to list imported portfolios.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS_SERVICECATALOG</code> - List default portfolios
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IMPORTED</code> - List imported portfolios
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param portfolioShareType
+     *        The type of shared portfolios to list. The default is to list imported portfolios.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AWS_SERVICECATALOG</code> - List default portfolios
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IMPORTED</code> - List imported portfolios
+     *        </p>
+     *        </li>
+     * @see PortfolioShareType
+     */
+
+    public void setPortfolioShareType(String portfolioShareType) {
+        this.portfolioShareType = portfolioShareType;
+    }
+
+    /**
+     * <p>
+     * The type of shared portfolios to list. The default is to list imported portfolios.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS_SERVICECATALOG</code> - List default portfolios
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IMPORTED</code> - List imported portfolios
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The type of shared portfolios to list. The default is to list imported portfolios.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>AWS_SERVICECATALOG</code> - List default portfolios
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>IMPORTED</code> - List imported portfolios
+     *         </p>
+     *         </li>
+     * @see PortfolioShareType
+     */
+
+    public String getPortfolioShareType() {
+        return this.portfolioShareType;
+    }
+
+    /**
+     * <p>
+     * The type of shared portfolios to list. The default is to list imported portfolios.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS_SERVICECATALOG</code> - List default portfolios
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IMPORTED</code> - List imported portfolios
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param portfolioShareType
+     *        The type of shared portfolios to list. The default is to list imported portfolios.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AWS_SERVICECATALOG</code> - List default portfolios
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IMPORTED</code> - List imported portfolios
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PortfolioShareType
+     */
+
+    public ListAcceptedPortfolioSharesRequest withPortfolioShareType(String portfolioShareType) {
+        setPortfolioShareType(portfolioShareType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of shared portfolios to list. The default is to list imported portfolios.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS_SERVICECATALOG</code> - List default portfolios
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IMPORTED</code> - List imported portfolios
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param portfolioShareType
+     *        The type of shared portfolios to list. The default is to list imported portfolios.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AWS_SERVICECATALOG</code> - List default portfolios
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IMPORTED</code> - List imported portfolios
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PortfolioShareType
+     */
+
+    public ListAcceptedPortfolioSharesRequest withPortfolioShareType(PortfolioShareType portfolioShareType) {
+        this.portfolioShareType = portfolioShareType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -296,7 +465,9 @@ public class ListAcceptedPortfolioSharesRequest extends com.amazonaws.AmazonWebS
         if (getPageToken() != null)
             sb.append("PageToken: ").append(getPageToken()).append(",");
         if (getPageSize() != null)
-            sb.append("PageSize: ").append(getPageSize());
+            sb.append("PageSize: ").append(getPageSize()).append(",");
+        if (getPortfolioShareType() != null)
+            sb.append("PortfolioShareType: ").append(getPortfolioShareType());
         sb.append("}");
         return sb.toString();
     }
@@ -323,6 +494,10 @@ public class ListAcceptedPortfolioSharesRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getPageSize() != null && other.getPageSize().equals(this.getPageSize()) == false)
             return false;
+        if (other.getPortfolioShareType() == null ^ this.getPortfolioShareType() == null)
+            return false;
+        if (other.getPortfolioShareType() != null && other.getPortfolioShareType().equals(this.getPortfolioShareType()) == false)
+            return false;
         return true;
     }
 
@@ -334,6 +509,7 @@ public class ListAcceptedPortfolioSharesRequest extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getAcceptLanguage() == null) ? 0 : getAcceptLanguage().hashCode());
         hashCode = prime * hashCode + ((getPageToken() == null) ? 0 : getPageToken().hashCode());
         hashCode = prime * hashCode + ((getPageSize() == null) ? 0 : getPageSize().hashCode());
+        hashCode = prime * hashCode + ((getPortfolioShareType() == null) ? 0 : getPortfolioShareType().hashCode());
         return hashCode;
     }
 
