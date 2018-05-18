@@ -48,7 +48,7 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
     private UserPoolPolicyType policies;
     /**
      * <p>
-     * The AWS Lambda triggers associated with tue user pool.
+     * The AWS Lambda triggers associated with the user pool.
      * </p>
      */
     private LambdaConfigType lambdaConfig;
@@ -210,6 +210,12 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private UserPoolAddOnsType userPoolAddOns;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the user pool.
+     * </p>
+     */
+    private String arn;
 
     /**
      * <p>
@@ -333,11 +339,11 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Lambda triggers associated with tue user pool.
+     * The AWS Lambda triggers associated with the user pool.
      * </p>
      * 
      * @param lambdaConfig
-     *        The AWS Lambda triggers associated with tue user pool.
+     *        The AWS Lambda triggers associated with the user pool.
      */
 
     public void setLambdaConfig(LambdaConfigType lambdaConfig) {
@@ -346,10 +352,10 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Lambda triggers associated with tue user pool.
+     * The AWS Lambda triggers associated with the user pool.
      * </p>
      * 
-     * @return The AWS Lambda triggers associated with tue user pool.
+     * @return The AWS Lambda triggers associated with the user pool.
      */
 
     public LambdaConfigType getLambdaConfig() {
@@ -358,11 +364,11 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Lambda triggers associated with tue user pool.
+     * The AWS Lambda triggers associated with the user pool.
      * </p>
      * 
      * @param lambdaConfig
-     *        The AWS Lambda triggers associated with tue user pool.
+     *        The AWS Lambda triggers associated with the user pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1770,6 +1776,46 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the user pool.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) for the user pool.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the user pool.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the user pool.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the user pool.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) for the user pool.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserPoolType withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1833,7 +1879,9 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
         if (getAdminCreateUserConfig() != null)
             sb.append("AdminCreateUserConfig: ").append(getAdminCreateUserConfig()).append(",");
         if (getUserPoolAddOns() != null)
-            sb.append("UserPoolAddOns: ").append(getUserPoolAddOns());
+            sb.append("UserPoolAddOns: ").append(getUserPoolAddOns()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn());
         sb.append("}");
         return sb.toString();
     }
@@ -1956,6 +2004,10 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getUserPoolAddOns() != null && other.getUserPoolAddOns().equals(this.getUserPoolAddOns()) == false)
             return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
         return true;
     }
 
@@ -1991,6 +2043,7 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
         hashCode = prime * hashCode + ((getAdminCreateUserConfig() == null) ? 0 : getAdminCreateUserConfig().hashCode());
         hashCode = prime * hashCode + ((getUserPoolAddOns() == null) ? 0 : getUserPoolAddOns().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         return hashCode;
     }
 

@@ -34,6 +34,19 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * <ul>
      * <li>
      * <p>
+     * <code>MFA_SETUP</code>: If MFA is required, users who do not have at least one of the MFA methods set up are
+     * presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to continue to
+     * authenticate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for text SMS MFA,
+     * and <code>SOFTWARE_TOKEN_MFA</code> for TOTP software token MFA.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.
      * </p>
      * </li>
@@ -118,6 +131,19 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * <ul>
      * <li>
      * <p>
+     * <code>MFA_SETUP</code>: If MFA is required, users who do not have at least one of the MFA methods set up are
+     * presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to continue to
+     * authenticate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for text SMS MFA,
+     * and <code>SOFTWARE_TOKEN_MFA</code> for TOTP software token MFA.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.
      * </p>
      * </li>
@@ -162,6 +188,19 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *        The name of the challenge which you are responding to with this call. This is returned to you in the
      *        <code>AdminInitiateAuth</code> response if you need to pass another challenge.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>MFA_SETUP</code>: If MFA is required, users who do not have at least one of the MFA methods set up
+     *        are presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to
+     *        continue to authenticate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for text
+     *        SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code> for TOTP software token MFA.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.
@@ -219,6 +258,19 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * <ul>
      * <li>
      * <p>
+     * <code>MFA_SETUP</code>: If MFA is required, users who do not have at least one of the MFA methods set up are
+     * presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to continue to
+     * authenticate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for text SMS MFA,
+     * and <code>SOFTWARE_TOKEN_MFA</code> for TOTP software token MFA.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.
      * </p>
      * </li>
@@ -262,6 +314,19 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * @return The name of the challenge which you are responding to with this call. This is returned to you in the
      *         <code>AdminInitiateAuth</code> response if you need to pass another challenge.</p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>MFA_SETUP</code>: If MFA is required, users who do not have at least one of the MFA methods set up
+     *         are presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to
+     *         continue to authenticate.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for text
+     *         SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code> for TOTP software token MFA.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.
@@ -319,6 +384,19 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * <ul>
      * <li>
      * <p>
+     * <code>MFA_SETUP</code>: If MFA is required, users who do not have at least one of the MFA methods set up are
+     * presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to continue to
+     * authenticate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for text SMS MFA,
+     * and <code>SOFTWARE_TOKEN_MFA</code> for TOTP software token MFA.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.
      * </p>
      * </li>
@@ -363,6 +441,19 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *        The name of the challenge which you are responding to with this call. This is returned to you in the
      *        <code>AdminInitiateAuth</code> response if you need to pass another challenge.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>MFA_SETUP</code>: If MFA is required, users who do not have at least one of the MFA methods set up
+     *        are presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to
+     *        continue to authenticate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for text
+     *        SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code> for TOTP software token MFA.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.
@@ -422,6 +513,19 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * <ul>
      * <li>
      * <p>
+     * <code>MFA_SETUP</code>: If MFA is required, users who do not have at least one of the MFA methods set up are
+     * presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to continue to
+     * authenticate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for text SMS MFA,
+     * and <code>SOFTWARE_TOKEN_MFA</code> for TOTP software token MFA.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.
      * </p>
      * </li>
@@ -466,6 +570,19 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *        The name of the challenge which you are responding to with this call. This is returned to you in the
      *        <code>AdminInitiateAuth</code> response if you need to pass another challenge.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>MFA_SETUP</code>: If MFA is required, users who do not have at least one of the MFA methods set up
+     *        are presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to
+     *        continue to authenticate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for text
+     *        SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code> for TOTP software token MFA.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.
@@ -523,6 +640,19 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * <ul>
      * <li>
      * <p>
+     * <code>MFA_SETUP</code>: If MFA is required, users who do not have at least one of the MFA methods set up are
+     * presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to continue to
+     * authenticate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for text SMS MFA,
+     * and <code>SOFTWARE_TOKEN_MFA</code> for TOTP software token MFA.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.
      * </p>
      * </li>
@@ -567,6 +697,19 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *        The name of the challenge which you are responding to with this call. This is returned to you in the
      *        <code>AdminInitiateAuth</code> response if you need to pass another challenge.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>MFA_SETUP</code>: If MFA is required, users who do not have at least one of the MFA methods set up
+     *        are presented with an <code>MFA_SETUP</code> challenge. The user must set up at least one MFA type to
+     *        continue to authenticate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SELECT_MFA_TYPE</code>: Selects the MFA type. Valid MFA options are <code>SMS_MFA</code> for text
+     *        SMS MFA, and <code>SOFTWARE_TOKEN_MFA</code> for TOTP software token MFA.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>SMS_MFA</code>: Next challenge is to supply an <code>SMS_MFA_CODE</code>, delivered via SMS.

@@ -23,7 +23,8 @@ public enum IdentityProviderTypeType {
     SAML("SAML"),
     Facebook("Facebook"),
     Google("Google"),
-    LoginWithAmazon("LoginWithAmazon");
+    LoginWithAmazon("LoginWithAmazon"),
+    OIDC("OIDC");
 
     private String value;
 

@@ -48,7 +48,7 @@ public class SchemaAttributeType implements Serializable, Cloneable, StructuredP
     private Boolean developerOnlyAttribute;
     /**
      * <p>
-     * Specifies whether the attribute can be changed once it has been created.
+     * Specifies whether the value of the attribute can be changed.
      * </p>
      */
     private Boolean mutable;
@@ -239,11 +239,11 @@ public class SchemaAttributeType implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies whether the attribute can be changed once it has been created.
+     * Specifies whether the value of the attribute can be changed.
      * </p>
      * 
      * @param mutable
-     *        Specifies whether the attribute can be changed once it has been created.
+     *        Specifies whether the value of the attribute can be changed.
      */
 
     public void setMutable(Boolean mutable) {
@@ -252,10 +252,10 @@ public class SchemaAttributeType implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies whether the attribute can be changed once it has been created.
+     * Specifies whether the value of the attribute can be changed.
      * </p>
      * 
-     * @return Specifies whether the attribute can be changed once it has been created.
+     * @return Specifies whether the value of the attribute can be changed.
      */
 
     public Boolean getMutable() {
@@ -264,11 +264,11 @@ public class SchemaAttributeType implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies whether the attribute can be changed once it has been created.
+     * Specifies whether the value of the attribute can be changed.
      * </p>
      * 
      * @param mutable
-     *        Specifies whether the attribute can be changed once it has been created.
+     *        Specifies whether the value of the attribute can be changed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,10 +279,10 @@ public class SchemaAttributeType implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies whether the attribute can be changed once it has been created.
+     * Specifies whether the value of the attribute can be changed.
      * </p>
      * 
-     * @return Specifies whether the attribute can be changed once it has been created.
+     * @return Specifies whether the value of the attribute can be changed.
      */
 
     public Boolean isMutable() {

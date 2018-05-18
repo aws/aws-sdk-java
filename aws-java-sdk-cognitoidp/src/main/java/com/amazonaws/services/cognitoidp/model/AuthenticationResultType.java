@@ -36,7 +36,7 @@ public class AuthenticationResultType implements Serializable, Cloneable, Struct
     private String accessToken;
     /**
      * <p>
-     * The expiration period of the authentication result.
+     * The expiration period of the authentication result in seconds.
      * </p>
      */
     private Integer expiresIn;
@@ -107,11 +107,11 @@ public class AuthenticationResultType implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The expiration period of the authentication result.
+     * The expiration period of the authentication result in seconds.
      * </p>
      * 
      * @param expiresIn
-     *        The expiration period of the authentication result.
+     *        The expiration period of the authentication result in seconds.
      */
 
     public void setExpiresIn(Integer expiresIn) {
@@ -120,10 +120,10 @@ public class AuthenticationResultType implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The expiration period of the authentication result.
+     * The expiration period of the authentication result in seconds.
      * </p>
      * 
-     * @return The expiration period of the authentication result.
+     * @return The expiration period of the authentication result in seconds.
      */
 
     public Integer getExpiresIn() {
@@ -132,11 +132,11 @@ public class AuthenticationResultType implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The expiration period of the authentication result.
+     * The expiration period of the authentication result in seconds.
      * </p>
      * 
      * @param expiresIn
-     *        The expiration period of the authentication result.
+     *        The expiration period of the authentication result in seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

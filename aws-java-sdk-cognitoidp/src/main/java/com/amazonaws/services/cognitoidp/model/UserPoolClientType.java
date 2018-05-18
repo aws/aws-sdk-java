@@ -96,7 +96,35 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
     private java.util.List<String> supportedIdentityProviders;
     /**
      * <p>
-     * A list of allowed callback URLs for the identity providers.
+     * A list of allowed redirect (callback) URLs for the identity providers.
+     * </p>
+     * <p>
+     * A redirect URI must:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Be an absolute URI.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Be registered with the authorization server.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Not include a fragment component.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
      * </p>
      */
     private java.util.List<String> callbackURLs;
@@ -109,6 +137,34 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The default redirect URI. Must be in the <code>CallbackURLs</code> list.
+     * </p>
+     * <p>
+     * A redirect URI must:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Be an absolute URI.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Be registered with the authorization server.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Not include a fragment component.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
      * </p>
      */
     private String defaultRedirectURI;
@@ -733,10 +789,65 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A list of allowed callback URLs for the identity providers.
+     * A list of allowed redirect (callback) URLs for the identity providers.
+     * </p>
+     * <p>
+     * A redirect URI must:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Be an absolute URI.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Be registered with the authorization server.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Not include a fragment component.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
      * </p>
      * 
-     * @return A list of allowed callback URLs for the identity providers.
+     * @return A list of allowed redirect (callback) URLs for the identity providers.</p>
+     *         <p>
+     *         A redirect URI must:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Be an absolute URI.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Be registered with the authorization server.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Not include a fragment component.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
      */
 
     public java.util.List<String> getCallbackURLs() {
@@ -745,11 +856,66 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A list of allowed callback URLs for the identity providers.
+     * A list of allowed redirect (callback) URLs for the identity providers.
+     * </p>
+     * <p>
+     * A redirect URI must:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Be an absolute URI.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Be registered with the authorization server.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Not include a fragment component.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
      * </p>
      * 
      * @param callbackURLs
-     *        A list of allowed callback URLs for the identity providers.
+     *        A list of allowed redirect (callback) URLs for the identity providers.</p>
+     *        <p>
+     *        A redirect URI must:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Be an absolute URI.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Be registered with the authorization server.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Not include a fragment component.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
      */
 
     public void setCallbackURLs(java.util.Collection<String> callbackURLs) {
@@ -763,7 +929,35 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A list of allowed callback URLs for the identity providers.
+     * A list of allowed redirect (callback) URLs for the identity providers.
+     * </p>
+     * <p>
+     * A redirect URI must:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Be an absolute URI.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Be registered with the authorization server.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Not include a fragment component.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -772,7 +966,34 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param callbackURLs
-     *        A list of allowed callback URLs for the identity providers.
+     *        A list of allowed redirect (callback) URLs for the identity providers.</p>
+     *        <p>
+     *        A redirect URI must:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Be an absolute URI.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Be registered with the authorization server.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Not include a fragment component.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -788,11 +1009,66 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A list of allowed callback URLs for the identity providers.
+     * A list of allowed redirect (callback) URLs for the identity providers.
+     * </p>
+     * <p>
+     * A redirect URI must:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Be an absolute URI.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Be registered with the authorization server.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Not include a fragment component.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
      * </p>
      * 
      * @param callbackURLs
-     *        A list of allowed callback URLs for the identity providers.
+     *        A list of allowed redirect (callback) URLs for the identity providers.</p>
+     *        <p>
+     *        A redirect URI must:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Be an absolute URI.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Be registered with the authorization server.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Not include a fragment component.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -875,9 +1151,64 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      * <p>
      * The default redirect URI. Must be in the <code>CallbackURLs</code> list.
      * </p>
+     * <p>
+     * A redirect URI must:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Be an absolute URI.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Be registered with the authorization server.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Not include a fragment component.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
+     * </p>
      * 
      * @param defaultRedirectURI
-     *        The default redirect URI. Must be in the <code>CallbackURLs</code> list.
+     *        The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
+     *        <p>
+     *        A redirect URI must:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Be an absolute URI.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Be registered with the authorization server.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Not include a fragment component.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
      */
 
     public void setDefaultRedirectURI(String defaultRedirectURI) {
@@ -888,8 +1219,63 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      * <p>
      * The default redirect URI. Must be in the <code>CallbackURLs</code> list.
      * </p>
+     * <p>
+     * A redirect URI must:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Be an absolute URI.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Be registered with the authorization server.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Not include a fragment component.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
+     * </p>
      * 
-     * @return The default redirect URI. Must be in the <code>CallbackURLs</code> list.
+     * @return The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
+     *         <p>
+     *         A redirect URI must:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Be an absolute URI.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Be registered with the authorization server.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Not include a fragment component.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
      */
 
     public String getDefaultRedirectURI() {
@@ -900,9 +1286,64 @@ public class UserPoolClientType implements Serializable, Cloneable, StructuredPo
      * <p>
      * The default redirect URI. Must be in the <code>CallbackURLs</code> list.
      * </p>
+     * <p>
+     * A redirect URI must:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Be an absolute URI.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Be registered with the authorization server.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Not include a fragment component.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
+     * </p>
      * 
      * @param defaultRedirectURI
-     *        The default redirect URI. Must be in the <code>CallbackURLs</code> list.
+     *        The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
+     *        <p>
+     *        A redirect URI must:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Be an absolute URI.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Be registered with the authorization server.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Not use HTTP without TLS (i.e. use HTTPS instead of HTTP).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Not include a fragment component.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        See <a href="https://tools.ietf.org/html/rfc6749#section-3.1.2">OAuth 2.0 - Redirection Endpoint</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

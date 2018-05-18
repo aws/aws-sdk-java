@@ -1436,10 +1436,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Cancels one or more Spot Instance requests. Spot Instances are instances that Amazon EC2 starts on your behalf
-     * when the maximum price that you specify exceeds the current Spot price. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot Instance Requests</a> in the
-     * <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * Cancels one or more Spot Instance requests.
      * </p>
      * <important>
      * <p>
@@ -1459,10 +1456,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Cancels one or more Spot Instance requests. Spot Instances are instances that Amazon EC2 starts on your behalf
-     * when the maximum price that you specify exceeds the current Spot price. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot Instance Requests</a> in the
-     * <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * Cancels one or more Spot Instance requests.
      * </p>
      * <important>
      * <p>
@@ -2678,8 +2672,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Grants an AWS authorized partner account permission to attach the specified network interface to an instance in
-     * their account.
+     * Grants an AWS-authorized account permission to attach the specified network interface to an instance in their
+     * account.
      * </p>
      * <p>
      * You can grant permission to a single AWS account only, and only one account at a time.
@@ -2698,8 +2692,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Grants an AWS authorized partner account permission to attach the specified network interface to an instance in
-     * their account.
+     * Grants an AWS-authorized account permission to attach the specified network interface to an instance in their
+     * account.
      * </p>
      * <p>
      * You can grant permission to a single AWS account only, and only one account at a time.
@@ -8622,10 +8616,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes the Spot Instance requests that belong to your account. Spot Instances are instances that Amazon EC2
-     * launches when the Spot price that you specify exceeds the current Spot price. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot Instance Requests</a> in the
-     * <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * Describes the specified Spot Instance requests.
      * </p>
      * <p>
      * You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance by examining the response.
@@ -8650,10 +8641,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes the Spot Instance requests that belong to your account. Spot Instances are instances that Amazon EC2
-     * launches when the Spot price that you specify exceeds the current Spot price. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot Instance Requests</a> in the
-     * <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * Describes the specified Spot Instance requests.
      * </p>
      * <p>
      * You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance by examining the response.
@@ -13283,10 +13271,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a Spot Instance request. Spot Instances are instances that Amazon EC2 launches when the maximum price
-     * that you specify exceeds the current Spot price. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot Instance Requests</a> in the
-     * <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * Creates a Spot Instance request.
+     * </p>
+     * <p>
+     * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
+     * Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param requestSpotInstancesRequest
@@ -13300,10 +13289,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a Spot Instance request. Spot Instances are instances that Amazon EC2 launches when the maximum price
-     * that you specify exceeds the current Spot price. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot Instance Requests</a> in the
-     * <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * Creates a Spot Instance request.
+     * </p>
+     * <p>
+     * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
+     * Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param requestSpotInstancesRequest
