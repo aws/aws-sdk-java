@@ -164,6 +164,16 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public DeleteJobResult deleteJob(DeleteJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteJobExecutionResult deleteJobExecution(DeleteJobExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteOTAUpdateResult deleteOTAUpdate(DeleteOTAUpdateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

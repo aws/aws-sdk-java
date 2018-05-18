@@ -32,8 +32,8 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * <fullname>Amazon Simple Email Service</fullname>
  * <p>
- * This is the API Reference for <a href="https://aws.amazon.com/ses/">Amazon Simple Email Service</a> (Amazon SES).
- * This documentation is intended to be used in conjunction with the <a
+ * This document contains reference information for the <a href="https://aws.amazon.com/ses/">Amazon Simple Email
+ * Service</a> (Amazon SES) API, version 2010-12-01. This document is best used in conjunction with the <a
  * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>.
  * </p>
  * <note>

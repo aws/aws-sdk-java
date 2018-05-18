@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Sends message data to an AWS IoT Analytics channel.
+ * Sends messge data to an AWS IoT Analytics channel.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -39,8 +39,8 @@ public class IotAnalyticsAction implements Serializable, Cloneable, StructuredPo
     private String channelName;
     /**
      * <p>
-     * The ARN of the role which has a policy that grants IoT permission to send message data via IoT Analytics
-     * (iotanalytics:BatchPutMessage).
+     * The ARN of the role which has a policy that grants IoT Analytics permission to send message data via IoT
+     * Analytics (iotanalytics:BatchPutMessage).
      * </p>
      */
     private String roleArn;
@@ -127,13 +127,13 @@ public class IotAnalyticsAction implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ARN of the role which has a policy that grants IoT permission to send message data via IoT Analytics
-     * (iotanalytics:BatchPutMessage).
+     * The ARN of the role which has a policy that grants IoT Analytics permission to send message data via IoT
+     * Analytics (iotanalytics:BatchPutMessage).
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the role which has a policy that grants IoT permission to send message data via IoT Analytics
-     *        (iotanalytics:BatchPutMessage).
+     *        The ARN of the role which has a policy that grants IoT Analytics permission to send message data via IoT
+     *        Analytics (iotanalytics:BatchPutMessage).
      */
 
     public void setRoleArn(String roleArn) {
@@ -142,12 +142,12 @@ public class IotAnalyticsAction implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ARN of the role which has a policy that grants IoT permission to send message data via IoT Analytics
-     * (iotanalytics:BatchPutMessage).
+     * The ARN of the role which has a policy that grants IoT Analytics permission to send message data via IoT
+     * Analytics (iotanalytics:BatchPutMessage).
      * </p>
      * 
-     * @return The ARN of the role which has a policy that grants IoT permission to send message data via IoT Analytics
-     *         (iotanalytics:BatchPutMessage).
+     * @return The ARN of the role which has a policy that grants IoT Analytics permission to send message data via IoT
+     *         Analytics (iotanalytics:BatchPutMessage).
      */
 
     public String getRoleArn() {
@@ -156,13 +156,13 @@ public class IotAnalyticsAction implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ARN of the role which has a policy that grants IoT permission to send message data via IoT Analytics
-     * (iotanalytics:BatchPutMessage).
+     * The ARN of the role which has a policy that grants IoT Analytics permission to send message data via IoT
+     * Analytics (iotanalytics:BatchPutMessage).
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the role which has a policy that grants IoT permission to send message data via IoT Analytics
-     *        (iotanalytics:BatchPutMessage).
+     *        The ARN of the role which has a policy that grants IoT Analytics permission to send message data via IoT
+     *        Analytics (iotanalytics:BatchPutMessage).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

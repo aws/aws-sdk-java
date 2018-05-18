@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The number of attached entities exceeds the limit.
+ * A limit has been exceeded.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

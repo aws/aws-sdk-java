@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Indicates that a template could not be created because it contained invalid JSON.
+ * Indicates that the template that you specified could not be rendered. This issue may occur when a template refers to
+ * a partial that does not exist.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

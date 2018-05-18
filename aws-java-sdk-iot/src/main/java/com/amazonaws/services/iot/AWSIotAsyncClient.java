@@ -1080,6 +1080,72 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteJobResult> deleteJobAsync(DeleteJobRequest request) {
+
+        return deleteJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteJobResult> deleteJobAsync(final DeleteJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteJobRequest, DeleteJobResult> asyncHandler) {
+        final DeleteJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteJobResult>() {
+            @Override
+            public DeleteJobResult call() throws Exception {
+                DeleteJobResult result = null;
+
+                try {
+                    result = executeDeleteJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteJobExecutionResult> deleteJobExecutionAsync(DeleteJobExecutionRequest request) {
+
+        return deleteJobExecutionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteJobExecutionResult> deleteJobExecutionAsync(final DeleteJobExecutionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteJobExecutionRequest, DeleteJobExecutionResult> asyncHandler) {
+        final DeleteJobExecutionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteJobExecutionResult>() {
+            @Override
+            public DeleteJobExecutionResult call() throws Exception {
+                DeleteJobExecutionResult result = null;
+
+                try {
+                    result = executeDeleteJobExecution(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteOTAUpdateResult> deleteOTAUpdateAsync(DeleteOTAUpdateRequest request) {
 
         return deleteOTAUpdateAsync(request, null);

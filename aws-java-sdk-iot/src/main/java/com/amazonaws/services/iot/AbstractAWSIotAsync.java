@@ -354,6 +354,32 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteJobResult> deleteJobAsync(DeleteJobRequest request) {
+
+        return deleteJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteJobResult> deleteJobAsync(DeleteJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteJobRequest, DeleteJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteJobExecutionResult> deleteJobExecutionAsync(DeleteJobExecutionRequest request) {
+
+        return deleteJobExecutionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteJobExecutionResult> deleteJobExecutionAsync(DeleteJobExecutionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteJobExecutionRequest, DeleteJobExecutionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteOTAUpdateResult> deleteOTAUpdateAsync(DeleteOTAUpdateRequest request) {
 
         return deleteOTAUpdateAsync(request, null);

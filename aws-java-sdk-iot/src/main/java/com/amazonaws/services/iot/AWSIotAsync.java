@@ -960,6 +960,76 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Deletes a job and its related job executions.
+     * </p>
+     * <p>
+     * Deleting a job may take time, depending on the number of job executions created for the job and various other
+     * factors. While the job is being deleted, the status of the job will be shown as "DELETION_IN_PROGRESS".
+     * Attempting to delete or cancel a job whose status is already "DELETION_IN_PROGRESS" will result in an error.
+     * </p>
+     * <p>
+     * Only 10 jobs may have status "DELETION_IN_PROGRESS" at the same time, or a LimitExceededException will occur.
+     * </p>
+     * 
+     * @param deleteJobRequest
+     * @return A Java Future containing the result of the DeleteJob operation returned by the service.
+     * @sample AWSIotAsync.DeleteJob
+     */
+    java.util.concurrent.Future<DeleteJobResult> deleteJobAsync(DeleteJobRequest deleteJobRequest);
+
+    /**
+     * <p>
+     * Deletes a job and its related job executions.
+     * </p>
+     * <p>
+     * Deleting a job may take time, depending on the number of job executions created for the job and various other
+     * factors. While the job is being deleted, the status of the job will be shown as "DELETION_IN_PROGRESS".
+     * Attempting to delete or cancel a job whose status is already "DELETION_IN_PROGRESS" will result in an error.
+     * </p>
+     * <p>
+     * Only 10 jobs may have status "DELETION_IN_PROGRESS" at the same time, or a LimitExceededException will occur.
+     * </p>
+     * 
+     * @param deleteJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteJob operation returned by the service.
+     * @sample AWSIotAsyncHandler.DeleteJob
+     */
+    java.util.concurrent.Future<DeleteJobResult> deleteJobAsync(DeleteJobRequest deleteJobRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteJobRequest, DeleteJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a job execution.
+     * </p>
+     * 
+     * @param deleteJobExecutionRequest
+     * @return A Java Future containing the result of the DeleteJobExecution operation returned by the service.
+     * @sample AWSIotAsync.DeleteJobExecution
+     */
+    java.util.concurrent.Future<DeleteJobExecutionResult> deleteJobExecutionAsync(DeleteJobExecutionRequest deleteJobExecutionRequest);
+
+    /**
+     * <p>
+     * Deletes a job execution.
+     * </p>
+     * 
+     * @param deleteJobExecutionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteJobExecution operation returned by the service.
+     * @sample AWSIotAsyncHandler.DeleteJobExecution
+     */
+    java.util.concurrent.Future<DeleteJobExecutionResult> deleteJobExecutionAsync(DeleteJobExecutionRequest deleteJobExecutionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteJobExecutionRequest, DeleteJobExecutionResult> asyncHandler);
+
+    /**
+     * <p>
      * Delete an OTA update.
      * </p>
      * 

@@ -1,3 +1,12 @@
+# __1.11.333__ __2018-05-18__
+## __AWS IoT__
+  - ### Features
+    - We are releasing DeleteJob and DeleteJobExecution APIs to allow customer to delete resources created using AWS IoT Jobs.
+
+## __Amazon Simple Email Service__
+  - ### Features
+    - Fixed a broken link in the documentation for S3Action.
+
 # __1.11.332__ __2018-05-17__
 ## __AWS CodeDeploy__
   - ### Features

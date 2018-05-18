@@ -51,8 +51,8 @@ import com.amazonaws.services.simpleemail.model.transform.*;
  * <p>
  * <fullname>Amazon Simple Email Service</fullname>
  * <p>
- * This is the API Reference for <a href="https://aws.amazon.com/ses/">Amazon Simple Email Service</a> (Amazon SES).
- * This documentation is intended to be used in conjunction with the <a
+ * This document contains reference information for the <a href="https://aws.amazon.com/ses/">Amazon Simple Email
+ * Service</a> (Amazon SES) API, version 2010-12-01. This document is best used in conjunction with the <a
  * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>.
  * </p>
  * <note>
@@ -448,7 +448,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * <note>
      * <p>
      * When you create or update an event destination, you must provide one, and only one, destination. The destination
-     * can be Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple Notification Service (Amazon SNS).
+     * can be CloudWatch, Amazon Kinesis Firehose, or Amazon Simple Notification Service (Amazon SNS).
      * </p>
      * </note>
      * <p>
@@ -534,11 +534,10 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * By default, images and links used for tracking open and click events are hosted on domains operated by Amazon
-     * SES. You can configure a subdomain of your own to handle these events. For information about using configuration
-     * sets, see <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
-     * Custom Domains to Handle Open and Click Tracking</a> in the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>.
+     * SES. You can configure a subdomain of your own to handle these events. For information about using custom
+     * domains, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Amazon SES
+     * Developer Guide</a>.
      * </p>
      * 
      * @param createConfigurationSetTrackingOptionsRequest
@@ -612,7 +611,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * For more information about custom verification email templates, see <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
      * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * <p>
@@ -917,7 +916,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * @throws AlreadyExistsException
      *         Indicates that a resource could not be created because of a naming conflict.
      * @throws InvalidTemplateException
-     *         Indicates that a template could not be created because it contained invalid JSON.
+     *         Indicates that the template that you specified could not be rendered. This issue may occur when a
+     *         template refers to a partial that does not exist.
      * @throws LimitExceededException
      *         Indicates that a resource could not be created because of service limits. For a list of Amazon SES
      *         limits, see the <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html">Amazon SES
@@ -1097,11 +1097,10 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * By default, images and links used for tracking open and click events are hosted on domains operated by Amazon
-     * SES. You can configure a subdomain of your own to handle these events. For information about using configuration
-     * sets, see <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
-     * Custom Domains to Handle Open and Click Tracking</a> in the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>.
+     * SES. You can configure a subdomain of your own to handle these events. For information about using custom
+     * domains, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Amazon SES
+     * Developer Guide</a>.
      * </p>
      * <note>
      * <p>
@@ -1167,7 +1166,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * For more information about custom verification email templates, see <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
      * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * <p>
@@ -1891,7 +1890,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Returns the email sending status of the Amazon SES account.
+     * Returns the email sending status of the Amazon SES account for the current region.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -1947,7 +1946,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * For more information about custom verification email templates, see <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
      * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * <p>
@@ -2413,7 +2412,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Provides sending statistics for the Amazon SES account. The result is a list of data points, representing the
+     * Provides sending statistics for the current AWS Region. The result is a list of data points, representing the
      * last two weeks of sending activity. Each data point in the list contains statistics for a 15-minute period of
      * time.
      * </p>
@@ -2526,8 +2525,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Provides a list of the configuration sets associated with your Amazon SES account. For information about using
-     * configuration sets, see <a
+     * Provides a list of the configuration sets associated with your Amazon SES account in the current AWS Region. For
+     * information about using configuration sets, see <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Monitoring Your Amazon
      * SES Sending Activity</a> in the <i>Amazon SES Developer Guide.</i>
      * </p>
@@ -2589,11 +2588,11 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Lists the existing custom verification email templates for your account.
+     * Lists the existing custom verification email templates for your account in the current AWS Region.
      * </p>
      * <p>
      * For more information about custom verification email templates, see <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
      * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * <p>
@@ -2604,8 +2603,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      *        Represents a request to list the existing custom verification email templates for your account.</p>
      *        <p>
      *        For more information about custom verification email templates, see <a
-     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
-     *        Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     *        href="ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom Verification Email
+     *        Templates</a> in the <i>Amazon SES Developer Guide</i>.
      * @return Result of the ListCustomVerificationEmailTemplates operation returned by the service.
      * @sample AmazonSimpleEmailService.ListCustomVerificationEmailTemplates
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListCustomVerificationEmailTemplates"
@@ -2653,8 +2652,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Returns a list containing all of the identities (email addresses and domains) for your AWS account, regardless of
-     * verification status.
+     * Returns a list containing all of the identities (email addresses and domains) for your AWS account in the current
+     * AWS Region, regardless of verification status.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -2783,7 +2782,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Lists the IP address filters associated with your AWS account.
+     * Lists the IP address filters associated with your AWS account in the current AWS Region.
      * </p>
      * <p>
      * For information about managing IP address filters, see the <a
@@ -2844,9 +2843,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Lists the receipt rule sets that exist under your AWS account. If there are additional receipt rule sets to be
-     * retrieved, you will receive a <code>NextToken</code> that you can provide to the next call to
-     * <code>ListReceiptRuleSets</code> to retrieve the additional entries.
+     * Lists the receipt rule sets that exist under your AWS account in the current AWS Region. If there are additional
+     * receipt rule sets to be retrieved, you will receive a <code>NextToken</code> that you can provide to the next
+     * call to <code>ListReceiptRuleSets</code> to retrieve the additional entries.
      * </p>
      * <p>
      * For information about managing receipt rule sets, see the <a
@@ -2907,7 +2906,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Lists the email templates present in your Amazon SES account.
+     * Lists the email templates present in your Amazon SES account in the current AWS Region.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -3335,13 +3334,14 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Adds an email address to the list of identities for your Amazon SES account and attempts to verify it. As a
-     * result of executing this operation, a customized verification email is sent to the specified address.
+     * Adds an email address to the list of identities for your Amazon SES account in the current AWS Region and
+     * attempts to verify it. As a result of executing this operation, a customized verification email is sent to the
+     * specified address.
      * </p>
      * <p>
      * To use this operation, you must first create a custom verification email template. For more information about
      * creating and using custom verification email templates, see <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
      * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * <p>
@@ -3748,6 +3748,20 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * </p>
      * </li>
      * </ul>
+     * <important>
+     * <p>
+     * If your call to the <code>SendTemplatedEmail</code> operation includes all of the required parameters, Amazon SES
+     * accepts it and returns a Message ID. However, if Amazon SES can't render the email because the template contains
+     * errors, it doesn't send the email. Additionally, because it already accepted the message, Amazon SES doesn't
+     * return a message stating that it was unable to send the email.
+     * </p>
+     * <p>
+     * For these reasons, we highly recommend that you set up Amazon SES to send you notifications when Rendering
+     * Failure events occur. For more information, see <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Sending Personalized
+     * Email Using the Amazon SES API</a> in the <i>Amazon Simple Email Service Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param sendTemplatedEmailRequest
      *        Represents a request to send a templated email using Amazon SES. For more information, see the <a
@@ -4360,9 +4374,10 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Enables or disables email sending across your entire Amazon SES account. You can use this operation in
-     * conjunction with Amazon CloudWatch alarms to temporarily pause email sending across your Amazon SES account when
-     * reputation metrics (such as your bounce on complaint rate) reach certain thresholds.
+     * Enables or disables email sending across your entire Amazon SES account in the current AWS Region. You can use
+     * this operation in conjunction with Amazon CloudWatch alarms to temporarily pause email sending across your Amazon
+     * SES account in a given AWS Region when reputation metrics (such as your bounce or complaint rates) reach certain
+     * thresholds.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -4495,9 +4510,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Enables or disables the publishing of reputation metrics for emails sent using a specific configuration set.
-     * Reputation metrics include bounce and complaint rates. These metrics are published to Amazon CloudWatch. By using
-     * Amazon CloudWatch, you can create alarms when bounce or complaint rates exceed a certain threshold.
+     * Enables or disables the publishing of reputation metrics for emails sent using a specific configuration set in a
+     * given AWS Region. Reputation metrics include bounce and complaint rates. These metrics are published to Amazon
+     * CloudWatch. By using CloudWatch, you can create alarms when bounce or complaint rates exceed certain thresholds.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -4556,10 +4571,10 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Enables or disables email sending for messages sent using a specific configuration set. You can use this
-     * operation in conjunction with Amazon CloudWatch alarms to temporarily pause email sending for a configuration set
-     * when the reputation metrics for that configuration set (such as your bounce on complaint rate) reach certain
-     * thresholds.
+     * Enables or disables email sending for messages sent using a specific configuration set in a given AWS Region. You
+     * can use this operation in conjunction with Amazon CloudWatch alarms to temporarily pause email sending for a
+     * configuration set when the reputation metrics for that configuration set (such as your bounce on complaint rate)
+     * exceed certain thresholds.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -4620,11 +4635,10 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * By default, images and links used for tracking open and click events are hosted on domains operated by Amazon
-     * SES. You can configure a subdomain of your own to handle these events. For information about using configuration
-     * sets, see <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Configuring
-     * Custom Domains to Handle Open and Click Tracking</a> in the <a
-     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon SES Developer Guide</a>.
+     * SES. You can configure a subdomain of your own to handle these events. For information about using custom
+     * domains, see the <a
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html">Amazon SES
+     * Developer Guide</a>.
      * </p>
      * 
      * @param updateConfigurationSetTrackingOptionsRequest
@@ -4698,7 +4712,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * For more information about custom verification email templates, see <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
+     * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
      * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
      * </p>
      * <p>
@@ -4860,7 +4874,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
      * @throws TemplateDoesNotExistException
      *         Indicates that the Template object you specified does not exist in your Amazon SES account.
      * @throws InvalidTemplateException
-     *         Indicates that a template could not be created because it contained invalid JSON.
+     *         Indicates that the template that you specified could not be rendered. This issue may occur when a
+     *         template refers to a partial that does not exist.
      * @sample AmazonSimpleEmailService.UpdateTemplate
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/UpdateTemplate" target="_top">AWS API
      *      Documentation</a>
@@ -4972,8 +4987,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Adds a domain to the list of identities for your Amazon SES account and attempts to verify it. For more
-     * information about verifying domains, see <a
+     * Adds a domain to the list of identities for your Amazon SES account in the current AWS Region and attempts to
+     * verify it. For more information about verifying domains, see <a
      * href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying Email
      * Addresses and Domains</a> in the <i>Amazon SES Developer Guide.</i>
      * </p>
@@ -5085,8 +5100,9 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Adds an email address to the list of identities for your Amazon SES account and attempts to verify it. As a
-     * result of executing this operation, a verification email is sent to the specified address.
+     * Adds an email address to the list of identities for your Amazon SES account in the current AWS region and
+     * attempts to verify it. As a result of executing this operation, a verification email is sent to the specified
+     * address.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.

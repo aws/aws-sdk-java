@@ -157,6 +157,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                             new JsonErrorShapeMetadata().withErrorCode("CertificateValidationException").withModeledClass(
                                     com.amazonaws.services.iot.model.CertificateValidationException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidStateTransitionException").withModeledClass(
+                                    com.amazonaws.services.iot.model.InvalidStateTransitionException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceRegistrationFailureException").withModeledClass(
                                     com.amazonaws.services.iot.model.ResourceRegistrationFailureException.class))
                     .withBaseServiceExceptionClass(com.amazonaws.services.iot.model.AWSIotException.class));
@@ -493,7 +496,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws LimitExceededException
-     *         The number of attached entities exceeds the limit.
+     *         A limit has been exceeded.
      * @throws ThrottlingException
      *         The rate exceeds the limit.
      * @throws ServiceUnavailableException
@@ -560,7 +563,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @throws InternalFailureException
      *         An unexpected error has occurred.
      * @throws LimitExceededException
-     *         The number of attached entities exceeds the limit.
+     *         A limit has been exceeded.
      * @sample AWSIot.AttachPolicy
      */
     @Override
@@ -625,7 +628,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @throws InternalFailureException
      *         An unexpected error has occurred.
      * @throws LimitExceededException
-     *         The number of attached entities exceeds the limit.
+     *         A limit has been exceeded.
      * @sample AWSIot.AttachPrincipalPolicy
      */
     @Override
@@ -929,7 +932,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws LimitExceededException
-     *         The number of attached entities exceeds the limit.
+     *         A limit has been exceeded.
      * @throws ThrottlingException
      *         The rate exceeds the limit.
      * @throws UnauthorizedException
@@ -1100,7 +1103,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @throws ResourceAlreadyExistsException
      *         The resource already exists.
      * @throws LimitExceededException
-     *         The number of attached entities exceeds the limit.
+     *         A limit has been exceeded.
      * @throws ThrottlingException
      *         The rate exceeds the limit.
      * @throws ServiceUnavailableException
@@ -1418,7 +1421,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws LimitExceededException
-     *         The number of attached entities exceeds the limit.
+     *         A limit has been exceeded.
      * @throws ThrottlingException
      *         The rate exceeds the limit.
      * @throws UnauthorizedException
@@ -1950,6 +1953,132 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteCertificateResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteCertificateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a job and its related job executions.
+     * </p>
+     * <p>
+     * Deleting a job may take time, depending on the number of job executions created for the job and various other
+     * factors. While the job is being deleted, the status of the job will be shown as "DELETION_IN_PROGRESS".
+     * Attempting to delete or cancel a job whose status is already "DELETION_IN_PROGRESS" will result in an error.
+     * </p>
+     * <p>
+     * Only 10 jobs may have status "DELETION_IN_PROGRESS" at the same time, or a LimitExceededException will occur.
+     * </p>
+     * 
+     * @param deleteJobRequest
+     * @return Result of the DeleteJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidStateTransitionException
+     *         An attempt was made to change to an invalid state, for example by deleting a job or a job execution which
+     *         is "IN_PROGRESS" without setting the <code>force</code> parameter.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws LimitExceededException
+     *         A limit has been exceeded.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @sample AWSIot.DeleteJob
+     */
+    @Override
+    public DeleteJobResult deleteJob(DeleteJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteJob(request);
+    }
+
+    @SdkInternalApi
+    final DeleteJobResult executeDeleteJob(DeleteJobRequest deleteJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteJobRequest> request = null;
+        Response<DeleteJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteJobResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a job execution.
+     * </p>
+     * 
+     * @param deleteJobExecutionRequest
+     * @return Result of the DeleteJobExecution operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidStateTransitionException
+     *         An attempt was made to change to an invalid state, for example by deleting a job or a job execution which
+     *         is "IN_PROGRESS" without setting the <code>force</code> parameter.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @sample AWSIot.DeleteJobExecution
+     */
+    @Override
+    public DeleteJobExecutionResult deleteJobExecution(DeleteJobExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteJobExecution(request);
+    }
+
+    @SdkInternalApi
+    final DeleteJobExecutionResult executeDeleteJobExecution(DeleteJobExecutionRequest deleteJobExecutionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteJobExecutionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteJobExecutionRequest> request = null;
+        Response<DeleteJobExecutionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteJobExecutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteJobExecutionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteJobExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteJobExecutionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3577,7 +3706,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @throws InternalFailureException
      *         An unexpected error has occurred.
      * @throws LimitExceededException
-     *         The number of attached entities exceeds the limit.
+     *         A limit has been exceeded.
      * @sample AWSIot.DetachPolicy
      */
     @Override
@@ -3875,7 +4004,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @throws InternalFailureException
      *         An unexpected error has occurred.
      * @throws LimitExceededException
-     *         The number of attached entities exceeds the limit.
+     *         A limit has been exceeded.
      * @sample AWSIot.GetEffectivePolicies
      */
     @Override
@@ -4450,7 +4579,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @throws InternalFailureException
      *         An unexpected error has occurred.
      * @throws LimitExceededException
-     *         The number of attached entities exceeds the limit.
+     *         A limit has been exceeded.
      * @sample AWSIot.ListAttachedPolicies
      */
     @Override
@@ -5517,7 +5646,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @throws InternalFailureException
      *         An unexpected error has occurred.
      * @throws LimitExceededException
-     *         The number of attached entities exceeds the limit.
+     *         A limit has been exceeded.
      * @sample AWSIot.ListTargetsForPolicy
      */
     @Override
@@ -6145,7 +6274,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @throws ThrottlingException
      *         The rate exceeds the limit.
      * @throws LimitExceededException
-     *         The number of attached entities exceeds the limit.
+     *         A limit has been exceeded.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @throws ServiceUnavailableException
@@ -6999,7 +7128,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @throws InternalFailureException
      *         An unexpected error has occurred.
      * @throws LimitExceededException
-     *         The number of attached entities exceeds the limit.
+     *         A limit has been exceeded.
      * @sample AWSIot.TestAuthorization
      */
     @Override
@@ -7192,7 +7321,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws LimitExceededException
-     *         The number of attached entities exceeds the limit.
+     *         A limit has been exceeded.
      * @throws ThrottlingException
      *         The rate exceeds the limit.
      * @throws UnauthorizedException

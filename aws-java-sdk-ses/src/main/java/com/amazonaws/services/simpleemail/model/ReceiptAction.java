@@ -48,7 +48,7 @@ public class ReceiptAction implements Serializable, Cloneable {
     private BounceAction bounceAction;
     /**
      * <p>
-     * Calls Amazon WorkMail and, optionally, publishes a notification to Amazon SNS.
+     * Calls Amazon WorkMail and, optionally, publishes a notification to Amazon Amazon SNS.
      * </p>
      */
     private WorkmailAction workmailAction;
@@ -171,11 +171,11 @@ public class ReceiptAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Calls Amazon WorkMail and, optionally, publishes a notification to Amazon SNS.
+     * Calls Amazon WorkMail and, optionally, publishes a notification to Amazon Amazon SNS.
      * </p>
      * 
      * @param workmailAction
-     *        Calls Amazon WorkMail and, optionally, publishes a notification to Amazon SNS.
+     *        Calls Amazon WorkMail and, optionally, publishes a notification to Amazon Amazon SNS.
      */
 
     public void setWorkmailAction(WorkmailAction workmailAction) {
@@ -184,10 +184,10 @@ public class ReceiptAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Calls Amazon WorkMail and, optionally, publishes a notification to Amazon SNS.
+     * Calls Amazon WorkMail and, optionally, publishes a notification to Amazon Amazon SNS.
      * </p>
      * 
-     * @return Calls Amazon WorkMail and, optionally, publishes a notification to Amazon SNS.
+     * @return Calls Amazon WorkMail and, optionally, publishes a notification to Amazon Amazon SNS.
      */
 
     public WorkmailAction getWorkmailAction() {
@@ -196,11 +196,11 @@ public class ReceiptAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Calls Amazon WorkMail and, optionally, publishes a notification to Amazon SNS.
+     * Calls Amazon WorkMail and, optionally, publishes a notification to Amazon Amazon SNS.
      * </p>
      * 
      * @param workmailAction
-     *        Calls Amazon WorkMail and, optionally, publishes a notification to Amazon SNS.
+     *        Calls Amazon WorkMail and, optionally, publishes a notification to Amazon Amazon SNS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

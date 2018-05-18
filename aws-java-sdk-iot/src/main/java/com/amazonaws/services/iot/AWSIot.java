@@ -178,7 +178,7 @@ public interface AWSIot {
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws LimitExceededException
-     *         The number of attached entities exceeds the limit.
+     *         A limit has been exceeded.
      * @throws ThrottlingException
      *         The rate exceeds the limit.
      * @throws ServiceUnavailableException
@@ -207,7 +207,7 @@ public interface AWSIot {
      * @throws InternalFailureException
      *         An unexpected error has occurred.
      * @throws LimitExceededException
-     *         The number of attached entities exceeds the limit.
+     *         A limit has been exceeded.
      * @sample AWSIot.AttachPolicy
      */
     AttachPolicyResult attachPolicy(AttachPolicyRequest attachPolicyRequest);
@@ -236,7 +236,7 @@ public interface AWSIot {
      * @throws InternalFailureException
      *         An unexpected error has occurred.
      * @throws LimitExceededException
-     *         The number of attached entities exceeds the limit.
+     *         A limit has been exceeded.
      * @sample AWSIot.AttachPrincipalPolicy
      */
     @Deprecated
@@ -356,7 +356,7 @@ public interface AWSIot {
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws LimitExceededException
-     *         The number of attached entities exceeds the limit.
+     *         A limit has been exceeded.
      * @throws ThrottlingException
      *         The rate exceeds the limit.
      * @throws UnauthorizedException
@@ -453,7 +453,7 @@ public interface AWSIot {
      * @throws ResourceAlreadyExistsException
      *         The resource already exists.
      * @throws LimitExceededException
-     *         The number of attached entities exceeds the limit.
+     *         A limit has been exceeded.
      * @throws ThrottlingException
      *         The rate exceeds the limit.
      * @throws ServiceUnavailableException
@@ -589,7 +589,7 @@ public interface AWSIot {
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws LimitExceededException
-     *         The number of attached entities exceeds the limit.
+     *         A limit has been exceeded.
      * @throws ThrottlingException
      *         The rate exceeds the limit.
      * @throws UnauthorizedException
@@ -806,6 +806,60 @@ public interface AWSIot {
      * @sample AWSIot.DeleteCertificate
      */
     DeleteCertificateResult deleteCertificate(DeleteCertificateRequest deleteCertificateRequest);
+
+    /**
+     * <p>
+     * Deletes a job and its related job executions.
+     * </p>
+     * <p>
+     * Deleting a job may take time, depending on the number of job executions created for the job and various other
+     * factors. While the job is being deleted, the status of the job will be shown as "DELETION_IN_PROGRESS".
+     * Attempting to delete or cancel a job whose status is already "DELETION_IN_PROGRESS" will result in an error.
+     * </p>
+     * <p>
+     * Only 10 jobs may have status "DELETION_IN_PROGRESS" at the same time, or a LimitExceededException will occur.
+     * </p>
+     * 
+     * @param deleteJobRequest
+     * @return Result of the DeleteJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidStateTransitionException
+     *         An attempt was made to change to an invalid state, for example by deleting a job or a job execution which
+     *         is "IN_PROGRESS" without setting the <code>force</code> parameter.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws LimitExceededException
+     *         A limit has been exceeded.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @sample AWSIot.DeleteJob
+     */
+    DeleteJobResult deleteJob(DeleteJobRequest deleteJobRequest);
+
+    /**
+     * <p>
+     * Deletes a job execution.
+     * </p>
+     * 
+     * @param deleteJobExecutionRequest
+     * @return Result of the DeleteJobExecution operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidStateTransitionException
+     *         An attempt was made to change to an invalid state, for example by deleting a job or a job execution which
+     *         is "IN_PROGRESS" without setting the <code>force</code> parameter.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @sample AWSIot.DeleteJobExecution
+     */
+    DeleteJobExecutionResult deleteJobExecution(DeleteJobExecutionRequest deleteJobExecutionRequest);
 
     /**
      * <p>
@@ -1444,7 +1498,7 @@ public interface AWSIot {
      * @throws InternalFailureException
      *         An unexpected error has occurred.
      * @throws LimitExceededException
-     *         The number of attached entities exceeds the limit.
+     *         A limit has been exceeded.
      * @sample AWSIot.DetachPolicy
      */
     DetachPolicyResult detachPolicy(DetachPolicyRequest detachPolicyRequest);
@@ -1561,7 +1615,7 @@ public interface AWSIot {
      * @throws InternalFailureException
      *         An unexpected error has occurred.
      * @throws LimitExceededException
-     *         The number of attached entities exceeds the limit.
+     *         A limit has been exceeded.
      * @sample AWSIot.GetEffectivePolicies
      */
     GetEffectivePoliciesResult getEffectivePolicies(GetEffectivePoliciesRequest getEffectivePoliciesRequest);
@@ -1774,7 +1828,7 @@ public interface AWSIot {
      * @throws InternalFailureException
      *         An unexpected error has occurred.
      * @throws LimitExceededException
-     *         The number of attached entities exceeds the limit.
+     *         A limit has been exceeded.
      * @sample AWSIot.ListAttachedPolicies
      */
     ListAttachedPoliciesResult listAttachedPolicies(ListAttachedPoliciesRequest listAttachedPoliciesRequest);
@@ -2186,7 +2240,7 @@ public interface AWSIot {
      * @throws InternalFailureException
      *         An unexpected error has occurred.
      * @throws LimitExceededException
-     *         The number of attached entities exceeds the limit.
+     *         A limit has been exceeded.
      * @sample AWSIot.ListTargetsForPolicy
      */
     ListTargetsForPolicyResult listTargetsForPolicy(ListTargetsForPolicyRequest listTargetsForPolicyRequest);
@@ -2410,7 +2464,7 @@ public interface AWSIot {
      * @throws ThrottlingException
      *         The rate exceeds the limit.
      * @throws LimitExceededException
-     *         The number of attached entities exceeds the limit.
+     *         A limit has been exceeded.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @throws ServiceUnavailableException
@@ -2749,7 +2803,7 @@ public interface AWSIot {
      * @throws InternalFailureException
      *         An unexpected error has occurred.
      * @throws LimitExceededException
-     *         The number of attached entities exceeds the limit.
+     *         A limit has been exceeded.
      * @sample AWSIot.TestAuthorization
      */
     TestAuthorizationResult testAuthorization(TestAuthorizationRequest testAuthorizationRequest);
@@ -2834,7 +2888,7 @@ public interface AWSIot {
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws LimitExceededException
-     *         The number of attached entities exceeds the limit.
+     *         A limit has been exceeded.
      * @throws ThrottlingException
      *         The rate exceeds the limit.
      * @throws UnauthorizedException
