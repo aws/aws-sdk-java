@@ -112,6 +112,15 @@ public class StackSetOperation implements Serializable, Cloneable {
     private String administrationRoleARN;
     /**
      * <p>
+     * The name of the IAM execution role used to create or update the stack set.
+     * </p>
+     * <p>
+     * Use customized execution roles to control which stack resources users and groups can include in their stack sets.
+     * </p>
+     */
+    private String executionRoleName;
+    /**
+     * <p>
      * The time at which the operation was initiated. Note that the creation times for the stack set operation might
      * differ from the creation time of the individual stacks themselves. This is because AWS CloudFormation needs to
      * perform preparatory work for the operation, such as dispatching the work to the requested regions, before
@@ -877,6 +886,64 @@ public class StackSetOperation implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The name of the IAM execution role used to create or update the stack set.
+     * </p>
+     * <p>
+     * Use customized execution roles to control which stack resources users and groups can include in their stack sets.
+     * </p>
+     * 
+     * @param executionRoleName
+     *        The name of the IAM execution role used to create or update the stack set.</p>
+     *        <p>
+     *        Use customized execution roles to control which stack resources users and groups can include in their
+     *        stack sets.
+     */
+
+    public void setExecutionRoleName(String executionRoleName) {
+        this.executionRoleName = executionRoleName;
+    }
+
+    /**
+     * <p>
+     * The name of the IAM execution role used to create or update the stack set.
+     * </p>
+     * <p>
+     * Use customized execution roles to control which stack resources users and groups can include in their stack sets.
+     * </p>
+     * 
+     * @return The name of the IAM execution role used to create or update the stack set.</p>
+     *         <p>
+     *         Use customized execution roles to control which stack resources users and groups can include in their
+     *         stack sets.
+     */
+
+    public String getExecutionRoleName() {
+        return this.executionRoleName;
+    }
+
+    /**
+     * <p>
+     * The name of the IAM execution role used to create or update the stack set.
+     * </p>
+     * <p>
+     * Use customized execution roles to control which stack resources users and groups can include in their stack sets.
+     * </p>
+     * 
+     * @param executionRoleName
+     *        The name of the IAM execution role used to create or update the stack set.</p>
+     *        <p>
+     *        Use customized execution roles to control which stack resources users and groups can include in their
+     *        stack sets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackSetOperation withExecutionRoleName(String executionRoleName) {
+        setExecutionRoleName(executionRoleName);
+        return this;
+    }
+
+    /**
+     * <p>
      * The time at which the operation was initiated. Note that the creation times for the stack set operation might
      * differ from the creation time of the individual stacks themselves. This is because AWS CloudFormation needs to
      * perform preparatory work for the operation, such as dispatching the work to the requested regions, before
@@ -1010,6 +1077,8 @@ public class StackSetOperation implements Serializable, Cloneable {
             sb.append("RetainStacks: ").append(getRetainStacks()).append(",");
         if (getAdministrationRoleARN() != null)
             sb.append("AdministrationRoleARN: ").append(getAdministrationRoleARN()).append(",");
+        if (getExecutionRoleName() != null)
+            sb.append("ExecutionRoleName: ").append(getExecutionRoleName()).append(",");
         if (getCreationTimestamp() != null)
             sb.append("CreationTimestamp: ").append(getCreationTimestamp()).append(",");
         if (getEndTimestamp() != null)
@@ -1056,6 +1125,10 @@ public class StackSetOperation implements Serializable, Cloneable {
             return false;
         if (other.getAdministrationRoleARN() != null && other.getAdministrationRoleARN().equals(this.getAdministrationRoleARN()) == false)
             return false;
+        if (other.getExecutionRoleName() == null ^ this.getExecutionRoleName() == null)
+            return false;
+        if (other.getExecutionRoleName() != null && other.getExecutionRoleName().equals(this.getExecutionRoleName()) == false)
+            return false;
         if (other.getCreationTimestamp() == null ^ this.getCreationTimestamp() == null)
             return false;
         if (other.getCreationTimestamp() != null && other.getCreationTimestamp().equals(this.getCreationTimestamp()) == false)
@@ -1079,6 +1152,7 @@ public class StackSetOperation implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getOperationPreferences() == null) ? 0 : getOperationPreferences().hashCode());
         hashCode = prime * hashCode + ((getRetainStacks() == null) ? 0 : getRetainStacks().hashCode());
         hashCode = prime * hashCode + ((getAdministrationRoleARN() == null) ? 0 : getAdministrationRoleARN().hashCode());
+        hashCode = prime * hashCode + ((getExecutionRoleName() == null) ? 0 : getExecutionRoleName().hashCode());
         hashCode = prime * hashCode + ((getCreationTimestamp() == null) ? 0 : getCreationTimestamp().hashCode());
         hashCode = prime * hashCode + ((getEndTimestamp() == null) ? 0 : getEndTimestamp().hashCode());
         return hashCode;

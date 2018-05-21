@@ -134,6 +134,10 @@ public class CreateStackSetRequestMarshaller implements Marshaller<Request<Creat
             request.addParameter("AdministrationRoleARN", StringUtils.fromString(createStackSetRequest.getAdministrationRoleARN()));
         }
 
+        if (createStackSetRequest.getExecutionRoleName() != null) {
+            request.addParameter("ExecutionRoleName", StringUtils.fromString(createStackSetRequest.getExecutionRoleName()));
+        }
+
         request.addParameter("ClientRequestToken", IdempotentUtils.resolveString(createStackSetRequest.getClientRequestToken()));
 
         return request;

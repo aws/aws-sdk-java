@@ -208,6 +208,22 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
     private String administrationRoleARN;
     /**
      * <p>
+     * The name of the IAM execution role to use to update the stack set. If you do not specify an execution role, AWS
+     * CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack set operation.
+     * </p>
+     * <p>
+     * Specify an IAM role only if you are using customized execution roles to control which stack resources users and
+     * groups can include in their stack sets.
+     * </p>
+     * <p>
+     * If you specify a customized execution role, AWS CloudFormation uses that role to update the stack. If you do not
+     * specify a customized execution role, AWS CloudFormation performs the update using the role previously associated
+     * with the stack set, so long as you have permissions to perform operations on the stack set.
+     * </p>
+     */
+    private String executionRoleName;
+    /**
+     * <p>
      * The unique ID for this stack set operation.
      * </p>
      * <p>
@@ -224,6 +240,44 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String operationId;
+    /**
+     * <p>
+     * The accounts in which to update associated stack instances. If you specify accounts, you must also specify the
+     * regions in which to update stack set instances.
+     * </p>
+     * <p>
+     * To update <i>all</i> the stack instances associated with this stack set, do not specify the <code>Accounts</code>
+     * or <code>Regions</code> properties.
+     * </p>
+     * <p>
+     * If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
+     * <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS CloudFormation
+     * marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the
+     * specified accounts and regions. If the stack set update does not include changes to the template or parameters,
+     * AWS CloudFormation updates the stack instances in the specified accounts and regions, while leaving all other
+     * stack instances with their existing stack instance status.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> accounts;
+    /**
+     * <p>
+     * The regions in which to update associated stack instances. If you specify regions, you must also specify accounts
+     * in which to update stack set instances.
+     * </p>
+     * <p>
+     * To update <i>all</i> the stack instances associated with this stack set, do not specify the <code>Accounts</code>
+     * or <code>Regions</code> properties.
+     * </p>
+     * <p>
+     * If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
+     * <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS CloudFormation
+     * marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the
+     * specified accounts and regions. If the stack set update does not include changes to the template or parameters,
+     * AWS CloudFormation updates the stack instances in the specified accounts and regions, while leaving all other
+     * stack instances with their existing stack instance status.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> regions;
 
     /**
      * <p>
@@ -1781,6 +1835,109 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * The name of the IAM execution role to use to update the stack set. If you do not specify an execution role, AWS
+     * CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack set operation.
+     * </p>
+     * <p>
+     * Specify an IAM role only if you are using customized execution roles to control which stack resources users and
+     * groups can include in their stack sets.
+     * </p>
+     * <p>
+     * If you specify a customized execution role, AWS CloudFormation uses that role to update the stack. If you do not
+     * specify a customized execution role, AWS CloudFormation performs the update using the role previously associated
+     * with the stack set, so long as you have permissions to perform operations on the stack set.
+     * </p>
+     * 
+     * @param executionRoleName
+     *        The name of the IAM execution role to use to update the stack set. If you do not specify an execution
+     *        role, AWS CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack
+     *        set operation.</p>
+     *        <p>
+     *        Specify an IAM role only if you are using customized execution roles to control which stack resources
+     *        users and groups can include in their stack sets.
+     *        </p>
+     *        <p>
+     *        If you specify a customized execution role, AWS CloudFormation uses that role to update the stack. If you
+     *        do not specify a customized execution role, AWS CloudFormation performs the update using the role
+     *        previously associated with the stack set, so long as you have permissions to perform operations on the
+     *        stack set.
+     */
+
+    public void setExecutionRoleName(String executionRoleName) {
+        this.executionRoleName = executionRoleName;
+    }
+
+    /**
+     * <p>
+     * The name of the IAM execution role to use to update the stack set. If you do not specify an execution role, AWS
+     * CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack set operation.
+     * </p>
+     * <p>
+     * Specify an IAM role only if you are using customized execution roles to control which stack resources users and
+     * groups can include in their stack sets.
+     * </p>
+     * <p>
+     * If you specify a customized execution role, AWS CloudFormation uses that role to update the stack. If you do not
+     * specify a customized execution role, AWS CloudFormation performs the update using the role previously associated
+     * with the stack set, so long as you have permissions to perform operations on the stack set.
+     * </p>
+     * 
+     * @return The name of the IAM execution role to use to update the stack set. If you do not specify an execution
+     *         role, AWS CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack
+     *         set operation.</p>
+     *         <p>
+     *         Specify an IAM role only if you are using customized execution roles to control which stack resources
+     *         users and groups can include in their stack sets.
+     *         </p>
+     *         <p>
+     *         If you specify a customized execution role, AWS CloudFormation uses that role to update the stack. If you
+     *         do not specify a customized execution role, AWS CloudFormation performs the update using the role
+     *         previously associated with the stack set, so long as you have permissions to perform operations on the
+     *         stack set.
+     */
+
+    public String getExecutionRoleName() {
+        return this.executionRoleName;
+    }
+
+    /**
+     * <p>
+     * The name of the IAM execution role to use to update the stack set. If you do not specify an execution role, AWS
+     * CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack set operation.
+     * </p>
+     * <p>
+     * Specify an IAM role only if you are using customized execution roles to control which stack resources users and
+     * groups can include in their stack sets.
+     * </p>
+     * <p>
+     * If you specify a customized execution role, AWS CloudFormation uses that role to update the stack. If you do not
+     * specify a customized execution role, AWS CloudFormation performs the update using the role previously associated
+     * with the stack set, so long as you have permissions to perform operations on the stack set.
+     * </p>
+     * 
+     * @param executionRoleName
+     *        The name of the IAM execution role to use to update the stack set. If you do not specify an execution
+     *        role, AWS CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack
+     *        set operation.</p>
+     *        <p>
+     *        Specify an IAM role only if you are using customized execution roles to control which stack resources
+     *        users and groups can include in their stack sets.
+     *        </p>
+     *        <p>
+     *        If you specify a customized execution role, AWS CloudFormation uses that role to update the stack. If you
+     *        do not specify a customized execution role, AWS CloudFormation performs the update using the role
+     *        previously associated with the stack set, so long as you have permissions to perform operations on the
+     *        stack set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateStackSetRequest withExecutionRoleName(String executionRoleName) {
+        setExecutionRoleName(executionRoleName);
+        return this;
+    }
+
+    /**
+     * <p>
      * The unique ID for this stack set operation.
      * </p>
      * <p>
@@ -1889,6 +2046,352 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The accounts in which to update associated stack instances. If you specify accounts, you must also specify the
+     * regions in which to update stack set instances.
+     * </p>
+     * <p>
+     * To update <i>all</i> the stack instances associated with this stack set, do not specify the <code>Accounts</code>
+     * or <code>Regions</code> properties.
+     * </p>
+     * <p>
+     * If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
+     * <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS CloudFormation
+     * marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the
+     * specified accounts and regions. If the stack set update does not include changes to the template or parameters,
+     * AWS CloudFormation updates the stack instances in the specified accounts and regions, while leaving all other
+     * stack instances with their existing stack instance status.
+     * </p>
+     * 
+     * @return The accounts in which to update associated stack instances. If you specify accounts, you must also
+     *         specify the regions in which to update stack set instances.</p>
+     *         <p>
+     *         To update <i>all</i> the stack instances associated with this stack set, do not specify the
+     *         <code>Accounts</code> or <code>Regions</code> properties.
+     *         </p>
+     *         <p>
+     *         If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
+     *         <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS
+     *         CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the
+     *         stack instances in the specified accounts and regions. If the stack set update does not include changes
+     *         to the template or parameters, AWS CloudFormation updates the stack instances in the specified accounts
+     *         and regions, while leaving all other stack instances with their existing stack instance status.
+     */
+
+    public java.util.List<String> getAccounts() {
+        if (accounts == null) {
+            accounts = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return accounts;
+    }
+
+    /**
+     * <p>
+     * The accounts in which to update associated stack instances. If you specify accounts, you must also specify the
+     * regions in which to update stack set instances.
+     * </p>
+     * <p>
+     * To update <i>all</i> the stack instances associated with this stack set, do not specify the <code>Accounts</code>
+     * or <code>Regions</code> properties.
+     * </p>
+     * <p>
+     * If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
+     * <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS CloudFormation
+     * marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the
+     * specified accounts and regions. If the stack set update does not include changes to the template or parameters,
+     * AWS CloudFormation updates the stack instances in the specified accounts and regions, while leaving all other
+     * stack instances with their existing stack instance status.
+     * </p>
+     * 
+     * @param accounts
+     *        The accounts in which to update associated stack instances. If you specify accounts, you must also specify
+     *        the regions in which to update stack set instances.</p>
+     *        <p>
+     *        To update <i>all</i> the stack instances associated with this stack set, do not specify the
+     *        <code>Accounts</code> or <code>Regions</code> properties.
+     *        </p>
+     *        <p>
+     *        If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
+     *        <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS
+     *        CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the
+     *        stack instances in the specified accounts and regions. If the stack set update does not include changes to
+     *        the template or parameters, AWS CloudFormation updates the stack instances in the specified accounts and
+     *        regions, while leaving all other stack instances with their existing stack instance status.
+     */
+
+    public void setAccounts(java.util.Collection<String> accounts) {
+        if (accounts == null) {
+            this.accounts = null;
+            return;
+        }
+
+        this.accounts = new com.amazonaws.internal.SdkInternalList<String>(accounts);
+    }
+
+    /**
+     * <p>
+     * The accounts in which to update associated stack instances. If you specify accounts, you must also specify the
+     * regions in which to update stack set instances.
+     * </p>
+     * <p>
+     * To update <i>all</i> the stack instances associated with this stack set, do not specify the <code>Accounts</code>
+     * or <code>Regions</code> properties.
+     * </p>
+     * <p>
+     * If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
+     * <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS CloudFormation
+     * marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the
+     * specified accounts and regions. If the stack set update does not include changes to the template or parameters,
+     * AWS CloudFormation updates the stack instances in the specified accounts and regions, while leaving all other
+     * stack instances with their existing stack instance status.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAccounts(java.util.Collection)} or {@link #withAccounts(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param accounts
+     *        The accounts in which to update associated stack instances. If you specify accounts, you must also specify
+     *        the regions in which to update stack set instances.</p>
+     *        <p>
+     *        To update <i>all</i> the stack instances associated with this stack set, do not specify the
+     *        <code>Accounts</code> or <code>Regions</code> properties.
+     *        </p>
+     *        <p>
+     *        If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
+     *        <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS
+     *        CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the
+     *        stack instances in the specified accounts and regions. If the stack set update does not include changes to
+     *        the template or parameters, AWS CloudFormation updates the stack instances in the specified accounts and
+     *        regions, while leaving all other stack instances with their existing stack instance status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateStackSetRequest withAccounts(String... accounts) {
+        if (this.accounts == null) {
+            setAccounts(new com.amazonaws.internal.SdkInternalList<String>(accounts.length));
+        }
+        for (String ele : accounts) {
+            this.accounts.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The accounts in which to update associated stack instances. If you specify accounts, you must also specify the
+     * regions in which to update stack set instances.
+     * </p>
+     * <p>
+     * To update <i>all</i> the stack instances associated with this stack set, do not specify the <code>Accounts</code>
+     * or <code>Regions</code> properties.
+     * </p>
+     * <p>
+     * If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
+     * <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS CloudFormation
+     * marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the
+     * specified accounts and regions. If the stack set update does not include changes to the template or parameters,
+     * AWS CloudFormation updates the stack instances in the specified accounts and regions, while leaving all other
+     * stack instances with their existing stack instance status.
+     * </p>
+     * 
+     * @param accounts
+     *        The accounts in which to update associated stack instances. If you specify accounts, you must also specify
+     *        the regions in which to update stack set instances.</p>
+     *        <p>
+     *        To update <i>all</i> the stack instances associated with this stack set, do not specify the
+     *        <code>Accounts</code> or <code>Regions</code> properties.
+     *        </p>
+     *        <p>
+     *        If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
+     *        <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS
+     *        CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the
+     *        stack instances in the specified accounts and regions. If the stack set update does not include changes to
+     *        the template or parameters, AWS CloudFormation updates the stack instances in the specified accounts and
+     *        regions, while leaving all other stack instances with their existing stack instance status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateStackSetRequest withAccounts(java.util.Collection<String> accounts) {
+        setAccounts(accounts);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The regions in which to update associated stack instances. If you specify regions, you must also specify accounts
+     * in which to update stack set instances.
+     * </p>
+     * <p>
+     * To update <i>all</i> the stack instances associated with this stack set, do not specify the <code>Accounts</code>
+     * or <code>Regions</code> properties.
+     * </p>
+     * <p>
+     * If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
+     * <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS CloudFormation
+     * marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the
+     * specified accounts and regions. If the stack set update does not include changes to the template or parameters,
+     * AWS CloudFormation updates the stack instances in the specified accounts and regions, while leaving all other
+     * stack instances with their existing stack instance status.
+     * </p>
+     * 
+     * @return The regions in which to update associated stack instances. If you specify regions, you must also specify
+     *         accounts in which to update stack set instances.</p>
+     *         <p>
+     *         To update <i>all</i> the stack instances associated with this stack set, do not specify the
+     *         <code>Accounts</code> or <code>Regions</code> properties.
+     *         </p>
+     *         <p>
+     *         If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
+     *         <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS
+     *         CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the
+     *         stack instances in the specified accounts and regions. If the stack set update does not include changes
+     *         to the template or parameters, AWS CloudFormation updates the stack instances in the specified accounts
+     *         and regions, while leaving all other stack instances with their existing stack instance status.
+     */
+
+    public java.util.List<String> getRegions() {
+        if (regions == null) {
+            regions = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return regions;
+    }
+
+    /**
+     * <p>
+     * The regions in which to update associated stack instances. If you specify regions, you must also specify accounts
+     * in which to update stack set instances.
+     * </p>
+     * <p>
+     * To update <i>all</i> the stack instances associated with this stack set, do not specify the <code>Accounts</code>
+     * or <code>Regions</code> properties.
+     * </p>
+     * <p>
+     * If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
+     * <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS CloudFormation
+     * marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the
+     * specified accounts and regions. If the stack set update does not include changes to the template or parameters,
+     * AWS CloudFormation updates the stack instances in the specified accounts and regions, while leaving all other
+     * stack instances with their existing stack instance status.
+     * </p>
+     * 
+     * @param regions
+     *        The regions in which to update associated stack instances. If you specify regions, you must also specify
+     *        accounts in which to update stack set instances.</p>
+     *        <p>
+     *        To update <i>all</i> the stack instances associated with this stack set, do not specify the
+     *        <code>Accounts</code> or <code>Regions</code> properties.
+     *        </p>
+     *        <p>
+     *        If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
+     *        <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS
+     *        CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the
+     *        stack instances in the specified accounts and regions. If the stack set update does not include changes to
+     *        the template or parameters, AWS CloudFormation updates the stack instances in the specified accounts and
+     *        regions, while leaving all other stack instances with their existing stack instance status.
+     */
+
+    public void setRegions(java.util.Collection<String> regions) {
+        if (regions == null) {
+            this.regions = null;
+            return;
+        }
+
+        this.regions = new com.amazonaws.internal.SdkInternalList<String>(regions);
+    }
+
+    /**
+     * <p>
+     * The regions in which to update associated stack instances. If you specify regions, you must also specify accounts
+     * in which to update stack set instances.
+     * </p>
+     * <p>
+     * To update <i>all</i> the stack instances associated with this stack set, do not specify the <code>Accounts</code>
+     * or <code>Regions</code> properties.
+     * </p>
+     * <p>
+     * If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
+     * <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS CloudFormation
+     * marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the
+     * specified accounts and regions. If the stack set update does not include changes to the template or parameters,
+     * AWS CloudFormation updates the stack instances in the specified accounts and regions, while leaving all other
+     * stack instances with their existing stack instance status.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRegions(java.util.Collection)} or {@link #withRegions(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param regions
+     *        The regions in which to update associated stack instances. If you specify regions, you must also specify
+     *        accounts in which to update stack set instances.</p>
+     *        <p>
+     *        To update <i>all</i> the stack instances associated with this stack set, do not specify the
+     *        <code>Accounts</code> or <code>Regions</code> properties.
+     *        </p>
+     *        <p>
+     *        If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
+     *        <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS
+     *        CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the
+     *        stack instances in the specified accounts and regions. If the stack set update does not include changes to
+     *        the template or parameters, AWS CloudFormation updates the stack instances in the specified accounts and
+     *        regions, while leaving all other stack instances with their existing stack instance status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateStackSetRequest withRegions(String... regions) {
+        if (this.regions == null) {
+            setRegions(new com.amazonaws.internal.SdkInternalList<String>(regions.length));
+        }
+        for (String ele : regions) {
+            this.regions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The regions in which to update associated stack instances. If you specify regions, you must also specify accounts
+     * in which to update stack set instances.
+     * </p>
+     * <p>
+     * To update <i>all</i> the stack instances associated with this stack set, do not specify the <code>Accounts</code>
+     * or <code>Regions</code> properties.
+     * </p>
+     * <p>
+     * If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
+     * <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS CloudFormation
+     * marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the
+     * specified accounts and regions. If the stack set update does not include changes to the template or parameters,
+     * AWS CloudFormation updates the stack instances in the specified accounts and regions, while leaving all other
+     * stack instances with their existing stack instance status.
+     * </p>
+     * 
+     * @param regions
+     *        The regions in which to update associated stack instances. If you specify regions, you must also specify
+     *        accounts in which to update stack set instances.</p>
+     *        <p>
+     *        To update <i>all</i> the stack instances associated with this stack set, do not specify the
+     *        <code>Accounts</code> or <code>Regions</code> properties.
+     *        </p>
+     *        <p>
+     *        If the stack set update includes changes to the template (that is, if the <code>TemplateBody</code> or
+     *        <code>TemplateURL</code> properties are specified), or the <code>Parameters</code> property, AWS
+     *        CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the
+     *        stack instances in the specified accounts and regions. If the stack set update does not include changes to
+     *        the template or parameters, AWS CloudFormation updates the stack instances in the specified accounts and
+     *        regions, while leaving all other stack instances with their existing stack instance status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateStackSetRequest withRegions(java.util.Collection<String> regions) {
+        setRegions(regions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1919,8 +2422,14 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("OperationPreferences: ").append(getOperationPreferences()).append(",");
         if (getAdministrationRoleARN() != null)
             sb.append("AdministrationRoleARN: ").append(getAdministrationRoleARN()).append(",");
+        if (getExecutionRoleName() != null)
+            sb.append("ExecutionRoleName: ").append(getExecutionRoleName()).append(",");
         if (getOperationId() != null)
-            sb.append("OperationId: ").append(getOperationId());
+            sb.append("OperationId: ").append(getOperationId()).append(",");
+        if (getAccounts() != null)
+            sb.append("Accounts: ").append(getAccounts()).append(",");
+        if (getRegions() != null)
+            sb.append("Regions: ").append(getRegions());
         sb.append("}");
         return sb.toString();
     }
@@ -1975,9 +2484,21 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getAdministrationRoleARN() != null && other.getAdministrationRoleARN().equals(this.getAdministrationRoleARN()) == false)
             return false;
+        if (other.getExecutionRoleName() == null ^ this.getExecutionRoleName() == null)
+            return false;
+        if (other.getExecutionRoleName() != null && other.getExecutionRoleName().equals(this.getExecutionRoleName()) == false)
+            return false;
         if (other.getOperationId() == null ^ this.getOperationId() == null)
             return false;
         if (other.getOperationId() != null && other.getOperationId().equals(this.getOperationId()) == false)
+            return false;
+        if (other.getAccounts() == null ^ this.getAccounts() == null)
+            return false;
+        if (other.getAccounts() != null && other.getAccounts().equals(this.getAccounts()) == false)
+            return false;
+        if (other.getRegions() == null ^ this.getRegions() == null)
+            return false;
+        if (other.getRegions() != null && other.getRegions().equals(this.getRegions()) == false)
             return false;
         return true;
     }
@@ -1997,7 +2518,10 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getOperationPreferences() == null) ? 0 : getOperationPreferences().hashCode());
         hashCode = prime * hashCode + ((getAdministrationRoleARN() == null) ? 0 : getAdministrationRoleARN().hashCode());
+        hashCode = prime * hashCode + ((getExecutionRoleName() == null) ? 0 : getExecutionRoleName().hashCode());
         hashCode = prime * hashCode + ((getOperationId() == null) ? 0 : getOperationId().hashCode());
+        hashCode = prime * hashCode + ((getAccounts() == null) ? 0 : getAccounts().hashCode());
+        hashCode = prime * hashCode + ((getRegions() == null) ? 0 : getRegions().hashCode());
         return hashCode;
     }
 

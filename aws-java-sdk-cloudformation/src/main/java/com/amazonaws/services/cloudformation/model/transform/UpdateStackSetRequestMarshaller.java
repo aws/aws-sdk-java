@@ -177,7 +177,45 @@ public class UpdateStackSetRequestMarshaller implements Marshaller<Request<Updat
             request.addParameter("AdministrationRoleARN", StringUtils.fromString(updateStackSetRequest.getAdministrationRoleARN()));
         }
 
+        if (updateStackSetRequest.getExecutionRoleName() != null) {
+            request.addParameter("ExecutionRoleName", StringUtils.fromString(updateStackSetRequest.getExecutionRoleName()));
+        }
+
         request.addParameter("OperationId", IdempotentUtils.resolveString(updateStackSetRequest.getOperationId()));
+
+        if (updateStackSetRequest.getAccounts().isEmpty()
+                && !((com.amazonaws.internal.SdkInternalList<String>) updateStackSetRequest.getAccounts()).isAutoConstruct()) {
+            request.addParameter("Accounts", "");
+        }
+        if (!updateStackSetRequest.getAccounts().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) updateStackSetRequest.getAccounts()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> accountsList = (com.amazonaws.internal.SdkInternalList<String>) updateStackSetRequest.getAccounts();
+            int accountsListIndex = 1;
+
+            for (String accountsListValue : accountsList) {
+                if (accountsListValue != null) {
+                    request.addParameter("Accounts.member." + accountsListIndex, StringUtils.fromString(accountsListValue));
+                }
+                accountsListIndex++;
+            }
+        }
+
+        if (updateStackSetRequest.getRegions().isEmpty()
+                && !((com.amazonaws.internal.SdkInternalList<String>) updateStackSetRequest.getRegions()).isAutoConstruct()) {
+            request.addParameter("Regions", "");
+        }
+        if (!updateStackSetRequest.getRegions().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) updateStackSetRequest.getRegions()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> regionsList = (com.amazonaws.internal.SdkInternalList<String>) updateStackSetRequest.getRegions();
+            int regionsListIndex = 1;
+
+            for (String regionsListValue : regionsList) {
+                if (regionsListValue != null) {
+                    request.addParameter("Regions.member." + regionsListIndex, StringUtils.fromString(regionsListValue));
+                }
+                regionsListIndex++;
+            }
+        }
 
         return request;
     }

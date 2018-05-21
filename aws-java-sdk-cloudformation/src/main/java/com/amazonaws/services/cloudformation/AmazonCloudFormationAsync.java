@@ -1703,7 +1703,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
-     * Updates the stack set and <i>all</i> associated stack instances.
+     * Updates the stack set, and associated stack instances in the specified accounts and regions.
      * </p>
      * <p>
      * Even if the stack set operation created by updating the stack set fails (completely or partially, below or above
@@ -1721,7 +1721,7 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
-     * Updates the stack set and <i>all</i> associated stack instances.
+     * Updates the stack set, and associated stack instances in the specified accounts and regions.
      * </p>
      * <p>
      * Even if the stack set operation created by updating the stack set fails (completely or partially, below or above

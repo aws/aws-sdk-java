@@ -973,7 +973,7 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
-     * Updates the stack set and <i>all</i> associated stack instances.
+     * Updates the stack set, and associated stack instances in the specified accounts and regions.
      * </p>
      * <p>
      * Even if the stack set operation created by updating the stack set fails (completely or partially, below or above
@@ -994,6 +994,8 @@ public interface AmazonCloudFormation {
      *         Another operation has been performed on this stack set since the specified operation was performed.
      * @throws InvalidOperationException
      *         The specified operation isn't valid.
+     * @throws StackInstanceNotFoundException
+     *         The specified stack instance doesn't exist.
      * @sample AmazonCloudFormation.UpdateStackSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStackSet" target="_top">AWS
      *      API Documentation</a>

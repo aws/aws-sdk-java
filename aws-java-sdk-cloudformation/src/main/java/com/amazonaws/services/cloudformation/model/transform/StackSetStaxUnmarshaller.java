@@ -109,6 +109,11 @@ public class StackSetStaxUnmarshaller implements Unmarshaller<StackSet, StaxUnma
                     stackSet.setAdministrationRoleARN(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ExecutionRoleName", targetDepth)) {
+                    stackSet.setExecutionRoleName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return stackSet;

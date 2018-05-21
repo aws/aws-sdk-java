@@ -1,3 +1,8 @@
+# __1.11.334__ __2018-05-21__
+## __AWS CloudFormation__
+  - ### Features
+    - 1) Filtered Update for StackSet based on Accounts and Regions: This feature will allow flexibility for the customers to roll out updates on a StackSet based on specific Accounts and Regions.   2) Support for customized ExecutionRoleName: This feature will allow customers to attach ExecutionRoleName to the StackSet thus ensuring more security and controlling the behavior of any AWS resources in the target accounts.
+
 # __1.11.333__ __2018-05-18__
 ## __AWS IoT__
   - ### Features

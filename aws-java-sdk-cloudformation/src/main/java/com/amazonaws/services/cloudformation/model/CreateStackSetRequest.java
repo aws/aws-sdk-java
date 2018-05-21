@@ -158,11 +158,22 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Specify an IAM role only if you are using customized administrator roles to control which users or groups can
      * manage specific stack sets within the same administrator account. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions
-     * for Multiple Administrators</a> in the <i>AWS CloudFormation User Guide</i>.
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
+     * Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      */
     private String administrationRoleARN;
+    /**
+     * <p>
+     * The name of the IAM execution role to use to create the stack set. If you do not specify an execution role, AWS
+     * CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack set operation.
+     * </p>
+     * <p>
+     * Specify an IAM role only if you are using customized execution roles to control which stack resources users and
+     * groups can include in their stack sets.
+     * </p>
+     */
+    private String executionRoleName;
     /**
      * <p>
      * A unique identifier for this <code>CreateStackSet</code> request. Specify this token if you plan to retry
@@ -1326,8 +1337,8 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Specify an IAM role only if you are using customized administrator roles to control which users or groups can
      * manage specific stack sets within the same administrator account. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions
-     * for Multiple Administrators</a> in the <i>AWS CloudFormation User Guide</i>.
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
+     * Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      * 
      * @param administrationRoleARN
@@ -1335,8 +1346,8 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        Specify an IAM role only if you are using customized administrator roles to control which users or groups
      *        can manage specific stack sets within the same administrator account. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
-     *        Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
+     *        Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation User Guide</i>.
      */
 
     public void setAdministrationRoleARN(String administrationRoleARN) {
@@ -1350,16 +1361,17 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Specify an IAM role only if you are using customized administrator roles to control which users or groups can
      * manage specific stack sets within the same administrator account. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions
-     * for Multiple Administrators</a> in the <i>AWS CloudFormation User Guide</i>.
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
+     * Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      * 
      * @return The Amazon Resource Number (ARN) of the IAM role to use to create this stack set. </p>
      *         <p>
      *         Specify an IAM role only if you are using customized administrator roles to control which users or groups
      *         can manage specific stack sets within the same administrator account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
-     *         Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User Guide</i>.
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html"
+     *         >Prerequisites: Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation User
+     *         Guide</i>.
      */
 
     public String getAdministrationRoleARN() {
@@ -1373,8 +1385,8 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Specify an IAM role only if you are using customized administrator roles to control which users or groups can
      * manage specific stack sets within the same administrator account. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions
-     * for Multiple Administrators</a> in the <i>AWS CloudFormation User Guide</i>.
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
+     * Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      * 
      * @param administrationRoleARN
@@ -1382,13 +1394,83 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        Specify an IAM role only if you are using customized administrator roles to control which users or groups
      *        can manage specific stack sets within the same administrator account. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
-     *        Permissions for Multiple Administrators</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
+     *        Granting Permissions for Stack Set Operations</a> in the <i>AWS CloudFormation User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateStackSetRequest withAdministrationRoleARN(String administrationRoleARN) {
         setAdministrationRoleARN(administrationRoleARN);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the IAM execution role to use to create the stack set. If you do not specify an execution role, AWS
+     * CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack set operation.
+     * </p>
+     * <p>
+     * Specify an IAM role only if you are using customized execution roles to control which stack resources users and
+     * groups can include in their stack sets.
+     * </p>
+     * 
+     * @param executionRoleName
+     *        The name of the IAM execution role to use to create the stack set. If you do not specify an execution
+     *        role, AWS CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack
+     *        set operation.</p>
+     *        <p>
+     *        Specify an IAM role only if you are using customized execution roles to control which stack resources
+     *        users and groups can include in their stack sets.
+     */
+
+    public void setExecutionRoleName(String executionRoleName) {
+        this.executionRoleName = executionRoleName;
+    }
+
+    /**
+     * <p>
+     * The name of the IAM execution role to use to create the stack set. If you do not specify an execution role, AWS
+     * CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack set operation.
+     * </p>
+     * <p>
+     * Specify an IAM role only if you are using customized execution roles to control which stack resources users and
+     * groups can include in their stack sets.
+     * </p>
+     * 
+     * @return The name of the IAM execution role to use to create the stack set. If you do not specify an execution
+     *         role, AWS CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack
+     *         set operation.</p>
+     *         <p>
+     *         Specify an IAM role only if you are using customized execution roles to control which stack resources
+     *         users and groups can include in their stack sets.
+     */
+
+    public String getExecutionRoleName() {
+        return this.executionRoleName;
+    }
+
+    /**
+     * <p>
+     * The name of the IAM execution role to use to create the stack set. If you do not specify an execution role, AWS
+     * CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack set operation.
+     * </p>
+     * <p>
+     * Specify an IAM role only if you are using customized execution roles to control which stack resources users and
+     * groups can include in their stack sets.
+     * </p>
+     * 
+     * @param executionRoleName
+     *        The name of the IAM execution role to use to create the stack set. If you do not specify an execution
+     *        role, AWS CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role for the stack
+     *        set operation.</p>
+     *        <p>
+     *        Specify an IAM role only if you are using customized execution roles to control which stack resources
+     *        users and groups can include in their stack sets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackSetRequest withExecutionRoleName(String executionRoleName) {
+        setExecutionRoleName(executionRoleName);
         return this;
     }
 
@@ -1492,6 +1574,8 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("Tags: ").append(getTags()).append(",");
         if (getAdministrationRoleARN() != null)
             sb.append("AdministrationRoleARN: ").append(getAdministrationRoleARN()).append(",");
+        if (getExecutionRoleName() != null)
+            sb.append("ExecutionRoleName: ").append(getExecutionRoleName()).append(",");
         if (getClientRequestToken() != null)
             sb.append("ClientRequestToken: ").append(getClientRequestToken());
         sb.append("}");
@@ -1540,6 +1624,10 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getAdministrationRoleARN() != null && other.getAdministrationRoleARN().equals(this.getAdministrationRoleARN()) == false)
             return false;
+        if (other.getExecutionRoleName() == null ^ this.getExecutionRoleName() == null)
+            return false;
+        if (other.getExecutionRoleName() != null && other.getExecutionRoleName().equals(this.getExecutionRoleName()) == false)
+            return false;
         if (other.getClientRequestToken() == null ^ this.getClientRequestToken() == null)
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
@@ -1560,6 +1648,7 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getCapabilities() == null) ? 0 : getCapabilities().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getAdministrationRoleARN() == null) ? 0 : getAdministrationRoleARN().hashCode());
+        hashCode = prime * hashCode + ((getExecutionRoleName() == null) ? 0 : getExecutionRoleName().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         return hashCode;
     }
