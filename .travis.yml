@@ -30,4 +30,4 @@ notifications:
 install: /bin/true
 sudo: required
 dist: precise
-script: mvn install -pl ${MODULES_TO_SKIP}
+script: mvn install -P travis -pl ${MODULES_TO_SKIP}

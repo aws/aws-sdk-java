@@ -35,32 +35,43 @@ public enum Base64 {
     private static final InternalLogApi LOG = InternalLogFactory.getLog(Base64.class);
     private static final Base64Codec codec = new Base64Codec();
     private static final boolean isJaxbAvailable;
+    private static final boolean isJava8Base64Available;
 
     static {
-        boolean available;
-        try {
-            Class.forName("javax.xml.bind.DatatypeConverter");
-            available = true;
-        } catch (Exception e) {
-            available = false;
-        }
-        isJaxbAvailable = available;
-        if (isJaxbAvailable) {
-            Map<String, String> inconsistentJaxbImpls = new HashMap<String, String>();
-            inconsistentJaxbImpls.put("org.apache.ws.jaxme.impl.JAXBContextImpl", "Apache JaxMe");
-
-            try {
-                String className = JAXBContext.newInstance().getClass().getName();
-                if (inconsistentJaxbImpls.containsKey(className)) {
-                    LOG.warn("A JAXB implementation known to produce base64 encodings that are " +
-                             "inconsistent with the reference implementation has been detected. The " +
-                             "results of the encodeAsString() method may be incorrect. Implementation: " +
-                             inconsistentJaxbImpls.get(className));
-                }
-            } catch (Exception ignored) {
-            }
+        if (isAvailable("java.util.Base64")) {
+            isJava8Base64Available = true;
+            isJaxbAvailable = false;
         } else {
-            LOG.warn("JAXB is unavailable. Will fallback to SDK implementation which may be less performant");
+            // No need to detect JAXB, we can use Java 8 class
+            isJava8Base64Available = false;
+            isJaxbAvailable = isAvailable("javax.xml.bind.DatatypeConverter");
+            if (isJaxbAvailable) {
+                Map<String, String> inconsistentJaxbImpls = new HashMap<String, String>();
+                inconsistentJaxbImpls.put("org.apache.ws.jaxme.impl.JAXBContextImpl", "Apache JaxMe");
+
+                try {
+                    String className = JAXBContext.newInstance().getClass().getName();
+                    if (inconsistentJaxbImpls.containsKey(className)) {
+                        LOG.warn("A JAXB implementation known to produce base64 encodings that are " +
+                            "inconsistent with the reference implementation has been detected. The " +
+                            "results of the encodeAsString() method may be incorrect. Implementation: " +
+                            inconsistentJaxbImpls.get(className));
+                    }
+                } catch (Exception ignored) {
+                }
+            } else {
+                LOG.warn("JAXB is unavailable. Will fallback to SDK implementation which may be less performant");
+            }
+        }
+
+    }
+
+    private static boolean isAvailable(String className) {
+        try {
+            Class.forName(className);
+            return true;
+        } catch (Exception e) {
+            return false;
         }
     }
 
@@ -71,6 +82,11 @@ public enum Base64 {
         if (bytes == null) {
             return null;
         }
+
+        if (isJava8Base64Available) {
+            return java.util.Base64.getEncoder().encodeToString(bytes);
+        }
+
         if (isJaxbAvailable) {
             try {
                 return DatatypeConverter.printBase64Binary(bytes);
