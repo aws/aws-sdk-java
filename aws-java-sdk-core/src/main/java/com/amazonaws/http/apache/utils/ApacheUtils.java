@@ -135,6 +135,8 @@ public class ApacheUtils {
         }
 
         addPreemptiveAuthenticationProxy(clientContext, settings);
+
+        clientContext.setAttribute(HttpContextUtils.DISABLE_SOCKET_PROXY_PROPERTY, settings.disableSocketProxy());
         return clientContext;
 
     }

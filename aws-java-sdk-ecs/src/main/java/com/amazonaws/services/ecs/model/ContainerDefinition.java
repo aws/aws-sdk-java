@@ -389,6 +389,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      * <code>--hostname</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * The <code>hostname</code> parameter is not supported if using the <code>awsvpc</code> networkMode.
+     * </p>
+     * </note>
      */
     private String hostname;
     /**
@@ -3258,13 +3263,22 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      * <code>--hostname</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * The <code>hostname</code> parameter is not supported if using the <code>awsvpc</code> networkMode.
+     * </p>
+     * </note>
      * 
      * @param hostname
      *        The hostname to use for your container. This parameter maps to <code>Hostname</code> in the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
-     *        <code>--hostname</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *        <code>--hostname</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>.</p> <note>
+     *        <p>
+     *        The <code>hostname</code> parameter is not supported if using the <code>awsvpc</code> networkMode.
+     *        </p>
      */
 
     public void setHostname(String hostname) {
@@ -3279,13 +3293,21 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      * <code>--hostname</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * The <code>hostname</code> parameter is not supported if using the <code>awsvpc</code> networkMode.
+     * </p>
+     * </note>
      * 
      * @return The hostname to use for your container. This parameter maps to <code>Hostname</code> in the <a
      *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *         container</a> section of the <a
      *         href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and
      *         the <code>--hostname</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *         run</a>.
+     *         run</a>.</p> <note>
+     *         <p>
+     *         The <code>hostname</code> parameter is not supported if using the <code>awsvpc</code> networkMode.
+     *         </p>
      */
 
     public String getHostname() {
@@ -3300,13 +3322,22 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
      * <code>--hostname</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * The <code>hostname</code> parameter is not supported if using the <code>awsvpc</code> networkMode.
+     * </p>
+     * </note>
      * 
      * @param hostname
      *        The hostname to use for your container. This parameter maps to <code>Hostname</code> in the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/#create-a-container">Create a
      *        container</a> section of the <a
      *        href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.27/">Docker Remote API</a> and the
-     *        <code>--hostname</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *        <code>--hostname</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>.</p> <note>
+     *        <p>
+     *        The <code>hostname</code> parameter is not supported if using the <code>awsvpc</code> networkMode.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

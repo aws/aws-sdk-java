@@ -1,3 +1,16 @@
+# __1.11.335__ __2018-05-22__
+## __AWS SDK for Java__
+  - ### Features
+    - The default [`Socket`](https://docs.oracle.com/javase/6/docs/api/java/net/Socket.html) implementation tries to resolve an appropriate proxy via the configured [`ProxySelector`](https://docs.oracle.com/javase/6/docs/api/java/net/ProxySelector.html) when connecting to a remote host if it was not constructed with an explicit [`Proxy`](https://docs.oracle.com/javase/6/docs/api/java/net/Proxy.html). For example, if the system properties `socksProxyHost` and `socksProxyPort` are defined, then the default `ProxySelector` will return that as the proxy to use for the socket. This feature introduces a new setting, `ClientConfiguration#disableSocketProxy(boolean)`, to prevent the socket from resolving a proxy. This is useful for example, when the SOCKS proxy properties must be defined for other components, but the the client should not connect to it.
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - Amazon Elastic Container Service (ECS) adds service discovery for services that use host or bridged network mode. ECS can now also register instance IPs for active tasks using bridged and host networking with Route 53, making them available via DNS.
+
+## __Amazon Inspector__
+  - ### Features
+    - We are launching the ability to target all EC2 instances. With this launch, resourceGroupArn is now optional for CreateAssessmentTarget and UpdateAssessmentTarget. If resourceGroupArn is not specified, all EC2 instances in the account in the AWS region are included in the assessment target.
+
 # __1.11.334__ __2018-05-21__
 ## __AWS CloudFormation__
   - ### Features

@@ -31,6 +31,10 @@ public class ServiceRegistryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("registryArn").build();
     private static final MarshallingInfo<Integer> PORT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("port").build();
+    private static final MarshallingInfo<String> CONTAINERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containerName").build();
+    private static final MarshallingInfo<Integer> CONTAINERPORT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containerPort").build();
 
     private static final ServiceRegistryMarshaller instance = new ServiceRegistryMarshaller();
 
@@ -50,6 +54,8 @@ public class ServiceRegistryMarshaller {
         try {
             protocolMarshaller.marshall(serviceRegistry.getRegistryArn(), REGISTRYARN_BINDING);
             protocolMarshaller.marshall(serviceRegistry.getPort(), PORT_BINDING);
+            protocolMarshaller.marshall(serviceRegistry.getContainerName(), CONTAINERNAME_BINDING);
+            protocolMarshaller.marshall(serviceRegistry.getContainerPort(), CONTAINERPORT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

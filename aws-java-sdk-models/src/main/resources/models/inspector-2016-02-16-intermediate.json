@@ -247,6 +247,10 @@
         "exceptionName" : "NoSuchEntityException",
         "documentation" : "<p>The request was rejected because it referenced an entity that does not exist. The error code describes the entity.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidCrossAccountRoleException",
+        "documentation" : "<p>Amazon Inspector cannot assume the cross-account role that it needs to list your EC2 instances during the assessment run.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
@@ -13132,7 +13136,7 @@
       },
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
-      "required" : [ "arn", "name", "resourceGroupArn", "createdAt", "updatedAt" ],
+      "required" : [ "arn", "name", "createdAt", "updatedAt" ],
       "shapeName" : "AssessmentTarget",
       "signerAware" : false,
       "signerType" : null,
@@ -16966,7 +16970,7 @@
       },
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
-      "required" : [ "assessmentTargetName", "resourceGroupArn" ],
+      "required" : [ "assessmentTargetName" ],
       "shapeName" : "CreateAssessmentTargetRequest",
       "signerAware" : false,
       "signerType" : null,
@@ -50544,7 +50548,7 @@
       },
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
-      "required" : [ "assessmentTargetArn", "assessmentTargetName", "resourceGroupArn" ],
+      "required" : [ "assessmentTargetArn", "assessmentTargetName" ],
       "shapeName" : "UpdateAssessmentTargetRequest",
       "signerAware" : false,
       "signerType" : null,

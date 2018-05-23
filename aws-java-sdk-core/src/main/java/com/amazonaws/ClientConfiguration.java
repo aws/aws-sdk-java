@@ -52,6 +52,11 @@ public class ClientConfiguration {
      */
     public static final int DEFAULT_CLIENT_EXECUTION_TIMEOUT = 0;
 
+    /**
+     * The default on whether to disable {@code Socket} proxies.
+     */
+    public static final boolean DEFAULT_DISABLE_SOCKET_PROXY = false;
+
     /** The default max connection pool size. */
     public static final int DEFAULT_MAX_CONNECTIONS = 50;
 
@@ -172,6 +177,17 @@ public class ClientConfiguration {
 
     /** Specifies the proxy authentication methods that should be used, in priority order. */
     private List<ProxyAuthenticationMethod> proxyAuthenticationMethods = null;
+
+    /**
+     * Controls whether {@link java.net.Socket}s created by the client should
+     * use the default {@link java.net.ProxySelector} when connecting to the
+     * remote host to find an appropriate proxy or connect directly to the
+     * host.
+     * <p />
+     * Note this property is only guaranteed to be honored when using the
+     * default connection factories.
+     */
+    private boolean disableSocketProxy = DEFAULT_DISABLE_SOCKET_PROXY;
 
     /**
      * Whether to pre-emptively authenticate against a proxy server using basic authentication
@@ -342,6 +358,7 @@ public class ClientConfiguration {
         this.proxyUsername = other.getProxyUsername();
         this.proxyWorkstation = other.getProxyWorkstation();
         this.nonProxyHosts = other.getNonProxyHosts();
+        this.disableSocketProxy = other.disableSocketProxy();
         this.proxyAuthenticationMethods = other.getProxyAuthenticationMethods();
         this.preemptiveBasicProxyAuth = other.isPreemptiveBasicProxyAuth();
         this.socketTimeout = other.getSocketTimeout();
@@ -684,6 +701,34 @@ public class ClientConfiguration {
     public ClientConfiguration withProxyPort(int proxyPort) {
         setProxyPort(proxyPort);
         return this;
+    }
+
+    /**
+     * Set whether to disable proxies at the socket level.
+     *
+     * @param disableSocketProxy Whether to disable proxies at the socket level.
+     *
+     * @return The updated ClientConfiguration object.
+     */
+    public ClientConfiguration withDisableSocketProxy(boolean disableSocketProxy) {
+        this.disableSocketProxy = disableSocketProxy;
+        return this;
+    }
+
+    /**
+     * Set whether to disable proxies at the socket level.
+     *
+     * @param disableSocketProxy Whether to disable proxies at the socket level.
+     */
+    public void setDisableSocketProxy(boolean disableSocketProxy) {
+        withDisableSocketProxy(disableSocketProxy);
+    }
+
+    /**
+     * @return Whether to disable proxies at the socket level.
+     */
+    public boolean disableSocketProxy() {
+        return disableSocketProxy;
     }
 
     /**

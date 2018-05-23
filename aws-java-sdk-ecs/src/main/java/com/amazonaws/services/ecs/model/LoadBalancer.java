@@ -21,6 +21,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Details on a load balancer that is used with a service.
  * </p>
+ * <p>
+ * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch type)
+ * only support Application Load Balancers and Network Load Balancers; Classic Load Balancers are not supported. Also,
+ * when you create any target groups for these services, you must choose <code>ip</code> as the target type, not
+ * <code>instance</code>, because tasks that use the <code>awsvpc</code> network mode are associated with an elastic
+ * network interface, not an Amazon EC2 instance.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/LoadBalancer" target="_top">AWS API
  *      Documentation</a>
@@ -32,6 +39,14 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group associated with a service.
      * </p>
+     * <important>
+     * <p>
+     * If your service's task definition uses the <code>awsvpc</code> network mode (which is required for the Fargate
+     * launch type), you must choose <code>ip</code> as the target type, not <code>instance</code>, because tasks that
+     * use the <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2
+     * instance.
+     * </p>
+     * </important>
      */
     private String targetGroupArn;
     /**
@@ -59,9 +74,24 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group associated with a service.
      * </p>
+     * <important>
+     * <p>
+     * If your service's task definition uses the <code>awsvpc</code> network mode (which is required for the Fargate
+     * launch type), you must choose <code>ip</code> as the target type, not <code>instance</code>, because tasks that
+     * use the <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2
+     * instance.
+     * </p>
+     * </important>
      * 
      * @param targetGroupArn
-     *        The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group associated with a service.
+     *        The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group associated with a
+     *        service.</p> <important>
+     *        <p>
+     *        If your service's task definition uses the <code>awsvpc</code> network mode (which is required for the
+     *        Fargate launch type), you must choose <code>ip</code> as the target type, not <code>instance</code>,
+     *        because tasks that use the <code>awsvpc</code> network mode are associated with an elastic network
+     *        interface, not an Amazon EC2 instance.
+     *        </p>
      */
 
     public void setTargetGroupArn(String targetGroupArn) {
@@ -72,8 +102,23 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group associated with a service.
      * </p>
+     * <important>
+     * <p>
+     * If your service's task definition uses the <code>awsvpc</code> network mode (which is required for the Fargate
+     * launch type), you must choose <code>ip</code> as the target type, not <code>instance</code>, because tasks that
+     * use the <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2
+     * instance.
+     * </p>
+     * </important>
      * 
-     * @return The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group associated with a service.
+     * @return The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group associated with a
+     *         service.</p> <important>
+     *         <p>
+     *         If your service's task definition uses the <code>awsvpc</code> network mode (which is required for the
+     *         Fargate launch type), you must choose <code>ip</code> as the target type, not <code>instance</code>,
+     *         because tasks that use the <code>awsvpc</code> network mode are associated with an elastic network
+     *         interface, not an Amazon EC2 instance.
+     *         </p>
      */
 
     public String getTargetGroupArn() {
@@ -84,9 +129,24 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group associated with a service.
      * </p>
+     * <important>
+     * <p>
+     * If your service's task definition uses the <code>awsvpc</code> network mode (which is required for the Fargate
+     * launch type), you must choose <code>ip</code> as the target type, not <code>instance</code>, because tasks that
+     * use the <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2
+     * instance.
+     * </p>
+     * </important>
      * 
      * @param targetGroupArn
-     *        The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group associated with a service.
+     *        The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group associated with a
+     *        service.</p> <important>
+     *        <p>
+     *        If your service's task definition uses the <code>awsvpc</code> network mode (which is required for the
+     *        Fargate launch type), you must choose <code>ip</code> as the target type, not <code>instance</code>,
+     *        because tasks that use the <code>awsvpc</code> network mode are associated with an elastic network
+     *        interface, not an Amazon EC2 instance.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -68,16 +68,27 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
     private Boolean initProcessEnabled;
     /**
      * <p>
-     * The value for the size of the <code>/dev/shm</code> volume. This parameter maps to the <code>--shm-size</code>
-     * option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the
+     * <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * If you are using tasks that use the Fargate launch type, the <code>sharedMemorySize</code> parameter is not
+     * supported.
+     * </p>
+     * </note>
      */
     private Integer sharedMemorySize;
     /**
      * <p>
-     * The container path, mount options, and size of the tmpfs mount. This parameter maps to the <code>--tmpfs</code>
-     * option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
+     * <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * If you are using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter is not supported.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<Tmpfs> tmpfs;
 
@@ -392,13 +403,24 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The value for the size of the <code>/dev/shm</code> volume. This parameter maps to the <code>--shm-size</code>
-     * option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the
+     * <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * If you are using tasks that use the Fargate launch type, the <code>sharedMemorySize</code> parameter is not
+     * supported.
+     * </p>
+     * </note>
      * 
      * @param sharedMemorySize
-     *        The value for the size of the <code>/dev/shm</code> volume. This parameter maps to the
-     *        <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *        The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the
+     *        <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>.</p> <note>
+     *        <p>
+     *        If you are using tasks that use the Fargate launch type, the <code>sharedMemorySize</code> parameter is
+     *        not supported.
+     *        </p>
      */
 
     public void setSharedMemorySize(Integer sharedMemorySize) {
@@ -407,12 +429,23 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The value for the size of the <code>/dev/shm</code> volume. This parameter maps to the <code>--shm-size</code>
-     * option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the
+     * <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * If you are using tasks that use the Fargate launch type, the <code>sharedMemorySize</code> parameter is not
+     * supported.
+     * </p>
+     * </note>
      * 
-     * @return The value for the size of the <code>/dev/shm</code> volume. This parameter maps to the
-     *         <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * @return The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the
+     *         <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *         run</a>.</p> <note>
+     *         <p>
+     *         If you are using tasks that use the Fargate launch type, the <code>sharedMemorySize</code> parameter is
+     *         not supported.
+     *         </p>
      */
 
     public Integer getSharedMemorySize() {
@@ -421,13 +454,24 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The value for the size of the <code>/dev/shm</code> volume. This parameter maps to the <code>--shm-size</code>
-     * option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the
+     * <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * If you are using tasks that use the Fargate launch type, the <code>sharedMemorySize</code> parameter is not
+     * supported.
+     * </p>
+     * </note>
      * 
      * @param sharedMemorySize
-     *        The value for the size of the <code>/dev/shm</code> volume. This parameter maps to the
-     *        <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *        The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the
+     *        <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>.</p> <note>
+     *        <p>
+     *        If you are using tasks that use the Fargate launch type, the <code>sharedMemorySize</code> parameter is
+     *        not supported.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -438,12 +482,22 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The container path, mount options, and size of the tmpfs mount. This parameter maps to the <code>--tmpfs</code>
-     * option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
+     * <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * If you are using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter is not supported.
+     * </p>
+     * </note>
      * 
-     * @return The container path, mount options, and size of the tmpfs mount. This parameter maps to the
-     *         <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * @return The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
+     *         <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *         run</a>.</p> <note>
+     *         <p>
+     *         If you are using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter is not
+     *         supported.
+     *         </p>
      */
 
     public java.util.List<Tmpfs> getTmpfs() {
@@ -455,13 +509,23 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The container path, mount options, and size of the tmpfs mount. This parameter maps to the <code>--tmpfs</code>
-     * option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
+     * <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * If you are using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter is not supported.
+     * </p>
+     * </note>
      * 
      * @param tmpfs
-     *        The container path, mount options, and size of the tmpfs mount. This parameter maps to the
-     *        <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *        The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
+     *        <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     *        <note>
+     *        <p>
+     *        If you are using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter is not
+     *        supported.
+     *        </p>
      */
 
     public void setTmpfs(java.util.Collection<Tmpfs> tmpfs) {
@@ -475,9 +539,14 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The container path, mount options, and size of the tmpfs mount. This parameter maps to the <code>--tmpfs</code>
-     * option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
+     * <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * If you are using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter is not supported.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTmpfs(java.util.Collection)} or {@link #withTmpfs(java.util.Collection)} if you want to override the
@@ -485,8 +554,13 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param tmpfs
-     *        The container path, mount options, and size of the tmpfs mount. This parameter maps to the
-     *        <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *        The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
+     *        <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     *        <note>
+     *        <p>
+     *        If you are using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter is not
+     *        supported.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -502,13 +576,23 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The container path, mount options, and size of the tmpfs mount. This parameter maps to the <code>--tmpfs</code>
-     * option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
+     * <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
      * </p>
+     * <note>
+     * <p>
+     * If you are using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter is not supported.
+     * </p>
+     * </note>
      * 
      * @param tmpfs
-     *        The container path, mount options, and size of the tmpfs mount. This parameter maps to the
-     *        <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *        The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
+     *        <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     *        <note>
+     *        <p>
+     *        If you are using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter is not
+     *        supported.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

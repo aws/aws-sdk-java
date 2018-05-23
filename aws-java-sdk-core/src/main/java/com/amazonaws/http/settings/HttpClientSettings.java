@@ -173,6 +173,10 @@ public class HttpClientSettings {
         return getProxyHost() != null && getProxyPort() > 0;
     }
 
+    public boolean disableSocketProxy() {
+        return config.disableSocketProxy();
+    }
+
     public boolean isAuthenticatedProxy() {
         return getProxyUsername() != null && getProxyPassword() != null;
     }

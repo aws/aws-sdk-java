@@ -18,6 +18,7 @@ import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.http.AmazonHttpClient;
 import com.amazonaws.http.DelegatingDnsResolver;
 import com.amazonaws.http.client.ConnectionManagerFactory;
+import com.amazonaws.http.conn.SdkPlainSocketFactory;
 import com.amazonaws.http.conn.ssl.SdkTLSSocketFactory;
 import com.amazonaws.http.settings.HttpClientSettings;
 import com.amazonaws.internal.SdkSSLContext;
@@ -31,7 +32,6 @@ import org.apache.http.config.SocketConfig;
 import org.apache.http.conn.HttpClientConnectionManager;
 import org.apache.http.conn.socket.ConnectionSocketFactory;
 import org.apache.http.conn.socket.LayeredConnectionSocketFactory;
-import org.apache.http.conn.socket.PlainConnectionSocketFactory;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.impl.conn.DefaultSchemePortResolver;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
@@ -49,8 +49,6 @@ import java.net.UnknownHostException;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.util.concurrent.TimeUnit;
-
-import static com.amazonaws.SDKGlobalConfiguration.DISABLE_CERT_CHECKING_SYSTEM_PROPERTY;
 
 /**
  * Factory class to create connection manager used by the apache client.
@@ -137,7 +135,7 @@ public class ApacheConnectionManagerFactory implements
         }
 
         return RegistryBuilder.<ConnectionSocketFactory>create()
-                .register("http", PlainConnectionSocketFactory.getSocketFactory())
+                .register("http", new SdkPlainSocketFactory())
                 .register("https", sslSocketFactory)
                 .build();
     }

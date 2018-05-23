@@ -56,6 +56,14 @@ public class ServiceRegistryJsonUnmarshaller implements Unmarshaller<ServiceRegi
                     context.nextToken();
                     serviceRegistry.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("containerName", targetDepth)) {
+                    context.nextToken();
+                    serviceRegistry.setContainerName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("containerPort", targetDepth)) {
+                    context.nextToken();
+                    serviceRegistry.setContainerPort(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -65,13 +65,27 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * the load balancer. When a task from this service is placed on a container instance, the container instance and
      * port combination is registered as a target in the target group specified here.
      * </p>
+     * <p>
+     * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
+     * type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers are not
+     * supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the
+     * target type, not <code>instance</code>, because tasks that use the <code>awsvpc</code> network mode are
+     * associated with an elastic network interface, not an Amazon EC2 instance.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<LoadBalancer> loadBalancers;
     /**
      * <p>
      * The details of the service discovery registries you want to assign to this service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service Discovery</a>.
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
+     * <note>
+     * <p>
+     * Service discovery is supported for Fargate tasks if using platform version v1.1.0 or later. For more information,
+     * see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
+     * Platform Versions</a>.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<ServiceRegistry> serviceRegistries;
     /**
@@ -82,8 +96,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private Integer desiredCount;
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. Up to 32 ASCII characters
-     * are allowed.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 32 ASCII
+     * characters are allowed.
      * </p>
      */
     private String clientToken;
@@ -336,6 +350,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * the load balancer. When a task from this service is placed on a container instance, the container instance and
      * port combination is registered as a target in the target group specified here.
      * </p>
+     * <p>
+     * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
+     * type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers are not
+     * supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the
+     * target type, not <code>instance</code>, because tasks that use the <code>awsvpc</code> network mode are
+     * associated with an elastic network interface, not an Amazon EC2 instance.
+     * </p>
      * 
      * @return A load balancer object representing the load balancer to use with your service. Currently, you are
      *         limited to one load balancer or target group per service. After you create a service, the load balancer
@@ -352,6 +373,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         target group ARN, the container name (as it appears in a container definition), and the container port to
      *         access from the load balancer. When a task from this service is placed on a container instance, the
      *         container instance and port combination is registered as a target in the target group specified here.
+     *         </p>
+     *         <p>
+     *         Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate
+     *         launch type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers
+     *         are not supported. Also, when you create any target groups for these services, you must choose
+     *         <code>ip</code> as the target type, not <code>instance</code>, because tasks that use the
+     *         <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2
+     *         instance.
      */
 
     public java.util.List<LoadBalancer> getLoadBalancers() {
@@ -378,6 +407,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * the load balancer. When a task from this service is placed on a container instance, the container instance and
      * port combination is registered as a target in the target group specified here.
      * </p>
+     * <p>
+     * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
+     * type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers are not
+     * supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the
+     * target type, not <code>instance</code>, because tasks that use the <code>awsvpc</code> network mode are
+     * associated with an elastic network interface, not an Amazon EC2 instance.
+     * </p>
      * 
      * @param loadBalancers
      *        A load balancer object representing the load balancer to use with your service. Currently, you are limited
@@ -395,6 +431,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        target group ARN, the container name (as it appears in a container definition), and the container port to
      *        access from the load balancer. When a task from this service is placed on a container instance, the
      *        container instance and port combination is registered as a target in the target group specified here.
+     *        </p>
+     *        <p>
+     *        Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate
+     *        launch type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers
+     *        are not supported. Also, when you create any target groups for these services, you must choose
+     *        <code>ip</code> as the target type, not <code>instance</code>, because tasks that use the
+     *        <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2
+     *        instance.
      */
 
     public void setLoadBalancers(java.util.Collection<LoadBalancer> loadBalancers) {
@@ -424,6 +468,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * port combination is registered as a target in the target group specified here.
      * </p>
      * <p>
+     * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
+     * type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers are not
+     * supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the
+     * target type, not <code>instance</code>, because tasks that use the <code>awsvpc</code> network mode are
+     * associated with an elastic network interface, not an Amazon EC2 instance.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setLoadBalancers(java.util.Collection)} or {@link #withLoadBalancers(java.util.Collection)} if you want
      * to override the existing values.
@@ -445,6 +496,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        target group ARN, the container name (as it appears in a container definition), and the container port to
      *        access from the load balancer. When a task from this service is placed on a container instance, the
      *        container instance and port combination is registered as a target in the target group specified here.
+     *        </p>
+     *        <p>
+     *        Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate
+     *        launch type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers
+     *        are not supported. Also, when you create any target groups for these services, you must choose
+     *        <code>ip</code> as the target type, not <code>instance</code>, because tasks that use the
+     *        <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2
+     *        instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -475,6 +534,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * the load balancer. When a task from this service is placed on a container instance, the container instance and
      * port combination is registered as a target in the target group specified here.
      * </p>
+     * <p>
+     * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
+     * type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers are not
+     * supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the
+     * target type, not <code>instance</code>, because tasks that use the <code>awsvpc</code> network mode are
+     * associated with an elastic network interface, not an Amazon EC2 instance.
+     * </p>
      * 
      * @param loadBalancers
      *        A load balancer object representing the load balancer to use with your service. Currently, you are limited
@@ -492,6 +558,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        target group ARN, the container name (as it appears in a container definition), and the container port to
      *        access from the load balancer. When a task from this service is placed on a container instance, the
      *        container instance and port combination is registered as a target in the target group specified here.
+     *        </p>
+     *        <p>
+     *        Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate
+     *        launch type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers
+     *        are not supported. Also, when you create any target groups for these services, you must choose
+     *        <code>ip</code> as the target type, not <code>instance</code>, because tasks that use the
+     *        <code>awsvpc</code> network mode are associated with an elastic network interface, not an Amazon EC2
+     *        instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -503,12 +577,25 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The details of the service discovery registries you want to assign to this service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service Discovery</a>.
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
+     * <note>
+     * <p>
+     * Service discovery is supported for Fargate tasks if using platform version v1.1.0 or later. For more information,
+     * see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
+     * Platform Versions</a>.
+     * </p>
+     * </note>
      * 
      * @return The details of the service discovery registries you want to assign to this service. For more information,
-     *         see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service
-     *         Discovery</a>.
+     *         see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     *         Discovery</a>.</p> <note>
+     *         <p>
+     *         Service discovery is supported for Fargate tasks if using platform version v1.1.0 or later. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
+     *         Platform Versions</a>.
+     *         </p>
      */
 
     public java.util.List<ServiceRegistry> getServiceRegistries() {
@@ -521,13 +608,26 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The details of the service discovery registries you want to assign to this service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service Discovery</a>.
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
+     * <note>
+     * <p>
+     * Service discovery is supported for Fargate tasks if using platform version v1.1.0 or later. For more information,
+     * see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
+     * Platform Versions</a>.
+     * </p>
+     * </note>
      * 
      * @param serviceRegistries
      *        The details of the service discovery registries you want to assign to this service. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service
-     *        Discovery</a>.
+     *        see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     *        Discovery</a>.</p> <note>
+     *        <p>
+     *        Service discovery is supported for Fargate tasks if using platform version v1.1.0 or later. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
+     *        Platform Versions</a>.
+     *        </p>
      */
 
     public void setServiceRegistries(java.util.Collection<ServiceRegistry> serviceRegistries) {
@@ -542,8 +642,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The details of the service discovery registries you want to assign to this service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service Discovery</a>.
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
+     * <note>
+     * <p>
+     * Service discovery is supported for Fargate tasks if using platform version v1.1.0 or later. For more information,
+     * see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
+     * Platform Versions</a>.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setServiceRegistries(java.util.Collection)} or {@link #withServiceRegistries(java.util.Collection)} if
@@ -552,8 +659,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param serviceRegistries
      *        The details of the service discovery registries you want to assign to this service. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service
-     *        Discovery</a>.
+     *        see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     *        Discovery</a>.</p> <note>
+     *        <p>
+     *        Service discovery is supported for Fargate tasks if using platform version v1.1.0 or later. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
+     *        Platform Versions</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -570,13 +683,26 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The details of the service discovery registries you want to assign to this service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service Discovery</a>.
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
      * </p>
+     * <note>
+     * <p>
+     * Service discovery is supported for Fargate tasks if using platform version v1.1.0 or later. For more information,
+     * see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
+     * Platform Versions</a>.
+     * </p>
+     * </note>
      * 
      * @param serviceRegistries
      *        The details of the service discovery registries you want to assign to this service. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service
-     *        Discovery</a>.
+     *        see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     *        Discovery</a>.</p> <note>
+     *        <p>
+     *        Service discovery is supported for Fargate tasks if using platform version v1.1.0 or later. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
+     *        Platform Versions</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -627,13 +753,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. Up to 32 ASCII characters
-     * are allowed.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 32 ASCII
+     * characters are allowed.
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request. Up to 32 ASCII
-     *        characters are allowed.
+     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 32
+     *        ASCII characters are allowed.
      */
 
     public void setClientToken(String clientToken) {
@@ -642,12 +768,12 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. Up to 32 ASCII characters
-     * are allowed.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 32 ASCII
+     * characters are allowed.
      * </p>
      * 
-     * @return Unique, case-sensitive identifier you provide to ensure the idempotency of the request. Up to 32 ASCII
-     *         characters are allowed.
+     * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 32
+     *         ASCII characters are allowed.
      */
 
     public String getClientToken() {
@@ -656,13 +782,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. Up to 32 ASCII characters
-     * are allowed.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 32 ASCII
+     * characters are allowed.
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request. Up to 32 ASCII
-     *        characters are allowed.
+     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 32
+     *        ASCII characters are allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

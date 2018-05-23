@@ -144,6 +144,9 @@ public interface AmazonInspector {
      * @throws NoSuchEntityException
      *         The request was rejected because it referenced an entity that does not exist. The error code describes
      *         the entity.
+     * @throws InvalidCrossAccountRoleException
+     *         Amazon Inspector cannot assume the cross-account role that it needs to list your EC2 instances during the
+     *         assessment run.
      * @sample AmazonInspector.CreateAssessmentTarget
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateAssessmentTarget"
      *      target="_top">AWS API Documentation</a>

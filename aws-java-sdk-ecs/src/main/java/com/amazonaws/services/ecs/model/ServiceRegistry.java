@@ -30,29 +30,52 @@ public class ServiceRegistry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Service Registry. The currently supported service registry is Amazon Route
-     * 53 Auto Naming Service. For more information, see <a
+     * The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is Amazon Route
+     * 53 Auto Naming. For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_autonaming_Service.html">Service</a>.
      * </p>
      */
     private String registryArn;
     /**
      * <p>
-     * The port value used if your Service Discovery service specified an SRV record.
+     * The port value used if your service discovery service specified an SRV record. This field is required if both the
+     * <code>awsvpc</code> network mode and SRV records are used.
      * </p>
      */
     private Integer port;
+    /**
+     * <p>
+     * The container name value, already specified in the task definition, to be used for your service discovery
+     * service. If the task definition that your service task specifies uses the <code>bridge</code> or
+     * <code>host</code> network mode, you must specify a <code>containerName</code> and <code>containerPort</code>
+     * combination from the task definition. If the task definition that your service task specifies uses the
+     * <code>awsvpc</code> network mode and a type SRV DNS record is used, you must specify either a
+     * <code>containerName</code> and <code>containerPort</code> combination or a <code>port</code> value, but not both.
+     * </p>
+     */
+    private String containerName;
+    /**
+     * <p>
+     * The port value, already specified in the task definition, to be used for your service discovery service. If the
+     * task definition your service task specifies uses the <code>bridge</code> or <code>host</code> network mode, you
+     * must specify a <code>containerName</code> and <code>containerPort</code> combination from the task definition. If
+     * the task definition your service task specifies uses the <code>awsvpc</code> network mode and a type SRV DNS
+     * record is used, you must specify either a <code>containerName</code> and <code>containerPort</code> combination
+     * or a <code>port</code> value, but not both.
+     * </p>
+     */
+    private Integer containerPort;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Service Registry. The currently supported service registry is Amazon Route
-     * 53 Auto Naming Service. For more information, see <a
+     * The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is Amazon Route
+     * 53 Auto Naming. For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_autonaming_Service.html">Service</a>.
      * </p>
      * 
      * @param registryArn
-     *        The Amazon Resource Name (ARN) of the Service Registry. The currently supported service registry is Amazon
-     *        Route 53 Auto Naming Service. For more information, see <a
+     *        The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is Amazon
+     *        Route 53 Auto Naming. For more information, see <a
      *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_autonaming_Service.html">Service</a>.
      */
 
@@ -62,13 +85,13 @@ public class ServiceRegistry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Service Registry. The currently supported service registry is Amazon Route
-     * 53 Auto Naming Service. For more information, see <a
+     * The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is Amazon Route
+     * 53 Auto Naming. For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_autonaming_Service.html">Service</a>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Service Registry. The currently supported service registry is
-     *         Amazon Route 53 Auto Naming Service. For more information, see <a
+     * @return The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is
+     *         Amazon Route 53 Auto Naming. For more information, see <a
      *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_autonaming_Service.html">Service</a>.
      */
 
@@ -78,14 +101,14 @@ public class ServiceRegistry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Service Registry. The currently supported service registry is Amazon Route
-     * 53 Auto Naming Service. For more information, see <a
+     * The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is Amazon Route
+     * 53 Auto Naming. For more information, see <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_autonaming_Service.html">Service</a>.
      * </p>
      * 
      * @param registryArn
-     *        The Amazon Resource Name (ARN) of the Service Registry. The currently supported service registry is Amazon
-     *        Route 53 Auto Naming Service. For more information, see <a
+     *        The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is Amazon
+     *        Route 53 Auto Naming. For more information, see <a
      *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_autonaming_Service.html">Service</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -97,11 +120,13 @@ public class ServiceRegistry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The port value used if your Service Discovery service specified an SRV record.
+     * The port value used if your service discovery service specified an SRV record. This field is required if both the
+     * <code>awsvpc</code> network mode and SRV records are used.
      * </p>
      * 
      * @param port
-     *        The port value used if your Service Discovery service specified an SRV record.
+     *        The port value used if your service discovery service specified an SRV record. This field is required if
+     *        both the <code>awsvpc</code> network mode and SRV records are used.
      */
 
     public void setPort(Integer port) {
@@ -110,10 +135,12 @@ public class ServiceRegistry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The port value used if your Service Discovery service specified an SRV record.
+     * The port value used if your service discovery service specified an SRV record. This field is required if both the
+     * <code>awsvpc</code> network mode and SRV records are used.
      * </p>
      * 
-     * @return The port value used if your Service Discovery service specified an SRV record.
+     * @return The port value used if your service discovery service specified an SRV record. This field is required if
+     *         both the <code>awsvpc</code> network mode and SRV records are used.
      */
 
     public Integer getPort() {
@@ -122,16 +149,161 @@ public class ServiceRegistry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The port value used if your Service Discovery service specified an SRV record.
+     * The port value used if your service discovery service specified an SRV record. This field is required if both the
+     * <code>awsvpc</code> network mode and SRV records are used.
      * </p>
      * 
      * @param port
-     *        The port value used if your Service Discovery service specified an SRV record.
+     *        The port value used if your service discovery service specified an SRV record. This field is required if
+     *        both the <code>awsvpc</code> network mode and SRV records are used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ServiceRegistry withPort(Integer port) {
         setPort(port);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The container name value, already specified in the task definition, to be used for your service discovery
+     * service. If the task definition that your service task specifies uses the <code>bridge</code> or
+     * <code>host</code> network mode, you must specify a <code>containerName</code> and <code>containerPort</code>
+     * combination from the task definition. If the task definition that your service task specifies uses the
+     * <code>awsvpc</code> network mode and a type SRV DNS record is used, you must specify either a
+     * <code>containerName</code> and <code>containerPort</code> combination or a <code>port</code> value, but not both.
+     * </p>
+     * 
+     * @param containerName
+     *        The container name value, already specified in the task definition, to be used for your service discovery
+     *        service. If the task definition that your service task specifies uses the <code>bridge</code> or
+     *        <code>host</code> network mode, you must specify a <code>containerName</code> and
+     *        <code>containerPort</code> combination from the task definition. If the task definition that your service
+     *        task specifies uses the <code>awsvpc</code> network mode and a type SRV DNS record is used, you must
+     *        specify either a <code>containerName</code> and <code>containerPort</code> combination or a
+     *        <code>port</code> value, but not both.
+     */
+
+    public void setContainerName(String containerName) {
+        this.containerName = containerName;
+    }
+
+    /**
+     * <p>
+     * The container name value, already specified in the task definition, to be used for your service discovery
+     * service. If the task definition that your service task specifies uses the <code>bridge</code> or
+     * <code>host</code> network mode, you must specify a <code>containerName</code> and <code>containerPort</code>
+     * combination from the task definition. If the task definition that your service task specifies uses the
+     * <code>awsvpc</code> network mode and a type SRV DNS record is used, you must specify either a
+     * <code>containerName</code> and <code>containerPort</code> combination or a <code>port</code> value, but not both.
+     * </p>
+     * 
+     * @return The container name value, already specified in the task definition, to be used for your service discovery
+     *         service. If the task definition that your service task specifies uses the <code>bridge</code> or
+     *         <code>host</code> network mode, you must specify a <code>containerName</code> and
+     *         <code>containerPort</code> combination from the task definition. If the task definition that your service
+     *         task specifies uses the <code>awsvpc</code> network mode and a type SRV DNS record is used, you must
+     *         specify either a <code>containerName</code> and <code>containerPort</code> combination or a
+     *         <code>port</code> value, but not both.
+     */
+
+    public String getContainerName() {
+        return this.containerName;
+    }
+
+    /**
+     * <p>
+     * The container name value, already specified in the task definition, to be used for your service discovery
+     * service. If the task definition that your service task specifies uses the <code>bridge</code> or
+     * <code>host</code> network mode, you must specify a <code>containerName</code> and <code>containerPort</code>
+     * combination from the task definition. If the task definition that your service task specifies uses the
+     * <code>awsvpc</code> network mode and a type SRV DNS record is used, you must specify either a
+     * <code>containerName</code> and <code>containerPort</code> combination or a <code>port</code> value, but not both.
+     * </p>
+     * 
+     * @param containerName
+     *        The container name value, already specified in the task definition, to be used for your service discovery
+     *        service. If the task definition that your service task specifies uses the <code>bridge</code> or
+     *        <code>host</code> network mode, you must specify a <code>containerName</code> and
+     *        <code>containerPort</code> combination from the task definition. If the task definition that your service
+     *        task specifies uses the <code>awsvpc</code> network mode and a type SRV DNS record is used, you must
+     *        specify either a <code>containerName</code> and <code>containerPort</code> combination or a
+     *        <code>port</code> value, but not both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceRegistry withContainerName(String containerName) {
+        setContainerName(containerName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The port value, already specified in the task definition, to be used for your service discovery service. If the
+     * task definition your service task specifies uses the <code>bridge</code> or <code>host</code> network mode, you
+     * must specify a <code>containerName</code> and <code>containerPort</code> combination from the task definition. If
+     * the task definition your service task specifies uses the <code>awsvpc</code> network mode and a type SRV DNS
+     * record is used, you must specify either a <code>containerName</code> and <code>containerPort</code> combination
+     * or a <code>port</code> value, but not both.
+     * </p>
+     * 
+     * @param containerPort
+     *        The port value, already specified in the task definition, to be used for your service discovery service.
+     *        If the task definition your service task specifies uses the <code>bridge</code> or <code>host</code>
+     *        network mode, you must specify a <code>containerName</code> and <code>containerPort</code> combination
+     *        from the task definition. If the task definition your service task specifies uses the <code>awsvpc</code>
+     *        network mode and a type SRV DNS record is used, you must specify either a <code>containerName</code> and
+     *        <code>containerPort</code> combination or a <code>port</code> value, but not both.
+     */
+
+    public void setContainerPort(Integer containerPort) {
+        this.containerPort = containerPort;
+    }
+
+    /**
+     * <p>
+     * The port value, already specified in the task definition, to be used for your service discovery service. If the
+     * task definition your service task specifies uses the <code>bridge</code> or <code>host</code> network mode, you
+     * must specify a <code>containerName</code> and <code>containerPort</code> combination from the task definition. If
+     * the task definition your service task specifies uses the <code>awsvpc</code> network mode and a type SRV DNS
+     * record is used, you must specify either a <code>containerName</code> and <code>containerPort</code> combination
+     * or a <code>port</code> value, but not both.
+     * </p>
+     * 
+     * @return The port value, already specified in the task definition, to be used for your service discovery service.
+     *         If the task definition your service task specifies uses the <code>bridge</code> or <code>host</code>
+     *         network mode, you must specify a <code>containerName</code> and <code>containerPort</code> combination
+     *         from the task definition. If the task definition your service task specifies uses the <code>awsvpc</code>
+     *         network mode and a type SRV DNS record is used, you must specify either a <code>containerName</code> and
+     *         <code>containerPort</code> combination or a <code>port</code> value, but not both.
+     */
+
+    public Integer getContainerPort() {
+        return this.containerPort;
+    }
+
+    /**
+     * <p>
+     * The port value, already specified in the task definition, to be used for your service discovery service. If the
+     * task definition your service task specifies uses the <code>bridge</code> or <code>host</code> network mode, you
+     * must specify a <code>containerName</code> and <code>containerPort</code> combination from the task definition. If
+     * the task definition your service task specifies uses the <code>awsvpc</code> network mode and a type SRV DNS
+     * record is used, you must specify either a <code>containerName</code> and <code>containerPort</code> combination
+     * or a <code>port</code> value, but not both.
+     * </p>
+     * 
+     * @param containerPort
+     *        The port value, already specified in the task definition, to be used for your service discovery service.
+     *        If the task definition your service task specifies uses the <code>bridge</code> or <code>host</code>
+     *        network mode, you must specify a <code>containerName</code> and <code>containerPort</code> combination
+     *        from the task definition. If the task definition your service task specifies uses the <code>awsvpc</code>
+     *        network mode and a type SRV DNS record is used, you must specify either a <code>containerName</code> and
+     *        <code>containerPort</code> combination or a <code>port</code> value, but not both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceRegistry withContainerPort(Integer containerPort) {
+        setContainerPort(containerPort);
         return this;
     }
 
@@ -149,7 +321,11 @@ public class ServiceRegistry implements Serializable, Cloneable, StructuredPojo 
         if (getRegistryArn() != null)
             sb.append("RegistryArn: ").append(getRegistryArn()).append(",");
         if (getPort() != null)
-            sb.append("Port: ").append(getPort());
+            sb.append("Port: ").append(getPort()).append(",");
+        if (getContainerName() != null)
+            sb.append("ContainerName: ").append(getContainerName()).append(",");
+        if (getContainerPort() != null)
+            sb.append("ContainerPort: ").append(getContainerPort());
         sb.append("}");
         return sb.toString();
     }
@@ -172,6 +348,14 @@ public class ServiceRegistry implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getPort() != null && other.getPort().equals(this.getPort()) == false)
             return false;
+        if (other.getContainerName() == null ^ this.getContainerName() == null)
+            return false;
+        if (other.getContainerName() != null && other.getContainerName().equals(this.getContainerName()) == false)
+            return false;
+        if (other.getContainerPort() == null ^ this.getContainerPort() == null)
+            return false;
+        if (other.getContainerPort() != null && other.getContainerPort().equals(this.getContainerPort()) == false)
+            return false;
         return true;
     }
 
@@ -182,6 +366,8 @@ public class ServiceRegistry implements Serializable, Cloneable, StructuredPojo 
 
         hashCode = prime * hashCode + ((getRegistryArn() == null) ? 0 : getRegistryArn().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
+        hashCode = prime * hashCode + ((getContainerName() == null) ? 0 : getContainerName().hashCode());
+        hashCode = prime * hashCode + ((getContainerPort() == null) ? 0 : getContainerPort().hashCode());
         return hashCode;
     }
 

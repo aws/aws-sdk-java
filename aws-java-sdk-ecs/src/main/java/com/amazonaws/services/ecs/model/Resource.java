@@ -29,8 +29,8 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the resource, such as <code>cpu</code>, <code>memory</code>, <code>ports</code>, or a user-defined
-     * resource.
+     * The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>, <code>PORTS</code>,
+     * <code>PORTS_UDP</code>, or a user-defined resource.
      * </p>
      */
     private String name;
@@ -70,13 +70,13 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the resource, such as <code>cpu</code>, <code>memory</code>, <code>ports</code>, or a user-defined
-     * resource.
+     * The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>, <code>PORTS</code>,
+     * <code>PORTS_UDP</code>, or a user-defined resource.
      * </p>
      * 
      * @param name
-     *        The name of the resource, such as <code>cpu</code>, <code>memory</code>, <code>ports</code>, or a
-     *        user-defined resource.
+     *        The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>, <code>PORTS</code>,
+     *        <code>PORTS_UDP</code>, or a user-defined resource.
      */
 
     public void setName(String name) {
@@ -85,12 +85,12 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the resource, such as <code>cpu</code>, <code>memory</code>, <code>ports</code>, or a user-defined
-     * resource.
+     * The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>, <code>PORTS</code>,
+     * <code>PORTS_UDP</code>, or a user-defined resource.
      * </p>
      * 
-     * @return The name of the resource, such as <code>cpu</code>, <code>memory</code>, <code>ports</code>, or a
-     *         user-defined resource.
+     * @return The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>, <code>PORTS</code>,
+     *         <code>PORTS_UDP</code>, or a user-defined resource.
      */
 
     public String getName() {
@@ -99,13 +99,13 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the resource, such as <code>cpu</code>, <code>memory</code>, <code>ports</code>, or a user-defined
-     * resource.
+     * The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>, <code>PORTS</code>,
+     * <code>PORTS_UDP</code>, or a user-defined resource.
      * </p>
      * 
      * @param name
-     *        The name of the resource, such as <code>cpu</code>, <code>memory</code>, <code>ports</code>, or a
-     *        user-defined resource.
+     *        The name of the resource, such as <code>CPU</code>, <code>MEMORY</code>, <code>PORTS</code>,
+     *        <code>PORTS_UDP</code>, or a user-defined resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
