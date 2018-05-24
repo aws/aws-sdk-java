@@ -77,6 +77,8 @@ public class AmazonS3URI {
         }
         this.uri = uri;
 
+        this.versionId = parseVersionId(uri.getRawQuery());
+
         // s3://*
         if ("s3".equalsIgnoreCase(uri.getScheme())) {
             this.region = null;
@@ -167,8 +169,6 @@ public class AmazonS3URI {
                 this.key = uri.getPath().substring(1);
             }
         }
-
-        this.versionId = parseVersionId(uri.getRawQuery());
 
         if ("amazonaws".equals(matcher.group(2))) {
             // No region specified
