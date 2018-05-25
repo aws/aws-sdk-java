@@ -31,7 +31,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * This name must be unique per region per account, can have a maximum of 32 characters, must contain only
-     * alphanumeric characters or hyphens, and must not begin or end with a hyphen.
+     * alphanumeric characters or hyphens, must not begin or end with a hyphen, and must not begin with "internal-".
      * </p>
      */
     private String name;
@@ -112,14 +112,15 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * This name must be unique per region per account, can have a maximum of 32 characters, must contain only
-     * alphanumeric characters or hyphens, and must not begin or end with a hyphen.
+     * alphanumeric characters or hyphens, must not begin or end with a hyphen, and must not begin with "internal-".
      * </p>
      * 
      * @param name
      *        The name of the load balancer.</p>
      *        <p>
      *        This name must be unique per region per account, can have a maximum of 32 characters, must contain only
-     *        alphanumeric characters or hyphens, and must not begin or end with a hyphen.
+     *        alphanumeric characters or hyphens, must not begin or end with a hyphen, and must not begin with
+     *        "internal-".
      */
 
     public void setName(String name) {
@@ -132,13 +133,14 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * This name must be unique per region per account, can have a maximum of 32 characters, must contain only
-     * alphanumeric characters or hyphens, and must not begin or end with a hyphen.
+     * alphanumeric characters or hyphens, must not begin or end with a hyphen, and must not begin with "internal-".
      * </p>
      * 
      * @return The name of the load balancer.</p>
      *         <p>
      *         This name must be unique per region per account, can have a maximum of 32 characters, must contain only
-     *         alphanumeric characters or hyphens, and must not begin or end with a hyphen.
+     *         alphanumeric characters or hyphens, must not begin or end with a hyphen, and must not begin with
+     *         "internal-".
      */
 
     public String getName() {
@@ -151,14 +153,15 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * This name must be unique per region per account, can have a maximum of 32 characters, must contain only
-     * alphanumeric characters or hyphens, and must not begin or end with a hyphen.
+     * alphanumeric characters or hyphens, must not begin or end with a hyphen, and must not begin with "internal-".
      * </p>
      * 
      * @param name
      *        The name of the load balancer.</p>
      *        <p>
      *        This name must be unique per region per account, can have a maximum of 32 characters, must contain only
-     *        alphanumeric characters or hyphens, and must not begin or end with a hyphen.
+     *        alphanumeric characters or hyphens, must not begin or end with a hyphen, and must not begin with
+     *        "internal-".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

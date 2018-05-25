@@ -1596,6 +1596,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * True to enable Performance Insights for the DB instance, and otherwise false.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance
+     * Insights</a> in the <i>Amazon Relational Database Service User Guide</i>.
+     * </p>
      */
     private Boolean enablePerformanceInsights;
     /**
@@ -11932,9 +11937,18 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * True to enable Performance Insights for the DB instance, and otherwise false.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance
+     * Insights</a> in the <i>Amazon Relational Database Service User Guide</i>.
+     * </p>
      * 
      * @param enablePerformanceInsights
-     *        True to enable Performance Insights for the DB instance, and otherwise false.
+     *        True to enable Performance Insights for the DB instance, and otherwise false. </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon
+     *        Performance Insights</a> in the <i>Amazon Relational Database Service User Guide</i>.
      */
 
     public void setEnablePerformanceInsights(Boolean enablePerformanceInsights) {
@@ -11945,8 +11959,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * True to enable Performance Insights for the DB instance, and otherwise false.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance
+     * Insights</a> in the <i>Amazon Relational Database Service User Guide</i>.
+     * </p>
      * 
-     * @return True to enable Performance Insights for the DB instance, and otherwise false.
+     * @return True to enable Performance Insights for the DB instance, and otherwise false. </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon
+     *         Performance Insights</a> in the <i>Amazon Relational Database Service User Guide</i>.
      */
 
     public Boolean getEnablePerformanceInsights() {
@@ -11957,9 +11980,18 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * True to enable Performance Insights for the DB instance, and otherwise false.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance
+     * Insights</a> in the <i>Amazon Relational Database Service User Guide</i>.
+     * </p>
      * 
      * @param enablePerformanceInsights
-     *        True to enable Performance Insights for the DB instance, and otherwise false.
+     *        True to enable Performance Insights for the DB instance, and otherwise false. </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon
+     *        Performance Insights</a> in the <i>Amazon Relational Database Service User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -11972,8 +12004,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * True to enable Performance Insights for the DB instance, and otherwise false.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance
+     * Insights</a> in the <i>Amazon Relational Database Service User Guide</i>.
+     * </p>
      * 
-     * @return True to enable Performance Insights for the DB instance, and otherwise false.
+     * @return True to enable Performance Insights for the DB instance, and otherwise false. </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon
+     *         Performance Insights</a> in the <i>Amazon Relational Database Service User Guide</i>.
      */
 
     public Boolean isEnablePerformanceInsights() {

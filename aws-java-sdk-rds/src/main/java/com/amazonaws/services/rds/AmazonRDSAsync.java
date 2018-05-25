@@ -1051,6 +1051,11 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <p>
      * Creates a new DB security group. DB security groups control access to a DB instance.
      * </p>
+     * <note>
+     * <p>
+     * A DB security group controls access to EC2-Classic DB instances that are not in a VPC.
+     * </p>
+     * </note>
      * 
      * @param createDBSecurityGroupRequest
      * @return A Java Future containing the result of the CreateDBSecurityGroup operation returned by the service.
@@ -1064,6 +1069,11 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <p>
      * Creates a new DB security group. DB security groups control access to a DB instance.
      * </p>
+     * <note>
+     * <p>
+     * A DB security group controls access to EC2-Classic DB instances that are not in a VPC.
+     * </p>
+     * </note>
      * 
      * @param createDBSecurityGroupRequest
      * @param asyncHandler

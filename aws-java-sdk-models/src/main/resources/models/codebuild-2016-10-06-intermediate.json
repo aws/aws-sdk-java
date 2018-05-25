@@ -12450,6 +12450,9 @@
       "deprecated" : false,
       "documentation" : "",
       "enums" : [ {
+        "name" : "WINDOWS_CONTAINER",
+        "value" : "WINDOWS_CONTAINER"
+      }, {
         "name" : "LINUX_CONTAINER",
         "value" : "LINUX_CONTAINER"
       } ],
@@ -17187,6 +17190,9 @@
       }, {
         "name" : "UBUNTU",
         "value" : "UBUNTU"
+      }, {
+        "name" : "WINDOWS_SERVER",
+        "value" : "WINDOWS_SERVER"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,

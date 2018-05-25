@@ -3,7 +3,7 @@
   <parent>
     <artifactId>aws-java-sdk-pom</artifactId>
     <groupId>com.amazonaws</groupId>
-    <version>1.11.335</version>
+    <version>1.11.336</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
@@ -114,10 +114,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.335</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.336</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.335</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.336</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -648,6 +648,9 @@
                   &lt;script id="syntaxhighlight_script_core" type="text/javascript" src = "http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/resources/syntaxhighlight/scripts/shCore.js"&gt;
                   &lt;/script&gt;
                   &lt;script id="syntaxhighlight_script_java" type="text/javascript" src = "http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/resources/syntaxhighlight/scripts/shBrushJava.js"&gt;
+                  &lt;/script&gt;
+                  &lt;!-- Script for GDPR highlighting --&gt;
+                  &lt;script src="/SdkStatic/sdk-priv.js" async="true"&gt;
                   &lt;/script&gt;
                   &lt;link id="syntaxhighlight_css_core" rel="stylesheet" type="text/css" href = "http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/resources/syntaxhighlight/styles/shCoreDefault.css"/&gt;
                   &lt;link id="syntaxhighlight_css_theme" rel="stylesheet" type="text/css" href = "http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/resources/syntaxhighlight/styles/shThemeDefault.css"/&gt;
@@ -771,10 +774,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.335</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.336</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.335</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.336</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -1306,6 +1309,9 @@
                   &lt;/script&gt;
                   &lt;script id="syntaxhighlight_script_java" type="text/javascript" src = "http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/resources/syntaxhighlight/scripts/shBrushJava.js"&gt;
                   &lt;/script&gt;
+                  &lt;!-- Script for GDPR highlighting --&gt;
+                  &lt;script src="/SdkStatic/sdk-priv.js" async="true"&gt;
+                  &lt;/script&gt;
                   &lt;link id="syntaxhighlight_css_core" rel="stylesheet" type="text/css" href = "http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/resources/syntaxhighlight/styles/shCoreDefault.css"/&gt;
                   &lt;link id="syntaxhighlight_css_theme" rel="stylesheet" type="text/css" href = "http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/resources/syntaxhighlight/styles/shThemeDefault.css"/&gt;
                   &lt;!-- Scripts for Syntax Highlighter END--&gt;
@@ -1424,10 +1430,10 @@
               <use>false</use>
               <notree>true</notree>
               <nodeprecatedlist>true</nodeprecatedlist>
-              <windowtitle>AWS SDK for Java - 1.11.335</windowtitle>
+              <windowtitle>AWS SDK for Java - 1.11.336</windowtitle>
               <encoding>UTF-8</encoding>
               <docencoding>UTF-8</docencoding>
-              <doctitle>AWS SDK for Java API Reference - 1.11.335</doctitle>
+              <doctitle>AWS SDK for Java API Reference - 1.11.336</doctitle>
               <packagesheader>AWS SDK for Java</packagesheader>
               <docfilessubdirs>true</docfilessubdirs>
               <taglets>
@@ -1959,6 +1965,9 @@
                   &lt;/script&gt;
                   &lt;script id="syntaxhighlight_script_java" type="text/javascript" src = "http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/resources/syntaxhighlight/scripts/shBrushJava.js"&gt;
                   &lt;/script&gt;
+                  &lt;!-- Script for GDPR highlighting --&gt;
+                  &lt;script src="/SdkStatic/sdk-priv.js" async="true"&gt;
+                  &lt;/script&gt;
                   &lt;link id="syntaxhighlight_css_core" rel="stylesheet" type="text/css" href = "http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/resources/syntaxhighlight/styles/shCoreDefault.css"/&gt;
                   &lt;link id="syntaxhighlight_css_theme" rel="stylesheet" type="text/css" href = "http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/resources/syntaxhighlight/styles/shThemeDefault.css"/&gt;
                   &lt;!-- Scripts for Syntax Highlighter END--&gt;
@@ -2290,7 +2299,7 @@
                   <goal>exec</goal>
                 </goals>
                 <configuration>
-                  <workingDirectory>target/aws-java-sdk-osgi-1.11.335-sdk-zip-archive-assembly/</workingDirectory>
+                  <workingDirectory>target/aws-java-sdk-osgi-1.11.336-sdk-zip-archive-assembly/</workingDirectory>
                   <executable>zip</executable>
                   <commandlineArgs>-r ../aws-java-sdk.zip .</commandlineArgs>
                 </configuration>

@@ -1,3 +1,20 @@
+# __1.11.336__ __2018-05-24__
+## __AWS CodeBuild__
+  - ### Features
+    - AWS CodeBuild Adds Support for Windows Builds.
+
+## __AWS Secrets Manager__
+  - ### Features
+    - Documentation updates for secretsmanager
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - This release adds CloudWatch Logs integration capabilities to RDS Aurora MySQL clusters
+
+## __Elastic Load Balancing__
+  - ### Features
+    - Updated elasticloadbalancingV2 documentation with slow start mode details.  The slow start mode can be used to gradually increase the number of requests forwarded by a load balancer to a newly added target in a target group. It provides a new target an opportunity to warm up before it can handle its fair share of requests received from the load balancer. Slow start mode is disabled by default and can be enabled on a per target group basis.
+
 # __1.11.335__ __2018-05-22__
 ## __AWS SDK for Java__
   - ### Features

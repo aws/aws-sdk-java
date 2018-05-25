@@ -30,48 +30,60 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <p>
      * The name of the attribute.
      * </p>
+     * <p>
+     * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>access_logs.s3.enabled</code> - [Application Load Balancers] Indicates whether access logs stored in Amazon
-     * S3 are enabled. The value is <code>true</code> or <code>false</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>access_logs.s3.bucket</code> - [Application Load Balancers] The name of the S3 bucket for the access logs.
-     * This attribute is required if access logs in Amazon S3 are enabled. The bucket must exist in the same region as
-     * the load balancer and have a bucket policy that grants Elastic Load Balancing permission to write to the bucket.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>access_logs.s3.prefix</code> - [Application Load Balancers] The prefix for the location in the S3 bucket.
-     * If you don't specify a prefix, the access logs are stored in the root of the bucket.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
-     * <code>true</code> or <code>false</code>.
+     * <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported by only Application Load Balancers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>access_logs.s3.enabled</code> - Indicates whether access logs are enabled. The value is <code>true</code>
+     * or <code>false</code>. The default is <code>false</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>idle_timeout.timeout_seconds</code> - [Application Load Balancers] The idle timeout value, in seconds. The
-     * valid range is 1-4000. The default is 60 seconds.
+     * <code>access_logs.s3.bucket</code> - The name of the S3 bucket for the access logs. This attribute is required if
+     * access logs are enabled. The bucket must exist in the same region as the load balancer and have a bucket policy
+     * that grants Elastic Load Balancing permission to write to the bucket.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>load_balancing.cross_zone.enabled</code> - [Network Load Balancers] Indicates whether cross-zone load
-     * balancing is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the access logs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>routing.http2.enabled</code> - [Application Load Balancers] Indicates whether HTTP/2 is enabled. The value
-     * is <code>true</code> or <code>false</code>. The default is <code>true</code>.
+     * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The valid range is 1-4000
+     * seconds. The default is 60 seconds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
+     * <code>false</code>. The default is <code>true</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported by only Network Load Balancers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The
+     * value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
      * </p>
      * </li>
      * </ul>
@@ -88,98 +100,120 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <p>
      * The name of the attribute.
      * </p>
+     * <p>
+     * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>access_logs.s3.enabled</code> - [Application Load Balancers] Indicates whether access logs stored in Amazon
-     * S3 are enabled. The value is <code>true</code> or <code>false</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>access_logs.s3.bucket</code> - [Application Load Balancers] The name of the S3 bucket for the access logs.
-     * This attribute is required if access logs in Amazon S3 are enabled. The bucket must exist in the same region as
-     * the load balancer and have a bucket policy that grants Elastic Load Balancing permission to write to the bucket.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>access_logs.s3.prefix</code> - [Application Load Balancers] The prefix for the location in the S3 bucket.
-     * If you don't specify a prefix, the access logs are stored in the root of the bucket.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
-     * <code>true</code> or <code>false</code>.
+     * <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported by only Application Load Balancers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>access_logs.s3.enabled</code> - Indicates whether access logs are enabled. The value is <code>true</code>
+     * or <code>false</code>. The default is <code>false</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>idle_timeout.timeout_seconds</code> - [Application Load Balancers] The idle timeout value, in seconds. The
-     * valid range is 1-4000. The default is 60 seconds.
+     * <code>access_logs.s3.bucket</code> - The name of the S3 bucket for the access logs. This attribute is required if
+     * access logs are enabled. The bucket must exist in the same region as the load balancer and have a bucket policy
+     * that grants Elastic Load Balancing permission to write to the bucket.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>load_balancing.cross_zone.enabled</code> - [Network Load Balancers] Indicates whether cross-zone load
-     * balancing is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the access logs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>routing.http2.enabled</code> - [Application Load Balancers] Indicates whether HTTP/2 is enabled. The value
-     * is <code>true</code> or <code>false</code>. The default is <code>true</code>.
+     * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The valid range is 1-4000
+     * seconds. The default is 60 seconds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
+     * <code>false</code>. The default is <code>true</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported by only Network Load Balancers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The
+     * value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
      * </p>
      * </li>
      * </ul>
      * 
      * @param key
      *        The name of the attribute.</p>
+     *        <p>
+     *        The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>access_logs.s3.enabled</code> - [Application Load Balancers] Indicates whether access logs stored in
-     *        Amazon S3 are enabled. The value is <code>true</code> or <code>false</code>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>access_logs.s3.bucket</code> - [Application Load Balancers] The name of the S3 bucket for the access
-     *        logs. This attribute is required if access logs in Amazon S3 are enabled. The bucket must exist in the
-     *        same region as the load balancer and have a bucket policy that grants Elastic Load Balancing permission to
-     *        write to the bucket.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>access_logs.s3.prefix</code> - [Application Load Balancers] The prefix for the location in the S3
-     *        bucket. If you don't specify a prefix, the access logs are stored in the root of the bucket.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
-     *        <code>true</code> or <code>false</code>.
+     *        <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attributes are supported by only Application Load Balancers:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>access_logs.s3.enabled</code> - Indicates whether access logs are enabled. The value is
+     *        <code>true</code> or <code>false</code>. The default is <code>false</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>idle_timeout.timeout_seconds</code> - [Application Load Balancers] The idle timeout value, in
-     *        seconds. The valid range is 1-4000. The default is 60 seconds.
+     *        <code>access_logs.s3.bucket</code> - The name of the S3 bucket for the access logs. This attribute is
+     *        required if access logs are enabled. The bucket must exist in the same region as the load balancer and
+     *        have a bucket policy that grants Elastic Load Balancing permission to write to the bucket.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>load_balancing.cross_zone.enabled</code> - [Network Load Balancers] Indicates whether cross-zone
-     *        load balancing is enabled. The value is <code>true</code> or <code>false</code>. The default is
-     *        <code>false</code>.
+     *        <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the access logs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>routing.http2.enabled</code> - [Application Load Balancers] Indicates whether HTTP/2 is enabled. The
-     *        value is <code>true</code> or <code>false</code>. The default is <code>true</code>.
+     *        <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The valid range is 1-4000
+     *        seconds. The default is 60 seconds.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The value is <code>true</code>
+     *        or <code>false</code>. The default is <code>true</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attributes are supported by only Network Load Balancers:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled.
+     *        The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
      *        </p>
      *        </li>
      */
@@ -192,97 +226,119 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <p>
      * The name of the attribute.
      * </p>
+     * <p>
+     * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>access_logs.s3.enabled</code> - [Application Load Balancers] Indicates whether access logs stored in Amazon
-     * S3 are enabled. The value is <code>true</code> or <code>false</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>access_logs.s3.bucket</code> - [Application Load Balancers] The name of the S3 bucket for the access logs.
-     * This attribute is required if access logs in Amazon S3 are enabled. The bucket must exist in the same region as
-     * the load balancer and have a bucket policy that grants Elastic Load Balancing permission to write to the bucket.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>access_logs.s3.prefix</code> - [Application Load Balancers] The prefix for the location in the S3 bucket.
-     * If you don't specify a prefix, the access logs are stored in the root of the bucket.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
-     * <code>true</code> or <code>false</code>.
+     * <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported by only Application Load Balancers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>access_logs.s3.enabled</code> - Indicates whether access logs are enabled. The value is <code>true</code>
+     * or <code>false</code>. The default is <code>false</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>idle_timeout.timeout_seconds</code> - [Application Load Balancers] The idle timeout value, in seconds. The
-     * valid range is 1-4000. The default is 60 seconds.
+     * <code>access_logs.s3.bucket</code> - The name of the S3 bucket for the access logs. This attribute is required if
+     * access logs are enabled. The bucket must exist in the same region as the load balancer and have a bucket policy
+     * that grants Elastic Load Balancing permission to write to the bucket.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>load_balancing.cross_zone.enabled</code> - [Network Load Balancers] Indicates whether cross-zone load
-     * balancing is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the access logs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>routing.http2.enabled</code> - [Application Load Balancers] Indicates whether HTTP/2 is enabled. The value
-     * is <code>true</code> or <code>false</code>. The default is <code>true</code>.
+     * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The valid range is 1-4000
+     * seconds. The default is 60 seconds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
+     * <code>false</code>. The default is <code>true</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported by only Network Load Balancers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The
+     * value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
      * </p>
      * </li>
      * </ul>
      * 
      * @return The name of the attribute.</p>
+     *         <p>
+     *         The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>access_logs.s3.enabled</code> - [Application Load Balancers] Indicates whether access logs stored
-     *         in Amazon S3 are enabled. The value is <code>true</code> or <code>false</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>access_logs.s3.bucket</code> - [Application Load Balancers] The name of the S3 bucket for the
-     *         access logs. This attribute is required if access logs in Amazon S3 are enabled. The bucket must exist in
-     *         the same region as the load balancer and have a bucket policy that grants Elastic Load Balancing
-     *         permission to write to the bucket.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>access_logs.s3.prefix</code> - [Application Load Balancers] The prefix for the location in the S3
-     *         bucket. If you don't specify a prefix, the access logs are stored in the root of the bucket.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
-     *         <code>true</code> or <code>false</code>.
+     *         <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The following attributes are supported by only Application Load Balancers:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>access_logs.s3.enabled</code> - Indicates whether access logs are enabled. The value is
+     *         <code>true</code> or <code>false</code>. The default is <code>false</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>idle_timeout.timeout_seconds</code> - [Application Load Balancers] The idle timeout value, in
-     *         seconds. The valid range is 1-4000. The default is 60 seconds.
+     *         <code>access_logs.s3.bucket</code> - The name of the S3 bucket for the access logs. This attribute is
+     *         required if access logs are enabled. The bucket must exist in the same region as the load balancer and
+     *         have a bucket policy that grants Elastic Load Balancing permission to write to the bucket.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>load_balancing.cross_zone.enabled</code> - [Network Load Balancers] Indicates whether cross-zone
-     *         load balancing is enabled. The value is <code>true</code> or <code>false</code>. The default is
-     *         <code>false</code>.
+     *         <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the access logs.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>routing.http2.enabled</code> - [Application Load Balancers] Indicates whether HTTP/2 is enabled.
-     *         The value is <code>true</code> or <code>false</code>. The default is <code>true</code>.
+     *         <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The valid range is 1-4000
+     *         seconds. The default is 60 seconds.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The value is <code>true</code>
+     *         or <code>false</code>. The default is <code>true</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The following attributes are supported by only Network Load Balancers:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled.
+     *         The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
      *         </p>
      *         </li>
      */
@@ -295,98 +351,120 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <p>
      * The name of the attribute.
      * </p>
+     * <p>
+     * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>access_logs.s3.enabled</code> - [Application Load Balancers] Indicates whether access logs stored in Amazon
-     * S3 are enabled. The value is <code>true</code> or <code>false</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>access_logs.s3.bucket</code> - [Application Load Balancers] The name of the S3 bucket for the access logs.
-     * This attribute is required if access logs in Amazon S3 are enabled. The bucket must exist in the same region as
-     * the load balancer and have a bucket policy that grants Elastic Load Balancing permission to write to the bucket.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>access_logs.s3.prefix</code> - [Application Load Balancers] The prefix for the location in the S3 bucket.
-     * If you don't specify a prefix, the access logs are stored in the root of the bucket.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
-     * <code>true</code> or <code>false</code>.
+     * <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported by only Application Load Balancers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>access_logs.s3.enabled</code> - Indicates whether access logs are enabled. The value is <code>true</code>
+     * or <code>false</code>. The default is <code>false</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>idle_timeout.timeout_seconds</code> - [Application Load Balancers] The idle timeout value, in seconds. The
-     * valid range is 1-4000. The default is 60 seconds.
+     * <code>access_logs.s3.bucket</code> - The name of the S3 bucket for the access logs. This attribute is required if
+     * access logs are enabled. The bucket must exist in the same region as the load balancer and have a bucket policy
+     * that grants Elastic Load Balancing permission to write to the bucket.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>load_balancing.cross_zone.enabled</code> - [Network Load Balancers] Indicates whether cross-zone load
-     * balancing is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the access logs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>routing.http2.enabled</code> - [Application Load Balancers] Indicates whether HTTP/2 is enabled. The value
-     * is <code>true</code> or <code>false</code>. The default is <code>true</code>.
+     * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The valid range is 1-4000
+     * seconds. The default is 60 seconds.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
+     * <code>false</code>. The default is <code>true</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported by only Network Load Balancers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The
+     * value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
      * </p>
      * </li>
      * </ul>
      * 
      * @param key
      *        The name of the attribute.</p>
+     *        <p>
+     *        The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>access_logs.s3.enabled</code> - [Application Load Balancers] Indicates whether access logs stored in
-     *        Amazon S3 are enabled. The value is <code>true</code> or <code>false</code>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>access_logs.s3.bucket</code> - [Application Load Balancers] The name of the S3 bucket for the access
-     *        logs. This attribute is required if access logs in Amazon S3 are enabled. The bucket must exist in the
-     *        same region as the load balancer and have a bucket policy that grants Elastic Load Balancing permission to
-     *        write to the bucket.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>access_logs.s3.prefix</code> - [Application Load Balancers] The prefix for the location in the S3
-     *        bucket. If you don't specify a prefix, the access logs are stored in the root of the bucket.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
-     *        <code>true</code> or <code>false</code>.
+     *        <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attributes are supported by only Application Load Balancers:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>access_logs.s3.enabled</code> - Indicates whether access logs are enabled. The value is
+     *        <code>true</code> or <code>false</code>. The default is <code>false</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>idle_timeout.timeout_seconds</code> - [Application Load Balancers] The idle timeout value, in
-     *        seconds. The valid range is 1-4000. The default is 60 seconds.
+     *        <code>access_logs.s3.bucket</code> - The name of the S3 bucket for the access logs. This attribute is
+     *        required if access logs are enabled. The bucket must exist in the same region as the load balancer and
+     *        have a bucket policy that grants Elastic Load Balancing permission to write to the bucket.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>load_balancing.cross_zone.enabled</code> - [Network Load Balancers] Indicates whether cross-zone
-     *        load balancing is enabled. The value is <code>true</code> or <code>false</code>. The default is
-     *        <code>false</code>.
+     *        <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the access logs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>routing.http2.enabled</code> - [Application Load Balancers] Indicates whether HTTP/2 is enabled. The
-     *        value is <code>true</code> or <code>false</code>. The default is <code>true</code>.
+     *        <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The valid range is 1-4000
+     *        seconds. The default is 60 seconds.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The value is <code>true</code>
+     *        or <code>false</code>. The default is <code>true</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attributes are supported by only Network Load Balancers:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled.
+     *        The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -32,6 +32,10 @@ import java.io.Closeable;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Arrays;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static com.amazonaws.codegen.internal.Constants.LOGGER;
 
@@ -78,6 +82,10 @@ public class Utils {
         return name.length() < 2 ? StringUtils.lowerCase(name) : StringUtils.lowerCase(name.substring(0, 1))
                  + name.substring(1);
 
+    }
+
+    public static Stream<String> sanitize(String toBeSanitized) {
+        return Arrays.stream(toBeSanitized.split("[.]|\\W")).filter(StringUtils::hasValue);
     }
 
     public static String capitialize(String name) {

@@ -275,6 +275,12 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      */
     private Long backtrackConsumedChangeRecords;
+    /**
+     * <p>
+     * A list of log types that this DB cluster is configured to export to CloudWatch Logs.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> enabledCloudwatchLogsExports;
 
     /**
      * <p>
@@ -2151,6 +2157,79 @@ public class DBCluster implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A list of log types that this DB cluster is configured to export to CloudWatch Logs.
+     * </p>
+     * 
+     * @return A list of log types that this DB cluster is configured to export to CloudWatch Logs.
+     */
+
+    public java.util.List<String> getEnabledCloudwatchLogsExports() {
+        if (enabledCloudwatchLogsExports == null) {
+            enabledCloudwatchLogsExports = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return enabledCloudwatchLogsExports;
+    }
+
+    /**
+     * <p>
+     * A list of log types that this DB cluster is configured to export to CloudWatch Logs.
+     * </p>
+     * 
+     * @param enabledCloudwatchLogsExports
+     *        A list of log types that this DB cluster is configured to export to CloudWatch Logs.
+     */
+
+    public void setEnabledCloudwatchLogsExports(java.util.Collection<String> enabledCloudwatchLogsExports) {
+        if (enabledCloudwatchLogsExports == null) {
+            this.enabledCloudwatchLogsExports = null;
+            return;
+        }
+
+        this.enabledCloudwatchLogsExports = new com.amazonaws.internal.SdkInternalList<String>(enabledCloudwatchLogsExports);
+    }
+
+    /**
+     * <p>
+     * A list of log types that this DB cluster is configured to export to CloudWatch Logs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEnabledCloudwatchLogsExports(java.util.Collection)} or
+     * {@link #withEnabledCloudwatchLogsExports(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param enabledCloudwatchLogsExports
+     *        A list of log types that this DB cluster is configured to export to CloudWatch Logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withEnabledCloudwatchLogsExports(String... enabledCloudwatchLogsExports) {
+        if (this.enabledCloudwatchLogsExports == null) {
+            setEnabledCloudwatchLogsExports(new com.amazonaws.internal.SdkInternalList<String>(enabledCloudwatchLogsExports.length));
+        }
+        for (String ele : enabledCloudwatchLogsExports) {
+            this.enabledCloudwatchLogsExports.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of log types that this DB cluster is configured to export to CloudWatch Logs.
+     * </p>
+     * 
+     * @param enabledCloudwatchLogsExports
+     *        A list of log types that this DB cluster is configured to export to CloudWatch Logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withEnabledCloudwatchLogsExports(java.util.Collection<String> enabledCloudwatchLogsExports) {
+        setEnabledCloudwatchLogsExports(enabledCloudwatchLogsExports);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -2236,7 +2315,9 @@ public class DBCluster implements Serializable, Cloneable {
         if (getBacktrackWindow() != null)
             sb.append("BacktrackWindow: ").append(getBacktrackWindow()).append(",");
         if (getBacktrackConsumedChangeRecords() != null)
-            sb.append("BacktrackConsumedChangeRecords: ").append(getBacktrackConsumedChangeRecords());
+            sb.append("BacktrackConsumedChangeRecords: ").append(getBacktrackConsumedChangeRecords()).append(",");
+        if (getEnabledCloudwatchLogsExports() != null)
+            sb.append("EnabledCloudwatchLogsExports: ").append(getEnabledCloudwatchLogsExports());
         sb.append("}");
         return sb.toString();
     }
@@ -2406,6 +2487,10 @@ public class DBCluster implements Serializable, Cloneable {
         if (other.getBacktrackConsumedChangeRecords() != null
                 && other.getBacktrackConsumedChangeRecords().equals(this.getBacktrackConsumedChangeRecords()) == false)
             return false;
+        if (other.getEnabledCloudwatchLogsExports() == null ^ this.getEnabledCloudwatchLogsExports() == null)
+            return false;
+        if (other.getEnabledCloudwatchLogsExports() != null && other.getEnabledCloudwatchLogsExports().equals(this.getEnabledCloudwatchLogsExports()) == false)
+            return false;
         return true;
     }
 
@@ -2452,6 +2537,7 @@ public class DBCluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getEarliestBacktrackTime() == null) ? 0 : getEarliestBacktrackTime().hashCode());
         hashCode = prime * hashCode + ((getBacktrackWindow() == null) ? 0 : getBacktrackWindow().hashCode());
         hashCode = prime * hashCode + ((getBacktrackConsumedChangeRecords() == null) ? 0 : getBacktrackConsumedChangeRecords().hashCode());
+        hashCode = prime * hashCode + ((getEnabledCloudwatchLogsExports() == null) ? 0 : getEnabledCloudwatchLogsExports().hashCode());
         return hashCode;
     }
 

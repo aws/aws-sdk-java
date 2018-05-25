@@ -22,7 +22,8 @@ public enum PlatformType {
 
     DEBIAN("DEBIAN"),
     AMAZON_LINUX("AMAZON_LINUX"),
-    UBUNTU("UBUNTU");
+    UBUNTU("UBUNTU"),
+    WINDOWS_SERVER("WINDOWS_SERVER");
 
     private String value;
 

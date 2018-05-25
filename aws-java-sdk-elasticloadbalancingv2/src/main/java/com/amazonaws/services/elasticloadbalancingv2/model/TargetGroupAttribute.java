@@ -30,38 +30,57 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <p>
      * The name of the attribute.
      * </p>
+     * <p>
+     * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>deregistration_delay.timeout_seconds</code> - The amount time for Elastic Load Balancing to wait before
-     * changing the state of a deregistering target from <code>draining</code> to <code>unused</code>. The range is
-     * 0-3600 seconds. The default value is 300 seconds.
+     * <code>deregistration_delay.timeout_seconds</code> - The amount of time, in seconds, for Elastic Load Balancing to
+     * wait before changing the state of a deregistering target from <code>draining</code> to <code>unused</code>. The
+     * range is 0-3600 seconds. The default value is 300 seconds.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported by only Application Load Balancers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered target
+     * receives a linearly increasing share of the traffic to the target group. After this time period ends, the target
+     * receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is disabled by
+     * default.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>proxy_protocol_v2.enabled</code> - [Network Load Balancers] Indicates whether Proxy Protocol version 2 is
-     * enabled.
+     * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is <code>true</code>
+     * or <code>false</code>. The default is <code>false</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>stickiness.enabled</code> - [Application Load Balancers] Indicates whether sticky sessions are enabled. The
-     * value is <code>true</code> or <code>false</code>.
+     * <code>stickiness.type</code> - The type of sticky sessions. The possible value is <code>lb_cookie</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>stickiness.type</code> - [Application Load Balancers] The type of sticky sessions. The possible value is
-     * <code>lb_cookie</code>.
+     * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a
+     * client should be routed to the same target. After this time period expires, the load balancer-generated cookie is
+     * considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).
      * </p>
      * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported by only Network Load Balancers:
+     * </p>
+     * <ul>
      * <li>
      * <p>
-     * <code>stickiness.lb_cookie.duration_seconds</code> - [Application Load Balancers] The time period, in seconds,
-     * during which requests from a client should be routed to the same target. After this time period expires, the load
-     * balancer-generated cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default
-     * value is 1 day (86400 seconds).
+     * <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is
+     * <code>true</code> or <code>false</code>. The default is <code>false</code>.
      * </p>
      * </li>
      * </ul>
@@ -78,76 +97,115 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <p>
      * The name of the attribute.
      * </p>
+     * <p>
+     * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>deregistration_delay.timeout_seconds</code> - The amount time for Elastic Load Balancing to wait before
-     * changing the state of a deregistering target from <code>draining</code> to <code>unused</code>. The range is
-     * 0-3600 seconds. The default value is 300 seconds.
+     * <code>deregistration_delay.timeout_seconds</code> - The amount of time, in seconds, for Elastic Load Balancing to
+     * wait before changing the state of a deregistering target from <code>draining</code> to <code>unused</code>. The
+     * range is 0-3600 seconds. The default value is 300 seconds.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported by only Application Load Balancers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered target
+     * receives a linearly increasing share of the traffic to the target group. After this time period ends, the target
+     * receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is disabled by
+     * default.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>proxy_protocol_v2.enabled</code> - [Network Load Balancers] Indicates whether Proxy Protocol version 2 is
-     * enabled.
+     * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is <code>true</code>
+     * or <code>false</code>. The default is <code>false</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>stickiness.enabled</code> - [Application Load Balancers] Indicates whether sticky sessions are enabled. The
-     * value is <code>true</code> or <code>false</code>.
+     * <code>stickiness.type</code> - The type of sticky sessions. The possible value is <code>lb_cookie</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>stickiness.type</code> - [Application Load Balancers] The type of sticky sessions. The possible value is
-     * <code>lb_cookie</code>.
+     * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a
+     * client should be routed to the same target. After this time period expires, the load balancer-generated cookie is
+     * considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).
      * </p>
      * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported by only Network Load Balancers:
+     * </p>
+     * <ul>
      * <li>
      * <p>
-     * <code>stickiness.lb_cookie.duration_seconds</code> - [Application Load Balancers] The time period, in seconds,
-     * during which requests from a client should be routed to the same target. After this time period expires, the load
-     * balancer-generated cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default
-     * value is 1 day (86400 seconds).
+     * <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is
+     * <code>true</code> or <code>false</code>. The default is <code>false</code>.
      * </p>
      * </li>
      * </ul>
      * 
      * @param key
      *        The name of the attribute.</p>
+     *        <p>
+     *        The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>deregistration_delay.timeout_seconds</code> - The amount time for Elastic Load Balancing to wait
-     *        before changing the state of a deregistering target from <code>draining</code> to <code>unused</code>. The
-     *        range is 0-3600 seconds. The default value is 300 seconds.
+     *        <code>deregistration_delay.timeout_seconds</code> - The amount of time, in seconds, for Elastic Load
+     *        Balancing to wait before changing the state of a deregistering target from <code>draining</code> to
+     *        <code>unused</code>. The range is 0-3600 seconds. The default value is 300 seconds.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attributes are supported by only Application Load Balancers:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered
+     *        target receives a linearly increasing share of the traffic to the target group. After this time period
+     *        ends, the target receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start
+     *        mode is disabled by default.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>proxy_protocol_v2.enabled</code> - [Network Load Balancers] Indicates whether Proxy Protocol version
-     *        2 is enabled.
+     *        <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is
+     *        <code>true</code> or <code>false</code>. The default is <code>false</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>stickiness.enabled</code> - [Application Load Balancers] Indicates whether sticky sessions are
-     *        enabled. The value is <code>true</code> or <code>false</code>.
+     *        <code>stickiness.type</code> - The type of sticky sessions. The possible value is <code>lb_cookie</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>stickiness.type</code> - [Application Load Balancers] The type of sticky sessions. The possible
-     *        value is <code>lb_cookie</code>.
+     *        <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in seconds, during which requests
+     *        from a client should be routed to the same target. After this time period expires, the load
+     *        balancer-generated cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The
+     *        default value is 1 day (86400 seconds).
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attributes are supported by only Network Load Balancers:
+     *        </p>
+     *        <ul>
      *        <li>
      *        <p>
-     *        <code>stickiness.lb_cookie.duration_seconds</code> - [Application Load Balancers] The time period, in
-     *        seconds, during which requests from a client should be routed to the same target. After this time period
-     *        expires, the load balancer-generated cookie is considered stale. The range is 1 second to 1 week (604800
-     *        seconds). The default value is 1 day (86400 seconds).
+     *        <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value
+     *        is <code>true</code> or <code>false</code>. The default is <code>false</code>.
      *        </p>
      *        </li>
      */
@@ -160,75 +218,114 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <p>
      * The name of the attribute.
      * </p>
+     * <p>
+     * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>deregistration_delay.timeout_seconds</code> - The amount time for Elastic Load Balancing to wait before
-     * changing the state of a deregistering target from <code>draining</code> to <code>unused</code>. The range is
-     * 0-3600 seconds. The default value is 300 seconds.
+     * <code>deregistration_delay.timeout_seconds</code> - The amount of time, in seconds, for Elastic Load Balancing to
+     * wait before changing the state of a deregistering target from <code>draining</code> to <code>unused</code>. The
+     * range is 0-3600 seconds. The default value is 300 seconds.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported by only Application Load Balancers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered target
+     * receives a linearly increasing share of the traffic to the target group. After this time period ends, the target
+     * receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is disabled by
+     * default.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>proxy_protocol_v2.enabled</code> - [Network Load Balancers] Indicates whether Proxy Protocol version 2 is
-     * enabled.
+     * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is <code>true</code>
+     * or <code>false</code>. The default is <code>false</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>stickiness.enabled</code> - [Application Load Balancers] Indicates whether sticky sessions are enabled. The
-     * value is <code>true</code> or <code>false</code>.
+     * <code>stickiness.type</code> - The type of sticky sessions. The possible value is <code>lb_cookie</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>stickiness.type</code> - [Application Load Balancers] The type of sticky sessions. The possible value is
-     * <code>lb_cookie</code>.
+     * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a
+     * client should be routed to the same target. After this time period expires, the load balancer-generated cookie is
+     * considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).
      * </p>
      * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported by only Network Load Balancers:
+     * </p>
+     * <ul>
      * <li>
      * <p>
-     * <code>stickiness.lb_cookie.duration_seconds</code> - [Application Load Balancers] The time period, in seconds,
-     * during which requests from a client should be routed to the same target. After this time period expires, the load
-     * balancer-generated cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default
-     * value is 1 day (86400 seconds).
+     * <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is
+     * <code>true</code> or <code>false</code>. The default is <code>false</code>.
      * </p>
      * </li>
      * </ul>
      * 
      * @return The name of the attribute.</p>
+     *         <p>
+     *         The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>deregistration_delay.timeout_seconds</code> - The amount time for Elastic Load Balancing to wait
-     *         before changing the state of a deregistering target from <code>draining</code> to <code>unused</code>.
-     *         The range is 0-3600 seconds. The default value is 300 seconds.
+     *         <code>deregistration_delay.timeout_seconds</code> - The amount of time, in seconds, for Elastic Load
+     *         Balancing to wait before changing the state of a deregistering target from <code>draining</code> to
+     *         <code>unused</code>. The range is 0-3600 seconds. The default value is 300 seconds.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The following attributes are supported by only Application Load Balancers:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered
+     *         target receives a linearly increasing share of the traffic to the target group. After this time period
+     *         ends, the target receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start
+     *         mode is disabled by default.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>proxy_protocol_v2.enabled</code> - [Network Load Balancers] Indicates whether Proxy Protocol
-     *         version 2 is enabled.
+     *         <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is
+     *         <code>true</code> or <code>false</code>. The default is <code>false</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>stickiness.enabled</code> - [Application Load Balancers] Indicates whether sticky sessions are
-     *         enabled. The value is <code>true</code> or <code>false</code>.
+     *         <code>stickiness.type</code> - The type of sticky sessions. The possible value is <code>lb_cookie</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>stickiness.type</code> - [Application Load Balancers] The type of sticky sessions. The possible
-     *         value is <code>lb_cookie</code>.
+     *         <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in seconds, during which requests
+     *         from a client should be routed to the same target. After this time period expires, the load
+     *         balancer-generated cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The
+     *         default value is 1 day (86400 seconds).
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         The following attributes are supported by only Network Load Balancers:
+     *         </p>
+     *         <ul>
      *         <li>
      *         <p>
-     *         <code>stickiness.lb_cookie.duration_seconds</code> - [Application Load Balancers] The time period, in
-     *         seconds, during which requests from a client should be routed to the same target. After this time period
-     *         expires, the load balancer-generated cookie is considered stale. The range is 1 second to 1 week (604800
-     *         seconds). The default value is 1 day (86400 seconds).
+     *         <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value
+     *         is <code>true</code> or <code>false</code>. The default is <code>false</code>.
      *         </p>
      *         </li>
      */
@@ -241,76 +338,115 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <p>
      * The name of the attribute.
      * </p>
+     * <p>
+     * The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>deregistration_delay.timeout_seconds</code> - The amount time for Elastic Load Balancing to wait before
-     * changing the state of a deregistering target from <code>draining</code> to <code>unused</code>. The range is
-     * 0-3600 seconds. The default value is 300 seconds.
+     * <code>deregistration_delay.timeout_seconds</code> - The amount of time, in seconds, for Elastic Load Balancing to
+     * wait before changing the state of a deregistering target from <code>draining</code> to <code>unused</code>. The
+     * range is 0-3600 seconds. The default value is 300 seconds.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported by only Application Load Balancers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered target
+     * receives a linearly increasing share of the traffic to the target group. After this time period ends, the target
+     * receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is disabled by
+     * default.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>proxy_protocol_v2.enabled</code> - [Network Load Balancers] Indicates whether Proxy Protocol version 2 is
-     * enabled.
+     * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is <code>true</code>
+     * or <code>false</code>. The default is <code>false</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>stickiness.enabled</code> - [Application Load Balancers] Indicates whether sticky sessions are enabled. The
-     * value is <code>true</code> or <code>false</code>.
+     * <code>stickiness.type</code> - The type of sticky sessions. The possible value is <code>lb_cookie</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>stickiness.type</code> - [Application Load Balancers] The type of sticky sessions. The possible value is
-     * <code>lb_cookie</code>.
+     * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in seconds, during which requests from a
+     * client should be routed to the same target. After this time period expires, the load balancer-generated cookie is
+     * considered stale. The range is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).
      * </p>
      * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported by only Network Load Balancers:
+     * </p>
+     * <ul>
      * <li>
      * <p>
-     * <code>stickiness.lb_cookie.duration_seconds</code> - [Application Load Balancers] The time period, in seconds,
-     * during which requests from a client should be routed to the same target. After this time period expires, the load
-     * balancer-generated cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The default
-     * value is 1 day (86400 seconds).
+     * <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is
+     * <code>true</code> or <code>false</code>. The default is <code>false</code>.
      * </p>
      * </li>
      * </ul>
      * 
      * @param key
      *        The name of the attribute.</p>
+     *        <p>
+     *        The following attributes are supported by both Application Load Balancers and Network Load Balancers:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>deregistration_delay.timeout_seconds</code> - The amount time for Elastic Load Balancing to wait
-     *        before changing the state of a deregistering target from <code>draining</code> to <code>unused</code>. The
-     *        range is 0-3600 seconds. The default value is 300 seconds.
+     *        <code>deregistration_delay.timeout_seconds</code> - The amount of time, in seconds, for Elastic Load
+     *        Balancing to wait before changing the state of a deregistering target from <code>draining</code> to
+     *        <code>unused</code>. The range is 0-3600 seconds. The default value is 300 seconds.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attributes are supported by only Application Load Balancers:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered
+     *        target receives a linearly increasing share of the traffic to the target group. After this time period
+     *        ends, the target receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start
+     *        mode is disabled by default.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>proxy_protocol_v2.enabled</code> - [Network Load Balancers] Indicates whether Proxy Protocol version
-     *        2 is enabled.
+     *        <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled. The value is
+     *        <code>true</code> or <code>false</code>. The default is <code>false</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>stickiness.enabled</code> - [Application Load Balancers] Indicates whether sticky sessions are
-     *        enabled. The value is <code>true</code> or <code>false</code>.
+     *        <code>stickiness.type</code> - The type of sticky sessions. The possible value is <code>lb_cookie</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>stickiness.type</code> - [Application Load Balancers] The type of sticky sessions. The possible
-     *        value is <code>lb_cookie</code>.
+     *        <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in seconds, during which requests
+     *        from a client should be routed to the same target. After this time period expires, the load
+     *        balancer-generated cookie is considered stale. The range is 1 second to 1 week (604800 seconds). The
+     *        default value is 1 day (86400 seconds).
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attributes are supported by only Network Load Balancers:
+     *        </p>
+     *        <ul>
      *        <li>
      *        <p>
-     *        <code>stickiness.lb_cookie.duration_seconds</code> - [Application Load Balancers] The time period, in
-     *        seconds, during which requests from a client should be routed to the same target. After this time period
-     *        expires, the load balancer-generated cookie is considered stale. The range is 1 second to 1 week (604800
-     *        seconds). The default value is 1 day (86400 seconds).
+     *        <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value
+     *        is <code>true</code> or <code>false</code>. The default is <code>false</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

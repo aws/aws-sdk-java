@@ -29,6 +29,9 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Specifies the friendly name of the new secret.
      * </p>
+     * <p>
+     * The secret name must be ASCII letters, digits, or the following characters : /_+=,.@-
+     * </p>
      */
     private String name;
     /**
@@ -229,9 +232,14 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Specifies the friendly name of the new secret.
      * </p>
+     * <p>
+     * The secret name must be ASCII letters, digits, or the following characters : /_+=,.@-
+     * </p>
      * 
      * @param name
-     *        Specifies the friendly name of the new secret.
+     *        Specifies the friendly name of the new secret.</p>
+     *        <p>
+     *        The secret name must be ASCII letters, digits, or the following characters : /_+=,.@-
      */
 
     public void setName(String name) {
@@ -242,8 +250,13 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Specifies the friendly name of the new secret.
      * </p>
+     * <p>
+     * The secret name must be ASCII letters, digits, or the following characters : /_+=,.@-
+     * </p>
      * 
-     * @return Specifies the friendly name of the new secret.
+     * @return Specifies the friendly name of the new secret.</p>
+     *         <p>
+     *         The secret name must be ASCII letters, digits, or the following characters : /_+=,.@-
      */
 
     public String getName() {
@@ -254,9 +267,14 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Specifies the friendly name of the new secret.
      * </p>
+     * <p>
+     * The secret name must be ASCII letters, digits, or the following characters : /_+=,.@-
+     * </p>
      * 
      * @param name
-     *        Specifies the friendly name of the new secret.
+     *        Specifies the friendly name of the new secret.</p>
+     *        <p>
+     *        The secret name must be ASCII letters, digits, or the following characters : /_+=,.@-
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
