@@ -82,7 +82,6 @@ public class AmazonS3URI {
         // s3://*
         if ("s3".equalsIgnoreCase(uri.getScheme())) {
             this.region = null;
-            this.versionId = null;
             this.isPathStyle = false;
             this.bucket = uri.getAuthority();
 
