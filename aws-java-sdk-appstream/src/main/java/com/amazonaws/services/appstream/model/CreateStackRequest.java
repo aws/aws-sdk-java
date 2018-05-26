@@ -62,6 +62,13 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String feedbackURL;
+    /**
+     * <p>
+     * The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are
+     * enabled.
+     * </p>
+     */
+    private java.util.List<UserSetting> userSettings;
 
     /**
      * <p>
@@ -340,6 +347,84 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are
+     * enabled.
+     * </p>
+     * 
+     * @return The actions that are enabled or disabled for users during their streaming sessions. By default, these
+     *         actions are enabled.
+     */
+
+    public java.util.List<UserSetting> getUserSettings() {
+        return userSettings;
+    }
+
+    /**
+     * <p>
+     * The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are
+     * enabled.
+     * </p>
+     * 
+     * @param userSettings
+     *        The actions that are enabled or disabled for users during their streaming sessions. By default, these
+     *        actions are enabled.
+     */
+
+    public void setUserSettings(java.util.Collection<UserSetting> userSettings) {
+        if (userSettings == null) {
+            this.userSettings = null;
+            return;
+        }
+
+        this.userSettings = new java.util.ArrayList<UserSetting>(userSettings);
+    }
+
+    /**
+     * <p>
+     * The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are
+     * enabled.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUserSettings(java.util.Collection)} or {@link #withUserSettings(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param userSettings
+     *        The actions that are enabled or disabled for users during their streaming sessions. By default, these
+     *        actions are enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackRequest withUserSettings(UserSetting... userSettings) {
+        if (this.userSettings == null) {
+            setUserSettings(new java.util.ArrayList<UserSetting>(userSettings.length));
+        }
+        for (UserSetting ele : userSettings) {
+            this.userSettings.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The actions that are enabled or disabled for users during their streaming sessions. By default, these actions are
+     * enabled.
+     * </p>
+     * 
+     * @param userSettings
+     *        The actions that are enabled or disabled for users during their streaming sessions. By default, these
+     *        actions are enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackRequest withUserSettings(java.util.Collection<UserSetting> userSettings) {
+        setUserSettings(userSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -361,7 +446,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getRedirectURL() != null)
             sb.append("RedirectURL: ").append(getRedirectURL()).append(",");
         if (getFeedbackURL() != null)
-            sb.append("FeedbackURL: ").append(getFeedbackURL());
+            sb.append("FeedbackURL: ").append(getFeedbackURL()).append(",");
+        if (getUserSettings() != null)
+            sb.append("UserSettings: ").append(getUserSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -400,6 +487,10 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getFeedbackURL() != null && other.getFeedbackURL().equals(this.getFeedbackURL()) == false)
             return false;
+        if (other.getUserSettings() == null ^ this.getUserSettings() == null)
+            return false;
+        if (other.getUserSettings() != null && other.getUserSettings().equals(this.getUserSettings()) == false)
+            return false;
         return true;
     }
 
@@ -414,6 +505,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getStorageConnectors() == null) ? 0 : getStorageConnectors().hashCode());
         hashCode = prime * hashCode + ((getRedirectURL() == null) ? 0 : getRedirectURL().hashCode());
         hashCode = prime * hashCode + ((getFeedbackURL() == null) ? 0 : getFeedbackURL().hashCode());
+        hashCode = prime * hashCode + ((getUserSettings() == null) ? 0 : getUserSettings().hashCode());
         return hashCode;
     }
 

@@ -23,7 +23,8 @@ public enum StackAttribute {
     STORAGE_CONNECTORS("STORAGE_CONNECTORS"),
     REDIRECT_URL("REDIRECT_URL"),
     FEEDBACK_URL("FEEDBACK_URL"),
-    THEME_NAME("THEME_NAME");
+    THEME_NAME("THEME_NAME"),
+    USER_SETTINGS("USER_SETTINGS");
 
     private String value;
 

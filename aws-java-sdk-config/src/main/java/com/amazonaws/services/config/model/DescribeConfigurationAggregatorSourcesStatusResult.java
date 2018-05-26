@@ -26,7 +26,7 @@ public class DescribeConfigurationAggregatorSourcesStatusResult extends com.amaz
 
     /**
      * <p>
-     * Retuns an AggregatedSourceStatus object.
+     * Returns an AggregatedSourceStatus object.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AggregatedSourceStatus> aggregatedSourceStatusList;
@@ -40,10 +40,10 @@ public class DescribeConfigurationAggregatorSourcesStatusResult extends com.amaz
 
     /**
      * <p>
-     * Retuns an AggregatedSourceStatus object.
+     * Returns an AggregatedSourceStatus object.
      * </p>
      * 
-     * @return Retuns an AggregatedSourceStatus object.
+     * @return Returns an AggregatedSourceStatus object.
      */
 
     public java.util.List<AggregatedSourceStatus> getAggregatedSourceStatusList() {
@@ -55,11 +55,11 @@ public class DescribeConfigurationAggregatorSourcesStatusResult extends com.amaz
 
     /**
      * <p>
-     * Retuns an AggregatedSourceStatus object.
+     * Returns an AggregatedSourceStatus object.
      * </p>
      * 
      * @param aggregatedSourceStatusList
-     *        Retuns an AggregatedSourceStatus object.
+     *        Returns an AggregatedSourceStatus object.
      */
 
     public void setAggregatedSourceStatusList(java.util.Collection<AggregatedSourceStatus> aggregatedSourceStatusList) {
@@ -73,7 +73,7 @@ public class DescribeConfigurationAggregatorSourcesStatusResult extends com.amaz
 
     /**
      * <p>
-     * Retuns an AggregatedSourceStatus object.
+     * Returns an AggregatedSourceStatus object.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class DescribeConfigurationAggregatorSourcesStatusResult extends com.amaz
      * </p>
      * 
      * @param aggregatedSourceStatusList
-     *        Retuns an AggregatedSourceStatus object.
+     *        Returns an AggregatedSourceStatus object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class DescribeConfigurationAggregatorSourcesStatusResult extends com.amaz
 
     /**
      * <p>
-     * Retuns an AggregatedSourceStatus object.
+     * Returns an AggregatedSourceStatus object.
      * </p>
      * 
      * @param aggregatedSourceStatusList
-     *        Retuns an AggregatedSourceStatus object.
+     *        Returns an AggregatedSourceStatus object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

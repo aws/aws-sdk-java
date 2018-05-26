@@ -1,3 +1,20 @@
+# __1.11.337__ __2018-05-25__
+## __AWS Config__
+  - ### Features
+    - AWS Config adds support for retention period, allowing you to specify a retention period for your AWS Config configuration items.
+
+## __AWS Glue__
+  - ### Features
+    - AWS Glue now sends a delay notification to Amazon CloudWatch Events when an ETL job runs longer than the specified delay notification threshold.
+
+## __AWS IoT__
+  - ### Features
+    - We are exposing DELETION_IN_PROGRESS as a new job status in regards to the release of DeleteJob API.
+
+## __Amazon AppStream__
+  - ### Features
+    - This API update enables customers to control whether users can transfer data between their local devices and their streaming applications through file uploads and downloads, clipboard operations, or printing to local devices
+
 # __1.11.336__ __2018-05-24__
 ## __AWS CodeBuild__
   - ### Features

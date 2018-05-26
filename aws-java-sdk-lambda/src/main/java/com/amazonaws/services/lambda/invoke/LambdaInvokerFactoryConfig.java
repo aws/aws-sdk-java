@@ -17,6 +17,7 @@ package com.amazonaws.services.lambda.invoke;
 
 import com.amazonaws.annotation.SdkProtectedApi;
 import com.amazonaws.util.ValidationUtils;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
@@ -28,9 +29,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class LambdaInvokerFactoryConfig {
 
     private LambdaFunctionNameResolver lambdaFunctionNameResolver;
+    private final ObjectMapper objectMapper;
     private final String functionAlias;
     private final String functionVersion;
-    private final ObjectMapper objectMapper;
 
     /**
      * @deprecated Use {@link LambdaInvokerFactory#builder()} to configure invoker factory.
@@ -46,13 +47,17 @@ public class LambdaInvokerFactoryConfig {
                                String functionAlias,
                                String functionVersion) {
         this.lambdaFunctionNameResolver = lambdaFunctionNameResolver;
+        this.objectMapper = objectMapper;
         this.functionAlias = functionAlias;
         this.functionVersion = functionVersion;
-        this.objectMapper = objectMapper;
     }
 
     public LambdaFunctionNameResolver getLambdaFunctionNameResolver() {
         return lambdaFunctionNameResolver;
+    }
+
+    public ObjectMapper getObjectMapper() {
+        return objectMapper;
     }
 
     public String getFunctionAlias() {
@@ -61,10 +66,6 @@ public class LambdaInvokerFactoryConfig {
 
     public String getFunctionVersion() {
         return functionVersion;
-    }
-
-    public ObjectMapper getObjectMapper() {
-        return objectMapper;
     }
 
     /**

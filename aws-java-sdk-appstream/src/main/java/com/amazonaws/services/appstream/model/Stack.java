@@ -83,6 +83,13 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<StackError> stackErrors;
+    /**
+     * <p>
+     * The actions that are enabled or disabled for users during their streaming sessions. By default these actions are
+     * enabled.
+     * </p>
+     */
+    private java.util.List<UserSetting> userSettings;
 
     /**
      * <p>
@@ -511,6 +518,84 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The actions that are enabled or disabled for users during their streaming sessions. By default these actions are
+     * enabled.
+     * </p>
+     * 
+     * @return The actions that are enabled or disabled for users during their streaming sessions. By default these
+     *         actions are enabled.
+     */
+
+    public java.util.List<UserSetting> getUserSettings() {
+        return userSettings;
+    }
+
+    /**
+     * <p>
+     * The actions that are enabled or disabled for users during their streaming sessions. By default these actions are
+     * enabled.
+     * </p>
+     * 
+     * @param userSettings
+     *        The actions that are enabled or disabled for users during their streaming sessions. By default these
+     *        actions are enabled.
+     */
+
+    public void setUserSettings(java.util.Collection<UserSetting> userSettings) {
+        if (userSettings == null) {
+            this.userSettings = null;
+            return;
+        }
+
+        this.userSettings = new java.util.ArrayList<UserSetting>(userSettings);
+    }
+
+    /**
+     * <p>
+     * The actions that are enabled or disabled for users during their streaming sessions. By default these actions are
+     * enabled.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUserSettings(java.util.Collection)} or {@link #withUserSettings(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param userSettings
+     *        The actions that are enabled or disabled for users during their streaming sessions. By default these
+     *        actions are enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Stack withUserSettings(UserSetting... userSettings) {
+        if (this.userSettings == null) {
+            setUserSettings(new java.util.ArrayList<UserSetting>(userSettings.length));
+        }
+        for (UserSetting ele : userSettings) {
+            this.userSettings.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The actions that are enabled or disabled for users during their streaming sessions. By default these actions are
+     * enabled.
+     * </p>
+     * 
+     * @param userSettings
+     *        The actions that are enabled or disabled for users during their streaming sessions. By default these
+     *        actions are enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Stack withUserSettings(java.util.Collection<UserSetting> userSettings) {
+        setUserSettings(userSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -538,7 +623,9 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
         if (getFeedbackURL() != null)
             sb.append("FeedbackURL: ").append(getFeedbackURL()).append(",");
         if (getStackErrors() != null)
-            sb.append("StackErrors: ").append(getStackErrors());
+            sb.append("StackErrors: ").append(getStackErrors()).append(",");
+        if (getUserSettings() != null)
+            sb.append("UserSettings: ").append(getUserSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -589,6 +676,10 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStackErrors() != null && other.getStackErrors().equals(this.getStackErrors()) == false)
             return false;
+        if (other.getUserSettings() == null ^ this.getUserSettings() == null)
+            return false;
+        if (other.getUserSettings() != null && other.getUserSettings().equals(this.getUserSettings()) == false)
+            return false;
         return true;
     }
 
@@ -606,6 +697,7 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRedirectURL() == null) ? 0 : getRedirectURL().hashCode());
         hashCode = prime * hashCode + ((getFeedbackURL() == null) ? 0 : getFeedbackURL().hashCode());
         hashCode = prime * hashCode + ((getStackErrors() == null) ? 0 : getStackErrors().hashCode());
+        hashCode = prime * hashCode + ((getUserSettings() == null) ? 0 : getUserSettings().hashCode());
         return hashCode;
     }
 

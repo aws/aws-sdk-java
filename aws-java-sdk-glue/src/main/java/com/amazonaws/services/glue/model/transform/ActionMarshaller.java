@@ -35,6 +35,8 @@ public class ActionMarshaller {
             .marshallLocationName("Arguments").build();
     private static final MarshallingInfo<Integer> TIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Timeout").build();
+    private static final MarshallingInfo<StructuredPojo> NOTIFICATIONPROPERTY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotificationProperty").build();
 
     private static final ActionMarshaller instance = new ActionMarshaller();
 
@@ -55,6 +57,7 @@ public class ActionMarshaller {
             protocolMarshaller.marshall(action.getJobName(), JOBNAME_BINDING);
             protocolMarshaller.marshall(action.getArguments(), ARGUMENTS_BINDING);
             protocolMarshaller.marshall(action.getTimeout(), TIMEOUT_BINDING);
+            protocolMarshaller.marshall(action.getNotificationProperty(), NOTIFICATIONPROPERTY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

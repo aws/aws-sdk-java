@@ -22,7 +22,8 @@ public enum JobStatus {
 
     IN_PROGRESS("IN_PROGRESS"),
     CANCELED("CANCELED"),
-    COMPLETED("COMPLETED");
+    COMPLETED("COMPLETED"),
+    DELETION_IN_PROGRESS("DELETION_IN_PROGRESS");
 
     private String value;
 

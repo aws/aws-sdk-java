@@ -134,6 +134,12 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Integer timeout;
+    /**
+     * <p>
+     * Specifies configuration properties of a job run notification.
+     * </p>
+     */
+    private NotificationProperty notificationProperty;
 
     /**
      * <p>
@@ -908,6 +914,46 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies configuration properties of a job run notification.
+     * </p>
+     * 
+     * @param notificationProperty
+     *        Specifies configuration properties of a job run notification.
+     */
+
+    public void setNotificationProperty(NotificationProperty notificationProperty) {
+        this.notificationProperty = notificationProperty;
+    }
+
+    /**
+     * <p>
+     * Specifies configuration properties of a job run notification.
+     * </p>
+     * 
+     * @return Specifies configuration properties of a job run notification.
+     */
+
+    public NotificationProperty getNotificationProperty() {
+        return this.notificationProperty;
+    }
+
+    /**
+     * <p>
+     * Specifies configuration properties of a job run notification.
+     * </p>
+     * 
+     * @param notificationProperty
+     *        Specifies configuration properties of a job run notification.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobRun withNotificationProperty(NotificationProperty notificationProperty) {
+        setNotificationProperty(notificationProperty);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -947,7 +993,9 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
         if (getExecutionTime() != null)
             sb.append("ExecutionTime: ").append(getExecutionTime()).append(",");
         if (getTimeout() != null)
-            sb.append("Timeout: ").append(getTimeout());
+            sb.append("Timeout: ").append(getTimeout()).append(",");
+        if (getNotificationProperty() != null)
+            sb.append("NotificationProperty: ").append(getNotificationProperty());
         sb.append("}");
         return sb.toString();
     }
@@ -1022,6 +1070,10 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTimeout() != null && other.getTimeout().equals(this.getTimeout()) == false)
             return false;
+        if (other.getNotificationProperty() == null ^ this.getNotificationProperty() == null)
+            return false;
+        if (other.getNotificationProperty() != null && other.getNotificationProperty().equals(this.getNotificationProperty()) == false)
+            return false;
         return true;
     }
 
@@ -1045,6 +1097,7 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAllocatedCapacity() == null) ? 0 : getAllocatedCapacity().hashCode());
         hashCode = prime * hashCode + ((getExecutionTime() == null) ? 0 : getExecutionTime().hashCode());
         hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
+        hashCode = prime * hashCode + ((getNotificationProperty() == null) ? 0 : getNotificationProperty().hashCode());
         return hashCode;
     }
 

@@ -34,7 +34,6 @@ import com.amazonaws.regions.DefaultAwsRegionProviderChain;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.RegionUtils;
 import com.amazonaws.regions.Regions;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -236,7 +235,23 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
      * @return This object for method chaining.
      */
     public final Subclass withRegion(String region) {
-        return withRegion(RegionUtils.getRegion(region));
+        return withRegion(getRegionObject(region));
+    }
+
+    /**
+     * Lookups the {@link Region} object for the given string region name.
+     *
+     * @param regionStr Region name.
+     * @return Region object.
+     * @throws SdkClientException If region cannot be found in the metadata.
+     */
+    private Region getRegionObject(String regionStr) {
+        Region regionObj = RegionUtils.getRegion(regionStr);
+        if (regionObj == null) {
+            throw new SdkClientException(String.format("Could not find region information for '%s' in SDK metadata.",
+                                                             regionStr));
+        }
+        return regionObj;
     }
 
     /**
@@ -366,7 +381,7 @@ public abstract class AwsClientBuilder<Subclass extends AwsClientBuilder, TypeTo
         } else {
             final String region = determineRegionFromRegionProvider();
             if (region != null) {
-                client.setRegion(RegionUtils.getRegion(region));
+                client.setRegion(getRegionObject(region));
             } else {
                 throw new SdkClientException(
                         "Unable to find a region via the region provider chain. " +

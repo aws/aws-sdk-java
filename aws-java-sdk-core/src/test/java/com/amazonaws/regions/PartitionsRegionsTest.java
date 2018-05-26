@@ -14,6 +14,8 @@
  */
 package com.amazonaws.regions;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -58,9 +60,9 @@ public class PartitionsRegionsTest {
     }
 
     @Test
-    public void region_name_not_matches_regionregex_returns_null() {
+    public void region_name_not_matches_regionregex_returns_defaultPartition() {
         final String regionName = "ap-new-region-1";
-        Assert.assertNull(RegionUtils.getRegion(regionName));
+        assertEquals("aws", RegionUtils.getRegion(regionName).getPartition());
     }
 
     @Test

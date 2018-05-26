@@ -288,6 +288,23 @@ public interface AmazonConfig {
 
     /**
      * <p>
+     * Deletes the retention configuration.
+     * </p>
+     * 
+     * @param deleteRetentionConfigurationRequest
+     * @return Result of the DeleteRetentionConfiguration operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
+     * @throws NoSuchRetentionConfigurationException
+     *         You have specified a retention configuration that does not exist.
+     * @sample AmazonConfig.DeleteRetentionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRetentionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteRetentionConfigurationResult deleteRetentionConfiguration(DeleteRetentionConfigurationRequest deleteRetentionConfigurationRequest);
+
+    /**
+     * <p>
      * Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the specified delivery channel. After
      * the delivery has started, AWS Config sends the following notifications using an Amazon SNS topic that you have
      * specified.
@@ -739,6 +756,32 @@ public interface AmazonConfig {
 
     /**
      * <p>
+     * Returns the details of one or more retention configurations. If the retention configuration name is not
+     * specified, this action returns the details for all the retention configurations for that account.
+     * </p>
+     * <note>
+     * <p>
+     * Currently, AWS Config supports only one retention configuration per region in your account.
+     * </p>
+     * </note>
+     * 
+     * @param describeRetentionConfigurationsRequest
+     * @return Result of the DescribeRetentionConfigurations operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
+     * @throws NoSuchRetentionConfigurationException
+     *         You have specified a retention configuration that does not exist.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
+     * @sample AmazonConfig.DescribeRetentionConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRetentionConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeRetentionConfigurationsResult describeRetentionConfigurations(DescribeRetentionConfigurationsRequest describeRetentionConfigurationsRequest);
+
+    /**
+     * <p>
      * Returns the evaluation results for the specified AWS Config rule for a specific resource in a rule. The results
      * indicate which AWS resources were evaluated by the rule, when each resource was last evaluated, and whether each
      * resource complies with the rule.
@@ -970,7 +1013,9 @@ public interface AmazonConfig {
     /**
      * <p>
      * Returns a list of configuration items for the specified resource. The list contains details about each state of
-     * the resource during the specified time interval.
+     * the resource during the specified time interval. If you specified a retention period to retain your
+     * <code>ConfigurationItems</code> between a minimum of 30 days and a maximum of 7 years (2557 days), AWS Config
+     * returns the <code>ConfigurationItems</code> for the specified retention period.
      * </p>
      * <p>
      * The response is paginated. By default, AWS Config returns a limit of 10 configuration items per page. You can
@@ -1277,6 +1322,32 @@ public interface AmazonConfig {
      *      Documentation</a>
      */
     PutEvaluationsResult putEvaluations(PutEvaluationsRequest putEvaluationsRequest);
+
+    /**
+     * <p>
+     * Creates and updates the retention configuration with details about retention period (number of days) that AWS
+     * Config stores your historical information. The API creates the <code>RetentionConfiguration</code> object and
+     * names the object as <b>default</b>. When you have a <code>RetentionConfiguration</code> object named
+     * <b>default</b>, calling the API modifies the default object.
+     * </p>
+     * <note>
+     * <p>
+     * Currently, AWS Config supports only one retention configuration per region in your account.
+     * </p>
+     * </note>
+     * 
+     * @param putRetentionConfigurationRequest
+     * @return Result of the PutRetentionConfiguration operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
+     * @throws MaxNumberOfRetentionConfigurationsExceededException
+     *         Failed to add the retention configuration because a retention configuration with that name already
+     *         exists.
+     * @sample AmazonConfig.PutRetentionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRetentionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutRetentionConfigurationResult putRetentionConfiguration(PutRetentionConfigurationRequest putRetentionConfigurationRequest);
 
     /**
      * <p>

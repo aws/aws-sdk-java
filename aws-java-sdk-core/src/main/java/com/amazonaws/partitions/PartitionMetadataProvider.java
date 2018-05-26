@@ -81,7 +81,13 @@ public class PartitionMetadataProvider extends AbstractRegionMetadataProvider {
                 return cacheRegion(new PartitionRegionImpl(regionName, p));
             }
         }
-        return null;
+        // If we can't match the regex with any partition then assume the AWS partition if it's available.
+        Partition awsPartition = partitionMap.get("aws");
+        if (awsPartition != null) {
+            return cacheRegion(new PartitionRegionImpl(regionName, awsPartition));
+        } else {
+            return null;
+        }
     }
 
     private Region getRegionFromCache(String regionName) {

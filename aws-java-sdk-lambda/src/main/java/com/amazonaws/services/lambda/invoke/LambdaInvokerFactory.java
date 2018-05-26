@@ -71,8 +71,8 @@ import java.nio.ByteBuffer;
 public final class LambdaInvokerFactory {
 
     static final ObjectMapper DEFAULT_MAPPER = new ObjectMapper()
-            .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
-            .enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
+        .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
+        .enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
 
     /**
      * Creates a new Lambda invoker implementing the given interface and wrapping the given {@code AWSLambda} client.
@@ -140,9 +140,16 @@ public final class LambdaInvokerFactory {
          * Sets the ObjectMapper used to (de-)serialize payload if you do not wish to use the default mapper.
          * (see {@link ObjectMapper} for configuration options)
          *
+         * <p>The FAIL_ON_UNKNOWN_PROPERTIES property <b>MUST</b> be disabled for any custom object mapper so that
+         * the response unmarshalling is forward compatible with any new fields your Lambda function may return but might
+         * not be modeled.</p>
+         *
          * @return This current object for method chaining.
          */
         public Builder objectMapper(ObjectMapper objectMapper) {
+            if (objectMapper.isEnabled(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)) {
+                throw new IllegalArgumentException("FAIL_ON_UNKNOWN_PROPERTIES must be disabled on any custom ObjectMapper used");
+            }
             this.objectMapper = objectMapper;
             return this;
         }
@@ -201,7 +208,8 @@ public final class LambdaInvokerFactory {
         }
 
         private LambdaInvokerFactoryConfig getConfiguration() {
-            return new LambdaInvokerFactoryConfig(resolveFunctionNameResolver(), resolveObjectMapper(), functionAlias, functionVersion);
+            return new LambdaInvokerFactoryConfig(resolveFunctionNameResolver(), resolveObjectMapper(),
+                                                  functionAlias, functionVersion);
         }
     }
 
@@ -213,11 +221,13 @@ public final class LambdaInvokerFactory {
         private final AWSLambda awsLambda;
         private final Log log;
         private final LambdaInvokerFactoryConfig config;
+        private final ObjectMapper mapper;
 
         public LambdaInvocationHandler(Class<?> interfaceClass, AWSLambda awsLambda, LambdaInvokerFactoryConfig config) {
             this.awsLambda = awsLambda;
             this.log = LogFactory.getLog(interfaceClass);
             this.config = config;
+            this.mapper = config.getObjectMapper();
         }
 
         @Override
@@ -276,7 +286,7 @@ public final class LambdaInvokerFactory {
             if (input != null) {
                 try {
 
-                    String payload = config.getObjectMapper().writer().writeValueAsString(input);
+                    String payload = mapper.writer().writeValueAsString(input);
                     if (log.isDebugEnabled()) {
                         log.debug("Serialized request object to '" + payload + "'");
                     }
@@ -442,9 +452,9 @@ public final class LambdaInvokerFactory {
                 return null;
             }
 
-            JavaType javaType = config.getObjectMapper().getTypeFactory().constructType(type);
+            JavaType javaType = mapper.getTypeFactory().constructType(type);
 
-            return config.getObjectMapper().reader(javaType).readValue(BinaryUtils.copyAllBytesFrom(payload));
+            return mapper.reader(javaType).readValue(BinaryUtils.copyAllBytesFrom(payload));
         }
     }
 }

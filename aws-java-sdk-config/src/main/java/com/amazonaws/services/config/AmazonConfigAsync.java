@@ -402,6 +402,41 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
+     * Deletes the retention configuration.
+     * </p>
+     * 
+     * @param deleteRetentionConfigurationRequest
+     * @return A Java Future containing the result of the DeleteRetentionConfiguration operation returned by the
+     *         service.
+     * @sample AmazonConfigAsync.DeleteRetentionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRetentionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRetentionConfigurationResult> deleteRetentionConfigurationAsync(
+            DeleteRetentionConfigurationRequest deleteRetentionConfigurationRequest);
+
+    /**
+     * <p>
+     * Deletes the retention configuration.
+     * </p>
+     * 
+     * @param deleteRetentionConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRetentionConfiguration operation returned by the
+     *         service.
+     * @sample AmazonConfigAsyncHandler.DeleteRetentionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRetentionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRetentionConfigurationResult> deleteRetentionConfigurationAsync(
+            DeleteRetentionConfigurationRequest deleteRetentionConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRetentionConfigurationRequest, DeleteRetentionConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the specified delivery channel. After
      * the delivery has started, AWS Config sends the following notifications using an Amazon SNS topic that you have
      * specified.
@@ -1255,6 +1290,53 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
+     * Returns the details of one or more retention configurations. If the retention configuration name is not
+     * specified, this action returns the details for all the retention configurations for that account.
+     * </p>
+     * <note>
+     * <p>
+     * Currently, AWS Config supports only one retention configuration per region in your account.
+     * </p>
+     * </note>
+     * 
+     * @param describeRetentionConfigurationsRequest
+     * @return A Java Future containing the result of the DescribeRetentionConfigurations operation returned by the
+     *         service.
+     * @sample AmazonConfigAsync.DescribeRetentionConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRetentionConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRetentionConfigurationsResult> describeRetentionConfigurationsAsync(
+            DescribeRetentionConfigurationsRequest describeRetentionConfigurationsRequest);
+
+    /**
+     * <p>
+     * Returns the details of one or more retention configurations. If the retention configuration name is not
+     * specified, this action returns the details for all the retention configurations for that account.
+     * </p>
+     * <note>
+     * <p>
+     * Currently, AWS Config supports only one retention configuration per region in your account.
+     * </p>
+     * </note>
+     * 
+     * @param describeRetentionConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeRetentionConfigurations operation returned by the
+     *         service.
+     * @sample AmazonConfigAsyncHandler.DescribeRetentionConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRetentionConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRetentionConfigurationsResult> describeRetentionConfigurationsAsync(
+            DescribeRetentionConfigurationsRequest describeRetentionConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeRetentionConfigurationsRequest, DescribeRetentionConfigurationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the evaluation results for the specified AWS Config rule for a specific resource in a rule. The results
      * indicate which AWS resources were evaluated by the rule, when each resource was last evaluated, and whether each
      * resource complies with the rule.
@@ -1701,7 +1783,9 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * Returns a list of configuration items for the specified resource. The list contains details about each state of
-     * the resource during the specified time interval.
+     * the resource during the specified time interval. If you specified a retention period to retain your
+     * <code>ConfigurationItems</code> between a minimum of 30 days and a maximum of 7 years (2557 days), AWS Config
+     * returns the <code>ConfigurationItems</code> for the specified retention period.
      * </p>
      * <p>
      * The response is paginated. By default, AWS Config returns a limit of 10 configuration items per page. You can
@@ -1729,7 +1813,9 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * Returns a list of configuration items for the specified resource. The list contains details about each state of
-     * the resource during the specified time interval.
+     * the resource during the specified time interval. If you specified a retention period to retain your
+     * <code>ConfigurationItems</code> between a minimum of 30 days and a maximum of 7 years (2557 days), AWS Config
+     * returns the <code>ConfigurationItems</code> for the specified retention period.
      * </p>
      * <p>
      * The response is paginated. By default, AWS Config returns a limit of 10 configuration items per page. You can
@@ -2173,6 +2259,55 @@ public interface AmazonConfigAsync extends AmazonConfig {
      */
     java.util.concurrent.Future<PutEvaluationsResult> putEvaluationsAsync(PutEvaluationsRequest putEvaluationsRequest,
             com.amazonaws.handlers.AsyncHandler<PutEvaluationsRequest, PutEvaluationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates and updates the retention configuration with details about retention period (number of days) that AWS
+     * Config stores your historical information. The API creates the <code>RetentionConfiguration</code> object and
+     * names the object as <b>default</b>. When you have a <code>RetentionConfiguration</code> object named
+     * <b>default</b>, calling the API modifies the default object.
+     * </p>
+     * <note>
+     * <p>
+     * Currently, AWS Config supports only one retention configuration per region in your account.
+     * </p>
+     * </note>
+     * 
+     * @param putRetentionConfigurationRequest
+     * @return A Java Future containing the result of the PutRetentionConfiguration operation returned by the service.
+     * @sample AmazonConfigAsync.PutRetentionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRetentionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutRetentionConfigurationResult> putRetentionConfigurationAsync(
+            PutRetentionConfigurationRequest putRetentionConfigurationRequest);
+
+    /**
+     * <p>
+     * Creates and updates the retention configuration with details about retention period (number of days) that AWS
+     * Config stores your historical information. The API creates the <code>RetentionConfiguration</code> object and
+     * names the object as <b>default</b>. When you have a <code>RetentionConfiguration</code> object named
+     * <b>default</b>, calling the API modifies the default object.
+     * </p>
+     * <note>
+     * <p>
+     * Currently, AWS Config supports only one retention configuration per region in your account.
+     * </p>
+     * </note>
+     * 
+     * @param putRetentionConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutRetentionConfiguration operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.PutRetentionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRetentionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutRetentionConfigurationResult> putRetentionConfigurationAsync(
+            PutRetentionConfigurationRequest putRetentionConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutRetentionConfigurationRequest, PutRetentionConfigurationResult> asyncHandler);
 
     /**
      * <p>

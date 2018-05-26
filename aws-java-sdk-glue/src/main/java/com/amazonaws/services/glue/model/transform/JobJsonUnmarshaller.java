@@ -101,6 +101,10 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                     context.nextToken();
                     job.setTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("NotificationProperty", targetDepth)) {
+                    context.nextToken();
+                    job.setNotificationProperty(NotificationPropertyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
