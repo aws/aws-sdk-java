@@ -45,7 +45,7 @@ dependencies.
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-bom</artifactId>
-      <version>1.11.337</version>
+      <version>1.11.338</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -123,6 +123,16 @@ Please use these community resources for getting help. We use GitHub [issues][sd
 * **1.10.x** - Approved. Only major critical bugs will be fixed. To get the new features, upgrade to
     1.11.x version of the SDK.
 
+## Security
+
+### Jackson Vulnerabilities
+
+#### CVE 2017-15095 & CVE-2018-7489
+
+The AWS SDK for Java is not directly affected by these findings. The SDKs own use of ObjectMapper does not use polymorphic deserialization so deserialization gadgets cannot be exploited. The SDK continues to depend on Jackson 2.6.x due to its compatbility with Java 6. Consumers of the SDK can override the version of Jackson in their own application to a newer version.
+
+A good explanation of this type of exploit can be found [here][jackson-deserialization-gadget].
+
 [aws-iam-credentials]: http://docs.aws.amazon.com/java-sdk/latest/developer-guide/java-dg-roles.html
 [aws]: http://aws.amazon.com/
 [blog]: https://aws.amazon.com/blogs/developer/category/java/
@@ -145,3 +155,4 @@ Please use these community resources for getting help. We use GitHub [issues][sd
 [features]: https://github.com/aws/aws-sdk-java/issues?q=is%3Aopen+is%3Aissue+label%3A%22Feature+Request%22
 [support-center]: https://console.aws.amazon.com/support/
 [console]: https://console.aws.amazon.com
+[jackson-deserialization-gadget]: https://medium.com/@cowtowncoder/on-jackson-cves-dont-panic-here-is-what-you-need-to-know-54cd0d6e8062

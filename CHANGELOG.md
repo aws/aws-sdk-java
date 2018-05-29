@@ -1,3 +1,8 @@
+# __1.11.338__ __2018-05-29__
+## __AWS Performance Insights__
+  - ### Features
+    - Performance Insights is a feature of Amazon Relational Database Service (RDS) that helps you quickly assess the load on your database, and determine when and where to take action. You can use the SDK to retrieve Performance Insights data and integrate your monitoring solutions.
+
 # __1.11.337__ __2018-05-25__
 ## __AWS Config__
   - ### Features
