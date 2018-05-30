@@ -16,6 +16,7 @@ package com.amazonaws.services.simpleworkflow;
 
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.ClientConfigurationFactory;
+import com.amazonaws.PredefinedClientConfigurations;
 import com.amazonaws.annotation.SdkInternalApi;
 
 /*
@@ -27,6 +28,6 @@ public class AmazonSimpleWorkflowClientConfigurationFactory extends ClientConfig
 
     @Override
     protected ClientConfiguration getDefaultConfig() {
-        return super.getDefaultConfig().withMaxConnections(1000).withSocketTimeout(90000);
+        return PredefinedClientConfigurations.swfDefault();
     }
 }
