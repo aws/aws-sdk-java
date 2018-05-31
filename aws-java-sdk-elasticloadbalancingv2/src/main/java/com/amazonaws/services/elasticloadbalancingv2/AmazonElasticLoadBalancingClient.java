@@ -331,9 +331,11 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
         exceptionUnmarshallers.add(new TargetGroupAssociationLimitExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidSecurityGroupExceptionUnmarshaller());
         exceptionUnmarshallers.add(new IncompatibleProtocolsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyActionsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyListenersExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DuplicateLoadBalancerNameExceptionUnmarshaller());
         exceptionUnmarshallers.add(new OperationNotPermittedExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidLoadBalancerActionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CertificateNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DuplicateTagKeysExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyTagsExceptionUnmarshaller());
@@ -540,6 +542,10 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *         You've reached the limit on the number of times a target can be registered with a load balancer.
      * @throws TooManyTargetsException
      *         You've reached the limit on the number of targets.
+     * @throws TooManyActionsException
+     *         You've reached the limit on the number of actions per rule.
+     * @throws InvalidLoadBalancerActionException
+     *         The requested action is not valid.
      * @sample AmazonElasticLoadBalancing.CreateListener
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateListener"
      *      target="_top">AWS API Documentation</a>
@@ -690,9 +696,9 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * Creates a rule for the specified listener. The listener must be associated with an Application Load Balancer.
      * </p>
      * <p>
-     * Rules are evaluated in priority order, from the lowest value to the highest value. When the condition for a rule
-     * is met, the specified action is taken. If no conditions are met, the action for the default rule is taken. For
-     * more information, see <a href=
+     * Rules are evaluated in priority order, from the lowest value to the highest value. When the conditions for a rule
+     * are met, its actions are performed. If the conditions for no rules are met, the actions for the default rule are
+     * performed. For more information, see <a href=
      * "http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules"
      * >Listener Rules</a> in the <i>Application Load Balancers Guide</i>.
      * </p>
@@ -723,6 +729,12 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *         You've reached the limit on the number of times a target can be registered with a load balancer.
      * @throws TooManyTargetsException
      *         You've reached the limit on the number of targets.
+     * @throws UnsupportedProtocolException
+     *         The specified protocol is not supported.
+     * @throws TooManyActionsException
+     *         You've reached the limit on the number of actions per rule.
+     * @throws InvalidLoadBalancerActionException
+     *         The requested action is not valid.
      * @sample AmazonElasticLoadBalancing.CreateRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateRule"
      *      target="_top">AWS API Documentation</a>
@@ -1243,6 +1255,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *         The specified listener does not exist.
      * @throws LoadBalancerNotFoundException
      *         The specified load balancer does not exist.
+     * @throws UnsupportedProtocolException
+     *         The specified protocol is not supported.
      * @sample AmazonElasticLoadBalancing.DescribeListeners
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeListeners"
      *      target="_top">AWS API Documentation</a>
@@ -1411,6 +1425,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *         The specified listener does not exist.
      * @throws RuleNotFoundException
      *         The specified rule does not exist.
+     * @throws UnsupportedProtocolException
+     *         The specified protocol is not supported.
      * @sample AmazonElasticLoadBalancing.DescribeRules
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeRules"
      *      target="_top">AWS API Documentation</a>
@@ -1777,6 +1793,10 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *         You've reached the limit on the number of times a target can be registered with a load balancer.
      * @throws TooManyTargetsException
      *         You've reached the limit on the number of targets.
+     * @throws TooManyActionsException
+     *         You've reached the limit on the number of actions per rule.
+     * @throws InvalidLoadBalancerActionException
+     *         The requested action is not valid.
      * @sample AmazonElasticLoadBalancing.ModifyListener
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListener"
      *      target="_top">AWS API Documentation</a>
@@ -1885,7 +1905,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * Any existing properties that you do not modify retain their current values.
      * </p>
      * <p>
-     * To modify the default action, use <a>ModifyListener</a>.
+     * To modify the actions for the default rule, use <a>ModifyListener</a>.
      * </p>
      * 
      * @param modifyRuleRequest
@@ -1904,6 +1924,12 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *         You've reached the limit on the number of targets.
      * @throws TargetGroupNotFoundException
      *         The specified target group does not exist.
+     * @throws UnsupportedProtocolException
+     *         The specified protocol is not supported.
+     * @throws TooManyActionsException
+     *         You've reached the limit on the number of actions per rule.
+     * @throws InvalidLoadBalancerActionException
+     *         The requested action is not valid.
      * @sample AmazonElasticLoadBalancing.ModifyRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyRule"
      *      target="_top">AWS API Documentation</a>

@@ -351,9 +351,9 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * Creates a rule for the specified listener. The listener must be associated with an Application Load Balancer.
      * </p>
      * <p>
-     * Rules are evaluated in priority order, from the lowest value to the highest value. When the condition for a rule
-     * is met, the specified action is taken. If no conditions are met, the action for the default rule is taken. For
-     * more information, see <a href=
+     * Rules are evaluated in priority order, from the lowest value to the highest value. When the conditions for a rule
+     * are met, its actions are performed. If the conditions for no rules are met, the actions for the default rule are
+     * performed. For more information, see <a href=
      * "http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules"
      * >Listener Rules</a> in the <i>Application Load Balancers Guide</i>.
      * </p>
@@ -375,9 +375,9 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * Creates a rule for the specified listener. The listener must be associated with an Application Load Balancer.
      * </p>
      * <p>
-     * Rules are evaluated in priority order, from the lowest value to the highest value. When the condition for a rule
-     * is met, the specified action is taken. If no conditions are met, the action for the default rule is taken. For
-     * more information, see <a href=
+     * Rules are evaluated in priority order, from the lowest value to the highest value. When the conditions for a rule
+     * are met, its actions are performed. If the conditions for no rules are met, the actions for the default rule are
+     * performed. For more information, see <a href=
      * "http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules"
      * >Listener Rules</a> in the <i>Application Load Balancers Guide</i>.
      * </p>
@@ -1198,7 +1198,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * Any existing properties that you do not modify retain their current values.
      * </p>
      * <p>
-     * To modify the default action, use <a>ModifyListener</a>.
+     * To modify the actions for the default rule, use <a>ModifyListener</a>.
      * </p>
      * 
      * @param modifyRuleRequest
@@ -1217,7 +1217,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * Any existing properties that you do not modify retain their current values.
      * </p>
      * <p>
-     * To modify the default action, use <a>ModifyListener</a>.
+     * To modify the actions for the default rule, use <a>ModifyListener</a>.
      * </p>
      * 
      * @param modifyRuleRequest

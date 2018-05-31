@@ -102,6 +102,10 @@ public class Utils {
      * * @return Prefix to use when writing model files (service and intermediate).
      */
     public static String getFileNamePrefix(ServiceModel serviceModel) {
+        //TODO: fix this
+        if ("neptune-2014-10-31".equals(serviceModel.getMetadata().getUid())) {
+            return "neptune-2014-10-31";
+        }
         return String.format("%s-%s", serviceModel.getMetadata().getEndpointPrefix(), serviceModel.getMetadata().getApiVersion());
     }
 

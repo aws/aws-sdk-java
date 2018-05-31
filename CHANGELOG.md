@@ -1,3 +1,16 @@
+# __1.11.339__ __2018-05-30__
+## __Amazon Neptune__
+  - ### Features
+    - Amazon Neptune is a fast, reliable graph database service that makes it easy to build and run applications that work with highly connected datasets. Neptune supports popular graph models Property Graph and W3C's Resource Description Frame (RDF), and their respective query languages Apache TinkerPop Gremlin 3.3.2 and SPARQL 1.1. 
+
+## __Amazon Route53__
+  - ### Bugfixes
+    - Reverting a breaking change in ListHostedZonesByNameResult behavior introduced in version 1.11.321. See https://github.com/aws/aws-sdk-java/pull/1555 for more details.
+
+## __Elastic Load Balancing__
+  - ### Features
+    - This release of Elastic Load Balancing introduces user authentication on Application Load Balancer.
+
 # __1.11.338__ __2018-05-29__
 ## __AWS Performance Insights__
   - ### Features

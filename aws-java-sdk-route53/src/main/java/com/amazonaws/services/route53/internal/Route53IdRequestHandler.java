@@ -28,7 +28,6 @@ import com.amazonaws.services.route53.model.GetHostedZoneResult;
 import com.amazonaws.services.route53.model.GetReusableDelegationSetResult;
 import com.amazonaws.services.route53.model.HostedZone;
 import com.amazonaws.services.route53.model.ListHostedZonesResult;
-import com.amazonaws.services.route53.model.ListHostedZonesByNameResult;
 import com.amazonaws.services.route53.model.ListResourceRecordSetsResult;
 import com.amazonaws.services.route53.model.ListReusableDelegationSetsResult;
 import com.amazonaws.services.route53.model.ResourceRecordSet;
@@ -67,9 +66,6 @@ public class Route53IdRequestHandler extends AbstractRequestHandler {
             removePrefix(result.getHostedZone());
         } else if (obj instanceof ListHostedZonesResult) {
             ListHostedZonesResult result = (ListHostedZonesResult)obj;
-            for (HostedZone zone : result.getHostedZones()) removePrefix(zone);
-        } else if (obj instanceof ListHostedZonesByNameResult) {
-            ListHostedZonesByNameResult result = (ListHostedZonesByNameResult)obj;
             for (HostedZone zone : result.getHostedZones()) removePrefix(zone);
         } else if (obj instanceof ListResourceRecordSetsResult) {
             ListResourceRecordSetsResult result = (ListResourceRecordSetsResult)obj;

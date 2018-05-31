@@ -52,6 +52,21 @@ public class ActionStaxUnmarshaller implements Unmarshaller<Action, StaxUnmarsha
                     action.setTargetGroupArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("AuthenticateOidcConfig", targetDepth)) {
+                    action.setAuthenticateOidcConfig(AuthenticateOidcActionConfigStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("AuthenticateCognitoConfig", targetDepth)) {
+                    action.setAuthenticateCognitoConfig(AuthenticateCognitoActionConfigStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Order", targetDepth)) {
+                    action.setOrder(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return action;

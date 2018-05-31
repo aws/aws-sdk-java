@@ -25,17 +25,17 @@ public class ModifyTargetGroupResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Information about the target group.
+     * Information about the modified target group.
      * </p>
      */
     private java.util.List<TargetGroup> targetGroups;
 
     /**
      * <p>
-     * Information about the target group.
+     * Information about the modified target group.
      * </p>
      * 
-     * @return Information about the target group.
+     * @return Information about the modified target group.
      */
 
     public java.util.List<TargetGroup> getTargetGroups() {
@@ -44,11 +44,11 @@ public class ModifyTargetGroupResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Information about the target group.
+     * Information about the modified target group.
      * </p>
      * 
      * @param targetGroups
-     *        Information about the target group.
+     *        Information about the modified target group.
      */
 
     public void setTargetGroups(java.util.Collection<TargetGroup> targetGroups) {
@@ -62,7 +62,7 @@ public class ModifyTargetGroupResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Information about the target group.
+     * Information about the modified target group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -71,7 +71,7 @@ public class ModifyTargetGroupResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * @param targetGroups
-     *        Information about the target group.
+     *        Information about the modified target group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class ModifyTargetGroupResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Information about the target group.
+     * Information about the modified target group.
      * </p>
      * 
      * @param targetGroups
-     *        Information about the target group.
+     *        Information about the modified target group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
