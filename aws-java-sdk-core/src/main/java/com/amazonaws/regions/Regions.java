@@ -51,11 +51,11 @@ public enum Regions {
     public static final Regions DEFAULT_REGION = US_WEST_2;
 
     private final String name;
-    private final String readableName;
+    private final String description;
 
-    private Regions(String name, String readableName) {
+    private Regions(String name, String description) {
         this.name = name;
-        this.readableName = readableName;
+        this.description = description;
     }
 
     /**
@@ -68,8 +68,8 @@ public enum Regions {
     /**
      * Descriptive readable name for this region.
      */
-    public String getReadableName() {
-        return readableName;
+    public String getDescription() {
+        return description;
     }
 
     /**
