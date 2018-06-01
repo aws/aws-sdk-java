@@ -56,6 +56,10 @@ public class JobExecutionJsonUnmarshaller implements Unmarshaller<JobExecution, 
                     context.nextToken();
                     jobExecution.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("forceCanceled", targetDepth)) {
+                    context.nextToken();
+                    jobExecution.setForceCanceled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("statusDetails", targetDepth)) {
                     context.nextToken();
                     jobExecution.setStatusDetails(JobExecutionStatusDetailsJsonUnmarshaller.getInstance().unmarshall(context));
@@ -79,6 +83,10 @@ public class JobExecutionJsonUnmarshaller implements Unmarshaller<JobExecution, 
                 if (context.testExpression("executionNumber", targetDepth)) {
                     context.nextToken();
                     jobExecution.setExecutionNumber(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("versionNumber", targetDepth)) {
+                    context.nextToken();
+                    jobExecution.setVersionNumber(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

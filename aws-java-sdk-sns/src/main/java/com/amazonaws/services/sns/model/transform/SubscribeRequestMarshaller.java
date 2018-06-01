@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.sns.model.transform;
 
+import java.util.Map;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -50,6 +51,22 @@ public class SubscribeRequestMarshaller implements Marshaller<Request<SubscribeR
 
         if (subscribeRequest.getEndpoint() != null) {
             request.addParameter("Endpoint", StringUtils.fromString(subscribeRequest.getEndpoint()));
+        }
+
+        java.util.Map<String, String> attributes = subscribeRequest.getAttributes();
+        int attributesListIndex = 1;
+        for (Map.Entry<String, String> entry : attributes.entrySet()) {
+            if (entry.getKey() != null) {
+                request.addParameter("Attributes.entry." + attributesListIndex + ".key", StringUtils.fromString(entry.getKey()));
+            }
+            if (entry.getValue() != null) {
+                request.addParameter("Attributes.entry." + attributesListIndex + ".value", StringUtils.fromString(entry.getValue()));
+            }
+            attributesListIndex++;
+        }
+
+        if (subscribeRequest.getReturnSubscriptionArn() != null) {
+            request.addParameter("ReturnSubscriptionArn", StringUtils.fromBoolean(subscribeRequest.getReturnSubscriptionArn()));
         }
 
         return request;

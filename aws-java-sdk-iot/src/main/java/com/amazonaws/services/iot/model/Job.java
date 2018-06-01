@@ -54,6 +54,13 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
+     * Will be <code>true</code> if the job was canceled with the optional <code>force</code> parameter set to
+     * <code>true</code>.
+     * </p>
+     */
+    private Boolean forceCanceled;
+    /**
+     * <p>
      * If the job was updated, describes the reason for the update.
      * </p>
      */
@@ -337,6 +344,66 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     public Job withStatus(JobStatus status) {
         this.status = status.toString();
         return this;
+    }
+
+    /**
+     * <p>
+     * Will be <code>true</code> if the job was canceled with the optional <code>force</code> parameter set to
+     * <code>true</code>.
+     * </p>
+     * 
+     * @param forceCanceled
+     *        Will be <code>true</code> if the job was canceled with the optional <code>force</code> parameter set to
+     *        <code>true</code>.
+     */
+
+    public void setForceCanceled(Boolean forceCanceled) {
+        this.forceCanceled = forceCanceled;
+    }
+
+    /**
+     * <p>
+     * Will be <code>true</code> if the job was canceled with the optional <code>force</code> parameter set to
+     * <code>true</code>.
+     * </p>
+     * 
+     * @return Will be <code>true</code> if the job was canceled with the optional <code>force</code> parameter set to
+     *         <code>true</code>.
+     */
+
+    public Boolean getForceCanceled() {
+        return this.forceCanceled;
+    }
+
+    /**
+     * <p>
+     * Will be <code>true</code> if the job was canceled with the optional <code>force</code> parameter set to
+     * <code>true</code>.
+     * </p>
+     * 
+     * @param forceCanceled
+     *        Will be <code>true</code> if the job was canceled with the optional <code>force</code> parameter set to
+     *        <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withForceCanceled(Boolean forceCanceled) {
+        setForceCanceled(forceCanceled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Will be <code>true</code> if the job was canceled with the optional <code>force</code> parameter set to
+     * <code>true</code>.
+     * </p>
+     * 
+     * @return Will be <code>true</code> if the job was canceled with the optional <code>force</code> parameter set to
+     *         <code>true</code>.
+     */
+
+    public Boolean isForceCanceled() {
+        return this.forceCanceled;
     }
 
     /**
@@ -809,6 +876,8 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             sb.append("TargetSelection: ").append(getTargetSelection()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getForceCanceled() != null)
+            sb.append("ForceCanceled: ").append(getForceCanceled()).append(",");
         if (getComment() != null)
             sb.append("Comment: ").append(getComment()).append(",");
         if (getTargets() != null)
@@ -858,6 +927,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getForceCanceled() == null ^ this.getForceCanceled() == null)
+            return false;
+        if (other.getForceCanceled() != null && other.getForceCanceled().equals(this.getForceCanceled()) == false)
             return false;
         if (other.getComment() == null ^ this.getComment() == null)
             return false;
@@ -911,6 +984,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
         hashCode = prime * hashCode + ((getTargetSelection() == null) ? 0 : getTargetSelection().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getForceCanceled() == null) ? 0 : getForceCanceled().hashCode());
         hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode());
         hashCode = prime * hashCode + ((getTargets() == null) ? 0 : getTargets().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());

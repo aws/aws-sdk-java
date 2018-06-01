@@ -1,3 +1,24 @@
+# __1.11.340__ __2018-06-01__
+## __AWS Directory Service__
+  - ### Features
+    - Added ResetUserPassword API. Customers can now reset their users' passwords without providing the old passwords in Simple AD and Microsoft AD.
+
+## __AWS IoT__
+  - ### Features
+    - We are releasing force CancelJob and CancelJobExecution functionalities to customers.
+
+## __AWS MediaTailor__
+  - ### Features
+    - AWS Elemental MediaTailor is a personalization and monetization service that allows scalable server-side ad insertion. The service enables you to serve targeted ads to viewers while maintaining broadcast quality in over-the-top (OTT) video applications. This SDK allows user access to the AWS Elemental MediaTailor configuration interface.
+
+## __Amazon Redshift__
+  - ### Features
+    - Documentation updates for redshift
+
+## __Amazon Simple Notification Service__
+  - ### Features
+    - The SNS Subscribe API has been updated with two new optional parameters: Attributes and ReturnSubscriptionArn. Attributes is a map of subscription attributes which can be one or more of: FilterPolicy, DeliveryPolicy, and RawMessageDelivery. ReturnSubscriptionArn is a boolean parameter that overrides the default behavior of returning "pending confirmation" for subscriptions that require confirmation instead of returning the subscription ARN.
+
 # __1.11.339__ __2018-05-30__
 ## __Amazon Neptune__
   - ### Features

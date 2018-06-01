@@ -31,6 +31,8 @@ public class CancelJobRequestMarshaller {
             .marshallLocationName("jobId").build();
     private static final MarshallingInfo<String> COMMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("comment").build();
+    private static final MarshallingInfo<Boolean> FORCE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("force").build();
 
     private static final CancelJobRequestMarshaller instance = new CancelJobRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class CancelJobRequestMarshaller {
         try {
             protocolMarshaller.marshall(cancelJobRequest.getJobId(), JOBID_BINDING);
             protocolMarshaller.marshall(cancelJobRequest.getComment(), COMMENT_BINDING);
+            protocolMarshaller.marshall(cancelJobRequest.getForce(), FORCE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

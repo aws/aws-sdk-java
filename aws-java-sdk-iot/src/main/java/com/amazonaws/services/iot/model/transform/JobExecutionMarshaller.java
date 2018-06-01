@@ -31,6 +31,8 @@ public class JobExecutionMarshaller {
             .marshallLocationName("jobId").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
+    private static final MarshallingInfo<Boolean> FORCECANCELED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("forceCanceled").build();
     private static final MarshallingInfo<StructuredPojo> STATUSDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusDetails").build();
     private static final MarshallingInfo<String> THINGARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -43,6 +45,8 @@ public class JobExecutionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdatedAt").build();
     private static final MarshallingInfo<Long> EXECUTIONNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionNumber").build();
+    private static final MarshallingInfo<Long> VERSIONNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("versionNumber").build();
 
     private static final JobExecutionMarshaller instance = new JobExecutionMarshaller();
 
@@ -62,12 +66,14 @@ public class JobExecutionMarshaller {
         try {
             protocolMarshaller.marshall(jobExecution.getJobId(), JOBID_BINDING);
             protocolMarshaller.marshall(jobExecution.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(jobExecution.getForceCanceled(), FORCECANCELED_BINDING);
             protocolMarshaller.marshall(jobExecution.getStatusDetails(), STATUSDETAILS_BINDING);
             protocolMarshaller.marshall(jobExecution.getThingArn(), THINGARN_BINDING);
             protocolMarshaller.marshall(jobExecution.getQueuedAt(), QUEUEDAT_BINDING);
             protocolMarshaller.marshall(jobExecution.getStartedAt(), STARTEDAT_BINDING);
             protocolMarshaller.marshall(jobExecution.getLastUpdatedAt(), LASTUPDATEDAT_BINDING);
             protocolMarshaller.marshall(jobExecution.getExecutionNumber(), EXECUTIONNUMBER_BINDING);
+            protocolMarshaller.marshall(jobExecution.getVersionNumber(), VERSIONNUMBER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

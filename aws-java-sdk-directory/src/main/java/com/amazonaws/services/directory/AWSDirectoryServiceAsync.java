@@ -1425,6 +1425,37 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
+     * Resets the password for any user in your AWS Managed Microsoft AD or Simple AD directory.
+     * </p>
+     * 
+     * @param resetUserPasswordRequest
+     * @return A Java Future containing the result of the ResetUserPassword operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.ResetUserPassword
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ResetUserPassword" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ResetUserPasswordResult> resetUserPasswordAsync(ResetUserPasswordRequest resetUserPasswordRequest);
+
+    /**
+     * <p>
+     * Resets the password for any user in your AWS Managed Microsoft AD or Simple AD directory.
+     * </p>
+     * 
+     * @param resetUserPasswordRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ResetUserPassword operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.ResetUserPassword
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ResetUserPassword" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ResetUserPasswordResult> resetUserPasswordAsync(ResetUserPasswordRequest resetUserPasswordRequest,
+            com.amazonaws.handlers.AsyncHandler<ResetUserPasswordRequest, ResetUserPasswordResult> asyncHandler);
+
+    /**
+     * <p>
      * Restores a directory using an existing directory snapshot.
      * </p>
      * <p>

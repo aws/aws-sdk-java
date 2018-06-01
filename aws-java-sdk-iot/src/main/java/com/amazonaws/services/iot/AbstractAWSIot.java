@@ -79,6 +79,11 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public CancelJobExecutionResult cancelJobExecution(CancelJobExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ClearDefaultAuthorizerResult clearDefaultAuthorizer(ClearDefaultAuthorizerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

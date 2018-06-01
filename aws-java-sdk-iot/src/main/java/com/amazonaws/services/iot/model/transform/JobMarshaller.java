@@ -37,6 +37,8 @@ public class JobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("targetSelection").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
+    private static final MarshallingInfo<Boolean> FORCECANCELED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("forceCanceled").build();
     private static final MarshallingInfo<String> COMMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("comment").build();
     private static final MarshallingInfo<List> TARGETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -78,6 +80,7 @@ public class JobMarshaller {
             protocolMarshaller.marshall(job.getJobId(), JOBID_BINDING);
             protocolMarshaller.marshall(job.getTargetSelection(), TARGETSELECTION_BINDING);
             protocolMarshaller.marshall(job.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(job.getForceCanceled(), FORCECANCELED_BINDING);
             protocolMarshaller.marshall(job.getComment(), COMMENT_BINDING);
             protocolMarshaller.marshall(job.getTargets(), TARGETS_BINDING);
             protocolMarshaller.marshall(job.getDescription(), DESCRIPTION_BINDING);

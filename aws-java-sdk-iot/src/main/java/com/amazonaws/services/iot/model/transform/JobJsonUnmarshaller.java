@@ -64,6 +64,10 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                     context.nextToken();
                     job.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("forceCanceled", targetDepth)) {
+                    context.nextToken();
+                    job.setForceCanceled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("comment", targetDepth)) {
                     context.nextToken();
                     job.setComment(context.getUnmarshaller(String.class).unmarshall(context));

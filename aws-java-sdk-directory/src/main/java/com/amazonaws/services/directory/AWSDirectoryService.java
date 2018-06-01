@@ -1037,6 +1037,34 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * Resets the password for any user in your AWS Managed Microsoft AD or Simple AD directory.
+     * </p>
+     * 
+     * @param resetUserPasswordRequest
+     * @return Result of the ResetUserPassword operation returned by the service.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws UserDoesNotExistException
+     *         The user provided a username that does not exist in your directory.
+     * @throws InvalidPasswordException
+     *         The new password provided by the user does not meet the password complexity requirements defined in your
+     *         directory.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.ResetUserPassword
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/ResetUserPassword" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ResetUserPasswordResult resetUserPassword(ResetUserPasswordRequest resetUserPasswordRequest);
+
+    /**
+     * <p>
      * Restores a directory using an existing directory snapshot.
      * </p>
      * <p>

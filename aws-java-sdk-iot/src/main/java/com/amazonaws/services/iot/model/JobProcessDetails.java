@@ -27,7 +27,8 @@ public class JobProcessDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The devices on which the job is executing.
+     * The target devices to which the job execution is being rolled out. This value will be null after the job
+     * execution has finished rolling out to all the target devices.
      * </p>
      */
     private java.util.List<String> processingTargets;
@@ -77,10 +78,12 @@ public class JobProcessDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The devices on which the job is executing.
+     * The target devices to which the job execution is being rolled out. This value will be null after the job
+     * execution has finished rolling out to all the target devices.
      * </p>
      * 
-     * @return The devices on which the job is executing.
+     * @return The target devices to which the job execution is being rolled out. This value will be null after the job
+     *         execution has finished rolling out to all the target devices.
      */
 
     public java.util.List<String> getProcessingTargets() {
@@ -89,11 +92,13 @@ public class JobProcessDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The devices on which the job is executing.
+     * The target devices to which the job execution is being rolled out. This value will be null after the job
+     * execution has finished rolling out to all the target devices.
      * </p>
      * 
      * @param processingTargets
-     *        The devices on which the job is executing.
+     *        The target devices to which the job execution is being rolled out. This value will be null after the job
+     *        execution has finished rolling out to all the target devices.
      */
 
     public void setProcessingTargets(java.util.Collection<String> processingTargets) {
@@ -107,7 +112,8 @@ public class JobProcessDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The devices on which the job is executing.
+     * The target devices to which the job execution is being rolled out. This value will be null after the job
+     * execution has finished rolling out to all the target devices.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -116,7 +122,8 @@ public class JobProcessDetails implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param processingTargets
-     *        The devices on which the job is executing.
+     *        The target devices to which the job execution is being rolled out. This value will be null after the job
+     *        execution has finished rolling out to all the target devices.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,11 +139,13 @@ public class JobProcessDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The devices on which the job is executing.
+     * The target devices to which the job execution is being rolled out. This value will be null after the job
+     * execution has finished rolling out to all the target devices.
      * </p>
      * 
      * @param processingTargets
-     *        The devices on which the job is executing.
+     *        The target devices to which the job execution is being rolled out. This value will be null after the job
+     *        execution has finished rolling out to all the target devices.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

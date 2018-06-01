@@ -3,7 +3,7 @@
   <parent>
     <artifactId>aws-java-sdk-pom</artifactId>
     <groupId>com.amazonaws</groupId>
-    <version>1.11.339</version>
+    <version>1.11.340</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
@@ -114,10 +114,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.339</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.340</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.339</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.340</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -131,6 +131,10 @@
                     </taglet>
                   </taglets>
                   <groups>
+                    <group>
+                      <title>AWS MediaTailor</title>
+                      <packages>com.amazonaws.services.mediatailor*</packages>
+                    </group>
                     <group>
                       <title>Amazon Neptune</title>
                       <packages>com.amazonaws.services.neptune*</packages>
@@ -782,10 +786,10 @@
                   <use>false</use>
                   <notree>true</notree>
                   <nodeprecatedlist>true</nodeprecatedlist>
-                  <windowtitle>AWS SDK for Java - 1.11.339</windowtitle>
+                  <windowtitle>AWS SDK for Java - 1.11.340</windowtitle>
                   <encoding>UTF-8</encoding>
                   <docencoding>UTF-8</docencoding>
-                  <doctitle>AWS SDK for Java API Reference - 1.11.339</doctitle>
+                  <doctitle>AWS SDK for Java API Reference - 1.11.340</doctitle>
                   <packagesheader>AWS SDK for Java</packagesheader>
                   <docfilessubdirs>true</docfilessubdirs>
                   <taglets>
@@ -799,6 +803,10 @@
                     </taglet>
                   </taglets>
                   <groups>
+                    <group>
+                      <title>AWS MediaTailor</title>
+                      <packages>com.amazonaws.services.mediatailor*</packages>
+                    </group>
                     <group>
                       <title>Amazon Neptune</title>
                       <packages>com.amazonaws.services.neptune*</packages>
@@ -1446,10 +1454,10 @@
               <use>false</use>
               <notree>true</notree>
               <nodeprecatedlist>true</nodeprecatedlist>
-              <windowtitle>AWS SDK for Java - 1.11.339</windowtitle>
+              <windowtitle>AWS SDK for Java - 1.11.340</windowtitle>
               <encoding>UTF-8</encoding>
               <docencoding>UTF-8</docencoding>
-              <doctitle>AWS SDK for Java API Reference - 1.11.339</doctitle>
+              <doctitle>AWS SDK for Java API Reference - 1.11.340</doctitle>
               <packagesheader>AWS SDK for Java</packagesheader>
               <docfilessubdirs>true</docfilessubdirs>
               <taglets>
@@ -1463,6 +1471,10 @@
                 </taglet>
               </taglets>
               <groups>
+                <group>
+                  <title>AWS MediaTailor</title>
+                  <packages>com.amazonaws.services.mediatailor*</packages>
+                </group>
                 <group>
                   <title>Amazon Neptune</title>
                   <packages>com.amazonaws.services.neptune*</packages>
@@ -2323,7 +2335,7 @@
                   <goal>exec</goal>
                 </goals>
                 <configuration>
-                  <workingDirectory>target/aws-java-sdk-osgi-1.11.339-sdk-zip-archive-assembly/</workingDirectory>
+                  <workingDirectory>target/aws-java-sdk-osgi-1.11.340-sdk-zip-archive-assembly/</workingDirectory>
                   <executable>zip</executable>
                   <commandlineArgs>-r ../aws-java-sdk.zip .</commandlineArgs>
                 </configuration>

@@ -658,7 +658,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * Adds one or more tags to a specified resource.
      * </p>
      * <p>
-     * A resource can have up to 10 tags. If you try to create more than 10 tags for a resource, you will receive an
+     * A resource can have up to 50 tags. If you try to create more than 50 tags for a resource, you will receive an
      * error and the attempt will fail.
      * </p>
      * <p>
@@ -680,7 +680,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * Adds one or more tags to a specified resource.
      * </p>
      * <p>
-     * A resource can have up to 10 tags. If you try to create more than 10 tags for a resource, you will receive an
+     * A resource can have up to 50 tags. If you try to create more than 50 tags for a resource, you will receive an
      * error and the attempt will fail.
      * </p>
      * <p>

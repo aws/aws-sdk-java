@@ -39,7 +39,7 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
      * The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.
      * </p>
      * <p>
-     * Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
+     * Valid values: <code>DeliveryPolicy</code> | <code>FilterPolicy</code> | <code>RawMessageDelivery</code>
      * </p>
      */
     private String attributeName;
@@ -66,7 +66,7 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
      * @param attributeName
      *        The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.</p>
      *        <p>
-     *        Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
+     *        Valid values: <code>DeliveryPolicy</code> | <code>FilterPolicy</code> | <code>RawMessageDelivery</code>
      * @param attributeValue
      *        The new value for the attribute in JSON format.
      */
@@ -121,13 +121,13 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
      * The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.
      * </p>
      * <p>
-     * Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
+     * Valid values: <code>DeliveryPolicy</code> | <code>FilterPolicy</code> | <code>RawMessageDelivery</code>
      * </p>
      * 
      * @param attributeName
      *        The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.</p>
      *        <p>
-     *        Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
+     *        Valid values: <code>DeliveryPolicy</code> | <code>FilterPolicy</code> | <code>RawMessageDelivery</code>
      */
 
     public void setAttributeName(String attributeName) {
@@ -139,12 +139,12 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
      * The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.
      * </p>
      * <p>
-     * Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
+     * Valid values: <code>DeliveryPolicy</code> | <code>FilterPolicy</code> | <code>RawMessageDelivery</code>
      * </p>
      * 
      * @return The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.</p>
      *         <p>
-     *         Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
+     *         Valid values: <code>DeliveryPolicy</code> | <code>FilterPolicy</code> | <code>RawMessageDelivery</code>
      */
 
     public String getAttributeName() {
@@ -156,13 +156,13 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
      * The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.
      * </p>
      * <p>
-     * Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
+     * Valid values: <code>DeliveryPolicy</code> | <code>FilterPolicy</code> | <code>RawMessageDelivery</code>
      * </p>
      * 
      * @param attributeName
      *        The name of the attribute you want to set. Only a subset of the subscriptions attributes are mutable.</p>
      *        <p>
-     *        Valid values: <code>DeliveryPolicy</code> | <code>RawMessageDelivery</code>
+     *        Valid values: <code>DeliveryPolicy</code> | <code>FilterPolicy</code> | <code>RawMessageDelivery</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

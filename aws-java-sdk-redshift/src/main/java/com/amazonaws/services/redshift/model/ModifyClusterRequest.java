@@ -118,7 +118,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private com.amazonaws.internal.SdkInternalList<String> clusterSecurityGroups;
     /**
      * <p>
-     * A list of virtual private cloud (VPC) security groups to be associated with the cluster.
+     * A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is
+     * asynchronously applied as soon as possible.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIds;
@@ -970,10 +971,12 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of virtual private cloud (VPC) security groups to be associated with the cluster.
+     * A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is
+     * asynchronously applied as soon as possible.
      * </p>
      * 
-     * @return A list of virtual private cloud (VPC) security groups to be associated with the cluster.
+     * @return A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is
+     *         asynchronously applied as soon as possible.
      */
 
     public java.util.List<String> getVpcSecurityGroupIds() {
@@ -985,11 +988,13 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of virtual private cloud (VPC) security groups to be associated with the cluster.
+     * A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is
+     * asynchronously applied as soon as possible.
      * </p>
      * 
      * @param vpcSecurityGroupIds
-     *        A list of virtual private cloud (VPC) security groups to be associated with the cluster.
+     *        A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is
+     *        asynchronously applied as soon as possible.
      */
 
     public void setVpcSecurityGroupIds(java.util.Collection<String> vpcSecurityGroupIds) {
@@ -1003,7 +1008,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of virtual private cloud (VPC) security groups to be associated with the cluster.
+     * A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is
+     * asynchronously applied as soon as possible.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1012,7 +1018,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param vpcSecurityGroupIds
-     *        A list of virtual private cloud (VPC) security groups to be associated with the cluster.
+     *        A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is
+     *        asynchronously applied as soon as possible.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1028,11 +1035,13 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of virtual private cloud (VPC) security groups to be associated with the cluster.
+     * A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is
+     * asynchronously applied as soon as possible.
      * </p>
      * 
      * @param vpcSecurityGroupIds
-     *        A list of virtual private cloud (VPC) security groups to be associated with the cluster.
+     *        A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is
+     *        asynchronously applied as soon as possible.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

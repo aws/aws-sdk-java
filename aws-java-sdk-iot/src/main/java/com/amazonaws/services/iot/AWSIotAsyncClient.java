@@ -519,6 +519,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CancelJobExecutionResult> cancelJobExecutionAsync(CancelJobExecutionRequest request) {
+
+        return cancelJobExecutionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelJobExecutionResult> cancelJobExecutionAsync(final CancelJobExecutionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CancelJobExecutionRequest, CancelJobExecutionResult> asyncHandler) {
+        final CancelJobExecutionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CancelJobExecutionResult>() {
+            @Override
+            public CancelJobExecutionResult call() throws Exception {
+                CancelJobExecutionResult result = null;
+
+                try {
+                    result = executeCancelJobExecution(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ClearDefaultAuthorizerResult> clearDefaultAuthorizerAsync(ClearDefaultAuthorizerRequest request) {
 
         return clearDefaultAuthorizerAsync(request, null);

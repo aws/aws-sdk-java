@@ -862,6 +862,67 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * Cancels the execution of a job for a given thing.
+     * </p>
+     * 
+     * @param cancelJobExecutionRequest
+     * @return Result of the CancelJobExecution operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidStateTransitionException
+     *         An attempt was made to change to an invalid state, for example by deleting a job or a job execution which
+     *         is "IN_PROGRESS" without setting the <code>force</code> parameter.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws VersionConflictException
+     *         An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+     *         parameter does not match the latest version in the system.
+     * @sample AWSIot.CancelJobExecution
+     */
+    @Override
+    public CancelJobExecutionResult cancelJobExecution(CancelJobExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelJobExecution(request);
+    }
+
+    @SdkInternalApi
+    final CancelJobExecutionResult executeCancelJobExecution(CancelJobExecutionRequest cancelJobExecutionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelJobExecutionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelJobExecutionRequest> request = null;
+        Response<CancelJobExecutionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelJobExecutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelJobExecutionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelJobExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CancelJobExecutionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Clears the default authorizer.
      * </p>
      * 
@@ -2477,8 +2538,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
      * @throws VersionConflictException
-     *         An exception thrown when the version of a thing passed to a command is different than the version
-     *         specified with the --version parameter.
+     *         An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+     *         parameter does not match the latest version in the system.
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws ThrottlingException
@@ -2539,8 +2600,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws VersionConflictException
-     *         An exception thrown when the version of a thing passed to a command is different than the version
-     *         specified with the --version parameter.
+     *         An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+     *         parameter does not match the latest version in the system.
      * @throws ThrottlingException
      *         The rate exceeds the limit.
      * @throws InternalFailureException
@@ -3986,7 +4047,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Gets effective policies.
+     * Gets a list of the policies that have an effect on the authorization behavior of the specified device when it
+     * connects to the AWS IoT device gateway.
      * </p>
      * 
      * @param getEffectivePoliciesRequest
@@ -7110,7 +7172,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Test custom authorization.
+     * Tests if a specified principal is authorized to perform an AWS IoT action on a specified resource. Use this to
+     * test and debug the authorization behavior of devices that connect to the AWS IoT device gateway.
      * </p>
      * 
      * @param testAuthorizationRequest
@@ -7171,7 +7234,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Invoke the specified custom authorizer for testing purposes.
+     * Tests a custom authorization behavior by invoking a specified custom authorizer. Use this to test and debug the
+     * custom authorization behavior of devices that connect to the AWS IoT device gateway.
      * </p>
      * 
      * @param testInvokeAuthorizerRequest
@@ -7742,8 +7806,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws VersionConflictException
-     *         An exception thrown when the version of a thing passed to a command is different than the version
-     *         specified with the --version parameter.
+     *         An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+     *         parameter does not match the latest version in the system.
      * @throws ThrottlingException
      *         The rate exceeds the limit.
      * @throws UnauthorizedException
@@ -7804,8 +7868,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws VersionConflictException
-     *         An exception thrown when the version of a thing passed to a command is different than the version
-     *         specified with the --version parameter.
+     *         An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+     *         parameter does not match the latest version in the system.
      * @throws ThrottlingException
      *         The rate exceeds the limit.
      * @throws InternalFailureException

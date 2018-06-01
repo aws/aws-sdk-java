@@ -39,6 +39,13 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
+     * Will be <code>true</code> if the job execution was canceled with the optional <code>force</code> parameter set to
+     * <code>true</code>.
+     * </p>
+     */
+    private Boolean forceCanceled;
+    /**
+     * <p>
      * A collection of name/value pairs that describe the status of the job execution.
      * </p>
      */
@@ -74,6 +81,12 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Long executionNumber;
+    /**
+     * <p>
+     * The version of the job execution. Job execution versions are incremented each time they are updated by a device.
+     * </p>
+     */
+    private Long versionNumber;
 
     /**
      * <p>
@@ -172,6 +185,66 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
     public JobExecution withStatus(JobExecutionStatus status) {
         this.status = status.toString();
         return this;
+    }
+
+    /**
+     * <p>
+     * Will be <code>true</code> if the job execution was canceled with the optional <code>force</code> parameter set to
+     * <code>true</code>.
+     * </p>
+     * 
+     * @param forceCanceled
+     *        Will be <code>true</code> if the job execution was canceled with the optional <code>force</code> parameter
+     *        set to <code>true</code>.
+     */
+
+    public void setForceCanceled(Boolean forceCanceled) {
+        this.forceCanceled = forceCanceled;
+    }
+
+    /**
+     * <p>
+     * Will be <code>true</code> if the job execution was canceled with the optional <code>force</code> parameter set to
+     * <code>true</code>.
+     * </p>
+     * 
+     * @return Will be <code>true</code> if the job execution was canceled with the optional <code>force</code>
+     *         parameter set to <code>true</code>.
+     */
+
+    public Boolean getForceCanceled() {
+        return this.forceCanceled;
+    }
+
+    /**
+     * <p>
+     * Will be <code>true</code> if the job execution was canceled with the optional <code>force</code> parameter set to
+     * <code>true</code>.
+     * </p>
+     * 
+     * @param forceCanceled
+     *        Will be <code>true</code> if the job execution was canceled with the optional <code>force</code> parameter
+     *        set to <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobExecution withForceCanceled(Boolean forceCanceled) {
+        setForceCanceled(forceCanceled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Will be <code>true</code> if the job execution was canceled with the optional <code>force</code> parameter set to
+     * <code>true</code>.
+     * </p>
+     * 
+     * @return Will be <code>true</code> if the job execution was canceled with the optional <code>force</code>
+     *         parameter set to <code>true</code>.
+     */
+
+    public Boolean isForceCanceled() {
+        return this.forceCanceled;
     }
 
     /**
@@ -421,6 +494,49 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The version of the job execution. Job execution versions are incremented each time they are updated by a device.
+     * </p>
+     * 
+     * @param versionNumber
+     *        The version of the job execution. Job execution versions are incremented each time they are updated by a
+     *        device.
+     */
+
+    public void setVersionNumber(Long versionNumber) {
+        this.versionNumber = versionNumber;
+    }
+
+    /**
+     * <p>
+     * The version of the job execution. Job execution versions are incremented each time they are updated by a device.
+     * </p>
+     * 
+     * @return The version of the job execution. Job execution versions are incremented each time they are updated by a
+     *         device.
+     */
+
+    public Long getVersionNumber() {
+        return this.versionNumber;
+    }
+
+    /**
+     * <p>
+     * The version of the job execution. Job execution versions are incremented each time they are updated by a device.
+     * </p>
+     * 
+     * @param versionNumber
+     *        The version of the job execution. Job execution versions are incremented each time they are updated by a
+     *        device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobExecution withVersionNumber(Long versionNumber) {
+        setVersionNumber(versionNumber);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -435,6 +551,8 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
             sb.append("JobId: ").append(getJobId()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getForceCanceled() != null)
+            sb.append("ForceCanceled: ").append(getForceCanceled()).append(",");
         if (getStatusDetails() != null)
             sb.append("StatusDetails: ").append(getStatusDetails()).append(",");
         if (getThingArn() != null)
@@ -446,7 +564,9 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
         if (getLastUpdatedAt() != null)
             sb.append("LastUpdatedAt: ").append(getLastUpdatedAt()).append(",");
         if (getExecutionNumber() != null)
-            sb.append("ExecutionNumber: ").append(getExecutionNumber());
+            sb.append("ExecutionNumber: ").append(getExecutionNumber()).append(",");
+        if (getVersionNumber() != null)
+            sb.append("VersionNumber: ").append(getVersionNumber());
         sb.append("}");
         return sb.toString();
     }
@@ -468,6 +588,10 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getForceCanceled() == null ^ this.getForceCanceled() == null)
+            return false;
+        if (other.getForceCanceled() != null && other.getForceCanceled().equals(this.getForceCanceled()) == false)
             return false;
         if (other.getStatusDetails() == null ^ this.getStatusDetails() == null)
             return false;
@@ -493,6 +617,10 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getExecutionNumber() != null && other.getExecutionNumber().equals(this.getExecutionNumber()) == false)
             return false;
+        if (other.getVersionNumber() == null ^ this.getVersionNumber() == null)
+            return false;
+        if (other.getVersionNumber() != null && other.getVersionNumber().equals(this.getVersionNumber()) == false)
+            return false;
         return true;
     }
 
@@ -503,12 +631,14 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getForceCanceled() == null) ? 0 : getForceCanceled().hashCode());
         hashCode = prime * hashCode + ((getStatusDetails() == null) ? 0 : getStatusDetails().hashCode());
         hashCode = prime * hashCode + ((getThingArn() == null) ? 0 : getThingArn().hashCode());
         hashCode = prime * hashCode + ((getQueuedAt() == null) ? 0 : getQueuedAt().hashCode());
         hashCode = prime * hashCode + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedAt() == null) ? 0 : getLastUpdatedAt().hashCode());
         hashCode = prime * hashCode + ((getExecutionNumber() == null) ? 0 : getExecutionNumber().hashCode());
+        hashCode = prime * hashCode + ((getVersionNumber() == null) ? 0 : getVersionNumber().hashCode());
         return hashCode;
     }
 

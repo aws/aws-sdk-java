@@ -17,7 +17,6 @@ package com.amazonaws.regions;
 import com.amazonaws.AmazonClientException;
 import org.apache.commons.logging.LogFactory;
 
-import com.amazonaws.SdkClientException;
 import com.amazonaws.util.EC2MetadataUtils;
 
 /**
@@ -64,7 +63,7 @@ public enum Regions {
     public String getName() {
         return name;
     }
-    
+
     /**
      * Descriptive readable name for this region.
      */

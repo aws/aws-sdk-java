@@ -130,6 +130,33 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </ul>
      */
     private String endpoint;
+    /**
+     * <p>
+     * Assigns attributes to the subscription as a map of key-value pairs. You can assign any attribute that is
+     * supported by the <code>SetSubscriptionAttributes</code> action.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalMap<String, String> attributes;
+    /**
+     * <p>
+     * Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if the
+     * subscription is not yet confirmed.
+     * </p>
+     * <p>
+     * If you set this parameter to <code>false</code>, the response includes the ARN for confirmed subscriptions, but
+     * it includes an ARN value of "pending subscription" for subscriptions that are not yet confirmed. A subscription
+     * becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a confirmation
+     * token.
+     * </p>
+     * <p>
+     * If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the
+     * subscription is not yet confirmed.
+     * </p>
+     * <p>
+     * The default value is <code>false</code>.
+     * </p>
+     */
+    private Boolean returnSubscriptionArn;
 
     /**
      * Default constructor for SubscribeRequest object. Callers should use the setter or fluent setter (with...) methods
@@ -860,6 +887,236 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * Assigns attributes to the subscription as a map of key-value pairs. You can assign any attribute that is
+     * supported by the <code>SetSubscriptionAttributes</code> action.
+     * </p>
+     * 
+     * @return Assigns attributes to the subscription as a map of key-value pairs. You can assign any attribute that is
+     *         supported by the <code>SetSubscriptionAttributes</code> action.
+     */
+
+    public java.util.Map<String, String> getAttributes() {
+        if (attributes == null) {
+            attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();
+        }
+        return attributes;
+    }
+
+    /**
+     * <p>
+     * Assigns attributes to the subscription as a map of key-value pairs. You can assign any attribute that is
+     * supported by the <code>SetSubscriptionAttributes</code> action.
+     * </p>
+     * 
+     * @param attributes
+     *        Assigns attributes to the subscription as a map of key-value pairs. You can assign any attribute that is
+     *        supported by the <code>SetSubscriptionAttributes</code> action.
+     */
+
+    public void setAttributes(java.util.Map<String, String> attributes) {
+        this.attributes = attributes == null ? null : new com.amazonaws.internal.SdkInternalMap<String, String>(attributes);
+    }
+
+    /**
+     * <p>
+     * Assigns attributes to the subscription as a map of key-value pairs. You can assign any attribute that is
+     * supported by the <code>SetSubscriptionAttributes</code> action.
+     * </p>
+     * 
+     * @param attributes
+     *        Assigns attributes to the subscription as a map of key-value pairs. You can assign any attribute that is
+     *        supported by the <code>SetSubscriptionAttributes</code> action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SubscribeRequest withAttributes(java.util.Map<String, String> attributes) {
+        setAttributes(attributes);
+        return this;
+    }
+
+    public SubscribeRequest addAttributesEntry(String key, String value) {
+        if (null == this.attributes) {
+            this.attributes = new com.amazonaws.internal.SdkInternalMap<String, String>();
+        }
+        if (this.attributes.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.attributes.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Attributes.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SubscribeRequest clearAttributesEntries() {
+        this.attributes = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if the
+     * subscription is not yet confirmed.
+     * </p>
+     * <p>
+     * If you set this parameter to <code>false</code>, the response includes the ARN for confirmed subscriptions, but
+     * it includes an ARN value of "pending subscription" for subscriptions that are not yet confirmed. A subscription
+     * becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a confirmation
+     * token.
+     * </p>
+     * <p>
+     * If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the
+     * subscription is not yet confirmed.
+     * </p>
+     * <p>
+     * The default value is <code>false</code>.
+     * </p>
+     * 
+     * @param returnSubscriptionArn
+     *        Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if
+     *        the subscription is not yet confirmed.</p>
+     *        <p>
+     *        If you set this parameter to <code>false</code>, the response includes the ARN for confirmed
+     *        subscriptions, but it includes an ARN value of "pending subscription" for subscriptions that are not yet
+     *        confirmed. A subscription becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code>
+     *        action with a confirmation token.
+     *        </p>
+     *        <p>
+     *        If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the
+     *        subscription is not yet confirmed.
+     *        </p>
+     *        <p>
+     *        The default value is <code>false</code>.
+     */
+
+    public void setReturnSubscriptionArn(Boolean returnSubscriptionArn) {
+        this.returnSubscriptionArn = returnSubscriptionArn;
+    }
+
+    /**
+     * <p>
+     * Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if the
+     * subscription is not yet confirmed.
+     * </p>
+     * <p>
+     * If you set this parameter to <code>false</code>, the response includes the ARN for confirmed subscriptions, but
+     * it includes an ARN value of "pending subscription" for subscriptions that are not yet confirmed. A subscription
+     * becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a confirmation
+     * token.
+     * </p>
+     * <p>
+     * If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the
+     * subscription is not yet confirmed.
+     * </p>
+     * <p>
+     * The default value is <code>false</code>.
+     * </p>
+     * 
+     * @return Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if
+     *         the subscription is not yet confirmed.</p>
+     *         <p>
+     *         If you set this parameter to <code>false</code>, the response includes the ARN for confirmed
+     *         subscriptions, but it includes an ARN value of "pending subscription" for subscriptions that are not yet
+     *         confirmed. A subscription becomes confirmed when the subscriber calls the
+     *         <code>ConfirmSubscription</code> action with a confirmation token.
+     *         </p>
+     *         <p>
+     *         If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the
+     *         subscription is not yet confirmed.
+     *         </p>
+     *         <p>
+     *         The default value is <code>false</code>.
+     */
+
+    public Boolean getReturnSubscriptionArn() {
+        return this.returnSubscriptionArn;
+    }
+
+    /**
+     * <p>
+     * Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if the
+     * subscription is not yet confirmed.
+     * </p>
+     * <p>
+     * If you set this parameter to <code>false</code>, the response includes the ARN for confirmed subscriptions, but
+     * it includes an ARN value of "pending subscription" for subscriptions that are not yet confirmed. A subscription
+     * becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a confirmation
+     * token.
+     * </p>
+     * <p>
+     * If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the
+     * subscription is not yet confirmed.
+     * </p>
+     * <p>
+     * The default value is <code>false</code>.
+     * </p>
+     * 
+     * @param returnSubscriptionArn
+     *        Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if
+     *        the subscription is not yet confirmed.</p>
+     *        <p>
+     *        If you set this parameter to <code>false</code>, the response includes the ARN for confirmed
+     *        subscriptions, but it includes an ARN value of "pending subscription" for subscriptions that are not yet
+     *        confirmed. A subscription becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code>
+     *        action with a confirmation token.
+     *        </p>
+     *        <p>
+     *        If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the
+     *        subscription is not yet confirmed.
+     *        </p>
+     *        <p>
+     *        The default value is <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SubscribeRequest withReturnSubscriptionArn(Boolean returnSubscriptionArn) {
+        setReturnSubscriptionArn(returnSubscriptionArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if the
+     * subscription is not yet confirmed.
+     * </p>
+     * <p>
+     * If you set this parameter to <code>false</code>, the response includes the ARN for confirmed subscriptions, but
+     * it includes an ARN value of "pending subscription" for subscriptions that are not yet confirmed. A subscription
+     * becomes confirmed when the subscriber calls the <code>ConfirmSubscription</code> action with a confirmation
+     * token.
+     * </p>
+     * <p>
+     * If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the
+     * subscription is not yet confirmed.
+     * </p>
+     * <p>
+     * The default value is <code>false</code>.
+     * </p>
+     * 
+     * @return Sets whether the response from the <code>Subscribe</code> request includes the subscription ARN, even if
+     *         the subscription is not yet confirmed.</p>
+     *         <p>
+     *         If you set this parameter to <code>false</code>, the response includes the ARN for confirmed
+     *         subscriptions, but it includes an ARN value of "pending subscription" for subscriptions that are not yet
+     *         confirmed. A subscription becomes confirmed when the subscriber calls the
+     *         <code>ConfirmSubscription</code> action with a confirmation token.
+     *         </p>
+     *         <p>
+     *         If you set this parameter to <code>true</code>, the response includes the ARN in all cases, even if the
+     *         subscription is not yet confirmed.
+     *         </p>
+     *         <p>
+     *         The default value is <code>false</code>.
+     */
+
+    public Boolean isReturnSubscriptionArn() {
+        return this.returnSubscriptionArn;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -875,7 +1132,11 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getProtocol() != null)
             sb.append("Protocol: ").append(getProtocol()).append(",");
         if (getEndpoint() != null)
-            sb.append("Endpoint: ").append(getEndpoint());
+            sb.append("Endpoint: ").append(getEndpoint()).append(",");
+        if (getAttributes() != null)
+            sb.append("Attributes: ").append(getAttributes()).append(",");
+        if (getReturnSubscriptionArn() != null)
+            sb.append("ReturnSubscriptionArn: ").append(getReturnSubscriptionArn());
         sb.append("}");
         return sb.toString();
     }
@@ -902,6 +1163,14 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getEndpoint() != null && other.getEndpoint().equals(this.getEndpoint()) == false)
             return false;
+        if (other.getAttributes() == null ^ this.getAttributes() == null)
+            return false;
+        if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
+            return false;
+        if (other.getReturnSubscriptionArn() == null ^ this.getReturnSubscriptionArn() == null)
+            return false;
+        if (other.getReturnSubscriptionArn() != null && other.getReturnSubscriptionArn().equals(this.getReturnSubscriptionArn()) == false)
+            return false;
         return true;
     }
 
@@ -913,6 +1182,8 @@ public class SubscribeRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getTopicArn() == null) ? 0 : getTopicArn().hashCode());
         hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode());
         hashCode = prime * hashCode + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
+        hashCode = prime * hashCode + ((getReturnSubscriptionArn() == null) ? 0 : getReturnSubscriptionArn().hashCode());
         return hashCode;
     }
 
