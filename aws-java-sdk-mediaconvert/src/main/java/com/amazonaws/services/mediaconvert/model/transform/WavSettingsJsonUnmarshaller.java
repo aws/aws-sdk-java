@@ -56,6 +56,10 @@ public class WavSettingsJsonUnmarshaller implements Unmarshaller<WavSettings, Js
                     context.nextToken();
                     wavSettings.setChannels(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("format", targetDepth)) {
+                    context.nextToken();
+                    wavSettings.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("sampleRate", targetDepth)) {
                     context.nextToken();
                     wavSettings.setSampleRate(context.getUnmarshaller(Integer.class).unmarshall(context));

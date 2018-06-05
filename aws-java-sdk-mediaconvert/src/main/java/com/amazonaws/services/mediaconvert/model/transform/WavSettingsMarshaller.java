@@ -31,6 +31,8 @@ public class WavSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("bitDepth").build();
     private static final MarshallingInfo<Integer> CHANNELS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("channels").build();
+    private static final MarshallingInfo<String> FORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("format").build();
     private static final MarshallingInfo<Integer> SAMPLERATE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sampleRate").build();
 
@@ -52,6 +54,7 @@ public class WavSettingsMarshaller {
         try {
             protocolMarshaller.marshall(wavSettings.getBitDepth(), BITDEPTH_BINDING);
             protocolMarshaller.marshall(wavSettings.getChannels(), CHANNELS_BINDING);
+            protocolMarshaller.marshall(wavSettings.getFormat(), FORMAT_BINDING);
             protocolMarshaller.marshall(wavSettings.getSampleRate(), SAMPLERATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -15,9 +15,8 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * When an "Audio Description":#audio_description specifies an AudioSelector or AudioSelectorGroup for which no matching
- * source is found in the input, then the audio selector marked as DEFAULT will be used. If none are marked as default,
- * silence will be inserted for the duration of the input.
+ * Enable this setting on one audio selector to set it as the default for the job. The service uses this default for
+ * outputs where it can't find the specified input audio. If you don't set a default, those outputs have no audio.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum AudioDefaultSelection {

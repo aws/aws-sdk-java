@@ -25,6 +25,7 @@ public enum ContainerType {
     ISMV("ISMV"),
     M2TS("M2TS"),
     M3U8("M3U8"),
+    CMFC("CMFC"),
     MOV("MOV"),
     MP4("MP4"),
     MPD("MPD"),

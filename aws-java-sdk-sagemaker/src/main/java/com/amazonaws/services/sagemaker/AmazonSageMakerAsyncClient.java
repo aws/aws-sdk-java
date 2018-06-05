@@ -159,6 +159,40 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateHyperParameterTuningJobResult> createHyperParameterTuningJobAsync(CreateHyperParameterTuningJobRequest request) {
+
+        return createHyperParameterTuningJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateHyperParameterTuningJobResult> createHyperParameterTuningJobAsync(
+            final CreateHyperParameterTuningJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateHyperParameterTuningJobRequest, CreateHyperParameterTuningJobResult> asyncHandler) {
+        final CreateHyperParameterTuningJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateHyperParameterTuningJobResult>() {
+            @Override
+            public CreateHyperParameterTuningJobResult call() throws Exception {
+                CreateHyperParameterTuningJobResult result = null;
+
+                try {
+                    result = executeCreateHyperParameterTuningJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateModelResult> createModelAsync(CreateModelRequest request) {
 
         return createModelAsync(request, null);
@@ -594,6 +628,41 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeHyperParameterTuningJobResult> describeHyperParameterTuningJobAsync(
+            DescribeHyperParameterTuningJobRequest request) {
+
+        return describeHyperParameterTuningJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeHyperParameterTuningJobResult> describeHyperParameterTuningJobAsync(
+            final DescribeHyperParameterTuningJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeHyperParameterTuningJobRequest, DescribeHyperParameterTuningJobResult> asyncHandler) {
+        final DescribeHyperParameterTuningJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeHyperParameterTuningJobResult>() {
+            @Override
+            public DescribeHyperParameterTuningJobResult call() throws Exception {
+                DescribeHyperParameterTuningJobResult result = null;
+
+                try {
+                    result = executeDescribeHyperParameterTuningJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeModelResult> describeModelAsync(DescribeModelRequest request) {
 
         return describeModelAsync(request, null);
@@ -794,6 +863,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListHyperParameterTuningJobsResult> listHyperParameterTuningJobsAsync(ListHyperParameterTuningJobsRequest request) {
+
+        return listHyperParameterTuningJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListHyperParameterTuningJobsResult> listHyperParameterTuningJobsAsync(final ListHyperParameterTuningJobsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListHyperParameterTuningJobsRequest, ListHyperParameterTuningJobsResult> asyncHandler) {
+        final ListHyperParameterTuningJobsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListHyperParameterTuningJobsResult>() {
+            @Override
+            public ListHyperParameterTuningJobsResult call() throws Exception {
+                ListHyperParameterTuningJobsResult result = null;
+
+                try {
+                    result = executeListHyperParameterTuningJobs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListModelsResult> listModelsAsync(ListModelsRequest request) {
 
         return listModelsAsync(request, null);
@@ -961,6 +1063,41 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListTrainingJobsForHyperParameterTuningJobResult> listTrainingJobsForHyperParameterTuningJobAsync(
+            ListTrainingJobsForHyperParameterTuningJobRequest request) {
+
+        return listTrainingJobsForHyperParameterTuningJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTrainingJobsForHyperParameterTuningJobResult> listTrainingJobsForHyperParameterTuningJobAsync(
+            final ListTrainingJobsForHyperParameterTuningJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTrainingJobsForHyperParameterTuningJobRequest, ListTrainingJobsForHyperParameterTuningJobResult> asyncHandler) {
+        final ListTrainingJobsForHyperParameterTuningJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTrainingJobsForHyperParameterTuningJobResult>() {
+            @Override
+            public ListTrainingJobsForHyperParameterTuningJobResult call() throws Exception {
+                ListTrainingJobsForHyperParameterTuningJobResult result = null;
+
+                try {
+                    result = executeListTrainingJobsForHyperParameterTuningJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartNotebookInstanceResult> startNotebookInstanceAsync(StartNotebookInstanceRequest request) {
 
         return startNotebookInstanceAsync(request, null);
@@ -978,6 +1115,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
 
                 try {
                     result = executeStartNotebookInstance(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopHyperParameterTuningJobResult> stopHyperParameterTuningJobAsync(StopHyperParameterTuningJobRequest request) {
+
+        return stopHyperParameterTuningJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopHyperParameterTuningJobResult> stopHyperParameterTuningJobAsync(final StopHyperParameterTuningJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopHyperParameterTuningJobRequest, StopHyperParameterTuningJobResult> asyncHandler) {
+        final StopHyperParameterTuningJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopHyperParameterTuningJobResult>() {
+            @Override
+            public StopHyperParameterTuningJobResult call() throws Exception {
+                StopHyperParameterTuningJobResult result = null;
+
+                try {
+                    result = executeStopHyperParameterTuningJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

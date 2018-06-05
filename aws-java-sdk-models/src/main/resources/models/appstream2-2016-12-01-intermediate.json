@@ -33438,6 +33438,12 @@
         "name" : "STORAGE_CONNECTORS",
         "value" : "STORAGE_CONNECTORS"
       }, {
+        "name" : "STORAGE_CONNECTOR_HOMEFOLDERS",
+        "value" : "STORAGE_CONNECTOR_HOMEFOLDERS"
+      }, {
+        "name" : "STORAGE_CONNECTOR_GOOGLE_DRIVE",
+        "value" : "STORAGE_CONNECTOR_GOOGLE_DRIVE"
+      }, {
         "name" : "REDIRECT_URL",
         "value" : "REDIRECT_URL"
       }, {
@@ -35049,7 +35055,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Describes a storage connector.</p>",
+      "documentation" : "<p>Describes a connector to enable persistent storage for users.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -35183,6 +35189,147 @@
           "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "Domains",
+        "c2jShape" : "DomainList",
+        "deprecated" : false,
+        "documentation" : "<p>The names of the domains for the G Suite account.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The names of the domains for the G Suite account.</p>\n@param domains The names of the domains for the G Suite account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withDomains",
+        "getterDocumentation" : "/**<p>The names of the domains for the G Suite account.</p>\n@return The names of the domains for the G Suite account.*/",
+        "getterMethodName" : "getDomains",
+        "getterModel" : {
+          "returnType" : "java.util.List<String>",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "Domains",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Domains",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : true,
+        "listModel" : {
+          "implType" : "java.util.ArrayList",
+          "interfaceType" : "java.util.List",
+          "listMemberModel" : {
+            "c2jName" : "member",
+            "c2jShape" : "Domain",
+            "deprecated" : false,
+            "documentation" : "",
+            "enumType" : null,
+            "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "fluentSetterMethodName" : "withMember",
+            "getterDocumentation" : "/**\n@return */",
+            "getterMethodName" : "getMember",
+            "getterModel" : {
+              "returnType" : "String",
+              "documentation" : null
+            },
+            "http" : {
+              "additionalMarshallingPath" : null,
+              "additionalUnmarshallingPath" : null,
+              "flattened" : false,
+              "greedy" : false,
+              "header" : false,
+              "isPayload" : false,
+              "isStreaming" : false,
+              "location" : null,
+              "marshallLocation" : "PAYLOAD",
+              "marshallLocationName" : "member",
+              "queryString" : false,
+              "statusCode" : false,
+              "unmarshallLocationName" : "member",
+              "uri" : false
+            },
+            "idempotencyToken" : false,
+            "isBinary" : false,
+            "jsonValue" : false,
+            "list" : false,
+            "listModel" : null,
+            "map" : false,
+            "mapModel" : null,
+            "marshallingTargetClass" : "String",
+            "marshallingType" : "STRING",
+            "name" : "Member",
+            "setterDocumentation" : "/**\n@param member */",
+            "setterMethodName" : "setMember",
+            "setterModel" : {
+              "variableDeclarationType" : "String",
+              "variableName" : "member",
+              "variableType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "shouldEmitLegacyEnumSetter" : false,
+            "simple" : true,
+            "unmarshallingType" : null,
+            "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+            "variable" : {
+              "variableDeclarationType" : "String",
+              "variableName" : "member",
+              "variableType" : "String",
+              "documentation" : "",
+              "simpleType" : "String",
+              "variableSetterType" : "String"
+            },
+            "xmlNameSpaceUri" : null
+          },
+          "memberLocationName" : null,
+          "memberType" : "String",
+          "map" : false,
+          "marshallNonAutoConstructedEmptyLists" : false,
+          "memberAdditionalMarshallingPath" : null,
+          "memberAdditionalUnmarshallingPath" : null,
+          "sendEmptyQueryString" : false,
+          "simple" : true,
+          "simpleType" : "String",
+          "templateImplType" : "java.util.ArrayList<String>",
+          "templateType" : "java.util.List<String>"
+        },
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "List",
+        "marshallingType" : "LIST",
+        "name" : "Domains",
+        "setterDocumentation" : "/**<p>The names of the domains for the G Suite account.</p>\n@param domains The names of the domains for the G Suite account.*/",
+        "setterMethodName" : "setDomains",
+        "setterModel" : {
+          "variableDeclarationType" : "java.util.List<String>",
+          "variableName" : "domains",
+          "variableType" : "java.util.List<String>",
+          "documentation" : "",
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
+        },
+        "shouldEmitLegacyEnumSetter" : true,
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The names of the domains for the G Suite account.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDomains(java.util.Collection)} or {@link #withDomains(java.util.Collection)} if you want to override the existing values.</p>\n@param domains The names of the domains for the G Suite account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "java.util.List<String>",
+          "variableName" : "domains",
+          "variableType" : "java.util.List<String>",
+          "documentation" : "<p>The names of the domains for the G Suite account.</p>",
+          "simpleType" : "List<String>",
+          "variableSetterType" : "java.util.Collection<String>"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "ConnectorType" : {
@@ -35246,6 +35393,148 @@
             "documentation" : "<p>The type of storage connector.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "Domains" : {
+          "c2jName" : "Domains",
+          "c2jShape" : "DomainList",
+          "deprecated" : false,
+          "documentation" : "<p>The names of the domains for the G Suite account.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The names of the domains for the G Suite account.</p>\n@param domains The names of the domains for the G Suite account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withDomains",
+          "getterDocumentation" : "/**<p>The names of the domains for the G Suite account.</p>\n@return The names of the domains for the G Suite account.*/",
+          "getterMethodName" : "getDomains",
+          "getterModel" : {
+            "returnType" : "java.util.List<String>",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "Domains",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Domains",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : true,
+          "listModel" : {
+            "implType" : "java.util.ArrayList",
+            "interfaceType" : "java.util.List",
+            "listMemberModel" : {
+              "c2jName" : "member",
+              "c2jShape" : "Domain",
+              "deprecated" : false,
+              "documentation" : "",
+              "enumType" : null,
+              "fluentSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "fluentSetterMethodName" : "withMember",
+              "getterDocumentation" : "/**\n@return */",
+              "getterMethodName" : "getMember",
+              "getterModel" : {
+                "returnType" : "String",
+                "documentation" : null
+              },
+              "http" : {
+                "additionalMarshallingPath" : null,
+                "additionalUnmarshallingPath" : null,
+                "flattened" : false,
+                "greedy" : false,
+                "header" : false,
+                "isPayload" : false,
+                "isStreaming" : false,
+                "location" : null,
+                "marshallLocation" : "PAYLOAD",
+                "marshallLocationName" : "member",
+                "queryString" : false,
+                "statusCode" : false,
+                "unmarshallLocationName" : "member",
+                "uri" : false
+              },
+              "idempotencyToken" : false,
+              "isBinary" : false,
+              "jsonValue" : false,
+              "list" : false,
+              "listModel" : null,
+              "map" : false,
+              "mapModel" : null,
+              "marshallingTargetClass" : "String",
+              "marshallingType" : "STRING",
+              "name" : "Member",
+              "setterDocumentation" : "/**\n@param member */",
+              "setterMethodName" : "setMember",
+              "setterModel" : {
+                "variableDeclarationType" : "String",
+                "variableName" : "member",
+                "variableType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "shouldEmitLegacyEnumSetter" : false,
+              "simple" : true,
+              "unmarshallingType" : null,
+              "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
+              "variable" : {
+                "variableDeclarationType" : "String",
+                "variableName" : "member",
+                "variableType" : "String",
+                "documentation" : "",
+                "simpleType" : "String",
+                "variableSetterType" : "String"
+              },
+              "xmlNameSpaceUri" : null
+            },
+            "memberLocationName" : null,
+            "memberType" : "String",
+            "map" : false,
+            "marshallNonAutoConstructedEmptyLists" : false,
+            "memberAdditionalMarshallingPath" : null,
+            "memberAdditionalUnmarshallingPath" : null,
+            "sendEmptyQueryString" : false,
+            "simple" : true,
+            "simpleType" : "String",
+            "templateImplType" : "java.util.ArrayList<String>",
+            "templateType" : "java.util.List<String>"
+          },
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "List",
+          "marshallingType" : "LIST",
+          "name" : "Domains",
+          "setterDocumentation" : "/**<p>The names of the domains for the G Suite account.</p>\n@param domains The names of the domains for the G Suite account.*/",
+          "setterMethodName" : "setDomains",
+          "setterModel" : {
+            "variableDeclarationType" : "java.util.List<String>",
+            "variableName" : "domains",
+            "variableType" : "java.util.List<String>",
+            "documentation" : "",
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
+          },
+          "shouldEmitLegacyEnumSetter" : true,
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The names of the domains for the G Suite account.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDomains(java.util.Collection)} or {@link #withDomains(java.util.Collection)} if you want to override the existing values.</p>\n@param domains The names of the domains for the G Suite account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "java.util.List<String>",
+            "variableName" : "domains",
+            "variableType" : "java.util.List<String>",
+            "documentation" : "<p>The names of the domains for the G Suite account.</p>",
+            "simpleType" : "List<String>",
+            "variableSetterType" : "java.util.Collection<String>"
           },
           "xmlNameSpaceUri" : null
         },
@@ -35347,6 +35636,9 @@
       "enums" : [ {
         "name" : "HOMEFOLDERS",
         "value" : "HOMEFOLDERS"
+      }, {
+        "name" : "GOOGLE_DRIVE",
+        "value" : "GOOGLE_DRIVE"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,

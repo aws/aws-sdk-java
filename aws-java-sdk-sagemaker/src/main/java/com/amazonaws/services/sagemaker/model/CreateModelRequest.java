@@ -45,6 +45,12 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
      * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>.
      * </p>
+     * <note>
+     * <p>
+     * To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.
+     * </p>
+     * </note>
      */
     private String executionRoleArn;
     /**
@@ -57,7 +63,7 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * A object that specifies the VPC that you want your model to connect to. Control access to and from your training
+     * A object that specifies the VPC that you want your model to connect to. Control access to and from your model
      * container by configuring the VPC. For more information, see <a>host-vpc</a>.
      * </p>
      */
@@ -156,12 +162,23 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
      * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>.
      * </p>
+     * <note>
+     * <p>
+     * To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.
+     * </p>
+     * </note>
      * 
      * @param executionRoleArn
      *        The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model artifacts
      *        and docker image for deployment on ML compute instances. Deploying on ML compute instances is part of
      *        model hosting. For more information, see <a
      *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
+     *        </p> <note>
+     *        <p>
+     *        To be able to pass this role to Amazon SageMaker, the caller of this API must have the
+     *        <code>iam:PassRole</code> permission.
+     *        </p>
      */
 
     public void setExecutionRoleArn(String executionRoleArn) {
@@ -175,11 +192,22 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
      * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>.
      * </p>
+     * <note>
+     * <p>
+     * To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.
+     * </p>
+     * </note>
      * 
      * @return The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model artifacts
      *         and docker image for deployment on ML compute instances. Deploying on ML compute instances is part of
      *         model hosting. For more information, see <a
      *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
+     *         </p> <note>
+     *         <p>
+     *         To be able to pass this role to Amazon SageMaker, the caller of this API must have the
+     *         <code>iam:PassRole</code> permission.
+     *         </p>
      */
 
     public String getExecutionRoleArn() {
@@ -193,12 +221,23 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
      * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>.
      * </p>
+     * <note>
+     * <p>
+     * To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.
+     * </p>
+     * </note>
      * 
      * @param executionRoleArn
      *        The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model artifacts
      *        and docker image for deployment on ML compute instances. Deploying on ML compute instances is part of
      *        model hosting. For more information, see <a
      *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
+     *        </p> <note>
+     *        <p>
+     *        To be able to pass this role to Amazon SageMaker, the caller of this API must have the
+     *        <code>iam:PassRole</code> permission.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -295,13 +334,13 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A object that specifies the VPC that you want your model to connect to. Control access to and from your training
+     * A object that specifies the VPC that you want your model to connect to. Control access to and from your model
      * container by configuring the VPC. For more information, see <a>host-vpc</a>.
      * </p>
      * 
      * @param vpcConfig
      *        A object that specifies the VPC that you want your model to connect to. Control access to and from your
-     *        training container by configuring the VPC. For more information, see <a>host-vpc</a>.
+     *        model container by configuring the VPC. For more information, see <a>host-vpc</a>.
      */
 
     public void setVpcConfig(VpcConfig vpcConfig) {
@@ -310,12 +349,12 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A object that specifies the VPC that you want your model to connect to. Control access to and from your training
+     * A object that specifies the VPC that you want your model to connect to. Control access to and from your model
      * container by configuring the VPC. For more information, see <a>host-vpc</a>.
      * </p>
      * 
      * @return A object that specifies the VPC that you want your model to connect to. Control access to and from your
-     *         training container by configuring the VPC. For more information, see <a>host-vpc</a>.
+     *         model container by configuring the VPC. For more information, see <a>host-vpc</a>.
      */
 
     public VpcConfig getVpcConfig() {
@@ -324,13 +363,13 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A object that specifies the VPC that you want your model to connect to. Control access to and from your training
+     * A object that specifies the VPC that you want your model to connect to. Control access to and from your model
      * container by configuring the VPC. For more information, see <a>host-vpc</a>.
      * </p>
      * 
      * @param vpcConfig
      *        A object that specifies the VPC that you want your model to connect to. Control access to and from your
-     *        training container by configuring the VPC. For more information, see <a>host-vpc</a>.
+     *        model container by configuring the VPC. For more information, see <a>host-vpc</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

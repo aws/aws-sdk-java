@@ -15,7 +15,7 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Rate control mode. CQ uses constant quantizer (qp), ABR (average bitrate) does not write HRD parameters.
+ * Use this setting to specify whether this output has a variable bitrate (VBR) or constant bitrate (CBR).
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum H264RateControlMode {

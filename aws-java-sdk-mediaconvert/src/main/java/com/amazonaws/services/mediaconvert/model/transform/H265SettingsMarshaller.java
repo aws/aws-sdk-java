@@ -99,6 +99,8 @@ public class H265SettingsMarshaller {
             .marshallLocationName("tiles").build();
     private static final MarshallingInfo<String> UNREGISTEREDSEITIMECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("unregisteredSeiTimecode").build();
+    private static final MarshallingInfo<String> WRITEMP4PACKAGINGTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("writeMp4PackagingType").build();
 
     private static final H265SettingsMarshaller instance = new H265SettingsMarshaller();
 
@@ -152,6 +154,7 @@ public class H265SettingsMarshaller {
             protocolMarshaller.marshall(h265Settings.getTemporalIds(), TEMPORALIDS_BINDING);
             protocolMarshaller.marshall(h265Settings.getTiles(), TILES_BINDING);
             protocolMarshaller.marshall(h265Settings.getUnregisteredSeiTimecode(), UNREGISTEREDSEITIMECODE_BINDING);
+            protocolMarshaller.marshall(h265Settings.getWriteMp4PackagingType(), WRITEMP4PACKAGINGTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

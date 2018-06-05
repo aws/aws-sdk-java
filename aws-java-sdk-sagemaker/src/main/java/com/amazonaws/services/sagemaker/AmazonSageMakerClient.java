@@ -319,6 +319,62 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Starts a hyperparameter tuning job.
+     * </p>
+     * 
+     * @param createHyperParameterTuningJobRequest
+     * @return Result of the CreateHyperParameterTuningJob operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.CreateHyperParameterTuningJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHyperParameterTuningJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateHyperParameterTuningJobResult createHyperParameterTuningJob(CreateHyperParameterTuningJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateHyperParameterTuningJob(request);
+    }
+
+    @SdkInternalApi
+    final CreateHyperParameterTuningJobResult executeCreateHyperParameterTuningJob(CreateHyperParameterTuningJobRequest createHyperParameterTuningJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createHyperParameterTuningJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateHyperParameterTuningJobRequest> request = null;
+        Response<CreateHyperParameterTuningJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateHyperParameterTuningJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createHyperParameterTuningJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateHyperParameterTuningJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateHyperParameterTuningJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a model in Amazon SageMaker. In the request, you name the model and describe one or more containers. For
      * each container, you specify the docker image containing inference code, artifacts (from prior training), and
      * custom environment map that the inference code uses when you deploy the model into production.
@@ -567,7 +623,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Returns a URL that you can use to connect to the Juypter server from a notebook instance. In the Amazon SageMaker
+     * Returns a URL that you can use to connect to the Jupyter server from a notebook instance. In the Amazon SageMaker
      * console, when you choose <code>Open</code> next to a notebook instance, Amazon SageMaker opens a new tab showing
      * the Jupyter server home page from the notebook instance. The console uses this API to get the URL and show the
      * page.
@@ -782,7 +838,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Deletes an endpoint configuration. The <code>DeleteEndpoingConfig</code> API deletes only the specified
+     * Deletes an endpoint configuration. The <code>DeleteEndpointConfig</code> API deletes only the specified
      * configuration. It does not delete endpoints created using the configuration.
      * </p>
      * 
@@ -1144,6 +1200,60 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Gets a description of a hyperparameter tuning job.
+     * </p>
+     * 
+     * @param describeHyperParameterTuningJobRequest
+     * @return Result of the DescribeHyperParameterTuningJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeHyperParameterTuningJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHyperParameterTuningJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeHyperParameterTuningJobResult describeHyperParameterTuningJob(DescribeHyperParameterTuningJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeHyperParameterTuningJob(request);
+    }
+
+    @SdkInternalApi
+    final DescribeHyperParameterTuningJobResult executeDescribeHyperParameterTuningJob(
+            DescribeHyperParameterTuningJobRequest describeHyperParameterTuningJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeHyperParameterTuningJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeHyperParameterTuningJobRequest> request = null;
+        Response<DescribeHyperParameterTuningJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeHyperParameterTuningJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeHyperParameterTuningJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeHyperParameterTuningJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeHyperParameterTuningJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes a model that you created using the <code>CreateModel</code> API.
      * </p>
      * 
@@ -1449,6 +1559,57 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Gets a list of objects that describe the hyperparameter tuning jobs launched in your account.
+     * </p>
+     * 
+     * @param listHyperParameterTuningJobsRequest
+     * @return Result of the ListHyperParameterTuningJobs operation returned by the service.
+     * @sample AmazonSageMaker.ListHyperParameterTuningJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHyperParameterTuningJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListHyperParameterTuningJobsResult listHyperParameterTuningJobs(ListHyperParameterTuningJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListHyperParameterTuningJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListHyperParameterTuningJobsResult executeListHyperParameterTuningJobs(ListHyperParameterTuningJobsRequest listHyperParameterTuningJobsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listHyperParameterTuningJobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListHyperParameterTuningJobsRequest> request = null;
+        Response<ListHyperParameterTuningJobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListHyperParameterTuningJobsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listHyperParameterTuningJobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListHyperParameterTuningJobsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListHyperParameterTuningJobsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists models created with the <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModel.html">CreateModel</a> API.
      * </p>
@@ -1699,6 +1860,61 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Gets a list of objects that describe the training jobs that a hyperparameter tuning job launched.
+     * </p>
+     * 
+     * @param listTrainingJobsForHyperParameterTuningJobRequest
+     * @return Result of the ListTrainingJobsForHyperParameterTuningJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.ListTrainingJobsForHyperParameterTuningJob
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingJobsForHyperParameterTuningJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTrainingJobsForHyperParameterTuningJobResult listTrainingJobsForHyperParameterTuningJob(ListTrainingJobsForHyperParameterTuningJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTrainingJobsForHyperParameterTuningJob(request);
+    }
+
+    @SdkInternalApi
+    final ListTrainingJobsForHyperParameterTuningJobResult executeListTrainingJobsForHyperParameterTuningJob(
+            ListTrainingJobsForHyperParameterTuningJobRequest listTrainingJobsForHyperParameterTuningJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTrainingJobsForHyperParameterTuningJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTrainingJobsForHyperParameterTuningJobRequest> request = null;
+        Response<ListTrainingJobsForHyperParameterTuningJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTrainingJobsForHyperParameterTuningJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listTrainingJobsForHyperParameterTuningJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTrainingJobsForHyperParameterTuningJobResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListTrainingJobsForHyperParameterTuningJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Launches an ML compute instance with the latest version of the libraries and attaches your ML storage volume.
      * After configuring the notebook instance, Amazon SageMaker sets the notebook instance status to
      * <code>InService</code>. A notebook instance's status must be <code>InService</code> before you can connect to
@@ -1743,6 +1959,64 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
             HttpResponseHandler<AmazonWebServiceResponse<StartNotebookInstanceResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new StartNotebookInstanceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops a running hyperparameter tuning job and all running training jobs that the tuning job launched.
+     * </p>
+     * <p>
+     * All model artifacts output from the training jobs are stored in Amazon Simple Storage Service (Amazon S3). All
+     * data that the training jobs write toAmazon CloudWatch Logs are still available in CloudWatch. After the tuning
+     * job moves to the <code>Stopped</code> state, it releases all reserved resources for the tuning job.
+     * </p>
+     * 
+     * @param stopHyperParameterTuningJobRequest
+     * @return Result of the StopHyperParameterTuningJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.StopHyperParameterTuningJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopHyperParameterTuningJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StopHyperParameterTuningJobResult stopHyperParameterTuningJob(StopHyperParameterTuningJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopHyperParameterTuningJob(request);
+    }
+
+    @SdkInternalApi
+    final StopHyperParameterTuningJobResult executeStopHyperParameterTuningJob(StopHyperParameterTuningJobRequest stopHyperParameterTuningJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopHyperParameterTuningJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopHyperParameterTuningJobRequest> request = null;
+        Response<StopHyperParameterTuningJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopHyperParameterTuningJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(stopHyperParameterTuningJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopHyperParameterTuningJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StopHyperParameterTuningJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

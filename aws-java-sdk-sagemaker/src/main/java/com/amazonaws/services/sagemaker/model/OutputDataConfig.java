@@ -35,8 +35,8 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <note>
      * <p>
-     * If the configuration of the output S3 bucket requires server-side encryption for objects, and you don't provide
-     * the KMS key ID, Amazon SageMaker uses the default service key. For more information, see <a
+     * If you don't provide the KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's
+     * account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in
      * Amazon Simple Storage Service developer guide.
      * </p>
@@ -64,8 +64,8 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <note>
      * <p>
-     * If the configuration of the output S3 bucket requires server-side encryption for objects, and you don't provide
-     * the KMS key ID, Amazon SageMaker uses the default service key. For more information, see <a
+     * If you don't provide the KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's
+     * account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in
      * Amazon Simple Storage Service developer guide.
      * </p>
@@ -81,8 +81,8 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model artifacts at
      *        rest using Amazon S3 server-side encryption. </p> <note>
      *        <p>
-     *        If the configuration of the output S3 bucket requires server-side encryption for objects, and you don't
-     *        provide the KMS key ID, Amazon SageMaker uses the default service key. For more information, see <a
+     *        If you don't provide the KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
+     *        role's account. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption
      *        Keys</a> in Amazon Simple Storage Service developer guide.
      *        </p>
@@ -106,8 +106,8 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <note>
      * <p>
-     * If the configuration of the output S3 bucket requires server-side encryption for objects, and you don't provide
-     * the KMS key ID, Amazon SageMaker uses the default service key. For more information, see <a
+     * If you don't provide the KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's
+     * account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in
      * Amazon Simple Storage Service developer guide.
      * </p>
@@ -122,8 +122,8 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * @return The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model artifacts at
      *         rest using Amazon S3 server-side encryption. </p> <note>
      *         <p>
-     *         If the configuration of the output S3 bucket requires server-side encryption for objects, and you don't
-     *         provide the KMS key ID, Amazon SageMaker uses the default service key. For more information, see <a
+     *         If you don't provide the KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
+     *         role's account. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption
      *         Keys</a> in Amazon Simple Storage Service developer guide.
      *         </p>
@@ -147,8 +147,8 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <note>
      * <p>
-     * If the configuration of the output S3 bucket requires server-side encryption for objects, and you don't provide
-     * the KMS key ID, Amazon SageMaker uses the default service key. For more information, see <a
+     * If you don't provide the KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's
+     * account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in
      * Amazon Simple Storage Service developer guide.
      * </p>
@@ -164,8 +164,8 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model artifacts at
      *        rest using Amazon S3 server-side encryption. </p> <note>
      *        <p>
-     *        If the configuration of the output S3 bucket requires server-side encryption for objects, and you don't
-     *        provide the KMS key ID, Amazon SageMaker uses the default service key. For more information, see <a
+     *        If you don't provide the KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
+     *        role's account. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption
      *        Keys</a> in Amazon Simple Storage Service developer guide.
      *        </p>

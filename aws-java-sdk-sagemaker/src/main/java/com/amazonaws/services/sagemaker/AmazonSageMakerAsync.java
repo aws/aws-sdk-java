@@ -225,6 +225,41 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Starts a hyperparameter tuning job.
+     * </p>
+     * 
+     * @param createHyperParameterTuningJobRequest
+     * @return A Java Future containing the result of the CreateHyperParameterTuningJob operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsync.CreateHyperParameterTuningJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHyperParameterTuningJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateHyperParameterTuningJobResult> createHyperParameterTuningJobAsync(
+            CreateHyperParameterTuningJobRequest createHyperParameterTuningJobRequest);
+
+    /**
+     * <p>
+     * Starts a hyperparameter tuning job.
+     * </p>
+     * 
+     * @param createHyperParameterTuningJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateHyperParameterTuningJob operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsyncHandler.CreateHyperParameterTuningJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHyperParameterTuningJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateHyperParameterTuningJobResult> createHyperParameterTuningJobAsync(
+            CreateHyperParameterTuningJobRequest createHyperParameterTuningJobRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateHyperParameterTuningJobRequest, CreateHyperParameterTuningJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a model in Amazon SageMaker. In the request, you name the model and describe one or more containers. For
      * each container, you specify the docker image containing inference code, artifacts (from prior training), and
      * custom environment map that the inference code uses when you deploy the model into production.
@@ -498,7 +533,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Returns a URL that you can use to connect to the Juypter server from a notebook instance. In the Amazon SageMaker
+     * Returns a URL that you can use to connect to the Jupyter server from a notebook instance. In the Amazon SageMaker
      * console, when you choose <code>Open</code> next to a notebook instance, Amazon SageMaker opens a new tab showing
      * the Jupyter server home page from the notebook instance. The console uses this API to get the URL and show the
      * page.
@@ -516,7 +551,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Returns a URL that you can use to connect to the Juypter server from a notebook instance. In the Amazon SageMaker
+     * Returns a URL that you can use to connect to the Jupyter server from a notebook instance. In the Amazon SageMaker
      * console, when you choose <code>Open</code> next to a notebook instance, Amazon SageMaker opens a new tab showing
      * the Jupyter server home page from the notebook instance. The console uses this API to get the URL and show the
      * page.
@@ -715,7 +750,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Deletes an endpoint configuration. The <code>DeleteEndpoingConfig</code> API deletes only the specified
+     * Deletes an endpoint configuration. The <code>DeleteEndpointConfig</code> API deletes only the specified
      * configuration. It does not delete endpoints created using the configuration.
      * </p>
      * 
@@ -729,7 +764,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Deletes an endpoint configuration. The <code>DeleteEndpoingConfig</code> API deletes only the specified
+     * Deletes an endpoint configuration. The <code>DeleteEndpointConfig</code> API deletes only the specified
      * configuration. It does not delete endpoints created using the configuration.
      * </p>
      * 
@@ -964,6 +999,41 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Gets a description of a hyperparameter tuning job.
+     * </p>
+     * 
+     * @param describeHyperParameterTuningJobRequest
+     * @return A Java Future containing the result of the DescribeHyperParameterTuningJob operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsync.DescribeHyperParameterTuningJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHyperParameterTuningJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeHyperParameterTuningJobResult> describeHyperParameterTuningJobAsync(
+            DescribeHyperParameterTuningJobRequest describeHyperParameterTuningJobRequest);
+
+    /**
+     * <p>
+     * Gets a description of a hyperparameter tuning job.
+     * </p>
+     * 
+     * @param describeHyperParameterTuningJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeHyperParameterTuningJob operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsyncHandler.DescribeHyperParameterTuningJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHyperParameterTuningJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeHyperParameterTuningJobResult> describeHyperParameterTuningJobAsync(
+            DescribeHyperParameterTuningJobRequest describeHyperParameterTuningJobRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeHyperParameterTuningJobRequest, DescribeHyperParameterTuningJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes a model that you created using the <code>CreateModel</code> API.
      * </p>
      * 
@@ -1162,6 +1232,41 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Gets a list of objects that describe the hyperparameter tuning jobs launched in your account.
+     * </p>
+     * 
+     * @param listHyperParameterTuningJobsRequest
+     * @return A Java Future containing the result of the ListHyperParameterTuningJobs operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsync.ListHyperParameterTuningJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHyperParameterTuningJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListHyperParameterTuningJobsResult> listHyperParameterTuningJobsAsync(
+            ListHyperParameterTuningJobsRequest listHyperParameterTuningJobsRequest);
+
+    /**
+     * <p>
+     * Gets a list of objects that describe the hyperparameter tuning jobs launched in your account.
+     * </p>
+     * 
+     * @param listHyperParameterTuningJobsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListHyperParameterTuningJobs operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsyncHandler.ListHyperParameterTuningJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHyperParameterTuningJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListHyperParameterTuningJobsResult> listHyperParameterTuningJobsAsync(
+            ListHyperParameterTuningJobsRequest listHyperParameterTuningJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListHyperParameterTuningJobsRequest, ListHyperParameterTuningJobsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists models created with the <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModel.html">CreateModel</a> API.
      * </p>
@@ -1323,6 +1428,43 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Gets a list of objects that describe the training jobs that a hyperparameter tuning job launched.
+     * </p>
+     * 
+     * @param listTrainingJobsForHyperParameterTuningJobRequest
+     * @return A Java Future containing the result of the ListTrainingJobsForHyperParameterTuningJob operation returned
+     *         by the service.
+     * @sample AmazonSageMakerAsync.ListTrainingJobsForHyperParameterTuningJob
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingJobsForHyperParameterTuningJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTrainingJobsForHyperParameterTuningJobResult> listTrainingJobsForHyperParameterTuningJobAsync(
+            ListTrainingJobsForHyperParameterTuningJobRequest listTrainingJobsForHyperParameterTuningJobRequest);
+
+    /**
+     * <p>
+     * Gets a list of objects that describe the training jobs that a hyperparameter tuning job launched.
+     * </p>
+     * 
+     * @param listTrainingJobsForHyperParameterTuningJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTrainingJobsForHyperParameterTuningJob operation returned
+     *         by the service.
+     * @sample AmazonSageMakerAsyncHandler.ListTrainingJobsForHyperParameterTuningJob
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingJobsForHyperParameterTuningJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTrainingJobsForHyperParameterTuningJobResult> listTrainingJobsForHyperParameterTuningJobAsync(
+            ListTrainingJobsForHyperParameterTuningJobRequest listTrainingJobsForHyperParameterTuningJobRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTrainingJobsForHyperParameterTuningJobRequest, ListTrainingJobsForHyperParameterTuningJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Launches an ML compute instance with the latest version of the libraries and attaches your ML storage volume.
      * After configuring the notebook instance, Amazon SageMaker sets the notebook instance status to
      * <code>InService</code>. A notebook instance's status must be <code>InService</code> before you can connect to
@@ -1357,6 +1499,49 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<StartNotebookInstanceResult> startNotebookInstanceAsync(StartNotebookInstanceRequest startNotebookInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<StartNotebookInstanceRequest, StartNotebookInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops a running hyperparameter tuning job and all running training jobs that the tuning job launched.
+     * </p>
+     * <p>
+     * All model artifacts output from the training jobs are stored in Amazon Simple Storage Service (Amazon S3). All
+     * data that the training jobs write toAmazon CloudWatch Logs are still available in CloudWatch. After the tuning
+     * job moves to the <code>Stopped</code> state, it releases all reserved resources for the tuning job.
+     * </p>
+     * 
+     * @param stopHyperParameterTuningJobRequest
+     * @return A Java Future containing the result of the StopHyperParameterTuningJob operation returned by the service.
+     * @sample AmazonSageMakerAsync.StopHyperParameterTuningJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopHyperParameterTuningJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopHyperParameterTuningJobResult> stopHyperParameterTuningJobAsync(
+            StopHyperParameterTuningJobRequest stopHyperParameterTuningJobRequest);
+
+    /**
+     * <p>
+     * Stops a running hyperparameter tuning job and all running training jobs that the tuning job launched.
+     * </p>
+     * <p>
+     * All model artifacts output from the training jobs are stored in Amazon Simple Storage Service (Amazon S3). All
+     * data that the training jobs write toAmazon CloudWatch Logs are still available in CloudWatch. After the tuning
+     * job moves to the <code>Stopped</code> state, it releases all reserved resources for the tuning job.
+     * </p>
+     * 
+     * @param stopHyperParameterTuningJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopHyperParameterTuningJob operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.StopHyperParameterTuningJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopHyperParameterTuningJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopHyperParameterTuningJobResult> stopHyperParameterTuningJobAsync(
+            StopHyperParameterTuningJobRequest stopHyperParameterTuningJobRequest,
+            com.amazonaws.handlers.AsyncHandler<StopHyperParameterTuningJobRequest, StopHyperParameterTuningJobResult> asyncHandler);
 
     /**
      * <p>

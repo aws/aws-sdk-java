@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 /**
  * Use Noise reducer filter (NoiseReducerFilter) to select one of the following spatial image filtering functions. To
  * use this setting, you must also enable Noise reducer (NoiseReducer). * Bilateral is an edge preserving noise
- * reduction filter * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) are convolution filters * Conserve is a
- * min/max noise reduction filter * Spatial is frequency-domain filter based on JND principles.
+ * reduction filter. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) are convolution filters. * Conserve is
+ * a min/max noise reduction filter. * Spatial is a frequency-domain filter based on JND principles.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum NoiseReducerFilter {

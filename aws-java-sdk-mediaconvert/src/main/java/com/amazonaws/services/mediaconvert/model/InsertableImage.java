@@ -70,7 +70,7 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     private Integer opacity;
     /**
      * Use Start time (StartTime) to specify the video timecode when the image is inserted in the output. This must be
-     * in timecode format (HH:MM:SS:FF)
+     * in timecode (HH:MM:SS:FF or HH:MM:SS;FF) format.
      */
     private String startTime;
     /**
@@ -436,11 +436,11 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * Use Start time (StartTime) to specify the video timecode when the image is inserted in the output. This must be
-     * in timecode format (HH:MM:SS:FF)
+     * in timecode (HH:MM:SS:FF or HH:MM:SS;FF) format.
      * 
      * @param startTime
      *        Use Start time (StartTime) to specify the video timecode when the image is inserted in the output. This
-     *        must be in timecode format (HH:MM:SS:FF)
+     *        must be in timecode (HH:MM:SS:FF or HH:MM:SS;FF) format.
      */
 
     public void setStartTime(String startTime) {
@@ -449,10 +449,10 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * Use Start time (StartTime) to specify the video timecode when the image is inserted in the output. This must be
-     * in timecode format (HH:MM:SS:FF)
+     * in timecode (HH:MM:SS:FF or HH:MM:SS;FF) format.
      * 
      * @return Use Start time (StartTime) to specify the video timecode when the image is inserted in the output. This
-     *         must be in timecode format (HH:MM:SS:FF)
+     *         must be in timecode (HH:MM:SS:FF or HH:MM:SS;FF) format.
      */
 
     public String getStartTime() {
@@ -461,11 +461,11 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * Use Start time (StartTime) to specify the video timecode when the image is inserted in the output. This must be
-     * in timecode format (HH:MM:SS:FF)
+     * in timecode (HH:MM:SS:FF or HH:MM:SS;FF) format.
      * 
      * @param startTime
      *        Use Start time (StartTime) to specify the video timecode when the image is inserted in the output. This
-     *        must be in timecode format (HH:MM:SS:FF)
+     *        must be in timecode (HH:MM:SS:FF or HH:MM:SS;FF) format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

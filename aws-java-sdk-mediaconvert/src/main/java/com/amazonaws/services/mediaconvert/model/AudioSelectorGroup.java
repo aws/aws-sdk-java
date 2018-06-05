@@ -27,20 +27,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class AudioSelectorGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * Name of an "Audio Selector":#inputs-audio_selector within the same input to include in the group. Audio selector
-     * names are standardized, based on their order within the input (e.g. "Audio Selector 1"). The audio_selector_name
-     * parameter can be repeated to add any number of audio selectors to the group.
+     * Name of an Audio Selector within the same input to include in the group. Audio selector names are standardized,
+     * based on their order within the input (e.g., "Audio Selector 1"). The audio selector name parameter can be
+     * repeated to add any number of audio selectors to the group.
      */
     private java.util.List<String> audioSelectorNames;
 
     /**
-     * Name of an "Audio Selector":#inputs-audio_selector within the same input to include in the group. Audio selector
-     * names are standardized, based on their order within the input (e.g. "Audio Selector 1"). The audio_selector_name
-     * parameter can be repeated to add any number of audio selectors to the group.
+     * Name of an Audio Selector within the same input to include in the group. Audio selector names are standardized,
+     * based on their order within the input (e.g., "Audio Selector 1"). The audio selector name parameter can be
+     * repeated to add any number of audio selectors to the group.
      * 
-     * @return Name of an "Audio Selector":#inputs-audio_selector within the same input to include in the group. Audio
-     *         selector names are standardized, based on their order within the input (e.g. "Audio Selector 1"). The
-     *         audio_selector_name parameter can be repeated to add any number of audio selectors to the group.
+     * @return Name of an Audio Selector within the same input to include in the group. Audio selector names are
+     *         standardized, based on their order within the input (e.g., "Audio Selector 1"). The audio selector name
+     *         parameter can be repeated to add any number of audio selectors to the group.
      */
 
     public java.util.List<String> getAudioSelectorNames() {
@@ -48,14 +48,14 @@ public class AudioSelectorGroup implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Name of an "Audio Selector":#inputs-audio_selector within the same input to include in the group. Audio selector
-     * names are standardized, based on their order within the input (e.g. "Audio Selector 1"). The audio_selector_name
-     * parameter can be repeated to add any number of audio selectors to the group.
+     * Name of an Audio Selector within the same input to include in the group. Audio selector names are standardized,
+     * based on their order within the input (e.g., "Audio Selector 1"). The audio selector name parameter can be
+     * repeated to add any number of audio selectors to the group.
      * 
      * @param audioSelectorNames
-     *        Name of an "Audio Selector":#inputs-audio_selector within the same input to include in the group. Audio
-     *        selector names are standardized, based on their order within the input (e.g. "Audio Selector 1"). The
-     *        audio_selector_name parameter can be repeated to add any number of audio selectors to the group.
+     *        Name of an Audio Selector within the same input to include in the group. Audio selector names are
+     *        standardized, based on their order within the input (e.g., "Audio Selector 1"). The audio selector name
+     *        parameter can be repeated to add any number of audio selectors to the group.
      */
 
     public void setAudioSelectorNames(java.util.Collection<String> audioSelectorNames) {
@@ -68,9 +68,9 @@ public class AudioSelectorGroup implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Name of an "Audio Selector":#inputs-audio_selector within the same input to include in the group. Audio selector
-     * names are standardized, based on their order within the input (e.g. "Audio Selector 1"). The audio_selector_name
-     * parameter can be repeated to add any number of audio selectors to the group.
+     * Name of an Audio Selector within the same input to include in the group. Audio selector names are standardized,
+     * based on their order within the input (e.g., "Audio Selector 1"). The audio selector name parameter can be
+     * repeated to add any number of audio selectors to the group.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAudioSelectorNames(java.util.Collection)} or {@link #withAudioSelectorNames(java.util.Collection)} if
@@ -78,9 +78,9 @@ public class AudioSelectorGroup implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param audioSelectorNames
-     *        Name of an "Audio Selector":#inputs-audio_selector within the same input to include in the group. Audio
-     *        selector names are standardized, based on their order within the input (e.g. "Audio Selector 1"). The
-     *        audio_selector_name parameter can be repeated to add any number of audio selectors to the group.
+     *        Name of an Audio Selector within the same input to include in the group. Audio selector names are
+     *        standardized, based on their order within the input (e.g., "Audio Selector 1"). The audio selector name
+     *        parameter can be repeated to add any number of audio selectors to the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,14 +95,14 @@ public class AudioSelectorGroup implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Name of an "Audio Selector":#inputs-audio_selector within the same input to include in the group. Audio selector
-     * names are standardized, based on their order within the input (e.g. "Audio Selector 1"). The audio_selector_name
-     * parameter can be repeated to add any number of audio selectors to the group.
+     * Name of an Audio Selector within the same input to include in the group. Audio selector names are standardized,
+     * based on their order within the input (e.g., "Audio Selector 1"). The audio selector name parameter can be
+     * repeated to add any number of audio selectors to the group.
      * 
      * @param audioSelectorNames
-     *        Name of an "Audio Selector":#inputs-audio_selector within the same input to include in the group. Audio
-     *        selector names are standardized, based on their order within the input (e.g. "Audio Selector 1"). The
-     *        audio_selector_name parameter can be repeated to add any number of audio selectors to the group.
+     *        Name of an Audio Selector within the same input to include in the group. Audio selector names are
+     *        standardized, based on their order within the input (e.g., "Audio Selector 1"). The audio selector name
+     *        parameter can be repeated to add any number of audio selectors to the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -49,7 +49,7 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If training data is compressed, the compression type. The default value is <code>None</code>.
-     * <code>CompressionType</code> is used only in PIPE input mode. In FILE mode, leave this field unset or set it to
+     * <code>CompressionType</code> is used only in Pipe input mode. In File mode, leave this field unset or set it to
      * None.
      * </p>
      */
@@ -58,8 +58,8 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * <p/>
      * <p>
      * Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO
-     * format, in which caseAmazon SageMaker wraps each individual S3 object in a RecordIO record. If the input data is
-     * already in RecordIO format, you don't need to set this attribute. For more information, see <a
+     * format, in which case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If the input data
+     * is already in RecordIO format, you don't need to set this attribute. For more information, see <a
      * href="https://mxnet.incubator.apache.org/how_to/recordio.html?highlight=im2rec">Create a Dataset Using
      * RecordIO</a>.
      * </p>
@@ -193,13 +193,13 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If training data is compressed, the compression type. The default value is <code>None</code>.
-     * <code>CompressionType</code> is used only in PIPE input mode. In FILE mode, leave this field unset or set it to
+     * <code>CompressionType</code> is used only in Pipe input mode. In File mode, leave this field unset or set it to
      * None.
      * </p>
      * 
      * @param compressionType
      *        If training data is compressed, the compression type. The default value is <code>None</code>.
-     *        <code>CompressionType</code> is used only in PIPE input mode. In FILE mode, leave this field unset or set
+     *        <code>CompressionType</code> is used only in Pipe input mode. In File mode, leave this field unset or set
      *        it to None.
      * @see CompressionType
      */
@@ -211,12 +211,12 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If training data is compressed, the compression type. The default value is <code>None</code>.
-     * <code>CompressionType</code> is used only in PIPE input mode. In FILE mode, leave this field unset or set it to
+     * <code>CompressionType</code> is used only in Pipe input mode. In File mode, leave this field unset or set it to
      * None.
      * </p>
      * 
      * @return If training data is compressed, the compression type. The default value is <code>None</code>.
-     *         <code>CompressionType</code> is used only in PIPE input mode. In FILE mode, leave this field unset or set
+     *         <code>CompressionType</code> is used only in Pipe input mode. In File mode, leave this field unset or set
      *         it to None.
      * @see CompressionType
      */
@@ -228,13 +228,13 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If training data is compressed, the compression type. The default value is <code>None</code>.
-     * <code>CompressionType</code> is used only in PIPE input mode. In FILE mode, leave this field unset or set it to
+     * <code>CompressionType</code> is used only in Pipe input mode. In File mode, leave this field unset or set it to
      * None.
      * </p>
      * 
      * @param compressionType
      *        If training data is compressed, the compression type. The default value is <code>None</code>.
-     *        <code>CompressionType</code> is used only in PIPE input mode. In FILE mode, leave this field unset or set
+     *        <code>CompressionType</code> is used only in Pipe input mode. In File mode, leave this field unset or set
      *        it to None.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CompressionType
@@ -248,13 +248,13 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If training data is compressed, the compression type. The default value is <code>None</code>.
-     * <code>CompressionType</code> is used only in PIPE input mode. In FILE mode, leave this field unset or set it to
+     * <code>CompressionType</code> is used only in Pipe input mode. In File mode, leave this field unset or set it to
      * None.
      * </p>
      * 
      * @param compressionType
      *        If training data is compressed, the compression type. The default value is <code>None</code>.
-     *        <code>CompressionType</code> is used only in PIPE input mode. In FILE mode, leave this field unset or set
+     *        <code>CompressionType</code> is used only in Pipe input mode. In File mode, leave this field unset or set
      *        it to None.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CompressionType
@@ -269,8 +269,8 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * <p/>
      * <p>
      * Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO
-     * format, in which caseAmazon SageMaker wraps each individual S3 object in a RecordIO record. If the input data is
-     * already in RecordIO format, you don't need to set this attribute. For more information, see <a
+     * format, in which case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If the input data
+     * is already in RecordIO format, you don't need to set this attribute. For more information, see <a
      * href="https://mxnet.incubator.apache.org/how_to/recordio.html?highlight=im2rec">Create a Dataset Using
      * RecordIO</a>.
      * </p>
@@ -282,7 +282,7 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * @param recordWrapperType
      *        <p>
      *        Specify RecordIO as the value when input data is in raw format but the training algorithm requires the
-     *        RecordIO format, in which caseAmazon SageMaker wraps each individual S3 object in a RecordIO record. If
+     *        RecordIO format, in which case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If
      *        the input data is already in RecordIO format, you don't need to set this attribute. For more information,
      *        see <a href="https://mxnet.incubator.apache.org/how_to/recordio.html?highlight=im2rec">Create a Dataset
      *        Using RecordIO</a>.
@@ -301,8 +301,8 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * <p/>
      * <p>
      * Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO
-     * format, in which caseAmazon SageMaker wraps each individual S3 object in a RecordIO record. If the input data is
-     * already in RecordIO format, you don't need to set this attribute. For more information, see <a
+     * format, in which case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If the input data
+     * is already in RecordIO format, you don't need to set this attribute. For more information, see <a
      * href="https://mxnet.incubator.apache.org/how_to/recordio.html?highlight=im2rec">Create a Dataset Using
      * RecordIO</a>.
      * </p>
@@ -313,7 +313,7 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return <p>
      *         Specify RecordIO as the value when input data is in raw format but the training algorithm requires the
-     *         RecordIO format, in which caseAmazon SageMaker wraps each individual S3 object in a RecordIO record. If
+     *         RecordIO format, in which case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If
      *         the input data is already in RecordIO format, you don't need to set this attribute. For more information,
      *         see <a href="https://mxnet.incubator.apache.org/how_to/recordio.html?highlight=im2rec">Create a Dataset
      *         Using RecordIO</a>.
@@ -332,8 +332,8 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * <p/>
      * <p>
      * Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO
-     * format, in which caseAmazon SageMaker wraps each individual S3 object in a RecordIO record. If the input data is
-     * already in RecordIO format, you don't need to set this attribute. For more information, see <a
+     * format, in which case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If the input data
+     * is already in RecordIO format, you don't need to set this attribute. For more information, see <a
      * href="https://mxnet.incubator.apache.org/how_to/recordio.html?highlight=im2rec">Create a Dataset Using
      * RecordIO</a>.
      * </p>
@@ -345,7 +345,7 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * @param recordWrapperType
      *        <p>
      *        Specify RecordIO as the value when input data is in raw format but the training algorithm requires the
-     *        RecordIO format, in which caseAmazon SageMaker wraps each individual S3 object in a RecordIO record. If
+     *        RecordIO format, in which case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If
      *        the input data is already in RecordIO format, you don't need to set this attribute. For more information,
      *        see <a href="https://mxnet.incubator.apache.org/how_to/recordio.html?highlight=im2rec">Create a Dataset
      *        Using RecordIO</a>.
@@ -366,8 +366,8 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * <p/>
      * <p>
      * Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO
-     * format, in which caseAmazon SageMaker wraps each individual S3 object in a RecordIO record. If the input data is
-     * already in RecordIO format, you don't need to set this attribute. For more information, see <a
+     * format, in which case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If the input data
+     * is already in RecordIO format, you don't need to set this attribute. For more information, see <a
      * href="https://mxnet.incubator.apache.org/how_to/recordio.html?highlight=im2rec">Create a Dataset Using
      * RecordIO</a>.
      * </p>
@@ -379,7 +379,7 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * @param recordWrapperType
      *        <p>
      *        Specify RecordIO as the value when input data is in raw format but the training algorithm requires the
-     *        RecordIO format, in which caseAmazon SageMaker wraps each individual S3 object in a RecordIO record. If
+     *        RecordIO format, in which case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If
      *        the input data is already in RecordIO format, you don't need to set this attribute. For more information,
      *        see <a href="https://mxnet.incubator.apache.org/how_to/recordio.html?highlight=im2rec">Create a Dataset
      *        Using RecordIO</a>.

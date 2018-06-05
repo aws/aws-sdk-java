@@ -18,8 +18,8 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Use Manual audio remixing (RemixSettings) to adjust audio levels for each output channel. With audio remixing, you
- * can output more or fewer audio channels than your input audio source provides.
+ * Use Manual audio remixing (RemixSettings) to adjust audio levels for each audio channel in each output of your job.
+ * With audio remixing, you can output more or fewer audio channels than your input audio source provides.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/RemixSettings" target="_top">AWS API
  *      Documentation</a>

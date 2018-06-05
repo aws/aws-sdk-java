@@ -37,6 +37,13 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     private String trainingJobArn;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the associated hyperparameter tuning job if the training job was launched by a
+     * hyperparameter tuning job.
+     * </p>
+     */
+    private String tuningJobArn;
+    /**
+     * <p>
      * Information about the Amazon S3 location that is configured for storing model artifacts.
      * </p>
      */
@@ -152,13 +159,19 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     private java.util.Date creationTime;
     /**
      * <p>
-     * A timestamp that indicates when training started.
+     * Indicates the time when the training job starts on training instances. You are billed for the time interval
+     * between this time and the value of <code>TrainingEndTime</code>. The start time in CloudWatch Logs might be later
+     * than this time. The difference is due to the time it takes to download the training data and to the size of the
+     * training container.
      * </p>
      */
     private java.util.Date trainingStartTime;
     /**
      * <p>
-     * A timestamp that indicates when model training ended.
+     * Indicates the time when the training job ends on training instances. You are billed for the time interval between
+     * the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time
+     * after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job
+     * failure.
      * </p>
      */
     private java.util.Date trainingEndTime;
@@ -246,6 +259,52 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     public DescribeTrainingJobResult withTrainingJobArn(String trainingJobArn) {
         setTrainingJobArn(trainingJobArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the associated hyperparameter tuning job if the training job was launched by a
+     * hyperparameter tuning job.
+     * </p>
+     * 
+     * @param tuningJobArn
+     *        The Amazon Resource Name (ARN) of the associated hyperparameter tuning job if the training job was
+     *        launched by a hyperparameter tuning job.
+     */
+
+    public void setTuningJobArn(String tuningJobArn) {
+        this.tuningJobArn = tuningJobArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the associated hyperparameter tuning job if the training job was launched by a
+     * hyperparameter tuning job.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the associated hyperparameter tuning job if the training job was
+     *         launched by a hyperparameter tuning job.
+     */
+
+    public String getTuningJobArn() {
+        return this.tuningJobArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the associated hyperparameter tuning job if the training job was launched by a
+     * hyperparameter tuning job.
+     * </p>
+     * 
+     * @param tuningJobArn
+     *        The Amazon Resource Name (ARN) of the associated hyperparameter tuning job if the training job was
+     *        launched by a hyperparameter tuning job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withTuningJobArn(String tuningJobArn) {
+        setTuningJobArn(tuningJobArn);
         return this;
     }
 
@@ -1157,11 +1216,17 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A timestamp that indicates when training started.
+     * Indicates the time when the training job starts on training instances. You are billed for the time interval
+     * between this time and the value of <code>TrainingEndTime</code>. The start time in CloudWatch Logs might be later
+     * than this time. The difference is due to the time it takes to download the training data and to the size of the
+     * training container.
      * </p>
      * 
      * @param trainingStartTime
-     *        A timestamp that indicates when training started.
+     *        Indicates the time when the training job starts on training instances. You are billed for the time
+     *        interval between this time and the value of <code>TrainingEndTime</code>. The start time in CloudWatch
+     *        Logs might be later than this time. The difference is due to the time it takes to download the training
+     *        data and to the size of the training container.
      */
 
     public void setTrainingStartTime(java.util.Date trainingStartTime) {
@@ -1170,10 +1235,16 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A timestamp that indicates when training started.
+     * Indicates the time when the training job starts on training instances. You are billed for the time interval
+     * between this time and the value of <code>TrainingEndTime</code>. The start time in CloudWatch Logs might be later
+     * than this time. The difference is due to the time it takes to download the training data and to the size of the
+     * training container.
      * </p>
      * 
-     * @return A timestamp that indicates when training started.
+     * @return Indicates the time when the training job starts on training instances. You are billed for the time
+     *         interval between this time and the value of <code>TrainingEndTime</code>. The start time in CloudWatch
+     *         Logs might be later than this time. The difference is due to the time it takes to download the training
+     *         data and to the size of the training container.
      */
 
     public java.util.Date getTrainingStartTime() {
@@ -1182,11 +1253,17 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A timestamp that indicates when training started.
+     * Indicates the time when the training job starts on training instances. You are billed for the time interval
+     * between this time and the value of <code>TrainingEndTime</code>. The start time in CloudWatch Logs might be later
+     * than this time. The difference is due to the time it takes to download the training data and to the size of the
+     * training container.
      * </p>
      * 
      * @param trainingStartTime
-     *        A timestamp that indicates when training started.
+     *        Indicates the time when the training job starts on training instances. You are billed for the time
+     *        interval between this time and the value of <code>TrainingEndTime</code>. The start time in CloudWatch
+     *        Logs might be later than this time. The difference is due to the time it takes to download the training
+     *        data and to the size of the training container.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1197,11 +1274,17 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A timestamp that indicates when model training ended.
+     * Indicates the time when the training job ends on training instances. You are billed for the time interval between
+     * the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time
+     * after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job
+     * failure.
      * </p>
      * 
      * @param trainingEndTime
-     *        A timestamp that indicates when model training ended.
+     *        Indicates the time when the training job ends on training instances. You are billed for the time interval
+     *        between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs,
+     *        this is the time after model artifacts are uploaded. For failed jobs, this is the time when Amazon
+     *        SageMaker detects a job failure.
      */
 
     public void setTrainingEndTime(java.util.Date trainingEndTime) {
@@ -1210,10 +1293,16 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A timestamp that indicates when model training ended.
+     * Indicates the time when the training job ends on training instances. You are billed for the time interval between
+     * the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time
+     * after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job
+     * failure.
      * </p>
      * 
-     * @return A timestamp that indicates when model training ended.
+     * @return Indicates the time when the training job ends on training instances. You are billed for the time interval
+     *         between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs,
+     *         this is the time after model artifacts are uploaded. For failed jobs, this is the time when Amazon
+     *         SageMaker detects a job failure.
      */
 
     public java.util.Date getTrainingEndTime() {
@@ -1222,11 +1311,17 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A timestamp that indicates when model training ended.
+     * Indicates the time when the training job ends on training instances. You are billed for the time interval between
+     * the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time
+     * after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job
+     * failure.
      * </p>
      * 
      * @param trainingEndTime
-     *        A timestamp that indicates when model training ended.
+     *        Indicates the time when the training job ends on training instances. You are billed for the time interval
+     *        between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs,
+     *        this is the time after model artifacts are uploaded. For failed jobs, this is the time when Amazon
+     *        SageMaker detects a job failure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1290,6 +1385,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
             sb.append("TrainingJobName: ").append(getTrainingJobName()).append(",");
         if (getTrainingJobArn() != null)
             sb.append("TrainingJobArn: ").append(getTrainingJobArn()).append(",");
+        if (getTuningJobArn() != null)
+            sb.append("TuningJobArn: ").append(getTuningJobArn()).append(",");
         if (getModelArtifacts() != null)
             sb.append("ModelArtifacts: ").append(getModelArtifacts()).append(",");
         if (getTrainingJobStatus() != null)
@@ -1343,6 +1440,10 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
         if (other.getTrainingJobArn() == null ^ this.getTrainingJobArn() == null)
             return false;
         if (other.getTrainingJobArn() != null && other.getTrainingJobArn().equals(this.getTrainingJobArn()) == false)
+            return false;
+        if (other.getTuningJobArn() == null ^ this.getTuningJobArn() == null)
+            return false;
+        if (other.getTuningJobArn() != null && other.getTuningJobArn().equals(this.getTuningJobArn()) == false)
             return false;
         if (other.getModelArtifacts() == null ^ this.getModelArtifacts() == null)
             return false;
@@ -1418,6 +1519,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
         hashCode = prime * hashCode + ((getTrainingJobName() == null) ? 0 : getTrainingJobName().hashCode());
         hashCode = prime * hashCode + ((getTrainingJobArn() == null) ? 0 : getTrainingJobArn().hashCode());
+        hashCode = prime * hashCode + ((getTuningJobArn() == null) ? 0 : getTuningJobArn().hashCode());
         hashCode = prime * hashCode + ((getModelArtifacts() == null) ? 0 : getModelArtifacts().hashCode());
         hashCode = prime * hashCode + ((getTrainingJobStatus() == null) ? 0 : getTrainingJobStatus().hashCode());
         hashCode = prime * hashCode + ((getSecondaryStatus() == null) ? 0 : getSecondaryStatus().hashCode());

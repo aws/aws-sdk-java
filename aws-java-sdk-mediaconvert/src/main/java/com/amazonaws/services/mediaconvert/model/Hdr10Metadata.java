@@ -18,9 +18,11 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Use the HDR master display (Hdr10Metadata) settings to provide values for HDR color. These values vary depending on
- * the input video and must be provided by a color grader. Range is 0 to 50,000, each increment represents 0.00002 in
- * CIE1931 color coordinate.
+ * Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or to provide missing metadata. These
+ * values vary depending on the input video and must be provided by a color grader. Range is 0 to 50,000, each increment
+ * represents 0.00002 in CIE1931 color coordinate. Note that these settings are not color correction. Note that if you
+ * are creating HDR outputs inside of an HLS CMAF package, to comply with the Apple specification, you must use the HVC1
+ * for H.265 setting.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Hdr10Metadata" target="_top">AWS API
  *      Documentation</a>
@@ -29,23 +31,27 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class Hdr10Metadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to 50,000,
-     * each increment represents 0.00002 in CIE1931 color coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to
+     * 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color
+     * correction.
      */
     private Integer bluePrimaryX;
     /**
-     * HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to 50,000,
-     * each increment represents 0.00002 in CIE1931 color coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to
+     * 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color
+     * correction.
      */
     private Integer bluePrimaryY;
     /**
-     * HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to 50,000,
-     * each increment represents 0.00002 in CIE1931 color coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to
+     * 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color
+     * correction.
      */
     private Integer greenPrimaryX;
     /**
-     * HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to 50,000,
-     * each increment represents 0.00002 in CIE1931 color coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to
+     * 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color
+     * correction.
      */
     private Integer greenPrimaryY;
     /** Maximum light level among all samples in the coded video sequence, in units of candelas per square meter. */
@@ -57,33 +63,39 @@ public class Hdr10Metadata implements Serializable, Cloneable, StructuredPojo {
     /** Nominal minimum mastering display luminance in units of of 0.0001 candelas per square meter */
     private Integer minLuminance;
     /**
-     * HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to 50,000,
-     * each increment represents 0.00002 in CIE1931 color coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to
+     * 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color
+     * correction.
      */
     private Integer redPrimaryX;
     /**
-     * HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to 50,000,
-     * each increment represents 0.00002 in CIE1931 color coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to
+     * 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color
+     * correction.
      */
     private Integer redPrimaryY;
     /**
-     * HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to 50,000,
-     * each increment represents 0.00002 in CIE1931 color coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to
+     * 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color
+     * correction.
      */
     private Integer whitePointX;
     /**
-     * HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to 50,000,
-     * each increment represents 0.00002 in CIE1931 color coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to
+     * 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color
+     * correction.
      */
     private Integer whitePointY;
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to 50,000,
-     * each increment represents 0.00002 in CIE1931 color coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to
+     * 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color
+     * correction.
      * 
      * @param bluePrimaryX
-     *        HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to
-     *        50,000, each increment represents 0.00002 in CIE1931 color coordinate.
+     *        HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0
+     *        to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not
+     *        for color correction.
      */
 
     public void setBluePrimaryX(Integer bluePrimaryX) {
@@ -91,11 +103,13 @@ public class Hdr10Metadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to 50,000,
-     * each increment represents 0.00002 in CIE1931 color coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to
+     * 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color
+     * correction.
      * 
-     * @return HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to
-     *         50,000, each increment represents 0.00002 in CIE1931 color coordinate.
+     * @return HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0
+     *         to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not
+     *         for color correction.
      */
 
     public Integer getBluePrimaryX() {
@@ -103,12 +117,14 @@ public class Hdr10Metadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to 50,000,
-     * each increment represents 0.00002 in CIE1931 color coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to
+     * 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color
+     * correction.
      * 
      * @param bluePrimaryX
-     *        HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to
-     *        50,000, each increment represents 0.00002 in CIE1931 color coordinate.
+     *        HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0
+     *        to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not
+     *        for color correction.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -118,12 +134,14 @@ public class Hdr10Metadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to 50,000,
-     * each increment represents 0.00002 in CIE1931 color coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to
+     * 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color
+     * correction.
      * 
      * @param bluePrimaryY
-     *        HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to
-     *        50,000, each increment represents 0.00002 in CIE1931 color coordinate.
+     *        HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0
+     *        to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not
+     *        for color correction.
      */
 
     public void setBluePrimaryY(Integer bluePrimaryY) {
@@ -131,11 +149,13 @@ public class Hdr10Metadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to 50,000,
-     * each increment represents 0.00002 in CIE1931 color coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to
+     * 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color
+     * correction.
      * 
-     * @return HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to
-     *         50,000, each increment represents 0.00002 in CIE1931 color coordinate.
+     * @return HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0
+     *         to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not
+     *         for color correction.
      */
 
     public Integer getBluePrimaryY() {
@@ -143,12 +163,14 @@ public class Hdr10Metadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to 50,000,
-     * each increment represents 0.00002 in CIE1931 color coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to
+     * 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color
+     * correction.
      * 
      * @param bluePrimaryY
-     *        HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to
-     *        50,000, each increment represents 0.00002 in CIE1931 color coordinate.
+     *        HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0
+     *        to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not
+     *        for color correction.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -158,12 +180,14 @@ public class Hdr10Metadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to 50,000,
-     * each increment represents 0.00002 in CIE1931 color coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to
+     * 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color
+     * correction.
      * 
      * @param greenPrimaryX
-     *        HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to
-     *        50,000, each increment represents 0.00002 in CIE1931 color coordinate.
+     *        HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0
+     *        to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not
+     *        for color correction.
      */
 
     public void setGreenPrimaryX(Integer greenPrimaryX) {
@@ -171,11 +195,13 @@ public class Hdr10Metadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to 50,000,
-     * each increment represents 0.00002 in CIE1931 color coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to
+     * 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color
+     * correction.
      * 
-     * @return HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to
-     *         50,000, each increment represents 0.00002 in CIE1931 color coordinate.
+     * @return HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0
+     *         to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not
+     *         for color correction.
      */
 
     public Integer getGreenPrimaryX() {
@@ -183,12 +209,14 @@ public class Hdr10Metadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to 50,000,
-     * each increment represents 0.00002 in CIE1931 color coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to
+     * 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color
+     * correction.
      * 
      * @param greenPrimaryX
-     *        HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to
-     *        50,000, each increment represents 0.00002 in CIE1931 color coordinate.
+     *        HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0
+     *        to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not
+     *        for color correction.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -198,12 +226,14 @@ public class Hdr10Metadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to 50,000,
-     * each increment represents 0.00002 in CIE1931 color coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to
+     * 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color
+     * correction.
      * 
      * @param greenPrimaryY
-     *        HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to
-     *        50,000, each increment represents 0.00002 in CIE1931 color coordinate.
+     *        HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0
+     *        to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not
+     *        for color correction.
      */
 
     public void setGreenPrimaryY(Integer greenPrimaryY) {
@@ -211,11 +241,13 @@ public class Hdr10Metadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to 50,000,
-     * each increment represents 0.00002 in CIE1931 color coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to
+     * 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color
+     * correction.
      * 
-     * @return HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to
-     *         50,000, each increment represents 0.00002 in CIE1931 color coordinate.
+     * @return HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0
+     *         to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not
+     *         for color correction.
      */
 
     public Integer getGreenPrimaryY() {
@@ -223,12 +255,14 @@ public class Hdr10Metadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to 50,000,
-     * each increment represents 0.00002 in CIE1931 color coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to
+     * 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color
+     * correction.
      * 
      * @param greenPrimaryY
-     *        HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to
-     *        50,000, each increment represents 0.00002 in CIE1931 color coordinate.
+     *        HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0
+     *        to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not
+     *        for color correction.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -377,12 +411,14 @@ public class Hdr10Metadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to 50,000,
-     * each increment represents 0.00002 in CIE1931 color coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to
+     * 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color
+     * correction.
      * 
      * @param redPrimaryX
-     *        HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to
-     *        50,000, each increment represents 0.00002 in CIE1931 color coordinate.
+     *        HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0
+     *        to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not
+     *        for color correction.
      */
 
     public void setRedPrimaryX(Integer redPrimaryX) {
@@ -390,11 +426,13 @@ public class Hdr10Metadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to 50,000,
-     * each increment represents 0.00002 in CIE1931 color coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to
+     * 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color
+     * correction.
      * 
-     * @return HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to
-     *         50,000, each increment represents 0.00002 in CIE1931 color coordinate.
+     * @return HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0
+     *         to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not
+     *         for color correction.
      */
 
     public Integer getRedPrimaryX() {
@@ -402,12 +440,14 @@ public class Hdr10Metadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to 50,000,
-     * each increment represents 0.00002 in CIE1931 color coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to
+     * 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color
+     * correction.
      * 
      * @param redPrimaryX
-     *        HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to
-     *        50,000, each increment represents 0.00002 in CIE1931 color coordinate.
+     *        HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0
+     *        to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not
+     *        for color correction.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -417,12 +457,14 @@ public class Hdr10Metadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to 50,000,
-     * each increment represents 0.00002 in CIE1931 color coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to
+     * 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color
+     * correction.
      * 
      * @param redPrimaryY
-     *        HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to
-     *        50,000, each increment represents 0.00002 in CIE1931 color coordinate.
+     *        HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0
+     *        to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not
+     *        for color correction.
      */
 
     public void setRedPrimaryY(Integer redPrimaryY) {
@@ -430,11 +472,13 @@ public class Hdr10Metadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to 50,000,
-     * each increment represents 0.00002 in CIE1931 color coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to
+     * 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color
+     * correction.
      * 
-     * @return HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to
-     *         50,000, each increment represents 0.00002 in CIE1931 color coordinate.
+     * @return HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0
+     *         to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not
+     *         for color correction.
      */
 
     public Integer getRedPrimaryY() {
@@ -442,12 +486,14 @@ public class Hdr10Metadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to 50,000,
-     * each increment represents 0.00002 in CIE1931 color coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to
+     * 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color
+     * correction.
      * 
      * @param redPrimaryY
-     *        HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to
-     *        50,000, each increment represents 0.00002 in CIE1931 color coordinate.
+     *        HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0
+     *        to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not
+     *        for color correction.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -457,12 +503,14 @@ public class Hdr10Metadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to 50,000,
-     * each increment represents 0.00002 in CIE1931 color coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to
+     * 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color
+     * correction.
      * 
      * @param whitePointX
-     *        HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to
-     *        50,000, each increment represents 0.00002 in CIE1931 color coordinate.
+     *        HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0
+     *        to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not
+     *        for color correction.
      */
 
     public void setWhitePointX(Integer whitePointX) {
@@ -470,11 +518,13 @@ public class Hdr10Metadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to 50,000,
-     * each increment represents 0.00002 in CIE1931 color coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to
+     * 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color
+     * correction.
      * 
-     * @return HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to
-     *         50,000, each increment represents 0.00002 in CIE1931 color coordinate.
+     * @return HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0
+     *         to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not
+     *         for color correction.
      */
 
     public Integer getWhitePointX() {
@@ -482,12 +532,14 @@ public class Hdr10Metadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to 50,000,
-     * each increment represents 0.00002 in CIE1931 color coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to
+     * 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color
+     * correction.
      * 
      * @param whitePointX
-     *        HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to
-     *        50,000, each increment represents 0.00002 in CIE1931 color coordinate.
+     *        HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0
+     *        to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not
+     *        for color correction.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -497,12 +549,14 @@ public class Hdr10Metadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to 50,000,
-     * each increment represents 0.00002 in CIE1931 color coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to
+     * 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color
+     * correction.
      * 
      * @param whitePointY
-     *        HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to
-     *        50,000, each increment represents 0.00002 in CIE1931 color coordinate.
+     *        HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0
+     *        to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not
+     *        for color correction.
      */
 
     public void setWhitePointY(Integer whitePointY) {
@@ -510,11 +564,13 @@ public class Hdr10Metadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to 50,000,
-     * each increment represents 0.00002 in CIE1931 color coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to
+     * 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color
+     * correction.
      * 
-     * @return HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to
-     *         50,000, each increment represents 0.00002 in CIE1931 color coordinate.
+     * @return HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0
+     *         to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not
+     *         for color correction.
      */
 
     public Integer getWhitePointY() {
@@ -522,12 +578,14 @@ public class Hdr10Metadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to 50,000,
-     * each increment represents 0.00002 in CIE1931 color coordinate.
+     * HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0 to
+     * 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not for color
+     * correction.
      * 
      * @param whitePointY
-     *        HDR Master Display Information comes from the color grader and the color grading tools. Range is 0 to
-     *        50,000, each increment represents 0.00002 in CIE1931 color coordinate.
+     *        HDR Master Display Information must be provided by a color grader, using color grading tools. Range is 0
+     *        to 50,000, each increment represents 0.00002 in CIE1931 color coordinate. Note that this setting is not
+     *        for color correction.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

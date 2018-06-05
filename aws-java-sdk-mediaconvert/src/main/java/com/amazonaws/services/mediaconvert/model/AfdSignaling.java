@@ -15,10 +15,10 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * This setting only applies to H.264 and MPEG2 outputs. Use Insert AFD signaling (AfdSignaling) to whether there are
- * AFD values in the output video data and what those values are. * Choose None to remove all AFD values from this
- * output. * Choose Fixed to ignore input AFD values and instead encode the value specified in the job. * Choose Auto to
- * calculate output AFD values based on the input AFD scaler data.
+ * This setting only applies to H.264 and MPEG2 outputs. Use Insert AFD signaling (AfdSignaling) to specify whether the
+ * service includes AFD values in the output video data and what those values are. * Choose None to remove all AFD
+ * values from this output. * Choose Fixed to ignore input AFD values and instead encode the value specified in the job.
+ * * Choose Auto to calculate output AFD values based on the input AFD scaler data.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum AfdSignaling {

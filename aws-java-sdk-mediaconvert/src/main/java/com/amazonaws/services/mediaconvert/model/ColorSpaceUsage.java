@@ -15,10 +15,11 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * There are two sources for color metadata, the input file and the job configuration. This enum controls which takes
- * precedence. FORCE: System will use color metadata supplied by user, if any. If the user does not supply color
- * metadata the system will use data from the source. FALLBACK: System will use color metadata from the source. If
- * source has no color metadata, the system will use user-supplied color metadata values if available.
+ * There are two sources for color metadata, the input file and the job configuration (in the Color space and HDR master
+ * display informaiton settings). The Color space usage setting controls which takes precedence. FORCE: The system will
+ * use color metadata supplied by user, if any. If the user does not supply color metadata, the system will use data
+ * from the source. FALLBACK: The system will use color metadata from the source. If source has no color metadata, the
+ * system will use user-supplied color metadata values if available.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ColorSpaceUsage {

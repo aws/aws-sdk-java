@@ -137,6 +137,24 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Starts a hyperparameter tuning job.
+     * </p>
+     * 
+     * @param createHyperParameterTuningJobRequest
+     * @return Result of the CreateHyperParameterTuningJob operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.CreateHyperParameterTuningJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHyperParameterTuningJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateHyperParameterTuningJobResult createHyperParameterTuningJob(CreateHyperParameterTuningJobRequest createHyperParameterTuningJobRequest);
+
+    /**
+     * <p>
      * Creates a model in Amazon SageMaker. In the request, you name the model and describe one or more containers. For
      * each container, you specify the docker image containing inference code, artifacts (from prior training), and
      * custom environment map that the inference code uses when you deploy the model into production.
@@ -274,7 +292,7 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Returns a URL that you can use to connect to the Juypter server from a notebook instance. In the Amazon SageMaker
+     * Returns a URL that you can use to connect to the Jupyter server from a notebook instance. In the Amazon SageMaker
      * console, when you choose <code>Open</code> next to a notebook instance, Amazon SageMaker opens a new tab showing
      * the Jupyter server home page from the notebook instance. The console uses this API to get the URL and show the
      * page.
@@ -379,7 +397,7 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Deletes an endpoint configuration. The <code>DeleteEndpoingConfig</code> API deletes only the specified
+     * Deletes an endpoint configuration. The <code>DeleteEndpointConfig</code> API deletes only the specified
      * configuration. It does not delete endpoints created using the configuration.
      * </p>
      * 
@@ -485,6 +503,21 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Gets a description of a hyperparameter tuning job.
+     * </p>
+     * 
+     * @param describeHyperParameterTuningJobRequest
+     * @return Result of the DescribeHyperParameterTuningJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeHyperParameterTuningJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHyperParameterTuningJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeHyperParameterTuningJobResult describeHyperParameterTuningJob(DescribeHyperParameterTuningJobRequest describeHyperParameterTuningJobRequest);
+
+    /**
+     * <p>
      * Describes a model that you created using the <code>CreateModel</code> API.
      * </p>
      * 
@@ -570,6 +603,19 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Gets a list of objects that describe the hyperparameter tuning jobs launched in your account.
+     * </p>
+     * 
+     * @param listHyperParameterTuningJobsRequest
+     * @return Result of the ListHyperParameterTuningJobs operation returned by the service.
+     * @sample AmazonSageMaker.ListHyperParameterTuningJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHyperParameterTuningJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListHyperParameterTuningJobsResult listHyperParameterTuningJobs(ListHyperParameterTuningJobsRequest listHyperParameterTuningJobsRequest);
+
+    /**
+     * <p>
      * Lists models created with the <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModel.html">CreateModel</a> API.
      * </p>
@@ -637,6 +683,23 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Gets a list of objects that describe the training jobs that a hyperparameter tuning job launched.
+     * </p>
+     * 
+     * @param listTrainingJobsForHyperParameterTuningJobRequest
+     * @return Result of the ListTrainingJobsForHyperParameterTuningJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.ListTrainingJobsForHyperParameterTuningJob
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingJobsForHyperParameterTuningJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTrainingJobsForHyperParameterTuningJobResult listTrainingJobsForHyperParameterTuningJob(
+            ListTrainingJobsForHyperParameterTuningJobRequest listTrainingJobsForHyperParameterTuningJobRequest);
+
+    /**
+     * <p>
      * Launches an ML compute instance with the latest version of the libraries and attaches your ML storage volume.
      * After configuring the notebook instance, Amazon SageMaker sets the notebook instance status to
      * <code>InService</code>. A notebook instance's status must be <code>InService</code> before you can connect to
@@ -653,6 +716,26 @@ public interface AmazonSageMaker {
      *      target="_top">AWS API Documentation</a>
      */
     StartNotebookInstanceResult startNotebookInstance(StartNotebookInstanceRequest startNotebookInstanceRequest);
+
+    /**
+     * <p>
+     * Stops a running hyperparameter tuning job and all running training jobs that the tuning job launched.
+     * </p>
+     * <p>
+     * All model artifacts output from the training jobs are stored in Amazon Simple Storage Service (Amazon S3). All
+     * data that the training jobs write toAmazon CloudWatch Logs are still available in CloudWatch. After the tuning
+     * job moves to the <code>Stopped</code> state, it releases all reserved resources for the tuning job.
+     * </p>
+     * 
+     * @param stopHyperParameterTuningJobRequest
+     * @return Result of the StopHyperParameterTuningJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.StopHyperParameterTuningJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopHyperParameterTuningJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StopHyperParameterTuningJobResult stopHyperParameterTuningJob(StopHyperParameterTuningJobRequest stopHyperParameterTuningJobRequest);
 
     /**
      * <p>

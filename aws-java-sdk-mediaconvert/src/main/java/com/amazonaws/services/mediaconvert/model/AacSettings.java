@@ -18,7 +18,11 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AAC.
+ * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AAC. The service accepts one of
+ * two mutually exclusive groups of AAC settings--VBR and CBR. To select one of these modes, set the value of Bitrate
+ * control mode (rateControlMode) to "VBR" or "CBR". In VBR mode, you control the audio quality with the setting VBR
+ * quality (vbrQuality). In CBR mode, you use the setting Bitrate (bitrate). Defaults and valid values depend on the
+ * rate control mode.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AacSettings" target="_top">AWS API
  *      Documentation</a>
@@ -27,7 +31,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class AacSettings implements Serializable, Cloneable, StructuredPojo {
 
     private String audioDescriptionBroadcasterMix;
-    /** Average bitrate in bits/second. Valid values depend on rate control mode and profile. */
+    /** Average bitrate in bits/second. Defaults and valid values depend on rate control mode and profile. */
     private Integer bitrate;
 
     private String codecProfile;
@@ -85,10 +89,10 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Average bitrate in bits/second. Valid values depend on rate control mode and profile.
+     * Average bitrate in bits/second. Defaults and valid values depend on rate control mode and profile.
      * 
      * @param bitrate
-     *        Average bitrate in bits/second. Valid values depend on rate control mode and profile.
+     *        Average bitrate in bits/second. Defaults and valid values depend on rate control mode and profile.
      */
 
     public void setBitrate(Integer bitrate) {
@@ -96,9 +100,9 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Average bitrate in bits/second. Valid values depend on rate control mode and profile.
+     * Average bitrate in bits/second. Defaults and valid values depend on rate control mode and profile.
      * 
-     * @return Average bitrate in bits/second. Valid values depend on rate control mode and profile.
+     * @return Average bitrate in bits/second. Defaults and valid values depend on rate control mode and profile.
      */
 
     public Integer getBitrate() {
@@ -106,10 +110,10 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Average bitrate in bits/second. Valid values depend on rate control mode and profile.
+     * Average bitrate in bits/second. Defaults and valid values depend on rate control mode and profile.
      * 
      * @param bitrate
-     *        Average bitrate in bits/second. Valid values depend on rate control mode and profile.
+     *        Average bitrate in bits/second. Defaults and valid values depend on rate control mode and profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

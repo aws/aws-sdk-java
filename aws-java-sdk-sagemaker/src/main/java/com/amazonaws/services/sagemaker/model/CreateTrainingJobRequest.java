@@ -34,9 +34,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     private String trainingJobName;
     /**
      * <p>
-     * Algorithm-specific parameters. You set hyperparameters before you start the learning process. Hyperparameters
-     * influence the quality of the model. For a list of hyperparameters for each training algorithm provided by Amazon
-     * SageMaker, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start
+     * the learning process. For a list of hyperparameters for each training algorithm provided by Amazon SageMaker, see
+     * <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p>
      * <p>
      * You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is
@@ -64,6 +64,12 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>.
      * </p>
+     * <note>
+     * <p>
+     * To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.
+     * </p>
+     * </note>
      */
     private String roleArn;
     /**
@@ -179,19 +185,18 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Algorithm-specific parameters. You set hyperparameters before you start the learning process. Hyperparameters
-     * influence the quality of the model. For a list of hyperparameters for each training algorithm provided by Amazon
-     * SageMaker, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start
+     * the learning process. For a list of hyperparameters for each training algorithm provided by Amazon SageMaker, see
+     * <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p>
      * <p>
      * You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is
      * limited to 256 characters, as specified by the <code>Length Constraint</code>.
      * </p>
      * 
-     * @return Algorithm-specific parameters. You set hyperparameters before you start the learning process.
-     *         Hyperparameters influence the quality of the model. For a list of hyperparameters for each training
-     *         algorithm provided by Amazon SageMaker, see <a
-     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>
+     * @return Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you
+     *         start the learning process. For a list of hyperparameters for each training algorithm provided by Amazon
+     *         SageMaker, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>
      *         <p>
      *         You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and
      *         value is limited to 256 characters, as specified by the <code>Length Constraint</code>.
@@ -203,9 +208,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Algorithm-specific parameters. You set hyperparameters before you start the learning process. Hyperparameters
-     * influence the quality of the model. For a list of hyperparameters for each training algorithm provided by Amazon
-     * SageMaker, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start
+     * the learning process. For a list of hyperparameters for each training algorithm provided by Amazon SageMaker, see
+     * <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p>
      * <p>
      * You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is
@@ -213,10 +218,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param hyperParameters
-     *        Algorithm-specific parameters. You set hyperparameters before you start the learning process.
-     *        Hyperparameters influence the quality of the model. For a list of hyperparameters for each training
-     *        algorithm provided by Amazon SageMaker, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>
+     *        Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you
+     *        start the learning process. For a list of hyperparameters for each training algorithm provided by Amazon
+     *        SageMaker, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>
      *        <p>
      *        You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and
      *        value is limited to 256 characters, as specified by the <code>Length Constraint</code>.
@@ -228,9 +232,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Algorithm-specific parameters. You set hyperparameters before you start the learning process. Hyperparameters
-     * influence the quality of the model. For a list of hyperparameters for each training algorithm provided by Amazon
-     * SageMaker, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start
+     * the learning process. For a list of hyperparameters for each training algorithm provided by Amazon SageMaker, see
+     * <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p>
      * <p>
      * You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is
@@ -238,10 +242,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param hyperParameters
-     *        Algorithm-specific parameters. You set hyperparameters before you start the learning process.
-     *        Hyperparameters influence the quality of the model. For a list of hyperparameters for each training
-     *        algorithm provided by Amazon SageMaker, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>
+     *        Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you
+     *        start the learning process. For a list of hyperparameters for each training algorithm provided by Amazon
+     *        SageMaker, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>. </p>
      *        <p>
      *        You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and
      *        value is limited to 256 characters, as specified by the <code>Length Constraint</code>.
@@ -343,6 +346,12 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>.
      * </p>
+     * <note>
+     * <p>
+     * To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.
+     * </p>
+     * </note>
      * 
      * @param roleArn
      *        The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your
@@ -353,6 +362,12 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      *        Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant permissions for all of these
      *        tasks to an IAM role. For more information, see <a
      *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        To be able to pass this role to Amazon SageMaker, the caller of this API must have the
+     *        <code>iam:PassRole</code> permission.
+     *        </p>
      */
 
     public void setRoleArn(String roleArn) {
@@ -370,6 +385,12 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>.
      * </p>
+     * <note>
+     * <p>
+     * To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.
+     * </p>
+     * </note>
      * 
      * @return The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your
      *         behalf. </p>
@@ -379,6 +400,12 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      *         Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant permissions for all of these
      *         tasks to an IAM role. For more information, see <a
      *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         To be able to pass this role to Amazon SageMaker, the caller of this API must have the
+     *         <code>iam:PassRole</code> permission.
+     *         </p>
      */
 
     public String getRoleArn() {
@@ -396,6 +423,12 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>.
      * </p>
+     * <note>
+     * <p>
+     * To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.
+     * </p>
+     * </note>
      * 
      * @param roleArn
      *        The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your
@@ -406,6 +439,12 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      *        Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant permissions for all of these
      *        tasks to an IAM role. For more information, see <a
      *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        To be able to pass this role to Amazon SageMaker, the caller of this API must have the
+     *        <code>iam:PassRole</code> permission.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

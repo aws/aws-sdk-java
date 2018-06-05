@@ -30,8 +30,7 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
 
     private String alternateTransferFunctionSei;
     /**
-     * Average bitrate in bits/second. Required for VBR, CBR, and ABR. Five megabits can be entered as 5000000 or 5m.
-     * Five hundred kilobits can be entered as 500000 or 0.5m. For MS Smooth outputs, bitrates must be unique when
+     * Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique when
      * rounded down to the nearest multiple of 1000.
      */
     private Integer bitrate;
@@ -63,17 +62,11 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     private String gopSizeUnits;
     /** Percentage of the buffer that should initially be filled (HRD buffer model). */
     private Integer hrdBufferInitialFillPercentage;
-    /**
-     * Size of buffer (HRD buffer model). Five megabits can be entered as 5000000 or 5m. Five hundred kilobits can be
-     * entered as 500000 or 0.5m.
-     */
+    /** Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000. */
     private Integer hrdBufferSize;
 
     private String interlaceMode;
-    /**
-     * Maximum bitrate in bits/second (for VBR mode only). Five megabits can be entered as 5000000 or 5m. Five hundred
-     * kilobits can be entered as 500000 or 0.5m.
-     */
+    /** Maximum bitrate in bits/second. */
     private Integer maxBitrate;
     /**
      * Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a
@@ -123,6 +116,8 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     private String tiles;
 
     private String unregisteredSeiTimecode;
+
+    private String writeMp4PackagingType;
 
     /**
      * @param adaptiveQuantization
@@ -205,13 +200,11 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Average bitrate in bits/second. Required for VBR, CBR, and ABR. Five megabits can be entered as 5000000 or 5m.
-     * Five hundred kilobits can be entered as 500000 or 0.5m. For MS Smooth outputs, bitrates must be unique when
+     * Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique when
      * rounded down to the nearest multiple of 1000.
      * 
      * @param bitrate
-     *        Average bitrate in bits/second. Required for VBR, CBR, and ABR. Five megabits can be entered as 5000000 or
-     *        5m. Five hundred kilobits can be entered as 500000 or 0.5m. For MS Smooth outputs, bitrates must be unique
+     *        Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique
      *        when rounded down to the nearest multiple of 1000.
      */
 
@@ -220,13 +213,11 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Average bitrate in bits/second. Required for VBR, CBR, and ABR. Five megabits can be entered as 5000000 or 5m.
-     * Five hundred kilobits can be entered as 500000 or 0.5m. For MS Smooth outputs, bitrates must be unique when
+     * Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique when
      * rounded down to the nearest multiple of 1000.
      * 
-     * @return Average bitrate in bits/second. Required for VBR, CBR, and ABR. Five megabits can be entered as 5000000
-     *         or 5m. Five hundred kilobits can be entered as 500000 or 0.5m. For MS Smooth outputs, bitrates must be
-     *         unique when rounded down to the nearest multiple of 1000.
+     * @return Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique
+     *         when rounded down to the nearest multiple of 1000.
      */
 
     public Integer getBitrate() {
@@ -234,13 +225,11 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Average bitrate in bits/second. Required for VBR, CBR, and ABR. Five megabits can be entered as 5000000 or 5m.
-     * Five hundred kilobits can be entered as 500000 or 0.5m. For MS Smooth outputs, bitrates must be unique when
+     * Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique when
      * rounded down to the nearest multiple of 1000.
      * 
      * @param bitrate
-     *        Average bitrate in bits/second. Required for VBR, CBR, and ABR. Five megabits can be entered as 5000000 or
-     *        5m. Five hundred kilobits can be entered as 500000 or 0.5m. For MS Smooth outputs, bitrates must be unique
+     *        Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique
      *        when rounded down to the nearest multiple of 1000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -713,12 +702,10 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Size of buffer (HRD buffer model). Five megabits can be entered as 5000000 or 5m. Five hundred kilobits can be
-     * entered as 500000 or 0.5m.
+     * Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000.
      * 
      * @param hrdBufferSize
-     *        Size of buffer (HRD buffer model). Five megabits can be entered as 5000000 or 5m. Five hundred kilobits
-     *        can be entered as 500000 or 0.5m.
+     *        Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000.
      */
 
     public void setHrdBufferSize(Integer hrdBufferSize) {
@@ -726,11 +713,9 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Size of buffer (HRD buffer model). Five megabits can be entered as 5000000 or 5m. Five hundred kilobits can be
-     * entered as 500000 or 0.5m.
+     * Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000.
      * 
-     * @return Size of buffer (HRD buffer model). Five megabits can be entered as 5000000 or 5m. Five hundred kilobits
-     *         can be entered as 500000 or 0.5m.
+     * @return Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000.
      */
 
     public Integer getHrdBufferSize() {
@@ -738,12 +723,10 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Size of buffer (HRD buffer model). Five megabits can be entered as 5000000 or 5m. Five hundred kilobits can be
-     * entered as 500000 or 0.5m.
+     * Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000.
      * 
      * @param hrdBufferSize
-     *        Size of buffer (HRD buffer model). Five megabits can be entered as 5000000 or 5m. Five hundred kilobits
-     *        can be entered as 500000 or 0.5m.
+     *        Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -793,12 +776,10 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Maximum bitrate in bits/second (for VBR mode only). Five megabits can be entered as 5000000 or 5m. Five hundred
-     * kilobits can be entered as 500000 or 0.5m.
+     * Maximum bitrate in bits/second.
      * 
      * @param maxBitrate
-     *        Maximum bitrate in bits/second (for VBR mode only). Five megabits can be entered as 5000000 or 5m. Five
-     *        hundred kilobits can be entered as 500000 or 0.5m.
+     *        Maximum bitrate in bits/second.
      */
 
     public void setMaxBitrate(Integer maxBitrate) {
@@ -806,11 +787,9 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Maximum bitrate in bits/second (for VBR mode only). Five megabits can be entered as 5000000 or 5m. Five hundred
-     * kilobits can be entered as 500000 or 0.5m.
+     * Maximum bitrate in bits/second.
      * 
-     * @return Maximum bitrate in bits/second (for VBR mode only). Five megabits can be entered as 5000000 or 5m. Five
-     *         hundred kilobits can be entered as 500000 or 0.5m.
+     * @return Maximum bitrate in bits/second.
      */
 
     public Integer getMaxBitrate() {
@@ -818,12 +797,10 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Maximum bitrate in bits/second (for VBR mode only). Five megabits can be entered as 5000000 or 5m. Five hundred
-     * kilobits can be entered as 500000 or 0.5m.
+     * Maximum bitrate in bits/second.
      * 
      * @param maxBitrate
-     *        Maximum bitrate in bits/second (for VBR mode only). Five megabits can be entered as 5000000 or 5m. Five
-     *        hundred kilobits can be entered as 500000 or 0.5m.
+     *        Maximum bitrate in bits/second.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1553,6 +1530,46 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param writeMp4PackagingType
+     * @see H265WriteMp4PackagingType
+     */
+
+    public void setWriteMp4PackagingType(String writeMp4PackagingType) {
+        this.writeMp4PackagingType = writeMp4PackagingType;
+    }
+
+    /**
+     * @return
+     * @see H265WriteMp4PackagingType
+     */
+
+    public String getWriteMp4PackagingType() {
+        return this.writeMp4PackagingType;
+    }
+
+    /**
+     * @param writeMp4PackagingType
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see H265WriteMp4PackagingType
+     */
+
+    public H265Settings withWriteMp4PackagingType(String writeMp4PackagingType) {
+        setWriteMp4PackagingType(writeMp4PackagingType);
+        return this;
+    }
+
+    /**
+     * @param writeMp4PackagingType
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see H265WriteMp4PackagingType
+     */
+
+    public H265Settings withWriteMp4PackagingType(H265WriteMp4PackagingType writeMp4PackagingType) {
+        this.writeMp4PackagingType = writeMp4PackagingType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1634,7 +1651,9 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
         if (getTiles() != null)
             sb.append("Tiles: ").append(getTiles()).append(",");
         if (getUnregisteredSeiTimecode() != null)
-            sb.append("UnregisteredSeiTimecode: ").append(getUnregisteredSeiTimecode());
+            sb.append("UnregisteredSeiTimecode: ").append(getUnregisteredSeiTimecode()).append(",");
+        if (getWriteMp4PackagingType() != null)
+            sb.append("WriteMp4PackagingType: ").append(getWriteMp4PackagingType());
         sb.append("}");
         return sb.toString();
     }
@@ -1796,6 +1815,10 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getUnregisteredSeiTimecode() != null && other.getUnregisteredSeiTimecode().equals(this.getUnregisteredSeiTimecode()) == false)
             return false;
+        if (other.getWriteMp4PackagingType() == null ^ this.getWriteMp4PackagingType() == null)
+            return false;
+        if (other.getWriteMp4PackagingType() != null && other.getWriteMp4PackagingType().equals(this.getWriteMp4PackagingType()) == false)
+            return false;
         return true;
     }
 
@@ -1840,6 +1863,7 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTemporalIds() == null) ? 0 : getTemporalIds().hashCode());
         hashCode = prime * hashCode + ((getTiles() == null) ? 0 : getTiles().hashCode());
         hashCode = prime * hashCode + ((getUnregisteredSeiTimecode() == null) ? 0 : getUnregisteredSeiTimecode().hashCode());
+        hashCode = prime * hashCode + ((getWriteMp4PackagingType() == null) ? 0 : getWriteMp4PackagingType().hashCode());
         return hashCode;
     }
 

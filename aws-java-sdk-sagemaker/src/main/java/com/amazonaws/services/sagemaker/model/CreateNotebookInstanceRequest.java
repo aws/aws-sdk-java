@@ -58,6 +58,12 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * to assume this role. For more information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
      * </p>
+     * <note>
+     * <p>
+     * To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.
+     * </p>
+     * </note>
      */
     private String roleArn;
     /**
@@ -323,6 +329,12 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * to assume this role. For more information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
      * </p>
+     * <note>
+     * <p>
+     * To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.
+     * </p>
+     * </note>
      * 
      * @param roleArn
      *        When you send any requests to AWS resources from the notebook instance, Amazon SageMaker assumes this role
@@ -330,6 +342,11 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      *        perform these tasks. The policy must allow the Amazon SageMaker service principal
      *        (sagemaker.amazonaws.com) permissions to assume this role. For more information, see <a
      *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
+     *        </p> <note>
+     *        <p>
+     *        To be able to pass this role to Amazon SageMaker, the caller of this API must have the
+     *        <code>iam:PassRole</code> permission.
+     *        </p>
      */
 
     public void setRoleArn(String roleArn) {
@@ -344,12 +361,23 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * to assume this role. For more information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
      * </p>
+     * <note>
+     * <p>
+     * To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.
+     * </p>
+     * </note>
      * 
      * @return When you send any requests to AWS resources from the notebook instance, Amazon SageMaker assumes this
      *         role to perform tasks on your behalf. You must grant this role necessary permissions so Amazon SageMaker
      *         can perform these tasks. The policy must allow the Amazon SageMaker service principal
      *         (sagemaker.amazonaws.com) permissions to assume this role. For more information, see <a
      *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
+     *         </p> <note>
+     *         <p>
+     *         To be able to pass this role to Amazon SageMaker, the caller of this API must have the
+     *         <code>iam:PassRole</code> permission.
+     *         </p>
      */
 
     public String getRoleArn() {
@@ -364,6 +392,12 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * to assume this role. For more information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
      * </p>
+     * <note>
+     * <p>
+     * To be able to pass this role to Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+     * permission.
+     * </p>
+     * </note>
      * 
      * @param roleArn
      *        When you send any requests to AWS resources from the notebook instance, Amazon SageMaker assumes this role
@@ -371,6 +405,11 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      *        perform these tasks. The policy must allow the Amazon SageMaker service principal
      *        (sagemaker.amazonaws.com) permissions to assume this role. For more information, see <a
      *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a>.
+     *        </p> <note>
+     *        <p>
+     *        To be able to pass this role to Amazon SageMaker, the caller of this API must have the
+     *        <code>iam:PassRole</code> permission.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

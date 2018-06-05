@@ -15,8 +15,12 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Specifies the colorspace of an input. This setting works in tandem with "Color Corrector":#color_corrector >
- * color_space_conversion to determine if any conversion will be performed.
+ * If your input video has accurate color space metadata, or if you don't know about color space, leave this set to the
+ * default value FOLLOW. The service will automatically detect your input color space. If your input video has metadata
+ * indicating the wrong color space, or if your input video is missing color space metadata that should be there,
+ * specify the accurate color space here. If you choose HDR10, you can also correct inaccurate color space coefficients,
+ * using the HDR master display information controls. You must also set Color space usage (ColorSpaceUsage) to FORCE for
+ * the service to use these values.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ColorSpace {

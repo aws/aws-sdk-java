@@ -28,13 +28,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TimedMetadataInsertion implements Serializable, Cloneable, StructuredPojo {
 
-    /** Id3Insertions contains the array of Id3Insertion instances. */
     private java.util.List<Id3Insertion> id3Insertions;
 
     /**
-     * Id3Insertions contains the array of Id3Insertion instances.
-     * 
-     * @return Id3Insertions contains the array of Id3Insertion instances.
+     * @return
      */
 
     public java.util.List<Id3Insertion> getId3Insertions() {
@@ -42,10 +39,7 @@ public class TimedMetadataInsertion implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Id3Insertions contains the array of Id3Insertion instances.
-     * 
      * @param id3Insertions
-     *        Id3Insertions contains the array of Id3Insertion instances.
      */
 
     public void setId3Insertions(java.util.Collection<Id3Insertion> id3Insertions) {
@@ -58,7 +52,6 @@ public class TimedMetadataInsertion implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Id3Insertions contains the array of Id3Insertion instances.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setId3Insertions(java.util.Collection)} or {@link #withId3Insertions(java.util.Collection)} if you want
@@ -66,7 +59,6 @@ public class TimedMetadataInsertion implements Serializable, Cloneable, Structur
      * </p>
      * 
      * @param id3Insertions
-     *        Id3Insertions contains the array of Id3Insertion instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,10 +73,7 @@ public class TimedMetadataInsertion implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Id3Insertions contains the array of Id3Insertion instances.
-     * 
      * @param id3Insertions
-     *        Id3Insertions contains the array of Id3Insertion instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

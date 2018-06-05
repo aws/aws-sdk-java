@@ -56,6 +56,10 @@ public class DescribeTrainingJobResultJsonUnmarshaller implements Unmarshaller<D
                     context.nextToken();
                     describeTrainingJobResult.setTrainingJobArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("TuningJobArn", targetDepth)) {
+                    context.nextToken();
+                    describeTrainingJobResult.setTuningJobArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ModelArtifacts", targetDepth)) {
                     context.nextToken();
                     describeTrainingJobResult.setModelArtifacts(ModelArtifactsJsonUnmarshaller.getInstance().unmarshall(context));

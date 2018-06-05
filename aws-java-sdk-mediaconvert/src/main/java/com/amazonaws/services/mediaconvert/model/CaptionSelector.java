@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Caption inputs to be mapped to caption outputs.
+ * Set up captions in your outputs by first selecting them from your input here.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CaptionSelector" target="_top">AWS API
  *      Documentation</a>

@@ -28,8 +28,7 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
 
     private String adaptiveQuantization;
     /**
-     * Average bitrate in bits/second. Required for VBR, CBR, and ABR. Five megabits can be entered as 5000000 or 5m.
-     * Five hundred kilobits can be entered as 500000 or 0.5m. For MS Smooth outputs, bitrates must be unique when
+     * Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique when
      * rounded down to the nearest multiple of 1000.
      */
     private Integer bitrate;
@@ -57,19 +56,13 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     private String gopSizeUnits;
     /** Percentage of the buffer that should initially be filled (HRD buffer model). */
     private Integer hrdBufferInitialFillPercentage;
-    /**
-     * Size of buffer (HRD buffer model). Five megabits can be entered as 5000000 or 5m. Five hundred kilobits can be
-     * entered as 500000 or 0.5m.
-     */
+    /** Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000. */
     private Integer hrdBufferSize;
 
     private String interlaceMode;
 
     private String intraDcPrecision;
-    /**
-     * Maximum bitrate in bits/second (for VBR mode only). Five megabits can be entered as 5000000 or 5m. Five hundred
-     * kilobits can be entered as 500000 or 0.5m.
-     */
+    /** Maximum bitrate in bits/second. For example, enter five megabits per second as 5000000. */
     private Integer maxBitrate;
     /**
      * Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a
@@ -147,13 +140,11 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Average bitrate in bits/second. Required for VBR, CBR, and ABR. Five megabits can be entered as 5000000 or 5m.
-     * Five hundred kilobits can be entered as 500000 or 0.5m. For MS Smooth outputs, bitrates must be unique when
+     * Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique when
      * rounded down to the nearest multiple of 1000.
      * 
      * @param bitrate
-     *        Average bitrate in bits/second. Required for VBR, CBR, and ABR. Five megabits can be entered as 5000000 or
-     *        5m. Five hundred kilobits can be entered as 500000 or 0.5m. For MS Smooth outputs, bitrates must be unique
+     *        Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique
      *        when rounded down to the nearest multiple of 1000.
      */
 
@@ -162,13 +153,11 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Average bitrate in bits/second. Required for VBR, CBR, and ABR. Five megabits can be entered as 5000000 or 5m.
-     * Five hundred kilobits can be entered as 500000 or 0.5m. For MS Smooth outputs, bitrates must be unique when
+     * Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique when
      * rounded down to the nearest multiple of 1000.
      * 
-     * @return Average bitrate in bits/second. Required for VBR, CBR, and ABR. Five megabits can be entered as 5000000
-     *         or 5m. Five hundred kilobits can be entered as 500000 or 0.5m. For MS Smooth outputs, bitrates must be
-     *         unique when rounded down to the nearest multiple of 1000.
+     * @return Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique
+     *         when rounded down to the nearest multiple of 1000.
      */
 
     public Integer getBitrate() {
@@ -176,13 +165,11 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Average bitrate in bits/second. Required for VBR, CBR, and ABR. Five megabits can be entered as 5000000 or 5m.
-     * Five hundred kilobits can be entered as 500000 or 0.5m. For MS Smooth outputs, bitrates must be unique when
+     * Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique when
      * rounded down to the nearest multiple of 1000.
      * 
      * @param bitrate
-     *        Average bitrate in bits/second. Required for VBR, CBR, and ABR. Five megabits can be entered as 5000000 or
-     *        5m. Five hundred kilobits can be entered as 500000 or 0.5m. For MS Smooth outputs, bitrates must be unique
+     *        Average bitrate in bits/second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be unique
      *        when rounded down to the nearest multiple of 1000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -575,12 +562,10 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Size of buffer (HRD buffer model). Five megabits can be entered as 5000000 or 5m. Five hundred kilobits can be
-     * entered as 500000 or 0.5m.
+     * Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000.
      * 
      * @param hrdBufferSize
-     *        Size of buffer (HRD buffer model). Five megabits can be entered as 5000000 or 5m. Five hundred kilobits
-     *        can be entered as 500000 or 0.5m.
+     *        Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000.
      */
 
     public void setHrdBufferSize(Integer hrdBufferSize) {
@@ -588,11 +573,9 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Size of buffer (HRD buffer model). Five megabits can be entered as 5000000 or 5m. Five hundred kilobits can be
-     * entered as 500000 or 0.5m.
+     * Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000.
      * 
-     * @return Size of buffer (HRD buffer model). Five megabits can be entered as 5000000 or 5m. Five hundred kilobits
-     *         can be entered as 500000 or 0.5m.
+     * @return Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000.
      */
 
     public Integer getHrdBufferSize() {
@@ -600,12 +583,10 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Size of buffer (HRD buffer model). Five megabits can be entered as 5000000 or 5m. Five hundred kilobits can be
-     * entered as 500000 or 0.5m.
+     * Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000.
      * 
      * @param hrdBufferSize
-     *        Size of buffer (HRD buffer model). Five megabits can be entered as 5000000 or 5m. Five hundred kilobits
-     *        can be entered as 500000 or 0.5m.
+     *        Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -695,12 +676,10 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Maximum bitrate in bits/second (for VBR mode only). Five megabits can be entered as 5000000 or 5m. Five hundred
-     * kilobits can be entered as 500000 or 0.5m.
+     * Maximum bitrate in bits/second. For example, enter five megabits per second as 5000000.
      * 
      * @param maxBitrate
-     *        Maximum bitrate in bits/second (for VBR mode only). Five megabits can be entered as 5000000 or 5m. Five
-     *        hundred kilobits can be entered as 500000 or 0.5m.
+     *        Maximum bitrate in bits/second. For example, enter five megabits per second as 5000000.
      */
 
     public void setMaxBitrate(Integer maxBitrate) {
@@ -708,11 +687,9 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Maximum bitrate in bits/second (for VBR mode only). Five megabits can be entered as 5000000 or 5m. Five hundred
-     * kilobits can be entered as 500000 or 0.5m.
+     * Maximum bitrate in bits/second. For example, enter five megabits per second as 5000000.
      * 
-     * @return Maximum bitrate in bits/second (for VBR mode only). Five megabits can be entered as 5000000 or 5m. Five
-     *         hundred kilobits can be entered as 500000 or 0.5m.
+     * @return Maximum bitrate in bits/second. For example, enter five megabits per second as 5000000.
      */
 
     public Integer getMaxBitrate() {
@@ -720,12 +697,10 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Maximum bitrate in bits/second (for VBR mode only). Five megabits can be entered as 5000000 or 5m. Five hundred
-     * kilobits can be entered as 500000 or 0.5m.
+     * Maximum bitrate in bits/second. For example, enter five megabits per second as 5000000.
      * 
      * @param maxBitrate
-     *        Maximum bitrate in bits/second (for VBR mode only). Five megabits can be entered as 5000000 or 5m. Five
-     *        hundred kilobits can be entered as 500000 or 0.5m.
+     *        Maximum bitrate in bits/second. For example, enter five megabits per second as 5000000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

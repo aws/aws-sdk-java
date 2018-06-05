@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes a storage connector.
+ * Describes a connector to enable persistent storage for users.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StorageConnector" target="_top">AWS API
@@ -40,6 +40,12 @@ public class StorageConnector implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String resourceIdentifier;
+    /**
+     * <p>
+     * The names of the domains for the G Suite account.
+     * </p>
+     */
+    private java.util.List<String> domains;
 
     /**
      * <p>
@@ -155,6 +161,76 @@ public class StorageConnector implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The names of the domains for the G Suite account.
+     * </p>
+     * 
+     * @return The names of the domains for the G Suite account.
+     */
+
+    public java.util.List<String> getDomains() {
+        return domains;
+    }
+
+    /**
+     * <p>
+     * The names of the domains for the G Suite account.
+     * </p>
+     * 
+     * @param domains
+     *        The names of the domains for the G Suite account.
+     */
+
+    public void setDomains(java.util.Collection<String> domains) {
+        if (domains == null) {
+            this.domains = null;
+            return;
+        }
+
+        this.domains = new java.util.ArrayList<String>(domains);
+    }
+
+    /**
+     * <p>
+     * The names of the domains for the G Suite account.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDomains(java.util.Collection)} or {@link #withDomains(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param domains
+     *        The names of the domains for the G Suite account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StorageConnector withDomains(String... domains) {
+        if (this.domains == null) {
+            setDomains(new java.util.ArrayList<String>(domains.length));
+        }
+        for (String ele : domains) {
+            this.domains.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The names of the domains for the G Suite account.
+     * </p>
+     * 
+     * @param domains
+     *        The names of the domains for the G Suite account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StorageConnector withDomains(java.util.Collection<String> domains) {
+        setDomains(domains);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -168,7 +244,9 @@ public class StorageConnector implements Serializable, Cloneable, StructuredPojo
         if (getConnectorType() != null)
             sb.append("ConnectorType: ").append(getConnectorType()).append(",");
         if (getResourceIdentifier() != null)
-            sb.append("ResourceIdentifier: ").append(getResourceIdentifier());
+            sb.append("ResourceIdentifier: ").append(getResourceIdentifier()).append(",");
+        if (getDomains() != null)
+            sb.append("Domains: ").append(getDomains());
         sb.append("}");
         return sb.toString();
     }
@@ -191,6 +269,10 @@ public class StorageConnector implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getResourceIdentifier() != null && other.getResourceIdentifier().equals(this.getResourceIdentifier()) == false)
             return false;
+        if (other.getDomains() == null ^ this.getDomains() == null)
+            return false;
+        if (other.getDomains() != null && other.getDomains().equals(this.getDomains()) == false)
+            return false;
         return true;
     }
 
@@ -201,6 +283,7 @@ public class StorageConnector implements Serializable, Cloneable, StructuredPojo
 
         hashCode = prime * hashCode + ((getConnectorType() == null) ? 0 : getConnectorType().hashCode());
         hashCode = prime * hashCode + ((getResourceIdentifier() == null) ? 0 : getResourceIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getDomains() == null) ? 0 : getDomains().hashCode());
         return hashCode;
     }
 
