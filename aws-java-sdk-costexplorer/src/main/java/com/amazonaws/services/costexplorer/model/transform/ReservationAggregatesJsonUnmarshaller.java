@@ -64,6 +64,30 @@ public class ReservationAggregatesJsonUnmarshaller implements Unmarshaller<Reser
                     context.nextToken();
                     reservationAggregates.setUnusedHours(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("OnDemandCostOfRIHoursUsed", targetDepth)) {
+                    context.nextToken();
+                    reservationAggregates.setOnDemandCostOfRIHoursUsed(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("NetRISavings", targetDepth)) {
+                    context.nextToken();
+                    reservationAggregates.setNetRISavings(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TotalPotentialRISavings", targetDepth)) {
+                    context.nextToken();
+                    reservationAggregates.setTotalPotentialRISavings(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AmortizedUpfrontFee", targetDepth)) {
+                    context.nextToken();
+                    reservationAggregates.setAmortizedUpfrontFee(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AmortizedRecurringFee", targetDepth)) {
+                    context.nextToken();
+                    reservationAggregates.setAmortizedRecurringFee(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TotalAmortizedFee", targetDepth)) {
+                    context.nextToken();
+                    reservationAggregates.setTotalAmortizedFee(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

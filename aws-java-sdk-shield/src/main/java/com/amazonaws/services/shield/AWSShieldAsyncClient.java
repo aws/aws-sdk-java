@@ -248,6 +248,72 @@ public class AWSShieldAsyncClient extends AWSShieldClient implements AWSShieldAs
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateDRTLogBucketResult> associateDRTLogBucketAsync(AssociateDRTLogBucketRequest request) {
+
+        return associateDRTLogBucketAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateDRTLogBucketResult> associateDRTLogBucketAsync(final AssociateDRTLogBucketRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateDRTLogBucketRequest, AssociateDRTLogBucketResult> asyncHandler) {
+        final AssociateDRTLogBucketRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateDRTLogBucketResult>() {
+            @Override
+            public AssociateDRTLogBucketResult call() throws Exception {
+                AssociateDRTLogBucketResult result = null;
+
+                try {
+                    result = executeAssociateDRTLogBucket(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateDRTRoleResult> associateDRTRoleAsync(AssociateDRTRoleRequest request) {
+
+        return associateDRTRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateDRTRoleResult> associateDRTRoleAsync(final AssociateDRTRoleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateDRTRoleRequest, AssociateDRTRoleResult> asyncHandler) {
+        final AssociateDRTRoleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateDRTRoleResult>() {
+            @Override
+            public AssociateDRTRoleResult call() throws Exception {
+                AssociateDRTRoleResult result = null;
+
+                try {
+                    result = executeAssociateDRTRole(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateProtectionResult> createProtectionAsync(CreateProtectionRequest request) {
 
         return createProtectionAsync(request, null);
@@ -347,12 +413,14 @@ public class AWSShieldAsyncClient extends AWSShieldClient implements AWSShieldAs
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteSubscriptionResult> deleteSubscriptionAsync(DeleteSubscriptionRequest request) {
 
         return deleteSubscriptionAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteSubscriptionResult> deleteSubscriptionAsync(final DeleteSubscriptionRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteSubscriptionRequest, DeleteSubscriptionResult> asyncHandler) {
         final DeleteSubscriptionRequest finalRequest = beforeClientExecution(request);
@@ -397,6 +465,74 @@ public class AWSShieldAsyncClient extends AWSShieldClient implements AWSShieldAs
 
                 try {
                     result = executeDescribeAttack(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDRTAccessResult> describeDRTAccessAsync(DescribeDRTAccessRequest request) {
+
+        return describeDRTAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDRTAccessResult> describeDRTAccessAsync(final DescribeDRTAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeDRTAccessRequest, DescribeDRTAccessResult> asyncHandler) {
+        final DescribeDRTAccessRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeDRTAccessResult>() {
+            @Override
+            public DescribeDRTAccessResult call() throws Exception {
+                DescribeDRTAccessResult result = null;
+
+                try {
+                    result = executeDescribeDRTAccess(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEmergencyContactSettingsResult> describeEmergencyContactSettingsAsync(
+            DescribeEmergencyContactSettingsRequest request) {
+
+        return describeEmergencyContactSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEmergencyContactSettingsResult> describeEmergencyContactSettingsAsync(
+            final DescribeEmergencyContactSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeEmergencyContactSettingsRequest, DescribeEmergencyContactSettingsResult> asyncHandler) {
+        final DescribeEmergencyContactSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeEmergencyContactSettingsResult>() {
+            @Override
+            public DescribeEmergencyContactSettingsResult call() throws Exception {
+                DescribeEmergencyContactSettingsResult result = null;
+
+                try {
+                    result = executeDescribeEmergencyContactSettings(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -463,6 +599,72 @@ public class AWSShieldAsyncClient extends AWSShieldClient implements AWSShieldAs
 
                 try {
                     result = executeDescribeSubscription(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateDRTLogBucketResult> disassociateDRTLogBucketAsync(DisassociateDRTLogBucketRequest request) {
+
+        return disassociateDRTLogBucketAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateDRTLogBucketResult> disassociateDRTLogBucketAsync(final DisassociateDRTLogBucketRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateDRTLogBucketRequest, DisassociateDRTLogBucketResult> asyncHandler) {
+        final DisassociateDRTLogBucketRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateDRTLogBucketResult>() {
+            @Override
+            public DisassociateDRTLogBucketResult call() throws Exception {
+                DisassociateDRTLogBucketResult result = null;
+
+                try {
+                    result = executeDisassociateDRTLogBucket(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateDRTRoleResult> disassociateDRTRoleAsync(DisassociateDRTRoleRequest request) {
+
+        return disassociateDRTRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateDRTRoleResult> disassociateDRTRoleAsync(final DisassociateDRTRoleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateDRTRoleRequest, DisassociateDRTRoleResult> asyncHandler) {
+        final DisassociateDRTRoleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateDRTRoleResult>() {
+            @Override
+            public DisassociateDRTRoleResult call() throws Exception {
+                DisassociateDRTRoleResult result = null;
+
+                try {
+                    result = executeDisassociateDRTRole(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -562,6 +764,73 @@ public class AWSShieldAsyncClient extends AWSShieldClient implements AWSShieldAs
 
                 try {
                     result = executeListProtections(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEmergencyContactSettingsResult> updateEmergencyContactSettingsAsync(UpdateEmergencyContactSettingsRequest request) {
+
+        return updateEmergencyContactSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEmergencyContactSettingsResult> updateEmergencyContactSettingsAsync(
+            final UpdateEmergencyContactSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateEmergencyContactSettingsRequest, UpdateEmergencyContactSettingsResult> asyncHandler) {
+        final UpdateEmergencyContactSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateEmergencyContactSettingsResult>() {
+            @Override
+            public UpdateEmergencyContactSettingsResult call() throws Exception {
+                UpdateEmergencyContactSettingsResult result = null;
+
+                try {
+                    result = executeUpdateEmergencyContactSettings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSubscriptionResult> updateSubscriptionAsync(UpdateSubscriptionRequest request) {
+
+        return updateSubscriptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSubscriptionResult> updateSubscriptionAsync(final UpdateSubscriptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateSubscriptionRequest, UpdateSubscriptionResult> asyncHandler) {
+        final UpdateSubscriptionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateSubscriptionResult>() {
+            @Override
+            public UpdateSubscriptionResult call() throws Exception {
+                UpdateSubscriptionResult result = null;
+
+                try {
+                    result = executeUpdateSubscription(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

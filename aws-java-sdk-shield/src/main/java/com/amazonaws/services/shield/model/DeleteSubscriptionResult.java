@@ -20,6 +20,7 @@ import javax.annotation.Generated;
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteSubscription" target="_top">AWS API
  *      Documentation</a>
  */
+@Deprecated
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteSubscriptionResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 

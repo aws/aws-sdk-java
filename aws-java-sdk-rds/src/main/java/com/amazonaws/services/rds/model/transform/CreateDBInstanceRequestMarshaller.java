@@ -254,6 +254,27 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
             }
         }
 
+        if (!createDBInstanceRequest.getProcessorFeatures().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<ProcessorFeature>) createDBInstanceRequest.getProcessorFeatures()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<ProcessorFeature> processorFeaturesList = (com.amazonaws.internal.SdkInternalList<ProcessorFeature>) createDBInstanceRequest
+                    .getProcessorFeatures();
+            int processorFeaturesListIndex = 1;
+
+            for (ProcessorFeature processorFeaturesListValue : processorFeaturesList) {
+
+                if (processorFeaturesListValue.getName() != null) {
+                    request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Name",
+                            StringUtils.fromString(processorFeaturesListValue.getName()));
+                }
+
+                if (processorFeaturesListValue.getValue() != null) {
+                    request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Value",
+                            StringUtils.fromString(processorFeaturesListValue.getValue()));
+                }
+                processorFeaturesListIndex++;
+            }
+        }
+
         return request;
     }
 

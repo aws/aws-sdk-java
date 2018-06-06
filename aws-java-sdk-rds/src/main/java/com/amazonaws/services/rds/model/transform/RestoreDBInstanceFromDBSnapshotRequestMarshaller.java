@@ -162,6 +162,33 @@ public class RestoreDBInstanceFromDBSnapshotRequestMarshaller implements
             }
         }
 
+        if (!restoreDBInstanceFromDBSnapshotRequest.getProcessorFeatures().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<ProcessorFeature>) restoreDBInstanceFromDBSnapshotRequest.getProcessorFeatures())
+                        .isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<ProcessorFeature> processorFeaturesList = (com.amazonaws.internal.SdkInternalList<ProcessorFeature>) restoreDBInstanceFromDBSnapshotRequest
+                    .getProcessorFeatures();
+            int processorFeaturesListIndex = 1;
+
+            for (ProcessorFeature processorFeaturesListValue : processorFeaturesList) {
+
+                if (processorFeaturesListValue.getName() != null) {
+                    request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Name",
+                            StringUtils.fromString(processorFeaturesListValue.getName()));
+                }
+
+                if (processorFeaturesListValue.getValue() != null) {
+                    request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Value",
+                            StringUtils.fromString(processorFeaturesListValue.getValue()));
+                }
+                processorFeaturesListIndex++;
+            }
+        }
+
+        if (restoreDBInstanceFromDBSnapshotRequest.getUseDefaultProcessorFeatures() != null) {
+            request.addParameter("UseDefaultProcessorFeatures",
+                    StringUtils.fromBoolean(restoreDBInstanceFromDBSnapshotRequest.getUseDefaultProcessorFeatures()));
+        }
+
         return request;
     }
 

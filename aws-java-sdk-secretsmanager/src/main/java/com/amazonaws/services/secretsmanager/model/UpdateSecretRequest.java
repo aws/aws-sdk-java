@@ -88,13 +88,13 @@ public class UpdateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String description;
     /**
      * <p>
-     * (Optional) Specifies the ARN or alias of the KMS customer master key (CMK) to be used to encrypt the protected
-     * text in the versions of this secret.
+     * (Optional) Specifies the ARN or alias of the AWS KMS customer master key (CMK) to be used to encrypt the
+     * protected text in the versions of this secret.
      * </p>
      * <p>
      * If you don't specify this value, then Secrets Manager defaults to using the default CMK in the account (the one
-     * named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't exist, then Secrets Manager creates
-     * it for you automatically the first time it needs to encrypt a version's <code>Plaintext</code> or
+     * named <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't exist, then Secrets Manager
+     * creates it for you automatically the first time it needs to encrypt a version's <code>Plaintext</code> or
      * <code>PlaintextString</code> fields.
      * </p>
      * <important>
@@ -526,13 +526,13 @@ public class UpdateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) Specifies the ARN or alias of the KMS customer master key (CMK) to be used to encrypt the protected
-     * text in the versions of this secret.
+     * (Optional) Specifies the ARN or alias of the AWS KMS customer master key (CMK) to be used to encrypt the
+     * protected text in the versions of this secret.
      * </p>
      * <p>
      * If you don't specify this value, then Secrets Manager defaults to using the default CMK in the account (the one
-     * named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't exist, then Secrets Manager creates
-     * it for you automatically the first time it needs to encrypt a version's <code>Plaintext</code> or
+     * named <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't exist, then Secrets Manager
+     * creates it for you automatically the first time it needs to encrypt a version's <code>Plaintext</code> or
      * <code>PlaintextString</code> fields.
      * </p>
      * <important>
@@ -544,12 +544,12 @@ public class UpdateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </important>
      * 
      * @param kmsKeyId
-     *        (Optional) Specifies the ARN or alias of the KMS customer master key (CMK) to be used to encrypt the
+     *        (Optional) Specifies the ARN or alias of the AWS KMS customer master key (CMK) to be used to encrypt the
      *        protected text in the versions of this secret.</p>
      *        <p>
      *        If you don't specify this value, then Secrets Manager defaults to using the default CMK in the account
-     *        (the one named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't exist, then Secrets
-     *        Manager creates it for you automatically the first time it needs to encrypt a version's
+     *        (the one named <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't exist, then
+     *        Secrets Manager creates it for you automatically the first time it needs to encrypt a version's
      *        <code>Plaintext</code> or <code>PlaintextString</code> fields.
      *        </p>
      *        <important>
@@ -566,13 +566,13 @@ public class UpdateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) Specifies the ARN or alias of the KMS customer master key (CMK) to be used to encrypt the protected
-     * text in the versions of this secret.
+     * (Optional) Specifies the ARN or alias of the AWS KMS customer master key (CMK) to be used to encrypt the
+     * protected text in the versions of this secret.
      * </p>
      * <p>
      * If you don't specify this value, then Secrets Manager defaults to using the default CMK in the account (the one
-     * named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't exist, then Secrets Manager creates
-     * it for you automatically the first time it needs to encrypt a version's <code>Plaintext</code> or
+     * named <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't exist, then Secrets Manager
+     * creates it for you automatically the first time it needs to encrypt a version's <code>Plaintext</code> or
      * <code>PlaintextString</code> fields.
      * </p>
      * <important>
@@ -583,12 +583,12 @@ public class UpdateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </important>
      * 
-     * @return (Optional) Specifies the ARN or alias of the KMS customer master key (CMK) to be used to encrypt the
+     * @return (Optional) Specifies the ARN or alias of the AWS KMS customer master key (CMK) to be used to encrypt the
      *         protected text in the versions of this secret.</p>
      *         <p>
      *         If you don't specify this value, then Secrets Manager defaults to using the default CMK in the account
-     *         (the one named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't exist, then Secrets
-     *         Manager creates it for you automatically the first time it needs to encrypt a version's
+     *         (the one named <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't exist, then
+     *         Secrets Manager creates it for you automatically the first time it needs to encrypt a version's
      *         <code>Plaintext</code> or <code>PlaintextString</code> fields.
      *         </p>
      *         <important>
@@ -605,13 +605,13 @@ public class UpdateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) Specifies the ARN or alias of the KMS customer master key (CMK) to be used to encrypt the protected
-     * text in the versions of this secret.
+     * (Optional) Specifies the ARN or alias of the AWS KMS customer master key (CMK) to be used to encrypt the
+     * protected text in the versions of this secret.
      * </p>
      * <p>
      * If you don't specify this value, then Secrets Manager defaults to using the default CMK in the account (the one
-     * named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't exist, then Secrets Manager creates
-     * it for you automatically the first time it needs to encrypt a version's <code>Plaintext</code> or
+     * named <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't exist, then Secrets Manager
+     * creates it for you automatically the first time it needs to encrypt a version's <code>Plaintext</code> or
      * <code>PlaintextString</code> fields.
      * </p>
      * <important>
@@ -623,12 +623,12 @@ public class UpdateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </important>
      * 
      * @param kmsKeyId
-     *        (Optional) Specifies the ARN or alias of the KMS customer master key (CMK) to be used to encrypt the
+     *        (Optional) Specifies the ARN or alias of the AWS KMS customer master key (CMK) to be used to encrypt the
      *        protected text in the versions of this secret.</p>
      *        <p>
      *        If you don't specify this value, then Secrets Manager defaults to using the default CMK in the account
-     *        (the one named <code>aws/secretsmanager</code>). If a KMS CMK with that name doesn't exist, then Secrets
-     *        Manager creates it for you automatically the first time it needs to encrypt a version's
+     *        (the one named <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't exist, then
+     *        Secrets Manager creates it for you automatically the first time it needs to encrypt a version's
      *        <code>Plaintext</code> or <code>PlaintextString</code> fields.
      *        </p>
      *        <important>

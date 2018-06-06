@@ -55,9 +55,14 @@ public class DescribeReservedDBInstancesOfferingsRequest extends com.amazonaws.A
     private String duration;
     /**
      * <p>
-     * Product description filter value. Specify this parameter to show only the available offerings matching the
+     * Product description filter value. Specify this parameter to show only the available offerings that contain the
      * specified product description.
      * </p>
+     * <note>
+     * <p>
+     * The results show offerings that partially match the filter value.
+     * </p>
+     * </note>
      */
     private String productDescription;
     /**
@@ -275,13 +280,21 @@ public class DescribeReservedDBInstancesOfferingsRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * Product description filter value. Specify this parameter to show only the available offerings matching the
+     * Product description filter value. Specify this parameter to show only the available offerings that contain the
      * specified product description.
      * </p>
+     * <note>
+     * <p>
+     * The results show offerings that partially match the filter value.
+     * </p>
+     * </note>
      * 
      * @param productDescription
-     *        Product description filter value. Specify this parameter to show only the available offerings matching the
-     *        specified product description.
+     *        Product description filter value. Specify this parameter to show only the available offerings that contain
+     *        the specified product description.</p> <note>
+     *        <p>
+     *        The results show offerings that partially match the filter value.
+     *        </p>
      */
 
     public void setProductDescription(String productDescription) {
@@ -290,12 +303,20 @@ public class DescribeReservedDBInstancesOfferingsRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * Product description filter value. Specify this parameter to show only the available offerings matching the
+     * Product description filter value. Specify this parameter to show only the available offerings that contain the
      * specified product description.
      * </p>
+     * <note>
+     * <p>
+     * The results show offerings that partially match the filter value.
+     * </p>
+     * </note>
      * 
-     * @return Product description filter value. Specify this parameter to show only the available offerings matching
-     *         the specified product description.
+     * @return Product description filter value. Specify this parameter to show only the available offerings that
+     *         contain the specified product description.</p> <note>
+     *         <p>
+     *         The results show offerings that partially match the filter value.
+     *         </p>
      */
 
     public String getProductDescription() {
@@ -304,13 +325,21 @@ public class DescribeReservedDBInstancesOfferingsRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * Product description filter value. Specify this parameter to show only the available offerings matching the
+     * Product description filter value. Specify this parameter to show only the available offerings that contain the
      * specified product description.
      * </p>
+     * <note>
+     * <p>
+     * The results show offerings that partially match the filter value.
+     * </p>
+     * </note>
      * 
      * @param productDescription
-     *        Product description filter value. Specify this parameter to show only the available offerings matching the
-     *        specified product description.
+     *        Product description filter value. Specify this parameter to show only the available offerings that contain
+     *        the specified product description.</p> <note>
+     *        <p>
+     *        The results show offerings that partially match the filter value.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

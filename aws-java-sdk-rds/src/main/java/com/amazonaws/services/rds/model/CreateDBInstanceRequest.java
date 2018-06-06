@@ -1616,6 +1616,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExports;
+    /**
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ProcessorFeature> processorFeatures;
 
     /**
      * Default constructor for CreateDBInstanceRequest object. Callers should use the setter or fluent setter (with...)
@@ -12141,6 +12147,79 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * </p>
+     * 
+     * @return The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     */
+
+    public java.util.List<ProcessorFeature> getProcessorFeatures() {
+        if (processorFeatures == null) {
+            processorFeatures = new com.amazonaws.internal.SdkInternalList<ProcessorFeature>();
+        }
+        return processorFeatures;
+    }
+
+    /**
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * </p>
+     * 
+     * @param processorFeatures
+     *        The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     */
+
+    public void setProcessorFeatures(java.util.Collection<ProcessorFeature> processorFeatures) {
+        if (processorFeatures == null) {
+            this.processorFeatures = null;
+            return;
+        }
+
+        this.processorFeatures = new com.amazonaws.internal.SdkInternalList<ProcessorFeature>(processorFeatures);
+    }
+
+    /**
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProcessorFeatures(java.util.Collection)} or {@link #withProcessorFeatures(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param processorFeatures
+     *        The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBInstanceRequest withProcessorFeatures(ProcessorFeature... processorFeatures) {
+        if (this.processorFeatures == null) {
+            setProcessorFeatures(new com.amazonaws.internal.SdkInternalList<ProcessorFeature>(processorFeatures.length));
+        }
+        for (ProcessorFeature ele : processorFeatures) {
+            this.processorFeatures.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * </p>
+     * 
+     * @param processorFeatures
+     *        The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBInstanceRequest withProcessorFeatures(java.util.Collection<ProcessorFeature> processorFeatures) {
+        setProcessorFeatures(processorFeatures);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -12234,7 +12313,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
         if (getPerformanceInsightsKMSKeyId() != null)
             sb.append("PerformanceInsightsKMSKeyId: ").append(getPerformanceInsightsKMSKeyId()).append(",");
         if (getEnableCloudwatchLogsExports() != null)
-            sb.append("EnableCloudwatchLogsExports: ").append(getEnableCloudwatchLogsExports());
+            sb.append("EnableCloudwatchLogsExports: ").append(getEnableCloudwatchLogsExports()).append(",");
+        if (getProcessorFeatures() != null)
+            sb.append("ProcessorFeatures: ").append(getProcessorFeatures());
         sb.append("}");
         return sb.toString();
     }
@@ -12418,6 +12499,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getEnableCloudwatchLogsExports() != null && other.getEnableCloudwatchLogsExports().equals(this.getEnableCloudwatchLogsExports()) == false)
             return false;
+        if (other.getProcessorFeatures() == null ^ this.getProcessorFeatures() == null)
+            return false;
+        if (other.getProcessorFeatures() != null && other.getProcessorFeatures().equals(this.getProcessorFeatures()) == false)
+            return false;
         return true;
     }
 
@@ -12468,6 +12553,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getEnablePerformanceInsights() == null) ? 0 : getEnablePerformanceInsights().hashCode());
         hashCode = prime * hashCode + ((getPerformanceInsightsKMSKeyId() == null) ? 0 : getPerformanceInsightsKMSKeyId().hashCode());
         hashCode = prime * hashCode + ((getEnableCloudwatchLogsExports() == null) ? 0 : getEnableCloudwatchLogsExports().hashCode());
+        hashCode = prime * hashCode + ((getProcessorFeatures() == null) ? 0 : getProcessorFeatures().hashCode());
         return hashCode;
     }
 

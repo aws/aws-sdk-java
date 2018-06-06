@@ -243,6 +243,31 @@ public class RestoreDBInstanceFromS3RequestMarshaller implements Marshaller<Requ
             }
         }
 
+        if (!restoreDBInstanceFromS3Request.getProcessorFeatures().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<ProcessorFeature>) restoreDBInstanceFromS3Request.getProcessorFeatures()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<ProcessorFeature> processorFeaturesList = (com.amazonaws.internal.SdkInternalList<ProcessorFeature>) restoreDBInstanceFromS3Request
+                    .getProcessorFeatures();
+            int processorFeaturesListIndex = 1;
+
+            for (ProcessorFeature processorFeaturesListValue : processorFeaturesList) {
+
+                if (processorFeaturesListValue.getName() != null) {
+                    request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Name",
+                            StringUtils.fromString(processorFeaturesListValue.getName()));
+                }
+
+                if (processorFeaturesListValue.getValue() != null) {
+                    request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Value",
+                            StringUtils.fromString(processorFeaturesListValue.getValue()));
+                }
+                processorFeaturesListIndex++;
+            }
+        }
+
+        if (restoreDBInstanceFromS3Request.getUseDefaultProcessorFeatures() != null) {
+            request.addParameter("UseDefaultProcessorFeatures", StringUtils.fromBoolean(restoreDBInstanceFromS3Request.getUseDefaultProcessorFeatures()));
+        }
+
         return request;
     }
 

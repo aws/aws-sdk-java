@@ -189,6 +189,13 @@ public class DBSnapshot implements Serializable, Cloneable {
      * </p>
      */
     private Boolean iAMDatabaseAuthenticationEnabled;
+    /**
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance when the
+     * DB snapshot was created.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ProcessorFeature> processorFeatures;
 
     /**
      * <p>
@@ -1285,6 +1292,87 @@ public class DBSnapshot implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance when the
+     * DB snapshot was created.
+     * </p>
+     * 
+     * @return The number of CPU cores and the number of threads per core for the DB instance class of the DB instance
+     *         when the DB snapshot was created.
+     */
+
+    public java.util.List<ProcessorFeature> getProcessorFeatures() {
+        if (processorFeatures == null) {
+            processorFeatures = new com.amazonaws.internal.SdkInternalList<ProcessorFeature>();
+        }
+        return processorFeatures;
+    }
+
+    /**
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance when the
+     * DB snapshot was created.
+     * </p>
+     * 
+     * @param processorFeatures
+     *        The number of CPU cores and the number of threads per core for the DB instance class of the DB instance
+     *        when the DB snapshot was created.
+     */
+
+    public void setProcessorFeatures(java.util.Collection<ProcessorFeature> processorFeatures) {
+        if (processorFeatures == null) {
+            this.processorFeatures = null;
+            return;
+        }
+
+        this.processorFeatures = new com.amazonaws.internal.SdkInternalList<ProcessorFeature>(processorFeatures);
+    }
+
+    /**
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance when the
+     * DB snapshot was created.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProcessorFeatures(java.util.Collection)} or {@link #withProcessorFeatures(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param processorFeatures
+     *        The number of CPU cores and the number of threads per core for the DB instance class of the DB instance
+     *        when the DB snapshot was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBSnapshot withProcessorFeatures(ProcessorFeature... processorFeatures) {
+        if (this.processorFeatures == null) {
+            setProcessorFeatures(new com.amazonaws.internal.SdkInternalList<ProcessorFeature>(processorFeatures.length));
+        }
+        for (ProcessorFeature ele : processorFeatures) {
+            this.processorFeatures.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance when the
+     * DB snapshot was created.
+     * </p>
+     * 
+     * @param processorFeatures
+     *        The number of CPU cores and the number of threads per core for the DB instance class of the DB instance
+     *        when the DB snapshot was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBSnapshot withProcessorFeatures(java.util.Collection<ProcessorFeature> processorFeatures) {
+        setProcessorFeatures(processorFeatures);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1346,7 +1434,9 @@ public class DBSnapshot implements Serializable, Cloneable {
         if (getTimezone() != null)
             sb.append("Timezone: ").append(getTimezone()).append(",");
         if (getIAMDatabaseAuthenticationEnabled() != null)
-            sb.append("IAMDatabaseAuthenticationEnabled: ").append(getIAMDatabaseAuthenticationEnabled());
+            sb.append("IAMDatabaseAuthenticationEnabled: ").append(getIAMDatabaseAuthenticationEnabled()).append(",");
+        if (getProcessorFeatures() != null)
+            sb.append("ProcessorFeatures: ").append(getProcessorFeatures());
         sb.append("}");
         return sb.toString();
     }
@@ -1466,6 +1556,10 @@ public class DBSnapshot implements Serializable, Cloneable {
         if (other.getIAMDatabaseAuthenticationEnabled() != null
                 && other.getIAMDatabaseAuthenticationEnabled().equals(this.getIAMDatabaseAuthenticationEnabled()) == false)
             return false;
+        if (other.getProcessorFeatures() == null ^ this.getProcessorFeatures() == null)
+            return false;
+        if (other.getProcessorFeatures() != null && other.getProcessorFeatures().equals(this.getProcessorFeatures()) == false)
+            return false;
         return true;
     }
 
@@ -1500,6 +1594,7 @@ public class DBSnapshot implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDBSnapshotArn() == null) ? 0 : getDBSnapshotArn().hashCode());
         hashCode = prime * hashCode + ((getTimezone() == null) ? 0 : getTimezone().hashCode());
         hashCode = prime * hashCode + ((getIAMDatabaseAuthenticationEnabled() == null) ? 0 : getIAMDatabaseAuthenticationEnabled().hashCode());
+        hashCode = prime * hashCode + ((getProcessorFeatures() == null) ? 0 : getProcessorFeatures().hashCode());
         return hashCode;
     }
 

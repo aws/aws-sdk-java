@@ -350,6 +350,16 @@ public class DBInstanceStaxUnmarshaller implements Unmarshaller<DBInstance, Stax
                     continue;
                 }
 
+                if (context.testExpression("ProcessorFeatures", targetDepth)) {
+                    dBInstance.withProcessorFeatures(new ArrayList<ProcessorFeature>());
+                    continue;
+                }
+
+                if (context.testExpression("ProcessorFeatures/ProcessorFeature", targetDepth)) {
+                    dBInstance.withProcessorFeatures(ProcessorFeatureStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dBInstance;

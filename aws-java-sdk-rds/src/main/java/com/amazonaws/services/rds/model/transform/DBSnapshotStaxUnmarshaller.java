@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.rds.model.transform;
 
+import java.util.ArrayList;
+
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -172,6 +174,17 @@ public class DBSnapshotStaxUnmarshaller implements Unmarshaller<DBSnapshot, Stax
                     dBSnapshot.setIAMDatabaseAuthenticationEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ProcessorFeatures", targetDepth)) {
+                    dBSnapshot.withProcessorFeatures(new ArrayList<ProcessorFeature>());
+                    continue;
+                }
+
+                if (context.testExpression("ProcessorFeatures/ProcessorFeature", targetDepth)) {
+                    dBSnapshot.withProcessorFeatures(ProcessorFeatureStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dBSnapshot;

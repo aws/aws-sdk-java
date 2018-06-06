@@ -286,7 +286,7 @@
       "documentation" : "<p>Synthesizes UTF-8 input, plain text or SSML, to a stream of bytes. SSML input must be valid, well-formed SSML. Some alphabets might not be available with all the voices (for example, Cyrillic might not be read at all by English voices) unless phoneme mapping is used. For more information, see <a href=\"http://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html\">How it Works</a>.</p>",
       "exceptions" : [ {
         "exceptionName" : "TextLengthExceededException",
-        "documentation" : "<p>The value of the \"Text\" parameter is longer than the accepted limits. The limit for input text is a maximum of 3000 characters total, of which no more than 1500 can be billed characters. SSML tags are not counted as billed characters.</p>",
+        "documentation" : "<p>The value of the \"Text\" parameter is longer than the accepted limits. The limit for input text is a maximum of 6000 characters total, of which no more than 3000 can be billed characters. SSML tags are not counted as billed characters.</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "InvalidSampleRateException",
@@ -6436,7 +6436,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>The value of the \"Text\" parameter is longer than the accepted limits. The limit for input text is a maximum of 3000 characters total, of which no more than 1500 can be billed characters. SSML tags are not counted as billed characters.</p>",
+      "documentation" : "<p>The value of the \"Text\" parameter is longer than the accepted limits. The limit for input text is a maximum of 6000 characters total, of which no more than 3000 can be billed characters. SSML tags are not counted as billed characters.</p>",
       "enums" : null,
       "errorCode" : "TextLengthExceededException",
       "hasHeaderMember" : false,
@@ -7343,6 +7343,9 @@
       }, {
         "name" : "Celine",
         "value" : "Celine"
+      }, {
+        "name" : "Lea",
+        "value" : "Lea"
       }, {
         "name" : "Mathieu",
         "value" : "Mathieu"

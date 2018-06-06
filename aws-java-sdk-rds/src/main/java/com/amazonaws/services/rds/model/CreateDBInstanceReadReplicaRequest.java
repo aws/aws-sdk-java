@@ -409,6 +409,18 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExports;
+    /**
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ProcessorFeature> processorFeatures;
+    /**
+     * <p>
+     * A value that specifies that the DB instance class of the DB instance uses its default processor features.
+     * </p>
+     */
+    private Boolean useDefaultProcessorFeatures;
     /** The region where the source instance is located. */
     private String sourceRegion;
 
@@ -3098,6 +3110,131 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * </p>
+     * 
+     * @return The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     */
+
+    public java.util.List<ProcessorFeature> getProcessorFeatures() {
+        if (processorFeatures == null) {
+            processorFeatures = new com.amazonaws.internal.SdkInternalList<ProcessorFeature>();
+        }
+        return processorFeatures;
+    }
+
+    /**
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * </p>
+     * 
+     * @param processorFeatures
+     *        The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     */
+
+    public void setProcessorFeatures(java.util.Collection<ProcessorFeature> processorFeatures) {
+        if (processorFeatures == null) {
+            this.processorFeatures = null;
+            return;
+        }
+
+        this.processorFeatures = new com.amazonaws.internal.SdkInternalList<ProcessorFeature>(processorFeatures);
+    }
+
+    /**
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProcessorFeatures(java.util.Collection)} or {@link #withProcessorFeatures(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param processorFeatures
+     *        The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBInstanceReadReplicaRequest withProcessorFeatures(ProcessorFeature... processorFeatures) {
+        if (this.processorFeatures == null) {
+            setProcessorFeatures(new com.amazonaws.internal.SdkInternalList<ProcessorFeature>(processorFeatures.length));
+        }
+        for (ProcessorFeature ele : processorFeatures) {
+            this.processorFeatures.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * </p>
+     * 
+     * @param processorFeatures
+     *        The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBInstanceReadReplicaRequest withProcessorFeatures(java.util.Collection<ProcessorFeature> processorFeatures) {
+        setProcessorFeatures(processorFeatures);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that specifies that the DB instance class of the DB instance uses its default processor features.
+     * </p>
+     * 
+     * @param useDefaultProcessorFeatures
+     *        A value that specifies that the DB instance class of the DB instance uses its default processor features.
+     */
+
+    public void setUseDefaultProcessorFeatures(Boolean useDefaultProcessorFeatures) {
+        this.useDefaultProcessorFeatures = useDefaultProcessorFeatures;
+    }
+
+    /**
+     * <p>
+     * A value that specifies that the DB instance class of the DB instance uses its default processor features.
+     * </p>
+     * 
+     * @return A value that specifies that the DB instance class of the DB instance uses its default processor features.
+     */
+
+    public Boolean getUseDefaultProcessorFeatures() {
+        return this.useDefaultProcessorFeatures;
+    }
+
+    /**
+     * <p>
+     * A value that specifies that the DB instance class of the DB instance uses its default processor features.
+     * </p>
+     * 
+     * @param useDefaultProcessorFeatures
+     *        A value that specifies that the DB instance class of the DB instance uses its default processor features.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBInstanceReadReplicaRequest withUseDefaultProcessorFeatures(Boolean useDefaultProcessorFeatures) {
+        setUseDefaultProcessorFeatures(useDefaultProcessorFeatures);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that specifies that the DB instance class of the DB instance uses its default processor features.
+     * </p>
+     * 
+     * @return A value that specifies that the DB instance class of the DB instance uses its default processor features.
+     */
+
+    public Boolean isUseDefaultProcessorFeatures() {
+        return this.useDefaultProcessorFeatures;
+    }
+
+    /**
      * The region where the source instance is located.
      * 
      * @param sourceRegion
@@ -3186,6 +3323,10 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
             sb.append("PerformanceInsightsKMSKeyId: ").append(getPerformanceInsightsKMSKeyId()).append(",");
         if (getEnableCloudwatchLogsExports() != null)
             sb.append("EnableCloudwatchLogsExports: ").append(getEnableCloudwatchLogsExports()).append(",");
+        if (getProcessorFeatures() != null)
+            sb.append("ProcessorFeatures: ").append(getProcessorFeatures()).append(",");
+        if (getUseDefaultProcessorFeatures() != null)
+            sb.append("UseDefaultProcessorFeatures: ").append(getUseDefaultProcessorFeatures()).append(",");
         if (getSourceRegion() != null)
             sb.append("SourceRegion: ").append(getSourceRegion());
         sb.append("}");
@@ -3291,6 +3432,14 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getEnableCloudwatchLogsExports() != null && other.getEnableCloudwatchLogsExports().equals(this.getEnableCloudwatchLogsExports()) == false)
             return false;
+        if (other.getProcessorFeatures() == null ^ this.getProcessorFeatures() == null)
+            return false;
+        if (other.getProcessorFeatures() != null && other.getProcessorFeatures().equals(this.getProcessorFeatures()) == false)
+            return false;
+        if (other.getUseDefaultProcessorFeatures() == null ^ this.getUseDefaultProcessorFeatures() == null)
+            return false;
+        if (other.getUseDefaultProcessorFeatures() != null && other.getUseDefaultProcessorFeatures().equals(this.getUseDefaultProcessorFeatures()) == false)
+            return false;
         if (other.getSourceRegion() == null ^ this.getSourceRegion() == null)
             return false;
         if (other.getSourceRegion() != null && other.getSourceRegion().equals(this.getSourceRegion()) == false)
@@ -3325,6 +3474,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getEnablePerformanceInsights() == null) ? 0 : getEnablePerformanceInsights().hashCode());
         hashCode = prime * hashCode + ((getPerformanceInsightsKMSKeyId() == null) ? 0 : getPerformanceInsightsKMSKeyId().hashCode());
         hashCode = prime * hashCode + ((getEnableCloudwatchLogsExports() == null) ? 0 : getEnableCloudwatchLogsExports().hashCode());
+        hashCode = prime * hashCode + ((getProcessorFeatures() == null) ? 0 : getProcessorFeatures().hashCode());
+        hashCode = prime * hashCode + ((getUseDefaultProcessorFeatures() == null) ? 0 : getUseDefaultProcessorFeatures().hashCode());
         hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode());
         return hashCode;
     }

@@ -235,6 +235,31 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
             }
         }
 
+        if (!modifyDBInstanceRequest.getProcessorFeatures().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<ProcessorFeature>) modifyDBInstanceRequest.getProcessorFeatures()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<ProcessorFeature> processorFeaturesList = (com.amazonaws.internal.SdkInternalList<ProcessorFeature>) modifyDBInstanceRequest
+                    .getProcessorFeatures();
+            int processorFeaturesListIndex = 1;
+
+            for (ProcessorFeature processorFeaturesListValue : processorFeaturesList) {
+
+                if (processorFeaturesListValue.getName() != null) {
+                    request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Name",
+                            StringUtils.fromString(processorFeaturesListValue.getName()));
+                }
+
+                if (processorFeaturesListValue.getValue() != null) {
+                    request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Value",
+                            StringUtils.fromString(processorFeaturesListValue.getValue()));
+                }
+                processorFeaturesListIndex++;
+            }
+        }
+
+        if (modifyDBInstanceRequest.getUseDefaultProcessorFeatures() != null) {
+            request.addParameter("UseDefaultProcessorFeatures", StringUtils.fromBoolean(modifyDBInstanceRequest.getUseDefaultProcessorFeatures()));
+        }
+
         return request;
     }
 

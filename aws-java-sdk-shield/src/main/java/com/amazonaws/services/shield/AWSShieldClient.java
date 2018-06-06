@@ -100,8 +100,17 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                             new JsonErrorShapeMetadata().withErrorCode("InternalErrorException").withModeledClass(
                                     com.amazonaws.services.shield.model.InternalErrorException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidPaginationTokenException").withModeledClass(
+                                    com.amazonaws.services.shield.model.InvalidPaginationTokenException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitsExceededException").withModeledClass(
                                     com.amazonaws.services.shield.model.LimitsExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NoAssociatedRoleException").withModeledClass(
+                                    com.amazonaws.services.shield.model.NoAssociatedRoleException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedForDependencyException").withModeledClass(
+                                    com.amazonaws.services.shield.model.AccessDeniedForDependencyException.class))
                     .withBaseServiceExceptionClass(com.amazonaws.services.shield.model.AWSShieldException.class));
 
     /**
@@ -287,8 +296,200 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
 
     /**
      * <p>
+     * Authorizes the DDoS Response team (DRT) to access the specified Amazon S3 bucket containing your flow logs. You
+     * can associate up to 10 Amazon S3 buckets with your subscription.
+     * </p>
+     * <p>
+     * To use the services of the DRT and make an <code>AssociateDRTLogBucket</code> request, you must be subscribed to
+     * the <a href="https://aws.amazon.com/premiumsupport/business-support/">Business Support plan</a> or the <a
+     * href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise Support plan</a>.
+     * </p>
+     * 
+     * @param associateDRTLogBucketRequest
+     * @return Result of the AssociateDRTLogBucket operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @throws InvalidOperationException
+     *         Exception that indicates that the operation would not cause any change to occur.
+     * @throws NoAssociatedRoleException
+     *         The ARN of the role that you specifed does not exist.
+     * @throws LimitsExceededException
+     *         Exception that indicates that the operation would exceed a limit.</p>
+     *         <p>
+     *         <code>Type</code> is the type of limit that would be exceeded.
+     *         </p>
+     *         <p>
+     *         <code>Limit</code> is the threshold that would be exceeded.
+     * @throws InvalidParameterException
+     *         Exception that indicates that the parameters passed to the API are invalid.
+     * @throws AccessDeniedForDependencyException
+     *         In order to grant the necessary access to the DDoS Response Team, the user submitting
+     *         <code>AssociateDRTRole</code> must have the <code>iam:PassRole</code> permission. This error indicates
+     *         the user did not have the appropriate permissions. For more information, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting a User
+     *         Permissions to Pass a Role to an AWS Service</a>.
+     * @throws OptimisticLockException
+     *         Exception that indicates that the protection state has been modified by another client. You can retry the
+     *         request.
+     * @throws ResourceNotFoundException
+     *         Exception indicating the specified resource does not exist.
+     * @sample AWSShield.AssociateDRTLogBucket
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateDRTLogBucket" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public AssociateDRTLogBucketResult associateDRTLogBucket(AssociateDRTLogBucketRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateDRTLogBucket(request);
+    }
+
+    @SdkInternalApi
+    final AssociateDRTLogBucketResult executeAssociateDRTLogBucket(AssociateDRTLogBucketRequest associateDRTLogBucketRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateDRTLogBucketRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateDRTLogBucketRequest> request = null;
+        Response<AssociateDRTLogBucketResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateDRTLogBucketRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateDRTLogBucketRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateDRTLogBucketResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new AssociateDRTLogBucketResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Authorizes the DDoS Response team (DRT), using the specified role, to access your AWS account to assist with DDoS
+     * attack mitigation during potential attacks. This enables the DRT to inspect your AWS WAF configuration and create
+     * or update AWS WAF rules and web ACLs.
+     * </p>
+     * <p>
+     * You can associate only one <code>RoleArn</code> with your subscription. If you submit an
+     * <code>AssociateDRTRole</code> request for an account that already has an associated role, the new
+     * <code>RoleArn</code> will replace the existing <code>RoleArn</code>.
+     * </p>
+     * <p>
+     * Prior to making the <code>AssociateDRTRole</code> request, you must attach the <a href=
+     * "https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy"
+     * >AWSShieldDRTAccessPolicy</a> managed policy to the role you will specify in the request. For more information
+     * see <a
+     * href=" https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Attaching and
+     * Detaching IAM Policies</a>. The role must also trust the service principal <code> drt.shield.amazonaws.com</code>
+     * . For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">IAM JSON
+     * Policy Elements: Principal</a>.
+     * </p>
+     * <p>
+     * The DRT will have access only to your AWS WAF and Shield resources. By submitting this request, you authorize the
+     * DRT to inspect your AWS WAF and Shield configuration and create and update AWS WAF rules and web ACLs on your
+     * behalf. The DRT takes these actions only if explicitly authorized by you.
+     * </p>
+     * <p>
+     * You must have the <code>iam:PassRole</code> permission to make an <code>AssociateDRTRole</code> request. For more
+     * information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting a
+     * User Permissions to Pass a Role to an AWS Service</a>.
+     * </p>
+     * <p>
+     * To use the services of the DRT and make an <code>AssociateDRTRole</code> request, you must be subscribed to the
+     * <a href="https://aws.amazon.com/premiumsupport/business-support/">Business Support plan</a> or the <a
+     * href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise Support plan</a>.
+     * </p>
+     * 
+     * @param associateDRTRoleRequest
+     * @return Result of the AssociateDRTRole operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @throws InvalidOperationException
+     *         Exception that indicates that the operation would not cause any change to occur.
+     * @throws InvalidParameterException
+     *         Exception that indicates that the parameters passed to the API are invalid.
+     * @throws AccessDeniedForDependencyException
+     *         In order to grant the necessary access to the DDoS Response Team, the user submitting
+     *         <code>AssociateDRTRole</code> must have the <code>iam:PassRole</code> permission. This error indicates
+     *         the user did not have the appropriate permissions. For more information, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting a User
+     *         Permissions to Pass a Role to an AWS Service</a>.
+     * @throws OptimisticLockException
+     *         Exception that indicates that the protection state has been modified by another client. You can retry the
+     *         request.
+     * @throws ResourceNotFoundException
+     *         Exception indicating the specified resource does not exist.
+     * @sample AWSShield.AssociateDRTRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateDRTRole" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public AssociateDRTRoleResult associateDRTRole(AssociateDRTRoleRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateDRTRole(request);
+    }
+
+    @SdkInternalApi
+    final AssociateDRTRoleResult executeAssociateDRTRole(AssociateDRTRoleRequest associateDRTRoleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateDRTRoleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateDRTRoleRequest> request = null;
+        Response<AssociateDRTRoleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateDRTRoleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateDRTRoleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateDRTRoleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AssociateDRTRoleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Enables AWS Shield Advanced for a specific AWS resource. The resource can be an Amazon CloudFront distribution,
      * Elastic Load Balancing load balancer, Elastic IP Address, or an Amazon Route 53 hosted zone.
+     * </p>
+     * <p>
+     * You can add protection to only a single resource with each CreateProtection request. If you want to add
+     * protection to multiple resources at once, use the <a href="https://console.aws.amazon.com/waf/">AWS WAF
+     * console</a>. For more information see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting Started with AWS
+     * Shield Advanced</a> and <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/configure-new-protection.html">Add AWS Shield
+     * Advanced Protection to more AWS Resources</a>.
      * </p>
      * 
      * @param createProtectionRequest
@@ -360,6 +561,16 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
     /**
      * <p>
      * Activates AWS Shield Advanced for an account.
+     * </p>
+     * <p>
+     * As part of this request you can specify <code>EmergencySettings</code> that automaticaly grant the DDoS response
+     * team (DRT) needed permissions to assist you during a suspected DDoS attack. For more information see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/authorize-DRT.html">Authorize the DDoS Response Team
+     * to Create Rules and Web ACLs on Your Behalf</a>.
+     * </p>
+     * <p>
+     * When you initally create a subscription, your subscription is set to be automatically renewed at the end of the
+     * existing subscription period. You can change this by submitting an <code>UpdateSubscription</code> request.
      * </p>
      * 
      * @param createSubscriptionRequest
@@ -480,8 +691,9 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
      *         request.
      * @throws LockedSubscriptionException
-     *         Exception that indicates that the subscription you are trying to delete has not yet completed the 1-year
-     *         commitment. You cannot delete this subscription.
+     *         You are trying to update a subscription that has not yet completed the 1-year commitment. You can change
+     *         the <code>AutoRenew</code> parameter during the last 30 days of your subscription. This exception
+     *         indicates that you are attempting to change <code>AutoRenew</code> prior to that period.
      * @throws ResourceNotFoundException
      *         Exception indicating the specified resource does not exist.
      * @sample AWSShield.DeleteSubscription
@@ -489,6 +701,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteSubscriptionResult deleteSubscription(DeleteSubscriptionRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteSubscription(request);
@@ -570,6 +783,118 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeAttackResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeAttackResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the current role and list of Amazon S3 log buckets used by the DDoS Response team (DRT) to access your
+     * AWS account while assisting with attack mitigation.
+     * </p>
+     * 
+     * @param describeDRTAccessRequest
+     * @return Result of the DescribeDRTAccess operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @throws ResourceNotFoundException
+     *         Exception indicating the specified resource does not exist.
+     * @sample AWSShield.DescribeDRTAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeDRTAccess" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeDRTAccessResult describeDRTAccess(DescribeDRTAccessRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDRTAccess(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDRTAccessResult executeDescribeDRTAccess(DescribeDRTAccessRequest describeDRTAccessRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeDRTAccessRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDRTAccessRequest> request = null;
+        Response<DescribeDRTAccessResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDRTAccessRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDRTAccessRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeDRTAccessResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeDRTAccessResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the email addresses that the DRT can use to contact you during a suspected attack.
+     * </p>
+     * 
+     * @param describeEmergencyContactSettingsRequest
+     * @return Result of the DescribeEmergencyContactSettings operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @throws ResourceNotFoundException
+     *         Exception indicating the specified resource does not exist.
+     * @sample AWSShield.DescribeEmergencyContactSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeEmergencyContactSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeEmergencyContactSettingsResult describeEmergencyContactSettings(DescribeEmergencyContactSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEmergencyContactSettings(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEmergencyContactSettingsResult executeDescribeEmergencyContactSettings(
+            DescribeEmergencyContactSettingsRequest describeEmergencyContactSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeEmergencyContactSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeEmergencyContactSettingsRequest> request = null;
+        Response<DescribeEmergencyContactSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeEmergencyContactSettingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeEmergencyContactSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeEmergencyContactSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeEmergencyContactSettingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -678,6 +1003,148 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeSubscriptionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeSubscriptionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes the DDoS Response team's (DRT) access to the specified Amazon S3 bucket containing your flow logs.
+     * </p>
+     * <p>
+     * To make a <code>DisassociateDRTLogBucket</code> request, you must be subscribed to the <a
+     * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support plan</a> or the <a
+     * href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise Support plan</a>. However, if you are
+     * not subscribed to one of these support plans, but had been previously and had granted the DRT access to your
+     * account, you can submit a <code>DisassociateDRTLogBucket</code> request to remove this access.
+     * </p>
+     * 
+     * @param disassociateDRTLogBucketRequest
+     * @return Result of the DisassociateDRTLogBucket operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @throws InvalidOperationException
+     *         Exception that indicates that the operation would not cause any change to occur.
+     * @throws NoAssociatedRoleException
+     *         The ARN of the role that you specifed does not exist.
+     * @throws AccessDeniedForDependencyException
+     *         In order to grant the necessary access to the DDoS Response Team, the user submitting
+     *         <code>AssociateDRTRole</code> must have the <code>iam:PassRole</code> permission. This error indicates
+     *         the user did not have the appropriate permissions. For more information, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting a User
+     *         Permissions to Pass a Role to an AWS Service</a>.
+     * @throws OptimisticLockException
+     *         Exception that indicates that the protection state has been modified by another client. You can retry the
+     *         request.
+     * @throws ResourceNotFoundException
+     *         Exception indicating the specified resource does not exist.
+     * @sample AWSShield.DisassociateDRTLogBucket
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisassociateDRTLogBucket"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateDRTLogBucketResult disassociateDRTLogBucket(DisassociateDRTLogBucketRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateDRTLogBucket(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateDRTLogBucketResult executeDisassociateDRTLogBucket(DisassociateDRTLogBucketRequest disassociateDRTLogBucketRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateDRTLogBucketRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateDRTLogBucketRequest> request = null;
+        Response<DisassociateDRTLogBucketResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateDRTLogBucketRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateDRTLogBucketRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateDRTLogBucketResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateDRTLogBucketResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes the DDoS Response team's (DRT) access to your AWS account.
+     * </p>
+     * <p>
+     * To make a <code>DisassociateDRTRole</code> request, you must be subscribed to the <a
+     * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support plan</a> or the <a
+     * href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise Support plan</a>. However, if you are
+     * not subscribed to one of these support plans, but had been previously and had granted the DRT access to your
+     * account, you can submit a <code>DisassociateDRTRole</code> request to remove this access.
+     * </p>
+     * 
+     * @param disassociateDRTRoleRequest
+     * @return Result of the DisassociateDRTRole operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @throws InvalidOperationException
+     *         Exception that indicates that the operation would not cause any change to occur.
+     * @throws OptimisticLockException
+     *         Exception that indicates that the protection state has been modified by another client. You can retry the
+     *         request.
+     * @throws ResourceNotFoundException
+     *         Exception indicating the specified resource does not exist.
+     * @sample AWSShield.DisassociateDRTRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisassociateDRTRole" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DisassociateDRTRoleResult disassociateDRTRole(DisassociateDRTRoleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateDRTRole(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateDRTRoleResult executeDisassociateDRTRole(DisassociateDRTRoleRequest disassociateDRTRoleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateDRTRoleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateDRTRoleRequest> request = null;
+        Response<DisassociateDRTRoleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateDRTRoleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateDRTRoleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateDRTRoleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DisassociateDRTRoleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -808,6 +1275,9 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *         request.
      * @throws ResourceNotFoundException
      *         Exception indicating the specified resource does not exist.
+     * @throws InvalidPaginationTokenException
+     *         Exception that indicates that the NextToken specified in the request is invalid. Submit the request using
+     *         the NextToken value that was returned in the response.
      * @sample AWSShield.ListProtections
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListProtections" target="_top">AWS API
      *      Documentation</a>
@@ -840,6 +1310,131 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
 
             HttpResponseHandler<AmazonWebServiceResponse<ListProtectionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListProtectionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the details of the list of email addresses that the DRT can use to contact you during a suspected attack.
+     * </p>
+     * 
+     * @param updateEmergencyContactSettingsRequest
+     * @return Result of the UpdateEmergencyContactSettings operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @throws InvalidParameterException
+     *         Exception that indicates that the parameters passed to the API are invalid.
+     * @throws OptimisticLockException
+     *         Exception that indicates that the protection state has been modified by another client. You can retry the
+     *         request.
+     * @throws ResourceNotFoundException
+     *         Exception indicating the specified resource does not exist.
+     * @sample AWSShield.UpdateEmergencyContactSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateEmergencyContactSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateEmergencyContactSettingsResult updateEmergencyContactSettings(UpdateEmergencyContactSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateEmergencyContactSettings(request);
+    }
+
+    @SdkInternalApi
+    final UpdateEmergencyContactSettingsResult executeUpdateEmergencyContactSettings(UpdateEmergencyContactSettingsRequest updateEmergencyContactSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateEmergencyContactSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateEmergencyContactSettingsRequest> request = null;
+        Response<UpdateEmergencyContactSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateEmergencyContactSettingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateEmergencyContactSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateEmergencyContactSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateEmergencyContactSettingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the details of an existing subscription. Only enter values for parameters you want to change. Empty
+     * parameters are not updated.
+     * </p>
+     * 
+     * @param updateSubscriptionRequest
+     * @return Result of the UpdateSubscription operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @throws LockedSubscriptionException
+     *         You are trying to update a subscription that has not yet completed the 1-year commitment. You can change
+     *         the <code>AutoRenew</code> parameter during the last 30 days of your subscription. This exception
+     *         indicates that you are attempting to change <code>AutoRenew</code> prior to that period.
+     * @throws ResourceNotFoundException
+     *         Exception indicating the specified resource does not exist.
+     * @throws InvalidParameterException
+     *         Exception that indicates that the parameters passed to the API are invalid.
+     * @throws OptimisticLockException
+     *         Exception that indicates that the protection state has been modified by another client. You can retry the
+     *         request.
+     * @sample AWSShield.UpdateSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateSubscription" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateSubscriptionResult updateSubscription(UpdateSubscriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateSubscription(request);
+    }
+
+    @SdkInternalApi
+    final UpdateSubscriptionResult executeUpdateSubscription(UpdateSubscriptionRequest updateSubscriptionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateSubscriptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateSubscriptionRequest> request = null;
+        Response<UpdateSubscriptionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateSubscriptionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateSubscriptionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateSubscriptionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateSubscriptionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

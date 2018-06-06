@@ -35,6 +35,18 @@ public class ReservationAggregatesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TotalActualHours").build();
     private static final MarshallingInfo<String> UNUSEDHOURS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UnusedHours").build();
+    private static final MarshallingInfo<String> ONDEMANDCOSTOFRIHOURSUSED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OnDemandCostOfRIHoursUsed").build();
+    private static final MarshallingInfo<String> NETRISAVINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NetRISavings").build();
+    private static final MarshallingInfo<String> TOTALPOTENTIALRISAVINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TotalPotentialRISavings").build();
+    private static final MarshallingInfo<String> AMORTIZEDUPFRONTFEE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AmortizedUpfrontFee").build();
+    private static final MarshallingInfo<String> AMORTIZEDRECURRINGFEE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AmortizedRecurringFee").build();
+    private static final MarshallingInfo<String> TOTALAMORTIZEDFEE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TotalAmortizedFee").build();
 
     private static final ReservationAggregatesMarshaller instance = new ReservationAggregatesMarshaller();
 
@@ -56,6 +68,12 @@ public class ReservationAggregatesMarshaller {
             protocolMarshaller.marshall(reservationAggregates.getPurchasedHours(), PURCHASEDHOURS_BINDING);
             protocolMarshaller.marshall(reservationAggregates.getTotalActualHours(), TOTALACTUALHOURS_BINDING);
             protocolMarshaller.marshall(reservationAggregates.getUnusedHours(), UNUSEDHOURS_BINDING);
+            protocolMarshaller.marshall(reservationAggregates.getOnDemandCostOfRIHoursUsed(), ONDEMANDCOSTOFRIHOURSUSED_BINDING);
+            protocolMarshaller.marshall(reservationAggregates.getNetRISavings(), NETRISAVINGS_BINDING);
+            protocolMarshaller.marshall(reservationAggregates.getTotalPotentialRISavings(), TOTALPOTENTIALRISAVINGS_BINDING);
+            protocolMarshaller.marshall(reservationAggregates.getAmortizedUpfrontFee(), AMORTIZEDUPFRONTFEE_BINDING);
+            protocolMarshaller.marshall(reservationAggregates.getAmortizedRecurringFee(), AMORTIZEDRECURRINGFEE_BINDING);
+            protocolMarshaller.marshall(reservationAggregates.getTotalAmortizedFee(), TOTALAMORTIZEDFEE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -169,6 +169,31 @@ public class RestoreDBInstanceToPointInTimeRequestMarshaller implements
             }
         }
 
+        if (!restoreDBInstanceToPointInTimeRequest.getProcessorFeatures().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<ProcessorFeature>) restoreDBInstanceToPointInTimeRequest.getProcessorFeatures()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<ProcessorFeature> processorFeaturesList = (com.amazonaws.internal.SdkInternalList<ProcessorFeature>) restoreDBInstanceToPointInTimeRequest
+                    .getProcessorFeatures();
+            int processorFeaturesListIndex = 1;
+
+            for (ProcessorFeature processorFeaturesListValue : processorFeaturesList) {
+
+                if (processorFeaturesListValue.getName() != null) {
+                    request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Name",
+                            StringUtils.fromString(processorFeaturesListValue.getName()));
+                }
+
+                if (processorFeaturesListValue.getValue() != null) {
+                    request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Value",
+                            StringUtils.fromString(processorFeaturesListValue.getValue()));
+                }
+                processorFeaturesListIndex++;
+            }
+        }
+
+        if (restoreDBInstanceToPointInTimeRequest.getUseDefaultProcessorFeatures() != null) {
+            request.addParameter("UseDefaultProcessorFeatures", StringUtils.fromBoolean(restoreDBInstanceToPointInTimeRequest.getUseDefaultProcessorFeatures()));
+        }
+
         return request;
     }
 

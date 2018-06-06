@@ -149,10 +149,10 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * The port number on which the new DB cluster accepts connections.
      * </p>
      * <p>
-     * Constraints: Value must be <code>1150-65535</code>
+     * Constraints: A value from <code>1150-65535</code>.
      * </p>
      * <p>
-     * Default: The same port as the original DB cluster.
+     * Default: The default port for the engine.
      * </p>
      */
     private Integer port;
@@ -997,19 +997,19 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * The port number on which the new DB cluster accepts connections.
      * </p>
      * <p>
-     * Constraints: Value must be <code>1150-65535</code>
+     * Constraints: A value from <code>1150-65535</code>.
      * </p>
      * <p>
-     * Default: The same port as the original DB cluster.
+     * Default: The default port for the engine.
      * </p>
      * 
      * @param port
      *        The port number on which the new DB cluster accepts connections.</p>
      *        <p>
-     *        Constraints: Value must be <code>1150-65535</code>
+     *        Constraints: A value from <code>1150-65535</code>.
      *        </p>
      *        <p>
-     *        Default: The same port as the original DB cluster.
+     *        Default: The default port for the engine.
      */
 
     public void setPort(Integer port) {
@@ -1021,18 +1021,18 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * The port number on which the new DB cluster accepts connections.
      * </p>
      * <p>
-     * Constraints: Value must be <code>1150-65535</code>
+     * Constraints: A value from <code>1150-65535</code>.
      * </p>
      * <p>
-     * Default: The same port as the original DB cluster.
+     * Default: The default port for the engine.
      * </p>
      * 
      * @return The port number on which the new DB cluster accepts connections.</p>
      *         <p>
-     *         Constraints: Value must be <code>1150-65535</code>
+     *         Constraints: A value from <code>1150-65535</code>.
      *         </p>
      *         <p>
-     *         Default: The same port as the original DB cluster.
+     *         Default: The default port for the engine.
      */
 
     public Integer getPort() {
@@ -1044,19 +1044,19 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * The port number on which the new DB cluster accepts connections.
      * </p>
      * <p>
-     * Constraints: Value must be <code>1150-65535</code>
+     * Constraints: A value from <code>1150-65535</code>.
      * </p>
      * <p>
-     * Default: The same port as the original DB cluster.
+     * Default: The default port for the engine.
      * </p>
      * 
      * @param port
      *        The port number on which the new DB cluster accepts connections.</p>
      *        <p>
-     *        Constraints: Value must be <code>1150-65535</code>
+     *        Constraints: A value from <code>1150-65535</code>.
      *        </p>
      *        <p>
-     *        Default: The same port as the original DB cluster.
+     *        Default: The default port for the engine.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

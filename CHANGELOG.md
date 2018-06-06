@@ -1,3 +1,28 @@
+# __1.11.342__ __2018-06-05__
+## __AWS Cost Explorer Service__
+  - ### Features
+    - Cost Explorer API is providing programmatic access to RI saving metrics to enable customers to optimize their reservations.
+
+## __AWS SDK for Java__
+  - ### Features
+    - Caching `XPathFactory` to improve performance of exception handling for services using XML protocol
+
+## __AWS Secrets Manager__
+  - ### Features
+    - Documentation updates for secretsmanager
+
+## __AWS Shield__
+  - ### Features
+    - DDoS Response Team access management for AWS Shield
+
+## __Amazon Polly__
+  - ### Features
+    - Amazon Polly adds new French voice - "Lea"
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - This release adds customizable processor features for RDS instances.
+
 # __1.11.341__ __2018-06-04__
 ## __AWS Elemental MediaConvert__
   - ### Features

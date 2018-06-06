@@ -55,6 +55,16 @@ public class ValidDBInstanceModificationsMessageStaxUnmarshaller implements Unma
                     continue;
                 }
 
+                if (context.testExpression("ValidProcessorFeatures", targetDepth)) {
+                    validDBInstanceModificationsMessage.withValidProcessorFeatures(new ArrayList<AvailableProcessorFeature>());
+                    continue;
+                }
+
+                if (context.testExpression("ValidProcessorFeatures/AvailableProcessorFeature", targetDepth)) {
+                    validDBInstanceModificationsMessage.withValidProcessorFeatures(AvailableProcessorFeatureStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return validDBInstanceModificationsMessage;

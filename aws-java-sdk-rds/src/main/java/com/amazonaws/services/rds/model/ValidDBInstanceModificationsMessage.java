@@ -34,6 +34,12 @@ public class ValidDBInstanceModificationsMessage implements Serializable, Clonea
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ValidStorageOptions> storage;
+    /**
+     * <p>
+     * Valid processor features for your DB instance.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<AvailableProcessorFeature> validProcessorFeatures;
 
     /**
      * <p>
@@ -109,6 +115,79 @@ public class ValidDBInstanceModificationsMessage implements Serializable, Clonea
     }
 
     /**
+     * <p>
+     * Valid processor features for your DB instance.
+     * </p>
+     * 
+     * @return Valid processor features for your DB instance.
+     */
+
+    public java.util.List<AvailableProcessorFeature> getValidProcessorFeatures() {
+        if (validProcessorFeatures == null) {
+            validProcessorFeatures = new com.amazonaws.internal.SdkInternalList<AvailableProcessorFeature>();
+        }
+        return validProcessorFeatures;
+    }
+
+    /**
+     * <p>
+     * Valid processor features for your DB instance.
+     * </p>
+     * 
+     * @param validProcessorFeatures
+     *        Valid processor features for your DB instance.
+     */
+
+    public void setValidProcessorFeatures(java.util.Collection<AvailableProcessorFeature> validProcessorFeatures) {
+        if (validProcessorFeatures == null) {
+            this.validProcessorFeatures = null;
+            return;
+        }
+
+        this.validProcessorFeatures = new com.amazonaws.internal.SdkInternalList<AvailableProcessorFeature>(validProcessorFeatures);
+    }
+
+    /**
+     * <p>
+     * Valid processor features for your DB instance.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setValidProcessorFeatures(java.util.Collection)} or
+     * {@link #withValidProcessorFeatures(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param validProcessorFeatures
+     *        Valid processor features for your DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ValidDBInstanceModificationsMessage withValidProcessorFeatures(AvailableProcessorFeature... validProcessorFeatures) {
+        if (this.validProcessorFeatures == null) {
+            setValidProcessorFeatures(new com.amazonaws.internal.SdkInternalList<AvailableProcessorFeature>(validProcessorFeatures.length));
+        }
+        for (AvailableProcessorFeature ele : validProcessorFeatures) {
+            this.validProcessorFeatures.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Valid processor features for your DB instance.
+     * </p>
+     * 
+     * @param validProcessorFeatures
+     *        Valid processor features for your DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ValidDBInstanceModificationsMessage withValidProcessorFeatures(java.util.Collection<AvailableProcessorFeature> validProcessorFeatures) {
+        setValidProcessorFeatures(validProcessorFeatures);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -120,7 +199,9 @@ public class ValidDBInstanceModificationsMessage implements Serializable, Clonea
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStorage() != null)
-            sb.append("Storage: ").append(getStorage());
+            sb.append("Storage: ").append(getStorage()).append(",");
+        if (getValidProcessorFeatures() != null)
+            sb.append("ValidProcessorFeatures: ").append(getValidProcessorFeatures());
         sb.append("}");
         return sb.toString();
     }
@@ -139,6 +220,10 @@ public class ValidDBInstanceModificationsMessage implements Serializable, Clonea
             return false;
         if (other.getStorage() != null && other.getStorage().equals(this.getStorage()) == false)
             return false;
+        if (other.getValidProcessorFeatures() == null ^ this.getValidProcessorFeatures() == null)
+            return false;
+        if (other.getValidProcessorFeatures() != null && other.getValidProcessorFeatures().equals(this.getValidProcessorFeatures()) == false)
+            return false;
         return true;
     }
 
@@ -148,6 +233,7 @@ public class ValidDBInstanceModificationsMessage implements Serializable, Clonea
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getStorage() == null) ? 0 : getStorage().hashCode());
+        hashCode = prime * hashCode + ((getValidProcessorFeatures() == null) ? 0 : getValidProcessorFeatures().hashCode());
         return hashCode;
     }
 

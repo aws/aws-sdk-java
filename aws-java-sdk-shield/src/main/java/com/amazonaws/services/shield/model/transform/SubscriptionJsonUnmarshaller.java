@@ -52,9 +52,21 @@ public class SubscriptionJsonUnmarshaller implements Unmarshaller<Subscription, 
                     context.nextToken();
                     subscription.setStartTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
                 }
+                if (context.testExpression("EndTime", targetDepth)) {
+                    context.nextToken();
+                    subscription.setEndTime(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                }
                 if (context.testExpression("TimeCommitmentInSeconds", targetDepth)) {
                     context.nextToken();
                     subscription.setTimeCommitmentInSeconds(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("AutoRenew", targetDepth)) {
+                    context.nextToken();
+                    subscription.setAutoRenew(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Limits", targetDepth)) {
+                    context.nextToken();
+                    subscription.setLimits(new ListUnmarshaller<Limit>(LimitJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

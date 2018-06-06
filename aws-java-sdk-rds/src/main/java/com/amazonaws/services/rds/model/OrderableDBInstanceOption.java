@@ -149,6 +149,12 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * </p>
      */
     private Double maxIopsPerGib;
+    /**
+     * <p>
+     * A list of the available processor features for the DB instance class of a DB instance.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<AvailableProcessorFeature> availableProcessorFeatures;
 
     /**
      * <p>
@@ -1080,6 +1086,79 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A list of the available processor features for the DB instance class of a DB instance.
+     * </p>
+     * 
+     * @return A list of the available processor features for the DB instance class of a DB instance.
+     */
+
+    public java.util.List<AvailableProcessorFeature> getAvailableProcessorFeatures() {
+        if (availableProcessorFeatures == null) {
+            availableProcessorFeatures = new com.amazonaws.internal.SdkInternalList<AvailableProcessorFeature>();
+        }
+        return availableProcessorFeatures;
+    }
+
+    /**
+     * <p>
+     * A list of the available processor features for the DB instance class of a DB instance.
+     * </p>
+     * 
+     * @param availableProcessorFeatures
+     *        A list of the available processor features for the DB instance class of a DB instance.
+     */
+
+    public void setAvailableProcessorFeatures(java.util.Collection<AvailableProcessorFeature> availableProcessorFeatures) {
+        if (availableProcessorFeatures == null) {
+            this.availableProcessorFeatures = null;
+            return;
+        }
+
+        this.availableProcessorFeatures = new com.amazonaws.internal.SdkInternalList<AvailableProcessorFeature>(availableProcessorFeatures);
+    }
+
+    /**
+     * <p>
+     * A list of the available processor features for the DB instance class of a DB instance.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAvailableProcessorFeatures(java.util.Collection)} or
+     * {@link #withAvailableProcessorFeatures(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param availableProcessorFeatures
+     *        A list of the available processor features for the DB instance class of a DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OrderableDBInstanceOption withAvailableProcessorFeatures(AvailableProcessorFeature... availableProcessorFeatures) {
+        if (this.availableProcessorFeatures == null) {
+            setAvailableProcessorFeatures(new com.amazonaws.internal.SdkInternalList<AvailableProcessorFeature>(availableProcessorFeatures.length));
+        }
+        for (AvailableProcessorFeature ele : availableProcessorFeatures) {
+            this.availableProcessorFeatures.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the available processor features for the DB instance class of a DB instance.
+     * </p>
+     * 
+     * @param availableProcessorFeatures
+     *        A list of the available processor features for the DB instance class of a DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OrderableDBInstanceOption withAvailableProcessorFeatures(java.util.Collection<AvailableProcessorFeature> availableProcessorFeatures) {
+        setAvailableProcessorFeatures(availableProcessorFeatures);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1129,7 +1208,9 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         if (getMinIopsPerGib() != null)
             sb.append("MinIopsPerGib: ").append(getMinIopsPerGib()).append(",");
         if (getMaxIopsPerGib() != null)
-            sb.append("MaxIopsPerGib: ").append(getMaxIopsPerGib());
+            sb.append("MaxIopsPerGib: ").append(getMaxIopsPerGib()).append(",");
+        if (getAvailableProcessorFeatures() != null)
+            sb.append("AvailableProcessorFeatures: ").append(getAvailableProcessorFeatures());
         sb.append("}");
         return sb.toString();
     }
@@ -1225,6 +1306,10 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
             return false;
         if (other.getMaxIopsPerGib() != null && other.getMaxIopsPerGib().equals(this.getMaxIopsPerGib()) == false)
             return false;
+        if (other.getAvailableProcessorFeatures() == null ^ this.getAvailableProcessorFeatures() == null)
+            return false;
+        if (other.getAvailableProcessorFeatures() != null && other.getAvailableProcessorFeatures().equals(this.getAvailableProcessorFeatures()) == false)
+            return false;
         return true;
     }
 
@@ -1253,6 +1338,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMaxIopsPerDbInstance() == null) ? 0 : getMaxIopsPerDbInstance().hashCode());
         hashCode = prime * hashCode + ((getMinIopsPerGib() == null) ? 0 : getMinIopsPerGib().hashCode());
         hashCode = prime * hashCode + ((getMaxIopsPerGib() == null) ? 0 : getMaxIopsPerGib().hashCode());
+        hashCode = prime * hashCode + ((getAvailableProcessorFeatures() == null) ? 0 : getAvailableProcessorFeatures().hashCode());
         return hashCode;
     }
 
