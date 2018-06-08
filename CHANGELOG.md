@@ -1,3 +1,8 @@
+# __1.11.343__ __2018-06-07__
+## __AWS Elemental MediaLive__
+  - ### Features
+    - AWS Elemental MediaLive now makes channel log information available through Amazon CloudWatch Logs. You can set up each MediaLive channel with a logging level; when the channel is run, logs will automatically be published to your account on Amazon CloudWatch Logs
+
 # __1.11.342__ __2018-06-05__
 ## __AWS Cost Explorer Service__
   - ### Features

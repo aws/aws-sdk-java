@@ -45,10 +45,10 @@ public interface AWSMediaLive {
      * @param createChannelRequest
      *        A request to create a channel
      * @return Result of the CreateChannel operation returned by the service.
-     * @throws UnprocessableEntityException
-     *         The Channel failed validation and could not be created.
      * @throws BadRequestException
      *         This request was invalid.
+     * @throws UnprocessableEntityException
+     *         The Channel failed validation and could not be created.
      * @throws InternalServerErrorException
      *         Unexpected internal service error.
      * @throws ForbiddenException
@@ -409,10 +409,10 @@ public interface AWSMediaLive {
      * @param updateChannelRequest
      *        A request to update a channel.
      * @return Result of the UpdateChannel operation returned by the service.
-     * @throws UnprocessableEntityException
-     *         The channel configuration failed validation and could not be updated.
      * @throws BadRequestException
      *         This request was invalid.
+     * @throws UnprocessableEntityException
+     *         The channel configuration failed validation and could not be updated.
      * @throws InternalServerErrorException
      *         Unexpected internal service error.
      * @throws ForbiddenException

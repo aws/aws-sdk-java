@@ -75,6 +75,10 @@ public class ChannelSummaryJsonUnmarshaller implements Unmarshaller<ChannelSumma
                     context.nextToken();
                     channelSummary.setInputSpecification(InputSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("logLevel", targetDepth)) {
+                    context.nextToken();
+                    channelSummary.setLogLevel(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     channelSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));

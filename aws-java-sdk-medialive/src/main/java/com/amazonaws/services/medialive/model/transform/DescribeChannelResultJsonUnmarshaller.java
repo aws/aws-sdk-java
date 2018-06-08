@@ -79,6 +79,10 @@ public class DescribeChannelResultJsonUnmarshaller implements Unmarshaller<Descr
                     context.nextToken();
                     describeChannelResult.setInputSpecification(InputSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("logLevel", targetDepth)) {
+                    context.nextToken();
+                    describeChannelResult.setLogLevel(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     describeChannelResult.setName(context.getUnmarshaller(String.class).unmarshall(context));

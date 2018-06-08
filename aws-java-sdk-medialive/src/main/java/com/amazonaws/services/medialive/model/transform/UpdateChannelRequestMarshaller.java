@@ -38,6 +38,8 @@ public class UpdateChannelRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputAttachments").build();
     private static final MarshallingInfo<StructuredPojo> INPUTSPECIFICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputSpecification").build();
+    private static final MarshallingInfo<String> LOGLEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("logLevel").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -64,6 +66,7 @@ public class UpdateChannelRequestMarshaller {
             protocolMarshaller.marshall(updateChannelRequest.getEncoderSettings(), ENCODERSETTINGS_BINDING);
             protocolMarshaller.marshall(updateChannelRequest.getInputAttachments(), INPUTATTACHMENTS_BINDING);
             protocolMarshaller.marshall(updateChannelRequest.getInputSpecification(), INPUTSPECIFICATION_BINDING);
+            protocolMarshaller.marshall(updateChannelRequest.getLogLevel(), LOGLEVEL_BINDING);
             protocolMarshaller.marshall(updateChannelRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(updateChannelRequest.getRoleArn(), ROLEARN_BINDING);
         } catch (Exception e) {

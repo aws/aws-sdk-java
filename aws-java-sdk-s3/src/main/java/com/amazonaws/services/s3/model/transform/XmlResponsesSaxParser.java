@@ -31,6 +31,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -2295,7 +2296,7 @@ public class XmlResponsesSaxParser {
 
             if (in("Tagging")) {
                 if (name.equals("TagSet")) {
-                    currentTagSet = new HashMap<String, String>();
+                    currentTagSet = new LinkedHashMap<String, String>();
                 }
             }
         }

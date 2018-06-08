@@ -36,6 +36,8 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     private java.util.List<InputAttachment> inputAttachments;
     /** Specification of input for this channel (max. bitrate, resolution, codec, etc.) */
     private InputSpecification inputSpecification;
+    /** The log level to write to CloudWatch Logs. */
+    private String logLevel;
     /** The name of the channel. */
     private String name;
     /**
@@ -261,6 +263,57 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * The log level to write to CloudWatch Logs.
+     * 
+     * @param logLevel
+     *        The log level to write to CloudWatch Logs.
+     * @see LogLevel
+     */
+
+    public void setLogLevel(String logLevel) {
+        this.logLevel = logLevel;
+    }
+
+    /**
+     * The log level to write to CloudWatch Logs.
+     * 
+     * @return The log level to write to CloudWatch Logs.
+     * @see LogLevel
+     */
+
+    public String getLogLevel() {
+        return this.logLevel;
+    }
+
+    /**
+     * The log level to write to CloudWatch Logs.
+     * 
+     * @param logLevel
+     *        The log level to write to CloudWatch Logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LogLevel
+     */
+
+    public UpdateChannelRequest withLogLevel(String logLevel) {
+        setLogLevel(logLevel);
+        return this;
+    }
+
+    /**
+     * The log level to write to CloudWatch Logs.
+     * 
+     * @param logLevel
+     *        The log level to write to CloudWatch Logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LogLevel
+     */
+
+    public UpdateChannelRequest withLogLevel(LogLevel logLevel) {
+        this.logLevel = logLevel.toString();
+        return this;
+    }
+
+    /**
      * The name of the channel.
      * 
      * @param name
@@ -355,6 +408,8 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("InputAttachments: ").append(getInputAttachments()).append(",");
         if (getInputSpecification() != null)
             sb.append("InputSpecification: ").append(getInputSpecification()).append(",");
+        if (getLogLevel() != null)
+            sb.append("LogLevel: ").append(getLogLevel()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getRoleArn() != null)
@@ -393,6 +448,10 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getInputSpecification() != null && other.getInputSpecification().equals(this.getInputSpecification()) == false)
             return false;
+        if (other.getLogLevel() == null ^ this.getLogLevel() == null)
+            return false;
+        if (other.getLogLevel() != null && other.getLogLevel().equals(this.getLogLevel()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -414,6 +473,7 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getEncoderSettings() == null) ? 0 : getEncoderSettings().hashCode());
         hashCode = prime * hashCode + ((getInputAttachments() == null) ? 0 : getInputAttachments().hashCode());
         hashCode = prime * hashCode + ((getInputSpecification() == null) ? 0 : getInputSpecification().hashCode());
+        hashCode = prime * hashCode + ((getLogLevel() == null) ? 0 : getLogLevel().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         return hashCode;

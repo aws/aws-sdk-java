@@ -79,6 +79,10 @@ public class StartChannelResultJsonUnmarshaller implements Unmarshaller<StartCha
                     context.nextToken();
                     startChannelResult.setInputSpecification(InputSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("logLevel", targetDepth)) {
+                    context.nextToken();
+                    startChannelResult.setLogLevel(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     startChannelResult.setName(context.getUnmarshaller(String.class).unmarshall(context));

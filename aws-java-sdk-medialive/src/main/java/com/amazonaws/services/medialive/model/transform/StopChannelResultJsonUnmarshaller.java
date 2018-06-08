@@ -79,6 +79,10 @@ public class StopChannelResultJsonUnmarshaller implements Unmarshaller<StopChann
                     context.nextToken();
                     stopChannelResult.setInputSpecification(InputSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("logLevel", targetDepth)) {
+                    context.nextToken();
+                    stopChannelResult.setLogLevel(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     stopChannelResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
