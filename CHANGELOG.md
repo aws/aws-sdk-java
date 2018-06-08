@@ -1,3 +1,8 @@
+# __1.11.344__ __2018-06-08__
+## __AWS MediaTailor__
+  - ### Features
+    - Fixes a bug in the request URIs for MediaTailor PlaybackConfiguration operations.
+
 # __1.11.343__ __2018-06-07__
 ## __AWS Elemental MediaLive__
   - ### Features

@@ -32,9 +32,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class DeletePlaybackConfigurationRequestProtocolMarshaller implements
         Marshaller<Request<DeletePlaybackConfigurationRequest>, DeletePlaybackConfigurationRequest> {
 
-    private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/prod/playbackConfiguration/{Name}").httpMethodName(HttpMethodName.DELETE).hasExplicitPayloadMember(false).hasPayloadMembers(false)
-            .serviceName("AWSMediaTailor").build();
+    private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/playbackConfiguration/{Name}")
+            .httpMethodName(HttpMethodName.DELETE).hasExplicitPayloadMember(false).hasPayloadMembers(false).serviceName("AWSMediaTailor").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

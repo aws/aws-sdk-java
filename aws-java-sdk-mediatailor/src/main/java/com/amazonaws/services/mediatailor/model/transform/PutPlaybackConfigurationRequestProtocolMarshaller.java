@@ -31,7 +31,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class PutPlaybackConfigurationRequestProtocolMarshaller implements Marshaller<Request<PutPlaybackConfigurationRequest>, PutPlaybackConfigurationRequest> {
 
-    private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/prod/playbackConfiguration")
+    private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/playbackConfiguration")
             .httpMethodName(HttpMethodName.PUT).hasExplicitPayloadMember(false).hasPayloadMembers(true).serviceName("AWSMediaTailor").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;

@@ -19,7 +19,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -504,7 +504,7 @@
       "marshaller" : {
         "action" : "DeletePlaybackConfiguration",
         "locationName" : null,
-        "requestUri" : "/prod/playbackConfiguration/{Name}",
+        "requestUri" : "/playbackConfiguration/{Name}",
         "target" : null,
         "verb" : "DELETE",
         "xmlNameSpaceUri" : null
@@ -714,7 +714,7 @@
       "marshaller" : {
         "action" : "GetPlaybackConfiguration",
         "locationName" : null,
-        "requestUri" : "/prod/playbackConfiguration/{Name}",
+        "requestUri" : "/playbackConfiguration/{Name}",
         "target" : null,
         "verb" : "GET",
         "xmlNameSpaceUri" : null
@@ -2108,7 +2108,7 @@
       "marshaller" : {
         "action" : "ListPlaybackConfigurations",
         "locationName" : null,
-        "requestUri" : "/prod/playbackConfigurations",
+        "requestUri" : "/playbackConfigurations",
         "target" : null,
         "verb" : "GET",
         "xmlNameSpaceUri" : null
@@ -3531,7 +3531,7 @@
       "marshaller" : {
         "action" : "PutPlaybackConfiguration",
         "locationName" : null,
-        "requestUri" : "/prod/playbackConfiguration",
+        "requestUri" : "/playbackConfiguration",
         "target" : null,
         "verb" : "PUT",
         "xmlNameSpaceUri" : null
