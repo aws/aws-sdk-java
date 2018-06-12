@@ -55,6 +55,8 @@ public class BatchWriteOperationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AttachTypedLink").build();
     private static final MarshallingInfo<StructuredPojo> DETACHTYPEDLINK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DetachTypedLink").build();
+    private static final MarshallingInfo<StructuredPojo> UPDATELINKATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpdateLinkAttributes").build();
 
     private static final BatchWriteOperationMarshaller instance = new BatchWriteOperationMarshaller();
 
@@ -86,6 +88,7 @@ public class BatchWriteOperationMarshaller {
             protocolMarshaller.marshall(batchWriteOperation.getDetachFromIndex(), DETACHFROMINDEX_BINDING);
             protocolMarshaller.marshall(batchWriteOperation.getAttachTypedLink(), ATTACHTYPEDLINK_BINDING);
             protocolMarshaller.marshall(batchWriteOperation.getDetachTypedLink(), DETACHTYPEDLINK_BINDING);
+            protocolMarshaller.marshall(batchWriteOperation.getUpdateLinkAttributes(), UPDATELINKATTRIBUTES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -260,7 +260,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * true.
      * </p>
      * <p>
-     * For a list of valid engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.
+     * For a list of valid engine versions, see <a>CreateDBCluster</a>, or call <a>DescribeDBEngineVersions</a>.
      * </p>
      */
     private String engineVersion;
@@ -1749,7 +1749,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * true.
      * </p>
      * <p>
-     * For a list of valid engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.
+     * For a list of valid engine versions, see <a>CreateDBCluster</a>, or call <a>DescribeDBEngineVersions</a>.
      * </p>
      * 
      * @param engineVersion
@@ -1757,7 +1757,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        an outage. The change is applied during the next maintenance window unless the ApplyImmediately parameter
      *        is set to true.</p>
      *        <p>
-     *        For a list of valid engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.
+     *        For a list of valid engine versions, see <a>CreateDBCluster</a>, or call <a>DescribeDBEngineVersions</a>.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -1771,15 +1771,14 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * true.
      * </p>
      * <p>
-     * For a list of valid engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.
+     * For a list of valid engine versions, see <a>CreateDBCluster</a>, or call <a>DescribeDBEngineVersions</a>.
      * </p>
      * 
      * @return The version number of the database engine to which you want to upgrade. Changing this parameter results
      *         in an outage. The change is applied during the next maintenance window unless the ApplyImmediately
      *         parameter is set to true.</p>
      *         <p>
-     *         For a list of valid engine versions, see <a>CreateDBInstance</a>, or call
-     *         <a>DescribeDBEngineVersions</a>.
+     *         For a list of valid engine versions, see <a>CreateDBCluster</a>, or call <a>DescribeDBEngineVersions</a>.
      */
 
     public String getEngineVersion() {
@@ -1793,7 +1792,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * true.
      * </p>
      * <p>
-     * For a list of valid engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.
+     * For a list of valid engine versions, see <a>CreateDBCluster</a>, or call <a>DescribeDBEngineVersions</a>.
      * </p>
      * 
      * @param engineVersion
@@ -1801,7 +1800,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        an outage. The change is applied during the next maintenance window unless the ApplyImmediately parameter
      *        is set to true.</p>
      *        <p>
-     *        For a list of valid engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.
+     *        For a list of valid engine versions, see <a>CreateDBCluster</a>, or call <a>DescribeDBEngineVersions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

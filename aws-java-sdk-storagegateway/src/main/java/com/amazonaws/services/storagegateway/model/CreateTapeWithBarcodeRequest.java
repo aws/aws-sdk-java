@@ -57,6 +57,20 @@ public class CreateTapeWithBarcodeRequest extends com.amazonaws.AmazonWebService
      * </note>
      */
     private String tapeBarcode;
+    /**
+     * <p>
+     * True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * S3. Optional.
+     * </p>
+     */
+    private Boolean kMSEncrypted;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the KMS Key used for Amazon S3 server side encryption. This value can only be
+     * set when KMSEncrypted is true. Optional.
+     * </p>
+     */
+    private String kMSKey;
 
     /**
      * <p>
@@ -233,6 +247,112 @@ public class CreateTapeWithBarcodeRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * S3. Optional.
+     * </p>
+     * 
+     * @param kMSEncrypted
+     *        True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by
+     *        Amazon S3. Optional.
+     */
+
+    public void setKMSEncrypted(Boolean kMSEncrypted) {
+        this.kMSEncrypted = kMSEncrypted;
+    }
+
+    /**
+     * <p>
+     * True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * S3. Optional.
+     * </p>
+     * 
+     * @return True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by
+     *         Amazon S3. Optional.
+     */
+
+    public Boolean getKMSEncrypted() {
+        return this.kMSEncrypted;
+    }
+
+    /**
+     * <p>
+     * True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * S3. Optional.
+     * </p>
+     * 
+     * @param kMSEncrypted
+     *        True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by
+     *        Amazon S3. Optional.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTapeWithBarcodeRequest withKMSEncrypted(Boolean kMSEncrypted) {
+        setKMSEncrypted(kMSEncrypted);
+        return this;
+    }
+
+    /**
+     * <p>
+     * True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon
+     * S3. Optional.
+     * </p>
+     * 
+     * @return True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by
+     *         Amazon S3. Optional.
+     */
+
+    public Boolean isKMSEncrypted() {
+        return this.kMSEncrypted;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the KMS Key used for Amazon S3 server side encryption. This value can only be
+     * set when KMSEncrypted is true. Optional.
+     * </p>
+     * 
+     * @param kMSKey
+     *        The Amazon Resource Name (ARN) of the KMS Key used for Amazon S3 server side encryption. This value can
+     *        only be set when KMSEncrypted is true. Optional.
+     */
+
+    public void setKMSKey(String kMSKey) {
+        this.kMSKey = kMSKey;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the KMS Key used for Amazon S3 server side encryption. This value can only be
+     * set when KMSEncrypted is true. Optional.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the KMS Key used for Amazon S3 server side encryption. This value can
+     *         only be set when KMSEncrypted is true. Optional.
+     */
+
+    public String getKMSKey() {
+        return this.kMSKey;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the KMS Key used for Amazon S3 server side encryption. This value can only be
+     * set when KMSEncrypted is true. Optional.
+     * </p>
+     * 
+     * @param kMSKey
+     *        The Amazon Resource Name (ARN) of the KMS Key used for Amazon S3 server side encryption. This value can
+     *        only be set when KMSEncrypted is true. Optional.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTapeWithBarcodeRequest withKMSKey(String kMSKey) {
+        setKMSKey(kMSKey);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -248,7 +368,11 @@ public class CreateTapeWithBarcodeRequest extends com.amazonaws.AmazonWebService
         if (getTapeSizeInBytes() != null)
             sb.append("TapeSizeInBytes: ").append(getTapeSizeInBytes()).append(",");
         if (getTapeBarcode() != null)
-            sb.append("TapeBarcode: ").append(getTapeBarcode());
+            sb.append("TapeBarcode: ").append(getTapeBarcode()).append(",");
+        if (getKMSEncrypted() != null)
+            sb.append("KMSEncrypted: ").append(getKMSEncrypted()).append(",");
+        if (getKMSKey() != null)
+            sb.append("KMSKey: ").append(getKMSKey());
         sb.append("}");
         return sb.toString();
     }
@@ -275,6 +399,14 @@ public class CreateTapeWithBarcodeRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getTapeBarcode() != null && other.getTapeBarcode().equals(this.getTapeBarcode()) == false)
             return false;
+        if (other.getKMSEncrypted() == null ^ this.getKMSEncrypted() == null)
+            return false;
+        if (other.getKMSEncrypted() != null && other.getKMSEncrypted().equals(this.getKMSEncrypted()) == false)
+            return false;
+        if (other.getKMSKey() == null ^ this.getKMSKey() == null)
+            return false;
+        if (other.getKMSKey() != null && other.getKMSKey().equals(this.getKMSKey()) == false)
+            return false;
         return true;
     }
 
@@ -286,6 +418,8 @@ public class CreateTapeWithBarcodeRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode());
         hashCode = prime * hashCode + ((getTapeSizeInBytes() == null) ? 0 : getTapeSizeInBytes().hashCode());
         hashCode = prime * hashCode + ((getTapeBarcode() == null) ? 0 : getTapeBarcode().hashCode());
+        hashCode = prime * hashCode + ((getKMSEncrypted() == null) ? 0 : getKMSEncrypted().hashCode());
+        hashCode = prime * hashCode + ((getKMSKey() == null) ? 0 : getKMSKey().hashCode());
         return hashCode;
     }
 

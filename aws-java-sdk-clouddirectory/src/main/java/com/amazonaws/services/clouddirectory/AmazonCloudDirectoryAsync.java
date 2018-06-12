@@ -1010,6 +1010,37 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
 
     /**
      * <p>
+     * Retrieves attributes that are associated with a typed link.
+     * </p>
+     * 
+     * @param getLinkAttributesRequest
+     * @return A Java Future containing the result of the GetLinkAttributes operation returned by the service.
+     * @sample AmazonCloudDirectoryAsync.GetLinkAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetLinkAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetLinkAttributesResult> getLinkAttributesAsync(GetLinkAttributesRequest getLinkAttributesRequest);
+
+    /**
+     * <p>
+     * Retrieves attributes that are associated with a typed link.
+     * </p>
+     * 
+     * @param getLinkAttributesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetLinkAttributes operation returned by the service.
+     * @sample AmazonCloudDirectoryAsyncHandler.GetLinkAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetLinkAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetLinkAttributesResult> getLinkAttributesAsync(GetLinkAttributesRequest getLinkAttributesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetLinkAttributesRequest, GetLinkAttributesResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves attributes within a facet that are associated with an object.
      * </p>
      * 
@@ -2051,6 +2082,39 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      */
     java.util.concurrent.Future<UpdateFacetResult> updateFacetAsync(UpdateFacetRequest updateFacetRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateFacetRequest, UpdateFacetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a given typed link’s attributes. Attributes to be updated must not contribute to the typed link’s
+     * identity, as defined by its <code>IdentityAttributeOrder</code>.
+     * </p>
+     * 
+     * @param updateLinkAttributesRequest
+     * @return A Java Future containing the result of the UpdateLinkAttributes operation returned by the service.
+     * @sample AmazonCloudDirectoryAsync.UpdateLinkAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateLinkAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateLinkAttributesResult> updateLinkAttributesAsync(UpdateLinkAttributesRequest updateLinkAttributesRequest);
+
+    /**
+     * <p>
+     * Updates a given typed link’s attributes. Attributes to be updated must not contribute to the typed link’s
+     * identity, as defined by its <code>IdentityAttributeOrder</code>.
+     * </p>
+     * 
+     * @param updateLinkAttributesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateLinkAttributes operation returned by the service.
+     * @sample AmazonCloudDirectoryAsyncHandler.UpdateLinkAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateLinkAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateLinkAttributesResult> updateLinkAttributesAsync(UpdateLinkAttributesRequest updateLinkAttributesRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateLinkAttributesRequest, UpdateLinkAttributesResult> asyncHandler);
 
     /**
      * <p>

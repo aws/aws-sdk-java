@@ -1,3 +1,16 @@
+# __1.11.345__ __2018-06-11__
+## __AWS Storage Gateway__
+  - ### Features
+    -  AWS Storage Gateway now enables you to create cached volumes and tapes with AWS KMS support.
+
+## __Amazon CloudDirectory__
+  - ### Features
+    - Amazon Cloud Directory now supports optional attributes on Typed Links, giving users the ability to associate and manage data on Typed Links. 
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Changed lists of valid EngineVersion values to links to the RDS User Guide.
+
 # __1.11.344__ __2018-06-08__
 ## __AWS MediaTailor__
   - ### Features

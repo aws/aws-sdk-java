@@ -80,6 +80,10 @@ public class TapeJsonUnmarshaller implements Unmarshaller<Tape, JsonUnmarshaller
                     context.nextToken();
                     tape.setTapeUsedInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("KMSKey", targetDepth)) {
+                    context.nextToken();
+                    tape.setKMSKey(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -1176,6 +1176,39 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     }
 
     @Override
+    public java.util.concurrent.Future<GetLinkAttributesResult> getLinkAttributesAsync(GetLinkAttributesRequest request) {
+
+        return getLinkAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLinkAttributesResult> getLinkAttributesAsync(final GetLinkAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLinkAttributesRequest, GetLinkAttributesResult> asyncHandler) {
+        final GetLinkAttributesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetLinkAttributesResult>() {
+            @Override
+            public GetLinkAttributesResult call() throws Exception {
+                GetLinkAttributesResult result = null;
+
+                try {
+                    result = executeGetLinkAttributes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetObjectAttributesResult> getObjectAttributesAsync(GetObjectAttributesRequest request) {
 
         return getObjectAttributesAsync(request, null);
@@ -2150,6 +2183,39 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
 
                 try {
                     result = executeUpdateFacet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLinkAttributesResult> updateLinkAttributesAsync(UpdateLinkAttributesRequest request) {
+
+        return updateLinkAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLinkAttributesResult> updateLinkAttributesAsync(final UpdateLinkAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateLinkAttributesRequest, UpdateLinkAttributesResult> asyncHandler) {
+        final UpdateLinkAttributesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateLinkAttributesResult>() {
+            @Override
+            public UpdateLinkAttributesResult call() throws Exception {
+                UpdateLinkAttributesResult result = null;
+
+                try {
+                    result = executeUpdateLinkAttributes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

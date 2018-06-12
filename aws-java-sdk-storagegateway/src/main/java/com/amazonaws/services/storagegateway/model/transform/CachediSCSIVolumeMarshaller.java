@@ -47,6 +47,8 @@ public class CachediSCSIVolumeMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedDate").build();
     private static final MarshallingInfo<Long> VOLUMEUSEDINBYTES_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeUsedInBytes").build();
+    private static final MarshallingInfo<String> KMSKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KMSKey").build();
 
     private static final CachediSCSIVolumeMarshaller instance = new CachediSCSIVolumeMarshaller();
 
@@ -74,6 +76,7 @@ public class CachediSCSIVolumeMarshaller {
             protocolMarshaller.marshall(cachediSCSIVolume.getVolumeiSCSIAttributes(), VOLUMEISCSIATTRIBUTES_BINDING);
             protocolMarshaller.marshall(cachediSCSIVolume.getCreatedDate(), CREATEDDATE_BINDING);
             protocolMarshaller.marshall(cachediSCSIVolume.getVolumeUsedInBytes(), VOLUMEUSEDINBYTES_BINDING);
+            protocolMarshaller.marshall(cachediSCSIVolume.getKMSKey(), KMSKEY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

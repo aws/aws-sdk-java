@@ -895,7 +895,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * For more information on copying encrypted DB cluster snapshots from one AWS Region to another, see <a href=
      * "http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBClusterSnapshot.CrossRegion"
      * > Copying a DB Cluster Snapshot in the Same Account, Either in the Same Region or Across Regions</a> in the
-     * Amazon RDS User Guide.
+     * <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * For more information on Amazon Aurora, see <a
@@ -1023,7 +1023,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * <p>
      * For more information about copying snapshots, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopyDBSnapshot.html">Copying a DB Snapshot</a>
-     * in the Amazon RDS User Guide.
+     * in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param copyDBSnapshotRequest

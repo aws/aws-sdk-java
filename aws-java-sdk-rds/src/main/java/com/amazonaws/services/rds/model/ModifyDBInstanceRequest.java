@@ -62,7 +62,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
-     * in the Amazon RDS User Guide.
+     * in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * If you modify the DB instance class, an outage occurs during the change. The change is applied during the next
@@ -358,7 +358,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * default for that DB parameter group family.
      * </p>
      * <p>
-     * For a list of valid engine versions, see <a>CreateDBInstance</a>.
+     * For information about valid engine versions, see <a>CreateDBInstance</a>, or call
+     * <a>DescribeDBEngineVersions</a>.
      * </p>
      */
     private String engineVersion;
@@ -958,7 +959,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
-     * in the Amazon RDS User Guide.
+     * in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * If you modify the DB instance class, an outage occurs during the change. The change is applied during the next
@@ -973,7 +974,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        instance classes are available in all AWS Regions, or for all database engines. For the full list of DB
      *        instance classes, and availability for your engine, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
-     *        Class</a> in the Amazon RDS User Guide. </p>
+     *        Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      *        <p>
      *        If you modify the DB instance class, an outage occurs during the change. The change is applied during the
      *        next maintenance window, unless <code>ApplyImmediately</code> is specified as <code>true</code> for this
@@ -993,7 +994,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
-     * in the Amazon RDS User Guide.
+     * in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * If you modify the DB instance class, an outage occurs during the change. The change is applied during the next
@@ -1007,7 +1008,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         instance classes are available in all AWS Regions, or for all database engines. For the full list of DB
      *         instance classes, and availability for your engine, see <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
-     *         Class</a> in the Amazon RDS User Guide. </p>
+     *         Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      *         <p>
      *         If you modify the DB instance class, an outage occurs during the change. The change is applied during the
      *         next maintenance window, unless <code>ApplyImmediately</code> is specified as <code>true</code> for this
@@ -1027,7 +1028,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * instance classes are available in all AWS Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
-     * in the Amazon RDS User Guide.
+     * in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * If you modify the DB instance class, an outage occurs during the change. The change is applied during the next
@@ -1042,7 +1043,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        instance classes are available in all AWS Regions, or for all database engines. For the full list of DB
      *        instance classes, and availability for your engine, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
-     *        Class</a> in the Amazon RDS User Guide. </p>
+     *        Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      *        <p>
      *        If you modify the DB instance class, an outage occurs during the change. The change is applied during the
      *        next maintenance window, unless <code>ApplyImmediately</code> is specified as <code>true</code> for this
@@ -2906,7 +2907,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * default for that DB parameter group family.
      * </p>
      * <p>
-     * For a list of valid engine versions, see <a>CreateDBInstance</a>.
+     * For information about valid engine versions, see <a>CreateDBInstance</a>, or call
+     * <a>DescribeDBEngineVersions</a>.
      * </p>
      * 
      * @param engineVersion
@@ -2919,7 +2921,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        group can be the default for that DB parameter group family.
      *        </p>
      *        <p>
-     *        For a list of valid engine versions, see <a>CreateDBInstance</a>.
+     *        For information about valid engine versions, see <a>CreateDBInstance</a>, or call
+     *        <a>DescribeDBEngineVersions</a>.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -2938,7 +2941,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * default for that DB parameter group family.
      * </p>
      * <p>
-     * For a list of valid engine versions, see <a>CreateDBInstance</a>.
+     * For information about valid engine versions, see <a>CreateDBInstance</a>, or call
+     * <a>DescribeDBEngineVersions</a>.
      * </p>
      * 
      * @return The version number of the database engine to upgrade to. Changing this parameter results in an outage and
@@ -2950,7 +2954,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         group can be the default for that DB parameter group family.
      *         </p>
      *         <p>
-     *         For a list of valid engine versions, see <a>CreateDBInstance</a>.
+     *         For information about valid engine versions, see <a>CreateDBInstance</a>, or call
+     *         <a>DescribeDBEngineVersions</a>.
      */
 
     public String getEngineVersion() {
@@ -2969,7 +2974,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * default for that DB parameter group family.
      * </p>
      * <p>
-     * For a list of valid engine versions, see <a>CreateDBInstance</a>.
+     * For information about valid engine versions, see <a>CreateDBInstance</a>, or call
+     * <a>DescribeDBEngineVersions</a>.
      * </p>
      * 
      * @param engineVersion
@@ -2982,7 +2988,8 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        group can be the default for that DB parameter group family.
      *        </p>
      *        <p>
-     *        For a list of valid engine versions, see <a>CreateDBInstance</a>.
+     *        For information about valid engine versions, see <a>CreateDBInstance</a>, or call
+     *        <a>DescribeDBEngineVersions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

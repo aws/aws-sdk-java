@@ -88,6 +88,10 @@ public class CachediSCSIVolumeJsonUnmarshaller implements Unmarshaller<CachediSC
                     context.nextToken();
                     cachediSCSIVolume.setVolumeUsedInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("KMSKey", targetDepth)) {
+                    context.nextToken();
+                    cachediSCSIVolume.setKMSKey(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

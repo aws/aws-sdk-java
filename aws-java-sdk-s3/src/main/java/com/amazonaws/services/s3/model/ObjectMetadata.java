@@ -790,11 +790,9 @@ public class ObjectMetadata implements ServerSideEncryptionResult, S3RequesterCh
     }
 
     /**
-     * Sets the {@link BucketLifecycleConfiguration} rule ID for this object's
-     * expiration
-     *
-     * @param expirationTimeRuleId
-     *            The rule ID for this object's expiration
+     * For internal use only. This will *not* set the object's expiration time
+     * rule id, and is only used to set the value in the object after receiving
+     * the value in a response from S3.
      */
     public void setExpirationTimeRuleId(String expirationTimeRuleId) {
         this.expirationTimeRuleId = expirationTimeRuleId;

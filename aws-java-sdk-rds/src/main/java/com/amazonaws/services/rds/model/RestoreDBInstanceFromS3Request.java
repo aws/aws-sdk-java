@@ -80,7 +80,7 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      * classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
-     * in the Amazon RDS User Guide.
+     * in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * Importing from Amazon S3 is not supported on the db.t2.micro DB instance class.
@@ -282,8 +282,8 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
     private Boolean multiAZ;
     /**
      * <p>
-     * The version number of the database engine to use. Choose the latest minor version of your database engine as
-     * specified in <a>CreateDBInstance</a>.
+     * The version number of the database engine to use. Choose the latest minor version of your database engine. For
+     * information about engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.
      * </p>
      */
     private String engineVersion;
@@ -797,7 +797,7 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      * classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
-     * in the Amazon RDS User Guide.
+     * in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * Importing from Amazon S3 is not supported on the db.t2.micro DB instance class.
@@ -808,7 +808,7 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      *        instance classes are available in all AWS Regions, or for all database engines. For the full list of DB
      *        instance classes, and availability for your engine, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
-     *        Class</a> in the Amazon RDS User Guide. </p>
+     *        Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      *        <p>
      *        Importing from Amazon S3 is not supported on the db.t2.micro DB instance class.
      */
@@ -823,7 +823,7 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      * classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
-     * in the Amazon RDS User Guide.
+     * in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * Importing from Amazon S3 is not supported on the db.t2.micro DB instance class.
@@ -833,7 +833,7 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      *         instance classes are available in all AWS Regions, or for all database engines. For the full list of DB
      *         instance classes, and availability for your engine, see <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
-     *         Class</a> in the Amazon RDS User Guide. </p>
+     *         Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      *         <p>
      *         Importing from Amazon S3 is not supported on the db.t2.micro DB instance class.
      */
@@ -848,7 +848,7 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      * classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
-     * in the Amazon RDS User Guide.
+     * in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * Importing from Amazon S3 is not supported on the db.t2.micro DB instance class.
@@ -859,7 +859,7 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      *        instance classes are available in all AWS Regions, or for all database engines. For the full list of DB
      *        instance classes, and availability for your engine, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
-     *        Class</a> in the Amazon RDS User Guide. </p>
+     *        Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      *        <p>
      *        Importing from Amazon S3 is not supported on the db.t2.micro DB instance class.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2147,13 +2147,14 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The version number of the database engine to use. Choose the latest minor version of your database engine as
-     * specified in <a>CreateDBInstance</a>.
+     * The version number of the database engine to use. Choose the latest minor version of your database engine. For
+     * information about engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.
      * </p>
      * 
      * @param engineVersion
-     *        The version number of the database engine to use. Choose the latest minor version of your database engine
-     *        as specified in <a>CreateDBInstance</a>.
+     *        The version number of the database engine to use. Choose the latest minor version of your database engine.
+     *        For information about engine versions, see <a>CreateDBInstance</a>, or call
+     *        <a>DescribeDBEngineVersions</a>.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -2162,12 +2163,13 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The version number of the database engine to use. Choose the latest minor version of your database engine as
-     * specified in <a>CreateDBInstance</a>.
+     * The version number of the database engine to use. Choose the latest minor version of your database engine. For
+     * information about engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.
      * </p>
      * 
-     * @return The version number of the database engine to use. Choose the latest minor version of your database engine
-     *         as specified in <a>CreateDBInstance</a>.
+     * @return The version number of the database engine to use. Choose the latest minor version of your database
+     *         engine. For information about engine versions, see <a>CreateDBInstance</a>, or call
+     *         <a>DescribeDBEngineVersions</a>.
      */
 
     public String getEngineVersion() {
@@ -2176,13 +2178,14 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The version number of the database engine to use. Choose the latest minor version of your database engine as
-     * specified in <a>CreateDBInstance</a>.
+     * The version number of the database engine to use. Choose the latest minor version of your database engine. For
+     * information about engine versions, see <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>.
      * </p>
      * 
      * @param engineVersion
-     *        The version number of the database engine to use. Choose the latest minor version of your database engine
-     *        as specified in <a>CreateDBInstance</a>.
+     *        The version number of the database engine to use. Choose the latest minor version of your database engine.
+     *        For information about engine versions, see <a>CreateDBInstance</a>, or call
+     *        <a>DescribeDBEngineVersions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

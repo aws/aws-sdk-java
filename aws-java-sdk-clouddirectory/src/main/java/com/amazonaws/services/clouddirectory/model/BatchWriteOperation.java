@@ -118,6 +118,12 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private BatchDetachTypedLink detachTypedLink;
+    /**
+     * <p>
+     * Updates a given object's attributes.
+     * </p>
+     */
+    private BatchUpdateLinkAttributes updateLinkAttributes;
 
     /**
      * <p>
@@ -716,6 +722,46 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Updates a given object's attributes.
+     * </p>
+     * 
+     * @param updateLinkAttributes
+     *        Updates a given object's attributes.
+     */
+
+    public void setUpdateLinkAttributes(BatchUpdateLinkAttributes updateLinkAttributes) {
+        this.updateLinkAttributes = updateLinkAttributes;
+    }
+
+    /**
+     * <p>
+     * Updates a given object's attributes.
+     * </p>
+     * 
+     * @return Updates a given object's attributes.
+     */
+
+    public BatchUpdateLinkAttributes getUpdateLinkAttributes() {
+        return this.updateLinkAttributes;
+    }
+
+    /**
+     * <p>
+     * Updates a given object's attributes.
+     * </p>
+     * 
+     * @param updateLinkAttributes
+     *        Updates a given object's attributes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchWriteOperation withUpdateLinkAttributes(BatchUpdateLinkAttributes updateLinkAttributes) {
+        setUpdateLinkAttributes(updateLinkAttributes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -753,7 +799,9 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
         if (getAttachTypedLink() != null)
             sb.append("AttachTypedLink: ").append(getAttachTypedLink()).append(",");
         if (getDetachTypedLink() != null)
-            sb.append("DetachTypedLink: ").append(getDetachTypedLink());
+            sb.append("DetachTypedLink: ").append(getDetachTypedLink()).append(",");
+        if (getUpdateLinkAttributes() != null)
+            sb.append("UpdateLinkAttributes: ").append(getUpdateLinkAttributes());
         sb.append("}");
         return sb.toString();
     }
@@ -824,6 +872,10 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getDetachTypedLink() != null && other.getDetachTypedLink().equals(this.getDetachTypedLink()) == false)
             return false;
+        if (other.getUpdateLinkAttributes() == null ^ this.getUpdateLinkAttributes() == null)
+            return false;
+        if (other.getUpdateLinkAttributes() != null && other.getUpdateLinkAttributes().equals(this.getUpdateLinkAttributes()) == false)
+            return false;
         return true;
     }
 
@@ -846,6 +898,7 @@ public class BatchWriteOperation implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getDetachFromIndex() == null) ? 0 : getDetachFromIndex().hashCode());
         hashCode = prime * hashCode + ((getAttachTypedLink() == null) ? 0 : getAttachTypedLink().hashCode());
         hashCode = prime * hashCode + ((getDetachTypedLink() == null) ? 0 : getDetachTypedLink().hashCode());
+        hashCode = prime * hashCode + ((getUpdateLinkAttributes() == null) ? 0 : getUpdateLinkAttributes().hashCode());
         return hashCode;
     }
 

@@ -85,7 +85,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
-     * in the Amazon RDS User Guide.
+     * in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * Default: Inherits from the source DB instance.
@@ -825,7 +825,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
-     * in the Amazon RDS User Guide.
+     * in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * Default: Inherits from the source DB instance.
@@ -836,7 +836,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        instance classes are available in all AWS Regions, or for all database engines. For the full list of DB
      *        instance classes, and availability for your engine, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
-     *        Class</a> in the Amazon RDS User Guide. </p>
+     *        Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      *        <p>
      *        Default: Inherits from the source DB instance.
      */
@@ -851,7 +851,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
-     * in the Amazon RDS User Guide.
+     * in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * Default: Inherits from the source DB instance.
@@ -861,7 +861,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *         instance classes are available in all AWS Regions, or for all database engines. For the full list of DB
      *         instance classes, and availability for your engine, see <a
      *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
-     *         Class</a> in the Amazon RDS User Guide. </p>
+     *         Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      *         <p>
      *         Default: Inherits from the source DB instance.
      */
@@ -876,7 +876,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * classes are available in all AWS Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
-     * in the Amazon RDS User Guide.
+     * in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * Default: Inherits from the source DB instance.
@@ -887,7 +887,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      *        instance classes are available in all AWS Regions, or for all database engines. For the full list of DB
      *        instance classes, and availability for your engine, see <a
      *        href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
-     *        Class</a> in the Amazon RDS User Guide. </p>
+     *        Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      *        <p>
      *        Default: Inherits from the source DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.

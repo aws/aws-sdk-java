@@ -43,8 +43,8 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     private Boolean kMSEncrypted;
     /**
      * <p>
-     * The KMS key used for Amazon S3 server side encryption. This value can only be set when KmsEncrypted is true.
-     * Optional.
+     * The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side encryption. This value can only be
+     * set when KMSEncrypted is true. Optional.
      * </p>
      */
     private String kMSKey;
@@ -57,7 +57,8 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The default storage class for objects put into an Amazon S3 bucket by a file gateway. Possible values are
-     * S3_STANDARD or S3_STANDARD_IA. If this field is not populated, the default value S3_STANDARD is used. Optional.
+     * S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If this field is not populated, the default value S3_STANDARD is
+     * used. Optional.
      * </p>
      */
     private String defaultStorageClass;
@@ -221,13 +222,13 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The KMS key used for Amazon S3 server side encryption. This value can only be set when KmsEncrypted is true.
-     * Optional.
+     * The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side encryption. This value can only be
+     * set when KMSEncrypted is true. Optional.
      * </p>
      * 
      * @param kMSKey
-     *        The KMS key used for Amazon S3 server side encryption. This value can only be set when KmsEncrypted is
-     *        true. Optional.
+     *        The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side encryption. This value can
+     *        only be set when KMSEncrypted is true. Optional.
      */
 
     public void setKMSKey(String kMSKey) {
@@ -236,12 +237,12 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The KMS key used for Amazon S3 server side encryption. This value can only be set when KmsEncrypted is true.
-     * Optional.
+     * The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side encryption. This value can only be
+     * set when KMSEncrypted is true. Optional.
      * </p>
      * 
-     * @return The KMS key used for Amazon S3 server side encryption. This value can only be set when KmsEncrypted is
-     *         true. Optional.
+     * @return The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side encryption. This value can
+     *         only be set when KMSEncrypted is true. Optional.
      */
 
     public String getKMSKey() {
@@ -250,13 +251,13 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The KMS key used for Amazon S3 server side encryption. This value can only be set when KmsEncrypted is true.
-     * Optional.
+     * The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side encryption. This value can only be
+     * set when KMSEncrypted is true. Optional.
      * </p>
      * 
      * @param kMSKey
-     *        The KMS key used for Amazon S3 server side encryption. This value can only be set when KmsEncrypted is
-     *        true. Optional.
+     *        The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side encryption. This value can
+     *        only be set when KMSEncrypted is true. Optional.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -308,13 +309,14 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The default storage class for objects put into an Amazon S3 bucket by a file gateway. Possible values are
-     * S3_STANDARD or S3_STANDARD_IA. If this field is not populated, the default value S3_STANDARD is used. Optional.
+     * S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If this field is not populated, the default value S3_STANDARD is
+     * used. Optional.
      * </p>
      * 
      * @param defaultStorageClass
      *        The default storage class for objects put into an Amazon S3 bucket by a file gateway. Possible values are
-     *        S3_STANDARD or S3_STANDARD_IA. If this field is not populated, the default value S3_STANDARD is used.
-     *        Optional.
+     *        S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If this field is not populated, the default value
+     *        S3_STANDARD is used. Optional.
      */
 
     public void setDefaultStorageClass(String defaultStorageClass) {
@@ -324,12 +326,13 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The default storage class for objects put into an Amazon S3 bucket by a file gateway. Possible values are
-     * S3_STANDARD or S3_STANDARD_IA. If this field is not populated, the default value S3_STANDARD is used. Optional.
+     * S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If this field is not populated, the default value S3_STANDARD is
+     * used. Optional.
      * </p>
      * 
      * @return The default storage class for objects put into an Amazon S3 bucket by a file gateway. Possible values are
-     *         S3_STANDARD or S3_STANDARD_IA. If this field is not populated, the default value S3_STANDARD is used.
-     *         Optional.
+     *         S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If this field is not populated, the default value
+     *         S3_STANDARD is used. Optional.
      */
 
     public String getDefaultStorageClass() {
@@ -339,13 +342,14 @@ public class UpdateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The default storage class for objects put into an Amazon S3 bucket by a file gateway. Possible values are
-     * S3_STANDARD or S3_STANDARD_IA. If this field is not populated, the default value S3_STANDARD is used. Optional.
+     * S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If this field is not populated, the default value S3_STANDARD is
+     * used. Optional.
      * </p>
      * 
      * @param defaultStorageClass
      *        The default storage class for objects put into an Amazon S3 bucket by a file gateway. Possible values are
-     *        S3_STANDARD or S3_STANDARD_IA. If this field is not populated, the default value S3_STANDARD is used.
-     *        Optional.
+     *        S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If this field is not populated, the default value
+     *        S3_STANDARD is used. Optional.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

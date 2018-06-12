@@ -1178,7 +1178,7 @@ public class AmazonHttpClient {
                 throws IOException, InterruptedException {
 
             if (execOneParams.isRetry()) {
-                resetRequestInputStream(request);
+                resetRequestInputStream(request, execOneParams.retriedException);
             }
             checkInterrupted();
             if (requestLog.isDebugEnabled()) {
@@ -1345,17 +1345,25 @@ public class AmazonHttpClient {
          * Reset the input stream of the request before a retry.
          *
          * @param request Request containing input stream to reset
+         * @param retriedException
          * @throws ResetException If Input Stream can't be reset which means the request can't be
          *                        retried
          */
-        private void resetRequestInputStream(final Request<?> request) throws ResetException {
+        private void resetRequestInputStream(final Request<?> request, SdkBaseException retriedException)
+                throws ResetException {
             InputStream requestInputStream = request.getContent();
             if (requestInputStream != null) {
                 if (requestInputStream.markSupported()) {
                     try {
                         requestInputStream.reset();
                     } catch (IOException ex) {
-                        throw new ResetException("Failed to reset the request input stream", ex);
+                        ResetException resetException = new ResetException(
+                                "The request to the service failed with a retryable reason, but resetting the request input " +
+                                "stream has failed. See exception.getExtraInfo or debug-level logging for the original failure " +
+                                "that caused this retry.",
+                                ex);
+                        resetException.setExtraInfo(retriedException.getMessage());
+                        throw resetException;
                     }
                 }
             }

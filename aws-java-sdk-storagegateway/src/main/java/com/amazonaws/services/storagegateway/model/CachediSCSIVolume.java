@@ -97,6 +97,8 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
      */
     private Long volumeUsedInBytes;
 
+    private String kMSKey;
+
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the storage volume.
@@ -544,6 +546,32 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * @param kMSKey
+     */
+
+    public void setKMSKey(String kMSKey) {
+        this.kMSKey = kMSKey;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getKMSKey() {
+        return this.kMSKey;
+    }
+
+    /**
+     * @param kMSKey
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CachediSCSIVolume withKMSKey(String kMSKey) {
+        setKMSKey(kMSKey);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -573,7 +601,9 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
         if (getCreatedDate() != null)
             sb.append("CreatedDate: ").append(getCreatedDate()).append(",");
         if (getVolumeUsedInBytes() != null)
-            sb.append("VolumeUsedInBytes: ").append(getVolumeUsedInBytes());
+            sb.append("VolumeUsedInBytes: ").append(getVolumeUsedInBytes()).append(",");
+        if (getKMSKey() != null)
+            sb.append("KMSKey: ").append(getKMSKey());
         sb.append("}");
         return sb.toString();
     }
@@ -628,6 +658,10 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getVolumeUsedInBytes() != null && other.getVolumeUsedInBytes().equals(this.getVolumeUsedInBytes()) == false)
             return false;
+        if (other.getKMSKey() == null ^ this.getKMSKey() == null)
+            return false;
+        if (other.getKMSKey() != null && other.getKMSKey().equals(this.getKMSKey()) == false)
+            return false;
         return true;
     }
 
@@ -646,6 +680,7 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getVolumeiSCSIAttributes() == null) ? 0 : getVolumeiSCSIAttributes().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         hashCode = prime * hashCode + ((getVolumeUsedInBytes() == null) ? 0 : getVolumeUsedInBytes().hashCode());
+        hashCode = prime * hashCode + ((getKMSKey() == null) ? 0 : getKMSKey().hashCode());
         return hashCode;
     }
 

@@ -18,7 +18,6 @@ import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.ListObjectsRequest;
 import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
-
 import java.util.Iterator;
 
 /**
@@ -39,9 +38,12 @@ public class S3Objects implements Iterable<S3ObjectSummary> {
 
     private AmazonS3 s3;
     private String prefix = null;
-    private String delimiter = null;
     private String bucketName;
     private Integer batchSize = null;
+    private String delimiter;
+    private String marker;
+    private String encodingType;
+    private boolean requesterPays;
 
     private S3Objects(AmazonS3 s3, String bucketName) {
         this.s3 = s3;
@@ -93,14 +95,31 @@ public class S3Objects implements Iterable<S3ObjectSummary> {
     }
 
     /**
-     * Sets the delimiter.
-     *
-     * @param delimiter
-     *            The delimiter.
+     * @see ListObjectsRequest#withRequesterPays(boolean)
      */
-    public S3Objects withDelimiter(String delimiter) {
+    public void withRequesterPays(boolean requesterPays) {
+        this.requesterPays = requesterPays;
+    }
+
+    /**
+     * @see ListObjectsRequest#withEncodingType(String)
+     */
+    public void withEncodingType(String encodingType) {
+        this.encodingType = encodingType;
+    }
+
+    /**
+     * @see ListObjectsRequest#withMarker(String)
+     */
+    public void withMarker(String marker) {
+        this.marker = marker;
+    }
+
+    /**
+     * @see ListObjectsRequest#withDelimiter(String)
+     */
+    public void withDelimiter(String delimiter) {
         this.delimiter = delimiter;
-        return this;
     }
 
     public Integer getBatchSize() {
@@ -111,12 +130,24 @@ public class S3Objects implements Iterable<S3ObjectSummary> {
         return prefix;
     }
 
+    public String getBucketName() {
+        return bucketName;
+    }
+
     public String getDelimiter() {
         return delimiter;
     }
 
-    public String getBucketName() {
-        return bucketName;
+    public String getMarker() {
+        return marker;
+    }
+
+    public String getEncodingType() {
+        return encodingType;
+    }
+
+    public boolean isRequesterPays() {
+        return requesterPays;
     }
 
     public AmazonS3 getS3() {
@@ -147,14 +178,17 @@ public class S3Objects implements Iterable<S3ObjectSummary> {
         }
 
         private void prepareCurrentListing() {
-            while ( currentListing == null || (!currentIterator.hasNext() && currentListing.isTruncated()) ) {
+            while (currentListing == null || (!currentIterator.hasNext() && currentListing.isTruncated())) {
 
-                if ( currentListing == null ) {
+                if (currentListing == null) {
                     ListObjectsRequest req = new ListObjectsRequest();
                     req.setBucketName(getBucketName());
                     req.setPrefix(getPrefix());
-                    req.setDelimiter(getDelimiter());
                     req.setMaxKeys(getBatchSize());
+                    req.setDelimiter(getDelimiter());
+                    req.setMarker(getMarker());
+                    req.setEncodingType(getEncodingType());
+                    req.setRequesterPays(isRequesterPays());
                     currentListing = getS3().listObjects(req);
                 } else {
                     currentListing = getS3().listNextBatchOfObjects(currentListing);

@@ -1287,6 +1287,46 @@ public interface AmazonCloudDirectory {
 
     /**
      * <p>
+     * Retrieves attributes that are associated with a typed link.
+     * </p>
+     * 
+     * @param getLinkAttributesRequest
+     * @return Result of the GetLinkAttributes operation returned by the service.
+     * @throws InternalServiceException
+     *         Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in
+     *         which case you can retry your request until it succeeds. Otherwise, go to the <a
+     *         href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any
+     *         operational issues with the service.
+     * @throws InvalidArnException
+     *         Indicates that the provided ARN value is not valid.
+     * @throws RetryableConflictException
+     *         Occurs when a conflict with a previous successful write is detected. For example, if a write operation
+     *         occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this
+     *         exception may result. This generally occurs when the previous write did not have time to propagate to the
+     *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
+     *         this exception.
+     * @throws ValidationException
+     *         Indicates that your request is malformed in some manner. See the exception message.
+     * @throws LimitExceededException
+     *         Indicates that limits are exceeded. See <a
+     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         information.
+     * @throws AccessDeniedException
+     *         Access denied. Check your permissions.
+     * @throws DirectoryNotEnabledException
+     *         Operations are only permitted on enabled directories.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws FacetValidationException
+     *         The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
+     * @sample AmazonCloudDirectory.GetLinkAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetLinkAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetLinkAttributesResult getLinkAttributes(GetLinkAttributesRequest getLinkAttributesRequest);
+
+    /**
+     * <p>
      * Retrieves attributes within a facet that are associated with an object.
      * </p>
      * 
@@ -2531,6 +2571,47 @@ public interface AmazonCloudDirectory {
 
     /**
      * <p>
+     * Updates a given typed link’s attributes. Attributes to be updated must not contribute to the typed link’s
+     * identity, as defined by its <code>IdentityAttributeOrder</code>.
+     * </p>
+     * 
+     * @param updateLinkAttributesRequest
+     * @return Result of the UpdateLinkAttributes operation returned by the service.
+     * @throws InternalServiceException
+     *         Indicates a problem that must be resolved by Amazon Web Services. This might be a transient error in
+     *         which case you can retry your request until it succeeds. Otherwise, go to the <a
+     *         href="http://status.aws.amazon.com/">AWS Service Health Dashboard</a> site to see if there are any
+     *         operational issues with the service.
+     * @throws InvalidArnException
+     *         Indicates that the provided ARN value is not valid.
+     * @throws RetryableConflictException
+     *         Occurs when a conflict with a previous successful write is detected. For example, if a write operation
+     *         occurs on an object and then an attempt is made to read the object using “SERIALIZABLE” consistency, this
+     *         exception may result. This generally occurs when the previous write did not have time to propagate to the
+     *         host serving the current request. A retry (with appropriate backoff logic) is the recommended response to
+     *         this exception.
+     * @throws ValidationException
+     *         Indicates that your request is malformed in some manner. See the exception message.
+     * @throws LimitExceededException
+     *         Indicates that limits are exceeded. See <a
+     *         href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html">Limits</a> for more
+     *         information.
+     * @throws AccessDeniedException
+     *         Access denied. Check your permissions.
+     * @throws DirectoryNotEnabledException
+     *         Operations are only permitted on enabled directories.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws FacetValidationException
+     *         The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
+     * @sample AmazonCloudDirectory.UpdateLinkAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateLinkAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateLinkAttributesResult updateLinkAttributes(UpdateLinkAttributesRequest updateLinkAttributesRequest);
+
+    /**
+     * <p>
      * Updates a given object's attributes.
      * </p>
      * 
@@ -2561,6 +2642,9 @@ public interface AmazonCloudDirectory {
      *         Operations are only permitted on enabled directories.
      * @throws ResourceNotFoundException
      *         The specified resource could not be found.
+     * @throws LinkNameAlreadyInUseException
+     *         Indicates that a link could not be created due to a naming conflict. Choose a different name and then try
+     *         again.
      * @throws FacetValidationException
      *         The <a>Facet</a> that you provided was not well formed or could not be validated with the schema.
      * @sample AmazonCloudDirectory.UpdateObjectAttributes

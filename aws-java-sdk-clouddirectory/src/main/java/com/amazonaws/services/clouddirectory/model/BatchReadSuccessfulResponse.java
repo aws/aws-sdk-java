@@ -114,6 +114,12 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
      * </p>
      */
     private BatchListIncomingTypedLinksResponse listIncomingTypedLinks;
+    /**
+     * <p>
+     * The list of attributes to retrieve from the typed link.
+     * </p>
+     */
+    private BatchGetLinkAttributesResponse getLinkAttributes;
 
     /**
      * <p>
@@ -683,6 +689,46 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * The list of attributes to retrieve from the typed link.
+     * </p>
+     * 
+     * @param getLinkAttributes
+     *        The list of attributes to retrieve from the typed link.
+     */
+
+    public void setGetLinkAttributes(BatchGetLinkAttributesResponse getLinkAttributes) {
+        this.getLinkAttributes = getLinkAttributes;
+    }
+
+    /**
+     * <p>
+     * The list of attributes to retrieve from the typed link.
+     * </p>
+     * 
+     * @return The list of attributes to retrieve from the typed link.
+     */
+
+    public BatchGetLinkAttributesResponse getGetLinkAttributes() {
+        return this.getLinkAttributes;
+    }
+
+    /**
+     * <p>
+     * The list of attributes to retrieve from the typed link.
+     * </p>
+     * 
+     * @param getLinkAttributes
+     *        The list of attributes to retrieve from the typed link.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchReadSuccessfulResponse withGetLinkAttributes(BatchGetLinkAttributesResponse getLinkAttributes) {
+        setGetLinkAttributes(getLinkAttributes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -716,7 +762,9 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
         if (getListOutgoingTypedLinks() != null)
             sb.append("ListOutgoingTypedLinks: ").append(getListOutgoingTypedLinks()).append(",");
         if (getListIncomingTypedLinks() != null)
-            sb.append("ListIncomingTypedLinks: ").append(getListIncomingTypedLinks());
+            sb.append("ListIncomingTypedLinks: ").append(getListIncomingTypedLinks()).append(",");
+        if (getGetLinkAttributes() != null)
+            sb.append("GetLinkAttributes: ").append(getGetLinkAttributes());
         sb.append("}");
         return sb.toString();
     }
@@ -779,6 +827,10 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
             return false;
         if (other.getListIncomingTypedLinks() != null && other.getListIncomingTypedLinks().equals(this.getListIncomingTypedLinks()) == false)
             return false;
+        if (other.getGetLinkAttributes() == null ^ this.getGetLinkAttributes() == null)
+            return false;
+        if (other.getGetLinkAttributes() != null && other.getGetLinkAttributes().equals(this.getGetLinkAttributes()) == false)
+            return false;
         return true;
     }
 
@@ -799,6 +851,7 @@ public class BatchReadSuccessfulResponse implements Serializable, Cloneable, Str
         hashCode = prime * hashCode + ((getListIndex() == null) ? 0 : getListIndex().hashCode());
         hashCode = prime * hashCode + ((getListOutgoingTypedLinks() == null) ? 0 : getListOutgoingTypedLinks().hashCode());
         hashCode = prime * hashCode + ((getListIncomingTypedLinks() == null) ? 0 : getListIncomingTypedLinks().hashCode());
+        hashCode = prime * hashCode + ((getGetLinkAttributes() == null) ? 0 : getGetLinkAttributes().hashCode());
         return hashCode;
     }
 

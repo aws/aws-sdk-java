@@ -178,6 +178,11 @@ public class AbstractAmazonCloudDirectory implements AmazonCloudDirectory {
     }
 
     @Override
+    public GetLinkAttributesResult getLinkAttributes(GetLinkAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetObjectAttributesResult getObjectAttributes(GetObjectAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -324,6 +329,11 @@ public class AbstractAmazonCloudDirectory implements AmazonCloudDirectory {
 
     @Override
     public UpdateFacetResult updateFacet(UpdateFacetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateLinkAttributesResult updateLinkAttributes(UpdateLinkAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -104,6 +104,10 @@ public class BatchWriteOperationJsonUnmarshaller implements Unmarshaller<BatchWr
                     context.nextToken();
                     batchWriteOperation.setDetachTypedLink(BatchDetachTypedLinkJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("UpdateLinkAttributes", targetDepth)) {
+                    context.nextToken();
+                    batchWriteOperation.setUpdateLinkAttributes(BatchUpdateLinkAttributesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

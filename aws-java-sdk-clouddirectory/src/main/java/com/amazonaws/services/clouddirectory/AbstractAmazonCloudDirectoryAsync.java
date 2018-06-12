@@ -392,6 +392,19 @@ public class AbstractAmazonCloudDirectoryAsync extends AbstractAmazonCloudDirect
     }
 
     @Override
+    public java.util.concurrent.Future<GetLinkAttributesResult> getLinkAttributesAsync(GetLinkAttributesRequest request) {
+
+        return getLinkAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLinkAttributesResult> getLinkAttributesAsync(GetLinkAttributesRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetLinkAttributesRequest, GetLinkAttributesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetObjectAttributesResult> getObjectAttributesAsync(GetObjectAttributesRequest request) {
 
         return getObjectAttributesAsync(request, null);
@@ -777,6 +790,19 @@ public class AbstractAmazonCloudDirectoryAsync extends AbstractAmazonCloudDirect
     @Override
     public java.util.concurrent.Future<UpdateFacetResult> updateFacetAsync(UpdateFacetRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateFacetRequest, UpdateFacetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLinkAttributesResult> updateLinkAttributesAsync(UpdateLinkAttributesRequest request) {
+
+        return updateLinkAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLinkAttributesResult> updateLinkAttributesAsync(UpdateLinkAttributesRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateLinkAttributesRequest, UpdateLinkAttributesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

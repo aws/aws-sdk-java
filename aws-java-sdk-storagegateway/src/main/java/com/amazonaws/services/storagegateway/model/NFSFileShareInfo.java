@@ -56,7 +56,8 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The default storage class for objects put into an Amazon S3 bucket by file gateway. Possible values are
-     * S3_STANDARD or S3_STANDARD_IA. If this field is not populated, the default value S3_STANDARD is used. Optional.
+     * S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If this field is not populated, the default value S3_STANDARD is
+     * used. Optional.
      * </p>
      */
     private String defaultStorageClass;
@@ -384,13 +385,14 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The default storage class for objects put into an Amazon S3 bucket by file gateway. Possible values are
-     * S3_STANDARD or S3_STANDARD_IA. If this field is not populated, the default value S3_STANDARD is used. Optional.
+     * S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If this field is not populated, the default value S3_STANDARD is
+     * used. Optional.
      * </p>
      * 
      * @param defaultStorageClass
      *        The default storage class for objects put into an Amazon S3 bucket by file gateway. Possible values are
-     *        S3_STANDARD or S3_STANDARD_IA. If this field is not populated, the default value S3_STANDARD is used.
-     *        Optional.
+     *        S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If this field is not populated, the default value
+     *        S3_STANDARD is used. Optional.
      */
 
     public void setDefaultStorageClass(String defaultStorageClass) {
@@ -400,12 +402,13 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The default storage class for objects put into an Amazon S3 bucket by file gateway. Possible values are
-     * S3_STANDARD or S3_STANDARD_IA. If this field is not populated, the default value S3_STANDARD is used. Optional.
+     * S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If this field is not populated, the default value S3_STANDARD is
+     * used. Optional.
      * </p>
      * 
      * @return The default storage class for objects put into an Amazon S3 bucket by file gateway. Possible values are
-     *         S3_STANDARD or S3_STANDARD_IA. If this field is not populated, the default value S3_STANDARD is used.
-     *         Optional.
+     *         S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If this field is not populated, the default value
+     *         S3_STANDARD is used. Optional.
      */
 
     public String getDefaultStorageClass() {
@@ -415,13 +418,14 @@ public class NFSFileShareInfo implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The default storage class for objects put into an Amazon S3 bucket by file gateway. Possible values are
-     * S3_STANDARD or S3_STANDARD_IA. If this field is not populated, the default value S3_STANDARD is used. Optional.
+     * S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If this field is not populated, the default value S3_STANDARD is
+     * used. Optional.
      * </p>
      * 
      * @param defaultStorageClass
      *        The default storage class for objects put into an Amazon S3 bucket by file gateway. Possible values are
-     *        S3_STANDARD or S3_STANDARD_IA. If this field is not populated, the default value S3_STANDARD is used.
-     *        Optional.
+     *        S3_STANDARD, S3_STANDARD_IA or S3_ONEZONE_IA. If this field is not populated, the default value
+     *        S3_STANDARD is used. Optional.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

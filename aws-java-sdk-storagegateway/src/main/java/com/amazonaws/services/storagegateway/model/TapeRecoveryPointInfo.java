@@ -39,7 +39,8 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable, Structure
      * The time when the point-in-time view of the virtual tape was replicated for later recovery.
      * </p>
      * <p>
-     * The string format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     * The default time stamp format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
+     * format.
      * </p>
      */
     private java.util.Date tapeRecoveryPointTime;
@@ -97,14 +98,15 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable, Structure
      * The time when the point-in-time view of the virtual tape was replicated for later recovery.
      * </p>
      * <p>
-     * The string format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     * The default time stamp format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
+     * format.
      * </p>
      * 
      * @param tapeRecoveryPointTime
      *        The time when the point-in-time view of the virtual tape was replicated for later recovery.</p>
      *        <p>
-     *        The string format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
-     *        format.
+     *        The default time stamp format of the tape recovery point time is in the ISO8601 extended
+     *        YYYY-MM-DD'T'HH:MM:SS'Z' format.
      */
 
     public void setTapeRecoveryPointTime(java.util.Date tapeRecoveryPointTime) {
@@ -116,13 +118,14 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable, Structure
      * The time when the point-in-time view of the virtual tape was replicated for later recovery.
      * </p>
      * <p>
-     * The string format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     * The default time stamp format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
+     * format.
      * </p>
      * 
      * @return The time when the point-in-time view of the virtual tape was replicated for later recovery.</p>
      *         <p>
-     *         The string format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
-     *         format.
+     *         The default time stamp format of the tape recovery point time is in the ISO8601 extended
+     *         YYYY-MM-DD'T'HH:MM:SS'Z' format.
      */
 
     public java.util.Date getTapeRecoveryPointTime() {
@@ -134,14 +137,15 @@ public class TapeRecoveryPointInfo implements Serializable, Cloneable, Structure
      * The time when the point-in-time view of the virtual tape was replicated for later recovery.
      * </p>
      * <p>
-     * The string format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z' format.
+     * The default time stamp format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
+     * format.
      * </p>
      * 
      * @param tapeRecoveryPointTime
      *        The time when the point-in-time view of the virtual tape was replicated for later recovery.</p>
      *        <p>
-     *        The string format of the tape recovery point time is in the ISO8601 extended YYYY-MM-DD'T'HH:MM:SS'Z'
-     *        format.
+     *        The default time stamp format of the tape recovery point time is in the ISO8601 extended
+     *        YYYY-MM-DD'T'HH:MM:SS'Z' format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -51,6 +51,8 @@ public class BatchReadSuccessfulResponseMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ListOutgoingTypedLinks").build();
     private static final MarshallingInfo<StructuredPojo> LISTINCOMINGTYPEDLINKS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ListIncomingTypedLinks").build();
+    private static final MarshallingInfo<StructuredPojo> GETLINKATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GetLinkAttributes").build();
 
     private static final BatchReadSuccessfulResponseMarshaller instance = new BatchReadSuccessfulResponseMarshaller();
 
@@ -80,6 +82,7 @@ public class BatchReadSuccessfulResponseMarshaller {
             protocolMarshaller.marshall(batchReadSuccessfulResponse.getListIndex(), LISTINDEX_BINDING);
             protocolMarshaller.marshall(batchReadSuccessfulResponse.getListOutgoingTypedLinks(), LISTOUTGOINGTYPEDLINKS_BINDING);
             protocolMarshaller.marshall(batchReadSuccessfulResponse.getListIncomingTypedLinks(), LISTINCOMINGTYPEDLINKS_BINDING);
+            protocolMarshaller.marshall(batchReadSuccessfulResponse.getGetLinkAttributes(), GETLINKATTRIBUTES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
