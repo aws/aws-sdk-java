@@ -31,6 +31,8 @@ public class DeleteServiceRequestMarshaller {
             .marshallLocationName("cluster").build();
     private static final MarshallingInfo<String> SERVICE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("service").build();
+    private static final MarshallingInfo<Boolean> FORCE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("force").build();
 
     private static final DeleteServiceRequestMarshaller instance = new DeleteServiceRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class DeleteServiceRequestMarshaller {
         try {
             protocolMarshaller.marshall(deleteServiceRequest.getCluster(), CLUSTER_BINDING);
             protocolMarshaller.marshall(deleteServiceRequest.getService(), SERVICE_BINDING);
+            protocolMarshaller.marshall(deleteServiceRequest.getForce(), FORCE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

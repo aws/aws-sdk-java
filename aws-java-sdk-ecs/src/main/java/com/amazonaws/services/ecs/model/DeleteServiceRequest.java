@@ -38,6 +38,13 @@ public class DeleteServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String service;
+    /**
+     * <p>
+     * If <code>true</code>, allows you to delete a service even if it has not been scaled down to zero tasks. It is
+     * only necessary to use this if the service is using the <code>REPLICA</code> scheduling strategy.
+     * </p>
+     */
+    private Boolean force;
 
     /**
      * <p>
@@ -126,6 +133,66 @@ public class DeleteServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * If <code>true</code>, allows you to delete a service even if it has not been scaled down to zero tasks. It is
+     * only necessary to use this if the service is using the <code>REPLICA</code> scheduling strategy.
+     * </p>
+     * 
+     * @param force
+     *        If <code>true</code>, allows you to delete a service even if it has not been scaled down to zero tasks. It
+     *        is only necessary to use this if the service is using the <code>REPLICA</code> scheduling strategy.
+     */
+
+    public void setForce(Boolean force) {
+        this.force = force;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, allows you to delete a service even if it has not been scaled down to zero tasks. It is
+     * only necessary to use this if the service is using the <code>REPLICA</code> scheduling strategy.
+     * </p>
+     * 
+     * @return If <code>true</code>, allows you to delete a service even if it has not been scaled down to zero tasks.
+     *         It is only necessary to use this if the service is using the <code>REPLICA</code> scheduling strategy.
+     */
+
+    public Boolean getForce() {
+        return this.force;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, allows you to delete a service even if it has not been scaled down to zero tasks. It is
+     * only necessary to use this if the service is using the <code>REPLICA</code> scheduling strategy.
+     * </p>
+     * 
+     * @param force
+     *        If <code>true</code>, allows you to delete a service even if it has not been scaled down to zero tasks. It
+     *        is only necessary to use this if the service is using the <code>REPLICA</code> scheduling strategy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteServiceRequest withForce(Boolean force) {
+        setForce(force);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, allows you to delete a service even if it has not been scaled down to zero tasks. It is
+     * only necessary to use this if the service is using the <code>REPLICA</code> scheduling strategy.
+     * </p>
+     * 
+     * @return If <code>true</code>, allows you to delete a service even if it has not been scaled down to zero tasks.
+     *         It is only necessary to use this if the service is using the <code>REPLICA</code> scheduling strategy.
+     */
+
+    public Boolean isForce() {
+        return this.force;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -139,7 +206,9 @@ public class DeleteServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getCluster() != null)
             sb.append("Cluster: ").append(getCluster()).append(",");
         if (getService() != null)
-            sb.append("Service: ").append(getService());
+            sb.append("Service: ").append(getService()).append(",");
+        if (getForce() != null)
+            sb.append("Force: ").append(getForce());
         sb.append("}");
         return sb.toString();
     }
@@ -162,6 +231,10 @@ public class DeleteServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getService() != null && other.getService().equals(this.getService()) == false)
             return false;
+        if (other.getForce() == null ^ this.getForce() == null)
+            return false;
+        if (other.getForce() != null && other.getForce().equals(this.getForce()) == false)
+            return false;
         return true;
     }
 
@@ -172,6 +245,7 @@ public class DeleteServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
         hashCode = prime * hashCode + ((getCluster() == null) ? 0 : getCluster().hashCode());
         hashCode = prime * hashCode + ((getService() == null) ? 0 : getService().hashCode());
+        hashCode = prime * hashCode + ((getForce() == null) ? 0 : getForce().hashCode());
         return hashCode;
     }
 

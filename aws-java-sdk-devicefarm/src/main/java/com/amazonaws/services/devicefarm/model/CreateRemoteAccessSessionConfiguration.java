@@ -34,6 +34,12 @@ public class CreateRemoteAccessSessionConfiguration implements Serializable, Clo
      * </p>
      */
     private String billingMethod;
+    /**
+     * <p>
+     * An array of Amazon Resource Names (ARNs) included in the VPC endpoint configuration.
+     * </p>
+     */
+    private java.util.List<String> vpceConfigurationArns;
 
     /**
      * <p>
@@ -109,6 +115,76 @@ public class CreateRemoteAccessSessionConfiguration implements Serializable, Clo
     }
 
     /**
+     * <p>
+     * An array of Amazon Resource Names (ARNs) included in the VPC endpoint configuration.
+     * </p>
+     * 
+     * @return An array of Amazon Resource Names (ARNs) included in the VPC endpoint configuration.
+     */
+
+    public java.util.List<String> getVpceConfigurationArns() {
+        return vpceConfigurationArns;
+    }
+
+    /**
+     * <p>
+     * An array of Amazon Resource Names (ARNs) included in the VPC endpoint configuration.
+     * </p>
+     * 
+     * @param vpceConfigurationArns
+     *        An array of Amazon Resource Names (ARNs) included in the VPC endpoint configuration.
+     */
+
+    public void setVpceConfigurationArns(java.util.Collection<String> vpceConfigurationArns) {
+        if (vpceConfigurationArns == null) {
+            this.vpceConfigurationArns = null;
+            return;
+        }
+
+        this.vpceConfigurationArns = new java.util.ArrayList<String>(vpceConfigurationArns);
+    }
+
+    /**
+     * <p>
+     * An array of Amazon Resource Names (ARNs) included in the VPC endpoint configuration.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVpceConfigurationArns(java.util.Collection)} or
+     * {@link #withVpceConfigurationArns(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param vpceConfigurationArns
+     *        An array of Amazon Resource Names (ARNs) included in the VPC endpoint configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRemoteAccessSessionConfiguration withVpceConfigurationArns(String... vpceConfigurationArns) {
+        if (this.vpceConfigurationArns == null) {
+            setVpceConfigurationArns(new java.util.ArrayList<String>(vpceConfigurationArns.length));
+        }
+        for (String ele : vpceConfigurationArns) {
+            this.vpceConfigurationArns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of Amazon Resource Names (ARNs) included in the VPC endpoint configuration.
+     * </p>
+     * 
+     * @param vpceConfigurationArns
+     *        An array of Amazon Resource Names (ARNs) included in the VPC endpoint configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRemoteAccessSessionConfiguration withVpceConfigurationArns(java.util.Collection<String> vpceConfigurationArns) {
+        setVpceConfigurationArns(vpceConfigurationArns);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -120,7 +196,9 @@ public class CreateRemoteAccessSessionConfiguration implements Serializable, Clo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBillingMethod() != null)
-            sb.append("BillingMethod: ").append(getBillingMethod());
+            sb.append("BillingMethod: ").append(getBillingMethod()).append(",");
+        if (getVpceConfigurationArns() != null)
+            sb.append("VpceConfigurationArns: ").append(getVpceConfigurationArns());
         sb.append("}");
         return sb.toString();
     }
@@ -139,6 +217,10 @@ public class CreateRemoteAccessSessionConfiguration implements Serializable, Clo
             return false;
         if (other.getBillingMethod() != null && other.getBillingMethod().equals(this.getBillingMethod()) == false)
             return false;
+        if (other.getVpceConfigurationArns() == null ^ this.getVpceConfigurationArns() == null)
+            return false;
+        if (other.getVpceConfigurationArns() != null && other.getVpceConfigurationArns().equals(this.getVpceConfigurationArns()) == false)
+            return false;
         return true;
     }
 
@@ -148,6 +230,7 @@ public class CreateRemoteAccessSessionConfiguration implements Serializable, Clo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getBillingMethod() == null) ? 0 : getBillingMethod().hashCode());
+        hashCode = prime * hashCode + ((getVpceConfigurationArns() == null) ? 0 : getVpceConfigurationArns().hashCode());
         return hashCode;
     }
 

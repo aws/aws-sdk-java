@@ -430,17 +430,20 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * before starting two new tasks. Tasks for services that <i>do not</i> use a load balancer are considered healthy
      * if they are in the <code>RUNNING</code> state. Tasks for services that <i>do</i> use a load balancer are
      * considered healthy if they are in the <code>RUNNING</code> state and the container instance they are hosted on is
-     * reported as healthy by the load balancer. The default value for <code>minimumHealthyPercent</code> is 50% in the
-     * console and 100% for the AWS CLI, the AWS SDKs, and the APIs.
+     * reported as healthy by the load balancer. The default value for a replica service for
+     * <code>minimumHealthyPercent</code> is 50% in the console and 100% for the AWS CLI, the AWS SDKs, and the APIs.
+     * The default value for a daemon service for <code>minimumHealthyPercent</code> is 0% for the AWS CLI, the AWS
+     * SDKs, and the APIs and 50% for the console.
      * </p>
      * <p>
      * The <code>maximumPercent</code> parameter represents an upper limit on the number of your service's tasks that
      * are allowed in the <code>RUNNING</code> or <code>PENDING</code> state during a deployment, as a percentage of the
      * <code>desiredCount</code> (rounded down to the nearest integer). This parameter enables you to define the
-     * deployment batch size. For example, if your service has a <code>desiredCount</code> of four tasks and a
+     * deployment batch size. For example, if your replica service has a <code>desiredCount</code> of four tasks and a
      * <code>maximumPercent</code> value of 200%, the scheduler can start four new tasks before stopping the four older
-     * tasks (provided that the cluster resources required to do this are available). The default value for
-     * <code>maximumPercent</code> is 200%.
+     * tasks (provided that the cluster resources required to do this are available). The default value for a replica
+     * service for <code>maximumPercent</code> is 200%. If you are using a daemon service type, the
+     * <code>maximumPercent</code> should remain at 100%, which is the default value.
      * </p>
      * <p>
      * When the service scheduler launches new tasks, it determines task placement in your cluster using the following

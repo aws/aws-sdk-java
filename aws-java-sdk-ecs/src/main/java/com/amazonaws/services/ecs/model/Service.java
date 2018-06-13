@@ -171,6 +171,35 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Integer healthCheckGracePeriodSeconds;
+    /**
+     * <p>
+     * The scheduling strategy to use for the service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.
+     * </p>
+     * <p>
+     * There are two service scheduler strategies available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your
+     * cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement
+     * strategies and constraints to customize task placement decisions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each container instance in your
+     * cluster. When using this strategy, do not specify a desired number of tasks or any task placement strategies.
+     * </p>
+     * <note>
+     * <p>
+     * Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.
+     * </p>
+     * </note></li>
+     * </ul>
+     */
+    private String schedulingStrategy;
 
     /**
      * <p>
@@ -1374,6 +1403,249 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The scheduling strategy to use for the service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.
+     * </p>
+     * <p>
+     * There are two service scheduler strategies available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your
+     * cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement
+     * strategies and constraints to customize task placement decisions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each container instance in your
+     * cluster. When using this strategy, do not specify a desired number of tasks or any task placement strategies.
+     * </p>
+     * <note>
+     * <p>
+     * Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.
+     * </p>
+     * </note></li>
+     * </ul>
+     * 
+     * @param schedulingStrategy
+     *        The scheduling strategy to use for the service. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.</p>
+     *        <p>
+     *        There are two service scheduler strategies available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks
+     *        across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can
+     *        use task placement strategies and constraints to customize task placement decisions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each container instance in
+     *        your cluster. When using this strategy, do not specify a desired number of tasks or any task placement
+     *        strategies.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.
+     *        </p>
+     *        </note></li>
+     * @see SchedulingStrategy
+     */
+
+    public void setSchedulingStrategy(String schedulingStrategy) {
+        this.schedulingStrategy = schedulingStrategy;
+    }
+
+    /**
+     * <p>
+     * The scheduling strategy to use for the service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.
+     * </p>
+     * <p>
+     * There are two service scheduler strategies available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your
+     * cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement
+     * strategies and constraints to customize task placement decisions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each container instance in your
+     * cluster. When using this strategy, do not specify a desired number of tasks or any task placement strategies.
+     * </p>
+     * <note>
+     * <p>
+     * Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.
+     * </p>
+     * </note></li>
+     * </ul>
+     * 
+     * @return The scheduling strategy to use for the service. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.</p>
+     *         <p>
+     *         There are two service scheduler strategies available:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks
+     *         across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can
+     *         use task placement strategies and constraints to customize task placement decisions.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each container instance in
+     *         your cluster. When using this strategy, do not specify a desired number of tasks or any task placement
+     *         strategies.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.
+     *         </p>
+     *         </note></li>
+     * @see SchedulingStrategy
+     */
+
+    public String getSchedulingStrategy() {
+        return this.schedulingStrategy;
+    }
+
+    /**
+     * <p>
+     * The scheduling strategy to use for the service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.
+     * </p>
+     * <p>
+     * There are two service scheduler strategies available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your
+     * cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement
+     * strategies and constraints to customize task placement decisions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each container instance in your
+     * cluster. When using this strategy, do not specify a desired number of tasks or any task placement strategies.
+     * </p>
+     * <note>
+     * <p>
+     * Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.
+     * </p>
+     * </note></li>
+     * </ul>
+     * 
+     * @param schedulingStrategy
+     *        The scheduling strategy to use for the service. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.</p>
+     *        <p>
+     *        There are two service scheduler strategies available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks
+     *        across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can
+     *        use task placement strategies and constraints to customize task placement decisions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each container instance in
+     *        your cluster. When using this strategy, do not specify a desired number of tasks or any task placement
+     *        strategies.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.
+     *        </p>
+     *        </note></li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SchedulingStrategy
+     */
+
+    public Service withSchedulingStrategy(String schedulingStrategy) {
+        setSchedulingStrategy(schedulingStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The scheduling strategy to use for the service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.
+     * </p>
+     * <p>
+     * There are two service scheduler strategies available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks across your
+     * cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement
+     * strategies and constraints to customize task placement decisions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each container instance in your
+     * cluster. When using this strategy, do not specify a desired number of tasks or any task placement strategies.
+     * </p>
+     * <note>
+     * <p>
+     * Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.
+     * </p>
+     * </note></li>
+     * </ul>
+     * 
+     * @param schedulingStrategy
+     *        The scheduling strategy to use for the service. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.</p>
+     *        <p>
+     *        There are two service scheduler strategies available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired number of tasks
+     *        across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can
+     *        use task placement strategies and constraints to customize task placement decisions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each container instance in
+     *        your cluster. When using this strategy, do not specify a desired number of tasks or any task placement
+     *        strategies.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Fargate tasks do not support the <code>DAEMON</code> scheduling strategy.
+     *        </p>
+     *        </note></li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SchedulingStrategy
+     */
+
+    public Service withSchedulingStrategy(SchedulingStrategy schedulingStrategy) {
+        this.schedulingStrategy = schedulingStrategy.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1425,7 +1697,9 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         if (getNetworkConfiguration() != null)
             sb.append("NetworkConfiguration: ").append(getNetworkConfiguration()).append(",");
         if (getHealthCheckGracePeriodSeconds() != null)
-            sb.append("HealthCheckGracePeriodSeconds: ").append(getHealthCheckGracePeriodSeconds());
+            sb.append("HealthCheckGracePeriodSeconds: ").append(getHealthCheckGracePeriodSeconds()).append(",");
+        if (getSchedulingStrategy() != null)
+            sb.append("SchedulingStrategy: ").append(getSchedulingStrategy());
         sb.append("}");
         return sb.toString();
     }
@@ -1525,6 +1799,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         if (other.getHealthCheckGracePeriodSeconds() != null
                 && other.getHealthCheckGracePeriodSeconds().equals(this.getHealthCheckGracePeriodSeconds()) == false)
             return false;
+        if (other.getSchedulingStrategy() == null ^ this.getSchedulingStrategy() == null)
+            return false;
+        if (other.getSchedulingStrategy() != null && other.getSchedulingStrategy().equals(this.getSchedulingStrategy()) == false)
+            return false;
         return true;
     }
 
@@ -1554,6 +1832,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPlacementStrategy() == null) ? 0 : getPlacementStrategy().hashCode());
         hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
         hashCode = prime * hashCode + ((getHealthCheckGracePeriodSeconds() == null) ? 0 : getHealthCheckGracePeriodSeconds().hashCode());
+        hashCode = prime * hashCode + ((getSchedulingStrategy() == null) ? 0 : getSchedulingStrategy().hashCode());
         return hashCode;
     }
 

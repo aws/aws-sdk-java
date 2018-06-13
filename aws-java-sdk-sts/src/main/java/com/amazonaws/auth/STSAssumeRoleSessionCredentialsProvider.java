@@ -433,10 +433,6 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
          * @return the itself for chained calls
          */
         public Builder withRoleSessionDurationSeconds(int roleSessionDurationSeconds) {
-            if (roleSessionDurationSeconds < 900 || roleSessionDurationSeconds > 3600) {
-                throw new IllegalArgumentException(
-                        "Assume Role session duration should be in the range of 15min - 1Hr");
-            }
             this.roleSessionDurationSeconds = roleSessionDurationSeconds;
             return this;
         }

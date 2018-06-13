@@ -1,3 +1,20 @@
+# __1.11.346__ __2018-06-12__
+## __AWS Device Farm__
+  - ### Features
+    - Adding VPCEndpoint support for Remote access. Allows customers to be able to access their private endpoints/services running in their VPC during remote access.
+
+## __AWS Security Token Service__
+  - ### Bugfixes
+    - Removed client side validation for session duration in STSAssumeRoleSessionCredentialsProvider. Please note that the limits still apply and you will get a runtime exception if the specified value in out of valid range.
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - Introduces daemon scheduling capability to deploy one task per instance on selected instances in a cluster.  Adds a "force" flag to the DeleteService API to delete a service without requiring to scale down the number of tasks to zero.
+
+## __Amazon SNS__
+  - ### Bugfixes
+    - Fix SnsMessageManager class to use proper certificate names for AWS China and AWS GovCloud regions.
+
 # __1.11.345__ __2018-06-11__
 ## __AWS Storage Gateway__
   - ### Features
