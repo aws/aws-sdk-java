@@ -61,6 +61,8 @@ public class SendCommandRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceRoleArn").build();
     private static final MarshallingInfo<StructuredPojo> NOTIFICATIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotificationConfig").build();
+    private static final MarshallingInfo<StructuredPojo> CLOUDWATCHOUTPUTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CloudWatchOutputConfig").build();
 
     private static final SendCommandRequestMarshaller instance = new SendCommandRequestMarshaller();
 
@@ -94,6 +96,7 @@ public class SendCommandRequestMarshaller {
             protocolMarshaller.marshall(sendCommandRequest.getMaxErrors(), MAXERRORS_BINDING);
             protocolMarshaller.marshall(sendCommandRequest.getServiceRoleArn(), SERVICEROLEARN_BINDING);
             protocolMarshaller.marshall(sendCommandRequest.getNotificationConfig(), NOTIFICATIONCONFIG_BINDING);
+            protocolMarshaller.marshall(sendCommandRequest.getCloudWatchOutputConfig(), CLOUDWATCHOUTPUTCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

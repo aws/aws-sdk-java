@@ -67,10 +67,14 @@ public class CommandMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CompletedCount").build();
     private static final MarshallingInfo<Integer> ERRORCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ErrorCount").build();
+    private static final MarshallingInfo<Integer> DELIVERYTIMEDOUTCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeliveryTimedOutCount").build();
     private static final MarshallingInfo<String> SERVICEROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceRole").build();
     private static final MarshallingInfo<StructuredPojo> NOTIFICATIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotificationConfig").build();
+    private static final MarshallingInfo<StructuredPojo> CLOUDWATCHOUTPUTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CloudWatchOutputConfig").build();
 
     private static final CommandMarshaller instance = new CommandMarshaller();
 
@@ -107,8 +111,10 @@ public class CommandMarshaller {
             protocolMarshaller.marshall(command.getTargetCount(), TARGETCOUNT_BINDING);
             protocolMarshaller.marshall(command.getCompletedCount(), COMPLETEDCOUNT_BINDING);
             protocolMarshaller.marshall(command.getErrorCount(), ERRORCOUNT_BINDING);
+            protocolMarshaller.marshall(command.getDeliveryTimedOutCount(), DELIVERYTIMEDOUTCOUNT_BINDING);
             protocolMarshaller.marshall(command.getServiceRole(), SERVICEROLE_BINDING);
             protocolMarshaller.marshall(command.getNotificationConfig(), NOTIFICATIONCONFIG_BINDING);
+            protocolMarshaller.marshall(command.getCloudWatchOutputConfig(), CLOUDWATCHOUTPUTCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

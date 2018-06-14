@@ -41,7 +41,7 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
  * <p>
  * To get started, verify prerequisites and configure managed instances. For more information, see <a
  * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Systems Manager
- * Prerequisites</a>.
+ * Prerequisites</a> in the <i>AWS Systems Manager User Guide</i>.
  * </p>
  * <p>
  * For information about other API actions you can perform on Amazon EC2 instances, see the <a
@@ -172,12 +172,12 @@ public interface AWSSimpleSystemsManagement {
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
-     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is running.
+     *         On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
-     *         or EC2Config service.
+     *         SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling SSM Agent or
+     *         EC2Config service.
      *         </p>
      *         <p>
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
@@ -240,12 +240,12 @@ public interface AWSSimpleSystemsManagement {
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
-     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is running.
+     *         On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
-     *         or EC2Config service.
+     *         SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling SSM Agent or
+     *         EC2Config service.
      *         </p>
      *         <p>
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
@@ -296,12 +296,12 @@ public interface AWSSimpleSystemsManagement {
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
-     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is running.
+     *         On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
-     *         or EC2Config service.
+     *         SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling SSM Agent or
+     *         EC2Config service.
      *         </p>
      *         <p>
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
@@ -424,9 +424,9 @@ public interface AWSSimpleSystemsManagement {
      * By default, data is not encrypted in Amazon S3. We strongly recommend that you enable encryption in Amazon S3 to
      * ensure secure data storage. We also recommend that you secure access to the Amazon S3 bucket by creating a
      * restrictive bucket policy. To view an example of a restrictive Amazon S3 bucket policy for Resource Data Sync,
-     * see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-configuring.html#sysman-inventory-datasync"
-     * >Configuring Resource Data Sync for Inventory</a>.
+     * see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync-create.html">Create a
+     * Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param createResourceDataSyncRequest
@@ -494,12 +494,12 @@ public interface AWSSimpleSystemsManagement {
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
-     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is running.
+     *         On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
-     *         or EC2Config service.
+     *         SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling SSM Agent or
+     *         EC2Config service.
      *         </p>
      *         <p>
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
@@ -649,7 +649,7 @@ public interface AWSSimpleSystemsManagement {
     /**
      * <p>
      * Removes the server or virtual machine from the list of registered servers. You can reregister the instance again
-     * at any time. If you don't plan to use Run Command on the server, we suggest uninstalling the SSM Agent first.
+     * at any time. If you don't plan to use Run Command on the server, we suggest uninstalling SSM Agent first.
      * </p>
      * 
      * @param deregisterManagedInstanceRequest
@@ -660,12 +660,12 @@ public interface AWSSimpleSystemsManagement {
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
-     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is running.
+     *         On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
-     *         or EC2Config service.
+     *         SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling SSM Agent or
+     *         EC2Config service.
      *         </p>
      *         <p>
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
@@ -791,12 +791,12 @@ public interface AWSSimpleSystemsManagement {
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
-     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is running.
+     *         On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
-     *         or EC2Config service.
+     *         SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling SSM Agent or
+     *         EC2Config service.
      *         </p>
      *         <p>
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
@@ -921,12 +921,12 @@ public interface AWSSimpleSystemsManagement {
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
-     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is running.
+     *         On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
-     *         or EC2Config service.
+     *         SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling SSM Agent or
+     *         EC2Config service.
      *         </p>
      *         <p>
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
@@ -984,12 +984,12 @@ public interface AWSSimpleSystemsManagement {
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
-     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is running.
+     *         On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
-     *         or EC2Config service.
+     *         SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling SSM Agent or
+     *         EC2Config service.
      *         </p>
      *         <p>
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
@@ -1022,12 +1022,12 @@ public interface AWSSimpleSystemsManagement {
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
-     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is running.
+     *         On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
-     *         or EC2Config service.
+     *         SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling SSM Agent or
+     *         EC2Config service.
      *         </p>
      *         <p>
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
@@ -1097,12 +1097,12 @@ public interface AWSSimpleSystemsManagement {
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
-     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is running.
+     *         On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
-     *         or EC2Config service.
+     *         SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling SSM Agent or
+     *         EC2Config service.
      *         </p>
      *         <p>
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
@@ -1371,12 +1371,12 @@ public interface AWSSimpleSystemsManagement {
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
-     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is running.
+     *         On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
-     *         or EC2Config service.
+     *         SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling SSM Agent or
+     *         EC2Config service.
      *         </p>
      *         <p>
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
@@ -1607,7 +1607,8 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
-     * Get information about a parameter by using the parameter name.
+     * Get information about a parameter by using the parameter name. Don't confuse this API action with the
+     * <a>GetParameters</a> API action.
      * </p>
      * 
      * @param getParameterRequest
@@ -1649,7 +1650,7 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
-     * Get details of a parameter.
+     * Get details of a parameter. Don't confuse this API action with the <a>GetParameter</a> API action.
      * </p>
      * 
      * @param getParametersRequest
@@ -1668,7 +1669,7 @@ public interface AWSSimpleSystemsManagement {
      * <p>
      * Retrieve parameters in a specific hierarchy. For more information, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working with
-     * Systems Manager Parameters</a>.
+     * Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <p>
      * Request results are returned on a best-effort basis. If you specify <code>MaxResults</code> in the request, the
@@ -1798,12 +1799,12 @@ public interface AWSSimpleSystemsManagement {
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
-     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is running.
+     *         On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
-     *         or EC2Config service.
+     *         SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling SSM Agent or
+     *         EC2Config service.
      *         </p>
      *         <p>
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
@@ -1834,12 +1835,12 @@ public interface AWSSimpleSystemsManagement {
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
-     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is running.
+     *         On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
-     *         or EC2Config service.
+     *         SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling SSM Agent or
+     *         EC2Config service.
      *         </p>
      *         <p>
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
@@ -1961,12 +1962,12 @@ public interface AWSSimpleSystemsManagement {
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
-     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is running.
+     *         On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
-     *         or EC2Config service.
+     *         SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling SSM Agent or
+     *         EC2Config service.
      *         </p>
      *         <p>
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
@@ -2203,12 +2204,12 @@ public interface AWSSimpleSystemsManagement {
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
-     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is running.
+     *         On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
-     *         or EC2Config service.
+     *         SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling SSM Agent or
+     *         EC2Config service.
      *         </p>
      *         <p>
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
@@ -2264,7 +2265,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws HierarchyLevelLimitExceededException
      *         A hierarchy can have a maximum of 15 levels. For more information, see <a
      *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working
-     *         with Systems Manager Parameters</a>.
+     *         with Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      * @throws HierarchyTypeMismatchException
      *         Parameter Store does not support changing a parameter type in a hierarchy. For example, you can't change
      *         a parameter from a String type to a SecureString type. You must create a new, unique parameter.
@@ -2472,12 +2473,12 @@ public interface AWSSimpleSystemsManagement {
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
-     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is running.
+     *         On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
-     *         or EC2Config service.
+     *         SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling SSM Agent or
+     *         EC2Config service.
      *         </p>
      *         <p>
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
@@ -2618,12 +2619,12 @@ public interface AWSSimpleSystemsManagement {
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
-     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is running.
+     *         On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
-     *         or EC2Config service.
+     *         SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling SSM Agent or
+     *         EC2Config service.
      *         </p>
      *         <p>
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states
@@ -2832,12 +2833,12 @@ public interface AWSSimpleSystemsManagement {
      *         You do not have permission to access the instance.
      *         </p>
      *         <p>
-     *         The SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is
-     *         running. On EC2 Windows instances, verify that the EC2Config service is running.
+     *         SSM Agent is not running. On managed instances and Linux instances, verify that the SSM Agent is running.
+     *         On EC2 Windows instances, verify that the EC2Config service is running.
      *         </p>
      *         <p>
-     *         The SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling the SSM Agent
-     *         or EC2Config service.
+     *         SSM Agent or EC2Config service is not registered to the SSM endpoint. Try reinstalling SSM Agent or
+     *         EC2Config service.
      *         </p>
      *         <p>
      *         The instance is not in valid state. Valid states are: Running, Pending, Stopped, Stopping. Invalid states

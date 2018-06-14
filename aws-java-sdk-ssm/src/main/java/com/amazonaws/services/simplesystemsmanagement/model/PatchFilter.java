@@ -100,6 +100,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <code>WindowsServer2016</code>
  * </p>
  * </li>
+ * <li>
+ * <p>
+ * <code>*</code>
+ * </p>
+ * <p>
+ * <i>Use a wildcard character (*) to target all supported operating system versions.</i>
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * <i>Supported key:</i> <code>CLASSIFICATION</code>
@@ -216,6 +224,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <code>Ubuntu16.04</code>
  * </p>
  * </li>
+ * <li>
+ * <p>
+ * <code>*</code>
+ * </p>
+ * <p>
+ * <i>Use a wildcard character (*) to target all supported operating system versions.</i>
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * <i>Supported key:</i> <code>PRIORITY</code>
@@ -328,6 +344,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <li>
  * <p>
  * <code>AmazonLinux2017.09</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>*</code>
+ * </p>
+ * <p>
+ * <i>Use a wildcard character (*) to target all supported operating system versions.</i>
  * </p>
  * </li>
  * </ul>
@@ -457,6 +481,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <code>RedhatEnterpriseLinux7.4</code>
  * </p>
  * </li>
+ * <li>
+ * <p>
+ * <code>*</code>
+ * </p>
+ * <p>
+ * <i>Use a wildcard character (*) to target all supported operating system versions.</i>
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * <i>Supported key:</i> <code>CLASSIFICATION</code>
@@ -581,6 +613,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <li>
  * <p>
  * <code>Suse12.9</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>*</code>
+ * </p>
+ * <p>
+ * <i>Use a wildcard character (*) to target all supported operating system versions.</i>
  * </p>
  * </li>
  * </ul>
@@ -712,6 +752,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <li>
  * <p>
  * <code>CentOS7.4</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>*</code>
+ * </p>
+ * <p>
+ * <i>Use a wildcard character (*) to target all supported operating system versions.</i>
  * </p>
  * </li>
  * </ul>

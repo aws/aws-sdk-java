@@ -1,3 +1,12 @@
+# __1.11.347__ __2018-06-13__
+## __AWS Service Catalog__
+  - ### Features
+    - Introduced new length limitations for few of the product fields.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Added support for new parameter, CloudWatchOutputConfig, for SendCommand API. Users can now have RunCommand output sent to CloudWatchLogs.
+
 # __1.11.346__ __2018-06-12__
 ## __AWS Device Farm__
   - ### Features

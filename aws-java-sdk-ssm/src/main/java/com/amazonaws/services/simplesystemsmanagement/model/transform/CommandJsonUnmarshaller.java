@@ -125,6 +125,10 @@ public class CommandJsonUnmarshaller implements Unmarshaller<Command, JsonUnmars
                     context.nextToken();
                     command.setErrorCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("DeliveryTimedOutCount", targetDepth)) {
+                    context.nextToken();
+                    command.setDeliveryTimedOutCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("ServiceRole", targetDepth)) {
                     context.nextToken();
                     command.setServiceRole(context.getUnmarshaller(String.class).unmarshall(context));
@@ -132,6 +136,10 @@ public class CommandJsonUnmarshaller implements Unmarshaller<Command, JsonUnmars
                 if (context.testExpression("NotificationConfig", targetDepth)) {
                     context.nextToken();
                     command.setNotificationConfig(NotificationConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("CloudWatchOutputConfig", targetDepth)) {
+                    context.nextToken();
+                    command.setCloudWatchOutputConfig(CloudWatchOutputConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

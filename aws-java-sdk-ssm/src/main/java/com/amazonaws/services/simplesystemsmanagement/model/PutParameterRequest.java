@@ -31,9 +31,9 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * the complete hierarchy of the parameter path and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code>
      * </p>
      * <p>
-     * For information about parameter name requirements and restrictions, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html#sysman-paramstore-su-create-about"
-     * >About Creating Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     * For information about parameter name requirements and restrictions, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
+     * Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -93,9 +93,9 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * the complete hierarchy of the parameter path and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code>
      * </p>
      * <p>
-     * For information about parameter name requirements and restrictions, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html#sysman-paramstore-su-create-about"
-     * >About Creating Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     * For information about parameter name requirements and restrictions, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
+     * Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -109,9 +109,9 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        includes the complete hierarchy of the parameter path and name. For example:
      *        <code>/Dev/DBServer/MySQL/db-string13</code> </p>
      *        <p>
-     *        For information about parameter name requirements and restrictions, see <a href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html#sysman-paramstore-su-create-about"
-     *        >About Creating Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        For information about parameter name requirements and restrictions, see <a
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html"
+     *        >Creating Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      *        </p>
      *        <note>
      *        <p>
@@ -130,9 +130,9 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * the complete hierarchy of the parameter path and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code>
      * </p>
      * <p>
-     * For information about parameter name requirements and restrictions, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html#sysman-paramstore-su-create-about"
-     * >About Creating Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     * For information about parameter name requirements and restrictions, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
+     * Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -145,9 +145,9 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         includes the complete hierarchy of the parameter path and name. For example:
      *         <code>/Dev/DBServer/MySQL/db-string13</code> </p>
      *         <p>
-     *         For information about parameter name requirements and restrictions, see <a href=
-     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html#sysman-paramstore-su-create-about"
-     *         >About Creating Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         For information about parameter name requirements and restrictions, see <a
+     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html"
+     *         >Creating Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      *         </p>
      *         <note>
      *         <p>
@@ -166,9 +166,9 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * the complete hierarchy of the parameter path and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code>
      * </p>
      * <p>
-     * For information about parameter name requirements and restrictions, see <a href=
-     * "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html#sysman-paramstore-su-create-about"
-     * >About Creating Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     * For information about parameter name requirements and restrictions, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
+     * Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -182,9 +182,9 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        includes the complete hierarchy of the parameter path and name. For example:
      *        <code>/Dev/DBServer/MySQL/db-string13</code> </p>
      *        <p>
-     *        For information about parameter name requirements and restrictions, see <a href=
-     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html#sysman-paramstore-su-create-about"
-     *        >About Creating Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        For information about parameter name requirements and restrictions, see <a
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html"
+     *        >Creating Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      *        </p>
      *        <note>
      *        <p>

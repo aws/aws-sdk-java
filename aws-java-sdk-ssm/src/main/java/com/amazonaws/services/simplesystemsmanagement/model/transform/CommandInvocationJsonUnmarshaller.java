@@ -108,6 +108,10 @@ public class CommandInvocationJsonUnmarshaller implements Unmarshaller<CommandIn
                     context.nextToken();
                     commandInvocation.setNotificationConfig(NotificationConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("CloudWatchOutputConfig", targetDepth)) {
+                    context.nextToken();
+                    commandInvocation.setCloudWatchOutputConfig(CloudWatchOutputConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
