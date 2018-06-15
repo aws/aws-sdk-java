@@ -42,8 +42,9 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <code>ignore=documentation</code>.
      * </p>
      * <p>
-     * To configure the endpoint type, set <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code> or
-     * <code>endpointConfigurationTypes=REGIONAL</code>. The default endpoint type is <code>EDGE</code>.
+     * To configure the endpoint type, set <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>,
+     * <code>endpointConfigurationTypes=REGIONAL</code>, or <code>endpointConfigurationTypes=PRIVATE</code>. The default
+     * endpoint type is <code>EDGE</code>.
      * </p>
      * <p>
      * To handle imported <code>basePath</code>, set <code>parameters</code> as <code>basePath=ignore</code>,
@@ -54,14 +55,14 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * <pre>
-     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json</code>
+     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>
      * </pre>
      * <p>
      * The AWS CLI command to set the regional endpoint on the imported API is:
      * </p>
      * 
      * <pre>
-     * <code>aws apigateway import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body 'file:///path/to/imported-api-body.json</code>
+     * <code>aws apigateway import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body 'file:///path/to/imported-api-body.json'</code>
      * </pre>
      */
     private java.util.Map<String, String> parameters;
@@ -143,8 +144,9 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <code>ignore=documentation</code>.
      * </p>
      * <p>
-     * To configure the endpoint type, set <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code> or
-     * <code>endpointConfigurationTypes=REGIONAL</code>. The default endpoint type is <code>EDGE</code>.
+     * To configure the endpoint type, set <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>,
+     * <code>endpointConfigurationTypes=REGIONAL</code>, or <code>endpointConfigurationTypes=PRIVATE</code>. The default
+     * endpoint type is <code>EDGE</code>.
      * </p>
      * <p>
      * To handle imported <code>basePath</code>, set <code>parameters</code> as <code>basePath=ignore</code>,
@@ -155,14 +157,14 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * <pre>
-     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json</code>
+     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>
      * </pre>
      * <p>
      * The AWS CLI command to set the regional endpoint on the imported API is:
      * </p>
      * 
      * <pre>
-     * <code>aws apigateway import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body 'file:///path/to/imported-api-body.json</code>
+     * <code>aws apigateway import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body 'file:///path/to/imported-api-body.json'</code>
      * </pre>
      * 
      * @return A key-value map of context-specific query string parameters specifying the behavior of different API
@@ -173,8 +175,8 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         </p>
      *         <p>
      *         To configure the endpoint type, set <code>parameters</code> as
-     *         <code>endpointConfigurationTypes=EDGE</code> or<code>endpointConfigurationTypes=REGIONAL</code>. The
-     *         default endpoint type is <code>EDGE</code>.
+     *         <code>endpointConfigurationTypes=EDGE</code>, <code>endpointConfigurationTypes=REGIONAL</code>, or
+     *         <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is <code>EDGE</code>.
      *         </p>
      *         <p>
      *         To handle imported <code>basePath</code>, set <code>parameters</code> as <code>basePath=ignore</code>,
@@ -185,13 +187,13 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         </p>
      * 
      *         <pre>
-     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json</code>
+     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>
      * </pre>
      *         <p>
      *         The AWS CLI command to set the regional endpoint on the imported API is:
      *         </p>
      * 
-     * <pre><code>aws apigateway import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body 'file:///path/to/imported-api-body.json</code>
+     * <pre><code>aws apigateway import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body 'file:///path/to/imported-api-body.json'</code>
      */
 
     public java.util.Map<String, String> getParameters() {
@@ -208,8 +210,9 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <code>ignore=documentation</code>.
      * </p>
      * <p>
-     * To configure the endpoint type, set <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code> or
-     * <code>endpointConfigurationTypes=REGIONAL</code>. The default endpoint type is <code>EDGE</code>.
+     * To configure the endpoint type, set <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>,
+     * <code>endpointConfigurationTypes=REGIONAL</code>, or <code>endpointConfigurationTypes=PRIVATE</code>. The default
+     * endpoint type is <code>EDGE</code>.
      * </p>
      * <p>
      * To handle imported <code>basePath</code>, set <code>parameters</code> as <code>basePath=ignore</code>,
@@ -220,14 +223,14 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * <pre>
-     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json</code>
+     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>
      * </pre>
      * <p>
      * The AWS CLI command to set the regional endpoint on the imported API is:
      * </p>
      * 
      * <pre>
-     * <code>aws apigateway import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body 'file:///path/to/imported-api-body.json</code>
+     * <code>aws apigateway import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body 'file:///path/to/imported-api-body.json'</code>
      * </pre>
      * 
      * @param parameters
@@ -239,8 +242,8 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </p>
      *        <p>
      *        To configure the endpoint type, set <code>parameters</code> as
-     *        <code>endpointConfigurationTypes=EDGE</code> or<code>endpointConfigurationTypes=REGIONAL</code>. The
-     *        default endpoint type is <code>EDGE</code>.
+     *        <code>endpointConfigurationTypes=EDGE</code>, <code>endpointConfigurationTypes=REGIONAL</code>, or
+     *        <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is <code>EDGE</code>.
      *        </p>
      *        <p>
      *        To handle imported <code>basePath</code>, set <code>parameters</code> as <code>basePath=ignore</code>,
@@ -251,13 +254,13 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </p>
      * 
      *        <pre>
-     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json</code>
+     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>
      * </pre>
      *        <p>
      *        The AWS CLI command to set the regional endpoint on the imported API is:
      *        </p>
      * 
-     * <pre><code>aws apigateway import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body 'file:///path/to/imported-api-body.json</code>
+     * <pre><code>aws apigateway import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body 'file:///path/to/imported-api-body.json'</code>
      */
 
     public void setParameters(java.util.Map<String, String> parameters) {
@@ -274,8 +277,9 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <code>ignore=documentation</code>.
      * </p>
      * <p>
-     * To configure the endpoint type, set <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code> or
-     * <code>endpointConfigurationTypes=REGIONAL</code>. The default endpoint type is <code>EDGE</code>.
+     * To configure the endpoint type, set <code>parameters</code> as <code>endpointConfigurationTypes=EDGE</code>,
+     * <code>endpointConfigurationTypes=REGIONAL</code>, or <code>endpointConfigurationTypes=PRIVATE</code>. The default
+     * endpoint type is <code>EDGE</code>.
      * </p>
      * <p>
      * To handle imported <code>basePath</code>, set <code>parameters</code> as <code>basePath=ignore</code>,
@@ -286,14 +290,14 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * <pre>
-     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json</code>
+     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>
      * </pre>
      * <p>
      * The AWS CLI command to set the regional endpoint on the imported API is:
      * </p>
      * 
      * <pre>
-     * <code>aws apigateway import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body 'file:///path/to/imported-api-body.json</code>
+     * <code>aws apigateway import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body 'file:///path/to/imported-api-body.json'</code>
      * </pre>
      * 
      * @param parameters
@@ -305,8 +309,8 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </p>
      *        <p>
      *        To configure the endpoint type, set <code>parameters</code> as
-     *        <code>endpointConfigurationTypes=EDGE</code> or<code>endpointConfigurationTypes=REGIONAL</code>. The
-     *        default endpoint type is <code>EDGE</code>.
+     *        <code>endpointConfigurationTypes=EDGE</code>, <code>endpointConfigurationTypes=REGIONAL</code>, or
+     *        <code>endpointConfigurationTypes=PRIVATE</code>. The default endpoint type is <code>EDGE</code>.
      *        </p>
      *        <p>
      *        To handle imported <code>basePath</code>, set <code>parameters</code> as <code>basePath=ignore</code>,
@@ -317,14 +321,14 @@ public class ImportRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </p>
      * 
      *        <pre>
-     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json</code>
+     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>
      * </pre>
      *        <p>
      *        The AWS CLI command to set the regional endpoint on the imported API is:
      *        </p>
      * 
      *        <pre>
-     * <code>aws apigateway import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body 'file:///path/to/imported-api-body.json</code>
+     * <code>aws apigateway import-rest-api --parameters endpointConfigurationTypes=REGIONAL --body 'file:///path/to/imported-api-body.json'</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

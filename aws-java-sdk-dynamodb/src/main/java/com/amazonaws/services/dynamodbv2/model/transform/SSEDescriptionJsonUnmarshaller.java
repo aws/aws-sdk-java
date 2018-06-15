@@ -52,6 +52,14 @@ public class SSEDescriptionJsonUnmarshaller implements Unmarshaller<SSEDescripti
                     context.nextToken();
                     sSEDescription.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SSEType", targetDepth)) {
+                    context.nextToken();
+                    sSEDescription.setSSEType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("KMSMasterKeyArn", targetDepth)) {
+                    context.nextToken();
+                    sSEDescription.setKMSMasterKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

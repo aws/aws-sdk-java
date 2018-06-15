@@ -16,15 +16,17 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The endpoint type. The valid value is <code>EDGE</code> for edge-optimized API setup, most suitable for mobile
- * applications, <code>REGIONAL</code> for regional API endpoint setup, most suitable for calling from AWS Region
+ * The endpoint type. The valid values are <code>EDGE</code> for edge-optimized API setup, most suitable for mobile
+ * applications; <code>REGIONAL</code> for regional API endpoint setup, most suitable for calling from AWS Region; and
+ * <code>PRIVATE</code> for private APIs.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum EndpointType {
 
     REGIONAL("REGIONAL"),
-    EDGE("EDGE");
+    EDGE("EDGE"),
+    PRIVATE("PRIVATE");
 
     private String value;
 

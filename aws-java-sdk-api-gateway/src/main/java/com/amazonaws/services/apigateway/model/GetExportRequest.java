@@ -47,9 +47,10 @@ public class GetExportRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * A key-value map of query string parameters that specify properties of the export, depending on the requested
      * <code>exportType</code>. For <code>exportType</code> <code>swagger</code>, any combination of the following
-     * parameters are supported: <code>integrations</code> will export the API with x-amazon-apigateway-integration
-     * extensions. <code>authorizers</code> will export the API with x-amazon-apigateway-authorizer extensions.
-     * <code>postman</code> will export the API with Postman extensions, allowing for import to the Postman tool
+     * parameters are supported: <code>extensions='integrations'</code> or <code>extensions='apigateway'</code> will
+     * export the API with x-amazon-apigateway-integration extensions. <code>extensions='authorizers'</code> will export
+     * the API with x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the API with Postman
+     * extensions, allowing for import to the Postman tool
      * </p>
      */
     private java.util.Map<String, String> parameters;
@@ -186,17 +187,18 @@ public class GetExportRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * A key-value map of query string parameters that specify properties of the export, depending on the requested
      * <code>exportType</code>. For <code>exportType</code> <code>swagger</code>, any combination of the following
-     * parameters are supported: <code>integrations</code> will export the API with x-amazon-apigateway-integration
-     * extensions. <code>authorizers</code> will export the API with x-amazon-apigateway-authorizer extensions.
-     * <code>postman</code> will export the API with Postman extensions, allowing for import to the Postman tool
+     * parameters are supported: <code>extensions='integrations'</code> or <code>extensions='apigateway'</code> will
+     * export the API with x-amazon-apigateway-integration extensions. <code>extensions='authorizers'</code> will export
+     * the API with x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the API with Postman
+     * extensions, allowing for import to the Postman tool
      * </p>
      * 
      * @return A key-value map of query string parameters that specify properties of the export, depending on the
      *         requested <code>exportType</code>. For <code>exportType</code> <code>swagger</code>, any combination of
-     *         the following parameters are supported: <code>integrations</code> will export the API with
-     *         x-amazon-apigateway-integration extensions. <code>authorizers</code> will export the API with
-     *         x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the API with Postman
-     *         extensions, allowing for import to the Postman tool
+     *         the following parameters are supported: <code>extensions='integrations'</code> or
+     *         <code>extensions='apigateway'</code> will export the API with x-amazon-apigateway-integration extensions.
+     *         <code>extensions='authorizers'</code> will export the API with x-amazon-apigateway-authorizer extensions.
+     *         <code>postman</code> will export the API with Postman extensions, allowing for import to the Postman tool
      */
 
     public java.util.Map<String, String> getParameters() {
@@ -207,18 +209,19 @@ public class GetExportRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * A key-value map of query string parameters that specify properties of the export, depending on the requested
      * <code>exportType</code>. For <code>exportType</code> <code>swagger</code>, any combination of the following
-     * parameters are supported: <code>integrations</code> will export the API with x-amazon-apigateway-integration
-     * extensions. <code>authorizers</code> will export the API with x-amazon-apigateway-authorizer extensions.
-     * <code>postman</code> will export the API with Postman extensions, allowing for import to the Postman tool
+     * parameters are supported: <code>extensions='integrations'</code> or <code>extensions='apigateway'</code> will
+     * export the API with x-amazon-apigateway-integration extensions. <code>extensions='authorizers'</code> will export
+     * the API with x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the API with Postman
+     * extensions, allowing for import to the Postman tool
      * </p>
      * 
      * @param parameters
      *        A key-value map of query string parameters that specify properties of the export, depending on the
      *        requested <code>exportType</code>. For <code>exportType</code> <code>swagger</code>, any combination of
-     *        the following parameters are supported: <code>integrations</code> will export the API with
-     *        x-amazon-apigateway-integration extensions. <code>authorizers</code> will export the API with
-     *        x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the API with Postman
-     *        extensions, allowing for import to the Postman tool
+     *        the following parameters are supported: <code>extensions='integrations'</code> or
+     *        <code>extensions='apigateway'</code> will export the API with x-amazon-apigateway-integration extensions.
+     *        <code>extensions='authorizers'</code> will export the API with x-amazon-apigateway-authorizer extensions.
+     *        <code>postman</code> will export the API with Postman extensions, allowing for import to the Postman tool
      */
 
     public void setParameters(java.util.Map<String, String> parameters) {
@@ -229,18 +232,19 @@ public class GetExportRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * A key-value map of query string parameters that specify properties of the export, depending on the requested
      * <code>exportType</code>. For <code>exportType</code> <code>swagger</code>, any combination of the following
-     * parameters are supported: <code>integrations</code> will export the API with x-amazon-apigateway-integration
-     * extensions. <code>authorizers</code> will export the API with x-amazon-apigateway-authorizer extensions.
-     * <code>postman</code> will export the API with Postman extensions, allowing for import to the Postman tool
+     * parameters are supported: <code>extensions='integrations'</code> or <code>extensions='apigateway'</code> will
+     * export the API with x-amazon-apigateway-integration extensions. <code>extensions='authorizers'</code> will export
+     * the API with x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the API with Postman
+     * extensions, allowing for import to the Postman tool
      * </p>
      * 
      * @param parameters
      *        A key-value map of query string parameters that specify properties of the export, depending on the
      *        requested <code>exportType</code>. For <code>exportType</code> <code>swagger</code>, any combination of
-     *        the following parameters are supported: <code>integrations</code> will export the API with
-     *        x-amazon-apigateway-integration extensions. <code>authorizers</code> will export the API with
-     *        x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the API with Postman
-     *        extensions, allowing for import to the Postman tool
+     *        the following parameters are supported: <code>extensions='integrations'</code> or
+     *        <code>extensions='apigateway'</code> will export the API with x-amazon-apigateway-integration extensions.
+     *        <code>extensions='authorizers'</code> will export the API with x-amazon-apigateway-authorizer extensions.
+     *        <code>postman</code> will export the API with Postman extensions, allowing for import to the Postman tool
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

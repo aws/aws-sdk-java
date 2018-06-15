@@ -49,25 +49,24 @@ import com.amazonaws.services.iotanalytics.model.transform.*;
  * until the service call completes.
  * <p>
  * <p>
- * AWS IoT Analytics provides advanced data analysis for AWS IoT. It allows you to collect large amounts of device data,
- * process messages, store them, and then query the data and run sophisticated analytics to make accurate decisions in
- * your IoT applications and machine learning use cases. AWS IoT Analytics enables advanced data exploration through
+ * AWS IoT Analytics allows you to collect large amounts of device data, process messages, and store them. You can then
+ * query the data and run sophisticated analytics on it. AWS IoT Analytics enables advanced data exploration through
  * integration with Jupyter Notebooks and data visualization through integration with Amazon QuickSight.
  * </p>
  * <p>
  * Traditional analytics and business intelligence tools are designed to process structured data. IoT data often comes
- * from devices that record noisy processes (such as temperature, motion, or sound). As a result, the data from these
+ * from devices that record noisy processes (such as temperature, motion, or sound). As a result the data from these
  * devices can have significant gaps, corrupted messages, and false readings that must be cleaned up before analysis can
  * occur. Also, IoT data is often only meaningful in the context of other data from external sources.
  * </p>
  * <p>
- * AWS IoT Analytics automates each of the steps required to analyze data from IoT devices. AWS IoT Analytics filters,
+ * AWS IoT Analytics automates the steps required to analyze data from IoT devices. AWS IoT Analytics filters,
  * transforms, and enriches IoT data before storing it in a time-series data store for analysis. You can set up the
  * service to collect only the data you need from your devices, apply mathematical transforms to process the data, and
  * enrich the data with device-specific metadata such as device type and location before storing it. Then, you can
  * analyze your data by running queries using the built-in SQL query engine, or perform more complex analytics and
- * machine learning inference. AWS IoT Analytics includes models for common IoT use cases so you can answer questions
- * like which devices are about to fail or which customers are at risk of abandoning their wearable devices.
+ * machine learning inference. AWS IoT Analytics includes pre-built models for common IoT use cases so you can answer
+ * questions like which devices are about to fail or which customers are at risk of abandoning their wearable devices.
  * </p>
  */
 @ThreadSafe
@@ -1457,7 +1456,73 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Lists the tags (metadata) which you have assigned to the resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was not valid.
+     * @throws InternalFailureException
+     *         There was an internal failure.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws LimitExceededException
+     *         The command caused an internal limit to be exceeded.
+     * @throws ResourceNotFoundException
+     *         A resource with the specified name could not be found.
+     * @sample AWSIoTAnalytics.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Sets or updates the AWS IoT Analytics logging options.
+     * </p>
+     * <p>
+     * Note that if you update the value of any <code>loggingOptions</code> field, it takes up to one minute for the
+     * change to take effect. Also, if you change the policy attached to the role you specified in the roleArn field
+     * (for example, to correct an invalid policy) it takes up to 5 minutes for that change to take effect.
      * </p>
      * 
      * @param putLoggingOptionsRequest
@@ -1682,6 +1747,128 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
             HttpResponseHandler<AmazonWebServiceResponse<StartPipelineReprocessingResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new StartPipelineReprocessingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds to or modifies the tags of the given resource. Tags are metadata which can be used to manage a resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was not valid.
+     * @throws InternalFailureException
+     *         There was an internal failure.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws LimitExceededException
+     *         The command caused an internal limit to be exceeded.
+     * @throws ResourceNotFoundException
+     *         A resource with the specified name could not be found.
+     * @sample AWSIoTAnalytics.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes the given tags (metadata) from the resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was not valid.
+     * @throws InternalFailureException
+     *         There was an internal failure.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws LimitExceededException
+     *         The command caused an internal limit to be exceeded.
+     * @throws ResourceNotFoundException
+     *         A resource with the specified name could not be found.
+     * @sample AWSIoTAnalytics.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

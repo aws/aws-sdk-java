@@ -98,8 +98,8 @@ public class RegionUtils {
     }
 
     /**
-     * Returns the region with the id given, if it exists. Otherwise, returns
-     * null.
+     * Returns the region with the given regionName and proper partition if found in region metadata.
+     * Otherwise, returns a {@link Region} object with given regionName and aws partition.
      */
     public static Region getRegion(String regionName) {
         return getRegionMetadata().getRegion(regionName);

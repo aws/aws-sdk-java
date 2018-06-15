@@ -26,25 +26,24 @@ import com.amazonaws.services.iotanalytics.model.*;
  * </p>
  * <p>
  * <p>
- * AWS IoT Analytics provides advanced data analysis for AWS IoT. It allows you to collect large amounts of device data,
- * process messages, store them, and then query the data and run sophisticated analytics to make accurate decisions in
- * your IoT applications and machine learning use cases. AWS IoT Analytics enables advanced data exploration through
+ * AWS IoT Analytics allows you to collect large amounts of device data, process messages, and store them. You can then
+ * query the data and run sophisticated analytics on it. AWS IoT Analytics enables advanced data exploration through
  * integration with Jupyter Notebooks and data visualization through integration with Amazon QuickSight.
  * </p>
  * <p>
  * Traditional analytics and business intelligence tools are designed to process structured data. IoT data often comes
- * from devices that record noisy processes (such as temperature, motion, or sound). As a result, the data from these
+ * from devices that record noisy processes (such as temperature, motion, or sound). As a result the data from these
  * devices can have significant gaps, corrupted messages, and false readings that must be cleaned up before analysis can
  * occur. Also, IoT data is often only meaningful in the context of other data from external sources.
  * </p>
  * <p>
- * AWS IoT Analytics automates each of the steps required to analyze data from IoT devices. AWS IoT Analytics filters,
+ * AWS IoT Analytics automates the steps required to analyze data from IoT devices. AWS IoT Analytics filters,
  * transforms, and enriches IoT data before storing it in a time-series data store for analysis. You can set up the
  * service to collect only the data you need from your devices, apply mathematical transforms to process the data, and
  * enrich the data with device-specific metadata such as device type and location before storing it. Then, you can
  * analyze your data by running queries using the built-in SQL query engine, or perform more complex analytics and
- * machine learning inference. AWS IoT Analytics includes models for common IoT use cases so you can answer questions
- * like which devices are about to fail or which customers are at risk of abandoning their wearable devices.
+ * machine learning inference. AWS IoT Analytics includes pre-built models for common IoT use cases so you can answer
+ * questions like which devices are about to fail or which customers are at risk of abandoning their wearable devices.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -756,7 +755,43 @@ public interface AWSIoTAnalyticsAsync extends AWSIoTAnalytics {
 
     /**
      * <p>
+     * Lists the tags (metadata) which you have assigned to the resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSIoTAnalyticsAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Lists the tags (metadata) which you have assigned to the resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSIoTAnalyticsAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Sets or updates the AWS IoT Analytics logging options.
+     * </p>
+     * <p>
+     * Note that if you update the value of any <code>loggingOptions</code> field, it takes up to one minute for the
+     * change to take effect. Also, if you change the policy attached to the role you specified in the roleArn field
+     * (for example, to correct an invalid policy) it takes up to 5 minutes for that change to take effect.
      * </p>
      * 
      * @param putLoggingOptionsRequest
@@ -770,6 +805,11 @@ public interface AWSIoTAnalyticsAsync extends AWSIoTAnalytics {
     /**
      * <p>
      * Sets or updates the AWS IoT Analytics logging options.
+     * </p>
+     * <p>
+     * Note that if you update the value of any <code>loggingOptions</code> field, it takes up to one minute for the
+     * change to take effect. Also, if you change the policy attached to the role you specified in the roleArn field
+     * (for example, to correct an invalid policy) it takes up to 5 minutes for that change to take effect.
      * </p>
      * 
      * @param putLoggingOptionsRequest
@@ -881,6 +921,68 @@ public interface AWSIoTAnalyticsAsync extends AWSIoTAnalytics {
     java.util.concurrent.Future<StartPipelineReprocessingResult> startPipelineReprocessingAsync(
             StartPipelineReprocessingRequest startPipelineReprocessingRequest,
             com.amazonaws.handlers.AsyncHandler<StartPipelineReprocessingRequest, StartPipelineReprocessingResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds to or modifies the tags of the given resource. Tags are metadata which can be used to manage a resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSIoTAnalyticsAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Adds to or modifies the tags of the given resource. Tags are metadata which can be used to manage a resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSIoTAnalyticsAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes the given tags (metadata) from the resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSIoTAnalyticsAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes the given tags (metadata) from the resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSIoTAnalyticsAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
      * <p>

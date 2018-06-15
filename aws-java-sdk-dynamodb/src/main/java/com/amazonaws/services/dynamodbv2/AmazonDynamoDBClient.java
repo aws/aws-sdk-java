@@ -697,8 +697,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         There is another ongoing conflicting backup control plane operation on the table. The backups is either
      *         being created, deleted or restored to a table.
      * @throws LimitExceededException
-     *         Up to 50 <code>CreateBackup</code> operations are allowed per second, per account. There is no limit to
-     *         the number of daily on-demand backups that can be taken. </p>
+     *         There is no limit to the number of daily on-demand backups that can be taken. </p>
      *         <p>
      *         Up to 10 simultaneous table operations are allowed per account. These operations include
      *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
@@ -761,32 +760,28 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * more DynamoDB tables with the same table name in the provided regions.
      * </p>
      * <p>
-     * Tables can only be added as the replicas of a global table group under the following conditions:
+     * If you want to add a new replica table to a global table, each of the following conditions must be true:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The tables must have the same name.
+     * The table must have the same primary key as all of the other replicas.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The tables must contain no items.
+     * The table must have the same name as all of the other replicas.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The tables must have the same hash key and sort key (if present).
+     * The table must have DynamoDB Streams enabled, with the stream containing both the new and the old images of the
+     * item.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The tables must have DynamoDB Streams enabled (NEW_AND_OLD_IMAGES).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The tables must have same provisioned and maximum write capacity units.
+     * None of the replica tables in the global table can contain any data.
      * </p>
      * </li>
      * </ul>
@@ -804,18 +799,24 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * The global secondary indexes must have the same hash key and sort key (if present).
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * The global secondary indexes must have the same provisioned and maximum write capacity units.
-     * </p>
-     * </li>
      * </ul>
+     * <important>
+     * <p>
+     * Write capacity settings should be set consistently across your replica tables and secondary indexes. DynamoDB
+     * strongly recommends enabling auto scaling to manage the write capacity settings for all of your global tables
+     * replicas and indexes.
+     * </p>
+     * <p>
+     * If you prefer to manage write capacity settings manually, you should provision equal replicated write capacity
+     * units to your replica tables. You should also provision equal replicated write capacity units to matching
+     * secondary indexes across your global table.
+     * </p>
+     * </important>
      * 
      * @param createGlobalTableRequest
      * @return Result of the CreateGlobalTable operation returned by the service.
      * @throws LimitExceededException
-     *         Up to 50 <code>CreateBackup</code> operations are allowed per second, per account. There is no limit to
-     *         the number of daily on-demand backups that can be taken. </p>
+     *         There is no limit to the number of daily on-demand backups that can be taken. </p>
      *         <p>
      *         Up to 10 simultaneous table operations are allowed per account. These operations include
      *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
@@ -905,8 +906,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         The operation conflicts with the resource's availability. For example, you attempted to recreate an
      *         existing table, or tried to delete a table currently in the <code>CREATING</code> state.
      * @throws LimitExceededException
-     *         Up to 50 <code>CreateBackup</code> operations are allowed per second, per account. There is no limit to
-     *         the number of daily on-demand backups that can be taken. </p>
+     *         There is no limit to the number of daily on-demand backups that can be taken. </p>
      *         <p>
      *         Up to 10 simultaneous table operations are allowed per account. These operations include
      *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
@@ -986,8 +986,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         There is another ongoing conflicting backup control plane operation on the table. The backups is either
      *         being created, deleted or restored to a table.
      * @throws LimitExceededException
-     *         Up to 50 <code>CreateBackup</code> operations are allowed per second, per account. There is no limit to
-     *         the number of daily on-demand backups that can be taken. </p>
+     *         There is no limit to the number of daily on-demand backups that can be taken. </p>
      *         <p>
      *         Up to 10 simultaneous table operations are allowed per account. These operations include
      *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
@@ -1169,8 +1168,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         The operation tried to access a nonexistent table or index. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
      * @throws LimitExceededException
-     *         Up to 50 <code>CreateBackup</code> operations are allowed per second, per account. There is no limit to
-     *         the number of daily on-demand backups that can be taken. </p>
+     *         There is no limit to the number of daily on-demand backups that can be taken. </p>
      *         <p>
      *         Up to 10 simultaneous table operations are allowed per account. These operations include
      *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
@@ -2383,8 +2381,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         There is another ongoing conflicting backup control plane operation on the table. The backups is either
      *         being created, deleted or restored to a table.
      * @throws LimitExceededException
-     *         Up to 50 <code>CreateBackup</code> operations are allowed per second, per account. There is no limit to
-     *         the number of daily on-demand backups that can be taken. </p>
+     *         There is no limit to the number of daily on-demand backups that can be taken. </p>
      *         <p>
      *         Up to 10 simultaneous table operations are allowed per account. These operations include
      *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
@@ -2532,8 +2529,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @throws TableInUseException
      *         A target table with the specified name is either being created or deleted.
      * @throws LimitExceededException
-     *         Up to 50 <code>CreateBackup</code> operations are allowed per second, per account. There is no limit to
-     *         the number of daily on-demand backups that can be taken. </p>
+     *         There is no limit to the number of daily on-demand backups that can be taken. </p>
      *         <p>
      *         Up to 10 simultaneous table operations are allowed per account. These operations include
      *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
@@ -2717,8 +2713,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
      * @throws LimitExceededException
-     *         Up to 50 <code>CreateBackup</code> operations are allowed per second, per account. There is no limit to
-     *         the number of daily on-demand backups that can be taken. </p>
+     *         There is no limit to the number of daily on-demand backups that can be taken. </p>
      *         <p>
      *         Up to 10 simultaneous table operations are allowed per account. These operations include
      *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
@@ -2795,8 +2790,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
      * @throws LimitExceededException
-     *         Up to 50 <code>CreateBackup</code> operations are allowed per second, per account. There is no limit to
-     *         the number of daily on-demand backups that can be taken. </p>
+     *         There is no limit to the number of daily on-demand backups that can be taken. </p>
      *         <p>
      *         Up to 10 simultaneous table operations are allowed per account. These operations include
      *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
@@ -3031,8 +3025,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @throws IndexNotFoundException
      *         The operation tried to access a nonexistent index.
      * @throws LimitExceededException
-     *         Up to 50 <code>CreateBackup</code> operations are allowed per second, per account. There is no limit to
-     *         the number of daily on-demand backups that can be taken. </p>
+     *         There is no limit to the number of daily on-demand backups that can be taken. </p>
      *         <p>
      *         Up to 10 simultaneous table operations are allowed per account. These operations include
      *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
@@ -3226,8 +3219,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         The operation tried to access a nonexistent table or index. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
      * @throws LimitExceededException
-     *         Up to 50 <code>CreateBackup</code> operations are allowed per second, per account. There is no limit to
-     *         the number of daily on-demand backups that can be taken. </p>
+     *         There is no limit to the number of daily on-demand backups that can be taken. </p>
      *         <p>
      *         Up to 10 simultaneous table operations are allowed per account. These operations include
      *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
@@ -3336,8 +3328,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         The operation tried to access a nonexistent table or index. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
      * @throws LimitExceededException
-     *         Up to 50 <code>CreateBackup</code> operations are allowed per second, per account. There is no limit to
-     *         the number of daily on-demand backups that can be taken. </p>
+     *         There is no limit to the number of daily on-demand backups that can be taken. </p>
      *         <p>
      *         Up to 10 simultaneous table operations are allowed per account. These operations include
      *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,

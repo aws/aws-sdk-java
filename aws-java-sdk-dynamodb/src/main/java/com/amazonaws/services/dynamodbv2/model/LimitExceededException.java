@@ -16,8 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Up to 50 <code>CreateBackup</code> operations are allowed per second, per account. There is no limit to the number of
- * daily on-demand backups that can be taken.
+ * There is no limit to the number of daily on-demand backups that can be taken.
  * </p>
  * <p>
  * Up to 10 simultaneous table operations are allowed per account. These operations include <code>CreateTable</code>,

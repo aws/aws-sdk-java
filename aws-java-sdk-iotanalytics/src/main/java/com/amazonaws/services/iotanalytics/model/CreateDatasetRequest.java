@@ -44,6 +44,12 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private java.util.List<DatasetTrigger> triggers;
+    /**
+     * <p>
+     * Metadata which can be used to manage the data set.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -234,6 +240,76 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * Metadata which can be used to manage the data set.
+     * </p>
+     * 
+     * @return Metadata which can be used to manage the data set.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Metadata which can be used to manage the data set.
+     * </p>
+     * 
+     * @param tags
+     *        Metadata which can be used to manage the data set.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Metadata which can be used to manage the data set.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Metadata which can be used to manage the data set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDatasetRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Metadata which can be used to manage the data set.
+     * </p>
+     * 
+     * @param tags
+     *        Metadata which can be used to manage the data set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDatasetRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -249,7 +325,9 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getActions() != null)
             sb.append("Actions: ").append(getActions()).append(",");
         if (getTriggers() != null)
-            sb.append("Triggers: ").append(getTriggers());
+            sb.append("Triggers: ").append(getTriggers()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -276,6 +354,10 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getTriggers() != null && other.getTriggers().equals(this.getTriggers()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -287,6 +369,7 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getDatasetName() == null) ? 0 : getDatasetName().hashCode());
         hashCode = prime * hashCode + ((getActions() == null) ? 0 : getActions().hashCode());
         hashCode = prime * hashCode + ((getTriggers() == null) ? 0 : getTriggers().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

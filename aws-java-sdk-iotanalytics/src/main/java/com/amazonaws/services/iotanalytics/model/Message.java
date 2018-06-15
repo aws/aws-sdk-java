@@ -30,7 +30,7 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID you wish to assign to the message.
+     * The ID you wish to assign to the message. Each "messageId" must be unique within each batch sent.
      * </p>
      */
     private String messageId;
@@ -43,11 +43,11 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID you wish to assign to the message.
+     * The ID you wish to assign to the message. Each "messageId" must be unique within each batch sent.
      * </p>
      * 
      * @param messageId
-     *        The ID you wish to assign to the message.
+     *        The ID you wish to assign to the message. Each "messageId" must be unique within each batch sent.
      */
 
     public void setMessageId(String messageId) {
@@ -56,10 +56,10 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID you wish to assign to the message.
+     * The ID you wish to assign to the message. Each "messageId" must be unique within each batch sent.
      * </p>
      * 
-     * @return The ID you wish to assign to the message.
+     * @return The ID you wish to assign to the message. Each "messageId" must be unique within each batch sent.
      */
 
     public String getMessageId() {
@@ -68,11 +68,11 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID you wish to assign to the message.
+     * The ID you wish to assign to the message. Each "messageId" must be unique within each batch sent.
      * </p>
      * 
      * @param messageId
-     *        The ID you wish to assign to the message.
+     *        The ID you wish to assign to the message. Each "messageId" must be unique within each batch sent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

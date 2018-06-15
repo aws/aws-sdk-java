@@ -32,6 +32,8 @@ public class CreatePipelineRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pipelineName").build();
     private static final MarshallingInfo<List> PIPELINEACTIVITIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pipelineActivities").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreatePipelineRequestMarshaller instance = new CreatePipelineRequestMarshaller();
 
@@ -51,6 +53,7 @@ public class CreatePipelineRequestMarshaller {
         try {
             protocolMarshaller.marshall(createPipelineRequest.getPipelineName(), PIPELINENAME_BINDING);
             protocolMarshaller.marshall(createPipelineRequest.getPipelineActivities(), PIPELINEACTIVITIES_BINDING);
+            protocolMarshaller.marshall(createPipelineRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

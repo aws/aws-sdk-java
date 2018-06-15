@@ -50,7 +50,7 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * Custom header parameters as part of the request. For example, to exclude <a>DocumentationParts</a> from an
      * imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI command
      * of
-     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json</code>
+     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>
      * .
      * </p>
      */
@@ -251,14 +251,14 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * Custom header parameters as part of the request. For example, to exclude <a>DocumentationParts</a> from an
      * imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI command
      * of
-     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json</code>
+     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>
      * .
      * </p>
      * 
      * @return Custom header parameters as part of the request. For example, to exclude <a>DocumentationParts</a> from
      *         an imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS
      *         CLI command of
-     *         <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json</code>
+     *         <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>
      *         .
      */
 
@@ -271,7 +271,7 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * Custom header parameters as part of the request. For example, to exclude <a>DocumentationParts</a> from an
      * imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI command
      * of
-     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json</code>
+     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>
      * .
      * </p>
      * 
@@ -279,7 +279,7 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        Custom header parameters as part of the request. For example, to exclude <a>DocumentationParts</a> from an
      *        imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI
      *        command of
-     *        <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json</code>
+     *        <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>
      *        .
      */
 
@@ -292,7 +292,7 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * Custom header parameters as part of the request. For example, to exclude <a>DocumentationParts</a> from an
      * imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI command
      * of
-     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json</code>
+     * <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>
      * .
      * </p>
      * 
@@ -300,7 +300,7 @@ public class PutRestApiRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        Custom header parameters as part of the request. For example, to exclude <a>DocumentationParts</a> from an
      *        imported API, set <code>ignore=documentation</code> as a <code>parameters</code> value, as in the AWS CLI
      *        command of
-     *        <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json</code>
+     *        <code>aws apigateway import-rest-api --parameters ignore=documentation --body 'file:///path/to/imported-api-body.json'</code>
      *        .
      * @return Returns a reference to this object so that method calls can be chained together.
      */

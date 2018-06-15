@@ -25,18 +25,18 @@ public class DescribeContinuousBackupsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * <code>ContinuousBackupsDescription</code> can be one of the following : ENABLED, DISABLED.
+     * Represents the continuous backups and point in time recovery settings on the table.
      * </p>
      */
     private ContinuousBackupsDescription continuousBackupsDescription;
 
     /**
      * <p>
-     * <code>ContinuousBackupsDescription</code> can be one of the following : ENABLED, DISABLED.
+     * Represents the continuous backups and point in time recovery settings on the table.
      * </p>
      * 
      * @param continuousBackupsDescription
-     *        <code>ContinuousBackupsDescription</code> can be one of the following : ENABLED, DISABLED.
+     *        Represents the continuous backups and point in time recovery settings on the table.
      */
 
     public void setContinuousBackupsDescription(ContinuousBackupsDescription continuousBackupsDescription) {
@@ -45,10 +45,10 @@ public class DescribeContinuousBackupsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * <code>ContinuousBackupsDescription</code> can be one of the following : ENABLED, DISABLED.
+     * Represents the continuous backups and point in time recovery settings on the table.
      * </p>
      * 
-     * @return <code>ContinuousBackupsDescription</code> can be one of the following : ENABLED, DISABLED.
+     * @return Represents the continuous backups and point in time recovery settings on the table.
      */
 
     public ContinuousBackupsDescription getContinuousBackupsDescription() {
@@ -57,11 +57,11 @@ public class DescribeContinuousBackupsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * <code>ContinuousBackupsDescription</code> can be one of the following : ENABLED, DISABLED.
+     * Represents the continuous backups and point in time recovery settings on the table.
      * </p>
      * 
      * @param continuousBackupsDescription
-     *        <code>ContinuousBackupsDescription</code> can be one of the following : ENABLED, DISABLED.
+     *        Represents the continuous backups and point in time recovery settings on the table.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

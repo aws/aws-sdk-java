@@ -1,3 +1,16 @@
+# __1.11.348__ __2018-06-14__
+## __AWS IoT Analytics__
+  - ### Features
+    - With this release, AWS IoT Analytics allows you to tag resources. Tags are metadata that you can create and use to manage your IoT Analytics resources. For more information about tagging, see AWS Tagging Strategies. For technical documentation, look for the tagging operations in the AWS IoT Analytics API reference or User Guide.
+
+## __Amazon API Gateway__
+  - ### Features
+    - Support for PRIVATE endpoint configuration type
+
+## __Amazon DynamoDB__
+  - ### Features
+    - Added two new fields SSEType and KMSMasterKeyArn to SSEDescription block in describe-table output.
+
 # __1.11.347__ __2018-06-13__
 ## __AWS Service Catalog__
   - ### Features
