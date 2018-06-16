@@ -48,6 +48,7 @@ import com.amazonaws.services.kms.model.EncryptRequest;
 import com.amazonaws.services.kms.model.EncryptResult;
 import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.KeyWrapException;
+import com.amazonaws.services.s3.model.CryptoConfiguration;
 import com.amazonaws.services.s3.model.CryptoMode;
 import com.amazonaws.services.s3.model.EncryptionMaterials;
 import com.amazonaws.services.s3.model.EncryptionMaterialsAccessor;
@@ -631,16 +632,13 @@ final class ContentCryptoMaterial {
      *            description
      * @param targetScheme
      *            the target crypto scheme to be used for key wrapping, etc.
-     * @param provider
-     *            optional security provider; null means to use the default.
      * @throws SecurityException
      *             if the old and new material description are the same; or if
      *             the old and new KEK are the same
      */
     ContentCryptoMaterial recreate(Map<String, String> newKEKMatDesc,
-                                   EncryptionMaterialsAccessor accessor, S3CryptoScheme targetScheme,
-                                   Provider provider, boolean alwaysUseProvider, AWSKMS kms,
-                                   AmazonWebServiceRequest req) {
+            EncryptionMaterialsAccessor accessor, S3CryptoScheme targetScheme,
+            CryptoConfiguration config, AWSKMS kms, AmazonWebServiceRequest req) {
         if (!usesKMSKey() && newKEKMatDesc.equals(kekMaterialsDescription)) {
             throw new SecurityException(
                 "Material description of the new KEK must differ from the current one");
@@ -659,12 +657,12 @@ final class ContentCryptoMaterial {
                     + newKEKMatDesc
                     + " from the encryption material provider");
         }
-        SecretKey cek = cek(encryptedCEK, keyWrappingAlgorithm, origKEK, provider,
+        SecretKey cek = cek(encryptedCEK, keyWrappingAlgorithm, origKEK, config.getCryptoProvider(),
                 getContentCryptoScheme(), kms);
         ContentCryptoMaterial output = create(cek, cipherLite.getIV(), newKEK,
                 getContentCryptoScheme(),  // must use same content crypto scheme
                 targetScheme,
-                provider, alwaysUseProvider, kms, req);
+                config, kms, req);
         if (Arrays.equals(output.encryptedCEK, encryptedCEK)) {
             throw new SecurityException(
                 "The new KEK must differ from the original");
@@ -688,16 +686,13 @@ final class ContentCryptoMaterial {
      * @param targetScheme
      *            the target crypto scheme to use for recreating the content
      *            crypto material
-     * @param provider
-     *            optional security provider; null means to use the default.
      * @throws SecurityException
      *             if the old and new material description are the same; or if
      *             the old and new KEK are the same
      */
     ContentCryptoMaterial recreate(EncryptionMaterials newKEK,
             EncryptionMaterialsAccessor accessor, S3CryptoScheme targetScheme,
-            Provider provider, boolean alwaysUseProvider, AWSKMS kms,
-            AmazonWebServiceRequest req) {
+            CryptoConfiguration config, AWSKMS kms, AmazonWebServiceRequest req) {
         if (!usesKMSKey()
         &&  newKEK.getMaterialsDescription().equals(kekMaterialsDescription)) {
             throw new SecurityException(
@@ -710,13 +705,13 @@ final class ContentCryptoMaterial {
         } else {
             origKEK = accessor.getEncryptionMaterials(kekMaterialsDescription);
         }
-        SecretKey cek = cek(encryptedCEK, keyWrappingAlgorithm, origKEK, provider,
+        SecretKey cek = cek(encryptedCEK, keyWrappingAlgorithm, origKEK, config.getCryptoProvider(),
                 getContentCryptoScheme(), kms);
         ContentCryptoMaterial output =
             create(cek, cipherLite.getIV(), newKEK,
                    getContentCryptoScheme(),  // must use same content crypto scheme
                    targetScheme, // target scheme used to recreate the content crypto material
-                   provider, alwaysUseProvider, kms, req);
+                   config, kms, req);
         if (Arrays.equals(output.encryptedCEK, encryptedCEK)) {
             throw new SecurityException(
                 "The new KEK must differ from the original");
@@ -742,17 +737,15 @@ final class ContentCryptoMaterial {
      *            the target s3 crypto scheme to be used for recreating the
      *            content crypto material by providing the key wrapping scheme
      *            and mechanism for secure randomness
-     * @param provider
-     *            optional security provider
      */
     static ContentCryptoMaterial create(SecretKey cek, byte[] iv,
             EncryptionMaterials kekMaterials,
             ContentCryptoScheme contentCryptoScheme,
             S3CryptoScheme targetScheme,
-            Provider provider, boolean alwaysUseProvider,
-            AWSKMS kms, AmazonWebServiceRequest req) {
+            CryptoConfiguration config, AWSKMS kms,
+            AmazonWebServiceRequest req) {
         return doCreate(cek, iv, kekMaterials, contentCryptoScheme,
-                targetScheme, provider, alwaysUseProvider, kms, req);
+                targetScheme, config, kms, req);
     }
 
     /**
@@ -768,17 +761,17 @@ final class ContentCryptoMaterial {
      *            s3 crypto scheme to be used for the content crypto material by
      *            providing the content crypto scheme, key wrapping scheme and
      *            mechanism for secure randomness
-     * @param provider optional security provider
+     * @param config crypto configuration
      * @param kms reference to the KMS client
      * @param req originating service request
      */
     static ContentCryptoMaterial create(SecretKey cek, byte[] iv,
             EncryptionMaterials kekMaterials,
             S3CryptoScheme scheme,
-            Provider provider, boolean alwaysUseProvider,
-            AWSKMS kms, AmazonWebServiceRequest req) {
+            CryptoConfiguration config, AWSKMS kms,
+            AmazonWebServiceRequest req) {
         return doCreate(cek, iv, kekMaterials, scheme.getContentCryptoScheme(),
-                scheme, provider, alwaysUseProvider, kms, req);
+                scheme, config, kms, req);
     }
 
     /**
@@ -801,8 +794,8 @@ final class ContentCryptoMaterial {
      * @param targetS3CryptoScheme
      *            the target s3 crypto scheme to be used for providing the key
      *            wrapping scheme and mechanism for secure randomness
-     * @param provider
-     *            security provider
+     * @param config
+     *            crypto configuration
      * @param kms
      *            reference to the KMS client
      * @param req
@@ -812,17 +805,16 @@ final class ContentCryptoMaterial {
             EncryptionMaterials kekMaterials,
             ContentCryptoScheme contentCryptoScheme,
             S3CryptoScheme targetS3CryptoScheme,
-            Provider provider,
-            boolean alwaysUseProvider,
+            CryptoConfiguration config,
             AWSKMS kms,
             AmazonWebServiceRequest req) {
         // Secure the envelope symmetric key either by encryption, key wrapping
         // or KMS.
         SecuredCEK cekSecured = secureCEK(cek, kekMaterials,
                 targetS3CryptoScheme.getKeyWrapScheme(),
-                targetS3CryptoScheme.getSecureRandom(),
-                provider, kms, req);
-        return wrap(cek, iv, contentCryptoScheme, provider, alwaysUseProvider, cekSecured);
+                config, kms, req);
+        return wrap(cek, iv, contentCryptoScheme, config.getCryptoProvider(),
+                config.getAlwaysUseCryptoProvider(), cekSecured);
     }
 
     /**
@@ -851,13 +843,13 @@ final class ContentCryptoMaterial {
      * @param cek content encrypting key to be secured
      * @param materials used to provide the key-encryption-key (KEK); or if
      * it is KMS-enabled, the customer master key id and material description.
-     * @param kwScheme the key wrapping scheme.
-     * @param p optional security provider; can be null if the default is used.
+     * @param kwScheme the key wrap scheme
+     * @param config crypto configuration
      * @return a secured CEK in the form of ciphertext or ciphertext blob.
      */
     private static SecuredCEK secureCEK(SecretKey cek,
             EncryptionMaterials materials, S3KeyWrapScheme kwScheme,
-            SecureRandom srand, Provider p, AWSKMS kms,
+            CryptoConfiguration config, AWSKMS kms,
             AmazonWebServiceRequest req) {
         final Map<String,String> matdesc;
 
@@ -887,11 +879,13 @@ final class ContentCryptoMaterial {
             kek = materials.getSymmetricKey();
         }
         String keyWrapAlgo = kwScheme.getKeyWrapAlgorithm(kek);
+        Provider provider = config.getCryptoProvider();
+        SecureRandom srand = config.getSecureRandom();
         try {
             if (keyWrapAlgo != null) {
-                Cipher cipher = p == null ? Cipher
+                Cipher cipher = provider == null ? Cipher
                         .getInstance(keyWrapAlgo) : Cipher.getInstance(
-                        keyWrapAlgo, p);
+                        keyWrapAlgo, provider);
                 cipher.init(Cipher.WRAP_MODE, kek, srand);
                 return new SecuredCEK(cipher.wrap(cek), keyWrapAlgo, matdesc);
             }
@@ -899,8 +893,8 @@ final class ContentCryptoMaterial {
             Cipher cipher;
             byte[] toBeEncryptedBytes = cek.getEncoded();
             String algo = kek.getAlgorithm();
-            if (p != null) {
-                cipher = Cipher.getInstance(algo, p);
+            if (provider != null) {
+                cipher = Cipher.getInstance(algo, provider);
             } else {
                 cipher = Cipher.getInstance(algo); // Use default JCE Provider
             }

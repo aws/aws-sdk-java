@@ -16,6 +16,7 @@ package com.amazonaws.services.s3.model;
 import java.io.Serializable;
 
 import java.security.Provider;
+import java.security.SecureRandom;
 
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
@@ -32,10 +33,13 @@ public class CryptoConfiguration implements Cloneable,Serializable {
 
     private static final long serialVersionUID = -8646831898339939580L;
 
+    private static final SecureRandom SRAND = new SecureRandom();
+
     private CryptoMode cryptoMode;
     private CryptoStorageMode storageMode;
     private Provider cryptoProvider;
     private boolean alwaysUseCryptoProvider;
+    private SecureRandom secureRandom;
 
     /**
      * True to ignore instruction file that cannot be found during a GET
@@ -77,6 +81,7 @@ public class CryptoConfiguration implements Cloneable,Serializable {
         // A null value implies that the default JCE crypto provider will be
         // used
         this.cryptoProvider = null;
+        this.secureRandom = SRAND;
         this.cryptoMode = cryptoMode;
     }
 
@@ -178,6 +183,31 @@ public class CryptoConfiguration implements Cloneable,Serializable {
      */
     public boolean getAlwaysUseCryptoProvider() {
         return alwaysUseCryptoProvider;
+    }
+
+    /**
+     * Returns the SecureRandom instance that will be used to generate
+     * cryptographic parameters.
+     */
+    public SecureRandom getSecureRandom() {
+        return secureRandom;
+    }
+
+    /**
+     * Sets the secure random instance to use for generating cryptographic
+     * parameters.
+     */
+    public void setSecureRandom(SecureRandom secureRandom) {
+        this.secureRandom = secureRandom;
+    }
+
+    /**
+     * Sets the secure random instance to use for generating cryptographic
+     * parameters, and returns this object.
+     */
+    public CryptoConfiguration withSecureRandom(SecureRandom secureRandom) {
+        this.secureRandom = secureRandom;
+        return this;
     }
 
     /**
@@ -313,6 +343,12 @@ public class CryptoConfiguration implements Cloneable,Serializable {
         @Override public CryptoConfiguration withAlwaysUseCryptoProvider(boolean value) {
             throw new UnsupportedOperationException();
         }
+        @Override public void setSecureRandom(SecureRandom random) {
+            throw new UnsupportedOperationException();
+        }
+        @Override public CryptoConfiguration withSecureRandom(SecureRandom random) {
+            throw new UnsupportedOperationException();
+        }
         @Override public void setCryptoMode(CryptoMode cryptoMode) {
             throw new UnsupportedOperationException();
         }
@@ -354,6 +390,7 @@ public class CryptoConfiguration implements Cloneable,Serializable {
         that.storageMode = this.storageMode;
         that.cryptoProvider = this.cryptoProvider;
         that.alwaysUseCryptoProvider = this.alwaysUseCryptoProvider;
+        that.secureRandom = this.secureRandom;
         that.ignoreMissingInstructionFile = this.ignoreMissingInstructionFile;
         that.awskmsRegion = this.awskmsRegion;
         return that;

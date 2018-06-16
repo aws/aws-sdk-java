@@ -26,8 +26,7 @@ final class S3CryptoScheme {
     // http://docs.oracle.com/javase/7/docs/technotes/guides/security/StandardNames.html
     // http://docs.oracle.com/javase/7/docs/technotes/guides/security/crypto/CryptoSpec.html#Key
     static final String AES = "AES"; 
-    static final String RSA = "RSA"; 
-    private static final SecureRandom srand = new SecureRandom();
+    static final String RSA = "RSA";
     private final S3KeyWrapScheme kwScheme;
 
     private final ContentCryptoScheme contentCryptoScheme;
@@ -38,8 +37,6 @@ final class S3CryptoScheme {
         this.kwScheme = kwScheme;
     }
 
-    SecureRandom getSecureRandom() { return srand; }
-    
     ContentCryptoScheme getContentCryptoScheme() {
         return contentCryptoScheme;
     }
