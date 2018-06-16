@@ -177,10 +177,10 @@ abstract class ContentCryptoScheme {
         String specificProvider = getSpecificCipherProvider();
         Cipher cipher;
         try {
-            if (specificProvider != null) { // use the specific provider if defined
-                    cipher = Cipher.getInstance(getCipherAlgorithm(), specificProvider);
-            } else if (securityProvider != null) { // use the one optionally specified in the input
+            if (securityProvider != null) { // use the one optionally specified in the input
                 cipher = Cipher.getInstance(getCipherAlgorithm(), securityProvider);
+            } else if (specificProvider != null) { // use the specific provider if defined
+                    cipher = Cipher.getInstance(getCipherAlgorithm(), specificProvider);
             } else { // use the default provider
                 cipher = Cipher.getInstance(getCipherAlgorithm());
             }

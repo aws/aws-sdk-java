@@ -233,8 +233,8 @@ public class CryptoConfiguration implements Cloneable,Serializable {
      *             specified crypto mode.
      */
     private void check(CryptoMode cryptoMode) {
-        if (cryptoMode == CryptoMode.AuthenticatedEncryption
-                || cryptoMode == CryptoMode.StrictAuthenticatedEncryption) {
+        if (cryptoProvider == null && (cryptoMode == CryptoMode.AuthenticatedEncryption
+                || cryptoMode == CryptoMode.StrictAuthenticatedEncryption)) {
             if (!CryptoRuntime.isBouncyCastleAvailable()) {
                 CryptoRuntime.enableBouncyCastle();
                 if (!CryptoRuntime.isBouncyCastleAvailable()) {
