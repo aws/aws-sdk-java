@@ -37,6 +37,8 @@ public class AudioDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioTypeControl").build();
     private static final MarshallingInfo<StructuredPojo> CODECSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("codecSettings").build();
+    private static final MarshallingInfo<String> CUSTOMLANGUAGECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customLanguageCode").build();
     private static final MarshallingInfo<String> LANGUAGECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("languageCode").build();
     private static final MarshallingInfo<String> LANGUAGECODECONTROL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -67,6 +69,7 @@ public class AudioDescriptionMarshaller {
             protocolMarshaller.marshall(audioDescription.getAudioType(), AUDIOTYPE_BINDING);
             protocolMarshaller.marshall(audioDescription.getAudioTypeControl(), AUDIOTYPECONTROL_BINDING);
             protocolMarshaller.marshall(audioDescription.getCodecSettings(), CODECSETTINGS_BINDING);
+            protocolMarshaller.marshall(audioDescription.getCustomLanguageCode(), CUSTOMLANGUAGECODE_BINDING);
             protocolMarshaller.marshall(audioDescription.getLanguageCode(), LANGUAGECODE_BINDING);
             protocolMarshaller.marshall(audioDescription.getLanguageCodeControl(), LANGUAGECODECONTROL_BINDING);
             protocolMarshaller.marshall(audioDescription.getRemixSettings(), REMIXSETTINGS_BINDING);

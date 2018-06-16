@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CaptionSelectorMarshaller {
 
+    private static final MarshallingInfo<String> CUSTOMLANGUAGECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customLanguageCode").build();
     private static final MarshallingInfo<String> LANGUAGECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("languageCode").build();
     private static final MarshallingInfo<StructuredPojo> SOURCESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -48,6 +50,7 @@ public class CaptionSelectorMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(captionSelector.getCustomLanguageCode(), CUSTOMLANGUAGECODE_BINDING);
             protocolMarshaller.marshall(captionSelector.getLanguageCode(), LANGUAGECODE_BINDING);
             protocolMarshaller.marshall(captionSelector.getSourceSettings(), SOURCESETTINGS_BINDING);
         } catch (Exception e) {

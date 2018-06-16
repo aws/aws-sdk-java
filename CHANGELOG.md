@@ -1,3 +1,8 @@
+# __1.11.349__ __2018-06-15__
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - This release adds language code support according to the ISO-639-3 standard. Custom 3-character language codes are now supported on input and output for both audio and captions.
+
 # __1.11.348__ __2018-06-14__
 ## __AWS IoT Analytics__
   - ### Features

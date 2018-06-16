@@ -26,6 +26,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AudioSelector implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * Selects a specific language code from within an audio source, using the ISO 639-2 or ISO 639-3 three-letter
+     * language code
+     */
+    private String customLanguageCode;
+
     private String defaultSelection;
     /** Specifies audio data from an external file source. */
     private String externalAudioFileInput;
@@ -58,6 +64,46 @@ public class AudioSelector implements Serializable, Cloneable, StructuredPojo {
      * file, provide the track numbers in an array. For example, "tracks": [1,2,3].
      */
     private java.util.List<Integer> tracks;
+
+    /**
+     * Selects a specific language code from within an audio source, using the ISO 639-2 or ISO 639-3 three-letter
+     * language code
+     * 
+     * @param customLanguageCode
+     *        Selects a specific language code from within an audio source, using the ISO 639-2 or ISO 639-3
+     *        three-letter language code
+     */
+
+    public void setCustomLanguageCode(String customLanguageCode) {
+        this.customLanguageCode = customLanguageCode;
+    }
+
+    /**
+     * Selects a specific language code from within an audio source, using the ISO 639-2 or ISO 639-3 three-letter
+     * language code
+     * 
+     * @return Selects a specific language code from within an audio source, using the ISO 639-2 or ISO 639-3
+     *         three-letter language code
+     */
+
+    public String getCustomLanguageCode() {
+        return this.customLanguageCode;
+    }
+
+    /**
+     * Selects a specific language code from within an audio source, using the ISO 639-2 or ISO 639-3 three-letter
+     * language code
+     * 
+     * @param customLanguageCode
+     *        Selects a specific language code from within an audio source, using the ISO 639-2 or ISO 639-3
+     *        three-letter language code
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AudioSelector withCustomLanguageCode(String customLanguageCode) {
+        setCustomLanguageCode(customLanguageCode);
+        return this;
+    }
 
     /**
      * @param defaultSelection
@@ -522,6 +568,8 @@ public class AudioSelector implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCustomLanguageCode() != null)
+            sb.append("CustomLanguageCode: ").append(getCustomLanguageCode()).append(",");
         if (getDefaultSelection() != null)
             sb.append("DefaultSelection: ").append(getDefaultSelection()).append(",");
         if (getExternalAudioFileInput() != null)
@@ -554,6 +602,10 @@ public class AudioSelector implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof AudioSelector == false)
             return false;
         AudioSelector other = (AudioSelector) obj;
+        if (other.getCustomLanguageCode() == null ^ this.getCustomLanguageCode() == null)
+            return false;
+        if (other.getCustomLanguageCode() != null && other.getCustomLanguageCode().equals(this.getCustomLanguageCode()) == false)
+            return false;
         if (other.getDefaultSelection() == null ^ this.getDefaultSelection() == null)
             return false;
         if (other.getDefaultSelection() != null && other.getDefaultSelection().equals(this.getDefaultSelection()) == false)
@@ -598,6 +650,7 @@ public class AudioSelector implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCustomLanguageCode() == null) ? 0 : getCustomLanguageCode().hashCode());
         hashCode = prime * hashCode + ((getDefaultSelection() == null) ? 0 : getDefaultSelection().hashCode());
         hashCode = prime * hashCode + ((getExternalAudioFileInput() == null) ? 0 : getExternalAudioFileInput().hashCode());
         hashCode = prime * hashCode + ((getLanguageCode() == null) ? 0 : getLanguageCode().hashCode());

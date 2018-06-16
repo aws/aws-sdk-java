@@ -27,6 +27,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class CaptionSelector implements Serializable, Cloneable, StructuredPojo {
 
     /**
+     * The specific language to extract from source, using the ISO 639-2 or ISO 639-3 three-letter language code. If
+     * input is SCTE-27, complete this field and/or PID to select the caption language to extract. If input is DVB-Sub
+     * and output is Burn-in or SMPTE-TT, complete this field and/or PID to select the caption language to extract. If
+     * input is DVB-Sub that is being passed through, omit this field (and PID field); there is no way to extract a
+     * specific language with pass-through captions.
+     */
+    private String customLanguageCode;
+    /**
      * The specific language to extract from source. If input is SCTE-27, complete this field and/or PID to select the
      * caption language to extract. If input is DVB-Sub and output is Burn-in or SMPTE-TT, complete this field and/or
      * PID to select the caption language to extract. If input is DVB-Sub that is being passed through, omit this field
@@ -35,6 +43,64 @@ public class CaptionSelector implements Serializable, Cloneable, StructuredPojo 
     private String languageCode;
 
     private CaptionSourceSettings sourceSettings;
+
+    /**
+     * The specific language to extract from source, using the ISO 639-2 or ISO 639-3 three-letter language code. If
+     * input is SCTE-27, complete this field and/or PID to select the caption language to extract. If input is DVB-Sub
+     * and output is Burn-in or SMPTE-TT, complete this field and/or PID to select the caption language to extract. If
+     * input is DVB-Sub that is being passed through, omit this field (and PID field); there is no way to extract a
+     * specific language with pass-through captions.
+     * 
+     * @param customLanguageCode
+     *        The specific language to extract from source, using the ISO 639-2 or ISO 639-3 three-letter language code.
+     *        If input is SCTE-27, complete this field and/or PID to select the caption language to extract. If input is
+     *        DVB-Sub and output is Burn-in or SMPTE-TT, complete this field and/or PID to select the caption language
+     *        to extract. If input is DVB-Sub that is being passed through, omit this field (and PID field); there is no
+     *        way to extract a specific language with pass-through captions.
+     */
+
+    public void setCustomLanguageCode(String customLanguageCode) {
+        this.customLanguageCode = customLanguageCode;
+    }
+
+    /**
+     * The specific language to extract from source, using the ISO 639-2 or ISO 639-3 three-letter language code. If
+     * input is SCTE-27, complete this field and/or PID to select the caption language to extract. If input is DVB-Sub
+     * and output is Burn-in or SMPTE-TT, complete this field and/or PID to select the caption language to extract. If
+     * input is DVB-Sub that is being passed through, omit this field (and PID field); there is no way to extract a
+     * specific language with pass-through captions.
+     * 
+     * @return The specific language to extract from source, using the ISO 639-2 or ISO 639-3 three-letter language
+     *         code. If input is SCTE-27, complete this field and/or PID to select the caption language to extract. If
+     *         input is DVB-Sub and output is Burn-in or SMPTE-TT, complete this field and/or PID to select the caption
+     *         language to extract. If input is DVB-Sub that is being passed through, omit this field (and PID field);
+     *         there is no way to extract a specific language with pass-through captions.
+     */
+
+    public String getCustomLanguageCode() {
+        return this.customLanguageCode;
+    }
+
+    /**
+     * The specific language to extract from source, using the ISO 639-2 or ISO 639-3 three-letter language code. If
+     * input is SCTE-27, complete this field and/or PID to select the caption language to extract. If input is DVB-Sub
+     * and output is Burn-in or SMPTE-TT, complete this field and/or PID to select the caption language to extract. If
+     * input is DVB-Sub that is being passed through, omit this field (and PID field); there is no way to extract a
+     * specific language with pass-through captions.
+     * 
+     * @param customLanguageCode
+     *        The specific language to extract from source, using the ISO 639-2 or ISO 639-3 three-letter language code.
+     *        If input is SCTE-27, complete this field and/or PID to select the caption language to extract. If input is
+     *        DVB-Sub and output is Burn-in or SMPTE-TT, complete this field and/or PID to select the caption language
+     *        to extract. If input is DVB-Sub that is being passed through, omit this field (and PID field); there is no
+     *        way to extract a specific language with pass-through captions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CaptionSelector withCustomLanguageCode(String customLanguageCode) {
+        setCustomLanguageCode(customLanguageCode);
+        return this;
+    }
 
     /**
      * The specific language to extract from source. If input is SCTE-27, complete this field and/or PID to select the
@@ -152,6 +218,8 @@ public class CaptionSelector implements Serializable, Cloneable, StructuredPojo 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCustomLanguageCode() != null)
+            sb.append("CustomLanguageCode: ").append(getCustomLanguageCode()).append(",");
         if (getLanguageCode() != null)
             sb.append("LanguageCode: ").append(getLanguageCode()).append(",");
         if (getSourceSettings() != null)
@@ -170,6 +238,10 @@ public class CaptionSelector implements Serializable, Cloneable, StructuredPojo 
         if (obj instanceof CaptionSelector == false)
             return false;
         CaptionSelector other = (CaptionSelector) obj;
+        if (other.getCustomLanguageCode() == null ^ this.getCustomLanguageCode() == null)
+            return false;
+        if (other.getCustomLanguageCode() != null && other.getCustomLanguageCode().equals(this.getCustomLanguageCode()) == false)
+            return false;
         if (other.getLanguageCode() == null ^ this.getLanguageCode() == null)
             return false;
         if (other.getLanguageCode() != null && other.getLanguageCode().equals(this.getLanguageCode()) == false)
@@ -186,6 +258,7 @@ public class CaptionSelector implements Serializable, Cloneable, StructuredPojo 
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCustomLanguageCode() == null) ? 0 : getCustomLanguageCode().hashCode());
         hashCode = prime * hashCode + ((getLanguageCode() == null) ? 0 : getLanguageCode().hashCode());
         hashCode = prime * hashCode + ((getSourceSettings() == null) ? 0 : getSourceSettings().hashCode());
         return hashCode;

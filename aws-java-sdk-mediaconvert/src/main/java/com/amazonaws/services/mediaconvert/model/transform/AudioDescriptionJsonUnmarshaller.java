@@ -68,6 +68,10 @@ public class AudioDescriptionJsonUnmarshaller implements Unmarshaller<AudioDescr
                     context.nextToken();
                     audioDescription.setCodecSettings(AudioCodecSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("customLanguageCode", targetDepth)) {
+                    context.nextToken();
+                    audioDescription.setCustomLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("languageCode", targetDepth)) {
                     context.nextToken();
                     audioDescription.setLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));

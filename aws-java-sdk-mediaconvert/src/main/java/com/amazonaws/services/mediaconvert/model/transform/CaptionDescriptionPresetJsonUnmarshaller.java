@@ -48,6 +48,10 @@ public class CaptionDescriptionPresetJsonUnmarshaller implements Unmarshaller<Ca
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("customLanguageCode", targetDepth)) {
+                    context.nextToken();
+                    captionDescriptionPreset.setCustomLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("destinationSettings", targetDepth)) {
                     context.nextToken();
                     captionDescriptionPreset.setDestinationSettings(CaptionDestinationSettingsJsonUnmarshaller.getInstance().unmarshall(context));

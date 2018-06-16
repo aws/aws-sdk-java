@@ -52,6 +52,10 @@ public class HlsCaptionLanguageMappingJsonUnmarshaller implements Unmarshaller<H
                     context.nextToken();
                     hlsCaptionLanguageMapping.setCaptionChannel(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("customLanguageCode", targetDepth)) {
+                    context.nextToken();
+                    hlsCaptionLanguageMapping.setCustomLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("languageCode", targetDepth)) {
                     context.nextToken();
                     hlsCaptionLanguageMapping.setLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));

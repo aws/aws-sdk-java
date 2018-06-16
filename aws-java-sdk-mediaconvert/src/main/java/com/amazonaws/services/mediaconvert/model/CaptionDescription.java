@@ -32,6 +32,8 @@ public class CaptionDescription implements Serializable, Cloneable, StructuredPo
      * from each input.
      */
     private String captionSelectorName;
+    /** Indicates the language of the caption output track, using the ISO 639-2 or ISO 639-3 three-letter language code */
+    private String customLanguageCode;
 
     private CaptionDestinationSettings destinationSettings;
     /** Indicates the language of the caption output track. */
@@ -85,6 +87,43 @@ public class CaptionDescription implements Serializable, Cloneable, StructuredPo
 
     public CaptionDescription withCaptionSelectorName(String captionSelectorName) {
         setCaptionSelectorName(captionSelectorName);
+        return this;
+    }
+
+    /**
+     * Indicates the language of the caption output track, using the ISO 639-2 or ISO 639-3 three-letter language code
+     * 
+     * @param customLanguageCode
+     *        Indicates the language of the caption output track, using the ISO 639-2 or ISO 639-3 three-letter language
+     *        code
+     */
+
+    public void setCustomLanguageCode(String customLanguageCode) {
+        this.customLanguageCode = customLanguageCode;
+    }
+
+    /**
+     * Indicates the language of the caption output track, using the ISO 639-2 or ISO 639-3 three-letter language code
+     * 
+     * @return Indicates the language of the caption output track, using the ISO 639-2 or ISO 639-3 three-letter
+     *         language code
+     */
+
+    public String getCustomLanguageCode() {
+        return this.customLanguageCode;
+    }
+
+    /**
+     * Indicates the language of the caption output track, using the ISO 639-2 or ISO 639-3 three-letter language code
+     * 
+     * @param customLanguageCode
+     *        Indicates the language of the caption output track, using the ISO 639-2 or ISO 639-3 three-letter language
+     *        code
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CaptionDescription withCustomLanguageCode(String customLanguageCode) {
+        setCustomLanguageCode(customLanguageCode);
         return this;
     }
 
@@ -218,6 +257,8 @@ public class CaptionDescription implements Serializable, Cloneable, StructuredPo
         sb.append("{");
         if (getCaptionSelectorName() != null)
             sb.append("CaptionSelectorName: ").append(getCaptionSelectorName()).append(",");
+        if (getCustomLanguageCode() != null)
+            sb.append("CustomLanguageCode: ").append(getCustomLanguageCode()).append(",");
         if (getDestinationSettings() != null)
             sb.append("DestinationSettings: ").append(getDestinationSettings()).append(",");
         if (getLanguageCode() != null)
@@ -242,6 +283,10 @@ public class CaptionDescription implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getCaptionSelectorName() != null && other.getCaptionSelectorName().equals(this.getCaptionSelectorName()) == false)
             return false;
+        if (other.getCustomLanguageCode() == null ^ this.getCustomLanguageCode() == null)
+            return false;
+        if (other.getCustomLanguageCode() != null && other.getCustomLanguageCode().equals(this.getCustomLanguageCode()) == false)
+            return false;
         if (other.getDestinationSettings() == null ^ this.getDestinationSettings() == null)
             return false;
         if (other.getDestinationSettings() != null && other.getDestinationSettings().equals(this.getDestinationSettings()) == false)
@@ -263,6 +308,7 @@ public class CaptionDescription implements Serializable, Cloneable, StructuredPo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCaptionSelectorName() == null) ? 0 : getCaptionSelectorName().hashCode());
+        hashCode = prime * hashCode + ((getCustomLanguageCode() == null) ? 0 : getCustomLanguageCode().hashCode());
         hashCode = prime * hashCode + ((getDestinationSettings() == null) ? 0 : getDestinationSettings().hashCode());
         hashCode = prime * hashCode + ((getLanguageCode() == null) ? 0 : getLanguageCode().hashCode());
         hashCode = prime * hashCode + ((getLanguageDescription() == null) ? 0 : getLanguageDescription().hashCode());

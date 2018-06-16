@@ -52,6 +52,10 @@ public class CaptionDescriptionJsonUnmarshaller implements Unmarshaller<CaptionD
                     context.nextToken();
                     captionDescription.setCaptionSelectorName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("customLanguageCode", targetDepth)) {
+                    context.nextToken();
+                    captionDescription.setCustomLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("destinationSettings", targetDepth)) {
                     context.nextToken();
                     captionDescription.setDestinationSettings(CaptionDestinationSettingsJsonUnmarshaller.getInstance().unmarshall(context));

@@ -48,6 +48,10 @@ public class CaptionSelectorJsonUnmarshaller implements Unmarshaller<CaptionSele
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("customLanguageCode", targetDepth)) {
+                    context.nextToken();
+                    captionSelector.setCustomLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("languageCode", targetDepth)) {
                     context.nextToken();
                     captionSelector.setLanguageCode(context.getUnmarshaller(String.class).unmarshall(context));

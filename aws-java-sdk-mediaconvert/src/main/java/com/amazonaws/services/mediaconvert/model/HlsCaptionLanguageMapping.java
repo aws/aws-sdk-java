@@ -28,6 +28,8 @@ public class HlsCaptionLanguageMapping implements Serializable, Cloneable, Struc
 
     /** Caption channel. */
     private Integer captionChannel;
+    /** Specify the language for this caption channel, using the ISO 639-2 or ISO 639-3 three-letter language code */
+    private String customLanguageCode;
 
     private String languageCode;
     /** Caption language description. */
@@ -64,6 +66,41 @@ public class HlsCaptionLanguageMapping implements Serializable, Cloneable, Struc
 
     public HlsCaptionLanguageMapping withCaptionChannel(Integer captionChannel) {
         setCaptionChannel(captionChannel);
+        return this;
+    }
+
+    /**
+     * Specify the language for this caption channel, using the ISO 639-2 or ISO 639-3 three-letter language code
+     * 
+     * @param customLanguageCode
+     *        Specify the language for this caption channel, using the ISO 639-2 or ISO 639-3 three-letter language code
+     */
+
+    public void setCustomLanguageCode(String customLanguageCode) {
+        this.customLanguageCode = customLanguageCode;
+    }
+
+    /**
+     * Specify the language for this caption channel, using the ISO 639-2 or ISO 639-3 three-letter language code
+     * 
+     * @return Specify the language for this caption channel, using the ISO 639-2 or ISO 639-3 three-letter language
+     *         code
+     */
+
+    public String getCustomLanguageCode() {
+        return this.customLanguageCode;
+    }
+
+    /**
+     * Specify the language for this caption channel, using the ISO 639-2 or ISO 639-3 three-letter language code
+     * 
+     * @param customLanguageCode
+     *        Specify the language for this caption channel, using the ISO 639-2 or ISO 639-3 three-letter language code
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HlsCaptionLanguageMapping withCustomLanguageCode(String customLanguageCode) {
+        setCustomLanguageCode(customLanguageCode);
         return this;
     }
 
@@ -154,6 +191,8 @@ public class HlsCaptionLanguageMapping implements Serializable, Cloneable, Struc
         sb.append("{");
         if (getCaptionChannel() != null)
             sb.append("CaptionChannel: ").append(getCaptionChannel()).append(",");
+        if (getCustomLanguageCode() != null)
+            sb.append("CustomLanguageCode: ").append(getCustomLanguageCode()).append(",");
         if (getLanguageCode() != null)
             sb.append("LanguageCode: ").append(getLanguageCode()).append(",");
         if (getLanguageDescription() != null)
@@ -176,6 +215,10 @@ public class HlsCaptionLanguageMapping implements Serializable, Cloneable, Struc
             return false;
         if (other.getCaptionChannel() != null && other.getCaptionChannel().equals(this.getCaptionChannel()) == false)
             return false;
+        if (other.getCustomLanguageCode() == null ^ this.getCustomLanguageCode() == null)
+            return false;
+        if (other.getCustomLanguageCode() != null && other.getCustomLanguageCode().equals(this.getCustomLanguageCode()) == false)
+            return false;
         if (other.getLanguageCode() == null ^ this.getLanguageCode() == null)
             return false;
         if (other.getLanguageCode() != null && other.getLanguageCode().equals(this.getLanguageCode()) == false)
@@ -193,6 +236,7 @@ public class HlsCaptionLanguageMapping implements Serializable, Cloneable, Struc
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCaptionChannel() == null) ? 0 : getCaptionChannel().hashCode());
+        hashCode = prime * hashCode + ((getCustomLanguageCode() == null) ? 0 : getCustomLanguageCode().hashCode());
         hashCode = prime * hashCode + ((getLanguageCode() == null) ? 0 : getLanguageCode().hashCode());
         hashCode = prime * hashCode + ((getLanguageDescription() == null) ? 0 : getLanguageDescription().hashCode());
         return hashCode;
