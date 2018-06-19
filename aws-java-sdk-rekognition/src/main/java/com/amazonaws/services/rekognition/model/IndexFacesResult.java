@@ -20,7 +20,8 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An array of faces detected and added to the collection. For more information, see <a>collections-index-faces</a>.
+     * An array of faces detected and added to the collection. For more information, see Searching Faces in a Collection
+     * in the Amazon Rekognition Developer Guide.
      * </p>
      */
     private java.util.List<FaceRecord> faceRecords;
@@ -49,11 +50,12 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An array of faces detected and added to the collection. For more information, see <a>collections-index-faces</a>.
+     * An array of faces detected and added to the collection. For more information, see Searching Faces in a Collection
+     * in the Amazon Rekognition Developer Guide.
      * </p>
      * 
-     * @return An array of faces detected and added to the collection. For more information, see
-     *         <a>collections-index-faces</a>.
+     * @return An array of faces detected and added to the collection. For more information, see Searching Faces in a
+     *         Collection in the Amazon Rekognition Developer Guide.
      */
 
     public java.util.List<FaceRecord> getFaceRecords() {
@@ -62,12 +64,13 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An array of faces detected and added to the collection. For more information, see <a>collections-index-faces</a>.
+     * An array of faces detected and added to the collection. For more information, see Searching Faces in a Collection
+     * in the Amazon Rekognition Developer Guide.
      * </p>
      * 
      * @param faceRecords
-     *        An array of faces detected and added to the collection. For more information, see
-     *        <a>collections-index-faces</a>.
+     *        An array of faces detected and added to the collection. For more information, see Searching Faces in a
+     *        Collection in the Amazon Rekognition Developer Guide.
      */
 
     public void setFaceRecords(java.util.Collection<FaceRecord> faceRecords) {
@@ -81,7 +84,8 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An array of faces detected and added to the collection. For more information, see <a>collections-index-faces</a>.
+     * An array of faces detected and added to the collection. For more information, see Searching Faces in a Collection
+     * in the Amazon Rekognition Developer Guide.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -90,8 +94,8 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param faceRecords
-     *        An array of faces detected and added to the collection. For more information, see
-     *        <a>collections-index-faces</a>.
+     *        An array of faces detected and added to the collection. For more information, see Searching Faces in a
+     *        Collection in the Amazon Rekognition Developer Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,12 +111,13 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An array of faces detected and added to the collection. For more information, see <a>collections-index-faces</a>.
+     * An array of faces detected and added to the collection. For more information, see Searching Faces in a Collection
+     * in the Amazon Rekognition Developer Guide.
      * </p>
      * 
      * @param faceRecords
-     *        An array of faces detected and added to the collection. For more information, see
-     *        <a>collections-index-faces</a>.
+     *        An array of faces detected and added to the collection. For more information, see Searching Faces in a
+     *        Collection in the Amazon Rekognition Developer Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

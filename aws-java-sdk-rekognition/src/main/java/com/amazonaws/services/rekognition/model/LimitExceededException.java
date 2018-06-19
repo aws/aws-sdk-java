@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An Amazon Rekognition service limit was exceeded. For example, if you start too many Rekognition Video jobs
+ * An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition Video jobs
  * concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will raise a
  * <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of concurrently running jobs
  * is below the Amazon Rekognition service limit.

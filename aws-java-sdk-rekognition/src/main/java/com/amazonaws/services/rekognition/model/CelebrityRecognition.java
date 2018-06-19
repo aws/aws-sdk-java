@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Information about a detected celebrity and the time the celebrity was detected in a stored video. For more
- * information, see .
+ * information, see GetCelebrityRecognition in the Amazon Rekognition Developer Guide.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -36,9 +36,9 @@ public class GetCelebrityRecognitionRequest extends com.amazonaws.AmazonWebServi
     private Integer maxResults;
     /**
      * <p>
-     * If the previous response was incomplete (because there is more recognized celebrities to retrieve), Rekognition
-     * Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of
-     * celebrities.
+     * If the previous response was incomplete (because there is more recognized celebrities to retrieve), Amazon
+     * Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the
+     * next set of celebrities.
      * </p>
      */
     private String nextToken;
@@ -144,13 +144,13 @@ public class GetCelebrityRecognitionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * If the previous response was incomplete (because there is more recognized celebrities to retrieve), Rekognition
-     * Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of
-     * celebrities.
+     * If the previous response was incomplete (because there is more recognized celebrities to retrieve), Amazon
+     * Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the
+     * next set of celebrities.
      * </p>
      * 
      * @param nextToken
-     *        If the previous response was incomplete (because there is more recognized celebrities to retrieve),
+     *        If the previous response was incomplete (because there is more recognized celebrities to retrieve), Amazon
      *        Rekognition Video returns a pagination token in the response. You can use this pagination token to
      *        retrieve the next set of celebrities.
      */
@@ -161,13 +161,13 @@ public class GetCelebrityRecognitionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * If the previous response was incomplete (because there is more recognized celebrities to retrieve), Rekognition
-     * Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of
-     * celebrities.
+     * If the previous response was incomplete (because there is more recognized celebrities to retrieve), Amazon
+     * Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the
+     * next set of celebrities.
      * </p>
      * 
      * @return If the previous response was incomplete (because there is more recognized celebrities to retrieve),
-     *         Rekognition Video returns a pagination token in the response. You can use this pagination token to
+     *         Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to
      *         retrieve the next set of celebrities.
      */
 
@@ -177,13 +177,13 @@ public class GetCelebrityRecognitionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * If the previous response was incomplete (because there is more recognized celebrities to retrieve), Rekognition
-     * Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of
-     * celebrities.
+     * If the previous response was incomplete (because there is more recognized celebrities to retrieve), Amazon
+     * Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the
+     * next set of celebrities.
      * </p>
      * 
      * @param nextToken
-     *        If the previous response was incomplete (because there is more recognized celebrities to retrieve),
+     *        If the previous response was incomplete (because there is more recognized celebrities to retrieve), Amazon
      *        Rekognition Video returns a pagination token in the response. You can use this pagination token to
      *        retrieve the next set of celebrities.
      * @return Returns a reference to this object so that method calls can be chained together.

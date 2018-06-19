@@ -32,15 +32,15 @@ public class GetFaceSearchResult extends com.amazonaws.AmazonWebServiceResult<co
     private String statusMessage;
     /**
      * <p>
-     * If the response is truncated, Rekognition Video returns this token that you can use in the subsequent request to
-     * retrieve the next set of search results.
+     * If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
+     * request to retrieve the next set of search results.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
      * Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page
-     * of paginated responses from a Rekognition Video operation.
+     * of paginated responses from a Amazon Rekognition Video operation.
      * </p>
      */
     private VideoMetadata videoMetadata;
@@ -156,13 +156,13 @@ public class GetFaceSearchResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * If the response is truncated, Rekognition Video returns this token that you can use in the subsequent request to
-     * retrieve the next set of search results.
+     * If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
+     * request to retrieve the next set of search results.
      * </p>
      * 
      * @param nextToken
-     *        If the response is truncated, Rekognition Video returns this token that you can use in the subsequent
-     *        request to retrieve the next set of search results.
+     *        If the response is truncated, Amazon Rekognition Video returns this token that you can use in the
+     *        subsequent request to retrieve the next set of search results.
      */
 
     public void setNextToken(String nextToken) {
@@ -171,12 +171,12 @@ public class GetFaceSearchResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * If the response is truncated, Rekognition Video returns this token that you can use in the subsequent request to
-     * retrieve the next set of search results.
+     * If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
+     * request to retrieve the next set of search results.
      * </p>
      * 
-     * @return If the response is truncated, Rekognition Video returns this token that you can use in the subsequent
-     *         request to retrieve the next set of search results.
+     * @return If the response is truncated, Amazon Rekognition Video returns this token that you can use in the
+     *         subsequent request to retrieve the next set of search results.
      */
 
     public String getNextToken() {
@@ -185,13 +185,13 @@ public class GetFaceSearchResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * If the response is truncated, Rekognition Video returns this token that you can use in the subsequent request to
-     * retrieve the next set of search results.
+     * If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
+     * request to retrieve the next set of search results.
      * </p>
      * 
      * @param nextToken
-     *        If the response is truncated, Rekognition Video returns this token that you can use in the subsequent
-     *        request to retrieve the next set of search results.
+     *        If the response is truncated, Amazon Rekognition Video returns this token that you can use in the
+     *        subsequent request to retrieve the next set of search results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,12 +203,12 @@ public class GetFaceSearchResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page
-     * of paginated responses from a Rekognition Video operation.
+     * of paginated responses from a Amazon Rekognition Video operation.
      * </p>
      * 
      * @param videoMetadata
      *        Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in
-     *        every page of paginated responses from a Rekognition Video operation.
+     *        every page of paginated responses from a Amazon Rekognition Video operation.
      */
 
     public void setVideoMetadata(VideoMetadata videoMetadata) {
@@ -218,11 +218,11 @@ public class GetFaceSearchResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page
-     * of paginated responses from a Rekognition Video operation.
+     * of paginated responses from a Amazon Rekognition Video operation.
      * </p>
      * 
      * @return Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in
-     *         every page of paginated responses from a Rekognition Video operation.
+     *         every page of paginated responses from a Amazon Rekognition Video operation.
      */
 
     public VideoMetadata getVideoMetadata() {
@@ -232,12 +232,12 @@ public class GetFaceSearchResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page
-     * of paginated responses from a Rekognition Video operation.
+     * of paginated responses from a Amazon Rekognition Video operation.
      * </p>
      * 
      * @param videoMetadata
      *        Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in
-     *        every page of paginated responses from a Rekognition Video operation.
+     *        every page of paginated responses from a Amazon Rekognition Video operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -32,15 +32,15 @@ public class GetCelebrityRecognitionResult extends com.amazonaws.AmazonWebServic
     private String statusMessage;
     /**
      * <p>
-     * Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in every page
-     * of paginated responses from a Rekognition Video operation.
+     * Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every
+     * page of paginated responses from a Amazon Rekognition Video operation.
      * </p>
      */
     private VideoMetadata videoMetadata;
     /**
      * <p>
-     * If the response is truncated, Rekognition Video returns this token that you can use in the subsequent request to
-     * retrieve the next set of celebrities.
+     * If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
+     * request to retrieve the next set of celebrities.
      * </p>
      */
     private String nextToken;
@@ -152,13 +152,13 @@ public class GetCelebrityRecognitionResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in every page
-     * of paginated responses from a Rekognition Video operation.
+     * Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every
+     * page of paginated responses from a Amazon Rekognition Video operation.
      * </p>
      * 
      * @param videoMetadata
-     *        Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in every
-     *        page of paginated responses from a Rekognition Video operation.
+     *        Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned
+     *        in every page of paginated responses from a Amazon Rekognition Video operation.
      */
 
     public void setVideoMetadata(VideoMetadata videoMetadata) {
@@ -167,12 +167,12 @@ public class GetCelebrityRecognitionResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in every page
-     * of paginated responses from a Rekognition Video operation.
+     * Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every
+     * page of paginated responses from a Amazon Rekognition Video operation.
      * </p>
      * 
-     * @return Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in
-     *         every page of paginated responses from a Rekognition Video operation.
+     * @return Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned
+     *         in every page of paginated responses from a Amazon Rekognition Video operation.
      */
 
     public VideoMetadata getVideoMetadata() {
@@ -181,13 +181,13 @@ public class GetCelebrityRecognitionResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in every page
-     * of paginated responses from a Rekognition Video operation.
+     * Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every
+     * page of paginated responses from a Amazon Rekognition Video operation.
      * </p>
      * 
      * @param videoMetadata
-     *        Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in every
-     *        page of paginated responses from a Rekognition Video operation.
+     *        Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned
+     *        in every page of paginated responses from a Amazon Rekognition Video operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -198,13 +198,13 @@ public class GetCelebrityRecognitionResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * If the response is truncated, Rekognition Video returns this token that you can use in the subsequent request to
-     * retrieve the next set of celebrities.
+     * If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
+     * request to retrieve the next set of celebrities.
      * </p>
      * 
      * @param nextToken
-     *        If the response is truncated, Rekognition Video returns this token that you can use in the subsequent
-     *        request to retrieve the next set of celebrities.
+     *        If the response is truncated, Amazon Rekognition Video returns this token that you can use in the
+     *        subsequent request to retrieve the next set of celebrities.
      */
 
     public void setNextToken(String nextToken) {
@@ -213,12 +213,12 @@ public class GetCelebrityRecognitionResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * If the response is truncated, Rekognition Video returns this token that you can use in the subsequent request to
-     * retrieve the next set of celebrities.
+     * If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
+     * request to retrieve the next set of celebrities.
      * </p>
      * 
-     * @return If the response is truncated, Rekognition Video returns this token that you can use in the subsequent
-     *         request to retrieve the next set of celebrities.
+     * @return If the response is truncated, Amazon Rekognition Video returns this token that you can use in the
+     *         subsequent request to retrieve the next set of celebrities.
      */
 
     public String getNextToken() {
@@ -227,13 +227,13 @@ public class GetCelebrityRecognitionResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * If the response is truncated, Rekognition Video returns this token that you can use in the subsequent request to
-     * retrieve the next set of celebrities.
+     * If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
+     * request to retrieve the next set of celebrities.
      * </p>
      * 
      * @param nextToken
-     *        If the response is truncated, Rekognition Video returns this token that you can use in the subsequent
-     *        request to retrieve the next set of celebrities.
+     *        If the response is truncated, Amazon Rekognition Video returns this token that you can use in the
+     *        subsequent request to retrieve the next set of celebrities.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

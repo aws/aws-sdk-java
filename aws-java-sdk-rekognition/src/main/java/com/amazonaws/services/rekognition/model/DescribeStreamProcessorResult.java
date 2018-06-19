@@ -63,7 +63,7 @@ public class DescribeStreamProcessorResult extends com.amazonaws.AmazonWebServic
     private StreamProcessorInput input;
     /**
      * <p>
-     * Kinesis data stream to which Rekognition Video puts the analysis results.
+     * Kinesis data stream to which Amazon Rekognition Video puts the analysis results.
      * </p>
      */
     private StreamProcessorOutput output;
@@ -388,11 +388,11 @@ public class DescribeStreamProcessorResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Kinesis data stream to which Rekognition Video puts the analysis results.
+     * Kinesis data stream to which Amazon Rekognition Video puts the analysis results.
      * </p>
      * 
      * @param output
-     *        Kinesis data stream to which Rekognition Video puts the analysis results.
+     *        Kinesis data stream to which Amazon Rekognition Video puts the analysis results.
      */
 
     public void setOutput(StreamProcessorOutput output) {
@@ -401,10 +401,10 @@ public class DescribeStreamProcessorResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Kinesis data stream to which Rekognition Video puts the analysis results.
+     * Kinesis data stream to which Amazon Rekognition Video puts the analysis results.
      * </p>
      * 
-     * @return Kinesis data stream to which Rekognition Video puts the analysis results.
+     * @return Kinesis data stream to which Amazon Rekognition Video puts the analysis results.
      */
 
     public StreamProcessorOutput getOutput() {
@@ -413,11 +413,11 @@ public class DescribeStreamProcessorResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Kinesis data stream to which Rekognition Video puts the analysis results.
+     * Kinesis data stream to which Amazon Rekognition Video puts the analysis results.
      * </p>
      * 
      * @param output
-     *        Kinesis data stream to which Rekognition Video puts the analysis results.
+     *        Kinesis data stream to which Amazon Rekognition Video puts the analysis results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

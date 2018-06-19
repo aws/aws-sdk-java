@@ -1,3 +1,8 @@
+# __1.11.350__ __2018-06-19__
+## __Amazon Rekognition__
+  - ### Features
+    - Documentation updates for rekognition
+
 # __1.11.349__ __2018-06-15__
 ## __AWS Elemental MediaConvert__
   - ### Features

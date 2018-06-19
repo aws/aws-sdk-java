@@ -29,8 +29,8 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
     private StreamProcessorInput input;
     /**
      * <p>
-     * Kinesis data stream stream to which Rekognition Video puts the analysis results. If you are using the AWS CLI,
-     * the parameter name is <code>StreamProcessorOutput</code>.
+     * Kinesis data stream stream to which Amazon Rekognition Video puts the analysis results. If you are using the AWS
+     * CLI, the parameter name is <code>StreamProcessorOutput</code>.
      * </p>
      */
     private StreamProcessorOutput output;
@@ -103,13 +103,13 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Kinesis data stream stream to which Rekognition Video puts the analysis results. If you are using the AWS CLI,
-     * the parameter name is <code>StreamProcessorOutput</code>.
+     * Kinesis data stream stream to which Amazon Rekognition Video puts the analysis results. If you are using the AWS
+     * CLI, the parameter name is <code>StreamProcessorOutput</code>.
      * </p>
      * 
      * @param output
-     *        Kinesis data stream stream to which Rekognition Video puts the analysis results. If you are using the AWS
-     *        CLI, the parameter name is <code>StreamProcessorOutput</code>.
+     *        Kinesis data stream stream to which Amazon Rekognition Video puts the analysis results. If you are using
+     *        the AWS CLI, the parameter name is <code>StreamProcessorOutput</code>.
      */
 
     public void setOutput(StreamProcessorOutput output) {
@@ -118,12 +118,12 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Kinesis data stream stream to which Rekognition Video puts the analysis results. If you are using the AWS CLI,
-     * the parameter name is <code>StreamProcessorOutput</code>.
+     * Kinesis data stream stream to which Amazon Rekognition Video puts the analysis results. If you are using the AWS
+     * CLI, the parameter name is <code>StreamProcessorOutput</code>.
      * </p>
      * 
-     * @return Kinesis data stream stream to which Rekognition Video puts the analysis results. If you are using the AWS
-     *         CLI, the parameter name is <code>StreamProcessorOutput</code>.
+     * @return Kinesis data stream stream to which Amazon Rekognition Video puts the analysis results. If you are using
+     *         the AWS CLI, the parameter name is <code>StreamProcessorOutput</code>.
      */
 
     public StreamProcessorOutput getOutput() {
@@ -132,13 +132,13 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Kinesis data stream stream to which Rekognition Video puts the analysis results. If you are using the AWS CLI,
-     * the parameter name is <code>StreamProcessorOutput</code>.
+     * Kinesis data stream stream to which Amazon Rekognition Video puts the analysis results. If you are using the AWS
+     * CLI, the parameter name is <code>StreamProcessorOutput</code>.
      * </p>
      * 
      * @param output
-     *        Kinesis data stream stream to which Rekognition Video puts the analysis results. If you are using the AWS
-     *        CLI, the parameter name is <code>StreamProcessorOutput</code>.
+     *        Kinesis data stream stream to which Amazon Rekognition Video puts the analysis results. If you are using
+     *        the AWS CLI, the parameter name is <code>StreamProcessorOutput</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

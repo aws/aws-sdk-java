@@ -45,7 +45,7 @@ public class StartContentModerationRequest extends com.amazonaws.AmazonWebServic
     private String clientRequestToken;
     /**
      * <p>
-     * The Amazon SNS topic ARN that you want Rekognition Video to publish the completion status of the content
+     * The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the content
      * moderation analysis to.
      * </p>
      */
@@ -210,13 +210,13 @@ public class StartContentModerationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon SNS topic ARN that you want Rekognition Video to publish the completion status of the content
+     * The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the content
      * moderation analysis to.
      * </p>
      * 
      * @param notificationChannel
-     *        The Amazon SNS topic ARN that you want Rekognition Video to publish the completion status of the content
-     *        moderation analysis to.
+     *        The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the
+     *        content moderation analysis to.
      */
 
     public void setNotificationChannel(NotificationChannel notificationChannel) {
@@ -225,12 +225,12 @@ public class StartContentModerationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon SNS topic ARN that you want Rekognition Video to publish the completion status of the content
+     * The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the content
      * moderation analysis to.
      * </p>
      * 
-     * @return The Amazon SNS topic ARN that you want Rekognition Video to publish the completion status of the content
-     *         moderation analysis to.
+     * @return The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the
+     *         content moderation analysis to.
      */
 
     public NotificationChannel getNotificationChannel() {
@@ -239,13 +239,13 @@ public class StartContentModerationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon SNS topic ARN that you want Rekognition Video to publish the completion status of the content
+     * The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the content
      * moderation analysis to.
      * </p>
      * 
      * @param notificationChannel
-     *        The Amazon SNS topic ARN that you want Rekognition Video to publish the completion status of the content
-     *        moderation analysis to.
+     *        The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the
+     *        content moderation analysis to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

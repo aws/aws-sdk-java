@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * The Kinesis data stream Amazon Rekognition to which the analysis results of a Amazon Rekognition stream processor are
- * streamed. For more information, see .
+ * streamed. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

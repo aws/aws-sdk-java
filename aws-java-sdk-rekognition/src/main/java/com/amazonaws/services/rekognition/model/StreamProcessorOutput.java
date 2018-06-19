@@ -19,8 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the Amazon Kinesis Data Streams stream to which a Rekognition Video stream processor streams the
- * results of a video analysis. For more information, see .
+ * Information about the Amazon Kinesis Data Streams stream to which a Amazon Rekognition Video stream processor streams
+ * the results of a video analysis. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer
+ * Guide.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

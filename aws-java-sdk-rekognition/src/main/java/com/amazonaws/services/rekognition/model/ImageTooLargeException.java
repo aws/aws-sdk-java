@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The input image size exceeds the allowed limit. For more information, see <a>limits</a>.
+ * The input image size exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in the Amazon
+ * Rekognition Developer Guide.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

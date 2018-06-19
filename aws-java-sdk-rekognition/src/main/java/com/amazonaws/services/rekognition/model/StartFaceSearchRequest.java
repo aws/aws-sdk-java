@@ -49,8 +49,8 @@ public class StartFaceSearchRequest extends com.amazonaws.AmazonWebServiceReques
     private String collectionId;
     /**
      * <p>
-     * The ARN of the Amazon SNS topic to which you want Rekognition Video to publish the completion status of the
-     * search.
+     * The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of
+     * the search.
      * </p>
      */
     private NotificationChannel notificationChannel;
@@ -242,13 +242,13 @@ public class StartFaceSearchRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ARN of the Amazon SNS topic to which you want Rekognition Video to publish the completion status of the
-     * search.
+     * The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of
+     * the search.
      * </p>
      * 
      * @param notificationChannel
-     *        The ARN of the Amazon SNS topic to which you want Rekognition Video to publish the completion status of
-     *        the search.
+     *        The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion
+     *        status of the search.
      */
 
     public void setNotificationChannel(NotificationChannel notificationChannel) {
@@ -257,12 +257,12 @@ public class StartFaceSearchRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ARN of the Amazon SNS topic to which you want Rekognition Video to publish the completion status of the
-     * search.
+     * The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of
+     * the search.
      * </p>
      * 
-     * @return The ARN of the Amazon SNS topic to which you want Rekognition Video to publish the completion status of
-     *         the search.
+     * @return The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion
+     *         status of the search.
      */
 
     public NotificationChannel getNotificationChannel() {
@@ -271,13 +271,13 @@ public class StartFaceSearchRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ARN of the Amazon SNS topic to which you want Rekognition Video to publish the completion status of the
-     * search.
+     * The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of
+     * the search.
      * </p>
      * 
      * @param notificationChannel
-     *        The ARN of the Amazon SNS topic to which you want Rekognition Video to publish the completion status of
-     *        the search.
+     *        The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion
+     *        status of the search.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

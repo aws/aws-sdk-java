@@ -32,8 +32,8 @@ public class GetFaceDetectionResult extends com.amazonaws.AmazonWebServiceResult
     private String statusMessage;
     /**
      * <p>
-     * Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in every page
-     * of paginated responses from a Amazon Rekognition video operation.
+     * Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every
+     * page of paginated responses from a Amazon Rekognition video operation.
      * </p>
      */
     private VideoMetadata videoMetadata;
@@ -153,13 +153,13 @@ public class GetFaceDetectionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in every page
-     * of paginated responses from a Amazon Rekognition video operation.
+     * Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every
+     * page of paginated responses from a Amazon Rekognition video operation.
      * </p>
      * 
      * @param videoMetadata
-     *        Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in every
-     *        page of paginated responses from a Amazon Rekognition video operation.
+     *        Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned
+     *        in every page of paginated responses from a Amazon Rekognition video operation.
      */
 
     public void setVideoMetadata(VideoMetadata videoMetadata) {
@@ -168,12 +168,12 @@ public class GetFaceDetectionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in every page
-     * of paginated responses from a Amazon Rekognition video operation.
+     * Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every
+     * page of paginated responses from a Amazon Rekognition video operation.
      * </p>
      * 
-     * @return Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in
-     *         every page of paginated responses from a Amazon Rekognition video operation.
+     * @return Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned
+     *         in every page of paginated responses from a Amazon Rekognition video operation.
      */
 
     public VideoMetadata getVideoMetadata() {
@@ -182,13 +182,13 @@ public class GetFaceDetectionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in every page
-     * of paginated responses from a Amazon Rekognition video operation.
+     * Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every
+     * page of paginated responses from a Amazon Rekognition video operation.
      * </p>
      * 
      * @param videoMetadata
-     *        Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in every
-     *        page of paginated responses from a Amazon Rekognition video operation.
+     *        Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned
+     *        in every page of paginated responses from a Amazon Rekognition video operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

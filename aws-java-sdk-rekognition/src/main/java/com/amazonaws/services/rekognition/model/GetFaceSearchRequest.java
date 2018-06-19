@@ -36,9 +36,9 @@ public class GetFaceSearchRequest extends com.amazonaws.AmazonWebServiceRequest 
     private Integer maxResults;
     /**
      * <p>
-     * If the previous response was incomplete (because there is more search results to retrieve), Rekognition Video
-     * returns a pagination token in the response. You can use this pagination token to retrieve the next set of search
-     * results.
+     * If the previous response was incomplete (because there is more search results to retrieve), Amazon Rekognition
+     * Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of
+     * search results.
      * </p>
      */
     private String nextToken;
@@ -144,15 +144,15 @@ public class GetFaceSearchRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * If the previous response was incomplete (because there is more search results to retrieve), Rekognition Video
-     * returns a pagination token in the response. You can use this pagination token to retrieve the next set of search
-     * results.
+     * If the previous response was incomplete (because there is more search results to retrieve), Amazon Rekognition
+     * Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of
+     * search results.
      * </p>
      * 
      * @param nextToken
-     *        If the previous response was incomplete (because there is more search results to retrieve), Rekognition
-     *        Video returns a pagination token in the response. You can use this pagination token to retrieve the next
-     *        set of search results.
+     *        If the previous response was incomplete (because there is more search results to retrieve), Amazon
+     *        Rekognition Video returns a pagination token in the response. You can use this pagination token to
+     *        retrieve the next set of search results.
      */
 
     public void setNextToken(String nextToken) {
@@ -161,14 +161,14 @@ public class GetFaceSearchRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * If the previous response was incomplete (because there is more search results to retrieve), Rekognition Video
-     * returns a pagination token in the response. You can use this pagination token to retrieve the next set of search
-     * results.
+     * If the previous response was incomplete (because there is more search results to retrieve), Amazon Rekognition
+     * Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of
+     * search results.
      * </p>
      * 
-     * @return If the previous response was incomplete (because there is more search results to retrieve), Rekognition
-     *         Video returns a pagination token in the response. You can use this pagination token to retrieve the next
-     *         set of search results.
+     * @return If the previous response was incomplete (because there is more search results to retrieve), Amazon
+     *         Rekognition Video returns a pagination token in the response. You can use this pagination token to
+     *         retrieve the next set of search results.
      */
 
     public String getNextToken() {
@@ -177,15 +177,15 @@ public class GetFaceSearchRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * If the previous response was incomplete (because there is more search results to retrieve), Rekognition Video
-     * returns a pagination token in the response. You can use this pagination token to retrieve the next set of search
-     * results.
+     * If the previous response was incomplete (because there is more search results to retrieve), Amazon Rekognition
+     * Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of
+     * search results.
      * </p>
      * 
      * @param nextToken
-     *        If the previous response was incomplete (because there is more search results to retrieve), Rekognition
-     *        Video returns a pagination token in the response. You can use this pagination token to retrieve the next
-     *        set of search results.
+     *        If the previous response was incomplete (because there is more search results to retrieve), Amazon
+     *        Rekognition Video returns a pagination token in the response. You can use this pagination token to
+     *        retrieve the next set of search results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

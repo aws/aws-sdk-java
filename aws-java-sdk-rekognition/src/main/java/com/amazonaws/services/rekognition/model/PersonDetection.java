@@ -21,7 +21,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Details and tracking information for a single time a person is tracked in a video. Amazon Rekognition operations that
  * track persons return an array of <code>PersonDetection</code> objects with elements for each time a person is tracked
- * in a video. For more information, see .
+ * in a video.
+ * </p>
+ * <p>
+ * For more information, see API_GetPersonTracking in the Amazon Rekognition Developer Guide.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

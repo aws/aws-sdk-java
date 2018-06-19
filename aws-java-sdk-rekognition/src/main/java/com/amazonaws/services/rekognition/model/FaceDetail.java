@@ -27,10 +27,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <code>Quality</code>.
  * </p>
  * <p>
- * is the only Rekognition Video stored video operation that can return a <code>FaceDetail</code> object with all
+ * is the only Amazon Rekognition Video stored video operation that can return a <code>FaceDetail</code> object with all
  * attributes. To specify which attributes to return, use the <code>FaceAttributes</code> input parameter for . The
- * following Rekognition Video operations return only the default attributes. The corresponding Start operations don't
- * have a <code>FaceAttributes</code> input parameter.
+ * following Amazon Rekognition Video operations return only the default attributes. The corresponding Start operations
+ * don't have a <code>FaceAttributes</code> input parameter.
  * </p>
  * <ul>
  * <li>
@@ -50,8 +50,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * </ul>
  * <p>
- * The Rekognition Image and operations can return all facial attributes. To specify which attributes to return, use the
- * <code>Attributes</code> input parameter for <code>DetectFaces</code>. For <code>IndexFaces</code>, use the
+ * The Amazon Rekognition Image and operations can return all facial attributes. To specify which attributes to return,
+ * use the <code>Attributes</code> input parameter for <code>DetectFaces</code>. For <code>IndexFaces</code>, use the
  * <code>DetectAttributes</code> input parameter.
  * </p>
  */

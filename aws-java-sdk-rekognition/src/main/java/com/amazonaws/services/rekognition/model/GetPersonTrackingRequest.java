@@ -36,8 +36,9 @@ public class GetPersonTrackingRequest extends com.amazonaws.AmazonWebServiceRequ
     private Integer maxResults;
     /**
      * <p>
-     * If the previous response was incomplete (because there are more persons to retrieve), Rekognition Video returns a
-     * pagination token in the response. You can use this pagination token to retrieve the next set of persons.
+     * If the previous response was incomplete (because there are more persons to retrieve), Amazon Rekognition Video
+     * returns a pagination token in the response. You can use this pagination token to retrieve the next set of
+     * persons.
      * </p>
      */
     private String nextToken;
@@ -145,14 +146,15 @@ public class GetPersonTrackingRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * If the previous response was incomplete (because there are more persons to retrieve), Rekognition Video returns a
-     * pagination token in the response. You can use this pagination token to retrieve the next set of persons.
+     * If the previous response was incomplete (because there are more persons to retrieve), Amazon Rekognition Video
+     * returns a pagination token in the response. You can use this pagination token to retrieve the next set of
+     * persons.
      * </p>
      * 
      * @param nextToken
-     *        If the previous response was incomplete (because there are more persons to retrieve), Rekognition Video
-     *        returns a pagination token in the response. You can use this pagination token to retrieve the next set of
-     *        persons.
+     *        If the previous response was incomplete (because there are more persons to retrieve), Amazon Rekognition
+     *        Video returns a pagination token in the response. You can use this pagination token to retrieve the next
+     *        set of persons.
      */
 
     public void setNextToken(String nextToken) {
@@ -161,13 +163,14 @@ public class GetPersonTrackingRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * If the previous response was incomplete (because there are more persons to retrieve), Rekognition Video returns a
-     * pagination token in the response. You can use this pagination token to retrieve the next set of persons.
+     * If the previous response was incomplete (because there are more persons to retrieve), Amazon Rekognition Video
+     * returns a pagination token in the response. You can use this pagination token to retrieve the next set of
+     * persons.
      * </p>
      * 
-     * @return If the previous response was incomplete (because there are more persons to retrieve), Rekognition Video
-     *         returns a pagination token in the response. You can use this pagination token to retrieve the next set of
-     *         persons.
+     * @return If the previous response was incomplete (because there are more persons to retrieve), Amazon Rekognition
+     *         Video returns a pagination token in the response. You can use this pagination token to retrieve the next
+     *         set of persons.
      */
 
     public String getNextToken() {
@@ -176,14 +179,15 @@ public class GetPersonTrackingRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * If the previous response was incomplete (because there are more persons to retrieve), Rekognition Video returns a
-     * pagination token in the response. You can use this pagination token to retrieve the next set of persons.
+     * If the previous response was incomplete (because there are more persons to retrieve), Amazon Rekognition Video
+     * returns a pagination token in the response. You can use this pagination token to retrieve the next set of
+     * persons.
      * </p>
      * 
      * @param nextToken
-     *        If the previous response was incomplete (because there are more persons to retrieve), Rekognition Video
-     *        returns a pagination token in the response. You can use this pagination token to retrieve the next set of
-     *        persons.
+     *        If the previous response was incomplete (because there are more persons to retrieve), Amazon Rekognition
+     *        Video returns a pagination token in the response. You can use this pagination token to retrieve the next
+     *        set of persons.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

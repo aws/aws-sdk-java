@@ -36,8 +36,8 @@ public class StartFaceDetectionRequest extends com.amazonaws.AmazonWebServiceReq
     private String clientRequestToken;
     /**
      * <p>
-     * The ARN of the Amazon SNS topic to which you want Rekognition Video to publish the completion status of the face
-     * detection operation.
+     * The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of
+     * the face detection operation.
      * </p>
      */
     private NotificationChannel notificationChannel;
@@ -156,13 +156,13 @@ public class StartFaceDetectionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ARN of the Amazon SNS topic to which you want Rekognition Video to publish the completion status of the face
-     * detection operation.
+     * The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of
+     * the face detection operation.
      * </p>
      * 
      * @param notificationChannel
-     *        The ARN of the Amazon SNS topic to which you want Rekognition Video to publish the completion status of
-     *        the face detection operation.
+     *        The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion
+     *        status of the face detection operation.
      */
 
     public void setNotificationChannel(NotificationChannel notificationChannel) {
@@ -171,12 +171,12 @@ public class StartFaceDetectionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ARN of the Amazon SNS topic to which you want Rekognition Video to publish the completion status of the face
-     * detection operation.
+     * The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of
+     * the face detection operation.
      * </p>
      * 
-     * @return The ARN of the Amazon SNS topic to which you want Rekognition Video to publish the completion status of
-     *         the face detection operation.
+     * @return The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion
+     *         status of the face detection operation.
      */
 
     public NotificationChannel getNotificationChannel() {
@@ -185,13 +185,13 @@ public class StartFaceDetectionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ARN of the Amazon SNS topic to which you want Rekognition Video to publish the completion status of the face
-     * detection operation.
+     * The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of
+     * the face detection operation.
      * </p>
      * 
      * @param notificationChannel
-     *        The ARN of the Amazon SNS topic to which you want Rekognition Video to publish the completion status of
-     *        the face detection operation.
+     *        The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion
+     *        status of the face detection operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

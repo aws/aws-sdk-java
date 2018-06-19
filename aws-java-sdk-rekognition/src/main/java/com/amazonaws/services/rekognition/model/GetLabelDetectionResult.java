@@ -32,15 +32,15 @@ public class GetLabelDetectionResult extends com.amazonaws.AmazonWebServiceResul
     private String statusMessage;
     /**
      * <p>
-     * Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in every page
-     * of paginated responses from a Amazon Rekognition video operation.
+     * Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every
+     * page of paginated responses from a Amazon Rekognition video operation.
      * </p>
      */
     private VideoMetadata videoMetadata;
     /**
      * <p>
-     * If the response is truncated, Rekognition Video returns this token that you can use in the subsequent request to
-     * retrieve the next set of labels.
+     * If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
+     * request to retrieve the next set of labels.
      * </p>
      */
     private String nextToken;
@@ -153,13 +153,13 @@ public class GetLabelDetectionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in every page
-     * of paginated responses from a Amazon Rekognition video operation.
+     * Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every
+     * page of paginated responses from a Amazon Rekognition video operation.
      * </p>
      * 
      * @param videoMetadata
-     *        Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in every
-     *        page of paginated responses from a Amazon Rekognition video operation.
+     *        Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned
+     *        in every page of paginated responses from a Amazon Rekognition video operation.
      */
 
     public void setVideoMetadata(VideoMetadata videoMetadata) {
@@ -168,12 +168,12 @@ public class GetLabelDetectionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in every page
-     * of paginated responses from a Amazon Rekognition video operation.
+     * Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every
+     * page of paginated responses from a Amazon Rekognition video operation.
      * </p>
      * 
-     * @return Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in
-     *         every page of paginated responses from a Amazon Rekognition video operation.
+     * @return Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned
+     *         in every page of paginated responses from a Amazon Rekognition video operation.
      */
 
     public VideoMetadata getVideoMetadata() {
@@ -182,13 +182,13 @@ public class GetLabelDetectionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in every page
-     * of paginated responses from a Amazon Rekognition video operation.
+     * Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned in every
+     * page of paginated responses from a Amazon Rekognition video operation.
      * </p>
      * 
      * @param videoMetadata
-     *        Information about a video that Rekognition Video analyzed. <code>Videometadata</code> is returned in every
-     *        page of paginated responses from a Amazon Rekognition video operation.
+     *        Information about a video that Amazon Rekognition Video analyzed. <code>Videometadata</code> is returned
+     *        in every page of paginated responses from a Amazon Rekognition video operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,13 +199,13 @@ public class GetLabelDetectionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * If the response is truncated, Rekognition Video returns this token that you can use in the subsequent request to
-     * retrieve the next set of labels.
+     * If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
+     * request to retrieve the next set of labels.
      * </p>
      * 
      * @param nextToken
-     *        If the response is truncated, Rekognition Video returns this token that you can use in the subsequent
-     *        request to retrieve the next set of labels.
+     *        If the response is truncated, Amazon Rekognition Video returns this token that you can use in the
+     *        subsequent request to retrieve the next set of labels.
      */
 
     public void setNextToken(String nextToken) {
@@ -214,12 +214,12 @@ public class GetLabelDetectionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * If the response is truncated, Rekognition Video returns this token that you can use in the subsequent request to
-     * retrieve the next set of labels.
+     * If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
+     * request to retrieve the next set of labels.
      * </p>
      * 
-     * @return If the response is truncated, Rekognition Video returns this token that you can use in the subsequent
-     *         request to retrieve the next set of labels.
+     * @return If the response is truncated, Amazon Rekognition Video returns this token that you can use in the
+     *         subsequent request to retrieve the next set of labels.
      */
 
     public String getNextToken() {
@@ -228,13 +228,13 @@ public class GetLabelDetectionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * If the response is truncated, Rekognition Video returns this token that you can use in the subsequent request to
-     * retrieve the next set of labels.
+     * If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
+     * request to retrieve the next set of labels.
      * </p>
      * 
      * @param nextToken
-     *        If the response is truncated, Rekognition Video returns this token that you can use in the subsequent
-     *        request to retrieve the next set of labels.
+     *        If the response is truncated, Amazon Rekognition Video returns this token that you can use in the
+     *        subsequent request to retrieve the next set of labels.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
