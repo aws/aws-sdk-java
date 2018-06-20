@@ -141,6 +141,11 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements
             request.addParameter("PerformanceInsightsKMSKeyId", StringUtils.fromString(createDBInstanceReadReplicaRequest.getPerformanceInsightsKMSKeyId()));
         }
 
+        if (createDBInstanceReadReplicaRequest.getPerformanceInsightsRetentionPeriod() != null) {
+            request.addParameter("PerformanceInsightsRetentionPeriod",
+                    StringUtils.fromInteger(createDBInstanceReadReplicaRequest.getPerformanceInsightsRetentionPeriod()));
+        }
+
         if (!createDBInstanceReadReplicaRequest.getEnableCloudwatchLogsExports().isEmpty()
                 || !((com.amazonaws.internal.SdkInternalList<String>) createDBInstanceReadReplicaRequest.getEnableCloudwatchLogsExports()).isAutoConstruct()) {
             com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExportsList = (com.amazonaws.internal.SdkInternalList<String>) createDBInstanceReadReplicaRequest

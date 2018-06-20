@@ -49,6 +49,8 @@ public class CertificateAuthorityMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CertificateAuthorityConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> REVOCATIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RevocationConfiguration").build();
+    private static final MarshallingInfo<java.util.Date> RESTORABLEUNTIL_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RestorableUntil").build();
 
     private static final CertificateAuthorityMarshaller instance = new CertificateAuthorityMarshaller();
 
@@ -77,6 +79,7 @@ public class CertificateAuthorityMarshaller {
             protocolMarshaller.marshall(certificateAuthority.getFailureReason(), FAILUREREASON_BINDING);
             protocolMarshaller.marshall(certificateAuthority.getCertificateAuthorityConfiguration(), CERTIFICATEAUTHORITYCONFIGURATION_BINDING);
             protocolMarshaller.marshall(certificateAuthority.getRevocationConfiguration(), REVOCATIONCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(certificateAuthority.getRestorableUntil(), RESTORABLEUNTIL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

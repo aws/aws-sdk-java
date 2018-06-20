@@ -28,7 +28,7 @@ public class CreateCertificateAuthorityResult extends com.amazonaws.AmazonWebSer
      * If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This is of the form:
      * </p>
      * <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      * .
      * </p>
      */
@@ -39,14 +39,14 @@ public class CreateCertificateAuthorityResult extends com.amazonaws.AmazonWebSer
      * If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This is of the form:
      * </p>
      * <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      * .
      * </p>
      * 
      * @param certificateAuthorityArn
      *        If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This is of the form: </p>
      *        <p>
-     *        <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.
+     *        <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.
      */
 
     public void setCertificateAuthorityArn(String certificateAuthorityArn) {
@@ -58,14 +58,14 @@ public class CreateCertificateAuthorityResult extends com.amazonaws.AmazonWebSer
      * If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This is of the form:
      * </p>
      * <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      * .
      * </p>
      * 
      * @return If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This is of the form:
      *         </p>
      *         <p>
-     *         <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.
+     *         <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.
      */
 
     public String getCertificateAuthorityArn() {
@@ -77,14 +77,14 @@ public class CreateCertificateAuthorityResult extends com.amazonaws.AmazonWebSer
      * If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This is of the form:
      * </p>
      * <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      * .
      * </p>
      * 
      * @param certificateAuthorityArn
      *        If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This is of the form: </p>
      *        <p>
-     *        <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.
+     *        <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

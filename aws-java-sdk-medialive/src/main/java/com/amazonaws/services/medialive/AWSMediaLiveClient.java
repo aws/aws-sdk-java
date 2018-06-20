@@ -509,6 +509,70 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
     }
 
     /**
+     * Delete an expired reservation.
+     * 
+     * @param deleteReservationRequest
+     *        Placeholder documentation for DeleteReservationRequest
+     * @return Result of the DeleteReservation operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid
+     * @throws InternalServerErrorException
+     *         Internal service error
+     * @throws ForbiddenException
+     *         You do not have permission to delete reservation
+     * @throws BadGatewayException
+     *         Bad gateway error
+     * @throws NotFoundException
+     *         Reservation you're attempting to delete does not exist
+     * @throws GatewayTimeoutException
+     *         Gateway timeout error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on delete reservation request
+     * @throws ConflictException
+     *         The reservation could not be deleted because it is currently active.
+     * @sample AWSMediaLive.DeleteReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteReservation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteReservationResult deleteReservation(DeleteReservationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteReservation(request);
+    }
+
+    @SdkInternalApi
+    final DeleteReservationResult executeDeleteReservation(DeleteReservationRequest deleteReservationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteReservationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteReservationRequest> request = null;
+        Response<DeleteReservationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteReservationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteReservationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteReservationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteReservationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Gets details about a channel
      * 
      * @param describeChannelRequest
@@ -697,6 +761,130 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
     }
 
     /**
+     * Get details for an offering.
+     * 
+     * @param describeOfferingRequest
+     *        Placeholder documentation for DescribeOfferingRequest
+     * @return Result of the DescribeOffering operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid
+     * @throws InternalServerErrorException
+     *         Internal service error
+     * @throws ForbiddenException
+     *         You do not have permission to describe offering
+     * @throws BadGatewayException
+     *         Bad gateway error
+     * @throws NotFoundException
+     *         Offering you're attempting to describe does not exist
+     * @throws GatewayTimeoutException
+     *         Gateway timeout error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on describe offering request
+     * @sample AWSMediaLive.DescribeOffering
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeOffering" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeOfferingResult describeOffering(DescribeOfferingRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeOffering(request);
+    }
+
+    @SdkInternalApi
+    final DescribeOfferingResult executeDescribeOffering(DescribeOfferingRequest describeOfferingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeOfferingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeOfferingRequest> request = null;
+        Response<DescribeOfferingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeOfferingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeOfferingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeOfferingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeOfferingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Get details for a reservation.
+     * 
+     * @param describeReservationRequest
+     *        Placeholder documentation for DescribeReservationRequest
+     * @return Result of the DescribeReservation operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid
+     * @throws InternalServerErrorException
+     *         Internal service error
+     * @throws ForbiddenException
+     *         You do not have permission to describe reservation
+     * @throws BadGatewayException
+     *         Bad gateway error
+     * @throws NotFoundException
+     *         Reservation you're attempting to describe does not exist
+     * @throws GatewayTimeoutException
+     *         Gateway timeout error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on describe reservation request
+     * @sample AWSMediaLive.DescribeReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeReservation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeReservationResult describeReservation(DescribeReservationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeReservation(request);
+    }
+
+    @SdkInternalApi
+    final DescribeReservationResult executeDescribeReservation(DescribeReservationRequest describeReservationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeReservationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeReservationRequest> request = null;
+        Response<DescribeReservationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeReservationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeReservationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeReservationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeReservationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Produces list of channels that have been created
      * 
      * @param listChannelsRequest
@@ -868,6 +1056,190 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
 
             HttpResponseHandler<AmazonWebServiceResponse<ListInputsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListInputsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * List offerings available for purchase.
+     * 
+     * @param listOfferingsRequest
+     *        Placeholder documentation for ListOfferingsRequest
+     * @return Result of the ListOfferings operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid
+     * @throws InternalServerErrorException
+     *         Internal service error
+     * @throws ForbiddenException
+     *         You do not have permission to list offerings
+     * @throws BadGatewayException
+     *         Bad gateway error
+     * @throws GatewayTimeoutException
+     *         Gateway timeout error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on list offerings request
+     * @sample AWSMediaLive.ListOfferings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListOfferings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListOfferingsResult listOfferings(ListOfferingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListOfferings(request);
+    }
+
+    @SdkInternalApi
+    final ListOfferingsResult executeListOfferings(ListOfferingsRequest listOfferingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listOfferingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListOfferingsRequest> request = null;
+        Response<ListOfferingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListOfferingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listOfferingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListOfferingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListOfferingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * List purchased reservations.
+     * 
+     * @param listReservationsRequest
+     *        Placeholder documentation for ListReservationsRequest
+     * @return Result of the ListReservations operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid
+     * @throws InternalServerErrorException
+     *         Internal service error
+     * @throws ForbiddenException
+     *         You do not have permission to list reservations
+     * @throws BadGatewayException
+     *         Bad gateway error
+     * @throws GatewayTimeoutException
+     *         Gateway timeout error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on list reservations request
+     * @sample AWSMediaLive.ListReservations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListReservations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListReservationsResult listReservations(ListReservationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListReservations(request);
+    }
+
+    @SdkInternalApi
+    final ListReservationsResult executeListReservations(ListReservationsRequest listReservationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listReservationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListReservationsRequest> request = null;
+        Response<ListReservationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListReservationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listReservationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListReservationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListReservationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Purchase an offering and create a reservation.
+     * 
+     * @param purchaseOfferingRequest
+     *        Placeholder documentation for PurchaseOfferingRequest
+     * @return Result of the PurchaseOffering operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid
+     * @throws InternalServerErrorException
+     *         Internal service error
+     * @throws ForbiddenException
+     *         You do not have permission to purchase the offering
+     * @throws BadGatewayException
+     *         Bad gateway error
+     * @throws NotFoundException
+     *         Offering you're attempting to purchase does not exist
+     * @throws GatewayTimeoutException
+     *         Gateway timeout error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on purchase offering request
+     * @throws ConflictException
+     *         Offering purchase prevented by service resource issue
+     * @sample AWSMediaLive.PurchaseOffering
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/PurchaseOffering" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PurchaseOfferingResult purchaseOffering(PurchaseOfferingRequest request) {
+        request = beforeClientExecution(request);
+        return executePurchaseOffering(request);
+    }
+
+    @SdkInternalApi
+    final PurchaseOfferingResult executePurchaseOffering(PurchaseOfferingRequest purchaseOfferingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(purchaseOfferingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PurchaseOfferingRequest> request = null;
+        Response<PurchaseOfferingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PurchaseOfferingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(purchaseOfferingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PurchaseOfferingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PurchaseOfferingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -29,6 +29,8 @@ public class DeleteCertificateAuthorityRequestMarshaller {
 
     private static final MarshallingInfo<String> CERTIFICATEAUTHORITYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CertificateAuthorityArn").build();
+    private static final MarshallingInfo<Integer> PERMANENTDELETIONTIMEINDAYS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PermanentDeletionTimeInDays").build();
 
     private static final DeleteCertificateAuthorityRequestMarshaller instance = new DeleteCertificateAuthorityRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class DeleteCertificateAuthorityRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(deleteCertificateAuthorityRequest.getCertificateAuthorityArn(), CERTIFICATEAUTHORITYARN_BINDING);
+            protocolMarshaller.marshall(deleteCertificateAuthorityRequest.getPermanentDeletionTimeInDays(), PERMANENTDELETIONTIMEINDAYS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

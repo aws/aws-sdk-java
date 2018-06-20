@@ -28,7 +28,7 @@ public class IssueCertificateResult extends com.amazonaws.AmazonWebServiceResult
      * The Amazon Resource Name (ARN) of the issued certificate and the certificate serial number. This is of the form:
      * </p>
      * <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code>
      * </p>
      */
     private String certificateArn;
@@ -38,14 +38,14 @@ public class IssueCertificateResult extends com.amazonaws.AmazonWebServiceResult
      * The Amazon Resource Name (ARN) of the issued certificate and the certificate serial number. This is of the form:
      * </p>
      * <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code>
      * </p>
      * 
      * @param certificateArn
      *        The Amazon Resource Name (ARN) of the issued certificate and the certificate serial number. This is of the
      *        form:</p>
      *        <p>
-     *        <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code>
+     *        <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code>
      */
 
     public void setCertificateArn(String certificateArn) {
@@ -57,13 +57,13 @@ public class IssueCertificateResult extends com.amazonaws.AmazonWebServiceResult
      * The Amazon Resource Name (ARN) of the issued certificate and the certificate serial number. This is of the form:
      * </p>
      * <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code>
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the issued certificate and the certificate serial number. This is of
      *         the form:</p>
      *         <p>
-     *         <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code>
+     *         <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code>
      */
 
     public String getCertificateArn() {
@@ -75,14 +75,14 @@ public class IssueCertificateResult extends com.amazonaws.AmazonWebServiceResult
      * The Amazon Resource Name (ARN) of the issued certificate and the certificate serial number. This is of the form:
      * </p>
      * <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code>
      * </p>
      * 
      * @param certificateArn
      *        The Amazon Resource Name (ARN) of the issued certificate and the certificate serial number. This is of the
      *        form:</p>
      *        <p>
-     *        <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code>
+     *        <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>/certificate/<i>286535153982981100925020015808220737245</i> </code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -5793,6 +5793,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         The specified option group could not be found.
      * @throws KMSKeyNotAccessibleException
      *         An error occurred accessing an AWS KMS key.
+     * @throws DBClusterParameterGroupNotFoundException
+     *         <i>DBClusterParameterGroupName</i> doesn't refer to an existing DB cluster parameter group.
      * @sample AmazonRDS.RestoreDBClusterFromSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromSnapshot"
      *      target="_top">AWS API Documentation</a>
@@ -5892,6 +5894,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws StorageQuotaExceededException
      *         The request would result in the user exceeding the allowed amount of storage available across all DB
      *         instances.
+     * @throws DBClusterParameterGroupNotFoundException
+     *         <i>DBClusterParameterGroupName</i> doesn't refer to an existing DB cluster parameter group.
      * @sample AmazonRDS.RestoreDBClusterToPointInTime
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterToPointInTime"
      *      target="_top">AWS API Documentation</a>
@@ -6003,6 +6007,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         <i>DBSecurityGroupName</i> doesn't refer to an existing DB security group.
      * @throws DomainNotFoundException
      *         <i>Domain</i> doesn't refer to an existing Active Directory domain.
+     * @throws DBParameterGroupNotFoundException
+     *         <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
      * @sample AmazonRDS.RestoreDBInstanceFromDBSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot"
      *      target="_top">AWS API Documentation</a>
@@ -6200,6 +6206,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         <i>DBSecurityGroupName</i> doesn't refer to an existing DB security group.
      * @throws DomainNotFoundException
      *         <i>Domain</i> doesn't refer to an existing Active Directory domain.
+     * @throws DBParameterGroupNotFoundException
+     *         <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
      * @sample AmazonRDS.RestoreDBInstanceToPointInTime
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceToPointInTime"
      *      target="_top">AWS API Documentation</a>

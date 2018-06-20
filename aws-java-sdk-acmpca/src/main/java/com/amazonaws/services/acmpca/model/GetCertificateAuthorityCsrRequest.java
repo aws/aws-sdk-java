@@ -27,29 +27,29 @@ public class GetCertificateAuthorityCsrRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a> function.
+     * The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a> operation.
      * This must be of the form:
      * </p>
      * <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      * </p>
      */
     private String certificateAuthorityArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a> function.
+     * The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a> operation.
      * This must be of the form:
      * </p>
      * <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      * </p>
      * 
      * @param certificateAuthorityArn
      *        The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a>
-     *        function. This must be of the form: </p>
+     *        operation. This must be of the form: </p>
      *        <p>
-     *        <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
+     *        <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      */
 
     public void setCertificateAuthorityArn(String certificateAuthorityArn) {
@@ -58,17 +58,17 @@ public class GetCertificateAuthorityCsrRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a> function.
+     * The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a> operation.
      * This must be of the form:
      * </p>
      * <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a>
-     *         function. This must be of the form: </p>
+     *         operation. This must be of the form: </p>
      *         <p>
-     *         <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
+     *         <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      */
 
     public String getCertificateAuthorityArn() {
@@ -77,18 +77,18 @@ public class GetCertificateAuthorityCsrRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a> function.
+     * The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a> operation.
      * This must be of the form:
      * </p>
      * <p>
-     * <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      * </p>
      * 
      * @param certificateAuthorityArn
      *        The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a>
-     *        function. This must be of the form: </p>
+     *        operation. This must be of the form: </p>
      *        <p>
-     *        <code>arn:aws:acm:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
+     *        <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

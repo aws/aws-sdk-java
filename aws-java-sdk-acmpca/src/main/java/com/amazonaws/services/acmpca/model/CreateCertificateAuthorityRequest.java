@@ -52,8 +52,8 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
      * Alphanumeric string that can be used to distinguish between calls to <b>CreateCertificateAuthority</b>.
      * Idempotency tokens time out after five minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple
      * times with the same idempotency token within a five minute period, ACM PCA recognizes that you are requesting
-     * only one certificate and will issue only one. If you change the idempotency token for each call, however, ACM PCA
-     * recognizes that you are requesting multiple certificates.
+     * only one certificate. As a result, ACM PCA issues only one. If you change the idempotency token for each call,
+     * however, ACM PCA recognizes that you are requesting multiple certificates.
      * </p>
      */
     private String idempotencyToken;
@@ -226,16 +226,16 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
      * Alphanumeric string that can be used to distinguish between calls to <b>CreateCertificateAuthority</b>.
      * Idempotency tokens time out after five minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple
      * times with the same idempotency token within a five minute period, ACM PCA recognizes that you are requesting
-     * only one certificate and will issue only one. If you change the idempotency token for each call, however, ACM PCA
-     * recognizes that you are requesting multiple certificates.
+     * only one certificate. As a result, ACM PCA issues only one. If you change the idempotency token for each call,
+     * however, ACM PCA recognizes that you are requesting multiple certificates.
      * </p>
      * 
      * @param idempotencyToken
      *        Alphanumeric string that can be used to distinguish between calls to <b>CreateCertificateAuthority</b>.
      *        Idempotency tokens time out after five minutes. Therefore, if you call <b>CreateCertificateAuthority</b>
      *        multiple times with the same idempotency token within a five minute period, ACM PCA recognizes that you
-     *        are requesting only one certificate and will issue only one. If you change the idempotency token for each
-     *        call, however, ACM PCA recognizes that you are requesting multiple certificates.
+     *        are requesting only one certificate. As a result, ACM PCA issues only one. If you change the idempotency
+     *        token for each call, however, ACM PCA recognizes that you are requesting multiple certificates.
      */
 
     public void setIdempotencyToken(String idempotencyToken) {
@@ -247,15 +247,15 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
      * Alphanumeric string that can be used to distinguish between calls to <b>CreateCertificateAuthority</b>.
      * Idempotency tokens time out after five minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple
      * times with the same idempotency token within a five minute period, ACM PCA recognizes that you are requesting
-     * only one certificate and will issue only one. If you change the idempotency token for each call, however, ACM PCA
-     * recognizes that you are requesting multiple certificates.
+     * only one certificate. As a result, ACM PCA issues only one. If you change the idempotency token for each call,
+     * however, ACM PCA recognizes that you are requesting multiple certificates.
      * </p>
      * 
      * @return Alphanumeric string that can be used to distinguish between calls to <b>CreateCertificateAuthority</b>.
      *         Idempotency tokens time out after five minutes. Therefore, if you call <b>CreateCertificateAuthority</b>
      *         multiple times with the same idempotency token within a five minute period, ACM PCA recognizes that you
-     *         are requesting only one certificate and will issue only one. If you change the idempotency token for each
-     *         call, however, ACM PCA recognizes that you are requesting multiple certificates.
+     *         are requesting only one certificate. As a result, ACM PCA issues only one. If you change the idempotency
+     *         token for each call, however, ACM PCA recognizes that you are requesting multiple certificates.
      */
 
     public String getIdempotencyToken() {
@@ -267,16 +267,16 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
      * Alphanumeric string that can be used to distinguish between calls to <b>CreateCertificateAuthority</b>.
      * Idempotency tokens time out after five minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple
      * times with the same idempotency token within a five minute period, ACM PCA recognizes that you are requesting
-     * only one certificate and will issue only one. If you change the idempotency token for each call, however, ACM PCA
-     * recognizes that you are requesting multiple certificates.
+     * only one certificate. As a result, ACM PCA issues only one. If you change the idempotency token for each call,
+     * however, ACM PCA recognizes that you are requesting multiple certificates.
      * </p>
      * 
      * @param idempotencyToken
      *        Alphanumeric string that can be used to distinguish between calls to <b>CreateCertificateAuthority</b>.
      *        Idempotency tokens time out after five minutes. Therefore, if you call <b>CreateCertificateAuthority</b>
      *        multiple times with the same idempotency token within a five minute period, ACM PCA recognizes that you
-     *        are requesting only one certificate and will issue only one. If you change the idempotency token for each
-     *        call, however, ACM PCA recognizes that you are requesting multiple certificates.
+     *        are requesting only one certificate. As a result, ACM PCA issues only one. If you change the idempotency
+     *        token for each call, however, ACM PCA recognizes that you are requesting multiple certificates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

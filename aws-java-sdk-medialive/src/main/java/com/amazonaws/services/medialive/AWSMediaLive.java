@@ -198,6 +198,34 @@ public interface AWSMediaLive {
     DeleteInputSecurityGroupResult deleteInputSecurityGroup(DeleteInputSecurityGroupRequest deleteInputSecurityGroupRequest);
 
     /**
+     * Delete an expired reservation.
+     * 
+     * @param deleteReservationRequest
+     *        Placeholder documentation for DeleteReservationRequest
+     * @return Result of the DeleteReservation operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid
+     * @throws InternalServerErrorException
+     *         Internal service error
+     * @throws ForbiddenException
+     *         You do not have permission to delete reservation
+     * @throws BadGatewayException
+     *         Bad gateway error
+     * @throws NotFoundException
+     *         Reservation you're attempting to delete does not exist
+     * @throws GatewayTimeoutException
+     *         Gateway timeout error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on delete reservation request
+     * @throws ConflictException
+     *         The reservation could not be deleted because it is currently active.
+     * @sample AWSMediaLive.DeleteReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteReservation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteReservationResult deleteReservation(DeleteReservationRequest deleteReservationRequest);
+
+    /**
      * Gets details about a channel
      * 
      * @param describeChannelRequest
@@ -276,6 +304,58 @@ public interface AWSMediaLive {
     DescribeInputSecurityGroupResult describeInputSecurityGroup(DescribeInputSecurityGroupRequest describeInputSecurityGroupRequest);
 
     /**
+     * Get details for an offering.
+     * 
+     * @param describeOfferingRequest
+     *        Placeholder documentation for DescribeOfferingRequest
+     * @return Result of the DescribeOffering operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid
+     * @throws InternalServerErrorException
+     *         Internal service error
+     * @throws ForbiddenException
+     *         You do not have permission to describe offering
+     * @throws BadGatewayException
+     *         Bad gateway error
+     * @throws NotFoundException
+     *         Offering you're attempting to describe does not exist
+     * @throws GatewayTimeoutException
+     *         Gateway timeout error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on describe offering request
+     * @sample AWSMediaLive.DescribeOffering
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeOffering" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeOfferingResult describeOffering(DescribeOfferingRequest describeOfferingRequest);
+
+    /**
+     * Get details for a reservation.
+     * 
+     * @param describeReservationRequest
+     *        Placeholder documentation for DescribeReservationRequest
+     * @return Result of the DescribeReservation operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid
+     * @throws InternalServerErrorException
+     *         Internal service error
+     * @throws ForbiddenException
+     *         You do not have permission to describe reservation
+     * @throws BadGatewayException
+     *         Bad gateway error
+     * @throws NotFoundException
+     *         Reservation you're attempting to describe does not exist
+     * @throws GatewayTimeoutException
+     *         Gateway timeout error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on describe reservation request
+     * @sample AWSMediaLive.DescribeReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeReservation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeReservationResult describeReservation(DescribeReservationRequest describeReservationRequest);
+
+    /**
      * Produces list of channels that have been created
      * 
      * @param listChannelsRequest
@@ -346,6 +426,82 @@ public interface AWSMediaLive {
      *      Documentation</a>
      */
     ListInputsResult listInputs(ListInputsRequest listInputsRequest);
+
+    /**
+     * List offerings available for purchase.
+     * 
+     * @param listOfferingsRequest
+     *        Placeholder documentation for ListOfferingsRequest
+     * @return Result of the ListOfferings operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid
+     * @throws InternalServerErrorException
+     *         Internal service error
+     * @throws ForbiddenException
+     *         You do not have permission to list offerings
+     * @throws BadGatewayException
+     *         Bad gateway error
+     * @throws GatewayTimeoutException
+     *         Gateway timeout error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on list offerings request
+     * @sample AWSMediaLive.ListOfferings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListOfferings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListOfferingsResult listOfferings(ListOfferingsRequest listOfferingsRequest);
+
+    /**
+     * List purchased reservations.
+     * 
+     * @param listReservationsRequest
+     *        Placeholder documentation for ListReservationsRequest
+     * @return Result of the ListReservations operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid
+     * @throws InternalServerErrorException
+     *         Internal service error
+     * @throws ForbiddenException
+     *         You do not have permission to list reservations
+     * @throws BadGatewayException
+     *         Bad gateway error
+     * @throws GatewayTimeoutException
+     *         Gateway timeout error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on list reservations request
+     * @sample AWSMediaLive.ListReservations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListReservations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListReservationsResult listReservations(ListReservationsRequest listReservationsRequest);
+
+    /**
+     * Purchase an offering and create a reservation.
+     * 
+     * @param purchaseOfferingRequest
+     *        Placeholder documentation for PurchaseOfferingRequest
+     * @return Result of the PurchaseOffering operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid
+     * @throws InternalServerErrorException
+     *         Internal service error
+     * @throws ForbiddenException
+     *         You do not have permission to purchase the offering
+     * @throws BadGatewayException
+     *         Bad gateway error
+     * @throws NotFoundException
+     *         Offering you're attempting to purchase does not exist
+     * @throws GatewayTimeoutException
+     *         Gateway timeout error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on purchase offering request
+     * @throws ConflictException
+     *         Offering purchase prevented by service resource issue
+     * @sample AWSMediaLive.PurchaseOffering
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/PurchaseOffering" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PurchaseOfferingResult purchaseOffering(PurchaseOfferingRequest purchaseOfferingRequest);
 
     /**
      * Starts an existing channel

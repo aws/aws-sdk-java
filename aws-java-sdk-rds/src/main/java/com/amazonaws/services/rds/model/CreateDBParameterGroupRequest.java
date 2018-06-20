@@ -63,6 +63,17 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * group family, and can be applied only to a DB instance running a database engine and engine version compatible
      * with that DB parameter group family.
      * </p>
+     * <p>
+     * To list all of the available parameter group families, use the following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"</code>
+     * </p>
+     * <note>
+     * <p>
+     * The output contains duplicates.
+     * </p>
+     * </note>
      */
     private String dBParameterGroupFamily;
     /**
@@ -114,7 +125,17 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * @param dBParameterGroupFamily
      *        The DB parameter group family name. A DB parameter group can be associated with one and only one DB
      *        parameter group family, and can be applied only to a DB instance running a database engine and engine
-     *        version compatible with that DB parameter group family.
+     *        version compatible with that DB parameter group family.</p>
+     *        <p>
+     *        To list all of the available parameter group families, use the following command:
+     *        </p>
+     *        <p>
+     *        <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The output contains duplicates.
+     *        </p>
      * @param description
      *        The description for the DB parameter group.
      */
@@ -317,11 +338,32 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * group family, and can be applied only to a DB instance running a database engine and engine version compatible
      * with that DB parameter group family.
      * </p>
+     * <p>
+     * To list all of the available parameter group families, use the following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"</code>
+     * </p>
+     * <note>
+     * <p>
+     * The output contains duplicates.
+     * </p>
+     * </note>
      * 
      * @param dBParameterGroupFamily
      *        The DB parameter group family name. A DB parameter group can be associated with one and only one DB
      *        parameter group family, and can be applied only to a DB instance running a database engine and engine
-     *        version compatible with that DB parameter group family.
+     *        version compatible with that DB parameter group family.</p>
+     *        <p>
+     *        To list all of the available parameter group families, use the following command:
+     *        </p>
+     *        <p>
+     *        <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The output contains duplicates.
+     *        </p>
      */
 
     public void setDBParameterGroupFamily(String dBParameterGroupFamily) {
@@ -334,10 +376,31 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * group family, and can be applied only to a DB instance running a database engine and engine version compatible
      * with that DB parameter group family.
      * </p>
+     * <p>
+     * To list all of the available parameter group families, use the following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"</code>
+     * </p>
+     * <note>
+     * <p>
+     * The output contains duplicates.
+     * </p>
+     * </note>
      * 
      * @return The DB parameter group family name. A DB parameter group can be associated with one and only one DB
      *         parameter group family, and can be applied only to a DB instance running a database engine and engine
-     *         version compatible with that DB parameter group family.
+     *         version compatible with that DB parameter group family.</p>
+     *         <p>
+     *         To list all of the available parameter group families, use the following command:
+     *         </p>
+     *         <p>
+     *         <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"</code>
+     *         </p>
+     *         <note>
+     *         <p>
+     *         The output contains duplicates.
+     *         </p>
      */
 
     public String getDBParameterGroupFamily() {
@@ -350,11 +413,32 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * group family, and can be applied only to a DB instance running a database engine and engine version compatible
      * with that DB parameter group family.
      * </p>
+     * <p>
+     * To list all of the available parameter group families, use the following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"</code>
+     * </p>
+     * <note>
+     * <p>
+     * The output contains duplicates.
+     * </p>
+     * </note>
      * 
      * @param dBParameterGroupFamily
      *        The DB parameter group family name. A DB parameter group can be associated with one and only one DB
      *        parameter group family, and can be applied only to a DB instance running a database engine and engine
-     *        version compatible with that DB parameter group family.
+     *        version compatible with that DB parameter group family.</p>
+     *        <p>
+     *        To list all of the available parameter group families, use the following command:
+     *        </p>
+     *        <p>
+     *        <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The output contains duplicates.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

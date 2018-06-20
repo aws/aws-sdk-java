@@ -88,6 +88,11 @@ public class AbstractAWSACMPCA implements AWSACMPCA {
     }
 
     @Override
+    public RestoreCertificateAuthorityResult restoreCertificateAuthority(RestoreCertificateAuthorityRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RevokeCertificateResult revokeCertificate(RevokeCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

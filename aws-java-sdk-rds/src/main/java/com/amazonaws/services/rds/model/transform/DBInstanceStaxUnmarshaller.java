@@ -340,6 +340,11 @@ public class DBInstanceStaxUnmarshaller implements Unmarshaller<DBInstance, Stax
                     continue;
                 }
 
+                if (context.testExpression("PerformanceInsightsRetentionPeriod", targetDepth)) {
+                    dBInstance.setPerformanceInsightsRetentionPeriod(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("EnabledCloudwatchLogsExports", targetDepth)) {
                     dBInstance.withEnabledCloudwatchLogsExports(new ArrayList<String>());
                     continue;

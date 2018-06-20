@@ -23,6 +23,7 @@ public enum CertificateAuthorityStatus {
     CREATING("CREATING"),
     PENDING_CERTIFICATE("PENDING_CERTIFICATE"),
     ACTIVE("ACTIVE"),
+    DELETED("DELETED"),
     DISABLED("DISABLED"),
     EXPIRED("EXPIRED"),
     FAILED("FAILED");

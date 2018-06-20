@@ -205,6 +205,35 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
             com.amazonaws.handlers.AsyncHandler<DeleteInputSecurityGroupRequest, DeleteInputSecurityGroupResult> asyncHandler);
 
     /**
+     * Delete an expired reservation.
+     * 
+     * @param deleteReservationRequest
+     *        Placeholder documentation for DeleteReservationRequest
+     * @return A Java Future containing the result of the DeleteReservation operation returned by the service.
+     * @sample AWSMediaLiveAsync.DeleteReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteReservation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteReservationResult> deleteReservationAsync(DeleteReservationRequest deleteReservationRequest);
+
+    /**
+     * Delete an expired reservation.
+     * 
+     * @param deleteReservationRequest
+     *        Placeholder documentation for DeleteReservationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteReservation operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.DeleteReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteReservation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteReservationResult> deleteReservationAsync(DeleteReservationRequest deleteReservationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteReservationRequest, DeleteReservationResult> asyncHandler);
+
+    /**
      * Gets details about a channel
      * 
      * @param describeChannelRequest
@@ -294,6 +323,64 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
             com.amazonaws.handlers.AsyncHandler<DescribeInputSecurityGroupRequest, DescribeInputSecurityGroupResult> asyncHandler);
 
     /**
+     * Get details for an offering.
+     * 
+     * @param describeOfferingRequest
+     *        Placeholder documentation for DescribeOfferingRequest
+     * @return A Java Future containing the result of the DescribeOffering operation returned by the service.
+     * @sample AWSMediaLiveAsync.DescribeOffering
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeOffering" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeOfferingResult> describeOfferingAsync(DescribeOfferingRequest describeOfferingRequest);
+
+    /**
+     * Get details for an offering.
+     * 
+     * @param describeOfferingRequest
+     *        Placeholder documentation for DescribeOfferingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeOffering operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.DescribeOffering
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeOffering" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeOfferingResult> describeOfferingAsync(DescribeOfferingRequest describeOfferingRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeOfferingRequest, DescribeOfferingResult> asyncHandler);
+
+    /**
+     * Get details for a reservation.
+     * 
+     * @param describeReservationRequest
+     *        Placeholder documentation for DescribeReservationRequest
+     * @return A Java Future containing the result of the DescribeReservation operation returned by the service.
+     * @sample AWSMediaLiveAsync.DescribeReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeReservation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeReservationResult> describeReservationAsync(DescribeReservationRequest describeReservationRequest);
+
+    /**
+     * Get details for a reservation.
+     * 
+     * @param describeReservationRequest
+     *        Placeholder documentation for DescribeReservationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeReservation operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.DescribeReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeReservation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeReservationResult> describeReservationAsync(DescribeReservationRequest describeReservationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeReservationRequest, DescribeReservationResult> asyncHandler);
+
+    /**
      * Produces list of channels that have been created
      * 
      * @param listChannelsRequest
@@ -379,6 +466,93 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
      */
     java.util.concurrent.Future<ListInputsResult> listInputsAsync(ListInputsRequest listInputsRequest,
             com.amazonaws.handlers.AsyncHandler<ListInputsRequest, ListInputsResult> asyncHandler);
+
+    /**
+     * List offerings available for purchase.
+     * 
+     * @param listOfferingsRequest
+     *        Placeholder documentation for ListOfferingsRequest
+     * @return A Java Future containing the result of the ListOfferings operation returned by the service.
+     * @sample AWSMediaLiveAsync.ListOfferings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListOfferings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListOfferingsResult> listOfferingsAsync(ListOfferingsRequest listOfferingsRequest);
+
+    /**
+     * List offerings available for purchase.
+     * 
+     * @param listOfferingsRequest
+     *        Placeholder documentation for ListOfferingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListOfferings operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.ListOfferings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListOfferings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListOfferingsResult> listOfferingsAsync(ListOfferingsRequest listOfferingsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListOfferingsRequest, ListOfferingsResult> asyncHandler);
+
+    /**
+     * List purchased reservations.
+     * 
+     * @param listReservationsRequest
+     *        Placeholder documentation for ListReservationsRequest
+     * @return A Java Future containing the result of the ListReservations operation returned by the service.
+     * @sample AWSMediaLiveAsync.ListReservations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListReservations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListReservationsResult> listReservationsAsync(ListReservationsRequest listReservationsRequest);
+
+    /**
+     * List purchased reservations.
+     * 
+     * @param listReservationsRequest
+     *        Placeholder documentation for ListReservationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListReservations operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.ListReservations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListReservations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListReservationsResult> listReservationsAsync(ListReservationsRequest listReservationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListReservationsRequest, ListReservationsResult> asyncHandler);
+
+    /**
+     * Purchase an offering and create a reservation.
+     * 
+     * @param purchaseOfferingRequest
+     *        Placeholder documentation for PurchaseOfferingRequest
+     * @return A Java Future containing the result of the PurchaseOffering operation returned by the service.
+     * @sample AWSMediaLiveAsync.PurchaseOffering
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/PurchaseOffering" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PurchaseOfferingResult> purchaseOfferingAsync(PurchaseOfferingRequest purchaseOfferingRequest);
+
+    /**
+     * Purchase an offering and create a reservation.
+     * 
+     * @param purchaseOfferingRequest
+     *        Placeholder documentation for PurchaseOfferingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PurchaseOffering operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.PurchaseOffering
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/PurchaseOffering" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PurchaseOfferingResult> purchaseOfferingAsync(PurchaseOfferingRequest purchaseOfferingRequest,
+            com.amazonaws.handlers.AsyncHandler<PurchaseOfferingRequest, PurchaseOfferingResult> asyncHandler);
 
     /**
      * Starts an existing channel

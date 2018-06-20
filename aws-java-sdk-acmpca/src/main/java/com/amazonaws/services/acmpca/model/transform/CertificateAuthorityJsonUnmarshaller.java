@@ -93,6 +93,10 @@ public class CertificateAuthorityJsonUnmarshaller implements Unmarshaller<Certif
                     context.nextToken();
                     certificateAuthority.setRevocationConfiguration(RevocationConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("RestorableUntil", targetDepth)) {
+                    context.nextToken();
+                    certificateAuthority.setRestorableUntil(context.getUnmarshaller(java.util.Date.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
