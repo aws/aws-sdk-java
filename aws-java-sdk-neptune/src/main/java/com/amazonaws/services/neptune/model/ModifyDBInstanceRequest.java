@@ -437,22 +437,10 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer dBPortNumber;
     /**
      * <p>
-     * Boolean value that indicates if the DB instance has a publicly resolvable DNS name. Set to <code>True</code> to
-     * make the DB instance Internet-facing with a publicly resolvable DNS name, which resolves to a public IP address.
-     * Set to <code>False</code> to make the DB instance internal with a DNS name that resolves to a private IP address.
-     * </p>
-     * <p>
-     * The DB instance must be part of a public subnet and <code>PubliclyAccessible</code> must be true in order for it
-     * to be publicly accessible.
-     * </p>
-     * <p>
-     * Changes to the <code>PubliclyAccessible</code> parameter are applied immediately regardless of the value of the
-     * <code>ApplyImmediately</code> parameter.
-     * </p>
-     * <p>
-     * Default: false
+     * This parameter is not supported.
      * </p>
      */
+    @Deprecated
     private Boolean publiclyAccessible;
     /**
      * <p>
@@ -3252,117 +3240,39 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Boolean value that indicates if the DB instance has a publicly resolvable DNS name. Set to <code>True</code> to
-     * make the DB instance Internet-facing with a publicly resolvable DNS name, which resolves to a public IP address.
-     * Set to <code>False</code> to make the DB instance internal with a DNS name that resolves to a private IP address.
-     * </p>
-     * <p>
-     * The DB instance must be part of a public subnet and <code>PubliclyAccessible</code> must be true in order for it
-     * to be publicly accessible.
-     * </p>
-     * <p>
-     * Changes to the <code>PubliclyAccessible</code> parameter are applied immediately regardless of the value of the
-     * <code>ApplyImmediately</code> parameter.
-     * </p>
-     * <p>
-     * Default: false
+     * This parameter is not supported.
      * </p>
      * 
      * @param publiclyAccessible
-     *        Boolean value that indicates if the DB instance has a publicly resolvable DNS name. Set to
-     *        <code>True</code> to make the DB instance Internet-facing with a publicly resolvable DNS name, which
-     *        resolves to a public IP address. Set to <code>False</code> to make the DB instance internal with a DNS
-     *        name that resolves to a private IP address. </p>
-     *        <p>
-     *        The DB instance must be part of a public subnet and <code>PubliclyAccessible</code> must be true in order
-     *        for it to be publicly accessible.
-     *        </p>
-     *        <p>
-     *        Changes to the <code>PubliclyAccessible</code> parameter are applied immediately regardless of the value
-     *        of the <code>ApplyImmediately</code> parameter.
-     *        </p>
-     *        <p>
-     *        Default: false
+     *        This parameter is not supported.
      */
-
+    @Deprecated
     public void setPubliclyAccessible(Boolean publiclyAccessible) {
         this.publiclyAccessible = publiclyAccessible;
     }
 
     /**
      * <p>
-     * Boolean value that indicates if the DB instance has a publicly resolvable DNS name. Set to <code>True</code> to
-     * make the DB instance Internet-facing with a publicly resolvable DNS name, which resolves to a public IP address.
-     * Set to <code>False</code> to make the DB instance internal with a DNS name that resolves to a private IP address.
-     * </p>
-     * <p>
-     * The DB instance must be part of a public subnet and <code>PubliclyAccessible</code> must be true in order for it
-     * to be publicly accessible.
-     * </p>
-     * <p>
-     * Changes to the <code>PubliclyAccessible</code> parameter are applied immediately regardless of the value of the
-     * <code>ApplyImmediately</code> parameter.
-     * </p>
-     * <p>
-     * Default: false
+     * This parameter is not supported.
      * </p>
      * 
-     * @return Boolean value that indicates if the DB instance has a publicly resolvable DNS name. Set to
-     *         <code>True</code> to make the DB instance Internet-facing with a publicly resolvable DNS name, which
-     *         resolves to a public IP address. Set to <code>False</code> to make the DB instance internal with a DNS
-     *         name that resolves to a private IP address. </p>
-     *         <p>
-     *         The DB instance must be part of a public subnet and <code>PubliclyAccessible</code> must be true in order
-     *         for it to be publicly accessible.
-     *         </p>
-     *         <p>
-     *         Changes to the <code>PubliclyAccessible</code> parameter are applied immediately regardless of the value
-     *         of the <code>ApplyImmediately</code> parameter.
-     *         </p>
-     *         <p>
-     *         Default: false
+     * @return This parameter is not supported.
      */
-
+    @Deprecated
     public Boolean getPubliclyAccessible() {
         return this.publiclyAccessible;
     }
 
     /**
      * <p>
-     * Boolean value that indicates if the DB instance has a publicly resolvable DNS name. Set to <code>True</code> to
-     * make the DB instance Internet-facing with a publicly resolvable DNS name, which resolves to a public IP address.
-     * Set to <code>False</code> to make the DB instance internal with a DNS name that resolves to a private IP address.
-     * </p>
-     * <p>
-     * The DB instance must be part of a public subnet and <code>PubliclyAccessible</code> must be true in order for it
-     * to be publicly accessible.
-     * </p>
-     * <p>
-     * Changes to the <code>PubliclyAccessible</code> parameter are applied immediately regardless of the value of the
-     * <code>ApplyImmediately</code> parameter.
-     * </p>
-     * <p>
-     * Default: false
+     * This parameter is not supported.
      * </p>
      * 
      * @param publiclyAccessible
-     *        Boolean value that indicates if the DB instance has a publicly resolvable DNS name. Set to
-     *        <code>True</code> to make the DB instance Internet-facing with a publicly resolvable DNS name, which
-     *        resolves to a public IP address. Set to <code>False</code> to make the DB instance internal with a DNS
-     *        name that resolves to a private IP address. </p>
-     *        <p>
-     *        The DB instance must be part of a public subnet and <code>PubliclyAccessible</code> must be true in order
-     *        for it to be publicly accessible.
-     *        </p>
-     *        <p>
-     *        Changes to the <code>PubliclyAccessible</code> parameter are applied immediately regardless of the value
-     *        of the <code>ApplyImmediately</code> parameter.
-     *        </p>
-     *        <p>
-     *        Default: false
+     *        This parameter is not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public ModifyDBInstanceRequest withPubliclyAccessible(Boolean publiclyAccessible) {
         setPubliclyAccessible(publiclyAccessible);
         return this;
@@ -3370,38 +3280,12 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Boolean value that indicates if the DB instance has a publicly resolvable DNS name. Set to <code>True</code> to
-     * make the DB instance Internet-facing with a publicly resolvable DNS name, which resolves to a public IP address.
-     * Set to <code>False</code> to make the DB instance internal with a DNS name that resolves to a private IP address.
-     * </p>
-     * <p>
-     * The DB instance must be part of a public subnet and <code>PubliclyAccessible</code> must be true in order for it
-     * to be publicly accessible.
-     * </p>
-     * <p>
-     * Changes to the <code>PubliclyAccessible</code> parameter are applied immediately regardless of the value of the
-     * <code>ApplyImmediately</code> parameter.
-     * </p>
-     * <p>
-     * Default: false
+     * This parameter is not supported.
      * </p>
      * 
-     * @return Boolean value that indicates if the DB instance has a publicly resolvable DNS name. Set to
-     *         <code>True</code> to make the DB instance Internet-facing with a publicly resolvable DNS name, which
-     *         resolves to a public IP address. Set to <code>False</code> to make the DB instance internal with a DNS
-     *         name that resolves to a private IP address. </p>
-     *         <p>
-     *         The DB instance must be part of a public subnet and <code>PubliclyAccessible</code> must be true in order
-     *         for it to be publicly accessible.
-     *         </p>
-     *         <p>
-     *         Changes to the <code>PubliclyAccessible</code> parameter are applied immediately regardless of the value
-     *         of the <code>ApplyImmediately</code> parameter.
-     *         </p>
-     *         <p>
-     *         Default: false
+     * @return This parameter is not supported.
      */
-
+    @Deprecated
     public Boolean isPubliclyAccessible() {
         return this.publiclyAccessible;
     }

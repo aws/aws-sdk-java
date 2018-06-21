@@ -1252,6 +1252,12 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * instances. If you specify an instance ID that is not valid or an instance that you do not own, you receive an
      * error.
      * </p>
+     * <note>
+     * <p>
+     * The IamRole field for this API action is the Amazon Identity and Access Management (IAM) role assigned to
+     * on-premises instances. This call does not return the IAM role for Amazon EC2 instances.
+     * </p>
+     * </note>
      * 
      * @param describeInstanceInformationRequest
      * @return A Java Future containing the result of the DescribeInstanceInformation operation returned by the service.
@@ -1270,6 +1276,12 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * instances. If you specify an instance ID that is not valid or an instance that you do not own, you receive an
      * error.
      * </p>
+     * <note>
+     * <p>
+     * The IamRole field for this API action is the Amazon Identity and Access Management (IAM) role assigned to
+     * on-premises instances. This call does not return the IAM role for Amazon EC2 instances.
+     * </p>
+     * </note>
      * 
      * @param describeInstanceInformationRequest
      * @param asyncHandler

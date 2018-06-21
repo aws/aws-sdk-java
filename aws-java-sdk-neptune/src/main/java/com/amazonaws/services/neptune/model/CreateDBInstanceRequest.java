@@ -314,32 +314,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String characterSetName;
     /**
      * <p>
-     * Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance
-     * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
-     * internal instance with a DNS name that resolves to a private IP address.
-     * </p>
-     * <p>
-     * Default: The default behavior varies depending on whether a VPC has been requested or not. The following list
-     * shows the default behavior in each case.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>Default VPC:</b> true
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>VPC:</b> false
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is private.
+     * This parameter is not supported.
      * </p>
      */
+    @Deprecated
     private Boolean publiclyAccessible;
 
     private java.util.List<Tag> tags;
@@ -2384,174 +2362,39 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance
-     * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
-     * internal instance with a DNS name that resolves to a private IP address.
-     * </p>
-     * <p>
-     * Default: The default behavior varies depending on whether a VPC has been requested or not. The following list
-     * shows the default behavior in each case.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>Default VPC:</b> true
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>VPC:</b> false
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is private.
+     * This parameter is not supported.
      * </p>
      * 
      * @param publiclyAccessible
-     *        Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
-     *        instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false
-     *        specifies an internal instance with a DNS name that resolves to a private IP address.</p>
-     *        <p>
-     *        Default: The default behavior varies depending on whether a VPC has been requested or not. The following
-     *        list shows the default behavior in each case.
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <b>Default VPC:</b> true
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>VPC:</b> false
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
-     *        been set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part
-     *        of the request and the PubliclyAccessible value has not been set, the DB instance is private.
+     *        This parameter is not supported.
      */
-
+    @Deprecated
     public void setPubliclyAccessible(Boolean publiclyAccessible) {
         this.publiclyAccessible = publiclyAccessible;
     }
 
     /**
      * <p>
-     * Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance
-     * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
-     * internal instance with a DNS name that resolves to a private IP address.
-     * </p>
-     * <p>
-     * Default: The default behavior varies depending on whether a VPC has been requested or not. The following list
-     * shows the default behavior in each case.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>Default VPC:</b> true
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>VPC:</b> false
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is private.
+     * This parameter is not supported.
      * </p>
      * 
-     * @return Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
-     *         instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false
-     *         specifies an internal instance with a DNS name that resolves to a private IP address.</p>
-     *         <p>
-     *         Default: The default behavior varies depending on whether a VPC has been requested or not. The following
-     *         list shows the default behavior in each case.
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <b>Default VPC:</b> true
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <b>VPC:</b> false
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
-     *         been set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as
-     *         part of the request and the PubliclyAccessible value has not been set, the DB instance is private.
+     * @return This parameter is not supported.
      */
-
+    @Deprecated
     public Boolean getPubliclyAccessible() {
         return this.publiclyAccessible;
     }
 
     /**
      * <p>
-     * Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance
-     * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
-     * internal instance with a DNS name that resolves to a private IP address.
-     * </p>
-     * <p>
-     * Default: The default behavior varies depending on whether a VPC has been requested or not. The following list
-     * shows the default behavior in each case.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>Default VPC:</b> true
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>VPC:</b> false
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is private.
+     * This parameter is not supported.
      * </p>
      * 
      * @param publiclyAccessible
-     *        Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
-     *        instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false
-     *        specifies an internal instance with a DNS name that resolves to a private IP address.</p>
-     *        <p>
-     *        Default: The default behavior varies depending on whether a VPC has been requested or not. The following
-     *        list shows the default behavior in each case.
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <b>Default VPC:</b> true
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>VPC:</b> false
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
-     *        been set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part
-     *        of the request and the PubliclyAccessible value has not been set, the DB instance is private.
+     *        This parameter is not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public CreateDBInstanceRequest withPubliclyAccessible(Boolean publiclyAccessible) {
         setPubliclyAccessible(publiclyAccessible);
         return this;
@@ -2559,57 +2402,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance
-     * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
-     * internal instance with a DNS name that resolves to a private IP address.
-     * </p>
-     * <p>
-     * Default: The default behavior varies depending on whether a VPC has been requested or not. The following list
-     * shows the default behavior in each case.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>Default VPC:</b> true
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>VPC:</b> false
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not been
-     * set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as part of the
-     * request and the PubliclyAccessible value has not been set, the DB instance is private.
+     * This parameter is not supported.
      * </p>
      * 
-     * @return Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
-     *         instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false
-     *         specifies an internal instance with a DNS name that resolves to a private IP address.</p>
-     *         <p>
-     *         Default: The default behavior varies depending on whether a VPC has been requested or not. The following
-     *         list shows the default behavior in each case.
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <b>Default VPC:</b> true
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <b>VPC:</b> false
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         If no DB subnet group has been specified as part of the request and the PubliclyAccessible value has not
-     *         been set, the DB instance is publicly accessible. If a specific DB subnet group has been specified as
-     *         part of the request and the PubliclyAccessible value has not been set, the DB instance is private.
+     * @return This parameter is not supported.
      */
-
+    @Deprecated
     public Boolean isPubliclyAccessible() {
         return this.publiclyAccessible;
     }
