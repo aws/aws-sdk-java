@@ -1605,6 +1605,39 @@ public class AmazonCloudDirectoryAsyncClient extends AmazonCloudDirectoryClient 
     }
 
     @Override
+    public java.util.concurrent.Future<ListManagedSchemaArnsResult> listManagedSchemaArnsAsync(ListManagedSchemaArnsRequest request) {
+
+        return listManagedSchemaArnsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListManagedSchemaArnsResult> listManagedSchemaArnsAsync(final ListManagedSchemaArnsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListManagedSchemaArnsRequest, ListManagedSchemaArnsResult> asyncHandler) {
+        final ListManagedSchemaArnsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListManagedSchemaArnsResult>() {
+            @Override
+            public ListManagedSchemaArnsResult call() throws Exception {
+                ListManagedSchemaArnsResult result = null;
+
+                try {
+                    result = executeListManagedSchemaArns(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListObjectAttributesResult> listObjectAttributesAsync(ListObjectAttributesRequest request) {
 
         return listObjectAttributesAsync(request, null);

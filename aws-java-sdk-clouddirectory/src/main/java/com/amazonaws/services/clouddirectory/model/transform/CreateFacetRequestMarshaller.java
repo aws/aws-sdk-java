@@ -36,6 +36,8 @@ public class CreateFacetRequestMarshaller {
             .marshallLocationName("Attributes").build();
     private static final MarshallingInfo<String> OBJECTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ObjectType").build();
+    private static final MarshallingInfo<String> FACETSTYLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FacetStyle").build();
 
     private static final CreateFacetRequestMarshaller instance = new CreateFacetRequestMarshaller();
 
@@ -57,6 +59,7 @@ public class CreateFacetRequestMarshaller {
             protocolMarshaller.marshall(createFacetRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createFacetRequest.getAttributes(), ATTRIBUTES_BINDING);
             protocolMarshaller.marshall(createFacetRequest.getObjectType(), OBJECTTYPE_BINDING);
+            protocolMarshaller.marshall(createFacetRequest.getFacetStyle(), FACETSTYLE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

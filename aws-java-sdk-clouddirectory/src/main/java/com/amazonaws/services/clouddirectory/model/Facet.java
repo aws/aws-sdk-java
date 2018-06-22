@@ -25,7 +25,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * information.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/Facet" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/Facet" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -43,6 +43,14 @@ public class Facet implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String objectType;
+    /**
+     * <p>
+     * There are two different styles that you can define on any given facet, <code>Static</code> and
+     * <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets,
+     * attributes can be defined during data plane operations.
+     * </p>
+     */
+    private String facetStyle;
 
     /**
      * <p>
@@ -163,6 +171,99 @@ public class Facet implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * There are two different styles that you can define on any given facet, <code>Static</code> and
+     * <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets,
+     * attributes can be defined during data plane operations.
+     * </p>
+     * 
+     * @param facetStyle
+     *        There are two different styles that you can define on any given facet, <code>Static</code> and
+     *        <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets,
+     *        attributes can be defined during data plane operations.
+     * @see FacetStyle
+     */
+
+    public void setFacetStyle(String facetStyle) {
+        this.facetStyle = facetStyle;
+    }
+
+    /**
+     * <p>
+     * There are two different styles that you can define on any given facet, <code>Static</code> and
+     * <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets,
+     * attributes can be defined during data plane operations.
+     * </p>
+     * 
+     * @return There are two different styles that you can define on any given facet, <code>Static</code> and
+     *         <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic
+     *         facets, attributes can be defined during data plane operations.
+     * @see FacetStyle
+     */
+
+    public String getFacetStyle() {
+        return this.facetStyle;
+    }
+
+    /**
+     * <p>
+     * There are two different styles that you can define on any given facet, <code>Static</code> and
+     * <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets,
+     * attributes can be defined during data plane operations.
+     * </p>
+     * 
+     * @param facetStyle
+     *        There are two different styles that you can define on any given facet, <code>Static</code> and
+     *        <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets,
+     *        attributes can be defined during data plane operations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FacetStyle
+     */
+
+    public Facet withFacetStyle(String facetStyle) {
+        setFacetStyle(facetStyle);
+        return this;
+    }
+
+    /**
+     * <p>
+     * There are two different styles that you can define on any given facet, <code>Static</code> and
+     * <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets,
+     * attributes can be defined during data plane operations.
+     * </p>
+     * 
+     * @param facetStyle
+     *        There are two different styles that you can define on any given facet, <code>Static</code> and
+     *        <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets,
+     *        attributes can be defined during data plane operations.
+     * @see FacetStyle
+     */
+
+    public void setFacetStyle(FacetStyle facetStyle) {
+        withFacetStyle(facetStyle);
+    }
+
+    /**
+     * <p>
+     * There are two different styles that you can define on any given facet, <code>Static</code> and
+     * <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets,
+     * attributes can be defined during data plane operations.
+     * </p>
+     * 
+     * @param facetStyle
+     *        There are two different styles that you can define on any given facet, <code>Static</code> and
+     *        <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets,
+     *        attributes can be defined during data plane operations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FacetStyle
+     */
+
+    public Facet withFacetStyle(FacetStyle facetStyle) {
+        this.facetStyle = facetStyle.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -176,7 +277,9 @@ public class Facet implements Serializable, Cloneable, StructuredPojo {
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getObjectType() != null)
-            sb.append("ObjectType: ").append(getObjectType());
+            sb.append("ObjectType: ").append(getObjectType()).append(",");
+        if (getFacetStyle() != null)
+            sb.append("FacetStyle: ").append(getFacetStyle());
         sb.append("}");
         return sb.toString();
     }
@@ -199,6 +302,10 @@ public class Facet implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getObjectType() != null && other.getObjectType().equals(this.getObjectType()) == false)
             return false;
+        if (other.getFacetStyle() == null ^ this.getFacetStyle() == null)
+            return false;
+        if (other.getFacetStyle() != null && other.getFacetStyle().equals(this.getFacetStyle()) == false)
+            return false;
         return true;
     }
 
@@ -209,6 +316,7 @@ public class Facet implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getObjectType() == null) ? 0 : getObjectType().hashCode());
+        hashCode = prime * hashCode + ((getFacetStyle() == null) ? 0 : getFacetStyle().hashCode());
         return hashCode;
     }
 

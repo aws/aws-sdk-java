@@ -243,6 +243,11 @@ public class AbstractAmazonCloudDirectory implements AmazonCloudDirectory {
     }
 
     @Override
+    public ListManagedSchemaArnsResult listManagedSchemaArns(ListManagedSchemaArnsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListObjectAttributesResult listObjectAttributes(ListObjectAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

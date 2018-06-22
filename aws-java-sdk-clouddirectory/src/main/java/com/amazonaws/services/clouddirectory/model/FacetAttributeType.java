@@ -24,7 +24,8 @@ public enum FacetAttributeType {
     BINARY("BINARY"),
     BOOLEAN("BOOLEAN"),
     NUMBER("NUMBER"),
-    DATETIME("DATETIME");
+    DATETIME("DATETIME"),
+    VARIANT("VARIANT");
 
     private String value;
 

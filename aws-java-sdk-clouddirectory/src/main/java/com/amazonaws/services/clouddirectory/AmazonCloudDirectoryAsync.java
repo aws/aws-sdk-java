@@ -46,7 +46,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param addFacetToObjectRequest
      * @return A Java Future containing the result of the AddFacetToObject operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.AddFacetToObject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AddFacetToObject"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AddFacetToObject"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<AddFacetToObjectResult> addFacetToObjectAsync(AddFacetToObjectRequest addFacetToObjectRequest);
@@ -63,7 +63,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AddFacetToObject operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.AddFacetToObject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AddFacetToObject"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AddFacetToObject"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<AddFacetToObjectResult> addFacetToObjectAsync(AddFacetToObjectRequest addFacetToObjectRequest,
@@ -78,7 +78,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param applySchemaRequest
      * @return A Java Future containing the result of the ApplySchema operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.ApplySchema
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ApplySchema" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ApplySchema" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ApplySchemaResult> applySchemaAsync(ApplySchemaRequest applySchemaRequest);
@@ -96,7 +96,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ApplySchema operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.ApplySchema
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ApplySchema" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ApplySchema" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ApplySchemaResult> applySchemaAsync(ApplySchemaRequest applySchemaRequest,
@@ -122,7 +122,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param attachObjectRequest
      * @return A Java Future containing the result of the AttachObject operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.AttachObject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachObject" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachObject" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<AttachObjectResult> attachObjectAsync(AttachObjectRequest attachObjectRequest);
@@ -151,7 +151,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AttachObject operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.AttachObject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachObject" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachObject" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<AttachObjectResult> attachObjectAsync(AttachObjectRequest attachObjectRequest,
@@ -165,7 +165,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param attachPolicyRequest
      * @return A Java Future containing the result of the AttachPolicy operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.AttachPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachPolicy" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachPolicy" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<AttachPolicyResult> attachPolicyAsync(AttachPolicyRequest attachPolicyRequest);
@@ -182,7 +182,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AttachPolicy operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.AttachPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachPolicy" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachPolicy" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<AttachPolicyResult> attachPolicyAsync(AttachPolicyRequest attachPolicyRequest,
@@ -196,7 +196,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param attachToIndexRequest
      * @return A Java Future containing the result of the AttachToIndex operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.AttachToIndex
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachToIndex" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachToIndex" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<AttachToIndexResult> attachToIndexAsync(AttachToIndexRequest attachToIndexRequest);
@@ -213,7 +213,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AttachToIndex operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.AttachToIndex
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachToIndex" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachToIndex" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<AttachToIndexResult> attachToIndexAsync(AttachToIndexRequest attachToIndexRequest,
@@ -229,7 +229,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param attachTypedLinkRequest
      * @return A Java Future containing the result of the AttachTypedLink operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.AttachTypedLink
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachTypedLink" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachTypedLink" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<AttachTypedLinkResult> attachTypedLinkAsync(AttachTypedLinkRequest attachTypedLinkRequest);
@@ -248,7 +248,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the AttachTypedLink operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.AttachTypedLink
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/AttachTypedLink" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/AttachTypedLink" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<AttachTypedLinkResult> attachTypedLinkAsync(AttachTypedLinkRequest attachTypedLinkRequest,
@@ -262,7 +262,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param batchReadRequest
      * @return A Java Future containing the result of the BatchRead operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.BatchRead
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchRead" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchRead" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<BatchReadResult> batchReadAsync(BatchReadRequest batchReadRequest);
@@ -279,7 +279,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the BatchRead operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.BatchRead
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchRead" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchRead" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<BatchReadResult> batchReadAsync(BatchReadRequest batchReadRequest,
@@ -293,7 +293,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param batchWriteRequest
      * @return A Java Future containing the result of the BatchWrite operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.BatchWrite
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchWrite" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchWrite" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<BatchWriteResult> batchWriteAsync(BatchWriteRequest batchWriteRequest);
@@ -310,7 +310,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the BatchWrite operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.BatchWrite
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/BatchWrite" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/BatchWrite" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<BatchWriteResult> batchWriteAsync(BatchWriteRequest batchWriteRequest,
@@ -325,7 +325,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param createDirectoryRequest
      * @return A Java Future containing the result of the CreateDirectory operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.CreateDirectory
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateDirectory" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateDirectory" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateDirectoryResult> createDirectoryAsync(CreateDirectoryRequest createDirectoryRequest);
@@ -343,7 +343,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateDirectory operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.CreateDirectory
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateDirectory" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateDirectory" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateDirectoryResult> createDirectoryAsync(CreateDirectoryRequest createDirectoryRequest,
@@ -357,7 +357,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param createFacetRequest
      * @return A Java Future containing the result of the CreateFacet operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.CreateFacet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateFacet" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateFacet" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<CreateFacetResult> createFacetAsync(CreateFacetRequest createFacetRequest);
@@ -374,7 +374,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateFacet operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.CreateFacet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateFacet" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateFacet" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<CreateFacetResult> createFacetAsync(CreateFacetRequest createFacetRequest,
@@ -390,7 +390,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param createIndexRequest
      * @return A Java Future containing the result of the CreateIndex operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.CreateIndex
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateIndex" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateIndex" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<CreateIndexResult> createIndexAsync(CreateIndexRequest createIndexRequest);
@@ -409,7 +409,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateIndex operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.CreateIndex
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateIndex" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateIndex" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<CreateIndexResult> createIndexAsync(CreateIndexRequest createIndexRequest,
@@ -425,7 +425,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param createObjectRequest
      * @return A Java Future containing the result of the CreateObject operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.CreateObject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateObject" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateObject" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateObjectResult> createObjectAsync(CreateObjectRequest createObjectRequest);
@@ -444,7 +444,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateObject operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.CreateObject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateObject" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateObject" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateObjectResult> createObjectAsync(CreateObjectRequest createObjectRequest,
@@ -477,7 +477,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param createSchemaRequest
      * @return A Java Future containing the result of the CreateSchema operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.CreateSchema
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateSchema" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateSchema" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateSchemaResult> createSchemaAsync(CreateSchemaRequest createSchemaRequest);
@@ -513,7 +513,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateSchema operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.CreateSchema
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateSchema" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateSchema" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateSchemaResult> createSchemaAsync(CreateSchemaRequest createSchemaRequest,
@@ -529,7 +529,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param createTypedLinkFacetRequest
      * @return A Java Future containing the result of the CreateTypedLinkFacet operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.CreateTypedLinkFacet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateTypedLinkFacet"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateTypedLinkFacet"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateTypedLinkFacetResult> createTypedLinkFacetAsync(CreateTypedLinkFacetRequest createTypedLinkFacetRequest);
@@ -548,7 +548,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateTypedLinkFacet operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.CreateTypedLinkFacet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/CreateTypedLinkFacet"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/CreateTypedLinkFacet"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateTypedLinkFacetResult> createTypedLinkFacetAsync(CreateTypedLinkFacetRequest createTypedLinkFacetRequest,
@@ -563,7 +563,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param deleteDirectoryRequest
      * @return A Java Future containing the result of the DeleteDirectory operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.DeleteDirectory
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteDirectory" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteDirectory" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteDirectoryResult> deleteDirectoryAsync(DeleteDirectoryRequest deleteDirectoryRequest);
@@ -581,7 +581,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteDirectory operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.DeleteDirectory
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteDirectory" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteDirectory" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteDirectoryResult> deleteDirectoryAsync(DeleteDirectoryRequest deleteDirectoryRequest,
@@ -596,7 +596,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param deleteFacetRequest
      * @return A Java Future containing the result of the DeleteFacet operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.DeleteFacet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteFacet" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteFacet" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteFacetResult> deleteFacetAsync(DeleteFacetRequest deleteFacetRequest);
@@ -614,7 +614,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteFacet operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.DeleteFacet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteFacet" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteFacet" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DeleteFacetResult> deleteFacetAsync(DeleteFacetRequest deleteFacetRequest,
@@ -628,7 +628,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param deleteObjectRequest
      * @return A Java Future containing the result of the DeleteObject operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.DeleteObject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteObject" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteObject" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteObjectResult> deleteObjectAsync(DeleteObjectRequest deleteObjectRequest);
@@ -645,7 +645,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteObject operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.DeleteObject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteObject" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteObject" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteObjectResult> deleteObjectAsync(DeleteObjectRequest deleteObjectRequest,
@@ -659,7 +659,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param deleteSchemaRequest
      * @return A Java Future containing the result of the DeleteSchema operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.DeleteSchema
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteSchema" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteSchema" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteSchemaResult> deleteSchemaAsync(DeleteSchemaRequest deleteSchemaRequest);
@@ -676,7 +676,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteSchema operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.DeleteSchema
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteSchema" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteSchema" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteSchemaResult> deleteSchemaAsync(DeleteSchemaRequest deleteSchemaRequest,
@@ -692,7 +692,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param deleteTypedLinkFacetRequest
      * @return A Java Future containing the result of the DeleteTypedLinkFacet operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.DeleteTypedLinkFacet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteTypedLinkFacet"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteTypedLinkFacet"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteTypedLinkFacetResult> deleteTypedLinkFacetAsync(DeleteTypedLinkFacetRequest deleteTypedLinkFacetRequest);
@@ -711,7 +711,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteTypedLinkFacet operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.DeleteTypedLinkFacet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DeleteTypedLinkFacet"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DeleteTypedLinkFacet"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteTypedLinkFacetResult> deleteTypedLinkFacetAsync(DeleteTypedLinkFacetRequest deleteTypedLinkFacetRequest,
@@ -725,7 +725,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param detachFromIndexRequest
      * @return A Java Future containing the result of the DetachFromIndex operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.DetachFromIndex
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachFromIndex" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DetachFromIndex" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<DetachFromIndexResult> detachFromIndexAsync(DetachFromIndexRequest detachFromIndexRequest);
@@ -742,7 +742,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DetachFromIndex operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.DetachFromIndex
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachFromIndex" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DetachFromIndex" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<DetachFromIndexResult> detachFromIndexAsync(DetachFromIndexRequest detachFromIndexRequest,
@@ -757,7 +757,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param detachObjectRequest
      * @return A Java Future containing the result of the DetachObject operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.DetachObject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachObject" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DetachObject" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<DetachObjectResult> detachObjectAsync(DetachObjectRequest detachObjectRequest);
@@ -775,7 +775,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DetachObject operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.DetachObject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachObject" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DetachObject" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<DetachObjectResult> detachObjectAsync(DetachObjectRequest detachObjectRequest,
@@ -789,7 +789,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param detachPolicyRequest
      * @return A Java Future containing the result of the DetachPolicy operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.DetachPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachPolicy" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DetachPolicy" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<DetachPolicyResult> detachPolicyAsync(DetachPolicyRequest detachPolicyRequest);
@@ -806,7 +806,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DetachPolicy operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.DetachPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachPolicy" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DetachPolicy" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<DetachPolicyResult> detachPolicyAsync(DetachPolicyRequest detachPolicyRequest,
@@ -822,7 +822,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param detachTypedLinkRequest
      * @return A Java Future containing the result of the DetachTypedLink operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.DetachTypedLink
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachTypedLink" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DetachTypedLink" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<DetachTypedLinkResult> detachTypedLinkAsync(DetachTypedLinkRequest detachTypedLinkRequest);
@@ -841,7 +841,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DetachTypedLink operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.DetachTypedLink
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DetachTypedLink" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DetachTypedLink" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<DetachTypedLinkResult> detachTypedLinkAsync(DetachTypedLinkRequest detachTypedLinkRequest,
@@ -856,7 +856,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param disableDirectoryRequest
      * @return A Java Future containing the result of the DisableDirectory operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.DisableDirectory
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DisableDirectory"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DisableDirectory"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DisableDirectoryResult> disableDirectoryAsync(DisableDirectoryRequest disableDirectoryRequest);
@@ -874,7 +874,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DisableDirectory operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.DisableDirectory
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/DisableDirectory"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/DisableDirectory"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DisableDirectoryResult> disableDirectoryAsync(DisableDirectoryRequest disableDirectoryRequest,
@@ -889,7 +889,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param enableDirectoryRequest
      * @return A Java Future containing the result of the EnableDirectory operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.EnableDirectory
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/EnableDirectory" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/EnableDirectory" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<EnableDirectoryResult> enableDirectoryAsync(EnableDirectoryRequest enableDirectoryRequest);
@@ -907,7 +907,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the EnableDirectory operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.EnableDirectory
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/EnableDirectory" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/EnableDirectory" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<EnableDirectoryResult> enableDirectoryAsync(EnableDirectoryRequest enableDirectoryRequest,
@@ -921,7 +921,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param getAppliedSchemaVersionRequest
      * @return A Java Future containing the result of the GetAppliedSchemaVersion operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.GetAppliedSchemaVersion
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetAppliedSchemaVersion"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetAppliedSchemaVersion"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetAppliedSchemaVersionResult> getAppliedSchemaVersionAsync(GetAppliedSchemaVersionRequest getAppliedSchemaVersionRequest);
@@ -938,7 +938,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetAppliedSchemaVersion operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.GetAppliedSchemaVersion
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetAppliedSchemaVersion"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetAppliedSchemaVersion"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetAppliedSchemaVersionResult> getAppliedSchemaVersionAsync(GetAppliedSchemaVersionRequest getAppliedSchemaVersionRequest,
@@ -952,7 +952,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param getDirectoryRequest
      * @return A Java Future containing the result of the GetDirectory operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.GetDirectory
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetDirectory" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetDirectory" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<GetDirectoryResult> getDirectoryAsync(GetDirectoryRequest getDirectoryRequest);
@@ -969,7 +969,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetDirectory operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.GetDirectory
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetDirectory" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetDirectory" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<GetDirectoryResult> getDirectoryAsync(GetDirectoryRequest getDirectoryRequest,
@@ -984,7 +984,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param getFacetRequest
      * @return A Java Future containing the result of the GetFacet operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.GetFacet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetFacet" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetFacet" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetFacetResult> getFacetAsync(GetFacetRequest getFacetRequest);
@@ -1002,7 +1002,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetFacet operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.GetFacet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetFacet" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetFacet" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetFacetResult> getFacetAsync(GetFacetRequest getFacetRequest,
@@ -1016,7 +1016,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param getLinkAttributesRequest
      * @return A Java Future containing the result of the GetLinkAttributes operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.GetLinkAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetLinkAttributes"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetLinkAttributes"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetLinkAttributesResult> getLinkAttributesAsync(GetLinkAttributesRequest getLinkAttributesRequest);
@@ -1033,7 +1033,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetLinkAttributes operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.GetLinkAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetLinkAttributes"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetLinkAttributes"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetLinkAttributesResult> getLinkAttributesAsync(GetLinkAttributesRequest getLinkAttributesRequest,
@@ -1047,7 +1047,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param getObjectAttributesRequest
      * @return A Java Future containing the result of the GetObjectAttributes operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.GetObjectAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetObjectAttributes"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetObjectAttributes"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetObjectAttributesResult> getObjectAttributesAsync(GetObjectAttributesRequest getObjectAttributesRequest);
@@ -1064,7 +1064,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetObjectAttributes operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.GetObjectAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetObjectAttributes"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetObjectAttributes"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetObjectAttributesResult> getObjectAttributesAsync(GetObjectAttributesRequest getObjectAttributesRequest,
@@ -1078,7 +1078,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param getObjectInformationRequest
      * @return A Java Future containing the result of the GetObjectInformation operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.GetObjectInformation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetObjectInformation"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetObjectInformation"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetObjectInformationResult> getObjectInformationAsync(GetObjectInformationRequest getObjectInformationRequest);
@@ -1095,7 +1095,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetObjectInformation operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.GetObjectInformation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetObjectInformation"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetObjectInformation"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetObjectInformationResult> getObjectInformationAsync(GetObjectInformationRequest getObjectInformationRequest,
@@ -1111,7 +1111,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param getSchemaAsJsonRequest
      * @return A Java Future containing the result of the GetSchemaAsJson operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.GetSchemaAsJson
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetSchemaAsJson" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetSchemaAsJson" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<GetSchemaAsJsonResult> getSchemaAsJsonAsync(GetSchemaAsJsonRequest getSchemaAsJsonRequest);
@@ -1130,7 +1130,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetSchemaAsJson operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.GetSchemaAsJson
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetSchemaAsJson" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetSchemaAsJson" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<GetSchemaAsJsonResult> getSchemaAsJsonAsync(GetSchemaAsJsonRequest getSchemaAsJsonRequest,
@@ -1147,7 +1147,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @return A Java Future containing the result of the GetTypedLinkFacetInformation operation returned by the
      *         service.
      * @sample AmazonCloudDirectoryAsync.GetTypedLinkFacetInformation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetTypedLinkFacetInformation"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetTypedLinkFacetInformation"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetTypedLinkFacetInformationResult> getTypedLinkFacetInformationAsync(
@@ -1168,7 +1168,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @return A Java Future containing the result of the GetTypedLinkFacetInformation operation returned by the
      *         service.
      * @sample AmazonCloudDirectoryAsyncHandler.GetTypedLinkFacetInformation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/GetTypedLinkFacetInformation"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetTypedLinkFacetInformation"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetTypedLinkFacetInformationResult> getTypedLinkFacetInformationAsync(
@@ -1184,7 +1184,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param listAppliedSchemaArnsRequest
      * @return A Java Future containing the result of the ListAppliedSchemaArns operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.ListAppliedSchemaArns
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAppliedSchemaArns"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListAppliedSchemaArns"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListAppliedSchemaArnsResult> listAppliedSchemaArnsAsync(ListAppliedSchemaArnsRequest listAppliedSchemaArnsRequest);
@@ -1202,7 +1202,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListAppliedSchemaArns operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.ListAppliedSchemaArns
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAppliedSchemaArns"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListAppliedSchemaArns"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListAppliedSchemaArnsResult> listAppliedSchemaArnsAsync(ListAppliedSchemaArnsRequest listAppliedSchemaArnsRequest,
@@ -1216,7 +1216,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param listAttachedIndicesRequest
      * @return A Java Future containing the result of the ListAttachedIndices operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.ListAttachedIndices
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAttachedIndices"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListAttachedIndices"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListAttachedIndicesResult> listAttachedIndicesAsync(ListAttachedIndicesRequest listAttachedIndicesRequest);
@@ -1233,7 +1233,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListAttachedIndices operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.ListAttachedIndices
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListAttachedIndices"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListAttachedIndices"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListAttachedIndicesResult> listAttachedIndicesAsync(ListAttachedIndicesRequest listAttachedIndicesRequest,
@@ -1247,7 +1247,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param listDevelopmentSchemaArnsRequest
      * @return A Java Future containing the result of the ListDevelopmentSchemaArns operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.ListDevelopmentSchemaArns
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDevelopmentSchemaArns"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListDevelopmentSchemaArns"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListDevelopmentSchemaArnsResult> listDevelopmentSchemaArnsAsync(
@@ -1265,7 +1265,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListDevelopmentSchemaArns operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.ListDevelopmentSchemaArns
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDevelopmentSchemaArns"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListDevelopmentSchemaArns"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListDevelopmentSchemaArnsResult> listDevelopmentSchemaArnsAsync(
@@ -1280,7 +1280,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param listDirectoriesRequest
      * @return A Java Future containing the result of the ListDirectories operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.ListDirectories
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDirectories" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListDirectories" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<ListDirectoriesResult> listDirectoriesAsync(ListDirectoriesRequest listDirectoriesRequest);
@@ -1297,7 +1297,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListDirectories operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.ListDirectories
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListDirectories" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListDirectories" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<ListDirectoriesResult> listDirectoriesAsync(ListDirectoriesRequest listDirectoriesRequest,
@@ -1311,7 +1311,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param listFacetAttributesRequest
      * @return A Java Future containing the result of the ListFacetAttributes operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.ListFacetAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetAttributes"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListFacetAttributes"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListFacetAttributesResult> listFacetAttributesAsync(ListFacetAttributesRequest listFacetAttributesRequest);
@@ -1328,7 +1328,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListFacetAttributes operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.ListFacetAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetAttributes"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListFacetAttributes"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListFacetAttributesResult> listFacetAttributesAsync(ListFacetAttributesRequest listFacetAttributesRequest,
@@ -1342,7 +1342,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param listFacetNamesRequest
      * @return A Java Future containing the result of the ListFacetNames operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.ListFacetNames
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetNames" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListFacetNames" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<ListFacetNamesResult> listFacetNamesAsync(ListFacetNamesRequest listFacetNamesRequest);
@@ -1359,7 +1359,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListFacetNames operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.ListFacetNames
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListFacetNames" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListFacetNames" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<ListFacetNamesResult> listFacetNamesAsync(ListFacetNamesRequest listFacetNamesRequest,
@@ -1376,7 +1376,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param listIncomingTypedLinksRequest
      * @return A Java Future containing the result of the ListIncomingTypedLinks operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.ListIncomingTypedLinks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIncomingTypedLinks"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListIncomingTypedLinks"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListIncomingTypedLinksResult> listIncomingTypedLinksAsync(ListIncomingTypedLinksRequest listIncomingTypedLinksRequest);
@@ -1396,7 +1396,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListIncomingTypedLinks operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.ListIncomingTypedLinks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIncomingTypedLinks"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListIncomingTypedLinks"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListIncomingTypedLinksResult> listIncomingTypedLinksAsync(ListIncomingTypedLinksRequest listIncomingTypedLinksRequest,
@@ -1410,7 +1410,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param listIndexRequest
      * @return A Java Future containing the result of the ListIndex operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.ListIndex
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIndex" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListIndex" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListIndexResult> listIndexAsync(ListIndexRequest listIndexRequest);
@@ -1427,11 +1427,44 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListIndex operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.ListIndex
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListIndex" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListIndex" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListIndexResult> listIndexAsync(ListIndexRequest listIndexRequest,
             com.amazonaws.handlers.AsyncHandler<ListIndexRequest, ListIndexResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the major version families of each managed schema. If a major version ARN is provided as SchemaArn, the
+     * minor version revisions in that family are listed instead.
+     * </p>
+     * 
+     * @param listManagedSchemaArnsRequest
+     * @return A Java Future containing the result of the ListManagedSchemaArns operation returned by the service.
+     * @sample AmazonCloudDirectoryAsync.ListManagedSchemaArns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListManagedSchemaArns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListManagedSchemaArnsResult> listManagedSchemaArnsAsync(ListManagedSchemaArnsRequest listManagedSchemaArnsRequest);
+
+    /**
+     * <p>
+     * Lists the major version families of each managed schema. If a major version ARN is provided as SchemaArn, the
+     * minor version revisions in that family are listed instead.
+     * </p>
+     * 
+     * @param listManagedSchemaArnsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListManagedSchemaArns operation returned by the service.
+     * @sample AmazonCloudDirectoryAsyncHandler.ListManagedSchemaArns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListManagedSchemaArns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListManagedSchemaArnsResult> listManagedSchemaArnsAsync(ListManagedSchemaArnsRequest listManagedSchemaArnsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListManagedSchemaArnsRequest, ListManagedSchemaArnsResult> asyncHandler);
 
     /**
      * <p>
@@ -1441,7 +1474,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param listObjectAttributesRequest
      * @return A Java Future containing the result of the ListObjectAttributes operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.ListObjectAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectAttributes"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectAttributes"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListObjectAttributesResult> listObjectAttributesAsync(ListObjectAttributesRequest listObjectAttributesRequest);
@@ -1458,7 +1491,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListObjectAttributes operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.ListObjectAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectAttributes"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectAttributes"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListObjectAttributesResult> listObjectAttributesAsync(ListObjectAttributesRequest listObjectAttributesRequest,
@@ -1472,7 +1505,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param listObjectChildrenRequest
      * @return A Java Future containing the result of the ListObjectChildren operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.ListObjectChildren
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectChildren"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectChildren"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListObjectChildrenResult> listObjectChildrenAsync(ListObjectChildrenRequest listObjectChildrenRequest);
@@ -1489,7 +1522,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListObjectChildren operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.ListObjectChildren
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectChildren"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectChildren"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListObjectChildrenResult> listObjectChildrenAsync(ListObjectChildrenRequest listObjectChildrenRequest,
@@ -1513,7 +1546,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param listObjectParentPathsRequest
      * @return A Java Future containing the result of the ListObjectParentPaths operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.ListObjectParentPaths
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParentPaths"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectParentPaths"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListObjectParentPathsResult> listObjectParentPathsAsync(ListObjectParentPathsRequest listObjectParentPathsRequest);
@@ -1540,7 +1573,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListObjectParentPaths operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.ListObjectParentPaths
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParentPaths"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectParentPaths"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListObjectParentPathsResult> listObjectParentPathsAsync(ListObjectParentPathsRequest listObjectParentPathsRequest,
@@ -1554,7 +1587,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param listObjectParentsRequest
      * @return A Java Future containing the result of the ListObjectParents operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.ListObjectParents
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParents"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectParents"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListObjectParentsResult> listObjectParentsAsync(ListObjectParentsRequest listObjectParentsRequest);
@@ -1571,7 +1604,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListObjectParents operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.ListObjectParents
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectParents"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectParents"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListObjectParentsResult> listObjectParentsAsync(ListObjectParentsRequest listObjectParentsRequest,
@@ -1585,7 +1618,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param listObjectPoliciesRequest
      * @return A Java Future containing the result of the ListObjectPolicies operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.ListObjectPolicies
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectPolicies"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectPolicies"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListObjectPoliciesResult> listObjectPoliciesAsync(ListObjectPoliciesRequest listObjectPoliciesRequest);
@@ -1602,7 +1635,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListObjectPolicies operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.ListObjectPolicies
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListObjectPolicies"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListObjectPolicies"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListObjectPoliciesResult> listObjectPoliciesAsync(ListObjectPoliciesRequest listObjectPoliciesRequest,
@@ -1619,7 +1652,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param listOutgoingTypedLinksRequest
      * @return A Java Future containing the result of the ListOutgoingTypedLinks operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.ListOutgoingTypedLinks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListOutgoingTypedLinks"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListOutgoingTypedLinks"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListOutgoingTypedLinksResult> listOutgoingTypedLinksAsync(ListOutgoingTypedLinksRequest listOutgoingTypedLinksRequest);
@@ -1639,7 +1672,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListOutgoingTypedLinks operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.ListOutgoingTypedLinks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListOutgoingTypedLinks"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListOutgoingTypedLinks"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListOutgoingTypedLinksResult> listOutgoingTypedLinksAsync(ListOutgoingTypedLinksRequest listOutgoingTypedLinksRequest,
@@ -1653,7 +1686,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param listPolicyAttachmentsRequest
      * @return A Java Future containing the result of the ListPolicyAttachments operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.ListPolicyAttachments
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPolicyAttachments"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListPolicyAttachments"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListPolicyAttachmentsResult> listPolicyAttachmentsAsync(ListPolicyAttachmentsRequest listPolicyAttachmentsRequest);
@@ -1670,7 +1703,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListPolicyAttachments operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.ListPolicyAttachments
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPolicyAttachments"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListPolicyAttachments"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListPolicyAttachmentsResult> listPolicyAttachmentsAsync(ListPolicyAttachmentsRequest listPolicyAttachmentsRequest,
@@ -1685,7 +1718,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param listPublishedSchemaArnsRequest
      * @return A Java Future containing the result of the ListPublishedSchemaArns operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.ListPublishedSchemaArns
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPublishedSchemaArns"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListPublishedSchemaArns"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListPublishedSchemaArnsResult> listPublishedSchemaArnsAsync(ListPublishedSchemaArnsRequest listPublishedSchemaArnsRequest);
@@ -1703,7 +1736,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListPublishedSchemaArns operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.ListPublishedSchemaArns
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListPublishedSchemaArns"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListPublishedSchemaArns"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListPublishedSchemaArnsResult> listPublishedSchemaArnsAsync(ListPublishedSchemaArnsRequest listPublishedSchemaArnsRequest,
@@ -1718,7 +1751,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param listTagsForResourceRequest
      * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.ListTagsForResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTagsForResource"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListTagsForResource"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
@@ -1736,7 +1769,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.ListTagsForResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTagsForResource"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListTagsForResource"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
@@ -1754,7 +1787,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @return A Java Future containing the result of the ListTypedLinkFacetAttributes operation returned by the
      *         service.
      * @sample AmazonCloudDirectoryAsync.ListTypedLinkFacetAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetAttributes"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListTypedLinkFacetAttributes"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListTypedLinkFacetAttributesResult> listTypedLinkFacetAttributesAsync(
@@ -1776,7 +1809,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @return A Java Future containing the result of the ListTypedLinkFacetAttributes operation returned by the
      *         service.
      * @sample AmazonCloudDirectoryAsyncHandler.ListTypedLinkFacetAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetAttributes"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListTypedLinkFacetAttributes"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListTypedLinkFacetAttributesResult> listTypedLinkFacetAttributesAsync(
@@ -1793,7 +1826,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param listTypedLinkFacetNamesRequest
      * @return A Java Future containing the result of the ListTypedLinkFacetNames operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.ListTypedLinkFacetNames
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetNames"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListTypedLinkFacetNames"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListTypedLinkFacetNamesResult> listTypedLinkFacetNamesAsync(ListTypedLinkFacetNamesRequest listTypedLinkFacetNamesRequest);
@@ -1812,7 +1845,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListTypedLinkFacetNames operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.ListTypedLinkFacetNames
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/ListTypedLinkFacetNames"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/ListTypedLinkFacetNames"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListTypedLinkFacetNamesResult> listTypedLinkFacetNamesAsync(ListTypedLinkFacetNamesRequest listTypedLinkFacetNamesRequest,
@@ -1831,7 +1864,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param lookupPolicyRequest
      * @return A Java Future containing the result of the LookupPolicy operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.LookupPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/LookupPolicy" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/LookupPolicy" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<LookupPolicyResult> lookupPolicyAsync(LookupPolicyRequest lookupPolicyRequest);
@@ -1853,7 +1886,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the LookupPolicy operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.LookupPolicy
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/LookupPolicy" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/LookupPolicy" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<LookupPolicyResult> lookupPolicyAsync(LookupPolicyRequest lookupPolicyRequest,
@@ -1867,7 +1900,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param publishSchemaRequest
      * @return A Java Future containing the result of the PublishSchema operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.PublishSchema
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PublishSchema" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/PublishSchema" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<PublishSchemaResult> publishSchemaAsync(PublishSchemaRequest publishSchemaRequest);
@@ -1884,7 +1917,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PublishSchema operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.PublishSchema
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PublishSchema" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/PublishSchema" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<PublishSchemaResult> publishSchemaAsync(PublishSchemaRequest publishSchemaRequest,
@@ -1900,7 +1933,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param putSchemaFromJsonRequest
      * @return A Java Future containing the result of the PutSchemaFromJson operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.PutSchemaFromJson
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PutSchemaFromJson"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/PutSchemaFromJson"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<PutSchemaFromJsonResult> putSchemaFromJsonAsync(PutSchemaFromJsonRequest putSchemaFromJsonRequest);
@@ -1919,7 +1952,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the PutSchemaFromJson operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.PutSchemaFromJson
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/PutSchemaFromJson"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/PutSchemaFromJson"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<PutSchemaFromJsonResult> putSchemaFromJsonAsync(PutSchemaFromJsonRequest putSchemaFromJsonRequest,
@@ -1933,7 +1966,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param removeFacetFromObjectRequest
      * @return A Java Future containing the result of the RemoveFacetFromObject operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.RemoveFacetFromObject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/RemoveFacetFromObject"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/RemoveFacetFromObject"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<RemoveFacetFromObjectResult> removeFacetFromObjectAsync(RemoveFacetFromObjectRequest removeFacetFromObjectRequest);
@@ -1950,7 +1983,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the RemoveFacetFromObject operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.RemoveFacetFromObject
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/RemoveFacetFromObject"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/RemoveFacetFromObject"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<RemoveFacetFromObjectResult> removeFacetFromObjectAsync(RemoveFacetFromObjectRequest removeFacetFromObjectRequest,
@@ -1964,7 +1997,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param tagResourceRequest
      * @return A Java Future containing the result of the TagResource operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.TagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TagResource" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/TagResource" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
@@ -1981,7 +2014,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the TagResource operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.TagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/TagResource" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/TagResource" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
@@ -1995,7 +2028,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param untagResourceRequest
      * @return A Java Future containing the result of the UntagResource operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.UntagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UntagResource" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UntagResource" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
@@ -2012,7 +2045,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UntagResource operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.UntagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UntagResource" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UntagResource" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
@@ -2043,7 +2076,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param updateFacetRequest
      * @return A Java Future containing the result of the UpdateFacet operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.UpdateFacet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateFacet" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateFacet" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateFacetResult> updateFacetAsync(UpdateFacetRequest updateFacetRequest);
@@ -2077,7 +2110,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateFacet operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.UpdateFacet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateFacet" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateFacet" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<UpdateFacetResult> updateFacetAsync(UpdateFacetRequest updateFacetRequest,
@@ -2092,7 +2125,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param updateLinkAttributesRequest
      * @return A Java Future containing the result of the UpdateLinkAttributes operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.UpdateLinkAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateLinkAttributes"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateLinkAttributes"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateLinkAttributesResult> updateLinkAttributesAsync(UpdateLinkAttributesRequest updateLinkAttributesRequest);
@@ -2110,7 +2143,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateLinkAttributes operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.UpdateLinkAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateLinkAttributes"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateLinkAttributes"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateLinkAttributesResult> updateLinkAttributesAsync(UpdateLinkAttributesRequest updateLinkAttributesRequest,
@@ -2124,7 +2157,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param updateObjectAttributesRequest
      * @return A Java Future containing the result of the UpdateObjectAttributes operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.UpdateObjectAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateObjectAttributes"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateObjectAttributes"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateObjectAttributesResult> updateObjectAttributesAsync(UpdateObjectAttributesRequest updateObjectAttributesRequest);
@@ -2141,7 +2174,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateObjectAttributes operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.UpdateObjectAttributes
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateObjectAttributes"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateObjectAttributes"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateObjectAttributesResult> updateObjectAttributesAsync(UpdateObjectAttributesRequest updateObjectAttributesRequest,
@@ -2155,7 +2188,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param updateSchemaRequest
      * @return A Java Future containing the result of the UpdateSchema operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.UpdateSchema
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateSchema" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateSchema" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateSchemaResult> updateSchemaAsync(UpdateSchemaRequest updateSchemaRequest);
@@ -2172,7 +2205,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateSchema operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.UpdateSchema
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateSchema" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateSchema" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateSchemaResult> updateSchemaAsync(UpdateSchemaRequest updateSchemaRequest,
@@ -2188,7 +2221,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param updateTypedLinkFacetRequest
      * @return A Java Future containing the result of the UpdateTypedLinkFacet operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.UpdateTypedLinkFacet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateTypedLinkFacet"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateTypedLinkFacet"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateTypedLinkFacetResult> updateTypedLinkFacetAsync(UpdateTypedLinkFacetRequest updateTypedLinkFacetRequest);
@@ -2207,7 +2240,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateTypedLinkFacet operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.UpdateTypedLinkFacet
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpdateTypedLinkFacet"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpdateTypedLinkFacet"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateTypedLinkFacetResult> updateTypedLinkFacetAsync(UpdateTypedLinkFacetRequest updateTypedLinkFacetRequest,
@@ -2225,7 +2258,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param upgradeAppliedSchemaRequest
      * @return A Java Future containing the result of the UpgradeAppliedSchema operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.UpgradeAppliedSchema
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradeAppliedSchema"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpgradeAppliedSchema"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpgradeAppliedSchemaResult> upgradeAppliedSchemaAsync(UpgradeAppliedSchemaRequest upgradeAppliedSchemaRequest);
@@ -2246,7 +2279,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpgradeAppliedSchema operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.UpgradeAppliedSchema
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradeAppliedSchema"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpgradeAppliedSchema"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpgradeAppliedSchemaResult> upgradeAppliedSchemaAsync(UpgradeAppliedSchemaRequest upgradeAppliedSchemaRequest,
@@ -2261,7 +2294,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      * @param upgradePublishedSchemaRequest
      * @return A Java Future containing the result of the UpgradePublishedSchema operation returned by the service.
      * @sample AmazonCloudDirectoryAsync.UpgradePublishedSchema
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradePublishedSchema"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpgradePublishedSchema"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpgradePublishedSchemaResult> upgradePublishedSchemaAsync(UpgradePublishedSchemaRequest upgradePublishedSchemaRequest);
@@ -2279,7 +2312,7 @@ public interface AmazonCloudDirectoryAsync extends AmazonCloudDirectory {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpgradePublishedSchema operation returned by the service.
      * @sample AmazonCloudDirectoryAsyncHandler.UpgradePublishedSchema
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2016-05-10/UpgradePublishedSchema"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/UpgradePublishedSchema"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpgradePublishedSchemaResult> upgradePublishedSchemaAsync(UpgradePublishedSchemaRequest upgradePublishedSchemaRequest,

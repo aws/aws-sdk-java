@@ -561,6 +561,19 @@ public class AbstractAmazonCloudDirectoryAsync extends AbstractAmazonCloudDirect
     }
 
     @Override
+    public java.util.concurrent.Future<ListManagedSchemaArnsResult> listManagedSchemaArnsAsync(ListManagedSchemaArnsRequest request) {
+
+        return listManagedSchemaArnsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListManagedSchemaArnsResult> listManagedSchemaArnsAsync(ListManagedSchemaArnsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListManagedSchemaArnsRequest, ListManagedSchemaArnsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListObjectAttributesResult> listObjectAttributesAsync(ListObjectAttributesRequest request) {
 
         return listObjectAttributesAsync(request, null);
