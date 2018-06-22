@@ -35,6 +35,8 @@ public class CryptoConfiguration implements Cloneable,Serializable {
     private CryptoMode cryptoMode;
     private CryptoStorageMode storageMode;
     private Provider cryptoProvider;
+    private boolean alwaysUseCryptoProvider;
+
     /**
      * True to ignore instruction file that cannot be found during a GET
      * operation; false otherwise. Default is true. This property is ignored if
@@ -146,6 +148,36 @@ public class CryptoConfiguration implements Cloneable,Serializable {
      */
     public Provider getCryptoProvider() {
         return this.cryptoProvider;
+    }
+
+    /**
+     * Sets whether the specified crypto provider should be used in all cases. For
+     * backwards compatibility, it will be ignored if CryptoMode specified authenticated
+     * encryption.
+     */
+    public void setAlwaysUseCryptoProvider(boolean value) {
+        this.alwaysUseCryptoProvider = value;
+    }
+
+    /**
+     * Sets whether the specified crypto provider should be used in all cases. For
+     * backwards compatibility, it will be ignored if CryptoMode specified authenticated
+     * encryption.
+     */
+    public CryptoConfiguration withAlwaysUseCryptoProvider(boolean value) {
+        this.alwaysUseCryptoProvider = value;
+        return this;
+    }
+
+    /**
+     * Returns true if the specified crypto provider should be used in all cases. For
+     * backwards compatibility, it will be ignored if CryptoMode specifies authenticated
+     * encryption.
+     *
+     * @return true if the crypto provider should always be used
+     */
+    public boolean getAlwaysUseCryptoProvider() {
+        return alwaysUseCryptoProvider;
     }
 
     /**
@@ -268,6 +300,12 @@ public class CryptoConfiguration implements Cloneable,Serializable {
         @Override public CryptoConfiguration withCryptoProvider(Provider cryptoProvider) {
             throw new UnsupportedOperationException();
         }
+        @Override public void setAlwaysUseCryptoProvider(boolean value) {
+            throw new UnsupportedOperationException();
+        }
+        @Override public CryptoConfiguration withAlwaysUseCryptoProvider(boolean value) {
+            throw new UnsupportedOperationException();
+        }
         @Override public void setCryptoMode(CryptoMode cryptoMode) {
             throw new UnsupportedOperationException();
         }
@@ -308,6 +346,7 @@ public class CryptoConfiguration implements Cloneable,Serializable {
         that.cryptoMode = this.cryptoMode;
         that.storageMode = this.storageMode;
         that.cryptoProvider = this.cryptoProvider;
+        that.alwaysUseCryptoProvider = this.alwaysUseCryptoProvider;
         that.ignoreMissingInstructionFile = this.ignoreMissingInstructionFile;
         that.awskmsRegion = this.awskmsRegion;
         return that;
