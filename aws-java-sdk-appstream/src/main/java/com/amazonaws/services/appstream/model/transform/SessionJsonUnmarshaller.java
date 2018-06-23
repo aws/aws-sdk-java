@@ -72,6 +72,10 @@ public class SessionJsonUnmarshaller implements Unmarshaller<Session, JsonUnmars
                     context.nextToken();
                     session.setAuthenticationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("NetworkAccessConfiguration", targetDepth)) {
+                    context.nextToken();
+                    session.setNetworkAccessConfiguration(NetworkAccessConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

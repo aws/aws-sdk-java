@@ -93,6 +93,9 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AlreadyExistsException").withModeledClass(
                                     com.amazonaws.services.alexaforbusiness.model.AlreadyExistsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DeviceNotRegisteredException").withModeledClass(
+                                    com.amazonaws.services.alexaforbusiness.model.DeviceNotRegisteredException.class))
                     .withBaseServiceExceptionClass(com.amazonaws.services.alexaforbusiness.model.AmazonAlexaForBusinessException.class));
 
     public static AmazonAlexaForBusinessClientBuilder builder() {
@@ -191,6 +194,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @return Result of the AssociateDeviceWithRoom operation returned by the service.
      * @throws LimitExceededException
      *         You are performing an action that would put you beyond your account's limits. HTTP Status Code: 400
+     * @throws DeviceNotRegisteredException
      * @sample AmazonAlexaForBusiness.AssociateDeviceWithRoom
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithRoom"
      *      target="_top">AWS API Documentation</a>
@@ -1023,6 +1027,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * 
      * @param disassociateDeviceFromRoomRequest
      * @return Result of the DisassociateDeviceFromRoom operation returned by the service.
+     * @throws DeviceNotRegisteredException
      * @sample AmazonAlexaForBusiness.DisassociateDeviceFromRoom
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateDeviceFromRoom"
      *      target="_top">AWS API Documentation</a>
@@ -2189,6 +2194,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * 
      * @param startDeviceSyncRequest
      * @return Result of the StartDeviceSync operation returned by the service.
+     * @throws DeviceNotRegisteredException
      * @sample AmazonAlexaForBusiness.StartDeviceSync
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartDeviceSync"
      *      target="_top">AWS API Documentation</a>
@@ -2446,6 +2452,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * @return Result of the UpdateDevice operation returned by the service.
      * @throws NotFoundException
      *         The resource is not found. HTTP Status Code: 400
+     * @throws DeviceNotRegisteredException
      * @sample AmazonAlexaForBusiness.UpdateDevice
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateDevice" target="_top">AWS
      *      API Documentation</a>

@@ -19,7 +19,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -123,6 +123,10 @@
       "exceptions" : [ {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>You are performing an action that would put you beyond your account's limits. HTTP Status Code: 400</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "DeviceNotRegisteredException",
+        "documentation" : null,
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -628,7 +632,11 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Disassociates a device from its current room. The device continues to be connected to the Wi-Fi network and is still registered to the account. The device settings and skills are removed from the room.</p>",
-      "exceptions" : null,
+      "exceptions" : [ {
+        "exceptionName" : "DeviceNotRegisteredException",
+        "documentation" : null,
+        "httpStatusCode" : null
+      } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
         "variableDeclarationType" : "DisassociateDeviceFromRoomRequest",
@@ -1301,7 +1309,11 @@
       "authenticated" : true,
       "deprecated" : false,
       "documentation" : "<p>Resets a device and its account to the known default settings, by clearing all information and settings set by previous users.</p>",
-      "exceptions" : null,
+      "exceptions" : [ {
+        "exceptionName" : "DeviceNotRegisteredException",
+        "documentation" : null,
+        "httpStatusCode" : null
+      } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {
         "variableDeclarationType" : "StartDeviceSyncRequest",
@@ -1459,6 +1471,10 @@
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The resource is not found. HTTP Status Code: 400</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "DeviceNotRegisteredException",
+        "documentation" : null,
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -15446,6 +15462,42 @@
         "documentation" : null,
         "simpleType" : "DeviceEventType",
         "variableSetterType" : "DeviceEventType"
+      },
+      "wrapper" : false
+    },
+    "DeviceNotRegisteredException" : {
+      "c2jName" : "DeviceNotRegisteredException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : "DeviceNotRegisteredException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ ],
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "DeviceNotRegisteredException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "variableDeclarationType" : "DeviceNotRegisteredException",
+        "variableName" : "deviceNotRegisteredException",
+        "variableType" : "DeviceNotRegisteredException",
+        "documentation" : null,
+        "simpleType" : "DeviceNotRegisteredException",
+        "variableSetterType" : "DeviceNotRegisteredException"
       },
       "wrapper" : false
     },

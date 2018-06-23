@@ -1,8 +1,30 @@
+# __1.11.354__ __2018-06-22__
+## __Alexa For Business__
+  - ### Features
+    -  Introduce DeviceNotRegisteredException for AWSMoneypenny
+
+## __Amazon AppStream__
+  - ### Features
+    - This API update enables customers to find their VPC private IP address and ENI ID associated with AppStream streaming sessions.
+
 # __1.11.353__ __2018-06-21__
 ## __Amazon CloudDirectory__
   - ### Features
     - SDK release to support Flexible Schema initiative being carried out by Amazon Cloud Directory. This feature lets customers using new capabilities like: variant typed attributes, dynamic facets and AWS managed Cloud Directory schemas.
 
+## __Amazon Macie__
+  - ### Features
+    - Amazon Macie is a security service that uses machine learning to automatically discover, classify, and protect sensitive data in AWS. With this release, we are launching the following Macie HTTPS API operations: AssociateMemberAccount, AssociateS3Resources, DisassociateMemberAccount, DisassociateS3Resources, ListMemberAccounts, ListS3Resources, and UpdateS3Resources. With these API operations you can issue HTTPS requests directly to the service.
+
+## __Amazon Neptune__
+  - ### Features
+    - Deprecates the PubliclyAccessible parameter that is not supported by Amazon Neptune.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Adds Amazon Linux 2 support to Patch Manager
+
+# __1.11.352__ __2018-06-21__
 ## __Amazon Macie__
   - ### Features
     - Amazon Macie is a security service that uses machine learning to automatically discover, classify, and protect sensitive data in AWS. With this release, we are launching the following Macie HTTPS API operations: AssociateMemberAccount, AssociateS3Resources, DisassociateMemberAccount, DisassociateS3Resources, ListMemberAccounts, ListS3Resources, and UpdateS3Resources. With these API operations you can issue HTTPS requests directly to the service.

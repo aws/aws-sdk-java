@@ -150,7 +150,8 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Creates a directory configuration.
+     * Creates a Directory Config object in AppStream 2.0. This object includes the information required to join
+     * streaming instances to an Active Directory domain.
      * </p>
      * 
      * @param createDirectoryConfigRequest
@@ -170,7 +171,7 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Creates a fleet.
+     * Creates a fleet. A fleet consists of streaming instances that run a specified image.
      * </p>
      * 
      * @param createFleetRequest
@@ -202,7 +203,7 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Creates an image builder.
+     * Creates an image builder. An image builder is a virtual machine that is used to create an image.
      * </p>
      * <p>
      * The initial state of the builder is <code>PENDING</code>. When it is ready, the state is <code>RUNNING</code>.
@@ -254,7 +255,8 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Creates a stack.
+     * Creates a stack to start streaming applications to users. A stack consists of an associated fleet, user access
+     * policies, and storage configurations.
      * </p>
      * 
      * @param createStackRequest
@@ -282,7 +284,8 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Creates a URL to start a streaming session for the specified user.
+     * Creates a temporary URL to start an AppStream 2.0 streaming session for the specified user. A streaming URL
+     * enables application streaming to be tested without user setup.
      * </p>
      * 
      * @param createStreamingURLRequest
@@ -303,7 +306,8 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Deletes the specified directory configuration.
+     * Deletes the specified Directory Config object from AppStream 2.0. This object includes the information required
+     * to join streaming instances to an Active Directory domain.
      * </p>
      * 
      * @param deleteDirectoryConfigRequest
@@ -339,8 +343,8 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Deletes the specified image. You cannot delete an image that is currently in use. After you delete an image, you
-     * cannot provision new capacity using the image.
+     * Deletes the specified image. You cannot delete an image when it is in use. After you delete an image, you cannot
+     * provision new capacity using the image.
      * </p>
      * 
      * @param deleteImageRequest
@@ -380,8 +384,9 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Deletes the specified stack. After this operation completes, the environment can no longer be activated and any
-     * reservations made for the stack are released.
+     * Deletes the specified stack. After the stack is deleted, the application streaming environment provided by the
+     * stack is no longer available to users. Also, any reservations made for application streaming sessions for the
+     * stack are released.
      * </p>
      * 
      * @param deleteStackRequest
@@ -400,8 +405,13 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Describes the specified directory configurations. Note that although the response syntax in this topic includes
-     * the account password, this password is not returned in the actual response.
+     * Retrieves a list that describes one or more specified Directory Config objects for AppStream 2.0, if the names
+     * for these objects are provided. Otherwise, all Directory Config objects in the account are described. These
+     * objects include the information required to join streaming instances to an Active Directory domain.
+     * </p>
+     * <p>
+     * Although the response syntax in this topic includes the account password, this password is not returned in the
+     * actual response.
      * </p>
      * 
      * @param describeDirectoryConfigsRequest
@@ -416,7 +426,8 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Describes the specified fleets or all fleets in the account.
+     * Retrieves a list that describes one or more specified fleets, if the fleet names are provided. Otherwise, all
+     * fleets in the account are described.
      * </p>
      * 
      * @param describeFleetsRequest
@@ -431,7 +442,8 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Describes the specified image builders or all image builders in the account.
+     * Retrieves a list that describes one or more specified image builders, if the image builder names are provided.
+     * Otherwise, all image builders in the account are described.
      * </p>
      * 
      * @param describeImageBuildersRequest
@@ -446,7 +458,8 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Describes the specified images or all images in the account.
+     * Retrieves a list that describes one or more specified images, if the image names are provided. Otherwise, all
+     * images in the account are described.
      * </p>
      * 
      * @param describeImagesRequest
@@ -461,9 +474,9 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Describes the streaming sessions for the specified stack and fleet. If a user ID is provided, only the streaming
-     * sessions for only that user are returned. If an authentication type is not provided, the default is to
-     * authenticate users using a streaming URL.
+     * Retrieves a list that describes the streaming sessions for a specified stack and fleet. If a user ID is provided
+     * for the stack and fleet, only streaming sessions for that user are described. If an authentication type is not
+     * provided, the default is to authenticate users using a streaming URL.
      * </p>
      * 
      * @param describeSessionsRequest
@@ -478,7 +491,8 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Describes the specified stacks or all stacks in the account.
+     * Retrieves a list that describes one or more specified stacks, if the stack names are provided. Otherwise, all
+     * stacks in the account are described.
      * </p>
      * 
      * @param describeStacksRequest
@@ -512,7 +526,7 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Stops the specified streaming session.
+     * Immediately stops the specified streaming session.
      * </p>
      * 
      * @param expireSessionRequest
@@ -525,7 +539,7 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Lists the fleets associated with the specified stack.
+     * Retrieves the name of the fleet that is associated with the specified stack.
      * </p>
      * 
      * @param listAssociatedFleetsRequest
@@ -538,7 +552,7 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Lists the stacks associated with the specified fleet.
+     * Retrieves the name of the stack with which the specified fleet is associated.
      * </p>
      * 
      * @param listAssociatedStacksRequest
@@ -551,8 +565,8 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Lists the tags for the specified AppStream 2.0 resource. You can tag AppStream 2.0 image builders, images,
-     * fleets, and stacks.
+     * Retrieves a list of all tags for the specified AppStream 2.0 resource. You can tag AppStream 2.0 image builders,
+     * images, fleets, and stacks.
      * </p>
      * <p>
      * For more information about tags, see <a
@@ -690,7 +704,7 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Disassociates the specified tags from the specified AppStream 2.0 resource.
+     * Disassociates one or more specified tags from the specified AppStream 2.0 resource.
      * </p>
      * <p>
      * To list the current tags for your resources, use <a>ListTagsForResource</a>.
@@ -713,7 +727,8 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Updates the specified directory configuration.
+     * Updates the specified Directory Config object in AppStream 2.0. This object includes the information required to
+     * join streaming instances to an Active Directory domain.
      * </p>
      * 
      * @param updateDirectoryConfigRequest
@@ -772,7 +787,7 @@ public interface AmazonAppStream {
 
     /**
      * <p>
-     * Updates the specified stack.
+     * Updates the specified fields for the specified stack.
      * </p>
      * 
      * @param updateStackRequest
@@ -792,6 +807,8 @@ public interface AmazonAppStream {
      *         Support.
      * @throws IncompatibleImageException
      *         The image does not support storage connectors.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
      * @sample AmazonAppStream.UpdateStack
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateStack" target="_top">AWS API
      *      Documentation</a>

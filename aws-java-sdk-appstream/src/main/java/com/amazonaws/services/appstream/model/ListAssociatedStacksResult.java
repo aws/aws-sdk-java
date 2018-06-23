@@ -25,7 +25,7 @@ public class ListAssociatedStacksResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The names of the stacks.
+     * The name of the stack.
      * </p>
      */
     private java.util.List<String> names;
@@ -39,10 +39,10 @@ public class ListAssociatedStacksResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The names of the stacks.
+     * The name of the stack.
      * </p>
      * 
-     * @return The names of the stacks.
+     * @return The name of the stack.
      */
 
     public java.util.List<String> getNames() {
@@ -51,11 +51,11 @@ public class ListAssociatedStacksResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The names of the stacks.
+     * The name of the stack.
      * </p>
      * 
      * @param names
-     *        The names of the stacks.
+     *        The name of the stack.
      */
 
     public void setNames(java.util.Collection<String> names) {
@@ -69,7 +69,7 @@ public class ListAssociatedStacksResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The names of the stacks.
+     * The name of the stack.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class ListAssociatedStacksResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param names
-     *        The names of the stacks.
+     *        The name of the stack.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class ListAssociatedStacksResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The names of the stacks.
+     * The name of the stack.
      * </p>
      * 
      * @param names
-     *        The names of the stacks.
+     *        The name of the stack.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
