@@ -14,6 +14,7 @@
  */
 package com.amazonaws;
 
+import com.amazonaws.PredefinedClientConfigurations;
 import com.amazonaws.annotation.SdkProtectedApi;
 
 /**
@@ -43,7 +44,7 @@ public class ClientConfigurationFactory {
      * @return constructed {@link ClientConfiguration} with standard configuration.
      */
     protected ClientConfiguration getDefaultConfig() {
-        return new ClientConfiguration();
+        return PredefinedClientConfigurations.defaultConfig();
     }
 
     /**

@@ -16,6 +16,7 @@ package com.amazonaws.services.dynamodbv2;
 
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.ClientConfigurationFactory;
+import com.amazonaws.PredefinedClientConfigurations;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.retry.PredefinedRetryPolicies;
 
@@ -28,7 +29,7 @@ class AmazonDynamoDBClientConfigurationFactory extends ClientConfigurationFactor
 
     @Override
     protected ClientConfiguration getDefaultConfig() {
-        return super.getDefaultConfig().withRetryPolicy(PredefinedRetryPolicies.DYNAMODB_DEFAULT);
+        return PredefinedClientConfigurations.dynamoDefault();
     }
 
     @Override
