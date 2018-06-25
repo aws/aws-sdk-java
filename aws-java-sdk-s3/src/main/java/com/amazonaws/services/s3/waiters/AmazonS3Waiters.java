@@ -55,7 +55,7 @@ public class AmazonS3Waiters {
         return new WaiterBuilder<HeadBucketRequest, HeadBucketResult>()
                 .withSdkFunction(new HeadBucketFunction(client))
                 .withAcceptors(
-                        new HttpFailureStatusAcceptor(404, WaiterState.SUCCESS))
+                        new HttpFailureStatusAcceptor<HeadBucketResult>(404, WaiterState.SUCCESS))
                 .withDefaultPollingStrategy(
                         new PollingStrategy(new MaxAttemptsRetryStrategy(20),
                                 new FixedDelayStrategy(5)))
@@ -74,10 +74,10 @@ public class AmazonS3Waiters {
         return new WaiterBuilder<HeadBucketRequest, HeadBucketResult>()
                 .withSdkFunction(new HeadBucketFunction(client))
                 .withAcceptors(
-                        new HttpSuccessStatusAcceptor(WaiterState.SUCCESS),
-                        new HttpFailureStatusAcceptor(301, WaiterState.SUCCESS),
-                        new HttpFailureStatusAcceptor(403, WaiterState.SUCCESS),
-                        new HttpFailureStatusAcceptor(404, WaiterState.RETRY))
+                        new HttpSuccessStatusAcceptor<HeadBucketResult>(WaiterState.SUCCESS),
+                        new HttpFailureStatusAcceptor<HeadBucketResult>(301, WaiterState.SUCCESS),
+                        new HttpFailureStatusAcceptor<HeadBucketResult>(403, WaiterState.SUCCESS),
+                        new HttpFailureStatusAcceptor<HeadBucketResult>(404, WaiterState.RETRY))
                 .withDefaultPollingStrategy(
                         new PollingStrategy(new MaxAttemptsRetryStrategy(20),
                                 new FixedDelayStrategy(5)))
@@ -96,8 +96,8 @@ public class AmazonS3Waiters {
         return new WaiterBuilder<GetObjectMetadataRequest, ObjectMetadata>()
                 .withSdkFunction(new HeadObjectFunction(client))
                 .withAcceptors(
-                        new HttpSuccessStatusAcceptor(WaiterState.SUCCESS),
-                        new HttpFailureStatusAcceptor(404, WaiterState.RETRY))
+                        new HttpSuccessStatusAcceptor<ObjectMetadata>(WaiterState.SUCCESS),
+                        new HttpFailureStatusAcceptor<ObjectMetadata>(404, WaiterState.RETRY))
                 .withDefaultPollingStrategy(
                         new PollingStrategy(new MaxAttemptsRetryStrategy(20),
                                 new FixedDelayStrategy(5)))
@@ -116,7 +116,7 @@ public class AmazonS3Waiters {
         return new WaiterBuilder<GetObjectMetadataRequest, ObjectMetadata>()
                 .withSdkFunction(new HeadObjectFunction(client))
                 .withAcceptors(
-                        new HttpFailureStatusAcceptor(404, WaiterState.SUCCESS))
+                        new HttpFailureStatusAcceptor<ObjectMetadata>(404, WaiterState.SUCCESS))
                 .withDefaultPollingStrategy(
                         new PollingStrategy(new MaxAttemptsRetryStrategy(20),
                                 new FixedDelayStrategy(5)))
