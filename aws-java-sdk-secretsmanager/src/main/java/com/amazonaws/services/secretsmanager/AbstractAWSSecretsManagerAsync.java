@@ -54,6 +54,19 @@ public class AbstractAWSSecretsManagerAsync extends AbstractAWSSecretsManager im
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest request) {
+
+        return deleteResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteResourcePolicyRequest, DeleteResourcePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteSecretResult> deleteSecretAsync(DeleteSecretRequest request) {
 
         return deleteSecretAsync(request, null);
@@ -93,6 +106,19 @@ public class AbstractAWSSecretsManagerAsync extends AbstractAWSSecretsManager im
     }
 
     @Override
+    public java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest request) {
+
+        return getResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetResourcePolicyRequest, GetResourcePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSecretValueResult> getSecretValueAsync(GetSecretValueRequest request) {
 
         return getSecretValueAsync(request, null);
@@ -127,6 +153,19 @@ public class AbstractAWSSecretsManagerAsync extends AbstractAWSSecretsManager im
     @Override
     public java.util.concurrent.Future<ListSecretsResult> listSecretsAsync(ListSecretsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListSecretsRequest, ListSecretsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest request) {
+
+        return putResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutResourcePolicyRequest, PutResourcePolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

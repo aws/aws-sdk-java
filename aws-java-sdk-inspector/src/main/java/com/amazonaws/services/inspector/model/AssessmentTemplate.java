@@ -49,7 +49,7 @@ public class AssessmentTemplate implements Serializable, Cloneable, StructuredPo
     private String assessmentTargetArn;
     /**
      * <p>
-     * The duration in seconds specified for this assessment tempate. The default value is 3600 seconds (one hour). The
+     * The duration in seconds specified for this assessment template. The default value is 3600 seconds (one hour). The
      * maximum value is 86400 seconds (one day).
      * </p>
      */
@@ -70,7 +70,7 @@ public class AssessmentTemplate implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the most recent assessment run associated with this assessment template. This
-     * value exists only when the value of assessmentRunCount is greater than zero.
+     * value exists only when the value of assessmentRunCount is greaterpa than zero.
      * </p>
      */
     private String lastAssessmentRunArn;
@@ -210,12 +210,12 @@ public class AssessmentTemplate implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The duration in seconds specified for this assessment tempate. The default value is 3600 seconds (one hour). The
+     * The duration in seconds specified for this assessment template. The default value is 3600 seconds (one hour). The
      * maximum value is 86400 seconds (one day).
      * </p>
      * 
      * @param durationInSeconds
-     *        The duration in seconds specified for this assessment tempate. The default value is 3600 seconds (one
+     *        The duration in seconds specified for this assessment template. The default value is 3600 seconds (one
      *        hour). The maximum value is 86400 seconds (one day).
      */
 
@@ -225,11 +225,11 @@ public class AssessmentTemplate implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The duration in seconds specified for this assessment tempate. The default value is 3600 seconds (one hour). The
+     * The duration in seconds specified for this assessment template. The default value is 3600 seconds (one hour). The
      * maximum value is 86400 seconds (one day).
      * </p>
      * 
-     * @return The duration in seconds specified for this assessment tempate. The default value is 3600 seconds (one
+     * @return The duration in seconds specified for this assessment template. The default value is 3600 seconds (one
      *         hour). The maximum value is 86400 seconds (one day).
      */
 
@@ -239,12 +239,12 @@ public class AssessmentTemplate implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The duration in seconds specified for this assessment tempate. The default value is 3600 seconds (one hour). The
+     * The duration in seconds specified for this assessment template. The default value is 3600 seconds (one hour). The
      * maximum value is 86400 seconds (one day).
      * </p>
      * 
      * @param durationInSeconds
-     *        The duration in seconds specified for this assessment tempate. The default value is 3600 seconds (one
+     *        The duration in seconds specified for this assessment template. The default value is 3600 seconds (one
      *        hour). The maximum value is 86400 seconds (one day).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -405,12 +405,12 @@ public class AssessmentTemplate implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the most recent assessment run associated with this assessment template. This
-     * value exists only when the value of assessmentRunCount is greater than zero.
+     * value exists only when the value of assessmentRunCount is greaterpa than zero.
      * </p>
      * 
      * @param lastAssessmentRunArn
      *        The Amazon Resource Name (ARN) of the most recent assessment run associated with this assessment template.
-     *        This value exists only when the value of assessmentRunCount is greater than zero.
+     *        This value exists only when the value of assessmentRunCount is greaterpa than zero.
      */
 
     public void setLastAssessmentRunArn(String lastAssessmentRunArn) {
@@ -420,11 +420,11 @@ public class AssessmentTemplate implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the most recent assessment run associated with this assessment template. This
-     * value exists only when the value of assessmentRunCount is greater than zero.
+     * value exists only when the value of assessmentRunCount is greaterpa than zero.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the most recent assessment run associated with this assessment
-     *         template. This value exists only when the value of assessmentRunCount is greater than zero.
+     *         template. This value exists only when the value of assessmentRunCount is greaterpa than zero.
      */
 
     public String getLastAssessmentRunArn() {
@@ -434,12 +434,12 @@ public class AssessmentTemplate implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the most recent assessment run associated with this assessment template. This
-     * value exists only when the value of assessmentRunCount is greater than zero.
+     * value exists only when the value of assessmentRunCount is greaterpa than zero.
      * </p>
      * 
      * @param lastAssessmentRunArn
      *        The Amazon Resource Name (ARN) of the most recent assessment run associated with this assessment template.
-     *        This value exists only when the value of assessmentRunCount is greater than zero.
+     *        This value exists only when the value of assessmentRunCount is greaterpa than zero.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

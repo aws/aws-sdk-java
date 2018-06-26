@@ -177,6 +177,7 @@ public class RequestXmlFactory {
                 addIfNotNull(xml, "RecordDelimiter", csvInput.getRecordDelimiterAsString());
                 addIfNotNull(xml, "FieldDelimiter", csvInput.getFieldDelimiterAsString());
                 addIfNotNull(xml, "QuoteCharacter", csvInput.getQuoteCharacterAsString());
+                addIfNotNull(xml, "AllowQuotedRecordDelimiter", csvInput.getAllowQuotedRecordDelimiter());
                 xml.end();
             }
 

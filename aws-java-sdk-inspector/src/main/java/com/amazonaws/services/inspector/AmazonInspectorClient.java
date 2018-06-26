@@ -97,6 +97,9 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                             new JsonErrorShapeMetadata().withErrorCode("AgentsAlreadyRunningAssessmentException").withModeledClass(
                                     com.amazonaws.services.inspector.model.AgentsAlreadyRunningAssessmentException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("PreviewGenerationInProgressException").withModeledClass(
+                                    com.amazonaws.services.inspector.model.PreviewGenerationInProgressException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidCrossAccountRoleException").withModeledClass(
                                     com.amazonaws.services.inspector.model.InvalidCrossAccountRoleException.class))
                     .addErrorMetadata(
@@ -475,6 +478,69 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
             HttpResponseHandler<AmazonWebServiceResponse<CreateAssessmentTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateAssessmentTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts the generation of an exclusions preview for the specified assessment template. The exclusions preview
+     * lists the potential exclusions (ExclusionPreview) that Inspector can detect before it runs the assessment.
+     * </p>
+     * 
+     * @param createExclusionsPreviewRequest
+     * @return Result of the CreateExclusionsPreview operation returned by the service.
+     * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
+     * @throws PreviewGenerationInProgressException
+     *         The request is rejected. The specified assessment template is currently generating an exclusions preview.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws AccessDeniedException
+     *         You do not have required permissions to access the requested resource.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced an entity that does not exist. The error code describes
+     *         the entity.
+     * @sample AmazonInspector.CreateExclusionsPreview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateExclusionsPreview"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateExclusionsPreviewResult createExclusionsPreview(CreateExclusionsPreviewRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateExclusionsPreview(request);
+    }
+
+    @SdkInternalApi
+    final CreateExclusionsPreviewResult executeCreateExclusionsPreview(CreateExclusionsPreviewRequest createExclusionsPreviewRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createExclusionsPreviewRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateExclusionsPreviewRequest> request = null;
+        Response<CreateExclusionsPreviewResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateExclusionsPreviewRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createExclusionsPreviewRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateExclusionsPreviewResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateExclusionsPreviewResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -947,6 +1013,59 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Describes the exclusions that are specified by the exclusions' ARNs.
+     * </p>
+     * 
+     * @param describeExclusionsRequest
+     * @return Result of the DescribeExclusions operation returned by the service.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
+     * @sample AmazonInspector.DescribeExclusions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeExclusions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeExclusionsResult describeExclusions(DescribeExclusionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeExclusions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeExclusionsResult executeDescribeExclusions(DescribeExclusionsRequest describeExclusionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeExclusionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeExclusionsRequest> request = null;
+        Response<DescribeExclusionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeExclusionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeExclusionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeExclusionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeExclusionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes the findings that are specified by the ARNs of the findings.
      * </p>
      * 
@@ -1161,6 +1280,65 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<GetAssessmentReportResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetAssessmentReportResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the exclusions preview (a list of ExclusionPreview objects) specified by the preview token. You can
+     * obtain the preview token by running the CreateExclusionsPreview API.
+     * </p>
+     * 
+     * @param getExclusionsPreviewRequest
+     * @return Result of the GetExclusionsPreview operation returned by the service.
+     * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws AccessDeniedException
+     *         You do not have required permissions to access the requested resource.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced an entity that does not exist. The error code describes
+     *         the entity.
+     * @sample AmazonInspector.GetExclusionsPreview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetExclusionsPreview" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetExclusionsPreviewResult getExclusionsPreview(GetExclusionsPreviewRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetExclusionsPreview(request);
+    }
+
+    @SdkInternalApi
+    final GetExclusionsPreviewResult executeGetExclusionsPreview(GetExclusionsPreviewRequest getExclusionsPreviewRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getExclusionsPreviewRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetExclusionsPreviewRequest> request = null;
+        Response<GetExclusionsPreviewResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetExclusionsPreviewRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getExclusionsPreviewRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetExclusionsPreviewResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetExclusionsPreviewResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1517,6 +1695,64 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
             HttpResponseHandler<AmazonWebServiceResponse<ListEventSubscriptionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListEventSubscriptionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List exclusions that are generated by the assessment run.
+     * </p>
+     * 
+     * @param listExclusionsRequest
+     * @return Result of the ListExclusions operation returned by the service.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because an invalid or out-of-range value was supplied for an input parameter.
+     * @throws AccessDeniedException
+     *         You do not have required permissions to access the requested resource.
+     * @throws NoSuchEntityException
+     *         The request was rejected because it referenced an entity that does not exist. The error code describes
+     *         the entity.
+     * @sample AmazonInspector.ListExclusions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListExclusions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListExclusionsResult listExclusions(ListExclusionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListExclusions(request);
+    }
+
+    @SdkInternalApi
+    final ListExclusionsResult executeListExclusions(ListExclusionsRequest listExclusionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listExclusionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListExclusionsRequest> request = null;
+        Response<ListExclusionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListExclusionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listExclusionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListExclusionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListExclusionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

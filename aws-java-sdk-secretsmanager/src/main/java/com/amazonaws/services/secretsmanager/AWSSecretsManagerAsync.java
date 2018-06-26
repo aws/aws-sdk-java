@@ -516,6 +516,103 @@ public interface AWSSecretsManagerAsync extends AWSSecretsManager {
 
     /**
      * <p>
+     * Deletes the resource-based policy currently attached to the secret.
+     * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * secretsmanager:DeleteResourcePolicy
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To attach a resource policy to a secret, use <a>PutResourcePolicy</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To retrieve the current resource-based policy that is attached to a secret, use <a>GetResourcePolicy</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To list all of the currently available secrets, use <a>ListSecrets</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @return A Java Future containing the result of the DeleteResourcePolicy operation returned by the service.
+     * @sample AWSSecretsManagerAsync.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest deleteResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Deletes the resource-based policy currently attached to the secret.
+     * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * secretsmanager:DeleteResourcePolicy
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To attach a resource policy to a secret, use <a>PutResourcePolicy</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To retrieve the current resource-based policy that is attached to a secret, use <a>GetResourcePolicy</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To list all of the currently available secrets, use <a>ListSecrets</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteResourcePolicy operation returned by the service.
+     * @sample AWSSecretsManagerAsyncHandler.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest deleteResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteResourcePolicyRequest, DeleteResourcePolicyResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes an entire secret and all of its versions. You can optionally include a recovery window during which you
      * can restore the secret. If you don't specify a recovery window value, the operation defaults to 30 days. Secrets
      * Manager attaches a <code>DeletionDate</code> stamp to the secret that specifies the end of the recovery window.
@@ -835,6 +932,107 @@ public interface AWSSecretsManagerAsync extends AWSSecretsManager {
 
     /**
      * <p>
+     * Retrieves the JSON text of the resource-based policy attached to the specified secret. The JSON request string
+     * input and response output are shown formatted with whitespace and line breaks for better readability. Submit your
+     * input as a single line JSON string.
+     * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * secretsmanager:GetResourcePolicy
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To attach a resource policy to a secret, use <a>PutResourcePolicy</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To delete the resource-based policy that is attached to a secret, use <a>DeleteResourcePolicy</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To list all of the currently available secrets, use <a>ListSecrets</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getResourcePolicyRequest
+     * @return A Java Future containing the result of the GetResourcePolicy operation returned by the service.
+     * @sample AWSSecretsManagerAsync.GetResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest getResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Retrieves the JSON text of the resource-based policy attached to the specified secret. The JSON request string
+     * input and response output are shown formatted with whitespace and line breaks for better readability. Submit your
+     * input as a single line JSON string.
+     * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * secretsmanager:GetResourcePolicy
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To attach a resource policy to a secret, use <a>PutResourcePolicy</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To delete the resource-based policy that is attached to a secret, use <a>DeleteResourcePolicy</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To list all of the currently available secrets, use <a>ListSecrets</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getResourcePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetResourcePolicy operation returned by the service.
+     * @sample AWSSecretsManagerAsyncHandler.GetResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest getResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetResourcePolicyRequest, GetResourcePolicyResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves the contents of the encrypted fields <code>SecretString</code> or <code>SecretBinary</code> from the
      * specified version of a secret, whichever contains content.
      * </p>
@@ -1129,6 +1327,119 @@ public interface AWSSecretsManagerAsync extends AWSSecretsManager {
      */
     java.util.concurrent.Future<ListSecretsResult> listSecretsAsync(ListSecretsRequest listSecretsRequest,
             com.amazonaws.handlers.AsyncHandler<ListSecretsRequest, ListSecretsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Attaches the contents of the specified resource-based policy to a secret. A resource-based policy is optional.
+     * Alternatively, you can use IAM user-based policies that specify the secret's ARN in the policy statement's
+     * <code>Resources</code> element. You can also use a combination of both identity- an resource-based policies. The
+     * affected users and roles receive the permissions permitted by all of the relevant policies. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html"
+     * >Using Resource-Based Policies for AWS Secrets Manager</a>. For the complete description of the AWS policy syntax
+     * and grammar, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON
+     * Policy Reference</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * secretsmanager:PutResourcePolicy
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To retrieve the resource policy attached to a secret, use <a>GetResourcePolicy</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To delete the resource-based policy that is attached to a secret, use <a>DeleteResourcePolicy</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To list all of the currently available secrets, use <a>ListSecrets</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param putResourcePolicyRequest
+     * @return A Java Future containing the result of the PutResourcePolicy operation returned by the service.
+     * @sample AWSSecretsManagerAsync.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest putResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Attaches the contents of the specified resource-based policy to a secret. A resource-based policy is optional.
+     * Alternatively, you can use IAM user-based policies that specify the secret's ARN in the policy statement's
+     * <code>Resources</code> element. You can also use a combination of both identity- an resource-based policies. The
+     * affected users and roles receive the permissions permitted by all of the relevant policies. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html"
+     * >Using Resource-Based Policies for AWS Secrets Manager</a>. For the complete description of the AWS policy syntax
+     * and grammar, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON
+     * Policy Reference</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * secretsmanager:PutResourcePolicy
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To retrieve the resource policy attached to a secret, use <a>GetResourcePolicy</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To delete the resource-based policy that is attached to a secret, use <a>DeleteResourcePolicy</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To list all of the currently available secrets, use <a>ListSecrets</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param putResourcePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutResourcePolicy operation returned by the service.
+     * @sample AWSSecretsManagerAsyncHandler.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest putResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<PutResourcePolicyRequest, PutResourcePolicyResult> asyncHandler);
 
     /**
      * <p>

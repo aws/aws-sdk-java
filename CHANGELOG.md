@@ -1,3 +1,16 @@
+# __1.11.355__ __2018-06-26__
+## __AWS Secrets Manager__
+  - ### Features
+    - This release adds support for resource-based policies that attach directly to your secrets. These policies provide an additional way to control who can access your secrets and what they can do with them. For more information, see https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html in the Secrets Manager User Guide.
+
+## __Amazon Inspector__
+  - ### Features
+    - Introduce four new APIs to view and preview Exclusions.  Exclusions show which intended security checks are excluded from an assessment, along with reasons and recommendations to fix.  The APIs are CreateExclusionsPreview, GetExclusionsPreview, ListExclusions, and DescribeExclusions.
+
+## __Amazon Simple Storage Service__
+  - ### Features
+    - Add AllowQuotedRecordDelimiter to Amazon S3 Select API. Please refer to https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectSELECTContent.html for usage details.
+
 # __1.11.354__ __2018-06-22__
 ## __Alexa For Business__
   - ### Features

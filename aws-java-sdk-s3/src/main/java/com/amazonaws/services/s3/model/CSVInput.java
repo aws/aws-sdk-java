@@ -75,6 +75,11 @@ public class CSVInput implements Serializable, Cloneable {
     private String quoteCharacter;
 
     /**
+     * Value used to allow quoted record delimiters to occur within the input.
+     */
+    private Boolean allowQuotedRecordDelimiter;
+
+    /**
      * @return the first line of input. Valid values: None, Ignore, Use.
      */
     public String getFileHeaderInfo() {
@@ -406,6 +411,33 @@ public class CSVInput implements Serializable, Cloneable {
         return this;
     }
 
+    /**
+     * @return The value used to allow quoted record delimiters to occur within the input.
+     */
+    public Boolean getAllowQuotedRecordDelimiter() {
+        return allowQuotedRecordDelimiter;
+    }
+
+    /**
+     * Sets the value used to allow quoted record delimiters to occur within the input.
+     *
+     * @param allowQuotedRecordDelimiter New allowQuotedRecordDelimiter value.
+     */
+    public void setAllowQuotedRecordDelimiter(Boolean allowQuotedRecordDelimiter) {
+        this.allowQuotedRecordDelimiter = allowQuotedRecordDelimiter;
+    }
+
+    /**
+     * Sets the value used to allow quoted record delimiters to occur within the input.
+     *
+     * @param allowQuotedRecordDelimiter New allowQuotedRecordDelimiter value.
+     * @return This object for method chaining.
+     */
+    public CSVInput withAllowQuotedRecordDelimiter(Boolean allowQuotedRecordDelimiter) {
+        setAllowQuotedRecordDelimiter(allowQuotedRecordDelimiter);
+        return this;
+    }
+
     private String charToString(Character character) {
         return character == null ? null : character.toString();
     }
@@ -458,6 +490,8 @@ public class CSVInput implements Serializable, Cloneable {
             return false;
         if (other.getQuoteCharacterAsString() != null && !other.getQuoteCharacterAsString().equals(this.getQuoteCharacterAsString()))
             return false;
+        if (other.getAllowQuotedRecordDelimiter() != null && !other.getAllowQuotedRecordDelimiter().equals(this.getAllowQuotedRecordDelimiter()))
+            return false;
         return true;
     }
 
@@ -472,6 +506,7 @@ public class CSVInput implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getRecordDelimiterAsString() == null) ? 0 : getRecordDelimiterAsString().hashCode());
         hashCode = prime * hashCode + ((getFieldDelimiterAsString() == null) ? 0 : getFieldDelimiterAsString().hashCode());
         hashCode = prime * hashCode + (getQuoteCharacterAsString() != null ? getQuoteCharacterAsString().hashCode() : 0);
+        hashCode = prime * hashCode + ((getAllowQuotedRecordDelimiter() == null) ? 0 : getAllowQuotedRecordDelimiter().hashCode());
         return hashCode;
     }
 
@@ -491,6 +526,8 @@ public class CSVInput implements Serializable, Cloneable {
             sb.append("FieldDelimiter: ").append(getFieldDelimiterAsString()).append(",");
         if (getQuoteCharacterAsString() != null)
             sb.append("QuoteCharacter: ").append(getQuoteCharacterAsString());
+        if (getAllowQuotedRecordDelimiter() != null)
+            sb.append("AllowQuotedRecordDelimiter: ").append(getAllowQuotedRecordDelimiter());
         sb.append("}");
         return sb.toString();
     }

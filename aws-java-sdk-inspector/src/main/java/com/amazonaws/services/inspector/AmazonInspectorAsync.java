@@ -151,6 +151,39 @@ public interface AmazonInspectorAsync extends AmazonInspector {
 
     /**
      * <p>
+     * Starts the generation of an exclusions preview for the specified assessment template. The exclusions preview
+     * lists the potential exclusions (ExclusionPreview) that Inspector can detect before it runs the assessment.
+     * </p>
+     * 
+     * @param createExclusionsPreviewRequest
+     * @return A Java Future containing the result of the CreateExclusionsPreview operation returned by the service.
+     * @sample AmazonInspectorAsync.CreateExclusionsPreview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateExclusionsPreview"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateExclusionsPreviewResult> createExclusionsPreviewAsync(CreateExclusionsPreviewRequest createExclusionsPreviewRequest);
+
+    /**
+     * <p>
+     * Starts the generation of an exclusions preview for the specified assessment template. The exclusions preview
+     * lists the potential exclusions (ExclusionPreview) that Inspector can detect before it runs the assessment.
+     * </p>
+     * 
+     * @param createExclusionsPreviewRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateExclusionsPreview operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.CreateExclusionsPreview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/CreateExclusionsPreview"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateExclusionsPreviewResult> createExclusionsPreviewAsync(CreateExclusionsPreviewRequest createExclusionsPreviewRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateExclusionsPreviewRequest, CreateExclusionsPreviewResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a resource group using the specified set of tags (key and value pairs) that are used to select the EC2
      * instances to be included in an Amazon Inspector assessment target. The created resource group is then used to
      * create an Amazon Inspector assessment target. For more information, see <a>CreateAssessmentTarget</a>.
@@ -411,6 +444,37 @@ public interface AmazonInspectorAsync extends AmazonInspector {
 
     /**
      * <p>
+     * Describes the exclusions that are specified by the exclusions' ARNs.
+     * </p>
+     * 
+     * @param describeExclusionsRequest
+     * @return A Java Future containing the result of the DescribeExclusions operation returned by the service.
+     * @sample AmazonInspectorAsync.DescribeExclusions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeExclusions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeExclusionsResult> describeExclusionsAsync(DescribeExclusionsRequest describeExclusionsRequest);
+
+    /**
+     * <p>
+     * Describes the exclusions that are specified by the exclusions' ARNs.
+     * </p>
+     * 
+     * @param describeExclusionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeExclusions operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.DescribeExclusions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/DescribeExclusions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeExclusionsResult> describeExclusionsAsync(DescribeExclusionsRequest describeExclusionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeExclusionsRequest, DescribeExclusionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes the findings that are specified by the ARNs of the findings.
      * </p>
      * 
@@ -532,6 +596,39 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      */
     java.util.concurrent.Future<GetAssessmentReportResult> getAssessmentReportAsync(GetAssessmentReportRequest getAssessmentReportRequest,
             com.amazonaws.handlers.AsyncHandler<GetAssessmentReportRequest, GetAssessmentReportResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the exclusions preview (a list of ExclusionPreview objects) specified by the preview token. You can
+     * obtain the preview token by running the CreateExclusionsPreview API.
+     * </p>
+     * 
+     * @param getExclusionsPreviewRequest
+     * @return A Java Future containing the result of the GetExclusionsPreview operation returned by the service.
+     * @sample AmazonInspectorAsync.GetExclusionsPreview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetExclusionsPreview" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetExclusionsPreviewResult> getExclusionsPreviewAsync(GetExclusionsPreviewRequest getExclusionsPreviewRequest);
+
+    /**
+     * <p>
+     * Retrieves the exclusions preview (a list of ExclusionPreview objects) specified by the preview token. You can
+     * obtain the preview token by running the CreateExclusionsPreview API.
+     * </p>
+     * 
+     * @param getExclusionsPreviewRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetExclusionsPreview operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.GetExclusionsPreview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetExclusionsPreview" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetExclusionsPreviewResult> getExclusionsPreviewAsync(GetExclusionsPreviewRequest getExclusionsPreviewRequest,
+            com.amazonaws.handlers.AsyncHandler<GetExclusionsPreviewRequest, GetExclusionsPreviewResult> asyncHandler);
 
     /**
      * <p>
@@ -728,6 +825,37 @@ public interface AmazonInspectorAsync extends AmazonInspector {
      */
     java.util.concurrent.Future<ListEventSubscriptionsResult> listEventSubscriptionsAsync(ListEventSubscriptionsRequest listEventSubscriptionsRequest,
             com.amazonaws.handlers.AsyncHandler<ListEventSubscriptionsRequest, ListEventSubscriptionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * List exclusions that are generated by the assessment run.
+     * </p>
+     * 
+     * @param listExclusionsRequest
+     * @return A Java Future containing the result of the ListExclusions operation returned by the service.
+     * @sample AmazonInspectorAsync.ListExclusions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListExclusions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListExclusionsResult> listExclusionsAsync(ListExclusionsRequest listExclusionsRequest);
+
+    /**
+     * <p>
+     * List exclusions that are generated by the assessment run.
+     * </p>
+     * 
+     * @param listExclusionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListExclusions operation returned by the service.
+     * @sample AmazonInspectorAsyncHandler.ListExclusions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListExclusions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListExclusionsResult> listExclusionsAsync(ListExclusionsRequest listExclusionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListExclusionsRequest, ListExclusionsResult> asyncHandler);
 
     /**
      * <p>

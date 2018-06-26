@@ -194,9 +194,22 @@ public interface AWSSecretsManager {
      * @throws InternalServiceErrorException
      *         An error occurred on the server side.
      * @throws InvalidRequestException
-     *         You provided a parameter value that is not valid for the current state of the resource. For example, if
-     *         you try to enable rotation on a secret, you must already have a Lambda function ARN configured or
-     *         included as a parameter in this call.
+     *         You provided a parameter value that is not valid for the current state of the resource.</p>
+     *         <p>
+     *         Possible causes:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to perform the operation on a secret that's currently marked deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and
+     *         you didn't include such an ARN as a parameter in this call.
+     *         </p>
+     *         </li>
      * @sample AWSSecretsManager.CancelRotateSecret
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/CancelRotateSecret"
      *      target="_top">AWS API Documentation</a>
@@ -318,9 +331,22 @@ public interface AWSSecretsManager {
      * @throws InvalidParameterException
      *         You provided an invalid value for a parameter.
      * @throws InvalidRequestException
-     *         You provided a parameter value that is not valid for the current state of the resource. For example, if
-     *         you try to enable rotation on a secret, you must already have a Lambda function ARN configured or
-     *         included as a parameter in this call.
+     *         You provided a parameter value that is not valid for the current state of the resource.</p>
+     *         <p>
+     *         Possible causes:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to perform the operation on a secret that's currently marked deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and
+     *         you didn't include such an ARN as a parameter in this call.
+     *         </p>
+     *         </li>
      * @throws LimitExceededException
      *         The request failed because it would exceed one of the Secrets Manager internal limits.
      * @throws EncryptionFailureException
@@ -336,11 +362,80 @@ public interface AWSSecretsManager {
      *         The policy document that you provided isn't valid.
      * @throws InternalServiceErrorException
      *         An error occurred on the server side.
+     * @throws PreconditionNotMetException
+     *         The request failed because you did not complete all the prerequisite steps.
      * @sample AWSSecretsManager.CreateSecret
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/CreateSecret" target="_top">AWS
      *      API Documentation</a>
      */
     CreateSecretResult createSecret(CreateSecretRequest createSecretRequest);
+
+    /**
+     * <p>
+     * Deletes the resource-based policy currently attached to the secret.
+     * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * secretsmanager:DeleteResourcePolicy
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To attach a resource policy to a secret, use <a>PutResourcePolicy</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To retrieve the current resource-based policy that is attached to a secret, use <a>GetResourcePolicy</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To list all of the currently available secrets, use <a>ListSecrets</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @return Result of the DeleteResourcePolicy operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         We can't find the resource that you asked for.
+     * @throws InternalServiceErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidRequestException
+     *         You provided a parameter value that is not valid for the current state of the resource.</p>
+     *         <p>
+     *         Possible causes:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to perform the operation on a secret that's currently marked deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and
+     *         you didn't include such an ARN as a parameter in this call.
+     *         </p>
+     *         </li>
+     * @sample AWSSecretsManager.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/DeleteResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteResourcePolicyResult deleteResourcePolicy(DeleteResourcePolicyRequest deleteResourcePolicyRequest);
 
     /**
      * <p>
@@ -413,9 +508,22 @@ public interface AWSSecretsManager {
      * @throws InvalidParameterException
      *         You provided an invalid value for a parameter.
      * @throws InvalidRequestException
-     *         You provided a parameter value that is not valid for the current state of the resource. For example, if
-     *         you try to enable rotation on a secret, you must already have a Lambda function ARN configured or
-     *         included as a parameter in this call.
+     *         You provided a parameter value that is not valid for the current state of the resource.</p>
+     *         <p>
+     *         Possible causes:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to perform the operation on a secret that's currently marked deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and
+     *         you didn't include such an ARN as a parameter in this call.
+     *         </p>
+     *         </li>
      * @throws InternalServiceErrorException
      *         An error occurred on the server side.
      * @sample AWSSecretsManager.DeleteSecret
@@ -505,9 +613,22 @@ public interface AWSSecretsManager {
      * @throws InvalidParameterException
      *         You provided an invalid value for a parameter.
      * @throws InvalidRequestException
-     *         You provided a parameter value that is not valid for the current state of the resource. For example, if
-     *         you try to enable rotation on a secret, you must already have a Lambda function ARN configured or
-     *         included as a parameter in this call.
+     *         You provided a parameter value that is not valid for the current state of the resource.</p>
+     *         <p>
+     *         Possible causes:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to perform the operation on a secret that's currently marked deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and
+     *         you didn't include such an ARN as a parameter in this call.
+     *         </p>
+     *         </li>
      * @throws InternalServiceErrorException
      *         An error occurred on the server side.
      * @sample AWSSecretsManager.GetRandomPassword
@@ -515,6 +636,75 @@ public interface AWSSecretsManager {
      *      target="_top">AWS API Documentation</a>
      */
     GetRandomPasswordResult getRandomPassword(GetRandomPasswordRequest getRandomPasswordRequest);
+
+    /**
+     * <p>
+     * Retrieves the JSON text of the resource-based policy attached to the specified secret. The JSON request string
+     * input and response output are shown formatted with whitespace and line breaks for better readability. Submit your
+     * input as a single line JSON string.
+     * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * secretsmanager:GetResourcePolicy
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To attach a resource policy to a secret, use <a>PutResourcePolicy</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To delete the resource-based policy that is attached to a secret, use <a>DeleteResourcePolicy</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To list all of the currently available secrets, use <a>ListSecrets</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getResourcePolicyRequest
+     * @return Result of the GetResourcePolicy operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         We can't find the resource that you asked for.
+     * @throws InternalServiceErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidRequestException
+     *         You provided a parameter value that is not valid for the current state of the resource.</p>
+     *         <p>
+     *         Possible causes:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to perform the operation on a secret that's currently marked deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and
+     *         you didn't include such an ARN as a parameter in this call.
+     *         </p>
+     *         </li>
+     * @sample AWSSecretsManager.GetResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/GetResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetResourcePolicyResult getResourcePolicy(GetResourcePolicyRequest getResourcePolicyRequest);
 
     /**
      * <p>
@@ -563,9 +753,22 @@ public interface AWSSecretsManager {
      * @throws InvalidParameterException
      *         You provided an invalid value for a parameter.
      * @throws InvalidRequestException
-     *         You provided a parameter value that is not valid for the current state of the resource. For example, if
-     *         you try to enable rotation on a secret, you must already have a Lambda function ARN configured or
-     *         included as a parameter in this call.
+     *         You provided a parameter value that is not valid for the current state of the resource.</p>
+     *         <p>
+     *         Possible causes:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to perform the operation on a secret that's currently marked deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and
+     *         you didn't include such an ARN as a parameter in this call.
+     *         </p>
+     *         </li>
      * @throws DecryptionFailureException
      *         Secrets Manager can't decrypt the protected secret text using the provided KMS key.
      * @throws InternalServiceErrorException
@@ -680,6 +883,85 @@ public interface AWSSecretsManager {
      *      Documentation</a>
      */
     ListSecretsResult listSecrets(ListSecretsRequest listSecretsRequest);
+
+    /**
+     * <p>
+     * Attaches the contents of the specified resource-based policy to a secret. A resource-based policy is optional.
+     * Alternatively, you can use IAM user-based policies that specify the secret's ARN in the policy statement's
+     * <code>Resources</code> element. You can also use a combination of both identity- an resource-based policies. The
+     * affected users and roles receive the permissions permitted by all of the relevant policies. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html"
+     * >Using Resource-Based Policies for AWS Secrets Manager</a>. For the complete description of the AWS policy syntax
+     * and grammar, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON
+     * Policy Reference</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * To run this command, you must have the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * secretsmanager:PutResourcePolicy
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Related operations</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To retrieve the resource policy attached to a secret, use <a>GetResourcePolicy</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To delete the resource-based policy that is attached to a secret, use <a>DeleteResourcePolicy</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To list all of the currently available secrets, use <a>ListSecrets</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param putResourcePolicyRequest
+     * @return Result of the PutResourcePolicy operation returned by the service.
+     * @throws MalformedPolicyDocumentException
+     *         The policy document that you provided isn't valid.
+     * @throws ResourceNotFoundException
+     *         We can't find the resource that you asked for.
+     * @throws InvalidParameterException
+     *         You provided an invalid value for a parameter.
+     * @throws InternalServiceErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidRequestException
+     *         You provided a parameter value that is not valid for the current state of the resource.</p>
+     *         <p>
+     *         Possible causes:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to perform the operation on a secret that's currently marked deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and
+     *         you didn't include such an ARN as a parameter in this call.
+     *         </p>
+     *         </li>
+     * @sample AWSSecretsManager.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/PutResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutResourcePolicyResult putResourcePolicy(PutResourcePolicyRequest putResourcePolicyRequest);
 
     /**
      * <p>
@@ -799,9 +1081,22 @@ public interface AWSSecretsManager {
      * @throws InvalidParameterException
      *         You provided an invalid value for a parameter.
      * @throws InvalidRequestException
-     *         You provided a parameter value that is not valid for the current state of the resource. For example, if
-     *         you try to enable rotation on a secret, you must already have a Lambda function ARN configured or
-     *         included as a parameter in this call.
+     *         You provided a parameter value that is not valid for the current state of the resource.</p>
+     *         <p>
+     *         Possible causes:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to perform the operation on a secret that's currently marked deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and
+     *         you didn't include such an ARN as a parameter in this call.
+     *         </p>
+     *         </li>
      * @throws LimitExceededException
      *         The request failed because it would exceed one of the Secrets Manager internal limits.
      * @throws EncryptionFailureException
@@ -857,9 +1152,22 @@ public interface AWSSecretsManager {
      * @throws InvalidParameterException
      *         You provided an invalid value for a parameter.
      * @throws InvalidRequestException
-     *         You provided a parameter value that is not valid for the current state of the resource. For example, if
-     *         you try to enable rotation on a secret, you must already have a Lambda function ARN configured or
-     *         included as a parameter in this call.
+     *         You provided a parameter value that is not valid for the current state of the resource.</p>
+     *         <p>
+     *         Possible causes:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to perform the operation on a secret that's currently marked deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and
+     *         you didn't include such an ARN as a parameter in this call.
+     *         </p>
+     *         </li>
      * @throws InternalServiceErrorException
      *         An error occurred on the server side.
      * @sample AWSSecretsManager.RestoreSecret
@@ -961,9 +1269,22 @@ public interface AWSSecretsManager {
      * @throws InternalServiceErrorException
      *         An error occurred on the server side.
      * @throws InvalidRequestException
-     *         You provided a parameter value that is not valid for the current state of the resource. For example, if
-     *         you try to enable rotation on a secret, you must already have a Lambda function ARN configured or
-     *         included as a parameter in this call.
+     *         You provided a parameter value that is not valid for the current state of the resource.</p>
+     *         <p>
+     *         Possible causes:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to perform the operation on a secret that's currently marked deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and
+     *         you didn't include such an ARN as a parameter in this call.
+     *         </p>
+     *         </li>
      * @sample AWSSecretsManager.RotateSecret
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/RotateSecret" target="_top">AWS
      *      API Documentation</a>
@@ -1055,6 +1376,23 @@ public interface AWSSecretsManager {
      * @return Result of the TagResource operation returned by the service.
      * @throws ResourceNotFoundException
      *         We can't find the resource that you asked for.
+     * @throws InvalidRequestException
+     *         You provided a parameter value that is not valid for the current state of the resource.</p>
+     *         <p>
+     *         Possible causes:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to perform the operation on a secret that's currently marked deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and
+     *         you didn't include such an ARN as a parameter in this call.
+     *         </p>
+     *         </li>
      * @throws InvalidParameterException
      *         You provided an invalid value for a parameter.
      * @throws InternalServiceErrorException
@@ -1113,6 +1451,23 @@ public interface AWSSecretsManager {
      * @return Result of the UntagResource operation returned by the service.
      * @throws ResourceNotFoundException
      *         We can't find the resource that you asked for.
+     * @throws InvalidRequestException
+     *         You provided a parameter value that is not valid for the current state of the resource.</p>
+     *         <p>
+     *         Possible causes:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to perform the operation on a secret that's currently marked deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and
+     *         you didn't include such an ARN as a parameter in this call.
+     *         </p>
+     *         </li>
      * @throws InvalidParameterException
      *         You provided an invalid value for a parameter.
      * @throws InternalServiceErrorException
@@ -1235,9 +1590,22 @@ public interface AWSSecretsManager {
      * @throws InvalidParameterException
      *         You provided an invalid value for a parameter.
      * @throws InvalidRequestException
-     *         You provided a parameter value that is not valid for the current state of the resource. For example, if
-     *         you try to enable rotation on a secret, you must already have a Lambda function ARN configured or
-     *         included as a parameter in this call.
+     *         You provided a parameter value that is not valid for the current state of the resource.</p>
+     *         <p>
+     *         Possible causes:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to perform the operation on a secret that's currently marked deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and
+     *         you didn't include such an ARN as a parameter in this call.
+     *         </p>
+     *         </li>
      * @throws LimitExceededException
      *         The request failed because it would exceed one of the Secrets Manager internal limits.
      * @throws EncryptionFailureException
@@ -1253,6 +1621,8 @@ public interface AWSSecretsManager {
      *         The policy document that you provided isn't valid.
      * @throws InternalServiceErrorException
      *         An error occurred on the server side.
+     * @throws PreconditionNotMetException
+     *         The request failed because you did not complete all the prerequisite steps.
      * @sample AWSSecretsManager.UpdateSecret
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/UpdateSecret" target="_top">AWS
      *      API Documentation</a>
@@ -1317,9 +1687,22 @@ public interface AWSSecretsManager {
      * @throws InvalidParameterException
      *         You provided an invalid value for a parameter.
      * @throws InvalidRequestException
-     *         You provided a parameter value that is not valid for the current state of the resource. For example, if
-     *         you try to enable rotation on a secret, you must already have a Lambda function ARN configured or
-     *         included as a parameter in this call.
+     *         You provided a parameter value that is not valid for the current state of the resource.</p>
+     *         <p>
+     *         Possible causes:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You tried to perform the operation on a secret that's currently marked deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to enable rotation on a secret that doesn't already have a Lambda function ARN configured and
+     *         you didn't include such an ARN as a parameter in this call.
+     *         </p>
+     *         </li>
      * @throws LimitExceededException
      *         The request failed because it would exceed one of the Secrets Manager internal limits.
      * @throws InternalServiceErrorException
