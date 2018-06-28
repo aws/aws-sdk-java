@@ -27,16 +27,16 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the secret to which you want to attach the resource-based policy. You can specify either the Amazon
-     * Resource Name (ARN) or the friendly name of the secret.
+     * Specifies the secret that you want to attach the resource-based policy to. You can specify either the ARN or the
+     * friendly name of the secret.
      * </p>
      */
     private String secretId;
     /**
      * <p>
-     * A JSON-formatted string constructed according to the grammar and syntax for an AWS resource-based policy. The
-     * policy in the string identifies who can access or manage this secret and its versions. For information on how to
-     * format a JSON parameter for the various command line tool environments, see <a
+     * A JSON-formatted string that's constructed according to the grammar and syntax for an AWS resource-based policy.
+     * The policy in the string identifies who can access or manage this secret and its versions. For information on how
+     * to format a JSON parameter for the various command line tool environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>.
      * </p>
@@ -45,13 +45,13 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the secret to which you want to attach the resource-based policy. You can specify either the Amazon
-     * Resource Name (ARN) or the friendly name of the secret.
+     * Specifies the secret that you want to attach the resource-based policy to. You can specify either the ARN or the
+     * friendly name of the secret.
      * </p>
      * 
      * @param secretId
-     *        Specifies the secret to which you want to attach the resource-based policy. You can specify either the
-     *        Amazon Resource Name (ARN) or the friendly name of the secret.
+     *        Specifies the secret that you want to attach the resource-based policy to. You can specify either the ARN
+     *        or the friendly name of the secret.
      */
 
     public void setSecretId(String secretId) {
@@ -60,12 +60,12 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the secret to which you want to attach the resource-based policy. You can specify either the Amazon
-     * Resource Name (ARN) or the friendly name of the secret.
+     * Specifies the secret that you want to attach the resource-based policy to. You can specify either the ARN or the
+     * friendly name of the secret.
      * </p>
      * 
-     * @return Specifies the secret to which you want to attach the resource-based policy. You can specify either the
-     *         Amazon Resource Name (ARN) or the friendly name of the secret.
+     * @return Specifies the secret that you want to attach the resource-based policy to. You can specify either the ARN
+     *         or the friendly name of the secret.
      */
 
     public String getSecretId() {
@@ -74,13 +74,13 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the secret to which you want to attach the resource-based policy. You can specify either the Amazon
-     * Resource Name (ARN) or the friendly name of the secret.
+     * Specifies the secret that you want to attach the resource-based policy to. You can specify either the ARN or the
+     * friendly name of the secret.
      * </p>
      * 
      * @param secretId
-     *        Specifies the secret to which you want to attach the resource-based policy. You can specify either the
-     *        Amazon Resource Name (ARN) or the friendly name of the secret.
+     *        Specifies the secret that you want to attach the resource-based policy to. You can specify either the ARN
+     *        or the friendly name of the secret.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,17 +91,17 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A JSON-formatted string constructed according to the grammar and syntax for an AWS resource-based policy. The
-     * policy in the string identifies who can access or manage this secret and its versions. For information on how to
-     * format a JSON parameter for the various command line tool environments, see <a
+     * A JSON-formatted string that's constructed according to the grammar and syntax for an AWS resource-based policy.
+     * The policy in the string identifies who can access or manage this secret and its versions. For information on how
+     * to format a JSON parameter for the various command line tool environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>.
      * </p>
      * 
      * @param resourcePolicy
-     *        A JSON-formatted string constructed according to the grammar and syntax for an AWS resource-based policy.
-     *        The policy in the string identifies who can access or manage this secret and its versions. For information
-     *        on how to format a JSON parameter for the various command line tool environments, see <a
+     *        A JSON-formatted string that's constructed according to the grammar and syntax for an AWS resource-based
+     *        policy. The policy in the string identifies who can access or manage this secret and its versions. For
+     *        information on how to format a JSON parameter for the various command line tool environments, see <a
      *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *        JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.
      */
@@ -112,15 +112,15 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A JSON-formatted string constructed according to the grammar and syntax for an AWS resource-based policy. The
-     * policy in the string identifies who can access or manage this secret and its versions. For information on how to
-     * format a JSON parameter for the various command line tool environments, see <a
+     * A JSON-formatted string that's constructed according to the grammar and syntax for an AWS resource-based policy.
+     * The policy in the string identifies who can access or manage this secret and its versions. For information on how
+     * to format a JSON parameter for the various command line tool environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>.
      * </p>
      * 
-     * @return A JSON-formatted string constructed according to the grammar and syntax for an AWS resource-based policy.
-     *         The policy in the string identifies who can access or manage this secret and its versions. For
+     * @return A JSON-formatted string that's constructed according to the grammar and syntax for an AWS resource-based
+     *         policy. The policy in the string identifies who can access or manage this secret and its versions. For
      *         information on how to format a JSON parameter for the various command line tool environments, see <a
      *         href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *         JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.
@@ -132,17 +132,17 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A JSON-formatted string constructed according to the grammar and syntax for an AWS resource-based policy. The
-     * policy in the string identifies who can access or manage this secret and its versions. For information on how to
-     * format a JSON parameter for the various command line tool environments, see <a
+     * A JSON-formatted string that's constructed according to the grammar and syntax for an AWS resource-based policy.
+     * The policy in the string identifies who can access or manage this secret and its versions. For information on how
+     * to format a JSON parameter for the various command line tool environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>.
      * </p>
      * 
      * @param resourcePolicy
-     *        A JSON-formatted string constructed according to the grammar and syntax for an AWS resource-based policy.
-     *        The policy in the string identifies who can access or manage this secret and its versions. For information
-     *        on how to format a JSON parameter for the various command line tool environments, see <a
+     *        A JSON-formatted string that's constructed according to the grammar and syntax for an AWS resource-based
+     *        policy. The policy in the string identifies who can access or manage this secret and its versions. For
+     *        information on how to format a JSON parameter for the various command line tool environments, see <a
      *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *        JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

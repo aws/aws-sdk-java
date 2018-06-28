@@ -69,8 +69,8 @@ public interface AmazonComprehend {
 
     /**
      * <p>
-     * Inspects the text of a batch of documents and returns information about them. For more information about
-     * entities, see <a>how-entities</a>
+     * Inspects the text of a batch of documents for named entities and returns information about them. For more
+     * information about named entities, see <a>how-entities</a>
      * </p>
      * 
      * @param batchDetectEntitiesRequest
@@ -152,6 +152,95 @@ public interface AmazonComprehend {
 
     /**
      * <p>
+     * Gets the properties associated with a dominant language detection job. Use this operation to get the status of a
+     * detection job.
+     * </p>
+     * 
+     * @param describeDominantLanguageDetectionJobRequest
+     * @return Result of the DescribeDominantLanguageDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws JobNotFoundException
+     *         The specified job was not found. Check the job ID and try again.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DescribeDominantLanguageDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDominantLanguageDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeDominantLanguageDetectionJobResult describeDominantLanguageDetectionJob(
+            DescribeDominantLanguageDetectionJobRequest describeDominantLanguageDetectionJobRequest);
+
+    /**
+     * <p>
+     * Gets the properties associated with an entities detection job. Use this operation to get the status of a
+     * detection job.
+     * </p>
+     * 
+     * @param describeEntitiesDetectionJobRequest
+     * @return Result of the DescribeEntitiesDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws JobNotFoundException
+     *         The specified job was not found. Check the job ID and try again.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DescribeEntitiesDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEntitiesDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeEntitiesDetectionJobResult describeEntitiesDetectionJob(DescribeEntitiesDetectionJobRequest describeEntitiesDetectionJobRequest);
+
+    /**
+     * <p>
+     * Gets the properties associated with a key phrases detection job. Use this operation to get the status of a
+     * detection job.
+     * </p>
+     * 
+     * @param describeKeyPhrasesDetectionJobRequest
+     * @return Result of the DescribeKeyPhrasesDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws JobNotFoundException
+     *         The specified job was not found. Check the job ID and try again.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DescribeKeyPhrasesDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeKeyPhrasesDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeKeyPhrasesDetectionJobResult describeKeyPhrasesDetectionJob(DescribeKeyPhrasesDetectionJobRequest describeKeyPhrasesDetectionJobRequest);
+
+    /**
+     * <p>
+     * Gets the properties associated with a sentiment detection job. Use this operation to get the status of a
+     * detection job.
+     * </p>
+     * 
+     * @param describeSentimentDetectionJobRequest
+     * @return Result of the DescribeSentimentDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws JobNotFoundException
+     *         The specified job was not found. Check the job ID and try again.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DescribeSentimentDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeSentimentDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeSentimentDetectionJobResult describeSentimentDetectionJob(DescribeSentimentDetectionJobRequest describeSentimentDetectionJobRequest);
+
+    /**
+     * <p>
      * Gets the properties associated with a topic detection job. Use this operation to get the status of a detection
      * job.
      * </p>
@@ -195,8 +284,8 @@ public interface AmazonComprehend {
 
     /**
      * <p>
-     * Inspects text for entities, and returns information about them. For more information, about entities, see
-     * <a>how-entities</a>.
+     * Inspects text for named entities, and returns information about them. For more information, about named entities,
+     * see <a>how-entities</a>.
      * </p>
      * 
      * @param detectEntitiesRequest
@@ -269,6 +358,94 @@ public interface AmazonComprehend {
 
     /**
      * <p>
+     * Gets a list of the dominant language detection jobs that you have submitted.
+     * </p>
+     * 
+     * @param listDominantLanguageDetectionJobsRequest
+     * @return Result of the ListDominantLanguageDetectionJobs operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InvalidFilterException
+     *         The filter specified for the <code>ListTopicDetectionJobs</code> operation is invalid. Specify a
+     *         different filter.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.ListDominantLanguageDetectionJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDominantLanguageDetectionJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListDominantLanguageDetectionJobsResult listDominantLanguageDetectionJobs(ListDominantLanguageDetectionJobsRequest listDominantLanguageDetectionJobsRequest);
+
+    /**
+     * <p>
+     * Gets a list of the entity detection jobs that you have submitted.
+     * </p>
+     * 
+     * @param listEntitiesDetectionJobsRequest
+     * @return Result of the ListEntitiesDetectionJobs operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InvalidFilterException
+     *         The filter specified for the <code>ListTopicDetectionJobs</code> operation is invalid. Specify a
+     *         different filter.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.ListEntitiesDetectionJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEntitiesDetectionJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListEntitiesDetectionJobsResult listEntitiesDetectionJobs(ListEntitiesDetectionJobsRequest listEntitiesDetectionJobsRequest);
+
+    /**
+     * <p>
+     * Get a list of key phrase detection jobs that you have submitted.
+     * </p>
+     * 
+     * @param listKeyPhrasesDetectionJobsRequest
+     * @return Result of the ListKeyPhrasesDetectionJobs operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InvalidFilterException
+     *         The filter specified for the <code>ListTopicDetectionJobs</code> operation is invalid. Specify a
+     *         different filter.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.ListKeyPhrasesDetectionJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListKeyPhrasesDetectionJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListKeyPhrasesDetectionJobsResult listKeyPhrasesDetectionJobs(ListKeyPhrasesDetectionJobsRequest listKeyPhrasesDetectionJobsRequest);
+
+    /**
+     * <p>
+     * Gets a list of sentiment detection jobs that you have submitted.
+     * </p>
+     * 
+     * @param listSentimentDetectionJobsRequest
+     * @return Result of the ListSentimentDetectionJobs operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InvalidFilterException
+     *         The filter specified for the <code>ListTopicDetectionJobs</code> operation is invalid. Specify a
+     *         different filter.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.ListSentimentDetectionJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListSentimentDetectionJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListSentimentDetectionJobsResult listSentimentDetectionJobs(ListSentimentDetectionJobsRequest listSentimentDetectionJobsRequest);
+
+    /**
+     * <p>
      * Gets a list of the topic detection jobs that you have submitted.
      * </p>
      * 
@@ -291,6 +468,86 @@ public interface AmazonComprehend {
 
     /**
      * <p>
+     * Starts an asynchronous dominant language detection job for a collection of documents. Use the operation to track
+     * the status of a job.
+     * </p>
+     * 
+     * @param startDominantLanguageDetectionJobRequest
+     * @return Result of the StartDominantLanguageDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.StartDominantLanguageDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartDominantLanguageDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartDominantLanguageDetectionJobResult startDominantLanguageDetectionJob(StartDominantLanguageDetectionJobRequest startDominantLanguageDetectionJobRequest);
+
+    /**
+     * <p>
+     * Starts an asynchronous entity detection job for a collection of documents. Use the operation to track the status
+     * of a job.
+     * </p>
+     * 
+     * @param startEntitiesDetectionJobRequest
+     * @return Result of the StartEntitiesDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.StartEntitiesDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartEntitiesDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartEntitiesDetectionJobResult startEntitiesDetectionJob(StartEntitiesDetectionJobRequest startEntitiesDetectionJobRequest);
+
+    /**
+     * <p>
+     * Starts an asynchronous key phrase detection job for a collection of documents. Use the operation to track the
+     * status of a job.
+     * </p>
+     * 
+     * @param startKeyPhrasesDetectionJobRequest
+     * @return Result of the StartKeyPhrasesDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.StartKeyPhrasesDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartKeyPhrasesDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartKeyPhrasesDetectionJobResult startKeyPhrasesDetectionJob(StartKeyPhrasesDetectionJobRequest startKeyPhrasesDetectionJobRequest);
+
+    /**
+     * <p>
+     * Starts an asynchronous sentiment detection job for a collection of documents. use the operation to track the
+     * status of a job.
+     * </p>
+     * 
+     * @param startSentimentDetectionJobRequest
+     * @return Result of the StartSentimentDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.StartSentimentDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartSentimentDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartSentimentDetectionJobResult startSentimentDetectionJob(StartSentimentDetectionJobRequest startSentimentDetectionJobRequest);
+
+    /**
+     * <p>
      * Starts an asynchronous topic detection job. Use the <code>DescribeTopicDetectionJob</code> operation to track the
      * status of a job.
      * </p>
@@ -308,6 +565,130 @@ public interface AmazonComprehend {
      *      target="_top">AWS API Documentation</a>
      */
     StartTopicsDetectionJobResult startTopicsDetectionJob(StartTopicsDetectionJobRequest startTopicsDetectionJobRequest);
+
+    /**
+     * <p>
+     * Stops a dominant language detection job in progress.
+     * </p>
+     * <p>
+     * If the job state is <code>IN_PROGRESS</code> the job will be marked for termination and put into the
+     * <code>STOPPING</code> state.
+     * </p>
+     * <p>
+     * If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you call the
+     * <code>StopDominantLanguageDetectionJob</code> operation, the operation will return a 400 Internal Request
+     * Exception.
+     * </p>
+     * <p>
+     * When a job is stopped, any document that has already been processed will be written to the output location.
+     * </p>
+     * 
+     * @param stopDominantLanguageDetectionJobRequest
+     * @return Result of the StopDominantLanguageDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws JobNotFoundException
+     *         The specified job was not found. Check the job ID and try again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.StopDominantLanguageDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopDominantLanguageDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StopDominantLanguageDetectionJobResult stopDominantLanguageDetectionJob(StopDominantLanguageDetectionJobRequest stopDominantLanguageDetectionJobRequest);
+
+    /**
+     * <p>
+     * Stops an entities detection job in progress.
+     * </p>
+     * <p>
+     * If the job state is <code>IN_PROGRESS</code> the job will be marked for termination and put into the
+     * <code>STOPPING</code> state.
+     * </p>
+     * <p>
+     * If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you call the
+     * <code>StopDominantLanguageDetectionJob</code> operation, the operation will return a 400 Internal Request
+     * Exception.
+     * </p>
+     * <p>
+     * When a job is stopped, any document that has already been processed will be written to the output location.
+     * </p>
+     * 
+     * @param stopEntitiesDetectionJobRequest
+     * @return Result of the StopEntitiesDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws JobNotFoundException
+     *         The specified job was not found. Check the job ID and try again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.StopEntitiesDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopEntitiesDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StopEntitiesDetectionJobResult stopEntitiesDetectionJob(StopEntitiesDetectionJobRequest stopEntitiesDetectionJobRequest);
+
+    /**
+     * <p>
+     * Stops a key phrases detection job in progress.
+     * </p>
+     * <p>
+     * If the job state is <code>IN_PROGRESS</code> the job will be marked for termination and put into the
+     * <code>STOPPING</code> state.
+     * </p>
+     * <p>
+     * If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you call the
+     * <code>StopDominantLanguageDetectionJob</code> operation, the operation will return a 400 Internal Request
+     * Exception.
+     * </p>
+     * <p>
+     * When a job is stopped, any document that has already been processed will be written to the output location.
+     * </p>
+     * 
+     * @param stopKeyPhrasesDetectionJobRequest
+     * @return Result of the StopKeyPhrasesDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws JobNotFoundException
+     *         The specified job was not found. Check the job ID and try again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.StopKeyPhrasesDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopKeyPhrasesDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StopKeyPhrasesDetectionJobResult stopKeyPhrasesDetectionJob(StopKeyPhrasesDetectionJobRequest stopKeyPhrasesDetectionJobRequest);
+
+    /**
+     * <p>
+     * Stops a sentiment detection job in progress.
+     * </p>
+     * <p>
+     * If the job state is <code>IN_PROGRESS</code> the job will be marked for termination and put into the
+     * <code>STOPPING</code> state.
+     * </p>
+     * <p>
+     * If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you call the
+     * <code>StopDominantLanguageDetectionJob</code> operation, the operation will return a 400 Internal Request
+     * Exception.
+     * </p>
+     * <p>
+     * When a job is stopped, any document that has already been processed will be written to the output location.
+     * </p>
+     * 
+     * @param stopSentimentDetectionJobRequest
+     * @return Result of the StopSentimentDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws JobNotFoundException
+     *         The specified job was not found. Check the job ID and try again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.StopSentimentDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopSentimentDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StopSentimentDetectionJobResult stopSentimentDetectionJob(StopSentimentDetectionJobRequest stopSentimentDetectionJobRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

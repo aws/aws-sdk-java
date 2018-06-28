@@ -1,3 +1,20 @@
+# __1.11.356__ __2018-06-27__
+## __AWS CodePipeline__
+  - ### Features
+    - UpdatePipeline may now throw a LimitExceededException when adding or updating Source Actions that use periodic checks for change detection
+
+## __AWS Secrets Manager__
+  - ### Features
+    - Documentation updates for secretsmanager
+
+## __Amazon CloudFront__
+  - ### Features
+    - Unpublish delete-service-linked-role API.
+
+## __Amazon Comprehend__
+  - ### Features
+    - This release gives customers the option to batch process a set of documents stored within an S3 bucket in addition to the existing synchronous nature of the current Comprehend API.
+
 # __1.11.355__ __2018-06-26__
 ## __AWS Secrets Manager__
   - ### Features

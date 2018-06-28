@@ -1000,6 +1000,8 @@ public interface AWSCodePipeline {
      *         Reserved for future use.
      * @throws InvalidStructureException
      *         The specified structure was specified in an invalid format.
+     * @throws LimitExceededException
+     *         The number of pipelines associated with the AWS account has exceeded the limit allowed for the account.
      * @sample AWSCodePipeline.UpdatePipeline
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdatePipeline" target="_top">AWS
      *      API Documentation</a>

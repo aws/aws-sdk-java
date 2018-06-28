@@ -33,7 +33,9 @@ public class StartTopicsDetectionJobRequest extends com.amazonaws.AmazonWebServi
     private InputDataConfig inputDataConfig;
     /**
      * <p>
-     * Specifies where to send the output files.
+     * Specifies where to send the output files. The output is a compressed archive with two files,
+     * <code>topic-terms.csv</code> that lists the terms associated with each topic, and <code>doc-topics.csv</code>
+     * that lists the documents associated with each topic
      * </p>
      */
     private OutputDataConfig outputDataConfig;
@@ -105,11 +107,15 @@ public class StartTopicsDetectionJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Specifies where to send the output files.
+     * Specifies where to send the output files. The output is a compressed archive with two files,
+     * <code>topic-terms.csv</code> that lists the terms associated with each topic, and <code>doc-topics.csv</code>
+     * that lists the documents associated with each topic
      * </p>
      * 
      * @param outputDataConfig
-     *        Specifies where to send the output files.
+     *        Specifies where to send the output files. The output is a compressed archive with two files,
+     *        <code>topic-terms.csv</code> that lists the terms associated with each topic, and
+     *        <code>doc-topics.csv</code> that lists the documents associated with each topic
      */
 
     public void setOutputDataConfig(OutputDataConfig outputDataConfig) {
@@ -118,10 +124,14 @@ public class StartTopicsDetectionJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Specifies where to send the output files.
+     * Specifies where to send the output files. The output is a compressed archive with two files,
+     * <code>topic-terms.csv</code> that lists the terms associated with each topic, and <code>doc-topics.csv</code>
+     * that lists the documents associated with each topic
      * </p>
      * 
-     * @return Specifies where to send the output files.
+     * @return Specifies where to send the output files. The output is a compressed archive with two files,
+     *         <code>topic-terms.csv</code> that lists the terms associated with each topic, and
+     *         <code>doc-topics.csv</code> that lists the documents associated with each topic
      */
 
     public OutputDataConfig getOutputDataConfig() {
@@ -130,11 +140,15 @@ public class StartTopicsDetectionJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Specifies where to send the output files.
+     * Specifies where to send the output files. The output is a compressed archive with two files,
+     * <code>topic-terms.csv</code> that lists the terms associated with each topic, and <code>doc-topics.csv</code>
+     * that lists the documents associated with each topic
      * </p>
      * 
      * @param outputDataConfig
-     *        Specifies where to send the output files.
+     *        Specifies where to send the output files. The output is a compressed archive with two files,
+     *        <code>topic-terms.csv</code> that lists the terms associated with each topic, and
+     *        <code>doc-topics.csv</code> that lists the documents associated with each topic
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

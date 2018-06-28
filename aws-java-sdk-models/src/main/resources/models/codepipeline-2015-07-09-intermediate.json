@@ -1330,6 +1330,10 @@
         "exceptionName" : "InvalidStructureException",
         "documentation" : "<p>The specified structure was specified in an invalid format.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "LimitExceededException",
+        "documentation" : "<p>The number of pipelines associated with the AWS account has exceeded the limit allowed for the account.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "input" : {

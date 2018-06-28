@@ -23,7 +23,9 @@ public enum JobStatus {
     SUBMITTED("SUBMITTED"),
     IN_PROGRESS("IN_PROGRESS"),
     COMPLETED("COMPLETED"),
-    FAILED("FAILED");
+    FAILED("FAILED"),
+    STOP_REQUESTED("STOP_REQUESTED"),
+    STOPPED("STOPPED");
 
     private String value;
 

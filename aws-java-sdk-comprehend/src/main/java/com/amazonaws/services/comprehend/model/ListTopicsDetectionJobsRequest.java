@@ -40,7 +40,7 @@ public class ListTopicsDetectionJobsRequest extends com.amazonaws.AmazonWebServi
     private String nextToken;
     /**
      * <p>
-     * The maximum number of results to return in each page.
+     * The maximum number of results to return in each page. The default is 100.
      * </p>
      */
     private Integer maxResults;
@@ -133,11 +133,11 @@ public class ListTopicsDetectionJobsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The maximum number of results to return in each page.
+     * The maximum number of results to return in each page. The default is 100.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in each page.
+     *        The maximum number of results to return in each page. The default is 100.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -146,10 +146,10 @@ public class ListTopicsDetectionJobsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The maximum number of results to return in each page.
+     * The maximum number of results to return in each page. The default is 100.
      * </p>
      * 
-     * @return The maximum number of results to return in each page.
+     * @return The maximum number of results to return in each page. The default is 100.
      */
 
     public Integer getMaxResults() {
@@ -158,11 +158,11 @@ public class ListTopicsDetectionJobsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The maximum number of results to return in each page.
+     * The maximum number of results to return in each page. The default is 100.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in each page.
+     *        The maximum number of results to return in each page. The default is 100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

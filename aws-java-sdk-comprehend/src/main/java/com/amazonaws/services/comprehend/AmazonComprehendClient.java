@@ -74,6 +74,9 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withModeledClass(
+                                    com.amazonaws.services.comprehend.model.InvalidRequestException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidFilterException").withModeledClass(
                                     com.amazonaws.services.comprehend.model.InvalidFilterException.class))
                     .addErrorMetadata(
@@ -82,9 +85,6 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("JobNotFoundException").withModeledClass(
                                     com.amazonaws.services.comprehend.model.JobNotFoundException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withModeledClass(
-                                    com.amazonaws.services.comprehend.model.InvalidRequestException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TextSizeLimitExceededException").withModeledClass(
                                     com.amazonaws.services.comprehend.model.TextSizeLimitExceededException.class))
@@ -194,8 +194,8 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Inspects the text of a batch of documents and returns information about them. For more information about
-     * entities, see <a>how-entities</a>
+     * Inspects the text of a batch of documents for named entities and returns information about them. For more
+     * information about named entities, see <a>how-entities</a>
      * </p>
      * 
      * @param batchDetectEntitiesRequest
@@ -386,6 +386,247 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Gets the properties associated with a dominant language detection job. Use this operation to get the status of a
+     * detection job.
+     * </p>
+     * 
+     * @param describeDominantLanguageDetectionJobRequest
+     * @return Result of the DescribeDominantLanguageDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws JobNotFoundException
+     *         The specified job was not found. Check the job ID and try again.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DescribeDominantLanguageDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDominantLanguageDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeDominantLanguageDetectionJobResult describeDominantLanguageDetectionJob(DescribeDominantLanguageDetectionJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDominantLanguageDetectionJob(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDominantLanguageDetectionJobResult executeDescribeDominantLanguageDetectionJob(
+            DescribeDominantLanguageDetectionJobRequest describeDominantLanguageDetectionJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeDominantLanguageDetectionJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDominantLanguageDetectionJobRequest> request = null;
+        Response<DescribeDominantLanguageDetectionJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDominantLanguageDetectionJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeDominantLanguageDetectionJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeDominantLanguageDetectionJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeDominantLanguageDetectionJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the properties associated with an entities detection job. Use this operation to get the status of a
+     * detection job.
+     * </p>
+     * 
+     * @param describeEntitiesDetectionJobRequest
+     * @return Result of the DescribeEntitiesDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws JobNotFoundException
+     *         The specified job was not found. Check the job ID and try again.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DescribeEntitiesDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEntitiesDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeEntitiesDetectionJobResult describeEntitiesDetectionJob(DescribeEntitiesDetectionJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEntitiesDetectionJob(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEntitiesDetectionJobResult executeDescribeEntitiesDetectionJob(DescribeEntitiesDetectionJobRequest describeEntitiesDetectionJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeEntitiesDetectionJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeEntitiesDetectionJobRequest> request = null;
+        Response<DescribeEntitiesDetectionJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeEntitiesDetectionJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeEntitiesDetectionJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeEntitiesDetectionJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeEntitiesDetectionJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the properties associated with a key phrases detection job. Use this operation to get the status of a
+     * detection job.
+     * </p>
+     * 
+     * @param describeKeyPhrasesDetectionJobRequest
+     * @return Result of the DescribeKeyPhrasesDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws JobNotFoundException
+     *         The specified job was not found. Check the job ID and try again.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DescribeKeyPhrasesDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeKeyPhrasesDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeKeyPhrasesDetectionJobResult describeKeyPhrasesDetectionJob(DescribeKeyPhrasesDetectionJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeKeyPhrasesDetectionJob(request);
+    }
+
+    @SdkInternalApi
+    final DescribeKeyPhrasesDetectionJobResult executeDescribeKeyPhrasesDetectionJob(DescribeKeyPhrasesDetectionJobRequest describeKeyPhrasesDetectionJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeKeyPhrasesDetectionJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeKeyPhrasesDetectionJobRequest> request = null;
+        Response<DescribeKeyPhrasesDetectionJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeKeyPhrasesDetectionJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeKeyPhrasesDetectionJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeKeyPhrasesDetectionJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeKeyPhrasesDetectionJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the properties associated with a sentiment detection job. Use this operation to get the status of a
+     * detection job.
+     * </p>
+     * 
+     * @param describeSentimentDetectionJobRequest
+     * @return Result of the DescribeSentimentDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws JobNotFoundException
+     *         The specified job was not found. Check the job ID and try again.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DescribeSentimentDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeSentimentDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeSentimentDetectionJobResult describeSentimentDetectionJob(DescribeSentimentDetectionJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeSentimentDetectionJob(request);
+    }
+
+    @SdkInternalApi
+    final DescribeSentimentDetectionJobResult executeDescribeSentimentDetectionJob(DescribeSentimentDetectionJobRequest describeSentimentDetectionJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeSentimentDetectionJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeSentimentDetectionJobRequest> request = null;
+        Response<DescribeSentimentDetectionJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeSentimentDetectionJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeSentimentDetectionJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeSentimentDetectionJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeSentimentDetectionJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets the properties associated with a topic detection job. Use this operation to get the status of a detection
      * job.
      * </p>
@@ -504,8 +745,8 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Inspects text for entities, and returns information about them. For more information, about entities, see
-     * <a>how-entities</a>.
+     * Inspects text for named entities, and returns information about them. For more information, about named entities,
+     * see <a>how-entities</a>.
      * </p>
      * 
      * @param detectEntitiesRequest
@@ -686,6 +927,247 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Gets a list of the dominant language detection jobs that you have submitted.
+     * </p>
+     * 
+     * @param listDominantLanguageDetectionJobsRequest
+     * @return Result of the ListDominantLanguageDetectionJobs operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InvalidFilterException
+     *         The filter specified for the <code>ListTopicDetectionJobs</code> operation is invalid. Specify a
+     *         different filter.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.ListDominantLanguageDetectionJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDominantLanguageDetectionJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListDominantLanguageDetectionJobsResult listDominantLanguageDetectionJobs(ListDominantLanguageDetectionJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDominantLanguageDetectionJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListDominantLanguageDetectionJobsResult executeListDominantLanguageDetectionJobs(
+            ListDominantLanguageDetectionJobsRequest listDominantLanguageDetectionJobsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDominantLanguageDetectionJobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDominantLanguageDetectionJobsRequest> request = null;
+        Response<ListDominantLanguageDetectionJobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDominantLanguageDetectionJobsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listDominantLanguageDetectionJobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDominantLanguageDetectionJobsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListDominantLanguageDetectionJobsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a list of the entity detection jobs that you have submitted.
+     * </p>
+     * 
+     * @param listEntitiesDetectionJobsRequest
+     * @return Result of the ListEntitiesDetectionJobs operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InvalidFilterException
+     *         The filter specified for the <code>ListTopicDetectionJobs</code> operation is invalid. Specify a
+     *         different filter.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.ListEntitiesDetectionJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEntitiesDetectionJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListEntitiesDetectionJobsResult listEntitiesDetectionJobs(ListEntitiesDetectionJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListEntitiesDetectionJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListEntitiesDetectionJobsResult executeListEntitiesDetectionJobs(ListEntitiesDetectionJobsRequest listEntitiesDetectionJobsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listEntitiesDetectionJobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListEntitiesDetectionJobsRequest> request = null;
+        Response<ListEntitiesDetectionJobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListEntitiesDetectionJobsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listEntitiesDetectionJobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListEntitiesDetectionJobsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListEntitiesDetectionJobsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Get a list of key phrase detection jobs that you have submitted.
+     * </p>
+     * 
+     * @param listKeyPhrasesDetectionJobsRequest
+     * @return Result of the ListKeyPhrasesDetectionJobs operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InvalidFilterException
+     *         The filter specified for the <code>ListTopicDetectionJobs</code> operation is invalid. Specify a
+     *         different filter.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.ListKeyPhrasesDetectionJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListKeyPhrasesDetectionJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListKeyPhrasesDetectionJobsResult listKeyPhrasesDetectionJobs(ListKeyPhrasesDetectionJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListKeyPhrasesDetectionJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListKeyPhrasesDetectionJobsResult executeListKeyPhrasesDetectionJobs(ListKeyPhrasesDetectionJobsRequest listKeyPhrasesDetectionJobsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listKeyPhrasesDetectionJobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListKeyPhrasesDetectionJobsRequest> request = null;
+        Response<ListKeyPhrasesDetectionJobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListKeyPhrasesDetectionJobsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listKeyPhrasesDetectionJobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListKeyPhrasesDetectionJobsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListKeyPhrasesDetectionJobsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a list of sentiment detection jobs that you have submitted.
+     * </p>
+     * 
+     * @param listSentimentDetectionJobsRequest
+     * @return Result of the ListSentimentDetectionJobs operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InvalidFilterException
+     *         The filter specified for the <code>ListTopicDetectionJobs</code> operation is invalid. Specify a
+     *         different filter.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.ListSentimentDetectionJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListSentimentDetectionJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListSentimentDetectionJobsResult listSentimentDetectionJobs(ListSentimentDetectionJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSentimentDetectionJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListSentimentDetectionJobsResult executeListSentimentDetectionJobs(ListSentimentDetectionJobsRequest listSentimentDetectionJobsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSentimentDetectionJobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSentimentDetectionJobsRequest> request = null;
+        Response<ListSentimentDetectionJobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSentimentDetectionJobsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listSentimentDetectionJobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSentimentDetectionJobsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListSentimentDetectionJobsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets a list of the topic detection jobs that you have submitted.
      * </p>
      * 
@@ -746,6 +1228,239 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Starts an asynchronous dominant language detection job for a collection of documents. Use the operation to track
+     * the status of a job.
+     * </p>
+     * 
+     * @param startDominantLanguageDetectionJobRequest
+     * @return Result of the StartDominantLanguageDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.StartDominantLanguageDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartDominantLanguageDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartDominantLanguageDetectionJobResult startDominantLanguageDetectionJob(StartDominantLanguageDetectionJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartDominantLanguageDetectionJob(request);
+    }
+
+    @SdkInternalApi
+    final StartDominantLanguageDetectionJobResult executeStartDominantLanguageDetectionJob(
+            StartDominantLanguageDetectionJobRequest startDominantLanguageDetectionJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startDominantLanguageDetectionJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartDominantLanguageDetectionJobRequest> request = null;
+        Response<StartDominantLanguageDetectionJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartDominantLanguageDetectionJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startDominantLanguageDetectionJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartDominantLanguageDetectionJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartDominantLanguageDetectionJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts an asynchronous entity detection job for a collection of documents. Use the operation to track the status
+     * of a job.
+     * </p>
+     * 
+     * @param startEntitiesDetectionJobRequest
+     * @return Result of the StartEntitiesDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.StartEntitiesDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartEntitiesDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartEntitiesDetectionJobResult startEntitiesDetectionJob(StartEntitiesDetectionJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartEntitiesDetectionJob(request);
+    }
+
+    @SdkInternalApi
+    final StartEntitiesDetectionJobResult executeStartEntitiesDetectionJob(StartEntitiesDetectionJobRequest startEntitiesDetectionJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startEntitiesDetectionJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartEntitiesDetectionJobRequest> request = null;
+        Response<StartEntitiesDetectionJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartEntitiesDetectionJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startEntitiesDetectionJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartEntitiesDetectionJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartEntitiesDetectionJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts an asynchronous key phrase detection job for a collection of documents. Use the operation to track the
+     * status of a job.
+     * </p>
+     * 
+     * @param startKeyPhrasesDetectionJobRequest
+     * @return Result of the StartKeyPhrasesDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.StartKeyPhrasesDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartKeyPhrasesDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartKeyPhrasesDetectionJobResult startKeyPhrasesDetectionJob(StartKeyPhrasesDetectionJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartKeyPhrasesDetectionJob(request);
+    }
+
+    @SdkInternalApi
+    final StartKeyPhrasesDetectionJobResult executeStartKeyPhrasesDetectionJob(StartKeyPhrasesDetectionJobRequest startKeyPhrasesDetectionJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startKeyPhrasesDetectionJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartKeyPhrasesDetectionJobRequest> request = null;
+        Response<StartKeyPhrasesDetectionJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartKeyPhrasesDetectionJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startKeyPhrasesDetectionJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartKeyPhrasesDetectionJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartKeyPhrasesDetectionJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts an asynchronous sentiment detection job for a collection of documents. use the operation to track the
+     * status of a job.
+     * </p>
+     * 
+     * @param startSentimentDetectionJobRequest
+     * @return Result of the StartSentimentDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.StartSentimentDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartSentimentDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartSentimentDetectionJobResult startSentimentDetectionJob(StartSentimentDetectionJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartSentimentDetectionJob(request);
+    }
+
+    @SdkInternalApi
+    final StartSentimentDetectionJobResult executeStartSentimentDetectionJob(StartSentimentDetectionJobRequest startSentimentDetectionJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startSentimentDetectionJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartSentimentDetectionJobRequest> request = null;
+        Response<StartSentimentDetectionJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartSentimentDetectionJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startSentimentDetectionJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartSentimentDetectionJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartSentimentDetectionJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Starts an asynchronous topic detection job. Use the <code>DescribeTopicDetectionJob</code> operation to track the
      * status of a job.
      * </p>
@@ -792,6 +1507,283 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
             HttpResponseHandler<AmazonWebServiceResponse<StartTopicsDetectionJobResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new StartTopicsDetectionJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops a dominant language detection job in progress.
+     * </p>
+     * <p>
+     * If the job state is <code>IN_PROGRESS</code> the job will be marked for termination and put into the
+     * <code>STOPPING</code> state.
+     * </p>
+     * <p>
+     * If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you call the
+     * <code>StopDominantLanguageDetectionJob</code> operation, the operation will return a 400 Internal Request
+     * Exception.
+     * </p>
+     * <p>
+     * When a job is stopped, any document that has already been processed will be written to the output location.
+     * </p>
+     * 
+     * @param stopDominantLanguageDetectionJobRequest
+     * @return Result of the StopDominantLanguageDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws JobNotFoundException
+     *         The specified job was not found. Check the job ID and try again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.StopDominantLanguageDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopDominantLanguageDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StopDominantLanguageDetectionJobResult stopDominantLanguageDetectionJob(StopDominantLanguageDetectionJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopDominantLanguageDetectionJob(request);
+    }
+
+    @SdkInternalApi
+    final StopDominantLanguageDetectionJobResult executeStopDominantLanguageDetectionJob(
+            StopDominantLanguageDetectionJobRequest stopDominantLanguageDetectionJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopDominantLanguageDetectionJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopDominantLanguageDetectionJobRequest> request = null;
+        Response<StopDominantLanguageDetectionJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopDominantLanguageDetectionJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(stopDominantLanguageDetectionJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopDominantLanguageDetectionJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StopDominantLanguageDetectionJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops an entities detection job in progress.
+     * </p>
+     * <p>
+     * If the job state is <code>IN_PROGRESS</code> the job will be marked for termination and put into the
+     * <code>STOPPING</code> state.
+     * </p>
+     * <p>
+     * If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you call the
+     * <code>StopDominantLanguageDetectionJob</code> operation, the operation will return a 400 Internal Request
+     * Exception.
+     * </p>
+     * <p>
+     * When a job is stopped, any document that has already been processed will be written to the output location.
+     * </p>
+     * 
+     * @param stopEntitiesDetectionJobRequest
+     * @return Result of the StopEntitiesDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws JobNotFoundException
+     *         The specified job was not found. Check the job ID and try again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.StopEntitiesDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopEntitiesDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StopEntitiesDetectionJobResult stopEntitiesDetectionJob(StopEntitiesDetectionJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopEntitiesDetectionJob(request);
+    }
+
+    @SdkInternalApi
+    final StopEntitiesDetectionJobResult executeStopEntitiesDetectionJob(StopEntitiesDetectionJobRequest stopEntitiesDetectionJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopEntitiesDetectionJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopEntitiesDetectionJobRequest> request = null;
+        Response<StopEntitiesDetectionJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopEntitiesDetectionJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(stopEntitiesDetectionJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopEntitiesDetectionJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StopEntitiesDetectionJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops a key phrases detection job in progress.
+     * </p>
+     * <p>
+     * If the job state is <code>IN_PROGRESS</code> the job will be marked for termination and put into the
+     * <code>STOPPING</code> state.
+     * </p>
+     * <p>
+     * If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you call the
+     * <code>StopDominantLanguageDetectionJob</code> operation, the operation will return a 400 Internal Request
+     * Exception.
+     * </p>
+     * <p>
+     * When a job is stopped, any document that has already been processed will be written to the output location.
+     * </p>
+     * 
+     * @param stopKeyPhrasesDetectionJobRequest
+     * @return Result of the StopKeyPhrasesDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws JobNotFoundException
+     *         The specified job was not found. Check the job ID and try again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.StopKeyPhrasesDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopKeyPhrasesDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StopKeyPhrasesDetectionJobResult stopKeyPhrasesDetectionJob(StopKeyPhrasesDetectionJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopKeyPhrasesDetectionJob(request);
+    }
+
+    @SdkInternalApi
+    final StopKeyPhrasesDetectionJobResult executeStopKeyPhrasesDetectionJob(StopKeyPhrasesDetectionJobRequest stopKeyPhrasesDetectionJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopKeyPhrasesDetectionJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopKeyPhrasesDetectionJobRequest> request = null;
+        Response<StopKeyPhrasesDetectionJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopKeyPhrasesDetectionJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(stopKeyPhrasesDetectionJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopKeyPhrasesDetectionJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StopKeyPhrasesDetectionJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops a sentiment detection job in progress.
+     * </p>
+     * <p>
+     * If the job state is <code>IN_PROGRESS</code> the job will be marked for termination and put into the
+     * <code>STOPPING</code> state.
+     * </p>
+     * <p>
+     * If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you call the
+     * <code>StopDominantLanguageDetectionJob</code> operation, the operation will return a 400 Internal Request
+     * Exception.
+     * </p>
+     * <p>
+     * When a job is stopped, any document that has already been processed will be written to the output location.
+     * </p>
+     * 
+     * @param stopSentimentDetectionJobRequest
+     * @return Result of the StopSentimentDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws JobNotFoundException
+     *         The specified job was not found. Check the job ID and try again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.StopSentimentDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopSentimentDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StopSentimentDetectionJobResult stopSentimentDetectionJob(StopSentimentDetectionJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopSentimentDetectionJob(request);
+    }
+
+    @SdkInternalApi
+    final StopSentimentDetectionJobResult executeStopSentimentDetectionJob(StopSentimentDetectionJobRequest stopSentimentDetectionJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopSentimentDetectionJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopSentimentDetectionJobRequest> request = null;
+        Response<StopSentimentDetectionJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopSentimentDetectionJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(stopSentimentDetectionJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopSentimentDetectionJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StopSentimentDetectionJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

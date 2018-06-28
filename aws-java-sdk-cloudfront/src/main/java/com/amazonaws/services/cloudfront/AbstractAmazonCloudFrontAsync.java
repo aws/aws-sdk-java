@@ -224,19 +224,6 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteServiceLinkedRoleResult> deleteServiceLinkedRoleAsync(DeleteServiceLinkedRoleRequest request) {
-
-        return deleteServiceLinkedRoleAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteServiceLinkedRoleResult> deleteServiceLinkedRoleAsync(DeleteServiceLinkedRoleRequest request,
-            com.amazonaws.handlers.AsyncHandler<DeleteServiceLinkedRoleRequest, DeleteServiceLinkedRoleResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
     public java.util.concurrent.Future<DeleteStreamingDistributionResult> deleteStreamingDistributionAsync(DeleteStreamingDistributionRequest request) {
 
         return deleteStreamingDistributionAsync(request, null);

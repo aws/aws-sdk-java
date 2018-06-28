@@ -25,24 +25,24 @@ public class DeleteResourcePolicyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the secret for which the resource-based policy was deleted.
+     * The ARN of the secret that the resource-based policy was deleted for.
      * </p>
      */
     private String aRN;
     /**
      * <p>
-     * The friendly name of the secret for which the resource-based policy was deleted.
+     * The friendly name of the secret that the resource-based policy was deleted for.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * The ARN of the secret for which the resource-based policy was deleted.
+     * The ARN of the secret that the resource-based policy was deleted for.
      * </p>
      * 
      * @param aRN
-     *        The ARN of the secret for which the resource-based policy was deleted.
+     *        The ARN of the secret that the resource-based policy was deleted for.
      */
 
     public void setARN(String aRN) {
@@ -51,10 +51,10 @@ public class DeleteResourcePolicyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the secret for which the resource-based policy was deleted.
+     * The ARN of the secret that the resource-based policy was deleted for.
      * </p>
      * 
-     * @return The ARN of the secret for which the resource-based policy was deleted.
+     * @return The ARN of the secret that the resource-based policy was deleted for.
      */
 
     public String getARN() {
@@ -63,11 +63,11 @@ public class DeleteResourcePolicyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the secret for which the resource-based policy was deleted.
+     * The ARN of the secret that the resource-based policy was deleted for.
      * </p>
      * 
      * @param aRN
-     *        The ARN of the secret for which the resource-based policy was deleted.
+     *        The ARN of the secret that the resource-based policy was deleted for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,11 +78,11 @@ public class DeleteResourcePolicyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The friendly name of the secret for which the resource-based policy was deleted.
+     * The friendly name of the secret that the resource-based policy was deleted for.
      * </p>
      * 
      * @param name
-     *        The friendly name of the secret for which the resource-based policy was deleted.
+     *        The friendly name of the secret that the resource-based policy was deleted for.
      */
 
     public void setName(String name) {
@@ -91,10 +91,10 @@ public class DeleteResourcePolicyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The friendly name of the secret for which the resource-based policy was deleted.
+     * The friendly name of the secret that the resource-based policy was deleted for.
      * </p>
      * 
-     * @return The friendly name of the secret for which the resource-based policy was deleted.
+     * @return The friendly name of the secret that the resource-based policy was deleted for.
      */
 
     public String getName() {
@@ -103,11 +103,11 @@ public class DeleteResourcePolicyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The friendly name of the secret for which the resource-based policy was deleted.
+     * The friendly name of the secret that the resource-based policy was deleted for.
      * </p>
      * 
      * @param name
-     *        The friendly name of the secret for which the resource-based policy was deleted.
+     *        The friendly name of the secret that the resource-based policy was deleted for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

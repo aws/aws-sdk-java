@@ -703,21 +703,6 @@ public interface AmazonCloudFront {
     DeletePublicKeyResult deletePublicKey(DeletePublicKeyRequest deletePublicKeyRequest);
 
     /**
-     * @param deleteServiceLinkedRoleRequest
-     * @return Result of the DeleteServiceLinkedRole operation returned by the service.
-     * @throws InvalidArgumentException
-     *         The argument is invalid.
-     * @throws AccessDeniedException
-     *         Access denied.
-     * @throws ResourceInUseException
-     * @throws NoSuchResourceException
-     * @sample AmazonCloudFront.DeleteServiceLinkedRole
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteServiceLinkedRole"
-     *      target="_top">AWS API Documentation</a>
-     */
-    DeleteServiceLinkedRoleResult deleteServiceLinkedRole(DeleteServiceLinkedRoleRequest deleteServiceLinkedRoleRequest);
-
-    /**
      * <p>
      * Delete a streaming distribution. To delete an RTMP distribution using the CloudFront API, perform the following
      * steps.

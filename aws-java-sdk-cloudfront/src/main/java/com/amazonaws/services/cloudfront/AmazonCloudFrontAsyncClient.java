@@ -723,39 +723,6 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     }
 
     @Override
-    public java.util.concurrent.Future<DeleteServiceLinkedRoleResult> deleteServiceLinkedRoleAsync(DeleteServiceLinkedRoleRequest request) {
-
-        return deleteServiceLinkedRoleAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteServiceLinkedRoleResult> deleteServiceLinkedRoleAsync(final DeleteServiceLinkedRoleRequest request,
-            final com.amazonaws.handlers.AsyncHandler<DeleteServiceLinkedRoleRequest, DeleteServiceLinkedRoleResult> asyncHandler) {
-        final DeleteServiceLinkedRoleRequest finalRequest = beforeClientExecution(request);
-
-        return executorService.submit(new java.util.concurrent.Callable<DeleteServiceLinkedRoleResult>() {
-            @Override
-            public DeleteServiceLinkedRoleResult call() throws Exception {
-                DeleteServiceLinkedRoleResult result = null;
-
-                try {
-                    result = executeDeleteServiceLinkedRole(finalRequest);
-                } catch (Exception ex) {
-                    if (asyncHandler != null) {
-                        asyncHandler.onError(ex);
-                    }
-                    throw ex;
-                }
-
-                if (asyncHandler != null) {
-                    asyncHandler.onSuccess(finalRequest, result);
-                }
-                return result;
-            }
-        });
-    }
-
-    @Override
     public java.util.concurrent.Future<DeleteStreamingDistributionResult> deleteStreamingDistributionAsync(DeleteStreamingDistributionRequest request) {
 
         return deleteStreamingDistributionAsync(request, null);

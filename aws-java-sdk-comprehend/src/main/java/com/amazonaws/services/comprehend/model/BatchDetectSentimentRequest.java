@@ -34,7 +34,8 @@ public class BatchDetectSentimentRequest extends com.amazonaws.AmazonWebServiceR
     private java.util.List<String> textList;
     /**
      * <p>
-     * The language of the input documents. All documents must be in the same language.
+     * The language of the input documents. You can specify English ("en") or Spanish ("es"). All documents must be in
+     * the same language.
      * </p>
      */
     private String languageCode;
@@ -119,11 +120,14 @@ public class BatchDetectSentimentRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The language of the input documents. All documents must be in the same language.
+     * The language of the input documents. You can specify English ("en") or Spanish ("es"). All documents must be in
+     * the same language.
      * </p>
      * 
      * @param languageCode
-     *        The language of the input documents. All documents must be in the same language.
+     *        The language of the input documents. You can specify English ("en") or Spanish ("es"). All documents must
+     *        be in the same language.
+     * @see LanguageCode
      */
 
     public void setLanguageCode(String languageCode) {
@@ -132,10 +136,13 @@ public class BatchDetectSentimentRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The language of the input documents. All documents must be in the same language.
+     * The language of the input documents. You can specify English ("en") or Spanish ("es"). All documents must be in
+     * the same language.
      * </p>
      * 
-     * @return The language of the input documents. All documents must be in the same language.
+     * @return The language of the input documents. You can specify English ("en") or Spanish ("es"). All documents must
+     *         be in the same language.
+     * @see LanguageCode
      */
 
     public String getLanguageCode() {
@@ -144,16 +151,37 @@ public class BatchDetectSentimentRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The language of the input documents. All documents must be in the same language.
+     * The language of the input documents. You can specify English ("en") or Spanish ("es"). All documents must be in
+     * the same language.
      * </p>
      * 
      * @param languageCode
-     *        The language of the input documents. All documents must be in the same language.
+     *        The language of the input documents. You can specify English ("en") or Spanish ("es"). All documents must
+     *        be in the same language.
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LanguageCode
      */
 
     public BatchDetectSentimentRequest withLanguageCode(String languageCode) {
         setLanguageCode(languageCode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The language of the input documents. You can specify English ("en") or Spanish ("es"). All documents must be in
+     * the same language.
+     * </p>
+     * 
+     * @param languageCode
+     *        The language of the input documents. You can specify English ("en") or Spanish ("es"). All documents must
+     *        be in the same language.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LanguageCode
+     */
+
+    public BatchDetectSentimentRequest withLanguageCode(LanguageCode languageCode) {
+        this.languageCode = languageCode.toString();
         return this;
     }
 

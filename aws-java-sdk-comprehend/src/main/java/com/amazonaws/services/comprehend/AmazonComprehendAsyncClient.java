@@ -197,6 +197,142 @@ public class AmazonComprehendAsyncClient extends AmazonComprehendClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeDominantLanguageDetectionJobResult> describeDominantLanguageDetectionJobAsync(
+            DescribeDominantLanguageDetectionJobRequest request) {
+
+        return describeDominantLanguageDetectionJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDominantLanguageDetectionJobResult> describeDominantLanguageDetectionJobAsync(
+            final DescribeDominantLanguageDetectionJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeDominantLanguageDetectionJobRequest, DescribeDominantLanguageDetectionJobResult> asyncHandler) {
+        final DescribeDominantLanguageDetectionJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeDominantLanguageDetectionJobResult>() {
+            @Override
+            public DescribeDominantLanguageDetectionJobResult call() throws Exception {
+                DescribeDominantLanguageDetectionJobResult result = null;
+
+                try {
+                    result = executeDescribeDominantLanguageDetectionJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEntitiesDetectionJobResult> describeEntitiesDetectionJobAsync(DescribeEntitiesDetectionJobRequest request) {
+
+        return describeEntitiesDetectionJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEntitiesDetectionJobResult> describeEntitiesDetectionJobAsync(final DescribeEntitiesDetectionJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeEntitiesDetectionJobRequest, DescribeEntitiesDetectionJobResult> asyncHandler) {
+        final DescribeEntitiesDetectionJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeEntitiesDetectionJobResult>() {
+            @Override
+            public DescribeEntitiesDetectionJobResult call() throws Exception {
+                DescribeEntitiesDetectionJobResult result = null;
+
+                try {
+                    result = executeDescribeEntitiesDetectionJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeKeyPhrasesDetectionJobResult> describeKeyPhrasesDetectionJobAsync(DescribeKeyPhrasesDetectionJobRequest request) {
+
+        return describeKeyPhrasesDetectionJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeKeyPhrasesDetectionJobResult> describeKeyPhrasesDetectionJobAsync(
+            final DescribeKeyPhrasesDetectionJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeKeyPhrasesDetectionJobRequest, DescribeKeyPhrasesDetectionJobResult> asyncHandler) {
+        final DescribeKeyPhrasesDetectionJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeKeyPhrasesDetectionJobResult>() {
+            @Override
+            public DescribeKeyPhrasesDetectionJobResult call() throws Exception {
+                DescribeKeyPhrasesDetectionJobResult result = null;
+
+                try {
+                    result = executeDescribeKeyPhrasesDetectionJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSentimentDetectionJobResult> describeSentimentDetectionJobAsync(DescribeSentimentDetectionJobRequest request) {
+
+        return describeSentimentDetectionJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSentimentDetectionJobResult> describeSentimentDetectionJobAsync(
+            final DescribeSentimentDetectionJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeSentimentDetectionJobRequest, DescribeSentimentDetectionJobResult> asyncHandler) {
+        final DescribeSentimentDetectionJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeSentimentDetectionJobResult>() {
+            @Override
+            public DescribeSentimentDetectionJobResult call() throws Exception {
+                DescribeSentimentDetectionJobResult result = null;
+
+                try {
+                    result = executeDescribeSentimentDetectionJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeTopicsDetectionJobResult> describeTopicsDetectionJobAsync(DescribeTopicsDetectionJobRequest request) {
 
         return describeTopicsDetectionJobAsync(request, null);
@@ -362,6 +498,140 @@ public class AmazonComprehendAsyncClient extends AmazonComprehendClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListDominantLanguageDetectionJobsResult> listDominantLanguageDetectionJobsAsync(
+            ListDominantLanguageDetectionJobsRequest request) {
+
+        return listDominantLanguageDetectionJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDominantLanguageDetectionJobsResult> listDominantLanguageDetectionJobsAsync(
+            final ListDominantLanguageDetectionJobsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDominantLanguageDetectionJobsRequest, ListDominantLanguageDetectionJobsResult> asyncHandler) {
+        final ListDominantLanguageDetectionJobsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListDominantLanguageDetectionJobsResult>() {
+            @Override
+            public ListDominantLanguageDetectionJobsResult call() throws Exception {
+                ListDominantLanguageDetectionJobsResult result = null;
+
+                try {
+                    result = executeListDominantLanguageDetectionJobs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEntitiesDetectionJobsResult> listEntitiesDetectionJobsAsync(ListEntitiesDetectionJobsRequest request) {
+
+        return listEntitiesDetectionJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEntitiesDetectionJobsResult> listEntitiesDetectionJobsAsync(final ListEntitiesDetectionJobsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListEntitiesDetectionJobsRequest, ListEntitiesDetectionJobsResult> asyncHandler) {
+        final ListEntitiesDetectionJobsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListEntitiesDetectionJobsResult>() {
+            @Override
+            public ListEntitiesDetectionJobsResult call() throws Exception {
+                ListEntitiesDetectionJobsResult result = null;
+
+                try {
+                    result = executeListEntitiesDetectionJobs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListKeyPhrasesDetectionJobsResult> listKeyPhrasesDetectionJobsAsync(ListKeyPhrasesDetectionJobsRequest request) {
+
+        return listKeyPhrasesDetectionJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListKeyPhrasesDetectionJobsResult> listKeyPhrasesDetectionJobsAsync(final ListKeyPhrasesDetectionJobsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListKeyPhrasesDetectionJobsRequest, ListKeyPhrasesDetectionJobsResult> asyncHandler) {
+        final ListKeyPhrasesDetectionJobsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListKeyPhrasesDetectionJobsResult>() {
+            @Override
+            public ListKeyPhrasesDetectionJobsResult call() throws Exception {
+                ListKeyPhrasesDetectionJobsResult result = null;
+
+                try {
+                    result = executeListKeyPhrasesDetectionJobs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSentimentDetectionJobsResult> listSentimentDetectionJobsAsync(ListSentimentDetectionJobsRequest request) {
+
+        return listSentimentDetectionJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSentimentDetectionJobsResult> listSentimentDetectionJobsAsync(final ListSentimentDetectionJobsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSentimentDetectionJobsRequest, ListSentimentDetectionJobsResult> asyncHandler) {
+        final ListSentimentDetectionJobsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSentimentDetectionJobsResult>() {
+            @Override
+            public ListSentimentDetectionJobsResult call() throws Exception {
+                ListSentimentDetectionJobsResult result = null;
+
+                try {
+                    result = executeListSentimentDetectionJobs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTopicsDetectionJobsResult> listTopicsDetectionJobsAsync(ListTopicsDetectionJobsRequest request) {
 
         return listTopicsDetectionJobsAsync(request, null);
@@ -395,6 +665,140 @@ public class AmazonComprehendAsyncClient extends AmazonComprehendClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<StartDominantLanguageDetectionJobResult> startDominantLanguageDetectionJobAsync(
+            StartDominantLanguageDetectionJobRequest request) {
+
+        return startDominantLanguageDetectionJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartDominantLanguageDetectionJobResult> startDominantLanguageDetectionJobAsync(
+            final StartDominantLanguageDetectionJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartDominantLanguageDetectionJobRequest, StartDominantLanguageDetectionJobResult> asyncHandler) {
+        final StartDominantLanguageDetectionJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartDominantLanguageDetectionJobResult>() {
+            @Override
+            public StartDominantLanguageDetectionJobResult call() throws Exception {
+                StartDominantLanguageDetectionJobResult result = null;
+
+                try {
+                    result = executeStartDominantLanguageDetectionJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartEntitiesDetectionJobResult> startEntitiesDetectionJobAsync(StartEntitiesDetectionJobRequest request) {
+
+        return startEntitiesDetectionJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartEntitiesDetectionJobResult> startEntitiesDetectionJobAsync(final StartEntitiesDetectionJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartEntitiesDetectionJobRequest, StartEntitiesDetectionJobResult> asyncHandler) {
+        final StartEntitiesDetectionJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartEntitiesDetectionJobResult>() {
+            @Override
+            public StartEntitiesDetectionJobResult call() throws Exception {
+                StartEntitiesDetectionJobResult result = null;
+
+                try {
+                    result = executeStartEntitiesDetectionJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartKeyPhrasesDetectionJobResult> startKeyPhrasesDetectionJobAsync(StartKeyPhrasesDetectionJobRequest request) {
+
+        return startKeyPhrasesDetectionJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartKeyPhrasesDetectionJobResult> startKeyPhrasesDetectionJobAsync(final StartKeyPhrasesDetectionJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartKeyPhrasesDetectionJobRequest, StartKeyPhrasesDetectionJobResult> asyncHandler) {
+        final StartKeyPhrasesDetectionJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartKeyPhrasesDetectionJobResult>() {
+            @Override
+            public StartKeyPhrasesDetectionJobResult call() throws Exception {
+                StartKeyPhrasesDetectionJobResult result = null;
+
+                try {
+                    result = executeStartKeyPhrasesDetectionJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSentimentDetectionJobResult> startSentimentDetectionJobAsync(StartSentimentDetectionJobRequest request) {
+
+        return startSentimentDetectionJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSentimentDetectionJobResult> startSentimentDetectionJobAsync(final StartSentimentDetectionJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartSentimentDetectionJobRequest, StartSentimentDetectionJobResult> asyncHandler) {
+        final StartSentimentDetectionJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartSentimentDetectionJobResult>() {
+            @Override
+            public StartSentimentDetectionJobResult call() throws Exception {
+                StartSentimentDetectionJobResult result = null;
+
+                try {
+                    result = executeStartSentimentDetectionJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartTopicsDetectionJobResult> startTopicsDetectionJobAsync(StartTopicsDetectionJobRequest request) {
 
         return startTopicsDetectionJobAsync(request, null);
@@ -412,6 +816,140 @@ public class AmazonComprehendAsyncClient extends AmazonComprehendClient implemen
 
                 try {
                     result = executeStartTopicsDetectionJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopDominantLanguageDetectionJobResult> stopDominantLanguageDetectionJobAsync(
+            StopDominantLanguageDetectionJobRequest request) {
+
+        return stopDominantLanguageDetectionJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopDominantLanguageDetectionJobResult> stopDominantLanguageDetectionJobAsync(
+            final StopDominantLanguageDetectionJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopDominantLanguageDetectionJobRequest, StopDominantLanguageDetectionJobResult> asyncHandler) {
+        final StopDominantLanguageDetectionJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopDominantLanguageDetectionJobResult>() {
+            @Override
+            public StopDominantLanguageDetectionJobResult call() throws Exception {
+                StopDominantLanguageDetectionJobResult result = null;
+
+                try {
+                    result = executeStopDominantLanguageDetectionJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopEntitiesDetectionJobResult> stopEntitiesDetectionJobAsync(StopEntitiesDetectionJobRequest request) {
+
+        return stopEntitiesDetectionJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopEntitiesDetectionJobResult> stopEntitiesDetectionJobAsync(final StopEntitiesDetectionJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopEntitiesDetectionJobRequest, StopEntitiesDetectionJobResult> asyncHandler) {
+        final StopEntitiesDetectionJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopEntitiesDetectionJobResult>() {
+            @Override
+            public StopEntitiesDetectionJobResult call() throws Exception {
+                StopEntitiesDetectionJobResult result = null;
+
+                try {
+                    result = executeStopEntitiesDetectionJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopKeyPhrasesDetectionJobResult> stopKeyPhrasesDetectionJobAsync(StopKeyPhrasesDetectionJobRequest request) {
+
+        return stopKeyPhrasesDetectionJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopKeyPhrasesDetectionJobResult> stopKeyPhrasesDetectionJobAsync(final StopKeyPhrasesDetectionJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopKeyPhrasesDetectionJobRequest, StopKeyPhrasesDetectionJobResult> asyncHandler) {
+        final StopKeyPhrasesDetectionJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopKeyPhrasesDetectionJobResult>() {
+            @Override
+            public StopKeyPhrasesDetectionJobResult call() throws Exception {
+                StopKeyPhrasesDetectionJobResult result = null;
+
+                try {
+                    result = executeStopKeyPhrasesDetectionJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopSentimentDetectionJobResult> stopSentimentDetectionJobAsync(StopSentimentDetectionJobRequest request) {
+
+        return stopSentimentDetectionJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopSentimentDetectionJobResult> stopSentimentDetectionJobAsync(final StopSentimentDetectionJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopSentimentDetectionJobRequest, StopSentimentDetectionJobResult> asyncHandler) {
+        final StopSentimentDetectionJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopSentimentDetectionJobResult>() {
+            @Override
+            public StopSentimentDetectionJobResult call() throws Exception {
+                StopSentimentDetectionJobResult result = null;
+
+                try {
+                    result = executeStopSentimentDetectionJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -291,7 +291,6 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         exceptionUnmarshallers.add(new TooManyFieldLevelEncryptionProfilesExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyOriginCustomHeadersExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidLocationCodeExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ResourceInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidForwardCookiesExceptionUnmarshaller());
         exceptionUnmarshallers.add(new FieldLevelEncryptionProfileSizeExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyCertificatesExceptionUnmarshaller());
@@ -1449,57 +1448,6 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<DeletePublicKeyResult> responseHandler = new StaxResponseHandler<DeletePublicKeyResult>(
                     new DeletePublicKeyResultStaxUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * @param deleteServiceLinkedRoleRequest
-     * @return Result of the DeleteServiceLinkedRole operation returned by the service.
-     * @throws InvalidArgumentException
-     *         The argument is invalid.
-     * @throws AccessDeniedException
-     *         Access denied.
-     * @throws ResourceInUseException
-     * @throws NoSuchResourceException
-     * @sample AmazonCloudFront.DeleteServiceLinkedRole
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteServiceLinkedRole"
-     *      target="_top">AWS API Documentation</a>
-     */
-    @Override
-    public DeleteServiceLinkedRoleResult deleteServiceLinkedRole(DeleteServiceLinkedRoleRequest request) {
-        request = beforeClientExecution(request);
-        return executeDeleteServiceLinkedRole(request);
-    }
-
-    @SdkInternalApi
-    final DeleteServiceLinkedRoleResult executeDeleteServiceLinkedRole(DeleteServiceLinkedRoleRequest deleteServiceLinkedRoleRequest) {
-
-        ExecutionContext executionContext = createExecutionContext(deleteServiceLinkedRoleRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<DeleteServiceLinkedRoleRequest> request = null;
-        Response<DeleteServiceLinkedRoleResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new DeleteServiceLinkedRoleRequestMarshaller().marshall(super.beforeMarshalling(deleteServiceLinkedRoleRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            StaxResponseHandler<DeleteServiceLinkedRoleResult> responseHandler = new StaxResponseHandler<DeleteServiceLinkedRoleResult>(
-                    new DeleteServiceLinkedRoleResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

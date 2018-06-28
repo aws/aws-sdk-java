@@ -540,7 +540,7 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Deletes the resource-based policy currently attached to the secret.
+     * Deletes the resource-based permission policy that's attached to the secret.
      * </p>
      * <p>
      * <b>Minimum permissions</b>
@@ -566,7 +566,7 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
      * </li>
      * <li>
      * <p>
-     * To retrieve the current resource-based policy that is attached to a secret, use <a>GetResourcePolicy</a>.
+     * To retrieve the current resource-based policy that's attached to a secret, use <a>GetResourcePolicy</a>.
      * </p>
      * </li>
      * <li>
@@ -951,9 +951,9 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Retrieves the JSON text of the resource-based policy attached to the specified secret. The JSON request string
-     * input and response output are shown formatted with whitespace and line breaks for better readability. Submit your
-     * input as a single line JSON string.
+     * Retrieves the JSON text of the resource-based policy document that's attached to the specified secret. The JSON
+     * request string input and response output are shown formatted with white space and line breaks for better
+     * readability. Submit your input as a single line JSON string.
      * </p>
      * <p>
      * <b>Minimum permissions</b>
@@ -979,7 +979,7 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
      * </li>
      * <li>
      * <p>
-     * To delete the resource-based policy that is attached to a secret, use <a>DeleteResourcePolicy</a>.
+     * To delete the resource-based policy that's attached to a secret, use <a>DeleteResourcePolicy</a>.
      * </p>
      * </li>
      * <li>
@@ -1342,11 +1342,11 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Attaches the contents of the specified resource-based policy to a secret. A resource-based policy is optional.
-     * Alternatively, you can use IAM user-based policies that specify the secret's ARN in the policy statement's
-     * <code>Resources</code> element. You can also use a combination of both identity- an resource-based policies. The
-     * affected users and roles receive the permissions permitted by all of the relevant policies. For more information,
-     * see <a
+     * Attaches the contents of the specified resource-based permission policy to a secret. A resource-based policy is
+     * optional. Alternatively, you can use IAM identity-based policies that specify the secret's Amazon Resource Name
+     * (ARN) in the policy statement's <code>Resources</code> element. You can also use a combination of both
+     * identity-based and resource-based policies. The affected users and roles receive the permissions that are
+     * permitted by all of the relevant policies. For more information, see <a
      * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html"
      * >Using Resource-Based Policies for AWS Secrets Manager</a>. For the complete description of the AWS policy syntax
      * and grammar, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON
@@ -1371,12 +1371,12 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
      * <ul>
      * <li>
      * <p>
-     * To retrieve the resource policy attached to a secret, use <a>GetResourcePolicy</a>.
+     * To retrieve the resource policy that's attached to a secret, use <a>GetResourcePolicy</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * To delete the resource-based policy that is attached to a secret, use <a>DeleteResourcePolicy</a>.
+     * To delete the resource-based policy that's attached to a secret, use <a>DeleteResourcePolicy</a>.
      * </p>
      * </li>
      * <li>

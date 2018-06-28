@@ -53,8 +53,6 @@ public enum CloudFrontActions implements Action {
     DeleteFieldLevelEncryptionProfile("cloudfront:DeleteFieldLevelEncryptionProfile"),
     /** Action for the DeletePublicKey operation. */
     DeletePublicKey("cloudfront:DeletePublicKey"),
-    /** Action for the DeleteServiceLinkedRole operation. */
-    DeleteServiceLinkedRole("cloudfront:DeleteServiceLinkedRole"),
     /** Action for the DeleteStreamingDistribution operation. */
     DeleteStreamingDistribution("cloudfront:DeleteStreamingDistribution"),
     /** Action for the GetCloudFrontOriginAccessIdentity operation. */

@@ -31,7 +31,8 @@ public class DominantLanguage implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The RFC 5646 language code for the dominant language.
+     * The RFC 5646 language code for the dominant language. For more information about RFC 5646, see <a
+     * href="https://tools.ietf.org/html/rfc5646">Tags for Identifying Languages</a> on the <i>IETF Tools</i> web site.
      * </p>
      */
     private String languageCode;
@@ -44,11 +45,14 @@ public class DominantLanguage implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The RFC 5646 language code for the dominant language.
+     * The RFC 5646 language code for the dominant language. For more information about RFC 5646, see <a
+     * href="https://tools.ietf.org/html/rfc5646">Tags for Identifying Languages</a> on the <i>IETF Tools</i> web site.
      * </p>
      * 
      * @param languageCode
-     *        The RFC 5646 language code for the dominant language.
+     *        The RFC 5646 language code for the dominant language. For more information about RFC 5646, see <a
+     *        href="https://tools.ietf.org/html/rfc5646">Tags for Identifying Languages</a> on the <i>IETF Tools</i> web
+     *        site.
      */
 
     public void setLanguageCode(String languageCode) {
@@ -57,10 +61,13 @@ public class DominantLanguage implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The RFC 5646 language code for the dominant language.
+     * The RFC 5646 language code for the dominant language. For more information about RFC 5646, see <a
+     * href="https://tools.ietf.org/html/rfc5646">Tags for Identifying Languages</a> on the <i>IETF Tools</i> web site.
      * </p>
      * 
-     * @return The RFC 5646 language code for the dominant language.
+     * @return The RFC 5646 language code for the dominant language. For more information about RFC 5646, see <a
+     *         href="https://tools.ietf.org/html/rfc5646">Tags for Identifying Languages</a> on the <i>IETF Tools</i>
+     *         web site.
      */
 
     public String getLanguageCode() {
@@ -69,11 +76,14 @@ public class DominantLanguage implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The RFC 5646 language code for the dominant language.
+     * The RFC 5646 language code for the dominant language. For more information about RFC 5646, see <a
+     * href="https://tools.ietf.org/html/rfc5646">Tags for Identifying Languages</a> on the <i>IETF Tools</i> web site.
      * </p>
      * 
      * @param languageCode
-     *        The RFC 5646 language code for the dominant language.
+     *        The RFC 5646 language code for the dominant language. For more information about RFC 5646, see <a
+     *        href="https://tools.ietf.org/html/rfc5646">Tags for Identifying Languages</a> on the <i>IETF Tools</i> web
+     *        site.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

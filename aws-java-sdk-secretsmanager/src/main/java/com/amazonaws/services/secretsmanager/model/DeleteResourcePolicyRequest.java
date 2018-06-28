@@ -27,7 +27,7 @@ public class DeleteResourcePolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Specifies the secret for which you want to delete the attached resource-based policy. You can specify either the
+     * Specifies the secret that you want to delete the attached resource-based policy for. You can specify either the
      * Amazon Resource Name (ARN) or the friendly name of the secret.
      * </p>
      */
@@ -35,12 +35,12 @@ public class DeleteResourcePolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Specifies the secret for which you want to delete the attached resource-based policy. You can specify either the
+     * Specifies the secret that you want to delete the attached resource-based policy for. You can specify either the
      * Amazon Resource Name (ARN) or the friendly name of the secret.
      * </p>
      * 
      * @param secretId
-     *        Specifies the secret for which you want to delete the attached resource-based policy. You can specify
+     *        Specifies the secret that you want to delete the attached resource-based policy for. You can specify
      *        either the Amazon Resource Name (ARN) or the friendly name of the secret.
      */
 
@@ -50,11 +50,11 @@ public class DeleteResourcePolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Specifies the secret for which you want to delete the attached resource-based policy. You can specify either the
+     * Specifies the secret that you want to delete the attached resource-based policy for. You can specify either the
      * Amazon Resource Name (ARN) or the friendly name of the secret.
      * </p>
      * 
-     * @return Specifies the secret for which you want to delete the attached resource-based policy. You can specify
+     * @return Specifies the secret that you want to delete the attached resource-based policy for. You can specify
      *         either the Amazon Resource Name (ARN) or the friendly name of the secret.
      */
 
@@ -64,12 +64,12 @@ public class DeleteResourcePolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Specifies the secret for which you want to delete the attached resource-based policy. You can specify either the
+     * Specifies the secret that you want to delete the attached resource-based policy for. You can specify either the
      * Amazon Resource Name (ARN) or the friendly name of the secret.
      * </p>
      * 
      * @param secretId
-     *        Specifies the secret for which you want to delete the attached resource-based policy. You can specify
+     *        Specifies the secret that you want to delete the attached resource-based policy for. You can specify
      *        either the Amazon Resource Name (ARN) or the friendly name of the secret.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

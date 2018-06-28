@@ -27,20 +27,20 @@ public class GetResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the secret for which you want to retrieve the attached resource-based policy. You can specify either
-     * the Amazon Resource Name (ARN) or the friendly name of the secret.
+     * Specifies the secret that you want to retrieve the attached resource-based policy for. You can specify either the
+     * Amazon Resource Name (ARN) or the friendly name of the secret.
      * </p>
      */
     private String secretId;
 
     /**
      * <p>
-     * Specifies the secret for which you want to retrieve the attached resource-based policy. You can specify either
-     * the Amazon Resource Name (ARN) or the friendly name of the secret.
+     * Specifies the secret that you want to retrieve the attached resource-based policy for. You can specify either the
+     * Amazon Resource Name (ARN) or the friendly name of the secret.
      * </p>
      * 
      * @param secretId
-     *        Specifies the secret for which you want to retrieve the attached resource-based policy. You can specify
+     *        Specifies the secret that you want to retrieve the attached resource-based policy for. You can specify
      *        either the Amazon Resource Name (ARN) or the friendly name of the secret.
      */
 
@@ -50,11 +50,11 @@ public class GetResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the secret for which you want to retrieve the attached resource-based policy. You can specify either
-     * the Amazon Resource Name (ARN) or the friendly name of the secret.
+     * Specifies the secret that you want to retrieve the attached resource-based policy for. You can specify either the
+     * Amazon Resource Name (ARN) or the friendly name of the secret.
      * </p>
      * 
-     * @return Specifies the secret for which you want to retrieve the attached resource-based policy. You can specify
+     * @return Specifies the secret that you want to retrieve the attached resource-based policy for. You can specify
      *         either the Amazon Resource Name (ARN) or the friendly name of the secret.
      */
 
@@ -64,12 +64,12 @@ public class GetResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the secret for which you want to retrieve the attached resource-based policy. You can specify either
-     * the Amazon Resource Name (ARN) or the friendly name of the secret.
+     * Specifies the secret that you want to retrieve the attached resource-based policy for. You can specify either the
+     * Amazon Resource Name (ARN) or the friendly name of the secret.
      * </p>
      * 
      * @param secretId
-     *        Specifies the secret for which you want to retrieve the attached resource-based policy. You can specify
+     *        Specifies the secret that you want to retrieve the attached resource-based policy for. You can specify
      *        either the Amazon Resource Name (ARN) or the friendly name of the secret.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

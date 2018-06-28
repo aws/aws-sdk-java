@@ -31,38 +31,39 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon S3 URI where you want to write the output data. The URI must be in the same region as the API endpoint
-     * that you are calling.
+     * When you use the <code>OutputDataConfig</code> object with asynchronous operations, you specify the Amazon S3
+     * location where you want to write the output data. The URI must be in the same region as the API endpoint that you
+     * are calling. The location is used as the prefix for the actual location of the output file.
      * </p>
      * <p>
-     * The service creates an output file called <code>output.tar.gz</code>. It is a compressed archive that contains
-     * two files, <code>topic-terms.csv</code> that lists the terms associated with each topic, and
-     * <code>doc-topics.csv</code> that lists the documents associated with each topic. For more information, see
-     * <a>topic-modeling</a>.
+     * When the topic detection job is finished, the service creates an output file in a directory specific to the job.
+     * The <code>S3Uri</code> field contains the location of the output file, called <code>output.tar.gz</code>. It is a
+     * compressed archive that contains the ouput of the operation.
      * </p>
      */
     private String s3Uri;
 
     /**
      * <p>
-     * The Amazon S3 URI where you want to write the output data. The URI must be in the same region as the API endpoint
-     * that you are calling.
+     * When you use the <code>OutputDataConfig</code> object with asynchronous operations, you specify the Amazon S3
+     * location where you want to write the output data. The URI must be in the same region as the API endpoint that you
+     * are calling. The location is used as the prefix for the actual location of the output file.
      * </p>
      * <p>
-     * The service creates an output file called <code>output.tar.gz</code>. It is a compressed archive that contains
-     * two files, <code>topic-terms.csv</code> that lists the terms associated with each topic, and
-     * <code>doc-topics.csv</code> that lists the documents associated with each topic. For more information, see
-     * <a>topic-modeling</a>.
+     * When the topic detection job is finished, the service creates an output file in a directory specific to the job.
+     * The <code>S3Uri</code> field contains the location of the output file, called <code>output.tar.gz</code>. It is a
+     * compressed archive that contains the ouput of the operation.
      * </p>
      * 
      * @param s3Uri
-     *        The Amazon S3 URI where you want to write the output data. The URI must be in the same region as the API
-     *        endpoint that you are calling. </p>
+     *        When you use the <code>OutputDataConfig</code> object with asynchronous operations, you specify the Amazon
+     *        S3 location where you want to write the output data. The URI must be in the same region as the API
+     *        endpoint that you are calling. The location is used as the prefix for the actual location of the output
+     *        file.</p>
      *        <p>
-     *        The service creates an output file called <code>output.tar.gz</code>. It is a compressed archive that
-     *        contains two files, <code>topic-terms.csv</code> that lists the terms associated with each topic, and
-     *        <code>doc-topics.csv</code> that lists the documents associated with each topic. For more information, see
-     *        <a>topic-modeling</a>.
+     *        When the topic detection job is finished, the service creates an output file in a directory specific to
+     *        the job. The <code>S3Uri</code> field contains the location of the output file, called
+     *        <code>output.tar.gz</code>. It is a compressed archive that contains the ouput of the operation.
      */
 
     public void setS3Uri(String s3Uri) {
@@ -71,23 +72,24 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon S3 URI where you want to write the output data. The URI must be in the same region as the API endpoint
-     * that you are calling.
+     * When you use the <code>OutputDataConfig</code> object with asynchronous operations, you specify the Amazon S3
+     * location where you want to write the output data. The URI must be in the same region as the API endpoint that you
+     * are calling. The location is used as the prefix for the actual location of the output file.
      * </p>
      * <p>
-     * The service creates an output file called <code>output.tar.gz</code>. It is a compressed archive that contains
-     * two files, <code>topic-terms.csv</code> that lists the terms associated with each topic, and
-     * <code>doc-topics.csv</code> that lists the documents associated with each topic. For more information, see
-     * <a>topic-modeling</a>.
+     * When the topic detection job is finished, the service creates an output file in a directory specific to the job.
+     * The <code>S3Uri</code> field contains the location of the output file, called <code>output.tar.gz</code>. It is a
+     * compressed archive that contains the ouput of the operation.
      * </p>
      * 
-     * @return The Amazon S3 URI where you want to write the output data. The URI must be in the same region as the API
-     *         endpoint that you are calling. </p>
+     * @return When you use the <code>OutputDataConfig</code> object with asynchronous operations, you specify the
+     *         Amazon S3 location where you want to write the output data. The URI must be in the same region as the API
+     *         endpoint that you are calling. The location is used as the prefix for the actual location of the output
+     *         file.</p>
      *         <p>
-     *         The service creates an output file called <code>output.tar.gz</code>. It is a compressed archive that
-     *         contains two files, <code>topic-terms.csv</code> that lists the terms associated with each topic, and
-     *         <code>doc-topics.csv</code> that lists the documents associated with each topic. For more information,
-     *         see <a>topic-modeling</a>.
+     *         When the topic detection job is finished, the service creates an output file in a directory specific to
+     *         the job. The <code>S3Uri</code> field contains the location of the output file, called
+     *         <code>output.tar.gz</code>. It is a compressed archive that contains the ouput of the operation.
      */
 
     public String getS3Uri() {
@@ -96,24 +98,25 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon S3 URI where you want to write the output data. The URI must be in the same region as the API endpoint
-     * that you are calling.
+     * When you use the <code>OutputDataConfig</code> object with asynchronous operations, you specify the Amazon S3
+     * location where you want to write the output data. The URI must be in the same region as the API endpoint that you
+     * are calling. The location is used as the prefix for the actual location of the output file.
      * </p>
      * <p>
-     * The service creates an output file called <code>output.tar.gz</code>. It is a compressed archive that contains
-     * two files, <code>topic-terms.csv</code> that lists the terms associated with each topic, and
-     * <code>doc-topics.csv</code> that lists the documents associated with each topic. For more information, see
-     * <a>topic-modeling</a>.
+     * When the topic detection job is finished, the service creates an output file in a directory specific to the job.
+     * The <code>S3Uri</code> field contains the location of the output file, called <code>output.tar.gz</code>. It is a
+     * compressed archive that contains the ouput of the operation.
      * </p>
      * 
      * @param s3Uri
-     *        The Amazon S3 URI where you want to write the output data. The URI must be in the same region as the API
-     *        endpoint that you are calling. </p>
+     *        When you use the <code>OutputDataConfig</code> object with asynchronous operations, you specify the Amazon
+     *        S3 location where you want to write the output data. The URI must be in the same region as the API
+     *        endpoint that you are calling. The location is used as the prefix for the actual location of the output
+     *        file.</p>
      *        <p>
-     *        The service creates an output file called <code>output.tar.gz</code>. It is a compressed archive that
-     *        contains two files, <code>topic-terms.csv</code> that lists the terms associated with each topic, and
-     *        <code>doc-topics.csv</code> that lists the documents associated with each topic. For more information, see
-     *        <a>topic-modeling</a>.
+     *        When the topic detection job is finished, the service creates an output file in a directory specific to
+     *        the job. The <code>S3Uri</code> field contains the location of the output file, called
+     *        <code>output.tar.gz</code>. It is a compressed archive that contains the ouput of the operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

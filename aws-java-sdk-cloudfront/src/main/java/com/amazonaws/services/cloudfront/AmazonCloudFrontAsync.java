@@ -706,29 +706,6 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
             com.amazonaws.handlers.AsyncHandler<DeletePublicKeyRequest, DeletePublicKeyResult> asyncHandler);
 
     /**
-     * @param deleteServiceLinkedRoleRequest
-     * @return A Java Future containing the result of the DeleteServiceLinkedRole operation returned by the service.
-     * @sample AmazonCloudFrontAsync.DeleteServiceLinkedRole
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteServiceLinkedRole"
-     *      target="_top">AWS API Documentation</a>
-     */
-    java.util.concurrent.Future<DeleteServiceLinkedRoleResult> deleteServiceLinkedRoleAsync(DeleteServiceLinkedRoleRequest deleteServiceLinkedRoleRequest);
-
-    /**
-     * @param deleteServiceLinkedRoleRequest
-     * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
-     *        implementation of the callback methods in this interface to receive notification of successful or
-     *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the DeleteServiceLinkedRole operation returned by the service.
-     * @sample AmazonCloudFrontAsyncHandler.DeleteServiceLinkedRole
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2017-10-30/DeleteServiceLinkedRole"
-     *      target="_top">AWS API Documentation</a>
-     */
-    java.util.concurrent.Future<DeleteServiceLinkedRoleResult> deleteServiceLinkedRoleAsync(DeleteServiceLinkedRoleRequest deleteServiceLinkedRoleRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteServiceLinkedRoleRequest, DeleteServiceLinkedRoleResult> asyncHandler);
-
-    /**
      * <p>
      * Delete a streaming distribution. To delete an RTMP distribution using the CloudFront API, perform the following
      * steps.
