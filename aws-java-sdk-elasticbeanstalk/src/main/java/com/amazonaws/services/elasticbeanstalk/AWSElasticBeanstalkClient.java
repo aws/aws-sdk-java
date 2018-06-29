@@ -1848,7 +1848,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Retrives detailed information about the health of instances in your AWS Elastic Beanstalk. This operation
+     * Retrieves detailed information about the health of instances in your AWS Elastic Beanstalk. This operation
      * requires <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced health
      * reporting</a>.
      * </p>

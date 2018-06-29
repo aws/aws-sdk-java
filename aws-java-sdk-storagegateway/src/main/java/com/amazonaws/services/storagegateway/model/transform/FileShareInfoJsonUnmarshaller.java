@@ -48,6 +48,10 @@ public class FileShareInfoJsonUnmarshaller implements Unmarshaller<FileShareInfo
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("FileShareType", targetDepth)) {
+                    context.nextToken();
+                    fileShareInfo.setFileShareType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("FileShareARN", targetDepth)) {
                     context.nextToken();
                     fileShareInfo.setFileShareARN(context.getUnmarshaller(String.class).unmarshall(context));

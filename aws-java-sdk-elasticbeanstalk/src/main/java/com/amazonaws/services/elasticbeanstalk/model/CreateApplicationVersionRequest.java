@@ -85,9 +85,13 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
     private Boolean autoCreateApplication;
     /**
      * <p>
-     * Preprocesses and validates the environment manifest (<code>env.yaml</code>) and configuration files (
+     * Pre-processes and validates the environment manifest (<code>env.yaml</code>) and configuration files (
      * <code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating
      * configuration files can identify issues prior to deploying the application version to an environment.
+     * </p>
+     * <p>
+     * You must turn processing on for application versions that you create using AWS CodeBuild or AWS CodeCommit. For
+     * application versions built from a source bundle in Amazon S3, processing is optional.
      * </p>
      * <note>
      * <p>
@@ -505,9 +509,13 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Preprocesses and validates the environment manifest (<code>env.yaml</code>) and configuration files (
+     * Pre-processes and validates the environment manifest (<code>env.yaml</code>) and configuration files (
      * <code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating
      * configuration files can identify issues prior to deploying the application version to an environment.
+     * </p>
+     * <p>
+     * You must turn processing on for application versions that you create using AWS CodeBuild or AWS CodeCommit. For
+     * application versions built from a source bundle in Amazon S3, processing is optional.
      * </p>
      * <note>
      * <p>
@@ -517,9 +525,13 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * </note>
      * 
      * @param process
-     *        Preprocesses and validates the environment manifest (<code>env.yaml</code>) and configuration files (
+     *        Pre-processes and validates the environment manifest (<code>env.yaml</code>) and configuration files (
      *        <code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating
      *        configuration files can identify issues prior to deploying the application version to an environment.</p>
+     *        <p>
+     *        You must turn processing on for application versions that you create using AWS CodeBuild or AWS
+     *        CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.
+     *        </p>
      *        <note>
      *        <p>
      *        The <code>Process</code> option validates Elastic Beanstalk configuration files. It doesn't validate your
@@ -533,9 +545,13 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Preprocesses and validates the environment manifest (<code>env.yaml</code>) and configuration files (
+     * Pre-processes and validates the environment manifest (<code>env.yaml</code>) and configuration files (
      * <code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating
      * configuration files can identify issues prior to deploying the application version to an environment.
+     * </p>
+     * <p>
+     * You must turn processing on for application versions that you create using AWS CodeBuild or AWS CodeCommit. For
+     * application versions built from a source bundle in Amazon S3, processing is optional.
      * </p>
      * <note>
      * <p>
@@ -544,9 +560,13 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * </note>
      * 
-     * @return Preprocesses and validates the environment manifest (<code>env.yaml</code>) and configuration files (
+     * @return Pre-processes and validates the environment manifest (<code>env.yaml</code>) and configuration files (
      *         <code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating
      *         configuration files can identify issues prior to deploying the application version to an environment.</p>
+     *         <p>
+     *         You must turn processing on for application versions that you create using AWS CodeBuild or AWS
+     *         CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.
+     *         </p>
      *         <note>
      *         <p>
      *         The <code>Process</code> option validates Elastic Beanstalk configuration files. It doesn't validate your
@@ -560,9 +580,13 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Preprocesses and validates the environment manifest (<code>env.yaml</code>) and configuration files (
+     * Pre-processes and validates the environment manifest (<code>env.yaml</code>) and configuration files (
      * <code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating
      * configuration files can identify issues prior to deploying the application version to an environment.
+     * </p>
+     * <p>
+     * You must turn processing on for application versions that you create using AWS CodeBuild or AWS CodeCommit. For
+     * application versions built from a source bundle in Amazon S3, processing is optional.
      * </p>
      * <note>
      * <p>
@@ -572,9 +596,13 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * </note>
      * 
      * @param process
-     *        Preprocesses and validates the environment manifest (<code>env.yaml</code>) and configuration files (
+     *        Pre-processes and validates the environment manifest (<code>env.yaml</code>) and configuration files (
      *        <code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating
      *        configuration files can identify issues prior to deploying the application version to an environment.</p>
+     *        <p>
+     *        You must turn processing on for application versions that you create using AWS CodeBuild or AWS
+     *        CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.
+     *        </p>
      *        <note>
      *        <p>
      *        The <code>Process</code> option validates Elastic Beanstalk configuration files. It doesn't validate your
@@ -590,9 +618,13 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Preprocesses and validates the environment manifest (<code>env.yaml</code>) and configuration files (
+     * Pre-processes and validates the environment manifest (<code>env.yaml</code>) and configuration files (
      * <code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating
      * configuration files can identify issues prior to deploying the application version to an environment.
+     * </p>
+     * <p>
+     * You must turn processing on for application versions that you create using AWS CodeBuild or AWS CodeCommit. For
+     * application versions built from a source bundle in Amazon S3, processing is optional.
      * </p>
      * <note>
      * <p>
@@ -601,9 +633,13 @@ public class CreateApplicationVersionRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * </note>
      * 
-     * @return Preprocesses and validates the environment manifest (<code>env.yaml</code>) and configuration files (
+     * @return Pre-processes and validates the environment manifest (<code>env.yaml</code>) and configuration files (
      *         <code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating
      *         configuration files can identify issues prior to deploying the application version to an environment.</p>
+     *         <p>
+     *         You must turn processing on for application versions that you create using AWS CodeBuild or AWS
+     *         CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.
+     *         </p>
      *         <note>
      *         <p>
      *         The <code>Process</code> option validates Elastic Beanstalk configuration files. It doesn't validate your

@@ -27,7 +27,8 @@ public enum EnvironmentHealthStatus {
     Info("Info"),
     Warning("Warning"),
     Degraded("Degraded"),
-    Severe("Severe");
+    Severe("Severe"),
+    Suspended("Suspended");
 
     private String value;
 

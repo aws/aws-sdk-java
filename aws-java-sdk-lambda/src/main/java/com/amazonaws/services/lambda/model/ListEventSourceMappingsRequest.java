@@ -28,7 +28,8 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream. (This parameter is optional.)
+     * The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream, or an SQS queue. (This parameter is
+     * optional.)
      * </p>
      */
     private String eventSourceArn;
@@ -63,11 +64,13 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream. (This parameter is optional.)
+     * The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream, or an SQS queue. (This parameter is
+     * optional.)
      * </p>
      * 
      * @param eventSourceArn
-     *        The Amazon Resource Name (ARN) of the Amazon Kinesis stream. (This parameter is optional.)
+     *        The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream, or an SQS queue. (This parameter
+     *        is optional.)
      */
 
     public void setEventSourceArn(String eventSourceArn) {
@@ -76,10 +79,12 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream. (This parameter is optional.)
+     * The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream, or an SQS queue. (This parameter is
+     * optional.)
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon Kinesis stream. (This parameter is optional.)
+     * @return The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream, or an SQS queue. (This parameter
+     *         is optional.)
      */
 
     public String getEventSourceArn() {
@@ -88,11 +93,13 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream. (This parameter is optional.)
+     * The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream, or an SQS queue. (This parameter is
+     * optional.)
      * </p>
      * 
      * @param eventSourceArn
-     *        The Amazon Resource Name (ARN) of the Amazon Kinesis stream. (This parameter is optional.)
+     *        The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream, or an SQS queue. (This parameter
+     *        is optional.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

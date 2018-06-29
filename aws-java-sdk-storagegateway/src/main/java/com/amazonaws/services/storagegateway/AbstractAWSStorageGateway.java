@@ -83,6 +83,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
+    public CreateSMBFileShareResult createSMBFileShare(CreateSMBFileShareRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateSnapshotResult createSnapshot(CreateSnapshotRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -183,6 +188,16 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
+    public DescribeSMBFileSharesResult describeSMBFileShares(DescribeSMBFileSharesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeSMBSettingsResult describeSMBSettings(DescribeSMBSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeSnapshotScheduleResult describeSnapshotSchedule(DescribeSnapshotScheduleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -229,6 +244,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
 
     @Override
     public DisableGatewayResult disableGateway(DisableGatewayRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public JoinDomainResult joinDomain(JoinDomainRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -323,6 +343,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
+    public SetSMBGuestPasswordResult setSMBGuestPassword(SetSMBGuestPasswordRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ShutdownGatewayResult shutdownGateway(ShutdownGatewayRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -359,6 +384,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
 
     @Override
     public UpdateNFSFileShareResult updateNFSFileShare(UpdateNFSFileShareRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateSMBFileShareResult updateSMBFileShare(UpdateSMBFileShareRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

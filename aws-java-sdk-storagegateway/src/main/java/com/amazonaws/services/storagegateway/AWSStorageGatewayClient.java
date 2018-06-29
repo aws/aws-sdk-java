@@ -910,8 +910,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Creates a file share on an existing file gateway. In Storage Gateway, a file share is a file system mount point
-     * backed by Amazon S3 cloud storage. Storage Gateway exposes file shares using a Network File System (NFS)
+     * Creates a Network File System (NFS) file share on an existing file gateway. In Storage Gateway, a file share is a
+     * file system mount point backed by Amazon S3 cloud storage. Storage Gateway exposes file shares using a NFS
      * interface. This operation is only supported in the file gateway type.
      * </p>
      * <important>
@@ -967,6 +967,75 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateNFSFileShareResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateNFSFileShareResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a Server Message Block (SMB) file share on an existing file gateway. In Storage Gateway, a file share is
+     * a file system mount point backed by Amazon S3 cloud storage. Storage Gateway expose file shares using a SMB
+     * interface. This operation is only supported in the file gateway type.
+     * </p>
+     * <important>
+     * <p>
+     * File gateway requires AWS Security Token Service (AWS STS) to be activated to enable you create a file share.
+     * Make sure AWS STS is activated in the region you are creating your file gateway in. If AWS STS is not activated
+     * in the region, activate it. For information about how to activate AWS STS, see Activating and Deactivating AWS
+     * STS in an AWS Region in the AWS Identity and Access Management User Guide.
+     * </p>
+     * <p>
+     * File gateway does not support creating hard or symbolic links on a file share.
+     * </p>
+     * </important>
+     * 
+     * @param createSMBFileShareRequest
+     *        CreateSMBFileShareInput
+     * @return Result of the CreateSMBFileShare operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.CreateSMBFileShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSMBFileShare"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateSMBFileShareResult createSMBFileShare(CreateSMBFileShareRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSMBFileShare(request);
+    }
+
+    @SdkInternalApi
+    final CreateSMBFileShareResult executeCreateSMBFileShare(CreateSMBFileShareRequest createSMBFileShareRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createSMBFileShareRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateSMBFileShareRequest> request = null;
+        Response<CreateSMBFileShareResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateSMBFileShareRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSMBFileShareRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateSMBFileShareResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateSMBFileShareResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2257,8 +2326,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Gets a description for one or more file shares from a file gateway. This operation is only supported in the file
-     * gateway type.
+     * Gets a description for one or more Network File System (NFS) file shares from a file gateway. This operation is
+     * only supported in the file gateway type.
      * </p>
      * 
      * @param describeNFSFileSharesRequest
@@ -2303,6 +2372,120 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
             HttpResponseHandler<AmazonWebServiceResponse<DescribeNFSFileSharesResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new DescribeNFSFileSharesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a description for one or more Server Message Block (SMB) file shares from a file gateway. This operation is
+     * only supported in the file gateway type.
+     * </p>
+     * 
+     * @param describeSMBFileSharesRequest
+     *        DescribeSMBFileSharesInput
+     * @return Result of the DescribeSMBFileShares operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.DescribeSMBFileShares
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSMBFileShares"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeSMBFileSharesResult describeSMBFileShares(DescribeSMBFileSharesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeSMBFileShares(request);
+    }
+
+    @SdkInternalApi
+    final DescribeSMBFileSharesResult executeDescribeSMBFileShares(DescribeSMBFileSharesRequest describeSMBFileSharesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeSMBFileSharesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeSMBFileSharesRequest> request = null;
+        Response<DescribeSMBFileSharesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeSMBFileSharesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSMBFileSharesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeSMBFileSharesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeSMBFileSharesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a description of a Server Message Block (SMB) file share settings from a file gateway. This operation is
+     * only supported in the file gateway type.
+     * </p>
+     * 
+     * @param describeSMBSettingsRequest
+     * @return Result of the DescribeSMBSettings operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.DescribeSMBSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSMBSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeSMBSettingsResult describeSMBSettings(DescribeSMBSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeSMBSettings(request);
+    }
+
+    @SdkInternalApi
+    final DescribeSMBSettingsResult executeDescribeSMBSettings(DescribeSMBSettingsRequest describeSMBSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeSMBSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeSMBSettingsRequest> request = null;
+        Response<DescribeSMBSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeSMBSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSMBSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeSMBSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeSMBSettingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2865,6 +3048,63 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<DisableGatewayResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DisableGatewayResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds a file gateway to an Active Directory domain. This operation is only supported in the file gateway type that
+     * supports the SMB file protocol.
+     * </p>
+     * 
+     * @param joinDomainRequest
+     *        JoinDomainInput
+     * @return Result of the JoinDomain operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.JoinDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/JoinDomain" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public JoinDomainResult joinDomain(JoinDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeJoinDomain(request);
+    }
+
+    @SdkInternalApi
+    final JoinDomainResult executeJoinDomain(JoinDomainRequest joinDomainRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(joinDomainRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<JoinDomainRequest> request = null;
+        Response<JoinDomainResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new JoinDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(joinDomainRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<JoinDomainResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new JoinDomainResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3866,6 +4106,63 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Sets the password for the guest user “smbguest”. "smbguest" is the user when the Authentication method for the
+     * file share is “GuestAccess”.
+     * </p>
+     * 
+     * @param setSMBGuestPasswordRequest
+     *        SetSMBGuestPasswordInput
+     * @return Result of the SetSMBGuestPassword operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.SetSMBGuestPassword
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/SetSMBGuestPassword"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SetSMBGuestPasswordResult setSMBGuestPassword(SetSMBGuestPasswordRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetSMBGuestPassword(request);
+    }
+
+    @SdkInternalApi
+    final SetSMBGuestPasswordResult executeSetSMBGuestPassword(SetSMBGuestPasswordRequest setSMBGuestPasswordRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(setSMBGuestPasswordRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SetSMBGuestPasswordRequest> request = null;
+        Response<SetSMBGuestPasswordResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SetSMBGuestPasswordRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setSMBGuestPasswordRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SetSMBGuestPasswordResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SetSMBGuestPasswordResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Shuts down a gateway. To specify which gateway to shut down, use the Amazon Resource Name (ARN) of the gateway in
      * the body of your request.
      * </p>
@@ -4393,7 +4690,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Updates a file share. This operation is only supported in the file gateway type.
+     * Updates a Network File System (NFS) file share. This operation is only supported in the file gateway type.
      * </p>
      * <note>
      * <p>
@@ -4478,6 +4775,78 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateNFSFileShareResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateNFSFileShareResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a Server Message Block (SMB) file share. This operation is only supported in the file gateway type.
+     * </p>
+     * <note>
+     * <p>
+     * To leave a file share field unchanged, set the corresponding input field to null. This operation is only
+     * supported in the file gateway type.
+     * </p>
+     * </note> <important>
+     * <p>
+     * File gateway requires AWS Security Token Service (AWS STS) to be activated to enable you create a file share.
+     * Make sure AWS STS is activated in the region you are creating your file gateway in. If AWS STS is not activated
+     * in the region, activate it. For information about how to activate AWS STS, see Activating and Deactivating AWS
+     * STS in an AWS Region in the AWS Identity and Access Management User Guide.
+     * </p>
+     * <p>
+     * File gateway does not support creating hard or symbolic links on a file share.
+     * </p>
+     * </important>
+     * 
+     * @param updateSMBFileShareRequest
+     *        UpdateSMBFileShareInput
+     * @return Result of the UpdateSMBFileShare operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.UpdateSMBFileShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShare"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateSMBFileShareResult updateSMBFileShare(UpdateSMBFileShareRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateSMBFileShare(request);
+    }
+
+    @SdkInternalApi
+    final UpdateSMBFileShareResult executeUpdateSMBFileShare(UpdateSMBFileShareRequest updateSMBFileShareRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateSMBFileShareRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateSMBFileShareRequest> request = null;
+        Response<UpdateSMBFileShareResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateSMBFileShareRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateSMBFileShareRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateSMBFileShareResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateSMBFileShareResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

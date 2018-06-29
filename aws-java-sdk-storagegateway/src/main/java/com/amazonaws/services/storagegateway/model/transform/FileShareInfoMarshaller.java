@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class FileShareInfoMarshaller {
 
+    private static final MarshallingInfo<String> FILESHARETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FileShareType").build();
     private static final MarshallingInfo<String> FILESHAREARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FileShareARN").build();
     private static final MarshallingInfo<String> FILESHAREID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -52,6 +54,7 @@ public class FileShareInfoMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(fileShareInfo.getFileShareType(), FILESHARETYPE_BINDING);
             protocolMarshaller.marshall(fileShareInfo.getFileShareARN(), FILESHAREARN_BINDING);
             protocolMarshaller.marshall(fileShareInfo.getFileShareId(), FILESHAREID_BINDING);
             protocolMarshaller.marshall(fileShareInfo.getFileShareStatus(), FILESHARESTATUS_BINDING);

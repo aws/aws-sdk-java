@@ -610,8 +610,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Creates a file share on an existing file gateway. In Storage Gateway, a file share is a file system mount point
-     * backed by Amazon S3 cloud storage. Storage Gateway exposes file shares using a Network File System (NFS)
+     * Creates a Network File System (NFS) file share on an existing file gateway. In Storage Gateway, a file share is a
+     * file system mount point backed by Amazon S3 cloud storage. Storage Gateway exposes file shares using a NFS
      * interface. This operation is only supported in the file gateway type.
      * </p>
      * <important>
@@ -637,8 +637,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Creates a file share on an existing file gateway. In Storage Gateway, a file share is a file system mount point
-     * backed by Amazon S3 cloud storage. Storage Gateway exposes file shares using a Network File System (NFS)
+     * Creates a Network File System (NFS) file share on an existing file gateway. In Storage Gateway, a file share is a
+     * file system mount point backed by Amazon S3 cloud storage. Storage Gateway exposes file shares using a NFS
      * interface. This operation is only supported in the file gateway type.
      * </p>
      * <important>
@@ -666,6 +666,65 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      */
     java.util.concurrent.Future<CreateNFSFileShareResult> createNFSFileShareAsync(CreateNFSFileShareRequest createNFSFileShareRequest,
             com.amazonaws.handlers.AsyncHandler<CreateNFSFileShareRequest, CreateNFSFileShareResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a Server Message Block (SMB) file share on an existing file gateway. In Storage Gateway, a file share is
+     * a file system mount point backed by Amazon S3 cloud storage. Storage Gateway expose file shares using a SMB
+     * interface. This operation is only supported in the file gateway type.
+     * </p>
+     * <important>
+     * <p>
+     * File gateway requires AWS Security Token Service (AWS STS) to be activated to enable you create a file share.
+     * Make sure AWS STS is activated in the region you are creating your file gateway in. If AWS STS is not activated
+     * in the region, activate it. For information about how to activate AWS STS, see Activating and Deactivating AWS
+     * STS in an AWS Region in the AWS Identity and Access Management User Guide.
+     * </p>
+     * <p>
+     * File gateway does not support creating hard or symbolic links on a file share.
+     * </p>
+     * </important>
+     * 
+     * @param createSMBFileShareRequest
+     *        CreateSMBFileShareInput
+     * @return A Java Future containing the result of the CreateSMBFileShare operation returned by the service.
+     * @sample AWSStorageGatewayAsync.CreateSMBFileShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSMBFileShare"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSMBFileShareResult> createSMBFileShareAsync(CreateSMBFileShareRequest createSMBFileShareRequest);
+
+    /**
+     * <p>
+     * Creates a Server Message Block (SMB) file share on an existing file gateway. In Storage Gateway, a file share is
+     * a file system mount point backed by Amazon S3 cloud storage. Storage Gateway expose file shares using a SMB
+     * interface. This operation is only supported in the file gateway type.
+     * </p>
+     * <important>
+     * <p>
+     * File gateway requires AWS Security Token Service (AWS STS) to be activated to enable you create a file share.
+     * Make sure AWS STS is activated in the region you are creating your file gateway in. If AWS STS is not activated
+     * in the region, activate it. For information about how to activate AWS STS, see Activating and Deactivating AWS
+     * STS in an AWS Region in the AWS Identity and Access Management User Guide.
+     * </p>
+     * <p>
+     * File gateway does not support creating hard or symbolic links on a file share.
+     * </p>
+     * </important>
+     * 
+     * @param createSMBFileShareRequest
+     *        CreateSMBFileShareInput
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateSMBFileShare operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.CreateSMBFileShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSMBFileShare"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSMBFileShareResult> createSMBFileShareAsync(CreateSMBFileShareRequest createSMBFileShareRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateSMBFileShareRequest, CreateSMBFileShareResult> asyncHandler);
 
     /**
      * <p>
@@ -1686,8 +1745,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Gets a description for one or more file shares from a file gateway. This operation is only supported in the file
-     * gateway type.
+     * Gets a description for one or more Network File System (NFS) file shares from a file gateway. This operation is
+     * only supported in the file gateway type.
      * </p>
      * 
      * @param describeNFSFileSharesRequest
@@ -1701,8 +1760,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Gets a description for one or more file shares from a file gateway. This operation is only supported in the file
-     * gateway type.
+     * Gets a description for one or more Network File System (NFS) file shares from a file gateway. This operation is
+     * only supported in the file gateway type.
      * </p>
      * 
      * @param describeNFSFileSharesRequest
@@ -1718,6 +1777,74 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      */
     java.util.concurrent.Future<DescribeNFSFileSharesResult> describeNFSFileSharesAsync(DescribeNFSFileSharesRequest describeNFSFileSharesRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeNFSFileSharesRequest, DescribeNFSFileSharesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a description for one or more Server Message Block (SMB) file shares from a file gateway. This operation is
+     * only supported in the file gateway type.
+     * </p>
+     * 
+     * @param describeSMBFileSharesRequest
+     *        DescribeSMBFileSharesInput
+     * @return A Java Future containing the result of the DescribeSMBFileShares operation returned by the service.
+     * @sample AWSStorageGatewayAsync.DescribeSMBFileShares
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSMBFileShares"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeSMBFileSharesResult> describeSMBFileSharesAsync(DescribeSMBFileSharesRequest describeSMBFileSharesRequest);
+
+    /**
+     * <p>
+     * Gets a description for one or more Server Message Block (SMB) file shares from a file gateway. This operation is
+     * only supported in the file gateway type.
+     * </p>
+     * 
+     * @param describeSMBFileSharesRequest
+     *        DescribeSMBFileSharesInput
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeSMBFileShares operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.DescribeSMBFileShares
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSMBFileShares"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeSMBFileSharesResult> describeSMBFileSharesAsync(DescribeSMBFileSharesRequest describeSMBFileSharesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeSMBFileSharesRequest, DescribeSMBFileSharesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a description of a Server Message Block (SMB) file share settings from a file gateway. This operation is
+     * only supported in the file gateway type.
+     * </p>
+     * 
+     * @param describeSMBSettingsRequest
+     * @return A Java Future containing the result of the DescribeSMBSettings operation returned by the service.
+     * @sample AWSStorageGatewayAsync.DescribeSMBSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSMBSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeSMBSettingsResult> describeSMBSettingsAsync(DescribeSMBSettingsRequest describeSMBSettingsRequest);
+
+    /**
+     * <p>
+     * Gets a description of a Server Message Block (SMB) file share settings from a file gateway. This operation is
+     * only supported in the file gateway type.
+     * </p>
+     * 
+     * @param describeSMBSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeSMBSettings operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.DescribeSMBSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeSMBSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeSMBSettingsResult> describeSMBSettingsAsync(DescribeSMBSettingsRequest describeSMBSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeSMBSettingsRequest, DescribeSMBSettingsResult> asyncHandler);
 
     /**
      * <p>
@@ -2126,6 +2253,41 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      */
     java.util.concurrent.Future<DisableGatewayResult> disableGatewayAsync(DisableGatewayRequest disableGatewayRequest,
             com.amazonaws.handlers.AsyncHandler<DisableGatewayRequest, DisableGatewayResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds a file gateway to an Active Directory domain. This operation is only supported in the file gateway type that
+     * supports the SMB file protocol.
+     * </p>
+     * 
+     * @param joinDomainRequest
+     *        JoinDomainInput
+     * @return A Java Future containing the result of the JoinDomain operation returned by the service.
+     * @sample AWSStorageGatewayAsync.JoinDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/JoinDomain" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<JoinDomainResult> joinDomainAsync(JoinDomainRequest joinDomainRequest);
+
+    /**
+     * <p>
+     * Adds a file gateway to an Active Directory domain. This operation is only supported in the file gateway type that
+     * supports the SMB file protocol.
+     * </p>
+     * 
+     * @param joinDomainRequest
+     *        JoinDomainInput
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the JoinDomain operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.JoinDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/JoinDomain" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<JoinDomainResult> joinDomainAsync(JoinDomainRequest joinDomainRequest,
+            com.amazonaws.handlers.AsyncHandler<JoinDomainRequest, JoinDomainResult> asyncHandler);
 
     /**
      * <p>
@@ -2924,6 +3086,41 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
+     * Sets the password for the guest user “smbguest”. "smbguest" is the user when the Authentication method for the
+     * file share is “GuestAccess”.
+     * </p>
+     * 
+     * @param setSMBGuestPasswordRequest
+     *        SetSMBGuestPasswordInput
+     * @return A Java Future containing the result of the SetSMBGuestPassword operation returned by the service.
+     * @sample AWSStorageGatewayAsync.SetSMBGuestPassword
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/SetSMBGuestPassword"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SetSMBGuestPasswordResult> setSMBGuestPasswordAsync(SetSMBGuestPasswordRequest setSMBGuestPasswordRequest);
+
+    /**
+     * <p>
+     * Sets the password for the guest user “smbguest”. "smbguest" is the user when the Authentication method for the
+     * file share is “GuestAccess”.
+     * </p>
+     * 
+     * @param setSMBGuestPasswordRequest
+     *        SetSMBGuestPasswordInput
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SetSMBGuestPassword operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.SetSMBGuestPassword
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/SetSMBGuestPassword"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SetSMBGuestPasswordResult> setSMBGuestPasswordAsync(SetSMBGuestPasswordRequest setSMBGuestPasswordRequest,
+            com.amazonaws.handlers.AsyncHandler<SetSMBGuestPasswordRequest, SetSMBGuestPasswordResult> asyncHandler);
+
+    /**
+     * <p>
      * Shuts down a gateway. To specify which gateway to shut down, use the Amazon Resource Name (ARN) of the gateway in
      * the body of your request.
      * </p>
@@ -3409,7 +3606,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Updates a file share. This operation is only supported in the file gateway type.
+     * Updates a Network File System (NFS) file share. This operation is only supported in the file gateway type.
      * </p>
      * <note>
      * <p>
@@ -3464,7 +3661,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Updates a file share. This operation is only supported in the file gateway type.
+     * Updates a Network File System (NFS) file share. This operation is only supported in the file gateway type.
      * </p>
      * <note>
      * <p>
@@ -3521,6 +3718,71 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      */
     java.util.concurrent.Future<UpdateNFSFileShareResult> updateNFSFileShareAsync(UpdateNFSFileShareRequest updateNFSFileShareRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateNFSFileShareRequest, UpdateNFSFileShareResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a Server Message Block (SMB) file share. This operation is only supported in the file gateway type.
+     * </p>
+     * <note>
+     * <p>
+     * To leave a file share field unchanged, set the corresponding input field to null. This operation is only
+     * supported in the file gateway type.
+     * </p>
+     * </note> <important>
+     * <p>
+     * File gateway requires AWS Security Token Service (AWS STS) to be activated to enable you create a file share.
+     * Make sure AWS STS is activated in the region you are creating your file gateway in. If AWS STS is not activated
+     * in the region, activate it. For information about how to activate AWS STS, see Activating and Deactivating AWS
+     * STS in an AWS Region in the AWS Identity and Access Management User Guide.
+     * </p>
+     * <p>
+     * File gateway does not support creating hard or symbolic links on a file share.
+     * </p>
+     * </important>
+     * 
+     * @param updateSMBFileShareRequest
+     *        UpdateSMBFileShareInput
+     * @return A Java Future containing the result of the UpdateSMBFileShare operation returned by the service.
+     * @sample AWSStorageGatewayAsync.UpdateSMBFileShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShare"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSMBFileShareResult> updateSMBFileShareAsync(UpdateSMBFileShareRequest updateSMBFileShareRequest);
+
+    /**
+     * <p>
+     * Updates a Server Message Block (SMB) file share. This operation is only supported in the file gateway type.
+     * </p>
+     * <note>
+     * <p>
+     * To leave a file share field unchanged, set the corresponding input field to null. This operation is only
+     * supported in the file gateway type.
+     * </p>
+     * </note> <important>
+     * <p>
+     * File gateway requires AWS Security Token Service (AWS STS) to be activated to enable you create a file share.
+     * Make sure AWS STS is activated in the region you are creating your file gateway in. If AWS STS is not activated
+     * in the region, activate it. For information about how to activate AWS STS, see Activating and Deactivating AWS
+     * STS in an AWS Region in the AWS Identity and Access Management User Guide.
+     * </p>
+     * <p>
+     * File gateway does not support creating hard or symbolic links on a file share.
+     * </p>
+     * </important>
+     * 
+     * @param updateSMBFileShareRequest
+     *        UpdateSMBFileShareInput
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateSMBFileShare operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.UpdateSMBFileShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShare"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSMBFileShareResult> updateSMBFileShareAsync(UpdateSMBFileShareRequest updateSMBFileShareRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateSMBFileShareRequest, UpdateSMBFileShareResult> asyncHandler);
 
     /**
      * <p>

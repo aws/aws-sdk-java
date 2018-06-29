@@ -40,8 +40,15 @@ public class EnvironmentTier implements Serializable, Cloneable {
     private String type;
     /**
      * <p>
-     * The version of this environment tier.
+     * The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest
+     * compatible worker tier version.
      * </p>
+     * <note>
+     * <p>
+     * This member is deprecated. Any specific version that you set may become out of date. We recommend leaving it
+     * unspecified.
+     * </p>
+     * </note>
      */
     private String version;
 
@@ -127,11 +134,23 @@ public class EnvironmentTier implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The version of this environment tier.
+     * The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest
+     * compatible worker tier version.
      * </p>
+     * <note>
+     * <p>
+     * This member is deprecated. Any specific version that you set may become out of date. We recommend leaving it
+     * unspecified.
+     * </p>
+     * </note>
      * 
      * @param version
-     *        The version of this environment tier.
+     *        The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest
+     *        compatible worker tier version.</p> <note>
+     *        <p>
+     *        This member is deprecated. Any specific version that you set may become out of date. We recommend leaving
+     *        it unspecified.
+     *        </p>
      */
 
     public void setVersion(String version) {
@@ -140,10 +159,22 @@ public class EnvironmentTier implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The version of this environment tier.
+     * The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest
+     * compatible worker tier version.
      * </p>
+     * <note>
+     * <p>
+     * This member is deprecated. Any specific version that you set may become out of date. We recommend leaving it
+     * unspecified.
+     * </p>
+     * </note>
      * 
-     * @return The version of this environment tier.
+     * @return The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest
+     *         compatible worker tier version.</p> <note>
+     *         <p>
+     *         This member is deprecated. Any specific version that you set may become out of date. We recommend leaving
+     *         it unspecified.
+     *         </p>
      */
 
     public String getVersion() {
@@ -152,11 +183,23 @@ public class EnvironmentTier implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The version of this environment tier.
+     * The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest
+     * compatible worker tier version.
      * </p>
+     * <note>
+     * <p>
+     * This member is deprecated. Any specific version that you set may become out of date. We recommend leaving it
+     * unspecified.
+     * </p>
+     * </note>
      * 
      * @param version
-     *        The version of this environment tier.
+     *        The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest
+     *        compatible worker tier version.</p> <note>
+     *        <p>
+     *        This member is deprecated. Any specific version that you set may become out of date. We recommend leaving
+     *        it unspecified.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

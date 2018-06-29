@@ -28,10 +28,9 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon DynamoDB stream that is the event source. Any
-     * record added to this stream could cause AWS Lambda to invoke your Lambda function, it depends on the
-     * <code>BatchSize</code>. AWS Lambda POSTs the Amazon Kinesis event, containing records, to your Lambda function as
-     * JSON.
+     * The Amazon Resource Name (ARN) of the event source. Any record added to this source could cause AWS Lambda to
+     * invoke your Lambda function, it depends on the <code>BatchSize</code>. AWS Lambda POSTs the event's records to
+     * your Lambda function as JSON.
      * </p>
      */
     private String eventSourceArn;
@@ -68,7 +67,8 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking your
-     * function. Your function receives an event with all the retrieved records. The default is 100 records.
+     * function. Your function receives an event with all the retrieved records. The default for Amazon Kinesis and
+     * Amazon DynamoDB is 100 records. For SQS, the default is 1.
      * </p>
      */
     private Integer batchSize;
@@ -99,17 +99,15 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon DynamoDB stream that is the event source. Any
-     * record added to this stream could cause AWS Lambda to invoke your Lambda function, it depends on the
-     * <code>BatchSize</code>. AWS Lambda POSTs the Amazon Kinesis event, containing records, to your Lambda function as
-     * JSON.
+     * The Amazon Resource Name (ARN) of the event source. Any record added to this source could cause AWS Lambda to
+     * invoke your Lambda function, it depends on the <code>BatchSize</code>. AWS Lambda POSTs the event's records to
+     * your Lambda function as JSON.
      * </p>
      * 
      * @param eventSourceArn
-     *        The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon DynamoDB stream that is the event
-     *        source. Any record added to this stream could cause AWS Lambda to invoke your Lambda function, it depends
-     *        on the <code>BatchSize</code>. AWS Lambda POSTs the Amazon Kinesis event, containing records, to your
-     *        Lambda function as JSON.
+     *        The Amazon Resource Name (ARN) of the event source. Any record added to this source could cause AWS Lambda
+     *        to invoke your Lambda function, it depends on the <code>BatchSize</code>. AWS Lambda POSTs the event's
+     *        records to your Lambda function as JSON.
      */
 
     public void setEventSourceArn(String eventSourceArn) {
@@ -118,16 +116,14 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon DynamoDB stream that is the event source. Any
-     * record added to this stream could cause AWS Lambda to invoke your Lambda function, it depends on the
-     * <code>BatchSize</code>. AWS Lambda POSTs the Amazon Kinesis event, containing records, to your Lambda function as
-     * JSON.
+     * The Amazon Resource Name (ARN) of the event source. Any record added to this source could cause AWS Lambda to
+     * invoke your Lambda function, it depends on the <code>BatchSize</code>. AWS Lambda POSTs the event's records to
+     * your Lambda function as JSON.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon DynamoDB stream that is the event
-     *         source. Any record added to this stream could cause AWS Lambda to invoke your Lambda function, it depends
-     *         on the <code>BatchSize</code>. AWS Lambda POSTs the Amazon Kinesis event, containing records, to your
-     *         Lambda function as JSON.
+     * @return The Amazon Resource Name (ARN) of the event source. Any record added to this source could cause AWS
+     *         Lambda to invoke your Lambda function, it depends on the <code>BatchSize</code>. AWS Lambda POSTs the
+     *         event's records to your Lambda function as JSON.
      */
 
     public String getEventSourceArn() {
@@ -136,17 +132,15 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon DynamoDB stream that is the event source. Any
-     * record added to this stream could cause AWS Lambda to invoke your Lambda function, it depends on the
-     * <code>BatchSize</code>. AWS Lambda POSTs the Amazon Kinesis event, containing records, to your Lambda function as
-     * JSON.
+     * The Amazon Resource Name (ARN) of the event source. Any record added to this source could cause AWS Lambda to
+     * invoke your Lambda function, it depends on the <code>BatchSize</code>. AWS Lambda POSTs the event's records to
+     * your Lambda function as JSON.
      * </p>
      * 
      * @param eventSourceArn
-     *        The Amazon Resource Name (ARN) of the Amazon Kinesis or the Amazon DynamoDB stream that is the event
-     *        source. Any record added to this stream could cause AWS Lambda to invoke your Lambda function, it depends
-     *        on the <code>BatchSize</code>. AWS Lambda POSTs the Amazon Kinesis event, containing records, to your
-     *        Lambda function as JSON.
+     *        The Amazon Resource Name (ARN) of the event source. Any record added to this source could cause AWS Lambda
+     *        to invoke your Lambda function, it depends on the <code>BatchSize</code>. AWS Lambda POSTs the event's
+     *        records to your Lambda function as JSON.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -362,12 +356,14 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking your
-     * function. Your function receives an event with all the retrieved records. The default is 100 records.
+     * function. Your function receives an event with all the retrieved records. The default for Amazon Kinesis and
+     * Amazon DynamoDB is 100 records. For SQS, the default is 1.
      * </p>
      * 
      * @param batchSize
      *        The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking
-     *        your function. Your function receives an event with all the retrieved records. The default is 100 records.
+     *        your function. Your function receives an event with all the retrieved records. The default for Amazon
+     *        Kinesis and Amazon DynamoDB is 100 records. For SQS, the default is 1.
      */
 
     public void setBatchSize(Integer batchSize) {
@@ -377,12 +373,13 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking your
-     * function. Your function receives an event with all the retrieved records. The default is 100 records.
+     * function. Your function receives an event with all the retrieved records. The default for Amazon Kinesis and
+     * Amazon DynamoDB is 100 records. For SQS, the default is 1.
      * </p>
      * 
      * @return The largest number of records that AWS Lambda will retrieve from your event source at the time of
-     *         invoking your function. Your function receives an event with all the retrieved records. The default is
-     *         100 records.
+     *         invoking your function. Your function receives an event with all the retrieved records. The default for
+     *         Amazon Kinesis and Amazon DynamoDB is 100 records. For SQS, the default is 1.
      */
 
     public Integer getBatchSize() {
@@ -392,12 +389,14 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking your
-     * function. Your function receives an event with all the retrieved records. The default is 100 records.
+     * function. Your function receives an event with all the retrieved records. The default for Amazon Kinesis and
+     * Amazon DynamoDB is 100 records. For SQS, the default is 1.
      * </p>
      * 
      * @param batchSize
      *        The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking
-     *        your function. Your function receives an event with all the retrieved records. The default is 100 records.
+     *        your function. Your function receives an event with all the retrieved records. The default for Amazon
+     *        Kinesis and Amazon DynamoDB is 100 records. For SQS, the default is 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes mapping between an Amazon Kinesis stream and a Lambda function.
+ * Describes mapping between an Amazon Kinesis or DynamoDB stream or an Amazon SQS queue and a Lambda function.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping" target="_top">AWS
@@ -41,13 +41,14 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
     private Integer batchSize;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream that is the source of events.
+     * The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream or the SQS queue that is the source of
+     * events.
      * </p>
      */
     private String eventSourceArn;
     /**
      * <p>
-     * The Lambda function to invoke when AWS Lambda detects an event on the stream.
+     * The Lambda function to invoke when AWS Lambda detects an event on the poll-based source.
      * </p>
      */
     private String functionArn;
@@ -167,11 +168,13 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream that is the source of events.
+     * The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream or the SQS queue that is the source of
+     * events.
      * </p>
      * 
      * @param eventSourceArn
-     *        The Amazon Resource Name (ARN) of the Amazon Kinesis stream that is the source of events.
+     *        The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream or the SQS queue that is the
+     *        source of events.
      */
 
     public void setEventSourceArn(String eventSourceArn) {
@@ -180,10 +183,12 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream that is the source of events.
+     * The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream or the SQS queue that is the source of
+     * events.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon Kinesis stream that is the source of events.
+     * @return The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream or the SQS queue that is the
+     *         source of events.
      */
 
     public String getEventSourceArn() {
@@ -192,11 +197,13 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream that is the source of events.
+     * The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream or the SQS queue that is the source of
+     * events.
      * </p>
      * 
      * @param eventSourceArn
-     *        The Amazon Resource Name (ARN) of the Amazon Kinesis stream that is the source of events.
+     *        The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream or the SQS queue that is the
+     *        source of events.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -207,11 +214,11 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Lambda function to invoke when AWS Lambda detects an event on the stream.
+     * The Lambda function to invoke when AWS Lambda detects an event on the poll-based source.
      * </p>
      * 
      * @param functionArn
-     *        The Lambda function to invoke when AWS Lambda detects an event on the stream.
+     *        The Lambda function to invoke when AWS Lambda detects an event on the poll-based source.
      */
 
     public void setFunctionArn(String functionArn) {
@@ -220,10 +227,10 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Lambda function to invoke when AWS Lambda detects an event on the stream.
+     * The Lambda function to invoke when AWS Lambda detects an event on the poll-based source.
      * </p>
      * 
-     * @return The Lambda function to invoke when AWS Lambda detects an event on the stream.
+     * @return The Lambda function to invoke when AWS Lambda detects an event on the poll-based source.
      */
 
     public String getFunctionArn() {
@@ -232,11 +239,11 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Lambda function to invoke when AWS Lambda detects an event on the stream.
+     * The Lambda function to invoke when AWS Lambda detects an event on the poll-based source.
      * </p>
      * 
      * @param functionArn
-     *        The Lambda function to invoke when AWS Lambda detects an event on the stream.
+     *        The Lambda function to invoke when AWS Lambda detects an event on the poll-based source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

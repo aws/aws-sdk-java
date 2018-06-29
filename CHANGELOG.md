@@ -1,3 +1,16 @@
+# __1.11.357__ __2018-06-28__
+## __AWS Elastic Beanstalk__
+  - ### Features
+    - Elastic Beanstalk adds "Suspended" health status to the EnvironmentHealthStatus enum type and updates document.
+
+## __AWS Lambda__
+  - ### Features
+    - Support for SQS as an event source.
+
+## __AWS Storage Gateway__
+  - ### Features
+    - AWS Storage Gateway now enables you to use Server Message Block (SMB) protocol  to store and access objects in Amazon Simple Storage Service (S3). 
+
 # __1.11.356__ __2018-06-27__
 ## __AWS CodePipeline__
   - ### Features
