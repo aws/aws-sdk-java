@@ -15,9 +15,9 @@
 
 package com.amazonaws.codegen.internal;
 
+import com.amazonaws.codegen.model.config.customization.CustomizationConfig;
 import com.amazonaws.codegen.model.intermediate.IntermediateModel;
 import com.amazonaws.codegen.model.intermediate.Metadata;
-import com.amazonaws.codegen.model.intermediate.Protocol;
 import com.amazonaws.codegen.model.intermediate.ShapeMarshaller;
 import com.amazonaws.codegen.model.intermediate.ShapeModel;
 import com.amazonaws.codegen.model.service.Input;
@@ -33,8 +33,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static com.amazonaws.codegen.internal.Constants.LOGGER;
@@ -101,11 +99,11 @@ public class Utils {
      * * @param serviceModel Service model to get prefix for.
      * * @return Prefix to use when writing model files (service and intermediate).
      */
-    public static String getFileNamePrefix(ServiceModel serviceModel) {
-        //TODO: fix this
-        if ("neptune-2014-10-31".equals(serviceModel.getMetadata().getUid())) {
-            return "neptune-2014-10-31";
+    public static String getFileNamePrefix(ServiceModel serviceModel, CustomizationConfig customizationConfig) {
+        if (customizationConfig.isUseUidAsFilePrefix() && serviceModel.getMetadata().getUid() != null) {
+            return serviceModel.getMetadata().getUid();
         }
+
         return String.format("%s-%s", serviceModel.getMetadata().getEndpointPrefix(), serviceModel.getMetadata().getApiVersion());
     }
 

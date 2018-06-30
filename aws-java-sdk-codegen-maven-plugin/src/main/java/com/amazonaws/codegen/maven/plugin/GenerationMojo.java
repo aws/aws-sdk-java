@@ -75,7 +75,7 @@ public class GenerationMojo extends AbstractMojo {
     }
 
     private void generateCode(C2jModels models) {
-        new CodeGenerator(models, outputDirectory, resourcesDirectory, Utils.getFileNamePrefix(models.serviceModel())).execute();
+        new CodeGenerator(models, outputDirectory, resourcesDirectory, Utils.getFileNamePrefix(models.serviceModel(), models.customizationConfig())).execute();
     }
 
     private BasicCodeGenConfig loadCodeGenConfig() throws MojoExecutionException {

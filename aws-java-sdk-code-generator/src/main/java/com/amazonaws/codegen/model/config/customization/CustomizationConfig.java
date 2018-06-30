@@ -239,6 +239,11 @@ public class CustomizationConfig {
      */
     private String contentTypeOverride;
 
+    /**
+     * True if uid is used as file name prefix, false otherwise
+     */
+    private boolean useUidAsFilePrefix;
+
     private CustomizationConfig(){
     }
 
@@ -572,5 +577,14 @@ public class CustomizationConfig {
     public void setContentTypeOverride(String contentTypeOverride) {
         this.contentTypeOverride = contentTypeOverride;
     }
+
+    public boolean isUseUidAsFilePrefix() {
+        return useUidAsFilePrefix;
+    }
+
+    public void setUseUidAsFilePrefix(boolean useUidAsFilePrefix) {
+        this.useUidAsFilePrefix = useUidAsFilePrefix;
+    }
+
 
 }

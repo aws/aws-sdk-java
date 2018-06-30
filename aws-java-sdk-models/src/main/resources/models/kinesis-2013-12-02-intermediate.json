@@ -83,7 +83,8 @@
     "skipSmokeTests" : true,
     "transformDirectory" : "transform",
     "useAutoConstructList" : true,
-    "useAutoConstructMap" : true
+    "useAutoConstructMap" : true,
+    "useUidAsFilePrefix" : false
   },
   "metadata" : {
     "apiVersion" : "2013-12-02",

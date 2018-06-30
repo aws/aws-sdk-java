@@ -1,3 +1,8 @@
+# __1.11.358__ __2018-06-29__
+## __AWS Secrets Manager__
+  - ### Features
+    - New SDK code snippet examples for the new APIs released for the Resource-based Policy support in Secrets Manager
+
 # __1.11.357__ __2018-06-28__
 ## __AWS Elastic Beanstalk__
   - ### Features
