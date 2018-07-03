@@ -1063,6 +1063,75 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAssociationExecutionTargetsResult> describeAssociationExecutionTargetsAsync(
+            DescribeAssociationExecutionTargetsRequest request) {
+
+        return describeAssociationExecutionTargetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAssociationExecutionTargetsResult> describeAssociationExecutionTargetsAsync(
+            final DescribeAssociationExecutionTargetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAssociationExecutionTargetsRequest, DescribeAssociationExecutionTargetsResult> asyncHandler) {
+        final DescribeAssociationExecutionTargetsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAssociationExecutionTargetsResult>() {
+            @Override
+            public DescribeAssociationExecutionTargetsResult call() throws Exception {
+                DescribeAssociationExecutionTargetsResult result = null;
+
+                try {
+                    result = executeDescribeAssociationExecutionTargets(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAssociationExecutionsResult> describeAssociationExecutionsAsync(DescribeAssociationExecutionsRequest request) {
+
+        return describeAssociationExecutionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAssociationExecutionsResult> describeAssociationExecutionsAsync(
+            final DescribeAssociationExecutionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAssociationExecutionsRequest, DescribeAssociationExecutionsResult> asyncHandler) {
+        final DescribeAssociationExecutionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAssociationExecutionsResult>() {
+            @Override
+            public DescribeAssociationExecutionsResult call() throws Exception {
+                DescribeAssociationExecutionsResult result = null;
+
+                try {
+                    result = executeDescribeAssociationExecutions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAutomationExecutionsResult> describeAutomationExecutionsAsync(DescribeAutomationExecutionsRequest request) {
 
         return describeAutomationExecutionsAsync(request, null);
@@ -3217,6 +3286,39 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
 
                 try {
                     result = executeSendCommand(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartAssociationsOnceResult> startAssociationsOnceAsync(StartAssociationsOnceRequest request) {
+
+        return startAssociationsOnceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartAssociationsOnceResult> startAssociationsOnceAsync(final StartAssociationsOnceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartAssociationsOnceRequest, StartAssociationsOnceResult> asyncHandler) {
+        final StartAssociationsOnceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartAssociationsOnceResult>() {
+            @Override
+            public StartAssociationsOnceResult call() throws Exception {
+                StartAssociationsOnceResult result = null;
+
+                try {
+                    result = executeStartAssociationsOnce(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

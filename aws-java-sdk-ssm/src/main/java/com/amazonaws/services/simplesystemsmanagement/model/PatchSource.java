@@ -57,7 +57,7 @@ public class PatchSource implements Serializable, Cloneable, StructuredPojo {
      * <code>keepcache=0</code>
      * </p>
      * <p>
-     * <code>debualevel=2</code>
+     * <code>debuglevel=2</code>
      * </p>
      */
     private String configuration;
@@ -205,7 +205,7 @@ public class PatchSource implements Serializable, Cloneable, StructuredPojo {
      * <code>keepcache=0</code>
      * </p>
      * <p>
-     * <code>debualevel=2</code>
+     * <code>debuglevel=2</code>
      * </p>
      * 
      * @param configuration
@@ -220,7 +220,7 @@ public class PatchSource implements Serializable, Cloneable, StructuredPojo {
      *        <code>keepcache=0</code>
      *        </p>
      *        <p>
-     *        <code>debualevel=2</code>
+     *        <code>debuglevel=2</code>
      */
 
     public void setConfiguration(String configuration) {
@@ -241,7 +241,7 @@ public class PatchSource implements Serializable, Cloneable, StructuredPojo {
      * <code>keepcache=0</code>
      * </p>
      * <p>
-     * <code>debualevel=2</code>
+     * <code>debuglevel=2</code>
      * </p>
      * 
      * @return The value of the yum repo configuration. For example:</p>
@@ -255,7 +255,7 @@ public class PatchSource implements Serializable, Cloneable, StructuredPojo {
      *         <code>keepcache=0</code>
      *         </p>
      *         <p>
-     *         <code>debualevel=2</code>
+     *         <code>debuglevel=2</code>
      */
 
     public String getConfiguration() {
@@ -276,7 +276,7 @@ public class PatchSource implements Serializable, Cloneable, StructuredPojo {
      * <code>keepcache=0</code>
      * </p>
      * <p>
-     * <code>debualevel=2</code>
+     * <code>debuglevel=2</code>
      * </p>
      * 
      * @param configuration
@@ -291,7 +291,7 @@ public class PatchSource implements Serializable, Cloneable, StructuredPojo {
      *        <code>keepcache=0</code>
      *        </p>
      *        <p>
-     *        <code>debualevel=2</code>
+     *        <code>debuglevel=2</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

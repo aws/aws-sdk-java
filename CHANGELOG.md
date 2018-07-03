@@ -1,3 +1,8 @@
+# __1.11.359__ __2018-07-02__
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Execution History and StartAssociationOnce release for State Manager. Users now have the ability to view association execution history with DescribeAssociationExecutions and DescribeAssociationExecutionTargets. Users can also execute an association by calling StartAssociationOnce.
+
 # __1.11.358__ __2018-06-29__
 ## __AWS Secrets Manager__
   - ### Features

@@ -809,6 +809,47 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Use this API action to view information about a specific execution of a specific association.
+     * </p>
+     * 
+     * @param describeAssociationExecutionTargetsRequest
+     * @return Result of the DescribeAssociationExecutionTargets operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws AssociationDoesNotExistException
+     *         The specified association does not exist.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @throws AssociationExecutionDoesNotExistException
+     *         The specified execution ID does not exist. Verify the ID number and try again.
+     * @sample AWSSimpleSystemsManagement.DescribeAssociationExecutionTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutionTargets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeAssociationExecutionTargetsResult describeAssociationExecutionTargets(
+            DescribeAssociationExecutionTargetsRequest describeAssociationExecutionTargetsRequest);
+
+    /**
+     * <p>
+     * Use this API action to view all executions for a specific association ID.
+     * </p>
+     * 
+     * @param describeAssociationExecutionsRequest
+     * @return Result of the DescribeAssociationExecutions operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws AssociationDoesNotExistException
+     *         The specified association does not exist.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.DescribeAssociationExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeAssociationExecutionsResult describeAssociationExecutions(DescribeAssociationExecutionsRequest describeAssociationExecutionsRequest);
+
+    /**
+     * <p>
      * Provides details about all active and terminated Automation executions.
      * </p>
      * 
@@ -2269,9 +2310,9 @@ public interface AWSSimpleSystemsManagement {
      * @throws ParameterAlreadyExistsException
      *         The parameter already exists. You can't create duplicate parameters.
      * @throws HierarchyLevelLimitExceededException
-     *         A hierarchy can have a maximum of 15 levels. For more information, see <a
-     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working
-     *         with Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         A hierarchy can have a maximum of 15 levels. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html"
+     *         >Requirements and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User Guide</i>.
      * @throws HierarchyTypeMismatchException
      *         Parameter Store does not support changing a parameter type in a hierarchy. For example, you can't change
      *         a parameter from a String type to a SecureString type. You must create a new, unique parameter.
@@ -2517,6 +2558,24 @@ public interface AWSSimpleSystemsManagement {
      *      Documentation</a>
      */
     SendCommandResult sendCommand(SendCommandRequest sendCommandRequest);
+
+    /**
+     * <p>
+     * Use this API action to execute an association immediately and only one time. This action can be helpful when
+     * troubleshooting associations.
+     * </p>
+     * 
+     * @param startAssociationsOnceRequest
+     * @return Result of the StartAssociationsOnce operation returned by the service.
+     * @throws InvalidAssociationException
+     *         The association is not valid or does not exist.
+     * @throws AssociationDoesNotExistException
+     *         The specified association does not exist.
+     * @sample AWSSimpleSystemsManagement.StartAssociationsOnce
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAssociationsOnce" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartAssociationsOnceResult startAssociationsOnce(StartAssociationsOnceRequest startAssociationsOnceRequest);
 
     /**
      * <p>

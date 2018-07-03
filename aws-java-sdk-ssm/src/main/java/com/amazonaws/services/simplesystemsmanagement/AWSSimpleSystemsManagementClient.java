@@ -107,6 +107,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                             new JsonErrorShapeMetadata().withErrorCode("InvalidFilter").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.InvalidFilterException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AssociationExecutionDoesNotExist").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.AssociationExecutionDoesNotExistException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidSchedule").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.InvalidScheduleException.class))
                     .addErrorMetadata(
@@ -238,6 +241,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidInventoryItemContextException").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.InvalidInventoryItemContextException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidAssociation").withModeledClass(
+                                    com.amazonaws.services.simplesystemsmanagement.model.InvalidAssociationException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidAutomationSignalException").withModeledClass(
                                     com.amazonaws.services.simplesystemsmanagement.model.InvalidAutomationSignalException.class))
@@ -2119,6 +2125,123 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeAssociationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeAssociationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Use this API action to view information about a specific execution of a specific association.
+     * </p>
+     * 
+     * @param describeAssociationExecutionTargetsRequest
+     * @return Result of the DescribeAssociationExecutionTargets operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws AssociationDoesNotExistException
+     *         The specified association does not exist.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @throws AssociationExecutionDoesNotExistException
+     *         The specified execution ID does not exist. Verify the ID number and try again.
+     * @sample AWSSimpleSystemsManagement.DescribeAssociationExecutionTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutionTargets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeAssociationExecutionTargetsResult describeAssociationExecutionTargets(DescribeAssociationExecutionTargetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAssociationExecutionTargets(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAssociationExecutionTargetsResult executeDescribeAssociationExecutionTargets(
+            DescribeAssociationExecutionTargetsRequest describeAssociationExecutionTargetsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAssociationExecutionTargetsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAssociationExecutionTargetsRequest> request = null;
+        Response<DescribeAssociationExecutionTargetsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAssociationExecutionTargetsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAssociationExecutionTargetsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAssociationExecutionTargetsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeAssociationExecutionTargetsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Use this API action to view all executions for a specific association ID.
+     * </p>
+     * 
+     * @param describeAssociationExecutionsRequest
+     * @return Result of the DescribeAssociationExecutions operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws AssociationDoesNotExistException
+     *         The specified association does not exist.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.DescribeAssociationExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeAssociationExecutionsResult describeAssociationExecutions(DescribeAssociationExecutionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAssociationExecutions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAssociationExecutionsResult executeDescribeAssociationExecutions(DescribeAssociationExecutionsRequest describeAssociationExecutionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAssociationExecutionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAssociationExecutionsRequest> request = null;
+        Response<DescribeAssociationExecutionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAssociationExecutionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAssociationExecutionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAssociationExecutionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeAssociationExecutionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5674,9 +5797,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @throws ParameterAlreadyExistsException
      *         The parameter already exists. You can't create duplicate parameters.
      * @throws HierarchyLevelLimitExceededException
-     *         A hierarchy can have a maximum of 15 levels. For more information, see <a
-     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working
-     *         with Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         A hierarchy can have a maximum of 15 levels. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html"
+     *         >Requirements and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User Guide</i>.
      * @throws HierarchyTypeMismatchException
      *         Parameter Store does not support changing a parameter type in a hierarchy. For example, you can't change
      *         a parameter from a String type to a SecureString type. You must create a new, unique parameter.
@@ -6211,6 +6334,61 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<SendCommandResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SendCommandResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Use this API action to execute an association immediately and only one time. This action can be helpful when
+     * troubleshooting associations.
+     * </p>
+     * 
+     * @param startAssociationsOnceRequest
+     * @return Result of the StartAssociationsOnce operation returned by the service.
+     * @throws InvalidAssociationException
+     *         The association is not valid or does not exist.
+     * @throws AssociationDoesNotExistException
+     *         The specified association does not exist.
+     * @sample AWSSimpleSystemsManagement.StartAssociationsOnce
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAssociationsOnce" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StartAssociationsOnceResult startAssociationsOnce(StartAssociationsOnceRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartAssociationsOnce(request);
+    }
+
+    @SdkInternalApi
+    final StartAssociationsOnceResult executeStartAssociationsOnce(StartAssociationsOnceRequest startAssociationsOnceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startAssociationsOnceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartAssociationsOnceRequest> request = null;
+        Response<StartAssociationsOnceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartAssociationsOnceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startAssociationsOnceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartAssociationsOnceResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new StartAssociationsOnceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

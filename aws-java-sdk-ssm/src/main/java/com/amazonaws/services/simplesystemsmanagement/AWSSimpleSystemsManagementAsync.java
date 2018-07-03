@@ -970,6 +970,76 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * Use this API action to view information about a specific execution of a specific association.
+     * </p>
+     * 
+     * @param describeAssociationExecutionTargetsRequest
+     * @return A Java Future containing the result of the DescribeAssociationExecutionTargets operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsync.DescribeAssociationExecutionTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutionTargets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAssociationExecutionTargetsResult> describeAssociationExecutionTargetsAsync(
+            DescribeAssociationExecutionTargetsRequest describeAssociationExecutionTargetsRequest);
+
+    /**
+     * <p>
+     * Use this API action to view information about a specific execution of a specific association.
+     * </p>
+     * 
+     * @param describeAssociationExecutionTargetsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAssociationExecutionTargets operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeAssociationExecutionTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutionTargets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAssociationExecutionTargetsResult> describeAssociationExecutionTargetsAsync(
+            DescribeAssociationExecutionTargetsRequest describeAssociationExecutionTargetsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAssociationExecutionTargetsRequest, DescribeAssociationExecutionTargetsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Use this API action to view all executions for a specific association ID.
+     * </p>
+     * 
+     * @param describeAssociationExecutionsRequest
+     * @return A Java Future containing the result of the DescribeAssociationExecutions operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsync.DescribeAssociationExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAssociationExecutionsResult> describeAssociationExecutionsAsync(
+            DescribeAssociationExecutionsRequest describeAssociationExecutionsRequest);
+
+    /**
+     * <p>
+     * Use this API action to view all executions for a specific association ID.
+     * </p>
+     * 
+     * @param describeAssociationExecutionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAssociationExecutions operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeAssociationExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAssociationExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAssociationExecutionsResult> describeAssociationExecutionsAsync(
+            DescribeAssociationExecutionsRequest describeAssociationExecutionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAssociationExecutionsRequest, DescribeAssociationExecutionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Provides details about all active and terminated Automation executions.
      * </p>
      * 
@@ -3358,6 +3428,39 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<SendCommandResult> sendCommandAsync(SendCommandRequest sendCommandRequest,
             com.amazonaws.handlers.AsyncHandler<SendCommandRequest, SendCommandResult> asyncHandler);
+
+    /**
+     * <p>
+     * Use this API action to execute an association immediately and only one time. This action can be helpful when
+     * troubleshooting associations.
+     * </p>
+     * 
+     * @param startAssociationsOnceRequest
+     * @return A Java Future containing the result of the StartAssociationsOnce operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.StartAssociationsOnce
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAssociationsOnce" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartAssociationsOnceResult> startAssociationsOnceAsync(StartAssociationsOnceRequest startAssociationsOnceRequest);
+
+    /**
+     * <p>
+     * Use this API action to execute an association immediately and only one time. This action can be helpful when
+     * troubleshooting associations.
+     * </p>
+     * 
+     * @param startAssociationsOnceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartAssociationsOnce operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.StartAssociationsOnce
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAssociationsOnce" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartAssociationsOnceResult> startAssociationsOnceAsync(StartAssociationsOnceRequest startAssociationsOnceRequest,
+            com.amazonaws.handlers.AsyncHandler<StartAssociationsOnceRequest, StartAssociationsOnceResult> asyncHandler);
 
     /**
      * <p>

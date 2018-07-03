@@ -346,6 +346,34 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAssociationExecutionTargetsResult> describeAssociationExecutionTargetsAsync(
+            DescribeAssociationExecutionTargetsRequest request) {
+
+        return describeAssociationExecutionTargetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAssociationExecutionTargetsResult> describeAssociationExecutionTargetsAsync(
+            DescribeAssociationExecutionTargetsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAssociationExecutionTargetsRequest, DescribeAssociationExecutionTargetsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAssociationExecutionsResult> describeAssociationExecutionsAsync(DescribeAssociationExecutionsRequest request) {
+
+        return describeAssociationExecutionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAssociationExecutionsResult> describeAssociationExecutionsAsync(DescribeAssociationExecutionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAssociationExecutionsRequest, DescribeAssociationExecutionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAutomationExecutionsResult> describeAutomationExecutionsAsync(DescribeAutomationExecutionsRequest request) {
 
         return describeAutomationExecutionsAsync(request, null);
@@ -1228,6 +1256,19 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     @Override
     public java.util.concurrent.Future<SendCommandResult> sendCommandAsync(SendCommandRequest request,
             com.amazonaws.handlers.AsyncHandler<SendCommandRequest, SendCommandResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartAssociationsOnceResult> startAssociationsOnceAsync(StartAssociationsOnceRequest request) {
+
+        return startAssociationsOnceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartAssociationsOnceResult> startAssociationsOnceAsync(StartAssociationsOnceRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartAssociationsOnceRequest, StartAssociationsOnceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

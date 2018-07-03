@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 /**
  * <p>
  * A hierarchy can have a maximum of 15 levels. For more information, see <a
- * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working with
- * Systems Manager Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+ * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html"
+ * >Requirements and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User Guide</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
