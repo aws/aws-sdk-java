@@ -154,8 +154,9 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
     private String userData;
     /**
      * <p>
-     * The tags to apply to the resources during launch. You can tag instances and volumes. The specified tags are
-     * applied to all instances or volumes that are created during launch.
+     * The tags to apply to the resources during launch. You can only tag instances and volumes on launch. The specified
+     * tags are applied to all instances or volumes that are created during launch. To tag a resource after it has been
+     * created, see <a>CreateTags</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<LaunchTemplateTagSpecificationRequest> tagSpecifications;
@@ -1144,12 +1145,14 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tags to apply to the resources during launch. You can tag instances and volumes. The specified tags are
-     * applied to all instances or volumes that are created during launch.
+     * The tags to apply to the resources during launch. You can only tag instances and volumes on launch. The specified
+     * tags are applied to all instances or volumes that are created during launch. To tag a resource after it has been
+     * created, see <a>CreateTags</a>.
      * </p>
      * 
-     * @return The tags to apply to the resources during launch. You can tag instances and volumes. The specified tags
-     *         are applied to all instances or volumes that are created during launch.
+     * @return The tags to apply to the resources during launch. You can only tag instances and volumes on launch. The
+     *         specified tags are applied to all instances or volumes that are created during launch. To tag a resource
+     *         after it has been created, see <a>CreateTags</a>.
      */
 
     public java.util.List<LaunchTemplateTagSpecificationRequest> getTagSpecifications() {
@@ -1161,13 +1164,15 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tags to apply to the resources during launch. You can tag instances and volumes. The specified tags are
-     * applied to all instances or volumes that are created during launch.
+     * The tags to apply to the resources during launch. You can only tag instances and volumes on launch. The specified
+     * tags are applied to all instances or volumes that are created during launch. To tag a resource after it has been
+     * created, see <a>CreateTags</a>.
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags to apply to the resources during launch. You can tag instances and volumes. The specified tags
-     *        are applied to all instances or volumes that are created during launch.
+     *        The tags to apply to the resources during launch. You can only tag instances and volumes on launch. The
+     *        specified tags are applied to all instances or volumes that are created during launch. To tag a resource
+     *        after it has been created, see <a>CreateTags</a>.
      */
 
     public void setTagSpecifications(java.util.Collection<LaunchTemplateTagSpecificationRequest> tagSpecifications) {
@@ -1181,8 +1186,9 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tags to apply to the resources during launch. You can tag instances and volumes. The specified tags are
-     * applied to all instances or volumes that are created during launch.
+     * The tags to apply to the resources during launch. You can only tag instances and volumes on launch. The specified
+     * tags are applied to all instances or volumes that are created during launch. To tag a resource after it has been
+     * created, see <a>CreateTags</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1191,8 +1197,9 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags to apply to the resources during launch. You can tag instances and volumes. The specified tags
-     *        are applied to all instances or volumes that are created during launch.
+     *        The tags to apply to the resources during launch. You can only tag instances and volumes on launch. The
+     *        specified tags are applied to all instances or volumes that are created during launch. To tag a resource
+     *        after it has been created, see <a>CreateTags</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1208,13 +1215,15 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The tags to apply to the resources during launch. You can tag instances and volumes. The specified tags are
-     * applied to all instances or volumes that are created during launch.
+     * The tags to apply to the resources during launch. You can only tag instances and volumes on launch. The specified
+     * tags are applied to all instances or volumes that are created during launch. To tag a resource after it has been
+     * created, see <a>CreateTags</a>.
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags to apply to the resources during launch. You can tag instances and volumes. The specified tags
-     *        are applied to all instances or volumes that are created during launch.
+     *        The tags to apply to the resources during launch. You can only tag instances and volumes on launch. The
+     *        specified tags are applied to all instances or volumes that are created during launch. To tag a resource
+     *        after it has been created, see <a>CreateTags</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

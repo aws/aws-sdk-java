@@ -25,6 +25,8 @@ public enum RedshiftActions implements Action {
     /** Represents any action executed on Amazon Redshift. */
     AllRedshiftActions("redshift:*"),
 
+    /** Action for the AcceptReservedNodeExchange operation. */
+    AcceptReservedNodeExchange("redshift:AcceptReservedNodeExchange"),
     /** Action for the AuthorizeClusterSecurityGroupIngress operation. */
     AuthorizeClusterSecurityGroupIngress("redshift:AuthorizeClusterSecurityGroupIngress"),
     /** Action for the AuthorizeSnapshotAccess operation. */
@@ -71,6 +73,8 @@ public enum RedshiftActions implements Action {
     DeleteSnapshotCopyGrant("redshift:DeleteSnapshotCopyGrant"),
     /** Action for the DeleteTags operation. */
     DeleteTags("redshift:DeleteTags"),
+    /** Action for the DescribeClusterDbRevisions operation. */
+    DescribeClusterDbRevisions("redshift:DescribeClusterDbRevisions"),
     /** Action for the DescribeClusterParameterGroups operation. */
     DescribeClusterParameterGroups("redshift:DescribeClusterParameterGroups"),
     /** Action for the DescribeClusterParameters operation. */
@@ -123,8 +127,12 @@ public enum RedshiftActions implements Action {
     EnableSnapshotCopy("redshift:EnableSnapshotCopy"),
     /** Action for the GetClusterCredentials operation. */
     GetClusterCredentials("redshift:GetClusterCredentials"),
+    /** Action for the GetReservedNodeExchangeOfferings operation. */
+    GetReservedNodeExchangeOfferings("redshift:GetReservedNodeExchangeOfferings"),
     /** Action for the ModifyCluster operation. */
     ModifyCluster("redshift:ModifyCluster"),
+    /** Action for the ModifyClusterDbRevision operation. */
+    ModifyClusterDbRevision("redshift:ModifyClusterDbRevision"),
     /** Action for the ModifyClusterIamRoles operation. */
     ModifyClusterIamRoles("redshift:ModifyClusterIamRoles"),
     /** Action for the ModifyClusterParameterGroup operation. */

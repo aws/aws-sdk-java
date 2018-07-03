@@ -101,7 +101,12 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
     private Boolean replaceUnhealthyInstances;
     /**
      * <p>
-     * The tags for an EC2 Fleet resource.
+     * The key-value pair for tagging the EC2 Fleet request on creation. The value for <code>ResourceType</code> must be
+     * <code>fleet</code>, otherwise the fleet request fails. To tag instances at launch, specify the tags in the <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+     * template</a>. For information about tagging after launch, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
+     * Resources</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
@@ -702,10 +707,21 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The tags for an EC2 Fleet resource.
+     * The key-value pair for tagging the EC2 Fleet request on creation. The value for <code>ResourceType</code> must be
+     * <code>fleet</code>, otherwise the fleet request fails. To tag instances at launch, specify the tags in the <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+     * template</a>. For information about tagging after launch, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
+     * Resources</a>.
      * </p>
      * 
-     * @return The tags for an EC2 Fleet resource.
+     * @return The key-value pair for tagging the EC2 Fleet request on creation. The value for <code>ResourceType</code>
+     *         must be <code>fleet</code>, otherwise the fleet request fails. To tag instances at launch, specify the
+     *         tags in the <a href=
+     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
+     *         >launch template</a>. For information about tagging after launch, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
+     *         Resources</a>.
      */
 
     public java.util.List<TagSpecification> getTagSpecifications() {
@@ -717,11 +733,22 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The tags for an EC2 Fleet resource.
+     * The key-value pair for tagging the EC2 Fleet request on creation. The value for <code>ResourceType</code> must be
+     * <code>fleet</code>, otherwise the fleet request fails. To tag instances at launch, specify the tags in the <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+     * template</a>. For information about tagging after launch, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
+     * Resources</a>.
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags for an EC2 Fleet resource.
+     *        The key-value pair for tagging the EC2 Fleet request on creation. The value for <code>ResourceType</code>
+     *        must be <code>fleet</code>, otherwise the fleet request fails. To tag instances at launch, specify the
+     *        tags in the <a href=
+     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
+     *        >launch template</a>. For information about tagging after launch, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
+     *        Resources</a>.
      */
 
     public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
@@ -735,7 +762,12 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The tags for an EC2 Fleet resource.
+     * The key-value pair for tagging the EC2 Fleet request on creation. The value for <code>ResourceType</code> must be
+     * <code>fleet</code>, otherwise the fleet request fails. To tag instances at launch, specify the tags in the <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+     * template</a>. For information about tagging after launch, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
+     * Resources</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -744,7 +776,13 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags for an EC2 Fleet resource.
+     *        The key-value pair for tagging the EC2 Fleet request on creation. The value for <code>ResourceType</code>
+     *        must be <code>fleet</code>, otherwise the fleet request fails. To tag instances at launch, specify the
+     *        tags in the <a href=
+     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
+     *        >launch template</a>. For information about tagging after launch, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
+     *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -760,11 +798,22 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The tags for an EC2 Fleet resource.
+     * The key-value pair for tagging the EC2 Fleet request on creation. The value for <code>ResourceType</code> must be
+     * <code>fleet</code>, otherwise the fleet request fails. To tag instances at launch, specify the tags in the <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+     * template</a>. For information about tagging after launch, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
+     * Resources</a>.
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags for an EC2 Fleet resource.
+     *        The key-value pair for tagging the EC2 Fleet request on creation. The value for <code>ResourceType</code>
+     *        must be <code>fleet</code>, otherwise the fleet request fails. To tag instances at launch, specify the
+     *        tags in the <a href=
+     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
+     *        >launch template</a>. For information about tagging after launch, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
+     *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

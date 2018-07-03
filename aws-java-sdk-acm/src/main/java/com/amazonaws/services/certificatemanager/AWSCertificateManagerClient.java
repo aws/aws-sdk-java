@@ -38,6 +38,7 @@ import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.client.AwsSyncClientParams;
 import com.amazonaws.services.certificatemanager.AWSCertificateManagerClientBuilder;
+import com.amazonaws.services.certificatemanager.waiters.AWSCertificateManagerWaiters;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -68,6 +69,8 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
 
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "acm";
+
+    private volatile AWSCertificateManagerWaiters waiters;
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
@@ -1161,6 +1164,26 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public AWSCertificateManagerWaiters waiters() {
+        if (waiters == null) {
+            synchronized (this) {
+                if (waiters == null) {
+                    waiters = new AWSCertificateManagerWaiters(this);
+                }
+            }
+        }
+        return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

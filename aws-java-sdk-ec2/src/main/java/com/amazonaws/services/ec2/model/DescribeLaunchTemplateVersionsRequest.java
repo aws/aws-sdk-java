@@ -67,7 +67,7 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
     /**
      * <p>
      * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     * with the returned <code>NextToken</code> value. This value can be between 5 and 1000.
+     * with the returned <code>NextToken</code> value. This value can be between 1 and 200.
      * </p>
      */
     private Integer maxResults;
@@ -409,12 +409,12 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
     /**
      * <p>
      * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     * with the returned <code>NextToken</code> value. This value can be between 5 and 1000.
+     * with the returned <code>NextToken</code> value. This value can be between 1 and 200.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *        call with the returned <code>NextToken</code> value. This value can be between 5 and 1000.
+     *        call with the returned <code>NextToken</code> value. This value can be between 1 and 200.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -424,11 +424,11 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
     /**
      * <p>
      * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     * with the returned <code>NextToken</code> value. This value can be between 5 and 1000.
+     * with the returned <code>NextToken</code> value. This value can be between 1 and 200.
      * </p>
      * 
      * @return The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *         call with the returned <code>NextToken</code> value. This value can be between 5 and 1000.
+     *         call with the returned <code>NextToken</code> value. This value can be between 1 and 200.
      */
 
     public Integer getMaxResults() {
@@ -438,12 +438,12 @@ public class DescribeLaunchTemplateVersionsRequest extends AmazonWebServiceReque
     /**
      * <p>
      * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     * with the returned <code>NextToken</code> value. This value can be between 5 and 1000.
+     * with the returned <code>NextToken</code> value. This value can be between 1 and 200.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *        call with the returned <code>NextToken</code> value. This value can be between 5 and 1000.
+     *        call with the returned <code>NextToken</code> value. This value can be between 1 and 200.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -337,6 +337,12 @@ public class Cluster implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ClusterIamRole> iamRoles;
+    /**
+     * <p>
+     * Cluster operations that are waiting to be started.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> pendingActions;
 
     /**
      * <p>
@@ -2614,6 +2620,79 @@ public class Cluster implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Cluster operations that are waiting to be started.
+     * </p>
+     * 
+     * @return Cluster operations that are waiting to be started.
+     */
+
+    public java.util.List<String> getPendingActions() {
+        if (pendingActions == null) {
+            pendingActions = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return pendingActions;
+    }
+
+    /**
+     * <p>
+     * Cluster operations that are waiting to be started.
+     * </p>
+     * 
+     * @param pendingActions
+     *        Cluster operations that are waiting to be started.
+     */
+
+    public void setPendingActions(java.util.Collection<String> pendingActions) {
+        if (pendingActions == null) {
+            this.pendingActions = null;
+            return;
+        }
+
+        this.pendingActions = new com.amazonaws.internal.SdkInternalList<String>(pendingActions);
+    }
+
+    /**
+     * <p>
+     * Cluster operations that are waiting to be started.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPendingActions(java.util.Collection)} or {@link #withPendingActions(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param pendingActions
+     *        Cluster operations that are waiting to be started.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withPendingActions(String... pendingActions) {
+        if (this.pendingActions == null) {
+            setPendingActions(new com.amazonaws.internal.SdkInternalList<String>(pendingActions.length));
+        }
+        for (String ele : pendingActions) {
+            this.pendingActions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Cluster operations that are waiting to be started.
+     * </p>
+     * 
+     * @param pendingActions
+     *        Cluster operations that are waiting to be started.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withPendingActions(java.util.Collection<String> pendingActions) {
+        setPendingActions(pendingActions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -2689,7 +2768,9 @@ public class Cluster implements Serializable, Cloneable {
         if (getEnhancedVpcRouting() != null)
             sb.append("EnhancedVpcRouting: ").append(getEnhancedVpcRouting()).append(",");
         if (getIamRoles() != null)
-            sb.append("IamRoles: ").append(getIamRoles());
+            sb.append("IamRoles: ").append(getIamRoles()).append(",");
+        if (getPendingActions() != null)
+            sb.append("PendingActions: ").append(getPendingActions());
         sb.append("}");
         return sb.toString();
     }
@@ -2837,6 +2918,10 @@ public class Cluster implements Serializable, Cloneable {
             return false;
         if (other.getIamRoles() != null && other.getIamRoles().equals(this.getIamRoles()) == false)
             return false;
+        if (other.getPendingActions() == null ^ this.getPendingActions() == null)
+            return false;
+        if (other.getPendingActions() != null && other.getPendingActions().equals(this.getPendingActions()) == false)
+            return false;
         return true;
     }
 
@@ -2878,6 +2963,7 @@ public class Cluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getEnhancedVpcRouting() == null) ? 0 : getEnhancedVpcRouting().hashCode());
         hashCode = prime * hashCode + ((getIamRoles() == null) ? 0 : getIamRoles().hashCode());
+        hashCode = prime * hashCode + ((getPendingActions() == null) ? 0 : getPendingActions().hashCode());
         return hashCode;
     }
 

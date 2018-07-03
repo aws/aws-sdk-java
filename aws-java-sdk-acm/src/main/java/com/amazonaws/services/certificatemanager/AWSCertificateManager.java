@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.certificatemanager.model.*;
+import com.amazonaws.services.certificatemanager.waiters.AWSCertificateManagerWaiters;
 
 /**
  * Interface for accessing ACM.
@@ -500,5 +501,7 @@ public interface AWSCertificateManager {
      * @return The response metadata for the specified request, or null if none is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AWSCertificateManagerWaiters waiters();
 
 }

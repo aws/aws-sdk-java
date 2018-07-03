@@ -1,3 +1,16 @@
+# __1.11.360__ __2018-07-03__
+## __AWS Certificate Manager__
+  - ### Features
+    - Adds a "CertificateValidated" waiter to AWS Certificate Manager clients, which polls on a new certificate's validation state.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Added support for customers to tag EC2 Dedicated Hosts
+
+## __Amazon Redshift__
+  - ### Features
+    - Feature 1 - On-demand cluster release version - When Amazon Redshift releases a new cluster version, you can choose to upgrade to that version immediately instead of waiting until your next maintenance window. You can also choose to roll back to a previous version. The two new APIs added for managing cluster release version are - ModifyClusterDbRevision, DescribeClusterDbRevisions. Feature 2 - Upgradeable reserved instance - You can now exchange one Reserved Instance for a new Reserved Instance with no changes to the terms of your existing Reserved Instance (term, payment type, or number of nodes). The two new APIs added for managing these upgrades are - AcceptReservedNodeExchange, GetReservedNodeExchangeOfferings. 
+
 # __1.11.359__ __2018-07-02__
 ## __Amazon Simple Systems Manager (SSM)__
   - ### Features

@@ -295,16 +295,18 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         exceptionUnmarshallers.add(new HsmConfigurationQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new UnsupportedOperationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SnapshotCopyGrantNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ReservedNodeAlreadyMigratedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new HsmClientCertificateNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SnapshotCopyAlreadyEnabledExceptionUnmarshaller());
         exceptionUnmarshallers.add(new HsmConfigurationAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubscriptionNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidClusterStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidReservedNodeStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubnetAlreadyInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterSubnetQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidClusterParameterGroupStateExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ClusterSubnetGroupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DependentServiceUnavailableExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ClusterSubnetGroupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SnapshotCopyAlreadyDisabledExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterSecurityGroupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterSnapshotQuotaExceededExceptionUnmarshaller());
@@ -321,10 +323,12 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         exceptionUnmarshallers.add(new InProgressTableRestoreQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AccessToSnapshotDeniedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidElasticIpExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TableLimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidSnapshotCopyGrantStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ResizeNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidHsmClientCertificateStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidClusterSubnetGroupStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ClusterOnLatestRevisionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ClusterSnapshotNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidTagExceptionUnmarshaller());
         exceptionUnmarshallers.add(new HsmClientCertificateAlreadyExistsExceptionUnmarshaller());
@@ -365,6 +369,70 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/redshift/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/redshift/request.handler2s"));
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * Exchanges a DC1 Reserved Node for a DC2 Reserved Node with no changes to the configuration (term, payment type,
+     * or number of nodes) and no additional costs.
+     * </p>
+     * 
+     * @param acceptReservedNodeExchangeRequest
+     * @return Result of the AcceptReservedNodeExchange operation returned by the service.
+     * @throws ReservedNodeNotFoundException
+     *         The specified reserved compute node not found.
+     * @throws InvalidReservedNodeStateException
+     *         Indicates that the Reserved Node being exchanged is not in an active state.
+     * @throws ReservedNodeAlreadyMigratedException
+     *         Indicates that the reserved node has already been exchanged.
+     * @throws ReservedNodeOfferingNotFoundException
+     *         Specified offering does not exist.
+     * @throws UnsupportedOperationException
+     *         The requested operation isn't supported.
+     * @throws DependentServiceUnavailableException
+     *         Your request cannot be completed because a dependent internal service is temporarily unavailable. Wait 30
+     *         to 60 seconds and try again.
+     * @throws ReservedNodeAlreadyExistsException
+     *         User already has a reservation with the given identifier.
+     * @sample AmazonRedshift.AcceptReservedNodeExchange
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AcceptReservedNodeExchange"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ReservedNode acceptReservedNodeExchange(AcceptReservedNodeExchangeRequest request) {
+        request = beforeClientExecution(request);
+        return executeAcceptReservedNodeExchange(request);
+    }
+
+    @SdkInternalApi
+    final ReservedNode executeAcceptReservedNodeExchange(AcceptReservedNodeExchangeRequest acceptReservedNodeExchangeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(acceptReservedNodeExchangeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AcceptReservedNodeExchangeRequest> request = null;
+        Response<ReservedNode> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AcceptReservedNodeExchangeRequestMarshaller().marshall(super.beforeMarshalling(acceptReservedNodeExchangeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ReservedNode> responseHandler = new StaxResponseHandler<ReservedNode>(new ReservedNodeStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -588,7 +656,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * Creates a new cluster.
      * </p>
      * <p>
-     * To create the cluster in Virtual Private Cloud (VPC), you must provide a cluster subnet group name. The cluster
+     * To create a cluster in Virtual Private Cloud (VPC), you must provide a cluster subnet group name. The cluster
      * subnet group identifies the subnets of your VPC that Amazon Redshift uses when creating the cluster. For more
      * information about managing clusters, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in
@@ -634,7 +702,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidElasticIpException
      *         The Elastic IP (EIP) is invalid or cannot be found.
      * @throws TagLimitExceededException
-     *         The request exceeds the limit of 10 tags for the resource.
+     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
+     *         cluster node type.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @throws LimitExceededException
@@ -709,7 +778,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws ClusterParameterGroupAlreadyExistsException
      *         A cluster parameter group with the same name already exists.
      * @throws TagLimitExceededException
-     *         The request exceeds the limit of 10 tags for the resource.
+     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
+     *         cluster node type.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateClusterParameterGroup
@@ -774,7 +844,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon
      *         Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * @throws TagLimitExceededException
-     *         The request exceeds the limit of 10 tags for the resource.
+     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
+     *         cluster node type.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateClusterSecurityGroup
@@ -840,7 +911,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws ClusterSnapshotQuotaExceededException
      *         The request would result in the user exceeding the allowed number of cluster snapshots.
      * @throws TagLimitExceededException
-     *         The request exceeds the limit of 10 tags for the resource.
+     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
+     *         cluster node type.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateClusterSnapshot
@@ -914,7 +986,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws UnauthorizedOperationException
      *         Your account is not authorized to perform the requested operation.
      * @throws TagLimitExceededException
-     *         The request exceeds the limit of 10 tags for the resource.
+     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
+     *         cluster node type.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @throws DependentServiceRequestThrottlingException
@@ -1011,7 +1084,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws SourceNotFoundException
      *         The specified Amazon Redshift event source could not be found.
      * @throws TagLimitExceededException
-     *         The request exceeds the limit of 10 tags for the resource.
+     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
+     *         cluster node type.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateEventSubscription
@@ -1077,7 +1151,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon
      *         Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * @throws TagLimitExceededException
-     *         The request exceeds the limit of 10 tags for the resource.
+     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
+     *         cluster node type.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateHsmClientCertificate
@@ -1143,7 +1218,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon
      *         Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * @throws TagLimitExceededException
-     *         The request exceeds the limit of 10 tags for the resource.
+     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
+     *         cluster node type.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateHsmConfiguration
@@ -1208,7 +1284,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      * @throws LimitExceededException
      *         The encryption key has exceeded its grant limit in AWS KMS.
      * @throws TagLimitExceededException
-     *         The request exceeds the limit of 10 tags for the resource.
+     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
+     *         cluster node type.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @throws DependentServiceRequestThrottlingException
@@ -1272,7 +1349,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *        Contains the output from the <code>CreateTags</code> action.
      * @return Result of the CreateTags operation returned by the service.
      * @throws TagLimitExceededException
-     *         The request exceeds the limit of 10 tags for the resource.
+     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
+     *         cluster node type.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @throws InvalidTagException
@@ -1889,6 +1967,57 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             }
 
             StaxResponseHandler<DeleteTagsResult> responseHandler = new StaxResponseHandler<DeleteTagsResult>(new DeleteTagsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns an array of <code>ClusterDbRevision</code> objects.
+     * </p>
+     * 
+     * @param describeClusterDbRevisionsRequest
+     * @return Result of the DescribeClusterDbRevisions operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @sample AmazonRedshift.DescribeClusterDbRevisions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterDbRevisions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeClusterDbRevisionsResult describeClusterDbRevisions(DescribeClusterDbRevisionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeClusterDbRevisions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeClusterDbRevisionsResult executeDescribeClusterDbRevisions(DescribeClusterDbRevisionsRequest describeClusterDbRevisionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeClusterDbRevisionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeClusterDbRevisionsRequest> request = null;
+        Response<DescribeClusterDbRevisionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeClusterDbRevisionsRequestMarshaller().marshall(super.beforeMarshalling(describeClusterDbRevisionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeClusterDbRevisionsResult> responseHandler = new StaxResponseHandler<DescribeClusterDbRevisionsResult>(
+                    new DescribeClusterDbRevisionsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3598,6 +3727,69 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Returns an array of ReservedNodeOfferings which is filtered by payment type, term, and instance type.
+     * </p>
+     * 
+     * @param getReservedNodeExchangeOfferingsRequest
+     * @return Result of the GetReservedNodeExchangeOfferings operation returned by the service.
+     * @throws ReservedNodeNotFoundException
+     *         The specified reserved compute node not found.
+     * @throws InvalidReservedNodeStateException
+     *         Indicates that the Reserved Node being exchanged is not in an active state.
+     * @throws ReservedNodeAlreadyMigratedException
+     *         Indicates that the reserved node has already been exchanged.
+     * @throws ReservedNodeOfferingNotFoundException
+     *         Specified offering does not exist.
+     * @throws UnsupportedOperationException
+     *         The requested operation isn't supported.
+     * @throws DependentServiceUnavailableException
+     *         Your request cannot be completed because a dependent internal service is temporarily unavailable. Wait 30
+     *         to 60 seconds and try again.
+     * @sample AmazonRedshift.GetReservedNodeExchangeOfferings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetReservedNodeExchangeOfferings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetReservedNodeExchangeOfferingsResult getReservedNodeExchangeOfferings(GetReservedNodeExchangeOfferingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetReservedNodeExchangeOfferings(request);
+    }
+
+    @SdkInternalApi
+    final GetReservedNodeExchangeOfferingsResult executeGetReservedNodeExchangeOfferings(
+            GetReservedNodeExchangeOfferingsRequest getReservedNodeExchangeOfferingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getReservedNodeExchangeOfferingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetReservedNodeExchangeOfferingsRequest> request = null;
+        Response<GetReservedNodeExchangeOfferingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetReservedNodeExchangeOfferingsRequestMarshaller().marshall(super.beforeMarshalling(getReservedNodeExchangeOfferingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetReservedNodeExchangeOfferingsResult> responseHandler = new StaxResponseHandler<GetReservedNodeExchangeOfferingsResult>(
+                    new GetReservedNodeExchangeOfferingsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Modifies the settings for a cluster. For example, you can add another security or parameter group, update the
      * preferred maintenance window, or change the master user password. Resetting a cluster password or modifying the
      * security groups associated with a cluster do not need a reboot. However, modifying a parameter group requires a
@@ -3648,6 +3840,8 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
      *         Redshift on your behalf. Wait and retry the request.
      * @throws InvalidElasticIpException
      *         The Elastic IP (EIP) is invalid or cannot be found.
+     * @throws TableLimitExceededException
+     *         The number of tables in the cluster exceeds the limit for the requested new cluster node type.
      * @sample AmazonRedshift.ModifyCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyCluster" target="_top">AWS API
      *      Documentation</a>
@@ -3671,6 +3865,61 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
                 request = new ModifyClusterRequestMarshaller().marshall(super.beforeMarshalling(modifyClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<Cluster> responseHandler = new StaxResponseHandler<Cluster>(new ClusterStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the database revision of a cluster. The database revision is a unique revision of the database running
+     * in a cluster.
+     * </p>
+     * 
+     * @param modifyClusterDbRevisionRequest
+     * @return Result of the ModifyClusterDbRevision operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws ClusterOnLatestRevisionException
+     *         Cluster is already on the latest database revision.
+     * @throws InvalidClusterStateException
+     *         The specified cluster is not in the <code>available</code> state.
+     * @sample AmazonRedshift.ModifyClusterDbRevision
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterDbRevision"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public Cluster modifyClusterDbRevision(ModifyClusterDbRevisionRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyClusterDbRevision(request);
+    }
+
+    @SdkInternalApi
+    final Cluster executeModifyClusterDbRevision(ModifyClusterDbRevisionRequest modifyClusterDbRevisionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyClusterDbRevisionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyClusterDbRevisionRequest> request = null;
+        Response<Cluster> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyClusterDbRevisionRequestMarshaller().marshall(super.beforeMarshalling(modifyClusterDbRevisionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());

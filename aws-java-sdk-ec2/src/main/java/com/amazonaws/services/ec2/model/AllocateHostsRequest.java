@@ -45,22 +45,22 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
     private String availabilityZone;
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
+     * information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
     private String clientToken;
     /**
      * <p>
-     * Specify the instance type that you want your Dedicated Hosts to be configured for. When you specify the instance
-     * type, that is the only instance type that you can launch onto that host.
+     * Specify the instance type for which to configure your Dedicated Hosts. When you specify the instance type, that
+     * is the only instance type that you can launch onto that host.
      * </p>
      */
     private String instanceType;
     /**
      * <p>
-     * The number of Dedicated Hosts you want to allocate to your account with these parameters.
+     * The number of Dedicated Hosts to allocate to your account with these parameters.
      * </p>
      */
     private Integer quantity;
@@ -215,15 +215,16 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
+     * information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
-     *        Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     *        Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public void setClientToken(String clientToken) {
@@ -232,14 +233,15 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
+     * information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
-     * @return Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
-     *         see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
-     *         Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     *         Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public String getClientToken() {
@@ -248,15 +250,16 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
-     * Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
+     * information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to
-     *        Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure
+     *        Idempotency</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -267,13 +270,13 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * Specify the instance type that you want your Dedicated Hosts to be configured for. When you specify the instance
-     * type, that is the only instance type that you can launch onto that host.
+     * Specify the instance type for which to configure your Dedicated Hosts. When you specify the instance type, that
+     * is the only instance type that you can launch onto that host.
      * </p>
      * 
      * @param instanceType
-     *        Specify the instance type that you want your Dedicated Hosts to be configured for. When you specify the
-     *        instance type, that is the only instance type that you can launch onto that host.
+     *        Specify the instance type for which to configure your Dedicated Hosts. When you specify the instance type,
+     *        that is the only instance type that you can launch onto that host.
      */
 
     public void setInstanceType(String instanceType) {
@@ -282,12 +285,12 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * Specify the instance type that you want your Dedicated Hosts to be configured for. When you specify the instance
-     * type, that is the only instance type that you can launch onto that host.
+     * Specify the instance type for which to configure your Dedicated Hosts. When you specify the instance type, that
+     * is the only instance type that you can launch onto that host.
      * </p>
      * 
-     * @return Specify the instance type that you want your Dedicated Hosts to be configured for. When you specify the
-     *         instance type, that is the only instance type that you can launch onto that host.
+     * @return Specify the instance type for which to configure your Dedicated Hosts. When you specify the instance
+     *         type, that is the only instance type that you can launch onto that host.
      */
 
     public String getInstanceType() {
@@ -296,13 +299,13 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * Specify the instance type that you want your Dedicated Hosts to be configured for. When you specify the instance
-     * type, that is the only instance type that you can launch onto that host.
+     * Specify the instance type for which to configure your Dedicated Hosts. When you specify the instance type, that
+     * is the only instance type that you can launch onto that host.
      * </p>
      * 
      * @param instanceType
-     *        Specify the instance type that you want your Dedicated Hosts to be configured for. When you specify the
-     *        instance type, that is the only instance type that you can launch onto that host.
+     *        Specify the instance type for which to configure your Dedicated Hosts. When you specify the instance type,
+     *        that is the only instance type that you can launch onto that host.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -313,11 +316,11 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The number of Dedicated Hosts you want to allocate to your account with these parameters.
+     * The number of Dedicated Hosts to allocate to your account with these parameters.
      * </p>
      * 
      * @param quantity
-     *        The number of Dedicated Hosts you want to allocate to your account with these parameters.
+     *        The number of Dedicated Hosts to allocate to your account with these parameters.
      */
 
     public void setQuantity(Integer quantity) {
@@ -326,10 +329,10 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The number of Dedicated Hosts you want to allocate to your account with these parameters.
+     * The number of Dedicated Hosts to allocate to your account with these parameters.
      * </p>
      * 
-     * @return The number of Dedicated Hosts you want to allocate to your account with these parameters.
+     * @return The number of Dedicated Hosts to allocate to your account with these parameters.
      */
 
     public Integer getQuantity() {
@@ -338,11 +341,11 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The number of Dedicated Hosts you want to allocate to your account with these parameters.
+     * The number of Dedicated Hosts to allocate to your account with these parameters.
      * </p>
      * 
      * @param quantity
-     *        The number of Dedicated Hosts you want to allocate to your account with these parameters.
+     *        The number of Dedicated Hosts to allocate to your account with these parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

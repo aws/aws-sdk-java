@@ -16,6 +16,7 @@ import javax.annotation.Generated;
 
 import com.amazonaws.services.certificatemanager.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.certificatemanager.waiters.AWSCertificateManagerWaiters;
 
 /**
  * Abstract implementation of {@code AWSCertificateManager}. Convenient method forms pass through to the corresponding
@@ -104,6 +105,11 @@ public class AbstractAWSCertificateManager implements AWSCertificateManager {
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AWSCertificateManagerWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 

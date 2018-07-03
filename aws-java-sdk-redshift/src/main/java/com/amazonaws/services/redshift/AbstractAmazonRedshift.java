@@ -39,6 +39,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
     }
 
     @Override
+    public ReservedNode acceptReservedNodeExchange(AcceptReservedNodeExchangeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ClusterSecurityGroup authorizeClusterSecurityGroupIngress(AuthorizeClusterSecurityGroupIngressRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -150,6 +155,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
 
     @Override
     public DeleteTagsResult deleteTags(DeleteTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeClusterDbRevisionsResult describeClusterDbRevisions(DescribeClusterDbRevisionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -369,7 +379,17 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
     }
 
     @Override
+    public GetReservedNodeExchangeOfferingsResult getReservedNodeExchangeOfferings(GetReservedNodeExchangeOfferingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public Cluster modifyCluster(ModifyClusterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public Cluster modifyClusterDbRevision(ModifyClusterDbRevisionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -29,7 +29,8 @@ public class LaunchTemplateTagSpecificationRequest implements Serializable, Clon
     /**
      * <p>
      * The type of resource to tag. Currently, the resource types that support tagging on creation are
-     * <code>instance</code> and <code>volume</code>.
+     * <code>instance</code> and <code>volume</code>. To tag a resource after it has been created, see
+     * <a>CreateTags</a>.
      * </p>
      */
     private String resourceType;
@@ -43,12 +44,14 @@ public class LaunchTemplateTagSpecificationRequest implements Serializable, Clon
     /**
      * <p>
      * The type of resource to tag. Currently, the resource types that support tagging on creation are
-     * <code>instance</code> and <code>volume</code>.
+     * <code>instance</code> and <code>volume</code>. To tag a resource after it has been created, see
+     * <a>CreateTags</a>.
      * </p>
      * 
      * @param resourceType
      *        The type of resource to tag. Currently, the resource types that support tagging on creation are
-     *        <code>instance</code> and <code>volume</code>.
+     *        <code>instance</code> and <code>volume</code>. To tag a resource after it has been created, see
+     *        <a>CreateTags</a>.
      * @see ResourceType
      */
 
@@ -59,11 +62,13 @@ public class LaunchTemplateTagSpecificationRequest implements Serializable, Clon
     /**
      * <p>
      * The type of resource to tag. Currently, the resource types that support tagging on creation are
-     * <code>instance</code> and <code>volume</code>.
+     * <code>instance</code> and <code>volume</code>. To tag a resource after it has been created, see
+     * <a>CreateTags</a>.
      * </p>
      * 
      * @return The type of resource to tag. Currently, the resource types that support tagging on creation are
-     *         <code>instance</code> and <code>volume</code>.
+     *         <code>instance</code> and <code>volume</code>. To tag a resource after it has been created, see
+     *         <a>CreateTags</a>.
      * @see ResourceType
      */
 
@@ -74,12 +79,14 @@ public class LaunchTemplateTagSpecificationRequest implements Serializable, Clon
     /**
      * <p>
      * The type of resource to tag. Currently, the resource types that support tagging on creation are
-     * <code>instance</code> and <code>volume</code>.
+     * <code>instance</code> and <code>volume</code>. To tag a resource after it has been created, see
+     * <a>CreateTags</a>.
      * </p>
      * 
      * @param resourceType
      *        The type of resource to tag. Currently, the resource types that support tagging on creation are
-     *        <code>instance</code> and <code>volume</code>.
+     *        <code>instance</code> and <code>volume</code>. To tag a resource after it has been created, see
+     *        <a>CreateTags</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -92,12 +99,14 @@ public class LaunchTemplateTagSpecificationRequest implements Serializable, Clon
     /**
      * <p>
      * The type of resource to tag. Currently, the resource types that support tagging on creation are
-     * <code>instance</code> and <code>volume</code>.
+     * <code>instance</code> and <code>volume</code>. To tag a resource after it has been created, see
+     * <a>CreateTags</a>.
      * </p>
      * 
      * @param resourceType
      *        The type of resource to tag. Currently, the resource types that support tagging on creation are
-     *        <code>instance</code> and <code>volume</code>.
+     *        <code>instance</code> and <code>volume</code>. To tag a resource after it has been created, see
+     *        <a>CreateTags</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */

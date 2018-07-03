@@ -189,8 +189,8 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Allocates a Dedicated Host to your account. At minimum you need to specify the instance size type, Availability
-     * Zone, and quantity of hosts you want to allocate.
+     * Allocates a Dedicated Host to your account. At a minimum, specify the instance size type, Availability Zone, and
+     * quantity of hosts to allocate.
      * </p>
      * 
      * @param allocateHostsRequest
@@ -475,10 +475,6 @@ public interface AmazonEC2 {
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * For an overview of the AWS Marketplace, see <a
-     * href="https://aws.amazon.com/marketplace/help/200900000">Introducing AWS Marketplace</a>.
-     * </p>
      * <p>
      * For more information about EBS volumes, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching Amazon EBS
@@ -1897,8 +1893,8 @@ public interface AmazonEC2 {
      * Deletes the specified EC2 Fleet.
      * </p>
      * <p>
-     * After you delete an EC2 Fleet, the EC2 Fleet launches no new instances. You must specify whether the EC2 Fleet
-     * should also terminate its instances. If you terminate the instances, the EC2 Fleet enters the
+     * After you delete an EC2 Fleet, it launches no new instances. You must specify whether an EC2 Fleet should also
+     * terminate its instances. If you terminate the instances, the EC2 Fleet enters the
      * <code>deleted_terminating</code> state. Otherwise, the EC2 Fleet enters the <code>deleted_running</code> state,
      * and the instances continue to run until they are interrupted or you terminate them manually.
      * </p>
@@ -2746,7 +2742,7 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Describes the specified EC2 Fleet.
+     * Describes one or more of your EC2 Fleet.
      * </p>
      * 
      * @param describeFleetsRequest
@@ -3395,6 +3391,7 @@ public interface AmazonEC2 {
      * Describes available AWS services in a prefix list format, which includes the prefix list name and prefix list ID
      * of the service and the IP address range for the service. A prefix list ID is required for creating an outbound
      * security group rule that allows traffic from a VPC to access an AWS service through a gateway VPC endpoint.
+     * Currently, the services that support this action are Amazon S3 and Amazon DynamoDB.
      * </p>
      * 
      * @param describePrefixListsRequest

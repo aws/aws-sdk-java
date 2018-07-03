@@ -64,6 +64,12 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements Ser
      * <code>released-permanent-failure</code>).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
+     * </p>
+     * </li>
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filter;
@@ -126,6 +132,12 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements Ser
      * <code>released-permanent-failure</code>).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return One or more filters.</p>
@@ -161,6 +173,12 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements Ser
      *         <code>state</code> - The allocation state of the Dedicated Host (<code>available</code> |
      *         <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code> |
      *         <code>released-permanent-failure</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *         assigned a tag with a specific key, regardless of the tag value.
      *         </p>
      *         </li>
      */
@@ -209,6 +227,12 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements Ser
      * <code>released-permanent-failure</code>).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param filter
@@ -245,6 +269,12 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements Ser
      *        <code>state</code> - The allocation state of the Dedicated Host (<code>available</code> |
      *        <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code> |
      *        <code>released-permanent-failure</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *        assigned a tag with a specific key, regardless of the tag value.
      *        </p>
      *        </li>
      */
@@ -295,6 +325,12 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements Ser
      * <code>released-permanent-failure</code>).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -336,6 +372,12 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements Ser
      *        <code>state</code> - The allocation state of the Dedicated Host (<code>available</code> |
      *        <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code> |
      *        <code>released-permanent-failure</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *        assigned a tag with a specific key, regardless of the tag value.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -388,6 +430,12 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements Ser
      * <code>released-permanent-failure</code>).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned
+     * a tag with a specific key, regardless of the tag value.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param filter
@@ -424,6 +472,12 @@ public class DescribeHostsRequest extends AmazonWebServiceRequest implements Ser
      *        <code>state</code> - The allocation state of the Dedicated Host (<code>available</code> |
      *        <code>under-assessment</code> | <code>permanent-failure</code> | <code>released</code> |
      *        <code>released-permanent-failure</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources
+     *        assigned a tag with a specific key, regardless of the tag value.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

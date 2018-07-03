@@ -59,6 +59,39 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
+     * Exchanges a DC1 Reserved Node for a DC2 Reserved Node with no changes to the configuration (term, payment type,
+     * or number of nodes) and no additional costs.
+     * </p>
+     * 
+     * @param acceptReservedNodeExchangeRequest
+     * @return A Java Future containing the result of the AcceptReservedNodeExchange operation returned by the service.
+     * @sample AmazonRedshiftAsync.AcceptReservedNodeExchange
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AcceptReservedNodeExchange"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ReservedNode> acceptReservedNodeExchangeAsync(AcceptReservedNodeExchangeRequest acceptReservedNodeExchangeRequest);
+
+    /**
+     * <p>
+     * Exchanges a DC1 Reserved Node for a DC2 Reserved Node with no changes to the configuration (term, payment type,
+     * or number of nodes) and no additional costs.
+     * </p>
+     * 
+     * @param acceptReservedNodeExchangeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AcceptReservedNodeExchange operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.AcceptReservedNodeExchange
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AcceptReservedNodeExchange"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ReservedNode> acceptReservedNodeExchangeAsync(AcceptReservedNodeExchangeRequest acceptReservedNodeExchangeRequest,
+            com.amazonaws.handlers.AsyncHandler<AcceptReservedNodeExchangeRequest, ReservedNode> asyncHandler);
+
+    /**
+     * <p>
      * Adds an inbound (ingress) rule to an Amazon Redshift security group. Depending on whether the application
      * accessing your cluster is running on the Internet or an Amazon EC2 instance, you can authorize inbound access to
      * either a Classless Interdomain Routing (CIDR)/Internet Protocol (IP) range or to an Amazon EC2 security group.
@@ -231,7 +264,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * Creates a new cluster.
      * </p>
      * <p>
-     * To create the cluster in Virtual Private Cloud (VPC), you must provide a cluster subnet group name. The cluster
+     * To create a cluster in Virtual Private Cloud (VPC), you must provide a cluster subnet group name. The cluster
      * subnet group identifies the subnets of your VPC that Amazon Redshift uses when creating the cluster. For more
      * information about managing clusters, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in
@@ -251,7 +284,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * Creates a new cluster.
      * </p>
      * <p>
-     * To create the cluster in Virtual Private Cloud (VPC), you must provide a cluster subnet group name. The cluster
+     * To create a cluster in Virtual Private Cloud (VPC), you must provide a cluster subnet group name. The cluster
      * subnet group identifies the subnets of your VPC that Amazon Redshift uses when creating the cluster. For more
      * information about managing clusters, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in
@@ -1101,6 +1134,39 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      */
     java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(DeleteTagsRequest deleteTagsRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns an array of <code>ClusterDbRevision</code> objects.
+     * </p>
+     * 
+     * @param describeClusterDbRevisionsRequest
+     * @return A Java Future containing the result of the DescribeClusterDbRevisions operation returned by the service.
+     * @sample AmazonRedshiftAsync.DescribeClusterDbRevisions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterDbRevisions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeClusterDbRevisionsResult> describeClusterDbRevisionsAsync(
+            DescribeClusterDbRevisionsRequest describeClusterDbRevisionsRequest);
+
+    /**
+     * <p>
+     * Returns an array of <code>ClusterDbRevision</code> objects.
+     * </p>
+     * 
+     * @param describeClusterDbRevisionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeClusterDbRevisions operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.DescribeClusterDbRevisions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterDbRevisions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeClusterDbRevisionsResult> describeClusterDbRevisionsAsync(
+            DescribeClusterDbRevisionsRequest describeClusterDbRevisionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeClusterDbRevisionsRequest, DescribeClusterDbRevisionsResult> asyncHandler);
 
     /**
      * <p>
@@ -2655,6 +2721,41 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
+     * Returns an array of ReservedNodeOfferings which is filtered by payment type, term, and instance type.
+     * </p>
+     * 
+     * @param getReservedNodeExchangeOfferingsRequest
+     * @return A Java Future containing the result of the GetReservedNodeExchangeOfferings operation returned by the
+     *         service.
+     * @sample AmazonRedshiftAsync.GetReservedNodeExchangeOfferings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetReservedNodeExchangeOfferings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetReservedNodeExchangeOfferingsResult> getReservedNodeExchangeOfferingsAsync(
+            GetReservedNodeExchangeOfferingsRequest getReservedNodeExchangeOfferingsRequest);
+
+    /**
+     * <p>
+     * Returns an array of ReservedNodeOfferings which is filtered by payment type, term, and instance type.
+     * </p>
+     * 
+     * @param getReservedNodeExchangeOfferingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetReservedNodeExchangeOfferings operation returned by the
+     *         service.
+     * @sample AmazonRedshiftAsyncHandler.GetReservedNodeExchangeOfferings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetReservedNodeExchangeOfferings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetReservedNodeExchangeOfferingsResult> getReservedNodeExchangeOfferingsAsync(
+            GetReservedNodeExchangeOfferingsRequest getReservedNodeExchangeOfferingsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetReservedNodeExchangeOfferingsRequest, GetReservedNodeExchangeOfferingsResult> asyncHandler);
+
+    /**
+     * <p>
      * Modifies the settings for a cluster. For example, you can add another security or parameter group, update the
      * preferred maintenance window, or change the master user password. Resetting a cluster password or modifying the
      * security groups associated with a cluster do not need a reboot. However, modifying a parameter group requires a
@@ -2701,6 +2802,39 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      */
     java.util.concurrent.Future<Cluster> modifyClusterAsync(ModifyClusterRequest modifyClusterRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyClusterRequest, Cluster> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the database revision of a cluster. The database revision is a unique revision of the database running
+     * in a cluster.
+     * </p>
+     * 
+     * @param modifyClusterDbRevisionRequest
+     * @return A Java Future containing the result of the ModifyClusterDbRevision operation returned by the service.
+     * @sample AmazonRedshiftAsync.ModifyClusterDbRevision
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterDbRevision"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<Cluster> modifyClusterDbRevisionAsync(ModifyClusterDbRevisionRequest modifyClusterDbRevisionRequest);
+
+    /**
+     * <p>
+     * Modifies the database revision of a cluster. The database revision is a unique revision of the database running
+     * in a cluster.
+     * </p>
+     * 
+     * @param modifyClusterDbRevisionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyClusterDbRevision operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.ModifyClusterDbRevision
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterDbRevision"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<Cluster> modifyClusterDbRevisionAsync(ModifyClusterDbRevisionRequest modifyClusterDbRevisionRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyClusterDbRevisionRequest, Cluster> asyncHandler);
 
     /**
      * <p>

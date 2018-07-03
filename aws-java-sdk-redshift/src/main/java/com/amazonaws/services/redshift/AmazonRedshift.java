@@ -119,6 +119,35 @@ public interface AmazonRedshift {
 
     /**
      * <p>
+     * Exchanges a DC1 Reserved Node for a DC2 Reserved Node with no changes to the configuration (term, payment type,
+     * or number of nodes) and no additional costs.
+     * </p>
+     * 
+     * @param acceptReservedNodeExchangeRequest
+     * @return Result of the AcceptReservedNodeExchange operation returned by the service.
+     * @throws ReservedNodeNotFoundException
+     *         The specified reserved compute node not found.
+     * @throws InvalidReservedNodeStateException
+     *         Indicates that the Reserved Node being exchanged is not in an active state.
+     * @throws ReservedNodeAlreadyMigratedException
+     *         Indicates that the reserved node has already been exchanged.
+     * @throws ReservedNodeOfferingNotFoundException
+     *         Specified offering does not exist.
+     * @throws UnsupportedOperationException
+     *         The requested operation isn't supported.
+     * @throws DependentServiceUnavailableException
+     *         Your request cannot be completed because a dependent internal service is temporarily unavailable. Wait 30
+     *         to 60 seconds and try again.
+     * @throws ReservedNodeAlreadyExistsException
+     *         User already has a reservation with the given identifier.
+     * @sample AmazonRedshift.AcceptReservedNodeExchange
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AcceptReservedNodeExchange"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ReservedNode acceptReservedNodeExchange(AcceptReservedNodeExchangeRequest acceptReservedNodeExchangeRequest);
+
+    /**
+     * <p>
      * Adds an inbound (ingress) rule to an Amazon Redshift security group. Depending on whether the application
      * accessing your cluster is running on the Internet or an Amazon EC2 instance, you can authorize inbound access to
      * either a Classless Interdomain Routing (CIDR)/Internet Protocol (IP) range or to an Amazon EC2 security group.
@@ -230,7 +259,7 @@ public interface AmazonRedshift {
      * Creates a new cluster.
      * </p>
      * <p>
-     * To create the cluster in Virtual Private Cloud (VPC), you must provide a cluster subnet group name. The cluster
+     * To create a cluster in Virtual Private Cloud (VPC), you must provide a cluster subnet group name. The cluster
      * subnet group identifies the subnets of your VPC that Amazon Redshift uses when creating the cluster. For more
      * information about managing clusters, go to <a
      * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in
@@ -276,7 +305,8 @@ public interface AmazonRedshift {
      * @throws InvalidElasticIpException
      *         The Elastic IP (EIP) is invalid or cannot be found.
      * @throws TagLimitExceededException
-     *         The request exceeds the limit of 10 tags for the resource.
+     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
+     *         cluster node type.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @throws LimitExceededException
@@ -316,7 +346,8 @@ public interface AmazonRedshift {
      * @throws ClusterParameterGroupAlreadyExistsException
      *         A cluster parameter group with the same name already exists.
      * @throws TagLimitExceededException
-     *         The request exceeds the limit of 10 tags for the resource.
+     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
+     *         cluster node type.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateClusterParameterGroup
@@ -345,7 +376,8 @@ public interface AmazonRedshift {
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon
      *         Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * @throws TagLimitExceededException
-     *         The request exceeds the limit of 10 tags for the resource.
+     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
+     *         cluster node type.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateClusterSecurityGroup
@@ -375,7 +407,8 @@ public interface AmazonRedshift {
      * @throws ClusterSnapshotQuotaExceededException
      *         The request would result in the user exceeding the allowed number of cluster snapshots.
      * @throws TagLimitExceededException
-     *         The request exceeds the limit of 10 tags for the resource.
+     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
+     *         cluster node type.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateClusterSnapshot
@@ -414,7 +447,8 @@ public interface AmazonRedshift {
      * @throws UnauthorizedOperationException
      *         Your account is not authorized to perform the requested operation.
      * @throws TagLimitExceededException
-     *         The request exceeds the limit of 10 tags for the resource.
+     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
+     *         cluster node type.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @throws DependentServiceRequestThrottlingException
@@ -476,7 +510,8 @@ public interface AmazonRedshift {
      * @throws SourceNotFoundException
      *         The specified Amazon Redshift event source could not be found.
      * @throws TagLimitExceededException
-     *         The request exceeds the limit of 10 tags for the resource.
+     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
+     *         cluster node type.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateEventSubscription
@@ -507,7 +542,8 @@ public interface AmazonRedshift {
      *         to <a href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon
      *         Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * @throws TagLimitExceededException
-     *         The request exceeds the limit of 10 tags for the resource.
+     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
+     *         cluster node type.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateHsmClientCertificate
@@ -537,7 +573,8 @@ public interface AmazonRedshift {
      *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon
      *         Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * @throws TagLimitExceededException
-     *         The request exceeds the limit of 10 tags for the resource.
+     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
+     *         cluster node type.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @sample AmazonRedshift.CreateHsmConfiguration
@@ -567,7 +604,8 @@ public interface AmazonRedshift {
      * @throws LimitExceededException
      *         The encryption key has exceeded its grant limit in AWS KMS.
      * @throws TagLimitExceededException
-     *         The request exceeds the limit of 10 tags for the resource.
+     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
+     *         cluster node type.
      * @throws InvalidTagException
      *         The tag is invalid.
      * @throws DependentServiceRequestThrottlingException
@@ -596,7 +634,8 @@ public interface AmazonRedshift {
      *        Contains the output from the <code>CreateTags</code> action.
      * @return Result of the CreateTags operation returned by the service.
      * @throws TagLimitExceededException
-     *         The request exceeds the limit of 10 tags for the resource.
+     *         The number of tables in your source cluster exceeds the limit for the target cluster. Resize to a larger
+     *         cluster node type.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
      * @throws InvalidTagException
@@ -830,6 +869,21 @@ public interface AmazonRedshift {
      *      Documentation</a>
      */
     DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest);
+
+    /**
+     * <p>
+     * Returns an array of <code>ClusterDbRevision</code> objects.
+     * </p>
+     * 
+     * @param describeClusterDbRevisionsRequest
+     * @return Result of the DescribeClusterDbRevisions operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @sample AmazonRedshift.DescribeClusterDbRevisions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterDbRevisions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeClusterDbRevisionsResult describeClusterDbRevisions(DescribeClusterDbRevisionsRequest describeClusterDbRevisionsRequest);
 
     /**
      * <p>
@@ -1631,6 +1685,32 @@ public interface AmazonRedshift {
 
     /**
      * <p>
+     * Returns an array of ReservedNodeOfferings which is filtered by payment type, term, and instance type.
+     * </p>
+     * 
+     * @param getReservedNodeExchangeOfferingsRequest
+     * @return Result of the GetReservedNodeExchangeOfferings operation returned by the service.
+     * @throws ReservedNodeNotFoundException
+     *         The specified reserved compute node not found.
+     * @throws InvalidReservedNodeStateException
+     *         Indicates that the Reserved Node being exchanged is not in an active state.
+     * @throws ReservedNodeAlreadyMigratedException
+     *         Indicates that the reserved node has already been exchanged.
+     * @throws ReservedNodeOfferingNotFoundException
+     *         Specified offering does not exist.
+     * @throws UnsupportedOperationException
+     *         The requested operation isn't supported.
+     * @throws DependentServiceUnavailableException
+     *         Your request cannot be completed because a dependent internal service is temporarily unavailable. Wait 30
+     *         to 60 seconds and try again.
+     * @sample AmazonRedshift.GetReservedNodeExchangeOfferings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetReservedNodeExchangeOfferings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetReservedNodeExchangeOfferingsResult getReservedNodeExchangeOfferings(GetReservedNodeExchangeOfferingsRequest getReservedNodeExchangeOfferingsRequest);
+
+    /**
+     * <p>
      * Modifies the settings for a cluster. For example, you can add another security or parameter group, update the
      * preferred maintenance window, or change the master user password. Resetting a cluster password or modifying the
      * security groups associated with a cluster do not need a reboot. However, modifying a parameter group requires a
@@ -1681,11 +1761,33 @@ public interface AmazonRedshift {
      *         Redshift on your behalf. Wait and retry the request.
      * @throws InvalidElasticIpException
      *         The Elastic IP (EIP) is invalid or cannot be found.
+     * @throws TableLimitExceededException
+     *         The number of tables in the cluster exceeds the limit for the requested new cluster node type.
      * @sample AmazonRedshift.ModifyCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyCluster" target="_top">AWS API
      *      Documentation</a>
      */
     Cluster modifyCluster(ModifyClusterRequest modifyClusterRequest);
+
+    /**
+     * <p>
+     * Modifies the database revision of a cluster. The database revision is a unique revision of the database running
+     * in a cluster.
+     * </p>
+     * 
+     * @param modifyClusterDbRevisionRequest
+     * @return Result of the ModifyClusterDbRevision operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws ClusterOnLatestRevisionException
+     *         Cluster is already on the latest database revision.
+     * @throws InvalidClusterStateException
+     *         The specified cluster is not in the <code>available</code> state.
+     * @sample AmazonRedshift.ModifyClusterDbRevision
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterDbRevision"
+     *      target="_top">AWS API Documentation</a>
+     */
+    Cluster modifyClusterDbRevision(ModifyClusterDbRevisionRequest modifyClusterDbRevisionRequest);
 
     /**
      * <p>
