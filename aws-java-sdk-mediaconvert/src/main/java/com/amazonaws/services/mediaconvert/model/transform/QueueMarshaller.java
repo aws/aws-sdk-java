@@ -37,8 +37,12 @@ public class QueueMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdated").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<Integer> PROGRESSINGJOBSCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("progressingJobsCount").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
+    private static final MarshallingInfo<Integer> SUBMITTEDJOBSCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("submittedJobsCount").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("type").build();
 
@@ -63,7 +67,9 @@ public class QueueMarshaller {
             protocolMarshaller.marshall(queue.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(queue.getLastUpdated(), LASTUPDATED_BINDING);
             protocolMarshaller.marshall(queue.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(queue.getProgressingJobsCount(), PROGRESSINGJOBSCOUNT_BINDING);
             protocolMarshaller.marshall(queue.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(queue.getSubmittedJobsCount(), SUBMITTEDJOBSCOUNT_BINDING);
             protocolMarshaller.marshall(queue.getType(), TYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

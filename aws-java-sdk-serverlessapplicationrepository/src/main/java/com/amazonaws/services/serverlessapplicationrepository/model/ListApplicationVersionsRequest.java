@@ -27,7 +27,7 @@ public class ListApplicationVersionsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ID of the application to get.
+     * The Amazon Resource Name (ARN) of the application.
      * </p>
      */
     private String applicationId;
@@ -46,11 +46,11 @@ public class ListApplicationVersionsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ID of the application to get.
+     * The Amazon Resource Name (ARN) of the application.
      * </p>
      * 
      * @param applicationId
-     *        The ID of the application to get.
+     *        The Amazon Resource Name (ARN) of the application.
      */
 
     public void setApplicationId(String applicationId) {
@@ -59,10 +59,10 @@ public class ListApplicationVersionsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ID of the application to get.
+     * The Amazon Resource Name (ARN) of the application.
      * </p>
      * 
-     * @return The ID of the application to get.
+     * @return The Amazon Resource Name (ARN) of the application.
      */
 
     public String getApplicationId() {
@@ -71,11 +71,11 @@ public class ListApplicationVersionsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ID of the application to get.
+     * The Amazon Resource Name (ARN) of the application.
      * </p>
      * 
      * @param applicationId
-     *        The ID of the application to get.
+     *        The Amazon Resource Name (ARN) of the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

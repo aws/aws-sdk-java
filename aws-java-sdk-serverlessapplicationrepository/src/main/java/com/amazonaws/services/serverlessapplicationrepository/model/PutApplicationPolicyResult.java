@@ -25,17 +25,17 @@ public class PutApplicationPolicyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Array of policy statements applied to the application.
+     * An array of policy statements applied to the application.
      * </p>
      */
     private java.util.List<ApplicationPolicyStatement> statements;
 
     /**
      * <p>
-     * Array of policy statements applied to the application.
+     * An array of policy statements applied to the application.
      * </p>
      * 
-     * @return Array of policy statements applied to the application.
+     * @return An array of policy statements applied to the application.
      */
 
     public java.util.List<ApplicationPolicyStatement> getStatements() {
@@ -44,11 +44,11 @@ public class PutApplicationPolicyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Array of policy statements applied to the application.
+     * An array of policy statements applied to the application.
      * </p>
      * 
      * @param statements
-     *        Array of policy statements applied to the application.
+     *        An array of policy statements applied to the application.
      */
 
     public void setStatements(java.util.Collection<ApplicationPolicyStatement> statements) {
@@ -62,7 +62,7 @@ public class PutApplicationPolicyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Array of policy statements applied to the application.
+     * An array of policy statements applied to the application.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -71,7 +71,7 @@ public class PutApplicationPolicyResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param statements
-     *        Array of policy statements applied to the application.
+     *        An array of policy statements applied to the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class PutApplicationPolicyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Array of policy statements applied to the application.
+     * An array of policy statements applied to the application.
      * </p>
      * 
      * @param statements
-     *        Array of policy statements applied to the application.
+     *        An array of policy statements applied to the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

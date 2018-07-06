@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The client is sending more than the allowed number of requests per unit time.
+ * The client is sending more than the allowed number of requests per unit of time.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

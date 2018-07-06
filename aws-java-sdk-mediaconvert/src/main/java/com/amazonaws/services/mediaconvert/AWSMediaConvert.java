@@ -490,6 +490,86 @@ public interface AWSMediaConvert {
     ListQueuesResult listQueues(ListQueuesRequest listQueuesRequest);
 
     /**
+     * Retrieve the tags for a MediaConvert resource.
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws BadRequestException
+     *         The service can't process your request because of a problem in the request. Please check your request
+     *         form and syntax.
+     * @throws InternalServerErrorException
+     *         The service encountered an unexpected condition and cannot fulfill your request.
+     * @throws ForbiddenException
+     *         You don't have permissions for this action with the credentials you sent.
+     * @throws NotFoundException
+     *         The resource you requested does not exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been sent in too short of a time. The service limits the rate at which it will
+     *         accept requests.
+     * @throws ConflictException
+     *         The service could not complete your request because there is a conflict with the current state of the
+     *         resource.
+     * @sample AWSMediaConvert.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * Tag a MediaConvert queue, preset, or job template. For information about these resource types, see the User Guide
+     * at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws BadRequestException
+     *         The service can't process your request because of a problem in the request. Please check your request
+     *         form and syntax.
+     * @throws InternalServerErrorException
+     *         The service encountered an unexpected condition and cannot fulfill your request.
+     * @throws ForbiddenException
+     *         You don't have permissions for this action with the credentials you sent.
+     * @throws NotFoundException
+     *         The resource you requested does not exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been sent in too short of a time. The service limits the rate at which it will
+     *         accept requests.
+     * @throws ConflictException
+     *         The service could not complete your request because there is a conflict with the current state of the
+     *         resource.
+     * @sample AWSMediaConvert.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * Untag a MediaConvert queue, preset, or job template. For information about these resource types, see the User
+     * Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws BadRequestException
+     *         The service can't process your request because of a problem in the request. Please check your request
+     *         form and syntax.
+     * @throws InternalServerErrorException
+     *         The service encountered an unexpected condition and cannot fulfill your request.
+     * @throws ForbiddenException
+     *         You don't have permissions for this action with the credentials you sent.
+     * @throws NotFoundException
+     *         The resource you requested does not exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been sent in too short of a time. The service limits the rate at which it will
+     *         accept requests.
+     * @throws ConflictException
+     *         The service could not complete your request because there is a conflict with the current state of the
+     *         resource.
+     * @sample AWSMediaConvert.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
      * Modify one of your existing job templates.
      * 
      * @param updateJobTemplateRequest

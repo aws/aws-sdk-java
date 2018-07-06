@@ -38,6 +38,8 @@ public class CreateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
     private String queue;
 
     private JobTemplateSettings settings;
+    /** The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key. */
+    private java.util.Map<String, String> tags;
 
     /**
      * Optional. A category for the job template you are creating
@@ -208,6 +210,64 @@ public class CreateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
+     * 
+     * @return The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a
+     *         key.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
+     * 
+     * @param tags
+     *        The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a
+     *        key.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
+     * 
+     * @param tags
+     *        The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a
+     *        key.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobTemplateRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public CreateJobTemplateRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobTemplateRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -227,7 +287,9 @@ public class CreateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getQueue() != null)
             sb.append("Queue: ").append(getQueue()).append(",");
         if (getSettings() != null)
-            sb.append("Settings: ").append(getSettings());
+            sb.append("Settings: ").append(getSettings()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -262,6 +324,10 @@ public class CreateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getSettings() != null && other.getSettings().equals(this.getSettings()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -275,6 +341,7 @@ public class CreateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getQueue() == null) ? 0 : getQueue().hashCode());
         hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -166,7 +166,7 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
      * @param createApplicationRequest
      * @return Result of the CreateApplication operation returned by the service.
      * @throws TooManyRequestsException
-     *         The client is sending more than the allowed number of requests per unit time.
+     *         The client is sending more than the allowed number of requests per unit of time.
      * @throws BadRequestException
      *         One of the parameters in the request is invalid.
      * @throws InternalServerErrorException
@@ -225,7 +225,7 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
      * @param createApplicationVersionRequest
      * @return Result of the CreateApplicationVersion operation returned by the service.
      * @throws TooManyRequestsException
-     *         The client is sending more than the allowed number of requests per unit time.
+     *         The client is sending more than the allowed number of requests per unit of time.
      * @throws BadRequestException
      *         One of the parameters in the request is invalid.
      * @throws InternalServerErrorException
@@ -280,13 +280,13 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
 
     /**
      * <p>
-     * Creates an AWS CloudFormation ChangeSet for the given application.
+     * Creates an AWS CloudFormation change set for the given application.
      * </p>
      * 
      * @param createCloudFormationChangeSetRequest
      * @return Result of the CreateCloudFormationChangeSet operation returned by the service.
      * @throws TooManyRequestsException
-     *         The client is sending more than the allowed number of requests per unit time.
+     *         The client is sending more than the allowed number of requests per unit of time.
      * @throws BadRequestException
      *         One of the parameters in the request is invalid.
      * @throws InternalServerErrorException
@@ -351,9 +351,9 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
      * @throws ForbiddenException
      *         The client is not authenticated.
      * @throws NotFoundException
-     *         The resource (for example, an access policy statement) specified in the request does not exist.
+     *         The resource (for example, an access policy statement) specified in the request doesn't exist.
      * @throws TooManyRequestsException
-     *         The client is sending more than the allowed number of requests per unit time.
+     *         The client is sending more than the allowed number of requests per unit of time.
      * @throws ConflictException
      *         The resource already exists.
      * @sample AWSServerlessApplicationRepository.DeleteApplication
@@ -406,9 +406,9 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
      * @param getApplicationRequest
      * @return Result of the GetApplication operation returned by the service.
      * @throws NotFoundException
-     *         The resource (for example, an access policy statement) specified in the request does not exist.
+     *         The resource (for example, an access policy statement) specified in the request doesn't exist.
      * @throws TooManyRequestsException
-     *         The client is sending more than the allowed number of requests per unit time.
+     *         The client is sending more than the allowed number of requests per unit of time.
      * @throws BadRequestException
      *         One of the parameters in the request is invalid.
      * @throws InternalServerErrorException
@@ -459,15 +459,15 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
 
     /**
      * <p>
-     * Gets the policy for the specified application.
+     * Retrieves the policy for the application.
      * </p>
      * 
      * @param getApplicationPolicyRequest
      * @return Result of the GetApplicationPolicy operation returned by the service.
      * @throws NotFoundException
-     *         The resource (for example, an access policy statement) specified in the request does not exist.
+     *         The resource (for example, an access policy statement) specified in the request doesn't exist.
      * @throws TooManyRequestsException
-     *         The client is sending more than the allowed number of requests per unit time.
+     *         The client is sending more than the allowed number of requests per unit of time.
      * @throws BadRequestException
      *         One of the parameters in the request is invalid.
      * @throws InternalServerErrorException
@@ -524,9 +524,9 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
      * @param listApplicationVersionsRequest
      * @return Result of the ListApplicationVersions operation returned by the service.
      * @throws NotFoundException
-     *         The resource (for example, an access policy statement) specified in the request does not exist.
+     *         The resource (for example, an access policy statement) specified in the request doesn't exist.
      * @throws TooManyRequestsException
-     *         The client is sending more than the allowed number of requests per unit time.
+     *         The client is sending more than the allowed number of requests per unit of time.
      * @throws BadRequestException
      *         One of the parameters in the request is invalid.
      * @throws InternalServerErrorException
@@ -585,7 +585,7 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
      * @param listApplicationsRequest
      * @return Result of the ListApplications operation returned by the service.
      * @throws NotFoundException
-     *         The resource (for example, an access policy statement) specified in the request does not exist.
+     *         The resource (for example, an access policy statement) specified in the request doesn't exist.
      * @throws BadRequestException
      *         One of the parameters in the request is invalid.
      * @throws InternalServerErrorException
@@ -636,15 +636,17 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
 
     /**
      * <p>
-     * Puts the policy for the specified application.
+     * Sets the permission policy for an application. See <a href=
+     * "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions"
+     * >Application Permissions</a> for the list of supported actions that can be used with this operation.
      * </p>
      * 
      * @param putApplicationPolicyRequest
      * @return Result of the PutApplicationPolicy operation returned by the service.
      * @throws NotFoundException
-     *         The resource (for example, an access policy statement) specified in the request does not exist.
+     *         The resource (for example, an access policy statement) specified in the request doesn't exist.
      * @throws TooManyRequestsException
-     *         The client is sending more than the allowed number of requests per unit time.
+     *         The client is sending more than the allowed number of requests per unit of time.
      * @throws BadRequestException
      *         One of the parameters in the request is invalid.
      * @throws InternalServerErrorException
@@ -707,9 +709,9 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
      * @throws ForbiddenException
      *         The client is not authenticated.
      * @throws NotFoundException
-     *         The resource (for example, an access policy statement) specified in the request does not exist.
+     *         The resource (for example, an access policy statement) specified in the request doesn't exist.
      * @throws TooManyRequestsException
-     *         The client is sending more than the allowed number of requests per unit time.
+     *         The client is sending more than the allowed number of requests per unit of time.
      * @throws ConflictException
      *         The resource already exists.
      * @sample AWSServerlessApplicationRepository.UpdateApplication

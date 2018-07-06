@@ -1184,6 +1184,194 @@ public class AWSMediaConvertClient extends AmazonWebServiceClient implements AWS
     }
 
     /**
+     * Retrieve the tags for a MediaConvert resource.
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws BadRequestException
+     *         The service can't process your request because of a problem in the request. Please check your request
+     *         form and syntax.
+     * @throws InternalServerErrorException
+     *         The service encountered an unexpected condition and cannot fulfill your request.
+     * @throws ForbiddenException
+     *         You don't have permissions for this action with the credentials you sent.
+     * @throws NotFoundException
+     *         The resource you requested does not exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been sent in too short of a time. The service limits the rate at which it will
+     *         accept requests.
+     * @throws ConflictException
+     *         The service could not complete your request because there is a conflict with the current state of the
+     *         resource.
+     * @sample AWSMediaConvert.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Tag a MediaConvert queue, preset, or job template. For information about these resource types, see the User Guide
+     * at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws BadRequestException
+     *         The service can't process your request because of a problem in the request. Please check your request
+     *         form and syntax.
+     * @throws InternalServerErrorException
+     *         The service encountered an unexpected condition and cannot fulfill your request.
+     * @throws ForbiddenException
+     *         You don't have permissions for this action with the credentials you sent.
+     * @throws NotFoundException
+     *         The resource you requested does not exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been sent in too short of a time. The service limits the rate at which it will
+     *         accept requests.
+     * @throws ConflictException
+     *         The service could not complete your request because there is a conflict with the current state of the
+     *         resource.
+     * @sample AWSMediaConvert.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Untag a MediaConvert queue, preset, or job template. For information about these resource types, see the User
+     * Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws BadRequestException
+     *         The service can't process your request because of a problem in the request. Please check your request
+     *         form and syntax.
+     * @throws InternalServerErrorException
+     *         The service encountered an unexpected condition and cannot fulfill your request.
+     * @throws ForbiddenException
+     *         You don't have permissions for this action with the credentials you sent.
+     * @throws NotFoundException
+     *         The resource you requested does not exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been sent in too short of a time. The service limits the rate at which it will
+     *         accept requests.
+     * @throws ConflictException
+     *         The service could not complete your request because there is a conflict with the current state of the
+     *         resource.
+     * @sample AWSMediaConvert.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Modify one of your existing job templates.
      * 
      * @param updateJobTemplateRequest

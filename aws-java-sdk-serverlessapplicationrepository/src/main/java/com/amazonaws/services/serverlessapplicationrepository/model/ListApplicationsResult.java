@@ -25,7 +25,7 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Array of application summaries.
+     * An array of application summaries.
      * </p>
      */
     private java.util.List<ApplicationSummary> applications;
@@ -38,10 +38,10 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Array of application summaries.
+     * An array of application summaries.
      * </p>
      * 
-     * @return Array of application summaries.
+     * @return An array of application summaries.
      */
 
     public java.util.List<ApplicationSummary> getApplications() {
@@ -50,11 +50,11 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Array of application summaries.
+     * An array of application summaries.
      * </p>
      * 
      * @param applications
-     *        Array of application summaries.
+     *        An array of application summaries.
      */
 
     public void setApplications(java.util.Collection<ApplicationSummary> applications) {
@@ -68,7 +68,7 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Array of application summaries.
+     * An array of application summaries.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param applications
-     *        Array of application summaries.
+     *        An array of application summaries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Array of application summaries.
+     * An array of application summaries.
      * </p>
      * 
      * @param applications
-     *        Array of application summaries.
+     *        An array of application summaries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

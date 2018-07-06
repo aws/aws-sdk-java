@@ -31,7 +31,7 @@ public class ListApplicationVersionsResult extends com.amazonaws.AmazonWebServic
     private String nextToken;
     /**
      * <p>
-     * Array of version summaries for the application.
+     * An array of version summaries for the application.
      * </p>
      */
     private java.util.List<VersionSummary> versions;
@@ -78,10 +78,10 @@ public class ListApplicationVersionsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Array of version summaries for the application.
+     * An array of version summaries for the application.
      * </p>
      * 
-     * @return Array of version summaries for the application.
+     * @return An array of version summaries for the application.
      */
 
     public java.util.List<VersionSummary> getVersions() {
@@ -90,11 +90,11 @@ public class ListApplicationVersionsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Array of version summaries for the application.
+     * An array of version summaries for the application.
      * </p>
      * 
      * @param versions
-     *        Array of version summaries for the application.
+     *        An array of version summaries for the application.
      */
 
     public void setVersions(java.util.Collection<VersionSummary> versions) {
@@ -108,7 +108,7 @@ public class ListApplicationVersionsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Array of version summaries for the application.
+     * An array of version summaries for the application.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -117,7 +117,7 @@ public class ListApplicationVersionsResult extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param versions
-     *        Array of version summaries for the application.
+     *        An array of version summaries for the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +133,11 @@ public class ListApplicationVersionsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Array of version summaries for the application.
+     * An array of version summaries for the application.
      * </p>
      * 
      * @param versions
-     *        Array of version summaries for the application.
+     *        An array of version summaries for the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

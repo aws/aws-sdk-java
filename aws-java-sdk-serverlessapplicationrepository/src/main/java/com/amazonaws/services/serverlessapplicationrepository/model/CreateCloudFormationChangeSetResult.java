@@ -32,13 +32,13 @@ public class CreateCloudFormationChangeSetResult extends com.amazonaws.AmazonWeb
     private String applicationId;
     /**
      * <p>
-     * The ARN of the change set.
+     * The Amazon Resource Name (ARN) of the change set.
      * </p>
      * <p>
-     * Length Constraints: Minimum length of 1.
+     * Length constraints: Minimum length of 1.
      * </p>
      * <p>
-     * Pattern: Amazon Resource Name (ARN):[-a-zA-Z0-9:/]*
+     * Pattern: ARN:[-a-zA-Z0-9:/]*
      * </p>
      */
     private String changeSetId;
@@ -100,22 +100,22 @@ public class CreateCloudFormationChangeSetResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ARN of the change set.
+     * The Amazon Resource Name (ARN) of the change set.
      * </p>
      * <p>
-     * Length Constraints: Minimum length of 1.
+     * Length constraints: Minimum length of 1.
      * </p>
      * <p>
-     * Pattern: Amazon Resource Name (ARN):[-a-zA-Z0-9:/]*
+     * Pattern: ARN:[-a-zA-Z0-9:/]*
      * </p>
      * 
      * @param changeSetId
-     *        The ARN of the change set.</p>
+     *        The Amazon Resource Name (ARN) of the change set.</p>
      *        <p>
-     *        Length Constraints: Minimum length of 1.
+     *        Length constraints: Minimum length of 1.
      *        </p>
      *        <p>
-     *        Pattern: Amazon Resource Name (ARN):[-a-zA-Z0-9:/]
+     *        Pattern: ARN:[-a-zA-Z0-9:/]
      **/
 
     public void setChangeSetId(String changeSetId) {
@@ -124,21 +124,21 @@ public class CreateCloudFormationChangeSetResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ARN of the change set.
+     * The Amazon Resource Name (ARN) of the change set.
      * </p>
      * <p>
-     * Length Constraints: Minimum length of 1.
+     * Length constraints: Minimum length of 1.
      * </p>
      * <p>
-     * Pattern: Amazon Resource Name (ARN):[-a-zA-Z0-9:/]*
+     * Pattern: ARN:[-a-zA-Z0-9:/]*
      * </p>
      * 
-     * @return The ARN of the change set.</p>
+     * @return The Amazon Resource Name (ARN) of the change set.</p>
      *         <p>
-     *         Length Constraints: Minimum length of 1.
+     *         Length constraints: Minimum length of 1.
      *         </p>
      *         <p>
-     *         Pattern: Amazon Resource Name (ARN):[-a-zA-Z0-9:/]
+     *         Pattern: ARN:[-a-zA-Z0-9:/]
      **/
 
     public String getChangeSetId() {
@@ -147,22 +147,22 @@ public class CreateCloudFormationChangeSetResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ARN of the change set.
+     * The Amazon Resource Name (ARN) of the change set.
      * </p>
      * <p>
-     * Length Constraints: Minimum length of 1.
+     * Length constraints: Minimum length of 1.
      * </p>
      * <p>
-     * Pattern: Amazon Resource Name (ARN):[-a-zA-Z0-9:/]*
+     * Pattern: ARN:[-a-zA-Z0-9:/]*
      * </p>
      * 
      * @param changeSetId
-     *        The ARN of the change set.</p>
+     *        The Amazon Resource Name (ARN) of the change set.</p>
      *        <p>
-     *        Length Constraints: Minimum length of 1.
+     *        Length constraints: Minimum length of 1.
      *        </p>
      *        <p>
-     *        Pattern: Amazon Resource Name (ARN):[-a-zA-Z0-9:/]*
+     *        Pattern: ARN:[-a-zA-Z0-9:/]*
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

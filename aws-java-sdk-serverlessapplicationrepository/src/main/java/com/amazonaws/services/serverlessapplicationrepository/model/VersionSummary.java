@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Application version summary.
+ * An application version summary.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/VersionSummary" target="_top">AWS API
@@ -36,7 +36,7 @@ public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
     private String applicationId;
     /**
      * <p>
-     * The date/time this resource was created.
+     * The date and time this resource was created.
      * </p>
      */
     private String creationTime;
@@ -98,11 +98,11 @@ public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date/time this resource was created.
+     * The date and time this resource was created.
      * </p>
      * 
      * @param creationTime
-     *        The date/time this resource was created.
+     *        The date and time this resource was created.
      */
 
     public void setCreationTime(String creationTime) {
@@ -111,10 +111,10 @@ public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date/time this resource was created.
+     * The date and time this resource was created.
      * </p>
      * 
-     * @return The date/time this resource was created.
+     * @return The date and time this resource was created.
      */
 
     public String getCreationTime() {
@@ -123,11 +123,11 @@ public class VersionSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date/time this resource was created.
+     * The date and time this resource was created.
      * </p>
      * 
      * @param creationTime
-     *        The date/time this resource was created.
+     *        The date and time this resource was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

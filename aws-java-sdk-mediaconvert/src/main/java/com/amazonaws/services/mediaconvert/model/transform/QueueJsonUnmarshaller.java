@@ -68,9 +68,17 @@ public class QueueJsonUnmarshaller implements Unmarshaller<Queue, JsonUnmarshall
                     context.nextToken();
                     queue.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("progressingJobsCount", targetDepth)) {
+                    context.nextToken();
+                    queue.setProgressingJobsCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     queue.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("submittedJobsCount", targetDepth)) {
+                    context.nextToken();
+                    queue.setSubmittedJobsCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();

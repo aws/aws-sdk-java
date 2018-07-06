@@ -31,13 +31,13 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
     private String applicationId;
     /**
      * <p>
-     * The date/time this resource was created.
+     * The date and time this resource was created.
      * </p>
      */
     private String creationTime;
     /**
      * <p>
-     * Array of parameter types supported by the application.
+     * An array of parameter types supported by the application.
      * </p>
      */
     private java.util.List<ParameterDefinition> parameterDefinitions;
@@ -105,11 +105,11 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The date/time this resource was created.
+     * The date and time this resource was created.
      * </p>
      * 
      * @param creationTime
-     *        The date/time this resource was created.
+     *        The date and time this resource was created.
      */
 
     public void setCreationTime(String creationTime) {
@@ -118,10 +118,10 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The date/time this resource was created.
+     * The date and time this resource was created.
      * </p>
      * 
-     * @return The date/time this resource was created.
+     * @return The date and time this resource was created.
      */
 
     public String getCreationTime() {
@@ -130,11 +130,11 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The date/time this resource was created.
+     * The date and time this resource was created.
      * </p>
      * 
      * @param creationTime
-     *        The date/time this resource was created.
+     *        The date and time this resource was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,10 +145,10 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Array of parameter types supported by the application.
+     * An array of parameter types supported by the application.
      * </p>
      * 
-     * @return Array of parameter types supported by the application.
+     * @return An array of parameter types supported by the application.
      */
 
     public java.util.List<ParameterDefinition> getParameterDefinitions() {
@@ -157,11 +157,11 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Array of parameter types supported by the application.
+     * An array of parameter types supported by the application.
      * </p>
      * 
      * @param parameterDefinitions
-     *        Array of parameter types supported by the application.
+     *        An array of parameter types supported by the application.
      */
 
     public void setParameterDefinitions(java.util.Collection<ParameterDefinition> parameterDefinitions) {
@@ -175,7 +175,7 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Array of parameter types supported by the application.
+     * An array of parameter types supported by the application.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -184,7 +184,7 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param parameterDefinitions
-     *        Array of parameter types supported by the application.
+     *        An array of parameter types supported by the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,11 +200,11 @@ public class CreateApplicationVersionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Array of parameter types supported by the application.
+     * An array of parameter types supported by the application.
      * </p>
      * 
      * @param parameterDefinitions
-     *        Array of parameter types supported by the application.
+     *        An array of parameter types supported by the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

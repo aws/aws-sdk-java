@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.mediaconvert.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +39,8 @@ public class CreateJobTemplateRequestMarshaller {
             .marshallLocationName("queue").build();
     private static final MarshallingInfo<StructuredPojo> SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("settings").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateJobTemplateRequestMarshaller instance = new CreateJobTemplateRequestMarshaller();
 
@@ -59,6 +63,7 @@ public class CreateJobTemplateRequestMarshaller {
             protocolMarshaller.marshall(createJobTemplateRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createJobTemplateRequest.getQueue(), QUEUE_BINDING);
             protocolMarshaller.marshall(createJobTemplateRequest.getSettings(), SETTINGS_BINDING);
+            protocolMarshaller.marshall(createJobTemplateRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

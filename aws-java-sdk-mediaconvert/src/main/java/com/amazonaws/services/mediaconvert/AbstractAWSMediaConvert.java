@@ -113,6 +113,21 @@ public class AbstractAWSMediaConvert implements AWSMediaConvert {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateJobTemplateResult updateJobTemplate(UpdateJobTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

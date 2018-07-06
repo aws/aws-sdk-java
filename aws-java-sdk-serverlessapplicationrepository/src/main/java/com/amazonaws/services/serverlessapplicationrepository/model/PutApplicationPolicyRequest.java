@@ -27,24 +27,24 @@ public class PutApplicationPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the application to get.
+     * The Amazon Resource Name (ARN) of the application.
      * </p>
      */
     private String applicationId;
     /**
      * <p>
-     * Array of policy statements applied to the application.
+     * An array of policy statements applied to the application.
      * </p>
      */
     private java.util.List<ApplicationPolicyStatement> statements;
 
     /**
      * <p>
-     * The ID of the application to get.
+     * The Amazon Resource Name (ARN) of the application.
      * </p>
      * 
      * @param applicationId
-     *        The ID of the application to get.
+     *        The Amazon Resource Name (ARN) of the application.
      */
 
     public void setApplicationId(String applicationId) {
@@ -53,10 +53,10 @@ public class PutApplicationPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the application to get.
+     * The Amazon Resource Name (ARN) of the application.
      * </p>
      * 
-     * @return The ID of the application to get.
+     * @return The Amazon Resource Name (ARN) of the application.
      */
 
     public String getApplicationId() {
@@ -65,11 +65,11 @@ public class PutApplicationPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the application to get.
+     * The Amazon Resource Name (ARN) of the application.
      * </p>
      * 
      * @param applicationId
-     *        The ID of the application to get.
+     *        The Amazon Resource Name (ARN) of the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +80,10 @@ public class PutApplicationPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Array of policy statements applied to the application.
+     * An array of policy statements applied to the application.
      * </p>
      * 
-     * @return Array of policy statements applied to the application.
+     * @return An array of policy statements applied to the application.
      */
 
     public java.util.List<ApplicationPolicyStatement> getStatements() {
@@ -92,11 +92,11 @@ public class PutApplicationPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Array of policy statements applied to the application.
+     * An array of policy statements applied to the application.
      * </p>
      * 
      * @param statements
-     *        Array of policy statements applied to the application.
+     *        An array of policy statements applied to the application.
      */
 
     public void setStatements(java.util.Collection<ApplicationPolicyStatement> statements) {
@@ -110,7 +110,7 @@ public class PutApplicationPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Array of policy statements applied to the application.
+     * An array of policy statements applied to the application.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +119,7 @@ public class PutApplicationPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param statements
-     *        Array of policy statements applied to the application.
+     *        An array of policy statements applied to the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class PutApplicationPolicyRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Array of policy statements applied to the application.
+     * An array of policy statements applied to the application.
      * </p>
      * 
      * @param statements
-     *        Array of policy statements applied to the application.
+     *        An array of policy statements applied to the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

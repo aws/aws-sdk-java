@@ -37,8 +37,12 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date lastUpdated;
     /** A name you create for each queue. Each name must be unique within your account. */
     private String name;
+    /** Estimated number of jobs in PROGRESSING status. */
+    private Integer progressingJobsCount;
 
     private String status;
+    /** Estimated number of jobs in SUBMITTED status. */
+    private Integer submittedJobsCount;
     /**
      * A queue can be of two types: system or custom. System or built-in queues can't be modified or deleted by the
      * user.
@@ -216,6 +220,40 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Estimated number of jobs in PROGRESSING status.
+     * 
+     * @param progressingJobsCount
+     *        Estimated number of jobs in PROGRESSING status.
+     */
+
+    public void setProgressingJobsCount(Integer progressingJobsCount) {
+        this.progressingJobsCount = progressingJobsCount;
+    }
+
+    /**
+     * Estimated number of jobs in PROGRESSING status.
+     * 
+     * @return Estimated number of jobs in PROGRESSING status.
+     */
+
+    public Integer getProgressingJobsCount() {
+        return this.progressingJobsCount;
+    }
+
+    /**
+     * Estimated number of jobs in PROGRESSING status.
+     * 
+     * @param progressingJobsCount
+     *        Estimated number of jobs in PROGRESSING status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Queue withProgressingJobsCount(Integer progressingJobsCount) {
+        setProgressingJobsCount(progressingJobsCount);
+        return this;
+    }
+
+    /**
      * @param status
      * @see QueueStatus
      */
@@ -252,6 +290,40 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
 
     public Queue withStatus(QueueStatus status) {
         this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * Estimated number of jobs in SUBMITTED status.
+     * 
+     * @param submittedJobsCount
+     *        Estimated number of jobs in SUBMITTED status.
+     */
+
+    public void setSubmittedJobsCount(Integer submittedJobsCount) {
+        this.submittedJobsCount = submittedJobsCount;
+    }
+
+    /**
+     * Estimated number of jobs in SUBMITTED status.
+     * 
+     * @return Estimated number of jobs in SUBMITTED status.
+     */
+
+    public Integer getSubmittedJobsCount() {
+        return this.submittedJobsCount;
+    }
+
+    /**
+     * Estimated number of jobs in SUBMITTED status.
+     * 
+     * @param submittedJobsCount
+     *        Estimated number of jobs in SUBMITTED status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Queue withSubmittedJobsCount(Integer submittedJobsCount) {
+        setSubmittedJobsCount(submittedJobsCount);
         return this;
     }
 
@@ -335,8 +407,12 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
             sb.append("LastUpdated: ").append(getLastUpdated()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getProgressingJobsCount() != null)
+            sb.append("ProgressingJobsCount: ").append(getProgressingJobsCount()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getSubmittedJobsCount() != null)
+            sb.append("SubmittedJobsCount: ").append(getSubmittedJobsCount()).append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType());
         sb.append("}");
@@ -373,9 +449,17 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getProgressingJobsCount() == null ^ this.getProgressingJobsCount() == null)
+            return false;
+        if (other.getProgressingJobsCount() != null && other.getProgressingJobsCount().equals(this.getProgressingJobsCount()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getSubmittedJobsCount() == null ^ this.getSubmittedJobsCount() == null)
+            return false;
+        if (other.getSubmittedJobsCount() != null && other.getSubmittedJobsCount().equals(this.getSubmittedJobsCount()) == false)
             return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
@@ -394,7 +478,9 @@ public class Queue implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getLastUpdated() == null) ? 0 : getLastUpdated().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getProgressingJobsCount() == null) ? 0 : getProgressingJobsCount().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getSubmittedJobsCount() == null) ? 0 : getSubmittedJobsCount().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }

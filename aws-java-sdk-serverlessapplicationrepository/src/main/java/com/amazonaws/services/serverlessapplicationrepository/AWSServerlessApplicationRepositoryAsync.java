@@ -131,7 +131,7 @@ public interface AWSServerlessApplicationRepositoryAsync extends AWSServerlessAp
 
     /**
      * <p>
-     * Creates an AWS CloudFormation ChangeSet for the given application.
+     * Creates an AWS CloudFormation change set for the given application.
      * </p>
      * 
      * @param createCloudFormationChangeSetRequest
@@ -146,7 +146,7 @@ public interface AWSServerlessApplicationRepositoryAsync extends AWSServerlessAp
 
     /**
      * <p>
-     * Creates an AWS CloudFormation ChangeSet for the given application.
+     * Creates an AWS CloudFormation change set for the given application.
      * </p>
      * 
      * @param createCloudFormationChangeSetRequest
@@ -228,7 +228,7 @@ public interface AWSServerlessApplicationRepositoryAsync extends AWSServerlessAp
 
     /**
      * <p>
-     * Gets the policy for the specified application.
+     * Retrieves the policy for the application.
      * </p>
      * 
      * @param getApplicationPolicyRequest
@@ -241,7 +241,7 @@ public interface AWSServerlessApplicationRepositoryAsync extends AWSServerlessAp
 
     /**
      * <p>
-     * Gets the policy for the specified application.
+     * Retrieves the policy for the application.
      * </p>
      * 
      * @param getApplicationPolicyRequest
@@ -321,7 +321,9 @@ public interface AWSServerlessApplicationRepositoryAsync extends AWSServerlessAp
 
     /**
      * <p>
-     * Puts the policy for the specified application.
+     * Sets the permission policy for an application. See <a href=
+     * "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions"
+     * >Application Permissions</a> for the list of supported actions that can be used with this operation.
      * </p>
      * 
      * @param putApplicationPolicyRequest
@@ -334,7 +336,9 @@ public interface AWSServerlessApplicationRepositoryAsync extends AWSServerlessAp
 
     /**
      * <p>
-     * Puts the policy for the specified application.
+     * Sets the permission policy for an application. See <a href=
+     * "https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions"
+     * >Application Permissions</a> for the list of supported actions that can be used with this operation.
      * </p>
      * 
      * @param putApplicationPolicyRequest

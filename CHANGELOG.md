@@ -1,3 +1,12 @@
+# __1.11.362__ __2018-07-06__
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - This release adds support for the following 1) users can specify tags to be attached to queues, presets, and templates during creation of those resources on MediaConvert. 2) users can now view the count of jobs in submitted state and in progressing state on a per queue basis.
+
+## __AWSServerlessApplicationRepository__
+  - ### Features
+    - Added required fields and documentation updates for AWS Serverless Application Repository.
+
 # __1.11.361__ __2018-07-05__
 ## __Amazon Pinpoint__
   - ### Features
