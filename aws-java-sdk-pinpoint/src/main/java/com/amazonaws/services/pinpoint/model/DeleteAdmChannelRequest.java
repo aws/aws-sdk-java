@@ -25,10 +25,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteAdmChannelRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /** The unique ID of your Amazon Pinpoint application. */
     private String applicationId;
 
     /**
+     * The unique ID of your Amazon Pinpoint application.
+     * 
      * @param applicationId
+     *        The unique ID of your Amazon Pinpoint application.
      */
 
     public void setApplicationId(String applicationId) {
@@ -36,7 +40,9 @@ public class DeleteAdmChannelRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * The unique ID of your Amazon Pinpoint application.
+     * 
+     * @return The unique ID of your Amazon Pinpoint application.
      */
 
     public String getApplicationId() {
@@ -44,7 +50,10 @@ public class DeleteAdmChannelRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * The unique ID of your Amazon Pinpoint application.
+     * 
      * @param applicationId
+     *        The unique ID of your Amazon Pinpoint application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

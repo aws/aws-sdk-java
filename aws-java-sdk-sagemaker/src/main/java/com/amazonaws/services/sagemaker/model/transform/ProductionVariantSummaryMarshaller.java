@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.sagemaker.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,8 @@ public class ProductionVariantSummaryMarshaller {
 
     private static final MarshallingInfo<String> VARIANTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VariantName").build();
+    private static final MarshallingInfo<List> DEPLOYEDIMAGES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeployedImages").build();
     private static final MarshallingInfo<Float> CURRENTWEIGHT_BINDING = MarshallingInfo.builder(MarshallingType.FLOAT)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CurrentWeight").build();
     private static final MarshallingInfo<Float> DESIREDWEIGHT_BINDING = MarshallingInfo.builder(MarshallingType.FLOAT)
@@ -55,6 +58,7 @@ public class ProductionVariantSummaryMarshaller {
 
         try {
             protocolMarshaller.marshall(productionVariantSummary.getVariantName(), VARIANTNAME_BINDING);
+            protocolMarshaller.marshall(productionVariantSummary.getDeployedImages(), DEPLOYEDIMAGES_BINDING);
             protocolMarshaller.marshall(productionVariantSummary.getCurrentWeight(), CURRENTWEIGHT_BINDING);
             protocolMarshaller.marshall(productionVariantSummary.getDesiredWeight(), DESIREDWEIGHT_BINDING);
             protocolMarshaller.marshall(productionVariantSummary.getCurrentInstanceCount(), CURRENTINSTANCECOUNT_BINDING);

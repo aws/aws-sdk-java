@@ -26,16 +26,16 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MessageBody implements Serializable, Cloneable, StructuredPojo {
 
-    /** The error message returned from the API. */
+    /** The error message that's returned from the API. */
     private String message;
     /** The unique message body ID. */
     private String requestID;
 
     /**
-     * The error message returned from the API.
+     * The error message that's returned from the API.
      * 
      * @param message
-     *        The error message returned from the API.
+     *        The error message that's returned from the API.
      */
 
     public void setMessage(String message) {
@@ -43,9 +43,9 @@ public class MessageBody implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The error message returned from the API.
+     * The error message that's returned from the API.
      * 
-     * @return The error message returned from the API.
+     * @return The error message that's returned from the API.
      */
 
     public String getMessage() {
@@ -53,10 +53,10 @@ public class MessageBody implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The error message returned from the API.
+     * The error message that's returned from the API.
      * 
      * @param message
-     *        The error message returned from the API.
+     *        The error message that's returned from the API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

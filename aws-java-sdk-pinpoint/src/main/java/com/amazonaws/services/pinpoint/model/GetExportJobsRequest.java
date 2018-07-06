@@ -25,6 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetExportJobsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /** The unique ID of your Amazon Pinpoint application. */
     private String applicationId;
     /** The number of entries you want on each page in the response. */
     private String pageSize;
@@ -35,7 +36,10 @@ public class GetExportJobsRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String token;
 
     /**
+     * The unique ID of your Amazon Pinpoint application.
+     * 
      * @param applicationId
+     *        The unique ID of your Amazon Pinpoint application.
      */
 
     public void setApplicationId(String applicationId) {
@@ -43,7 +47,9 @@ public class GetExportJobsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * The unique ID of your Amazon Pinpoint application.
+     * 
+     * @return The unique ID of your Amazon Pinpoint application.
      */
 
     public String getApplicationId() {
@@ -51,7 +57,10 @@ public class GetExportJobsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * The unique ID of your Amazon Pinpoint application.
+     * 
      * @param applicationId
+     *        The unique ID of your Amazon Pinpoint application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

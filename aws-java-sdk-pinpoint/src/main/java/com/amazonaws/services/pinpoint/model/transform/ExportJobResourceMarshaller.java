@@ -33,6 +33,8 @@ public class ExportJobResourceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3UrlPrefix").build();
     private static final MarshallingInfo<String> SEGMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SegmentId").build();
+    private static final MarshallingInfo<Integer> SEGMENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SegmentVersion").build();
 
     private static final ExportJobResourceMarshaller instance = new ExportJobResourceMarshaller();
 
@@ -53,6 +55,7 @@ public class ExportJobResourceMarshaller {
             protocolMarshaller.marshall(exportJobResource.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(exportJobResource.getS3UrlPrefix(), S3URLPREFIX_BINDING);
             protocolMarshaller.marshall(exportJobResource.getSegmentId(), SEGMENTID_BINDING);
+            protocolMarshaller.marshall(exportJobResource.getSegmentVersion(), SEGMENTVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

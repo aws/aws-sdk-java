@@ -88,6 +88,10 @@ public class EmailChannelResponseJsonUnmarshaller implements Unmarshaller<EmailC
                     context.nextToken();
                     emailChannelResponse.setLastModifiedDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("MessagesPerSecond", targetDepth)) {
+                    context.nextToken();
+                    emailChannelResponse.setMessagesPerSecond(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("Platform", targetDepth)) {
                     context.nextToken();
                     emailChannelResponse.setPlatform(context.getUnmarshaller(String.class).unmarshall(context));

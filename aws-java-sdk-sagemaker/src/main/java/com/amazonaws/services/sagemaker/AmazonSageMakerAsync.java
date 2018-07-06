@@ -103,6 +103,14 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * For an example, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/ex1.html">Exercise 1: Using the
      * K-Means Algorithm Provided by Amazon SageMaker</a>.
      * </p>
+     * <p>
+     * If any of the models hosted at this endpoint get model data from an Amazon S3 location, Amazon SageMaker uses AWS
+     * Security Token Service to download model artifacts from the S3 path you provided. AWS STS is activated in your
+     * IAM user account by default. If you previously deactivated AWS STS for a region, you need to reactivate AWS STS
+     * for that region. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
+     * Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
+     * </p>
      * 
      * @param createEndpointRequest
      * @return A Java Future containing the result of the CreateEndpoint operation returned by the service.
@@ -139,6 +147,14 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * <p>
      * For an example, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/ex1.html">Exercise 1: Using the
      * K-Means Algorithm Provided by Amazon SageMaker</a>.
+     * </p>
+     * <p>
+     * If any of the models hosted at this endpoint get model data from an Amazon S3 location, Amazon SageMaker uses AWS
+     * Security Token Service to download model artifacts from the S3 path you provided. AWS STS is activated in your
+     * IAM user account by default. If you previously deactivated AWS STS for a region, you need to reactivate AWS STS
+     * for that region. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
+     * Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
      * </p>
      * 
      * @param createEndpointRequest
@@ -1232,7 +1248,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Gets a list of objects that describe the hyperparameter tuning jobs launched in your account.
+     * Gets a list of <a>HyperParameterTuningJobSummary</a> objects that describe the hyperparameter tuning jobs
+     * launched in your account.
      * </p>
      * 
      * @param listHyperParameterTuningJobsRequest
@@ -1247,7 +1264,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Gets a list of objects that describe the hyperparameter tuning jobs launched in your account.
+     * Gets a list of <a>HyperParameterTuningJobSummary</a> objects that describe the hyperparameter tuning jobs
+     * launched in your account.
      * </p>
      * 
      * @param listHyperParameterTuningJobsRequest
@@ -1300,7 +1318,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Lists notebook instance lifestyle configurations created with the API.
+     * Lists notebook instance lifestyle configurations created with the <a>CreateNotebookInstanceLifecycleConfig</a>
+     * API.
      * </p>
      * 
      * @param listNotebookInstanceLifecycleConfigsRequest
@@ -1315,7 +1334,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Lists notebook instance lifestyle configurations created with the API.
+     * Lists notebook instance lifestyle configurations created with the <a>CreateNotebookInstanceLifecycleConfig</a>
+     * API.
      * </p>
      * 
      * @param listNotebookInstanceLifecycleConfigsRequest
@@ -1428,7 +1448,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Gets a list of objects that describe the training jobs that a hyperparameter tuning job launched.
+     * Gets a list of <a>TrainingJobSummary</a> objects that describe the training jobs that a hyperparameter tuning job
+     * launched.
      * </p>
      * 
      * @param listTrainingJobsForHyperParameterTuningJobRequest
@@ -1444,7 +1465,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Gets a list of objects that describe the training jobs that a hyperparameter tuning job launched.
+     * Gets a list of <a>TrainingJobSummary</a> objects that describe the training jobs that a hyperparameter tuning job
+     * launched.
      * </p>
      * 
      * @param listTrainingJobsForHyperParameterTuningJobRequest
@@ -1650,6 +1672,12 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * the endpoint, it sets the status to <code>InService</code>. To check the status of an endpoint, use the <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a> API.
      * </p>
+     * <note>
+     * <p>
+     * You cannot update an endpoint with the current <code>EndpointConfig</code>. To update an endpoint, you must
+     * create a new <code>EndpointConfig</code>.
+     * </p>
+     * </note>
      * 
      * @param updateEndpointRequest
      * @return A Java Future containing the result of the UpdateEndpoint operation returned by the service.
@@ -1670,6 +1698,12 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * the endpoint, it sets the status to <code>InService</code>. To check the status of an endpoint, use the <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a> API.
      * </p>
+     * <note>
+     * <p>
+     * You cannot update an endpoint with the current <code>EndpointConfig</code>. To update an endpoint, you must
+     * create a new <code>EndpointConfig</code>.
+     * </p>
+     * </note>
      * 
      * @param updateEndpointRequest
      * @param asyncHandler
@@ -1764,7 +1798,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Updates a notebook instance lifecycle configuration created with the API.
+     * Updates a notebook instance lifecycle configuration created with the <a>CreateNotebookInstanceLifecycleConfig</a>
+     * API.
      * </p>
      * 
      * @param updateNotebookInstanceLifecycleConfigRequest
@@ -1779,7 +1814,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Updates a notebook instance lifecycle configuration created with the API.
+     * Updates a notebook instance lifecycle configuration created with the <a>CreateNotebookInstanceLifecycleConfig</a>
+     * API.
      * </p>
      * 
      * @param updateNotebookInstanceLifecycleConfigRequest

@@ -52,6 +52,11 @@ public class ProductionVariantSummaryJsonUnmarshaller implements Unmarshaller<Pr
                     context.nextToken();
                     productionVariantSummary.setVariantName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DeployedImages", targetDepth)) {
+                    context.nextToken();
+                    productionVariantSummary.setDeployedImages(new ListUnmarshaller<DeployedImage>(DeployedImageJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
                 if (context.testExpression("CurrentWeight", targetDepth)) {
                     context.nextToken();
                     productionVariantSummary.setCurrentWeight(context.getUnmarshaller(Float.class).unmarshall(context));

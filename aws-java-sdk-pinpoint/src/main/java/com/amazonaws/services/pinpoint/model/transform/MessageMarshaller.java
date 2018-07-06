@@ -45,6 +45,8 @@ public class MessageMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RawContent").build();
     private static final MarshallingInfo<Boolean> SILENTPUSH_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SilentPush").build();
+    private static final MarshallingInfo<Integer> TIMETOLIVE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimeToLive").build();
     private static final MarshallingInfo<String> TITLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Title").build();
     private static final MarshallingInfo<String> URL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -75,6 +77,7 @@ public class MessageMarshaller {
             protocolMarshaller.marshall(message.getMediaUrl(), MEDIAURL_BINDING);
             protocolMarshaller.marshall(message.getRawContent(), RAWCONTENT_BINDING);
             protocolMarshaller.marshall(message.getSilentPush(), SILENTPUSH_BINDING);
+            protocolMarshaller.marshall(message.getTimeToLive(), TIMETOLIVE_BINDING);
             protocolMarshaller.marshall(message.getTitle(), TITLE_BINDING);
             protocolMarshaller.marshall(message.getUrl(), URL_BINDING);
         } catch (Exception e) {

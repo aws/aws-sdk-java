@@ -25,10 +25,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetSegmentImportJobsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /** The unique ID of your Amazon Pinpoint application. */
     private String applicationId;
     /** The number of entries you want on each page in the response. */
     private String pageSize;
-
+    /** The unique ID of the segment. */
     private String segmentId;
     /**
      * The NextToken string returned on a previous page that you use to get the next page of results in a paginated
@@ -37,7 +38,10 @@ public class GetSegmentImportJobsRequest extends com.amazonaws.AmazonWebServiceR
     private String token;
 
     /**
+     * The unique ID of your Amazon Pinpoint application.
+     * 
      * @param applicationId
+     *        The unique ID of your Amazon Pinpoint application.
      */
 
     public void setApplicationId(String applicationId) {
@@ -45,7 +49,9 @@ public class GetSegmentImportJobsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * The unique ID of your Amazon Pinpoint application.
+     * 
+     * @return The unique ID of your Amazon Pinpoint application.
      */
 
     public String getApplicationId() {
@@ -53,7 +59,10 @@ public class GetSegmentImportJobsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * The unique ID of your Amazon Pinpoint application.
+     * 
      * @param applicationId
+     *        The unique ID of your Amazon Pinpoint application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,7 +106,10 @@ public class GetSegmentImportJobsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * The unique ID of the segment.
+     * 
      * @param segmentId
+     *        The unique ID of the segment.
      */
 
     public void setSegmentId(String segmentId) {
@@ -105,7 +117,9 @@ public class GetSegmentImportJobsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * The unique ID of the segment.
+     * 
+     * @return The unique ID of the segment.
      */
 
     public String getSegmentId() {
@@ -113,7 +127,10 @@ public class GetSegmentImportJobsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * The unique ID of the segment.
+     * 
      * @param segmentId
+     *        The unique ID of the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

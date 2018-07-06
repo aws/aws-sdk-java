@@ -26,7 +26,7 @@ public class ListTrainingJobsForHyperParameterTuningJobResult extends com.amazon
 
     /**
      * <p>
-     * A list of objects that describe the training jobs that the
+     * A list of <a>TrainingJobSummary</a> objects that describe the training jobs that the
      * <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.
      * </p>
      */
@@ -41,11 +41,11 @@ public class ListTrainingJobsForHyperParameterTuningJobResult extends com.amazon
 
     /**
      * <p>
-     * A list of objects that describe the training jobs that the
+     * A list of <a>TrainingJobSummary</a> objects that describe the training jobs that the
      * <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.
      * </p>
      * 
-     * @return A list of objects that describe the training jobs that the
+     * @return A list of <a>TrainingJobSummary</a> objects that describe the training jobs that the
      *         <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.
      */
 
@@ -55,12 +55,12 @@ public class ListTrainingJobsForHyperParameterTuningJobResult extends com.amazon
 
     /**
      * <p>
-     * A list of objects that describe the training jobs that the
+     * A list of <a>TrainingJobSummary</a> objects that describe the training jobs that the
      * <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.
      * </p>
      * 
      * @param trainingJobSummaries
-     *        A list of objects that describe the training jobs that the
+     *        A list of <a>TrainingJobSummary</a> objects that describe the training jobs that the
      *        <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.
      */
 
@@ -75,7 +75,7 @@ public class ListTrainingJobsForHyperParameterTuningJobResult extends com.amazon
 
     /**
      * <p>
-     * A list of objects that describe the training jobs that the
+     * A list of <a>TrainingJobSummary</a> objects that describe the training jobs that the
      * <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.
      * </p>
      * <p>
@@ -85,7 +85,7 @@ public class ListTrainingJobsForHyperParameterTuningJobResult extends com.amazon
      * </p>
      * 
      * @param trainingJobSummaries
-     *        A list of objects that describe the training jobs that the
+     *        A list of <a>TrainingJobSummary</a> objects that describe the training jobs that the
      *        <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -102,12 +102,12 @@ public class ListTrainingJobsForHyperParameterTuningJobResult extends com.amazon
 
     /**
      * <p>
-     * A list of objects that describe the training jobs that the
+     * A list of <a>TrainingJobSummary</a> objects that describe the training jobs that the
      * <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.
      * </p>
      * 
      * @param trainingJobSummaries
-     *        A list of objects that describe the training jobs that the
+     *        A list of <a>TrainingJobSummary</a> objects that describe the training jobs that the
      *        <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

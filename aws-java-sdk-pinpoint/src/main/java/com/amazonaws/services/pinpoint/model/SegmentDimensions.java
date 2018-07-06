@@ -34,6 +34,8 @@ public class SegmentDimensions implements Serializable, Cloneable, StructuredPoj
     private SegmentDemographics demographic;
     /** The segment location attributes. */
     private SegmentLocation location;
+    /** Custom segment metrics. */
+    private java.util.Map<String, MetricDimension> metrics;
     /** Custom segment user attributes. */
     private java.util.Map<String, AttributeDimension> userAttributes;
 
@@ -195,6 +197,61 @@ public class SegmentDimensions implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * Custom segment metrics.
+     * 
+     * @return Custom segment metrics.
+     */
+
+    public java.util.Map<String, MetricDimension> getMetrics() {
+        return metrics;
+    }
+
+    /**
+     * Custom segment metrics.
+     * 
+     * @param metrics
+     *        Custom segment metrics.
+     */
+
+    public void setMetrics(java.util.Map<String, MetricDimension> metrics) {
+        this.metrics = metrics;
+    }
+
+    /**
+     * Custom segment metrics.
+     * 
+     * @param metrics
+     *        Custom segment metrics.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SegmentDimensions withMetrics(java.util.Map<String, MetricDimension> metrics) {
+        setMetrics(metrics);
+        return this;
+    }
+
+    public SegmentDimensions addMetricsEntry(String key, MetricDimension value) {
+        if (null == this.metrics) {
+            this.metrics = new java.util.HashMap<String, MetricDimension>();
+        }
+        if (this.metrics.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.metrics.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Metrics.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SegmentDimensions clearMetricsEntries() {
+        this.metrics = null;
+        return this;
+    }
+
+    /**
      * Custom segment user attributes.
      * 
      * @return Custom segment user attributes.
@@ -268,6 +325,8 @@ public class SegmentDimensions implements Serializable, Cloneable, StructuredPoj
             sb.append("Demographic: ").append(getDemographic()).append(",");
         if (getLocation() != null)
             sb.append("Location: ").append(getLocation()).append(",");
+        if (getMetrics() != null)
+            sb.append("Metrics: ").append(getMetrics()).append(",");
         if (getUserAttributes() != null)
             sb.append("UserAttributes: ").append(getUserAttributes());
         sb.append("}");
@@ -300,6 +359,10 @@ public class SegmentDimensions implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
             return false;
+        if (other.getMetrics() == null ^ this.getMetrics() == null)
+            return false;
+        if (other.getMetrics() != null && other.getMetrics().equals(this.getMetrics()) == false)
+            return false;
         if (other.getUserAttributes() == null ^ this.getUserAttributes() == null)
             return false;
         if (other.getUserAttributes() != null && other.getUserAttributes().equals(this.getUserAttributes()) == false)
@@ -316,6 +379,7 @@ public class SegmentDimensions implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getBehavior() == null) ? 0 : getBehavior().hashCode());
         hashCode = prime * hashCode + ((getDemographic() == null) ? 0 : getDemographic().hashCode());
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
+        hashCode = prime * hashCode + ((getMetrics() == null) ? 0 : getMetrics().hashCode());
         hashCode = prime * hashCode + ((getUserAttributes() == null) ? 0 : getUserAttributes().hashCode());
         return hashCode;
     }

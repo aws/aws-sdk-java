@@ -60,6 +60,10 @@ public class ExportJobResourceJsonUnmarshaller implements Unmarshaller<ExportJob
                     context.nextToken();
                     exportJobResource.setSegmentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SegmentVersion", targetDepth)) {
+                    context.nextToken();
+                    exportJobResource.setSegmentVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

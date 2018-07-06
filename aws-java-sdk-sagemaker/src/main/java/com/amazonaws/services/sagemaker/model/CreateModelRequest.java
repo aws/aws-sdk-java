@@ -63,8 +63,8 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * A object that specifies the VPC that you want your model to connect to. Control access to and from your model
-     * container by configuring the VPC. For more information, see <a>host-vpc</a>.
+     * A <a>VpcConfig</a> object that specifies the VPC that you want your model to connect to. Control access to and
+     * from your model container by configuring the VPC. For more information, see <a>host-vpc</a>.
      * </p>
      */
     private VpcConfig vpcConfig;
@@ -334,13 +334,13 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A object that specifies the VPC that you want your model to connect to. Control access to and from your model
-     * container by configuring the VPC. For more information, see <a>host-vpc</a>.
+     * A <a>VpcConfig</a> object that specifies the VPC that you want your model to connect to. Control access to and
+     * from your model container by configuring the VPC. For more information, see <a>host-vpc</a>.
      * </p>
      * 
      * @param vpcConfig
-     *        A object that specifies the VPC that you want your model to connect to. Control access to and from your
-     *        model container by configuring the VPC. For more information, see <a>host-vpc</a>.
+     *        A <a>VpcConfig</a> object that specifies the VPC that you want your model to connect to. Control access to
+     *        and from your model container by configuring the VPC. For more information, see <a>host-vpc</a>.
      */
 
     public void setVpcConfig(VpcConfig vpcConfig) {
@@ -349,12 +349,12 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A object that specifies the VPC that you want your model to connect to. Control access to and from your model
-     * container by configuring the VPC. For more information, see <a>host-vpc</a>.
+     * A <a>VpcConfig</a> object that specifies the VPC that you want your model to connect to. Control access to and
+     * from your model container by configuring the VPC. For more information, see <a>host-vpc</a>.
      * </p>
      * 
-     * @return A object that specifies the VPC that you want your model to connect to. Control access to and from your
-     *         model container by configuring the VPC. For more information, see <a>host-vpc</a>.
+     * @return A <a>VpcConfig</a> object that specifies the VPC that you want your model to connect to. Control access
+     *         to and from your model container by configuring the VPC. For more information, see <a>host-vpc</a>.
      */
 
     public VpcConfig getVpcConfig() {
@@ -363,13 +363,13 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A object that specifies the VPC that you want your model to connect to. Control access to and from your model
-     * container by configuring the VPC. For more information, see <a>host-vpc</a>.
+     * A <a>VpcConfig</a> object that specifies the VPC that you want your model to connect to. Control access to and
+     * from your model container by configuring the VPC. For more information, see <a>host-vpc</a>.
      * </p>
      * 
      * @param vpcConfig
-     *        A object that specifies the VPC that you want your model to connect to. Control access to and from your
-     *        model container by configuring the VPC. For more information, see <a>host-vpc</a>.
+     *        A <a>VpcConfig</a> object that specifies the VPC that you want your model to connect to. Control access to
+     *        and from your model container by configuring the VPC. For more information, see <a>host-vpc</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

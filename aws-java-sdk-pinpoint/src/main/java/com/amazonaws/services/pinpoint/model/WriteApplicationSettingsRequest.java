@@ -28,6 +28,8 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
 
     /** Default campaign hook information. */
     private CampaignHook campaignHook;
+    /** The CloudWatchMetrics settings for the app. */
+    private Boolean cloudWatchMetricsEnabled;
     /**
      * The default campaign limits for the app. These limits apply to each campaign for the app, unless the campaign
      * overrides the default with limits of its own.
@@ -71,6 +73,50 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
     public WriteApplicationSettingsRequest withCampaignHook(CampaignHook campaignHook) {
         setCampaignHook(campaignHook);
         return this;
+    }
+
+    /**
+     * The CloudWatchMetrics settings for the app.
+     * 
+     * @param cloudWatchMetricsEnabled
+     *        The CloudWatchMetrics settings for the app.
+     */
+
+    public void setCloudWatchMetricsEnabled(Boolean cloudWatchMetricsEnabled) {
+        this.cloudWatchMetricsEnabled = cloudWatchMetricsEnabled;
+    }
+
+    /**
+     * The CloudWatchMetrics settings for the app.
+     * 
+     * @return The CloudWatchMetrics settings for the app.
+     */
+
+    public Boolean getCloudWatchMetricsEnabled() {
+        return this.cloudWatchMetricsEnabled;
+    }
+
+    /**
+     * The CloudWatchMetrics settings for the app.
+     * 
+     * @param cloudWatchMetricsEnabled
+     *        The CloudWatchMetrics settings for the app.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WriteApplicationSettingsRequest withCloudWatchMetricsEnabled(Boolean cloudWatchMetricsEnabled) {
+        setCloudWatchMetricsEnabled(cloudWatchMetricsEnabled);
+        return this;
+    }
+
+    /**
+     * The CloudWatchMetrics settings for the app.
+     * 
+     * @return The CloudWatchMetrics settings for the app.
+     */
+
+    public Boolean isCloudWatchMetricsEnabled() {
+        return this.cloudWatchMetricsEnabled;
     }
 
     /**
@@ -166,6 +212,8 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
         sb.append("{");
         if (getCampaignHook() != null)
             sb.append("CampaignHook: ").append(getCampaignHook()).append(",");
+        if (getCloudWatchMetricsEnabled() != null)
+            sb.append("CloudWatchMetricsEnabled: ").append(getCloudWatchMetricsEnabled()).append(",");
         if (getLimits() != null)
             sb.append("Limits: ").append(getLimits()).append(",");
         if (getQuietTime() != null)
@@ -188,6 +236,10 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
             return false;
         if (other.getCampaignHook() != null && other.getCampaignHook().equals(this.getCampaignHook()) == false)
             return false;
+        if (other.getCloudWatchMetricsEnabled() == null ^ this.getCloudWatchMetricsEnabled() == null)
+            return false;
+        if (other.getCloudWatchMetricsEnabled() != null && other.getCloudWatchMetricsEnabled().equals(this.getCloudWatchMetricsEnabled()) == false)
+            return false;
         if (other.getLimits() == null ^ this.getLimits() == null)
             return false;
         if (other.getLimits() != null && other.getLimits().equals(this.getLimits()) == false)
@@ -205,6 +257,7 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCampaignHook() == null) ? 0 : getCampaignHook().hashCode());
+        hashCode = prime * hashCode + ((getCloudWatchMetricsEnabled() == null) ? 0 : getCloudWatchMetricsEnabled().hashCode());
         hashCode = prime * hashCode + ((getLimits() == null) ? 0 : getLimits().hashCode());
         hashCode = prime * hashCode + ((getQuietTime() == null) ? 0 : getQuietTime().hashCode());
         return hashCode;

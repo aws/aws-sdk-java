@@ -34,10 +34,7 @@ public class GCMChannelResponse implements Serializable, Cloneable, StructuredPo
     private String credential;
     /** If the channel is enabled for sending messages. */
     private Boolean enabled;
-    /**
-     * Indicates whether the channel is configured with FCM or GCM credentials. Amazon Pinpoint uses your credentials to
-     * authenticate push notifications with FCM or GCM. Provide your credentials by setting the ApiKey attribute.
-     */
+    /** Not used. Retained for backwards compatibility. */
     private Boolean hasCredential;
     /** Channel ID. Not used. Present only for backwards compatibility. */
     private String id;
@@ -199,13 +196,10 @@ public class GCMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Indicates whether the channel is configured with FCM or GCM credentials. Amazon Pinpoint uses your credentials to
-     * authenticate push notifications with FCM or GCM. Provide your credentials by setting the ApiKey attribute.
+     * Not used. Retained for backwards compatibility.
      * 
      * @param hasCredential
-     *        Indicates whether the channel is configured with FCM or GCM credentials. Amazon Pinpoint uses your
-     *        credentials to authenticate push notifications with FCM or GCM. Provide your credentials by setting the
-     *        ApiKey attribute.
+     *        Not used. Retained for backwards compatibility.
      */
 
     public void setHasCredential(Boolean hasCredential) {
@@ -213,12 +207,9 @@ public class GCMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Indicates whether the channel is configured with FCM or GCM credentials. Amazon Pinpoint uses your credentials to
-     * authenticate push notifications with FCM or GCM. Provide your credentials by setting the ApiKey attribute.
+     * Not used. Retained for backwards compatibility.
      * 
-     * @return Indicates whether the channel is configured with FCM or GCM credentials. Amazon Pinpoint uses your
-     *         credentials to authenticate push notifications with FCM or GCM. Provide your credentials by setting the
-     *         ApiKey attribute.
+     * @return Not used. Retained for backwards compatibility.
      */
 
     public Boolean getHasCredential() {
@@ -226,13 +217,10 @@ public class GCMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Indicates whether the channel is configured with FCM or GCM credentials. Amazon Pinpoint uses your credentials to
-     * authenticate push notifications with FCM or GCM. Provide your credentials by setting the ApiKey attribute.
+     * Not used. Retained for backwards compatibility.
      * 
      * @param hasCredential
-     *        Indicates whether the channel is configured with FCM or GCM credentials. Amazon Pinpoint uses your
-     *        credentials to authenticate push notifications with FCM or GCM. Provide your credentials by setting the
-     *        ApiKey attribute.
+     *        Not used. Retained for backwards compatibility.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -242,12 +230,9 @@ public class GCMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Indicates whether the channel is configured with FCM or GCM credentials. Amazon Pinpoint uses your credentials to
-     * authenticate push notifications with FCM or GCM. Provide your credentials by setting the ApiKey attribute.
+     * Not used. Retained for backwards compatibility.
      * 
-     * @return Indicates whether the channel is configured with FCM or GCM credentials. Amazon Pinpoint uses your
-     *         credentials to authenticate push notifications with FCM or GCM. Provide your credentials by setting the
-     *         ApiKey attribute.
+     * @return Not used. Retained for backwards compatibility.
      */
 
     public Boolean isHasCredential() {

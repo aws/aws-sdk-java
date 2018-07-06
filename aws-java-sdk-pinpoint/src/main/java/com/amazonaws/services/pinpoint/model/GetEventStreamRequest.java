@@ -18,7 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * GetEventStreamRequest
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEventStream" target="_top">AWS API
  *      Documentation</a>
@@ -26,14 +25,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetEventStreamRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** ApplicationId */
+    /** The unique ID of your Amazon Pinpoint application. */
     private String applicationId;
 
     /**
-     * ApplicationId
+     * The unique ID of your Amazon Pinpoint application.
      * 
      * @param applicationId
-     *        ApplicationId
+     *        The unique ID of your Amazon Pinpoint application.
      */
 
     public void setApplicationId(String applicationId) {
@@ -41,9 +40,9 @@ public class GetEventStreamRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * ApplicationId
+     * The unique ID of your Amazon Pinpoint application.
      * 
-     * @return ApplicationId
+     * @return The unique ID of your Amazon Pinpoint application.
      */
 
     public String getApplicationId() {
@@ -51,10 +50,10 @@ public class GetEventStreamRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * ApplicationId
+     * The unique ID of your Amazon Pinpoint application.
      * 
      * @param applicationId
-     *        ApplicationId
+     *        The unique ID of your Amazon Pinpoint application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

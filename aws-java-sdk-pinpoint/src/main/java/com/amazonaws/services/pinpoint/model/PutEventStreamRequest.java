@@ -25,16 +25,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PutEventStreamRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** ApplicationId */
+    /** The unique ID of your Amazon Pinpoint application. */
     private String applicationId;
-    /** EventStream to write. */
+
     private WriteEventStream writeEventStream;
 
     /**
-     * ApplicationId
+     * The unique ID of your Amazon Pinpoint application.
      * 
      * @param applicationId
-     *        ApplicationId
+     *        The unique ID of your Amazon Pinpoint application.
      */
 
     public void setApplicationId(String applicationId) {
@@ -42,9 +42,9 @@ public class PutEventStreamRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * ApplicationId
+     * The unique ID of your Amazon Pinpoint application.
      * 
-     * @return ApplicationId
+     * @return The unique ID of your Amazon Pinpoint application.
      */
 
     public String getApplicationId() {
@@ -52,10 +52,10 @@ public class PutEventStreamRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * ApplicationId
+     * The unique ID of your Amazon Pinpoint application.
      * 
      * @param applicationId
-     *        ApplicationId
+     *        The unique ID of your Amazon Pinpoint application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -65,10 +65,7 @@ public class PutEventStreamRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * EventStream to write.
-     * 
      * @param writeEventStream
-     *        EventStream to write.
      */
 
     public void setWriteEventStream(WriteEventStream writeEventStream) {
@@ -76,9 +73,7 @@ public class PutEventStreamRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * EventStream to write.
-     * 
-     * @return EventStream to write.
+     * @return
      */
 
     public WriteEventStream getWriteEventStream() {
@@ -86,10 +81,7 @@ public class PutEventStreamRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * EventStream to write.
-     * 
      * @param writeEventStream
-     *        EventStream to write.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

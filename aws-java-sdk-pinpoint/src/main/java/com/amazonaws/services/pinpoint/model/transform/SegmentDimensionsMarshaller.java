@@ -37,6 +37,8 @@ public class SegmentDimensionsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Demographic").build();
     private static final MarshallingInfo<StructuredPojo> LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Location").build();
+    private static final MarshallingInfo<Map> METRICS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Metrics").build();
     private static final MarshallingInfo<Map> USERATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("UserAttributes").build();
 
@@ -60,6 +62,7 @@ public class SegmentDimensionsMarshaller {
             protocolMarshaller.marshall(segmentDimensions.getBehavior(), BEHAVIOR_BINDING);
             protocolMarshaller.marshall(segmentDimensions.getDemographic(), DEMOGRAPHIC_BINDING);
             protocolMarshaller.marshall(segmentDimensions.getLocation(), LOCATION_BINDING);
+            protocolMarshaller.marshall(segmentDimensions.getMetrics(), METRICS_BINDING);
             protocolMarshaller.marshall(segmentDimensions.getUserAttributes(), USERATTRIBUTES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

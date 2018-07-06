@@ -34,11 +34,7 @@ public class BaiduChannelResponse implements Serializable, Cloneable, Structured
     private String credential;
     /** If the channel is enabled for sending messages. */
     private Boolean enabled;
-    /**
-     * Indicates whether the channel is configured with Baidu Cloud Push credentials. Amazon Pinpoint uses your
-     * credentials to authenticate push notifications with Baidu Cloud Push. Provide your credentials by setting the
-     * ApiKey and SecretKey attributes.
-     */
+    /** Not used. Retained for backwards compatibility. */
     private Boolean hasCredential;
     /** Channel ID. Not used, only for backwards compatibility. */
     private String id;
@@ -200,14 +196,10 @@ public class BaiduChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Indicates whether the channel is configured with Baidu Cloud Push credentials. Amazon Pinpoint uses your
-     * credentials to authenticate push notifications with Baidu Cloud Push. Provide your credentials by setting the
-     * ApiKey and SecretKey attributes.
+     * Not used. Retained for backwards compatibility.
      * 
      * @param hasCredential
-     *        Indicates whether the channel is configured with Baidu Cloud Push credentials. Amazon Pinpoint uses your
-     *        credentials to authenticate push notifications with Baidu Cloud Push. Provide your credentials by setting
-     *        the ApiKey and SecretKey attributes.
+     *        Not used. Retained for backwards compatibility.
      */
 
     public void setHasCredential(Boolean hasCredential) {
@@ -215,13 +207,9 @@ public class BaiduChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Indicates whether the channel is configured with Baidu Cloud Push credentials. Amazon Pinpoint uses your
-     * credentials to authenticate push notifications with Baidu Cloud Push. Provide your credentials by setting the
-     * ApiKey and SecretKey attributes.
+     * Not used. Retained for backwards compatibility.
      * 
-     * @return Indicates whether the channel is configured with Baidu Cloud Push credentials. Amazon Pinpoint uses your
-     *         credentials to authenticate push notifications with Baidu Cloud Push. Provide your credentials by setting
-     *         the ApiKey and SecretKey attributes.
+     * @return Not used. Retained for backwards compatibility.
      */
 
     public Boolean getHasCredential() {
@@ -229,14 +217,10 @@ public class BaiduChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Indicates whether the channel is configured with Baidu Cloud Push credentials. Amazon Pinpoint uses your
-     * credentials to authenticate push notifications with Baidu Cloud Push. Provide your credentials by setting the
-     * ApiKey and SecretKey attributes.
+     * Not used. Retained for backwards compatibility.
      * 
      * @param hasCredential
-     *        Indicates whether the channel is configured with Baidu Cloud Push credentials. Amazon Pinpoint uses your
-     *        credentials to authenticate push notifications with Baidu Cloud Push. Provide your credentials by setting
-     *        the ApiKey and SecretKey attributes.
+     *        Not used. Retained for backwards compatibility.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -246,13 +230,9 @@ public class BaiduChannelResponse implements Serializable, Cloneable, Structured
     }
 
     /**
-     * Indicates whether the channel is configured with Baidu Cloud Push credentials. Amazon Pinpoint uses your
-     * credentials to authenticate push notifications with Baidu Cloud Push. Provide your credentials by setting the
-     * ApiKey and SecretKey attributes.
+     * Not used. Retained for backwards compatibility.
      * 
-     * @return Indicates whether the channel is configured with Baidu Cloud Push credentials. Amazon Pinpoint uses your
-     *         credentials to authenticate push notifications with Baidu Cloud Push. Provide your credentials by setting
-     *         the ApiKey and SecretKey attributes.
+     * @return Not used. Retained for backwards compatibility.
      */
 
     public Boolean isHasCredential() {

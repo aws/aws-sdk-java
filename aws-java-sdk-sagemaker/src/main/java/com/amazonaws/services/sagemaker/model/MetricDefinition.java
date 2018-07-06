@@ -39,7 +39,7 @@ public class MetricDefinition implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * A regular expression that searches the output of a training job and gets the value of the metric. For more
-     * information about using regular expressions to define metrics, see <a>hpo-define-metrics</a>.
+     * information about using regular expressions to define metrics, see <a>automatic-model-tuning-define-metrics</a>.
      * </p>
      */
     private String regex;
@@ -87,12 +87,13 @@ public class MetricDefinition implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * A regular expression that searches the output of a training job and gets the value of the metric. For more
-     * information about using regular expressions to define metrics, see <a>hpo-define-metrics</a>.
+     * information about using regular expressions to define metrics, see <a>automatic-model-tuning-define-metrics</a>.
      * </p>
      * 
      * @param regex
      *        A regular expression that searches the output of a training job and gets the value of the metric. For more
-     *        information about using regular expressions to define metrics, see <a>hpo-define-metrics</a>.
+     *        information about using regular expressions to define metrics, see
+     *        <a>automatic-model-tuning-define-metrics</a>.
      */
 
     public void setRegex(String regex) {
@@ -102,11 +103,12 @@ public class MetricDefinition implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * A regular expression that searches the output of a training job and gets the value of the metric. For more
-     * information about using regular expressions to define metrics, see <a>hpo-define-metrics</a>.
+     * information about using regular expressions to define metrics, see <a>automatic-model-tuning-define-metrics</a>.
      * </p>
      * 
      * @return A regular expression that searches the output of a training job and gets the value of the metric. For
-     *         more information about using regular expressions to define metrics, see <a>hpo-define-metrics</a>.
+     *         more information about using regular expressions to define metrics, see
+     *         <a>automatic-model-tuning-define-metrics</a>.
      */
 
     public String getRegex() {
@@ -116,12 +118,13 @@ public class MetricDefinition implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * A regular expression that searches the output of a training job and gets the value of the metric. For more
-     * information about using regular expressions to define metrics, see <a>hpo-define-metrics</a>.
+     * information about using regular expressions to define metrics, see <a>automatic-model-tuning-define-metrics</a>.
      * </p>
      * 
      * @param regex
      *        A regular expression that searches the output of a training job and gets the value of the metric. For more
-     *        information about using regular expressions to define metrics, see <a>hpo-define-metrics</a>.
+     *        information about using regular expressions to define metrics, see
+     *        <a>automatic-model-tuning-define-metrics</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -36,19 +36,20 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
     private String strategy;
     /**
      * <p>
-     * The object that specifies the objective metric for this tuning job.
+     * The <a>HyperParameterTuningJobObjective</a> object that specifies the objective metric for this tuning job.
      * </p>
      */
     private HyperParameterTuningJobObjective hyperParameterTuningJobObjective;
     /**
      * <p>
-     * The object that specifies the maximum number of training jobs and parallel training jobs for this tuning job.
+     * The <a>ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training jobs
+     * for this tuning job.
      * </p>
      */
     private ResourceLimits resourceLimits;
     /**
      * <p>
-     * The object that specifies the ranges of hyperparameters that this tuning job searches.
+     * The <a>ParameterRanges</a> object that specifies the ranges of hyperparameters that this tuning job searches.
      * </p>
      */
     private ParameterRanges parameterRanges;
@@ -118,11 +119,12 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The object that specifies the objective metric for this tuning job.
+     * The <a>HyperParameterTuningJobObjective</a> object that specifies the objective metric for this tuning job.
      * </p>
      * 
      * @param hyperParameterTuningJobObjective
-     *        The object that specifies the objective metric for this tuning job.
+     *        The <a>HyperParameterTuningJobObjective</a> object that specifies the objective metric for this tuning
+     *        job.
      */
 
     public void setHyperParameterTuningJobObjective(HyperParameterTuningJobObjective hyperParameterTuningJobObjective) {
@@ -131,10 +133,11 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The object that specifies the objective metric for this tuning job.
+     * The <a>HyperParameterTuningJobObjective</a> object that specifies the objective metric for this tuning job.
      * </p>
      * 
-     * @return The object that specifies the objective metric for this tuning job.
+     * @return The <a>HyperParameterTuningJobObjective</a> object that specifies the objective metric for this tuning
+     *         job.
      */
 
     public HyperParameterTuningJobObjective getHyperParameterTuningJobObjective() {
@@ -143,11 +146,12 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The object that specifies the objective metric for this tuning job.
+     * The <a>HyperParameterTuningJobObjective</a> object that specifies the objective metric for this tuning job.
      * </p>
      * 
      * @param hyperParameterTuningJobObjective
-     *        The object that specifies the objective metric for this tuning job.
+     *        The <a>HyperParameterTuningJobObjective</a> object that specifies the objective metric for this tuning
+     *        job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -158,12 +162,13 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The object that specifies the maximum number of training jobs and parallel training jobs for this tuning job.
+     * The <a>ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training jobs
+     * for this tuning job.
      * </p>
      * 
      * @param resourceLimits
-     *        The object that specifies the maximum number of training jobs and parallel training jobs for this tuning
-     *        job.
+     *        The <a>ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training
+     *        jobs for this tuning job.
      */
 
     public void setResourceLimits(ResourceLimits resourceLimits) {
@@ -172,11 +177,12 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The object that specifies the maximum number of training jobs and parallel training jobs for this tuning job.
+     * The <a>ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training jobs
+     * for this tuning job.
      * </p>
      * 
-     * @return The object that specifies the maximum number of training jobs and parallel training jobs for this tuning
-     *         job.
+     * @return The <a>ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training
+     *         jobs for this tuning job.
      */
 
     public ResourceLimits getResourceLimits() {
@@ -185,12 +191,13 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The object that specifies the maximum number of training jobs and parallel training jobs for this tuning job.
+     * The <a>ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training jobs
+     * for this tuning job.
      * </p>
      * 
      * @param resourceLimits
-     *        The object that specifies the maximum number of training jobs and parallel training jobs for this tuning
-     *        job.
+     *        The <a>ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training
+     *        jobs for this tuning job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -201,11 +208,12 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The object that specifies the ranges of hyperparameters that this tuning job searches.
+     * The <a>ParameterRanges</a> object that specifies the ranges of hyperparameters that this tuning job searches.
      * </p>
      * 
      * @param parameterRanges
-     *        The object that specifies the ranges of hyperparameters that this tuning job searches.
+     *        The <a>ParameterRanges</a> object that specifies the ranges of hyperparameters that this tuning job
+     *        searches.
      */
 
     public void setParameterRanges(ParameterRanges parameterRanges) {
@@ -214,10 +222,11 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The object that specifies the ranges of hyperparameters that this tuning job searches.
+     * The <a>ParameterRanges</a> object that specifies the ranges of hyperparameters that this tuning job searches.
      * </p>
      * 
-     * @return The object that specifies the ranges of hyperparameters that this tuning job searches.
+     * @return The <a>ParameterRanges</a> object that specifies the ranges of hyperparameters that this tuning job
+     *         searches.
      */
 
     public ParameterRanges getParameterRanges() {
@@ -226,11 +235,12 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The object that specifies the ranges of hyperparameters that this tuning job searches.
+     * The <a>ParameterRanges</a> object that specifies the ranges of hyperparameters that this tuning job searches.
      * </p>
      * 
      * @param parameterRanges
-     *        The object that specifies the ranges of hyperparameters that this tuning job searches.
+     *        The <a>ParameterRanges</a> object that specifies the ranges of hyperparameters that this tuning job
+     *        searches.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

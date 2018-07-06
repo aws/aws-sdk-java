@@ -31,6 +31,8 @@ public class WriteSegmentRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Dimensions").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<StructuredPojo> SEGMENTGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SegmentGroups").build();
 
     private static final WriteSegmentRequestMarshaller instance = new WriteSegmentRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class WriteSegmentRequestMarshaller {
         try {
             protocolMarshaller.marshall(writeSegmentRequest.getDimensions(), DIMENSIONS_BINDING);
             protocolMarshaller.marshall(writeSegmentRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(writeSegmentRequest.getSegmentGroups(), SEGMENTGROUPS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

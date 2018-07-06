@@ -40,6 +40,8 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
     private String lastModifiedDate;
     /** The name of segment */
     private String name;
+    /** Segment definition groups. We currently only support one. If specified Dimensions must be empty. */
+    private SegmentGroupList segmentGroups;
     /**
      * The segment type: DIMENSIONAL - A dynamic segment built from selection criteria based on endpoint data reported
      * by your app. You create this type of segment by using the segment builder in the Amazon Pinpoint console or by
@@ -290,6 +292,40 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * Segment definition groups. We currently only support one. If specified Dimensions must be empty.
+     * 
+     * @param segmentGroups
+     *        Segment definition groups. We currently only support one. If specified Dimensions must be empty.
+     */
+
+    public void setSegmentGroups(SegmentGroupList segmentGroups) {
+        this.segmentGroups = segmentGroups;
+    }
+
+    /**
+     * Segment definition groups. We currently only support one. If specified Dimensions must be empty.
+     * 
+     * @return Segment definition groups. We currently only support one. If specified Dimensions must be empty.
+     */
+
+    public SegmentGroupList getSegmentGroups() {
+        return this.segmentGroups;
+    }
+
+    /**
+     * Segment definition groups. We currently only support one. If specified Dimensions must be empty.
+     * 
+     * @param segmentGroups
+     *        Segment definition groups. We currently only support one. If specified Dimensions must be empty.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SegmentResponse withSegmentGroups(SegmentGroupList segmentGroups) {
+        setSegmentGroups(segmentGroups);
+        return this;
+    }
+
+    /**
      * The segment type: DIMENSIONAL - A dynamic segment built from selection criteria based on endpoint data reported
      * by your app. You create this type of segment by using the segment builder in the Amazon Pinpoint console or by
      * making a POST request to the segments resource. IMPORT - A static segment built from an imported set of endpoint
@@ -451,6 +487,8 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
             sb.append("LastModifiedDate: ").append(getLastModifiedDate()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getSegmentGroups() != null)
+            sb.append("SegmentGroups: ").append(getSegmentGroups()).append(",");
         if (getSegmentType() != null)
             sb.append("SegmentType: ").append(getSegmentType()).append(",");
         if (getVersion() != null)
@@ -497,6 +535,10 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getSegmentGroups() == null ^ this.getSegmentGroups() == null)
+            return false;
+        if (other.getSegmentGroups() != null && other.getSegmentGroups().equals(this.getSegmentGroups()) == false)
+            return false;
         if (other.getSegmentType() == null ^ this.getSegmentType() == null)
             return false;
         if (other.getSegmentType() != null && other.getSegmentType().equals(this.getSegmentType()) == false)
@@ -520,6 +562,7 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getImportDefinition() == null) ? 0 : getImportDefinition().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getSegmentGroups() == null) ? 0 : getSegmentGroups().hashCode());
         hashCode = prime * hashCode + ((getSegmentType() == null) ? 0 : getSegmentType().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         return hashCode;

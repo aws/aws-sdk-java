@@ -84,6 +84,10 @@ public class MessageJsonUnmarshaller implements Unmarshaller<Message, JsonUnmars
                     context.nextToken();
                     message.setSilentPush(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("TimeToLive", targetDepth)) {
+                    context.nextToken();
+                    message.setTimeToLive(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("Title", targetDepth)) {
                     context.nextToken();
                     message.setTitle(context.getUnmarshaller(String.class).unmarshall(context));

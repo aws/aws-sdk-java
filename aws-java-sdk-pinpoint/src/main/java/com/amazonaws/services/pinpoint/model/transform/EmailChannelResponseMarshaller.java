@@ -47,6 +47,8 @@ public class EmailChannelResponseMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedBy").build();
     private static final MarshallingInfo<String> LASTMODIFIEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedDate").build();
+    private static final MarshallingInfo<Integer> MESSAGESPERSECOND_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MessagesPerSecond").build();
     private static final MarshallingInfo<String> PLATFORM_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Platform").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -80,6 +82,7 @@ public class EmailChannelResponseMarshaller {
             protocolMarshaller.marshall(emailChannelResponse.getIsArchived(), ISARCHIVED_BINDING);
             protocolMarshaller.marshall(emailChannelResponse.getLastModifiedBy(), LASTMODIFIEDBY_BINDING);
             protocolMarshaller.marshall(emailChannelResponse.getLastModifiedDate(), LASTMODIFIEDDATE_BINDING);
+            protocolMarshaller.marshall(emailChannelResponse.getMessagesPerSecond(), MESSAGESPERSECOND_BINDING);
             protocolMarshaller.marshall(emailChannelResponse.getPlatform(), PLATFORM_BINDING);
             protocolMarshaller.marshall(emailChannelResponse.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(emailChannelResponse.getVersion(), VERSION_BINDING);

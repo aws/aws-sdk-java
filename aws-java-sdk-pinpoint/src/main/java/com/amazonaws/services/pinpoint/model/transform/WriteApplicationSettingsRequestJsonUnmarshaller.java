@@ -52,6 +52,10 @@ public class WriteApplicationSettingsRequestJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     writeApplicationSettingsRequest.setCampaignHook(CampaignHookJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("CloudWatchMetricsEnabled", targetDepth)) {
+                    context.nextToken();
+                    writeApplicationSettingsRequest.setCloudWatchMetricsEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("Limits", targetDepth)) {
                     context.nextToken();
                     writeApplicationSettingsRequest.setLimits(CampaignLimitsJsonUnmarshaller.getInstance().unmarshall(context));

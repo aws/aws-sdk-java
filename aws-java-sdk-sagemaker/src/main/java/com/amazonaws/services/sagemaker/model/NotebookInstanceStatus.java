@@ -25,7 +25,8 @@ public enum NotebookInstanceStatus {
     Stopping("Stopping"),
     Stopped("Stopped"),
     Failed("Failed"),
-    Deleting("Deleting");
+    Deleting("Deleting"),
+    Updating("Updating");
 
     private String value;
 

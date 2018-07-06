@@ -72,13 +72,14 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
     private java.util.Map<String, String> tunedHyperParameters;
     /**
      * <p>
-     * The reason that the
+     * The reason that the training job failed.
      * </p>
      */
     private String failureReason;
     /**
      * <p>
-     * The object that specifies the value of the objective metric of the tuning job that launched this training job.
+     * The <a>FinalHyperParameterTuningJobObjectiveMetric</a> object that specifies the value of the objective metric of
+     * the tuning job that launched this training job.
      * </p>
      */
     private FinalHyperParameterTuningJobObjectiveMetric finalHyperParameterTuningJobObjectiveMetric;
@@ -434,11 +435,11 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The reason that the
+     * The reason that the training job failed.
      * </p>
      * 
      * @param failureReason
-     *        The reason that the
+     *        The reason that the training job failed.
      */
 
     public void setFailureReason(String failureReason) {
@@ -447,10 +448,10 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The reason that the
+     * The reason that the training job failed.
      * </p>
      * 
-     * @return The reason that the
+     * @return The reason that the training job failed.
      */
 
     public String getFailureReason() {
@@ -459,11 +460,11 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The reason that the
+     * The reason that the training job failed.
      * </p>
      * 
      * @param failureReason
-     *        The reason that the
+     *        The reason that the training job failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -474,12 +475,13 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The object that specifies the value of the objective metric of the tuning job that launched this training job.
+     * The <a>FinalHyperParameterTuningJobObjectiveMetric</a> object that specifies the value of the objective metric of
+     * the tuning job that launched this training job.
      * </p>
      * 
      * @param finalHyperParameterTuningJobObjectiveMetric
-     *        The object that specifies the value of the objective metric of the tuning job that launched this training
-     *        job.
+     *        The <a>FinalHyperParameterTuningJobObjectiveMetric</a> object that specifies the value of the objective
+     *        metric of the tuning job that launched this training job.
      */
 
     public void setFinalHyperParameterTuningJobObjectiveMetric(FinalHyperParameterTuningJobObjectiveMetric finalHyperParameterTuningJobObjectiveMetric) {
@@ -488,11 +490,12 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The object that specifies the value of the objective metric of the tuning job that launched this training job.
+     * The <a>FinalHyperParameterTuningJobObjectiveMetric</a> object that specifies the value of the objective metric of
+     * the tuning job that launched this training job.
      * </p>
      * 
-     * @return The object that specifies the value of the objective metric of the tuning job that launched this training
-     *         job.
+     * @return The <a>FinalHyperParameterTuningJobObjectiveMetric</a> object that specifies the value of the objective
+     *         metric of the tuning job that launched this training job.
      */
 
     public FinalHyperParameterTuningJobObjectiveMetric getFinalHyperParameterTuningJobObjectiveMetric() {
@@ -501,12 +504,13 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The object that specifies the value of the objective metric of the tuning job that launched this training job.
+     * The <a>FinalHyperParameterTuningJobObjectiveMetric</a> object that specifies the value of the objective metric of
+     * the tuning job that launched this training job.
      * </p>
      * 
      * @param finalHyperParameterTuningJobObjectiveMetric
-     *        The object that specifies the value of the objective metric of the tuning job that launched this training
-     *        job.
+     *        The <a>FinalHyperParameterTuningJobObjectiveMetric</a> object that specifies the value of the objective
+     *        metric of the tuning job that launched this training job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

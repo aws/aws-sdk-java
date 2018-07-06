@@ -52,6 +52,10 @@ public class MessageResultJsonUnmarshaller implements Unmarshaller<MessageResult
                     context.nextToken();
                     messageResult.setDeliveryStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("MessageId", targetDepth)) {
+                    context.nextToken();
+                    messageResult.setMessageId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("StatusCode", targetDepth)) {
                     context.nextToken();
                     messageResult.setStatusCode(context.getUnmarshaller(Integer.class).unmarshall(context));

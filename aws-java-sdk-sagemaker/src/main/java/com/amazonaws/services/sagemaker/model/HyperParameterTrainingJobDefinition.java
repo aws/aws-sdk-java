@@ -36,7 +36,8 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
     private java.util.Map<String, String> staticHyperParameters;
     /**
      * <p>
-     * The object that specifies the algorithm to use for the training jobs that the tuning job launches.
+     * The <a>HyperParameterAlgorithmSpecification</a> object that specifies the algorithm to use for the training jobs
+     * that the tuning job launches.
      * </p>
      */
     private HyperParameterAlgorithmSpecification algorithmSpecification;
@@ -48,15 +49,15 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
     private String roleArn;
     /**
      * <p>
-     * An array of objects that specify the input for the training jobs that the tuning job launches.
+     * An array of <a>Channel</a> objects that specify the input for the training jobs that the tuning job launches.
      * </p>
      */
     private java.util.List<Channel> inputDataConfig;
     /**
      * <p>
-     * The object that specifies the VPC that you want the training jobs that this hyperparameter tuning job launches to
-     * connect to. Control access to and from your training container by configuring the VPC. For more information, see
-     * <a>train-vpc</a>.
+     * The <a>VpcConfig</a> object that specifies the VPC that you want the training jobs that this hyperparameter
+     * tuning job launches to connect to. Control access to and from your training container by configuring the VPC. For
+     * more information, see <a>train-vpc</a>.
      * </p>
      */
     private VpcConfig vpcConfig;
@@ -159,11 +160,13 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
 
     /**
      * <p>
-     * The object that specifies the algorithm to use for the training jobs that the tuning job launches.
+     * The <a>HyperParameterAlgorithmSpecification</a> object that specifies the algorithm to use for the training jobs
+     * that the tuning job launches.
      * </p>
      * 
      * @param algorithmSpecification
-     *        The object that specifies the algorithm to use for the training jobs that the tuning job launches.
+     *        The <a>HyperParameterAlgorithmSpecification</a> object that specifies the algorithm to use for the
+     *        training jobs that the tuning job launches.
      */
 
     public void setAlgorithmSpecification(HyperParameterAlgorithmSpecification algorithmSpecification) {
@@ -172,10 +175,12 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
 
     /**
      * <p>
-     * The object that specifies the algorithm to use for the training jobs that the tuning job launches.
+     * The <a>HyperParameterAlgorithmSpecification</a> object that specifies the algorithm to use for the training jobs
+     * that the tuning job launches.
      * </p>
      * 
-     * @return The object that specifies the algorithm to use for the training jobs that the tuning job launches.
+     * @return The <a>HyperParameterAlgorithmSpecification</a> object that specifies the algorithm to use for the
+     *         training jobs that the tuning job launches.
      */
 
     public HyperParameterAlgorithmSpecification getAlgorithmSpecification() {
@@ -184,11 +189,13 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
 
     /**
      * <p>
-     * The object that specifies the algorithm to use for the training jobs that the tuning job launches.
+     * The <a>HyperParameterAlgorithmSpecification</a> object that specifies the algorithm to use for the training jobs
+     * that the tuning job launches.
      * </p>
      * 
      * @param algorithmSpecification
-     *        The object that specifies the algorithm to use for the training jobs that the tuning job launches.
+     *        The <a>HyperParameterAlgorithmSpecification</a> object that specifies the algorithm to use for the
+     *        training jobs that the tuning job launches.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -242,10 +249,11 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
 
     /**
      * <p>
-     * An array of objects that specify the input for the training jobs that the tuning job launches.
+     * An array of <a>Channel</a> objects that specify the input for the training jobs that the tuning job launches.
      * </p>
      * 
-     * @return An array of objects that specify the input for the training jobs that the tuning job launches.
+     * @return An array of <a>Channel</a> objects that specify the input for the training jobs that the tuning job
+     *         launches.
      */
 
     public java.util.List<Channel> getInputDataConfig() {
@@ -254,11 +262,12 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
 
     /**
      * <p>
-     * An array of objects that specify the input for the training jobs that the tuning job launches.
+     * An array of <a>Channel</a> objects that specify the input for the training jobs that the tuning job launches.
      * </p>
      * 
      * @param inputDataConfig
-     *        An array of objects that specify the input for the training jobs that the tuning job launches.
+     *        An array of <a>Channel</a> objects that specify the input for the training jobs that the tuning job
+     *        launches.
      */
 
     public void setInputDataConfig(java.util.Collection<Channel> inputDataConfig) {
@@ -272,7 +281,7 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
 
     /**
      * <p>
-     * An array of objects that specify the input for the training jobs that the tuning job launches.
+     * An array of <a>Channel</a> objects that specify the input for the training jobs that the tuning job launches.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -281,7 +290,8 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      * </p>
      * 
      * @param inputDataConfig
-     *        An array of objects that specify the input for the training jobs that the tuning job launches.
+     *        An array of <a>Channel</a> objects that specify the input for the training jobs that the tuning job
+     *        launches.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -297,11 +307,12 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
 
     /**
      * <p>
-     * An array of objects that specify the input for the training jobs that the tuning job launches.
+     * An array of <a>Channel</a> objects that specify the input for the training jobs that the tuning job launches.
      * </p>
      * 
      * @param inputDataConfig
-     *        An array of objects that specify the input for the training jobs that the tuning job launches.
+     *        An array of <a>Channel</a> objects that specify the input for the training jobs that the tuning job
+     *        launches.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -312,15 +323,15 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
 
     /**
      * <p>
-     * The object that specifies the VPC that you want the training jobs that this hyperparameter tuning job launches to
-     * connect to. Control access to and from your training container by configuring the VPC. For more information, see
-     * <a>train-vpc</a>.
+     * The <a>VpcConfig</a> object that specifies the VPC that you want the training jobs that this hyperparameter
+     * tuning job launches to connect to. Control access to and from your training container by configuring the VPC. For
+     * more information, see <a>train-vpc</a>.
      * </p>
      * 
      * @param vpcConfig
-     *        The object that specifies the VPC that you want the training jobs that this hyperparameter tuning job
-     *        launches to connect to. Control access to and from your training container by configuring the VPC. For
-     *        more information, see <a>train-vpc</a>.
+     *        The <a>VpcConfig</a> object that specifies the VPC that you want the training jobs that this
+     *        hyperparameter tuning job launches to connect to. Control access to and from your training container by
+     *        configuring the VPC. For more information, see <a>train-vpc</a>.
      */
 
     public void setVpcConfig(VpcConfig vpcConfig) {
@@ -329,14 +340,14 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
 
     /**
      * <p>
-     * The object that specifies the VPC that you want the training jobs that this hyperparameter tuning job launches to
-     * connect to. Control access to and from your training container by configuring the VPC. For more information, see
-     * <a>train-vpc</a>.
+     * The <a>VpcConfig</a> object that specifies the VPC that you want the training jobs that this hyperparameter
+     * tuning job launches to connect to. Control access to and from your training container by configuring the VPC. For
+     * more information, see <a>train-vpc</a>.
      * </p>
      * 
-     * @return The object that specifies the VPC that you want the training jobs that this hyperparameter tuning job
-     *         launches to connect to. Control access to and from your training container by configuring the VPC. For
-     *         more information, see <a>train-vpc</a>.
+     * @return The <a>VpcConfig</a> object that specifies the VPC that you want the training jobs that this
+     *         hyperparameter tuning job launches to connect to. Control access to and from your training container by
+     *         configuring the VPC. For more information, see <a>train-vpc</a>.
      */
 
     public VpcConfig getVpcConfig() {
@@ -345,15 +356,15 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
 
     /**
      * <p>
-     * The object that specifies the VPC that you want the training jobs that this hyperparameter tuning job launches to
-     * connect to. Control access to and from your training container by configuring the VPC. For more information, see
-     * <a>train-vpc</a>.
+     * The <a>VpcConfig</a> object that specifies the VPC that you want the training jobs that this hyperparameter
+     * tuning job launches to connect to. Control access to and from your training container by configuring the VPC. For
+     * more information, see <a>train-vpc</a>.
      * </p>
      * 
      * @param vpcConfig
-     *        The object that specifies the VPC that you want the training jobs that this hyperparameter tuning job
-     *        launches to connect to. Control access to and from your training container by configuring the VPC. For
-     *        more information, see <a>train-vpc</a>.
+     *        The <a>VpcConfig</a> object that specifies the VPC that you want the training jobs that this
+     *        hyperparameter tuning job launches to connect to. Control access to and from your training container by
+     *        configuring the VPC. For more information, see <a>train-vpc</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

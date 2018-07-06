@@ -24,7 +24,8 @@ public enum CampaignStatus {
     EXECUTING("EXECUTING"),
     PENDING_NEXT_RUN("PENDING_NEXT_RUN"),
     COMPLETED("COMPLETED"),
-    PAUSED("PAUSED");
+    PAUSED("PAUSED"),
+    DELETED("DELETED");
 
     private String value;
 

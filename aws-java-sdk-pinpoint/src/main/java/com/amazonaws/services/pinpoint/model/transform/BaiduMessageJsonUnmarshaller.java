@@ -94,6 +94,10 @@ public class BaiduMessageJsonUnmarshaller implements Unmarshaller<BaiduMessage, 
                     baiduMessage.setSubstitutions(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
                 }
+                if (context.testExpression("TimeToLive", targetDepth)) {
+                    context.nextToken();
+                    baiduMessage.setTimeToLive(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("Title", targetDepth)) {
                     context.nextToken();
                     baiduMessage.setTitle(context.getUnmarshaller(String.class).unmarshall(context));

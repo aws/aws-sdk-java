@@ -28,6 +28,8 @@ public class SegmentLocation implements Serializable, Cloneable, StructuredPojo 
 
     /** The country filter according to ISO 3166-1 Alpha-2 codes. */
     private SetDimension country;
+    /** The GPS Point dimension. */
+    private GPSPointDimension gPSPoint;
 
     /**
      * The country filter according to ISO 3166-1 Alpha-2 codes.
@@ -64,6 +66,40 @@ public class SegmentLocation implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * The GPS Point dimension.
+     * 
+     * @param gPSPoint
+     *        The GPS Point dimension.
+     */
+
+    public void setGPSPoint(GPSPointDimension gPSPoint) {
+        this.gPSPoint = gPSPoint;
+    }
+
+    /**
+     * The GPS Point dimension.
+     * 
+     * @return The GPS Point dimension.
+     */
+
+    public GPSPointDimension getGPSPoint() {
+        return this.gPSPoint;
+    }
+
+    /**
+     * The GPS Point dimension.
+     * 
+     * @param gPSPoint
+     *        The GPS Point dimension.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SegmentLocation withGPSPoint(GPSPointDimension gPSPoint) {
+        setGPSPoint(gPSPoint);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -75,7 +111,9 @@ public class SegmentLocation implements Serializable, Cloneable, StructuredPojo 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCountry() != null)
-            sb.append("Country: ").append(getCountry());
+            sb.append("Country: ").append(getCountry()).append(",");
+        if (getGPSPoint() != null)
+            sb.append("GPSPoint: ").append(getGPSPoint());
         sb.append("}");
         return sb.toString();
     }
@@ -94,6 +132,10 @@ public class SegmentLocation implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getCountry() != null && other.getCountry().equals(this.getCountry()) == false)
             return false;
+        if (other.getGPSPoint() == null ^ this.getGPSPoint() == null)
+            return false;
+        if (other.getGPSPoint() != null && other.getGPSPoint().equals(this.getGPSPoint()) == false)
+            return false;
         return true;
     }
 
@@ -103,6 +145,7 @@ public class SegmentLocation implements Serializable, Cloneable, StructuredPojo 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCountry() == null) ? 0 : getCountry().hashCode());
+        hashCode = prime * hashCode + ((getGPSPoint() == null) ? 0 : getGPSPoint().hashCode());
         return hashCode;
     }
 

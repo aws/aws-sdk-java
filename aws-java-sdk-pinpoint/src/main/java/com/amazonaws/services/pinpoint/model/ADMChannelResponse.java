@@ -32,11 +32,7 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     private String creationDate;
     /** If the channel is enabled for sending messages. */
     private Boolean enabled;
-    /**
-     * Indicates whether the channel is configured with ADM credentials. Amazon Pinpoint uses your credentials to
-     * authenticate push notifications with ADM. Provide your credentials by setting the ClientId and ClientSecret
-     * attributes.
-     */
+    /** Not used. Retained for backwards compatibility. */
     private Boolean hasCredential;
     /** Channel ID. Not used, only for backwards compatibility. */
     private String id;
@@ -164,14 +160,10 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Indicates whether the channel is configured with ADM credentials. Amazon Pinpoint uses your credentials to
-     * authenticate push notifications with ADM. Provide your credentials by setting the ClientId and ClientSecret
-     * attributes.
+     * Not used. Retained for backwards compatibility.
      * 
      * @param hasCredential
-     *        Indicates whether the channel is configured with ADM credentials. Amazon Pinpoint uses your credentials to
-     *        authenticate push notifications with ADM. Provide your credentials by setting the ClientId and
-     *        ClientSecret attributes.
+     *        Not used. Retained for backwards compatibility.
      */
 
     public void setHasCredential(Boolean hasCredential) {
@@ -179,13 +171,9 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Indicates whether the channel is configured with ADM credentials. Amazon Pinpoint uses your credentials to
-     * authenticate push notifications with ADM. Provide your credentials by setting the ClientId and ClientSecret
-     * attributes.
+     * Not used. Retained for backwards compatibility.
      * 
-     * @return Indicates whether the channel is configured with ADM credentials. Amazon Pinpoint uses your credentials
-     *         to authenticate push notifications with ADM. Provide your credentials by setting the ClientId and
-     *         ClientSecret attributes.
+     * @return Not used. Retained for backwards compatibility.
      */
 
     public Boolean getHasCredential() {
@@ -193,14 +181,10 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Indicates whether the channel is configured with ADM credentials. Amazon Pinpoint uses your credentials to
-     * authenticate push notifications with ADM. Provide your credentials by setting the ClientId and ClientSecret
-     * attributes.
+     * Not used. Retained for backwards compatibility.
      * 
      * @param hasCredential
-     *        Indicates whether the channel is configured with ADM credentials. Amazon Pinpoint uses your credentials to
-     *        authenticate push notifications with ADM. Provide your credentials by setting the ClientId and
-     *        ClientSecret attributes.
+     *        Not used. Retained for backwards compatibility.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -210,13 +194,9 @@ public class ADMChannelResponse implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Indicates whether the channel is configured with ADM credentials. Amazon Pinpoint uses your credentials to
-     * authenticate push notifications with ADM. Provide your credentials by setting the ClientId and ClientSecret
-     * attributes.
+     * Not used. Retained for backwards compatibility.
      * 
-     * @return Indicates whether the channel is configured with ADM credentials. Amazon Pinpoint uses your credentials
-     *         to authenticate push notifications with ADM. Provide your credentials by setting the ClientId and
-     *         ClientSecret attributes.
+     * @return Not used. Retained for backwards compatibility.
      */
 
     public Boolean isHasCredential() {

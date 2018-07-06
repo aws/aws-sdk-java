@@ -84,6 +84,10 @@ public class SMSChannelResponseJsonUnmarshaller implements Unmarshaller<SMSChann
                     context.nextToken();
                     sMSChannelResponse.setPlatform(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PromotionalMessagesPerSecond", targetDepth)) {
+                    context.nextToken();
+                    sMSChannelResponse.setPromotionalMessagesPerSecond(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("SenderId", targetDepth)) {
                     context.nextToken();
                     sMSChannelResponse.setSenderId(context.getUnmarshaller(String.class).unmarshall(context));
@@ -91,6 +95,10 @@ public class SMSChannelResponseJsonUnmarshaller implements Unmarshaller<SMSChann
                 if (context.testExpression("ShortCode", targetDepth)) {
                     context.nextToken();
                     sMSChannelResponse.setShortCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TransactionalMessagesPerSecond", targetDepth)) {
+                    context.nextToken();
+                    sMSChannelResponse.setTransactionalMessagesPerSecond(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
                     context.nextToken();

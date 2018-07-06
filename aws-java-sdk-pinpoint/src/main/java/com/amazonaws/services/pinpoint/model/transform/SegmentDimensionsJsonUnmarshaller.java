@@ -65,6 +65,11 @@ public class SegmentDimensionsJsonUnmarshaller implements Unmarshaller<SegmentDi
                     context.nextToken();
                     segmentDimensions.setLocation(SegmentLocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Metrics", targetDepth)) {
+                    context.nextToken();
+                    segmentDimensions.setMetrics(new MapUnmarshaller<String, MetricDimension>(context.getUnmarshaller(String.class),
+                            MetricDimensionJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("UserAttributes", targetDepth)) {
                     context.nextToken();
                     segmentDimensions.setUserAttributes(new MapUnmarshaller<String, AttributeDimension>(context.getUnmarshaller(String.class),

@@ -25,12 +25,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetCampaignRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /** The unique ID of your Amazon Pinpoint application. */
     private String applicationId;
-
+    /** The unique ID of the campaign. */
     private String campaignId;
 
     /**
+     * The unique ID of your Amazon Pinpoint application.
+     * 
      * @param applicationId
+     *        The unique ID of your Amazon Pinpoint application.
      */
 
     public void setApplicationId(String applicationId) {
@@ -38,7 +42,9 @@ public class GetCampaignRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * @return
+     * The unique ID of your Amazon Pinpoint application.
+     * 
+     * @return The unique ID of your Amazon Pinpoint application.
      */
 
     public String getApplicationId() {
@@ -46,7 +52,10 @@ public class GetCampaignRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * The unique ID of your Amazon Pinpoint application.
+     * 
      * @param applicationId
+     *        The unique ID of your Amazon Pinpoint application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +65,10 @@ public class GetCampaignRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * The unique ID of the campaign.
+     * 
      * @param campaignId
+     *        The unique ID of the campaign.
      */
 
     public void setCampaignId(String campaignId) {
@@ -64,7 +76,9 @@ public class GetCampaignRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * @return
+     * The unique ID of the campaign.
+     * 
+     * @return The unique ID of the campaign.
      */
 
     public String getCampaignId() {
@@ -72,7 +86,10 @@ public class GetCampaignRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * The unique ID of the campaign.
+     * 
      * @param campaignId
+     *        The unique ID of the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

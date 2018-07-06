@@ -57,10 +57,7 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     private EndpointDemographic demographic;
     /** The last time the endpoint was updated. Provided in ISO 8601 format. */
     private String effectiveDate;
-    /**
-     * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE if a delivery fails. Will be set
-     * to ACTIVE if the address is updated.
-     */
+    /** Unused. */
     private String endpointStatus;
     /**
      * The unique ID that you assigned to the endpoint. The ID should be a globally unique identifier (GUID) to ensure
@@ -475,12 +472,10 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE if a delivery fails. Will be set
-     * to ACTIVE if the address is updated.
+     * Unused.
      * 
      * @param endpointStatus
-     *        The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE if a delivery fails. Will
-     *        be set to ACTIVE if the address is updated.
+     *        Unused.
      */
 
     public void setEndpointStatus(String endpointStatus) {
@@ -488,11 +483,9 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE if a delivery fails. Will be set
-     * to ACTIVE if the address is updated.
+     * Unused.
      * 
-     * @return The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE if a delivery fails. Will
-     *         be set to ACTIVE if the address is updated.
+     * @return Unused.
      */
 
     public String getEndpointStatus() {
@@ -500,12 +493,10 @@ public class EndpointResponse implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE if a delivery fails. Will be set
-     * to ACTIVE if the address is updated.
+     * Unused.
      * 
      * @param endpointStatus
-     *        The endpoint status. Can be either ACTIVE or INACTIVE. Will be set to INACTIVE if a delivery fails. Will
-     *        be set to ACTIVE if the address is updated.
+     *        Unused.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

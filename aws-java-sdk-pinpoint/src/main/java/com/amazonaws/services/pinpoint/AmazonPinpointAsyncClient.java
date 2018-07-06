@@ -29,6 +29,8 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * Client for accessing Amazon Pinpoint asynchronously. Each asynchronous method will return a Java Future object
  * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
+ * <p>
+ * Amazon Pinpoint
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -867,6 +869,39 @@ public class AmazonPinpointAsyncClient extends AmazonPinpointClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteUserEndpointsResult> deleteUserEndpointsAsync(DeleteUserEndpointsRequest request) {
+
+        return deleteUserEndpointsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUserEndpointsResult> deleteUserEndpointsAsync(final DeleteUserEndpointsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteUserEndpointsRequest, DeleteUserEndpointsResult> asyncHandler) {
+        final DeleteUserEndpointsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteUserEndpointsResult>() {
+            @Override
+            public DeleteUserEndpointsResult call() throws Exception {
+                DeleteUserEndpointsResult result = null;
+
+                try {
+                    result = executeDeleteUserEndpoints(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAdmChannelResult> getAdmChannelAsync(GetAdmChannelRequest request) {
 
         return getAdmChannelAsync(request, null);
@@ -1313,6 +1348,39 @@ public class AmazonPinpointAsyncClient extends AmazonPinpointClient implements A
 
                 try {
                     result = executeGetCampaigns(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetChannelsResult> getChannelsAsync(GetChannelsRequest request) {
+
+        return getChannelsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetChannelsResult> getChannelsAsync(final GetChannelsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetChannelsRequest, GetChannelsResult> asyncHandler) {
+        final GetChannelsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetChannelsResult>() {
+            @Override
+            public GetChannelsResult call() throws Exception {
+                GetChannelsResult result = null;
+
+                try {
+                    result = executeGetChannels(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1824,6 +1892,72 @@ public class AmazonPinpointAsyncClient extends AmazonPinpointClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetUserEndpointsResult> getUserEndpointsAsync(GetUserEndpointsRequest request) {
+
+        return getUserEndpointsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUserEndpointsResult> getUserEndpointsAsync(final GetUserEndpointsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetUserEndpointsRequest, GetUserEndpointsResult> asyncHandler) {
+        final GetUserEndpointsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetUserEndpointsResult>() {
+            @Override
+            public GetUserEndpointsResult call() throws Exception {
+                GetUserEndpointsResult result = null;
+
+                try {
+                    result = executeGetUserEndpoints(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PhoneNumberValidateResult> phoneNumberValidateAsync(PhoneNumberValidateRequest request) {
+
+        return phoneNumberValidateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PhoneNumberValidateResult> phoneNumberValidateAsync(final PhoneNumberValidateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PhoneNumberValidateRequest, PhoneNumberValidateResult> asyncHandler) {
+        final PhoneNumberValidateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PhoneNumberValidateResult>() {
+            @Override
+            public PhoneNumberValidateResult call() throws Exception {
+                PhoneNumberValidateResult result = null;
+
+                try {
+                    result = executePhoneNumberValidate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PutEventStreamResult> putEventStreamAsync(PutEventStreamRequest request) {
 
         return putEventStreamAsync(request, null);
@@ -1841,6 +1975,39 @@ public class AmazonPinpointAsyncClient extends AmazonPinpointClient implements A
 
                 try {
                     result = executePutEventStream(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveAttributesResult> removeAttributesAsync(RemoveAttributesRequest request) {
+
+        return removeAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveAttributesResult> removeAttributesAsync(final RemoveAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RemoveAttributesRequest, RemoveAttributesResult> asyncHandler) {
+        final RemoveAttributesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RemoveAttributesResult>() {
+            @Override
+            public RemoveAttributesResult call() throws Exception {
+                RemoveAttributesResult result = null;
+
+                try {
+                    result = executeRemoveAttributes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

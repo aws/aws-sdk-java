@@ -56,6 +56,10 @@ public class WriteSegmentRequestJsonUnmarshaller implements Unmarshaller<WriteSe
                     context.nextToken();
                     writeSegmentRequest.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SegmentGroups", targetDepth)) {
+                    context.nextToken();
+                    writeSegmentRequest.setSegmentGroups(SegmentGroupListJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

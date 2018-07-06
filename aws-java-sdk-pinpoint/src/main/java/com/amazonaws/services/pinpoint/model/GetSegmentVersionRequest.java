@@ -25,14 +25,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetSegmentVersionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /** The unique ID of your Amazon Pinpoint application. */
     private String applicationId;
-
+    /** The unique ID of the segment. */
     private String segmentId;
-
+    /** The segment version. */
     private String version;
 
     /**
+     * The unique ID of your Amazon Pinpoint application.
+     * 
      * @param applicationId
+     *        The unique ID of your Amazon Pinpoint application.
      */
 
     public void setApplicationId(String applicationId) {
@@ -40,7 +44,9 @@ public class GetSegmentVersionRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * The unique ID of your Amazon Pinpoint application.
+     * 
+     * @return The unique ID of your Amazon Pinpoint application.
      */
 
     public String getApplicationId() {
@@ -48,7 +54,10 @@ public class GetSegmentVersionRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * The unique ID of your Amazon Pinpoint application.
+     * 
      * @param applicationId
+     *        The unique ID of your Amazon Pinpoint application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -58,7 +67,10 @@ public class GetSegmentVersionRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * The unique ID of the segment.
+     * 
      * @param segmentId
+     *        The unique ID of the segment.
      */
 
     public void setSegmentId(String segmentId) {
@@ -66,7 +78,9 @@ public class GetSegmentVersionRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * The unique ID of the segment.
+     * 
+     * @return The unique ID of the segment.
      */
 
     public String getSegmentId() {
@@ -74,7 +88,10 @@ public class GetSegmentVersionRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * The unique ID of the segment.
+     * 
      * @param segmentId
+     *        The unique ID of the segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,7 +101,10 @@ public class GetSegmentVersionRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * The segment version.
+     * 
      * @param version
+     *        The segment version.
      */
 
     public void setVersion(String version) {
@@ -92,7 +112,9 @@ public class GetSegmentVersionRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * The segment version.
+     * 
+     * @return The segment version.
      */
 
     public String getVersion() {
@@ -100,7 +122,10 @@ public class GetSegmentVersionRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * The segment version.
+     * 
      * @param version
+     *        The segment version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

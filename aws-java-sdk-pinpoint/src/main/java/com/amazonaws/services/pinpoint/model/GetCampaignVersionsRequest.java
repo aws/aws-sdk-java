@@ -25,8 +25,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetCampaignVersionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /** The unique ID of your Amazon Pinpoint application. */
     private String applicationId;
-
+    /** The unique ID of the campaign. */
     private String campaignId;
     /** The number of entries you want on each page in the response. */
     private String pageSize;
@@ -37,7 +38,10 @@ public class GetCampaignVersionsRequest extends com.amazonaws.AmazonWebServiceRe
     private String token;
 
     /**
+     * The unique ID of your Amazon Pinpoint application.
+     * 
      * @param applicationId
+     *        The unique ID of your Amazon Pinpoint application.
      */
 
     public void setApplicationId(String applicationId) {
@@ -45,7 +49,9 @@ public class GetCampaignVersionsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * The unique ID of your Amazon Pinpoint application.
+     * 
+     * @return The unique ID of your Amazon Pinpoint application.
      */
 
     public String getApplicationId() {
@@ -53,7 +59,10 @@ public class GetCampaignVersionsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * The unique ID of your Amazon Pinpoint application.
+     * 
      * @param applicationId
+     *        The unique ID of your Amazon Pinpoint application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -63,7 +72,10 @@ public class GetCampaignVersionsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * The unique ID of the campaign.
+     * 
      * @param campaignId
+     *        The unique ID of the campaign.
      */
 
     public void setCampaignId(String campaignId) {
@@ -71,7 +83,9 @@ public class GetCampaignVersionsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * The unique ID of the campaign.
+     * 
+     * @return The unique ID of the campaign.
      */
 
     public String getCampaignId() {
@@ -79,7 +93,10 @@ public class GetCampaignVersionsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * The unique ID of the campaign.
+     * 
      * @param campaignId
+     *        The unique ID of the campaign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

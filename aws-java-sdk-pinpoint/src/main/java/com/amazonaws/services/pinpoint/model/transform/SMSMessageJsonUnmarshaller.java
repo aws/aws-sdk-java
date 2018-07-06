@@ -52,6 +52,10 @@ public class SMSMessageJsonUnmarshaller implements Unmarshaller<SMSMessage, Json
                     context.nextToken();
                     sMSMessage.setBody(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Keyword", targetDepth)) {
+                    context.nextToken();
+                    sMSMessage.setKeyword(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("MessageType", targetDepth)) {
                     context.nextToken();
                     sMSMessage.setMessageType(context.getUnmarshaller(String.class).unmarshall(context));

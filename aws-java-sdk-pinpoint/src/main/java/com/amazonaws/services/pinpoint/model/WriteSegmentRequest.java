@@ -30,6 +30,8 @@ public class WriteSegmentRequest implements Serializable, Cloneable, StructuredP
     private SegmentDimensions dimensions;
     /** The name of segment */
     private String name;
+    /** Segment definition groups. We currently only support one. If specified Dimensions must be empty. */
+    private SegmentGroupList segmentGroups;
 
     /**
      * The segment dimensions attributes.
@@ -100,6 +102,40 @@ public class WriteSegmentRequest implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * Segment definition groups. We currently only support one. If specified Dimensions must be empty.
+     * 
+     * @param segmentGroups
+     *        Segment definition groups. We currently only support one. If specified Dimensions must be empty.
+     */
+
+    public void setSegmentGroups(SegmentGroupList segmentGroups) {
+        this.segmentGroups = segmentGroups;
+    }
+
+    /**
+     * Segment definition groups. We currently only support one. If specified Dimensions must be empty.
+     * 
+     * @return Segment definition groups. We currently only support one. If specified Dimensions must be empty.
+     */
+
+    public SegmentGroupList getSegmentGroups() {
+        return this.segmentGroups;
+    }
+
+    /**
+     * Segment definition groups. We currently only support one. If specified Dimensions must be empty.
+     * 
+     * @param segmentGroups
+     *        Segment definition groups. We currently only support one. If specified Dimensions must be empty.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WriteSegmentRequest withSegmentGroups(SegmentGroupList segmentGroups) {
+        setSegmentGroups(segmentGroups);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -113,7 +149,9 @@ public class WriteSegmentRequest implements Serializable, Cloneable, StructuredP
         if (getDimensions() != null)
             sb.append("Dimensions: ").append(getDimensions()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getSegmentGroups() != null)
+            sb.append("SegmentGroups: ").append(getSegmentGroups());
         sb.append("}");
         return sb.toString();
     }
@@ -136,6 +174,10 @@ public class WriteSegmentRequest implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getSegmentGroups() == null ^ this.getSegmentGroups() == null)
+            return false;
+        if (other.getSegmentGroups() != null && other.getSegmentGroups().equals(this.getSegmentGroups()) == false)
+            return false;
         return true;
     }
 
@@ -146,6 +188,7 @@ public class WriteSegmentRequest implements Serializable, Cloneable, StructuredP
 
         hashCode = prime * hashCode + ((getDimensions() == null) ? 0 : getDimensions().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getSegmentGroups() == null) ? 0 : getSegmentGroups().hashCode());
         return hashCode;
     }
 

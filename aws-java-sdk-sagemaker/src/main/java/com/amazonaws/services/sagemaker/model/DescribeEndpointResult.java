@@ -43,7 +43,7 @@ public class DescribeEndpointResult extends com.amazonaws.AmazonWebServiceResult
     private String endpointConfigName;
     /**
      * <p>
-     * An array of ProductionVariant objects, one for each model hosted behind this endpoint.
+     * An array of <a>ProductionVariantSummary</a> objects, one for each model hosted behind this endpoint.
      * </p>
      */
     private java.util.List<ProductionVariantSummary> productionVariants;
@@ -194,10 +194,10 @@ public class DescribeEndpointResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * An array of ProductionVariant objects, one for each model hosted behind this endpoint.
+     * An array of <a>ProductionVariantSummary</a> objects, one for each model hosted behind this endpoint.
      * </p>
      * 
-     * @return An array of ProductionVariant objects, one for each model hosted behind this endpoint.
+     * @return An array of <a>ProductionVariantSummary</a> objects, one for each model hosted behind this endpoint.
      */
 
     public java.util.List<ProductionVariantSummary> getProductionVariants() {
@@ -206,11 +206,11 @@ public class DescribeEndpointResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * An array of ProductionVariant objects, one for each model hosted behind this endpoint.
+     * An array of <a>ProductionVariantSummary</a> objects, one for each model hosted behind this endpoint.
      * </p>
      * 
      * @param productionVariants
-     *        An array of ProductionVariant objects, one for each model hosted behind this endpoint.
+     *        An array of <a>ProductionVariantSummary</a> objects, one for each model hosted behind this endpoint.
      */
 
     public void setProductionVariants(java.util.Collection<ProductionVariantSummary> productionVariants) {
@@ -224,7 +224,7 @@ public class DescribeEndpointResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * An array of ProductionVariant objects, one for each model hosted behind this endpoint.
+     * An array of <a>ProductionVariantSummary</a> objects, one for each model hosted behind this endpoint.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -233,7 +233,7 @@ public class DescribeEndpointResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param productionVariants
-     *        An array of ProductionVariant objects, one for each model hosted behind this endpoint.
+     *        An array of <a>ProductionVariantSummary</a> objects, one for each model hosted behind this endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -249,11 +249,11 @@ public class DescribeEndpointResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * An array of ProductionVariant objects, one for each model hosted behind this endpoint.
+     * An array of <a>ProductionVariantSummary</a> objects, one for each model hosted behind this endpoint.
      * </p>
      * 
      * @param productionVariants
-     *        An array of ProductionVariant objects, one for each model hosted behind this endpoint.
+     *        An array of <a>ProductionVariantSummary</a> objects, one for each model hosted behind this endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

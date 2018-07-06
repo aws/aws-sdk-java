@@ -110,8 +110,8 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     private ResourceConfig resourceConfig;
     /**
      * <p>
-     * A object that specifies the VPC that you want your training job to connect to. Control access to and from your
-     * training container by configuring the VPC. For more information, see <a>train-vpc</a>
+     * A <a>VpcConfig</a> object that specifies the VPC that you want your training job to connect to. Control access to
+     * and from your training container by configuring the VPC. For more information, see <a>train-vpc</a>
      * </p>
      */
     private VpcConfig vpcConfig;
@@ -729,13 +729,14 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A object that specifies the VPC that you want your training job to connect to. Control access to and from your
-     * training container by configuring the VPC. For more information, see <a>train-vpc</a>
+     * A <a>VpcConfig</a> object that specifies the VPC that you want your training job to connect to. Control access to
+     * and from your training container by configuring the VPC. For more information, see <a>train-vpc</a>
      * </p>
      * 
      * @param vpcConfig
-     *        A object that specifies the VPC that you want your training job to connect to. Control access to and from
-     *        your training container by configuring the VPC. For more information, see <a>train-vpc</a>
+     *        A <a>VpcConfig</a> object that specifies the VPC that you want your training job to connect to. Control
+     *        access to and from your training container by configuring the VPC. For more information, see
+     *        <a>train-vpc</a>
      */
 
     public void setVpcConfig(VpcConfig vpcConfig) {
@@ -744,12 +745,13 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A object that specifies the VPC that you want your training job to connect to. Control access to and from your
-     * training container by configuring the VPC. For more information, see <a>train-vpc</a>
+     * A <a>VpcConfig</a> object that specifies the VPC that you want your training job to connect to. Control access to
+     * and from your training container by configuring the VPC. For more information, see <a>train-vpc</a>
      * </p>
      * 
-     * @return A object that specifies the VPC that you want your training job to connect to. Control access to and from
-     *         your training container by configuring the VPC. For more information, see <a>train-vpc</a>
+     * @return A <a>VpcConfig</a> object that specifies the VPC that you want your training job to connect to. Control
+     *         access to and from your training container by configuring the VPC. For more information, see
+     *         <a>train-vpc</a>
      */
 
     public VpcConfig getVpcConfig() {
@@ -758,13 +760,14 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A object that specifies the VPC that you want your training job to connect to. Control access to and from your
-     * training container by configuring the VPC. For more information, see <a>train-vpc</a>
+     * A <a>VpcConfig</a> object that specifies the VPC that you want your training job to connect to. Control access to
+     * and from your training container by configuring the VPC. For more information, see <a>train-vpc</a>
      * </p>
      * 
      * @param vpcConfig
-     *        A object that specifies the VPC that you want your training job to connect to. Control access to and from
-     *        your training container by configuring the VPC. For more information, see <a>train-vpc</a>
+     *        A <a>VpcConfig</a> object that specifies the VPC that you want your training job to connect to. Control
+     *        access to and from your training container by configuring the VPC. For more information, see
+     *        <a>train-vpc</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

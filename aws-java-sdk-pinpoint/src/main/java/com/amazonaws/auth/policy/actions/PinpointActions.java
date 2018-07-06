@@ -63,6 +63,8 @@ public enum PinpointActions implements Action {
     DeleteSegment("pinpoint:DeleteSegment"),
     /** Action for the DeleteSmsChannel operation. */
     DeleteSmsChannel("pinpoint:DeleteSmsChannel"),
+    /** Action for the DeleteUserEndpoints operation. */
+    DeleteUserEndpoints("pinpoint:DeleteUserEndpoints"),
     /** Action for the GetAdmChannel operation. */
     GetAdmChannel("pinpoint:GetAdmChannel"),
     /** Action for the GetApnsChannel operation. */
@@ -91,6 +93,8 @@ public enum PinpointActions implements Action {
     GetCampaignVersions("pinpoint:GetCampaignVersions"),
     /** Action for the GetCampaigns operation. */
     GetCampaigns("pinpoint:GetCampaigns"),
+    /** Action for the GetChannels operation. */
+    GetChannels("pinpoint:GetChannels"),
     /** Action for the GetEmailChannel operation. */
     GetEmailChannel("pinpoint:GetEmailChannel"),
     /** Action for the GetEndpoint operation. */
@@ -121,8 +125,14 @@ public enum PinpointActions implements Action {
     GetSegments("pinpoint:GetSegments"),
     /** Action for the GetSmsChannel operation. */
     GetSmsChannel("pinpoint:GetSmsChannel"),
+    /** Action for the GetUserEndpoints operation. */
+    GetUserEndpoints("pinpoint:GetUserEndpoints"),
+    /** Action for the PhoneNumberValidate operation. */
+    PhoneNumberValidate("pinpoint:PhoneNumberValidate"),
     /** Action for the PutEventStream operation. */
     PutEventStream("pinpoint:PutEventStream"),
+    /** Action for the RemoveAttributes operation. */
+    RemoveAttributes("pinpoint:RemoveAttributes"),
     /** Action for the SendMessages operation. */
     SendMessages("pinpoint:SendMessages"),
     /** Action for the SendUsersMessages operation. */

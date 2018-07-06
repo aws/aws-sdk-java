@@ -34,7 +34,7 @@ public class ListHyperParameterTuningJobsRequest extends com.amazonaws.AmazonWeb
     private String nextToken;
     /**
      * <p>
-     * The maximum number of tuning jobs to return.
+     * The maximum number of tuning jobs to return. The default value is 10.
      * </p>
      */
     private Integer maxResults;
@@ -138,11 +138,11 @@ public class ListHyperParameterTuningJobsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The maximum number of tuning jobs to return.
+     * The maximum number of tuning jobs to return. The default value is 10.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of tuning jobs to return.
+     *        The maximum number of tuning jobs to return. The default value is 10.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -151,10 +151,10 @@ public class ListHyperParameterTuningJobsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The maximum number of tuning jobs to return.
+     * The maximum number of tuning jobs to return. The default value is 10.
      * </p>
      * 
-     * @return The maximum number of tuning jobs to return.
+     * @return The maximum number of tuning jobs to return. The default value is 10.
      */
 
     public Integer getMaxResults() {
@@ -163,11 +163,11 @@ public class ListHyperParameterTuningJobsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The maximum number of tuning jobs to return.
+     * The maximum number of tuning jobs to return. The default value is 10.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of tuning jobs to return.
+     *        The maximum number of tuning jobs to return. The default value is 10.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

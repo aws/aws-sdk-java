@@ -38,13 +38,14 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
     private String hyperParameterTuningJobArn;
     /**
      * <p>
-     * The object that specifies the configuration of the tuning job.
+     * The <a>HyperParameterTuningJobConfig</a> object that specifies the configuration of the tuning job.
      * </p>
      */
     private HyperParameterTuningJobConfig hyperParameterTuningJobConfig;
     /**
      * <p>
-     * The object that specifies the definition of the training jobs that this tuning job launches.
+     * The <a>HyperParameterTrainingJobDefinition</a> object that specifies the definition of the training jobs that
+     * this tuning job launches.
      * </p>
      */
     private HyperParameterTrainingJobDefinition trainingJobDefinition;
@@ -74,20 +75,22 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
     private java.util.Date lastModifiedTime;
     /**
      * <p>
-     * The object that specifies the number of training jobs, categorized by status, that this tuning job launched.
+     * The <a>TrainingJobStatusCounters</a> object that specifies the number of training jobs, categorized by status,
+     * that this tuning job launched.
      * </p>
      */
     private TrainingJobStatusCounters trainingJobStatusCounters;
     /**
      * <p>
-     * The object that specifies the number of training jobs, categorized by the status of their final objective metric,
-     * that this tuning job launched.
+     * The <a>ObjectiveStatusCounters</a> object that specifies the number of training jobs, categorized by the status
+     * of their final objective metric, that this tuning job launched.
      * </p>
      */
     private ObjectiveStatusCounters objectiveStatusCounters;
     /**
      * <p>
-     * A object that describes the training job that completed with the best current .
+     * A <a>TrainingJobSummary</a> object that describes the training job that completed with the best current
+     * <a>HyperParameterTuningJobObjective</a>.
      * </p>
      */
     private HyperParameterTrainingJobSummary bestTrainingJob;
@@ -180,11 +183,11 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The object that specifies the configuration of the tuning job.
+     * The <a>HyperParameterTuningJobConfig</a> object that specifies the configuration of the tuning job.
      * </p>
      * 
      * @param hyperParameterTuningJobConfig
-     *        The object that specifies the configuration of the tuning job.
+     *        The <a>HyperParameterTuningJobConfig</a> object that specifies the configuration of the tuning job.
      */
 
     public void setHyperParameterTuningJobConfig(HyperParameterTuningJobConfig hyperParameterTuningJobConfig) {
@@ -193,10 +196,10 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The object that specifies the configuration of the tuning job.
+     * The <a>HyperParameterTuningJobConfig</a> object that specifies the configuration of the tuning job.
      * </p>
      * 
-     * @return The object that specifies the configuration of the tuning job.
+     * @return The <a>HyperParameterTuningJobConfig</a> object that specifies the configuration of the tuning job.
      */
 
     public HyperParameterTuningJobConfig getHyperParameterTuningJobConfig() {
@@ -205,11 +208,11 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The object that specifies the configuration of the tuning job.
+     * The <a>HyperParameterTuningJobConfig</a> object that specifies the configuration of the tuning job.
      * </p>
      * 
      * @param hyperParameterTuningJobConfig
-     *        The object that specifies the configuration of the tuning job.
+     *        The <a>HyperParameterTuningJobConfig</a> object that specifies the configuration of the tuning job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -220,11 +223,13 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The object that specifies the definition of the training jobs that this tuning job launches.
+     * The <a>HyperParameterTrainingJobDefinition</a> object that specifies the definition of the training jobs that
+     * this tuning job launches.
      * </p>
      * 
      * @param trainingJobDefinition
-     *        The object that specifies the definition of the training jobs that this tuning job launches.
+     *        The <a>HyperParameterTrainingJobDefinition</a> object that specifies the definition of the training jobs
+     *        that this tuning job launches.
      */
 
     public void setTrainingJobDefinition(HyperParameterTrainingJobDefinition trainingJobDefinition) {
@@ -233,10 +238,12 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The object that specifies the definition of the training jobs that this tuning job launches.
+     * The <a>HyperParameterTrainingJobDefinition</a> object that specifies the definition of the training jobs that
+     * this tuning job launches.
      * </p>
      * 
-     * @return The object that specifies the definition of the training jobs that this tuning job launches.
+     * @return The <a>HyperParameterTrainingJobDefinition</a> object that specifies the definition of the training jobs
+     *         that this tuning job launches.
      */
 
     public HyperParameterTrainingJobDefinition getTrainingJobDefinition() {
@@ -245,11 +252,13 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The object that specifies the definition of the training jobs that this tuning job launches.
+     * The <a>HyperParameterTrainingJobDefinition</a> object that specifies the definition of the training jobs that
+     * this tuning job launches.
      * </p>
      * 
      * @param trainingJobDefinition
-     *        The object that specifies the definition of the training jobs that this tuning job launches.
+     *        The <a>HyperParameterTrainingJobDefinition</a> object that specifies the definition of the training jobs
+     *        that this tuning job launches.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -439,12 +448,13 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The object that specifies the number of training jobs, categorized by status, that this tuning job launched.
+     * The <a>TrainingJobStatusCounters</a> object that specifies the number of training jobs, categorized by status,
+     * that this tuning job launched.
      * </p>
      * 
      * @param trainingJobStatusCounters
-     *        The object that specifies the number of training jobs, categorized by status, that this tuning job
-     *        launched.
+     *        The <a>TrainingJobStatusCounters</a> object that specifies the number of training jobs, categorized by
+     *        status, that this tuning job launched.
      */
 
     public void setTrainingJobStatusCounters(TrainingJobStatusCounters trainingJobStatusCounters) {
@@ -453,11 +463,12 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The object that specifies the number of training jobs, categorized by status, that this tuning job launched.
+     * The <a>TrainingJobStatusCounters</a> object that specifies the number of training jobs, categorized by status,
+     * that this tuning job launched.
      * </p>
      * 
-     * @return The object that specifies the number of training jobs, categorized by status, that this tuning job
-     *         launched.
+     * @return The <a>TrainingJobStatusCounters</a> object that specifies the number of training jobs, categorized by
+     *         status, that this tuning job launched.
      */
 
     public TrainingJobStatusCounters getTrainingJobStatusCounters() {
@@ -466,12 +477,13 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The object that specifies the number of training jobs, categorized by status, that this tuning job launched.
+     * The <a>TrainingJobStatusCounters</a> object that specifies the number of training jobs, categorized by status,
+     * that this tuning job launched.
      * </p>
      * 
      * @param trainingJobStatusCounters
-     *        The object that specifies the number of training jobs, categorized by status, that this tuning job
-     *        launched.
+     *        The <a>TrainingJobStatusCounters</a> object that specifies the number of training jobs, categorized by
+     *        status, that this tuning job launched.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -482,13 +494,13 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The object that specifies the number of training jobs, categorized by the status of their final objective metric,
-     * that this tuning job launched.
+     * The <a>ObjectiveStatusCounters</a> object that specifies the number of training jobs, categorized by the status
+     * of their final objective metric, that this tuning job launched.
      * </p>
      * 
      * @param objectiveStatusCounters
-     *        The object that specifies the number of training jobs, categorized by the status of their final objective
-     *        metric, that this tuning job launched.
+     *        The <a>ObjectiveStatusCounters</a> object that specifies the number of training jobs, categorized by the
+     *        status of their final objective metric, that this tuning job launched.
      */
 
     public void setObjectiveStatusCounters(ObjectiveStatusCounters objectiveStatusCounters) {
@@ -497,12 +509,12 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The object that specifies the number of training jobs, categorized by the status of their final objective metric,
-     * that this tuning job launched.
+     * The <a>ObjectiveStatusCounters</a> object that specifies the number of training jobs, categorized by the status
+     * of their final objective metric, that this tuning job launched.
      * </p>
      * 
-     * @return The object that specifies the number of training jobs, categorized by the status of their final objective
-     *         metric, that this tuning job launched.
+     * @return The <a>ObjectiveStatusCounters</a> object that specifies the number of training jobs, categorized by the
+     *         status of their final objective metric, that this tuning job launched.
      */
 
     public ObjectiveStatusCounters getObjectiveStatusCounters() {
@@ -511,13 +523,13 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The object that specifies the number of training jobs, categorized by the status of their final objective metric,
-     * that this tuning job launched.
+     * The <a>ObjectiveStatusCounters</a> object that specifies the number of training jobs, categorized by the status
+     * of their final objective metric, that this tuning job launched.
      * </p>
      * 
      * @param objectiveStatusCounters
-     *        The object that specifies the number of training jobs, categorized by the status of their final objective
-     *        metric, that this tuning job launched.
+     *        The <a>ObjectiveStatusCounters</a> object that specifies the number of training jobs, categorized by the
+     *        status of their final objective metric, that this tuning job launched.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -528,11 +540,13 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A object that describes the training job that completed with the best current .
+     * A <a>TrainingJobSummary</a> object that describes the training job that completed with the best current
+     * <a>HyperParameterTuningJobObjective</a>.
      * </p>
      * 
      * @param bestTrainingJob
-     *        A object that describes the training job that completed with the best current .
+     *        A <a>TrainingJobSummary</a> object that describes the training job that completed with the best current
+     *        <a>HyperParameterTuningJobObjective</a>.
      */
 
     public void setBestTrainingJob(HyperParameterTrainingJobSummary bestTrainingJob) {
@@ -541,10 +555,12 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A object that describes the training job that completed with the best current .
+     * A <a>TrainingJobSummary</a> object that describes the training job that completed with the best current
+     * <a>HyperParameterTuningJobObjective</a>.
      * </p>
      * 
-     * @return A object that describes the training job that completed with the best current .
+     * @return A <a>TrainingJobSummary</a> object that describes the training job that completed with the best current
+     *         <a>HyperParameterTuningJobObjective</a>.
      */
 
     public HyperParameterTrainingJobSummary getBestTrainingJob() {
@@ -553,11 +569,13 @@ public class DescribeHyperParameterTuningJobResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A object that describes the training job that completed with the best current .
+     * A <a>TrainingJobSummary</a> object that describes the training job that completed with the best current
+     * <a>HyperParameterTuningJobObjective</a>.
      * </p>
      * 
      * @param bestTrainingJob
-     *        A object that describes the training job that completed with the best current .
+     *        A <a>TrainingJobSummary</a> object that describes the training job that completed with the best current
+     *        <a>HyperParameterTuningJobObjective</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

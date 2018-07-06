@@ -34,11 +34,7 @@ public class APNSChannelResponse implements Serializable, Cloneable, StructuredP
     private String defaultAuthenticationMethod;
     /** If the channel is enabled for sending messages. */
     private Boolean enabled;
-    /**
-     * Indicates whether the channel is configured with APNs credentials. Amazon Pinpoint uses your credentials to
-     * authenticate push notifications with APNs. To use APNs token authentication, set the BundleId, TeamId, TokenKey,
-     * and TokenKeyId attributes. To use certificate authentication, set the Certificate and PrivateKey attributes.
-     */
+    /** Not used. Retained for backwards compatibility. */
     private Boolean hasCredential;
     /**
      * Indicates whether the channel is configured with a key for APNs token authentication. Provide a token key by
@@ -205,15 +201,10 @@ public class APNSChannelResponse implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Indicates whether the channel is configured with APNs credentials. Amazon Pinpoint uses your credentials to
-     * authenticate push notifications with APNs. To use APNs token authentication, set the BundleId, TeamId, TokenKey,
-     * and TokenKeyId attributes. To use certificate authentication, set the Certificate and PrivateKey attributes.
+     * Not used. Retained for backwards compatibility.
      * 
      * @param hasCredential
-     *        Indicates whether the channel is configured with APNs credentials. Amazon Pinpoint uses your credentials
-     *        to authenticate push notifications with APNs. To use APNs token authentication, set the BundleId, TeamId,
-     *        TokenKey, and TokenKeyId attributes. To use certificate authentication, set the Certificate and PrivateKey
-     *        attributes.
+     *        Not used. Retained for backwards compatibility.
      */
 
     public void setHasCredential(Boolean hasCredential) {
@@ -221,14 +212,9 @@ public class APNSChannelResponse implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Indicates whether the channel is configured with APNs credentials. Amazon Pinpoint uses your credentials to
-     * authenticate push notifications with APNs. To use APNs token authentication, set the BundleId, TeamId, TokenKey,
-     * and TokenKeyId attributes. To use certificate authentication, set the Certificate and PrivateKey attributes.
+     * Not used. Retained for backwards compatibility.
      * 
-     * @return Indicates whether the channel is configured with APNs credentials. Amazon Pinpoint uses your credentials
-     *         to authenticate push notifications with APNs. To use APNs token authentication, set the BundleId, TeamId,
-     *         TokenKey, and TokenKeyId attributes. To use certificate authentication, set the Certificate and
-     *         PrivateKey attributes.
+     * @return Not used. Retained for backwards compatibility.
      */
 
     public Boolean getHasCredential() {
@@ -236,15 +222,10 @@ public class APNSChannelResponse implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Indicates whether the channel is configured with APNs credentials. Amazon Pinpoint uses your credentials to
-     * authenticate push notifications with APNs. To use APNs token authentication, set the BundleId, TeamId, TokenKey,
-     * and TokenKeyId attributes. To use certificate authentication, set the Certificate and PrivateKey attributes.
+     * Not used. Retained for backwards compatibility.
      * 
      * @param hasCredential
-     *        Indicates whether the channel is configured with APNs credentials. Amazon Pinpoint uses your credentials
-     *        to authenticate push notifications with APNs. To use APNs token authentication, set the BundleId, TeamId,
-     *        TokenKey, and TokenKeyId attributes. To use certificate authentication, set the Certificate and PrivateKey
-     *        attributes.
+     *        Not used. Retained for backwards compatibility.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -254,14 +235,9 @@ public class APNSChannelResponse implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * Indicates whether the channel is configured with APNs credentials. Amazon Pinpoint uses your credentials to
-     * authenticate push notifications with APNs. To use APNs token authentication, set the BundleId, TeamId, TokenKey,
-     * and TokenKeyId attributes. To use certificate authentication, set the Certificate and PrivateKey attributes.
+     * Not used. Retained for backwards compatibility.
      * 
-     * @return Indicates whether the channel is configured with APNs credentials. Amazon Pinpoint uses your credentials
-     *         to authenticate push notifications with APNs. To use APNs token authentication, set the BundleId, TeamId,
-     *         TokenKey, and TokenKeyId attributes. To use certificate authentication, set the Certificate and
-     *         PrivateKey attributes.
+     * @return Not used. Retained for backwards compatibility.
      */
 
     public Boolean isHasCredential() {

@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class UpdateAdmChannelRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     private ADMChannelRequest aDMChannelRequest;
-
+    /** The unique ID of your Amazon Pinpoint application. */
     private String applicationId;
 
     /**
@@ -56,7 +56,10 @@ public class UpdateAdmChannelRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * The unique ID of your Amazon Pinpoint application.
+     * 
      * @param applicationId
+     *        The unique ID of your Amazon Pinpoint application.
      */
 
     public void setApplicationId(String applicationId) {
@@ -64,7 +67,9 @@ public class UpdateAdmChannelRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * The unique ID of your Amazon Pinpoint application.
+     * 
+     * @return The unique ID of your Amazon Pinpoint application.
      */
 
     public String getApplicationId() {
@@ -72,7 +77,10 @@ public class UpdateAdmChannelRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * The unique ID of your Amazon Pinpoint application.
+     * 
      * @param applicationId
+     *        The unique ID of your Amazon Pinpoint application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

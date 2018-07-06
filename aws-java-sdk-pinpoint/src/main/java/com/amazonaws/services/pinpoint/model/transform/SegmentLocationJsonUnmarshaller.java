@@ -52,6 +52,10 @@ public class SegmentLocationJsonUnmarshaller implements Unmarshaller<SegmentLoca
                     context.nextToken();
                     segmentLocation.setCountry(SetDimensionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("GPSPoint", targetDepth)) {
+                    context.nextToken();
+                    segmentLocation.setGPSPoint(GPSPointDimensionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

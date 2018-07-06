@@ -73,21 +73,22 @@ public class HyperParameterTuningJobSummary implements Serializable, Cloneable, 
     private java.util.Date lastModifiedTime;
     /**
      * <p>
-     * The object that specifies the numbers of training jobs, categorized by status, that this tuning job launched.
+     * The <a>TrainingJobStatusCounters</a> object that specifies the numbers of training jobs, categorized by status,
+     * that this tuning job launched.
      * </p>
      */
     private TrainingJobStatusCounters trainingJobStatusCounters;
     /**
      * <p>
-     * The object that specifies the numbers of training jobs, categorized by objective metric status, that this tuning
-     * job launched.
+     * The <a>ObjectiveStatusCounters</a> object that specifies the numbers of training jobs, categorized by objective
+     * metric status, that this tuning job launched.
      * </p>
      */
     private ObjectiveStatusCounters objectiveStatusCounters;
     /**
      * <p>
-     * The object that specifies the maximum number of training jobs and parallel training jobs allowed for this tuning
-     * job.
+     * The <a>ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training jobs
+     * allowed for this tuning job.
      * </p>
      */
     private ResourceLimits resourceLimits;
@@ -420,12 +421,13 @@ public class HyperParameterTuningJobSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The object that specifies the numbers of training jobs, categorized by status, that this tuning job launched.
+     * The <a>TrainingJobStatusCounters</a> object that specifies the numbers of training jobs, categorized by status,
+     * that this tuning job launched.
      * </p>
      * 
      * @param trainingJobStatusCounters
-     *        The object that specifies the numbers of training jobs, categorized by status, that this tuning job
-     *        launched.
+     *        The <a>TrainingJobStatusCounters</a> object that specifies the numbers of training jobs, categorized by
+     *        status, that this tuning job launched.
      */
 
     public void setTrainingJobStatusCounters(TrainingJobStatusCounters trainingJobStatusCounters) {
@@ -434,11 +436,12 @@ public class HyperParameterTuningJobSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The object that specifies the numbers of training jobs, categorized by status, that this tuning job launched.
+     * The <a>TrainingJobStatusCounters</a> object that specifies the numbers of training jobs, categorized by status,
+     * that this tuning job launched.
      * </p>
      * 
-     * @return The object that specifies the numbers of training jobs, categorized by status, that this tuning job
-     *         launched.
+     * @return The <a>TrainingJobStatusCounters</a> object that specifies the numbers of training jobs, categorized by
+     *         status, that this tuning job launched.
      */
 
     public TrainingJobStatusCounters getTrainingJobStatusCounters() {
@@ -447,12 +450,13 @@ public class HyperParameterTuningJobSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The object that specifies the numbers of training jobs, categorized by status, that this tuning job launched.
+     * The <a>TrainingJobStatusCounters</a> object that specifies the numbers of training jobs, categorized by status,
+     * that this tuning job launched.
      * </p>
      * 
      * @param trainingJobStatusCounters
-     *        The object that specifies the numbers of training jobs, categorized by status, that this tuning job
-     *        launched.
+     *        The <a>TrainingJobStatusCounters</a> object that specifies the numbers of training jobs, categorized by
+     *        status, that this tuning job launched.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -463,13 +467,13 @@ public class HyperParameterTuningJobSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The object that specifies the numbers of training jobs, categorized by objective metric status, that this tuning
-     * job launched.
+     * The <a>ObjectiveStatusCounters</a> object that specifies the numbers of training jobs, categorized by objective
+     * metric status, that this tuning job launched.
      * </p>
      * 
      * @param objectiveStatusCounters
-     *        The object that specifies the numbers of training jobs, categorized by objective metric status, that this
-     *        tuning job launched.
+     *        The <a>ObjectiveStatusCounters</a> object that specifies the numbers of training jobs, categorized by
+     *        objective metric status, that this tuning job launched.
      */
 
     public void setObjectiveStatusCounters(ObjectiveStatusCounters objectiveStatusCounters) {
@@ -478,12 +482,12 @@ public class HyperParameterTuningJobSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The object that specifies the numbers of training jobs, categorized by objective metric status, that this tuning
-     * job launched.
+     * The <a>ObjectiveStatusCounters</a> object that specifies the numbers of training jobs, categorized by objective
+     * metric status, that this tuning job launched.
      * </p>
      * 
-     * @return The object that specifies the numbers of training jobs, categorized by objective metric status, that this
-     *         tuning job launched.
+     * @return The <a>ObjectiveStatusCounters</a> object that specifies the numbers of training jobs, categorized by
+     *         objective metric status, that this tuning job launched.
      */
 
     public ObjectiveStatusCounters getObjectiveStatusCounters() {
@@ -492,13 +496,13 @@ public class HyperParameterTuningJobSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The object that specifies the numbers of training jobs, categorized by objective metric status, that this tuning
-     * job launched.
+     * The <a>ObjectiveStatusCounters</a> object that specifies the numbers of training jobs, categorized by objective
+     * metric status, that this tuning job launched.
      * </p>
      * 
      * @param objectiveStatusCounters
-     *        The object that specifies the numbers of training jobs, categorized by objective metric status, that this
-     *        tuning job launched.
+     *        The <a>ObjectiveStatusCounters</a> object that specifies the numbers of training jobs, categorized by
+     *        objective metric status, that this tuning job launched.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -509,13 +513,13 @@ public class HyperParameterTuningJobSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The object that specifies the maximum number of training jobs and parallel training jobs allowed for this tuning
-     * job.
+     * The <a>ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training jobs
+     * allowed for this tuning job.
      * </p>
      * 
      * @param resourceLimits
-     *        The object that specifies the maximum number of training jobs and parallel training jobs allowed for this
-     *        tuning job.
+     *        The <a>ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training
+     *        jobs allowed for this tuning job.
      */
 
     public void setResourceLimits(ResourceLimits resourceLimits) {
@@ -524,12 +528,12 @@ public class HyperParameterTuningJobSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The object that specifies the maximum number of training jobs and parallel training jobs allowed for this tuning
-     * job.
+     * The <a>ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training jobs
+     * allowed for this tuning job.
      * </p>
      * 
-     * @return The object that specifies the maximum number of training jobs and parallel training jobs allowed for this
-     *         tuning job.
+     * @return The <a>ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training
+     *         jobs allowed for this tuning job.
      */
 
     public ResourceLimits getResourceLimits() {
@@ -538,13 +542,13 @@ public class HyperParameterTuningJobSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The object that specifies the maximum number of training jobs and parallel training jobs allowed for this tuning
-     * job.
+     * The <a>ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training jobs
+     * allowed for this tuning job.
      * </p>
      * 
      * @param resourceLimits
-     *        The object that specifies the maximum number of training jobs and parallel training jobs allowed for this
-     *        tuning job.
+     *        The <a>ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training
+     *        jobs allowed for this tuning job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

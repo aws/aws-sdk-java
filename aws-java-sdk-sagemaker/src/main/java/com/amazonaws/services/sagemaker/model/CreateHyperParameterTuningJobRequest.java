@@ -35,15 +35,16 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
     private String hyperParameterTuningJobName;
     /**
      * <p>
-     * The object that describes the tuning job, including the search strategy, metric used to evaluate training jobs,
-     * ranges of parameters to search, and resource limits for the tuning job.
+     * The <a>HyperParameterTuningJobConfig</a> object that describes the tuning job, including the search strategy,
+     * metric used to evaluate training jobs, ranges of parameters to search, and resource limits for the tuning job.
      * </p>
      */
     private HyperParameterTuningJobConfig hyperParameterTuningJobConfig;
     /**
      * <p>
-     * The object that describes the training jobs that this tuning job launches, including static hyperparameters,
-     * input data configuration, output data configuration, resource configuration, and stopping condition.
+     * The <a>HyperParameterTrainingJobDefinition</a> object that describes the training jobs that this tuning job
+     * launches, including static hyperparameters, input data configuration, output data configuration, resource
+     * configuration, and stopping condition.
      * </p>
      */
     private HyperParameterTrainingJobDefinition trainingJobDefinition;
@@ -111,13 +112,14 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The object that describes the tuning job, including the search strategy, metric used to evaluate training jobs,
-     * ranges of parameters to search, and resource limits for the tuning job.
+     * The <a>HyperParameterTuningJobConfig</a> object that describes the tuning job, including the search strategy,
+     * metric used to evaluate training jobs, ranges of parameters to search, and resource limits for the tuning job.
      * </p>
      * 
      * @param hyperParameterTuningJobConfig
-     *        The object that describes the tuning job, including the search strategy, metric used to evaluate training
-     *        jobs, ranges of parameters to search, and resource limits for the tuning job.
+     *        The <a>HyperParameterTuningJobConfig</a> object that describes the tuning job, including the search
+     *        strategy, metric used to evaluate training jobs, ranges of parameters to search, and resource limits for
+     *        the tuning job.
      */
 
     public void setHyperParameterTuningJobConfig(HyperParameterTuningJobConfig hyperParameterTuningJobConfig) {
@@ -126,12 +128,13 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The object that describes the tuning job, including the search strategy, metric used to evaluate training jobs,
-     * ranges of parameters to search, and resource limits for the tuning job.
+     * The <a>HyperParameterTuningJobConfig</a> object that describes the tuning job, including the search strategy,
+     * metric used to evaluate training jobs, ranges of parameters to search, and resource limits for the tuning job.
      * </p>
      * 
-     * @return The object that describes the tuning job, including the search strategy, metric used to evaluate training
-     *         jobs, ranges of parameters to search, and resource limits for the tuning job.
+     * @return The <a>HyperParameterTuningJobConfig</a> object that describes the tuning job, including the search
+     *         strategy, metric used to evaluate training jobs, ranges of parameters to search, and resource limits for
+     *         the tuning job.
      */
 
     public HyperParameterTuningJobConfig getHyperParameterTuningJobConfig() {
@@ -140,13 +143,14 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The object that describes the tuning job, including the search strategy, metric used to evaluate training jobs,
-     * ranges of parameters to search, and resource limits for the tuning job.
+     * The <a>HyperParameterTuningJobConfig</a> object that describes the tuning job, including the search strategy,
+     * metric used to evaluate training jobs, ranges of parameters to search, and resource limits for the tuning job.
      * </p>
      * 
      * @param hyperParameterTuningJobConfig
-     *        The object that describes the tuning job, including the search strategy, metric used to evaluate training
-     *        jobs, ranges of parameters to search, and resource limits for the tuning job.
+     *        The <a>HyperParameterTuningJobConfig</a> object that describes the tuning job, including the search
+     *        strategy, metric used to evaluate training jobs, ranges of parameters to search, and resource limits for
+     *        the tuning job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,14 +161,15 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The object that describes the training jobs that this tuning job launches, including static hyperparameters,
-     * input data configuration, output data configuration, resource configuration, and stopping condition.
+     * The <a>HyperParameterTrainingJobDefinition</a> object that describes the training jobs that this tuning job
+     * launches, including static hyperparameters, input data configuration, output data configuration, resource
+     * configuration, and stopping condition.
      * </p>
      * 
      * @param trainingJobDefinition
-     *        The object that describes the training jobs that this tuning job launches, including static
-     *        hyperparameters, input data configuration, output data configuration, resource configuration, and stopping
-     *        condition.
+     *        The <a>HyperParameterTrainingJobDefinition</a> object that describes the training jobs that this tuning
+     *        job launches, including static hyperparameters, input data configuration, output data configuration,
+     *        resource configuration, and stopping condition.
      */
 
     public void setTrainingJobDefinition(HyperParameterTrainingJobDefinition trainingJobDefinition) {
@@ -173,13 +178,14 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The object that describes the training jobs that this tuning job launches, including static hyperparameters,
-     * input data configuration, output data configuration, resource configuration, and stopping condition.
+     * The <a>HyperParameterTrainingJobDefinition</a> object that describes the training jobs that this tuning job
+     * launches, including static hyperparameters, input data configuration, output data configuration, resource
+     * configuration, and stopping condition.
      * </p>
      * 
-     * @return The object that describes the training jobs that this tuning job launches, including static
-     *         hyperparameters, input data configuration, output data configuration, resource configuration, and
-     *         stopping condition.
+     * @return The <a>HyperParameterTrainingJobDefinition</a> object that describes the training jobs that this tuning
+     *         job launches, including static hyperparameters, input data configuration, output data configuration,
+     *         resource configuration, and stopping condition.
      */
 
     public HyperParameterTrainingJobDefinition getTrainingJobDefinition() {
@@ -188,14 +194,15 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The object that describes the training jobs that this tuning job launches, including static hyperparameters,
-     * input data configuration, output data configuration, resource configuration, and stopping condition.
+     * The <a>HyperParameterTrainingJobDefinition</a> object that describes the training jobs that this tuning job
+     * launches, including static hyperparameters, input data configuration, output data configuration, resource
+     * configuration, and stopping condition.
      * </p>
      * 
      * @param trainingJobDefinition
-     *        The object that describes the training jobs that this tuning job launches, including static
-     *        hyperparameters, input data configuration, output data configuration, resource configuration, and stopping
-     *        condition.
+     *        The <a>HyperParameterTrainingJobDefinition</a> object that describes the training jobs that this tuning
+     *        job launches, including static hyperparameters, input data configuration, output data configuration,
+     *        resource configuration, and stopping condition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

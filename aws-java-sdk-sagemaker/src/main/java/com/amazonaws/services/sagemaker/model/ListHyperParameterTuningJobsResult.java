@@ -25,8 +25,8 @@ public class ListHyperParameterTuningJobsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of objects that describe the tuning jobs that the <code>ListHyperParameterTuningJobs</code> request
-     * returned.
+     * A list of <a>HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the
+     * <code>ListHyperParameterTuningJobs</code> request returned.
      * </p>
      */
     private java.util.List<HyperParameterTuningJobSummary> hyperParameterTuningJobSummaries;
@@ -40,12 +40,12 @@ public class ListHyperParameterTuningJobsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of objects that describe the tuning jobs that the <code>ListHyperParameterTuningJobs</code> request
-     * returned.
+     * A list of <a>HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the
+     * <code>ListHyperParameterTuningJobs</code> request returned.
      * </p>
      * 
-     * @return A list of objects that describe the tuning jobs that the <code>ListHyperParameterTuningJobs</code>
-     *         request returned.
+     * @return A list of <a>HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the
+     *         <code>ListHyperParameterTuningJobs</code> request returned.
      */
 
     public java.util.List<HyperParameterTuningJobSummary> getHyperParameterTuningJobSummaries() {
@@ -54,13 +54,13 @@ public class ListHyperParameterTuningJobsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of objects that describe the tuning jobs that the <code>ListHyperParameterTuningJobs</code> request
-     * returned.
+     * A list of <a>HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the
+     * <code>ListHyperParameterTuningJobs</code> request returned.
      * </p>
      * 
      * @param hyperParameterTuningJobSummaries
-     *        A list of objects that describe the tuning jobs that the <code>ListHyperParameterTuningJobs</code> request
-     *        returned.
+     *        A list of <a>HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the
+     *        <code>ListHyperParameterTuningJobs</code> request returned.
      */
 
     public void setHyperParameterTuningJobSummaries(java.util.Collection<HyperParameterTuningJobSummary> hyperParameterTuningJobSummaries) {
@@ -74,8 +74,8 @@ public class ListHyperParameterTuningJobsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of objects that describe the tuning jobs that the <code>ListHyperParameterTuningJobs</code> request
-     * returned.
+     * A list of <a>HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the
+     * <code>ListHyperParameterTuningJobs</code> request returned.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -84,8 +84,8 @@ public class ListHyperParameterTuningJobsResult extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param hyperParameterTuningJobSummaries
-     *        A list of objects that describe the tuning jobs that the <code>ListHyperParameterTuningJobs</code> request
-     *        returned.
+     *        A list of <a>HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the
+     *        <code>ListHyperParameterTuningJobs</code> request returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,13 +101,13 @@ public class ListHyperParameterTuningJobsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of objects that describe the tuning jobs that the <code>ListHyperParameterTuningJobs</code> request
-     * returned.
+     * A list of <a>HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the
+     * <code>ListHyperParameterTuningJobs</code> request returned.
      * </p>
      * 
      * @param hyperParameterTuningJobSummaries
-     *        A list of objects that describe the tuning jobs that the <code>ListHyperParameterTuningJobs</code> request
-     *        returned.
+     *        A list of <a>HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the
+     *        <code>ListHyperParameterTuningJobs</code> request returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

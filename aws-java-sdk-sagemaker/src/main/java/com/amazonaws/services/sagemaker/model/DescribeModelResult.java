@@ -44,7 +44,8 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
     private String executionRoleArn;
     /**
      * <p>
-     * A object that specifies the VPC that this model has access to. For more information, see <a>host-vpc</a>
+     * A <a>VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see
+     * <a>host-vpc</a>
      * </p>
      */
     private VpcConfig vpcConfig;
@@ -189,11 +190,13 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A object that specifies the VPC that this model has access to. For more information, see <a>host-vpc</a>
+     * A <a>VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see
+     * <a>host-vpc</a>
      * </p>
      * 
      * @param vpcConfig
-     *        A object that specifies the VPC that this model has access to. For more information, see <a>host-vpc</a>
+     *        A <a>VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see
+     *        <a>host-vpc</a>
      */
 
     public void setVpcConfig(VpcConfig vpcConfig) {
@@ -202,10 +205,12 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A object that specifies the VPC that this model has access to. For more information, see <a>host-vpc</a>
+     * A <a>VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see
+     * <a>host-vpc</a>
      * </p>
      * 
-     * @return A object that specifies the VPC that this model has access to. For more information, see <a>host-vpc</a>
+     * @return A <a>VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see
+     *         <a>host-vpc</a>
      */
 
     public VpcConfig getVpcConfig() {
@@ -214,11 +219,13 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A object that specifies the VPC that this model has access to. For more information, see <a>host-vpc</a>
+     * A <a>VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see
+     * <a>host-vpc</a>
      * </p>
      * 
      * @param vpcConfig
-     *        A object that specifies the VPC that this model has access to. For more information, see <a>host-vpc</a>
+     *        A <a>VpcConfig</a> object that specifies the VPC that this model has access to. For more information, see
+     *        <a>host-vpc</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

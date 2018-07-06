@@ -27,8 +27,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * A map of destination addresses, with the address as the key(Email address, phone number or push token) and the
-     * Address Configuration as the value.
+     * A map of key-value pairs, where each key is an address and each value is an AddressConfiguration object. An
+     * address can be a push notification token, a phone number, or an email address.
      */
     private java.util.Map<String, AddressConfiguration> addresses;
     /**
@@ -37,19 +37,20 @@ public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
      */
     private java.util.Map<String, String> context;
     /**
-     * A map of destination addresses, with the address as the key(Email address, phone number or push token) and the
-     * Address Configuration as the value.
+     * A map of key-value pairs, where each key is an endpoint ID and each value is an EndpointSendConfiguration object.
+     * Within an EndpointSendConfiguration object, you can tailor the message for an endpoint by specifying message
+     * overrides or substitutions.
      */
     private java.util.Map<String, EndpointSendConfiguration> endpoints;
     /** Message configuration. */
     private DirectMessageConfiguration messageConfiguration;
 
     /**
-     * A map of destination addresses, with the address as the key(Email address, phone number or push token) and the
-     * Address Configuration as the value.
+     * A map of key-value pairs, where each key is an address and each value is an AddressConfiguration object. An
+     * address can be a push notification token, a phone number, or an email address.
      * 
-     * @return A map of destination addresses, with the address as the key(Email address, phone number or push token)
-     *         and the Address Configuration as the value.
+     * @return A map of key-value pairs, where each key is an address and each value is an AddressConfiguration object.
+     *         An address can be a push notification token, a phone number, or an email address.
      */
 
     public java.util.Map<String, AddressConfiguration> getAddresses() {
@@ -57,12 +58,12 @@ public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A map of destination addresses, with the address as the key(Email address, phone number or push token) and the
-     * Address Configuration as the value.
+     * A map of key-value pairs, where each key is an address and each value is an AddressConfiguration object. An
+     * address can be a push notification token, a phone number, or an email address.
      * 
      * @param addresses
-     *        A map of destination addresses, with the address as the key(Email address, phone number or push token) and
-     *        the Address Configuration as the value.
+     *        A map of key-value pairs, where each key is an address and each value is an AddressConfiguration object.
+     *        An address can be a push notification token, a phone number, or an email address.
      */
 
     public void setAddresses(java.util.Map<String, AddressConfiguration> addresses) {
@@ -70,12 +71,12 @@ public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A map of destination addresses, with the address as the key(Email address, phone number or push token) and the
-     * Address Configuration as the value.
+     * A map of key-value pairs, where each key is an address and each value is an AddressConfiguration object. An
+     * address can be a push notification token, a phone number, or an email address.
      * 
      * @param addresses
-     *        A map of destination addresses, with the address as the key(Email address, phone number or push token) and
-     *        the Address Configuration as the value.
+     *        A map of key-value pairs, where each key is an address and each value is an AddressConfiguration object.
+     *        An address can be a push notification token, a phone number, or an email address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -167,11 +168,13 @@ public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A map of destination addresses, with the address as the key(Email address, phone number or push token) and the
-     * Address Configuration as the value.
+     * A map of key-value pairs, where each key is an endpoint ID and each value is an EndpointSendConfiguration object.
+     * Within an EndpointSendConfiguration object, you can tailor the message for an endpoint by specifying message
+     * overrides or substitutions.
      * 
-     * @return A map of destination addresses, with the address as the key(Email address, phone number or push token)
-     *         and the Address Configuration as the value.
+     * @return A map of key-value pairs, where each key is an endpoint ID and each value is an EndpointSendConfiguration
+     *         object. Within an EndpointSendConfiguration object, you can tailor the message for an endpoint by
+     *         specifying message overrides or substitutions.
      */
 
     public java.util.Map<String, EndpointSendConfiguration> getEndpoints() {
@@ -179,12 +182,14 @@ public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A map of destination addresses, with the address as the key(Email address, phone number or push token) and the
-     * Address Configuration as the value.
+     * A map of key-value pairs, where each key is an endpoint ID and each value is an EndpointSendConfiguration object.
+     * Within an EndpointSendConfiguration object, you can tailor the message for an endpoint by specifying message
+     * overrides or substitutions.
      * 
      * @param endpoints
-     *        A map of destination addresses, with the address as the key(Email address, phone number or push token) and
-     *        the Address Configuration as the value.
+     *        A map of key-value pairs, where each key is an endpoint ID and each value is an EndpointSendConfiguration
+     *        object. Within an EndpointSendConfiguration object, you can tailor the message for an endpoint by
+     *        specifying message overrides or substitutions.
      */
 
     public void setEndpoints(java.util.Map<String, EndpointSendConfiguration> endpoints) {
@@ -192,12 +197,14 @@ public class MessageRequest implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A map of destination addresses, with the address as the key(Email address, phone number or push token) and the
-     * Address Configuration as the value.
+     * A map of key-value pairs, where each key is an endpoint ID and each value is an EndpointSendConfiguration object.
+     * Within an EndpointSendConfiguration object, you can tailor the message for an endpoint by specifying message
+     * overrides or substitutions.
      * 
      * @param endpoints
-     *        A map of destination addresses, with the address as the key(Email address, phone number or push token) and
-     *        the Address Configuration as the value.
+     *        A map of key-value pairs, where each key is an endpoint ID and each value is an EndpointSendConfiguration
+     *        object. Within an EndpointSendConfiguration object, you can tailor the message for an endpoint by
+     *        specifying message overrides or substitutions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

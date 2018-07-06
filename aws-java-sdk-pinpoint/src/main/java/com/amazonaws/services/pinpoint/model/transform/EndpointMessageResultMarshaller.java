@@ -31,6 +31,8 @@ public class EndpointMessageResultMarshaller {
             .marshallLocationName("Address").build();
     private static final MarshallingInfo<String> DELIVERYSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeliveryStatus").build();
+    private static final MarshallingInfo<String> MESSAGEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("MessageId").build();
     private static final MarshallingInfo<Integer> STATUSCODE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusCode").build();
     private static final MarshallingInfo<String> STATUSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -56,6 +58,7 @@ public class EndpointMessageResultMarshaller {
         try {
             protocolMarshaller.marshall(endpointMessageResult.getAddress(), ADDRESS_BINDING);
             protocolMarshaller.marshall(endpointMessageResult.getDeliveryStatus(), DELIVERYSTATUS_BINDING);
+            protocolMarshaller.marshall(endpointMessageResult.getMessageId(), MESSAGEID_BINDING);
             protocolMarshaller.marshall(endpointMessageResult.getStatusCode(), STATUSCODE_BINDING);
             protocolMarshaller.marshall(endpointMessageResult.getStatusMessage(), STATUSMESSAGE_BINDING);
             protocolMarshaller.marshall(endpointMessageResult.getUpdatedToken(), UPDATEDTOKEN_BINDING);

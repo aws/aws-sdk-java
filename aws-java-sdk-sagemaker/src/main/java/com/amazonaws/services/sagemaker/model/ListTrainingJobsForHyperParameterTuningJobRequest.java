@@ -41,7 +41,7 @@ public class ListTrainingJobsForHyperParameterTuningJobRequest extends com.amazo
     private String nextToken;
     /**
      * <p>
-     * The maximum number of training jobs to return.
+     * The maximum number of training jobs to return. The default value is 10.
      * </p>
      */
     private Integer maxResults;
@@ -54,6 +54,10 @@ public class ListTrainingJobsForHyperParameterTuningJobRequest extends com.amazo
     /**
      * <p>
      * The field to sort results by. The default is <code>Name</code>.
+     * </p>
+     * <p>
+     * If the value of this field is <code>FinalObjectiveMetricValue</code>, any training jobs that did not return an
+     * objective metric are not listed.
      * </p>
      */
     private String sortBy;
@@ -158,11 +162,11 @@ public class ListTrainingJobsForHyperParameterTuningJobRequest extends com.amazo
 
     /**
      * <p>
-     * The maximum number of training jobs to return.
+     * The maximum number of training jobs to return. The default value is 10.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of training jobs to return.
+     *        The maximum number of training jobs to return. The default value is 10.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -171,10 +175,10 @@ public class ListTrainingJobsForHyperParameterTuningJobRequest extends com.amazo
 
     /**
      * <p>
-     * The maximum number of training jobs to return.
+     * The maximum number of training jobs to return. The default value is 10.
      * </p>
      * 
-     * @return The maximum number of training jobs to return.
+     * @return The maximum number of training jobs to return. The default value is 10.
      */
 
     public Integer getMaxResults() {
@@ -183,11 +187,11 @@ public class ListTrainingJobsForHyperParameterTuningJobRequest extends com.amazo
 
     /**
      * <p>
-     * The maximum number of training jobs to return.
+     * The maximum number of training jobs to return. The default value is 10.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of training jobs to return.
+     *        The maximum number of training jobs to return. The default value is 10.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -259,9 +263,16 @@ public class ListTrainingJobsForHyperParameterTuningJobRequest extends com.amazo
      * <p>
      * The field to sort results by. The default is <code>Name</code>.
      * </p>
+     * <p>
+     * If the value of this field is <code>FinalObjectiveMetricValue</code>, any training jobs that did not return an
+     * objective metric are not listed.
+     * </p>
      * 
      * @param sortBy
-     *        The field to sort results by. The default is <code>Name</code>.
+     *        The field to sort results by. The default is <code>Name</code>.</p>
+     *        <p>
+     *        If the value of this field is <code>FinalObjectiveMetricValue</code>, any training jobs that did not
+     *        return an objective metric are not listed.
      * @see TrainingJobSortByOptions
      */
 
@@ -273,8 +284,15 @@ public class ListTrainingJobsForHyperParameterTuningJobRequest extends com.amazo
      * <p>
      * The field to sort results by. The default is <code>Name</code>.
      * </p>
+     * <p>
+     * If the value of this field is <code>FinalObjectiveMetricValue</code>, any training jobs that did not return an
+     * objective metric are not listed.
+     * </p>
      * 
-     * @return The field to sort results by. The default is <code>Name</code>.
+     * @return The field to sort results by. The default is <code>Name</code>.</p>
+     *         <p>
+     *         If the value of this field is <code>FinalObjectiveMetricValue</code>, any training jobs that did not
+     *         return an objective metric are not listed.
      * @see TrainingJobSortByOptions
      */
 
@@ -286,9 +304,16 @@ public class ListTrainingJobsForHyperParameterTuningJobRequest extends com.amazo
      * <p>
      * The field to sort results by. The default is <code>Name</code>.
      * </p>
+     * <p>
+     * If the value of this field is <code>FinalObjectiveMetricValue</code>, any training jobs that did not return an
+     * objective metric are not listed.
+     * </p>
      * 
      * @param sortBy
-     *        The field to sort results by. The default is <code>Name</code>.
+     *        The field to sort results by. The default is <code>Name</code>.</p>
+     *        <p>
+     *        If the value of this field is <code>FinalObjectiveMetricValue</code>, any training jobs that did not
+     *        return an objective metric are not listed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrainingJobSortByOptions
      */
@@ -302,9 +327,16 @@ public class ListTrainingJobsForHyperParameterTuningJobRequest extends com.amazo
      * <p>
      * The field to sort results by. The default is <code>Name</code>.
      * </p>
+     * <p>
+     * If the value of this field is <code>FinalObjectiveMetricValue</code>, any training jobs that did not return an
+     * objective metric are not listed.
+     * </p>
      * 
      * @param sortBy
-     *        The field to sort results by. The default is <code>Name</code>.
+     *        The field to sort results by. The default is <code>Name</code>.</p>
+     *        <p>
+     *        If the value of this field is <code>FinalObjectiveMetricValue</code>, any training jobs that did not
+     *        return an objective metric are not listed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrainingJobSortByOptions
      */

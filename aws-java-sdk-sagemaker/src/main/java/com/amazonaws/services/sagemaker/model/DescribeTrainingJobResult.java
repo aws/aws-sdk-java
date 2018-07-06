@@ -141,7 +141,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     private ResourceConfig resourceConfig;
     /**
      * <p>
-     * A object that specifies the VPC that this training job has access to. For more information, see <a>train-vpc</a>.
+     * A <a>VpcConfig</a> object that specifies the VPC that this training job has access to. For more information, see
+     * <a>train-vpc</a>.
      * </p>
      */
     private VpcConfig vpcConfig;
@@ -1093,12 +1094,13 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A object that specifies the VPC that this training job has access to. For more information, see <a>train-vpc</a>.
+     * A <a>VpcConfig</a> object that specifies the VPC that this training job has access to. For more information, see
+     * <a>train-vpc</a>.
      * </p>
      * 
      * @param vpcConfig
-     *        A object that specifies the VPC that this training job has access to. For more information, see
-     *        <a>train-vpc</a>.
+     *        A <a>VpcConfig</a> object that specifies the VPC that this training job has access to. For more
+     *        information, see <a>train-vpc</a>.
      */
 
     public void setVpcConfig(VpcConfig vpcConfig) {
@@ -1107,11 +1109,12 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A object that specifies the VPC that this training job has access to. For more information, see <a>train-vpc</a>.
+     * A <a>VpcConfig</a> object that specifies the VPC that this training job has access to. For more information, see
+     * <a>train-vpc</a>.
      * </p>
      * 
-     * @return A object that specifies the VPC that this training job has access to. For more information, see
-     *         <a>train-vpc</a>.
+     * @return A <a>VpcConfig</a> object that specifies the VPC that this training job has access to. For more
+     *         information, see <a>train-vpc</a>.
      */
 
     public VpcConfig getVpcConfig() {
@@ -1120,12 +1123,13 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A object that specifies the VPC that this training job has access to. For more information, see <a>train-vpc</a>.
+     * A <a>VpcConfig</a> object that specifies the VPC that this training job has access to. For more information, see
+     * <a>train-vpc</a>.
      * </p>
      * 
      * @param vpcConfig
-     *        A object that specifies the VPC that this training job has access to. For more information, see
-     *        <a>train-vpc</a>.
+     *        A <a>VpcConfig</a> object that specifies the VPC that this training job has access to. For more
+     *        information, see <a>train-vpc</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
