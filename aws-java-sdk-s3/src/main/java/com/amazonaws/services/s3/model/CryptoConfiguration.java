@@ -265,8 +265,15 @@ public class CryptoConfiguration implements Cloneable,Serializable {
      *             specified crypto mode.
      */
     private void check(CryptoMode cryptoMode) {
-        if (cryptoProvider == null && (cryptoMode == CryptoMode.AuthenticatedEncryption
-                || cryptoMode == CryptoMode.StrictAuthenticatedEncryption)) {
+        // For modes that use AES/GCM, we prefer using the BouncyCastle provider unless the
+        // user has explicitly overridden us (i.e., with the FIPS-compliant BouncyCastle
+        // implementation).
+        boolean preferBC = (cryptoMode == CryptoMode.AuthenticatedEncryption)
+                || (cryptoMode == CryptoMode.StrictAuthenticatedEncryption);
+
+        boolean haveOverride = (cryptoProvider != null && alwaysUseCryptoProvider);
+
+        if (preferBC && !haveOverride) {
             if (!CryptoRuntime.isBouncyCastleAvailable()) {
                 CryptoRuntime.enableBouncyCastle();
                 if (!CryptoRuntime.isBouncyCastleAvailable()) {
