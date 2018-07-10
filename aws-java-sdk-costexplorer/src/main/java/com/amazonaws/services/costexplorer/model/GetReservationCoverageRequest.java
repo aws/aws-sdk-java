@@ -185,6 +185,9 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only
      * one level deep. If there are multiple values for a dimension, they are OR'd together.
      * </p>
+     * <p>
+     * If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.
+     * </p>
      */
     private Expression filter;
     /**
@@ -955,6 +958,9 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only
      * one level deep. If there are multiple values for a dimension, they are OR'd together.
      * </p>
+     * <p>
+     * If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.
+     * </p>
      * 
      * @param filter
      *        Filters utilization data by dimensions. You can filter by the following dimensions:</p>
@@ -1025,6 +1031,9 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      *        <code> <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> </code>
      *        object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest
      *        only one level deep. If there are multiple values for a dimension, they are OR'd together.
+     *        </p>
+     *        <p>
+     *        If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.
      */
 
     public void setFilter(Expression filter) {
@@ -1103,6 +1112,9 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only
      * one level deep. If there are multiple values for a dimension, they are OR'd together.
      * </p>
+     * <p>
+     * If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.
+     * </p>
      * 
      * @return Filters utilization data by dimensions. You can filter by the following dimensions:</p>
      *         <ul>
@@ -1172,6 +1184,9 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      *         <code> <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> </code>
      *         object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest
      *         only one level deep. If there are multiple values for a dimension, they are OR'd together.
+     *         </p>
+     *         <p>
+     *         If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.
      */
 
     public Expression getFilter() {
@@ -1250,6 +1265,9 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only
      * one level deep. If there are multiple values for a dimension, they are OR'd together.
      * </p>
+     * <p>
+     * If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.
+     * </p>
      * 
      * @param filter
      *        Filters utilization data by dimensions. You can filter by the following dimensions:</p>
@@ -1320,6 +1338,9 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      *        <code> <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> </code>
      *        object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest
      *        only one level deep. If there are multiple values for a dimension, they are OR'd together.
+     *        </p>
+     *        <p>
+     *        If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

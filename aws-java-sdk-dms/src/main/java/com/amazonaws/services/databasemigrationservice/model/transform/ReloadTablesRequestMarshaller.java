@@ -32,6 +32,8 @@ public class ReloadTablesRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicationTaskArn").build();
     private static final MarshallingInfo<List> TABLESTORELOAD_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TablesToReload").build();
+    private static final MarshallingInfo<String> RELOADOPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReloadOption").build();
 
     private static final ReloadTablesRequestMarshaller instance = new ReloadTablesRequestMarshaller();
 
@@ -51,6 +53,7 @@ public class ReloadTablesRequestMarshaller {
         try {
             protocolMarshaller.marshall(reloadTablesRequest.getReplicationTaskArn(), REPLICATIONTASKARN_BINDING);
             protocolMarshaller.marshall(reloadTablesRequest.getTablesToReload(), TABLESTORELOAD_BINDING);
+            protocolMarshaller.marshall(reloadTablesRequest.getReloadOption(), RELOADOPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

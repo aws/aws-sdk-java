@@ -37,7 +37,7 @@ public class ReservationPurchaseRecommendation implements Serializable, Cloneabl
     private String accountScope;
     /**
      * <p>
-     * How many days of previous usage that AWS takes into consideration when making this recommendation.
+     * How many days of previous usage that AWS considers when making this recommendation.
      * </p>
      */
     private String lookbackPeriodInDays;
@@ -141,11 +141,11 @@ public class ReservationPurchaseRecommendation implements Serializable, Cloneabl
 
     /**
      * <p>
-     * How many days of previous usage that AWS takes into consideration when making this recommendation.
+     * How many days of previous usage that AWS considers when making this recommendation.
      * </p>
      * 
      * @param lookbackPeriodInDays
-     *        How many days of previous usage that AWS takes into consideration when making this recommendation.
+     *        How many days of previous usage that AWS considers when making this recommendation.
      * @see LookbackPeriodInDays
      */
 
@@ -155,10 +155,10 @@ public class ReservationPurchaseRecommendation implements Serializable, Cloneabl
 
     /**
      * <p>
-     * How many days of previous usage that AWS takes into consideration when making this recommendation.
+     * How many days of previous usage that AWS considers when making this recommendation.
      * </p>
      * 
-     * @return How many days of previous usage that AWS takes into consideration when making this recommendation.
+     * @return How many days of previous usage that AWS considers when making this recommendation.
      * @see LookbackPeriodInDays
      */
 
@@ -168,11 +168,11 @@ public class ReservationPurchaseRecommendation implements Serializable, Cloneabl
 
     /**
      * <p>
-     * How many days of previous usage that AWS takes into consideration when making this recommendation.
+     * How many days of previous usage that AWS considers when making this recommendation.
      * </p>
      * 
      * @param lookbackPeriodInDays
-     *        How many days of previous usage that AWS takes into consideration when making this recommendation.
+     *        How many days of previous usage that AWS considers when making this recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LookbackPeriodInDays
      */
@@ -184,11 +184,11 @@ public class ReservationPurchaseRecommendation implements Serializable, Cloneabl
 
     /**
      * <p>
-     * How many days of previous usage that AWS takes into consideration when making this recommendation.
+     * How many days of previous usage that AWS considers when making this recommendation.
      * </p>
      * 
      * @param lookbackPeriodInDays
-     *        How many days of previous usage that AWS takes into consideration when making this recommendation.
+     *        How many days of previous usage that AWS considers when making this recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LookbackPeriodInDays
      */

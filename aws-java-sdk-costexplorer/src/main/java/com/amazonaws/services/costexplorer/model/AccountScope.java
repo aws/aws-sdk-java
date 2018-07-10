@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum AccountScope {
 
-    PAYER("PAYER");
+    PAYER("PAYER"),
+    LINKED("LINKED");
 
     private String value;
 

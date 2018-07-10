@@ -99,6 +99,9 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition
      * to specify when you want a CDC operation to start. Specifying both values results in an error.
      * </p>
+     * <p>
+     * Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”
+     * </p>
      */
     private java.util.Date cdcStartTime;
     /**
@@ -612,11 +615,16 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition
      * to specify when you want a CDC operation to start. Specifying both values results in an error.
      * </p>
+     * <p>
+     * Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”
+     * </p>
      * 
      * @param cdcStartTime
      *        Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or
      *        CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an
-     *        error.
+     *        error.</p>
+     *        <p>
+     *        Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”
      */
 
     public void setCdcStartTime(java.util.Date cdcStartTime) {
@@ -628,10 +636,15 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition
      * to specify when you want a CDC operation to start. Specifying both values results in an error.
      * </p>
+     * <p>
+     * Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”
+     * </p>
      * 
      * @return Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or
      *         CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an
-     *         error.
+     *         error.</p>
+     *         <p>
+     *         Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”
      */
 
     public java.util.Date getCdcStartTime() {
@@ -643,11 +656,16 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition
      * to specify when you want a CDC operation to start. Specifying both values results in an error.
      * </p>
+     * <p>
+     * Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”
+     * </p>
      * 
      * @param cdcStartTime
      *        Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or
      *        CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an
-     *        error.
+     *        error.</p>
+     *        <p>
+     *        Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

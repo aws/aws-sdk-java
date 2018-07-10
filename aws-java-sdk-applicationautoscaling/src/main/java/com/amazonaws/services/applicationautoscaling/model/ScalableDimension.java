@@ -29,7 +29,8 @@ public enum ScalableDimension {
     DynamodbIndexReadCapacityUnits("dynamodb:index:ReadCapacityUnits"),
     DynamodbIndexWriteCapacityUnits("dynamodb:index:WriteCapacityUnits"),
     RdsClusterReadReplicaCount("rds:cluster:ReadReplicaCount"),
-    SagemakerVariantDesiredInstanceCount("sagemaker:variant:DesiredInstanceCount");
+    SagemakerVariantDesiredInstanceCount("sagemaker:variant:DesiredInstanceCount"),
+    CustomResourceResourceTypeProperty("custom-resource:ResourceType:Property");
 
     private String value;
 

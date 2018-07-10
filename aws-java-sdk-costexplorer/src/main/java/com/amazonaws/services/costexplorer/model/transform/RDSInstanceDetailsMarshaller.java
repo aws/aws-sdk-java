@@ -35,6 +35,8 @@ public class RDSInstanceDetailsMarshaller {
             .marshallLocationName("Region").build();
     private static final MarshallingInfo<String> DATABASEENGINE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatabaseEngine").build();
+    private static final MarshallingInfo<String> DATABASEEDITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatabaseEdition").build();
     private static final MarshallingInfo<String> DEPLOYMENTOPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeploymentOption").build();
     private static final MarshallingInfo<String> LICENSEMODEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -64,6 +66,7 @@ public class RDSInstanceDetailsMarshaller {
             protocolMarshaller.marshall(rDSInstanceDetails.getInstanceType(), INSTANCETYPE_BINDING);
             protocolMarshaller.marshall(rDSInstanceDetails.getRegion(), REGION_BINDING);
             protocolMarshaller.marshall(rDSInstanceDetails.getDatabaseEngine(), DATABASEENGINE_BINDING);
+            protocolMarshaller.marshall(rDSInstanceDetails.getDatabaseEdition(), DATABASEEDITION_BINDING);
             protocolMarshaller.marshall(rDSInstanceDetails.getDeploymentOption(), DEPLOYMENTOPTION_BINDING);
             protocolMarshaller.marshall(rDSInstanceDetails.getLicenseModel(), LICENSEMODEL_BINDING);
             protocolMarshaller.marshall(rDSInstanceDetails.getCurrentGeneration(), CURRENTGENERATION_BINDING);

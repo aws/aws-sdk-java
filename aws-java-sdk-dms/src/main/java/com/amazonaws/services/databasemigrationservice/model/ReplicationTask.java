@@ -28,7 +28,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The replication task identifier.
+     * The user-assigned replication task identifier or name.
      * </p>
      * <p>
      * Constraints:
@@ -173,7 +173,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The replication task identifier.
+     * The user-assigned replication task identifier or name.
      * </p>
      * <p>
      * Constraints:
@@ -197,7 +197,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @param replicationTaskIdentifier
-     *        The replication task identifier.</p>
+     *        The user-assigned replication task identifier or name.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -225,7 +225,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The replication task identifier.
+     * The user-assigned replication task identifier or name.
      * </p>
      * <p>
      * Constraints:
@@ -248,7 +248,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * </ul>
      * 
-     * @return The replication task identifier.</p>
+     * @return The user-assigned replication task identifier or name.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -276,7 +276,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The replication task identifier.
+     * The user-assigned replication task identifier or name.
      * </p>
      * <p>
      * Constraints:
@@ -300,7 +300,7 @@ public class ReplicationTask implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @param replicationTaskIdentifier
-     *        The replication task identifier.</p>
+     *        The user-assigned replication task identifier or name.</p>
      *        <p>
      *        Constraints:
      *        </p>

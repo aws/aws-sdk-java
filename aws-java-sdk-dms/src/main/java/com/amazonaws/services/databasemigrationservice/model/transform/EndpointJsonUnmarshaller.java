@@ -124,6 +124,10 @@ public class EndpointJsonUnmarshaller implements Unmarshaller<Endpoint, JsonUnma
                     context.nextToken();
                     endpoint.setS3Settings(S3SettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("DmsTransferSettings", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setDmsTransferSettings(DmsTransferSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("MongoDbSettings", targetDepth)) {
                     context.nextToken();
                     endpoint.setMongoDbSettings(MongoDbSettingsJsonUnmarshaller.getInstance().unmarshall(context));

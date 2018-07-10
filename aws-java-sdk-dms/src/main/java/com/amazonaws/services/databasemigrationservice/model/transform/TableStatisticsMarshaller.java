@@ -57,6 +57,8 @@ public class TableStatisticsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValidationSuspendedRecords").build();
     private static final MarshallingInfo<String> VALIDATIONSTATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValidationState").build();
+    private static final MarshallingInfo<String> VALIDATIONSTATEDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValidationStateDetails").build();
 
     private static final TableStatisticsMarshaller instance = new TableStatisticsMarshaller();
 
@@ -89,6 +91,7 @@ public class TableStatisticsMarshaller {
             protocolMarshaller.marshall(tableStatistics.getValidationFailedRecords(), VALIDATIONFAILEDRECORDS_BINDING);
             protocolMarshaller.marshall(tableStatistics.getValidationSuspendedRecords(), VALIDATIONSUSPENDEDRECORDS_BINDING);
             protocolMarshaller.marshall(tableStatistics.getValidationState(), VALIDATIONSTATE_BINDING);
+            protocolMarshaller.marshall(tableStatistics.getValidationStateDetails(), VALIDATIONSTATEDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

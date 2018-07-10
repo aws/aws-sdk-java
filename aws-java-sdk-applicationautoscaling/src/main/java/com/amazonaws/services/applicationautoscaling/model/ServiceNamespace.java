@@ -26,7 +26,8 @@ public enum ServiceNamespace {
     Appstream("appstream"),
     Dynamodb("dynamodb"),
     Rds("rds"),
-    Sagemaker("sagemaker");
+    Sagemaker("sagemaker"),
+    CustomResource("custom-resource");
 
     private String value;
 

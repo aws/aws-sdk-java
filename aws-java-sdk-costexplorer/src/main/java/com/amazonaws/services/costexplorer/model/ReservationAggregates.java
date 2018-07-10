@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The aggregated numbers for your RI usage.
+ * The aggregated numbers for your Reserved Instance (RI) usage.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ReservationAggregates" target="_top">AWS API
@@ -60,8 +60,8 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
     private String onDemandCostOfRIHoursUsed;
     /**
      * <p>
-     * How much you saved due to purchasing and utilizing RIs. This is calculated by subtracting the
-     * <code>TotalAmortizedFee</code> from the <code>OnDemandCostOfRIHoursUsed</code>.
+     * How much you saved due to purchasing and utilizing RIs. AWS calculates this by subtracting
+     * <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.
      * </p>
      */
     private String netRISavings;
@@ -292,13 +292,13 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * How much you saved due to purchasing and utilizing RIs. This is calculated by subtracting the
-     * <code>TotalAmortizedFee</code> from the <code>OnDemandCostOfRIHoursUsed</code>.
+     * How much you saved due to purchasing and utilizing RIs. AWS calculates this by subtracting
+     * <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.
      * </p>
      * 
      * @param netRISavings
-     *        How much you saved due to purchasing and utilizing RIs. This is calculated by subtracting the
-     *        <code>TotalAmortizedFee</code> from the <code>OnDemandCostOfRIHoursUsed</code>.
+     *        How much you saved due to purchasing and utilizing RIs. AWS calculates this by subtracting
+     *        <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.
      */
 
     public void setNetRISavings(String netRISavings) {
@@ -307,12 +307,12 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * How much you saved due to purchasing and utilizing RIs. This is calculated by subtracting the
-     * <code>TotalAmortizedFee</code> from the <code>OnDemandCostOfRIHoursUsed</code>.
+     * How much you saved due to purchasing and utilizing RIs. AWS calculates this by subtracting
+     * <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.
      * </p>
      * 
-     * @return How much you saved due to purchasing and utilizing RIs. This is calculated by subtracting the
-     *         <code>TotalAmortizedFee</code> from the <code>OnDemandCostOfRIHoursUsed</code>.
+     * @return How much you saved due to purchasing and utilizing RIs. AWS calculates this by subtracting
+     *         <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.
      */
 
     public String getNetRISavings() {
@@ -321,13 +321,13 @@ public class ReservationAggregates implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * How much you saved due to purchasing and utilizing RIs. This is calculated by subtracting the
-     * <code>TotalAmortizedFee</code> from the <code>OnDemandCostOfRIHoursUsed</code>.
+     * How much you saved due to purchasing and utilizing RIs. AWS calculates this by subtracting
+     * <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.
      * </p>
      * 
      * @param netRISavings
-     *        How much you saved due to purchasing and utilizing RIs. This is calculated by subtracting the
-     *        <code>TotalAmortizedFee</code> from the <code>OnDemandCostOfRIHoursUsed</code>.
+     *        How much you saved due to purchasing and utilizing RIs. AWS calculates this by subtracting
+     *        <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

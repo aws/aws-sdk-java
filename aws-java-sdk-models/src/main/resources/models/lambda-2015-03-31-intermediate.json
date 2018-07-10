@@ -41922,6 +41922,9 @@
         "name" : "Dotnetcore20",
         "value" : "dotnetcore2.0"
       }, {
+        "name" : "Dotnetcore21",
+        "value" : "dotnetcore2.1"
+      }, {
         "name" : "Nodejs43Edge",
         "value" : "nodejs4.3-edge"
       }, {

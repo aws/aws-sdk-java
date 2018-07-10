@@ -140,6 +140,42 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     private S3Settings s3Settings;
     /**
      * <p>
+     * The settings in JSON format for the DMS Transfer type source endpoint.
+     * </p>
+     * <p>
+     * Attributes include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * serviceAccessRoleArn - The IAM role that has permission to access the Amazon S3 bucket.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * BucketName - The name of the S3 bucket to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * compressionType - An optional parameter to use GZIP to compress the target files. Set to NONE (the default) or do
+     * not use to leave the files uncompressed.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Shorthand syntax: ServiceAccessRoleArn=string ,BucketName=string,CompressionType=string
+     * </p>
+     * <p>
+     * JSON syntax:
+     * </p>
+     * <p>
+     * { "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" }
+     * </p>
+     */
+    private DmsTransferSettings dmsTransferSettings;
+    /**
+     * <p>
      * Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see
      * the <b>Configuration Properties When Using MongoDB as a Source for AWS Database Migration Service</b> section at
      * <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html"> Using Amazon S3 as a Target
@@ -971,6 +1007,223 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * The settings in JSON format for the DMS Transfer type source endpoint.
+     * </p>
+     * <p>
+     * Attributes include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * serviceAccessRoleArn - The IAM role that has permission to access the Amazon S3 bucket.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * BucketName - The name of the S3 bucket to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * compressionType - An optional parameter to use GZIP to compress the target files. Set to NONE (the default) or do
+     * not use to leave the files uncompressed.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Shorthand syntax: ServiceAccessRoleArn=string ,BucketName=string,CompressionType=string
+     * </p>
+     * <p>
+     * JSON syntax:
+     * </p>
+     * <p>
+     * { "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" }
+     * </p>
+     * 
+     * @param dmsTransferSettings
+     *        The settings in JSON format for the DMS Transfer type source endpoint. </p>
+     *        <p>
+     *        Attributes include:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        serviceAccessRoleArn - The IAM role that has permission to access the Amazon S3 bucket.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        BucketName - The name of the S3 bucket to use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        compressionType - An optional parameter to use GZIP to compress the target files. Set to NONE (the
+     *        default) or do not use to leave the files uncompressed.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Shorthand syntax: ServiceAccessRoleArn=string ,BucketName=string,CompressionType=string
+     *        </p>
+     *        <p>
+     *        JSON syntax:
+     *        </p>
+     *        <p>
+     *        { "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" }
+     */
+
+    public void setDmsTransferSettings(DmsTransferSettings dmsTransferSettings) {
+        this.dmsTransferSettings = dmsTransferSettings;
+    }
+
+    /**
+     * <p>
+     * The settings in JSON format for the DMS Transfer type source endpoint.
+     * </p>
+     * <p>
+     * Attributes include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * serviceAccessRoleArn - The IAM role that has permission to access the Amazon S3 bucket.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * BucketName - The name of the S3 bucket to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * compressionType - An optional parameter to use GZIP to compress the target files. Set to NONE (the default) or do
+     * not use to leave the files uncompressed.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Shorthand syntax: ServiceAccessRoleArn=string ,BucketName=string,CompressionType=string
+     * </p>
+     * <p>
+     * JSON syntax:
+     * </p>
+     * <p>
+     * { "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" }
+     * </p>
+     * 
+     * @return The settings in JSON format for the DMS Transfer type source endpoint. </p>
+     *         <p>
+     *         Attributes include:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         serviceAccessRoleArn - The IAM role that has permission to access the Amazon S3 bucket.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         BucketName - The name of the S3 bucket to use.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         compressionType - An optional parameter to use GZIP to compress the target files. Set to NONE (the
+     *         default) or do not use to leave the files uncompressed.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Shorthand syntax: ServiceAccessRoleArn=string ,BucketName=string,CompressionType=string
+     *         </p>
+     *         <p>
+     *         JSON syntax:
+     *         </p>
+     *         <p>
+     *         { "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" }
+     */
+
+    public DmsTransferSettings getDmsTransferSettings() {
+        return this.dmsTransferSettings;
+    }
+
+    /**
+     * <p>
+     * The settings in JSON format for the DMS Transfer type source endpoint.
+     * </p>
+     * <p>
+     * Attributes include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * serviceAccessRoleArn - The IAM role that has permission to access the Amazon S3 bucket.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * BucketName - The name of the S3 bucket to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * compressionType - An optional parameter to use GZIP to compress the target files. Set to NONE (the default) or do
+     * not use to leave the files uncompressed.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Shorthand syntax: ServiceAccessRoleArn=string ,BucketName=string,CompressionType=string
+     * </p>
+     * <p>
+     * JSON syntax:
+     * </p>
+     * <p>
+     * { "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" }
+     * </p>
+     * 
+     * @param dmsTransferSettings
+     *        The settings in JSON format for the DMS Transfer type source endpoint. </p>
+     *        <p>
+     *        Attributes include:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        serviceAccessRoleArn - The IAM role that has permission to access the Amazon S3 bucket.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        BucketName - The name of the S3 bucket to use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        compressionType - An optional parameter to use GZIP to compress the target files. Set to NONE (the
+     *        default) or do not use to leave the files uncompressed.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Shorthand syntax: ServiceAccessRoleArn=string ,BucketName=string,CompressionType=string
+     *        </p>
+     *        <p>
+     *        JSON syntax:
+     *        </p>
+     *        <p>
+     *        { "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" }
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyEndpointRequest withDmsTransferSettings(DmsTransferSettings dmsTransferSettings) {
+        setDmsTransferSettings(dmsTransferSettings);
+        return this;
+    }
+
+    /**
+     * <p>
      * Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see
      * the <b>Configuration Properties When Using MongoDB as a Source for AWS Database Migration Service</b> section at
      * <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html"> Using Amazon S3 as a Target
@@ -1071,6 +1324,8 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("DynamoDbSettings: ").append(getDynamoDbSettings()).append(",");
         if (getS3Settings() != null)
             sb.append("S3Settings: ").append(getS3Settings()).append(",");
+        if (getDmsTransferSettings() != null)
+            sb.append("DmsTransferSettings: ").append(getDmsTransferSettings()).append(",");
         if (getMongoDbSettings() != null)
             sb.append("MongoDbSettings: ").append(getMongoDbSettings());
         sb.append("}");
@@ -1151,6 +1406,10 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getS3Settings() != null && other.getS3Settings().equals(this.getS3Settings()) == false)
             return false;
+        if (other.getDmsTransferSettings() == null ^ this.getDmsTransferSettings() == null)
+            return false;
+        if (other.getDmsTransferSettings() != null && other.getDmsTransferSettings().equals(this.getDmsTransferSettings()) == false)
+            return false;
         if (other.getMongoDbSettings() == null ^ this.getMongoDbSettings() == null)
             return false;
         if (other.getMongoDbSettings() != null && other.getMongoDbSettings().equals(this.getMongoDbSettings()) == false)
@@ -1179,6 +1438,7 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getExternalTableDefinition() == null) ? 0 : getExternalTableDefinition().hashCode());
         hashCode = prime * hashCode + ((getDynamoDbSettings() == null) ? 0 : getDynamoDbSettings().hashCode());
         hashCode = prime * hashCode + ((getS3Settings() == null) ? 0 : getS3Settings().hashCode());
+        hashCode = prime * hashCode + ((getDmsTransferSettings() == null) ? 0 : getDmsTransferSettings().hashCode());
         hashCode = prime * hashCode + ((getMongoDbSettings() == null) ? 0 : getMongoDbSettings().hashCode());
         return hashCode;
     }

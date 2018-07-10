@@ -1,3 +1,24 @@
+# __1.11.363__ __2018-07-09__
+## __AWS Cost Explorer Service__
+  - ### Features
+    - AWS Cost Explorer provides you with Reserved Instance (RI) purchase recommendations based on your total cross-account Amazon EC2 and Amazon RDS usage. Starting today, linked accounts can also access custom RI purchase recommendations for specific linked accounts directly via AWS Cost Explorer API.
+
+## __AWS Database Migration Service__
+  - ### Features
+    - Added support for DmsTransfer endpoint type and support for re-validate option in table reload API.
+
+## __AWS Lambda__
+  - ### Features
+    - Add support for .NET Core 2.1 to Lambda.
+
+## __Amazon Transcribe Service__
+  - ### Features
+    - You can now specify an Amazon S3 output bucket to store the transcription of your audio file when you call the StartTranscriptionJob operation. 
+
+## __Application Auto Scaling__
+  - ### Features
+    - The release adds support for custom resource auto scaling.
+
 # __1.11.362__ __2018-07-06__
 ## __AWS Elemental MediaConvert__
   - ### Features

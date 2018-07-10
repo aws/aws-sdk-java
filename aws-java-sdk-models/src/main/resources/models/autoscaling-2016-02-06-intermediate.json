@@ -12986,6 +12986,9 @@
       }, {
         "name" : "SagemakerVariantDesiredInstanceCount",
         "value" : "sagemaker:variant:DesiredInstanceCount"
+      }, {
+        "name" : "CustomResourceResourceTypeProperty",
+        "value" : "custom-resource:ResourceType:Property"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -18539,6 +18542,9 @@
       }, {
         "name" : "Sagemaker",
         "value" : "sagemaker"
+      }, {
+        "name" : "CustomResource",
+        "value" : "custom-resource"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,

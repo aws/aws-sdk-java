@@ -29,6 +29,7 @@ public enum Runtime {
     Python36("python3.6"),
     Dotnetcore10("dotnetcore1.0"),
     Dotnetcore20("dotnetcore2.0"),
+    Dotnetcore21("dotnetcore2.1"),
     Nodejs43Edge("nodejs4.3-edge"),
     Go1X("go1.x");
 

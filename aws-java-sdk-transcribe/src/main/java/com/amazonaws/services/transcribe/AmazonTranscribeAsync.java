@@ -259,7 +259,8 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Updates an existing vocabulary with new values.
+     * Updates an existing vocabulary with new values. The <code>UpdateVocabulary</code> operation overwrites all of the
+     * existing information with the values that you provide in the request.
      * </p>
      * 
      * @param updateVocabularyRequest
@@ -272,7 +273,8 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Updates an existing vocabulary with new values.
+     * Updates an existing vocabulary with new values. The <code>UpdateVocabulary</code> operation overwrites all of the
+     * existing information with the values that you provide in the request.
      * </p>
      * 
      * @param updateVocabularyRequest

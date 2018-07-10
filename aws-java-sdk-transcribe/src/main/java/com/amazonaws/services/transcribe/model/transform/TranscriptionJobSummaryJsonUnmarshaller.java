@@ -72,6 +72,10 @@ public class TranscriptionJobSummaryJsonUnmarshaller implements Unmarshaller<Tra
                     context.nextToken();
                     transcriptionJobSummary.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("OutputLocationType", targetDepth)) {
+                    context.nextToken();
+                    transcriptionJobSummary.setOutputLocationType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

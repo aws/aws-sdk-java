@@ -19,7 +19,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -92,7 +92,7 @@
       "documentation" : "<p>Creates a new custom vocabulary that you can use to change the way Amazon Transcribe handles transcription of an audio file.</p>",
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
-        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name already exists when createing a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
+        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name already exists when creating a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitExceededException",
@@ -104,7 +104,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConflictException",
-        "documentation" : "<p>The <code>JobName</code> field is a duplicate of a previously entered job name. Resend your request with a different name.</p>",
+        "documentation" : "<p>When you are using the <code>StartTranscriptionJob</code> operation, the <code>JobName</code> field is a duplicate of a previously entered job name. Resend your request with a different name.</p> <p>When you are using the <code>UpdateVocabulary</code> operation, there are two jobs running at the same time. Resend the second request later.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -135,11 +135,15 @@
       "documentation" : "<p>Deletes a vocabulary from Amazon Transcribe. </p>",
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
-        "documentation" : "<p>We can't find the requested transcription job or custom vocabulary. Check the name and try your request again.</p>",
+        "documentation" : "<p>We can't find the requested resource. Check the name and try your request again.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>Either you have sent too many requests or your input file is too long. Wait before you resend your request, or use a smaller file and resend the request.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "BadRequestException",
+        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name already exists when creating a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalFailureException",
@@ -174,7 +178,7 @@
       "documentation" : "<p>Returns information about a transcription job. To see the status of the job, check the <code>TranscriptionJobStatus</code> field. If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified in the <code>TranscriptionFileUri</code> field.</p>",
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
-        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name already exists when createing a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
+        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name already exists when creating a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitExceededException",
@@ -186,7 +190,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "NotFoundException",
-        "documentation" : "<p>We can't find the requested transcription job or custom vocabulary. Check the name and try your request again.</p>",
+        "documentation" : "<p>We can't find the requested resource. Check the name and try your request again.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -217,7 +221,7 @@
       "documentation" : "<p>Gets information about a vocabulary.</p>",
       "exceptions" : [ {
         "exceptionName" : "NotFoundException",
-        "documentation" : "<p>We can't find the requested transcription job or custom vocabulary. Check the name and try your request again.</p>",
+        "documentation" : "<p>We can't find the requested resource. Check the name and try your request again.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitExceededException",
@@ -229,7 +233,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "BadRequestException",
-        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name already exists when createing a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
+        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name already exists when creating a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -260,7 +264,7 @@
       "documentation" : "<p>Lists transcription jobs with the specified status.</p>",
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
-        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name already exists when createing a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
+        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name already exists when creating a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitExceededException",
@@ -299,7 +303,7 @@
       "documentation" : "<p>Returns a list of vocabularies that match the specified criteria. If no criteria are specified, returns the entire list of vocabularies.</p>",
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
-        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name already exists when createing a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
+        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name already exists when creating a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitExceededException",
@@ -338,7 +342,7 @@
       "documentation" : "<p>Starts an asynchronous job to transcribe speech to text.</p>",
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
-        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name already exists when createing a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
+        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name already exists when creating a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitExceededException",
@@ -350,7 +354,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ConflictException",
-        "documentation" : "<p>The <code>JobName</code> field is a duplicate of a previously entered job name. Resend your request with a different name.</p>",
+        "documentation" : "<p>When you are using the <code>StartTranscriptionJob</code> operation, the <code>JobName</code> field is a duplicate of a previously entered job name. Resend your request with a different name.</p> <p>When you are using the <code>UpdateVocabulary</code> operation, there are two jobs running at the same time. Resend the second request later.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -378,10 +382,10 @@
       "asyncReturnType" : "UpdateVocabularyResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Updates an existing vocabulary with new values.</p>",
+      "documentation" : "<p>Updates an existing vocabulary with new values. The <code>UpdateVocabulary</code> operation overwrites all of the existing information with the values that you provide in the request.</p>",
       "exceptions" : [ {
         "exceptionName" : "BadRequestException",
-        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name already exists when createing a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
+        "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name already exists when creating a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitExceededException",
@@ -393,7 +397,11 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "NotFoundException",
-        "documentation" : "<p>We can't find the requested transcription job or custom vocabulary. Check the name and try your request again.</p>",
+        "documentation" : "<p>We can't find the requested resource. Check the name and try your request again.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ConflictException",
+        "documentation" : "<p>When you are using the <code>StartTranscriptionJob</code> operation, the <code>JobName</code> field is a duplicate of a previously entered job name. Resend your request with a different name.</p> <p>When you are using the <code>UpdateVocabulary</code> operation, there are two jobs running at the same time. Resend the second request later.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -425,7 +433,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name already exists when createing a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
+      "documentation" : "<p>Your request didn't pass one or more validation tests. For example, a name already exists when creating a resource or a name may not exist when getting a transcription job or custom vocabulary. See the exception <code>Message</code> field for more information.</p>",
       "enums" : null,
       "errorCode" : "BadRequestException",
       "hasHeaderMember" : false,
@@ -461,7 +469,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>The <code>JobName</code> field is a duplicate of a previously entered job name. Resend your request with a different name.</p>",
+      "documentation" : "<p>When you are using the <code>StartTranscriptionJob</code> operation, the <code>JobName</code> field is a duplicate of a previously entered job name. Resend your request with a different name.</p> <p>When you are using the <code>UpdateVocabulary</code> operation, there are two jobs running at the same time. Resend the second request later.</p>",
       "enums" : null,
       "errorCode" : "ConflictException",
       "hasHeaderMember" : false,
@@ -5867,7 +5875,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>We can't find the requested transcription job or custom vocabulary. Check the name and try your request again.</p>",
+      "documentation" : "<p>We can't find the requested resource. Check the name and try your request again.</p>",
       "enums" : null,
       "errorCode" : "NotFoundException",
       "hasHeaderMember" : false,
@@ -5891,6 +5899,51 @@
         "documentation" : null,
         "simpleType" : "NotFoundException",
         "variableSetterType" : "NotFoundException"
+      },
+      "wrapper" : false
+    },
+    "OutputLocationType" : {
+      "c2jName" : "OutputLocationType",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : [ {
+        "name" : "CUSTOMER_BUCKET",
+        "value" : "CUSTOMER_BUCKET"
+      }, {
+        "name" : "SERVICE_BUCKET",
+        "value" : "SERVICE_BUCKET"
+      } ],
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "OutputLocationType",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "variableDeclarationType" : "OutputLocationType",
+        "variableName" : "outputLocationType",
+        "variableType" : "OutputLocationType",
+        "documentation" : null,
+        "simpleType" : "OutputLocationType",
+        "variableSetterType" : "OutputLocationType"
       },
       "wrapper" : false
     },
@@ -6343,11 +6396,11 @@
         "c2jName" : "TranscriptionJobName",
         "c2jShape" : "TranscriptionJobName",
         "deprecated" : false,
-        "documentation" : "<p>The name of the job. The name must be unique within an AWS account.</p>",
+        "documentation" : "<p>The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The name of the job. The name must be unique within an AWS account.</p>\n@param transcriptionJobName The name of the job. The name must be unique within an AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.</p>\n@param transcriptionJobName The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withTranscriptionJobName",
-        "getterDocumentation" : "/**<p>The name of the job. The name must be unique within an AWS account.</p>\n@return The name of the job. The name must be unique within an AWS account.*/",
+        "getterDocumentation" : "/**<p>The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.</p>\n@return The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.*/",
         "getterMethodName" : "getTranscriptionJobName",
         "getterModel" : {
           "returnType" : "String",
@@ -6379,7 +6432,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TranscriptionJobName",
-        "setterDocumentation" : "/**<p>The name of the job. The name must be unique within an AWS account.</p>\n@param transcriptionJobName The name of the job. The name must be unique within an AWS account.*/",
+        "setterDocumentation" : "/**<p>The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.</p>\n@param transcriptionJobName The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.*/",
         "setterMethodName" : "setTranscriptionJobName",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -6392,12 +6445,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The name of the job. The name must be unique within an AWS account.</p>\n@param transcriptionJobName The name of the job. The name must be unique within an AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.</p>\n@param transcriptionJobName The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "transcriptionJobName",
           "variableType" : "String",
-          "documentation" : "<p>The name of the job. The name must be unique within an AWS account.</p>",
+          "documentation" : "<p>The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -6652,6 +6705,69 @@
           "documentation" : "<p>An object that describes the input media for a transcription job.</p>",
           "simpleType" : "Media",
           "variableSetterType" : "Media"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "OutputBucketName",
+        "c2jShape" : "OutputBucketName",
+        "deprecated" : false,
+        "documentation" : "<p>The location where the transcription is stored.</p> <p>If you set the <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the operation returns this location in the <code>TranscriptFileUri</code> field. The S3 bucket must have permissions that allow Amazon Transcribe to put files in the bucket. For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user\">Permissions Required for IAM User Roles</a>.</p> <p>If you don't set the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a shareable URL that provides secure access to your transcription, and returns it in the <code>TranscriptFileUri</code> field. Use this URL to download the transcription.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The location where the transcription is stored.</p> <p>If you set the <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the operation returns this location in the <code>TranscriptFileUri</code> field. The S3 bucket must have permissions that allow Amazon Transcribe to put files in the bucket. For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user\">Permissions Required for IAM User Roles</a>.</p> <p>If you don't set the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a shareable URL that provides secure access to your transcription, and returns it in the <code>TranscriptFileUri</code> field. Use this URL to download the transcription.</p>\n@param outputBucketName The location where the transcription is stored.</p> <p>If you set the <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the operation returns this location in the <code>TranscriptFileUri</code> field. The S3 bucket must have permissions that allow Amazon Transcribe to put files in the bucket. For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user\">Permissions Required for IAM User Roles</a>.</p> <p>If you don't set the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a shareable URL that provides secure access to your transcription, and returns it in the <code>TranscriptFileUri</code> field. Use this URL to download the transcription.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withOutputBucketName",
+        "getterDocumentation" : "/**<p>The location where the transcription is stored.</p> <p>If you set the <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the operation returns this location in the <code>TranscriptFileUri</code> field. The S3 bucket must have permissions that allow Amazon Transcribe to put files in the bucket. For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user\">Permissions Required for IAM User Roles</a>.</p> <p>If you don't set the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a shareable URL that provides secure access to your transcription, and returns it in the <code>TranscriptFileUri</code> field. Use this URL to download the transcription.</p>\n@return The location where the transcription is stored.</p> <p>If you set the <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the operation returns this location in the <code>TranscriptFileUri</code> field. The S3 bucket must have permissions that allow Amazon Transcribe to put files in the bucket. For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user\">Permissions Required for IAM User Roles</a>.</p> <p>If you don't set the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a shareable URL that provides secure access to your transcription, and returns it in the <code>TranscriptFileUri</code> field. Use this URL to download the transcription.*/",
+        "getterMethodName" : "getOutputBucketName",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "OutputBucketName",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "OutputBucketName",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "OutputBucketName",
+        "setterDocumentation" : "/**<p>The location where the transcription is stored.</p> <p>If you set the <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the operation returns this location in the <code>TranscriptFileUri</code> field. The S3 bucket must have permissions that allow Amazon Transcribe to put files in the bucket. For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user\">Permissions Required for IAM User Roles</a>.</p> <p>If you don't set the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a shareable URL that provides secure access to your transcription, and returns it in the <code>TranscriptFileUri</code> field. Use this URL to download the transcription.</p>\n@param outputBucketName The location where the transcription is stored.</p> <p>If you set the <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the operation returns this location in the <code>TranscriptFileUri</code> field. The S3 bucket must have permissions that allow Amazon Transcribe to put files in the bucket. For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user\">Permissions Required for IAM User Roles</a>.</p> <p>If you don't set the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a shareable URL that provides secure access to your transcription, and returns it in the <code>TranscriptFileUri</code> field. Use this URL to download the transcription.*/",
+        "setterMethodName" : "setOutputBucketName",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "outputBucketName",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The location where the transcription is stored.</p> <p>If you set the <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the operation returns this location in the <code>TranscriptFileUri</code> field. The S3 bucket must have permissions that allow Amazon Transcribe to put files in the bucket. For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user\">Permissions Required for IAM User Roles</a>.</p> <p>If you don't set the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a shareable URL that provides secure access to your transcription, and returns it in the <code>TranscriptFileUri</code> field. Use this URL to download the transcription.</p>\n@param outputBucketName The location where the transcription is stored.</p> <p>If you set the <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the operation returns this location in the <code>TranscriptFileUri</code> field. The S3 bucket must have permissions that allow Amazon Transcribe to put files in the bucket. For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user\">Permissions Required for IAM User Roles</a>.</p> <p>If you don't set the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a shareable URL that provides secure access to your transcription, and returns it in the <code>TranscriptFileUri</code> field. Use this URL to download the transcription.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "outputBucketName",
+          "variableType" : "String",
+          "documentation" : "<p>The location where the transcription is stored.</p> <p>If you set the <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the operation returns this location in the <code>TranscriptFileUri</code> field. The S3 bucket must have permissions that allow Amazon Transcribe to put files in the bucket. For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user\">Permissions Required for IAM User Roles</a>.</p> <p>If you don't set the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a shareable URL that provides secure access to your transcription, and returns it in the <code>TranscriptFileUri</code> field. Use this URL to download the transcription.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
       }, {
@@ -6975,6 +7091,70 @@
           },
           "xmlNameSpaceUri" : null
         },
+        "OutputBucketName" : {
+          "c2jName" : "OutputBucketName",
+          "c2jShape" : "OutputBucketName",
+          "deprecated" : false,
+          "documentation" : "<p>The location where the transcription is stored.</p> <p>If you set the <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the operation returns this location in the <code>TranscriptFileUri</code> field. The S3 bucket must have permissions that allow Amazon Transcribe to put files in the bucket. For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user\">Permissions Required for IAM User Roles</a>.</p> <p>If you don't set the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a shareable URL that provides secure access to your transcription, and returns it in the <code>TranscriptFileUri</code> field. Use this URL to download the transcription.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The location where the transcription is stored.</p> <p>If you set the <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the operation returns this location in the <code>TranscriptFileUri</code> field. The S3 bucket must have permissions that allow Amazon Transcribe to put files in the bucket. For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user\">Permissions Required for IAM User Roles</a>.</p> <p>If you don't set the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a shareable URL that provides secure access to your transcription, and returns it in the <code>TranscriptFileUri</code> field. Use this URL to download the transcription.</p>\n@param outputBucketName The location where the transcription is stored.</p> <p>If you set the <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the operation returns this location in the <code>TranscriptFileUri</code> field. The S3 bucket must have permissions that allow Amazon Transcribe to put files in the bucket. For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user\">Permissions Required for IAM User Roles</a>.</p> <p>If you don't set the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a shareable URL that provides secure access to your transcription, and returns it in the <code>TranscriptFileUri</code> field. Use this URL to download the transcription.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withOutputBucketName",
+          "getterDocumentation" : "/**<p>The location where the transcription is stored.</p> <p>If you set the <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the operation returns this location in the <code>TranscriptFileUri</code> field. The S3 bucket must have permissions that allow Amazon Transcribe to put files in the bucket. For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user\">Permissions Required for IAM User Roles</a>.</p> <p>If you don't set the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a shareable URL that provides secure access to your transcription, and returns it in the <code>TranscriptFileUri</code> field. Use this URL to download the transcription.</p>\n@return The location where the transcription is stored.</p> <p>If you set the <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the operation returns this location in the <code>TranscriptFileUri</code> field. The S3 bucket must have permissions that allow Amazon Transcribe to put files in the bucket. For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user\">Permissions Required for IAM User Roles</a>.</p> <p>If you don't set the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a shareable URL that provides secure access to your transcription, and returns it in the <code>TranscriptFileUri</code> field. Use this URL to download the transcription.*/",
+          "getterMethodName" : "getOutputBucketName",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "OutputBucketName",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "OutputBucketName",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "OutputBucketName",
+          "setterDocumentation" : "/**<p>The location where the transcription is stored.</p> <p>If you set the <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the operation returns this location in the <code>TranscriptFileUri</code> field. The S3 bucket must have permissions that allow Amazon Transcribe to put files in the bucket. For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user\">Permissions Required for IAM User Roles</a>.</p> <p>If you don't set the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a shareable URL that provides secure access to your transcription, and returns it in the <code>TranscriptFileUri</code> field. Use this URL to download the transcription.</p>\n@param outputBucketName The location where the transcription is stored.</p> <p>If you set the <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the operation returns this location in the <code>TranscriptFileUri</code> field. The S3 bucket must have permissions that allow Amazon Transcribe to put files in the bucket. For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user\">Permissions Required for IAM User Roles</a>.</p> <p>If you don't set the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a shareable URL that provides secure access to your transcription, and returns it in the <code>TranscriptFileUri</code> field. Use this URL to download the transcription.*/",
+          "setterMethodName" : "setOutputBucketName",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "outputBucketName",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The location where the transcription is stored.</p> <p>If you set the <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the operation returns this location in the <code>TranscriptFileUri</code> field. The S3 bucket must have permissions that allow Amazon Transcribe to put files in the bucket. For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user\">Permissions Required for IAM User Roles</a>.</p> <p>If you don't set the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a shareable URL that provides secure access to your transcription, and returns it in the <code>TranscriptFileUri</code> field. Use this URL to download the transcription.</p>\n@param outputBucketName The location where the transcription is stored.</p> <p>If you set the <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the operation returns this location in the <code>TranscriptFileUri</code> field. The S3 bucket must have permissions that allow Amazon Transcribe to put files in the bucket. For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user\">Permissions Required for IAM User Roles</a>.</p> <p>If you don't set the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a shareable URL that provides secure access to your transcription, and returns it in the <code>TranscriptFileUri</code> field. Use this URL to download the transcription.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "outputBucketName",
+            "variableType" : "String",
+            "documentation" : "<p>The location where the transcription is stored.</p> <p>If you set the <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the operation returns this location in the <code>TranscriptFileUri</code> field. The S3 bucket must have permissions that allow Amazon Transcribe to put files in the bucket. For more information, see <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/access-control-managing-permissions.html#auth-role-iam-user\">Permissions Required for IAM User Roles</a>.</p> <p>If you don't set the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a shareable URL that provides secure access to your transcription, and returns it in the <code>TranscriptFileUri</code> field. Use this URL to download the transcription.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "Settings" : {
           "c2jName" : "Settings",
           "c2jShape" : "Settings",
@@ -7043,11 +7223,11 @@
           "c2jName" : "TranscriptionJobName",
           "c2jShape" : "TranscriptionJobName",
           "deprecated" : false,
-          "documentation" : "<p>The name of the job. The name must be unique within an AWS account.</p>",
+          "documentation" : "<p>The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The name of the job. The name must be unique within an AWS account.</p>\n@param transcriptionJobName The name of the job. The name must be unique within an AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.</p>\n@param transcriptionJobName The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withTranscriptionJobName",
-          "getterDocumentation" : "/**<p>The name of the job. The name must be unique within an AWS account.</p>\n@return The name of the job. The name must be unique within an AWS account.*/",
+          "getterDocumentation" : "/**<p>The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.</p>\n@return The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.*/",
           "getterMethodName" : "getTranscriptionJobName",
           "getterModel" : {
             "returnType" : "String",
@@ -7079,7 +7259,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TranscriptionJobName",
-          "setterDocumentation" : "/**<p>The name of the job. The name must be unique within an AWS account.</p>\n@param transcriptionJobName The name of the job. The name must be unique within an AWS account.*/",
+          "setterDocumentation" : "/**<p>The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.</p>\n@param transcriptionJobName The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.*/",
           "setterMethodName" : "setTranscriptionJobName",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -7092,12 +7272,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The name of the job. The name must be unique within an AWS account.</p>\n@param transcriptionJobName The name of the job. The name must be unique within an AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.</p>\n@param transcriptionJobName The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "transcriptionJobName",
             "variableType" : "String",
-            "documentation" : "<p>The name of the job. The name must be unique within an AWS account.</p>",
+            "documentation" : "<p>The name of the job. You can't use the strings \".\" or \"..\" in the job name. The name must be unique within an AWS account.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7297,7 +7477,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Describes the output of a transcription job.</p>",
+      "documentation" : "<p>Identifies the location of a transcription.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -7309,11 +7489,11 @@
         "c2jName" : "TranscriptFileUri",
         "c2jShape" : "Uri",
         "deprecated" : false,
-        "documentation" : "<p>The S3 location where the transcription result is stored. Use this URI to access the results of the transcription job. </p>",
+        "documentation" : "<p>The location where the transcription is stored.</p> <p>Use this URI to access the transcription. If you specified an S3 bucket in the <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose to store the transcription in Amazon Transcribe, this is a shareable URL that provides secure access to that location.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The S3 location where the transcription result is stored. Use this URI to access the results of the transcription job. </p>\n@param transcriptFileUri The S3 location where the transcription result is stored. Use this URI to access the results of the transcription job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The location where the transcription is stored.</p> <p>Use this URI to access the transcription. If you specified an S3 bucket in the <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose to store the transcription in Amazon Transcribe, this is a shareable URL that provides secure access to that location.</p>\n@param transcriptFileUri The location where the transcription is stored.</p> <p>Use this URI to access the transcription. If you specified an S3 bucket in the <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose to store the transcription in Amazon Transcribe, this is a shareable URL that provides secure access to that location.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withTranscriptFileUri",
-        "getterDocumentation" : "/**<p>The S3 location where the transcription result is stored. Use this URI to access the results of the transcription job. </p>\n@return The S3 location where the transcription result is stored. Use this URI to access the results of the transcription job.*/",
+        "getterDocumentation" : "/**<p>The location where the transcription is stored.</p> <p>Use this URI to access the transcription. If you specified an S3 bucket in the <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose to store the transcription in Amazon Transcribe, this is a shareable URL that provides secure access to that location.</p>\n@return The location where the transcription is stored.</p> <p>Use this URI to access the transcription. If you specified an S3 bucket in the <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose to store the transcription in Amazon Transcribe, this is a shareable URL that provides secure access to that location.*/",
         "getterMethodName" : "getTranscriptFileUri",
         "getterModel" : {
           "returnType" : "String",
@@ -7345,7 +7525,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TranscriptFileUri",
-        "setterDocumentation" : "/**<p>The S3 location where the transcription result is stored. Use this URI to access the results of the transcription job. </p>\n@param transcriptFileUri The S3 location where the transcription result is stored. Use this URI to access the results of the transcription job.*/",
+        "setterDocumentation" : "/**<p>The location where the transcription is stored.</p> <p>Use this URI to access the transcription. If you specified an S3 bucket in the <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose to store the transcription in Amazon Transcribe, this is a shareable URL that provides secure access to that location.</p>\n@param transcriptFileUri The location where the transcription is stored.</p> <p>Use this URI to access the transcription. If you specified an S3 bucket in the <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose to store the transcription in Amazon Transcribe, this is a shareable URL that provides secure access to that location.*/",
         "setterMethodName" : "setTranscriptFileUri",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -7358,12 +7538,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The S3 location where the transcription result is stored. Use this URI to access the results of the transcription job. </p>\n@param transcriptFileUri The S3 location where the transcription result is stored. Use this URI to access the results of the transcription job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The location where the transcription is stored.</p> <p>Use this URI to access the transcription. If you specified an S3 bucket in the <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose to store the transcription in Amazon Transcribe, this is a shareable URL that provides secure access to that location.</p>\n@param transcriptFileUri The location where the transcription is stored.</p> <p>Use this URI to access the transcription. If you specified an S3 bucket in the <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose to store the transcription in Amazon Transcribe, this is a shareable URL that provides secure access to that location.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "transcriptFileUri",
           "variableType" : "String",
-          "documentation" : "<p>The S3 location where the transcription result is stored. Use this URI to access the results of the transcription job. </p>",
+          "documentation" : "<p>The location where the transcription is stored.</p> <p>Use this URI to access the transcription. If you specified an S3 bucket in the <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose to store the transcription in Amazon Transcribe, this is a shareable URL that provides secure access to that location.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -7374,11 +7554,11 @@
           "c2jName" : "TranscriptFileUri",
           "c2jShape" : "Uri",
           "deprecated" : false,
-          "documentation" : "<p>The S3 location where the transcription result is stored. Use this URI to access the results of the transcription job. </p>",
+          "documentation" : "<p>The location where the transcription is stored.</p> <p>Use this URI to access the transcription. If you specified an S3 bucket in the <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose to store the transcription in Amazon Transcribe, this is a shareable URL that provides secure access to that location.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The S3 location where the transcription result is stored. Use this URI to access the results of the transcription job. </p>\n@param transcriptFileUri The S3 location where the transcription result is stored. Use this URI to access the results of the transcription job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The location where the transcription is stored.</p> <p>Use this URI to access the transcription. If you specified an S3 bucket in the <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose to store the transcription in Amazon Transcribe, this is a shareable URL that provides secure access to that location.</p>\n@param transcriptFileUri The location where the transcription is stored.</p> <p>Use this URI to access the transcription. If you specified an S3 bucket in the <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose to store the transcription in Amazon Transcribe, this is a shareable URL that provides secure access to that location.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withTranscriptFileUri",
-          "getterDocumentation" : "/**<p>The S3 location where the transcription result is stored. Use this URI to access the results of the transcription job. </p>\n@return The S3 location where the transcription result is stored. Use this URI to access the results of the transcription job.*/",
+          "getterDocumentation" : "/**<p>The location where the transcription is stored.</p> <p>Use this URI to access the transcription. If you specified an S3 bucket in the <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose to store the transcription in Amazon Transcribe, this is a shareable URL that provides secure access to that location.</p>\n@return The location where the transcription is stored.</p> <p>Use this URI to access the transcription. If you specified an S3 bucket in the <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose to store the transcription in Amazon Transcribe, this is a shareable URL that provides secure access to that location.*/",
           "getterMethodName" : "getTranscriptFileUri",
           "getterModel" : {
             "returnType" : "String",
@@ -7410,7 +7590,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TranscriptFileUri",
-          "setterDocumentation" : "/**<p>The S3 location where the transcription result is stored. Use this URI to access the results of the transcription job. </p>\n@param transcriptFileUri The S3 location where the transcription result is stored. Use this URI to access the results of the transcription job.*/",
+          "setterDocumentation" : "/**<p>The location where the transcription is stored.</p> <p>Use this URI to access the transcription. If you specified an S3 bucket in the <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose to store the transcription in Amazon Transcribe, this is a shareable URL that provides secure access to that location.</p>\n@param transcriptFileUri The location where the transcription is stored.</p> <p>Use this URI to access the transcription. If you specified an S3 bucket in the <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose to store the transcription in Amazon Transcribe, this is a shareable URL that provides secure access to that location.*/",
           "setterMethodName" : "setTranscriptFileUri",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -7423,12 +7603,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The S3 location where the transcription result is stored. Use this URI to access the results of the transcription job. </p>\n@param transcriptFileUri The S3 location where the transcription result is stored. Use this URI to access the results of the transcription job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The location where the transcription is stored.</p> <p>Use this URI to access the transcription. If you specified an S3 bucket in the <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose to store the transcription in Amazon Transcribe, this is a shareable URL that provides secure access to that location.</p>\n@param transcriptFileUri The location where the transcription is stored.</p> <p>Use this URI to access the transcription. If you specified an S3 bucket in the <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose to store the transcription in Amazon Transcribe, this is a shareable URL that provides secure access to that location.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "transcriptFileUri",
             "variableType" : "String",
-            "documentation" : "<p>The S3 location where the transcription result is stored. Use this URI to access the results of the transcription job. </p>",
+            "documentation" : "<p>The location where the transcription is stored.</p> <p>Use this URI to access the transcription. If you specified an S3 bucket in the <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose to store the transcription in Amazon Transcribe, this is a shareable URL that provides secure access to that location.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7476,11 +7656,11 @@
         "c2jName" : "TranscriptionJobName",
         "c2jShape" : "TranscriptionJobName",
         "deprecated" : false,
-        "documentation" : "<p>A name to identify the transcription job.</p>",
+        "documentation" : "<p>The name of the transcription job.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>A name to identify the transcription job.</p>\n@param transcriptionJobName A name to identify the transcription job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The name of the transcription job.</p>\n@param transcriptionJobName The name of the transcription job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withTranscriptionJobName",
-        "getterDocumentation" : "/**<p>A name to identify the transcription job.</p>\n@return A name to identify the transcription job.*/",
+        "getterDocumentation" : "/**<p>The name of the transcription job.</p>\n@return The name of the transcription job.*/",
         "getterMethodName" : "getTranscriptionJobName",
         "getterModel" : {
           "returnType" : "String",
@@ -7512,7 +7692,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TranscriptionJobName",
-        "setterDocumentation" : "/**<p>A name to identify the transcription job.</p>\n@param transcriptionJobName A name to identify the transcription job.*/",
+        "setterDocumentation" : "/**<p>The name of the transcription job.</p>\n@param transcriptionJobName The name of the transcription job.*/",
         "setterMethodName" : "setTranscriptionJobName",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -7525,12 +7705,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>A name to identify the transcription job.</p>\n@param transcriptionJobName A name to identify the transcription job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The name of the transcription job.</p>\n@param transcriptionJobName The name of the transcription job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "transcriptionJobName",
           "variableType" : "String",
-          "documentation" : "<p>A name to identify the transcription job.</p>",
+          "documentation" : "<p>The name of the transcription job.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -7791,11 +7971,11 @@
         "c2jName" : "Media",
         "c2jShape" : "Media",
         "deprecated" : false,
-        "documentation" : "<p>An object that describes the input media for a transcription job.</p>",
+        "documentation" : "<p>An object that describes the input media for the transcription job.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>An object that describes the input media for a transcription job.</p>\n@param media An object that describes the input media for a transcription job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>An object that describes the input media for the transcription job.</p>\n@param media An object that describes the input media for the transcription job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withMedia",
-        "getterDocumentation" : "/**<p>An object that describes the input media for a transcription job.</p>\n@return An object that describes the input media for a transcription job.*/",
+        "getterDocumentation" : "/**<p>An object that describes the input media for the transcription job.</p>\n@return An object that describes the input media for the transcription job.*/",
         "getterMethodName" : "getMedia",
         "getterModel" : {
           "returnType" : "Media",
@@ -7827,7 +8007,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Media",
-        "setterDocumentation" : "/**<p>An object that describes the input media for a transcription job.</p>\n@param media An object that describes the input media for a transcription job.*/",
+        "setterDocumentation" : "/**<p>An object that describes the input media for the transcription job.</p>\n@param media An object that describes the input media for the transcription job.*/",
         "setterMethodName" : "setMedia",
         "setterModel" : {
           "variableDeclarationType" : "Media",
@@ -7840,12 +8020,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>An object that describes the input media for a transcription job.</p>\n@param media An object that describes the input media for a transcription job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>An object that describes the input media for the transcription job.</p>\n@param media An object that describes the input media for the transcription job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Media",
           "variableName" : "media",
           "variableType" : "Media",
-          "documentation" : "<p>An object that describes the input media for a transcription job.</p>",
+          "documentation" : "<p>An object that describes the input media for the transcription job.</p>",
           "simpleType" : "Media",
           "variableSetterType" : "Media"
         },
@@ -7917,11 +8097,11 @@
         "c2jName" : "CreationTime",
         "c2jShape" : "DateTime",
         "deprecated" : false,
-        "documentation" : "<p>Timestamp of the date and time that the job was created.</p>",
+        "documentation" : "<p>A timestamp that shows when the job was created.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Timestamp of the date and time that the job was created.</p>\n@param creationTime Timestamp of the date and time that the job was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>A timestamp that shows when the job was created.</p>\n@param creationTime A timestamp that shows when the job was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withCreationTime",
-        "getterDocumentation" : "/**<p>Timestamp of the date and time that the job was created.</p>\n@return Timestamp of the date and time that the job was created.*/",
+        "getterDocumentation" : "/**<p>A timestamp that shows when the job was created.</p>\n@return A timestamp that shows when the job was created.*/",
         "getterMethodName" : "getCreationTime",
         "getterModel" : {
           "returnType" : "java.util.Date",
@@ -7953,7 +8133,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreationTime",
-        "setterDocumentation" : "/**<p>Timestamp of the date and time that the job was created.</p>\n@param creationTime Timestamp of the date and time that the job was created.*/",
+        "setterDocumentation" : "/**<p>A timestamp that shows when the job was created.</p>\n@param creationTime A timestamp that shows when the job was created.*/",
         "setterMethodName" : "setCreationTime",
         "setterModel" : {
           "variableDeclarationType" : "java.util.Date",
@@ -7966,12 +8146,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Timestamp of the date and time that the job was created.</p>\n@param creationTime Timestamp of the date and time that the job was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A timestamp that shows when the job was created.</p>\n@param creationTime A timestamp that shows when the job was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "creationTime",
           "variableType" : "java.util.Date",
-          "documentation" : "<p>Timestamp of the date and time that the job was created.</p>",
+          "documentation" : "<p>A timestamp that shows when the job was created.</p>",
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
@@ -7980,11 +8160,11 @@
         "c2jName" : "CompletionTime",
         "c2jShape" : "DateTime",
         "deprecated" : false,
-        "documentation" : "<p>Timestamp of the date and time that the job completed.</p>",
+        "documentation" : "<p>A timestamp that shows when the job was completed.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Timestamp of the date and time that the job completed.</p>\n@param completionTime Timestamp of the date and time that the job completed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>A timestamp that shows when the job was completed.</p>\n@param completionTime A timestamp that shows when the job was completed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withCompletionTime",
-        "getterDocumentation" : "/**<p>Timestamp of the date and time that the job completed.</p>\n@return Timestamp of the date and time that the job completed.*/",
+        "getterDocumentation" : "/**<p>A timestamp that shows when the job was completed.</p>\n@return A timestamp that shows when the job was completed.*/",
         "getterMethodName" : "getCompletionTime",
         "getterModel" : {
           "returnType" : "java.util.Date",
@@ -8016,7 +8196,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CompletionTime",
-        "setterDocumentation" : "/**<p>Timestamp of the date and time that the job completed.</p>\n@param completionTime Timestamp of the date and time that the job completed.*/",
+        "setterDocumentation" : "/**<p>A timestamp that shows when the job was completed.</p>\n@param completionTime A timestamp that shows when the job was completed.*/",
         "setterMethodName" : "setCompletionTime",
         "setterModel" : {
           "variableDeclarationType" : "java.util.Date",
@@ -8029,12 +8209,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Timestamp of the date and time that the job completed.</p>\n@param completionTime Timestamp of the date and time that the job completed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A timestamp that shows when the job was completed.</p>\n@param completionTime A timestamp that shows when the job was completed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "completionTime",
           "variableType" : "java.util.Date",
-          "documentation" : "<p>Timestamp of the date and time that the job completed.</p>",
+          "documentation" : "<p>A timestamp that shows when the job was completed.</p>",
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
@@ -8106,11 +8286,11 @@
         "c2jName" : "Settings",
         "c2jShape" : "Settings",
         "deprecated" : false,
-        "documentation" : "<p>Optional settings for the transcription job.</p>",
+        "documentation" : "<p>Optional settings for the transcription job. Use these settings to turn on speaker recognition, to set the maximum number of speakers that should be identified and to specify a custom vocabulary to use when processing the transcription job.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Optional settings for the transcription job.</p>\n@param settings Optional settings for the transcription job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Optional settings for the transcription job. Use these settings to turn on speaker recognition, to set the maximum number of speakers that should be identified and to specify a custom vocabulary to use when processing the transcription job.</p>\n@param settings Optional settings for the transcription job. Use these settings to turn on speaker recognition, to set the maximum number of speakers that should be identified and to specify a custom vocabulary to use when processing the transcription job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withSettings",
-        "getterDocumentation" : "/**<p>Optional settings for the transcription job.</p>\n@return Optional settings for the transcription job.*/",
+        "getterDocumentation" : "/**<p>Optional settings for the transcription job. Use these settings to turn on speaker recognition, to set the maximum number of speakers that should be identified and to specify a custom vocabulary to use when processing the transcription job.</p>\n@return Optional settings for the transcription job. Use these settings to turn on speaker recognition, to set the maximum number of speakers that should be identified and to specify a custom vocabulary to use when processing the transcription job.*/",
         "getterMethodName" : "getSettings",
         "getterModel" : {
           "returnType" : "Settings",
@@ -8142,7 +8322,7 @@
         "marshallingTargetClass" : "StructuredPojo",
         "marshallingType" : "STRUCTURED",
         "name" : "Settings",
-        "setterDocumentation" : "/**<p>Optional settings for the transcription job.</p>\n@param settings Optional settings for the transcription job.*/",
+        "setterDocumentation" : "/**<p>Optional settings for the transcription job. Use these settings to turn on speaker recognition, to set the maximum number of speakers that should be identified and to specify a custom vocabulary to use when processing the transcription job.</p>\n@param settings Optional settings for the transcription job. Use these settings to turn on speaker recognition, to set the maximum number of speakers that should be identified and to specify a custom vocabulary to use when processing the transcription job.*/",
         "setterMethodName" : "setSettings",
         "setterModel" : {
           "variableDeclarationType" : "Settings",
@@ -8155,12 +8335,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Optional settings for the transcription job.</p>\n@param settings Optional settings for the transcription job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Optional settings for the transcription job. Use these settings to turn on speaker recognition, to set the maximum number of speakers that should be identified and to specify a custom vocabulary to use when processing the transcription job.</p>\n@param settings Optional settings for the transcription job. Use these settings to turn on speaker recognition, to set the maximum number of speakers that should be identified and to specify a custom vocabulary to use when processing the transcription job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "Settings",
           "variableName" : "settings",
           "variableType" : "Settings",
-          "documentation" : "<p>Optional settings for the transcription job.</p>",
+          "documentation" : "<p>Optional settings for the transcription job. Use these settings to turn on speaker recognition, to set the maximum number of speakers that should be identified and to specify a custom vocabulary to use when processing the transcription job.</p>",
           "simpleType" : "Settings",
           "variableSetterType" : "Settings"
         },
@@ -8171,11 +8351,11 @@
           "c2jName" : "CompletionTime",
           "c2jShape" : "DateTime",
           "deprecated" : false,
-          "documentation" : "<p>Timestamp of the date and time that the job completed.</p>",
+          "documentation" : "<p>A timestamp that shows when the job was completed.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Timestamp of the date and time that the job completed.</p>\n@param completionTime Timestamp of the date and time that the job completed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>A timestamp that shows when the job was completed.</p>\n@param completionTime A timestamp that shows when the job was completed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withCompletionTime",
-          "getterDocumentation" : "/**<p>Timestamp of the date and time that the job completed.</p>\n@return Timestamp of the date and time that the job completed.*/",
+          "getterDocumentation" : "/**<p>A timestamp that shows when the job was completed.</p>\n@return A timestamp that shows when the job was completed.*/",
           "getterMethodName" : "getCompletionTime",
           "getterModel" : {
             "returnType" : "java.util.Date",
@@ -8207,7 +8387,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CompletionTime",
-          "setterDocumentation" : "/**<p>Timestamp of the date and time that the job completed.</p>\n@param completionTime Timestamp of the date and time that the job completed.*/",
+          "setterDocumentation" : "/**<p>A timestamp that shows when the job was completed.</p>\n@param completionTime A timestamp that shows when the job was completed.*/",
           "setterMethodName" : "setCompletionTime",
           "setterModel" : {
             "variableDeclarationType" : "java.util.Date",
@@ -8220,12 +8400,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Timestamp of the date and time that the job completed.</p>\n@param completionTime Timestamp of the date and time that the job completed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A timestamp that shows when the job was completed.</p>\n@param completionTime A timestamp that shows when the job was completed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "completionTime",
             "variableType" : "java.util.Date",
-            "documentation" : "<p>Timestamp of the date and time that the job completed.</p>",
+            "documentation" : "<p>A timestamp that shows when the job was completed.</p>",
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
@@ -8235,11 +8415,11 @@
           "c2jName" : "CreationTime",
           "c2jShape" : "DateTime",
           "deprecated" : false,
-          "documentation" : "<p>Timestamp of the date and time that the job was created.</p>",
+          "documentation" : "<p>A timestamp that shows when the job was created.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Timestamp of the date and time that the job was created.</p>\n@param creationTime Timestamp of the date and time that the job was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>A timestamp that shows when the job was created.</p>\n@param creationTime A timestamp that shows when the job was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withCreationTime",
-          "getterDocumentation" : "/**<p>Timestamp of the date and time that the job was created.</p>\n@return Timestamp of the date and time that the job was created.*/",
+          "getterDocumentation" : "/**<p>A timestamp that shows when the job was created.</p>\n@return A timestamp that shows when the job was created.*/",
           "getterMethodName" : "getCreationTime",
           "getterModel" : {
             "returnType" : "java.util.Date",
@@ -8271,7 +8451,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreationTime",
-          "setterDocumentation" : "/**<p>Timestamp of the date and time that the job was created.</p>\n@param creationTime Timestamp of the date and time that the job was created.*/",
+          "setterDocumentation" : "/**<p>A timestamp that shows when the job was created.</p>\n@param creationTime A timestamp that shows when the job was created.*/",
           "setterMethodName" : "setCreationTime",
           "setterModel" : {
             "variableDeclarationType" : "java.util.Date",
@@ -8284,12 +8464,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Timestamp of the date and time that the job was created.</p>\n@param creationTime Timestamp of the date and time that the job was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A timestamp that shows when the job was created.</p>\n@param creationTime A timestamp that shows when the job was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "creationTime",
             "variableType" : "java.util.Date",
-            "documentation" : "<p>Timestamp of the date and time that the job was created.</p>",
+            "documentation" : "<p>A timestamp that shows when the job was created.</p>",
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
@@ -8427,11 +8607,11 @@
           "c2jName" : "Media",
           "c2jShape" : "Media",
           "deprecated" : false,
-          "documentation" : "<p>An object that describes the input media for a transcription job.</p>",
+          "documentation" : "<p>An object that describes the input media for the transcription job.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>An object that describes the input media for a transcription job.</p>\n@param media An object that describes the input media for a transcription job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>An object that describes the input media for the transcription job.</p>\n@param media An object that describes the input media for the transcription job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withMedia",
-          "getterDocumentation" : "/**<p>An object that describes the input media for a transcription job.</p>\n@return An object that describes the input media for a transcription job.*/",
+          "getterDocumentation" : "/**<p>An object that describes the input media for the transcription job.</p>\n@return An object that describes the input media for the transcription job.*/",
           "getterMethodName" : "getMedia",
           "getterModel" : {
             "returnType" : "Media",
@@ -8463,7 +8643,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Media",
-          "setterDocumentation" : "/**<p>An object that describes the input media for a transcription job.</p>\n@param media An object that describes the input media for a transcription job.*/",
+          "setterDocumentation" : "/**<p>An object that describes the input media for the transcription job.</p>\n@param media An object that describes the input media for the transcription job.*/",
           "setterMethodName" : "setMedia",
           "setterModel" : {
             "variableDeclarationType" : "Media",
@@ -8476,12 +8656,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>An object that describes the input media for a transcription job.</p>\n@param media An object that describes the input media for a transcription job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>An object that describes the input media for the transcription job.</p>\n@param media An object that describes the input media for the transcription job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Media",
             "variableName" : "media",
             "variableType" : "Media",
-            "documentation" : "<p>An object that describes the input media for a transcription job.</p>",
+            "documentation" : "<p>An object that describes the input media for the transcription job.</p>",
             "simpleType" : "Media",
             "variableSetterType" : "Media"
           },
@@ -8619,11 +8799,11 @@
           "c2jName" : "Settings",
           "c2jShape" : "Settings",
           "deprecated" : false,
-          "documentation" : "<p>Optional settings for the transcription job.</p>",
+          "documentation" : "<p>Optional settings for the transcription job. Use these settings to turn on speaker recognition, to set the maximum number of speakers that should be identified and to specify a custom vocabulary to use when processing the transcription job.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Optional settings for the transcription job.</p>\n@param settings Optional settings for the transcription job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Optional settings for the transcription job. Use these settings to turn on speaker recognition, to set the maximum number of speakers that should be identified and to specify a custom vocabulary to use when processing the transcription job.</p>\n@param settings Optional settings for the transcription job. Use these settings to turn on speaker recognition, to set the maximum number of speakers that should be identified and to specify a custom vocabulary to use when processing the transcription job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withSettings",
-          "getterDocumentation" : "/**<p>Optional settings for the transcription job.</p>\n@return Optional settings for the transcription job.*/",
+          "getterDocumentation" : "/**<p>Optional settings for the transcription job. Use these settings to turn on speaker recognition, to set the maximum number of speakers that should be identified and to specify a custom vocabulary to use when processing the transcription job.</p>\n@return Optional settings for the transcription job. Use these settings to turn on speaker recognition, to set the maximum number of speakers that should be identified and to specify a custom vocabulary to use when processing the transcription job.*/",
           "getterMethodName" : "getSettings",
           "getterModel" : {
             "returnType" : "Settings",
@@ -8655,7 +8835,7 @@
           "marshallingTargetClass" : "StructuredPojo",
           "marshallingType" : "STRUCTURED",
           "name" : "Settings",
-          "setterDocumentation" : "/**<p>Optional settings for the transcription job.</p>\n@param settings Optional settings for the transcription job.*/",
+          "setterDocumentation" : "/**<p>Optional settings for the transcription job. Use these settings to turn on speaker recognition, to set the maximum number of speakers that should be identified and to specify a custom vocabulary to use when processing the transcription job.</p>\n@param settings Optional settings for the transcription job. Use these settings to turn on speaker recognition, to set the maximum number of speakers that should be identified and to specify a custom vocabulary to use when processing the transcription job.*/",
           "setterMethodName" : "setSettings",
           "setterModel" : {
             "variableDeclarationType" : "Settings",
@@ -8668,12 +8848,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Optional settings for the transcription job.</p>\n@param settings Optional settings for the transcription job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Optional settings for the transcription job. Use these settings to turn on speaker recognition, to set the maximum number of speakers that should be identified and to specify a custom vocabulary to use when processing the transcription job.</p>\n@param settings Optional settings for the transcription job. Use these settings to turn on speaker recognition, to set the maximum number of speakers that should be identified and to specify a custom vocabulary to use when processing the transcription job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "Settings",
             "variableName" : "settings",
             "variableType" : "Settings",
-            "documentation" : "<p>Optional settings for the transcription job.</p>",
+            "documentation" : "<p>Optional settings for the transcription job. Use these settings to turn on speaker recognition, to set the maximum number of speakers that should be identified and to specify a custom vocabulary to use when processing the transcription job.</p>",
             "simpleType" : "Settings",
             "variableSetterType" : "Settings"
           },
@@ -8747,11 +8927,11 @@
           "c2jName" : "TranscriptionJobName",
           "c2jShape" : "TranscriptionJobName",
           "deprecated" : false,
-          "documentation" : "<p>A name to identify the transcription job.</p>",
+          "documentation" : "<p>The name of the transcription job.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>A name to identify the transcription job.</p>\n@param transcriptionJobName A name to identify the transcription job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The name of the transcription job.</p>\n@param transcriptionJobName The name of the transcription job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withTranscriptionJobName",
-          "getterDocumentation" : "/**<p>A name to identify the transcription job.</p>\n@return A name to identify the transcription job.*/",
+          "getterDocumentation" : "/**<p>The name of the transcription job.</p>\n@return The name of the transcription job.*/",
           "getterMethodName" : "getTranscriptionJobName",
           "getterModel" : {
             "returnType" : "String",
@@ -8783,7 +8963,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TranscriptionJobName",
-          "setterDocumentation" : "/**<p>A name to identify the transcription job.</p>\n@param transcriptionJobName A name to identify the transcription job.*/",
+          "setterDocumentation" : "/**<p>The name of the transcription job.</p>\n@param transcriptionJobName The name of the transcription job.*/",
           "setterMethodName" : "setTranscriptionJobName",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -8796,12 +8976,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>A name to identify the transcription job.</p>\n@param transcriptionJobName A name to identify the transcription job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The name of the transcription job.</p>\n@param transcriptionJobName The name of the transcription job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "transcriptionJobName",
             "variableType" : "String",
-            "documentation" : "<p>A name to identify the transcription job.</p>",
+            "documentation" : "<p>The name of the transcription job.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -8961,11 +9141,11 @@
         "c2jName" : "TranscriptionJobName",
         "c2jShape" : "TranscriptionJobName",
         "deprecated" : false,
-        "documentation" : "<p>The name assigned to the transcription job when it was created.</p>",
+        "documentation" : "<p>The name of the transcription job.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The name assigned to the transcription job when it was created.</p>\n@param transcriptionJobName The name assigned to the transcription job when it was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The name of the transcription job.</p>\n@param transcriptionJobName The name of the transcription job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withTranscriptionJobName",
-        "getterDocumentation" : "/**<p>The name assigned to the transcription job when it was created.</p>\n@return The name assigned to the transcription job when it was created.*/",
+        "getterDocumentation" : "/**<p>The name of the transcription job.</p>\n@return The name of the transcription job.*/",
         "getterMethodName" : "getTranscriptionJobName",
         "getterModel" : {
           "returnType" : "String",
@@ -8997,7 +9177,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "TranscriptionJobName",
-        "setterDocumentation" : "/**<p>The name assigned to the transcription job when it was created.</p>\n@param transcriptionJobName The name assigned to the transcription job when it was created.*/",
+        "setterDocumentation" : "/**<p>The name of the transcription job.</p>\n@param transcriptionJobName The name of the transcription job.*/",
         "setterMethodName" : "setTranscriptionJobName",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -9010,12 +9190,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The name assigned to the transcription job when it was created.</p>\n@param transcriptionJobName The name assigned to the transcription job when it was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The name of the transcription job.</p>\n@param transcriptionJobName The name of the transcription job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "transcriptionJobName",
           "variableType" : "String",
-          "documentation" : "<p>The name assigned to the transcription job when it was created.</p>",
+          "documentation" : "<p>The name of the transcription job.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -9024,11 +9204,11 @@
         "c2jName" : "CreationTime",
         "c2jShape" : "DateTime",
         "deprecated" : false,
-        "documentation" : "<p>Timestamp of the date and time that the job was created.</p>",
+        "documentation" : "<p>A timestamp that shows when the job was created.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Timestamp of the date and time that the job was created.</p>\n@param creationTime Timestamp of the date and time that the job was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>A timestamp that shows when the job was created.</p>\n@param creationTime A timestamp that shows when the job was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withCreationTime",
-        "getterDocumentation" : "/**<p>Timestamp of the date and time that the job was created.</p>\n@return Timestamp of the date and time that the job was created.*/",
+        "getterDocumentation" : "/**<p>A timestamp that shows when the job was created.</p>\n@return A timestamp that shows when the job was created.*/",
         "getterMethodName" : "getCreationTime",
         "getterModel" : {
           "returnType" : "java.util.Date",
@@ -9060,7 +9240,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CreationTime",
-        "setterDocumentation" : "/**<p>Timestamp of the date and time that the job was created.</p>\n@param creationTime Timestamp of the date and time that the job was created.*/",
+        "setterDocumentation" : "/**<p>A timestamp that shows when the job was created.</p>\n@param creationTime A timestamp that shows when the job was created.*/",
         "setterMethodName" : "setCreationTime",
         "setterModel" : {
           "variableDeclarationType" : "java.util.Date",
@@ -9073,12 +9253,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Timestamp of the date and time that the job was created.</p>\n@param creationTime Timestamp of the date and time that the job was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A timestamp that shows when the job was created.</p>\n@param creationTime A timestamp that shows when the job was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "creationTime",
           "variableType" : "java.util.Date",
-          "documentation" : "<p>Timestamp of the date and time that the job was created.</p>",
+          "documentation" : "<p>A timestamp that shows when the job was created.</p>",
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
@@ -9087,11 +9267,11 @@
         "c2jName" : "CompletionTime",
         "c2jShape" : "DateTime",
         "deprecated" : false,
-        "documentation" : "<p>Timestamp of the date and time that the job completed.</p>",
+        "documentation" : "<p>A timestamp that shows when the job was completed.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Timestamp of the date and time that the job completed.</p>\n@param completionTime Timestamp of the date and time that the job completed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>A timestamp that shows when the job was completed.</p>\n@param completionTime A timestamp that shows when the job was completed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withCompletionTime",
-        "getterDocumentation" : "/**<p>Timestamp of the date and time that the job completed.</p>\n@return Timestamp of the date and time that the job completed.*/",
+        "getterDocumentation" : "/**<p>A timestamp that shows when the job was completed.</p>\n@return A timestamp that shows when the job was completed.*/",
         "getterMethodName" : "getCompletionTime",
         "getterModel" : {
           "returnType" : "java.util.Date",
@@ -9123,7 +9303,7 @@
         "marshallingTargetClass" : "java.util.Date",
         "marshallingType" : "DATE",
         "name" : "CompletionTime",
-        "setterDocumentation" : "/**<p>Timestamp of the date and time that the job completed.</p>\n@param completionTime Timestamp of the date and time that the job completed.*/",
+        "setterDocumentation" : "/**<p>A timestamp that shows when the job was completed.</p>\n@param completionTime A timestamp that shows when the job was completed.*/",
         "setterMethodName" : "setCompletionTime",
         "setterModel" : {
           "variableDeclarationType" : "java.util.Date",
@@ -9136,12 +9316,12 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Timestamp of the date and time that the job completed.</p>\n@param completionTime Timestamp of the date and time that the job completed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A timestamp that shows when the job was completed.</p>\n@param completionTime A timestamp that shows when the job was completed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "completionTime",
           "variableType" : "java.util.Date",
-          "documentation" : "<p>Timestamp of the date and time that the job completed.</p>",
+          "documentation" : "<p>A timestamp that shows when the job was completed.</p>",
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
@@ -9276,11 +9456,11 @@
         "c2jName" : "FailureReason",
         "c2jShape" : "FailureReason",
         "deprecated" : false,
-        "documentation" : "<p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains a description of the error.</p>",
+        "documentation" : "<p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a description of the error.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains a description of the error.</p>\n@param failureReason If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains a description of the error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a description of the error.</p>\n@param failureReason If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a description of the error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withFailureReason",
-        "getterDocumentation" : "/**<p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains a description of the error.</p>\n@return If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains a description of the error.*/",
+        "getterDocumentation" : "/**<p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a description of the error.</p>\n@return If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a description of the error.*/",
         "getterMethodName" : "getFailureReason",
         "getterModel" : {
           "returnType" : "String",
@@ -9312,7 +9492,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "FailureReason",
-        "setterDocumentation" : "/**<p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains a description of the error.</p>\n@param failureReason If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains a description of the error.*/",
+        "setterDocumentation" : "/**<p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a description of the error.</p>\n@param failureReason If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a description of the error.*/",
         "setterMethodName" : "setFailureReason",
         "setterModel" : {
           "variableDeclarationType" : "String",
@@ -9325,12 +9505,75 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains a description of the error.</p>\n@param failureReason If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains a description of the error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a description of the error.</p>\n@param failureReason If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a description of the error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "variableDeclarationType" : "String",
           "variableName" : "failureReason",
           "variableType" : "String",
-          "documentation" : "<p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains a description of the error.</p>",
+          "documentation" : "<p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a description of the error.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "OutputLocationType",
+        "c2jShape" : "OutputLocationType",
+        "deprecated" : false,
+        "documentation" : "<p>Indicates the location of the output of the transcription job.</p> <p>If the value is <code>CUSTOMER_BUCKET</code> then the location is the S3 bucket specified in the <code>outputBucketName</code> field when the transcription job was started with the <code>StartTranscriptionJob</code> operation.</p> <p>If the value is <code>SERVICE_BUCKET</code> then the output is stored by Amazon Transcribe and can be retrieved using the URI in the <code>GetTranscriptionJob</code> response's <code>TranscriptFileUri</code> field.</p>",
+        "enumType" : "OutputLocationType",
+        "fluentSetterDocumentation" : "/**<p>Indicates the location of the output of the transcription job.</p> <p>If the value is <code>CUSTOMER_BUCKET</code> then the location is the S3 bucket specified in the <code>outputBucketName</code> field when the transcription job was started with the <code>StartTranscriptionJob</code> operation.</p> <p>If the value is <code>SERVICE_BUCKET</code> then the output is stored by Amazon Transcribe and can be retrieved using the URI in the <code>GetTranscriptionJob</code> response's <code>TranscriptFileUri</code> field.</p>\n@param outputLocationType Indicates the location of the output of the transcription job.</p> <p>If the value is <code>CUSTOMER_BUCKET</code> then the location is the S3 bucket specified in the <code>outputBucketName</code> field when the transcription job was started with the <code>StartTranscriptionJob</code> operation.</p> <p>If the value is <code>SERVICE_BUCKET</code> then the output is stored by Amazon Transcribe and can be retrieved using the URI in the <code>GetTranscriptionJob</code> response's <code>TranscriptFileUri</code> field.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OutputLocationType*/",
+        "fluentSetterMethodName" : "withOutputLocationType",
+        "getterDocumentation" : "/**<p>Indicates the location of the output of the transcription job.</p> <p>If the value is <code>CUSTOMER_BUCKET</code> then the location is the S3 bucket specified in the <code>outputBucketName</code> field when the transcription job was started with the <code>StartTranscriptionJob</code> operation.</p> <p>If the value is <code>SERVICE_BUCKET</code> then the output is stored by Amazon Transcribe and can be retrieved using the URI in the <code>GetTranscriptionJob</code> response's <code>TranscriptFileUri</code> field.</p>\n@return Indicates the location of the output of the transcription job.</p> <p>If the value is <code>CUSTOMER_BUCKET</code> then the location is the S3 bucket specified in the <code>outputBucketName</code> field when the transcription job was started with the <code>StartTranscriptionJob</code> operation.</p> <p>If the value is <code>SERVICE_BUCKET</code> then the output is stored by Amazon Transcribe and can be retrieved using the URI in the <code>GetTranscriptionJob</code> response's <code>TranscriptFileUri</code> field.\n@see OutputLocationType*/",
+        "getterMethodName" : "getOutputLocationType",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "OutputLocationType",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "OutputLocationType",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "OutputLocationType",
+        "setterDocumentation" : "/**<p>Indicates the location of the output of the transcription job.</p> <p>If the value is <code>CUSTOMER_BUCKET</code> then the location is the S3 bucket specified in the <code>outputBucketName</code> field when the transcription job was started with the <code>StartTranscriptionJob</code> operation.</p> <p>If the value is <code>SERVICE_BUCKET</code> then the output is stored by Amazon Transcribe and can be retrieved using the URI in the <code>GetTranscriptionJob</code> response's <code>TranscriptFileUri</code> field.</p>\n@param outputLocationType Indicates the location of the output of the transcription job.</p> <p>If the value is <code>CUSTOMER_BUCKET</code> then the location is the S3 bucket specified in the <code>outputBucketName</code> field when the transcription job was started with the <code>StartTranscriptionJob</code> operation.</p> <p>If the value is <code>SERVICE_BUCKET</code> then the output is stored by Amazon Transcribe and can be retrieved using the URI in the <code>GetTranscriptionJob</code> response's <code>TranscriptFileUri</code> field.\n@see OutputLocationType*/",
+        "setterMethodName" : "setOutputLocationType",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "outputLocationType",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Indicates the location of the output of the transcription job.</p> <p>If the value is <code>CUSTOMER_BUCKET</code> then the location is the S3 bucket specified in the <code>outputBucketName</code> field when the transcription job was started with the <code>StartTranscriptionJob</code> operation.</p> <p>If the value is <code>SERVICE_BUCKET</code> then the output is stored by Amazon Transcribe and can be retrieved using the URI in the <code>GetTranscriptionJob</code> response's <code>TranscriptFileUri</code> field.</p>\n@param outputLocationType Indicates the location of the output of the transcription job.</p> <p>If the value is <code>CUSTOMER_BUCKET</code> then the location is the S3 bucket specified in the <code>outputBucketName</code> field when the transcription job was started with the <code>StartTranscriptionJob</code> operation.</p> <p>If the value is <code>SERVICE_BUCKET</code> then the output is stored by Amazon Transcribe and can be retrieved using the URI in the <code>GetTranscriptionJob</code> response's <code>TranscriptFileUri</code> field.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OutputLocationType*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "outputLocationType",
+          "variableType" : "String",
+          "documentation" : "<p>Indicates the location of the output of the transcription job.</p> <p>If the value is <code>CUSTOMER_BUCKET</code> then the location is the S3 bucket specified in the <code>outputBucketName</code> field when the transcription job was started with the <code>StartTranscriptionJob</code> operation.</p> <p>If the value is <code>SERVICE_BUCKET</code> then the output is stored by Amazon Transcribe and can be retrieved using the URI in the <code>GetTranscriptionJob</code> response's <code>TranscriptFileUri</code> field.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -9341,11 +9584,11 @@
           "c2jName" : "CompletionTime",
           "c2jShape" : "DateTime",
           "deprecated" : false,
-          "documentation" : "<p>Timestamp of the date and time that the job completed.</p>",
+          "documentation" : "<p>A timestamp that shows when the job was completed.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Timestamp of the date and time that the job completed.</p>\n@param completionTime Timestamp of the date and time that the job completed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>A timestamp that shows when the job was completed.</p>\n@param completionTime A timestamp that shows when the job was completed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withCompletionTime",
-          "getterDocumentation" : "/**<p>Timestamp of the date and time that the job completed.</p>\n@return Timestamp of the date and time that the job completed.*/",
+          "getterDocumentation" : "/**<p>A timestamp that shows when the job was completed.</p>\n@return A timestamp that shows when the job was completed.*/",
           "getterMethodName" : "getCompletionTime",
           "getterModel" : {
             "returnType" : "java.util.Date",
@@ -9377,7 +9620,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CompletionTime",
-          "setterDocumentation" : "/**<p>Timestamp of the date and time that the job completed.</p>\n@param completionTime Timestamp of the date and time that the job completed.*/",
+          "setterDocumentation" : "/**<p>A timestamp that shows when the job was completed.</p>\n@param completionTime A timestamp that shows when the job was completed.*/",
           "setterMethodName" : "setCompletionTime",
           "setterModel" : {
             "variableDeclarationType" : "java.util.Date",
@@ -9390,12 +9633,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Timestamp of the date and time that the job completed.</p>\n@param completionTime Timestamp of the date and time that the job completed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A timestamp that shows when the job was completed.</p>\n@param completionTime A timestamp that shows when the job was completed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "completionTime",
             "variableType" : "java.util.Date",
-            "documentation" : "<p>Timestamp of the date and time that the job completed.</p>",
+            "documentation" : "<p>A timestamp that shows when the job was completed.</p>",
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
@@ -9405,11 +9648,11 @@
           "c2jName" : "CreationTime",
           "c2jShape" : "DateTime",
           "deprecated" : false,
-          "documentation" : "<p>Timestamp of the date and time that the job was created.</p>",
+          "documentation" : "<p>A timestamp that shows when the job was created.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Timestamp of the date and time that the job was created.</p>\n@param creationTime Timestamp of the date and time that the job was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>A timestamp that shows when the job was created.</p>\n@param creationTime A timestamp that shows when the job was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withCreationTime",
-          "getterDocumentation" : "/**<p>Timestamp of the date and time that the job was created.</p>\n@return Timestamp of the date and time that the job was created.*/",
+          "getterDocumentation" : "/**<p>A timestamp that shows when the job was created.</p>\n@return A timestamp that shows when the job was created.*/",
           "getterMethodName" : "getCreationTime",
           "getterModel" : {
             "returnType" : "java.util.Date",
@@ -9441,7 +9684,7 @@
           "marshallingTargetClass" : "java.util.Date",
           "marshallingType" : "DATE",
           "name" : "CreationTime",
-          "setterDocumentation" : "/**<p>Timestamp of the date and time that the job was created.</p>\n@param creationTime Timestamp of the date and time that the job was created.*/",
+          "setterDocumentation" : "/**<p>A timestamp that shows when the job was created.</p>\n@param creationTime A timestamp that shows when the job was created.*/",
           "setterMethodName" : "setCreationTime",
           "setterModel" : {
             "variableDeclarationType" : "java.util.Date",
@@ -9454,12 +9697,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Timestamp of the date and time that the job was created.</p>\n@param creationTime Timestamp of the date and time that the job was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A timestamp that shows when the job was created.</p>\n@param creationTime A timestamp that shows when the job was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "creationTime",
             "variableType" : "java.util.Date",
-            "documentation" : "<p>Timestamp of the date and time that the job was created.</p>",
+            "documentation" : "<p>A timestamp that shows when the job was created.</p>",
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
@@ -9469,11 +9712,11 @@
           "c2jName" : "FailureReason",
           "c2jShape" : "FailureReason",
           "deprecated" : false,
-          "documentation" : "<p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains a description of the error.</p>",
+          "documentation" : "<p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a description of the error.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains a description of the error.</p>\n@param failureReason If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains a description of the error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a description of the error.</p>\n@param failureReason If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a description of the error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withFailureReason",
-          "getterDocumentation" : "/**<p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains a description of the error.</p>\n@return If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains a description of the error.*/",
+          "getterDocumentation" : "/**<p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a description of the error.</p>\n@return If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a description of the error.*/",
           "getterMethodName" : "getFailureReason",
           "getterModel" : {
             "returnType" : "String",
@@ -9505,7 +9748,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "FailureReason",
-          "setterDocumentation" : "/**<p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains a description of the error.</p>\n@param failureReason If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains a description of the error.*/",
+          "setterDocumentation" : "/**<p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a description of the error.</p>\n@param failureReason If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a description of the error.*/",
           "setterMethodName" : "setFailureReason",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -9518,12 +9761,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains a description of the error.</p>\n@param failureReason If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains a description of the error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a description of the error.</p>\n@param failureReason If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a description of the error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "failureReason",
             "variableType" : "String",
-            "documentation" : "<p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this field contains a description of the error.</p>",
+            "documentation" : "<p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, a description of the error.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -9593,15 +9836,79 @@
           },
           "xmlNameSpaceUri" : null
         },
+        "OutputLocationType" : {
+          "c2jName" : "OutputLocationType",
+          "c2jShape" : "OutputLocationType",
+          "deprecated" : false,
+          "documentation" : "<p>Indicates the location of the output of the transcription job.</p> <p>If the value is <code>CUSTOMER_BUCKET</code> then the location is the S3 bucket specified in the <code>outputBucketName</code> field when the transcription job was started with the <code>StartTranscriptionJob</code> operation.</p> <p>If the value is <code>SERVICE_BUCKET</code> then the output is stored by Amazon Transcribe and can be retrieved using the URI in the <code>GetTranscriptionJob</code> response's <code>TranscriptFileUri</code> field.</p>",
+          "enumType" : "OutputLocationType",
+          "fluentSetterDocumentation" : "/**<p>Indicates the location of the output of the transcription job.</p> <p>If the value is <code>CUSTOMER_BUCKET</code> then the location is the S3 bucket specified in the <code>outputBucketName</code> field when the transcription job was started with the <code>StartTranscriptionJob</code> operation.</p> <p>If the value is <code>SERVICE_BUCKET</code> then the output is stored by Amazon Transcribe and can be retrieved using the URI in the <code>GetTranscriptionJob</code> response's <code>TranscriptFileUri</code> field.</p>\n@param outputLocationType Indicates the location of the output of the transcription job.</p> <p>If the value is <code>CUSTOMER_BUCKET</code> then the location is the S3 bucket specified in the <code>outputBucketName</code> field when the transcription job was started with the <code>StartTranscriptionJob</code> operation.</p> <p>If the value is <code>SERVICE_BUCKET</code> then the output is stored by Amazon Transcribe and can be retrieved using the URI in the <code>GetTranscriptionJob</code> response's <code>TranscriptFileUri</code> field.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OutputLocationType*/",
+          "fluentSetterMethodName" : "withOutputLocationType",
+          "getterDocumentation" : "/**<p>Indicates the location of the output of the transcription job.</p> <p>If the value is <code>CUSTOMER_BUCKET</code> then the location is the S3 bucket specified in the <code>outputBucketName</code> field when the transcription job was started with the <code>StartTranscriptionJob</code> operation.</p> <p>If the value is <code>SERVICE_BUCKET</code> then the output is stored by Amazon Transcribe and can be retrieved using the URI in the <code>GetTranscriptionJob</code> response's <code>TranscriptFileUri</code> field.</p>\n@return Indicates the location of the output of the transcription job.</p> <p>If the value is <code>CUSTOMER_BUCKET</code> then the location is the S3 bucket specified in the <code>outputBucketName</code> field when the transcription job was started with the <code>StartTranscriptionJob</code> operation.</p> <p>If the value is <code>SERVICE_BUCKET</code> then the output is stored by Amazon Transcribe and can be retrieved using the URI in the <code>GetTranscriptionJob</code> response's <code>TranscriptFileUri</code> field.\n@see OutputLocationType*/",
+          "getterMethodName" : "getOutputLocationType",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "OutputLocationType",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "OutputLocationType",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "OutputLocationType",
+          "setterDocumentation" : "/**<p>Indicates the location of the output of the transcription job.</p> <p>If the value is <code>CUSTOMER_BUCKET</code> then the location is the S3 bucket specified in the <code>outputBucketName</code> field when the transcription job was started with the <code>StartTranscriptionJob</code> operation.</p> <p>If the value is <code>SERVICE_BUCKET</code> then the output is stored by Amazon Transcribe and can be retrieved using the URI in the <code>GetTranscriptionJob</code> response's <code>TranscriptFileUri</code> field.</p>\n@param outputLocationType Indicates the location of the output of the transcription job.</p> <p>If the value is <code>CUSTOMER_BUCKET</code> then the location is the S3 bucket specified in the <code>outputBucketName</code> field when the transcription job was started with the <code>StartTranscriptionJob</code> operation.</p> <p>If the value is <code>SERVICE_BUCKET</code> then the output is stored by Amazon Transcribe and can be retrieved using the URI in the <code>GetTranscriptionJob</code> response's <code>TranscriptFileUri</code> field.\n@see OutputLocationType*/",
+          "setterMethodName" : "setOutputLocationType",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "outputLocationType",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Indicates the location of the output of the transcription job.</p> <p>If the value is <code>CUSTOMER_BUCKET</code> then the location is the S3 bucket specified in the <code>outputBucketName</code> field when the transcription job was started with the <code>StartTranscriptionJob</code> operation.</p> <p>If the value is <code>SERVICE_BUCKET</code> then the output is stored by Amazon Transcribe and can be retrieved using the URI in the <code>GetTranscriptionJob</code> response's <code>TranscriptFileUri</code> field.</p>\n@param outputLocationType Indicates the location of the output of the transcription job.</p> <p>If the value is <code>CUSTOMER_BUCKET</code> then the location is the S3 bucket specified in the <code>outputBucketName</code> field when the transcription job was started with the <code>StartTranscriptionJob</code> operation.</p> <p>If the value is <code>SERVICE_BUCKET</code> then the output is stored by Amazon Transcribe and can be retrieved using the URI in the <code>GetTranscriptionJob</code> response's <code>TranscriptFileUri</code> field.\n@return Returns a reference to this object so that method calls can be chained together.\n@see OutputLocationType*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "outputLocationType",
+            "variableType" : "String",
+            "documentation" : "<p>Indicates the location of the output of the transcription job.</p> <p>If the value is <code>CUSTOMER_BUCKET</code> then the location is the S3 bucket specified in the <code>outputBucketName</code> field when the transcription job was started with the <code>StartTranscriptionJob</code> operation.</p> <p>If the value is <code>SERVICE_BUCKET</code> then the output is stored by Amazon Transcribe and can be retrieved using the URI in the <code>GetTranscriptionJob</code> response's <code>TranscriptFileUri</code> field.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "TranscriptionJobName" : {
           "c2jName" : "TranscriptionJobName",
           "c2jShape" : "TranscriptionJobName",
           "deprecated" : false,
-          "documentation" : "<p>The name assigned to the transcription job when it was created.</p>",
+          "documentation" : "<p>The name of the transcription job.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The name assigned to the transcription job when it was created.</p>\n@param transcriptionJobName The name assigned to the transcription job when it was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The name of the transcription job.</p>\n@param transcriptionJobName The name of the transcription job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withTranscriptionJobName",
-          "getterDocumentation" : "/**<p>The name assigned to the transcription job when it was created.</p>\n@return The name assigned to the transcription job when it was created.*/",
+          "getterDocumentation" : "/**<p>The name of the transcription job.</p>\n@return The name of the transcription job.*/",
           "getterMethodName" : "getTranscriptionJobName",
           "getterModel" : {
             "returnType" : "String",
@@ -9633,7 +9940,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "TranscriptionJobName",
-          "setterDocumentation" : "/**<p>The name assigned to the transcription job when it was created.</p>\n@param transcriptionJobName The name assigned to the transcription job when it was created.*/",
+          "setterDocumentation" : "/**<p>The name of the transcription job.</p>\n@param transcriptionJobName The name of the transcription job.*/",
           "setterMethodName" : "setTranscriptionJobName",
           "setterModel" : {
             "variableDeclarationType" : "String",
@@ -9646,12 +9953,12 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The name assigned to the transcription job when it was created.</p>\n@param transcriptionJobName The name assigned to the transcription job when it was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The name of the transcription job.</p>\n@param transcriptionJobName The name of the transcription job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "variableDeclarationType" : "String",
             "variableName" : "transcriptionJobName",
             "variableType" : "String",
-            "documentation" : "<p>The name assigned to the transcription job when it was created.</p>",
+            "documentation" : "<p>The name of the transcription job.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },

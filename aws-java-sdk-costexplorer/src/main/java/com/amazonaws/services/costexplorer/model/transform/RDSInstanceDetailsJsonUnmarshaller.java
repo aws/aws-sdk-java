@@ -64,6 +64,10 @@ public class RDSInstanceDetailsJsonUnmarshaller implements Unmarshaller<RDSInsta
                     context.nextToken();
                     rDSInstanceDetails.setDatabaseEngine(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DatabaseEdition", targetDepth)) {
+                    context.nextToken();
+                    rDSInstanceDetails.setDatabaseEdition(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("DeploymentOption", targetDepth)) {
                     context.nextToken();
                     rDSInstanceDetails.setDeploymentOption(context.getUnmarshaller(String.class).unmarshall(context));
