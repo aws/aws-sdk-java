@@ -321,10 +321,12 @@ final class ContentCryptoMaterial {
             ObjectMetadata metadata,
             EncryptionMaterialsAccessor kekMaterialAccessor,
             Provider securityProvider,
+            boolean alwaysUseSecurityProvider,
             boolean keyWrapExpected,
             AWSKMS kms) {
         return fromObjectMetadata0(metadata, kekMaterialAccessor,
-                securityProvider, null, NONE, keyWrapExpected, kms);
+                securityProvider, alwaysUseSecurityProvider, null, NONE,
+                keyWrapExpected, kms);
     }
 
     /**
@@ -338,12 +340,14 @@ final class ContentCryptoMaterial {
             ObjectMetadata metadata,
             EncryptionMaterialsAccessor kekMaterialAccessor,
             Provider securityProvider,
+            boolean alwaysUseSecurityProvider,
             long[] range,
             ExtraMaterialsDescription extra,
             boolean keyWrapExpected,
             AWSKMS kms) {
         return fromObjectMetadata0(metadata, kekMaterialAccessor,
-                securityProvider, range, extra, keyWrapExpected, kms);
+                securityProvider, alwaysUseSecurityProvider, range, extra,
+                keyWrapExpected, kms);
     }
 
     /**
@@ -353,6 +357,7 @@ final class ContentCryptoMaterial {
             ObjectMetadata metadata,
             EncryptionMaterialsAccessor kekMaterialAccessor,
             Provider securityProvider,
+            boolean alwaysUseSecurityProvider,
             long[] range,
             ExtraMaterialsDescription extra,
             boolean keyWrapExpected,
@@ -423,7 +428,7 @@ final class ContentCryptoMaterial {
                 securityProvider, contentCryptoScheme, kms);
         return new ContentCryptoMaterial(merged, cekWrapped, keyWrapAlgo,
                 contentCryptoScheme.createCipherLite(cek, iv,
-                        Cipher.DECRYPT_MODE, securityProvider));
+                        Cipher.DECRYPT_MODE, securityProvider, alwaysUseSecurityProvider));
     }
 
     private static KeyWrapException newKeyWrapException() {
@@ -438,10 +443,12 @@ final class ContentCryptoMaterial {
             Map<String, String> instFile,
             EncryptionMaterialsAccessor kekMaterialAccessor,
             Provider securityProvider,
+            boolean alwaysUseSecurityProvider,
             boolean keyWrapExpected,
             AWSKMS kms) {
         return fromInstructionFile0(instFile, kekMaterialAccessor,
-                securityProvider, null, NONE, keyWrapExpected, kms);
+                securityProvider, alwaysUseSecurityProvider, null, NONE,
+                keyWrapExpected, kms);
     }
 
     /**
@@ -455,12 +462,14 @@ final class ContentCryptoMaterial {
             Map<String, String> instFile,
             EncryptionMaterialsAccessor kekMaterialAccessor,
             Provider securityProvider,
+            boolean alwaysUseSecurityProvider,
             long[] range,
             ExtraMaterialsDescription extra,
             boolean keyWrapExpected,
             AWSKMS kms) {
         return fromInstructionFile0(instFile, kekMaterialAccessor,
-                securityProvider, range, extra, keyWrapExpected, kms);
+                securityProvider, alwaysUseSecurityProvider, range, extra,
+                keyWrapExpected, kms);
     }
 
     /**
@@ -470,6 +479,7 @@ final class ContentCryptoMaterial {
             Map<String, String> instFile,
             EncryptionMaterialsAccessor kekMaterialAccessor,
             Provider securityProvider,
+            boolean alwaysUseSecurityProvider,
             long[] range,
             ExtraMaterialsDescription extra,
             boolean keyWrapExpected,
@@ -541,7 +551,7 @@ final class ContentCryptoMaterial {
                 securityProvider, contentCryptoScheme, kms);
         return new ContentCryptoMaterial(merged, cekWrapped, keyWrapAlgo,
                 contentCryptoScheme.createCipherLite(cek, iv,
-                        Cipher.DECRYPT_MODE, securityProvider));
+                        Cipher.DECRYPT_MODE, securityProvider, alwaysUseSecurityProvider));
     }
 
     /**
@@ -621,7 +631,7 @@ final class ContentCryptoMaterial {
      *            description
      * @param targetScheme
      *            the target crypto scheme to be used for key wrapping, etc.
-     * @param p
+     * @param provider
      *            optional security provider; null means to use the default.
      * @throws SecurityException
      *             if the old and new material description are the same; or if
@@ -629,7 +639,8 @@ final class ContentCryptoMaterial {
      */
     ContentCryptoMaterial recreate(Map<String, String> newKEKMatDesc,
                                    EncryptionMaterialsAccessor accessor, S3CryptoScheme targetScheme,
-                                   Provider p, AWSKMS kms, AmazonWebServiceRequest req) {
+                                   Provider provider, boolean alwaysUseProvider, AWSKMS kms,
+                                   AmazonWebServiceRequest req) {
         if (!usesKMSKey() && newKEKMatDesc.equals(kekMaterialsDescription)) {
             throw new SecurityException(
                 "Material description of the new KEK must differ from the current one");
@@ -648,12 +659,12 @@ final class ContentCryptoMaterial {
                     + newKEKMatDesc
                     + " from the encryption material provider");
         }
-        SecretKey cek = cek(encryptedCEK, keyWrappingAlgorithm, origKEK, p,
+        SecretKey cek = cek(encryptedCEK, keyWrappingAlgorithm, origKEK, provider,
                 getContentCryptoScheme(), kms);
         ContentCryptoMaterial output = create(cek, cipherLite.getIV(), newKEK,
                 getContentCryptoScheme(),  // must use same content crypto scheme
                 targetScheme,
-                p, kms, req);
+                provider, alwaysUseProvider, kms, req);
         if (Arrays.equals(output.encryptedCEK, encryptedCEK)) {
             throw new SecurityException(
                 "The new KEK must differ from the original");
@@ -677,7 +688,7 @@ final class ContentCryptoMaterial {
      * @param targetScheme
      *            the target crypto scheme to use for recreating the content
      *            crypto material
-     * @param p
+     * @param provider
      *            optional security provider; null means to use the default.
      * @throws SecurityException
      *             if the old and new material description are the same; or if
@@ -685,7 +696,8 @@ final class ContentCryptoMaterial {
      */
     ContentCryptoMaterial recreate(EncryptionMaterials newKEK,
             EncryptionMaterialsAccessor accessor, S3CryptoScheme targetScheme,
-            Provider p, AWSKMS kms, AmazonWebServiceRequest req) {
+            Provider provider, boolean alwaysUseProvider, AWSKMS kms,
+            AmazonWebServiceRequest req) {
         if (!usesKMSKey()
         &&  newKEK.getMaterialsDescription().equals(kekMaterialsDescription)) {
             throw new SecurityException(
@@ -698,13 +710,13 @@ final class ContentCryptoMaterial {
         } else {
             origKEK = accessor.getEncryptionMaterials(kekMaterialsDescription);
         }
-        SecretKey cek = cek(encryptedCEK, keyWrappingAlgorithm, origKEK, p,
+        SecretKey cek = cek(encryptedCEK, keyWrappingAlgorithm, origKEK, provider,
                 getContentCryptoScheme(), kms);
         ContentCryptoMaterial output =
             create(cek, cipherLite.getIV(), newKEK,
                    getContentCryptoScheme(),  // must use same content crypto scheme
                    targetScheme, // target scheme used to recreate the content crypto material
-                   p, kms, req);
+                   provider, alwaysUseProvider, kms, req);
         if (Arrays.equals(output.encryptedCEK, encryptedCEK)) {
             throw new SecurityException(
                 "The new KEK must differ from the original");
@@ -737,10 +749,10 @@ final class ContentCryptoMaterial {
             EncryptionMaterials kekMaterials,
             ContentCryptoScheme contentCryptoScheme,
             S3CryptoScheme targetScheme,
-            Provider provider, AWSKMS kms,
-            AmazonWebServiceRequest req) {
+            Provider provider, boolean alwaysUseProvider,
+            AWSKMS kms, AmazonWebServiceRequest req) {
         return doCreate(cek, iv, kekMaterials, contentCryptoScheme,
-                targetScheme, provider, kms, req);
+                targetScheme, provider, alwaysUseProvider, kms, req);
     }
 
     /**
@@ -763,10 +775,10 @@ final class ContentCryptoMaterial {
     static ContentCryptoMaterial create(SecretKey cek, byte[] iv,
             EncryptionMaterials kekMaterials,
             S3CryptoScheme scheme,
-            Provider provider, AWSKMS kms,
-            AmazonWebServiceRequest req) {
+            Provider provider, boolean alwaysUseProvider,
+            AWSKMS kms, AmazonWebServiceRequest req) {
         return doCreate(cek, iv, kekMaterials, scheme.getContentCryptoScheme(),
-                scheme, provider, kms, req);
+                scheme, provider, alwaysUseProvider, kms, req);
     }
 
     /**
@@ -801,6 +813,7 @@ final class ContentCryptoMaterial {
             ContentCryptoScheme contentCryptoScheme,
             S3CryptoScheme targetS3CryptoScheme,
             Provider provider,
+            boolean alwaysUseProvider,
             AWSKMS kms,
             AmazonWebServiceRequest req) {
         // Secure the envelope symmetric key either by encryption, key wrapping
@@ -809,7 +822,7 @@ final class ContentCryptoMaterial {
                 targetS3CryptoScheme.getKeyWrapScheme(),
                 targetS3CryptoScheme.getSecureRandom(),
                 provider, kms, req);
-        return wrap(cek, iv, contentCryptoScheme, provider, cekSecured);
+        return wrap(cek, iv, contentCryptoScheme, provider, alwaysUseProvider, cekSecured);
     }
 
     /**
@@ -821,13 +834,14 @@ final class ContentCryptoMaterial {
             SecretKey cek, byte[] iv,
             ContentCryptoScheme contentCryptoScheme,
             Provider provider,
+            boolean alwaysUseProvider,
             SecuredCEK cekSecured) {
         return new ContentCryptoMaterial(
                 cekSecured.getMaterialDescription(),
                 cekSecured.getEncrypted(),
                 cekSecured.getKeyWrapAlgorithm(),
                 contentCryptoScheme.createCipherLite
-                    (cek, iv, Cipher.ENCRYPT_MODE, provider));
+                    (cek, iv, Cipher.ENCRYPT_MODE, provider, alwaysUseProvider));
     }
 
     /**
@@ -837,7 +851,7 @@ final class ContentCryptoMaterial {
      * @param cek content encrypting key to be secured
      * @param materials used to provide the key-encryption-key (KEK); or if
      * it is KMS-enabled, the customer master key id and material description.
-     * @param contentCryptoScheme the content crypto scheme
+     * @param kwScheme the key wrapping scheme.
      * @param p optional security provider; can be null if the default is used.
      * @return a secured CEK in the form of ciphertext or ciphertext blob.
      */

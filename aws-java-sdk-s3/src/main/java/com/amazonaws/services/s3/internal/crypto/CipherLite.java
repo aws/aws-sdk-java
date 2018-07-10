@@ -86,7 +86,7 @@ class CipherLite {
      */
     CipherLite recreate() {
         return scheme.createCipherLite(secreteKey, cipher.getIV(),
-                this.cipherMode, cipher.getProvider());
+                this.cipherMode, cipher.getProvider(), true);
     }
 
     /**
@@ -95,7 +95,7 @@ class CipherLite {
      */
     CipherLite createUsingIV(byte[] iv) {
         return scheme.createCipherLite(secreteKey, iv, this.cipherMode,
-                cipher.getProvider());
+                cipher.getProvider(), true);
     }
 
     /**
@@ -128,7 +128,7 @@ class CipherLite {
         else
             throw new UnsupportedOperationException();
         return scheme.createCipherLite(secreteKey, cipher.getIV(),
-                inversedMode, cipher.getProvider());
+                inversedMode, cipher.getProvider(), true);
     }
 
     /**
@@ -162,7 +162,7 @@ class CipherLite {
      *                if this cipher is in decryption mode, and (un)padding has
      *                been requested, but the decrypted data is not bounded by
      *                the appropriate padding bytes
-     * @exception BadTagException
+     * @exception javax.crypto.AEADBadTagException
      *                if this cipher is decrypting in an AEAD mode (such as
      *                GCM/CCM), and the received authentication tag does not
      *                match the calculated value

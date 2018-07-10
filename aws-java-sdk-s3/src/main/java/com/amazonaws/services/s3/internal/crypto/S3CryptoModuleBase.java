@@ -542,13 +542,14 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
                         contentCryptoScheme.getKeyGeneratorAlgorithm());
             byte[] keyBlob = copyAllBytesFrom(keyGenRes.getCiphertextBlob());
             return ContentCryptoMaterial.wrap(cek, iv,
-                    contentCryptoScheme, provider,
+                    contentCryptoScheme, provider, cryptoConfig.getAlwaysUseCryptoProvider(),
                     new KMSSecuredCEK(keyBlob, encryptionContext));
         } else {
             // Generate a one-time use symmetric key and initialize a cipher to encrypt object data
             return ContentCryptoMaterial.create(
                     generateCEK(materials, provider),
-                    iv, materials, cryptoScheme, provider, kms, req);
+                    iv, materials, cryptoScheme, provider,
+                    cryptoConfig.getAlwaysUseCryptoProvider(), kms, req);
         }
     }
 
@@ -821,12 +822,14 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
                 newCCM = origCCM.recreate(req.getMaterialsDescription(),
                         this.kekMaterialsProvider,
                         cryptoScheme,
-                        cryptoConfig.getCryptoProvider(), kms, req);
+                        cryptoConfig.getCryptoProvider(),
+                        cryptoConfig.getAlwaysUseCryptoProvider(), kms, req);
             } else {
                 newCCM = origCCM.recreate(newKEK,
                         this.kekMaterialsProvider,
                         cryptoScheme,
-                        cryptoConfig.getCryptoProvider(), kms, req);
+                        cryptoConfig.getCryptoProvider(),
+                        cryptoConfig.getAlwaysUseCryptoProvider(), kms, req);
             }
             PutObjectRequest putInstFileRequest = req.createPutObjectRequest(retrieved);
             // Put the new instruction file into S3
@@ -847,8 +850,6 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
      *
      * @param s3w
      *            an existing S3 object (wrapper)
-     * @param s3objectId
-     *            the object id used to retrieve the existing S3 object
      *
      * @return a non-null content crypto material.
      */
@@ -859,6 +860,7 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
                 .fromObjectMetadata(s3w.getObjectMetadata(),
                     kekMaterialsProvider,
                     cryptoConfig.getCryptoProvider(),
+                    cryptoConfig.getAlwaysUseCryptoProvider(),
                     false,   // existing CEK not necessarily key-wrapped
                     kms
                 );
@@ -881,6 +883,7 @@ public abstract class S3CryptoModuleBase<T extends MultipartUploadCryptoContext>
             instruction,
             kekMaterialsProvider,
             cryptoConfig.getCryptoProvider(),
+            cryptoConfig.getAlwaysUseCryptoProvider(),
             false,   // existing CEK not necessarily key-wrapped
             kms
         );

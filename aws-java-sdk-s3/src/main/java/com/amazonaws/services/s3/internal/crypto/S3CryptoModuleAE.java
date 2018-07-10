@@ -221,6 +221,7 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
                     matdesc,
                     kekMaterialsProvider,
                     cryptoConfig.getCryptoProvider(),
+                    cryptoConfig.getAlwaysUseCryptoProvider(),
                     cryptoRange,   // range is sometimes necessary to compute the adjusted IV
                     extraMatDesc,
                     keyWrapExpected,
@@ -249,6 +250,7 @@ class S3CryptoModuleAE extends S3CryptoModuleBase<MultipartUploadCryptoContext> 
             .fromObjectMetadata(retrieved.getObjectMetadata(),
                 kekMaterialsProvider,
                 cryptoConfig.getCryptoProvider(),
+                cryptoConfig.getAlwaysUseCryptoProvider(),
                 // range is sometimes necessary to compute the adjusted IV
                 cryptoRange,
                 extraMatDesc,

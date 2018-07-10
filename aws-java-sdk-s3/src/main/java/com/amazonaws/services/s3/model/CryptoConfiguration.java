@@ -35,6 +35,8 @@ public class CryptoConfiguration implements Cloneable,Serializable {
     private CryptoMode cryptoMode;
     private CryptoStorageMode storageMode;
     private Provider cryptoProvider;
+    private boolean alwaysUseCryptoProvider;
+
     /**
      * True to ignore instruction file that cannot be found during a GET
      * operation; false otherwise. Default is true. This property is ignored if
@@ -149,6 +151,36 @@ public class CryptoConfiguration implements Cloneable,Serializable {
     }
 
     /**
+     * Sets whether the specified crypto provider should be used in all cases. For
+     * backwards compatibility, it will be ignored if CryptoMode specified authenticated
+     * encryption.
+     */
+    public void setAlwaysUseCryptoProvider(boolean value) {
+        this.alwaysUseCryptoProvider = value;
+    }
+
+    /**
+     * Sets whether the specified crypto provider should be used in all cases. For
+     * backwards compatibility, it will be ignored if CryptoMode specified authenticated
+     * encryption.
+     */
+    public CryptoConfiguration withAlwaysUseCryptoProvider(boolean value) {
+        this.alwaysUseCryptoProvider = value;
+        return this;
+    }
+
+    /**
+     * Returns true if the specified crypto provider should be used in all cases. For
+     * backwards compatibility, it will be ignored if CryptoMode specifies authenticated
+     * encryption.
+     *
+     * @return true if the crypto provider should always be used
+     */
+    public boolean getAlwaysUseCryptoProvider() {
+        return alwaysUseCryptoProvider;
+    }
+
+    /**
      * Returns the optionally specified crypto mode applicable only to the S3
      * encryption client; or null. This attribute is ignored if the S3
      * encryption client is not in use.
@@ -233,8 +265,15 @@ public class CryptoConfiguration implements Cloneable,Serializable {
      *             specified crypto mode.
      */
     private void check(CryptoMode cryptoMode) {
-        if (cryptoMode == CryptoMode.AuthenticatedEncryption
-                || cryptoMode == CryptoMode.StrictAuthenticatedEncryption) {
+        // For modes that use AES/GCM, we prefer using the BouncyCastle provider unless the
+        // user has explicitly overridden us (i.e., with the FIPS-compliant BouncyCastle
+        // implementation).
+        boolean preferBC = (cryptoMode == CryptoMode.AuthenticatedEncryption)
+                || (cryptoMode == CryptoMode.StrictAuthenticatedEncryption);
+
+        boolean haveOverride = (cryptoProvider != null && alwaysUseCryptoProvider);
+
+        if (preferBC && !haveOverride) {
             if (!CryptoRuntime.isBouncyCastleAvailable()) {
                 CryptoRuntime.enableBouncyCastle();
                 if (!CryptoRuntime.isBouncyCastleAvailable()) {
@@ -266,6 +305,12 @@ public class CryptoConfiguration implements Cloneable,Serializable {
             throw new UnsupportedOperationException();
         }
         @Override public CryptoConfiguration withCryptoProvider(Provider cryptoProvider) {
+            throw new UnsupportedOperationException();
+        }
+        @Override public void setAlwaysUseCryptoProvider(boolean value) {
+            throw new UnsupportedOperationException();
+        }
+        @Override public CryptoConfiguration withAlwaysUseCryptoProvider(boolean value) {
             throw new UnsupportedOperationException();
         }
         @Override public void setCryptoMode(CryptoMode cryptoMode) {
@@ -308,6 +353,7 @@ public class CryptoConfiguration implements Cloneable,Serializable {
         that.cryptoMode = this.cryptoMode;
         that.storageMode = this.storageMode;
         that.cryptoProvider = this.cryptoProvider;
+        that.alwaysUseCryptoProvider = this.alwaysUseCryptoProvider;
         that.ignoreMissingInstructionFile = this.ignoreMissingInstructionFile;
         that.awskmsRegion = this.awskmsRegion;
         return that;
