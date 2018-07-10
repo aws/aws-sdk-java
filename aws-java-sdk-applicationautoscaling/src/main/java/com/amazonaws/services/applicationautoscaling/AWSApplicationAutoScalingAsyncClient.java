@@ -31,13 +31,13 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * With Application Auto Scaling, you can configure automatic scaling for your scalable AWS resources. You can use
+ * With Application Auto Scaling, you can configure automatic scaling for your scalable resources. You can use
  * Application Auto Scaling to accomplish the following tasks:
  * </p>
  * <ul>
  * <li>
  * <p>
- * Define scaling policies to automatically scale your AWS resources
+ * Define scaling policies to automatically scale your AWS or custom resources
  * </p>
  * </li>
  * <li>
@@ -57,7 +57,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * </ul>
  * <p>
- * Application Auto Scaling can scale the following AWS resources:
+ * Application Auto Scaling can scale the following resources:
  * </p>
  * <ul>
  * <li>
@@ -104,21 +104,28 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
- * Amazon SageMaker endpoints. For more information, see <a
+ * Amazon SageMaker endpoint variants. For more information, see <a
  * href="http://docs.aws.amazon.com/sagemaker/latest/dg/endpoint-auto-scaling.html">Automatically Scaling Amazon
  * SageMaker Models</a>.
  * </p>
  * </li>
+ * <li>
+ * <p>
+ * Custom resources provided by your own applications or services. More information is available in our <a
+ * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub repository</a>.
+ * </p>
+ * </li>
  * </ul>
  * <p>
- * To configure automatic scaling for multiple resources across multiple services, use AWS Auto Scaling to create a
- * scaling plan for your application. For more information, see <a href="http://aws.amazon.com/autoscaling">AWS Auto
- * Scaling</a>.
+ * To learn more about Application Auto Scaling, see the <a
+ * href="http://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html">Application
+ * Auto Scaling User Guide</a>.
  * </p>
  * <p>
- * For a list of supported regions, see <a
- * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#as-app_region">AWS Regions and Endpoints: Application
- * Auto Scaling</a> in the <i>AWS General Reference</i>.
+ * To configure automatic scaling for multiple resources across multiple services, use AWS Auto Scaling to create a
+ * scaling plan for your application. For more information, see the <a
+ * href="http://docs.aws.amazon.com/autoscaling/plans/userguide/what-is-aws-auto-scaling.html">AWS Auto Scaling User
+ * Guide</a>.
  * </p>
  */
 @ThreadSafe

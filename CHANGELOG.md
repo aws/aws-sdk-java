@@ -1,3 +1,8 @@
+# __1.11.364__ __2018-07-10__
+## __Application Auto Scaling__
+  - ### Features
+    - Documentation updates for application-autoscaling
+
 # __1.11.363__ __2018-07-09__
 ## __AWS Cost Explorer Service__
   - ### Features
