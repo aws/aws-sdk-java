@@ -82,7 +82,7 @@ public class SetPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * </ul>
      * <p>
-     * For more information on the permissions associated with these levels, see <a
+     * For more information about the permissions associated with these levels, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
      * Permissions</a>.
      * </p>
@@ -306,7 +306,7 @@ public class SetPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * </ul>
      * <p>
-     * For more information on the permissions associated with these levels, see <a
+     * For more information about the permissions associated with these levels, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
      * Permissions</a>.
      * </p>
@@ -342,7 +342,7 @@ public class SetPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information on the permissions associated with these levels, see <a
+     *        For more information about the permissions associated with these levels, see <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
      *        Permissions</a>.
      */
@@ -384,7 +384,7 @@ public class SetPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * </ul>
      * <p>
-     * For more information on the permissions associated with these levels, see <a
+     * For more information about the permissions associated with these levels, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
      * Permissions</a>.
      * </p>
@@ -419,7 +419,7 @@ public class SetPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         </li>
      *         </ul>
      *         <p>
-     *         For more information on the permissions associated with these levels, see <a
+     *         For more information about the permissions associated with these levels, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
      *         Permissions</a>.
      */
@@ -461,7 +461,7 @@ public class SetPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * </ul>
      * <p>
-     * For more information on the permissions associated with these levels, see <a
+     * For more information about the permissions associated with these levels, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
      * Permissions</a>.
      * </p>
@@ -497,7 +497,7 @@ public class SetPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information on the permissions associated with these levels, see <a
+     *        For more information about the permissions associated with these levels, see <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User
      *        Permissions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

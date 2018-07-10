@@ -27,7 +27,7 @@ public class UpdateElasticIpRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The address.
+     * The IP address for which you want to update the name.
      * </p>
      */
     private String elasticIp;
@@ -40,11 +40,11 @@ public class UpdateElasticIpRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The address.
+     * The IP address for which you want to update the name.
      * </p>
      * 
      * @param elasticIp
-     *        The address.
+     *        The IP address for which you want to update the name.
      */
 
     public void setElasticIp(String elasticIp) {
@@ -53,10 +53,10 @@ public class UpdateElasticIpRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The address.
+     * The IP address for which you want to update the name.
      * </p>
      * 
-     * @return The address.
+     * @return The IP address for which you want to update the name.
      */
 
     public String getElasticIp() {
@@ -65,11 +65,11 @@ public class UpdateElasticIpRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The address.
+     * The IP address for which you want to update the name.
      * </p>
      * 
      * @param elasticIp
-     *        The address.
+     *        The IP address for which you want to update the name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

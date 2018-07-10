@@ -1,4 +1,25 @@
-# __1.11.364__ __2018-07-10__
+# __1.11.365__ __2018-07-10__
+## __AWS CodeBuild__
+  - ### Features
+    - API changes to CodeBuild service, support report build status for Github sources
+
+## __AWS Glue__
+  - ### Features
+    - AWS Glue adds the ability to crawl DynamoDB tables.
+
+## __AWS OpsWorks__
+  - ### Features
+    - Documentation updates for AWS OpsWorks Stacks.
+
+## __Amazon AppStream__
+  - ### Features
+    - This API update adds pagination to the DescribeImages API to support future features and enhancements.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Support CpuOptions field in Launch Template data and allow Launch Template name to contain hyphen.
+
+# __1.11.364__ __2018-07-09__
 ## __Application Auto Scaling__
   - ### Features
     - Documentation updates for application-autoscaling

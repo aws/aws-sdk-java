@@ -68,6 +68,10 @@ public class ProjectSourceJsonUnmarshaller implements Unmarshaller<ProjectSource
                     context.nextToken();
                     projectSource.setAuth(SourceAuthJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("reportBuildStatus", targetDepth)) {
+                    context.nextToken();
+                    projectSource.setReportBuildStatus(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("insecureSsl", targetDepth)) {
                     context.nextToken();
                     projectSource.setInsecureSsl(context.getUnmarshaller(Boolean.class).unmarshall(context));

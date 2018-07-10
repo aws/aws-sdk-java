@@ -85,7 +85,7 @@ public class Volume implements Serializable, Cloneable {
      * The number of I/O operations per second (IOPS) that the volume supports. For Provisioned IOPS SSD volumes, this
      * represents the number of IOPS that are provisioned for the volume. For General Purpose SSD volumes, this
      * represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for
-     * bursting. For more information on General Purpose SSD baseline performance, I/O credits, and bursting, see <a
+     * bursting. For more information about General Purpose SSD baseline performance, I/O credits, and bursting, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -562,7 +562,7 @@ public class Volume implements Serializable, Cloneable {
      * The number of I/O operations per second (IOPS) that the volume supports. For Provisioned IOPS SSD volumes, this
      * represents the number of IOPS that are provisioned for the volume. For General Purpose SSD volumes, this
      * represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for
-     * bursting. For more information on General Purpose SSD baseline performance, I/O credits, and bursting, see <a
+     * bursting. For more information about General Purpose SSD baseline performance, I/O credits, and bursting, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -578,9 +578,9 @@ public class Volume implements Serializable, Cloneable {
      *        The number of I/O operations per second (IOPS) that the volume supports. For Provisioned IOPS SSD volumes,
      *        this represents the number of IOPS that are provisioned for the volume. For General Purpose SSD volumes,
      *        this represents the baseline performance of the volume and the rate at which the volume accumulates I/O
-     *        credits for bursting. For more information on General Purpose SSD baseline performance, I/O credits, and
-     *        bursting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS
-     *        Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        credits for bursting. For more information about General Purpose SSD baseline performance, I/O credits,
+     *        and bursting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     *        EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
      *        Constraint: Range is 100-32000 IOPS for io1 volumes and 100-10000 IOPS for <code>gp2</code> volumes.
      *        </p>
@@ -598,7 +598,7 @@ public class Volume implements Serializable, Cloneable {
      * The number of I/O operations per second (IOPS) that the volume supports. For Provisioned IOPS SSD volumes, this
      * represents the number of IOPS that are provisioned for the volume. For General Purpose SSD volumes, this
      * represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for
-     * bursting. For more information on General Purpose SSD baseline performance, I/O credits, and bursting, see <a
+     * bursting. For more information about General Purpose SSD baseline performance, I/O credits, and bursting, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -613,8 +613,8 @@ public class Volume implements Serializable, Cloneable {
      * @return The number of I/O operations per second (IOPS) that the volume supports. For Provisioned IOPS SSD
      *         volumes, this represents the number of IOPS that are provisioned for the volume. For General Purpose SSD
      *         volumes, this represents the baseline performance of the volume and the rate at which the volume
-     *         accumulates I/O credits for bursting. For more information on General Purpose SSD baseline performance,
-     *         I/O credits, and bursting, see <a
+     *         accumulates I/O credits for bursting. For more information about General Purpose SSD baseline
+     *         performance, I/O credits, and bursting, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
      *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *         <p>
@@ -635,7 +635,7 @@ public class Volume implements Serializable, Cloneable {
      * The number of I/O operations per second (IOPS) that the volume supports. For Provisioned IOPS SSD volumes, this
      * represents the number of IOPS that are provisioned for the volume. For General Purpose SSD volumes, this
      * represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for
-     * bursting. For more information on General Purpose SSD baseline performance, I/O credits, and bursting, see <a
+     * bursting. For more information about General Purpose SSD baseline performance, I/O credits, and bursting, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -651,9 +651,9 @@ public class Volume implements Serializable, Cloneable {
      *        The number of I/O operations per second (IOPS) that the volume supports. For Provisioned IOPS SSD volumes,
      *        this represents the number of IOPS that are provisioned for the volume. For General Purpose SSD volumes,
      *        this represents the baseline performance of the volume and the rate at which the volume accumulates I/O
-     *        credits for bursting. For more information on General Purpose SSD baseline performance, I/O credits, and
-     *        bursting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS
-     *        Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *        credits for bursting. For more information about General Purpose SSD baseline performance, I/O credits,
+     *        and bursting, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     *        EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
      *        Constraint: Range is 100-32000 IOPS for io1 volumes and 100-10000 IOPS for <code>gp2</code> volumes.
      *        </p>

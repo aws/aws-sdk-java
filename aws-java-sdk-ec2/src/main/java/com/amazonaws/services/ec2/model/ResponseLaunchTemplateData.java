@@ -148,6 +148,14 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
      * </p>
      */
     private CreditSpecification creditSpecification;
+    /**
+     * <p>
+     * The CPU options for the instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU Options</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     */
+    private LaunchTemplateCpuOptions cpuOptions;
 
     /**
      * <p>
@@ -1226,6 +1234,58 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The CPU options for the instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU Options</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param cpuOptions
+     *        The CPU options for the instance. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU
+     *        Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+
+    public void setCpuOptions(LaunchTemplateCpuOptions cpuOptions) {
+        this.cpuOptions = cpuOptions;
+    }
+
+    /**
+     * <p>
+     * The CPU options for the instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU Options</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @return The CPU options for the instance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU
+     *         Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+
+    public LaunchTemplateCpuOptions getCpuOptions() {
+        return this.cpuOptions;
+    }
+
+    /**
+     * <p>
+     * The CPU options for the instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU Options</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param cpuOptions
+     *        The CPU options for the instance. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU
+     *        Options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResponseLaunchTemplateData withCpuOptions(LaunchTemplateCpuOptions cpuOptions) {
+        setCpuOptions(cpuOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -1275,7 +1335,9 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
         if (getInstanceMarketOptions() != null)
             sb.append("InstanceMarketOptions: ").append(getInstanceMarketOptions()).append(",");
         if (getCreditSpecification() != null)
-            sb.append("CreditSpecification: ").append(getCreditSpecification());
+            sb.append("CreditSpecification: ").append(getCreditSpecification()).append(",");
+        if (getCpuOptions() != null)
+            sb.append("CpuOptions: ").append(getCpuOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -1371,6 +1433,10 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
             return false;
         if (other.getCreditSpecification() != null && other.getCreditSpecification().equals(this.getCreditSpecification()) == false)
             return false;
+        if (other.getCpuOptions() == null ^ this.getCpuOptions() == null)
+            return false;
+        if (other.getCpuOptions() != null && other.getCpuOptions().equals(this.getCpuOptions()) == false)
+            return false;
         return true;
     }
 
@@ -1399,6 +1465,7 @@ public class ResponseLaunchTemplateData implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
         hashCode = prime * hashCode + ((getInstanceMarketOptions() == null) ? 0 : getInstanceMarketOptions().hashCode());
         hashCode = prime * hashCode + ((getCreditSpecification() == null) ? 0 : getCreditSpecification().hashCode());
+        hashCode = prime * hashCode + ((getCpuOptions() == null) ? 0 : getCpuOptions().hashCode());
         return hashCode;
     }
 

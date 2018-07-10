@@ -33,7 +33,7 @@ public class AttachElasticLoadBalancerRequest extends com.amazonaws.AmazonWebSer
     private String elasticLoadBalancerName;
     /**
      * <p>
-     * The ID of the layer that the Elastic Load Balancing instance is to be attached to.
+     * The ID of the layer to which the Elastic Load Balancing instance is to be attached.
      * </p>
      */
     private String layerId;
@@ -80,11 +80,11 @@ public class AttachElasticLoadBalancerRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the layer that the Elastic Load Balancing instance is to be attached to.
+     * The ID of the layer to which the Elastic Load Balancing instance is to be attached.
      * </p>
      * 
      * @param layerId
-     *        The ID of the layer that the Elastic Load Balancing instance is to be attached to.
+     *        The ID of the layer to which the Elastic Load Balancing instance is to be attached.
      */
 
     public void setLayerId(String layerId) {
@@ -93,10 +93,10 @@ public class AttachElasticLoadBalancerRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the layer that the Elastic Load Balancing instance is to be attached to.
+     * The ID of the layer to which the Elastic Load Balancing instance is to be attached.
      * </p>
      * 
-     * @return The ID of the layer that the Elastic Load Balancing instance is to be attached to.
+     * @return The ID of the layer to which the Elastic Load Balancing instance is to be attached.
      */
 
     public String getLayerId() {
@@ -105,11 +105,11 @@ public class AttachElasticLoadBalancerRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the layer that the Elastic Load Balancing instance is to be attached to.
+     * The ID of the layer to which the Elastic Load Balancing instance is to be attached.
      * </p>
      * 
      * @param layerId
-     *        The ID of the layer that the Elastic Load Balancing instance is to be attached to.
+     *        The ID of the layer to which the Elastic Load Balancing instance is to be attached.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

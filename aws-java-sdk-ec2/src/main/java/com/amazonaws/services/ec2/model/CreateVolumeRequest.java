@@ -49,7 +49,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The number of I/O operations per second (IOPS) to provision for the volume, with a maximum ratio of 50 IOPS/GiB.
      * Range is 100 to 32000 IOPS for volumes in most regions. For exceptions, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>.
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * This parameter is valid only for Provisioned IOPS SSD (io1) volumes.
@@ -330,7 +331,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The number of I/O operations per second (IOPS) to provision for the volume, with a maximum ratio of 50 IOPS/GiB.
      * Range is 100 to 32000 IOPS for volumes in most regions. For exceptions, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>.
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * This parameter is valid only for Provisioned IOPS SSD (io1) volumes.
@@ -339,8 +341,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * @param iops
      *        The number of I/O operations per second (IOPS) to provision for the volume, with a maximum ratio of 50
      *        IOPS/GiB. Range is 100 to 32000 IOPS for volumes in most regions. For exceptions, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
-     *        Types</a>.</p>
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
+     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
      *        This parameter is valid only for Provisioned IOPS SSD (io1) volumes.
      */
@@ -353,7 +355,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The number of I/O operations per second (IOPS) to provision for the volume, with a maximum ratio of 50 IOPS/GiB.
      * Range is 100 to 32000 IOPS for volumes in most regions. For exceptions, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>.
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * This parameter is valid only for Provisioned IOPS SSD (io1) volumes.
@@ -361,8 +364,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @return The number of I/O operations per second (IOPS) to provision for the volume, with a maximum ratio of 50
      *         IOPS/GiB. Range is 100 to 32000 IOPS for volumes in most regions. For exceptions, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
-     *         Types</a>.</p>
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
+     *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *         <p>
      *         This parameter is valid only for Provisioned IOPS SSD (io1) volumes.
      */
@@ -375,7 +378,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The number of I/O operations per second (IOPS) to provision for the volume, with a maximum ratio of 50 IOPS/GiB.
      * Range is 100 to 32000 IOPS for volumes in most regions. For exceptions, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>.
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * This parameter is valid only for Provisioned IOPS SSD (io1) volumes.
@@ -384,8 +388,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * @param iops
      *        The number of I/O operations per second (IOPS) to provision for the volume, with a maximum ratio of 50
      *        IOPS/GiB. Range is 100 to 32000 IOPS for volumes in most regions. For exceptions, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
-     *        Types</a>.</p>
+     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
+     *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
      *        This parameter is valid only for Provisioned IOPS SSD (io1) volumes.
      * @return Returns a reference to this object so that method calls can be chained together.

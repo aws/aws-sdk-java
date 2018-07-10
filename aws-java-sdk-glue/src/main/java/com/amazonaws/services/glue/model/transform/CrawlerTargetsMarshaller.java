@@ -32,6 +32,8 @@ public class CrawlerTargetsMarshaller {
             .marshallLocationName("S3Targets").build();
     private static final MarshallingInfo<List> JDBCTARGETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("JdbcTargets").build();
+    private static final MarshallingInfo<List> DYNAMODBTARGETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DynamoDBTargets").build();
 
     private static final CrawlerTargetsMarshaller instance = new CrawlerTargetsMarshaller();
 
@@ -51,6 +53,7 @@ public class CrawlerTargetsMarshaller {
         try {
             protocolMarshaller.marshall(crawlerTargets.getS3Targets(), S3TARGETS_BINDING);
             protocolMarshaller.marshall(crawlerTargets.getJdbcTargets(), JDBCTARGETS_BINDING);
+            protocolMarshaller.marshall(crawlerTargets.getDynamoDBTargets(), DYNAMODBTARGETS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

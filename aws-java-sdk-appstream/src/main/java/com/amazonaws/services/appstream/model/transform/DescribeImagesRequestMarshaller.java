@@ -30,6 +30,10 @@ public class DescribeImagesRequestMarshaller {
 
     private static final MarshallingInfo<List> NAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Names").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
 
     private static final DescribeImagesRequestMarshaller instance = new DescribeImagesRequestMarshaller();
 
@@ -48,6 +52,8 @@ public class DescribeImagesRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(describeImagesRequest.getNames(), NAMES_BINDING);
+            protocolMarshaller.marshall(describeImagesRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(describeImagesRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

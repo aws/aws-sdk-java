@@ -178,6 +178,11 @@ public class RequestLaunchTemplateDataStaxUnmarshaller implements Unmarshaller<R
                     requestLaunchTemplateData.setCreditSpecification(CreditSpecificationRequestStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("CpuOptions", targetDepth)) {
+                    requestLaunchTemplateData.setCpuOptions(LaunchTemplateCpuOptionsRequestStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return requestLaunchTemplateData;

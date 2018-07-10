@@ -27,18 +27,18 @@ public class DeregisterEcsClusterRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The cluster's ARN.
+     * The cluster's Amazon Resource Number (ARN).
      * </p>
      */
     private String ecsClusterArn;
 
     /**
      * <p>
-     * The cluster's ARN.
+     * The cluster's Amazon Resource Number (ARN).
      * </p>
      * 
      * @param ecsClusterArn
-     *        The cluster's ARN.
+     *        The cluster's Amazon Resource Number (ARN).
      */
 
     public void setEcsClusterArn(String ecsClusterArn) {
@@ -47,10 +47,10 @@ public class DeregisterEcsClusterRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The cluster's ARN.
+     * The cluster's Amazon Resource Number (ARN).
      * </p>
      * 
-     * @return The cluster's ARN.
+     * @return The cluster's Amazon Resource Number (ARN).
      */
 
     public String getEcsClusterArn() {
@@ -59,11 +59,11 @@ public class DeregisterEcsClusterRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The cluster's ARN.
+     * The cluster's Amazon Resource Number (ARN).
      * </p>
      * 
      * @param ecsClusterArn
-     *        The cluster's ARN.
+     *        The cluster's Amazon Resource Number (ARN).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

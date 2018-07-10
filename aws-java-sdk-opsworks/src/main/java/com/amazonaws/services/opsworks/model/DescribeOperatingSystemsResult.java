@@ -26,10 +26,19 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeOperatingSystemsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Contains information in response to a <code>DescribeOperatingSystems</code> request.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<OperatingSystem> operatingSystems;
 
     /**
-     * @return
+     * <p>
+     * Contains information in response to a <code>DescribeOperatingSystems</code> request.
+     * </p>
+     * 
+     * @return Contains information in response to a <code>DescribeOperatingSystems</code> request.
      */
 
     public java.util.List<OperatingSystem> getOperatingSystems() {
@@ -40,7 +49,12 @@ public class DescribeOperatingSystemsResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * Contains information in response to a <code>DescribeOperatingSystems</code> request.
+     * </p>
+     * 
      * @param operatingSystems
+     *        Contains information in response to a <code>DescribeOperatingSystems</code> request.
      */
 
     public void setOperatingSystems(java.util.Collection<OperatingSystem> operatingSystems) {
@@ -54,12 +68,16 @@ public class DescribeOperatingSystemsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
+     * Contains information in response to a <code>DescribeOperatingSystems</code> request.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setOperatingSystems(java.util.Collection)} or {@link #withOperatingSystems(java.util.Collection)} if you
      * want to override the existing values.
      * </p>
      * 
      * @param operatingSystems
+     *        Contains information in response to a <code>DescribeOperatingSystems</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -74,7 +92,12 @@ public class DescribeOperatingSystemsResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * Contains information in response to a <code>DescribeOperatingSystems</code> request.
+     * </p>
+     * 
      * @param operatingSystems
+     *        Contains information in response to a <code>DescribeOperatingSystems</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

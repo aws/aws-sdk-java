@@ -29,6 +29,13 @@ public class DescribeImagesResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private java.util.List<Image> images;
+    /**
+     * <p>
+     * The pagination token used to retrieve the next page of results. If this value is empty, only the first page is
+     * retrieved.
+     * </p>
+     */
+    private String nextToken;
 
     /**
      * <p>
@@ -101,6 +108,52 @@ public class DescribeImagesResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * The pagination token used to retrieve the next page of results. If this value is empty, only the first page is
+     * retrieved.
+     * </p>
+     * 
+     * @param nextToken
+     *        The pagination token used to retrieve the next page of results. If this value is empty, only the first
+     *        page is retrieved.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The pagination token used to retrieve the next page of results. If this value is empty, only the first page is
+     * retrieved.
+     * </p>
+     * 
+     * @return The pagination token used to retrieve the next page of results. If this value is empty, only the first
+     *         page is retrieved.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The pagination token used to retrieve the next page of results. If this value is empty, only the first page is
+     * retrieved.
+     * </p>
+     * 
+     * @param nextToken
+     *        The pagination token used to retrieve the next page of results. If this value is empty, only the first
+     *        page is retrieved.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeImagesResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -112,7 +165,9 @@ public class DescribeImagesResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getImages() != null)
-            sb.append("Images: ").append(getImages());
+            sb.append("Images: ").append(getImages()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -131,6 +186,10 @@ public class DescribeImagesResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getImages() != null && other.getImages().equals(this.getImages()) == false)
             return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         return true;
     }
 
@@ -140,6 +199,7 @@ public class DescribeImagesResult extends com.amazonaws.AmazonWebServiceResult<c
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getImages() == null) ? 0 : getImages().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

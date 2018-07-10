@@ -83,9 +83,9 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * </ul>
      * <p>
-     * For more information on how to use AWS OpsWorks Stacks with a VPC, see <a
+     * For more information about how to use AWS OpsWorks Stacks with a VPC, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>.
-     * For more information on default VPC and EC2 Classic, see <a
+     * For more information about default VPC and EC2 Classic, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.
      * </p>
      */
@@ -159,14 +159,14 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <li>
      * <p>
      * A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more
-     * information on how to use custom AMIs with OpsWorks, see <a
+     * information about how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      * AMIs</a>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The default option is the parent stack's operating system. For more information on the supported operating
+     * The default option is the parent stack's operating system. For more information about supported operating
      * systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks
      * Stacks Operating Systems</a>.
      * </p>
@@ -275,7 +275,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      * </p>
      * <p>
-     * For more information on custom JSON, see <a
+     * For more information about custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the
      * Stack Configuration Attributes</a>
      * </p>
@@ -569,9 +569,9 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * </ul>
      * <p>
-     * For more information on how to use AWS OpsWorks Stacks with a VPC, see <a
+     * For more information about how to use AWS OpsWorks Stacks with a VPC, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>.
-     * For more information on default VPC and EC2 Classic, see <a
+     * For more information about default VPC and EC2 Classic, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.
      * </p>
      * 
@@ -614,9 +614,9 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information on how to use AWS OpsWorks Stacks with a VPC, see <a
+     *        For more information about how to use AWS OpsWorks Stacks with a VPC, see <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a
-     *        VPC</a>. For more information on default VPC and EC2 Classic, see <a
+     *        VPC</a>. For more information about default VPC and EC2 Classic, see <a
      *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      *        Platforms</a>.
      */
@@ -664,9 +664,9 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * </ul>
      * <p>
-     * For more information on how to use AWS OpsWorks Stacks with a VPC, see <a
+     * For more information about how to use AWS OpsWorks Stacks with a VPC, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>.
-     * For more information on default VPC and EC2 Classic, see <a
+     * For more information about default VPC and EC2 Classic, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.
      * </p>
      * 
@@ -708,9 +708,9 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </li>
      *         </ul>
      *         <p>
-     *         For more information on how to use AWS OpsWorks Stacks with a VPC, see <a
+     *         For more information about how to use AWS OpsWorks Stacks with a VPC, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a
-     *         VPC</a>. For more information on default VPC and EC2 Classic, see <a
+     *         VPC</a>. For more information about default VPC and EC2 Classic, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      *         Platforms</a>.
      */
@@ -758,9 +758,9 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * </ul>
      * <p>
-     * For more information on how to use AWS OpsWorks Stacks with a VPC, see <a
+     * For more information about how to use AWS OpsWorks Stacks with a VPC, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a VPC</a>.
-     * For more information on default VPC and EC2 Classic, see <a
+     * For more information about default VPC and EC2 Classic, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>.
      * </p>
      * 
@@ -803,9 +803,9 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information on how to use AWS OpsWorks Stacks with a VPC, see <a
+     *        For more information about how to use AWS OpsWorks Stacks with a VPC, see <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a
-     *        VPC</a>. For more information on default VPC and EC2 Classic, see <a
+     *        VPC</a>. For more information about default VPC and EC2 Classic, see <a
      *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      *        Platforms</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1071,14 +1071,14 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <li>
      * <p>
      * A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more
-     * information on how to use custom AMIs with OpsWorks, see <a
+     * information about how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      * AMIs</a>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The default option is the parent stack's operating system. For more information on the supported operating
+     * The default option is the parent stack's operating system. For more information about supported operating
      * systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks
      * Stacks Operating Systems</a>.
      * </p>
@@ -1126,14 +1126,14 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <li>
      *        <p>
      *        A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances.
-     *        For more information on how to use custom AMIs with OpsWorks, see <a
+     *        For more information about how to use custom AMIs with OpsWorks, see <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      *        AMIs</a>.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        The default option is the parent stack's operating system. For more information on the supported operating
+     *        The default option is the parent stack's operating system. For more information about supported operating
      *        systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      *        OpsWorks Stacks Operating Systems</a>.
      *        </p>
@@ -1187,14 +1187,14 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <li>
      * <p>
      * A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more
-     * information on how to use custom AMIs with OpsWorks, see <a
+     * information about how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      * AMIs</a>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The default option is the parent stack's operating system. For more information on the supported operating
+     * The default option is the parent stack's operating system. For more information about supported operating
      * systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks
      * Stacks Operating Systems</a>.
      * </p>
@@ -1241,17 +1241,16 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <li>
      *         <p>
      *         A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances.
-     *         For more information on how to use custom AMIs with OpsWorks, see <a
+     *         For more information about how to use custom AMIs with OpsWorks, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      *         AMIs</a>.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         The default option is the parent stack's operating system. For more information on the supported
-     *         operating systems, see <a
-     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
-     *         Operating Systems</a>.
+     *         The default option is the parent stack's operating system. For more information about supported operating
+     *         systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
+     *         OpsWorks Stacks Operating Systems</a>.
      *         </p>
      *         <note>
      *         <p>
@@ -1303,14 +1302,14 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <li>
      * <p>
      * A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more
-     * information on how to use custom AMIs with OpsWorks, see <a
+     * information about how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      * AMIs</a>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The default option is the parent stack's operating system. For more information on the supported operating
+     * The default option is the parent stack's operating system. For more information about supported operating
      * systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks
      * Stacks Operating Systems</a>.
      * </p>
@@ -1358,14 +1357,14 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <li>
      *        <p>
      *        A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances.
-     *        For more information on how to use custom AMIs with OpsWorks, see <a
+     *        For more information about how to use custom AMIs with OpsWorks, see <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      *        AMIs</a>.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        The default option is the parent stack's operating system. For more information on the supported operating
+     *        The default option is the parent stack's operating system. For more information about supported operating
      *        systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
      *        OpsWorks Stacks Operating Systems</a>.
      *        </p>
@@ -1931,7 +1930,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      * </p>
      * <p>
-     * For more information on custom JSON, see <a
+     * For more information about custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the
      * Stack Configuration Attributes</a>
      * </p>
@@ -1943,7 +1942,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      *        </p>
      *        <p>
-     *        For more information on custom JSON, see <a
+     *        For more information about custom JSON, see <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
      *        Modify the Stack Configuration Attributes</a>
      */
@@ -1961,7 +1960,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      * </p>
      * <p>
-     * For more information on custom JSON, see <a
+     * For more information about custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the
      * Stack Configuration Attributes</a>
      * </p>
@@ -1972,7 +1971,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      *         </p>
      *         <p>
-     *         For more information on custom JSON, see <a
+     *         For more information about custom JSON, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
      *         Modify the Stack Configuration Attributes</a>
      */
@@ -1990,7 +1989,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      * </p>
      * <p>
-     * For more information on custom JSON, see <a
+     * For more information about custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the
      * Stack Configuration Attributes</a>
      * </p>
@@ -2002,7 +2001,7 @@ public class CloneStackRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      *        </p>
      *        <p>
-     *        For more information on custom JSON, see <a
+     *        For more information about custom JSON, see <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
      *        Modify the Stack Configuration Attributes</a>
      * @return Returns a reference to this object so that method calls can be chained together.

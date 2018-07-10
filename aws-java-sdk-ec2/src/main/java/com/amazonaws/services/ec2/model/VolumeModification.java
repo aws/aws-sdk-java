@@ -31,84 +31,84 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ID of the volume being modified.
+     * The ID of the volume.
      * </p>
      */
     private String volumeId;
     /**
      * <p>
-     * Current state of modification. Modification state is null for unmodified volumes.
+     * The current modification state. The modification state is null for unmodified volumes.
      * </p>
      */
     private String modificationState;
     /**
      * <p>
-     * Generic status message on modification progress or failure.
+     * A status message about the modification progress or failure.
      * </p>
      */
     private String statusMessage;
     /**
      * <p>
-     * Target size of the volume being modified.
+     * The target size of the volume, in GiB.
      * </p>
      */
     private Integer targetSize;
     /**
      * <p>
-     * Target IOPS rate of the volume being modified.
+     * The target IOPS rate of the volume.
      * </p>
      */
     private Integer targetIops;
     /**
      * <p>
-     * Target EBS volume type of the volume being modified.
+     * The target EBS volume type of the volume.
      * </p>
      */
     private String targetVolumeType;
     /**
      * <p>
-     * Original size of the volume being modified.
+     * The original size of the volume.
      * </p>
      */
     private Integer originalSize;
     /**
      * <p>
-     * Original IOPS rate of the volume being modified.
+     * The original IOPS rate of the volume.
      * </p>
      */
     private Integer originalIops;
     /**
      * <p>
-     * Original EBS volume type of the volume being modified.
+     * The original EBS volume type of the volume.
      * </p>
      */
     private String originalVolumeType;
     /**
      * <p>
-     * Modification progress from 0 to 100%.
+     * The modification progress, from 0 to 100 percent complete.
      * </p>
      */
     private Long progress;
     /**
      * <p>
-     * Modification start time
+     * The modification start time.
      * </p>
      */
     private java.util.Date startTime;
     /**
      * <p>
-     * Modification completion or failure time.
+     * The modification completion or failure time.
      * </p>
      */
     private java.util.Date endTime;
 
     /**
      * <p>
-     * ID of the volume being modified.
+     * The ID of the volume.
      * </p>
      * 
      * @param volumeId
-     *        ID of the volume being modified.
+     *        The ID of the volume.
      */
 
     public void setVolumeId(String volumeId) {
@@ -117,10 +117,10 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ID of the volume being modified.
+     * The ID of the volume.
      * </p>
      * 
-     * @return ID of the volume being modified.
+     * @return The ID of the volume.
      */
 
     public String getVolumeId() {
@@ -129,11 +129,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ID of the volume being modified.
+     * The ID of the volume.
      * </p>
      * 
      * @param volumeId
-     *        ID of the volume being modified.
+     *        The ID of the volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,11 +144,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Current state of modification. Modification state is null for unmodified volumes.
+     * The current modification state. The modification state is null for unmodified volumes.
      * </p>
      * 
      * @param modificationState
-     *        Current state of modification. Modification state is null for unmodified volumes.
+     *        The current modification state. The modification state is null for unmodified volumes.
      * @see VolumeModificationState
      */
 
@@ -158,10 +158,10 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Current state of modification. Modification state is null for unmodified volumes.
+     * The current modification state. The modification state is null for unmodified volumes.
      * </p>
      * 
-     * @return Current state of modification. Modification state is null for unmodified volumes.
+     * @return The current modification state. The modification state is null for unmodified volumes.
      * @see VolumeModificationState
      */
 
@@ -171,11 +171,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Current state of modification. Modification state is null for unmodified volumes.
+     * The current modification state. The modification state is null for unmodified volumes.
      * </p>
      * 
      * @param modificationState
-     *        Current state of modification. Modification state is null for unmodified volumes.
+     *        The current modification state. The modification state is null for unmodified volumes.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VolumeModificationState
      */
@@ -187,11 +187,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Current state of modification. Modification state is null for unmodified volumes.
+     * The current modification state. The modification state is null for unmodified volumes.
      * </p>
      * 
      * @param modificationState
-     *        Current state of modification. Modification state is null for unmodified volumes.
+     *        The current modification state. The modification state is null for unmodified volumes.
      * @see VolumeModificationState
      */
 
@@ -201,11 +201,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Current state of modification. Modification state is null for unmodified volumes.
+     * The current modification state. The modification state is null for unmodified volumes.
      * </p>
      * 
      * @param modificationState
-     *        Current state of modification. Modification state is null for unmodified volumes.
+     *        The current modification state. The modification state is null for unmodified volumes.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VolumeModificationState
      */
@@ -217,11 +217,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Generic status message on modification progress or failure.
+     * A status message about the modification progress or failure.
      * </p>
      * 
      * @param statusMessage
-     *        Generic status message on modification progress or failure.
+     *        A status message about the modification progress or failure.
      */
 
     public void setStatusMessage(String statusMessage) {
@@ -230,10 +230,10 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Generic status message on modification progress or failure.
+     * A status message about the modification progress or failure.
      * </p>
      * 
-     * @return Generic status message on modification progress or failure.
+     * @return A status message about the modification progress or failure.
      */
 
     public String getStatusMessage() {
@@ -242,11 +242,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Generic status message on modification progress or failure.
+     * A status message about the modification progress or failure.
      * </p>
      * 
      * @param statusMessage
-     *        Generic status message on modification progress or failure.
+     *        A status message about the modification progress or failure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -257,11 +257,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Target size of the volume being modified.
+     * The target size of the volume, in GiB.
      * </p>
      * 
      * @param targetSize
-     *        Target size of the volume being modified.
+     *        The target size of the volume, in GiB.
      */
 
     public void setTargetSize(Integer targetSize) {
@@ -270,10 +270,10 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Target size of the volume being modified.
+     * The target size of the volume, in GiB.
      * </p>
      * 
-     * @return Target size of the volume being modified.
+     * @return The target size of the volume, in GiB.
      */
 
     public Integer getTargetSize() {
@@ -282,11 +282,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Target size of the volume being modified.
+     * The target size of the volume, in GiB.
      * </p>
      * 
      * @param targetSize
-     *        Target size of the volume being modified.
+     *        The target size of the volume, in GiB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -297,11 +297,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Target IOPS rate of the volume being modified.
+     * The target IOPS rate of the volume.
      * </p>
      * 
      * @param targetIops
-     *        Target IOPS rate of the volume being modified.
+     *        The target IOPS rate of the volume.
      */
 
     public void setTargetIops(Integer targetIops) {
@@ -310,10 +310,10 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Target IOPS rate of the volume being modified.
+     * The target IOPS rate of the volume.
      * </p>
      * 
-     * @return Target IOPS rate of the volume being modified.
+     * @return The target IOPS rate of the volume.
      */
 
     public Integer getTargetIops() {
@@ -322,11 +322,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Target IOPS rate of the volume being modified.
+     * The target IOPS rate of the volume.
      * </p>
      * 
      * @param targetIops
-     *        Target IOPS rate of the volume being modified.
+     *        The target IOPS rate of the volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -337,11 +337,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Target EBS volume type of the volume being modified.
+     * The target EBS volume type of the volume.
      * </p>
      * 
      * @param targetVolumeType
-     *        Target EBS volume type of the volume being modified.
+     *        The target EBS volume type of the volume.
      * @see VolumeType
      */
 
@@ -351,10 +351,10 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Target EBS volume type of the volume being modified.
+     * The target EBS volume type of the volume.
      * </p>
      * 
-     * @return Target EBS volume type of the volume being modified.
+     * @return The target EBS volume type of the volume.
      * @see VolumeType
      */
 
@@ -364,11 +364,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Target EBS volume type of the volume being modified.
+     * The target EBS volume type of the volume.
      * </p>
      * 
      * @param targetVolumeType
-     *        Target EBS volume type of the volume being modified.
+     *        The target EBS volume type of the volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VolumeType
      */
@@ -380,11 +380,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Target EBS volume type of the volume being modified.
+     * The target EBS volume type of the volume.
      * </p>
      * 
      * @param targetVolumeType
-     *        Target EBS volume type of the volume being modified.
+     *        The target EBS volume type of the volume.
      * @see VolumeType
      */
 
@@ -394,11 +394,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Target EBS volume type of the volume being modified.
+     * The target EBS volume type of the volume.
      * </p>
      * 
      * @param targetVolumeType
-     *        Target EBS volume type of the volume being modified.
+     *        The target EBS volume type of the volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VolumeType
      */
@@ -410,11 +410,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Original size of the volume being modified.
+     * The original size of the volume.
      * </p>
      * 
      * @param originalSize
-     *        Original size of the volume being modified.
+     *        The original size of the volume.
      */
 
     public void setOriginalSize(Integer originalSize) {
@@ -423,10 +423,10 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Original size of the volume being modified.
+     * The original size of the volume.
      * </p>
      * 
-     * @return Original size of the volume being modified.
+     * @return The original size of the volume.
      */
 
     public Integer getOriginalSize() {
@@ -435,11 +435,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Original size of the volume being modified.
+     * The original size of the volume.
      * </p>
      * 
      * @param originalSize
-     *        Original size of the volume being modified.
+     *        The original size of the volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -450,11 +450,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Original IOPS rate of the volume being modified.
+     * The original IOPS rate of the volume.
      * </p>
      * 
      * @param originalIops
-     *        Original IOPS rate of the volume being modified.
+     *        The original IOPS rate of the volume.
      */
 
     public void setOriginalIops(Integer originalIops) {
@@ -463,10 +463,10 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Original IOPS rate of the volume being modified.
+     * The original IOPS rate of the volume.
      * </p>
      * 
-     * @return Original IOPS rate of the volume being modified.
+     * @return The original IOPS rate of the volume.
      */
 
     public Integer getOriginalIops() {
@@ -475,11 +475,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Original IOPS rate of the volume being modified.
+     * The original IOPS rate of the volume.
      * </p>
      * 
      * @param originalIops
-     *        Original IOPS rate of the volume being modified.
+     *        The original IOPS rate of the volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -490,11 +490,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Original EBS volume type of the volume being modified.
+     * The original EBS volume type of the volume.
      * </p>
      * 
      * @param originalVolumeType
-     *        Original EBS volume type of the volume being modified.
+     *        The original EBS volume type of the volume.
      * @see VolumeType
      */
 
@@ -504,10 +504,10 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Original EBS volume type of the volume being modified.
+     * The original EBS volume type of the volume.
      * </p>
      * 
-     * @return Original EBS volume type of the volume being modified.
+     * @return The original EBS volume type of the volume.
      * @see VolumeType
      */
 
@@ -517,11 +517,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Original EBS volume type of the volume being modified.
+     * The original EBS volume type of the volume.
      * </p>
      * 
      * @param originalVolumeType
-     *        Original EBS volume type of the volume being modified.
+     *        The original EBS volume type of the volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VolumeType
      */
@@ -533,11 +533,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Original EBS volume type of the volume being modified.
+     * The original EBS volume type of the volume.
      * </p>
      * 
      * @param originalVolumeType
-     *        Original EBS volume type of the volume being modified.
+     *        The original EBS volume type of the volume.
      * @see VolumeType
      */
 
@@ -547,11 +547,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Original EBS volume type of the volume being modified.
+     * The original EBS volume type of the volume.
      * </p>
      * 
      * @param originalVolumeType
-     *        Original EBS volume type of the volume being modified.
+     *        The original EBS volume type of the volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VolumeType
      */
@@ -563,11 +563,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Modification progress from 0 to 100%.
+     * The modification progress, from 0 to 100 percent complete.
      * </p>
      * 
      * @param progress
-     *        Modification progress from 0 to 100%.
+     *        The modification progress, from 0 to 100 percent complete.
      */
 
     public void setProgress(Long progress) {
@@ -576,10 +576,10 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Modification progress from 0 to 100%.
+     * The modification progress, from 0 to 100 percent complete.
      * </p>
      * 
-     * @return Modification progress from 0 to 100%.
+     * @return The modification progress, from 0 to 100 percent complete.
      */
 
     public Long getProgress() {
@@ -588,11 +588,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Modification progress from 0 to 100%.
+     * The modification progress, from 0 to 100 percent complete.
      * </p>
      * 
      * @param progress
-     *        Modification progress from 0 to 100%.
+     *        The modification progress, from 0 to 100 percent complete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -603,11 +603,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Modification start time
+     * The modification start time.
      * </p>
      * 
      * @param startTime
-     *        Modification start time
+     *        The modification start time.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -616,10 +616,10 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Modification start time
+     * The modification start time.
      * </p>
      * 
-     * @return Modification start time
+     * @return The modification start time.
      */
 
     public java.util.Date getStartTime() {
@@ -628,11 +628,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Modification start time
+     * The modification start time.
      * </p>
      * 
      * @param startTime
-     *        Modification start time
+     *        The modification start time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -643,11 +643,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Modification completion or failure time.
+     * The modification completion or failure time.
      * </p>
      * 
      * @param endTime
-     *        Modification completion or failure time.
+     *        The modification completion or failure time.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -656,10 +656,10 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Modification completion or failure time.
+     * The modification completion or failure time.
      * </p>
      * 
-     * @return Modification completion or failure time.
+     * @return The modification completion or failure time.
      */
 
     public java.util.Date getEndTime() {
@@ -668,11 +668,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Modification completion or failure time.
+     * The modification completion or failure time.
      * </p>
      * 
      * @param endTime
-     *        Modification completion or failure time.
+     *        The modification completion or failure time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

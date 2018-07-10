@@ -31,7 +31,11 @@ public class StopInstanceRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String instanceId;
-
+    /**
+     * <p>
+     * Specifies whether to force an instance to stop.
+     * </p>
+     */
     private Boolean force;
 
     /**
@@ -75,7 +79,12 @@ public class StopInstanceRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * Specifies whether to force an instance to stop.
+     * </p>
+     * 
      * @param force
+     *        Specifies whether to force an instance to stop.
      */
 
     public void setForce(Boolean force) {
@@ -83,7 +92,11 @@ public class StopInstanceRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies whether to force an instance to stop.
+     * </p>
+     * 
+     * @return Specifies whether to force an instance to stop.
      */
 
     public Boolean getForce() {
@@ -91,7 +104,12 @@ public class StopInstanceRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * Specifies whether to force an instance to stop.
+     * </p>
+     * 
      * @param force
+     *        Specifies whether to force an instance to stop.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,7 +119,11 @@ public class StopInstanceRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies whether to force an instance to stop.
+     * </p>
+     * 
+     * @return Specifies whether to force an instance to stop.
      */
 
     public Boolean isForce() {

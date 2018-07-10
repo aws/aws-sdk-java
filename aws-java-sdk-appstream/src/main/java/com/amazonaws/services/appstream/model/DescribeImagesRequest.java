@@ -31,6 +31,19 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private java.util.List<String> names;
+    /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is
+     * retrieved.
+     * </p>
+     */
+    private String nextToken;
+    /**
+     * <p>
+     * The maximum size of each results page.
+     * </p>
+     */
+    private Integer maxResults;
 
     /**
      * <p>
@@ -103,6 +116,92 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is
+     * retrieved.
+     * </p>
+     * 
+     * @param nextToken
+     *        The pagination token to use to retrieve the next page of results. If this value is empty, only the first
+     *        page is retrieved.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is
+     * retrieved.
+     * </p>
+     * 
+     * @return The pagination token to use to retrieve the next page of results. If this value is empty, only the first
+     *         page is retrieved.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is
+     * retrieved.
+     * </p>
+     * 
+     * @param nextToken
+     *        The pagination token to use to retrieve the next page of results. If this value is empty, only the first
+     *        page is retrieved.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeImagesRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum size of each results page.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum size of each results page.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum size of each results page.
+     * </p>
+     * 
+     * @return The maximum size of each results page.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum size of each results page.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum size of each results page.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeImagesRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -114,7 +213,11 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNames() != null)
-            sb.append("Names: ").append(getNames());
+            sb.append("Names: ").append(getNames()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults());
         sb.append("}");
         return sb.toString();
     }
@@ -133,6 +236,14 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getNames() != null && other.getNames().equals(this.getNames()) == false)
             return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
         return true;
     }
 
@@ -142,6 +253,8 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getNames() == null) ? 0 : getNames().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;
     }
 

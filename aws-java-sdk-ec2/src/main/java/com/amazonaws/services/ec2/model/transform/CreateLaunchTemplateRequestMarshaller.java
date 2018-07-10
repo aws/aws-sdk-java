@@ -436,6 +436,18 @@ public class CreateLaunchTemplateRequestMarshaller implements Marshaller<Request
                     request.addParameter("LaunchTemplateData.CreditSpecification.CpuCredits", StringUtils.fromString(creditSpecification.getCpuCredits()));
                 }
             }
+
+            LaunchTemplateCpuOptionsRequest cpuOptions = launchTemplateData.getCpuOptions();
+            if (cpuOptions != null) {
+
+                if (cpuOptions.getCoreCount() != null) {
+                    request.addParameter("LaunchTemplateData.CpuOptions.CoreCount", StringUtils.fromInteger(cpuOptions.getCoreCount()));
+                }
+
+                if (cpuOptions.getThreadsPerCore() != null) {
+                    request.addParameter("LaunchTemplateData.CpuOptions.ThreadsPerCore", StringUtils.fromInteger(cpuOptions.getThreadsPerCore()));
+                }
+            }
         }
 
         return request;

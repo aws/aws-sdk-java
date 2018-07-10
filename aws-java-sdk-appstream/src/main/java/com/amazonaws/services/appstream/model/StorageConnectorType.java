@@ -23,7 +23,8 @@ import javax.annotation.Generated;
 public enum StorageConnectorType {
 
     HOMEFOLDERS("HOMEFOLDERS"),
-    GOOGLE_DRIVE("GOOGLE_DRIVE");
+    GOOGLE_DRIVE("GOOGLE_DRIVE"),
+    ONE_DRIVE("ONE_DRIVE");
 
     private String value;
 

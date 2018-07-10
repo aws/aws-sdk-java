@@ -103,17 +103,17 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * For more information on the supported operating systems, see <a
+     * For more information about the supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
      * Operating Systems</a>.
      * </p>
      * <p>
      * The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you
      * must use the <a>CreateInstance</a> action's AmiId parameter to specify the custom AMI that you want to use. Block
-     * device mappings are not supported if the value is <code>Custom</code>. For more information on the supported
+     * device mappings are not supported if the value is <code>Custom</code>. For more information about supported
      * operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For
-     * more information on how to use custom AMIs with AWS OpsWorks Stacks, see <a
+     * more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      * AMIs</a>.
      * </p>
@@ -584,17 +584,17 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * For more information on the supported operating systems, see <a
+     * For more information about the supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
      * Operating Systems</a>.
      * </p>
      * <p>
      * The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you
      * must use the <a>CreateInstance</a> action's AmiId parameter to specify the custom AMI that you want to use. Block
-     * device mappings are not supported if the value is <code>Custom</code>. For more information on the supported
+     * device mappings are not supported if the value is <code>Custom</code>. For more information about supported
      * operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For
-     * more information on how to use custom AMIs with AWS OpsWorks Stacks, see <a
+     * more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      * AMIs</a>.
      * </p>
@@ -640,17 +640,17 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information on the supported operating systems, see <a
+     *        For more information about the supported operating systems, see <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
      *        Operating Systems</a>.
      *        </p>
      *        <p>
      *        The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>,
      *        you must use the <a>CreateInstance</a> action's AmiId parameter to specify the custom AMI that you want to
-     *        use. Block device mappings are not supported if the value is <code>Custom</code>. For more information on
-     *        the supported operating systems, see <a
+     *        use. Block device mappings are not supported if the value is <code>Custom</code>. For more information
+     *        about supported operating systems, see <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     *        Systems</a>For more information on how to use custom AMIs with AWS OpsWorks Stacks, see <a
+     *        Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      *        AMIs</a>.
      */
@@ -702,17 +702,17 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * For more information on the supported operating systems, see <a
+     * For more information about the supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
      * Operating Systems</a>.
      * </p>
      * <p>
      * The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you
      * must use the <a>CreateInstance</a> action's AmiId parameter to specify the custom AMI that you want to use. Block
-     * device mappings are not supported if the value is <code>Custom</code>. For more information on the supported
+     * device mappings are not supported if the value is <code>Custom</code>. For more information about supported
      * operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For
-     * more information on how to use custom AMIs with AWS OpsWorks Stacks, see <a
+     * more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      * AMIs</a>.
      * </p>
@@ -757,7 +757,7 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </li>
      *         </ul>
      *         <p>
-     *         For more information on the supported operating systems, see <a
+     *         For more information about the supported operating systems, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
      *         Operating Systems</a>.
      *         </p>
@@ -765,9 +765,9 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *         The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>,
      *         you must use the <a>CreateInstance</a> action's AmiId parameter to specify the custom AMI that you want
      *         to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information
-     *         on the supported operating systems, see <a
+     *         about supported operating systems, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     *         Systems</a>For more information on how to use custom AMIs with AWS OpsWorks Stacks, see <a
+     *         Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      *         AMIs</a>.
      */
@@ -819,17 +819,17 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * For more information on the supported operating systems, see <a
+     * For more information about the supported operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
      * Operating Systems</a>.
      * </p>
      * <p>
      * The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>, you
      * must use the <a>CreateInstance</a> action's AmiId parameter to specify the custom AMI that you want to use. Block
-     * device mappings are not supported if the value is <code>Custom</code>. For more information on the supported
+     * device mappings are not supported if the value is <code>Custom</code>. For more information about supported
      * operating systems, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For
-     * more information on how to use custom AMIs with AWS OpsWorks Stacks, see <a
+     * more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      * AMIs</a>.
      * </p>
@@ -875,17 +875,17 @@ public class CreateInstanceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information on the supported operating systems, see <a
+     *        For more information about the supported operating systems, see <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
      *        Operating Systems</a>.
      *        </p>
      *        <p>
      *        The default option is the current Amazon Linux version. If you set this parameter to <code>Custom</code>,
      *        you must use the <a>CreateInstance</a> action's AmiId parameter to specify the custom AMI that you want to
-     *        use. Block device mappings are not supported if the value is <code>Custom</code>. For more information on
-     *        the supported operating systems, see <a
+     *        use. Block device mappings are not supported if the value is <code>Custom</code>. For more information
+     *        about supported operating systems, see <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating
-     *        Systems</a>For more information on how to use custom AMIs with AWS OpsWorks Stacks, see <a
+     *        Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      *        AMIs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

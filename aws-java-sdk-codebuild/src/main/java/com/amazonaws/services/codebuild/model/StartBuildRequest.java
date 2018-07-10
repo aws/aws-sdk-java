@@ -123,6 +123,13 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private Boolean insecureSslOverride;
     /**
      * <p>
+     * Set to true to report to your source provider the status of a build's start and completion. If you use this
+     * option with a source provider other than GitHub, an invalidInputException is thrown.
+     * </p>
+     */
+    private Boolean reportBuildStatusOverride;
+    /**
+     * <p>
      * A container type for this build that overrides the one specified in the build project.
      * </p>
      */
@@ -861,6 +868,66 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
+     * Set to true to report to your source provider the status of a build's start and completion. If you use this
+     * option with a source provider other than GitHub, an invalidInputException is thrown.
+     * </p>
+     * 
+     * @param reportBuildStatusOverride
+     *        Set to true to report to your source provider the status of a build's start and completion. If you use
+     *        this option with a source provider other than GitHub, an invalidInputException is thrown.
+     */
+
+    public void setReportBuildStatusOverride(Boolean reportBuildStatusOverride) {
+        this.reportBuildStatusOverride = reportBuildStatusOverride;
+    }
+
+    /**
+     * <p>
+     * Set to true to report to your source provider the status of a build's start and completion. If you use this
+     * option with a source provider other than GitHub, an invalidInputException is thrown.
+     * </p>
+     * 
+     * @return Set to true to report to your source provider the status of a build's start and completion. If you use
+     *         this option with a source provider other than GitHub, an invalidInputException is thrown.
+     */
+
+    public Boolean getReportBuildStatusOverride() {
+        return this.reportBuildStatusOverride;
+    }
+
+    /**
+     * <p>
+     * Set to true to report to your source provider the status of a build's start and completion. If you use this
+     * option with a source provider other than GitHub, an invalidInputException is thrown.
+     * </p>
+     * 
+     * @param reportBuildStatusOverride
+     *        Set to true to report to your source provider the status of a build's start and completion. If you use
+     *        this option with a source provider other than GitHub, an invalidInputException is thrown.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartBuildRequest withReportBuildStatusOverride(Boolean reportBuildStatusOverride) {
+        setReportBuildStatusOverride(reportBuildStatusOverride);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to true to report to your source provider the status of a build's start and completion. If you use this
+     * option with a source provider other than GitHub, an invalidInputException is thrown.
+     * </p>
+     * 
+     * @return Set to true to report to your source provider the status of a build's start and completion. If you use
+     *         this option with a source provider other than GitHub, an invalidInputException is thrown.
+     */
+
+    public Boolean isReportBuildStatusOverride() {
+        return this.reportBuildStatusOverride;
+    }
+
+    /**
+     * <p>
      * A container type for this build that overrides the one specified in the build project.
      * </p>
      * 
@@ -1318,6 +1385,8 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
             sb.append("BuildspecOverride: ").append(getBuildspecOverride()).append(",");
         if (getInsecureSslOverride() != null)
             sb.append("InsecureSslOverride: ").append(getInsecureSslOverride()).append(",");
+        if (getReportBuildStatusOverride() != null)
+            sb.append("ReportBuildStatusOverride: ").append(getReportBuildStatusOverride()).append(",");
         if (getEnvironmentTypeOverride() != null)
             sb.append("EnvironmentTypeOverride: ").append(getEnvironmentTypeOverride()).append(",");
         if (getImageOverride() != null)
@@ -1390,6 +1459,10 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getInsecureSslOverride() != null && other.getInsecureSslOverride().equals(this.getInsecureSslOverride()) == false)
             return false;
+        if (other.getReportBuildStatusOverride() == null ^ this.getReportBuildStatusOverride() == null)
+            return false;
+        if (other.getReportBuildStatusOverride() != null && other.getReportBuildStatusOverride().equals(this.getReportBuildStatusOverride()) == false)
+            return false;
         if (other.getEnvironmentTypeOverride() == null ^ this.getEnvironmentTypeOverride() == null)
             return false;
         if (other.getEnvironmentTypeOverride() != null && other.getEnvironmentTypeOverride().equals(this.getEnvironmentTypeOverride()) == false)
@@ -1444,6 +1517,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getGitCloneDepthOverride() == null) ? 0 : getGitCloneDepthOverride().hashCode());
         hashCode = prime * hashCode + ((getBuildspecOverride() == null) ? 0 : getBuildspecOverride().hashCode());
         hashCode = prime * hashCode + ((getInsecureSslOverride() == null) ? 0 : getInsecureSslOverride().hashCode());
+        hashCode = prime * hashCode + ((getReportBuildStatusOverride() == null) ? 0 : getReportBuildStatusOverride().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentTypeOverride() == null) ? 0 : getEnvironmentTypeOverride().hashCode());
         hashCode = prime * hashCode + ((getImageOverride() == null) ? 0 : getImageOverride().hashCode());
         hashCode = prime * hashCode + ((getComputeTypeOverride() == null) ? 0 : getComputeTypeOverride().hashCode());

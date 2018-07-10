@@ -52,6 +52,10 @@ public class DescribeImagesResultJsonUnmarshaller implements Unmarshaller<Descri
                     context.nextToken();
                     describeImagesResult.setImages(new ListUnmarshaller<Image>(ImageJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("NextToken", targetDepth)) {
+                    context.nextToken();
+                    describeImagesResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

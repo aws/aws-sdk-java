@@ -143,6 +143,14 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
     private SourceAuth auth;
     /**
      * <p>
+     * Set to true to report the status of a build's start and finish to your source provider. This option is only valid
+     * when your source provider is GitHub. If this is set and you use a different source provider, an
+     * invalidInputException is thrown.
+     * </p>
+     */
+    private Boolean reportBuildStatus;
+    /**
+     * <p>
      * Enable this flag to ignore SSL warnings while connecting to the project source code.
      * </p>
      */
@@ -982,6 +990,74 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Set to true to report the status of a build's start and finish to your source provider. This option is only valid
+     * when your source provider is GitHub. If this is set and you use a different source provider, an
+     * invalidInputException is thrown.
+     * </p>
+     * 
+     * @param reportBuildStatus
+     *        Set to true to report the status of a build's start and finish to your source provider. This option is
+     *        only valid when your source provider is GitHub. If this is set and you use a different source provider, an
+     *        invalidInputException is thrown.
+     */
+
+    public void setReportBuildStatus(Boolean reportBuildStatus) {
+        this.reportBuildStatus = reportBuildStatus;
+    }
+
+    /**
+     * <p>
+     * Set to true to report the status of a build's start and finish to your source provider. This option is only valid
+     * when your source provider is GitHub. If this is set and you use a different source provider, an
+     * invalidInputException is thrown.
+     * </p>
+     * 
+     * @return Set to true to report the status of a build's start and finish to your source provider. This option is
+     *         only valid when your source provider is GitHub. If this is set and you use a different source provider,
+     *         an invalidInputException is thrown.
+     */
+
+    public Boolean getReportBuildStatus() {
+        return this.reportBuildStatus;
+    }
+
+    /**
+     * <p>
+     * Set to true to report the status of a build's start and finish to your source provider. This option is only valid
+     * when your source provider is GitHub. If this is set and you use a different source provider, an
+     * invalidInputException is thrown.
+     * </p>
+     * 
+     * @param reportBuildStatus
+     *        Set to true to report the status of a build's start and finish to your source provider. This option is
+     *        only valid when your source provider is GitHub. If this is set and you use a different source provider, an
+     *        invalidInputException is thrown.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProjectSource withReportBuildStatus(Boolean reportBuildStatus) {
+        setReportBuildStatus(reportBuildStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to true to report the status of a build's start and finish to your source provider. This option is only valid
+     * when your source provider is GitHub. If this is set and you use a different source provider, an
+     * invalidInputException is thrown.
+     * </p>
+     * 
+     * @return Set to true to report the status of a build's start and finish to your source provider. This option is
+     *         only valid when your source provider is GitHub. If this is set and you use a different source provider,
+     *         an invalidInputException is thrown.
+     */
+
+    public Boolean isReportBuildStatus() {
+        return this.reportBuildStatus;
+    }
+
+    /**
+     * <p>
      * Enable this flag to ignore SSL warnings while connecting to the project source code.
      * </p>
      * 
@@ -1053,6 +1129,8 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
             sb.append("Buildspec: ").append(getBuildspec()).append(",");
         if (getAuth() != null)
             sb.append("Auth: ").append(getAuth()).append(",");
+        if (getReportBuildStatus() != null)
+            sb.append("ReportBuildStatus: ").append(getReportBuildStatus()).append(",");
         if (getInsecureSsl() != null)
             sb.append("InsecureSsl: ").append(getInsecureSsl());
         sb.append("}");
@@ -1089,6 +1167,10 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAuth() != null && other.getAuth().equals(this.getAuth()) == false)
             return false;
+        if (other.getReportBuildStatus() == null ^ this.getReportBuildStatus() == null)
+            return false;
+        if (other.getReportBuildStatus() != null && other.getReportBuildStatus().equals(this.getReportBuildStatus()) == false)
+            return false;
         if (other.getInsecureSsl() == null ^ this.getInsecureSsl() == null)
             return false;
         if (other.getInsecureSsl() != null && other.getInsecureSsl().equals(this.getInsecureSsl()) == false)
@@ -1106,6 +1188,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getGitCloneDepth() == null) ? 0 : getGitCloneDepth().hashCode());
         hashCode = prime * hashCode + ((getBuildspec() == null) ? 0 : getBuildspec().hashCode());
         hashCode = prime * hashCode + ((getAuth() == null) ? 0 : getAuth().hashCode());
+        hashCode = prime * hashCode + ((getReportBuildStatus() == null) ? 0 : getReportBuildStatus().hashCode());
         hashCode = prime * hashCode + ((getInsecureSsl() == null) ? 0 : getInsecureSsl().hashCode());
         return hashCode;
     }

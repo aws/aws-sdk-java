@@ -48,7 +48,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String architecture;
-
+    /**
+     * <p>
+     * The instance's Amazon Resource Number (ARN).
+     * </p>
+     */
     private String arn;
     /**
      * <p>
@@ -531,7 +535,12 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The instance's Amazon Resource Number (ARN).
+     * </p>
+     * 
      * @param arn
+     *        The instance's Amazon Resource Number (ARN).
      */
 
     public void setArn(String arn) {
@@ -539,7 +548,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The instance's Amazon Resource Number (ARN).
+     * </p>
+     * 
+     * @return The instance's Amazon Resource Number (ARN).
      */
 
     public String getArn() {
@@ -547,7 +560,12 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The instance's Amazon Resource Number (ARN).
+     * </p>
+     * 
      * @param arn
+     *        The instance's Amazon Resource Number (ARN).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

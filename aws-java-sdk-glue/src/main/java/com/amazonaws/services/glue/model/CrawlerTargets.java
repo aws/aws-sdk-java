@@ -40,6 +40,12 @@ public class CrawlerTargets implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<JdbcTarget> jdbcTargets;
+    /**
+     * <p>
+     * Specifies DynamoDB targets.
+     * </p>
+     */
+    private java.util.List<DynamoDBTarget> dynamoDBTargets;
 
     /**
      * <p>
@@ -182,6 +188,76 @@ public class CrawlerTargets implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies DynamoDB targets.
+     * </p>
+     * 
+     * @return Specifies DynamoDB targets.
+     */
+
+    public java.util.List<DynamoDBTarget> getDynamoDBTargets() {
+        return dynamoDBTargets;
+    }
+
+    /**
+     * <p>
+     * Specifies DynamoDB targets.
+     * </p>
+     * 
+     * @param dynamoDBTargets
+     *        Specifies DynamoDB targets.
+     */
+
+    public void setDynamoDBTargets(java.util.Collection<DynamoDBTarget> dynamoDBTargets) {
+        if (dynamoDBTargets == null) {
+            this.dynamoDBTargets = null;
+            return;
+        }
+
+        this.dynamoDBTargets = new java.util.ArrayList<DynamoDBTarget>(dynamoDBTargets);
+    }
+
+    /**
+     * <p>
+     * Specifies DynamoDB targets.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDynamoDBTargets(java.util.Collection)} or {@link #withDynamoDBTargets(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param dynamoDBTargets
+     *        Specifies DynamoDB targets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CrawlerTargets withDynamoDBTargets(DynamoDBTarget... dynamoDBTargets) {
+        if (this.dynamoDBTargets == null) {
+            setDynamoDBTargets(new java.util.ArrayList<DynamoDBTarget>(dynamoDBTargets.length));
+        }
+        for (DynamoDBTarget ele : dynamoDBTargets) {
+            this.dynamoDBTargets.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies DynamoDB targets.
+     * </p>
+     * 
+     * @param dynamoDBTargets
+     *        Specifies DynamoDB targets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CrawlerTargets withDynamoDBTargets(java.util.Collection<DynamoDBTarget> dynamoDBTargets) {
+        setDynamoDBTargets(dynamoDBTargets);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -195,7 +271,9 @@ public class CrawlerTargets implements Serializable, Cloneable, StructuredPojo {
         if (getS3Targets() != null)
             sb.append("S3Targets: ").append(getS3Targets()).append(",");
         if (getJdbcTargets() != null)
-            sb.append("JdbcTargets: ").append(getJdbcTargets());
+            sb.append("JdbcTargets: ").append(getJdbcTargets()).append(",");
+        if (getDynamoDBTargets() != null)
+            sb.append("DynamoDBTargets: ").append(getDynamoDBTargets());
         sb.append("}");
         return sb.toString();
     }
@@ -218,6 +296,10 @@ public class CrawlerTargets implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getJdbcTargets() != null && other.getJdbcTargets().equals(this.getJdbcTargets()) == false)
             return false;
+        if (other.getDynamoDBTargets() == null ^ this.getDynamoDBTargets() == null)
+            return false;
+        if (other.getDynamoDBTargets() != null && other.getDynamoDBTargets().equals(this.getDynamoDBTargets()) == false)
+            return false;
         return true;
     }
 
@@ -228,6 +310,7 @@ public class CrawlerTargets implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getS3Targets() == null) ? 0 : getS3Targets().hashCode());
         hashCode = prime * hashCode + ((getJdbcTargets() == null) ? 0 : getJdbcTargets().hashCode());
+        hashCode = prime * hashCode + ((getDynamoDBTargets() == null) ? 0 : getDynamoDBTargets().hashCode());
         return hashCode;
     }
 

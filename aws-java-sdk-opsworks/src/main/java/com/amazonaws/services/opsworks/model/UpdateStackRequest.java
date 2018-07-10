@@ -96,14 +96,14 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more
-     * information on how to use custom AMIs with OpsWorks, see <a
+     * information about how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      * AMIs</a>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The default option is the stack's current operating system. For more information on the supported operating
+     * The default option is the stack's current operating system. For more information about supported operating
      * systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks
      * Stacks Operating Systems</a>.
      * </p>
@@ -206,7 +206,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      * </p>
      * <p>
-     * For more information on custom JSON, see <a
+     * For more information about custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the
      * Stack Configuration Attributes</a>.
      * </p>
@@ -216,7 +216,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The configuration manager. When you update a stack, we recommend that you use the configuration manager to
      * specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for
-     * Linux stacks is currently 11.4.
+     * Linux stacks is currently 12.
      * </p>
      */
     private StackConfigurationManager configurationManager;
@@ -598,14 +598,14 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more
-     * information on how to use custom AMIs with OpsWorks, see <a
+     * information about how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      * AMIs</a>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The default option is the stack's current operating system. For more information on the supported operating
+     * The default option is the stack's current operating system. For more information about supported operating
      * systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks
      * Stacks Operating Systems</a>.
      * </p>
@@ -647,17 +647,16 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances.
-     *        For more information on how to use custom AMIs with OpsWorks, see <a
+     *        For more information about how to use custom AMIs with OpsWorks, see <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      *        AMIs</a>.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        The default option is the stack's current operating system. For more information on the supported
-     *        operating systems, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
-     *        Operating Systems</a>.
+     *        The default option is the stack's current operating system. For more information about supported operating
+     *        systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
+     *        OpsWorks Stacks Operating Systems</a>.
      */
 
     public void setDefaultOs(String defaultOs) {
@@ -703,14 +702,14 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more
-     * information on how to use custom AMIs with OpsWorks, see <a
+     * information about how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      * AMIs</a>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The default option is the stack's current operating system. For more information on the supported operating
+     * The default option is the stack's current operating system. For more information about supported operating
      * systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks
      * Stacks Operating Systems</a>.
      * </p>
@@ -751,14 +750,14 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <li>
      *         <p>
      *         A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances.
-     *         For more information on how to use custom AMIs with OpsWorks, see <a
+     *         For more information about how to use custom AMIs with OpsWorks, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      *         AMIs</a>.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         The default option is the stack's current operating system. For more information on the supported
+     *         The default option is the stack's current operating system. For more information about supported
      *         operating systems, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
      *         Operating Systems</a>.
@@ -807,14 +806,14 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances. For more
-     * information on how to use custom AMIs with OpsWorks, see <a
+     * information about how to use custom AMIs with OpsWorks, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      * AMIs</a>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The default option is the stack's current operating system. For more information on the supported operating
+     * The default option is the stack's current operating system. For more information about supported operating
      * systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks
      * Stacks Operating Systems</a>.
      * </p>
@@ -856,17 +855,16 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when you create instances.
-     *        For more information on how to use custom AMIs with OpsWorks, see <a
+     *        For more information about how to use custom AMIs with OpsWorks, see <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using Custom
      *        AMIs</a>.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        The default option is the stack's current operating system. For more information on the supported
-     *        operating systems, see <a
-     *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks
-     *        Operating Systems</a>.
+     *        The default option is the stack's current operating system. For more information about supported operating
+     *        systems, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS
+     *        OpsWorks Stacks Operating Systems</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1424,7 +1422,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      * </p>
      * <p>
-     * For more information on custom JSON, see <a
+     * For more information about custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the
      * Stack Configuration Attributes</a>.
      * </p>
@@ -1437,7 +1435,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      *        </p>
      *        <p>
-     *        For more information on custom JSON, see <a
+     *        For more information about custom JSON, see <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
      *        Modify the Stack Configuration Attributes</a>.
      */
@@ -1455,7 +1453,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      * </p>
      * <p>
-     * For more information on custom JSON, see <a
+     * For more information about custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the
      * Stack Configuration Attributes</a>.
      * </p>
@@ -1467,7 +1465,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      *         </p>
      *         <p>
-     *         For more information on custom JSON, see <a
+     *         For more information about custom JSON, see <a
      *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
      *         Modify the Stack Configuration Attributes</a>.
      */
@@ -1485,7 +1483,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      * </p>
      * <p>
-     * For more information on custom JSON, see <a
+     * For more information about custom JSON, see <a
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to Modify the
      * Stack Configuration Attributes</a>.
      * </p>
@@ -1498,7 +1496,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code>
      *        </p>
      *        <p>
-     *        For more information on custom JSON, see <a
+     *        For more information about custom JSON, see <a
      *        href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
      *        Modify the Stack Configuration Attributes</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1513,13 +1511,13 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The configuration manager. When you update a stack, we recommend that you use the configuration manager to
      * specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for
-     * Linux stacks is currently 11.4.
+     * Linux stacks is currently 12.
      * </p>
      * 
      * @param configurationManager
      *        The configuration manager. When you update a stack, we recommend that you use the configuration manager to
      *        specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default
-     *        value for Linux stacks is currently 11.4.
+     *        value for Linux stacks is currently 12.
      */
 
     public void setConfigurationManager(StackConfigurationManager configurationManager) {
@@ -1530,12 +1528,12 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The configuration manager. When you update a stack, we recommend that you use the configuration manager to
      * specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for
-     * Linux stacks is currently 11.4.
+     * Linux stacks is currently 12.
      * </p>
      * 
      * @return The configuration manager. When you update a stack, we recommend that you use the configuration manager
      *         to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default
-     *         value for Linux stacks is currently 11.4.
+     *         value for Linux stacks is currently 12.
      */
 
     public StackConfigurationManager getConfigurationManager() {
@@ -1546,13 +1544,13 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The configuration manager. When you update a stack, we recommend that you use the configuration manager to
      * specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for
-     * Linux stacks is currently 11.4.
+     * Linux stacks is currently 12.
      * </p>
      * 
      * @param configurationManager
      *        The configuration manager. When you update a stack, we recommend that you use the configuration manager to
      *        specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default
-     *        value for Linux stacks is currently 11.4.
+     *        value for Linux stacks is currently 12.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

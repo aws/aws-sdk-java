@@ -32,7 +32,7 @@ import com.amazonaws.SdkClientException;
 
 /**
  * Cryptographic scheme for content encrypt/decryption.
- * 
+ *
  * @author Hanson Char
  */
 abstract class ContentCryptoScheme {
@@ -92,11 +92,11 @@ abstract class ContentCryptoScheme {
     abstract int getIVLengthInBytes();
 
     int getTagLengthInBits() { return 0; } // default to zero ie no tag
-    
+
     byte[] adjustIV(byte[] iv, long startingBytePos) {
         return iv;
     }
-    
+
     @Override
     public String toString() {
         return "cipherAlgo=" + getCipherAlgorithm() + ", blockSizeInBytes="
@@ -113,7 +113,7 @@ abstract class ContentCryptoScheme {
      * delta. Both the specified delta and the resultant value must stay within
      * the capacity of 32 bits.
      * (Package private for testing purposes.)
-     * 
+     *
      * @param counter
      *            a 16-byte counter used in AES/CTR
      * @param blockDelta
@@ -159,11 +159,11 @@ abstract class ContentCryptoScheme {
             return AES_CBC;
         throw new UnsupportedOperationException("Unsupported content encryption scheme: " + cekAlgo);
     }
-    
+
     /**
      * Creates and initializes a {@link CipherLite} for content
      * encrypt/decryption.
-     * 
+     *
      * @param cek
      *            content encrypting key
      * @param iv
@@ -242,7 +242,7 @@ abstract class ContentCryptoScheme {
     }
     /**
      * Creates and initializes a cipher lite for content encrypt/decryption.
-     * 
+     *
      * @param cek
      *            content encrypting key
      * @param iv

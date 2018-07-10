@@ -25,18 +25,18 @@ public class ModifyVolumeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A <a>VolumeModification</a> object.
+     * Information about the volume modification.
      * </p>
      */
     private VolumeModification volumeModification;
 
     /**
      * <p>
-     * A <a>VolumeModification</a> object.
+     * Information about the volume modification.
      * </p>
      * 
      * @param volumeModification
-     *        A <a>VolumeModification</a> object.
+     *        Information about the volume modification.
      */
 
     public void setVolumeModification(VolumeModification volumeModification) {
@@ -45,10 +45,10 @@ public class ModifyVolumeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A <a>VolumeModification</a> object.
+     * Information about the volume modification.
      * </p>
      * 
-     * @return A <a>VolumeModification</a> object.
+     * @return Information about the volume modification.
      */
 
     public VolumeModification getVolumeModification() {
@@ -57,11 +57,11 @@ public class ModifyVolumeResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A <a>VolumeModification</a> object.
+     * Information about the volume modification.
      * </p>
      * 
      * @param volumeModification
-     *        A <a>VolumeModification</a> object.
+     *        Information about the volume modification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

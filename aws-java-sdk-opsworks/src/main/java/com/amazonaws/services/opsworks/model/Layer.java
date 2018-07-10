@@ -28,6 +28,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Layer implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of a layer.
+     * </p>
+     */
     private String arn;
     /**
      * <p>
@@ -184,7 +189,12 @@ public class Layer implements Serializable, Cloneable, StructuredPojo {
     private LifecycleEventConfiguration lifecycleEventConfiguration;
 
     /**
+     * <p>
+     * The Amazon Resource Number (ARN) of a layer.
+     * </p>
+     * 
      * @param arn
+     *        The Amazon Resource Number (ARN) of a layer.
      */
 
     public void setArn(String arn) {
@@ -192,7 +202,11 @@ public class Layer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Number (ARN) of a layer.
+     * </p>
+     * 
+     * @return The Amazon Resource Number (ARN) of a layer.
      */
 
     public String getArn() {
@@ -200,7 +214,12 @@ public class Layer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Number (ARN) of a layer.
+     * </p>
+     * 
      * @param arn
+     *        The Amazon Resource Number (ARN) of a layer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

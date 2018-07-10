@@ -27,8 +27,8 @@ public class DescribeRdsDbInstancesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The stack ID that the instances are registered with. The operation returns descriptions of all registered Amazon
-     * RDS instances.
+     * The ID of the stack with which the instances are registered. The operation returns descriptions of all registered
+     * Amazon RDS instances.
      * </p>
      */
     private String stackId;
@@ -41,13 +41,13 @@ public class DescribeRdsDbInstancesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The stack ID that the instances are registered with. The operation returns descriptions of all registered Amazon
-     * RDS instances.
+     * The ID of the stack with which the instances are registered. The operation returns descriptions of all registered
+     * Amazon RDS instances.
      * </p>
      * 
      * @param stackId
-     *        The stack ID that the instances are registered with. The operation returns descriptions of all registered
-     *        Amazon RDS instances.
+     *        The ID of the stack with which the instances are registered. The operation returns descriptions of all
+     *        registered Amazon RDS instances.
      */
 
     public void setStackId(String stackId) {
@@ -56,12 +56,12 @@ public class DescribeRdsDbInstancesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The stack ID that the instances are registered with. The operation returns descriptions of all registered Amazon
-     * RDS instances.
+     * The ID of the stack with which the instances are registered. The operation returns descriptions of all registered
+     * Amazon RDS instances.
      * </p>
      * 
-     * @return The stack ID that the instances are registered with. The operation returns descriptions of all registered
-     *         Amazon RDS instances.
+     * @return The ID of the stack with which the instances are registered. The operation returns descriptions of all
+     *         registered Amazon RDS instances.
      */
 
     public String getStackId() {
@@ -70,13 +70,13 @@ public class DescribeRdsDbInstancesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The stack ID that the instances are registered with. The operation returns descriptions of all registered Amazon
-     * RDS instances.
+     * The ID of the stack with which the instances are registered. The operation returns descriptions of all registered
+     * Amazon RDS instances.
      * </p>
      * 
      * @param stackId
-     *        The stack ID that the instances are registered with. The operation returns descriptions of all registered
-     *        Amazon RDS instances.
+     *        The ID of the stack with which the instances are registered. The operation returns descriptions of all
+     *        registered Amazon RDS instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

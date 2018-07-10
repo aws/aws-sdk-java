@@ -64,7 +64,7 @@ public class CryptoConfiguration implements Cloneable,Serializable {
     /**
      * @param cryptoMode
      *            cryptographic mode to be used
-     * 
+     *
      * @throws UnsupportedOperationException
      *             if the necessary security provider cannot be found or the
      *             necessary cryptographic operations are not supported for the
@@ -82,7 +82,7 @@ public class CryptoConfiguration implements Cloneable,Serializable {
 
     /**
      * Sets the storage mode to the specified mode.
-     * 
+     *
      * @param storageMode
      *            The storage mode to be used for storing encryption
      *            information.
@@ -94,7 +94,7 @@ public class CryptoConfiguration implements Cloneable,Serializable {
     /**
      * Sets the storage mode to the specified mode, and returns the updated
      * CryptoConfiguration object.
-     * 
+     *
      * @param storageMode
      *            The storage mode to be used for storing encryption
      *            information.
@@ -107,7 +107,7 @@ public class CryptoConfiguration implements Cloneable,Serializable {
 
     /**
      * Returns the current storage mode of a CryptoConfiguration object.
-     * 
+     *
      * @return The storage mode to be used for storing encryption information.
      */
     public CryptoStorageMode getStorageMode() {
@@ -116,7 +116,7 @@ public class CryptoConfiguration implements Cloneable,Serializable {
 
     /**
      * Sets the crypto provider to the specified provider.
-     * 
+     *
      * @param cryptoProvider
      *            The crypto provider whose encryption implementation will be
      *            used to encrypt and decrypt data.
@@ -128,7 +128,7 @@ public class CryptoConfiguration implements Cloneable,Serializable {
     /**
      * Sets the crypto provider to the specified provider, and returns the
      * updated CryptoConfiguration object.
-     * 
+     *
      * @param cryptoProvider
      *            The crypto provider whose encryption implementation will be
      *            used to encrypt and decrypt data.
@@ -142,7 +142,7 @@ public class CryptoConfiguration implements Cloneable,Serializable {
     /**
      * Returns the crypto provider whose encryption implementation will be used
      * to encrypt and decrypt data.
-     * 
+     *
      * @return the crypto provider whose encryption implementation will be used
      *         to encrypt and decrypt data.
      */
@@ -191,7 +191,7 @@ public class CryptoConfiguration implements Cloneable,Serializable {
 
     /**
      * Sets the crypto mode; applicable only to the S3 encryption client.
-     * 
+     *
      * @throws UnsupportedOperationException
      *             if the necessary security provider cannot be found or the
      *             necessary cryptographic operations are not supported for the
@@ -208,7 +208,7 @@ public class CryptoConfiguration implements Cloneable,Serializable {
     /**
      * Fluent API to set the crypto mode; applicable only to the S3 encryption
      * client.
-     * 
+     *
      * @throws UnsupportedOperationException
      *             if the necessary security provider cannot be found or the
      *             necessary cryptographic operations are not supported for the
@@ -258,7 +258,7 @@ public class CryptoConfiguration implements Cloneable,Serializable {
 
     /**
      * Checks if the crypto mode is supported by the runtime.
-     * 
+     *
      * @throws UnsupportedOperationException
      *             if the necessary security provider cannot be found or the
      *             necessary cryptographic operations are not supported for the

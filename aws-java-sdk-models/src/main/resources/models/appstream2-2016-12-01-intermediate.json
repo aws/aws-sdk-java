@@ -15800,8 +15800,198 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "NextToken",
+        "c2jShape" : "String",
+        "deprecated" : false,
+        "documentation" : "<p>The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is retrieved.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is retrieved.</p>\n@param nextToken The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withNextToken",
+        "getterDocumentation" : "/**<p>The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is retrieved.</p>\n@return The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is retrieved.*/",
+        "getterMethodName" : "getNextToken",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "NextToken",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "NextToken",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "NextToken",
+        "setterDocumentation" : "/**<p>The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is retrieved.</p>\n@param nextToken The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is retrieved.*/",
+        "setterMethodName" : "setNextToken",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "nextToken",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is retrieved.</p>\n@param nextToken The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "nextToken",
+          "variableType" : "String",
+          "documentation" : "<p>The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is retrieved.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "MaxResults",
+        "c2jShape" : "DescribeImagesMaxResults",
+        "deprecated" : false,
+        "documentation" : "<p>The maximum size of each results page.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The maximum size of each results page.</p>\n@param maxResults The maximum size of each results page.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withMaxResults",
+        "getterDocumentation" : "/**<p>The maximum size of each results page.</p>\n@return The maximum size of each results page.*/",
+        "getterMethodName" : "getMaxResults",
+        "getterModel" : {
+          "returnType" : "Integer",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "MaxResults",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "MaxResults",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Integer",
+        "marshallingType" : "INTEGER",
+        "name" : "MaxResults",
+        "setterDocumentation" : "/**<p>The maximum size of each results page.</p>\n@param maxResults The maximum size of each results page.*/",
+        "setterMethodName" : "setMaxResults",
+        "setterModel" : {
+          "variableDeclarationType" : "Integer",
+          "variableName" : "maxResults",
+          "variableType" : "Integer",
+          "documentation" : "",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The maximum size of each results page.</p>\n@param maxResults The maximum size of each results page.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "Integer",
+          "variableName" : "maxResults",
+          "variableType" : "Integer",
+          "documentation" : "<p>The maximum size of each results page.</p>",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
+        "MaxResults" : {
+          "c2jName" : "MaxResults",
+          "c2jShape" : "DescribeImagesMaxResults",
+          "deprecated" : false,
+          "documentation" : "<p>The maximum size of each results page.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The maximum size of each results page.</p>\n@param maxResults The maximum size of each results page.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withMaxResults",
+          "getterDocumentation" : "/**<p>The maximum size of each results page.</p>\n@return The maximum size of each results page.*/",
+          "getterMethodName" : "getMaxResults",
+          "getterModel" : {
+            "returnType" : "Integer",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "MaxResults",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "MaxResults",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Integer",
+          "marshallingType" : "INTEGER",
+          "name" : "MaxResults",
+          "setterDocumentation" : "/**<p>The maximum size of each results page.</p>\n@param maxResults The maximum size of each results page.*/",
+          "setterMethodName" : "setMaxResults",
+          "setterModel" : {
+            "variableDeclarationType" : "Integer",
+            "variableName" : "maxResults",
+            "variableType" : "Integer",
+            "documentation" : "",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The maximum size of each results page.</p>\n@param maxResults The maximum size of each results page.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "Integer",
+            "variableName" : "maxResults",
+            "variableType" : "Integer",
+            "documentation" : "<p>The maximum size of each results page.</p>",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "Names" : {
           "c2jName" : "Names",
           "c2jShape" : "StringList",
@@ -15941,6 +16131,70 @@
             "documentation" : "<p>The names of the images to describe.</p>",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "NextToken" : {
+          "c2jName" : "NextToken",
+          "c2jShape" : "String",
+          "deprecated" : false,
+          "documentation" : "<p>The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is retrieved.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is retrieved.</p>\n@param nextToken The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withNextToken",
+          "getterDocumentation" : "/**<p>The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is retrieved.</p>\n@return The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is retrieved.*/",
+          "getterMethodName" : "getNextToken",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "NextToken",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "NextToken",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "NextToken",
+          "setterDocumentation" : "/**<p>The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is retrieved.</p>\n@param nextToken The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is retrieved.*/",
+          "setterMethodName" : "setNextToken",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "nextToken",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is retrieved.</p>\n@param nextToken The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "nextToken",
+            "variableType" : "String",
+            "documentation" : "<p>The pagination token to use to retrieve the next page of results. If this value is empty, only the first page is retrieved.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "xmlNameSpaceUri" : null
         }
@@ -16120,6 +16374,69 @@
           "variableSetterType" : "java.util.Collection<Image>"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "NextToken",
+        "c2jShape" : "String",
+        "deprecated" : false,
+        "documentation" : "<p>The pagination token used to retrieve the next page of results. If this value is empty, only the first page is retrieved.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The pagination token used to retrieve the next page of results. If this value is empty, only the first page is retrieved.</p>\n@param nextToken The pagination token used to retrieve the next page of results. If this value is empty, only the first page is retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withNextToken",
+        "getterDocumentation" : "/**<p>The pagination token used to retrieve the next page of results. If this value is empty, only the first page is retrieved.</p>\n@return The pagination token used to retrieve the next page of results. If this value is empty, only the first page is retrieved.*/",
+        "getterMethodName" : "getNextToken",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "NextToken",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "NextToken",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "NextToken",
+        "setterDocumentation" : "/**<p>The pagination token used to retrieve the next page of results. If this value is empty, only the first page is retrieved.</p>\n@param nextToken The pagination token used to retrieve the next page of results. If this value is empty, only the first page is retrieved.*/",
+        "setterMethodName" : "setNextToken",
+        "setterModel" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "nextToken",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The pagination token used to retrieve the next page of results. If this value is empty, only the first page is retrieved.</p>\n@param nextToken The pagination token used to retrieve the next page of results. If this value is empty, only the first page is retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "variableDeclarationType" : "String",
+          "variableName" : "nextToken",
+          "variableType" : "String",
+          "documentation" : "<p>The pagination token used to retrieve the next page of results. If this value is empty, only the first page is retrieved.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "Images" : {
@@ -16261,6 +16578,70 @@
             "documentation" : "<p>Information about the images.</p>",
             "simpleType" : "List<Image>",
             "variableSetterType" : "java.util.Collection<Image>"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "NextToken" : {
+          "c2jName" : "NextToken",
+          "c2jShape" : "String",
+          "deprecated" : false,
+          "documentation" : "<p>The pagination token used to retrieve the next page of results. If this value is empty, only the first page is retrieved.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The pagination token used to retrieve the next page of results. If this value is empty, only the first page is retrieved.</p>\n@param nextToken The pagination token used to retrieve the next page of results. If this value is empty, only the first page is retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withNextToken",
+          "getterDocumentation" : "/**<p>The pagination token used to retrieve the next page of results. If this value is empty, only the first page is retrieved.</p>\n@return The pagination token used to retrieve the next page of results. If this value is empty, only the first page is retrieved.*/",
+          "getterMethodName" : "getNextToken",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "NextToken",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "NextToken",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "NextToken",
+          "setterDocumentation" : "/**<p>The pagination token used to retrieve the next page of results. If this value is empty, only the first page is retrieved.</p>\n@param nextToken The pagination token used to retrieve the next page of results. If this value is empty, only the first page is retrieved.*/",
+          "setterMethodName" : "setNextToken",
+          "setterModel" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "nextToken",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The pagination token used to retrieve the next page of results. If this value is empty, only the first page is retrieved.</p>\n@param nextToken The pagination token used to retrieve the next page of results. If this value is empty, only the first page is retrieved.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "variableDeclarationType" : "String",
+            "variableName" : "nextToken",
+            "variableType" : "String",
+            "documentation" : "<p>The pagination token used to retrieve the next page of results. If this value is empty, only the first page is retrieved.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "xmlNameSpaceUri" : null
         }
@@ -33870,6 +34251,9 @@
         "name" : "STORAGE_CONNECTOR_GOOGLE_DRIVE",
         "value" : "STORAGE_CONNECTOR_GOOGLE_DRIVE"
       }, {
+        "name" : "STORAGE_CONNECTOR_ONE_DRIVE",
+        "value" : "STORAGE_CONNECTOR_ONE_DRIVE"
+      }, {
         "name" : "REDIRECT_URL",
         "value" : "REDIRECT_URL"
       }, {
@@ -36065,6 +36449,9 @@
       }, {
         "name" : "GOOGLE_DRIVE",
         "value" : "GOOGLE_DRIVE"
+      }, {
+        "name" : "ONE_DRIVE",
+        "value" : "ONE_DRIVE"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,

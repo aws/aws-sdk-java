@@ -792,16 +792,14 @@ public interface AmazonEC2 {
      * copies use the default AWS Key Management Service (AWS KMS) customer master key (CMK); however, you can specify a
      * non-default CMK with the <code>KmsKeyId</code> parameter.
      * </p>
-     * <note>
      * <p>
      * To copy an encrypted snapshot that has been shared from another account, you must have permissions for the CMK
      * used to encrypt the snapshot.
      * </p>
-     * </note> <note>
      * <p>
-     * Snapshots created by the CopySnapshot action have an arbitrary volume ID that should not be used for any purpose.
+     * Snapshots created by copying another snapshot have an arbitrary volume ID that should not be used for any
+     * purpose.
      * </p>
-     * </note>
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying an Amazon EBS
@@ -1487,7 +1485,8 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * You can tag your snapshots during creation. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>.
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon
@@ -1609,7 +1608,8 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * You can tag your volumes during creation. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>.
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>
+     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
@@ -2220,11 +2220,9 @@ public interface AmazonEC2 {
      * Deletes the specified EBS volume. The volume must be in the <code>available</code> state (not attached to an
      * instance).
      * </p>
-     * <note>
      * <p>
-     * The volume may remain in the <code>deleting</code> state for several minutes.
+     * The volume can remain in the <code>deleting</code> state for several minutes.
      * </p>
-     * </note>
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Deleting an Amazon EBS
@@ -4043,9 +4041,9 @@ public interface AmazonEC2 {
      * <code>impaired</code> , <code>warning</code>, or <code>insufficient-data</code>. If all checks pass, the overall
      * status of the volume is <code>ok</code>. If the check fails, the overall status is <code>impaired</code>. If the
      * status is <code>insufficient-data</code>, then the checks may still be taking place on your volume at the time.
-     * We recommend that you retry the request. For more information on volume status, see <a
+     * We recommend that you retry the request. For more information about volume status, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring the Status of
-     * Your Volumes</a>.
+     * Your Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * <i>Events</i>: Reflect the cause of a volume status and may require you to take action. For example, if your
@@ -4059,13 +4057,11 @@ public interface AmazonEC2 {
      * the action shows <code>enable-volume-io</code>. This means that you may want to enable the I/O operations for the
      * volume by calling the <a>EnableVolumeIO</a> action and then check the volume for data consistency.
      * </p>
-     * <note>
      * <p>
      * Volume status is based on the volume status checks, and does not reflect the volume state. Therefore, volume
      * status does not indicate volumes in the <code>error</code> state (for example, when a volume is incapable of
      * accepting I/O.)
      * </p>
-     * </note>
      * 
      * @param describeVolumeStatusRequest
      *        Contains the parameters for DescribeVolumeStatus.
@@ -4132,7 +4128,7 @@ public interface AmazonEC2 {
      * CloudWatch Events, see the <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon CloudWatch
      * Events User Guide</a>. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
-     * Volume Modifications"</a>.
+     * Volume Modifications"</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param describeVolumesModificationsRequest
@@ -5221,14 +5217,12 @@ public interface AmazonEC2 {
      * from a snapshot's list of create volume permissions, but you cannot do both in a single API call. If you need to
      * both add and remove account IDs for a snapshot, you must use multiple API calls.
      * </p>
-     * <note>
      * <p>
      * Encrypted snapshots and snapshots with AWS Marketplace product codes cannot be made public. Snapshots encrypted
      * with your default CMK cannot be shared with other accounts.
      * </p>
-     * </note>
      * <p>
-     * For more information on modifying snapshot permissions, see <a
+     * For more information about modifying snapshot permissions, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
      * Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -5319,21 +5313,18 @@ public interface AmazonEC2 {
      * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
      * Volume Modifications</a>.
      * </p>
-     * <note>
      * <p>
      * With previous-generation instance types, resizing an EBS volume may require detaching and reattaching the volume
-     * or stopping and restarting the instance. For more information about modifying an EBS volume running Linux, see <a
+     * or stopping and restarting the instance. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying the Size, IOPS, or
-     * Type of an EBS Volume on Linux</a>. For more information about modifying an EBS volume running Windows, see <a
+     * Type of an EBS Volume on Linux</a> and <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying the Size, IOPS, or
      * Type of an EBS Volume on Windows</a>.
      * </p>
-     * </note> <note>
      * <p>
      * If you reach the maximum volume modification rate per volume limit, you will need to wait at least six hours
      * before applying further modifications to the affected EBS volume.
      * </p>
-     * </note>
      * 
      * @param modifyVolumeRequest
      * @return Result of the ModifyVolume operation returned by the service.
@@ -6018,7 +6009,7 @@ public interface AmazonEC2 {
      * Resets permission settings for the specified snapshot.
      * </p>
      * <p>
-     * For more information on modifying snapshot permissions, see <a
+     * For more information about modifying snapshot permissions, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
      * Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
