@@ -115,6 +115,22 @@ public class StepExecutionJsonUnmarshaller implements Unmarshaller<StepExecution
                     stepExecution.setOverriddenParameters(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
                 }
+                if (context.testExpression("IsEnd", targetDepth)) {
+                    context.nextToken();
+                    stepExecution.setIsEnd(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("NextStep", targetDepth)) {
+                    context.nextToken();
+                    stepExecution.setNextStep(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("IsCritical", targetDepth)) {
+                    context.nextToken();
+                    stepExecution.setIsCritical(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("ValidNextSteps", targetDepth)) {
+                    context.nextToken();
+                    stepExecution.setValidNextSteps(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

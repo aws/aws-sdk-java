@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.apigateway.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +33,8 @@ public class ApiStageMarshaller {
             .marshallLocationName("apiId").build();
     private static final MarshallingInfo<String> STAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("stage").build();
+    private static final MarshallingInfo<Map> THROTTLE_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("throttle").build();
 
     private static final ApiStageMarshaller instance = new ApiStageMarshaller();
 
@@ -50,6 +54,7 @@ public class ApiStageMarshaller {
         try {
             protocolMarshaller.marshall(apiStage.getApiId(), APIID_BINDING);
             protocolMarshaller.marshall(apiStage.getStage(), STAGE_BINDING);
+            protocolMarshaller.marshall(apiStage.getThrottle(), THROTTLE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

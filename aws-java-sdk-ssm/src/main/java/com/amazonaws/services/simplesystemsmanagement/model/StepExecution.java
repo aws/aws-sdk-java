@@ -127,6 +127,37 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Map<String, java.util.List<String>> overriddenParameters;
+    /**
+     * <p>
+     * Enable this option to stop an Automation execution at the end of a specific step. The Automation execution stops
+     * if the step execution failed or succeeded.
+     * </p>
+     */
+    private Boolean isEnd;
+    /**
+     * <p>
+     * Specifies which step in an Automation to process next after successfully completing a step.
+     * </p>
+     */
+    private String nextStep;
+    /**
+     * <p>
+     * Enable this option to designate a step as critical for the successful completion of the Automation. If a step
+     * with this designation fails, then Automation reports the final status of the Automation as Failed.
+     * </p>
+     */
+    private Boolean isCritical;
+    /**
+     * <p>
+     * ValidNextSteps offer different strategies for managing an Automation workflow when a step finishes. Automation
+     * dynamically processes ValidNextSteps when a step is completed. For example, you can specify <code>Abort</code> to
+     * stop the Automation when a step fails or <code>Continue</code> to ignore the failure of the current step and
+     * allow Automation to continue processing the next step. You can also specify <code>step:<i>step_name</i> </code>
+     * to jump to a designated step after a step succeeds. The result of the current step dynamically determines the
+     * ValidNextSteps. If a step finishes and no ValidNextStep is designated, then the Automation stops.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> validNextSteps;
 
     /**
      * <p>
@@ -887,6 +918,283 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Enable this option to stop an Automation execution at the end of a specific step. The Automation execution stops
+     * if the step execution failed or succeeded.
+     * </p>
+     * 
+     * @param isEnd
+     *        Enable this option to stop an Automation execution at the end of a specific step. The Automation execution
+     *        stops if the step execution failed or succeeded.
+     */
+
+    public void setIsEnd(Boolean isEnd) {
+        this.isEnd = isEnd;
+    }
+
+    /**
+     * <p>
+     * Enable this option to stop an Automation execution at the end of a specific step. The Automation execution stops
+     * if the step execution failed or succeeded.
+     * </p>
+     * 
+     * @return Enable this option to stop an Automation execution at the end of a specific step. The Automation
+     *         execution stops if the step execution failed or succeeded.
+     */
+
+    public Boolean getIsEnd() {
+        return this.isEnd;
+    }
+
+    /**
+     * <p>
+     * Enable this option to stop an Automation execution at the end of a specific step. The Automation execution stops
+     * if the step execution failed or succeeded.
+     * </p>
+     * 
+     * @param isEnd
+     *        Enable this option to stop an Automation execution at the end of a specific step. The Automation execution
+     *        stops if the step execution failed or succeeded.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StepExecution withIsEnd(Boolean isEnd) {
+        setIsEnd(isEnd);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enable this option to stop an Automation execution at the end of a specific step. The Automation execution stops
+     * if the step execution failed or succeeded.
+     * </p>
+     * 
+     * @return Enable this option to stop an Automation execution at the end of a specific step. The Automation
+     *         execution stops if the step execution failed or succeeded.
+     */
+
+    public Boolean isEnd() {
+        return this.isEnd;
+    }
+
+    /**
+     * <p>
+     * Specifies which step in an Automation to process next after successfully completing a step.
+     * </p>
+     * 
+     * @param nextStep
+     *        Specifies which step in an Automation to process next after successfully completing a step.
+     */
+
+    public void setNextStep(String nextStep) {
+        this.nextStep = nextStep;
+    }
+
+    /**
+     * <p>
+     * Specifies which step in an Automation to process next after successfully completing a step.
+     * </p>
+     * 
+     * @return Specifies which step in an Automation to process next after successfully completing a step.
+     */
+
+    public String getNextStep() {
+        return this.nextStep;
+    }
+
+    /**
+     * <p>
+     * Specifies which step in an Automation to process next after successfully completing a step.
+     * </p>
+     * 
+     * @param nextStep
+     *        Specifies which step in an Automation to process next after successfully completing a step.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StepExecution withNextStep(String nextStep) {
+        setNextStep(nextStep);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enable this option to designate a step as critical for the successful completion of the Automation. If a step
+     * with this designation fails, then Automation reports the final status of the Automation as Failed.
+     * </p>
+     * 
+     * @param isCritical
+     *        Enable this option to designate a step as critical for the successful completion of the Automation. If a
+     *        step with this designation fails, then Automation reports the final status of the Automation as Failed.
+     */
+
+    public void setIsCritical(Boolean isCritical) {
+        this.isCritical = isCritical;
+    }
+
+    /**
+     * <p>
+     * Enable this option to designate a step as critical for the successful completion of the Automation. If a step
+     * with this designation fails, then Automation reports the final status of the Automation as Failed.
+     * </p>
+     * 
+     * @return Enable this option to designate a step as critical for the successful completion of the Automation. If a
+     *         step with this designation fails, then Automation reports the final status of the Automation as Failed.
+     */
+
+    public Boolean getIsCritical() {
+        return this.isCritical;
+    }
+
+    /**
+     * <p>
+     * Enable this option to designate a step as critical for the successful completion of the Automation. If a step
+     * with this designation fails, then Automation reports the final status of the Automation as Failed.
+     * </p>
+     * 
+     * @param isCritical
+     *        Enable this option to designate a step as critical for the successful completion of the Automation. If a
+     *        step with this designation fails, then Automation reports the final status of the Automation as Failed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StepExecution withIsCritical(Boolean isCritical) {
+        setIsCritical(isCritical);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enable this option to designate a step as critical for the successful completion of the Automation. If a step
+     * with this designation fails, then Automation reports the final status of the Automation as Failed.
+     * </p>
+     * 
+     * @return Enable this option to designate a step as critical for the successful completion of the Automation. If a
+     *         step with this designation fails, then Automation reports the final status of the Automation as Failed.
+     */
+
+    public Boolean isCritical() {
+        return this.isCritical;
+    }
+
+    /**
+     * <p>
+     * ValidNextSteps offer different strategies for managing an Automation workflow when a step finishes. Automation
+     * dynamically processes ValidNextSteps when a step is completed. For example, you can specify <code>Abort</code> to
+     * stop the Automation when a step fails or <code>Continue</code> to ignore the failure of the current step and
+     * allow Automation to continue processing the next step. You can also specify <code>step:<i>step_name</i> </code>
+     * to jump to a designated step after a step succeeds. The result of the current step dynamically determines the
+     * ValidNextSteps. If a step finishes and no ValidNextStep is designated, then the Automation stops.
+     * </p>
+     * 
+     * @return ValidNextSteps offer different strategies for managing an Automation workflow when a step finishes.
+     *         Automation dynamically processes ValidNextSteps when a step is completed. For example, you can specify
+     *         <code>Abort</code> to stop the Automation when a step fails or <code>Continue</code> to ignore the
+     *         failure of the current step and allow Automation to continue processing the next step. You can also
+     *         specify <code>step:<i>step_name</i> </code> to jump to a designated step after a step succeeds. The
+     *         result of the current step dynamically determines the ValidNextSteps. If a step finishes and no
+     *         ValidNextStep is designated, then the Automation stops.
+     */
+
+    public java.util.List<String> getValidNextSteps() {
+        if (validNextSteps == null) {
+            validNextSteps = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return validNextSteps;
+    }
+
+    /**
+     * <p>
+     * ValidNextSteps offer different strategies for managing an Automation workflow when a step finishes. Automation
+     * dynamically processes ValidNextSteps when a step is completed. For example, you can specify <code>Abort</code> to
+     * stop the Automation when a step fails or <code>Continue</code> to ignore the failure of the current step and
+     * allow Automation to continue processing the next step. You can also specify <code>step:<i>step_name</i> </code>
+     * to jump to a designated step after a step succeeds. The result of the current step dynamically determines the
+     * ValidNextSteps. If a step finishes and no ValidNextStep is designated, then the Automation stops.
+     * </p>
+     * 
+     * @param validNextSteps
+     *        ValidNextSteps offer different strategies for managing an Automation workflow when a step finishes.
+     *        Automation dynamically processes ValidNextSteps when a step is completed. For example, you can specify
+     *        <code>Abort</code> to stop the Automation when a step fails or <code>Continue</code> to ignore the failure
+     *        of the current step and allow Automation to continue processing the next step. You can also specify
+     *        <code>step:<i>step_name</i> </code> to jump to a designated step after a step succeeds. The result of the
+     *        current step dynamically determines the ValidNextSteps. If a step finishes and no ValidNextStep is
+     *        designated, then the Automation stops.
+     */
+
+    public void setValidNextSteps(java.util.Collection<String> validNextSteps) {
+        if (validNextSteps == null) {
+            this.validNextSteps = null;
+            return;
+        }
+
+        this.validNextSteps = new com.amazonaws.internal.SdkInternalList<String>(validNextSteps);
+    }
+
+    /**
+     * <p>
+     * ValidNextSteps offer different strategies for managing an Automation workflow when a step finishes. Automation
+     * dynamically processes ValidNextSteps when a step is completed. For example, you can specify <code>Abort</code> to
+     * stop the Automation when a step fails or <code>Continue</code> to ignore the failure of the current step and
+     * allow Automation to continue processing the next step. You can also specify <code>step:<i>step_name</i> </code>
+     * to jump to a designated step after a step succeeds. The result of the current step dynamically determines the
+     * ValidNextSteps. If a step finishes and no ValidNextStep is designated, then the Automation stops.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setValidNextSteps(java.util.Collection)} or {@link #withValidNextSteps(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param validNextSteps
+     *        ValidNextSteps offer different strategies for managing an Automation workflow when a step finishes.
+     *        Automation dynamically processes ValidNextSteps when a step is completed. For example, you can specify
+     *        <code>Abort</code> to stop the Automation when a step fails or <code>Continue</code> to ignore the failure
+     *        of the current step and allow Automation to continue processing the next step. You can also specify
+     *        <code>step:<i>step_name</i> </code> to jump to a designated step after a step succeeds. The result of the
+     *        current step dynamically determines the ValidNextSteps. If a step finishes and no ValidNextStep is
+     *        designated, then the Automation stops.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StepExecution withValidNextSteps(String... validNextSteps) {
+        if (this.validNextSteps == null) {
+            setValidNextSteps(new com.amazonaws.internal.SdkInternalList<String>(validNextSteps.length));
+        }
+        for (String ele : validNextSteps) {
+            this.validNextSteps.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * ValidNextSteps offer different strategies for managing an Automation workflow when a step finishes. Automation
+     * dynamically processes ValidNextSteps when a step is completed. For example, you can specify <code>Abort</code> to
+     * stop the Automation when a step fails or <code>Continue</code> to ignore the failure of the current step and
+     * allow Automation to continue processing the next step. You can also specify <code>step:<i>step_name</i> </code>
+     * to jump to a designated step after a step succeeds. The result of the current step dynamically determines the
+     * ValidNextSteps. If a step finishes and no ValidNextStep is designated, then the Automation stops.
+     * </p>
+     * 
+     * @param validNextSteps
+     *        ValidNextSteps offer different strategies for managing an Automation workflow when a step finishes.
+     *        Automation dynamically processes ValidNextSteps when a step is completed. For example, you can specify
+     *        <code>Abort</code> to stop the Automation when a step fails or <code>Continue</code> to ignore the failure
+     *        of the current step and allow Automation to continue processing the next step. You can also specify
+     *        <code>step:<i>step_name</i> </code> to jump to a designated step after a step succeeds. The result of the
+     *        current step dynamically determines the ValidNextSteps. If a step finishes and no ValidNextStep is
+     *        designated, then the Automation stops.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StepExecution withValidNextSteps(java.util.Collection<String> validNextSteps) {
+        setValidNextSteps(validNextSteps);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object; useful for testing and debugging.
      *
      * @return A string representation of this object.
@@ -928,7 +1236,15 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
         if (getStepExecutionId() != null)
             sb.append("StepExecutionId: ").append(getStepExecutionId()).append(",");
         if (getOverriddenParameters() != null)
-            sb.append("OverriddenParameters: ").append(getOverriddenParameters());
+            sb.append("OverriddenParameters: ").append(getOverriddenParameters()).append(",");
+        if (getIsEnd() != null)
+            sb.append("IsEnd: ").append(getIsEnd()).append(",");
+        if (getNextStep() != null)
+            sb.append("NextStep: ").append(getNextStep()).append(",");
+        if (getIsCritical() != null)
+            sb.append("IsCritical: ").append(getIsCritical()).append(",");
+        if (getValidNextSteps() != null)
+            sb.append("ValidNextSteps: ").append(getValidNextSteps());
         sb.append("}");
         return sb.toString();
     }
@@ -1007,6 +1323,22 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getOverriddenParameters() != null && other.getOverriddenParameters().equals(this.getOverriddenParameters()) == false)
             return false;
+        if (other.getIsEnd() == null ^ this.getIsEnd() == null)
+            return false;
+        if (other.getIsEnd() != null && other.getIsEnd().equals(this.getIsEnd()) == false)
+            return false;
+        if (other.getNextStep() == null ^ this.getNextStep() == null)
+            return false;
+        if (other.getNextStep() != null && other.getNextStep().equals(this.getNextStep()) == false)
+            return false;
+        if (other.getIsCritical() == null ^ this.getIsCritical() == null)
+            return false;
+        if (other.getIsCritical() != null && other.getIsCritical().equals(this.getIsCritical()) == false)
+            return false;
+        if (other.getValidNextSteps() == null ^ this.getValidNextSteps() == null)
+            return false;
+        if (other.getValidNextSteps() != null && other.getValidNextSteps().equals(this.getValidNextSteps()) == false)
+            return false;
         return true;
     }
 
@@ -1031,6 +1363,10 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getFailureDetails() == null) ? 0 : getFailureDetails().hashCode());
         hashCode = prime * hashCode + ((getStepExecutionId() == null) ? 0 : getStepExecutionId().hashCode());
         hashCode = prime * hashCode + ((getOverriddenParameters() == null) ? 0 : getOverriddenParameters().hashCode());
+        hashCode = prime * hashCode + ((getIsEnd() == null) ? 0 : getIsEnd().hashCode());
+        hashCode = prime * hashCode + ((getNextStep() == null) ? 0 : getNextStep().hashCode());
+        hashCode = prime * hashCode + ((getIsCritical() == null) ? 0 : getIsCritical().hashCode());
+        hashCode = prime * hashCode + ((getValidNextSteps() == null) ? 0 : getValidNextSteps().hashCode());
         return hashCode;
     }
 

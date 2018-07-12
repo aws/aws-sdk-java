@@ -1,3 +1,20 @@
+# __1.11.366__ __2018-07-11__
+## __AWS Cost Explorer Service__
+  - ### Features
+    - Starting today, you can access custom Reserved Instance (RI) purchase recommendations for your Amazon Redshift, Amazon ElastiCache, and Amazon Elasticsearch reservations via AWS Cost Explorer API, in addition to accessing RI purchase recommendations for your Amazon EC2 and Amazon RDS reservations.
+
+## __Amazon API Gateway__
+  - ### Features
+    - Support for fine grain throttling for API gateway. 
+
+## __Amazon Simple Storage Service__
+  - ### Features
+    - S3 Select support for BZIP2 compressed input files
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Support Conditional Branching OnFailure for SSM Automation
+
 # __1.11.365__ __2018-07-10__
 ## __AWS CodeBuild__
   - ### Features

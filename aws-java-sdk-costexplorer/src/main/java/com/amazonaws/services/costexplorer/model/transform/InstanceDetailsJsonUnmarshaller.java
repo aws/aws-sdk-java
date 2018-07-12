@@ -56,6 +56,18 @@ public class InstanceDetailsJsonUnmarshaller implements Unmarshaller<InstanceDet
                     context.nextToken();
                     instanceDetails.setRDSInstanceDetails(RDSInstanceDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("RedshiftInstanceDetails", targetDepth)) {
+                    context.nextToken();
+                    instanceDetails.setRedshiftInstanceDetails(RedshiftInstanceDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ElastiCacheInstanceDetails", targetDepth)) {
+                    context.nextToken();
+                    instanceDetails.setElastiCacheInstanceDetails(ElastiCacheInstanceDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ESInstanceDetails", targetDepth)) {
+                    context.nextToken();
+                    instanceDetails.setESInstanceDetails(ESInstanceDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

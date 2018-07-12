@@ -13,7 +13,7 @@
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -61,6 +61,14 @@ public class StepExecutionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StepExecutionId").build();
     private static final MarshallingInfo<Map> OVERRIDDENPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OverriddenParameters").build();
+    private static final MarshallingInfo<Boolean> ISEND_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("IsEnd").build();
+    private static final MarshallingInfo<String> NEXTSTEP_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextStep").build();
+    private static final MarshallingInfo<Boolean> ISCRITICAL_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IsCritical").build();
+    private static final MarshallingInfo<List> VALIDNEXTSTEPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValidNextSteps").build();
 
     private static final StepExecutionMarshaller instance = new StepExecutionMarshaller();
 
@@ -94,6 +102,10 @@ public class StepExecutionMarshaller {
             protocolMarshaller.marshall(stepExecution.getFailureDetails(), FAILUREDETAILS_BINDING);
             protocolMarshaller.marshall(stepExecution.getStepExecutionId(), STEPEXECUTIONID_BINDING);
             protocolMarshaller.marshall(stepExecution.getOverriddenParameters(), OVERRIDDENPARAMETERS_BINDING);
+            protocolMarshaller.marshall(stepExecution.getIsEnd(), ISEND_BINDING);
+            protocolMarshaller.marshall(stepExecution.getNextStep(), NEXTSTEP_BINDING);
+            protocolMarshaller.marshall(stepExecution.getIsCritical(), ISCRITICAL_BINDING);
+            protocolMarshaller.marshall(stepExecution.getValidNextSteps(), VALIDNEXTSTEPS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
