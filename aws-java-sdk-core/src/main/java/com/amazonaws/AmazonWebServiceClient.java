@@ -961,4 +961,8 @@ public abstract class AmazonWebServiceClient {
     public String getSignerOverride() {
         return clientConfiguration.getSignerOverride();
     }
+
+    public ClientConfiguration getClientConfiguration() {
+       return new ClientConfiguration(clientConfiguration);
+    }
 }
